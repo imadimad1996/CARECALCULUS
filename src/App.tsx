@@ -211,6 +211,44 @@ const getLocalizedMeta = (path: string, lang: LangCode) => {
   }
 };
 
+// The set of clinical module routes, defined once with RELATIVE paths so it can
+// be mounted under "/", "/fr", and "/ar" without duplication. `langPath` builds
+// the redirect targets for the index/fallback routes in the active language.
+function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
+  return (
+    <>
+      <Route index element={<Navigate to={langPath('/map-calculator')} replace />} />
+      <Route path="map-calculator" element={<MapCalculator lang={lang} />} />
+      <Route path="bmi-calculator" element={<BmiCalculator lang={lang} />} />
+      <Route path="glasgow-coma-scale" element={<GcsCalculator lang={lang} />} />
+      <Route path="drip-rate-calculator" element={<DripRate lang={lang} />} />
+      <Route path="creatinine-clearance" element={<CreatinineClearance lang={lang} />} />
+      <Route path="wells-score" element={<WellsScore lang={lang} />} />
+      <Route path="medical-conversions" element={<MedicalConversions lang={lang} />} />
+      <Route path="corrected-calcium" element={<CorrectedCalcium lang={lang} />} />
+      <Route path="qsofa-score" element={<QsofaScore lang={lang} />} />
+      <Route path="curb65-score" element={<Curb65Score lang={lang} />} />
+      <Route path="cha2ds2-vasc" element={<Cha2ds2VascScore lang={lang} />} />
+      <Route path="phq9-score" element={<Phq9Score lang={lang} />} />
+      <Route path="meld-score" element={<MeldScore lang={lang} />} />
+      <Route path="sirs-criteria" element={<SirsCriteria lang={lang} />} />
+      <Route path="pf-ratio" element={<PfRatio lang={lang} />} />
+      <Route path="tidal-volume" element={<TidalVolume lang={lang} />} />
+      <Route path="anc-calculator" element={<AncCalculator lang={lang} />} />
+      <Route path="adjusted-body-weight" element={<AdjustedBodyWeight lang={lang} />} />
+      <Route path="steroid-conversion" element={<SteroidConversion lang={lang} />} />
+      <Route path="blog" element={<MedicalBlog lang={lang} />} />
+      <Route path="blog/:slug" element={<MedicalBlog lang={lang} />} />
+      <Route path="blog-articles" element={<Blog lang={lang} />} />
+      <Route path="blog-articles/:slug" element={<Blog lang={lang} />} />
+      <Route path="presentations" element={<Presentations lang={lang} />} />
+      <Route path="presentations/:slug" element={<Presentations lang={lang} />} />
+      <Route path="cours" element={<Courses lang={lang} />} />
+      <Route path="cours/:slug" element={<Courses lang={lang} />} />
+    </>
+  );
+}
+
 function AppLayout() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -227,6 +265,28 @@ function AppLayout() {
     localStorage.setItem('carecalculus-lang', next);
     navigate(buildPath(logicalPath, next));
   };
+
+  // First-visit language routing: only when landing on the bare root ("/") do we
+  // consult a stored preference / browser language and redirect to the matching
+  // prefix. Beyond the root, the URL itself is authoritative.
+  useEffect(() => {
+    if (location.pathname !== '/') return;
+    const stored = localStorage.getItem('carecalculus-lang');
+    let preferred: LangCode = 'en';
+    if (stored === 'fr' || stored === 'ar' || stored === 'en') {
+      preferred = stored;
+    } else {
+      const browserLangs = navigator.languages || [navigator.language];
+      for (const b of browserLangs) {
+        const code = b.toLowerCase().slice(0, 2);
+        if (code === 'fr') { preferred = 'fr'; break; }
+        if (code === 'ar') { preferred = 'ar'; break; }
+      }
+    }
+    if (preferred !== 'en') {
+      navigate(buildPath('/', preferred), { replace: true });
+    }
+  }, [location.pathname, navigate]);
 
   const [geoState, setGeoState] = useState<{
     region: string;
@@ -351,8 +411,8 @@ function AppLayout() {
 
   // Dynamic header meta, automated hreflang injection, canonical and Open Graph (OG) social card SEO configurations
   useEffect(() => {
-    const meta = getLocalizedMeta(location.pathname, lang);
-    const pageUrl = `https://carecalculus.com${lang === 'en' ? '' : '/' + lang}${location.pathname}`;
+    const meta = getLocalizedMeta(logicalPath, lang);
+    const pageUrl = `https://carecalculus.com${lang === 'en' ? '' : '/' + lang}${logicalPath}`;
     const mainTitle = meta.title;
     const mainDesc = meta.desc;
     
@@ -430,7 +490,7 @@ function AppLayout() {
       link.setAttribute('rel', 'alternate');
       link.setAttribute('hreflang', l);
       const prefix = l === 'en' ? '' : `/${l}`;
-      const pathSuffix = location.pathname === '/' ? '/map-calculator' : location.pathname;
+      const pathSuffix = logicalPath === '/' ? '/map-calculator' : logicalPath;
       link.setAttribute('href', `https://carecalculus.com${prefix}${pathSuffix}`);
       document.head.appendChild(link);
     });
@@ -440,7 +500,7 @@ function AppLayout() {
     const xDefaultLink = document.createElement('link');
     xDefaultLink.setAttribute('rel', 'alternate');
     xDefaultLink.setAttribute('hreflang', 'x-default');
-    const xPathSuffix = location.pathname === '/' ? '/map-calculator' : location.pathname;
+    const xPathSuffix = logicalPath === '/' ? '/map-calculator' : logicalPath;
     xDefaultLink.setAttribute('href', `https://carecalculus.com${xPathSuffix}`);
     document.head.appendChild(xDefaultLink);
 
@@ -477,7 +537,7 @@ function AppLayout() {
       }
     ];
 
-    const medicalNode = getPathwaysMedicalSchema(location.pathname, lang);
+    const medicalNode = getPathwaysMedicalSchema(logicalPath, lang);
     if (medicalNode) {
       schemaList.push(medicalNode);
     }
@@ -485,7 +545,7 @@ function AppLayout() {
     schemaScript.textContent = JSON.stringify(schemaList, null, 2);
     document.head.appendChild(schemaScript);
 
-  }, [location.pathname, lang]);
+  }, [logicalPath, lang]);
 
   // Close sidebar on navigation mobile
   useEffect(() => {
@@ -502,7 +562,7 @@ function AppLayout() {
     return [...sameTier, ...defaults].slice(0, 3);
   };
 
-  const currentRelated = getRelatedCalculators(location.pathname);
+  const currentRelated = getRelatedCalculators(logicalPath);
 
   const getPathwaysMedicalSchema = (path: string, lang: LangCode) => {
     const db: Record<string, any> = {
@@ -658,7 +718,7 @@ function AppLayout() {
       { path: '/steroid-conversion', en: 'Steroid Conversion', fr: 'Dosage Corticoïdes', ar: 'تحويل الكورتيزون' },
     ];
 
-    const currentPath = location.pathname === '/' ? '/map-calculator' : location.pathname;
+    const currentPath = logicalPath === '/' ? '/map-calculator' : logicalPath;
 
     return (
       <div className="mb-6 bg-white p-4 rounded-2xl border border-gray-200/80 shadow-xs relative overflow-hidden">
@@ -685,7 +745,7 @@ function AppLayout() {
             return (
               <Link
                 key={tag.path}
-                to={tag.path}
+                to={langPath(tag.path)}
                 className={`py-2 px-3.5 rounded-full text-[11px] font-bold whitespace-nowrap transition-all duration-200 shrink-0 border uppercase tracking-tight flex items-center gap-1.5 ${
                   isActive
                     ? 'bg-blue-600 text-white border-blue-600 shadow-md font-extrabold scale-[1.01]'
@@ -835,11 +895,11 @@ function AppLayout() {
                 {filteredTopResults.map((item) => {
                   const Icon = item.icon;
                   const itemTitle = lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn);
-                  const isCurMatch = location.pathname === item.path || (location.pathname === '/' && item.path === '/map-calculator');
+                  const isCurMatch = logicalPath === item.path || (logicalPath === '/' && item.path === '/map-calculator');
                   return (
                     <Link
                       key={item.path}
-                      to={item.path}
+                      to={langPath(item.path)}
                       onClick={() => setTopSearch('')}
                       className={`p-3 border rounded-xl flex items-center justify-between hover:border-blue-400 hover:shadow-xs hover:bg-blue-50/10 transition-all ${
                         isCurMatch ? 'border-blue-600 bg-blue-50/20' : 'border-gray-200 bg-white'
@@ -871,6 +931,7 @@ function AppLayout() {
   };
 
   return (
+   <LangContext.Provider value={{ lang, langPath }}>
     <div className={`min-h-screen bg-[#fafafa] text-[#111] transition-colors duration-300 flex flex-col md:flex-row ${isRtl ? 'font-arabic' : 'font-sans'}`} dir={isRtl ? 'rtl' : 'ltr'}>
       
       {/* Mobile Top Header */}
@@ -1002,12 +1063,12 @@ function AppLayout() {
                 </div>
                 <div className="space-y-0.5">
                   {navItems.filter(i => i.tier === 1 && matchesSearch(i, sidebarSearch)).map((item) => {
-                    const isActive = location.pathname === item.path || (location.pathname === '/' && item.path === '/map-calculator');
+                    const isActive = logicalPath === item.path || (logicalPath === '/' && item.path === '/map-calculator');
                     const Icon = item.icon;
                     return (
                       <Link
                         key={item.path}
-                        to={item.path}
+                        to={langPath(item.path)}
                         onMouseEnter={playTactileClick}
                         onClick={playSleekSelect}
                         className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all ${
@@ -1035,12 +1096,12 @@ function AppLayout() {
                 </div>
                 <div className="space-y-0.5">
                   {navItems.filter(i => i.tier === 2 && matchesSearch(i, sidebarSearch)).map((item) => {
-                    const isActive = location.pathname === item.path;
+                    const isActive = logicalPath === item.path;
                     const Icon = item.icon;
                     return (
                       <Link
                         key={item.path}
-                        to={item.path}
+                        to={langPath(item.path)}
                         onMouseEnter={playTactileClick}
                         onClick={playSleekSelect}
                         className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all ${
@@ -1068,12 +1129,12 @@ function AppLayout() {
                 </div>
                 <div className="space-y-0.5">
                   {navItems.filter(i => i.tier === 3 && matchesSearch(i, sidebarSearch)).map((item) => {
-                    const isActive = location.pathname === item.path;
+                    const isActive = logicalPath === item.path;
                     const Icon = item.icon;
                     return (
                       <Link
                         key={item.path}
-                        to={item.path}
+                        to={langPath(item.path)}
                         onMouseEnter={playTactileClick}
                         onClick={playSleekSelect}
                         className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all ${
@@ -1117,12 +1178,12 @@ function AppLayout() {
                       </div>
                       <div className="space-y-0.5">
                         {groupItems.map((item) => {
-                          const isActive = location.pathname === item.path;
+                          const isActive = logicalPath === item.path;
                           const Icon = item.icon;
                           return (
                             <Link
                               key={item.path}
-                              to={item.path}
+                              to={langPath(item.path)}
                               onMouseEnter={playTactileClick}
                               onClick={playSleekSelect}
                               className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all relative ${
@@ -1183,35 +1244,14 @@ function AppLayout() {
               fallback={<div className="py-10 text-center text-sm text-gray-500">Loading clinical module...</div>}
             >
               <Routes>
-                <Route path="/" element={<Navigate to="/map-calculator" replace />} />
-                <Route path="/map-calculator" element={<MapCalculator lang={lang} />} />
-                <Route path="/bmi-calculator" element={<BmiCalculator lang={lang} />} />
-                <Route path="/glasgow-coma-scale" element={<GcsCalculator lang={lang} />} />
-                <Route path="/drip-rate-calculator" element={<DripRate lang={lang} />} />
-                <Route path="/creatinine-clearance" element={<CreatinineClearance lang={lang} />} />
-                <Route path="/wells-score" element={<WellsScore lang={lang} />} />
-                <Route path="/medical-conversions" element={<MedicalConversions lang={lang} />} />
-                <Route path="/corrected-calcium" element={<CorrectedCalcium lang={lang} />} />
-                <Route path="/qsofa-score" element={<QsofaScore lang={lang} />} />
-                <Route path="/curb65-score" element={<Curb65Score lang={lang} />} />
-                <Route path="/cha2ds2-vasc" element={<Cha2ds2VascScore lang={lang} />} />
-                <Route path="/phq9-score" element={<Phq9Score lang={lang} />} />
-                <Route path="/meld-score" element={<MeldScore lang={lang} />} />
-                <Route path="/sirs-criteria" element={<SirsCriteria lang={lang} />} />
-                <Route path="/pf-ratio" element={<PfRatio lang={lang} />} />
-                <Route path="/tidal-volume" element={<TidalVolume lang={lang} />} />
-                <Route path="/anc-calculator" element={<AncCalculator lang={lang} />} />
-                <Route path="/adjusted-body-weight" element={<AdjustedBodyWeight lang={lang} />} />
-                <Route path="/steroid-conversion" element={<SteroidConversion lang={lang} />} />
-                <Route path="/blog" element={<MedicalBlog lang={lang} />} />
-                <Route path="/blog/:slug" element={<MedicalBlog lang={lang} />} />
-                <Route path="/blog-articles" element={<Blog lang={lang} />} />
-                <Route path="/blog-articles/:slug" element={<Blog lang={lang} />} />
-                <Route path="/presentations" element={<Presentations lang={lang} />} />
-                <Route path="/presentations/:slug" element={<Presentations lang={lang} />} />
-                <Route path="/cours" element={<Courses lang={lang} />} />
-                <Route path="/cours/:slug" element={<Courses lang={lang} />} />
-                <Route path="*" element={<Navigate to="/map-calculator" replace />} />
+                {/* English (bare) + French (/fr) + Arabic (/ar) all share the
+                    same module routes. Relative child paths let one definition
+                    serve every language prefix. Navigate targets are built with
+                    langPath so redirects stay inside the active language. */}
+                <Route path="/">{moduleRoutes(lang, langPath)}</Route>
+                <Route path="/fr">{moduleRoutes('fr', (p) => buildPath(p, 'fr'))}</Route>
+                <Route path="/ar">{moduleRoutes('ar', (p) => buildPath(p, 'ar'))}</Route>
+                <Route path="*" element={<Navigate to={langPath('/map-calculator')} replace />} />
               </Routes>
             </React.Suspense>
 
@@ -1230,7 +1270,7 @@ function AppLayout() {
                     return (
                       <Link
                         key={item.path}
-                        to={item.path}
+                        to={langPath(item.path)}
                         className="p-4 border border-gray-100 rounded-xl hover:border-blue-300 hover:bg-blue-50/20 transition-all duration-200 flex items-center justify-between group"
                         style={{ minHeight: '44px' }}
                       >
@@ -1321,7 +1361,7 @@ function AppLayout() {
                 </p>
                 <div className="grid grid-cols-2 gap-x-2 gap-y-1.5 pt-1 text-[10px] font-mono font-semibold">
                   {navItems.slice(0, 6).map(n => (
-                    <Link key={n.path} to={n.path} className="text-blue-650 hover:text-blue-800 hover:underline truncate">
+                    <Link key={n.path} to={langPath(n.path)} className="text-blue-650 hover:text-blue-800 hover:underline truncate">
                       ▸ {lang === 'fr' ? n.nameFr : (lang === 'ar' ? n.nameAr : n.nameEn)}
                     </Link>
                   ))}
@@ -1348,12 +1388,13 @@ function AppLayout() {
       
       {/* Overlay for mobile sidebar */}
       {isSidebarOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-gray-900/50 z-30 md:hidden backdrop-blur-sm"
           onClick={() => setIsSidebarOpen(false)}
         />
       )}
     </div>
+   </LangContext.Provider>
   );
 }
 

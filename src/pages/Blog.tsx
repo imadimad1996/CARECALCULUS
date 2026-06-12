@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Search, Newspaper, Clock, Calendar, ChevronRight, Sparkles, ArrowLeft, Share2, CheckCircle2, Bookmark, Tag, User, Lightbulb, TrendingUp, Megaphone } from 'lucide-react';
 import { LangCode } from '../types';
 import { slugify, findBySlug } from '../utils/slug';
+import { useLang } from '../utils/lang';
 
 interface BlogArticle {
   id: string;
@@ -180,6 +181,7 @@ interface BlogProps {
 export default function Blog({ lang }: BlogProps) {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
+  const { langPath } = useLang();
 
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<'All' | BlogArticle['category']>('All');
@@ -190,8 +192,8 @@ export default function Blog({ lang }: BlogProps) {
 
   // Each article has its own URL: /blog-articles/:slug. Selection is driven by
   // the route param so posts are shareable, bookmarkable, and indexable.
-  const openPost = (a: BlogArticle) => navigate(`/blog-articles/${slugify(a.title, a.id)}`);
-  const closePost = () => navigate('/blog-articles');
+  const openPost = (a: BlogArticle) => navigate(langPath(`/blog-articles/${slugify(a.title, a.id)}`));
+  const closePost = () => navigate(langPath('/blog-articles'));
 
   const t = (en: string, fr: string, ar: string) => (lang === 'fr' ? fr : lang === 'ar' ? ar : en);
 
@@ -244,7 +246,7 @@ export default function Blog({ lang }: BlogProps) {
 
   // Unknown slug → fall back to the directory so deep links never dead-end.
   useEffect(() => {
-    if (slug && !activePost) navigate('/blog-articles', { replace: true });
+    if (slug && !activePost) navigate(langPath('/blog-articles'), { replace: true });
   }, [slug, activePost, navigate]);
 
   // Dynamic SEO for an open article

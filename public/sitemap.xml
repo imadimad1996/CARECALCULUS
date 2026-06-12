@@ -1,206 +1,1057 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://carecalculus.com/</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/"/>
   </url>
   <url>
     <loc>https://carecalculus.com/map-calculator</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/map-calculator"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/map-calculator"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/map-calculator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/map-calculator"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/map-calculator</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/map-calculator"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/map-calculator"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/map-calculator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/map-calculator"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/map-calculator</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/map-calculator"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/map-calculator"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/map-calculator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/map-calculator"/>
   </url>
   <url>
     <loc>https://carecalculus.com/glasgow-coma-scale</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/glasgow-coma-scale"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/glasgow-coma-scale"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/glasgow-coma-scale"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/glasgow-coma-scale"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/glasgow-coma-scale</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/glasgow-coma-scale"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/glasgow-coma-scale"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/glasgow-coma-scale"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/glasgow-coma-scale"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/glasgow-coma-scale</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/glasgow-coma-scale"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/glasgow-coma-scale"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/glasgow-coma-scale"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/glasgow-coma-scale"/>
   </url>
   <url>
     <loc>https://carecalculus.com/qsofa-score</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/qsofa-score"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/qsofa-score"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/qsofa-score"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/qsofa-score"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/qsofa-score</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/qsofa-score"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/qsofa-score"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/qsofa-score"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/qsofa-score"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/qsofa-score</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/qsofa-score"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/qsofa-score"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/qsofa-score"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/qsofa-score"/>
   </url>
   <url>
     <loc>https://carecalculus.com/sirs-criteria</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/sirs-criteria"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/sirs-criteria"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/sirs-criteria"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/sirs-criteria"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/sirs-criteria</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/sirs-criteria"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/sirs-criteria"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/sirs-criteria"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/sirs-criteria"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/sirs-criteria</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/sirs-criteria"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/sirs-criteria"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/sirs-criteria"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/sirs-criteria"/>
   </url>
   <url>
     <loc>https://carecalculus.com/curb65-score</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/curb65-score"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/curb65-score"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/curb65-score"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/curb65-score"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/curb65-score</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/curb65-score"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/curb65-score"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/curb65-score"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/curb65-score"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/curb65-score</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/curb65-score"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/curb65-score"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/curb65-score"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/curb65-score"/>
   </url>
   <url>
     <loc>https://carecalculus.com/pf-ratio</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/pf-ratio"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/pf-ratio"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/pf-ratio"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/pf-ratio"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/pf-ratio</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/pf-ratio"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/pf-ratio"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/pf-ratio"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/pf-ratio"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/pf-ratio</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/pf-ratio"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/pf-ratio"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/pf-ratio"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/pf-ratio"/>
   </url>
   <url>
     <loc>https://carecalculus.com/tidal-volume</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/tidal-volume"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/tidal-volume"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/tidal-volume"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/tidal-volume"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/tidal-volume</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/tidal-volume"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/tidal-volume"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/tidal-volume"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/tidal-volume"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/tidal-volume</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/tidal-volume"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/tidal-volume"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/tidal-volume"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/tidal-volume"/>
   </url>
   <url>
     <loc>https://carecalculus.com/creatinine-clearance</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/creatinine-clearance"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/creatinine-clearance"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/creatinine-clearance"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/creatinine-clearance"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/creatinine-clearance</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/creatinine-clearance"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/creatinine-clearance"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/creatinine-clearance"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/creatinine-clearance"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/creatinine-clearance</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/creatinine-clearance"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/creatinine-clearance"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/creatinine-clearance"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/creatinine-clearance"/>
   </url>
   <url>
     <loc>https://carecalculus.com/meld-score</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/meld-score"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/meld-score"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/meld-score"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/meld-score"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/meld-score</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/meld-score"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/meld-score"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/meld-score"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/meld-score"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/meld-score</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/meld-score"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/meld-score"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/meld-score"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/meld-score"/>
   </url>
   <url>
     <loc>https://carecalculus.com/wells-score</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/wells-score"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/wells-score"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/wells-score"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/wells-score"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/wells-score</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/wells-score"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/wells-score"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/wells-score"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/wells-score"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/wells-score</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/wells-score"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/wells-score"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/wells-score"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/wells-score"/>
   </url>
   <url>
     <loc>https://carecalculus.com/cha2ds2-vasc</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/cha2ds2-vasc"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/cha2ds2-vasc"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/cha2ds2-vasc"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/cha2ds2-vasc"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/cha2ds2-vasc</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/cha2ds2-vasc"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/cha2ds2-vasc"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/cha2ds2-vasc"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/cha2ds2-vasc"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/cha2ds2-vasc</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/cha2ds2-vasc"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/cha2ds2-vasc"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/cha2ds2-vasc"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/cha2ds2-vasc"/>
   </url>
   <url>
     <loc>https://carecalculus.com/corrected-calcium</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/corrected-calcium"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/corrected-calcium"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/corrected-calcium"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/corrected-calcium"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/corrected-calcium</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/corrected-calcium"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/corrected-calcium"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/corrected-calcium"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/corrected-calcium"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/corrected-calcium</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/corrected-calcium"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/corrected-calcium"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/corrected-calcium"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/corrected-calcium"/>
   </url>
   <url>
     <loc>https://carecalculus.com/anc-calculator</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/anc-calculator"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/anc-calculator"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/anc-calculator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/anc-calculator"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/anc-calculator</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/anc-calculator"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/anc-calculator"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/anc-calculator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/anc-calculator"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/anc-calculator</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/anc-calculator"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/anc-calculator"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/anc-calculator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/anc-calculator"/>
   </url>
   <url>
     <loc>https://carecalculus.com/drip-rate-calculator</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/drip-rate-calculator"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/drip-rate-calculator"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/drip-rate-calculator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/drip-rate-calculator"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/drip-rate-calculator</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/drip-rate-calculator"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/drip-rate-calculator"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/drip-rate-calculator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/drip-rate-calculator"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/drip-rate-calculator</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/drip-rate-calculator"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/drip-rate-calculator"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/drip-rate-calculator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/drip-rate-calculator"/>
   </url>
   <url>
     <loc>https://carecalculus.com/steroid-conversion</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/steroid-conversion"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/steroid-conversion"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/steroid-conversion"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/steroid-conversion"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/steroid-conversion</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/steroid-conversion"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/steroid-conversion"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/steroid-conversion"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/steroid-conversion"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/steroid-conversion</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/steroid-conversion"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/steroid-conversion"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/steroid-conversion"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/steroid-conversion"/>
   </url>
   <url>
     <loc>https://carecalculus.com/adjusted-body-weight</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/adjusted-body-weight"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/adjusted-body-weight"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/adjusted-body-weight"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/adjusted-body-weight"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/adjusted-body-weight</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/adjusted-body-weight"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/adjusted-body-weight"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/adjusted-body-weight"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/adjusted-body-weight"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/adjusted-body-weight</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/adjusted-body-weight"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/adjusted-body-weight"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/adjusted-body-weight"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/adjusted-body-weight"/>
   </url>
   <url>
     <loc>https://carecalculus.com/medical-conversions</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/medical-conversions"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/medical-conversions"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/medical-conversions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/medical-conversions"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/medical-conversions</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/medical-conversions"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/medical-conversions"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/medical-conversions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/medical-conversions"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/medical-conversions</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/medical-conversions"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/medical-conversions"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/medical-conversions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/medical-conversions"/>
   </url>
   <url>
     <loc>https://carecalculus.com/bmi-calculator</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/bmi-calculator"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/bmi-calculator"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/bmi-calculator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/bmi-calculator"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/bmi-calculator</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/bmi-calculator"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/bmi-calculator"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/bmi-calculator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/bmi-calculator"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/bmi-calculator</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/bmi-calculator"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/bmi-calculator"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/bmi-calculator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/bmi-calculator"/>
   </url>
   <url>
     <loc>https://carecalculus.com/phq9-score</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/phq9-score"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/phq9-score"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/phq9-score"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/phq9-score"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/phq9-score</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/phq9-score"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/phq9-score"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/phq9-score"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/phq9-score"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/phq9-score</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/phq9-score"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/phq9-score"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/phq9-score"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/phq9-score"/>
   </url>
   <url>
     <loc>https://carecalculus.com/blog</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/blog</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/blog</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog"/>
   </url>
   <url>
     <loc>https://carecalculus.com/blog-articles</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog-articles"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog-articles"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog-articles"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog-articles"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/blog-articles</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog-articles"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog-articles"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog-articles"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog-articles"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/blog-articles</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog-articles"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog-articles"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog-articles"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog-articles"/>
   </url>
   <url>
     <loc>https://carecalculus.com/presentations</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/presentations"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/presentations"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/presentations"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/presentations"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/presentations</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/presentations"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/presentations"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/presentations"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/presentations"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/presentations</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/presentations"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/presentations"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/presentations"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/presentations"/>
   </url>
   <url>
     <loc>https://carecalculus.com/cours</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/cours"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/cours"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/cours"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/cours"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/cours</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/cours"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/cours"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/cours"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/cours"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/cours</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/cours"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/cours"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/cours"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/cours"/>
   </url>
   <url>
     <loc>https://carecalculus.com/blog-articles/5-bedside-pearls-for-faster-map-guided-resuscitation</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog-articles/5-bedside-pearls-for-faster-map-guided-resuscitation"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog-articles/5-bedside-pearls-for-faster-map-guided-resuscitation"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog-articles/5-bedside-pearls-for-faster-map-guided-resuscitation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog-articles/5-bedside-pearls-for-faster-map-guided-resuscitation"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/blog-articles/5-bedside-pearls-for-faster-map-guided-resuscitation</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog-articles/5-bedside-pearls-for-faster-map-guided-resuscitation"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog-articles/5-bedside-pearls-for-faster-map-guided-resuscitation"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog-articles/5-bedside-pearls-for-faster-map-guided-resuscitation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog-articles/5-bedside-pearls-for-faster-map-guided-resuscitation"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/blog-articles/5-bedside-pearls-for-faster-map-guided-resuscitation</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog-articles/5-bedside-pearls-for-faster-map-guided-resuscitation"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog-articles/5-bedside-pearls-for-faster-map-guided-resuscitation"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog-articles/5-bedside-pearls-for-faster-map-guided-resuscitation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog-articles/5-bedside-pearls-for-faster-map-guided-resuscitation"/>
   </url>
   <url>
     <loc>https://carecalculus.com/blog-articles/what-the-2026-sepsis-bundle-updates-mean-for-your-triage</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog-articles/what-the-2026-sepsis-bundle-updates-mean-for-your-triage"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog-articles/what-the-2026-sepsis-bundle-updates-mean-for-your-triage"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog-articles/what-the-2026-sepsis-bundle-updates-mean-for-your-triage"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog-articles/what-the-2026-sepsis-bundle-updates-mean-for-your-triage"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/blog-articles/what-the-2026-sepsis-bundle-updates-mean-for-your-triage</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog-articles/what-the-2026-sepsis-bundle-updates-mean-for-your-triage"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog-articles/what-the-2026-sepsis-bundle-updates-mean-for-your-triage"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog-articles/what-the-2026-sepsis-bundle-updates-mean-for-your-triage"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog-articles/what-the-2026-sepsis-bundle-updates-mean-for-your-triage"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/blog-articles/what-the-2026-sepsis-bundle-updates-mean-for-your-triage</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog-articles/what-the-2026-sepsis-bundle-updates-mean-for-your-triage"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog-articles/what-the-2026-sepsis-bundle-updates-mean-for-your-triage"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog-articles/what-the-2026-sepsis-bundle-updates-mean-for-your-triage"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog-articles/what-the-2026-sepsis-bundle-updates-mean-for-your-triage"/>
   </url>
   <url>
     <loc>https://carecalculus.com/blog-articles/stop-guessing-steroid-equivalents-a-conversion-mindset</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog-articles/stop-guessing-steroid-equivalents-a-conversion-mindset"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog-articles/stop-guessing-steroid-equivalents-a-conversion-mindset"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog-articles/stop-guessing-steroid-equivalents-a-conversion-mindset"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog-articles/stop-guessing-steroid-equivalents-a-conversion-mindset"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/blog-articles/stop-guessing-steroid-equivalents-a-conversion-mindset</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog-articles/stop-guessing-steroid-equivalents-a-conversion-mindset"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog-articles/stop-guessing-steroid-equivalents-a-conversion-mindset"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog-articles/stop-guessing-steroid-equivalents-a-conversion-mindset"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog-articles/stop-guessing-steroid-equivalents-a-conversion-mindset"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/blog-articles/stop-guessing-steroid-equivalents-a-conversion-mindset</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog-articles/stop-guessing-steroid-equivalents-a-conversion-mindset"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog-articles/stop-guessing-steroid-equivalents-a-conversion-mindset"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog-articles/stop-guessing-steroid-equivalents-a-conversion-mindset"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog-articles/stop-guessing-steroid-equivalents-a-conversion-mindset"/>
   </url>
   <url>
     <loc>https://carecalculus.com/blog-articles/calculators-at-the-bedside-friend-not-crutch</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog-articles/calculators-at-the-bedside-friend-not-crutch"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog-articles/calculators-at-the-bedside-friend-not-crutch"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog-articles/calculators-at-the-bedside-friend-not-crutch"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog-articles/calculators-at-the-bedside-friend-not-crutch"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/blog-articles/calculators-at-the-bedside-friend-not-crutch</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog-articles/calculators-at-the-bedside-friend-not-crutch"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog-articles/calculators-at-the-bedside-friend-not-crutch"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog-articles/calculators-at-the-bedside-friend-not-crutch"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog-articles/calculators-at-the-bedside-friend-not-crutch"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/blog-articles/calculators-at-the-bedside-friend-not-crutch</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog-articles/calculators-at-the-bedside-friend-not-crutch"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog-articles/calculators-at-the-bedside-friend-not-crutch"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog-articles/calculators-at-the-bedside-friend-not-crutch"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog-articles/calculators-at-the-bedside-friend-not-crutch"/>
   </url>
   <url>
     <loc>https://carecalculus.com/blog-articles/reading-a-tidal-volume-order-like-a-lung-protective-pro</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog-articles/reading-a-tidal-volume-order-like-a-lung-protective-pro"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog-articles/reading-a-tidal-volume-order-like-a-lung-protective-pro"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog-articles/reading-a-tidal-volume-order-like-a-lung-protective-pro"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog-articles/reading-a-tidal-volume-order-like-a-lung-protective-pro"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/blog-articles/reading-a-tidal-volume-order-like-a-lung-protective-pro</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog-articles/reading-a-tidal-volume-order-like-a-lung-protective-pro"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog-articles/reading-a-tidal-volume-order-like-a-lung-protective-pro"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog-articles/reading-a-tidal-volume-order-like-a-lung-protective-pro"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog-articles/reading-a-tidal-volume-order-like-a-lung-protective-pro"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/blog-articles/reading-a-tidal-volume-order-like-a-lung-protective-pro</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog-articles/reading-a-tidal-volume-order-like-a-lung-protective-pro"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog-articles/reading-a-tidal-volume-order-like-a-lung-protective-pro"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog-articles/reading-a-tidal-volume-order-like-a-lung-protective-pro"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog-articles/reading-a-tidal-volume-order-like-a-lung-protective-pro"/>
   </url>
   <url>
     <loc>https://carecalculus.com/blog-articles/behind-the-build-how-we-localize-every-calculator-into-3-languages</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog-articles/behind-the-build-how-we-localize-every-calculator-into-3-languages"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog-articles/behind-the-build-how-we-localize-every-calculator-into-3-languages"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog-articles/behind-the-build-how-we-localize-every-calculator-into-3-languages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog-articles/behind-the-build-how-we-localize-every-calculator-into-3-languages"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/blog-articles/behind-the-build-how-we-localize-every-calculator-into-3-languages</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog-articles/behind-the-build-how-we-localize-every-calculator-into-3-languages"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog-articles/behind-the-build-how-we-localize-every-calculator-into-3-languages"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog-articles/behind-the-build-how-we-localize-every-calculator-into-3-languages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog-articles/behind-the-build-how-we-localize-every-calculator-into-3-languages"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/blog-articles/behind-the-build-how-we-localize-every-calculator-into-3-languages</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog-articles/behind-the-build-how-we-localize-every-calculator-into-3-languages"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog-articles/behind-the-build-how-we-localize-every-calculator-into-3-languages"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog-articles/behind-the-build-how-we-localize-every-calculator-into-3-languages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog-articles/behind-the-build-how-we-localize-every-calculator-into-3-languages"/>
   </url>
   <url>
     <loc>https://carecalculus.com/blog/precision-mean-arterial-pressure-map-targets-balancing-perfusion-vasopressor-tox</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog/precision-mean-arterial-pressure-map-targets-balancing-perfusion-vasopressor-tox"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog/precision-mean-arterial-pressure-map-targets-balancing-perfusion-vasopressor-tox"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog/precision-mean-arterial-pressure-map-targets-balancing-perfusion-vasopressor-tox"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog/precision-mean-arterial-pressure-map-targets-balancing-perfusion-vasopressor-tox"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/blog/precision-mean-arterial-pressure-map-targets-balancing-perfusion-vasopressor-tox</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog/precision-mean-arterial-pressure-map-targets-balancing-perfusion-vasopressor-tox"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog/precision-mean-arterial-pressure-map-targets-balancing-perfusion-vasopressor-tox"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog/precision-mean-arterial-pressure-map-targets-balancing-perfusion-vasopressor-tox"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog/precision-mean-arterial-pressure-map-targets-balancing-perfusion-vasopressor-tox"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/blog/precision-mean-arterial-pressure-map-targets-balancing-perfusion-vasopressor-tox</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog/precision-mean-arterial-pressure-map-targets-balancing-perfusion-vasopressor-tox"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog/precision-mean-arterial-pressure-map-targets-balancing-perfusion-vasopressor-tox"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog/precision-mean-arterial-pressure-map-targets-balancing-perfusion-vasopressor-tox"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog/precision-mean-arterial-pressure-map-targets-balancing-perfusion-vasopressor-tox"/>
   </url>
   <url>
     <loc>https://carecalculus.com/blog/evaluating-gcs-fluctuations-in-non-traumatic-coma-diagnostic-pitfalls-neuromonit</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog/evaluating-gcs-fluctuations-in-non-traumatic-coma-diagnostic-pitfalls-neuromonit"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog/evaluating-gcs-fluctuations-in-non-traumatic-coma-diagnostic-pitfalls-neuromonit"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog/evaluating-gcs-fluctuations-in-non-traumatic-coma-diagnostic-pitfalls-neuromonit"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog/evaluating-gcs-fluctuations-in-non-traumatic-coma-diagnostic-pitfalls-neuromonit"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/blog/evaluating-gcs-fluctuations-in-non-traumatic-coma-diagnostic-pitfalls-neuromonit</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog/evaluating-gcs-fluctuations-in-non-traumatic-coma-diagnostic-pitfalls-neuromonit"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog/evaluating-gcs-fluctuations-in-non-traumatic-coma-diagnostic-pitfalls-neuromonit"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog/evaluating-gcs-fluctuations-in-non-traumatic-coma-diagnostic-pitfalls-neuromonit"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog/evaluating-gcs-fluctuations-in-non-traumatic-coma-diagnostic-pitfalls-neuromonit"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/blog/evaluating-gcs-fluctuations-in-non-traumatic-coma-diagnostic-pitfalls-neuromonit</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog/evaluating-gcs-fluctuations-in-non-traumatic-coma-diagnostic-pitfalls-neuromonit"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog/evaluating-gcs-fluctuations-in-non-traumatic-coma-diagnostic-pitfalls-neuromonit"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog/evaluating-gcs-fluctuations-in-non-traumatic-coma-diagnostic-pitfalls-neuromonit"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog/evaluating-gcs-fluctuations-in-non-traumatic-coma-diagnostic-pitfalls-neuromonit"/>
   </url>
   <url>
     <loc>https://carecalculus.com/blog/the-qsofa-score-versus-sirs-criteria-for-sepsis-screening-a-multi-center-emergen</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog/the-qsofa-score-versus-sirs-criteria-for-sepsis-screening-a-multi-center-emergen"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog/the-qsofa-score-versus-sirs-criteria-for-sepsis-screening-a-multi-center-emergen"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog/the-qsofa-score-versus-sirs-criteria-for-sepsis-screening-a-multi-center-emergen"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog/the-qsofa-score-versus-sirs-criteria-for-sepsis-screening-a-multi-center-emergen"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/blog/the-qsofa-score-versus-sirs-criteria-for-sepsis-screening-a-multi-center-emergen</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog/the-qsofa-score-versus-sirs-criteria-for-sepsis-screening-a-multi-center-emergen"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog/the-qsofa-score-versus-sirs-criteria-for-sepsis-screening-a-multi-center-emergen"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog/the-qsofa-score-versus-sirs-criteria-for-sepsis-screening-a-multi-center-emergen"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog/the-qsofa-score-versus-sirs-criteria-for-sepsis-screening-a-multi-center-emergen"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/blog/the-qsofa-score-versus-sirs-criteria-for-sepsis-screening-a-multi-center-emergen</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog/the-qsofa-score-versus-sirs-criteria-for-sepsis-screening-a-multi-center-emergen"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog/the-qsofa-score-versus-sirs-criteria-for-sepsis-screening-a-multi-center-emergen"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog/the-qsofa-score-versus-sirs-criteria-for-sepsis-screening-a-multi-center-emergen"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog/the-qsofa-score-versus-sirs-criteria-for-sepsis-screening-a-multi-center-emergen"/>
   </url>
   <url>
     <loc>https://carecalculus.com/cours/clinical-nephrology-cockcroft-gault-drug-clearance-kinetics</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/cours/clinical-nephrology-cockcroft-gault-drug-clearance-kinetics"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/cours/clinical-nephrology-cockcroft-gault-drug-clearance-kinetics"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/cours/clinical-nephrology-cockcroft-gault-drug-clearance-kinetics"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/cours/clinical-nephrology-cockcroft-gault-drug-clearance-kinetics"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/cours/clinical-nephrology-cockcroft-gault-drug-clearance-kinetics</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/cours/clinical-nephrology-cockcroft-gault-drug-clearance-kinetics"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/cours/clinical-nephrology-cockcroft-gault-drug-clearance-kinetics"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/cours/clinical-nephrology-cockcroft-gault-drug-clearance-kinetics"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/cours/clinical-nephrology-cockcroft-gault-drug-clearance-kinetics"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/cours/clinical-nephrology-cockcroft-gault-drug-clearance-kinetics</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/cours/clinical-nephrology-cockcroft-gault-drug-clearance-kinetics"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/cours/clinical-nephrology-cockcroft-gault-drug-clearance-kinetics"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/cours/clinical-nephrology-cockcroft-gault-drug-clearance-kinetics"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/cours/clinical-nephrology-cockcroft-gault-drug-clearance-kinetics"/>
   </url>
   <url>
     <loc>https://carecalculus.com/cours/sepsis-pathways-early-calibration-of-qsofa-sirs-targets</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/cours/sepsis-pathways-early-calibration-of-qsofa-sirs-targets"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/cours/sepsis-pathways-early-calibration-of-qsofa-sirs-targets"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/cours/sepsis-pathways-early-calibration-of-qsofa-sirs-targets"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/cours/sepsis-pathways-early-calibration-of-qsofa-sirs-targets"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/cours/sepsis-pathways-early-calibration-of-qsofa-sirs-targets</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/cours/sepsis-pathways-early-calibration-of-qsofa-sirs-targets"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/cours/sepsis-pathways-early-calibration-of-qsofa-sirs-targets"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/cours/sepsis-pathways-early-calibration-of-qsofa-sirs-targets"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/cours/sepsis-pathways-early-calibration-of-qsofa-sirs-targets"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/cours/sepsis-pathways-early-calibration-of-qsofa-sirs-targets</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/cours/sepsis-pathways-early-calibration-of-qsofa-sirs-targets"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/cours/sepsis-pathways-early-calibration-of-qsofa-sirs-targets"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/cours/sepsis-pathways-early-calibration-of-qsofa-sirs-targets"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/cours/sepsis-pathways-early-calibration-of-qsofa-sirs-targets"/>
   </url>
   <url>
     <loc>https://carecalculus.com/presentations/advanced-hemodynamic-performance-organ-flow-targets</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/presentations/advanced-hemodynamic-performance-organ-flow-targets"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/presentations/advanced-hemodynamic-performance-organ-flow-targets"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/presentations/advanced-hemodynamic-performance-organ-flow-targets"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/presentations/advanced-hemodynamic-performance-organ-flow-targets"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/presentations/advanced-hemodynamic-performance-organ-flow-targets</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/presentations/advanced-hemodynamic-performance-organ-flow-targets"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/presentations/advanced-hemodynamic-performance-organ-flow-targets"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/presentations/advanced-hemodynamic-performance-organ-flow-targets"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/presentations/advanced-hemodynamic-performance-organ-flow-targets"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/presentations/advanced-hemodynamic-performance-organ-flow-targets</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/presentations/advanced-hemodynamic-performance-organ-flow-targets"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/presentations/advanced-hemodynamic-performance-organ-flow-targets"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/presentations/advanced-hemodynamic-performance-organ-flow-targets"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/presentations/advanced-hemodynamic-performance-organ-flow-targets"/>
   </url>
   <url>
     <loc>https://carecalculus.com/presentations/pulmonary-mechanics-low-tidal-volume-vent-protocol</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/presentations/pulmonary-mechanics-low-tidal-volume-vent-protocol"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/presentations/pulmonary-mechanics-low-tidal-volume-vent-protocol"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/presentations/pulmonary-mechanics-low-tidal-volume-vent-protocol"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/presentations/pulmonary-mechanics-low-tidal-volume-vent-protocol"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/presentations/pulmonary-mechanics-low-tidal-volume-vent-protocol</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/presentations/pulmonary-mechanics-low-tidal-volume-vent-protocol"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/presentations/pulmonary-mechanics-low-tidal-volume-vent-protocol"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/presentations/pulmonary-mechanics-low-tidal-volume-vent-protocol"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/presentations/pulmonary-mechanics-low-tidal-volume-vent-protocol"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/presentations/pulmonary-mechanics-low-tidal-volume-vent-protocol</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/presentations/pulmonary-mechanics-low-tidal-volume-vent-protocol"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/presentations/pulmonary-mechanics-low-tidal-volume-vent-protocol"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/presentations/pulmonary-mechanics-low-tidal-volume-vent-protocol"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/presentations/pulmonary-mechanics-low-tidal-volume-vent-protocol"/>
   </url>
 </urlset>

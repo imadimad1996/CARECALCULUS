@@ -101,15 +101,22 @@ const journalPosts = extractItems(extractArrayBlock(read('src/pages/MedicalBlog.
 const courses = extractItems(extractArrayBlock(read('src/pages/Courses.tsx'), 'DEFAULT_COURSES'));
 const decks = extractItems(extractArrayBlock(read('src/pages/Presentations.tsx'), 'DEFAULT_SUBJECTS'));
 
-// --- Build URL set ------------------------------------------------------------
-/** @type {{loc:string, priority:string, changefreq?:string}[]} */
-const urls = [];
+// --- Build the set of LOGICAL paths (language-agnostic) -----------------------
+// English is served bare, French at /fr, Arabic at /ar. Each logical path below
+// is emitted once per language with full hreflang alternates.
+const LANGS = ['en', 'fr', 'ar'];
+const langUrl = (path, lang) => {
+  const clean = path === '/' ? '' : path;
+  return lang === 'en' ? `${ORIGIN}${clean || '/'}` : `${ORIGIN}/${lang}${clean}`;
+};
+
+/** @type {{path:string, priority:string, changefreq?:string}[]} */
+const pages = [];
 const seen = new Set();
 const add = (path, priority, changefreq) => {
-  const loc = `${ORIGIN}${path}`;
-  if (seen.has(loc)) return;
-  seen.add(loc);
-  urls.push({ loc, priority, changefreq });
+  if (seen.has(path)) return;
+  seen.add(path);
+  pages.push({ path, priority, changefreq });
 };
 
 // Homepage
@@ -128,25 +135,37 @@ for (const p of journalPosts) add(`/blog/${slugify(p.title, p.id)}`, '0.6', 'mon
 for (const c of courses) add(`/cours/${slugify(c.title, c.id)}`, '0.5', 'monthly');
 for (const d of decks) add(`/presentations/${slugify(d.title, d.id)}`, '0.5', 'monthly');
 
-// --- Emit XML -----------------------------------------------------------------
-const body = urls
-  .map(({ loc, priority, changefreq }) => {
+// --- Emit XML with hreflang alternates ----------------------------------------
+// Per Google's multilingual sitemap spec, every <url> lists all language
+// variants (plus x-default → English) via xhtml:link rel="alternate".
+const blocks = [];
+for (const { path, priority, changefreq } of pages) {
+  const alternates = [
+    ...LANGS.map(
+      (l) => `    <xhtml:link rel="alternate" hreflang="${l}" href="${langUrl(path, l)}"/>`
+    ),
+    `    <xhtml:link rel="alternate" hreflang="x-default" href="${langUrl(path, 'en')}"/>`,
+  ].join('\n');
+
+  for (const lang of LANGS) {
     const cf = changefreq ? `\n    <changefreq>${changefreq}</changefreq>` : '';
-    return `  <url>
-    <loc>${loc}</loc>
+    blocks.push(`  <url>
+    <loc>${langUrl(path, lang)}</loc>
     <lastmod>${today}</lastmod>${cf}
     <priority>${priority}</priority>
-  </url>`;
-  })
-  .join('\n');
+${alternates}
+  </url>`);
+  }
+}
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${body}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${blocks.join('\n')}
 </urlset>
 `;
 
 writeFileSync(join(ROOT, 'public/sitemap.xml'), xml, 'utf8');
-console.log(`✓ sitemap.xml generated — ${urls.length} URLs (lastmod ${today})`);
+console.log(`✓ sitemap.xml generated — ${pages.length} pages × ${LANGS.length} languages = ${blocks.length} URLs (lastmod ${today})`);
 console.log(`  • ${navPaths.length} top-level routes`);
 console.log(`  • ${blogPosts.length} blog · ${journalPosts.length} journal · ${courses.length} courses · ${decks.length} presentations`);

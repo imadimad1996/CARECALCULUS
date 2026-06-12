@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { LangCode, Translations } from '../types';
 import { playSleekSelect, playTactileClick, playTelemetrySuccess, playTelemetryAlert, playDialTick } from '../utils/audio';
 import { slugify, findBySlug } from '../utils/slug';
+import { useLang } from '../utils/lang';
 
 interface MedicalCourse {
   id: string;
@@ -191,6 +192,7 @@ export default function Courses({ lang }: { lang: LangCode }) {
 
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
+  const { langPath } = useLang();
 
   const [courses, setCourses] = useState<MedicalCourse[]>(() => {
     if (typeof window !== 'undefined') {
@@ -348,13 +350,13 @@ export default function Courses({ lang }: { lang: LangCode }) {
     setCourses(cleanList);
     saveCustomUploadedCourses(cleanList);
     if (selectedCourse?.id === id) {
-      navigate('/cours');
+      navigate(langPath('/cours'));
     }
   };
 
   const startStudying = (course: MedicalCourse) => {
     playSleekSelect();
-    navigate(`/cours/${slugify(course.title, course.id)}`);
+    navigate(langPath(`/cours/${slugify(course.title, course.id)}`));
   };
 
   // Reset section/quiz progress whenever the open course changes (via the URL).
@@ -366,7 +368,7 @@ export default function Courses({ lang }: { lang: LangCode }) {
 
   // Unknown slug → fall back to the course library.
   useEffect(() => {
-    if (slug && !selectedCourse) navigate('/cours', { replace: true });
+    if (slug && !selectedCourse) navigate(langPath('/cours'), { replace: true });
   }, [slug, selectedCourse, navigate]);
 
   const handleAnswerSubmit = (qIdx: number, oIdx: number, correctIdx: number) => {
@@ -430,7 +432,7 @@ export default function Courses({ lang }: { lang: LangCode }) {
                   </h3>
                 </div>
                 <button
-                  onClick={() => { playTactileClick(); navigate('/cours'); }}
+                  onClick={() => { playTactileClick(); navigate(langPath('/cours')); }}
                   className="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-gray-200 transition-all font-semibold hover:text-white cursor-pointer"
                   style={{ minHeight: '44px' }}
                 >

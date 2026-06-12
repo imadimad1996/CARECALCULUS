@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Search, BookOpen, Clock, Tag, ExternalLink, Calendar, Award, User, ChevronRight, Compass, Bookmark, Share2, Sparkles, AlertCircle, FileText, CheckCircle2, RefreshCw, ArrowLeft, ArrowRight, Printer, Plus, Minus, Building2 } from 'lucide-react';
 import { LangCode } from '../types';
 import { slugify, findBySlug } from '../utils/slug';
+import { useLang } from '../utils/lang';
 
 interface BlogPost {
   id: string;
@@ -141,6 +142,7 @@ interface MedicalBlogProps {
 export default function MedicalBlog({ lang }: MedicalBlogProps) {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
+  const { langPath } = useLang();
 
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All Specialties');
@@ -154,8 +156,8 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
   const isRtl = lang === 'ar';
 
   // Each journal article has its own URL: /blog/:slug — shareable & indexable.
-  const openPost = (p: { id: string; title: string }) => navigate(`/blog/${slugify(p.title, p.id)}`);
-  const closePost = () => navigate('/blog');
+  const openPost = (p: { id: string; title: string }) => navigate(langPath(`/blog/${slugify(p.title, p.id)}`));
+  const closePost = () => navigate(langPath('/blog'));
 
   // Automatically scroll to top on post switch
   useEffect(() => {
@@ -357,7 +359,7 @@ ${s} exhibits progressive vascular, parenchymal, or endocrine triggers. Using ${
   // Unknown slug → fall back to the journal directory.
   useEffect(() => {
     if (slug && generatedBlogs.length > 0 && !activePost) {
-      navigate('/blog', { replace: true });
+      navigate(langPath('/blog'), { replace: true });
     }
   }, [slug, activePost, generatedBlogs, navigate]);
 
