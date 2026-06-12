@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Multilingual XML Sitemaps
-Sitemap: https://medicalcul.free.fr/sitemap.xml
+Sitemap: https://carecalculus.com/sitemap.xml

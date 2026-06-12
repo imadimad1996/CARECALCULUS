@@ -1,247 +1,206 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
-  <!-- Core Redirects/Static Entry Points -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://medicalcul.free.fr/</loc>
+    <loc>https://carecalculus.com/</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- MAP Calculator -->
   <url>
-    <loc>https://medicalcul.free.fr/en/map-calculator</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://medicalcul.free.fr/en/map-calculator" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://medicalcul.free.fr/fr/map-calculator" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://medicalcul.free.fr/ar/map-calculator" />
-    <lastmod>2026-06-12</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://medicalcul.free.fr/fr/map-calculator</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://medicalcul.free.fr/en/map-calculator" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://medicalcul.free.fr/fr/map-calculator" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://medicalcul.free.fr/ar/map-calculator" />
-    <lastmod>2026-06-12</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://medicalcul.free.fr/ar/map-calculator</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://medicalcul.free.fr/en/map-calculator" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://medicalcul.free.fr/fr/map-calculator" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://medicalcul.free.fr/ar/map-calculator" />
-    <lastmod>2026-06-12</lastmod>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- BMI Calculator -->
-  <url>
-    <loc>https://medicalcul.free.fr/en/bmi-calculator</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://medicalcul.free.fr/en/bmi-calculator" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://medicalcul.free.fr/fr/bmi-calculator" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://medicalcul.free.fr/ar/bmi-calculator" />
-    <lastmod>2026-06-12</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://medicalcul.free.fr/fr/bmi-calculator</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://medicalcul.free.fr/en/bmi-calculator" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://medicalcul.free.fr/fr/bmi-calculator" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://medicalcul.free.fr/ar/bmi-calculator" />
-    <lastmod>2026-06-12</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://medicalcul.free.fr/ar/bmi-calculator</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://medicalcul.free.fr/en/bmi-calculator" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://medicalcul.free.fr/fr/bmi-calculator" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://medicalcul.free.fr/ar/bmi-calculator" />
-    <lastmod>2026-06-12</lastmod>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- GCS Calculator -->
-  <url>
-    <loc>https://medicalcul.free.fr/en/glasgow-coma-scale</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://medicalcul.free.fr/en/glasgow-coma-scale" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://medicalcul.free.fr/fr/glasgow-coma-scale" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://medicalcul.free.fr/ar/glasgow-coma-scale" />
+    <loc>https://carecalculus.com/map-calculator</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medicalcul.free.fr/fr/glasgow-coma-scale</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://medicalcul.free.fr/en/glasgow-coma-scale" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://medicalcul.free.fr/fr/glasgow-coma-scale" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://medicalcul.free.fr/ar/glasgow-coma-scale" />
+    <loc>https://carecalculus.com/glasgow-coma-scale</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medicalcul.free.fr/ar/glasgow-coma-scale</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://medicalcul.free.fr/en/glasgow-coma-scale" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://medicalcul.free.fr/fr/glasgow-coma-scale" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://medicalcul.free.fr/ar/glasgow-coma-scale" />
-    <lastmod>2026-06-12</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Creatinine Clearance -->
-  <url>
-    <loc>https://medicalcul.free.fr/en/creatinine-clearance</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://medicalcul.free.fr/en/creatinine-clearance" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://medicalcul.free.fr/fr/creatinine-clearance" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://medicalcul.free.fr/ar/creatinine-clearance" />
+    <loc>https://carecalculus.com/qsofa-score</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medicalcul.free.fr/fr/creatinine-clearance</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://medicalcul.free.fr/en/creatinine-clearance" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://medicalcul.free.fr/fr/creatinine-clearance" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://medicalcul.free.fr/ar/creatinine-clearance" />
+    <loc>https://carecalculus.com/sirs-criteria</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medicalcul.free.fr/ar/creatinine-clearance</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://medicalcul.free.fr/en/creatinine-clearance" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://medicalcul.free.fr/fr/creatinine-clearance" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://medicalcul.free.fr/ar/creatinine-clearance" />
-    <lastmod>2026-06-12</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Wells Score -->
-  <url>
-    <loc>https://medicalcul.free.fr/en/wells-score</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://medicalcul.free.fr/en/wells-score" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://medicalcul.free.fr/fr/wells-score" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://medicalcul.free.fr/ar/wells-score" />
+    <loc>https://carecalculus.com/curb65-score</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medicalcul.free.fr/fr/wells-score</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://medicalcul.free.fr/en/wells-score" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://medicalcul.free.fr/fr/wells-score" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://medicalcul.free.fr/ar/wells-score" />
+    <loc>https://carecalculus.com/pf-ratio</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medicalcul.free.fr/ar/wells-score</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://medicalcul.free.fr/en/wells-score" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://medicalcul.free.fr/fr/wells-score" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://medicalcul.free.fr/ar/wells-score" />
-    <lastmod>2026-06-12</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Drip Rate -->
-  <url>
-    <loc>https://medicalcul.free.fr/en/drip-rate-calculator</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://medicalcul.free.fr/en/drip-rate-calculator" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://medicalcul.free.fr/fr/drip-rate-calculator" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://medicalcul.free.fr/ar/drip-rate-calculator" />
+    <loc>https://carecalculus.com/tidal-volume</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medicalcul.free.fr/fr/drip-rate-calculator</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://medicalcul.free.fr/en/drip-rate-calculator" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://medicalcul.free.fr/fr/drip-rate-calculator" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://medicalcul.free.fr/ar/drip-rate-calculator" />
+    <loc>https://carecalculus.com/creatinine-clearance</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medicalcul.free.fr/ar/drip-rate-calculator</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://medicalcul.free.fr/en/drip-rate-calculator" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://medicalcul.free.fr/fr/drip-rate-calculator" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://medicalcul.free.fr/ar/drip-rate-calculator" />
-    <lastmod>2026-06-12</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- CHA2DS2-VASc -->
-  <url>
-    <loc>https://medicalcul.free.fr/en/cha2ds2-vasc</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://medicalcul.free.fr/en/cha2ds2-vasc" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://medicalcul.free.fr/fr/cha2ds2-vasc" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://medicalcul.free.fr/ar/cha2ds2-vasc" />
+    <loc>https://carecalculus.com/meld-score</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medicalcul.free.fr/fr/cha2ds2-vasc</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://medicalcul.free.fr/en/cha2ds2-vasc" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://medicalcul.free.fr/fr/cha2ds2-vasc" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://medicalcul.free.fr/ar/cha2ds2-vasc" />
+    <loc>https://carecalculus.com/wells-score</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medicalcul.free.fr/ar/cha2ds2-vasc</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://medicalcul.free.fr/en/cha2ds2-vasc" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://medicalcul.free.fr/fr/cha2ds2-vasc" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://medicalcul.free.fr/ar/cha2ds2-vasc" />
+    <loc>https://carecalculus.com/cha2ds2-vasc</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.8</priority>
   </url>
-
-  <!-- General conversions and remaining templates -->
   <url>
-    <loc>https://medicalcul.free.fr/en/medical-conversions</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://medicalcul.free.fr/en/medical-conversions" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://medicalcul.free.fr/fr/medical-conversions" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://medicalcul.free.fr/ar/medical-conversions" />
+    <loc>https://carecalculus.com/corrected-calcium</loc>
     <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/anc-calculator</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/drip-rate-calculator</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/steroid-conversion</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/adjusted-body-weight</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/medical-conversions</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/bmi-calculator</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/phq9-score</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/blog</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://medicalcul.free.fr/fr/medical-conversions</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://medicalcul.free.fr/en/medical-conversions" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://medicalcul.free.fr/fr/medical-conversions" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://medicalcul.free.fr/ar/medical-conversions" />
+    <loc>https://carecalculus.com/blog-articles</loc>
     <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://medicalcul.free.fr/ar/medical-conversions</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://medicalcul.free.fr/en/medical-conversions" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://medicalcul.free.fr/fr/medical-conversions" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://medicalcul.free.fr/ar/medical-conversions" />
+    <loc>https://carecalculus.com/presentations</loc>
     <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- MELD Score -->
   <url>
-    <loc>https://medicalcul.free.fr/en/meld-score</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://medicalcul.free.fr/en/meld-score" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://medicalcul.free.fr/fr/meld-score" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://medicalcul.free.fr/ar/meld-score" />
+    <loc>https://carecalculus.com/cours</loc>
     <lastmod>2026-06-12</lastmod>
-    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://medicalcul.free.fr/fr/meld-score</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://medicalcul.free.fr/en/meld-score" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://medicalcul.free.fr/fr/meld-score" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://medicalcul.free.fr/ar/meld-score" />
+    <loc>https://carecalculus.com/blog-articles/5-bedside-pearls-for-faster-map-guided-resuscitation</loc>
     <lastmod>2026-06-12</lastmod>
-    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://medicalcul.free.fr/ar/meld-score</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://medicalcul.free.fr/en/meld-score" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://medicalcul.free.fr/fr/meld-score" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://medicalcul.free.fr/ar/meld-score" />
+    <loc>https://carecalculus.com/blog-articles/what-the-2026-sepsis-bundle-updates-mean-for-your-triage</loc>
     <lastmod>2026-06-12</lastmod>
-    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
-
+  <url>
+    <loc>https://carecalculus.com/blog-articles/stop-guessing-steroid-equivalents-a-conversion-mindset</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/blog-articles/calculators-at-the-bedside-friend-not-crutch</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/blog-articles/reading-a-tidal-volume-order-like-a-lung-protective-pro</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/blog-articles/behind-the-build-how-we-localize-every-calculator-into-3-languages</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/blog/precision-mean-arterial-pressure-map-targets-balancing-perfusion-vasopressor-tox</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/blog/evaluating-gcs-fluctuations-in-non-traumatic-coma-diagnostic-pitfalls-neuromonit</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/blog/the-qsofa-score-versus-sirs-criteria-for-sepsis-screening-a-multi-center-emergen</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/cours/clinical-nephrology-cockcroft-gault-drug-clearance-kinetics</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/cours/sepsis-pathways-early-calibration-of-qsofa-sirs-targets</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/presentations/advanced-hemodynamic-performance-organ-flow-targets</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/presentations/pulmonary-mechanics-low-tidal-volume-vent-protocol</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>

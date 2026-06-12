@@ -1,8 +1,10 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { BookOpen, Upload, FileText, Download, CheckCircle2, AlertCircle, ChevronLeft, ChevronRight, GraduationCap, RefreshCw, Sparkles, Trash2, Calendar, ClipboardCheck, ArrowRight, HelpCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { LangCode, Translations } from '../types';
 import { playSleekSelect, playTactileClick, playTelemetrySuccess, playTelemetryAlert, playDialTick } from '../utils/audio';
+import { slugify, findBySlug } from '../utils/slug';
 
 interface MedicalCourse {
   id: string;
@@ -187,6 +189,9 @@ export default function Courses({ lang }: { lang: LangCode }) {
   const t = translations[lang] || translations.en;
   const isRtl = lang === 'ar';
 
+  const { slug } = useParams<{ slug: string }>();
+  const navigate = useNavigate();
+
   const [courses, setCourses] = useState<MedicalCourse[]>(() => {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('carecalculus-pdf-uploads');
@@ -202,7 +207,12 @@ export default function Courses({ lang }: { lang: LangCode }) {
     return DEFAULT_COURSES;
   });
 
-  const [selectedCourse, setSelectedCourse] = useState<MedicalCourse | null>(null);
+  // The open course is derived from the URL (/cours/:slug) so each course is
+  // directly linkable and survives a reload.
+  const selectedCourse = useMemo(
+    () => findBySlug(courses, slug, c => c.title),
+    [courses, slug]
+  );
   const [activeSectionIndex, setActiveSectionIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [uploadError, setUploadError] = useState<string | null>(null);
@@ -338,17 +348,26 @@ export default function Courses({ lang }: { lang: LangCode }) {
     setCourses(cleanList);
     saveCustomUploadedCourses(cleanList);
     if (selectedCourse?.id === id) {
-      setSelectedCourse(null);
+      navigate('/cours');
     }
   };
 
   const startStudying = (course: MedicalCourse) => {
     playSleekSelect();
-    setSelectedCourse(course);
+    navigate(`/cours/${slugify(course.title, course.id)}`);
+  };
+
+  // Reset section/quiz progress whenever the open course changes (via the URL).
+  useEffect(() => {
     setActiveSectionIndex(0);
     setSelectedAnswers({});
     setQuizResults({});
-  };
+  }, [slug]);
+
+  // Unknown slug → fall back to the course library.
+  useEffect(() => {
+    if (slug && !selectedCourse) navigate('/cours', { replace: true });
+  }, [slug, selectedCourse, navigate]);
 
   const handleAnswerSubmit = (qIdx: number, oIdx: number, correctIdx: number) => {
     playSleekSelect();
@@ -411,7 +430,7 @@ export default function Courses({ lang }: { lang: LangCode }) {
                   </h3>
                 </div>
                 <button
-                  onClick={() => { playTactileClick(); setSelectedCourse(null); }}
+                  onClick={() => { playTactileClick(); navigate('/cours'); }}
                   className="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-gray-200 transition-all font-semibold hover:text-white cursor-pointer"
                   style={{ minHeight: '44px' }}
                 >

@@ -1,29 +1,31 @@
 import React, { useState, useEffect, ErrorInfo, ReactNode } from 'react';
-import { Activity, BookOpen, HeartPulse, Menu, X, LayoutDashboard, Calculator, Droplet, Brain, TestTube, AlertOctagon, ArrowRightLeft, AlertTriangle, Stethoscope, Wind, FileText, ShieldCheck, Award, Sparkles, Check, CheckCircle2, ChevronRight, Search, Globe, Scale, Volume2, VolumeX, MonitorPlay, GraduationCap } from 'lucide-react';
-import { BrowserRouter, Routes, Route, Link, useLocation, Navigate } from 'react-router-dom';
+import { Activity, BookOpen, HeartPulse, Menu, X, LayoutDashboard, Calculator, Droplet, Brain, TestTube, AlertOctagon, ArrowRightLeft, AlertTriangle, Stethoscope, Wind, FileText, ShieldCheck, Award, Sparkles, Check, CheckCircle2, ChevronRight, Search, Globe, Scale, Volume2, VolumeX, MonitorPlay, GraduationCap, Newspaper } from 'lucide-react';
+import { BrowserRouter, Routes, Route, Link, useLocation, Navigate, useNavigate } from 'react-router-dom';
+import { LangContext, parsePathname, buildPath, PREFIXED_LANGS } from './utils/lang';
 
-import MapCalculator from './pages/MapCalculator';
-import BmiCalculator from './pages/BmiCalculator';
-import GcsCalculator from './pages/GcsCalculator';
-import DripRate from './pages/DripRate';
-import CreatinineClearance from './pages/CreatinineClearance';
-import WellsScore from './pages/WellsScore';
-import MedicalConversions from './pages/MedicalConversions';
-import CorrectedCalcium from './pages/CorrectedCalcium';
-import QsofaScore from './pages/QsofaScore';
-import Curb65Score from './pages/Curb65Score';
-import Cha2ds2VascScore from './pages/Cha2ds2VascScore';
-import Phq9Score from './pages/Phq9Score';
-import MeldScore from './pages/MeldScore';
-import SirsCriteria from './pages/SirsCriteria';
-import PfRatio from './pages/PfRatio';
-import TidalVolume from './pages/TidalVolume';
-import AncCalculator from './pages/AncCalculator';
-import AdjustedBodyWeight from './pages/AdjustedBodyWeight';
-import SteroidConversion from './pages/SteroidConversion';
-import MedicalBlog from './pages/MedicalBlog';
-import Presentations from './pages/Presentations';
-import Courses from './pages/Courses';
+const MapCalculator = React.lazy(() => import('./pages/MapCalculator'));
+const BmiCalculator = React.lazy(() => import('./pages/BmiCalculator'));
+const GcsCalculator = React.lazy(() => import('./pages/GcsCalculator'));
+const DripRate = React.lazy(() => import('./pages/DripRate'));
+const CreatinineClearance = React.lazy(() => import('./pages/CreatinineClearance'));
+const WellsScore = React.lazy(() => import('./pages/WellsScore'));
+const MedicalConversions = React.lazy(() => import('./pages/MedicalConversions'));
+const CorrectedCalcium = React.lazy(() => import('./pages/CorrectedCalcium'));
+const QsofaScore = React.lazy(() => import('./pages/QsofaScore'));
+const Curb65Score = React.lazy(() => import('./pages/Curb65Score'));
+const Cha2ds2VascScore = React.lazy(() => import('./pages/Cha2ds2VascScore'));
+const Phq9Score = React.lazy(() => import('./pages/Phq9Score'));
+const MeldScore = React.lazy(() => import('./pages/MeldScore'));
+const SirsCriteria = React.lazy(() => import('./pages/SirsCriteria'));
+const PfRatio = React.lazy(() => import('./pages/PfRatio'));
+const TidalVolume = React.lazy(() => import('./pages/TidalVolume'));
+const AncCalculator = React.lazy(() => import('./pages/AncCalculator'));
+const AdjustedBodyWeight = React.lazy(() => import('./pages/AdjustedBodyWeight'));
+const SteroidConversion = React.lazy(() => import('./pages/SteroidConversion'));
+const MedicalBlog = React.lazy(() => import('./pages/MedicalBlog'));
+const Blog = React.lazy(() => import('./pages/Blog'));
+const Presentations = React.lazy(() => import('./pages/Presentations'));
+const Courses = React.lazy(() => import('./pages/Courses'));
 
 import { LangCode } from './types';
 import { getSfxEnabledInit, setSfxEnabledInStorage, playTactileClick, playSleekSelect, playDialTick } from './utils/audio';
@@ -79,9 +81,11 @@ export const navItems = [
   { path: '/medical-conversions', nameEn: 'Unit Conversions', nameFr: 'Conversions d’Unités', nameAr: 'تحويل الوحدات المخبرية والطبية', icon: ArrowRightLeft, tier: 3 },
   { path: '/bmi-calculator', nameEn: 'BMI Calculator', nameFr: 'Calculateur IMC', nameAr: 'مؤشر كتلة وزن الجسم BMI', icon: LayoutDashboard, tier: 3 },
   { path: '/phq9-score', nameEn: 'PHQ-9 Depression', nameFr: 'Score PHQ-9 Dépression', nameAr: 'مقياس PHQ-9 لتشخيص الاكتئاب', icon: Brain, tier: 3 },
-  { path: '/blog', nameEn: 'Clinical Journal', nameFr: 'Journal Clinique', nameAr: 'المجلة السريرية الطبية', icon: BookOpen, tier: 4 },
-  { path: '/presentations', nameEn: 'Presentations', nameFr: 'Présentations', nameAr: 'العروض التقديمية', icon: MonitorPlay, tier: 4 },
-  { path: '/cours', nameEn: 'Courses (PDF)', nameFr: 'Cours (PDF)', nameAr: 'المحاضرات والدروس', icon: GraduationCap, tier: 4 },
+  // Tier 4 — Resources & Library (grouped: Reading vs Learning)
+  { path: '/blog', nameEn: 'Medical Journals', nameFr: 'Journaux Médicaux', nameAr: 'المجلات الطبية', icon: BookOpen, tier: 4, group: 'reading' as const, badge: '2k+' },
+  { path: '/blog-articles', nameEn: 'Blog', nameFr: 'Blog', nameAr: 'المدونة', icon: Newspaper, tier: 4, group: 'reading' as const, badge: 'NEW' },
+  { path: '/presentations', nameEn: 'Presentations', nameFr: 'Présentations', nameAr: 'العروض التقديمية', icon: MonitorPlay, tier: 4, group: 'learning' as const, badge: 'PPTX' },
+  { path: '/cours', nameEn: 'Courses (PDF)', nameFr: 'Cours (PDF)', nameAr: 'المحاضرات والدروس', icon: GraduationCap, tier: 4, group: 'learning' as const, badge: 'PDF' },
 ];
 
 export const TIER_HEADERS: Record<number, Record<LangCode, string>> = {
@@ -124,7 +128,8 @@ const getLocalizedMeta = (path: string, lang: LangCode) => {
     '/anc-calculator': 'Absolute Neutrophil Count (ANC) Calculator',
     '/adjusted-body-weight': 'Ideal & Adjusted Body Weight Calculator',
     '/steroid-conversion': 'Corticosteroids Equivalent Dosage Converter',
-    '/blog': 'Evidence-Based Clinical Journal & Peer Reviews',
+    '/blog': 'Evidence-Based Medical Journals & Peer Reviews',
+    '/blog-articles': 'CareCalculus Blog — Clinical Tips, News & Editorials',
     '/presentations': 'Advanced Medical Presentations Library (PPTX)',
     '/cours': 'Accredited Clinical Course Syllabus (PDF)'
   };
@@ -149,7 +154,8 @@ const getLocalizedMeta = (path: string, lang: LangCode) => {
     '/anc-calculator': 'Nombre Absolu de Neutrophiles (NAN)',
     '/adjusted-body-weight': 'Calcul Poids Idéal et Poids Ajusté',
     '/steroid-conversion': 'Conversion de Corticoïdes Équivalents',
-    '/blog': 'Journal Clinique Basé sur Évidence (2K+)',
+    '/blog': 'Journaux Médicaux Basés sur l’Évidence (2K+)',
+    '/blog-articles': 'Blog CareCalculus — Astuces Cliniques & Actualités',
     '/presentations': 'Bibliothèque de Présentations Médicales (PPTX)',
     '/cours': 'Référentiel des Cours Académiques (PDF)'
   };
@@ -174,7 +180,8 @@ const getLocalizedMeta = (path: string, lang: LangCode) => {
     '/anc-calculator': 'حساب عدد الخلايا المتعادلة المطلق للدم',
     '/adjusted-body-weight': 'حساب الوزن المثالي والوزن المعدل للمريض',
     '/steroid-conversion': 'تحويل جرعات الكورتيكوستيرويدات والستيرويد',
-    '/blog': 'المجلة السريرية الطبية والمكتبة العلمية',
+    '/blog': 'المجلات الطبية والمكتبة العلمية المعتمدة',
+    '/blog-articles': 'مدونة كير كالكولوس — نصائح وأخبار سريرية',
     '/presentations': 'مكتبة العروض التقديمية الطبية (PPTX)',
     '/cours': 'مناهج المحاضرات والدروس السريرية (PDF)'
   };
@@ -205,19 +212,21 @@ const getLocalizedMeta = (path: string, lang: LangCode) => {
 };
 
 function AppLayout() {
-  const [lang, setLang] = useState<LangCode>(() => {
-    const cached = localStorage.getItem('carecalculus-lang');
-    if (cached === 'en' || cached === 'fr' || cached === 'ar') {
-      return cached;
-    }
-    const browserLangs = navigator.languages || [navigator.language];
-    for (const bLang of browserLangs) {
-      const code = bLang.toLowerCase().slice(0, 2);
-      if (code === 'fr') return 'fr';
-      if (code === 'ar') return 'ar';
-    }
-    return 'en';
-  });
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Language is derived from the URL — the prefix (/fr, /ar) is the single
+  // source of truth. `path` is the language-agnostic logical path.
+  const { lang, path: logicalPath } = parsePathname(location.pathname);
+
+  // Build a URL for the current language out of a logical path.
+  const langPath = (p: string) => buildPath(p, lang);
+
+  // Switching language navigates to the same logical page under the new prefix.
+  const setLang = (next: LangCode) => {
+    localStorage.setItem('carecalculus-lang', next);
+    navigate(buildPath(logicalPath, next));
+  };
 
   const [geoState, setGeoState] = useState<{
     region: string;
@@ -264,7 +273,6 @@ function AppLayout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [sidebarSearch, setSidebarSearch] = useState('');
   const [topSearch, setTopSearch] = useState('');
-  const location = useLocation();
 
   const isRtl = lang === 'ar';
 
@@ -344,7 +352,7 @@ function AppLayout() {
   // Dynamic header meta, automated hreflang injection, canonical and Open Graph (OG) social card SEO configurations
   useEffect(() => {
     const meta = getLocalizedMeta(location.pathname, lang);
-    const pageUrl = `https://medicalcul.free.fr${lang === 'en' ? '' : '/' + lang}${location.pathname}`;
+    const pageUrl = `https://carecalculus.com${lang === 'en' ? '' : '/' + lang}${location.pathname}`;
     const mainTitle = meta.title;
     const mainDesc = meta.desc;
     
@@ -423,16 +431,17 @@ function AppLayout() {
       link.setAttribute('hreflang', l);
       const prefix = l === 'en' ? '' : `/${l}`;
       const pathSuffix = location.pathname === '/' ? '/map-calculator' : location.pathname;
-      link.setAttribute('href', `https://medicalcul.free.fr${prefix}${pathSuffix}`);
+      link.setAttribute('href', `https://carecalculus.com${prefix}${pathSuffix}`);
       document.head.appendChild(link);
     });
 
     // Inject x-default language fallback for standard-conforming global indexers
+    document.querySelectorAll('link[rel="alternate"][hreflang="x-default"]').forEach(el => el.remove());
     const xDefaultLink = document.createElement('link');
     xDefaultLink.setAttribute('rel', 'alternate');
     xDefaultLink.setAttribute('hreflang', 'x-default');
     const xPathSuffix = location.pathname === '/' ? '/map-calculator' : location.pathname;
-    xDefaultLink.setAttribute('href', `https://medicalcul.free.fr${xPathSuffix}`);
+    xDefaultLink.setAttribute('href', `https://carecalculus.com${xPathSuffix}`);
     document.head.appendChild(xDefaultLink);
 
     // 8. Schema JSON-LD Structured Data Node
@@ -463,7 +472,7 @@ function AppLayout() {
         "author": {
           "@type": "Organization",
           "name": "CareCalculus",
-          "url": "https://medicalcul.free.fr"
+          "url": "https://carecalculus.com"
         }
       }
     ];
@@ -1083,46 +1092,64 @@ function AppLayout() {
               </div>
             )}
 
-            {/* TIER IV COMPONENT (RESOURCES & CLINICAL JOURNAL) */}
+            {/* TIER IV COMPONENT (RESOURCES & LIBRARY — grouped: Reading / Learning) */}
             {navItems.filter(i => i.tier === 4 && matchesSearch(i, sidebarSearch)).length > 0 && (
-              <div className="space-y-1.5 pt-2 border-t border-gray-100">
-                <div className="px-2.5 text-[10px] font-mono leading-none tracking-wider text-gray-400 font-extrabold uppercase pb-1 flex items-center justify-between">
-                  <span>{lang === 'fr' ? 'BIBLIOTHÈQUE ET JOURNAL' : (lang === 'ar' ? 'المجلة والبحوث العلمية' : 'CLINICAL RESOURCING JOURNAL')}</span>
+              <div className="space-y-4 pt-2 border-t border-gray-100">
+                <div className="px-2.5 text-[10px] font-mono leading-none tracking-wider text-gray-400 font-extrabold uppercase pb-0.5 flex items-center justify-between">
+                  <span>{lang === 'fr' ? 'RESSOURCES & BIBLIOTHÈQUE' : (lang === 'ar' ? 'المصادر والمكتبة' : 'RESOURCES & LIBRARY')}</span>
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
                   </span>
                 </div>
-                <div className="space-y-0.5">
-                  {navItems.filter(i => i.tier === 4 && matchesSearch(i, sidebarSearch)).map((item) => {
-                    const isActive = location.pathname === item.path;
-                    const Icon = item.icon;
-                    return (
-                      <Link
-                        key={item.path}
-                        to={item.path}
-                        onMouseEnter={playTactileClick}
-                        onClick={playSleekSelect}
-                        className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all relative ${
-                          isActive 
-                            ? 'bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 font-extrabold shadow-sm' 
-                            : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
-                        }`}
-                        style={{ minHeight: '44px' }}
-                      >
-                        <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-blue-600' : 'text-gray-400'}`} />
-                        <span className="truncate">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
-                        <span className="absolute right-2 px-1.5 py-0.5 bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 text-[8px] font-mono font-bold rounded-md">
-                          {item.path === '/blog'
-                            ? (lang === 'fr' ? '2K+' : (lang === 'ar' ? '٢أ+' : '2k+'))
-                            : item.path === '/presentations'
-                              ? 'PPTX'
-                              : 'PDF'}
-                        </span>
-                      </Link>
-                    );
-                  })}
-                </div>
+
+                {([
+                  { key: 'reading', en: 'Reading', fr: 'Lecture', ar: 'القراءة', dot: 'bg-indigo-500' },
+                  { key: 'learning', en: 'Learning', fr: 'Apprentissage', ar: 'التعلّم', dot: 'bg-emerald-500' },
+                ] as const).map((sub) => {
+                  const groupItems = navItems.filter(i => i.tier === 4 && (i as any).group === sub.key && matchesSearch(i, sidebarSearch));
+                  if (groupItems.length === 0) return null;
+                  return (
+                    <div key={sub.key} className="space-y-1">
+                      <div className="px-2.5 flex items-center gap-1.5 text-[9px] font-mono font-bold uppercase tracking-wider text-gray-400">
+                        <span className={`w-1.5 h-1.5 rounded-full ${sub.dot}`} />
+                        <span>{lang === 'fr' ? sub.fr : (lang === 'ar' ? sub.ar : sub.en)}</span>
+                      </div>
+                      <div className="space-y-0.5">
+                        {groupItems.map((item) => {
+                          const isActive = location.pathname === item.path;
+                          const Icon = item.icon;
+                          return (
+                            <Link
+                              key={item.path}
+                              to={item.path}
+                              onMouseEnter={playTactileClick}
+                              onClick={playSleekSelect}
+                              className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all relative ${
+                                isActive
+                                  ? 'bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 font-extrabold shadow-sm'
+                                  : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                              }`}
+                              style={{ minHeight: '44px' }}
+                            >
+                              <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-blue-600' : 'text-gray-400'}`} />
+                              <span className="truncate">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
+                              {(item as any).badge && (
+                                <span className={`absolute ${isRtl ? 'left-2' : 'right-2'} px-1.5 py-0.5 text-[8px] font-mono font-bold rounded-md border ${
+                                  (item as any).badge === 'NEW'
+                                    ? 'bg-blue-500/10 border-blue-500/20 text-blue-600'
+                                    : 'bg-emerald-500/10 border-emerald-500/20 text-emerald-600'
+                                }`}>
+                                  {(item as any).badge}
+                                </span>
+                              )}
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             )}
 
@@ -1152,32 +1179,41 @@ function AppLayout() {
             {/* Micro-Navigation Index with High-Volume Keywords */}
             {renderKeywordsHeader()}
 
-            <Routes>
-              <Route path="/" element={<Navigate to="/map-calculator" replace />} />
-              <Route path="/map-calculator" element={<MapCalculator lang={lang} />} />
-              <Route path="/bmi-calculator" element={<BmiCalculator lang={lang} />} />
-              <Route path="/glasgow-coma-scale" element={<GcsCalculator lang={lang} />} />
-              <Route path="/drip-rate-calculator" element={<DripRate lang={lang} />} />
-              <Route path="/creatinine-clearance" element={<CreatinineClearance lang={lang} />} />
-              <Route path="/wells-score" element={<WellsScore lang={lang} />} />
-              <Route path="/medical-conversions" element={<MedicalConversions lang={lang} />} />
-              <Route path="/corrected-calcium" element={<CorrectedCalcium lang={lang} />} />
-              <Route path="/qsofa-score" element={<QsofaScore lang={lang} />} />
-              <Route path="/curb65-score" element={<Curb65Score lang={lang} />} />
-              <Route path="/cha2ds2-vasc" element={<Cha2ds2VascScore lang={lang} />} />
-              <Route path="/phq9-score" element={<Phq9Score lang={lang} />} />
-              <Route path="/meld-score" element={<MeldScore lang={lang} />} />
-              <Route path="/sirs-criteria" element={<SirsCriteria lang={lang} />} />
-              <Route path="/pf-ratio" element={<PfRatio lang={lang} />} />
-              <Route path="/tidal-volume" element={<TidalVolume lang={lang} />} />
-              <Route path="/anc-calculator" element={<AncCalculator lang={lang} />} />
-              <Route path="/adjusted-body-weight" element={<AdjustedBodyWeight lang={lang} />} />
-              <Route path="/steroid-conversion" element={<SteroidConversion lang={lang} />} />
-              <Route path="/blog" element={<MedicalBlog lang={lang} />} />
-              <Route path="/presentations" element={<Presentations lang={lang} />} />
-              <Route path="/cours" element={<Courses lang={lang} />} />
-              <Route path="*" element={<Navigate to="/map-calculator" replace />} />
-            </Routes>
+            <React.Suspense
+              fallback={<div className="py-10 text-center text-sm text-gray-500">Loading clinical module...</div>}
+            >
+              <Routes>
+                <Route path="/" element={<Navigate to="/map-calculator" replace />} />
+                <Route path="/map-calculator" element={<MapCalculator lang={lang} />} />
+                <Route path="/bmi-calculator" element={<BmiCalculator lang={lang} />} />
+                <Route path="/glasgow-coma-scale" element={<GcsCalculator lang={lang} />} />
+                <Route path="/drip-rate-calculator" element={<DripRate lang={lang} />} />
+                <Route path="/creatinine-clearance" element={<CreatinineClearance lang={lang} />} />
+                <Route path="/wells-score" element={<WellsScore lang={lang} />} />
+                <Route path="/medical-conversions" element={<MedicalConversions lang={lang} />} />
+                <Route path="/corrected-calcium" element={<CorrectedCalcium lang={lang} />} />
+                <Route path="/qsofa-score" element={<QsofaScore lang={lang} />} />
+                <Route path="/curb65-score" element={<Curb65Score lang={lang} />} />
+                <Route path="/cha2ds2-vasc" element={<Cha2ds2VascScore lang={lang} />} />
+                <Route path="/phq9-score" element={<Phq9Score lang={lang} />} />
+                <Route path="/meld-score" element={<MeldScore lang={lang} />} />
+                <Route path="/sirs-criteria" element={<SirsCriteria lang={lang} />} />
+                <Route path="/pf-ratio" element={<PfRatio lang={lang} />} />
+                <Route path="/tidal-volume" element={<TidalVolume lang={lang} />} />
+                <Route path="/anc-calculator" element={<AncCalculator lang={lang} />} />
+                <Route path="/adjusted-body-weight" element={<AdjustedBodyWeight lang={lang} />} />
+                <Route path="/steroid-conversion" element={<SteroidConversion lang={lang} />} />
+                <Route path="/blog" element={<MedicalBlog lang={lang} />} />
+                <Route path="/blog/:slug" element={<MedicalBlog lang={lang} />} />
+                <Route path="/blog-articles" element={<Blog lang={lang} />} />
+                <Route path="/blog-articles/:slug" element={<Blog lang={lang} />} />
+                <Route path="/presentations" element={<Presentations lang={lang} />} />
+                <Route path="/presentations/:slug" element={<Presentations lang={lang} />} />
+                <Route path="/cours" element={<Courses lang={lang} />} />
+                <Route path="/cours/:slug" element={<Courses lang={lang} />} />
+                <Route path="*" element={<Navigate to="/map-calculator" replace />} />
+              </Routes>
+            </React.Suspense>
 
             {/* Curator Recommendation flow: satisfies Step 12 (l2) of the core SEO guidelines */}
             {true && (
@@ -1330,6 +1366,5 @@ export default function App() {
     </ErrorBoundary>
   );
 }
-
 
 

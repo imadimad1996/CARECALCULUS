@@ -1,8 +1,10 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { MonitorPlay, Upload, FileText, Download, CheckCircle, AlertCircle, ChevronLeft, ChevronRight, Play, RefreshCw, Sparkles, BookOpen, Trash2, Calendar, FileType } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { LangCode, Translations } from '../types';
 import { playSleekSelect, playTactileClick, playTelemetrySuccess, playTelemetryAlert, playDialTick } from '../utils/audio';
+import { slugify, findBySlug } from '../utils/slug';
 
 interface PresentationSubject {
   id: string;
@@ -199,6 +201,9 @@ export default function Presentations({ lang }: { lang: LangCode }) {
   const t = translations[lang] || translations.en;
   const isRtl = lang === 'ar';
 
+  const { slug } = useParams<{ slug: string }>();
+  const navigate = useNavigate();
+
   const [subjects, setSubjects] = useState<PresentationSubject[]>(() => {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('carecalculus-pptx-uploads');
@@ -214,7 +219,12 @@ export default function Presentations({ lang }: { lang: LangCode }) {
     return DEFAULT_SUBJECTS;
   });
 
-  const [selectedSubject, setSelectedSubject] = useState<PresentationSubject | null>(null);
+  // The open presentation is derived from the URL (/presentations/:slug) so each
+  // deck is directly linkable and survives a reload.
+  const selectedSubject = useMemo(
+    () => findBySlug(subjects, slug, s => s.title),
+    [subjects, slug]
+  );
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [uploadError, setUploadError] = useState<string | null>(null);
@@ -350,15 +360,24 @@ export default function Presentations({ lang }: { lang: LangCode }) {
     setSubjects(cleanList);
     saveCustomUploadedSubjects(cleanList);
     if (selectedSubject?.id === id) {
-      setSelectedSubject(null);
+      navigate('/presentations');
     }
   };
 
   const launchSlideshow = (subject: PresentationSubject) => {
     playSleekSelect();
-    setSelectedSubject(subject);
-    setActiveSlideIndex(0);
+    navigate(`/presentations/${slugify(subject.title, subject.id)}`);
   };
+
+  // Reset to the first slide whenever the open presentation changes (via URL).
+  useEffect(() => {
+    setActiveSlideIndex(0);
+  }, [slug]);
+
+  // Unknown slug → fall back to the presentation library.
+  useEffect(() => {
+    if (slug && !selectedSubject) navigate('/presentations', { replace: true });
+  }, [slug, selectedSubject, navigate]);
 
   const handlePrevSlide = () => {
     if (activeSlideIndex > 0) {
@@ -422,7 +441,7 @@ export default function Presentations({ lang }: { lang: LangCode }) {
                   </h3>
                 </div>
                 <button
-                  onClick={() => { playTactileClick(); setSelectedSubject(null); }}
+                  onClick={() => { playTactileClick(); navigate('/presentations'); }}
                   className="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-gray-200 transition-all font-semibold hover:text-white cursor-pointer"
                   style={{ minHeight: '44px' }}
                 >

@@ -1,6 +1,8 @@
 import React, { useState, useMemo, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { Search, BookOpen, Clock, Tag, ExternalLink, Calendar, Award, User, ChevronRight, Compass, Bookmark, Share2, Sparkles, AlertCircle, FileText, CheckCircle2, RefreshCw, ArrowLeft, ArrowRight, Printer, Plus, Minus, Building2 } from 'lucide-react';
 import { LangCode } from '../types';
+import { slugify, findBySlug } from '../utils/slug';
 
 interface BlogPost {
   id: string;
@@ -137,9 +139,11 @@ interface MedicalBlogProps {
 }
 
 export default function MedicalBlog({ lang }: MedicalBlogProps) {
+  const { slug } = useParams<{ slug: string }>();
+  const navigate = useNavigate();
+
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All Specialties');
-  const [selectedPostId, setSelectedPostId] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [bookmarkedIds, setBookmarkedIds] = useState<string[]>([]);
   const [copiedId, setCopiedId] = useState<string | null>(null);
@@ -149,15 +153,19 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
   const postsPerPage = 9;
   const isRtl = lang === 'ar';
 
+  // Each journal article has its own URL: /blog/:slug — shareable & indexable.
+  const openPost = (p: { id: string; title: string }) => navigate(`/blog/${slugify(p.title, p.id)}`);
+  const closePost = () => navigate('/blog');
+
   // Automatically scroll to top on post switch
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });
     setScrollPercent(0);
-  }, [selectedPostId]);
+  }, [slug]);
 
   // Track scrolling reading progress for full-page immersive journal view
   useEffect(() => {
-    if (!selectedPostId) return;
+    if (!slug) return;
 
     const handleScroll = () => {
       const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -169,7 +177,7 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [selectedPostId]);
+  }, [slug]);
 
   // Toggle Bookmark
   const toggleBookmark = (id: string, e: React.MouseEvent) => {
@@ -341,10 +349,17 @@ ${s} exhibits progressive vascular, parenchymal, or endocrine triggers. Using ${
     return filteredAndSearchedBlogs.slice(startIndex, startIndex + postsPerPage);
   }, [filteredAndSearchedBlogs, currentPage]);
 
-  const activePost = useMemo(() => {
-    if (!selectedPostId) return null;
-    return generatedBlogs.find(b => b.id === selectedPostId) || null;
-  }, [selectedPostId, generatedBlogs]);
+  const activePost = useMemo(
+    () => findBySlug(generatedBlogs, slug, b => b.title),
+    [slug, generatedBlogs]
+  );
+
+  // Unknown slug → fall back to the journal directory.
+  useEffect(() => {
+    if (slug && generatedBlogs.length > 0 && !activePost) {
+      navigate('/blog', { replace: true });
+    }
+  }, [slug, activePost, generatedBlogs, navigate]);
 
   // Dynamic SEO and Structured Schema update when reading an authentic clinical article
   useEffect(() => {
@@ -404,7 +419,7 @@ ${s} exhibits progressive vascular, parenchymal, or endocrine triggers. Using ${
       "publisher": {
         "@type": "Organization",
         "name": "CareCalculus Medical Publisher",
-        "url": "https://medicalcul.free.fr"
+        "url": "https://carecalculus.com"
       }
     };
 
@@ -452,7 +467,7 @@ ${s} exhibits progressive vascular, parenchymal, or endocrine triggers. Using ${
         <div className="bg-white p-4 rounded-2xl border border-gray-200/80 flex flex-wrap items-center justify-between gap-4 sticky top-1 z-40 shadow-xs">
           <div className="flex items-center gap-3">
             <button
-              onClick={() => setSelectedPostId(null)}
+              onClick={closePost}
               className="flex items-center gap-2 px-3 py-2 bg-slate-50 hover:bg-slate-100 text-slate-700 hover:text-slate-950 font-black text-xs tracking-tight rounded-xl transition border border-gray-200/80"
               style={{ minHeight: '38px' }}
             >
@@ -825,7 +840,7 @@ ${s} exhibits progressive vascular, parenchymal, or endocrine triggers. Using ${
                 </p>
 
                 <button 
-                  onClick={() => window.open('https://diagnostics.roche.com', '_blank')}
+                  onClick={() => window.open('https://diagnostics.roche.com', '_blank', 'noopener,noreferrer')}
                   className="w-full py-2 bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-[10px] uppercase rounded-xl transition shadow-xs"
                 >
                   Register Online
@@ -878,7 +893,7 @@ ${s} exhibits progressive vascular, parenchymal, or endocrine triggers. Using ${
                     return (
                       <div 
                         key={relPost.id}
-                        onClick={() => setSelectedPostId(relPost.id)}
+                        onClick={() => openPost(relPost)}
                         className="group space-y-1 hover:text-blue-600 cursor-pointer select-none border-b border-gray-100 pb-2 last:border-0 last:pb-0"
                       >
                         <span className="text-[8px] font-mono text-gray-400 font-bold block uppercase">{relPost.date}</span>
@@ -1032,7 +1047,7 @@ ${s} exhibits progressive vascular, parenchymal, or endocrine triggers. Using ${
               <div
                 id={`blog-card-${post.id}`}
                 key={post.id}
-                onClick={() => setSelectedPostId(post.id)}
+                onClick={() => openPost(post)}
                 className="group bg-white rounded-2xl border border-gray-200/80 hover:border-blue-300 hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between cursor-pointer relative"
               >
                 {isCurated && (
