@@ -1,6 +1,81 @@
-# CareCalculus Robots.txt - High Performance Clinical Indentation Protocol
+# CareCalculus — robots.txt
+# Free multilingual clinical calculators (EN / FR / AR).
+# We WELCOME search and AI/answer-engine crawlers: our content is meant to be
+# found, indexed, and cited.
+
+# ---------------------------------------------------------------------------
+# Traditional search engines
+# ---------------------------------------------------------------------------
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# ---------------------------------------------------------------------------
+# AI / answer-engine crawlers (GEO — Generative Engine Optimization)
+# Explicitly allowed so CareCalculus can be surfaced and cited inside
+# ChatGPT, Claude, Perplexity, Google AI Overviews, Gemini, etc.
+# ---------------------------------------------------------------------------
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# ---------------------------------------------------------------------------
+# Everyone else
+# ---------------------------------------------------------------------------
 User-agent: *
 Allow: /
 
-# Multilingual XML Sitemaps
+# Multilingual XML sitemap (EN bare, FR /fr, AR /ar with hreflang alternates)
 Sitemap: https://carecalculus.com/sitemap.xml

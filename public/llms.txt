@@ -1,0 +1,46 @@
+# CareCalculus
+
+> Free, multilingual (English, French, Arabic) clinical calculators, medical scores, and dosage tools for nurses, ICU specialists, emergency physicians, and healthcare students. Every formula is evidence-based and aligned with peer-reviewed guidelines (AHA, ESC, CDC, ARDSNet, Cockcroft-Gault, Devine). All tools are free and run instantly in the browser.
+
+CareCalculus eliminates cognitive load in high-stress clinical settings by providing instantaneous, error-free calculations. Results are computed live as values are entered. Pages are available in three languages: English (carecalculus.com/), French (carecalculus.com/fr/), and Arabic (carecalculus.com/ar/).
+
+## Emergency & Critical Care calculators
+
+- [Mean Arterial Pressure (MAP) Calculator](https://carecalculus.com/map-calculator): Computes MAP from systolic and diastolic blood pressure to assess organ perfusion in hypotension and sepsis.
+- [Glasgow Coma Scale (GCS)](https://carecalculus.com/glasgow-coma-scale): Scores eye, verbal, and motor response to grade level of consciousness in traumatic brain injury.
+- [qSOFA Score](https://carecalculus.com/qsofa-score): Rapid bedside sepsis risk screen (respiratory rate, mental status, systolic BP).
+- [SIRS Criteria](https://carecalculus.com/sirs-criteria): Systemic Inflammatory Response Syndrome assessment for sepsis triage.
+- [CURB-65 Score](https://carecalculus.com/curb65-score): Pneumonia severity and mortality risk stratification.
+- [P/F Ratio (PaO2/FiO2)](https://carecalculus.com/pf-ratio): Oxygenation index for ARDS and acute lung injury severity.
+- [Tidal Volume (ARDSNet)](https://carecalculus.com/tidal-volume): Lung-protective ventilation tidal volume from ideal body weight.
+
+## Organ Function & Internal Medicine
+
+- [Creatinine Clearance (Cockcroft-Gault)](https://carecalculus.com/creatinine-clearance): Estimates renal function for drug dosing.
+- [MELD Score](https://carecalculus.com/meld-score): Model for End-Stage Liver Disease mortality estimate.
+- [Wells Score (DVT/PE)](https://carecalculus.com/wells-score): Pretest probability for deep vein thrombosis and pulmonary embolism.
+- [CHA2DS2-VASc Score](https://carecalculus.com/cha2ds2-vasc): Stroke risk in atrial fibrillation to guide anticoagulation.
+- [Corrected Calcium](https://carecalculus.com/corrected-calcium): Albumin-corrected serum calcium.
+- [Absolute Neutrophil Count (ANC)](https://carecalculus.com/anc-calculator): Neutropenia assessment from white cell differential.
+
+## Dosing, Metrics & Pharmacology
+
+- [IV Drip Rate Calculator](https://carecalculus.com/drip-rate-calculator): Infusion drops-per-minute and flow rate.
+- [Corticosteroid Conversion](https://carecalculus.com/steroid-conversion): Equivalent dosing across steroid agents.
+- [Ideal & Adjusted Body Weight](https://carecalculus.com/adjusted-body-weight): Devine-formula IBW and ABW for pharmacokinetics.
+- [Medical Unit Conversions](https://carecalculus.com/medical-conversions): Laboratory and clinical unit converter.
+- [Body Mass Index (BMI)](https://carecalculus.com/bmi-calculator): Weight-status classification.
+- [PHQ-9 Depression Screener](https://carecalculus.com/phq9-score): Patient Health Questionnaire depression severity.
+
+## Resources
+
+- [Medical Journals Library](https://carecalculus.com/blog): Evidence-based, peer-reviewed clinical literature.
+- [Clinical Blog](https://carecalculus.com/blog-articles): Clinical tips, news, and editorials.
+- [Presentations](https://carecalculus.com/presentations): Medical presentation decks (PPTX).
+- [Courses](https://carecalculus.com/cours): Accredited clinical course material (PDF).
+
+## Notes
+
+- All calculators are free, require no login, and work offline after first load.
+- French versions are under /fr/ and Arabic versions under /ar/ with full hreflang alternates.
+- Sitemap: https://carecalculus.com/sitemap.xml

@@ -1,31 +1,57 @@
 import React, { useState, useEffect, ErrorInfo, ReactNode } from 'react';
 import { Activity, BookOpen, HeartPulse, Menu, X, LayoutDashboard, Calculator, Droplet, Brain, TestTube, AlertOctagon, ArrowRightLeft, AlertTriangle, Stethoscope, Wind, FileText, ShieldCheck, Award, Sparkles, Check, CheckCircle2, ChevronRight, Search, Globe, Scale, Volume2, VolumeX, MonitorPlay, GraduationCap, Newspaper } from 'lucide-react';
 import { BrowserRouter, Routes, Route, Link, useLocation, Navigate, useNavigate } from 'react-router-dom';
+import { StaticRouter } from 'react-router';
 import { LangContext, parsePathname, buildPath, PREFIXED_LANGS } from './utils/lang';
+import { organizationJsonLd, getLocalizedMeta as seoGetLocalizedMeta, getMedicalSchema, pageUrl as seoPageUrl } from './utils/seo';
 
-const MapCalculator = React.lazy(() => import('./pages/MapCalculator'));
-const BmiCalculator = React.lazy(() => import('./pages/BmiCalculator'));
-const GcsCalculator = React.lazy(() => import('./pages/GcsCalculator'));
-const DripRate = React.lazy(() => import('./pages/DripRate'));
-const CreatinineClearance = React.lazy(() => import('./pages/CreatinineClearance'));
-const WellsScore = React.lazy(() => import('./pages/WellsScore'));
-const MedicalConversions = React.lazy(() => import('./pages/MedicalConversions'));
-const CorrectedCalcium = React.lazy(() => import('./pages/CorrectedCalcium'));
-const QsofaScore = React.lazy(() => import('./pages/QsofaScore'));
-const Curb65Score = React.lazy(() => import('./pages/Curb65Score'));
-const Cha2ds2VascScore = React.lazy(() => import('./pages/Cha2ds2VascScore'));
-const Phq9Score = React.lazy(() => import('./pages/Phq9Score'));
-const MeldScore = React.lazy(() => import('./pages/MeldScore'));
-const SirsCriteria = React.lazy(() => import('./pages/SirsCriteria'));
-const PfRatio = React.lazy(() => import('./pages/PfRatio'));
-const TidalVolume = React.lazy(() => import('./pages/TidalVolume'));
-const AncCalculator = React.lazy(() => import('./pages/AncCalculator'));
-const AdjustedBodyWeight = React.lazy(() => import('./pages/AdjustedBodyWeight'));
-const SteroidConversion = React.lazy(() => import('./pages/SteroidConversion'));
-const MedicalBlog = React.lazy(() => import('./pages/MedicalBlog'));
-const Blog = React.lazy(() => import('./pages/Blog'));
-const Presentations = React.lazy(() => import('./pages/Presentations'));
-const Courses = React.lazy(() => import('./pages/Courses'));
+// Page import factories kept in one list so they can be (a) wrapped in
+// React.lazy for client-side code-splitting and (b) eagerly awaited during
+// build-time prerendering, which primes React.lazy's cache so renderToString
+// emits the real page body instead of the Suspense fallback.
+const pageLoaders = [
+  () => import('./pages/MapCalculator'),
+  () => import('./pages/BmiCalculator'),
+  () => import('./pages/GcsCalculator'),
+  () => import('./pages/DripRate'),
+  () => import('./pages/CreatinineClearance'),
+  () => import('./pages/WellsScore'),
+  () => import('./pages/MedicalConversions'),
+  () => import('./pages/CorrectedCalcium'),
+  () => import('./pages/QsofaScore'),
+  () => import('./pages/Curb65Score'),
+  () => import('./pages/Cha2ds2VascScore'),
+  () => import('./pages/Phq9Score'),
+  () => import('./pages/MeldScore'),
+  () => import('./pages/SirsCriteria'),
+  () => import('./pages/PfRatio'),
+  () => import('./pages/TidalVolume'),
+  () => import('./pages/AncCalculator'),
+  () => import('./pages/AdjustedBodyWeight'),
+  () => import('./pages/SteroidConversion'),
+  () => import('./pages/MedicalBlog'),
+  () => import('./pages/Blog'),
+  () => import('./pages/Presentations'),
+  () => import('./pages/Courses'),
+] as const;
+
+const [
+  MapCalculator, BmiCalculator, GcsCalculator, DripRate, CreatinineClearance,
+  WellsScore, MedicalConversions, CorrectedCalcium, QsofaScore, Curb65Score,
+  Cha2ds2VascScore, Phq9Score, MeldScore, SirsCriteria, PfRatio, TidalVolume,
+  AncCalculator, AdjustedBodyWeight, SteroidConversion, MedicalBlog, Blog,
+  Presentations, Courses,
+] = pageLoaders.map((loader) => React.lazy(loader as any)) as any[];
+
+/**
+ * Eagerly resolve every page chunk. Called once before prerendering so that
+ * React.lazy resolves synchronously during renderToString. Each loader returns
+ * the SAME module promise React.lazy uses (bundler-cached), so awaiting them
+ * here transitions the lazy components to their resolved state.
+ */
+export async function preloadPages() {
+  await Promise.all(pageLoaders.map((load) => load()));
+}
 
 import { LangCode } from './types';
 import { getSfxEnabledInit, setSfxEnabledInStorage, playTactileClick, playSleekSelect, playDialTick } from './utils/audio';
@@ -106,110 +132,6 @@ export const TIER_HEADERS: Record<number, Record<LangCode, string>> = {
   }
 };
 
-
-const getLocalizedMeta = (path: string, lang: LangCode) => {
-  const nameEnMap: Record<string, string> = {
-    '/map-calculator': 'Mean Arterial Pressure (MAP) Calculator',
-    '/bmi-calculator': 'Body Mass Index (BMI) Calculator',
-    '/glasgow-coma-scale': 'Glasgow Coma Scale (GCS) Calculator',
-    '/drip-rate-calculator': 'IV Drip Rate Calculator',
-    '/creatinine-clearance': 'Creatinine Clearance Calculator',
-    '/wells-score': 'Wells Score for DVT/PE Calculator',
-    '/medical-conversions': 'Medical Unit Conversions Converter',
-    '/corrected-calcium': 'Corrected Calcium Calculator',
-    '/qsofa-score': 'qSOFA Score Sepsis Risk Calculator',
-    '/curb65-score': 'CURB-65 Pneumonia Severity Calculator',
-    '/cha2ds2-vasc': 'CHA2DS2-VASc Stroke Risk Calculator',
-    '/phq9-score': 'PHQ-9 Depression Screener',
-    '/meld-score': 'MELD Score End-Stage Liver Disease',
-    '/sirs-criteria': 'SIRS Criteria Sepsis Calculator',
-    '/pf-ratio': 'P/F Ratio Lung Injury Calculator',
-    '/tidal-volume': 'Tidal Volume ARDS Calculator',
-    '/anc-calculator': 'Absolute Neutrophil Count (ANC) Calculator',
-    '/adjusted-body-weight': 'Ideal & Adjusted Body Weight Calculator',
-    '/steroid-conversion': 'Corticosteroids Equivalent Dosage Converter',
-    '/blog': 'Evidence-Based Medical Journals & Peer Reviews',
-    '/blog-articles': 'CareCalculus Blog — Clinical Tips, News & Editorials',
-    '/presentations': 'Advanced Medical Presentations Library (PPTX)',
-    '/cours': 'Accredited Clinical Course Syllabus (PDF)'
-  };
-
-  const nameFrMap: Record<string, string> = {
-    '/map-calculator': 'Calculateur PAM - Pression Artérielle Moyenne',
-    '/bmi-calculator': 'Calculateur IMC - Indice de Masse Corporelle',
-    '/glasgow-coma-scale': 'Échelle de Glasgow - Calculateur Score GCS',
-    '/drip-rate-calculator': 'Calcul Débit Perfusion et Gouttes par Minute',
-    '/creatinine-clearance': 'Clairance de la Créatinine (Cockcroft-Gault)',
-    '/wells-score': 'Score de Wells pour Phlébite et Embolie',
-    '/medical-conversions': 'Conversions d’Unités Médicales (Glycémie, etc)',
-    '/corrected-calcium': 'Calcul Calcium Corrigé par Albuminémie',
-    '/qsofa-score': 'Score qSOFA Dépistage Sepsis Rapide',
-    '/curb65-score': 'Score CURB-65 Sévérité de la Pneumonie',
-    '/cha2ds2-vasc': 'Score CHA2DS2-VASc Evaluation Risque FA',
-    '/phq9-score': 'Score PHQ-9 Evaluation de la Dépression',
-    '/meld-score': 'Score MELD Pronostic Insuffisance Hépatique',
-    '/sirs-criteria': 'Critères SIRS Syndrome Réponse Inflammatoire',
-    '/pf-ratio': 'Rapport PaO2/FiO2 (Rapport P/F)',
-    '/tidal-volume': 'Calcul du Volume Courant (Tidal)',
-    '/anc-calculator': 'Nombre Absolu de Neutrophiles (NAN)',
-    '/adjusted-body-weight': 'Calcul Poids Idéal et Poids Ajusté',
-    '/steroid-conversion': 'Conversion de Corticoïdes Équivalents',
-    '/blog': 'Journaux Médicaux Basés sur l’Évidence (2K+)',
-    '/blog-articles': 'Blog CareCalculus — Astuces Cliniques & Actualités',
-    '/presentations': 'Bibliothèque de Présentations Médicales (PPTX)',
-    '/cours': 'Référentiel des Cours Académiques (PDF)'
-  };
-
-  const nameArMap: Record<string, string> = {
-    '/map-calculator': 'حساب متوسط الضغط الشرياني (MAP)',
-    '/bmi-calculator': 'حساب مؤشر كتلة الجسم (BMI)',
-    '/glasgow-coma-scale': 'مقياس غلاسكو للغيبوبة (GCS)',
-    '/drip-rate-calculator': 'حساب معدل التنقيط الوريدي الوريد',
-    '/creatinine-clearance': 'حساب تصفية الكرياتينين والكلية',
-    '/wells-score': 'نقاط ويلز لتشخيص الجلطة والانسداد الرئوي',
-    '/medical-conversions': 'تحويل الوحدات الطبية والقياسات المخبرية',
-    '/corrected-calcium': 'حساب الكالسيوم المصحح ببروتين الألبومين',
-    '/qsofa-score': 'نقاط qSOFA لتقييم قصور الأعضاء وتسمم الدم',
-    '/curb65-score': 'مقياس CURB-65 لتقييم شدة الالتهاب الرئوي',
-    '/cha2ds2-vasc': 'مقياس CHA2DS2-VASc لتقييم سكتة الرجفان الأذيني',
-    '/phq9-score': 'مقياس PHQ-9 لتشخيص مستويات الاكتئاب',
-    '/meld-score': 'نقاط MELD لتليف وفشل الكبد الحاد',
-    '/sirs-criteria': 'معايير SIRS لمتلازمة الاستجابة الالتهابية المفرطة',
-    '/pf-ratio': 'حساب نسبة PaO2 إلى FiO2 للرائتين',
-    '/tidal-volume': 'حساب حجم الهواء المدخل للرئتين',
-    '/anc-calculator': 'حساب عدد الخلايا المتعادلة المطلق للدم',
-    '/adjusted-body-weight': 'حساب الوزن المثالي والوزن المعدل للمريض',
-    '/steroid-conversion': 'تحويل جرعات الكورتيكوستيرويدات والستيرويد',
-    '/blog': 'المجلات الطبية والمكتبة العلمية المعتمدة',
-    '/blog-articles': 'مدونة كير كالكولوس — نصائح وأخبار سريرية',
-    '/presentations': 'مكتبة العروض التقديمية الطبية (PPTX)',
-    '/cours': 'مناهج المحاضرات والدروس السريرية (PDF)'
-  };
-
-  const nameEn = nameEnMap[path] || 'Multilingual Care Calculators';
-  const nameFr = nameFrMap[path] || 'Calculateur Médical Gratuit';
-  const nameAr = nameArMap[path] || 'الحاسبة الطبية الشاملة المعتمدة';
-
-  if (lang === 'fr') {
-    return {
-      title: `${nameFr} | CareCalculus`,
-      desc: `Utilisez notre outil gratuit "${nameFr}" conçu pour aider les praticiens hospitaliers. Formule clinique validée scientifiquement avec références PubMed et calcul instantané.`,
-      keywords: `${nameFr.toLowerCase().replace(/[^a-zA-Z\s]/g, '')}, calculateur medical, guide, medecine`
-    };
-  } else if (lang === 'ar') {
-    return {
-      title: `${nameAr} | CareCalculus`,
-      desc: `استخدم الأداة الطبية المجانية وتطبيق "${nameAr}" الموضح بالمعادلات العلمية ومراجع PubMed. حساب سريري دقيق وموثوق للأطباء ومختلف الممارسين.`,
-      keywords: `${nameAr}, حاسبة طبية, أدوات الأطباء, معادلة سريرية`
-    };
-  } else {
-    return {
-      title: `${nameEn} | CareCalculus`,
-      desc: `Access our free "${nameEn}" constructed strictly for hospital clinicians. Highly accurate clinical formula complete with official scientific references.`,
-      keywords: `${nameEn.toLowerCase().replace(/[^a-zA-Z\s]/g, '')}, clinical calculator, medical metrics, care calculus`
-    };
-  }
-};
 
 // The set of clinical module routes, defined once with RELATIVE paths so it can
 // be mounted under "/", "/fr", and "/ar" without duplication. `langPath` builds
@@ -316,7 +238,7 @@ function AppLayout() {
       console.warn("Failed to auto-detect geo metrics.", e);
     }
 
-    const savedStandard = localStorage.getItem('carecalculus-standard');
+    const savedStandard = typeof window !== 'undefined' ? localStorage.getItem('carecalculus-standard') : null;
     if (savedStandard === 'Metric (SI)' || savedStandard === 'US Customary / Imperial') {
       standard = savedStandard as 'Metric (SI)' | 'US Customary / Imperial';
     }
@@ -411,8 +333,8 @@ function AppLayout() {
 
   // Dynamic header meta, automated hreflang injection, canonical and Open Graph (OG) social card SEO configurations
   useEffect(() => {
-    const meta = getLocalizedMeta(logicalPath, lang);
-    const pageUrl = `https://carecalculus.com${lang === 'en' ? '' : '/' + lang}${logicalPath}`;
+    const meta = seoGetLocalizedMeta(logicalPath, lang);
+    const pageUrl = seoPageUrl(logicalPath, lang);
     const mainTitle = meta.title;
     const mainDesc = meta.desc;
     
@@ -537,10 +459,13 @@ function AppLayout() {
       }
     ];
 
-    const medicalNode = getPathwaysMedicalSchema(logicalPath, lang);
+    const medicalNode = getMedicalSchema(logicalPath);
     if (medicalNode) {
       schemaList.push(medicalNode);
     }
+
+    // Sitewide Organization + WebSite nodes (E-E-A-T / GEO) on every page.
+    schemaList.push(...organizationJsonLd());
 
     schemaScript.textContent = JSON.stringify(schemaList, null, 2);
     document.head.appendChild(schemaScript);
@@ -563,145 +488,6 @@ function AppLayout() {
   };
 
   const currentRelated = getRelatedCalculators(logicalPath);
-
-  const getPathwaysMedicalSchema = (path: string, lang: LangCode) => {
-    const db: Record<string, any> = {
-      '/map-calculator': {
-        "@type": "MedicalWebPage",
-        "name": "Mean Arterial Pressure (MAP) Calculator",
-        "aspect": "Cardiovascular Assessment",
-        "about": [
-          { "@type": "MedicalCondition", "name": "Hypotension" },
-          { "@type": "MedicalCondition", "name": "Sepsis" }
-        ]
-      },
-      '/bmi-calculator': {
-        "@type": "MedicalWebPage",
-        "name": "Body Mass Index (BMI) Estimation",
-        "aspect": "Obesity & Nutritional Triage",
-        "about": { "@type": "MedicalCondition", "name": "Obesity" }
-      },
-      '/glasgow-coma-scale': {
-        "@type": "MedicalWebPage",
-        "name": "Glasgow Coma Scale (GCS) Score",
-        "aspect": "Neurological Triage",
-        "about": { "@type": "MedicalCondition", "name": "Traumatic Brain Injury" }
-      },
-      '/drip-rate-calculator': {
-        "@type": "MedicalWebPage",
-        "name": "IV Infusion & Drip Rate Calculator",
-        "aspect": "Therapeutics & Dosing",
-        "about": { "@type": "MedicalCondition", "name": "Dehydration" }
-      },
-      '/creatinine-clearance': {
-        "@type": "MedicalWebPage",
-        "name": "Cockcroft-Gault Creatinine Clearance Calculator",
-        "aspect": "Renal Pharmacokinetics",
-        "about": { "@type": "MedicalCondition", "name": "Renal Failure" }
-      },
-      '/wells-score': {
-        "@type": "MedicalWebPage",
-        "name": "Wells Criteria for Deep Vein Thrombosis (DVT)",
-        "aspect": "Thromboembolism Risk Triage",
-        "about": { "@type": "MedicalCondition", "name": "Deep Vein Thrombosis" }
-      },
-      '/medical-conversions': {
-        "@type": "MedicalWebPage",
-        "name": "Clinical Unit Converter & Laboratory Conversions",
-        "aspect": "Laboratory Metrics Converter",
-        "about": { "@type": "MedicalCondition", "name": "Diabetes Mellitus" }
-      },
-      '/corrected-calcium': {
-        "@type": "MedicalWebPage",
-        "name": "Albumin-Corrected Calcium Calculator",
-        "aspect": "Electrolyte Disorders",
-        "about": { "@type": "MedicalCondition", "name": "Hypercalcemia" }
-      },
-      '/qsofa-score': {
-        "@type": "MedicalWebPage",
-        "name": "qSOFA Sepsis Risk Assessment",
-        "aspect": "Sepsis Organ Dysfunction Triage",
-        "about": { "@type": "MedicalCondition", "name": "Sepsis" }
-      },
-      '/curb65-score': {
-        "@type": "MedicalWebPage",
-        "name": "CURB-65 Pneumonia Severity Score",
-        "aspect": "Infectious Disease Triage",
-        "about": { "@type": "MedicalCondition", "name": "Pneumonia" }
-      },
-      '/cha2ds2-vasc': {
-        "@type": "MedicalWebPage",
-        "name": "CHA2DS2-VASc Stroke Risk in Atrial Fibrillation",
-        "aspect": "Cardiovascular Stroke Prophylaxis",
-        "about": { "@type": "MedicalCondition", "name": "Atrial Fibrillation" }
-      },
-      '/phq9-score': {
-        "@type": "MedicalWebPage",
-        "name": "PHQ-9 Depression Patient Health Questionnaire",
-        "aspect": "Psychiatric Triage",
-        "about": { "@type": "MedicalCondition", "name": "Depressive Disorder" }
-      },
-      '/meld-score': {
-        "@type": "MedicalWebPage",
-        "name": "MELD Score for End-Stage Liver Disease",
-        "aspect": "Hepatology Survival Estimation",
-        "about": { "@type": "MedicalCondition", "name": "Liver Cirrhosis" }
-      },
-      '/sirs-criteria': {
-        "@type": "MedicalWebPage",
-        "name": "Systemic Inflammatory Response Syndrome (SIRS)",
-        "aspect": "Inflammatory Triage",
-        "about": { "@type": "MedicalCondition", "name": "Sepsis" }
-      },
-      '/pf-ratio': {
-        "@type": "MedicalWebPage",
-        "name": "Horovitz P/F Ratio Calculator",
-        "aspect": "Pulmonary & ICU Metrics",
-        "about": { "@type": "MedicalCondition", "name": "Acute Respiratory Distress Syndrome" }
-      },
-      '/tidal-volume': {
-        "@type": "MedicalWebPage",
-        "name": "ARDSNet Lung-Protective Tidal Volume Calculator",
-        "aspect": "Mechanical Ventilation Support",
-        "about": { "@type": "MedicalCondition", "name": "Acute Respiratory Distress Syndrome" }
-      },
-      '/anc-calculator': {
-        "@type": "MedicalWebPage",
-        "name": "Absolute Neutrophil Count (ANC) Calculator",
-        "aspect": "Hematology Oncology Triage",
-        "about": { "@type": "MedicalCondition", "name": "Neutropenia" }
-      },
-      '/adjusted-body-weight': {
-        "@type": "MedicalWebPage",
-        "name": "Ideal & Adjusted Body Weight (Devine Formula)",
-        "aspect": "Pharmacokinetic Body Metrics",
-        "about": { "@type": "MedicalCondition", "name": "Obesity" }
-      },
-      '/steroid-conversion': {
-        "@type": "MedicalWebPage",
-        "name": "Corticosteroids Dose Equivalents Conversion",
-        "aspect": "Endocrinology & Therapeutics",
-        "about": { "@type": "MedicalCondition", "name": "Adrenal Insufficiency" }
-      },
-      '/blog': {
-        "@type": "MedicalWebPage",
-        "name": "E-E-A-T Evidence-Based Clinical Medical Journal",
-        "aspect": "Scientific Medical Literature Review",
-        "about": [
-          { "@type": "MedicalCondition", "name": "Sepsis" },
-          { "@type": "MedicalCondition", "name": "Renal Failure" }
-        ]
-      }
-    };
-    return db[path] ? {
-      "@context": "https://schema.org",
-      "audience": {
-        "@type": "MedicalAudience",
-        "audienceType": "Clinicians, ICU Doctors, ER Emergency Physicians"
-      },
-      ...db[path]
-    } : null;
-  };
 
   // Render the high-performance top keywords navigation bar to facilitate fast routing 
   const renderKeywordsHeader = () => {
@@ -1398,7 +1184,19 @@ function AppLayout() {
   );
 }
 
-export default function App() {
+export default function App({ url }: { url?: string }) {
+  // During build-time prerendering a `url` is supplied and we render with
+  // StaticRouter (no browser history). At runtime in the browser we use
+  // BrowserRouter so client-side navigation works normally.
+  if (url) {
+    return (
+      <ErrorBoundary>
+        <StaticRouter location={url}>
+          <AppLayout />
+        </StaticRouter>
+      </ErrorBoundary>
+    );
+  }
   return (
     <ErrorBoundary>
       <BrowserRouter>
