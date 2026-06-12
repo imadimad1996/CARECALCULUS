@@ -1,0 +1,6 @@
+{
+  "name": "CareCalculus",
+  "description": "A high-performance multilingual medical calculator platform for healthcare professionals.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

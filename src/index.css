@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", "Inter", sans-serif;
+  --font-arabic: "Cairo", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  body {
+    background-color: #FAFAFA;
+    font-family: var(--font-sans);
+    color: #1e293b; /* Premium slate color */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Core titles and display typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    color: #0f172a; /* Richer Slate-900 depth */
+    letter-spacing: -0.025em; /* Smooth tracking-tight */
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  /* Semantic Typography Scales with Perfect Responsive Proportions */
+  h1 {
+    font-size: 2.25rem !important; /* 36px */
+    line-height: 1.15 !important;
+  }
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 3rem !important; /* 48px */
+    }
+  }
+
+  h2 {
+    font-size: 1.5rem !important; /* 24px */
+    line-height: 1.25 !important;
+    font-weight: 700 !important;
+  }
+  @media (min-width: 768px) {
+    h2 {
+      font-size: 1.875rem !important; /* 30px */
+    }
+  }
+
+  h3 {
+    font-size: 1.125rem !important; /* 18px */
+    line-height: 1.4 !important;
+    font-weight: 600 !important;
+  }
+  @media (min-width: 768px) {
+    h3 {
+      font-size: 1.25rem !important; /* 20px */
+    }
+  }
+
+  /* Labels and utility sizes */
+  label {
+    font-size: 0.75rem !important; /* text-xs */
+    font-weight: 700 !important;
+    letter-spacing: 0.05em !important; /* tracking-wider */
+    text-transform: uppercase !important;
+    color: #475569 !important; /* slate-600 */
+  }
+
+  /* Paragraphs and Body sizes */
+  p, span, li, a {
+    line-height: 1.6;
+  }
+
+  /* Form and high-end game element typography */
+  input[type="number"] {
+    font-family: var(--font-sans);
+    font-size: 1.875rem !important; /* Perfect 30px key readout */
+    font-weight: 600 !important;
+    color: #0f172a !important;
+  }
+  @media (min-width: 768px) {
+    input[type="number"] {
+      font-size: 2.25rem !important; /* 36px readout */
+    }
+  }
+
+  /* Comprehensive Arabic (Cairo) font system override */
+  html[lang="ar"] h1,
+  html[lang="ar"] h2,
+  html[lang="ar"] h3,
+  html[lang="ar"] h4,
+  html[lang="ar"] h5,
+  html[lang="ar"] h6,
+  html[lang="ar"] body,
+  html[lang="ar"] button,
+  html[lang="ar"] input,
+  html[lang="ar"] label,
+  html[lang="ar"] select,
+  html[lang="ar"] textarea,
+  html[lang="ar"] span,
+  html[lang="ar"] div,
+  html[lang="ar"] p,
+  html[lang="ar"] a,
+  html[lang="ar"] font {
+    font-family: var(--font-arabic) !important;
+    letter-spacing: 0px !important;
+    line-height: 1.5 !important;
+  }
+}
+
+/* Silicon Valley Game Grade Hospital Print System Style Sheet */
+@media print {
+  html, body {
+    background-color: #ffffff !important;
+    color: #1a1a1a !important;
+    font-size: 12px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* Hide standard live application interface completely to yield a clean PDF sheet */
+  #root, 
+  header, 
+  aside,
+  main,
+  footer,
+  .fixed, 
+  .absolute, 
+  .sticky,
+  button,
+  dialog {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* Expose exclusively the dedicated prepared document body */
+  #clinical-print-area {
+    display: block !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    z-index: 100000 !important;
+    background: #ffffff !important;
+  }
+}
+
+@media screen {
+  #clinical-print-area {
+    display: none !important;
+  }
+}
