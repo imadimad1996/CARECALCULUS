@@ -43,6 +43,8 @@ const [
   Presentations, Courses,
 ] = pageLoaders.map((loader) => React.lazy(loader as any)) as any[];
 
+const HomePage = React.lazy(() => import('./pages/HomePage'));
+
 /**
  * Eagerly resolve every page chunk. Called once before prerendering so that
  * React.lazy resolves synchronously during renderToString. Each loader returns
@@ -50,8 +52,14 @@ const [
  * here transitions the lazy components to their resolved state.
  */
 export async function preloadPages() {
-  await Promise.all(pageLoaders.map((load) => load()));
+  await Promise.all([
+    ...pageLoaders.map((load) => load()),
+    import('./pages/HomePage'),
+  ]);
 }
+
+// Routes that open in full-width reading mode (no sidebar, no top widgets)
+const CONTENT_ROUTES = ['/blog', '/blog-articles', '/presentations', '/cours'];
 
 import { LangCode } from './types';
 import { getSfxEnabledInit, setSfxEnabledInStorage, playTactileClick, playSleekSelect, playDialTick } from './utils/audio';
@@ -139,7 +147,8 @@ export const TIER_HEADERS: Record<number, Record<LangCode, string>> = {
 function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
   return (
     <>
-      <Route index element={<Navigate to={langPath('/map-calculator')} replace />} />
+      <Route index element={<HomePage lang={lang} />} />
+      <Route path="home" element={<HomePage lang={lang} />} />
       <Route path="map-calculator" element={<MapCalculator lang={lang} />} />
       <Route path="bmi-calculator" element={<BmiCalculator lang={lang} />} />
       <Route path="glasgow-coma-scale" element={<GcsCalculator lang={lang} />} />
@@ -181,6 +190,10 @@ function AppLayout() {
 
   // Build a URL for the current language out of a logical path.
   const langPath = (p: string) => buildPath(p, lang);
+
+  // Detect layout mode
+  const isContentPage = CONTENT_ROUTES.some(r => logicalPath === r || logicalPath.startsWith(r + '/'));
+  const isHomePage = logicalPath === '/' || logicalPath === '/home';
 
   // Switching language navigates to the same logical page under the new prefix.
   const setLang = (next: LangCode) => {
@@ -716,18 +729,168 @@ function AppLayout() {
     return TIER_HEADERS[tier] ? TIER_HEADERS[tier][lang] : `Tier ${tier}`;
   };
 
+  // Unified top navigation: search + popular keywords in one sticky bar (calculator pages)
+  const renderUnifiedTopNav = () => {
+    const popularTags = [
+      { path: '/map-calculator', en: 'MAP', fr: 'PAM', ar: 'MAP' },
+      { path: '/glasgow-coma-scale', en: 'GCS', fr: 'Glasgow', ar: 'GCS' },
+      { path: '/creatinine-clearance', en: 'Creatinine', fr: 'Créatinine', ar: 'الكرياتينين' },
+      { path: '/qsofa-score', en: 'qSOFA', fr: 'qSOFA', ar: 'qSOFA' },
+      { path: '/meld-score', en: 'MELD', fr: 'MELD', ar: 'MELD' },
+      { path: '/wells-score', en: 'Wells DVT', fr: 'Wells DVT', ar: 'ويلز' },
+      { path: '/curb65-score', en: 'CURB-65', fr: 'CURB-65', ar: 'CURB-65' },
+      { path: '/cha2ds2-vasc', en: 'CHA₂DS₂', fr: 'FA/AVC', ar: 'CHA₂DS₂' },
+      { path: '/steroid-conversion', en: 'Steroids', fr: 'Corticoïdes', ar: 'الكورتيزون' },
+      { path: '/bmi-calculator', en: 'BMI', fr: 'IMC', ar: 'BMI' },
+    ];
+    const currentPath = logicalPath === '/' ? '/map-calculator' : logicalPath;
+
+    return (
+      <div className="mb-6 bg-white rounded-2xl border border-gray-200/80 shadow-xs overflow-hidden">
+        {/* Search row */}
+        <div className="px-4 py-3 flex items-center gap-3 border-b border-gray-100">
+          <div className="flex-1 relative">
+            <Search className={`absolute ${isRtl ? 'right-3' : 'left-3'} top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none`} />
+            <input
+              id="top-nav-search"
+              type="text"
+              placeholder={lang === 'fr' ? 'Rechercher sepsis, GCS, rein, stéroïdes...' : (lang === 'ar' ? 'ابحث: sepsis، غلاسكو، كبد...' : 'Search: sepsis, GCS, renal, steroids...')}
+              value={topSearch}
+              onChange={(e) => { setTopSearch(e.target.value); playDialTick(0.65); }}
+              className={`w-full py-2 bg-gray-50 focus:bg-white text-gray-900 border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100/60 outline-none rounded-xl text-xs font-semibold transition-all placeholder-gray-400 ${isRtl ? 'pr-9 pl-8 text-right' : 'pl-9 pr-8 text-left'}`}
+              style={{ minHeight: '40px' }}
+            />
+            {topSearch && (
+              <button onClick={() => setTopSearch('')} className={`absolute ${isRtl ? 'left-3' : 'right-3'} top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-700 p-0.5 rounded-md hover:bg-gray-100 transition`} aria-label="Clear search">
+                <X className="w-3.5 h-3.5" />
+              </button>
+            )}
+          </div>
+          {/* GEO unit toggle chip */}
+          <button
+            onClick={toggleGeoStandard}
+            className="shrink-0 flex items-center gap-1.5 px-3 py-2 bg-slate-800 hover:bg-slate-700 text-white text-[10px] font-mono font-bold rounded-xl transition border border-slate-700 active:scale-95"
+            style={{ minHeight: '40px' }}
+            title="Toggle unit standard"
+          >
+            <Scale className="w-3.5 h-3.5 text-emerald-400" />
+            <span className="hidden sm:inline">{geoState.standard === 'Metric (SI)' ? 'SI' : 'US'}</span>
+          </button>
+        </div>
+
+        {/* Live search results */}
+        {topSearch && (
+          <div className="px-4 py-3 bg-blue-50/60 border-b border-blue-100">
+            {filteredTopResults.length === 0 ? (
+              <p className="text-xs text-gray-500 font-semibold flex items-center gap-1.5">
+                <AlertOctagon className="w-3.5 h-3.5 text-gray-400" />
+                {lang === 'fr' ? 'Aucun protocole trouvé.' : (lang === 'ar' ? 'لا توجد نتائج مطابقة.' : 'No matching calculator found.')}
+              </p>
+            ) : (
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+                {filteredTopResults.map((item) => {
+                  const Icon = item.icon;
+                  const label = lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn);
+                  return (
+                    <Link key={item.path} to={langPath(item.path)} onClick={() => setTopSearch('')}
+                      className="flex items-center gap-2 p-2 bg-white rounded-lg border border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all text-xs font-bold text-gray-800"
+                      style={{ minHeight: '40px' }}>
+                      <Icon className="w-3.5 h-3.5 text-blue-500 shrink-0" />
+                      <span className="truncate">{label}</span>
+                    </Link>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Keywords pill bar */}
+        <div className="px-4 py-2.5 flex items-center gap-1.5 overflow-x-auto scrollbar-none">
+          {popularTags.map((tag) => {
+            const isActive = currentPath === tag.path;
+            const label = lang === 'fr' ? tag.fr : (lang === 'ar' ? tag.ar : tag.en);
+            return (
+              <Link key={tag.path} to={langPath(tag.path)}
+                className={`shrink-0 px-3 py-1.5 rounded-full text-[11px] font-bold whitespace-nowrap transition-all border ${
+                  isActive
+                    ? 'bg-blue-600 text-white border-blue-600 shadow-sm'
+                    : 'bg-gray-50 text-gray-600 border-gray-200 hover:bg-gray-100 hover:text-gray-900'
+                }`}
+                style={{ minHeight: '32px' }}
+              >
+                {label}
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+    );
+  };
+
+  // Breadcrumb + back link for content/reading pages
+  const renderContentPageTopBar = () => {
+    const sectionMap: Record<string, { en: string; fr: string; ar: string; icon: any }> = {
+      '/blog':          { en: 'Medical Journals', fr: 'Journaux Médicaux', ar: 'المجلات الطبية', icon: BookOpen },
+      '/blog-articles': { en: 'Blog Articles',    fr: 'Articles de Blog',  ar: 'مقالات المدونة', icon: Newspaper },
+      '/presentations': { en: 'Presentations',    fr: 'Présentations',     ar: 'العروض التقديمية', icon: MonitorPlay },
+      '/cours':         { en: 'Courses (PDF)',     fr: 'Cours (PDF)',       ar: 'المحاضرات والدروس', icon: GraduationCap },
+    };
+    const base = CONTENT_ROUTES.find(r => logicalPath === r || logicalPath.startsWith(r + '/'));
+    const section = base ? sectionMap[base] : null;
+    const SectionIcon = section?.icon;
+    const sectionLabel = section ? (lang === 'fr' ? section.fr : lang === 'ar' ? section.ar : section.en) : '';
+    const isDetail = base && logicalPath !== base;
+
+    return (
+      <div className="mb-6 flex items-center justify-between gap-4 flex-wrap">
+        <div className="flex items-center gap-2 text-sm text-gray-500 font-semibold">
+          <Link to={langPath('/')} className="flex items-center gap-1 hover:text-blue-600 transition-colors font-bold text-gray-700">
+            <HeartPulse className="w-4 h-4 text-blue-600" />
+            CareCalculus
+          </Link>
+          <ChevronRight className="w-3.5 h-3.5 text-gray-300" />
+          {isDetail && base ? (
+            <>
+              <Link to={langPath(base)} className="hover:text-blue-600 transition-colors flex items-center gap-1">
+                {SectionIcon && <SectionIcon className="w-3.5 h-3.5" />}
+                {sectionLabel}
+              </Link>
+              <ChevronRight className="w-3.5 h-3.5 text-gray-300" />
+              <span className="text-gray-400 text-xs truncate max-w-[180px]">
+                {lang === 'fr' ? 'Article' : lang === 'ar' ? 'المقال' : 'Article'}
+              </span>
+            </>
+          ) : (
+            <span className="text-blue-600 flex items-center gap-1">
+              {SectionIcon && <SectionIcon className="w-3.5 h-3.5" />}
+              {sectionLabel}
+            </span>
+          )}
+        </div>
+        <Link
+          to={langPath('/map-calculator')}
+          className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs font-bold rounded-xl border border-blue-100 transition-all"
+          style={{ minHeight: '36px' }}
+        >
+          <Calculator className="w-3.5 h-3.5" />
+          {lang === 'fr' ? 'Calculateurs' : lang === 'ar' ? 'الحاسبات' : 'Calculators'}
+        </Link>
+      </div>
+    );
+  };
+
   return (
    <LangContext.Provider value={{ lang, langPath }}>
     <div className={`min-h-screen bg-[#fafafa] text-[#111] transition-colors duration-300 flex flex-col md:flex-row ${isRtl ? 'font-arabic' : 'font-sans'}`} dir={isRtl ? 'rtl' : 'ltr'}>
       
       {/* Mobile Top Header */}
       <div className="md:hidden sticky top-0 z-50 bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between">
-        <div className="flex items-center gap-2 text-blue-600">
+        <Link to={langPath('/')} className="flex items-center gap-2 text-blue-600">
           <HeartPulse className="w-6 h-6 stroke-[2.5]" />
           <span className="font-bold text-lg tracking-tight text-gray-900">Care<span className="text-blue-600">Calculus</span></span>
-        </div>
-        
-        {/* Mobile Quick Lang Switcher to satisfy instant target targets check */}
+        </Link>
+
         <div className="flex items-center gap-2">
           <div className="bg-gray-100 p-0.5 rounded-lg border border-gray-205 flex text-[10px]">
             {(['en', 'fr', 'ar'] as const).map(l => (
@@ -741,25 +904,27 @@ function AppLayout() {
               </button>
             ))}
           </div>
-          <button 
-            onClick={() => setIsSidebarOpen(!isSidebarOpen)} 
-            className="p-2 text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600/20 rounded-lg"
-            aria-label="Toggle Navigation Sidebar"
-            style={{ minWidth: '44px', minHeight: '44px' }}
-          >
-            {isSidebarOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {!isContentPage && (
+            <button
+              onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+              className="p-2 text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600/20 rounded-lg"
+              aria-label="Toggle Navigation Sidebar"
+              style={{ minWidth: '44px', minHeight: '44px' }}
+            >
+              {isSidebarOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          )}
         </div>
       </div>
 
-      {/* Sidebar Navigation grouped by clinical tiers */}
-      <aside className={`fixed inset-y-0 ${isRtl ? 'right-0' : 'left-0'} z-40 w-64 bg-white border-${isRtl ? 'l' : 'r'} border-gray-200 transform transition-transform duration-300 ease-in-out md:translate-x-0 md:static md:flex-shrink-0 ${isSidebarOpen ? 'translate-x-0' : (isRtl ? 'translate-x-full md:translate-x-0' : '-translate-x-full')}`}>
+      {/* Sidebar Navigation grouped by clinical tiers — hidden on content/reading pages */}
+      {!isContentPage && <aside className={`fixed inset-y-0 ${isRtl ? 'right-0' : 'left-0'} z-40 w-64 bg-white border-${isRtl ? 'l' : 'r'} border-gray-200 transform transition-transform duration-300 ease-in-out md:translate-x-0 md:static md:flex-shrink-0 ${isSidebarOpen ? 'translate-x-0' : (isRtl ? 'translate-x-full md:translate-x-0' : '-translate-x-full')}`}>
         <div className="h-full flex flex-col pt-5 md:pt-8 pb-4 overflow-y-auto">
           
-          <div className="px-6 mb-6 hidden md:flex items-center gap-2 text-blue-600">
+          <Link to={langPath('/')} className="px-6 mb-6 hidden md:flex items-center gap-2 text-blue-600 hover:opacity-80 transition-opacity">
             <HeartPulse className="w-7 h-7 stroke-[2.5]" />
             <span className="font-bold text-2xl tracking-tight text-gray-900">Care<span className="text-blue-600">Calculus</span></span>
-          </div>
+          </Link>
 
           {/* Silicon Valley Game Grade Tactile Audio Telemetry Controller */}
           <div className="px-6 mb-5">
@@ -839,7 +1004,23 @@ function AppLayout() {
 
           {/* Collapsible/Grouped Tiers Layout */}
           <nav className="flex-1 px-4 space-y-6 pb-6 select-all">
-            
+
+            {/* Home link */}
+            <Link
+              to={langPath('/')}
+              onMouseEnter={playTactileClick}
+              onClick={playSleekSelect}
+              className={`flex items-center gap-3 px-3 py-2 rounded-xl text-xs font-bold transition-all duration-150 ${
+                isHomePage
+                  ? 'bg-blue-50 text-blue-700 font-extrabold border border-blue-100'
+                  : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900 border border-transparent'
+              }`}
+              style={{ minHeight: '44px' }}
+            >
+              <HeartPulse className="w-4 h-4 shrink-0 text-blue-500" />
+              <span>{lang === 'fr' ? 'Accueil' : lang === 'ar' ? 'الرئيسية' : 'Home'}</span>
+            </Link>
+
             {/* TIER I COMPONENT */}
             {navItems.filter(i => i.tier === 1 && matchesSearch(i, sidebarSearch)).length > 0 && (
               <div className="space-y-1.5">
@@ -1010,21 +1191,18 @@ function AppLayout() {
 
           </nav>
         </div>
-      </aside>
+      </aside>}
 
       {/* Main Content Area */}
       <main className="flex-1 min-w-0 bg-[#fafafa]">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 md:py-10 relative flex flex-col justify-between min-h-screen">
+        <div className={`mx-auto px-4 sm:px-6 py-6 md:py-10 relative flex flex-col justify-between min-h-screen ${isContentPage ? 'max-w-6xl' : 'max-w-5xl'}`}>
           <div>
 
-            {/* Top clinical diagnostic decision support search engine */}
-            {renderTopPageSearchBar()}
+            {/* Unified top navigation widget — calculator pages only */}
+            {!isContentPage && !isHomePage && renderUnifiedTopNav()}
 
-            {/* Interactive GEO regional protocols HUD */}
-            {renderGeoProtocolHUD()}
-
-            {/* Micro-Navigation Index with High-Volume Keywords */}
-            {renderKeywordsHeader()}
+            {/* Content-page back-navigation bar */}
+            {isContentPage && renderContentPageTopBar()}
 
             <React.Suspense
               fallback={<div className="py-10 text-center text-sm text-gray-500">Loading clinical module...</div>}
