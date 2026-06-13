@@ -1,8 +1,7 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Activity, Info, BookOpen, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { LangCode, Translations } from '../types';
-import { playDialTick, playTelemetrySuccess, playTelemetryAlert } from '../utils/audio';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 
 const translations: Translations = {
@@ -67,14 +66,6 @@ export default function MapCalculator({ lang }: { lang: LangCode }) {
   }, [sys, dia]);
 
   const mapValueIsNormal = mapValue >= 65;
-  useEffect(() => {
-    if (mapValue === 0) return;
-    if (mapValueIsNormal) {
-      playTelemetrySuccess();
-    } else {
-      playTelemetryAlert();
-    }
-  }, [mapValueIsNormal]);
 
   return (
     <>
@@ -103,7 +94,6 @@ export default function MapCalculator({ lang }: { lang: LangCode }) {
                     onChange={(e) => {
                       const v = Number(e.target.value);
                       setSys(v);
-                      playDialTick((v - 40) / 220);
                     }}
                     className="w-full bg-gray-50/50 px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600 text-3xl tabular-nums font-semibold text-gray-900 transition-all placeholder:text-gray-300"
                     min="40"
@@ -114,11 +104,7 @@ export default function MapCalculator({ lang }: { lang: LangCode }) {
                 <input 
                   type="range" min="40" max="260" 
                   value={sys}
-                  onChange={(e) => {
-                    const v = Number(e.target.value);
-                    setSys(v);
-                    playDialTick((v - 40) / 220);
-                  }}
+                  onChange={(e) => setSys(Number(e.target.value))}
                   className="w-full mt-4 h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
                 />
               </div>
@@ -135,7 +121,6 @@ export default function MapCalculator({ lang }: { lang: LangCode }) {
                     onChange={(e) => {
                       const v = Number(e.target.value);
                       setDia(v);
-                      playDialTick((v - 20) / 160);
                     }}
                     className="w-full bg-gray-50/50 px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600 text-3xl tabular-nums font-semibold text-gray-900 transition-all placeholder:text-gray-300"
                     min="20"
@@ -146,11 +131,7 @@ export default function MapCalculator({ lang }: { lang: LangCode }) {
                 <input 
                   type="range" min="20" max="180" 
                   value={dia}
-                  onChange={(e) => {
-                    const v = Number(e.target.value);
-                    setDia(v);
-                    playDialTick((v - 20) / 160);
-                  }}
+                  onChange={(e) => setDia(Number(e.target.value))}
                   className="w-full mt-4 h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
                 />
               </div>

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Printer, Copy, Check, FileText, X, User, Calendar, FileDown, Lock } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { LangCode } from '../types';
-import { playTactileClick, playSleekSelect, playTelemetrySuccess, playDialTick } from '../utils/audio';
 
 export interface ClinicalExportButtonProps {
   title: string;
@@ -110,12 +109,10 @@ export default function ClinicalExportButton({
   }, [isOpen, lang]);
 
   const handleOpen = () => {
-    playSleekSelect();
     setIsOpen(true);
   };
 
   const handleClose = () => {
-    playTactileClick();
     setIsOpen(false);
     setCopied(false);
   };
@@ -168,14 +165,12 @@ ${divider}`;
     const reportText = getASCIIReportText();
     navigator.clipboard.writeText(reportText).then(() => {
       setCopied(true);
-      playTelemetrySuccess();
       setTimeout(() => setCopied(false), 3000);
     });
   };
 
   const handlePrint = () => {
-    playSleekSelect();
-    
+
     // Inject printing container inside HTML DOM dynamically
     let printContainer = document.getElementById("clinical-print-area");
     if (!printContainer) {
@@ -313,7 +308,6 @@ ${divider}`;
       {/* Tactical action button placed cleanly inside results card */}
       <button
         onClick={handleOpen}
-        onMouseEnter={playTactileClick}
         className="w-full mt-4 py-3 px-4 rounded-xl flex items-center justify-center gap-2.5 bg-white/10 hover:bg-white/20 active:bg-white/35 text-white text-xs font-bold font-mono uppercase tracking-wider transition-all duration-300 border border-white/20 hover:border-white/40 shadow-sm relative overflow-hidden group cursor-pointer"
         style={{ minHeight: '44px' }}
         id={`btn-open-export-${title.split(' ')[0].toLowerCase()}`}
@@ -358,7 +352,6 @@ ${divider}`;
                 </div>
                 <button
                   onClick={handleClose}
-                  onMouseEnter={playTactileClick}
                   className="p-1.5 hover:bg-slate-800 text-gray-400 hover:text-white rounded-lg transition-colors cursor-pointer"
                 >
                   <X className="w-5 h-5" />
@@ -387,7 +380,6 @@ ${divider}`;
                           value={patientId}
                           onChange={(e) => {
                             setPatientId(e.target.value);
-                            playDialTick(0.35);
                           }}
                           placeholder={t.patientIdPlc}
                           className="w-full bg-slate-900 border border-slate-700 focus:border-blue-500 rounded-lg pl-9 pr-4 py-2.5 text-xs text-white outline-none font-mono tracking-wider focus:ring-1 focus:ring-blue-500/20"
@@ -406,7 +398,6 @@ ${divider}`;
                           value={clinician}
                           onChange={(e) => {
                             setClinician(e.target.value);
-                            playDialTick(0.45);
                           }}
                           placeholder={t.clinicianPlc}
                           className="w-full bg-slate-900 border border-slate-700 focus:border-blue-500 rounded-lg pl-9 pr-4 py-2.5 text-xs text-white outline-none tracking-tight focus:ring-1 focus:ring-blue-500/20"
@@ -439,7 +430,6 @@ ${divider}`;
                       value={customNotes}
                       onChange={(e) => {
                         setCustomNotes(e.target.value);
-                        playDialTick(0.2);
                       }}
                       placeholder={t.notesPlc}
                       className="w-full bg-slate-900 border border-slate-700 focus:border-blue-550 rounded-xl p-3 text-xs text-white outline-none transition-all focus:ring-1 focus:ring-blue-500/20 placeholder:text-gray-600 resize-none"
@@ -460,7 +450,6 @@ ${divider}`;
                   <div className="flex flex-col sm:flex-row gap-3 pt-2">
                     <button
                       onClick={handleCopy}
-                      onMouseEnter={playTactileClick}
                       className={`flex-1 py-3 px-4 rounded-xl flex items-center justify-center gap-2 text-xs font-bold transition-all border shrink-0 cursor-pointer ${
                         copied
                           ? 'bg-emerald-650 border-emerald-500 text-emerald-100'
@@ -483,7 +472,6 @@ ${divider}`;
 
                     <button
                       onClick={handlePrint}
-                      onMouseEnter={playTactileClick}
                       className="flex-1 py-3 px-4 rounded-xl flex items-center justify-center gap-2 text-xs font-extrabold bg-blue-600 hover:bg-blue-500 active:bg-blue-700 border border-blue-500 text-white cursor-pointer hover:shadow-[0_0_15px_-3px_rgba(59,130,246,0.5)] transition-all"
                       style={{ minHeight: '44px' }}
                     >

@@ -1,7 +1,6 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Activity, Info, BookOpen, ChevronDown } from 'lucide-react';
 import { LangCode, Translations } from '../types';
-import { playDialTick, playTelemetrySuccess, playTelemetryAlert } from '../utils/audio';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 
 const translations: Translations = {
@@ -77,14 +76,6 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
   const category = getBmiCategory(bmiValue);
 
   const bmiValueIsNormal = bmiValue >= 18.5 && bmiValue < 25;
-  useEffect(() => {
-    if (bmiValue === 0) return;
-    if (bmiValueIsNormal) {
-      playTelemetrySuccess();
-    } else {
-      playTelemetryAlert();
-    }
-  }, [bmiValueIsNormal]);
 
   return (
     <>
@@ -112,7 +103,6 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
                     onChange={(e) => {
                       const v = Number(e.target.value);
                       setHeight(v);
-                      playDialTick((v - 50) / 200);
                     }}
                     className="w-full bg-gray-50/50 px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600 text-3xl tabular-nums font-semibold text-gray-900 transition-all placeholder:text-gray-300"
                     min="50"
@@ -122,11 +112,7 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
                 <input 
                   type="range" min="50" max="250" 
                   value={height}
-                  onChange={(e) => {
-                    const v = Number(e.target.value);
-                    setHeight(v);
-                    playDialTick((v - 50) / 200);
-                  }}
+                  onChange={(e) => setHeight(Number(e.target.value))}
                   className="w-full mt-4 h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
                 />
               </div>
@@ -142,7 +128,6 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
                     onChange={(e) => {
                       const v = Number(e.target.value);
                       setWeight(v);
-                      playDialTick((v - 10) / 290);
                     }}
                     className="w-full bg-gray-50/50 px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600 text-3xl tabular-nums font-semibold text-gray-900 transition-all placeholder:text-gray-300"
                     min="10"
@@ -152,11 +137,7 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
                 <input 
                   type="range" min="10" max="300" 
                   value={weight}
-                  onChange={(e) => {
-                    const v = Number(e.target.value);
-                    setWeight(v);
-                    playDialTick((v - 10) / 290);
-                  }}
+                  onChange={(e) => setWeight(Number(e.target.value))}
                   className="w-full mt-4 h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
                 />
               </div>

@@ -1,7 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { Activity, Info, BookOpen } from 'lucide-react';
 import { LangCode, Translations } from '../types';
-import { playDialTick, playSleekSelect, playTactileClick, playTelemetrySuccess } from '../utils/audio';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 
 const translations: Translations = {
@@ -94,12 +93,6 @@ export default function AdjustedBodyWeight({ lang }: { lang: LangCode }) {
     };
   }, [height, weight, sex]);
 
-  useEffect(() => {
-    if (results) {
-      playTelemetrySuccess();
-    }
-  }, [results?.ibw, results?.abw]);
-
   return (
     <>
       <div className="max-w-3xl mb-12">
@@ -120,16 +113,14 @@ export default function AdjustedBodyWeight({ lang }: { lang: LangCode }) {
                   <label className="text-sm font-semibold text-gray-700 uppercase tracking-wider block mb-2">{currentText.sex}</label>
                   <div className="flex gap-4">
                     <button
-                      onClick={() => { setSex(0); playSleekSelect(); }}
-                      onMouseEnter={playTactileClick}
+                      onClick={() => setSex(0)}
                       className={`flex-1 py-3 rounded-xl border text-sm font-medium transition-all ${sex === 0 ? 'bg-blue-600 border-blue-600 text-white font-bold' : 'bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100'}`}
                       style={{ minHeight: '44px' }}
                     >
                       {currentText.male}
                     </button>
                     <button
-                      onClick={() => { setSex(1); playSleekSelect(); }}
-                      onMouseEnter={playTactileClick}
+                      onClick={() => setSex(1)}
                       className={`flex-1 py-3 rounded-xl border text-sm font-medium transition-all ${sex === 1 ? 'bg-blue-600 border-blue-600 text-white font-bold' : 'bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100'}`}
                       style={{ minHeight: '44px' }}
                     >
@@ -147,7 +138,6 @@ export default function AdjustedBodyWeight({ lang }: { lang: LangCode }) {
                       onChange={(e) => {
                         const val = e.target.value === '' ? '' : Number(e.target.value);
                         setHeight(val);
-                        if (val !== '') playDialTick((val - 100) / 100);
                       }}
                       className="w-full bg-gray-50 px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600 text-2xl font-semibold text-gray-900"
                     />
@@ -160,7 +150,6 @@ export default function AdjustedBodyWeight({ lang }: { lang: LangCode }) {
                       onChange={(e) => {
                         const val = e.target.value === '' ? '' : Number(e.target.value);
                         setWeight(val);
-                        if (val !== '') playDialTick((val - 30) / 150);
                       }}
                       className="w-full bg-gray-50 px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600 text-2xl font-semibold text-gray-900"
                     />

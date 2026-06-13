@@ -1,7 +1,6 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Activity, Info, BookOpen, ChevronDown } from 'lucide-react';
 import { LangCode, Translations } from '../types';
-import { playSleekSelect, playTactileClick, playTelemetrySuccess, playTelemetryAlert } from '../utils/audio';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 
 const translations: Translations = {
@@ -107,13 +106,6 @@ export default function GcsCalculator({ lang }: { lang: LangCode }) {
 
   const gcsValue = eye + verbal + motor;
 
-  useEffect(() => {
-    if (gcsValue <= 8) {
-      playTelemetryAlert();
-    } else {
-      playTelemetrySuccess();
-    }
-  }, [gcsValue]);
 
   const getGcsCategory = (val: number) => {
     if (val <= 8) return { label: currentText.severe, color: 'text-red-400', bg: 'bg-red-500/10 border-red-500/20' };
@@ -145,8 +137,7 @@ export default function GcsCalculator({ lang }: { lang: LangCode }) {
                   {[4, 3, 2, 1].map((val) => (
                     <button
                       key={`eye-${val}`}
-                      onClick={() => { setEye(val); playSleekSelect(); }}
-                      onMouseEnter={playTactileClick}
+                      onClick={() => setEye(val)}
                       className={`text-left px-4 py-3 rounded-xl border text-sm font-medium transition-all ${eye === val ? 'bg-blue-50 border-blue-600 text-blue-800 font-bold' : 'bg-white border-gray-200 text-gray-700 hover:border-blue-300'}`}
                       style={{ minHeight: '44px' }}
                     >
@@ -162,8 +153,7 @@ export default function GcsCalculator({ lang }: { lang: LangCode }) {
                   {[5, 4, 3, 2, 1].map((val) => (
                     <button
                       key={`verbal-${val}`}
-                      onClick={() => { setVerbal(val); playSleekSelect(); }}
-                      onMouseEnter={playTactileClick}
+                      onClick={() => setVerbal(val)}
                       className={`text-left px-4 py-3 rounded-xl border text-sm font-medium transition-all ${verbal === val ? 'bg-blue-50 border-blue-600 text-blue-800 font-bold' : 'bg-white border-gray-200 text-gray-700 hover:border-blue-300'}`}
                       style={{ minHeight: '44px' }}
                     >
@@ -179,8 +169,7 @@ export default function GcsCalculator({ lang }: { lang: LangCode }) {
                   {[6, 5, 4, 3, 2, 1].map((val) => (
                     <button
                       key={`motor-${val}`}
-                      onClick={() => { setMotor(val); playSleekSelect(); }}
-                      onMouseEnter={playTactileClick}
+                      onClick={() => setMotor(val)}
                       className={`text-left px-4 py-3 rounded-xl border text-sm font-medium transition-all ${motor === val ? 'bg-blue-50 border-blue-600 text-blue-800 font-bold' : 'bg-white border-gray-200 text-gray-700 hover:border-blue-300'}`}
                       style={{ minHeight: '44px' }}
                     >

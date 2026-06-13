@@ -3,7 +3,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { BookOpen, Upload, FileText, Download, CheckCircle2, AlertCircle, ChevronLeft, ChevronRight, GraduationCap, RefreshCw, Sparkles, Trash2, Calendar, ClipboardCheck, ArrowRight, HelpCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { LangCode, Translations } from '../types';
-import { playSleekSelect, playTactileClick, playTelemetrySuccess, playTelemetryAlert, playDialTick } from '../utils/audio';
 import { slugify, findBySlug } from '../utils/slug';
 import { useLang } from '../utils/lang';
 
@@ -259,14 +258,12 @@ export default function Courses({ lang }: { lang: LangCode }) {
   const processFile = (file: File) => {
     if (!file.name.toLowerCase().endsWith('.pdf')) {
       setUploadError(t.onlyPdf);
-      playTelemetryAlert();
       return;
     }
 
     setUploadError(null);
     setIsUploadingSim(true);
     setSimulatedProgress(10);
-    playSleekSelect();
 
     // Trigger progressive feedback loader
     const interval = setInterval(() => {
@@ -276,7 +273,6 @@ export default function Courses({ lang }: { lang: LangCode }) {
           setTimeout(() => {
             setIsUploadingSim(false);
             setUploadSuccessMsg(true);
-            playTelemetrySuccess();
 
             const cleanTitle = file.name.replace(/\.[^/.]+$/, "").split('_').join(' ').split('-').join(' ');
             const formattedSize = `${(file.size / (1024 * 1024)).toFixed(1)} MB`;
@@ -323,7 +319,6 @@ export default function Courses({ lang }: { lang: LangCode }) {
           }, 450);
           return 100;
         }
-        playDialTick(p / 100);
         return p + 15;
       });
     }, 180);
@@ -345,7 +340,6 @@ export default function Courses({ lang }: { lang: LangCode }) {
 
   const handleDeleteCourse = (id: string, e: React.MouseEvent) => {
     e.stopPropagation();
-    playTelemetryAlert();
     const cleanList = courses.filter(c => c.id !== id);
     setCourses(cleanList);
     saveCustomUploadedCourses(cleanList);
@@ -355,7 +349,6 @@ export default function Courses({ lang }: { lang: LangCode }) {
   };
 
   const startStudying = (course: MedicalCourse) => {
-    playSleekSelect();
     navigate(langPath(`/cours/${slugify(course.title, course.id)}`));
   };
 
@@ -372,20 +365,12 @@ export default function Courses({ lang }: { lang: LangCode }) {
   }, [slug, selectedCourse, navigate]);
 
   const handleAnswerSubmit = (qIdx: number, oIdx: number, correctIdx: number) => {
-    playSleekSelect();
     setSelectedAnswers(prev => ({ ...prev, [qIdx]: oIdx }));
     const isCorrect = oIdx === correctIdx;
     setQuizResults(prev => ({ ...prev, [qIdx]: isCorrect }));
-
-    if (isCorrect) {
-      playTelemetrySuccess();
-    } else {
-      playTelemetryAlert();
-    }
   };
 
   const mockDownload = (course: MedicalCourse) => {
-    playTelemetrySuccess();
     const dummyContent = `MOCK PDF GUIDELINE FOR ${course.title}`;
     const blob = new Blob([dummyContent], { type: 'application/pdf' });
     const url = URL.createObjectURL(blob);
@@ -432,7 +417,7 @@ export default function Courses({ lang }: { lang: LangCode }) {
                   </h3>
                 </div>
                 <button
-                  onClick={() => { playTactileClick(); navigate(langPath('/cours')); }}
+                  onClick={() => navigate(langPath('/cours'))}
                   className="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-gray-200 transition-all font-semibold hover:text-white cursor-pointer"
                   style={{ minHeight: '44px' }}
                 >
@@ -454,7 +439,7 @@ export default function Courses({ lang }: { lang: LangCode }) {
                       {selectedCourse.sections.map((sec, idx) => (
                         <button
                           key={idx}
-                          onClick={() => { playTactileClick(); setActiveSectionIndex(idx); }}
+                          onClick={() => setActiveSectionIndex(idx)}
                           className={`w-full text-left px-3 py-2 rounded-lg text-xs leading-normal transition-all flex items-center gap-2 ${
                             activeSectionIndex === idx
                               ? 'bg-blue-650 text-white font-bold'
@@ -480,7 +465,6 @@ export default function Courses({ lang }: { lang: LangCode }) {
                       value={personalNotes}
                       onChange={(e) => {
                         setPersonalNotes(e.target.value);
-                        playDialTick(0.12);
                       }}
                       placeholder="Type personal references, equations, or exam notes here, they will persist automatically..."
                       className="w-full bg-slate-900 border border-slate-750 focus:border-amber-500 rounded-lg p-2.5 text-[11px] text-gray-200 placeholder:text-gray-650 outline-none resize-none leading-relaxed"
@@ -597,7 +581,7 @@ export default function Courses({ lang }: { lang: LangCode }) {
                 ? 'border-blue-600 bg-blue-50/40 ring-4 ring-blue-600/10 scale-[0.99]'
                 : 'border-gray-200 hover:border-blue-400 hover:bg-blue-50/10'
             }`}
-            onClick={() => { playTactileClick(); fileInputRef.current?.click(); }}
+            onClick={() => fileInputRef.current?.click()}
           >
             <input
               type="file"

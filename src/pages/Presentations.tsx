@@ -3,7 +3,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { MonitorPlay, Upload, FileText, Download, CheckCircle, AlertCircle, ChevronLeft, ChevronRight, Play, RefreshCw, Sparkles, BookOpen, Trash2, Calendar, FileType } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { LangCode, Translations } from '../types';
-import { playSleekSelect, playTactileClick, playTelemetrySuccess, playTelemetryAlert, playDialTick } from '../utils/audio';
 import { slugify, findBySlug } from '../utils/slug';
 import { useLang } from '../utils/lang';
 
@@ -254,14 +253,12 @@ export default function Presentations({ lang }: { lang: LangCode }) {
   const processFile = (file: File) => {
     if (!file.name.toLowerCase().endsWith('.pptx')) {
       setUploadError(t.onlyPptx);
-      playTelemetryAlert();
       return;
     }
 
     setUploadError(null);
     setIsUploadingSim(true);
     setSimulatedProgress(10);
-    playSleekSelect();
 
     // Trigger sequential loading simulation
     const interval = setInterval(() => {
@@ -271,7 +268,6 @@ export default function Presentations({ lang }: { lang: LangCode }) {
           setTimeout(() => {
             setIsUploadingSim(false);
             setUploadSuccessMsg(true);
-            playTelemetrySuccess();
 
             // Structure a realistic simulated presentation parsed dynamically from uploaded file name!
             const cleanTitle = file.name.replace(/\.[^/.]+$/, "").split('_').join(' ').split('-').join(' ');
@@ -335,7 +331,6 @@ export default function Presentations({ lang }: { lang: LangCode }) {
           }, 450);
           return 100;
         }
-        playDialTick(p / 100);
         return p + 15;
       });
     }, 180);
@@ -357,7 +352,6 @@ export default function Presentations({ lang }: { lang: LangCode }) {
 
   const handleDeleteSubject = (id: string, e: React.MouseEvent) => {
     e.stopPropagation();
-    playTelemetryAlert();
     const cleanList = subjects.filter(s => s.id !== id);
     setSubjects(cleanList);
     saveCustomUploadedSubjects(cleanList);
@@ -367,7 +361,6 @@ export default function Presentations({ lang }: { lang: LangCode }) {
   };
 
   const launchSlideshow = (subject: PresentationSubject) => {
-    playSleekSelect();
     navigate(langPath(`/presentations/${slugify(subject.title, subject.id)}`));
   };
 
@@ -383,20 +376,17 @@ export default function Presentations({ lang }: { lang: LangCode }) {
 
   const handlePrevSlide = () => {
     if (activeSlideIndex > 0) {
-      playTactileClick();
       setActiveSlideIndex(prev => prev - 1);
     }
   };
 
   const handleNextSlide = () => {
     if (selectedSubject && activeSlideIndex < selectedSubject.slides.length - 1) {
-      playTactileClick();
       setActiveSlideIndex(prev => prev + 1);
     }
   };
 
   const mockDownload = (subject: PresentationSubject) => {
-    playTelemetrySuccess();
     const dummyContent = `MOCK PPTX DATA FOR ${subject.title}`;
     const blob = new Blob([dummyContent], { type: 'application/vnd.openxmlformats-officedocument.presentationml.presentation' });
     const url = URL.createObjectURL(blob);
@@ -443,7 +433,7 @@ export default function Presentations({ lang }: { lang: LangCode }) {
                   </h3>
                 </div>
                 <button
-                  onClick={() => { playTactileClick(); navigate(langPath('/presentations')); }}
+                  onClick={() => navigate(langPath('/presentations'))}
                   className="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-gray-200 transition-all font-semibold hover:text-white cursor-pointer"
                   style={{ minHeight: '44px' }}
                 >
@@ -507,7 +497,7 @@ export default function Presentations({ lang }: { lang: LangCode }) {
                       {selectedSubject.slides.map((sld, idx) => (
                         <button
                           key={idx}
-                          onClick={() => { playTactileClick(); setActiveSlideIndex(idx); }}
+                          onClick={() => setActiveSlideIndex(idx)}
                           className={`w-full text-left px-3 py-2 rounded-lg text-xs font-mono transition-all flex items-center justify-between ${
                             activeSlideIndex === idx
                               ? 'bg-blue-600 text-white font-bold shadow-md'
@@ -594,7 +584,7 @@ export default function Presentations({ lang }: { lang: LangCode }) {
                 ? 'border-blue-600 bg-blue-50/40 ring-4 ring-blue-600/10 scale-[0.99]'
                 : 'border-gray-200 hover:border-blue-400 hover:bg-blue-50/10'
             }`}
-            onClick={() => { playTactileClick(); fileInputRef.current?.click(); }}
+            onClick={() => fileInputRef.current?.click()}
           >
             <input
               type="file"

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, ErrorInfo, ReactNode } from 'react';
-import { Activity, BookOpen, HeartPulse, Menu, X, LayoutDashboard, Calculator, Droplet, Brain, TestTube, AlertOctagon, ArrowRightLeft, AlertTriangle, Stethoscope, Wind, FileText, ShieldCheck, Sparkles, ChevronRight, Search, Globe, Scale, Volume2, VolumeX, MonitorPlay, GraduationCap, Newspaper } from 'lucide-react';
+import { Activity, BookOpen, HeartPulse, Menu, X, LayoutDashboard, Calculator, Droplet, Brain, TestTube, AlertOctagon, ArrowRightLeft, AlertTriangle, Stethoscope, Wind, FileText, ShieldCheck, Sparkles, ChevronRight, Search, Globe, Scale, MonitorPlay, GraduationCap, Newspaper } from 'lucide-react';
 import { BrowserRouter, Routes, Route, Link, useLocation, Navigate, useNavigate } from 'react-router-dom';
 import { StaticRouter } from 'react-router';
 import { LangContext, parsePathname, buildPath, PREFIXED_LANGS } from './utils/lang';
@@ -70,7 +70,6 @@ const LEGAL_ROUTES = ['/about', '/disclaimer', '/privacy', '/terms'];
 const CONTENT_ROUTES = ['/blog', '/blog-articles', '/presentations', '/cours', '/about', '/disclaimer', '/privacy', '/terms'];
 
 import { LangCode } from './types';
-import { getSfxEnabledInit, setSfxEnabledInStorage, playTactileClick, playSleekSelect, playDialTick } from './utils/audio';
 
 class ErrorBoundary extends React.Component<any, any> {
   constructor(props: any) {
@@ -282,21 +281,6 @@ function AppLayout() {
   const [topSearch, setTopSearch] = useState('');
 
   const isRtl = lang === 'ar';
-
-  const [sfxEnabled, setSfxEnabled] = useState<boolean>(() => {
-    return getSfxEnabledInit();
-  });
-
-  const toggleSfx = () => {
-    const nextVal = !sfxEnabled;
-    setSfxEnabled(nextVal);
-    setSfxEnabledInStorage(nextVal);
-    if (nextVal) {
-      setTimeout(() => {
-        playSleekSelect();
-      }, 50);
-    }
-  };
 
   useEffect(() => {
     localStorage.setItem('carecalculus-lang', lang);
@@ -677,7 +661,7 @@ function AppLayout() {
               type="text"
               placeholder={lang === 'fr' ? 'Saisissez sepsis, GCS, calcul de reins, corticoides...' : (lang === 'ar' ? 'ابحث هنا باسم الحاسبة أو المرض (مثل sepsis، غلاسكو، كبد)...' : 'Type sepsis, GCS, renal clearance, steroids conversion...')}
               value={topSearch}
-              onChange={(e) => { setTopSearch(e.target.value); playDialTick(0.65); }}
+              onChange={(e) => setTopSearch(e.target.value)}
               className={`w-full py-2.5 bg-gray-50 focus:bg-white text-gray-900 border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100/40 outline-none rounded-xl text-xs font-bold transition-all placeholder-gray-400 ${
                 isRtl ? 'pr-11 pl-9 text-right' : 'pl-11 pr-9 text-left'
               }`}
@@ -774,7 +758,7 @@ function AppLayout() {
               type="text"
               placeholder={lang === 'fr' ? 'Rechercher sepsis, GCS, rein, stéroïdes...' : (lang === 'ar' ? 'ابحث: sepsis، غلاسكو، كبد...' : 'Search: sepsis, GCS, renal, steroids...')}
               value={topSearch}
-              onChange={(e) => { setTopSearch(e.target.value); playDialTick(0.65); }}
+              onChange={(e) => setTopSearch(e.target.value)}
               className={`w-full py-2 bg-gray-50 focus:bg-white text-gray-900 border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100/60 outline-none rounded-xl text-xs font-semibold transition-all placeholder-gray-400 ${isRtl ? 'pr-9 pl-8 text-right' : 'pl-9 pr-8 text-left'}`}
               style={{ minHeight: '40px' }}
             />
@@ -948,41 +932,13 @@ function AppLayout() {
             <span className="font-bold text-2xl tracking-tight text-gray-900">Care<span className="text-blue-600">Calculus</span></span>
           </Link>
 
-          {/* Silicon Valley Game Grade Tactile Audio Telemetry Controller */}
-          <div className="px-6 mb-5">
-            <button
-              onClick={toggleSfx}
-              onMouseEnter={playTactileClick}
-              className={`w-full py-2.5 px-4 rounded-xl flex items-center justify-between text-[11px] font-mono uppercase tracking-wider font-extrabold transition-all duration-300 border ${
-                sfxEnabled
-                  ? 'bg-blue-950/80 text-blue-400 border-blue-500/30 shadow-[0_0_12px_-2px_rgba(59,130,246,0.3)]'
-                  : 'bg-gray-50 text-gray-400 border-gray-200/60 hover:bg-gray-100 hover:text-gray-600'
-              }`}
-              style={{ minHeight: '44px' }}
-              title="Toggle retro-tactile audio telemetry sound effects"
-            >
-              <div className="flex items-center gap-2">
-                {sfxEnabled ? (
-                  <Volume2 className="w-4 h-4 text-blue-400 animate-pulse" />
-                ) : (
-                  <VolumeX className="w-4 h-4 text-gray-400" />
-                )}
-                <span>{lang === 'fr' ? 'Tons Tactiles' : (lang === 'ar' ? 'المؤثرات الصوتية' : 'Tactile Sound')}</span>
-              </div>
-              <span className={`px-2 py-0.5 rounded-md text-[9px] font-bold ${sfxEnabled ? 'bg-blue-500/20 text-blue-300' : 'bg-gray-200 text-gray-500'}`}>
-                {sfxEnabled ? 'ON' : 'OFF'}
-              </span>
-            </button>
-          </div>
-
           {/* Desktop Language Switcher (Spacious 44px targets) */}
           <div className="px-6 mb-6">
             <div className="bg-gray-100/90 p-1 rounded-xl border border-gray-200/80 shadow-inner flex">
               {(['en', 'fr', 'ar'] as LangCode[]).map((l) => (
                 <button
                   key={l}
-                  onClick={() => { setLang(l); playSleekSelect(); }}
-                  onMouseEnter={playTactileClick}
+                  onClick={() => setLang(l)}
                   className={`flex-1 py-2 text-xs font-black rounded-lg uppercase tracking-wide transition-all duration-300 ${
                     lang === l
                       ? 'bg-white text-blue-600 shadow-md ring-1 ring-gray-905/5'
@@ -1005,7 +961,7 @@ function AppLayout() {
                 type="text"
                 placeholder={lang === 'fr' ? 'Rechercher un outil...' : (lang === 'ar' ? 'بحث عن أداة حسابية...' : 'Search clinical tools...')}
                 value={sidebarSearch}
-                onChange={(e) => { setSidebarSearch(e.target.value); playDialTick(0.5); }}
+                onChange={(e) => setSidebarSearch(e.target.value)}
                 className={`w-full py-2 bg-gray-50 focus:bg-white text-gray-800 border border-gray-200 focus:border-blue-500 rounded-xl text-xs font-semibold outline-none transition-all duration-300 placeholder-gray-400 ${
                   isRtl ? 'pr-9 pl-8 text-right' : 'pl-9 pr-8 text-left'
                 }`}
@@ -1030,8 +986,6 @@ function AppLayout() {
             {/* Home link */}
             <Link
               to={langPath('/')}
-              onMouseEnter={playTactileClick}
-              onClick={playSleekSelect}
               className={`flex items-center gap-3 px-3 py-2 rounded-xl text-xs font-bold transition-all duration-150 ${
                 isHomePage
                   ? 'bg-blue-50 text-blue-700 font-extrabold border border-blue-100'
@@ -1058,8 +1012,6 @@ function AppLayout() {
                       <Link
                         key={item.path}
                         to={langPath(item.path)}
-                        onMouseEnter={playTactileClick}
-                        onClick={playSleekSelect}
                         className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all ${
                           isActive 
                             ? 'bg-blue-50 text-blue-700 font-extrabold shadow-sm' 
@@ -1091,8 +1043,6 @@ function AppLayout() {
                       <Link
                         key={item.path}
                         to={langPath(item.path)}
-                        onMouseEnter={playTactileClick}
-                        onClick={playSleekSelect}
                         className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all ${
                           isActive 
                             ? 'bg-blue-50 text-blue-700 font-extrabold shadow-sm' 
@@ -1124,8 +1074,6 @@ function AppLayout() {
                       <Link
                         key={item.path}
                         to={langPath(item.path)}
-                        onMouseEnter={playTactileClick}
-                        onClick={playSleekSelect}
                         className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all ${
                           isActive 
                             ? 'bg-blue-50 text-blue-700 font-extrabold shadow-sm' 
@@ -1173,8 +1121,6 @@ function AppLayout() {
                             <Link
                               key={item.path}
                               to={langPath(item.path)}
-                              onMouseEnter={playTactileClick}
-                              onClick={playSleekSelect}
                               className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all relative ${
                                 isActive
                                   ? 'bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 font-extrabold shadow-sm'
