@@ -17,36 +17,45 @@ echo === CareCalculus Web Deploy ==============================================
 echo(
 
 REM --- 1. Type-check ----------------------------------------------------------
-echo [1/4] Type-checking ^(tsc --noEmit^)...
+echo [1/4] Type-checking (tsc --noEmit)...
 call npm run lint
-if errorlevel 1 goto :failed
+if %errorlevel% neq 0 (
+    echo(
+    echo *** DEPLOY ABORTED at step 1 [type-check] — fix TypeScript errors and re-run. ***
+    endlocal & exit /b 1
+)
 
 REM --- 2. Sitemap -------------------------------------------------------------
 echo(
 echo [2/4] Regenerating sitemap.xml...
 call npm run sitemap
-if errorlevel 1 goto :failed
+if %errorlevel% neq 0 (
+    echo(
+    echo *** DEPLOY ABORTED at step 2 [sitemap] — fix sitemap script and re-run. ***
+    endlocal & exit /b 1
+)
 
 REM --- 3. Build ---------------------------------------------------------------
 echo(
-echo [3/4] Building production bundle ^(vite build^)...
+echo [3/4] Building production bundle (vite build)...
 call npm run build
-if errorlevel 1 goto :failed
+if %errorlevel% neq 0 (
+    echo(
+    echo *** DEPLOY ABORTED at step 3 [build] — fix build errors and re-run. ***
+    endlocal & exit /b 1
+)
 
 REM --- 4. Deploy --------------------------------------------------------------
 echo(
 echo [4/4] Deploying to Cloudflare Pages...
-call npm run deploy:ci
-if errorlevel 1 goto :failed
+call npx wrangler pages deploy dist --project-name=carecalculus --commit-dirty=true
+if %errorlevel% neq 0 (
+    echo(
+    echo *** DEPLOY ABORTED at step 4 [wrangler] — check Cloudflare auth and re-run. ***
+    endlocal & exit /b 1
+)
 
 echo(
 echo === Deploy complete ======================================================
 endlocal
 exit /b 0
-
-:failed
-echo(
-echo *** DEPLOY ABORTED — a step above failed ^(exit code %errorlevel%^). ***
-echo     Nothing was deployed. Fix the error and re-run deploy_web.bat.
-endlocal
-exit /b 1
