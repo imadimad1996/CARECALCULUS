@@ -108,6 +108,7 @@ export async function prerender(data: { url: string }) {
     { type: 'meta', props: { property: 'og:type', content: 'website' } },
     { type: 'meta', props: { property: 'og:site_name', content: 'CareCalculus Clinical Suite' } },
     { type: 'meta', props: { property: 'og:image', content: head.ogImage } },
+    { type: 'meta', props: { property: 'og:image:alt', content: 'CareCalculus — Free multilingual clinical calculators for ICU, ER and hospital clinicians' } },
     {
       type: 'meta',
       props: {

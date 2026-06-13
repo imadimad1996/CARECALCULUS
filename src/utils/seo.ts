@@ -284,6 +284,129 @@ export function pageUrl(logicalPath: string, lang: LangCode): string {
   return `${ORIGIN}${lang === 'en' ? '' : '/' + lang}${logicalPath}`;
 }
 
+const faqSchemaDb: Record<string, { question: string; answer: string }[]> = {
+  '/map-calculator': [
+    { question: 'What is Mean Arterial Pressure (MAP)?', answer: 'Mean Arterial Pressure (MAP) is the average arterial pressure throughout one cardiac cycle. It reflects the average perfusion pressure driving blood to organs and is calculated as: MAP = DBP + 1/3 × (SBP − DBP).' },
+    { question: 'What MAP value indicates adequate organ perfusion?', answer: 'A MAP of at least 65 mmHg is the widely accepted minimum threshold for adequate perfusion of vital organs, particularly in septic shock, as per Surviving Sepsis Campaign and AHA guidelines.' },
+    { question: 'When should I use the MAP calculator?', answer: 'Use the MAP calculator in ICU, ER, or any acute care setting where hemodynamic assessment is needed — septic shock resuscitation, vasopressor titration, hypertensive emergencies, and post-operative monitoring.' },
+    { question: 'What is the difference between MAP and systolic blood pressure?', answer: 'Systolic blood pressure (SBP) is the peak pressure during ventricular contraction. MAP accounts for the entire cardiac cycle and is a better indicator of tissue perfusion because diastole takes up approximately 2/3 of the cycle.' },
+  ],
+  '/glasgow-coma-scale': [
+    { question: 'What is the Glasgow Coma Scale (GCS)?', answer: 'The Glasgow Coma Scale (GCS) is a standardized neurological assessment tool that measures a patient\'s level of consciousness by scoring three components: Eye Opening (E, 1-4), Verbal Response (V, 1-5), and Motor Response (M, 1-6). Total score ranges from 3 to 15.' },
+    { question: 'What GCS score indicates a severe brain injury?', answer: 'A GCS score of 8 or below indicates severe brain injury. A score of 9-12 indicates moderate injury, and 13-15 indicates mild injury. Patients with GCS ≤ 8 are generally considered for intubation to protect the airway.' },
+    { question: 'Who developed the Glasgow Coma Scale?', answer: 'The GCS was developed by Teasdale and Jennett in 1974 at the University of Glasgow, published in The Lancet. It has since become the global standard for consciousness assessment after traumatic brain injury.' },
+    { question: 'Can GCS be used in children?', answer: 'The standard GCS is validated for adults and older children. For infants and young children, a modified Pediatric GCS (or Children\'s GCS) is preferred, which adapts verbal and motor components to age-appropriate responses.' },
+  ],
+  '/bmi-calculator': [
+    { question: 'What is Body Mass Index (BMI)?', answer: 'BMI is a numeric value derived from a person\'s weight and height, calculated as weight (kg) divided by height squared (m²). It is used as a population-level screening tool for underweight, normal weight, overweight, and obesity categories.' },
+    { question: 'What are the WHO BMI classification categories?', answer: 'WHO classifies BMI as: Underweight (<18.5), Normal weight (18.5–24.9), Overweight (25–29.9), and Obese (≥30). The obese category is further divided into Class I (30–34.9), II (35–39.9), and III (≥40, severe obesity).' },
+    { question: 'What are the limitations of BMI in clinical practice?', answer: 'BMI does not distinguish between fat and muscle mass, does not reflect fat distribution (central vs peripheral), and may misclassify athletes (high muscle) or elderly patients (low muscle). It should be interpreted alongside waist circumference, clinical context, and comorbidities.' },
+    { question: 'Is BMI accurate for all ethnicities?', answer: 'No. Studies show that Asian populations have higher cardiometabolic risk at lower BMI thresholds. WHO and several national guidelines recommend lower obesity cut-offs for Asian adults (overweight ≥23, obese ≥27.5).' },
+  ],
+  '/qsofa-score': [
+    { question: 'What is the qSOFA score?', answer: 'The quick SOFA (qSOFA) is a bedside clinical tool for rapid identification of patients likely to have poor outcomes due to infection-related organ dysfunction (sepsis). It scores three criteria: Respiratory Rate ≥22/min, Altered Mentation (GCS <15), and Systolic BP ≤100 mmHg.' },
+    { question: 'What qSOFA score is considered high risk?', answer: 'A qSOFA score of ≥2 out of 3 indicates high risk of poor outcome and should prompt clinicians to investigate for sepsis, initiate monitoring, and consider ICU-level care, per the Sepsis-3 consensus (Singer et al., JAMA 2016).' },
+    { question: 'What is the difference between qSOFA and SOFA?', answer: 'qSOFA (quick SOFA) is a 3-item bedside screening tool usable without lab tests. Full SOFA (Sequential Organ Failure Assessment) requires lab values (PaO2, bilirubin, creatinine, platelets) and is used for formal organ failure quantification in the ICU.' },
+    { question: 'Should qSOFA replace SIRS criteria for sepsis screening?', answer: 'The Sepsis-3 consensus replaced SIRS with qSOFA for out-of-ICU sepsis screening, arguing SIRS lacked specificity. However, SIRS remains relevant in some guidelines and settings. Both tools are available on CareCalculus for comparative assessment.' },
+  ],
+  '/curb65-score': [
+    { question: 'What does CURB-65 stand for?', answer: 'CURB-65 is an acronym: C = Confusion (new disorientation), U = Urea >7 mmol/L (BUN >19 mg/dL), R = Respiratory rate ≥30/min, B = Blood pressure (Systolic <90 or Diastolic ≤60 mmHg), 65 = Age ≥65 years. Each criterion scores 1 point.' },
+    { question: 'What CURB-65 score requires hospitalization?', answer: 'Score 0-1: Low risk — outpatient management appropriate. Score 2: Intermediate risk — consider short inpatient admission or close outpatient follow-up. Score 3-5: High risk — hospitalize, consider ICU admission for score ≥4-5.' },
+    { question: 'What is the source study for CURB-65?', answer: 'CURB-65 was derived by Lim et al. (2003) from British Thoracic Society community-acquired pneumonia (CAP) guidelines data, published in Thorax (PMID: 12668799). It validated across multiple international CAP cohorts.' },
+    { question: 'What is the difference between CURB-65 and PSI (Pneumonia Severity Index)?', answer: 'PSI (PORT score) uses 20 variables and is more complex, providing finer risk stratification for low-risk patients. CURB-65 uses only 5 criteria and is faster at the bedside. Both are validated; CURB-65 is preferred for rapid triage in emergency settings.' },
+  ],
+};
+
+const howToSchemaDb: Record<string, { name: string; description: string; steps: { name: string; text: string }[] }> = {
+  '/map-calculator': {
+    name: 'How to Calculate Mean Arterial Pressure (MAP)',
+    description: 'Step-by-step guide to calculating MAP using the CareCalculus MAP calculator.',
+    steps: [
+      { name: 'Enter Systolic Blood Pressure', text: 'Input the patient\'s systolic blood pressure (SBP) in mmHg using the numeric field or slider. Normal adult SBP range: 90–140 mmHg.' },
+      { name: 'Enter Diastolic Blood Pressure', text: 'Input the diastolic blood pressure (DBP) in mmHg. Normal adult DBP range: 60–90 mmHg. Ensure DBP is less than SBP.' },
+      { name: 'Read the Calculated MAP', text: 'The MAP is instantly calculated using the formula: MAP = DBP + 1/3 × (SBP − DBP). A result ≥65 mmHg indicates adequate perfusion; <65 mmHg suggests hypoperfusion risk.' },
+      { name: 'Interpret the Clinical Status', text: 'Review the color-coded result: green (≥65 mmHg, normal perfusion) or red (<65 mmHg, low perfusion risk). Use this alongside clinical assessment and vasopressor guidance.' },
+    ],
+  },
+  '/glasgow-coma-scale': {
+    name: 'How to Score the Glasgow Coma Scale (GCS)',
+    description: 'Step-by-step guide to using the CareCalculus GCS calculator for neurological assessment.',
+    steps: [
+      { name: 'Assess Eye Opening Response', text: 'Observe and select the best eye opening response: 4 = Spontaneous, 3 = To voice/command, 2 = To pain stimulus, 1 = None. Always use the best observed response.' },
+      { name: 'Assess Verbal Response', text: 'Engage the patient verbally and select: 5 = Oriented (knows person, place, time), 4 = Confused, 3 = Inappropriate words, 2 = Incomprehensible sounds, 1 = None.' },
+      { name: 'Assess Motor Response', text: 'Apply stimulus if needed and select: 6 = Obeys commands, 5 = Localizes pain, 4 = Withdraws, 3 = Flexion (Decorticate), 2 = Extension (Decerebrate), 1 = None.' },
+      { name: 'Interpret the Total GCS Score', text: 'The total score (3-15) categorizes severity: ≤8 = Severe (consider intubation), 9-12 = Moderate, 13-15 = Mild. Document as E+V+M components (e.g., E3V4M5 = GCS 12).' },
+    ],
+  },
+  '/bmi-calculator': {
+    name: 'How to Calculate Body Mass Index (BMI)',
+    description: 'Step-by-step guide to using the CareCalculus BMI calculator for anthropometric assessment.',
+    steps: [
+      { name: 'Enter Patient Height', text: 'Enter the patient\'s height in centimeters (cm) using the input field or slider. Standard adult range: 140–210 cm.' },
+      { name: 'Enter Patient Weight', text: 'Enter the patient\'s weight in kilograms (kg). The calculator accepts values from 10 to 300 kg.' },
+      { name: 'Read the BMI Result', text: 'BMI is instantly calculated as Weight(kg) ÷ Height(m)². A BMI between 18.5 and 24.9 is considered normal weight by WHO classification.' },
+      { name: 'Interpret the BMI Category', text: 'Review the WHO category: Underweight (<18.5), Normal (18.5–24.9), Overweight (25–29.9), Obese (≥30). Always interpret in clinical context — BMI alone is not diagnostic.' },
+    ],
+  },
+  '/qsofa-score': {
+    name: 'How to Calculate the qSOFA Score',
+    description: 'Step-by-step guide to using the CareCalculus qSOFA Sepsis Risk calculator.',
+    steps: [
+      { name: 'Assess Respiratory Rate', text: 'Check if the patient\'s respiratory rate is ≥22 breaths/min. If yes, select this criterion (1 point). This is a sensitive early sign of respiratory compensation in sepsis.' },
+      { name: 'Assess Mental Status', text: 'Determine if the patient has altered mentation — defined as GCS <15. Any new confusion, disorientation, or decreased alertness qualifies. If present, select this criterion (1 point).' },
+      { name: 'Assess Systolic Blood Pressure', text: 'Check if systolic BP is ≤100 mmHg. If yes, select this criterion (1 point). Hypotension in the context of infection suggests early septic shock.' },
+      { name: 'Interpret the Total qSOFA Score', text: 'A score of 0-1 indicates low risk. A score of ≥2 indicates high risk of poor outcome — initiate sepsis workup (lactate, blood cultures, empiric antibiotics) and consider ICU escalation.' },
+    ],
+  },
+  '/curb65-score': {
+    name: 'How to Calculate the CURB-65 Score for Pneumonia Severity',
+    description: 'Step-by-step guide to using the CareCalculus CURB-65 pneumonia severity calculator.',
+    steps: [
+      { name: 'Assess for New Confusion', text: 'Check for new acute confusion or disorientation (not baseline). This is defined as an MMSE score <8 or any new acute disorientation to person, place, or time.' },
+      { name: 'Check Urea / BUN Level', text: 'Check if blood urea nitrogen (BUN) is >19 mg/dL (or urea >7 mmol/L). Elevated BUN in pneumonia indicates dehydration or early sepsis-related renal dysfunction.' },
+      { name: 'Measure Respiratory Rate', text: 'Count the patient\'s respiratory rate. If ≥30 breaths/min, select this criterion. Tachypnea in pneumonia reflects ventilatory failure risk.' },
+      { name: 'Check Blood Pressure', text: 'Check if systolic BP is <90 mmHg OR diastolic BP is ≤60 mmHg. Hypotension in CAP patients significantly increases 30-day mortality risk.' },
+      { name: 'Check Age ≥65', text: 'If the patient is 65 years or older, select this criterion. Age ≥65 is an independent predictor of 30-day mortality in community-acquired pneumonia.' },
+      { name: 'Interpret the Total CURB-65 Score', text: 'Score 0-1: Low risk (outpatient care). Score 2: Intermediate (consider hospitalization). Score 3-5: High risk — hospitalize, consider ICU for score ≥4.' },
+    ],
+  },
+};
+
+export function getFaqSchema(path: string) {
+  const faqs = faqSchemaDb[path];
+  if (!faqs) return null;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+    })),
+  };
+}
+
+export function getHowToSchema(path: string) {
+  const howTo = howToSchemaDb[path];
+  if (!howTo) return null;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: howTo.name,
+    description: howTo.description,
+    step: howTo.steps.map((s, i) => ({
+      '@type': 'HowToStep',
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+    })),
+  };
+}
+
+export function getFaqData(path: string) {
+  return faqSchemaDb[path] ?? null;
+}
+
 /** Full JSON-LD graph (array) for a route. */
 export function buildJsonLd(logicalPath: string, lang: LangCode) {
   const meta = getLocalizedMeta(logicalPath, lang);
@@ -305,6 +428,10 @@ export function buildJsonLd(logicalPath: string, lang: LangCode) {
   ];
   const medical = getMedicalSchema(logicalPath);
   if (medical) list.push(medical);
+  const faq = getFaqSchema(logicalPath);
+  if (faq) list.push(faq);
+  const howTo = getHowToSchema(logicalPath);
+  if (howTo) list.push(howTo);
   return list;
 }
 

@@ -248,7 +248,7 @@ export default function MedicalConversions({ lang }: { lang: LangCode }) {
             <Info className="w-5 h-5" />
           </div>
           <div>
-            <h3 className="font-semibold text-gray-900 mb-1">Clinical Context</h3>
+            <h2 className="font-semibold text-gray-900 mb-1 text-base">Clinical Context</h2>
             <p className="text-gray-600 text-sm leading-relaxed max-w-3xl">
               Reference ranges are indicative and may vary significantly by laboratory methodology, population variations, and patient specific conditions. Always follow standard clinical guidelines for your region. 
             </p>

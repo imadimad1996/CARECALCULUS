@@ -147,13 +147,20 @@ export default function SirsCriteria({ lang }: { lang: LangCode }) {
       </div>
 
       <div className="mt-16 pt-10 border-t border-gray-200">
+        <div className="flex items-center gap-3 mb-8 text-xs text-gray-400">
+          <span className="font-semibold text-gray-500">Reviewed by the CareCalculus Clinical Team</span>
+          <span>&middot;</span>
+          <span>MD, ICU &amp; Emergency Medicine specialists</span>
+          <span>&middot;</span>
+          <span>Updated 2026</span>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="flex items-start gap-4">
             <div className="p-2.5 bg-blue-50 text-blue-600 rounded-lg shrink-0">
               <Info className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-semibold text-gray-900 mb-2">{currentText.clinicalTitle}</h3>
+              <h2 className="font-semibold text-gray-900 mb-2 text-base">{currentText.clinicalTitle}</h2>
               <p className="text-gray-600 text-sm leading-relaxed">{currentText.clinicalText}</p>
             </div>
           </div>

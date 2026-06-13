@@ -401,6 +401,7 @@ function AppLayout() {
       'og:type': 'website',
       'og:site_name': 'CareCalculus Clinical Suite',
       'og:image': 'https://carecalculus.com/og-image.svg',
+      'og:image:alt': 'CareCalculus — Free multilingual clinical calculators for ICU, ER and hospital clinicians',
       'og:locale': lang === 'fr' ? 'fr_FR' : (lang === 'ar' ? 'ar_AR' : 'en_US'),
     };
     Object.entries(ogTags).forEach(([property, content]) => {

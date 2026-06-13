@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Activity, Info, BookOpen } from 'lucide-react';
+import { Activity, Info, BookOpen, ChevronDown } from 'lucide-react';
 import { LangCode, Translations } from '../types';
 
 const translations: Translations = {
@@ -143,13 +143,20 @@ export default function QsofaScore({ lang }: { lang: LangCode }) {
       </div>
 
       <div className="mt-16 pt-10 border-t border-gray-200">
+        <div className="flex items-center gap-3 mb-8 text-xs text-gray-400">
+          <span className="font-semibold text-gray-500">Reviewed by the CareCalculus Clinical Team</span>
+          <span>&middot;</span>
+          <span>MD, ICU &amp; Emergency Medicine specialists</span>
+          <span>&middot;</span>
+          <span>Updated 2026</span>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="flex items-start gap-4">
             <div className="p-2.5 bg-blue-50 text-blue-600 rounded-lg shrink-0">
               <Info className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-semibold text-gray-900 mb-2">{currentText.clinicalTitle}</h3>
+              <h2 className="font-semibold text-gray-900 mb-2 text-base">{currentText.clinicalTitle}</h2>
               <p className="text-gray-600 text-sm leading-relaxed">{currentText.clinicalText}</p>
             </div>
           </div>
@@ -158,7 +165,7 @@ export default function QsofaScore({ lang }: { lang: LangCode }) {
               <Activity className="w-5 h-5" />
             </div>
             <div className="w-full">
-              <h3 className="font-semibold text-gray-900 mb-2">Mathematical Metric</h3>
+              <h2 className="font-semibold text-gray-900 mb-2 text-base">Mathematical Metric</h2>
               <div className="font-mono text-xs bg-gray-100 text-gray-700 py-2 px-3 rounded-md border border-gray-200 uppercase tracking-tight" dir="ltr">
                 {currentText.formula}
               </div>
@@ -169,10 +176,49 @@ export default function QsofaScore({ lang }: { lang: LangCode }) {
               <BookOpen className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-semibold text-gray-900 mb-2">Evidence & Lit</h3>
+              <h2 className="font-semibold text-gray-900 mb-2 text-base">Evidence & Lit</h2>
               <p className="text-gray-500 text-xs leading-relaxed italic">{currentText.references}</p>
+              <a href="https://pubmed.ncbi.nlm.nih.gov/26973543/" target="_blank" rel="noopener noreferrer" className="text-xs text-blue-600 hover:underline mt-1 inline-block">Singer et al., JAMA 2016 — Sepsis-3 Definitions (PMID: 26973543) →</a>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="mt-12 pt-8 border-t border-gray-100">
+        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">See Also</h2>
+        <div className="flex flex-wrap gap-2 mb-10">
+          {[
+            { label: 'SIRS Criteria', path: '/sirs-criteria' },
+            { label: 'CURB-65 Score', path: '/curb65-score' },
+            { label: 'MAP Calculator', path: '/map-calculator' },
+            { label: 'Glasgow Coma Scale', path: '/glasgow-coma-scale' },
+          ].map(({ label, path }) => {
+            const prefix = lang === 'en' ? '' : `/${lang}`;
+            return (
+              <a key={path} href={`${prefix}${path}`} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 hover:bg-blue-50 text-gray-700 hover:text-blue-700 rounded-lg text-sm font-medium transition-colors border border-gray-200 hover:border-blue-200">
+                {label}
+              </a>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="mt-0 pt-0 border-t border-gray-100">
+        <h2 className="text-xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'What is the qSOFA score?', a: 'The quick SOFA (qSOFA) is a bedside clinical tool for rapid identification of patients likely to have poor outcomes due to infection-related organ dysfunction (sepsis). It scores three criteria: Respiratory Rate ≥22/min, Altered Mentation (GCS <15), and Systolic BP ≤100 mmHg.' },
+            { q: 'What qSOFA score is considered high risk?', a: 'A qSOFA score of ≥2 out of 3 indicates high risk of poor outcome and should prompt clinicians to investigate for sepsis, initiate monitoring, and consider ICU-level care, per the Sepsis-3 consensus (Singer et al., JAMA 2016).' },
+            { q: 'What is the difference between qSOFA and SOFA?', a: 'qSOFA is a 3-item bedside screening tool usable without lab tests. Full SOFA requires lab values (PaO2, bilirubin, creatinine, platelets) and is used for formal organ failure quantification in the ICU.' },
+            { q: 'Should qSOFA replace SIRS criteria for sepsis screening?', a: 'The Sepsis-3 consensus replaced SIRS with qSOFA for out-of-ICU sepsis screening, arguing SIRS lacked specificity. Both tools remain in use across different guidelines and settings.' },
+          ].map(({ q, a }) => (
+            <details key={q} className="group border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-5 py-4 cursor-pointer list-none font-medium text-gray-800 hover:bg-gray-50 transition-colors">
+                <span className="text-sm">{q}</span>
+                <ChevronDown className="w-4 h-4 text-gray-400 shrink-0 ml-3 group-open:rotate-180 transition-transform" />
+              </summary>
+              <p className="px-5 pb-4 text-sm text-gray-600 leading-relaxed">{a}</p>
+            </details>
+          ))}
         </div>
       </div>
     </>
