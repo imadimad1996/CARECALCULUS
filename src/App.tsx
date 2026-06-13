@@ -1,9 +1,9 @@
 import React, { useState, useEffect, ErrorInfo, ReactNode } from 'react';
-import { Activity, BookOpen, HeartPulse, Menu, X, LayoutDashboard, Calculator, Droplet, Brain, TestTube, AlertOctagon, ArrowRightLeft, AlertTriangle, Stethoscope, Wind, FileText, ShieldCheck, Award, Sparkles, Check, CheckCircle2, ChevronRight, Search, Globe, Scale, Volume2, VolumeX, MonitorPlay, GraduationCap, Newspaper } from 'lucide-react';
+import { Activity, BookOpen, HeartPulse, Menu, X, LayoutDashboard, Calculator, Droplet, Brain, TestTube, AlertOctagon, ArrowRightLeft, AlertTriangle, Stethoscope, Wind, FileText, ShieldCheck, Sparkles, ChevronRight, Search, Globe, Scale, Volume2, VolumeX, MonitorPlay, GraduationCap, Newspaper } from 'lucide-react';
 import { BrowserRouter, Routes, Route, Link, useLocation, Navigate, useNavigate } from 'react-router-dom';
 import { StaticRouter } from 'react-router';
 import { LangContext, parsePathname, buildPath, PREFIXED_LANGS } from './utils/lang';
-import { organizationJsonLd, getLocalizedMeta as seoGetLocalizedMeta, getMedicalSchema, pageUrl as seoPageUrl } from './utils/seo';
+import { organizationJsonLd, getLocalizedMeta as seoGetLocalizedMeta, getMedicalSchema, pageUrl as seoPageUrl, getBreadcrumbSchema } from './utils/seo';
 
 // Page import factories kept in one list so they can be (a) wrapped in
 // React.lazy for client-side code-splitting and (b) eagerly awaited during
@@ -33,6 +33,10 @@ const pageLoaders = [
   () => import('./pages/Blog'),
   () => import('./pages/Presentations'),
   () => import('./pages/Courses'),
+  () => import('./pages/About'),
+  () => import('./pages/Disclaimer'),
+  () => import('./pages/Privacy'),
+  () => import('./pages/Terms'),
 ] as const;
 
 const [
@@ -40,10 +44,11 @@ const [
   WellsScore, MedicalConversions, CorrectedCalcium, QsofaScore, Curb65Score,
   Cha2ds2VascScore, Phq9Score, MeldScore, SirsCriteria, PfRatio, TidalVolume,
   AncCalculator, AdjustedBodyWeight, SteroidConversion, MedicalBlog, Blog,
-  Presentations, Courses,
+  Presentations, Courses, About, Disclaimer, Privacy, Terms,
 ] = pageLoaders.map((loader) => React.lazy(loader as any)) as any[];
 
 const HomePage = React.lazy(() => import('./pages/HomePage'));
+const NotFound = React.lazy(() => import('./pages/NotFound'));
 
 /**
  * Eagerly resolve every page chunk. Called once before prerendering so that
@@ -58,8 +63,11 @@ export async function preloadPages() {
   ]);
 }
 
+// Routes for the static legal/about pages (no lang prop needed)
+const LEGAL_ROUTES = ['/about', '/disclaimer', '/privacy', '/terms'];
+
 // Routes that open in full-width reading mode (no sidebar, no top widgets)
-const CONTENT_ROUTES = ['/blog', '/blog-articles', '/presentations', '/cours'];
+const CONTENT_ROUTES = ['/blog', '/blog-articles', '/presentations', '/cours', '/about', '/disclaimer', '/privacy', '/terms'];
 
 import { LangCode } from './types';
 import { getSfxEnabledInit, setSfxEnabledInStorage, playTactileClick, playSleekSelect, playDialTick } from './utils/audio';
@@ -176,6 +184,10 @@ function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="presentations/:slug" element={<Presentations lang={lang} />} />
       <Route path="cours" element={<Courses lang={lang} />} />
       <Route path="cours/:slug" element={<Courses lang={lang} />} />
+      <Route path="about" element={<About lang={lang} />} />
+      <Route path="disclaimer" element={<Disclaimer lang={lang} />} />
+      <Route path="privacy" element={<Privacy lang={lang} />} />
+      <Route path="terms" element={<Terms lang={lang} />} />
     </>
   );
 }
@@ -388,7 +400,7 @@ function AppLayout() {
       'og:url': pageUrl,
       'og:type': 'website',
       'og:site_name': 'CareCalculus Clinical Suite',
-      'og:image': 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&h=630&q=80',
+      'og:image': 'https://carecalculus.com/og-image.svg',
       'og:locale': lang === 'fr' ? 'fr_FR' : (lang === 'ar' ? 'ar_AR' : 'en_US'),
     };
     Object.entries(ogTags).forEach(([property, content]) => {
@@ -406,7 +418,7 @@ function AppLayout() {
       'twitter:card': 'summary_large_image',
       'twitter:title': mainTitle,
       'twitter:description': mainDesc,
-      'twitter:image': 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&h=630&q=80',
+      'twitter:image': 'https://carecalculus.com/og-image.svg',
     };
     Object.entries(twitterTags).forEach(([name, content]) => {
       let twMeta = document.querySelector(`meta[name="${name}"]`);
@@ -475,6 +487,11 @@ function AppLayout() {
     const medicalNode = getMedicalSchema(logicalPath);
     if (medicalNode) {
       schemaList.push(medicalNode);
+    }
+
+    const breadcrumbNode = getBreadcrumbSchema(logicalPath, lang);
+    if (breadcrumbNode) {
+      schemaList.push(breadcrumbNode);
     }
 
     // Sitewide Organization + WebSite nodes (E-E-A-T / GEO) on every page.
@@ -835,6 +852,10 @@ function AppLayout() {
       '/blog-articles': { en: 'Blog Articles',    fr: 'Articles de Blog',  ar: 'مقالات المدونة', icon: Newspaper },
       '/presentations': { en: 'Presentations',    fr: 'Présentations',     ar: 'العروض التقديمية', icon: MonitorPlay },
       '/cours':         { en: 'Courses (PDF)',     fr: 'Cours (PDF)',       ar: 'المحاضرات والدروس', icon: GraduationCap },
+      '/about':         { en: 'About',            fr: 'À propos',          ar: 'عن المنصة', icon: ShieldCheck },
+      '/disclaimer':    { en: 'Medical Disclaimer', fr: 'Avertissement médical', ar: 'إخلاء المسؤولية', icon: ShieldCheck },
+      '/privacy':       { en: 'Privacy Policy',   fr: 'Confidentialité',   ar: 'سياسة الخصوصية', icon: ShieldCheck },
+      '/terms':         { en: 'Terms of Use',     fr: 'Conditions',        ar: 'شروط الاستخدام', icon: FileText },
     };
     const base = CONTENT_ROUTES.find(r => logicalPath === r || logicalPath.startsWith(r + '/'));
     const section = base ? sectionMap[base] : null;
@@ -1215,7 +1236,7 @@ function AppLayout() {
                 <Route path="/">{moduleRoutes(lang, langPath)}</Route>
                 <Route path="/fr">{moduleRoutes('fr', (p) => buildPath(p, 'fr'))}</Route>
                 <Route path="/ar">{moduleRoutes('ar', (p) => buildPath(p, 'ar'))}</Route>
-                <Route path="*" element={<Navigate to={langPath('/map-calculator')} replace />} />
+                <Route path="*" element={<NotFound lang={lang} />} />
               </Routes>
             </React.Suspense>
 
@@ -1281,33 +1302,31 @@ function AppLayout() {
                 </div>
               </div>
 
-              {/* Advisory Board Profiles */}
+              {/* Clinical Sources & Validation */}
               <div className="space-y-4">
                 <h4 className="font-extrabold text-[10px] uppercase tracking-widest text-gray-900 font-mono">
-                  {lang === 'fr' ? 'REVIEWS & DIRECTIVES MÉDICALES' : (lang === 'ar' ? 'أعضاء هيئة المراجعة العلمية والطبية' : 'CLINICAL ADVISORY BOARD')}
+                  {lang === 'fr' ? 'SOURCES & VALIDATION CLINIQUE' : (lang === 'ar' ? 'المصادر والمراجع العلمية المعتمدة' : 'CLINICAL SOURCES & VALIDATION')}
                 </h4>
-                <div className="space-y-3">
-                  <div className="flex items-start gap-2.5">
-                    <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center shrink-0 font-bold text-blue-700 text-xs">AV</div>
-                    <div>
-                      <p className="text-xs font-black text-gray-800">Prof. Alice Vance, MD, Ph.D.</p>
-                      <p className="text-[10px] text-gray-500 leading-none">Stanford Health Care Alumni • Renal Clearance Analyst</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-2.5">
-                    <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center shrink-0 font-bold text-emerald-700 text-xs">JD</div>
-                    <div>
-                      <p className="text-xs font-black text-gray-800">Dr. Jean-Pierre Dupont, MD</p>
-                      <p className="text-[10px] text-gray-500 leading-none">Emergency Medicine & Bio-Statistics advisor (Paris-Sud)</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-2.5">
-                    <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center shrink-0 font-bold text-indigo-700 text-xs">AF</div>
-                    <div>
-                      <p className="text-xs font-black text-gray-800">Dr. Al-Faruqi, MD, Cardiologist</p>
-                      <p className="text-[10px] text-gray-500 leading-none">Critical Care Representative Union • Morocco Medical Board</p>
-                    </div>
-                  </div>
+                <p className="text-[11px] text-gray-500 leading-relaxed">
+                  {lang === 'fr'
+                    ? 'Chaque formule est tirée de la littérature médicale publiée (AHA, ESC, SFAR, HAS, NIH) et documentée avec ses références originales.'
+                    : (lang === 'ar'
+                        ? 'كل معادلة مستندة إلى الأدبيات الطبية المنشورة (AHA، ESC، NIH، SFAR) مع توثيق المرجع الأصلي لكل أداة.'
+                        : 'Every formula is derived from published peer-reviewed literature (AHA, ESC, NIH, SFAR, CDC) with the original study or guideline cited for each tool.')}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {['AHA', 'ESC', 'NIH', 'SFAR', 'CDC', 'HAS', 'SRLF'].map(org => (
+                    <span key={org} className="px-2 py-0.5 bg-gray-50 border border-gray-200 rounded text-[9px] font-mono font-bold text-gray-600 uppercase">{org}</span>
+                  ))}
+                </div>
+                <div className="flex flex-wrap gap-2 pt-1">
+                  <Link to={langPath('/about')} className="text-[11px] text-blue-600 hover:underline font-semibold">
+                    {lang === 'fr' ? 'À propos de nous' : lang === 'ar' ? 'عن المنصة' : 'About CareCalculus'}
+                  </Link>
+                  <span className="text-gray-300">·</span>
+                  <Link to={langPath('/disclaimer')} className="text-[11px] text-blue-600 hover:underline font-semibold">
+                    {lang === 'fr' ? 'Avertissement médical' : lang === 'ar' ? 'إخلاء المسؤولية' : 'Medical Disclaimer'}
+                  </Link>
                 </div>
               </div>
 
@@ -1336,13 +1355,21 @@ function AppLayout() {
 
             <div className="pt-6 border-t border-gray-200 flex flex-col md:flex-row items-center justify-between gap-4">
               <span className="text-gray-400">
-                © 2026 CareCalculus | Hospital Standard Multilingual Math. All tools are validated against PubMed DOIs.
+                © 2026 CareCalculus — Free multilingual clinical decision support.
               </span>
-              <div className="flex items-center gap-4">
-                <span className="text-emerald-600 font-extrabold flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full inline-block animate-pulse"></span>
-                  FDA & EMA Metrics Standard
-                </span>
+              <div className="flex items-center gap-4 flex-wrap justify-center">
+                <Link to={langPath('/about')} className="text-gray-400 hover:text-blue-600 transition-colors text-xs">
+                  {lang === 'fr' ? 'À propos' : lang === 'ar' ? 'عن المنصة' : 'About'}
+                </Link>
+                <Link to={langPath('/disclaimer')} className="text-gray-400 hover:text-blue-600 transition-colors text-xs">
+                  {lang === 'fr' ? 'Avertissement' : lang === 'ar' ? 'إخلاء المسؤولية' : 'Disclaimer'}
+                </Link>
+                <Link to={langPath('/privacy')} className="text-gray-400 hover:text-blue-600 transition-colors text-xs">
+                  {lang === 'fr' ? 'Confidentialité' : lang === 'ar' ? 'الخصوصية' : 'Privacy'}
+                </Link>
+                <Link to={langPath('/terms')} className="text-gray-400 hover:text-blue-600 transition-colors text-xs">
+                  {lang === 'fr' ? 'Conditions' : lang === 'ar' ? 'الشروط' : 'Terms'}
+                </Link>
               </div>
             </div>
           </footer>

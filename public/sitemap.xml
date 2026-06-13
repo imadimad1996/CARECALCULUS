@@ -1054,4 +1054,125 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/presentations/pulmonary-mechanics-low-tidal-volume-vent-protocol"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/presentations/pulmonary-mechanics-low-tidal-volume-vent-protocol"/>
   </url>
+  <!-- Legal & Trust pages -->
+  <url>
+    <loc>https://carecalculus.com/about</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/about"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/about"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/about"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/about</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/about"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/about"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/about"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/about</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/about"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/about"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/about"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/disclaimer</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/disclaimer"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/disclaimer"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/disclaimer"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/disclaimer"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/disclaimer</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/disclaimer"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/disclaimer"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/disclaimer"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/disclaimer"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/disclaimer</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/disclaimer"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/disclaimer"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/disclaimer"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/disclaimer"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/privacy</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/privacy"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/privacy</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/privacy"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/privacy</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/privacy"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/terms</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/terms"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/terms"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/terms"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/terms</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/terms"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/terms"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/terms"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/terms</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/terms"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/terms"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/terms"/>
+  </url>
 </urlset>

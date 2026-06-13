@@ -1,0 +1,57 @@
+{
+  "name": "CareCalculus — Clinical Decision Suite",
+  "short_name": "CareCalculus",
+  "description": "Free multilingual medical calculators for emergency medicine, ICU, internal medicine, and pharmacology. Works offline.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fafafa",
+  "theme_color": "#2563eb",
+  "orientation": "any",
+  "lang": "en",
+  "categories": ["medical", "health", "utilities"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/og-image.svg",
+      "type": "image/svg+xml",
+      "sizes": "1200x630",
+      "label": "CareCalculus — Medical Calculator Suite"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "MAP Calculator",
+      "short_name": "MAP",
+      "description": "Mean Arterial Pressure Calculator",
+      "url": "/map-calculator",
+      "icons": [{ "src": "/favicon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "GCS Calculator",
+      "short_name": "GCS",
+      "description": "Glasgow Coma Scale",
+      "url": "/glasgow-coma-scale",
+      "icons": [{ "src": "/favicon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "Creatinine Clearance",
+      "short_name": "CrCl",
+      "description": "Cockcroft-Gault Creatinine Clearance",
+      "url": "/creatinine-clearance",
+      "icons": [{ "src": "/favicon.svg", "sizes": "any" }]
+    }
+  ]
+}

@@ -14,8 +14,7 @@ import { LangCode } from '../types';
 
 export const ORIGIN = 'https://carecalculus.com';
 
-const OG_IMAGE =
-  'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&h=630&q=80';
+const OG_IMAGE = 'https://carecalculus.com/og-image.svg';
 
 const nameEnMap: Record<string, string> = {
   '/map-calculator': 'Mean Arterial Pressure (MAP) Calculator',
@@ -41,32 +40,40 @@ const nameEnMap: Record<string, string> = {
   '/blog-articles': 'CareCalculus Blog — Clinical Tips, News & Editorials',
   '/presentations': 'Advanced Medical Presentations Library (PPTX)',
   '/cours': 'Accredited Clinical Course Syllabus (PDF)',
+  '/about': 'About CareCalculus — Mission, Sources & Team',
+  '/disclaimer': 'Medical Disclaimer — CareCalculus',
+  '/privacy': 'Privacy Policy — CareCalculus',
+  '/terms': 'Terms of Use — CareCalculus',
 };
 
 const nameFrMap: Record<string, string> = {
-  '/map-calculator': 'Calculateur PAM - Pression Artérielle Moyenne',
+  '/map-calculator': 'Calculateur PAM - Pression Arterielle Moyenne',
   '/bmi-calculator': 'Calculateur IMC - Indice de Masse Corporelle',
-  '/glasgow-coma-scale': 'Échelle de Glasgow - Calculateur Score GCS',
-  '/drip-rate-calculator': 'Calcul Débit Perfusion et Gouttes par Minute',
-  '/creatinine-clearance': 'Clairance de la Créatinine (Cockcroft-Gault)',
-  '/wells-score': 'Score de Wells pour Phlébite et Embolie',
-  '/medical-conversions': 'Conversions d’Unités Médicales (Glycémie, etc)',
-  '/corrected-calcium': 'Calcul Calcium Corrigé par Albuminémie',
-  '/qsofa-score': 'Score qSOFA Dépistage Sepsis Rapide',
-  '/curb65-score': 'Score CURB-65 Sévérité de la Pneumonie',
+  '/glasgow-coma-scale': 'Echelle de Glasgow - Calculateur Score GCS',
+  '/drip-rate-calculator': 'Calcul Debit Perfusion et Gouttes par Minute',
+  '/creatinine-clearance': 'Clairance de la Creatinine (Cockcroft-Gault)',
+  '/wells-score': 'Score de Wells pour Phlebite et Embolie',
+  '/medical-conversions': "Conversions d'Unites Medicales (Glycemie, etc)",
+  '/corrected-calcium': 'Calcul Calcium Corrige par Albuminemie',
+  '/qsofa-score': 'Score qSOFA Depistage Sepsis Rapide',
+  '/curb65-score': 'Score CURB-65 Severite de la Pneumonie',
   '/cha2ds2-vasc': 'Score CHA2DS2-VASc Evaluation Risque FA',
-  '/phq9-score': 'Score PHQ-9 Evaluation de la Dépression',
-  '/meld-score': 'Score MELD Pronostic Insuffisance Hépatique',
-  '/sirs-criteria': 'Critères SIRS Syndrome Réponse Inflammatoire',
+  '/phq9-score': 'Score PHQ-9 Evaluation de la Depression',
+  '/meld-score': 'Score MELD Pronostic Insuffisance Hepatique',
+  '/sirs-criteria': 'Criteres SIRS Syndrome Reponse Inflammatoire',
   '/pf-ratio': 'Rapport PaO2/FiO2 (Rapport P/F)',
   '/tidal-volume': 'Calcul du Volume Courant (Tidal)',
   '/anc-calculator': 'Nombre Absolu de Neutrophiles (NAN)',
-  '/adjusted-body-weight': 'Calcul Poids Idéal et Poids Ajusté',
-  '/steroid-conversion': 'Conversion de Corticoïdes Équivalents',
-  '/blog': 'Journaux Médicaux Basés sur l’Évidence (2K+)',
-  '/blog-articles': 'Blog CareCalculus — Astuces Cliniques & Actualités',
-  '/presentations': 'Bibliothèque de Présentations Médicales (PPTX)',
-  '/cours': 'Référentiel des Cours Académiques (PDF)',
+  '/adjusted-body-weight': 'Calcul Poids Ideal et Poids Ajuste',
+  '/steroid-conversion': 'Conversion de Corticoides Equivalents',
+  '/blog': "Journaux Medicaux Bases sur l'Evidence (2K+)",
+  '/blog-articles': 'Blog CareCalculus - Astuces Cliniques & Actualites',
+  '/presentations': 'Bibliotheque de Presentations Medicales (PPTX)',
+  '/cours': 'Referentiel des Cours Academiques (PDF)',
+  '/about': 'A propos de CareCalculus - Mission et Sources',
+  '/disclaimer': 'Avertissement medical - CareCalculus',
+  '/privacy': 'Politique de confidentialite - CareCalculus',
+  '/terms': "Conditions d'utilisation - CareCalculus",
 };
 
 const nameArMap: Record<string, string> = {
@@ -93,6 +100,10 @@ const nameArMap: Record<string, string> = {
   '/blog-articles': 'مدونة كير كالكولوس — نصائح وأخبار سريرية',
   '/presentations': 'مكتبة العروض التقديمية الطبية (PPTX)',
   '/cours': 'مناهج المحاضرات والدروس السريرية (PDF)',
+  '/about': 'عن منصة كير كالكولوس — المهمة والمصادر',
+  '/disclaimer': 'إخلاء المسؤولية الطبية — كير كالكولوس',
+  '/privacy': 'سياسة الخصوصية — كير كالكولوس',
+  '/terms': 'شروط الاستخدام — كير كالكولوس',
 };
 
 export interface RouteMeta {
@@ -308,7 +319,9 @@ export function organizationJsonLd() {
       logo: `${ORIGIN}/icon.svg`,
       description:
         'Free, multilingual (English, French, Arabic) clinical calculators, medical scores and dosage tools for nurses, ICU specialists, emergency physicians and healthcare students.',
-      sameAs: [],
+      sameAs: [
+        'https://carecalculus.com',
+      ],
     },
     {
       '@context': 'https://schema.org',
@@ -316,13 +329,40 @@ export function organizationJsonLd() {
       name: 'CareCalculus',
       url: ORIGIN,
       inLanguage: ['en', 'fr', 'ar'],
-      potentialAction: {
-        '@type': 'SearchAction',
-        target: `${ORIGIN}/?q={search_term_string}`,
-        'query-input': 'required name=search_term_string',
-      },
     },
   ];
+}
+
+/** BreadcrumbList schema for calculator/content pages. */
+export function getBreadcrumbSchema(logicalPath: string, lang: LangCode): any | null {
+  if (logicalPath === '/' || logicalPath === '/home') return null;
+  const meta = getLocalizedMeta(logicalPath, lang);
+  const pageName = meta.title.split(' | ')[0];
+  const homeLabel = lang === 'fr' ? 'Accueil' : lang === 'ar' ? 'الرئيسية' : 'Home';
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'CareCalculus',
+        item: ORIGIN,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: homeLabel,
+        item: `${ORIGIN}${lang === 'en' ? '' : '/' + lang}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: pageName,
+        item: pageUrl(logicalPath, lang),
+      },
+    ],
+  };
 }
 
 export interface HeadModel {

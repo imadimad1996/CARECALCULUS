@@ -1,0 +1,93 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="50%" style="stop-color:#1e3a5f"/>
+      <stop offset="100%" style="stop-color:#0f172a"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#6366f1;stop-opacity:0.05"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle glow circles -->
+  <circle cx="1050" cy="120" r="300" fill="url(#glow)"/>
+  <circle cx="150" cy="550" r="200" fill="url(#glow)"/>
+
+  <!-- Grid lines subtle -->
+  <line x1="0" y1="315" x2="1200" y2="315" stroke="#1e40af" stroke-width="1" stroke-opacity="0.15"/>
+  <line x1="600" y1="0" x2="600" y2="630" stroke="#1e40af" stroke-width="1" stroke-opacity="0.15"/>
+
+  <!-- Logo icon area -->
+  <rect x="72" y="120" width="56" height="56" rx="16" fill="#2563eb" fill-opacity="0.2" stroke="#3b82f6" stroke-width="1.5"/>
+  <!-- Heart pulse icon simplified -->
+  <polyline points="80,148 88,148 92,136 100,160 108,140 116,148 128,148" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Brand name -->
+  <text x="144" y="155" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="800" fill="white" letter-spacing="-1">Care<tspan fill="#3b82f6">Calculus</tspan></text>
+
+  <!-- Badge -->
+  <rect x="72" y="210" width="220" height="28" rx="14" fill="#2563eb" fill-opacity="0.2" stroke="#3b82f6" stroke-width="1"/>
+  <text x="182" y="229" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#93c5fd" letter-spacing="2" text-anchor="middle">CLINICAL DECISION SUITE</text>
+
+  <!-- Main headline -->
+  <text x="72" y="330" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="900" fill="white" letter-spacing="-2">Medical</text>
+  <text x="72" y="410" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="900" fill="#3b82f6" letter-spacing="-2">Calculators</text>
+
+  <!-- Subtitle -->
+  <text x="72" y="460" font-family="system-ui, sans-serif" font-size="22" font-weight="500" fill="#94a3b8">Evidence-based tools for critical care, ICU &amp; emergency medicine</text>
+
+  <!-- Stat pills -->
+  <rect x="72" y="500" width="130" height="40" rx="20" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="137" y="525" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#93c5fd" text-anchor="middle">19+ Calculators</text>
+
+  <rect x="214" y="500" width="110" height="40" rx="20" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="269" y="525" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#93c5fd" text-anchor="middle">EN · FR · AR</text>
+
+  <rect x="336" y="500" width="130" height="40" rx="20" fill="#1e3a5f" stroke="#10b981" stroke-width="1"/>
+  <text x="401" y="525" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#6ee7b7" text-anchor="middle">100% Free</text>
+
+  <!-- Right side decorative calculator grid -->
+  <g opacity="0.7">
+    <!-- Tier 1 card -->
+    <rect x="720" y="100" width="400" height="90" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <rect x="736" y="116" width="28" height="28" rx="8" fill="#ef4444" fill-opacity="0.2"/>
+    <circle cx="750" cy="130" r="6" fill="#ef4444" fill-opacity="0.7"/>
+    <text x="776" y="128" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#94a3b8" letter-spacing="1">TIER I — EMERGENCY</text>
+    <text x="776" y="148" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="white">MAP · GCS · qSOFA · CURB-65</text>
+    <text x="776" y="168" font-family="system-ui, sans-serif" font-size="11" fill="#64748b">P/F Ratio · Tidal Volume · SIRS</text>
+
+    <!-- Tier 2 card -->
+    <rect x="720" y="208" width="400" height="90" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <rect x="736" y="224" width="28" height="28" rx="8" fill="#3b82f6" fill-opacity="0.2"/>
+    <circle cx="750" cy="238" r="6" fill="#3b82f6" fill-opacity="0.7"/>
+    <text x="776" y="236" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#94a3b8" letter-spacing="1">TIER II — METABOLIC</text>
+    <text x="776" y="256" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="white">Creatinine · MELD · Wells · CHA₂DS₂</text>
+    <text x="776" y="276" font-family="system-ui, sans-serif" font-size="11" fill="#64748b">Corrected Calcium · ANC</text>
+
+    <!-- Tier 3 card -->
+    <rect x="720" y="316" width="400" height="90" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <rect x="736" y="332" width="28" height="28" rx="8" fill="#10b981" fill-opacity="0.2"/>
+    <circle cx="750" cy="346" r="6" fill="#10b981" fill-opacity="0.7"/>
+    <text x="776" y="344" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#94a3b8" letter-spacing="1">TIER III — THERAPEUTIC</text>
+    <text x="776" y="364" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="white">IV Drip · Steroids · IBW · BMI</text>
+    <text x="776" y="384" font-family="system-ui, sans-serif" font-size="11" fill="#64748b">Unit Conversions · PHQ-9 · ABW</text>
+
+    <!-- E-E-A-T badge -->
+    <rect x="720" y="424" width="120" height="36" rx="10" fill="#2563eb" fill-opacity="0.15" stroke="#3b82f6" stroke-width="1"/>
+    <text x="780" y="447" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#93c5fd" text-anchor="middle">E-E-A-T ✓</text>
+
+    <rect x="852" y="424" width="130" height="36" rx="10" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1"/>
+    <text x="917" y="447" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#6ee7b7" text-anchor="middle">PubMed Refs</text>
+
+    <rect x="994" y="424" width="126" height="36" rx="10" fill="#8b5cf6" fill-opacity="0.1" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="1057" y="447" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#c4b5fd" text-anchor="middle">Offline-Ready</text>
+  </g>
+
+  <!-- Domain -->
+  <text x="1128" y="600" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="#475569" text-anchor="end">carecalculus.com</text>
+</svg>

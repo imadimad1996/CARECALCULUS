@@ -61,6 +61,10 @@ const LOGICAL_ROUTES = [
   '/blog-articles',
   '/presentations',
   '/cours',
+  '/about',
+  '/disclaimer',
+  '/privacy',
+  '/terms',
 ];
 
 const LANGS: LangCode[] = ['en', 'fr', 'ar'];
