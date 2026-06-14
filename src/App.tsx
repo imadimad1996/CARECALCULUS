@@ -891,7 +891,7 @@ function AppLayout() {
       <div className="mb-6 flex items-center justify-between gap-4 flex-wrap">
         <div className="flex items-center gap-2 text-sm text-gray-500 font-semibold">
           <Link to={langPath('/')} className="flex items-center gap-1.5 hover:text-teal-600 transition-colors font-bold text-gray-700">
-            <Logo className="w-4 h-4" mode="light" />
+            <Logo className="w-5 h-5" mode="light" />
             CareCalculus
           </Link>
           <ChevronRight className="w-3.5 h-3.5 text-gray-300" />
@@ -949,7 +949,7 @@ function AppLayout() {
       {/* Mobile Top Header */}
       <div className="md:hidden sticky top-0 z-50 bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between">
         <Link to={langPath('/')} className="flex items-center gap-2">
-          <Logo className="w-6 h-6" mode="light" />
+          <Logo className="w-8 h-8" mode="light" />
           <span className="font-bold text-lg tracking-tight text-slate-800">Care<span className="text-teal-600 font-black">Calculus</span></span>
         </Link>
 
@@ -984,7 +984,7 @@ function AppLayout() {
         <div className="h-full flex flex-col pt-5 md:pt-8 pb-4 overflow-y-auto">
           
           <Link to={langPath('/')} className="px-6 mb-6 hidden md:flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <Logo className="w-7 h-7" mode="light" />
+            <Logo className="w-10 h-10" mode="light" />
             <span className="font-bold text-2xl tracking-tight text-slate-800">Care<span className="text-teal-600 font-black">Calculus</span></span>
           </Link>
 
@@ -1049,7 +1049,7 @@ function AppLayout() {
               }`}
               style={{ minHeight: '44px' }}
             >
-              <Logo className="w-4 h-4 shrink-0" mode="light" />
+              <Logo className="w-5 h-5 shrink-0" mode="light" />
               <span>{lang === 'fr' ? 'Accueil' : lang === 'ar' ? 'الرئيسية' : 'Home'}</span>
             </Link>
 
@@ -1301,7 +1301,7 @@ function AppLayout() {
               {/* E-E-A-T panel */}
               <div className="space-y-4">
                 <div className="flex items-center gap-2 text-teal-600">
-                  <Logo className="w-5 h-5" mode="light" />
+                  <Logo className="w-7 h-7" mode="light" />
                   <h4 className="font-extrabold text-sm tracking-tight text-slate-800">CareCalculus Clinical Registry</h4>
                 </div>
                 <p className="text-[11px] text-gray-500 leading-relaxed">
