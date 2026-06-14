@@ -437,6 +437,8 @@ function AppLayout() {
       'twitter:title': mainTitle,
       'twitter:description': mainDesc,
       'twitter:image': 'https://carecalculus.com/og-image.png',
+      'twitter:site': '@CareCalculus',
+      'twitter:creator': '@CareCalculus',
     };
     Object.entries(twitterTags).forEach(([name, content]) => {
       let twMeta = document.querySelector(`meta[name="${name}"]`);
