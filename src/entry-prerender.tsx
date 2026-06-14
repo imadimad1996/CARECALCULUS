@@ -33,9 +33,10 @@ async function renderResolved(url: string): Promise<string> {
   return html;
 }
 
-// Logical (language-agnostic) structural routes worth prerendering. Detail
-// pages (/blog/:slug, /cours/:slug, …) are intentionally excluded — they are
-// client-only, thin, and not in the sitemap.
+// Logical (language-agnostic) structural routes worth prerendering. These are
+// statically generated so Googlebot + AI crawlers get complete HTML on first
+// fetch. Article detail pages (/blog/:slug, etc.) will be added as full-body
+// content is authored for each article.
 const LOGICAL_ROUTES = [
   '/',
   '/map-calculator',
@@ -61,6 +62,8 @@ const LOGICAL_ROUTES = [
   '/blog-articles',
   '/presentations',
   '/cours',
+  '/orl',
+  '/glp-1-hub',
   '/about',
   '/disclaimer',
   '/privacy',

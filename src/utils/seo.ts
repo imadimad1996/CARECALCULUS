@@ -14,7 +14,7 @@ import { LangCode } from '../types';
 
 export const ORIGIN = 'https://carecalculus.com';
 
-const OG_IMAGE = 'https://carecalculus.com/og-image.svg';
+const OG_IMAGE = 'https://carecalculus.com/og-image.png';
 
 const nameEnMap: Record<string, string> = {
   '/map-calculator': 'Mean Arterial Pressure (MAP) Calculator',
@@ -501,6 +501,71 @@ export function buildJsonLd(logicalPath: string, lang: LangCode) {
   if (faq) list.push(faq);
   const howTo = getHowToSchema(logicalPath);
   if (howTo) list.push(howTo);
+
+  // BlogPosting schema for blog articles (enables Google Discover + rich snippets)
+  if (logicalPath.startsWith('/blog-articles')) {
+    list.push({
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: meta.title.split(' | ')[0],
+      description: meta.desc,
+      url,
+      inLanguage: lang,
+      isAccessibleForFree: true,
+      publisher: {
+        '@type': 'Organization',
+        name: 'CareCalculus',
+        url: ORIGIN,
+        logo: { '@type': 'ImageObject', url: `${ORIGIN}/icon.svg` },
+      },
+      author: { '@type': 'Organization', name: 'CareCalculus', url: ORIGIN },
+      mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    });
+  }
+
+  // ScholarlyArticle schema for medical journals
+  if (logicalPath.startsWith('/blog') && !logicalPath.startsWith('/blog-articles')) {
+    list.push({
+      '@context': 'https://schema.org',
+      '@type': 'ScholarlyArticle',
+      headline: meta.title.split(' | ')[0],
+      description: meta.desc,
+      url,
+      inLanguage: lang,
+      isAccessibleForFree: true,
+      publisher: {
+        '@type': 'Organization',
+        name: 'CareCalculus',
+        url: ORIGIN,
+        logo: { '@type': 'ImageObject', url: `${ORIGIN}/icon.svg` },
+      },
+      about: { '@type': 'MedicalScholarlyArticle' },
+    });
+  }
+
+  // Course schema for course pages
+  if (logicalPath.startsWith('/cours')) {
+    list.push({
+      '@context': 'https://schema.org',
+      '@type': 'Course',
+      name: meta.title.split(' | ')[0],
+      description: meta.desc,
+      url,
+      inLanguage: lang,
+      isAccessibleForFree: true,
+      provider: {
+        '@type': 'Organization',
+        name: 'CareCalculus',
+        url: ORIGIN,
+      },
+      educationalLevel: 'Advanced',
+      audience: {
+        '@type': 'MedicalAudience',
+        audienceType: 'Medical Students, Nurses, Physicians',
+      },
+    });
+  }
+
   return list;
 }
 

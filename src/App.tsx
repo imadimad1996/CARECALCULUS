@@ -5,6 +5,10 @@ import { StaticRouter } from 'react-router';
 import { LangContext, parsePathname, buildPath, PREFIXED_LANGS } from './utils/lang';
 import { organizationJsonLd, getLocalizedMeta as seoGetLocalizedMeta, getMedicalSchema, pageUrl as seoPageUrl, getBreadcrumbSchema } from './utils/seo';
 import Logo from './components/Logo';
+import AdUnit from './components/AdUnit';
+import SocialShare from './components/SocialShare';
+import ReadingProgress from './components/ReadingProgress';
+import NewsletterCapture from './components/NewsletterCapture';
 
 // Page import factories kept in one list so they can be (a) wrapped in
 // React.lazy for client-side code-splitting and (b) eagerly awaited during
@@ -413,7 +417,7 @@ function AppLayout() {
       'og:url': pageUrl,
       'og:type': 'website',
       'og:site_name': 'CareCalculus Clinical Suite',
-      'og:image': 'https://carecalculus.com/og-image.svg',
+      'og:image': 'https://carecalculus.com/og-image.png',
       'og:image:alt': 'CareCalculus — Free multilingual clinical calculators for ICU, ER and hospital clinicians',
       'og:locale': lang === 'fr' ? 'fr_FR' : (lang === 'ar' ? 'ar_AR' : 'en_US'),
     };
@@ -432,7 +436,7 @@ function AppLayout() {
       'twitter:card': 'summary_large_image',
       'twitter:title': mainTitle,
       'twitter:description': mainDesc,
-      'twitter:image': 'https://carecalculus.com/og-image.svg',
+      'twitter:image': 'https://carecalculus.com/og-image.png',
     };
     Object.entries(twitterTags).forEach(([name, content]) => {
       let twMeta = document.querySelector(`meta[name="${name}"]`);
@@ -932,7 +936,14 @@ function AppLayout() {
   return (
    <LangContext.Provider value={{ lang, langPath }}>
     <div className={`min-h-screen bg-[#fafafa] text-[#111] transition-colors duration-300 flex flex-col md:flex-row ${isRtl ? 'font-arabic' : 'font-sans'}`} dir={isRtl ? 'rtl' : 'ltr'}>
+      {/* Reading progress indicator for content pages */}
+      {isContentPage && <ReadingProgress />}
       
+      {/* Accessibility: skip-to-content for keyboard navigation */}
+      <a href="#main-content" className="skip-to-content">
+        {lang === 'fr' ? 'Aller au contenu principal' : lang === 'ar' ? 'انتقل إلى المحتوى الرئيسي' : 'Skip to main content'}
+      </a>
+
       {/* Mobile Top Header */}
       <div className="md:hidden sticky top-0 z-50 bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between">
         <Link to={langPath('/')} className="flex items-center gap-2">
@@ -1024,7 +1035,7 @@ function AppLayout() {
           </div>
 
           {/* Collapsible/Grouped Tiers Layout */}
-          <nav className="flex-1 px-4 space-y-6 pb-6 select-all">
+          <nav className="flex-1 px-4 space-y-6 pb-6">
 
             {/* Home link */}
             <Link
@@ -1205,7 +1216,7 @@ function AppLayout() {
       </aside>}
 
       {/* Main Content Area */}
-      <main className="flex-1 min-w-0 bg-[#fafafa]">
+      <main id="main-content" className="flex-1 min-w-0 bg-[#fafafa]">
         <div className={`mx-auto px-4 sm:px-6 py-6 md:py-10 relative flex flex-col justify-between min-h-screen ${isContentPage ? 'max-w-6xl' : 'max-w-5xl'}`}>
           <div>
 
@@ -1267,11 +1278,23 @@ function AppLayout() {
                 </div>
               </div>
             )}
+
+            {/* Social sharing bar */}
+            <div className="mt-8">
+              <SocialShare
+                title={document.title || 'CareCalculus'}
+                lang={lang}
+              />
+            </div>
+
+            {/* In-article ad unit — between content and footer */}
+            <AdUnit format="in-article" className="mt-6" />
+
           </div>
 
           {/* Absolute bottom of page scientific validation reviews (E-E-A-T CERTIFIED, STEP 13) */}
           <footer className="mt-16 pt-10 pb-6 border-t border-gray-200 text-gray-500 text-xs">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10 select-all">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
               
               {/* E-E-A-T panel */}
               <div className="space-y-4">
@@ -1367,6 +1390,9 @@ function AppLayout() {
         </div>
       </main>
       
+      {/* Newsletter capture (appears after 2 page views) */}
+      <NewsletterCapture lang={lang} />
+
       {/* Overlay for mobile sidebar */}
       {isSidebarOpen && (
         <div
