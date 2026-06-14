@@ -1282,7 +1282,7 @@ function AppLayout() {
             {/* Social sharing bar */}
             <div className="mt-8">
               <SocialShare
-                title={document.title || 'CareCalculus'}
+                title={typeof document !== 'undefined' ? document.title : 'CareCalculus'}
                 lang={lang}
               />
             </div>
