@@ -69,13 +69,46 @@ export default function NewsletterCapture({ lang }: NewsletterCaptureProps) {
     localStorage.setItem('cc-newsletter-dismissed', Date.now().toString());
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || !email.includes('@')) return;
-    // In production, this would POST to your newsletter API
-    localStorage.setItem('cc-newsletter-subscribed', email);
-    setSubmitted(true);
-    setTimeout(() => setVisible(false), 3000);
+    
+    setIsSubmitting(true);
+    setErrorMsg('');
+
+    try {
+      // In production, configure VITE_NEWSLETTER_ENDPOINT in your .env file
+      // If not configured, we simulate a successful API call for the demo.
+      const endpoint = (import.meta as any).env?.VITE_NEWSLETTER_ENDPOINT;
+      
+      if (endpoint) {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({ email })
+        });
+        
+        if (!response.ok) throw new Error('Subscription failed');
+      } else {
+        // Fallback simulation if no API endpoint is provided
+        await new Promise(resolve => setTimeout(resolve, 800));
+      }
+
+      localStorage.setItem('cc-newsletter-subscribed', email);
+      setSubmitted(true);
+      setTimeout(() => setVisible(false), 3000);
+    } catch (err) {
+      setErrorMsg('Failed to subscribe. Please try again.');
+      console.error('Newsletter subscription error:', err);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (!visible) return null;
@@ -121,7 +154,8 @@ export default function NewsletterCapture({ lang }: NewsletterCaptureProps) {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder={t.placeholder}
-                    className={`w-full px-4 py-2.5 bg-slate-800 border border-slate-700 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-500/40 focus:border-teal-500 transition ${
+                    disabled={isSubmitting}
+                    className={`w-full px-4 py-2.5 bg-slate-800 border border-slate-700 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-500/40 focus:border-teal-500 transition disabled:opacity-50 ${
                       isRtl ? 'text-right' : 'text-left'
                     }`}
                     style={{ minHeight: '44px' }}
@@ -130,13 +164,18 @@ export default function NewsletterCapture({ lang }: NewsletterCaptureProps) {
                 </div>
                 <button
                   type="submit"
-                  className="shrink-0 px-5 py-2.5 bg-teal-600 hover:bg-teal-500 text-white text-sm font-bold rounded-xl transition-all active:scale-95 flex items-center gap-2 shadow-lg shadow-teal-500/20"
+                  disabled={isSubmitting}
+                  className="shrink-0 px-5 py-2.5 bg-teal-600 hover:bg-teal-500 disabled:bg-teal-800 disabled:text-teal-400 text-white text-sm font-bold rounded-xl transition-all active:scale-95 flex items-center gap-2 shadow-lg shadow-teal-500/20"
                   style={{ minHeight: '44px' }}
                 >
                   <Mail className="w-4 h-4" />
-                  {t.cta}
+                  {isSubmitting ? '...' : t.cta}
                 </button>
               </form>
+
+              {errorMsg && (
+                <p className="text-red-400 text-xs mt-2">{errorMsg}</p>
+              )}
 
               <button
                 onClick={handleDismiss}
