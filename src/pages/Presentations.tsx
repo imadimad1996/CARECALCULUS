@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from 'motion/react';
 import { LangCode, Translations } from '../types';
 import { slugify, findBySlug } from '../utils/slug';
 import { useLang } from '../utils/lang';
+import { MASTER_PRESENTATIONS, getLocalizedPresentation } from '../utils/masterListContent';
+
 
 interface PresentationSubject {
   id: string;
@@ -206,26 +208,67 @@ export default function Presentations({ lang }: { lang: LangCode }) {
   const { langPath } = useLang();
 
   const [subjects, setSubjects] = useState<PresentationSubject[]>(() => {
+    const localizedMaster = MASTER_PRESENTATIONS.map(mp => getLocalizedPresentation(mp, lang));
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('carecalculus-pptx-uploads');
       if (saved) {
         try {
           const parsed = JSON.parse(saved);
-          return [...DEFAULT_SUBJECTS, ...parsed];
+          return [...DEFAULT_SUBJECTS, ...localizedMaster, ...parsed];
         } catch (e) {
-          return DEFAULT_SUBJECTS;
+          return [...DEFAULT_SUBJECTS, ...localizedMaster];
         }
       }
     }
-    return DEFAULT_SUBJECTS;
+    return [...DEFAULT_SUBJECTS, ...localizedMaster];
   });
+
+  // Re-translate presentations whenever language changes
+  useEffect(() => {
+    const localizedMaster = MASTER_PRESENTATIONS.map(mp => getLocalizedPresentation(mp, lang));
+    setSubjects(prev => {
+      const customOnly = prev.filter(s => s.isUserUploaded);
+      return [...DEFAULT_SUBJECTS, ...localizedMaster, ...customOnly];
+    });
+  }, [lang]);
 
   // The open presentation is derived from the URL (/presentations/:slug) so each
   // deck is directly linkable and survives a reload.
-  const selectedSubject = useMemo(
-    () => findBySlug(subjects, slug, s => s.title),
-    [subjects, slug]
-  );
+  const selectedSubject = useMemo(() => {
+    if (!slug) return null;
+    const target = slug.toLowerCase();
+    
+    // First try standard match in the current state list
+    const foundDirect = findBySlug(subjects, slug, s => s.title);
+    if (foundDirect) return foundDirect;
+    
+    // Fallback: match by ID or title in any language from master list
+    const foundMaster = MASTER_PRESENTATIONS.find(mp => {
+      return (
+        slugify(mp.title.en, mp.id) === target ||
+        slugify(mp.title.fr, mp.id) === target ||
+        slugify(mp.title.ar, mp.id) === target ||
+        mp.id.toLowerCase() === target
+      );
+    });
+    
+    if (foundMaster) {
+      return subjects.find(s => s.id === foundMaster.id) || null;
+    }
+    
+    return null;
+  }, [subjects, slug]);
+
+  // Synchronize slug with localized title on language change
+  useEffect(() => {
+    if (selectedSubject) {
+      const expectedSlug = slugify(selectedSubject.title, selectedSubject.id);
+      if (expectedSlug !== slug) {
+        navigate(langPath(`/presentations/${expectedSlug}`), { replace: true });
+      }
+    }
+  }, [lang, selectedSubject, slug, navigate, langPath]);
+
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [uploadError, setUploadError] = useState<string | null>(null);

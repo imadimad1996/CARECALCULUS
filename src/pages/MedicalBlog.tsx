@@ -4,6 +4,7 @@ import { Search, BookOpen, Clock, Tag, ExternalLink, Calendar, Award, User, Chev
 import { LangCode } from '../types';
 import { slugify, findBySlug } from '../utils/slug';
 import { useLang } from '../utils/lang';
+import { MASTER_JOURNALS, generateMasterContent } from '../utils/masterListContent';
 
 interface BlogPost {
   id: string;
@@ -26,7 +27,7 @@ interface BlogPost {
 }
 
 // 20 High-Quality Curated Seeds
-const CURATED_SEED_POSTS: BlogPost[] = [
+const ORIGINAL_CURATED_SEED_POSTS: BlogPost[] = [
   {
     id: 'seed-1',
     title: 'Precision Mean Arterial Pressure (MAP) Targets: Balancing Perfusion & Vasopressor Toxicity',
@@ -121,6 +122,29 @@ Effective healthcare environments should utilize **SIRS** to ensure early evalua
     clinicalImpact: 'Algorithmic dual screening decreased time-to-antibiotics in occult sepsis by 43 minutes.',
     relevance: 'Directly linked to qSOFA and SIRS Criteria.'
   }
+];
+
+const CURATED_SEED_POSTS: BlogPost[] = [
+  ...ORIGINAL_CURATED_SEED_POSTS,
+  ...MASTER_JOURNALS.map(mj => ({
+    id: mj.id,
+    title: mj.title.en,
+    snippet: mj.snippet.en,
+    content: '',
+    author: mj.author,
+    reviewer: mj.reviewer,
+    category: mj.category,
+    readTime: mj.readTime,
+    date: mj.date,
+    doi: mj.doi,
+    citationCount: mj.citationCount,
+    clinicalImpact: mj.clinicalImpact.en,
+    relevance: 'Guideline aligned.',
+    multilingualTitle: {
+      fr: mj.title.fr,
+      ar: mj.title.ar
+    }
+  }))
 ];
 
 // Specialities for quick category selection
@@ -356,6 +380,37 @@ ${s} exhibits progressive vascular, parenchymal, or endocrine triggers. Using ${
     [slug, generatedBlogs]
   );
 
+  const postSnippet = useMemo(() => {
+    if (!activePost) return '';
+    if (activePost.id.startsWith('mj-')) {
+      const mj = MASTER_JOURNALS.find(x => x.id === activePost.id);
+      if (mj) return lang === 'fr' ? mj.snippet.fr : lang === 'ar' ? mj.snippet.ar : mj.snippet.en;
+    }
+    return activePost.snippet;
+  }, [activePost, lang]);
+
+  const postClinicalImpact = useMemo(() => {
+    if (!activePost) return '';
+    if (activePost.id.startsWith('mj-')) {
+      const mj = MASTER_JOURNALS.find(x => x.id === activePost.id);
+      if (mj) return lang === 'fr' ? mj.clinicalImpact.fr : lang === 'ar' ? mj.clinicalImpact.ar : mj.clinicalImpact.en;
+    }
+    return activePost.clinicalImpact;
+  }, [activePost, lang]);
+
+  const postContent = useMemo(() => {
+    if (!activePost) return '';
+    if (activePost.id.startsWith('mj-')) {
+      const mj = MASTER_JOURNALS.find(x => x.id === activePost.id);
+      if (mj) {
+        const titleText = lang === 'fr' ? mj.title.fr : lang === 'ar' ? mj.title.ar : mj.title.en;
+        const snippetText = lang === 'fr' ? mj.snippet.fr : lang === 'ar' ? mj.snippet.ar : mj.snippet.en;
+        return generateMasterContent(mj.id, titleText, snippetText, lang);
+      }
+    }
+    return activePost.content;
+  }, [activePost, lang]);
+
   // Unknown slug → fall back to the journal directory.
   useEffect(() => {
     if (slug && generatedBlogs.length > 0 && !activePost) {
@@ -381,7 +436,7 @@ ${s} exhibits progressive vascular, parenchymal, or endocrine triggers. Using ${
       descMeta.setAttribute('name', 'description');
       document.head.appendChild(descMeta);
     }
-    descMeta.setAttribute('content', activePost.snippet);
+    descMeta.setAttribute('content', postSnippet);
 
     // 3. Dynamic keywords tag update
     let kwMeta = document.querySelector('meta[name="keywords"]');
@@ -405,7 +460,7 @@ ${s} exhibits progressive vascular, parenchymal, or endocrine triggers. Using ${
       "@context": "https://schema.org",
       "@type": "MedicalScholarlyArticle",
       "headline": postTitle,
-      "description": activePost.snippet,
+      "description": postSnippet,
       "datePublished": activePost.date,
       "inLanguage": lang,
       "identifier": activePost.doi,
@@ -676,7 +731,7 @@ ${s} exhibits progressive vascular, parenchymal, or endocrine triggers. Using ${
 
             {/* Rendered main article content text */}
             <div className={`prose max-w-none text-slate-700 ${getTextSizeClass()}`}>
-              {activePost.content.split('\n\n').map((paragraph, index) => {
+              {postContent.split('\n\n').map((paragraph, index) => {
                 
                 const isSecondParagraph = index === 2;
                 let renderBlock;
@@ -758,12 +813,12 @@ ${s} exhibits progressive vascular, parenchymal, or endocrine triggers. Using ${
             </div>
 
             {/* Clinical outcome summary highlight card */}
-            {activePost.clinicalImpact && (
+            {postClinicalImpact && (
               <div className="p-5 bg-emerald-50 rounded-2xl border border-emerald-150 space-y-1.5 text-xs sm:text-sm">
                 <span className="font-mono text-[9px] uppercase tracking-wider text-emerald-600 font-extrabold block">
                   {getLocalizedLabel('E-E-A-T CLINICAL ENDPOINT OUTCOME', 'RÉSULTAT CLINIQUE DIRECT', 'أثر التحليل على النتائج الطبية')}
                 </span>
-                <p className="font-bold text-emerald-800 leading-normal">{activePost.clinicalImpact}</p>
+                <p className="font-bold text-emerald-800 leading-normal">{postClinicalImpact}</p>
               </div>
             )}
 

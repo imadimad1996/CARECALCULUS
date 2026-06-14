@@ -34,6 +34,7 @@ const pageLoaders = [
   () => import('./pages/Blog'),
   () => import('./pages/Presentations'),
   () => import('./pages/Courses'),
+  () => import('./pages/OrlSpecialization'),
   () => import('./pages/About'),
   () => import('./pages/Disclaimer'),
   () => import('./pages/Privacy'),
@@ -45,7 +46,7 @@ const [
   WellsScore, MedicalConversions, CorrectedCalcium, QsofaScore, Curb65Score,
   Cha2ds2VascScore, Phq9Score, MeldScore, SirsCriteria, PfRatio, TidalVolume,
   AncCalculator, AdjustedBodyWeight, SteroidConversion, MedicalBlog, Blog,
-  Presentations, Courses, About, Disclaimer, Privacy, Terms,
+  Presentations, Courses, OrlSpecialization, About, Disclaimer, Privacy, Terms,
 ] = pageLoaders.map((loader) => React.lazy(loader as any)) as any[];
 
 const HomePage = React.lazy(() => import('./pages/HomePage'));
@@ -68,7 +69,7 @@ export async function preloadPages() {
 const LEGAL_ROUTES = ['/about', '/disclaimer', '/privacy', '/terms'];
 
 // Routes that open in full-width reading mode (no sidebar, no top widgets)
-const CONTENT_ROUTES = ['/blog', '/blog-articles', '/presentations', '/cours', '/about', '/disclaimer', '/privacy', '/terms'];
+const CONTENT_ROUTES = ['/blog', '/blog-articles', '/presentations', '/cours', '/orl', '/about', '/disclaimer', '/privacy', '/terms'];
 
 import { LangCode } from './types';
 
@@ -126,6 +127,7 @@ export const navItems = [
   // Tier 4 — Resources & Library (grouped: Reading vs Learning)
   { path: '/blog', nameEn: 'Medical Journals', nameFr: 'Journaux Médicaux', nameAr: 'المجلات الطبية', icon: BookOpen, tier: 4, group: 'reading' as const, badge: '2k+' },
   { path: '/blog-articles', nameEn: 'Blog', nameFr: 'Blog', nameAr: 'المدونة', icon: Newspaper, tier: 4, group: 'reading' as const, badge: 'NEW' },
+  { path: '/orl', nameEn: 'ORL Specialization', nameFr: 'Spécialisation ORL', nameAr: 'تخصص سرطان الحنجرة ORL', icon: HeartPulse, tier: 4, group: 'reading' as const, badge: 'NEW' },
   { path: '/presentations', nameEn: 'Presentations', nameFr: 'Présentations', nameAr: 'العروض التقديمية', icon: MonitorPlay, tier: 4, group: 'learning' as const, badge: 'PPTX' },
   { path: '/cours', nameEn: 'Courses (PDF)', nameFr: 'Cours (PDF)', nameAr: 'المحاضرات والدروس', icon: GraduationCap, tier: 4, group: 'learning' as const, badge: 'PDF' },
 ];
@@ -184,6 +186,8 @@ function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="presentations/:slug" element={<Presentations lang={lang} />} />
       <Route path="cours" element={<Courses lang={lang} />} />
       <Route path="cours/:slug" element={<Courses lang={lang} />} />
+      <Route path="orl" element={<OrlSpecialization lang={lang} />} />
+      <Route path="orl/:slug" element={<OrlSpecialization lang={lang} />} />
       <Route path="about" element={<About lang={lang} />} />
       <Route path="disclaimer" element={<Disclaimer lang={lang} />} />
       <Route path="privacy" element={<Privacy lang={lang} />} />
@@ -317,6 +321,8 @@ function AppLayout() {
       'clot': ['wells', 'dvt', 'pe', 'thrombosis', 'جلطة'],
       'weight': ['adjusted', 'body', 'steroids', 'ibw', 'abw', 'وزن', 'الوزن'],
       'steroid': ['steroid', 'cortico', 'conversion', 'كيرتيزون', 'ستيرويد', 'جرعات'],
+      'orl': ['orl', 'laryngeal', 'larynx', 'cancer', 'staging', 'tnm', 'حنجرة', 'سرطان'],
+      'laryngeal': ['orl', 'laryngeal', 'larynx', 'cancer', 'staging', 'tnm', 'حنجرة', 'سرطان'],
     };
 
     for (const [key, paths] of Object.entries(synonyms)) {
@@ -836,6 +842,7 @@ function AppLayout() {
     const sectionMap: Record<string, { en: string; fr: string; ar: string; icon: any }> = {
       '/blog':          { en: 'Medical Journals', fr: 'Journaux Médicaux', ar: 'المجلات الطبية', icon: BookOpen },
       '/blog-articles': { en: 'Blog Articles',    fr: 'Articles de Blog',  ar: 'مقالات المدونة', icon: Newspaper },
+      '/orl':           { en: 'ORL Specialization', fr: 'Spécialisation ORL', ar: 'تخصص سرطان الحنجرة ORL', icon: HeartPulse },
       '/presentations': { en: 'Presentations',    fr: 'Présentations',     ar: 'العروض التقديمية', icon: MonitorPlay },
       '/cours':         { en: 'Courses (PDF)',     fr: 'Cours (PDF)',       ar: 'المحاضرات والدروس', icon: GraduationCap },
       '/about':         { en: 'About',            fr: 'À propos',          ar: 'عن المنصة', icon: ShieldCheck },

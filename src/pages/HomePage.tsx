@@ -117,6 +117,7 @@ const TIER_HIGHLIGHTS = [
     items: [
       { icon: BookOpen, en: 'Medical Journals', fr: 'Journaux Médicaux', ar: 'المجلات الطبية', path: '/blog' },
       { icon: Newspaper, en: 'Blog Articles', fr: 'Articles de Blog', ar: 'مقالات المدونة', path: '/blog-articles' },
+      { icon: HeartPulse, en: 'ORL Specialization', fr: 'Spécialisation ORL', ar: 'تخصص سرطان الحنجرة', path: '/orl' },
       { icon: MonitorPlay, en: 'Presentations', fr: 'Présentations', ar: 'العروض التقديمية', path: '/presentations' },
       { icon: GraduationCap, en: 'Courses (PDF)', fr: 'Cours (PDF)', ar: 'المحاضرات والدروس', path: '/cours' },
     ],

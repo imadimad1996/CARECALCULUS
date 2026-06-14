@@ -4,6 +4,7 @@ import { Search, Newspaper, Clock, Calendar, ChevronRight, Sparkles, ArrowLeft, 
 import { LangCode } from '../types';
 import { slugify, findBySlug } from '../utils/slug';
 import { useLang } from '../utils/lang';
+import { MASTER_BLOGS, generateMasterContent } from '../utils/masterListContent';
 
 interface BlogArticle {
   id: string;
@@ -21,7 +22,7 @@ interface BlogArticle {
 }
 
 // Editorial blog seeds — lighter, practical companion to the formal Clinical Journal.
-const BLOG_SEED: BlogArticle[] = [
+const ORIGINAL_BLOG_SEED: BlogArticle[] = [
   {
     id: 'post-1',
     title: '5 Bedside Pearls for Faster MAP-Guided Resuscitation',
@@ -164,6 +165,24 @@ A clinician in Casablanca, Paris, or Chicago sees the same trustworthy tool in t
   }
 ];
 
+const BLOG_SEED: BlogArticle[] = [
+  ...ORIGINAL_BLOG_SEED,
+  ...MASTER_BLOGS.map(mb => ({
+    id: mb.id,
+    title: mb.title.en,
+    titleFr: mb.title.fr,
+    titleAr: mb.title.ar,
+    snippet: mb.snippet.en,
+    snippetFr: mb.snippet.fr,
+    snippetAr: mb.snippet.ar,
+    content: '',
+    author: mb.author,
+    category: mb.category,
+    readTime: mb.readTime,
+    date: mb.date
+  }))
+];
+
 // Full static class strings per category — Tailwind v4 purges interpolated names,
 // so these must be written out literally to survive the build.
 const CATEGORY_META: Record<BlogArticle['category'], { icon: any; chip: string }> = {
@@ -243,6 +262,14 @@ export default function Blog({ lang }: BlogProps) {
     () => findBySlug(BLOG_SEED, slug, a => a.title),
     [slug]
   );
+
+  const articleContent = useMemo(() => {
+    if (!activePost) return '';
+    if (activePost.id.startsWith('mb-')) {
+      return generateMasterContent(activePost.id, localizedTitle(activePost), localizedSnippet(activePost), lang);
+    }
+    return activePost.content;
+  }, [activePost, lang]);
 
   // Unknown slug → fall back to the directory so deep links never dead-end.
   useEffect(() => {
@@ -366,7 +393,7 @@ export default function Blog({ lang }: BlogProps) {
           </div>
 
           <div className="prose max-w-none text-slate-700 text-xs sm:text-sm md:text-[15px] leading-relaxed">
-            {activePost.content.split('\n\n').map((block, i) => {
+            {articleContent.split('\n\n').map((block, i) => {
               if (block.startsWith('### ')) {
                 return (
                   <h3 key={i} className="text-sm font-black text-slate-900 border-l-4 border-blue-600 pl-3 py-1.5 uppercase tracking-tight bg-slate-50/50 rounded-r-md mt-4">

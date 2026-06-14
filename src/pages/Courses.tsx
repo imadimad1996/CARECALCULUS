@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from 'motion/react';
 import { LangCode, Translations } from '../types';
 import { slugify, findBySlug } from '../utils/slug';
 import { useLang } from '../utils/lang';
+import { MASTER_COURSES, getLocalizedCourse } from '../utils/masterListContent';
+
 
 interface MedicalCourse {
   id: string;
@@ -194,26 +196,67 @@ export default function Courses({ lang }: { lang: LangCode }) {
   const { langPath } = useLang();
 
   const [courses, setCourses] = useState<MedicalCourse[]>(() => {
+    const localizedMaster = MASTER_COURSES.map(mc => getLocalizedCourse(mc, lang));
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('carecalculus-pdf-uploads');
       if (saved) {
         try {
           const parsed = JSON.parse(saved);
-          return [...DEFAULT_COURSES, ...parsed];
+          return [...DEFAULT_COURSES, ...localizedMaster, ...parsed];
         } catch (e) {
-          return DEFAULT_COURSES;
+          return [...DEFAULT_COURSES, ...localizedMaster];
         }
       }
     }
-    return DEFAULT_COURSES;
+    return [...DEFAULT_COURSES, ...localizedMaster];
   });
+
+  // Re-translate courses whenever language changes
+  useEffect(() => {
+    const localizedMaster = MASTER_COURSES.map(mc => getLocalizedCourse(mc, lang));
+    setCourses(prev => {
+      const customOnly = prev.filter(c => c.isUserUploaded);
+      return [...DEFAULT_COURSES, ...localizedMaster, ...customOnly];
+    });
+  }, [lang]);
 
   // The open course is derived from the URL (/cours/:slug) so each course is
   // directly linkable and survives a reload.
-  const selectedCourse = useMemo(
-    () => findBySlug(courses, slug, c => c.title),
-    [courses, slug]
-  );
+  const selectedCourse = useMemo(() => {
+    if (!slug) return null;
+    const target = slug.toLowerCase();
+    
+    // First try standard match in the current state list
+    const foundDirect = findBySlug(courses, slug, c => c.title);
+    if (foundDirect) return foundDirect;
+    
+    // Fallback: match by ID or title in any language from master list
+    const foundMaster = MASTER_COURSES.find(mc => {
+      return (
+        slugify(mc.title.en, mc.id) === target ||
+        slugify(mc.title.fr, mc.id) === target ||
+        slugify(mc.title.ar, mc.id) === target ||
+        mc.id.toLowerCase() === target
+      );
+    });
+    
+    if (foundMaster) {
+      return courses.find(c => c.id === foundMaster.id) || null;
+    }
+    
+    return null;
+  }, [courses, slug]);
+
+  // Synchronize slug with localized title on language change
+  useEffect(() => {
+    if (selectedCourse) {
+      const expectedSlug = slugify(selectedCourse.title, selectedCourse.id);
+      if (expectedSlug !== slug) {
+        navigate(langPath(`/cours/${expectedSlug}`), { replace: true });
+      }
+    }
+  }, [lang, selectedCourse, slug, navigate, langPath]);
+
   const [activeSectionIndex, setActiveSectionIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [uploadError, setUploadError] = useState<string | null>(null);

@@ -38,6 +38,7 @@ const nameEnMap: Record<string, string> = {
   '/steroid-conversion': 'Corticosteroids Equivalent Dosage Converter',
   '/blog': 'Evidence-Based Medical Journals & Peer Reviews',
   '/blog-articles': 'CareCalculus Blog — Clinical Tips, News & Editorials',
+  '/orl': 'ORL / Laryngeal Cancer Specialization & Staging',
   '/presentations': 'Advanced Medical Presentations Library (PPTX)',
   '/cours': 'Accredited Clinical Course Syllabus (PDF)',
   '/about': 'About CareCalculus — Mission, Sources & Team',
@@ -68,6 +69,7 @@ const nameFrMap: Record<string, string> = {
   '/steroid-conversion': 'Conversion de Corticoides Equivalents',
   '/blog': "Journaux Medicaux Bases sur l'Evidence (2K+)",
   '/blog-articles': 'Blog CareCalculus - Astuces Cliniques & Actualites',
+  '/orl': 'Specialisation ORL & Cancer du Larynx Staging',
   '/presentations': 'Bibliotheque de Presentations Medicales (PPTX)',
   '/cours': 'Referentiel des Cours Academiques (PDF)',
   '/about': 'A propos de CareCalculus - Mission et Sources',
@@ -98,6 +100,7 @@ const nameArMap: Record<string, string> = {
   '/steroid-conversion': 'تحويل جرعات الكورتيكوستيرويدات والستيرويد',
   '/blog': 'المجلات الطبية والمكتبة العلمية المعتمدة',
   '/blog-articles': 'مدونة كير كالكولوس — نصائح وأخبار سريرية',
+  '/orl': 'تخصص الأنف والأذن والحنجرة وسرطان الحنجرة',
   '/presentations': 'مكتبة العروض التقديمية الطبية (PPTX)',
   '/cours': 'مناهج المحاضرات والدروس السريرية (PDF)',
   '/about': 'عن منصة كير كالكولوس — المهمة والمصادر',
@@ -264,6 +267,15 @@ const medicalSchemaDb: Record<string, any> = {
       { '@type': 'MedicalCondition', name: 'Renal Failure' },
     ],
   },
+  '/orl': {
+    '@type': 'MedicalWebPage',
+    name: 'ORL / Laryngeal Cancer Specialization & Staging',
+    aspect: 'Oncology & Laryngeal Assessment',
+    about: [
+      { '@type': 'MedicalCondition', name: 'Laryngeal Cancer' },
+      { '@type': 'MedicalCondition', name: 'Head and Neck Squamous Cell Carcinoma' },
+    ],
+  },
 };
 
 export function getMedicalSchema(path: string) {
@@ -314,6 +326,11 @@ const faqSchemaDb: Record<string, { question: string; answer: string }[]> = {
     { question: 'What CURB-65 score requires hospitalization?', answer: 'Score 0-1: Low risk — outpatient management appropriate. Score 2: Intermediate risk — consider short inpatient admission or close outpatient follow-up. Score 3-5: High risk — hospitalize, consider ICU admission for score ≥4-5.' },
     { question: 'What is the source study for CURB-65?', answer: 'CURB-65 was derived by Lim et al. (2003) from British Thoracic Society community-acquired pneumonia (CAP) guidelines data, published in Thorax (PMID: 12668799). It validated across multiple international CAP cohorts.' },
     { question: 'What is the difference between CURB-65 and PSI (Pneumonia Severity Index)?', answer: 'PSI (PORT score) uses 20 variables and is more complex, providing finer risk stratification for low-risk patients. CURB-65 uses only 5 criteria and is faster at the bedside. Both are validated; CURB-65 is preferred for rapid triage in emergency settings.' },
+  ],
+  '/orl': [
+    { question: 'What is laryngeal cancer staging based on?', answer: 'Laryngeal cancer is staged using the AJCC TNM system, which evaluates the Primary Tumor extension (T), Regional Lymph Node involvement (N), and Distant Metastasis presence (M).' },
+    { question: 'What are the anatomical subsites of the larynx?', answer: 'The larynx is divided into three subsites: the supraglottis (above the vocal cords), the glottis (the vocal cords), and the subglottis (below the vocal cords).' },
+    { question: 'What is the significance of the T4 stage in laryngeal cancer?', answer: 'T4 indicates advanced disease. T4a represents moderately advanced local disease (invading through thyroid cartilage or trachea), while T4b represents very advanced local disease (invading prevertebral space, mediastinal structures, or carotid encasement).' },
   ],
 };
 
