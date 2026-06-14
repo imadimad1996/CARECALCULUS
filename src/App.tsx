@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Link, useLocation, Navigate, useNavigate 
 import { StaticRouter } from 'react-router';
 import { LangContext, parsePathname, buildPath, PREFIXED_LANGS } from './utils/lang';
 import { organizationJsonLd, getLocalizedMeta as seoGetLocalizedMeta, getMedicalSchema, pageUrl as seoPageUrl, getBreadcrumbSchema } from './utils/seo';
+import Logo from './components/Logo';
 
 // Page import factories kept in one list so they can be (a) wrapped in
 // React.lazy for client-side code-splitting and (b) eagerly awaited during
@@ -851,8 +852,8 @@ function AppLayout() {
     return (
       <div className="mb-6 flex items-center justify-between gap-4 flex-wrap">
         <div className="flex items-center gap-2 text-sm text-gray-500 font-semibold">
-          <Link to={langPath('/')} className="flex items-center gap-1 hover:text-blue-600 transition-colors font-bold text-gray-700">
-            <HeartPulse className="w-4 h-4 text-blue-600" />
+          <Link to={langPath('/')} className="flex items-center gap-1.5 hover:text-teal-600 transition-colors font-bold text-gray-700">
+            <Logo className="w-4 h-4" mode="light" />
             CareCalculus
           </Link>
           <ChevronRight className="w-3.5 h-3.5 text-gray-300" />
@@ -892,9 +893,9 @@ function AppLayout() {
       
       {/* Mobile Top Header */}
       <div className="md:hidden sticky top-0 z-50 bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between">
-        <Link to={langPath('/')} className="flex items-center gap-2 text-blue-600">
-          <HeartPulse className="w-6 h-6 stroke-[2.5]" />
-          <span className="font-bold text-lg tracking-tight text-gray-900">Care<span className="text-blue-600">Calculus</span></span>
+        <Link to={langPath('/')} className="flex items-center gap-2">
+          <Logo className="w-6 h-6" mode="light" />
+          <span className="font-bold text-lg tracking-tight text-slate-800">Care<span className="text-teal-600 font-black">Calculus</span></span>
         </Link>
 
         <div className="flex items-center gap-2">
@@ -927,9 +928,9 @@ function AppLayout() {
       {!isContentPage && <aside className={`fixed inset-y-0 ${isRtl ? 'right-0' : 'left-0'} z-40 w-64 bg-white border-${isRtl ? 'l' : 'r'} border-gray-200 transform transition-transform duration-300 ease-in-out md:translate-x-0 md:static md:flex-shrink-0 ${isSidebarOpen ? 'translate-x-0' : (isRtl ? 'translate-x-full md:translate-x-0' : '-translate-x-full')}`}>
         <div className="h-full flex flex-col pt-5 md:pt-8 pb-4 overflow-y-auto">
           
-          <Link to={langPath('/')} className="px-6 mb-6 hidden md:flex items-center gap-2 text-blue-600 hover:opacity-80 transition-opacity">
-            <HeartPulse className="w-7 h-7 stroke-[2.5]" />
-            <span className="font-bold text-2xl tracking-tight text-gray-900">Care<span className="text-blue-600">Calculus</span></span>
+          <Link to={langPath('/')} className="px-6 mb-6 hidden md:flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <Logo className="w-7 h-7" mode="light" />
+            <span className="font-bold text-2xl tracking-tight text-slate-800">Care<span className="text-teal-600 font-black">Calculus</span></span>
           </Link>
 
           {/* Desktop Language Switcher (Spacious 44px targets) */}
@@ -988,12 +989,12 @@ function AppLayout() {
               to={langPath('/')}
               className={`flex items-center gap-3 px-3 py-2 rounded-xl text-xs font-bold transition-all duration-150 ${
                 isHomePage
-                  ? 'bg-blue-50 text-blue-700 font-extrabold border border-blue-100'
+                  ? 'bg-teal-50 text-teal-700 font-extrabold border border-teal-100'
                   : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900 border border-transparent'
               }`}
               style={{ minHeight: '44px' }}
             >
-              <HeartPulse className="w-4 h-4 shrink-0 text-blue-500" />
+              <Logo className="w-4 h-4 shrink-0" mode="light" />
               <span>{lang === 'fr' ? 'Accueil' : lang === 'ar' ? 'الرئيسية' : 'Home'}</span>
             </Link>
 
@@ -1232,9 +1233,9 @@ function AppLayout() {
               
               {/* E-E-A-T panel */}
               <div className="space-y-4">
-                <div className="flex items-center gap-2 text-blue-600">
-                  <HeartPulse className="w-5 h-5 stroke-[2.5]" />
-                  <h4 className="font-extrabold text-sm tracking-tight text-gray-900">CareCalculus Clinical Registry</h4>
+                <div className="flex items-center gap-2 text-teal-600">
+                  <Logo className="w-5 h-5" mode="light" />
+                  <h4 className="font-extrabold text-sm tracking-tight text-slate-800">CareCalculus Clinical Registry</h4>
                 </div>
                 <p className="text-[11px] text-gray-500 leading-relaxed">
                   {lang === 'fr' 
@@ -1244,7 +1245,7 @@ function AppLayout() {
                         : 'All emergency index calculators, body mass variables, and drug equivalence metrics are strictly reviewed and clinical protocol aligned according to peer-reviewed guides (AHA, ESC, CDC, SFAR).')}
                 </p>
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="px-2.5 py-0.5 bg-blue-50 rounded-md text-[9px] font-extrabold text-blue-600 border border-blue-100 uppercase tracking-wider">E-E-A-T Certified</span>
+                  <span className="px-2.5 py-0.5 bg-teal-50 rounded-md text-[9px] font-extrabold text-teal-700 border border-teal-100 uppercase tracking-wider">E-E-A-T Certified</span>
                   <span className="px-2.5 py-0.5 bg-emerald-50 rounded-md text-[9px] font-extrabold text-emerald-600 border border-emerald-100 uppercase tracking-wider">PubMed Reference Linked</span>
                 </div>
               </div>

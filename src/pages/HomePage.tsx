@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { LangCode } from '../types';
 import { useLang } from '../utils/lang';
+import Logo from '../components/Logo';
 
 interface HomePageProps {
   lang: LangCode;
@@ -151,8 +152,8 @@ export default function HomePage({ lang }: HomePageProps) {
         </div>
         <div className="relative z-10 max-w-2xl">
           <div className="flex items-center gap-2 mb-5">
-            <HeartPulse className="w-5 h-5 text-blue-400" />
-            <span className="text-[11px] font-mono font-black text-blue-400 uppercase tracking-widest">{hero.badge}</span>
+            <Logo className="w-5 h-5" mode="dark" />
+            <span className="text-[11px] font-mono font-black text-teal-400 uppercase tracking-widest">{hero.badge}</span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-black tracking-tight text-white leading-tight mb-3">
             {hero.title}

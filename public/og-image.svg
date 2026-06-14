@@ -23,30 +23,77 @@
   <line x1="600" y1="0" x2="600" y2="630" stroke="#1e40af" stroke-width="1" stroke-opacity="0.15"/>
 
   <!-- Logo icon area -->
-  <rect x="72" y="120" width="56" height="56" rx="16" fill="#2563eb" fill-opacity="0.2" stroke="#3b82f6" stroke-width="1.5"/>
-  <!-- Heart pulse icon simplified -->
-  <polyline points="80,148 88,148 92,136 100,160 108,140 116,148 128,148" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <g transform="translate(72, 120) scale(0.56)">
+    <!-- Navy left half of cross (drawn with white for high contrast on dark background) -->
+    <path d="M 50,12 L 38,12 C 37,12 36,13 36,14 L 36,36 C 36,37 35,38 34,38 L 14,38 C 13,38 12,39 12,40 L 12,46 M 12,54 L 12,60 C 12,61 13,62 14,62 L 34,62 C 35,62 36,63 36,64 L 36,86 C 36,87 37,88 38,88 L 50,88" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <!-- Teal right half of cross (bright cyan/teal) -->
+    <path d="M 50,12 L 62,12 C 63,12 64,13 64,14 L 64,36 C 64,37 65,38 66,38 L 86,38 C 87,38 88,39 88,40 L 88,60 C 88,61 87,62 86,62 L 66,62 C 65,62 64,63 64,64 L 64,86 C 64,87 63,88 62,88 L 50,88" stroke="#00d2e0" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Center Circle (White/Teal split) -->
+    <g>
+      <path d="M 50,42 A 8 8 0 0 0 50,58 Z" fill="#ffffff" />
+      <path d="M 50,58 A 8 8 0 0 0 50,42 Z" fill="#00d2e0" />
+      <path d="M 50,46.5 L 50,53.5 M 46.5,50 L 53.5,50" stroke="#0f172a" stroke-width="1.8" stroke-linecap="round" />
+    </g>
+
+    <!-- Pulse Line (White) -->
+    <path d="M 6,50 L 16,50 L 19,42 L 23,58 L 27,38 L 31,62 L 34,46 L 38,50 L 42,50" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Connection Lines (Teal) -->
+    <g stroke="#00d2e0" stroke-width="1.8" opacity="0.85" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="64" y1="22" x2="64" y2="38" />
+      <line x1="64" y1="22" x2="58" y2="50" />
+      <line x1="64" y1="38" x2="58" y2="50" />
+      <line x1="64" y1="38" x2="70" y2="50" />
+      <line x1="64" y1="38" x2="76" y2="38" />
+      <line x1="76" y1="38" x2="70" y2="50" />
+      <line x1="76" y1="38" x2="86" y2="50" />
+      <line x1="86" y1="50" x2="70" y2="50" />
+      <line x1="86" y1="50" x2="76" y2="62" />
+      <line x1="76" y1="62" x2="70" y2="50" />
+      <line x1="76" y1="62" x2="64" y2="62" />
+      <line x1="64" y1="62" x2="70" y2="50" />
+      <line x1="64" y1="62" x2="58" y2="50" />
+      <line x1="64" y1="62" x2="64" y2="78" />
+      <line x1="64" y1="78" x2="58" y2="50" />
+      <line x1="58" y1="50" x2="70" y2="50" />
+    </g>
+
+    <!-- Nodes (Teal Circles) -->
+    <g fill="#00d2e0">
+      <circle cx="64" cy="22" r="2.5" />
+      <circle cx="64" cy="38" r="2.5" />
+      <circle cx="76" cy="38" r="2.5" />
+      <circle cx="86" cy="50" r="2.5" />
+      <circle cx="76" cy="62" r="2.5" />
+      <circle cx="64" cy="62" r="2.5" />
+      <circle cx="64" cy="78" r="2.5" />
+      <circle cx="70" cy="50" r="2.5" />
+      <circle cx="58" cy="50" r="2.5" />
+    </g>
+  </g>
 
   <!-- Brand name -->
-  <text x="144" y="155" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="800" fill="white" letter-spacing="-1">Care<tspan fill="#3b82f6">Calculus</tspan></text>
+  <text x="144" y="162" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="800" fill="white" letter-spacing="-1">Care<tspan fill="#00d2e0">Calculus</tspan></text>
 
   <!-- Badge -->
-  <rect x="72" y="210" width="220" height="28" rx="14" fill="#2563eb" fill-opacity="0.2" stroke="#3b82f6" stroke-width="1"/>
-  <text x="182" y="229" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#93c5fd" letter-spacing="2" text-anchor="middle">CLINICAL DECISION SUITE</text>
+  <rect x="72" y="210" width="220" height="28" rx="14" fill="#0096a6" fill-opacity="0.2" stroke="#00d2e0" stroke-width="1"/>
+  <text x="182" y="229" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#00d2e0" letter-spacing="2" text-anchor="middle">CLINICAL DECISION SUITE</text>
 
   <!-- Main headline -->
   <text x="72" y="330" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="900" fill="white" letter-spacing="-2">Medical</text>
-  <text x="72" y="410" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="900" fill="#3b82f6" letter-spacing="-2">Calculators</text>
+  <text x="72" y="410" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="900" fill="#00d2e0" letter-spacing="-2">Calculators</text>
 
   <!-- Subtitle -->
   <text x="72" y="460" font-family="system-ui, sans-serif" font-size="22" font-weight="500" fill="#94a3b8">Evidence-based tools for critical care, ICU &amp; emergency medicine</text>
 
   <!-- Stat pills -->
-  <rect x="72" y="500" width="130" height="40" rx="20" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
-  <text x="137" y="525" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#93c5fd" text-anchor="middle">19+ Calculators</text>
+  <rect x="72" y="500" width="130" height="40" rx="20" fill="#1e3a5f" stroke="#00d2e0" stroke-width="1"/>
+  <text x="137" y="525" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#00d2e0" text-anchor="middle">19+ Calculators</text>
 
-  <rect x="214" y="500" width="110" height="40" rx="20" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
-  <text x="269" y="525" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#93c5fd" text-anchor="middle">EN · FR · AR</text>
+  <rect x="214" y="500" width="110" height="40" rx="20" fill="#1e3a5f" stroke="#00d2e0" stroke-width="1"/>
+  <text x="269" y="525" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#00d2e0" text-anchor="middle">EN · FR · AR</text>
 
   <rect x="336" y="500" width="130" height="40" rx="20" fill="#1e3a5f" stroke="#10b981" stroke-width="1"/>
   <text x="401" y="525" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#6ee7b7" text-anchor="middle">100% Free</text>
@@ -63,8 +110,8 @@
 
     <!-- Tier 2 card -->
     <rect x="720" y="208" width="400" height="90" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
-    <rect x="736" y="224" width="28" height="28" rx="8" fill="#3b82f6" fill-opacity="0.2"/>
-    <circle cx="750" cy="238" r="6" fill="#3b82f6" fill-opacity="0.7"/>
+    <rect x="736" y="224" width="28" height="28" rx="8" fill="#00d2e0" fill-opacity="0.2"/>
+    <circle cx="750" cy="238" r="6" fill="#00d2e0" fill-opacity="0.7"/>
     <text x="776" y="236" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#94a3b8" letter-spacing="1">TIER II — METABOLIC</text>
     <text x="776" y="256" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="white">Creatinine · MELD · Wells · CHA₂DS₂</text>
     <text x="776" y="276" font-family="system-ui, sans-serif" font-size="11" fill="#64748b">Corrected Calcium · ANC</text>
@@ -78,8 +125,8 @@
     <text x="776" y="384" font-family="system-ui, sans-serif" font-size="11" fill="#64748b">Unit Conversions · PHQ-9 · ABW</text>
 
     <!-- E-E-A-T badge -->
-    <rect x="720" y="424" width="120" height="36" rx="10" fill="#2563eb" fill-opacity="0.15" stroke="#3b82f6" stroke-width="1"/>
-    <text x="780" y="447" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#93c5fd" text-anchor="middle">E-E-A-T ✓</text>
+    <rect x="720" y="424" width="120" height="36" rx="10" fill="#0096a6" fill-opacity="0.15" stroke="#00d2e0" stroke-width="1"/>
+    <text x="780" y="447" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#00d2e0" text-anchor="middle">E-E-A-T ✓</text>
 
     <rect x="852" y="424" width="130" height="36" rx="10" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1"/>
     <text x="917" y="447" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#6ee7b7" text-anchor="middle">PubMed Refs</text>

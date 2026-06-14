@@ -1,0 +1,96 @@
+import React from 'react';
+
+interface LogoProps {
+  className?: string;
+  mode?: 'light' | 'dark';
+}
+
+export default function Logo({ className = 'w-6 h-6', mode = 'light' }: LogoProps) {
+  const leftColor = mode === 'light' ? '#0f3d59' : '#ffffff';
+  const rightColor = mode === 'light' ? '#0096a6' : '#00d2e0';
+  const centerPlus = mode === 'light' ? '#ffffff' : '#0f172a';
+
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 100 100"
+      fill="none"
+      className={className}
+    >
+      {/* Navy/White left half of cross */}
+      <path
+        d="M 50,12 L 38,12 C 37,12 36,13 36,14 L 36,36 C 36,37 35,38 34,38 L 14,38 C 13,38 12,39 12,40 L 12,46 M 12,54 L 12,60 C 12,61 13,62 14,62 L 34,62 C 35,62 36,63 36,64 L 36,86 C 36,87 37,88 38,88 L 50,88"
+        stroke={leftColor}
+        strokeWidth="4.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      
+      {/* Teal right half of cross */}
+      <path
+        d="M 50,12 L 62,12 C 63,12 64,13 64,14 L 64,36 C 64,37 65,38 66,38 L 86,38 C 87,38 88,39 88,40 L 88,60 C 88,61 87,62 86,62 L 66,62 C 65,62 64,63 64,64 L 64,86 C 64,87 63,88 62,88 L 50,88"
+        stroke={rightColor}
+        strokeWidth="4.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+
+      {/* Center Circle */}
+      <g>
+        {/* Left half of circle */}
+        <path d="M 50,42 A 8 8 0 0 0 50,58 Z" fill={leftColor} />
+        {/* Right half of circle */}
+        <path d="M 50,58 A 8 8 0 0 0 50,42 Z" fill={rightColor} />
+        {/* White/Dark plus sign */}
+        <path
+          d="M 50,46.5 L 50,53.5 M 46.5,50 L 53.5,50"
+          stroke={centerPlus}
+          strokeWidth="1.8"
+          strokeLinecap="round"
+        />
+      </g>
+
+      {/* Pulse Line */}
+      <path
+        d="M 6,50 L 16,50 L 19,42 L 23,58 L 27,38 L 31,62 L 34,46 L 38,50 L 42,50"
+        stroke={leftColor}
+        strokeWidth="4.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+
+      {/* Network / Mesh (Right half) */}
+      <g stroke={rightColor} strokeWidth="1.8" opacity="0.85" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="64" y1="22" x2="64" y2="38" />
+        <line x1="64" y1="22" x2="58" y2="50" />
+        <line x1="64" y1="38" x2="58" y2="50" />
+        <line x1="64" y1="38" x2="70" y2="50" />
+        <line x1="64" y1="38" x2="76" y2="38" />
+        <line x1="76" y1="38" x2="70" y2="50" />
+        <line x1="76" y1="38" x2="86" y2="50" />
+        <line x1="86" y1="50" x2="70" y2="50" />
+        <line x1="86" y1="50" x2="76" y2="62" />
+        <line x1="76" y1="62" x2="70" y2="50" />
+        <line x1="76" y1="62" x2="64" y2="62" />
+        <line x1="64" y1="62" x2="70" y2="50" />
+        <line x1="64" y1="62" x2="58" y2="50" />
+        <line x1="64" y1="62" x2="64" y2="78" />
+        <line x1="64" y1="78" x2="58" y2="50" />
+        <line x1="58" y1="50" x2="70" y2="50" />
+      </g>
+
+      {/* Nodes (Circles) */}
+      <g fill={rightColor}>
+        <circle cx="64" cy="22" r="2.5" />
+        <circle cx="64" cy="38" r="2.5" />
+        <circle cx="76" cy="38" r="2.5" />
+        <circle cx="86" cy="50" r="2.5" />
+        <circle cx="76" cy="62" r="2.5" />
+        <circle cx="64" cy="62" r="2.5" />
+        <circle cx="64" cy="78" r="2.5" />
+        <circle cx="70" cy="50" r="2.5" />
+        <circle cx="58" cy="50" r="2.5" />
+      </g>
+    </svg>
+  );
+}
