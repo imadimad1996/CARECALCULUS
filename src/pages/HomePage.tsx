@@ -142,6 +142,17 @@ export default function HomePage({ lang }: HomePageProps) {
 
   const tierLabels = [tiers.t1, tiers.t2, tiers.t3, tiers.t4];
 
+  React.useEffect(() => {
+    document.title = `${hero.title} | CareCalculus`;
+    let descMeta = document.querySelector('meta[name="description"]');
+    if (!descMeta) {
+      descMeta = document.createElement('meta');
+      descMeta.setAttribute('name', 'description');
+      document.head.appendChild(descMeta);
+    }
+    descMeta.setAttribute('content', hero.desc);
+  }, [lang, hero]);
+
   return (
     <div className="space-y-12 pb-8" dir={isRtl ? 'rtl' : 'ltr'}>
 

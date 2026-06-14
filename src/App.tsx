@@ -39,6 +39,7 @@ const pageLoaders = [
   () => import('./pages/Disclaimer'),
   () => import('./pages/Privacy'),
   () => import('./pages/Terms'),
+  () => import('./pages/Glp1Hub'),
 ] as const;
 
 const [
@@ -47,6 +48,7 @@ const [
   Cha2ds2VascScore, Phq9Score, MeldScore, SirsCriteria, PfRatio, TidalVolume,
   AncCalculator, AdjustedBodyWeight, SteroidConversion, MedicalBlog, Blog,
   Presentations, Courses, OrlSpecialization, About, Disclaimer, Privacy, Terms,
+  Glp1Hub,
 ] = pageLoaders.map((loader) => React.lazy(loader as any)) as any[];
 
 const HomePage = React.lazy(() => import('./pages/HomePage'));
@@ -69,7 +71,7 @@ export async function preloadPages() {
 const LEGAL_ROUTES = ['/about', '/disclaimer', '/privacy', '/terms'];
 
 // Routes that open in full-width reading mode (no sidebar, no top widgets)
-const CONTENT_ROUTES = ['/blog', '/blog-articles', '/presentations', '/cours', '/orl', '/about', '/disclaimer', '/privacy', '/terms'];
+const CONTENT_ROUTES = ['/blog', '/blog-articles', '/presentations', '/cours', '/orl', '/about', '/disclaimer', '/privacy', '/terms', '/glp-1-hub', '/hub-glp1', '/%D9%85%D8%B1%D9%83%D8%B2-glp1', '/مركز-glp1'];
 
 import { LangCode } from './types';
 
@@ -125,6 +127,7 @@ export const navItems = [
   { path: '/bmi-calculator', nameEn: 'BMI Calculator', nameFr: 'Calculateur IMC', nameAr: 'مؤشر كتلة وزن الجسم BMI', icon: LayoutDashboard, tier: 3 },
   { path: '/phq9-score', nameEn: 'PHQ-9 Depression', nameFr: 'Score PHQ-9 Dépression', nameAr: 'مقياس PHQ-9 لتشخيص الاكتئاب', icon: Brain, tier: 3 },
   // Tier 4 — Resources & Library (grouped: Reading vs Learning)
+  { path: '/glp-1-hub', nameEn: 'GLP-1 Hub', nameFr: 'Hub GLP-1', nameAr: 'مركز أدوية GLP-1', icon: Sparkles, tier: 4, group: 'reading' as const, badge: 'NEW' },
   { path: '/blog', nameEn: 'Medical Journals', nameFr: 'Journaux Médicaux', nameAr: 'المجلات الطبية', icon: BookOpen, tier: 4, group: 'reading' as const, badge: '2k+' },
   { path: '/blog-articles', nameEn: 'Blog', nameFr: 'Blog', nameAr: 'المدونة', icon: Newspaper, tier: 4, group: 'reading' as const, badge: 'NEW' },
   { path: '/orl', nameEn: 'ORL Specialization', nameFr: 'Spécialisation ORL', nameAr: 'تخصص سرطان الحنجرة ORL', icon: HeartPulse, tier: 4, group: 'reading' as const, badge: 'NEW' },
@@ -188,6 +191,10 @@ function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="cours/:slug" element={<Courses lang={lang} />} />
       <Route path="orl" element={<OrlSpecialization lang={lang} />} />
       <Route path="orl/:slug" element={<OrlSpecialization lang={lang} />} />
+      <Route path="glp-1-hub" element={<Glp1Hub lang={lang} />} />
+      <Route path="hub-glp1" element={<Glp1Hub lang={lang} />} />
+      <Route path="مركز-glp1" element={<Glp1Hub lang={lang} />} />
+      <Route path="%D9%85%D8%B1%D9%83%D8%B2-glp1" element={<Glp1Hub lang={lang} />} />
       <Route path="about" element={<About lang={lang} />} />
       <Route path="disclaimer" element={<Disclaimer lang={lang} />} />
       <Route path="privacy" element={<Privacy lang={lang} />} />
@@ -205,7 +212,15 @@ function AppLayout() {
   const { lang, path: logicalPath } = parsePathname(location.pathname);
 
   // Build a URL for the current language out of a logical path.
-  const langPath = (p: string) => buildPath(p, lang);
+  const langPath = (p: string) => {
+    const clean = p.startsWith('/') ? p : `/${p}`;
+    if (clean === '/glp-1-hub' || clean === '/hub-glp1' || clean === '/مركز-glp1' || decodeURIComponent(clean) === '/مركز-glp1') {
+      if (lang === 'fr') return '/fr/hub-glp1';
+      if (lang === 'ar') return '/ar/مركز-glp1';
+      return '/glp-1-hub';
+    }
+    return buildPath(p, lang);
+  };
 
   // Detect layout mode
   const isContentPage = CONTENT_ROUTES.some(r => logicalPath === r || logicalPath.startsWith(r + '/'));
@@ -214,6 +229,13 @@ function AppLayout() {
   // Switching language navigates to the same logical page under the new prefix.
   const setLang = (next: LangCode) => {
     localStorage.setItem('carecalculus-lang', next);
+    const cleanLogical = logicalPath.startsWith('/') ? logicalPath : `/${logicalPath}`;
+    if (cleanLogical === '/glp-1-hub' || cleanLogical === '/hub-glp1' || cleanLogical === '/مركز-glp1' || decodeURIComponent(cleanLogical) === '/مركز-glp1') {
+      if (next === 'fr') navigate('/fr/hub-glp1');
+      else if (next === 'ar') navigate('/ar/مركز-glp1');
+      else navigate('/glp-1-hub');
+      return;
+    }
     navigate(buildPath(logicalPath, next));
   };
 
@@ -849,6 +871,9 @@ function AppLayout() {
       '/disclaimer':    { en: 'Medical Disclaimer', fr: 'Avertissement médical', ar: 'إخلاء المسؤولية', icon: ShieldCheck },
       '/privacy':       { en: 'Privacy Policy',   fr: 'Confidentialité',   ar: 'سياسة الخصوصية', icon: ShieldCheck },
       '/terms':         { en: 'Terms of Use',     fr: 'Conditions',        ar: 'شروط الاستخدام', icon: FileText },
+      '/glp-1-hub':     { en: 'GLP-1 Hub',        fr: 'Hub GLP-1',         ar: 'مركز أدوية GLP-1',  icon: Sparkles },
+      '/hub-glp1':      { en: 'GLP-1 Hub',        fr: 'Hub GLP-1',         ar: 'مركز أدوية GLP-1',  icon: Sparkles },
+      '/مركز-glp1':     { en: 'GLP-1 Hub',        fr: 'Hub GLP-1',         ar: 'مركز أدوية GLP-1',  icon: Sparkles },
     };
     const base = CONTENT_ROUTES.find(r => logicalPath === r || logicalPath.startsWith(r + '/'));
     const section = base ? sectionMap[base] : null;
@@ -882,14 +907,24 @@ function AppLayout() {
             </span>
           )}
         </div>
-        <Link
-          to={langPath('/map-calculator')}
-          className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs font-bold rounded-xl border border-blue-100 transition-all"
-          style={{ minHeight: '36px' }}
-        >
-          <Calculator className="w-3.5 h-3.5" />
-          {lang === 'fr' ? 'Calculateurs' : lang === 'ar' ? 'الحاسبات' : 'Calculators'}
-        </Link>
+        <div className="flex items-center gap-2">
+          <Link
+            to={langPath('/glp-1-hub')}
+            className="flex items-center gap-1.5 px-3 py-1.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-xs font-bold rounded-xl border border-indigo-100 transition-all"
+            style={{ minHeight: '36px' }}
+          >
+            <Sparkles className="w-3.5 h-3.5 text-indigo-500" />
+            {lang === 'fr' ? 'Hub GLP-1' : lang === 'ar' ? 'مركز GLP-1' : 'GLP-1 Hub'}
+          </Link>
+          <Link
+            to={langPath('/map-calculator')}
+            className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs font-bold rounded-xl border border-blue-100 transition-all"
+            style={{ minHeight: '36px' }}
+          >
+            <Calculator className="w-3.5 h-3.5" />
+            {lang === 'fr' ? 'Calculateurs' : lang === 'ar' ? 'الحاسبات' : 'Calculators'}
+          </Link>
+        </div>
       </div>
     );
   };

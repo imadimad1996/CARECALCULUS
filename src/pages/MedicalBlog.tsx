@@ -524,6 +524,7 @@ ${s} exhibits progressive vascular, parenchymal, or endocrine triggers. Using ${
         <div className="bg-white p-4 rounded-2xl border border-gray-200/80 flex flex-wrap items-center justify-between gap-4 sticky top-1 z-40 shadow-xs">
           <div className="flex items-center gap-3">
             <button
+              id="back-to-directory-btn"
               onClick={closePost}
               className="flex items-center gap-2 px-3 py-2 bg-slate-50 hover:bg-slate-100 text-slate-700 hover:text-slate-950 font-black text-xs tracking-tight rounded-xl transition border border-gray-200/80"
               style={{ minHeight: '38px' }}
@@ -617,6 +618,7 @@ ${s} exhibits progressive vascular, parenchymal, or endocrine triggers. Using ${
               </button>
 
               <button
+                id="print-journal-btn"
                 onClick={() => window.print()}
                 className="p-2 bg-white hover:bg-gray-50 border border-gray-200 text-slate-500 hover:text-slate-800 rounded-xl transition"
                 style={{ minWidth: '38px', minHeight: '38px' }}
@@ -1133,6 +1135,14 @@ ${s} exhibits progressive vascular, parenchymal, or endocrine triggers. Using ${
                   <p className="line-clamp-3 text-xs text-gray-500 leading-relaxed font-semibold">
                     {post.snippet}
                   </p>
+                  
+                  {/* E-E-A-T clinical reviewer badge */}
+                  <div className="mt-3.5 flex flex-wrap items-center gap-2 text-[10px] font-bold text-gray-500">
+                    <span className="text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded-md flex items-center gap-0.5 whitespace-nowrap shrink-0 border border-emerald-100">
+                      <CheckCircle2 className="w-2.5 h-2.5 text-emerald-600" />
+                      {getLocalizedLabel('Reviewed by', 'Révisé par', 'مراجعة')} {post.reviewer}
+                    </span>
+                  </div>
                 </div>
 
                 {/* Footer metrics block */}
@@ -1151,6 +1161,7 @@ ${s} exhibits progressive vascular, parenchymal, or endocrine triggers. Using ${
 
                   <div className="flex items-center gap-1.5 shrink-0">
                     <button
+                      id={`bookmark-btn-${post.id}`}
                       onClick={(e) => toggleBookmark(post.id, e)}
                       className={`p-2 rounded-lg transition ${
                         isBookmarked 
@@ -1163,6 +1174,7 @@ ${s} exhibits progressive vascular, parenchymal, or endocrine triggers. Using ${
                       <Bookmark className="w-3.5 h-3.5 fill-current" />
                     </button>
                     <button
+                      id={`share-btn-${post.id}`}
                       onClick={(e) => copyCitation(post.id, post.doi, e)}
                       className="p-2 bg-white text-gray-400 hover:text-gray-700 hover:bg-gray-100 border border-gray-200 rounded-lg transition"
                       style={{ minWidth: '34px', minHeight: '34px' }}

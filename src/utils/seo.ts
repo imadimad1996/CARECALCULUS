@@ -45,6 +45,10 @@ const nameEnMap: Record<string, string> = {
   '/disclaimer': 'Medical Disclaimer — CareCalculus',
   '/privacy': 'Privacy Policy — CareCalculus',
   '/terms': 'Terms of Use — CareCalculus',
+  '/glp-1-hub': 'GLP-1 & Metabolic Health Resource Hub',
+  '/hub-glp1': 'GLP-1 & Metabolic Health Resource Hub',
+  '/مركز-glp1': 'GLP-1 & Metabolic Health Resource Hub',
+  '/%D9%85%D8%B1%D9%83%D8%B2-glp1': 'GLP-1 & Metabolic Health Resource Hub',
 };
 
 const nameFrMap: Record<string, string> = {
@@ -76,6 +80,10 @@ const nameFrMap: Record<string, string> = {
   '/disclaimer': 'Avertissement medical - CareCalculus',
   '/privacy': 'Politique de confidentialite - CareCalculus',
   '/terms': "Conditions d'utilisation - CareCalculus",
+  '/glp-1-hub': "Centre d'Intelligence GLP-1 & Métabolique",
+  '/hub-glp1': "Centre d'Intelligence GLP-1 & Métabolique",
+  '/مركز-glp1': "Centre d'Intelligence GLP-1 & Métabolique",
+  '/%D9%85%D8%B1%D9%83%D8%B2-glp1': "Centre d'Intelligence GLP-1 & Métabolique",
 };
 
 const nameArMap: Record<string, string> = {
@@ -107,6 +115,10 @@ const nameArMap: Record<string, string> = {
   '/disclaimer': 'إخلاء المسؤولية الطبية — كير كالكولوس',
   '/privacy': 'سياسة الخصوصية — كير كالكولوس',
   '/terms': 'شروط الاستخدام — كير كالكولوس',
+  '/glp-1-hub': 'مركز معلومات أدوية GLP-1 والصحة الاستقلابية',
+  '/hub-glp1': 'مركز معلومات أدوية GLP-1 والصحة الاستقلابية',
+  '/مركز-glp1': 'مركز معلومات أدوية GLP-1 والصحة الاستقلابية',
+  '/%D9%85%D8%B1%D9%83%D8%B2-glp1': 'مركز معلومات أدوية GLP-1 والصحة الاستقلابية',
 };
 
 export interface RouteMeta {
@@ -274,6 +286,46 @@ const medicalSchemaDb: Record<string, any> = {
     about: [
       { '@type': 'MedicalCondition', name: 'Laryngeal Cancer' },
       { '@type': 'MedicalCondition', name: 'Head and Neck Squamous Cell Carcinoma' },
+    ],
+  },
+  '/glp-1-hub': {
+    '@type': 'MedicalWebPage',
+    name: 'GLP-1 & Metabolic Health Resource Hub',
+    aspect: 'Metabolic & Cardiomedical Guidelines',
+    about: [
+      { '@type': 'MedicalCondition', name: 'Diabetes Mellitus, Type 2' },
+      { '@type': 'MedicalCondition', name: 'Obesity' },
+      { '@type': 'MedicalCondition', name: 'Cardiovascular Disease' }
+    ],
+  },
+  '/hub-glp1': {
+    '@type': 'MedicalWebPage',
+    name: "Centre d'Intelligence GLP-1 & Métabolique",
+    aspect: 'Metabolic & Cardiomedical Guidelines',
+    about: [
+      { '@type': 'MedicalCondition', name: 'Diabetes Mellitus, Type 2' },
+      { '@type': 'MedicalCondition', name: 'Obesity' },
+      { '@type': 'MedicalCondition', name: 'Cardiovascular Disease' }
+    ],
+  },
+  '/مركز-glp1': {
+    '@type': 'MedicalWebPage',
+    name: 'مركز معلومات أدوية GLP-1 والصحة الاستقلابية',
+    aspect: 'Metabolic & Cardiomedical Guidelines',
+    about: [
+      { '@type': 'MedicalCondition', name: 'Diabetes Mellitus, Type 2' },
+      { '@type': 'MedicalCondition', name: 'Obesity' },
+      { '@type': 'MedicalCondition', name: 'Cardiovascular Disease' }
+    ],
+  },
+  '/%D9%85%D8%B1%D9%83%D8%B2-glp1': {
+    '@type': 'MedicalWebPage',
+    name: 'مركز معلومات أدوية GLP-1 والصحة الاستقلابية',
+    aspect: 'Metabolic & Cardiomedical Guidelines',
+    about: [
+      { '@type': 'MedicalCondition', name: 'Diabetes Mellitus, Type 2' },
+      { '@type': 'MedicalCondition', name: 'Obesity' },
+      { '@type': 'MedicalCondition', name: 'Cardiovascular Disease' }
     ],
   },
 };

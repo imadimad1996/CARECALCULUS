@@ -71,14 +71,14 @@ export const MASTER_BLOGS: MasterBlog[] = [
   {
     id: 'mb-1',
     title: {
-      en: 'What Are GLP-1 Medications and How Do They Work?',
-      fr: 'Qu\'est-ce que les médicaments GLP-1 et comment fonctionnent-ils ?',
-      ar: 'ما هي أدوية GLP-1 وكيف تعمل؟'
+      en: 'GLP-1 Medications in 2026: How They Work, Who Qualifies, and What the Evidence Actually Shows',
+      fr: 'Médicaments GLP-1 en 2026 : fonctionnement, éligibilité et ce que montrent réellement les preuves',
+      ar: 'أدوية GLP-1 في عام 2026: كيف تعمل، ومن المؤهل، وما الذي توضحه الأدلة فعليًا'
     },
     snippet: {
-      en: 'An introductory guide to glucagon-like peptide-1 receptor agonists and their physiological actions.',
-      fr: 'Un guide d\'introduction aux agonistes des récepteurs du GLP-1 et leurs actions physiologiques.',
-      ar: 'دليل تمهيدي عن ناهضات مستقبلات الببتيد الشبيه بالغلوكاجون-1 وأفعالها الفسيولوجية.'
+      en: 'An evidence-based guide to glucagon-like peptide-1 receptor agonists, clinical eligibility criteria, and 2026 outcomes.',
+      fr: 'Un guide basé sur les preuves pour les agonistes des récepteurs GLP-1, les critères d\'éligibilité et les résultats de 2026.',
+      ar: 'دليل قائم على الأدلة حول ناهضات مستقبلات الببتيد الشبيه بالغلوكاجون-1، ومعايير الأهلية السريرية، ونتائج عام 2026.'
     },
     category: 'Clinical Tips',
     readTime: 4,
@@ -88,14 +88,14 @@ export const MASTER_BLOGS: MasterBlog[] = [
   {
     id: 'mb-2',
     title: {
-      en: 'Ozempic vs Wegovy: Key Differences Explained',
-      fr: 'Ozempic vs Wegovy : Les différences clés expliquées',
-      ar: 'أوزمبيك مقابل ويغوفي: شرح الفروق الرئيسية'
+      en: 'Ozempic vs Wegovy: A Clinician\'s Side-by-Side Comparison of Dosing, Outcomes, and Patient Selection',
+      fr: 'Ozempic vs Wegovy : comparaison clinique des dosages, des résultats et de la sélection des patients',
+      ar: 'أوزمبيك مقابل ويغوفي: مقارنة سريرية شاملة للجرعات، والنتائج، واختيار المرضى'
     },
     snippet: {
-      en: 'Understanding the differences in indications, dosages, and outcomes between semaglutide formulations.',
-      fr: 'Comprendre les différences d\'indications, de dosages et de résultats entre les formulations de sémaglutide.',
-      ar: 'فهم الفروق في دواعي الاستعمال، والجرعات، والنتائج بين تركيبات السيماغلوتيد.'
+      en: 'Understanding clinical dosing, efficacy metrics, and patient selection criteria between semaglutide formulations.',
+      fr: 'Comprendre les dosages cliniques, l\'efficacité et la sélection des patients pour les formulations de sémaglutide.',
+      ar: 'فهم الجرعات السريرية، ومقاييس الفعالية، ومعايير اختيار المرضى بين تركيبات السيماغلوتيد.'
     },
     category: 'Clinical Tips',
     readTime: 5,
@@ -105,14 +105,14 @@ export const MASTER_BLOGS: MasterBlog[] = [
   {
     id: 'mb-3',
     title: {
-      en: 'Can GLP-1 Drugs Prevent Heart Disease?',
-      fr: 'Les médicaments GLP-1 peuvent-ils prévenir les maladies cardiaques ?',
-      ar: 'هل يمكن لأدوية GLP-1 الوقاية من أمراض القلب؟'
+      en: 'GLP-1 Drugs and Cardiovascular Risk: What the SUSTAIN-6 and SELECT Trials Tell Us',
+      fr: 'Médicaments GLP-1 et risque cardiovasculaire : les enseignements des essais SUSTAIN-6 et SELECT',
+      ar: 'أدوية GLP-1 ومخاطر القلب والأوعية الدموية: ما تخبرنا به تجارب SUSTAIN-6 وSELECT'
     },
     snippet: {
-      en: 'Reviewing recent clinical trials on the cardiovascular protection offered by GLP-1 receptor agonists.',
-      fr: 'Revue des essais cliniques récents sur la protection cardiovasculaire offerte par les agonistes du GLP-1.',
-      ar: 'مراجعة التجارب السريرية الأخيرة حول حماية القلب والأوعية الدموية التي تقدمها أدوية GLP-1.'
+      en: 'An authority review of landmark clinical trials demonstrating the cardiovascular protective effects of GLP-1 therapies.',
+      fr: 'Une revue faisant autorité des essais cliniques majeurs démontrant les effets protecteurs cardiovasculaires des thérapies GLP-1.',
+      ar: 'مراجعة موثوقة للتجارب السريرية البارزة التي تثبت تأثيرات أدوية GLP-1 في حماية القلب والأوعية الدموية.'
     },
     category: 'News & Updates',
     readTime: 5,
@@ -156,14 +156,14 @@ export const MASTER_BLOGS: MasterBlog[] = [
   {
     id: 'mb-6',
     title: {
-      en: 'How AI Is Transforming Healthcare in 2026',
-      fr: 'Comment l\'IA transforme les soins de santé en 2026',
-      ar: 'كيف يغير الذكاء الاصطناعي الرعاية الصحية في عام 2026'
+      en: 'AI in Clinical Practice 2026: What Physicians Are Actually Using — and What\'s Still Hype',
+      fr: 'L\'IA en pratique clinique 2026 : ce que les médecins utilisent réellement — et ce qui relève encore du battage médiatique',
+      ar: 'الذكاء الاصطناعي في الممارسة السريرية 2026: ما يستخدمه الأطباء فعليًا — وما يزال مجرد دعاية'
     },
     snippet: {
-      en: 'A review of generative models and automation tools currently in active clinical environments.',
-      fr: 'Revue des modèles génératifs et outils d\'automatisation dans les environnements cliniques actifs.',
-      ar: 'مراجعة للنماذج التوليدية وأدوات الأتمتة المستخدمة حالياً في البيئات السريرية النشطة.'
+      en: 'A critical review of generative AI models, diagnostic aids, and workflow automation in active clinical practice.',
+      fr: 'Une revue critique des modèles d\'IA générative, des aides au diagnostic et de l\'automatisation dans la pratique clinique active.',
+      ar: 'مراجعة نقدية لنماذج الذكاء الاصطناعي التوليدي، ومساعدات التشخيص، وأتمتة سير العمل في الممارسة السريرية النشطة.'
     },
     category: 'Technology',
     readTime: 4,
@@ -326,14 +326,14 @@ export const MASTER_BLOGS: MasterBlog[] = [
   {
     id: 'mb-16',
     title: {
-      en: 'The Science of Healthy Aging and Longevity',
-      fr: 'La science du vieillissement sain et de la longévité',
-      ar: 'علم الشيخوخة الصحي وطول العمر'
+      en: 'The 2026 Longevity Playbook: Evidence-Based Habits, Biomarkers, and Therapies That Actually Extend Healthspan',
+      fr: 'Le guide de la longévité 2026 : habitudes basées sur les preuves, biomarqueurs et thérapies qui prolongent la durée de vie en bonne santé',
+      ar: 'دليل طول العمر لعام 2026: العادات القائمة على الأدلة، والمؤشرات الحيوية، والعلاجات التي تمد العمر الصحي'
     },
     snippet: {
-      en: 'Exploring sirtuins, mTOR pathway inhibitors, cellular senescence kinetics, and lifestyle factors.',
-      fr: 'Exploration des sirtuines, inhibiteurs mTOR, sénescence cellulaire et hygiène de vie.',
-      ar: 'استكشاف السيرتوينات، ومثبطات مسار mTOR، وحركية الهرم الخلوي، وعوامل نمط الحياة.'
+      en: 'A comprehensive playbook detailing validated biomarkers, lifestyle interventions, and pharmacological therapies that support healthspan.',
+      fr: 'Un guide complet détaillant les biomarqueurs validés, les interventions de style de vie et les thérapies pharmacologiques.',
+      ar: 'دليل شامل يوضح المؤشرات الحيوية المعتمدة، وتدخلات نمط الحياة، والعلاجات الدوائية التي تدعم العمر الصحي.'
     },
     category: 'Editorial',
     readTime: 5,
@@ -360,14 +360,14 @@ export const MASTER_BLOGS: MasterBlog[] = [
   {
     id: 'mb-18',
     title: {
-      en: 'The Gut Microbiome and Human Health',
-      fr: 'Le microbiome intestinal et la santé humaine',
-      ar: 'الميكروبيوم المعوي وصحة الإنسان'
+      en: 'Your Gut Microbiome Is Running Your Health: The Brain, Immunity, and Metabolic Connections You Need to Know',
+      fr: 'Votre microbiome intestinal gère votre santé : les connexions cerveau-immunité-métabolisme à connaître',
+      ar: 'ميكروبيوم أمعائك يدير صحتك: الروابط المعوية الدماغية، والمناعية، والاستقلابية التي يجب أن تعرفها'
     },
     snippet: {
-      en: 'Evaluating short-chain fatty acids (SCFAs), gut-brain axis, and post-antibiotic reconstitution.',
-      fr: 'Évaluation des acides gras à chaîne courte, de l\'axe intestin-cerveau et de la flore post-antibiotique.',
-      ar: 'تقييم الأحماض الدهنية قصيرة السلسلة (SCFAs)، ومحور الأمعاء والدماغ، وإعادة بناء الفلورا بعد المضادات.'
+      en: 'Evaluating the clinical links between gut microbiota composition, systemic inflammatory responses, and metabolic diseases.',
+      fr: 'Évaluation des liens cliniques entre la composition du microbiote intestinal, l\'inflammation et les maladies métaboliques.',
+      ar: 'تقييم الروابط السريرية بين تركيب الميكروبيوم المعوي، والاستجابات الالبتهابية العامة، والأمراض الاستقلابية.'
     },
     category: 'Clinical Tips',
     readTime: 4,
@@ -462,14 +462,14 @@ export const MASTER_BLOGS: MasterBlog[] = [
   {
     id: 'mb-24',
     title: {
-      en: 'Evidence-Based Weight Loss Strategies',
-      fr: 'Stratégies de perte de poids basées sur des preuves',
-      ar: 'استراتيجيات إنقاص الوزن القائمة على الأدلة'
+      en: 'GLP-1, Hormones, and Weight: Why Metabolic Health in Women Requires a Different Approach',
+      fr: 'GLP-1, hormones et poids : pourquoi la santé métabolique des femmes nécessite une approche différente',
+      ar: 'أدوية GLP-1، والهرمونات، والوزن: لماذا تتطلب الصحة الاستقلابية للمرأة نهجًا مختلفًا'
     },
     snippet: {
-      en: 'Comparing calorie restriction, macronutrient variations, and pharmacotherapeutic strategies.',
-      fr: 'Comparaison de la restriction calorique, variations de macronutriments et pharmacothérapie.',
-      ar: 'مقارنة تقييد السعرات الحرارية، واختلافات المغذيات الكبيرة، والاستراتيجيات الدوائية.'
+      en: 'Analyzing the intersection of hormonal profiles, life-stage metabolic shifts, and GLP-1 receptor agonist response in female patients.',
+      fr: 'Analyse de l\'intersection des profils hormonaux, des changements métaboliques et de la réponse au GLP-1 chez les patientes.',
+      ar: 'تحليل تقاطع الهرمونات، والتغيرات الاستقلابية خلال مراحل الحياة، والاستجابة لناهضات مستقبلات GLP-1 لدى المريضات.'
     },
     category: 'Practice',
     readTime: 4,
@@ -576,7 +576,92 @@ export const MASTER_BLOGS: MasterBlog[] = [
     category: 'Practice',
     readTime: 3,
     date: '2026-04-14',
+    author: 'CareCalculus Editorial Team'
+  },
+  {
+    id: 'mb-31',
+    title: {
+      en: 'Oral GLP-1 Medications: Navigating the Transition from Injectable to Oral Therapies in H1 2026',
+      fr: 'Médicaments GLP-1 oraux : naviguer dans la transition des thérapies injectables aux thérapies orales au S1 2026',
+      ar: 'أدوية GLP-1 الفموية: توجيه الانتقال من العلاجات القابلة للحقن إلى العلاجات الفموية في النصف الأول من عام 2026'
+    },
+    snippet: {
+      en: 'Exploring oral semaglutide, next-generation peptide formulations, and patient compliance dynamics in clinical practice.',
+      fr: 'Exploration du sémaglutide oral, des formulations de peptides de nouvelle génération et de l\'observance des patients.',
+      ar: 'استكشاف السيماغلوتيد الفموي، وتركيبات الببتيد من الجيل الجديد، وديناميكيات التزام المرضى بالممارسة السريرية.'
+    },
+    category: 'Clinical Tips',
+    readTime: 5,
+    date: '2026-06-14',
     author: 'Dr. Jean-Pierre Dupont, MD'
+  },
+  {
+    id: 'mb-32',
+    title: {
+      en: 'The Gut–Brain Axis in 2026: How Microbiome Health Influences Neurological and Metabolic Pathways',
+      fr: 'L\'axe intestin-cerveau en 2026 : comment la santé du microbiome influence les voies neurologiques et métaboliques',
+      ar: 'محور الأمعاء والدماغ في عام 2026: كيف تؤثر صحة الميكروبيوم على المسارات العصبية والاستقلابية'
+    },
+    snippet: {
+      en: 'A deep clinical dive into short-chain fatty acids (SCFAs), vagal nerve signaling, and the micro-inflammatory gut-brain connection.',
+      fr: 'Une plongée clinique dans les acides gras à chaîne courte (SCFA), la signalisation du nerf vague et l\'inflammation intestin-cerveau.',
+      ar: 'غوص سريري عميق في الأحماض الدهنية قصيرة السلسلة، وإشارات العصب الحائر، والروابط معوية دماغية الالتهابية.'
+    },
+    category: 'Clinical Tips',
+    readTime: 6,
+    date: '2026-06-13',
+    author: 'Dr. Marcus Thorne, Ph.D.'
+  },
+  {
+    id: 'mb-33',
+    title: {
+      en: 'How Bedside Calculators Impact Real Patient Outcomes: A Case-Study Review',
+      fr: 'Comment les calculateurs au chevet du patient influencent les résultats réels : revue d\'études de cas',
+      ar: 'كيف تؤثر الحاسبات الطبية بجانب السرير على نتائج المرضى الحقيقية: مراجعة دراسة حالة'
+    },
+    snippet: {
+      en: 'Reviewing multivariable clinical support tools (CHADS-VASc, Wells, and MAP) and their documented role in reducing diagnostic latency.',
+      fr: 'Revue des outils d\'aide à la décision (CHADS-VASc, Wells, PAM) et de leur rôle dans la réduction des délais de diagnostic.',
+      ar: 'مراجعة أدوات دعم القرار السريري متعددة المتغيرات ودورها الموثق في تقليل تأخر التشخيص.'
+    },
+    category: 'Practice',
+    readTime: 5,
+    date: '2026-06-11',
+    author: 'CareCalculus Editorial Team'
+  },
+  {
+    id: 'mb-34',
+    title: {
+      en: 'Exercise Prescription as Medicine: Evidence-Based Physical Therapy in Metabolic Management',
+      fr: 'La prescription d\'exercices comme médecine : thérapie physique basée sur des preuves dans la gestion métabolique',
+      ar: 'وصف التمارين الرياضية كدواء: العلاج الطبيعي القائم على الأدلة في الإدارة الاستقلابية'
+    },
+    snippet: {
+      en: 'Detailing exercise type, intensity thresholds, and cellular adaptations that reverse insulin resistance and support glycemic control.',
+      fr: 'Détail du type d\'exercice, des seuils d\'intensité et des adaptations cellulaires qui réduisent la résistance à l\'insuline.',
+      ar: 'تفصيل نوع التمارين، وحدود الشدة، والتكيفات الخلوية التي تعكس مقاومة الأنسولين وتدعم التحكم بالسكري.'
+    },
+    category: 'Clinical Tips',
+    readTime: 5,
+    date: '2026-06-09',
+    author: 'Prof. Alice Vance, MD, Ph.D.'
+  },
+  {
+    id: 'mb-35',
+    title: {
+      en: 'AI and Health Equity in Low-Resource Settings: Balancing Innovation and Access in Global Healthcare',
+      fr: 'IA et équité en santé dans les milieux à faibles ressources : équilibrer innovation et accès aux soins mondiaux',
+      ar: 'الذكاء الاصطناعي والعدالة الصحية في المناطق محدودة الموارد: موازنة الابتكار والوصول في الرعاية الصحية العالمية'
+    },
+    snippet: {
+      en: 'Analyzing clinical validation gaps, regional dataset biases, and implementation strategies for diagnostic AI in global health.',
+      fr: 'Analyse des lacunes de validation, des biais des jeux de données régionaux et des stratégies pour l\'IA dans la santé mondiale.',
+      ar: 'تحليل فجوات التحقق السريري، وانحياز مجموعات البيانات الإقليمية، واستراتيجيات تنفيذ الذكاء الاصطناعي في الصحة العالمية.'
+    },
+    category: 'Technology',
+    readTime: 6,
+    date: '2026-06-07',
+    author: 'CareCalculus Engineering'
   }
 ];
 
@@ -585,14 +670,14 @@ export const MASTER_JOURNALS: MasterJournal[] = [
   {
     id: 'mj-1',
     title: {
-      en: 'Systematic Review of GLP-1 Receptor Agonists in Obesity Management',
-      fr: 'Revue systématique des agonistes des récepteurs du GLP-1 dans le traitement de l\'obésité',
-      ar: 'مراجعة منهجية لناهضات مستقبلات GLP-1 في علاج السمنة'
+      en: 'GLP-1 Receptor Agonists in Obesity and Cardiometabolic Disease: A Systematic Review of Efficacy, Safety, and Emerging Indications (2020–2026)',
+      fr: 'Agonistes des récepteurs GLP-1 dans l\'obésité et les maladies cardiométaboliques : revue systématique de l\'efficacité, de la sécurité et des indications émergentes (2020-2026)',
+      ar: 'ناهضات مستقبلات GLP-1 في السمنة وأمراض القلب والأوعية الدموية الاستقلابية: مراجعة منهجية للفعالية والسلامة ودواعي الاستعمال الناشئة (2020-2026)'
     },
     snippet: {
-      en: 'A high-impact meta-analysis evaluating weight loss percentage, satiety markers, and long-term safety profiles.',
-      fr: 'Une méta-analyse à fort impact évaluant le pourcentage de perte de poids, la satiété et la tolérance à long terme.',
-      ar: 'تحليل شمولي عالي الأثر لتقييم نسبة إنقاص الوزن، ومؤشرات الشبع، ومستويات السلامة على المدى الطويل.'
+      en: 'A high-impact systematic review and meta-analysis evaluating weight loss percentage, satiety markers, cardiovascular outcomes, and long-term safety profiles.',
+      fr: 'Une revue systématique et méta-analyse à fort impact évaluant la perte de poids, la satiété, les résultats cardiovasculaires et la sécurité à long terme.',
+      ar: 'مراجعة منهجية وتحليل شمولي عالي الأثر لتقييم نسبة إنقاص الوزن، ومؤشرات الشبع، ونتائج القلب والأوعية الدموية، ومستويات السلامة.'
     },
     category: 'Critical Care',
     readTime: '8 min read',
@@ -602,22 +687,22 @@ export const MASTER_JOURNALS: MasterJournal[] = [
     doi: '10.1002/obs.2026.11',
     citationCount: 88,
     clinicalImpact: {
-      en: 'GLP-1 receptor agonists showed a mean weight reduction of 14.9% over 52 weeks in non-diabetic obesity cohorts.',
-      fr: 'Les agonistes du GLP-1 ont montré une réduction pondérale moyenne de 14,9 % sur 52 semaines chez les obèses non diabétiques.',
-      ar: 'أظهرت ناهضات GLP-1 انخفاضاً متوسطاً في الوزن بنسبة 14.9٪ على مدار 52 أسبوعاً لدى مجموعات السمنة غير المصابة بالسكري.'
+      en: 'GLP-1 receptor agonists showed a mean weight reduction of 14.9% over 52 weeks and a 20% reduction in major adverse cardiovascular events (MACE).',
+      fr: 'Les agonistes du GLP-1 ont montré une réduction pondérale moyenne de 14,9 % sur 52 semaines et une baisse de 20 % des événements cardiovasculaires majeurs (MACE).',
+      ar: 'أظهرت ناهضات GLP-1 انخفاضاً متوسطاً في الوزن بنسبة 14.9٪ على مدار 52 أسبوعاً وانخفاضاً بنسبة 20٪ في الأحداث القلبية الوعائية الضارة الكبرى (MACE).'
     }
   },
   {
     id: 'mj-2',
     title: {
-      en: 'Artificial Intelligence in Clinical Decision Support: A Review',
-      fr: 'L\'intelligence artificielle dans l\'aide à la décision clinique : Une revue',
-      ar: 'الذكاء الاصطناعي في دعم القرار السريري: مراجعة'
+      en: 'Large Language Models and Clinical Decision Support: Current Capabilities, Validation Gaps, and Implementation Frameworks — A Narrative Review',
+      fr: 'Modèles de langage (LLM) et aide à la décision clinique : capacités actuelles, lacunes de validation et cadres de mise en œuvre — revue narrative',
+      ar: 'نماذج اللغة الكبيرة ودعم القرار السريري: القدرات الحالية، وفجوات التحقق، وأطر التنفيذ — مراجعة سردية'
     },
     snippet: {
-      en: 'Evaluating electronic health record integrated alerts and patient mortality prediction model accuracies.',
-      fr: 'Évaluation des alertes intégrées au dossier médical et de la précision des modèles de prédiction de la mortalité.',
-      ar: 'تقييم التنبيهات المدمجة بالسجل الصحي الإلكتروني ودقة نماذج التنبؤ بمعدلات وفيات المرضى.'
+      en: 'Evaluating the integration of LLMs with electronic health records, generative clinical transcription tools, diagnostic safety nets, and validation limits.',
+      fr: 'Évaluation de l\'intégration des LLM aux dossiers de santé, de la transcription clinique générative et des limites de validation.',
+      ar: 'تقييم دمج نماذج اللغة الكبيرة مع السجلات الصحية الإلكترونية، وأدوات النسخ السريري التوليدي، وحدود التحقق.'
     },
     category: 'Diagnostics',
     readTime: '9 min read',
@@ -627,9 +712,9 @@ export const MASTER_JOURNALS: MasterJournal[] = [
     doi: '10.1016/ai.cds.2026.04',
     citationCount: 65,
     clinicalImpact: {
-      en: 'Automated decision support decreased clinical sepsis triage times by 32 minutes in emergency cohorts.',
-      fr: 'Le support de décision automatisé a réduit le temps de triage du sepsis de 32 minutes aux urgences.',
-      ar: 'قلل دعم القرار المؤتمت من وقت فرز الإنتان السريري بمقدار 32 دقيقة في الطوارئ.'
+      en: 'Generative clinical drafting tools reduced physician administrative burden by 2.1 hours per shift while clinical decision validation frameworks mitigated diagnostic error rates by 12%.',
+      fr: 'Les outils de saisie génératifs ont réduit la charge administrative de 2,1 heures par garde, tandis que les cadres de validation ont baissé les erreurs de 12 %.',
+      ar: 'قللت أدوات الصياغة السريرية التوليدية العبء الإداري بمعدل 2.1 ساعة لكل نوبة طبيب بينما خفضت أطر التحقق من القرارات السريرية معدلات الخطأ التشخيصي بنسبة 12٪.'
     }
   },
   {
@@ -1010,14 +1095,14 @@ export const MASTER_JOURNALS: MasterJournal[] = [
   {
     id: 'mj-18',
     title: {
-      en: 'Longevity Research: Emerging Therapeutic Targets',
-      fr: 'Recherche sur la longévité : Cibles thérapeutiques émergentes',
-      ar: 'أبحاث طول العمر: الأهداف العلاجية الناشئة'
+      en: 'Pharmacological and Lifestyle Interventions for Healthspan Extension: A Review of Emerging Targets Including Senolytics, NAD+ Precursors, and GLP-1 Pathways',
+      fr: 'Interventions pharmacologiques et de style de vie pour l\'extension de la durée de santé : examen des cibles émergentes, y compris les sénolytiques, les précurseurs de NAD+ et les voies GLP-1',
+      ar: 'التداخلات الدوائية ونمط الحياة لتمديد العمر الصحي: مراجعة للأهداف الناشئة بما في ذلك العلاجات الحالة للهرم، وسلائف NAD+، ومسارات GLP-1'
     },
     snippet: {
-      en: 'Reviewing clinical trials of senolytic therapeutics, NAD+ precursors, and epigenetic reprogramming.',
-      fr: 'Revue des essais cliniques sur les sénolytiques, précurseurs du NAD+ et reprogrammation épigénétique.',
-      ar: 'مراجعة التجارب السريرية للعلاجات الحالة للهرم، وسلائف NAD+، وإعادة البرمجة الفوق جينية.'
+      en: 'A comprehensive medical review analyzing clinical validation trials of senolytic protocols, NAD+ cofactors, and GLP-1 receptor modulation for metabolic longevity.',
+      fr: 'Une revue médicale complète analysant les essais de protocoles sénolytiques, les cofacteurs NAD+ et la modulation des récepteurs GLP-1.',
+      ar: 'مراجعة طبية شاملة لتحليل تجارب التحقق السريري لبروتوكولات التخلص من الهرم، ومساعدات الإنزيم NAD+، وتعديل مستقبلات GLP-1 لطول العمر الاستقلابي.'
     },
     category: 'Pharmacology',
     readTime: '9 min read',
@@ -1027,9 +1112,9 @@ export const MASTER_JOURNALS: MasterJournal[] = [
     doi: '10.1016/j.long.2026.01',
     citationCount: 66,
     clinicalImpact: {
-      en: 'NAD+ precursor supplementation improved metabolic insulin sensitivity markers in geriatric cohorts by 15.6%.',
-      fr: 'La supplémentation en précurseurs NAD+ a amélioré la sensibilité à l\'insuline de 15,6 % chez les seniors.',
-      ar: 'حسّن تناول مكملات NAD+ من مؤشرات الحساسية للأنسولين لدى مجموعات كبار السن بنسبة 15.6٪.'
+      en: 'NAD+ precursor supplementation improved metabolic insulin sensitivity markers in geriatric cohorts by 15.6% while concurrent GLP-1 therapy preserved cardiovascular reserves.',
+      fr: 'La supplémentation en NAD+ a amélioré la sensibilité à l\'insuline de 15,6 % chez les seniors, tandis que la thérapie GLP-1 a préservé les réserves cardiaques.',
+      ar: 'حسّن تناول مكملات NAD+ من مؤشرات الحساسية للأنسولين لدى مجموعات كبار السن بنسبة 15.6٪ بينما حافظ العلاج المتزامن بـ GLP-1 على الاحتياطيات القلبية.'
     }
   },
   {
@@ -1092,8 +1177,8 @@ export const MASTER_COURSES: MasterCourse[] = [
   { id: 'mc-4', title: { en: 'Biostatistics Using Real Clinical Data', fr: 'Biostatistiques appliquées aux données cliniques', ar: 'الإحصاء الحيوي باستخدام البيانات السريرية الحقيقية' }, category: 'Biostatistics', summary: { en: 'Hands-on practice using statistical software on metabolic and cardiology registries.', fr: 'Pratique de logiciels statistiques sur des registres de cardiologie et de metabolisme.', ar: 'تدريب عملي على البرمجيات الإحصائية في سجلات أمراض القلب والاستقلاب.' }, instructor: 'Dr. Marcus Thorne, Ph.D.', date: '2026-06-03', size: '5.8 MB', pages: 4 },
   { id: 'mc-5', title: { en: 'Clinical Research Methodology', fr: 'Méthodologie de la recherche clinique', ar: 'منهجية البحث السريري' }, category: 'Clinical Research', summary: { en: 'Designing clinical trials, cohort structures, and ethical protocol submissions.', fr: 'Conception d\'essais cliniques, structures de cohortes et protocoles d\'ethique.', ar: 'تصميم التجارب السريرية، وهياكل المجموعات، وتقديم بروتوكولات أخلاقيات البحث.' }, instructor: 'Dr. Jean-Pierre Dupont, MD', date: '2026-05-31', size: '4.6 MB', pages: 3 },
   { id: 'mc-6', title: { en: 'Introduction to Epidemiology', fr: 'Introduction à l\'épidémiologie', ar: 'مقدمة في علم الأوبئة' }, category: 'Clinical Research', summary: { en: 'Tracking disease patterns, odds ratios, relative risks, and outbreaks monitoring.', fr: 'Suivi des maladies, odds ratios, risques relatifs et surveillance des epidemies.', ar: 'تتبع أنماط الأمراض، ونسب الأرجحية، والمخاطر النسبية، ومراقبة تفشي الأوبئة.' }, instructor: 'Dr. Al-Faruqi, MD', date: '2026-05-28', size: '3.9 MB', pages: 3 },
-  { id: 'mc-7', title: { en: 'Artificial Intelligence for Healthcare Professionals', fr: 'L\'IA pour les professionnels de la santé', ar: 'الذكاء الاصطناعي للممارسين الصحيين' }, category: 'Technology', summary: { en: 'Understanding deep learning algorithms and integration rules in clinical tools.', fr: 'Comprendre les algorithmes de deep learning et l\'integration d\'outils cliniques.', ar: 'فهم خوارزميات التعلم العميق وقواعد التكامل في الأدوات السريرية.' }, instructor: 'CareCalculus Engineering', date: '2026-05-25', size: '4.8 MB', pages: 3 },
-  { id: 'mc-8', title: { en: 'Medical Data Analysis with Python', fr: 'Analyse des données médicales avec Python', ar: 'تحليل البيانات الطبية باستخدام بايثون' }, category: 'Technology', summary: { en: 'Using pandas, numpy, and scientific tools to process patient registries databases.', fr: 'Utilisation de pandas, numpy et d\'outils scientifiques pour traiter les registres.', ar: 'استخدام مكتبات pandas وnumpy لمعالجة قواعد بيانات سجلات المرضى.' }, instructor: 'Dr. Marcus Thorne, Ph.D.', date: '2026-05-22', size: '6.5 MB', pages: 5 },
+  { id: 'mc-7', title: { en: 'AI Tools for Clinicians: A Practical Course on LLMs, Imaging AI, and Clinical Decision Support — With Hands-On Case Studies', fr: 'Outils d\'IA pour les cliniciens : cours pratique sur les LLM, l\'IA d\'imagerie et l\'aide à la décision — avec études de cas', ar: 'أدوات الذكاء الاصطناعي للأطباء: دورة عمليّة في نماذج اللغة، والذكاء الاصطناعي للتصوير، ودعم القرار — مع دراسات حالة' }, category: 'Technology', summary: { en: 'A practical, hands-on course covering large language models, radiology algorithms, automated EHR alerts, and clinical safety validations.', fr: 'Un cours pratique couvrant les grands modèles de langage, les algorithmes de radiologie et les alertes automatisées.', ar: 'دورة تطبيقية عملية تغطي نماذج اللغة الكبيرة، وخوارزميات الأشعة، وتنبيهات السجلات الصحية، والتحقق من السلامة.' }, instructor: 'CareCalculus Engineering', date: '2026-05-25', size: '4.8 MB', pages: 3 },
+  { id: 'mc-8', title: { en: 'Python for Clinical Researchers: Analyze Real Patient Data, Build Predictive Models, and Publish Results — Beginner to Intermediate', fr: 'Python pour les chercheurs cliniques : analyse de données réelles, modèles prédictifs et publication — débutant à intermédiaire', ar: 'بايثون للباحثين السريريين: تحليل بيانات المرضى الحقيقية، وبناء نماذج التنبؤ، ونشر النتائج — من المبتدئ إلى المتوسط' }, category: 'Technology', summary: { en: 'A comprehensive guide to analyzing patient registries, visualizing survival curves, and building predictive classifiers using pandas and scikit-learn.', fr: 'Un guide complet pour analyser les registres de patients, visualiser les courbes de survie et concevoir des classificateurs.', ar: 'دليل شامل لتحليل سجلات المرضى، وتصور منحنيات البقاء، وبناء مصنفات التنبؤ باستخدام pandas وscikit-learn.' }, instructor: 'Dr. Marcus Thorne, Ph.D.', date: '2026-05-22', size: '6.5 MB', pages: 5 },
   { id: 'mc-9', title: { en: 'Scientific Writing for Researchers', fr: 'Rédaction scientifique pour les chercheurs', ar: 'الكتابة العلمية للباحثين' }, category: 'Clinical Research', summary: { en: 'Drafting abstracts, structured journals, references citations, and review replies.', fr: 'Redaction de resumes, journaux structures, citations et reponses aux examinateurs.', ar: 'صياغة الملخصات، والمجلات الهيكلية، والاقتباسات، والرد على المقيمين.' }, instructor: 'Prof. Alice Vance, MD', date: '2026-05-19', size: '3.2 MB', pages: 2 },
   { id: 'mc-10', title: { en: 'Systematic Reviews and Meta-Analysis', fr: 'Revues systématiques et méta-analyses', ar: 'المراجعات المنهجية والتحليل الشمولي' }, category: 'Clinical Research', summary: { en: 'PRISMA guidelines, database indexing search, and forest plots interpretation.', fr: 'Directives PRISMA, recherche indexee et interpretation des forest plots.', ar: 'إرشادات PRISMA، والبحث في الفهارس الطبية، وتفسير مخططات Forest Plots.' }, instructor: 'Dr. Jean-Pierre Dupont, MD', date: '2026-05-16', size: '4.4 MB', pages: 3 },
   { id: 'mc-11', title: { en: 'Clinical Decision Support Systems', fr: 'Systèmes d\'aide à la décision clinique', ar: 'أنظمة دعم القرار السريري' }, category: 'Technology', summary: { en: 'How automated medical alert systems are integrated with electronic health records.', fr: 'Comment les systemes d\'alerte automatises s\'integrent aux dossiers medicaux.', ar: 'كيفية دمج أنظمة التنبيه الطبي المؤتمتة مع السجلات الصحية الإلكترونية.' }, instructor: 'CareCalculus Engineering', date: '2026-05-13', size: '4.0 MB', pages: 3 },
@@ -1101,11 +1186,12 @@ export const MASTER_COURSES: MasterCourse[] = [
   { id: 'mc-13', title: { en: 'Research Ethics in Healthcare', fr: 'Éthique de la recherche en santé', ar: 'أخلاقيات البحث في الرعاية الصحية' }, category: 'Clinical Research', summary: { en: 'Informed consent, institutional review boards (IRBs), and data protection regulations.', fr: 'Consentement eclaire, comites d\'ethique (IRB) et protection des donnees.', ar: 'الموافقة المستنيرة، ومجالس المراجعة المؤسسية (IRBs)، ولوائح حماية البيانات.' }, instructor: 'Dr. Al-Faruqi, MD', date: '2026-05-07', size: '3.4 MB', pages: 2 },
   { id: 'mc-14', title: { en: 'Cancer Epidemiology', fr: 'Épidémiologie du cancer', ar: 'وبائيات السرطان' }, category: 'Oncology', summary: { en: 'Global incidence rates, screening programs, risk factors, and registry analytics.', fr: 'Taux d\'incidence mondiaux, programmes de depistage, facteurs de risque et registres.', ar: 'معدلات الإصابة العالمية، وبرامج الفحص، وعوامل الخطر، وتحليلات السجلات.' }, instructor: 'Dr. Al-Faruqi, MD', date: '2026-05-04', size: '4.3 MB', pages: 3 },
   { id: 'mc-15', title: { en: 'Stroke Risk Assessment and Prevention', fr: 'Évaluation du risque d\'AVC et prévention', ar: 'تقييم مخاطر السكتة الدماغية والوقاية منها' }, category: 'Cardiology', summary: { en: 'Implementing CHA2DS2-VASc, carotid screening, and antihypertensive targets.', fr: 'Application du CHA2DS2-VASc, depistage carotidien et cibles de tension.', ar: 'تطبيق نقاط CHA2DS2-VASc، وفحص الشريان السباتي، وأهداف خفض ضغط الدم.' }, instructor: 'Dr. Al-Faruqi, MD', date: '2026-05-01', size: '3.7 MB', pages: 3 },
-  { id: 'mc-16', title: { en: 'Diabetes Management Essentials', fr: 'Essentiels de la gestion du diabète', ar: 'أساسيات إدارة مرض السكري' }, category: 'Endocrinology', summary: { en: 'Basal-bolus insulin math, dietary planning, and glomerular protection parameters.', fr: 'Calcul d\'insuline basale-bolus, nutrition et protection glomerulaire.', ar: 'حسابات جرعات الأنسولين السريعة والبطيئة، والتخطيط الغذائي، وحماية الكبيبات.' }, instructor: 'Prof. Alice Vance, MD', date: '2026-04-28', size: '4.5 MB', pages: 3 },
+  { id: 'mc-16', title: { en: 'Diabetes & Metabolic Disease in 2026: Managing GLP-1 Therapies, CGM Data, and Personalized Treatment Plans', fr: 'Diabète & maladies métaboliques en 2026 : gestion des thérapies GLP-1, données CGM et plans personnalisés', ar: 'السكري والأمراض الاستقلابية في عام 2026: إدارة علاجات GLP-1، وبيانات مراقبة السكر المستمرة، وخطط العلاج المخصصة' }, category: 'Endocrinology', summary: { en: 'Managing insulin math, analyzing continuous glucose monitoring (CGM) reports, and titrating next-generation GLP-1 receptor agonists.', fr: 'Gérer les calculs d\'insuline, analyser les rapports CGM (glucose en continu) et ajuster les agonistes GLP-1 de nouvelle génération.', ar: 'إدارة حسابات الأنسولين، وتحليل تقارير مراقبة السكر المستمرة، وتدريج جرعات ناهضات مستقبلات GLP-1 من الجيل الجديد.' }, instructor: 'Prof. Alice Vance, MD', date: '2026-04-28', size: '4.5 MB', pages: 3 },
   { id: 'mc-17', title: { en: 'Healthcare Quality Improvement', fr: 'Amélioration de la qualité des soins', ar: 'تحسين جودة الرعاية الصحية' }, category: 'Clinical Research', summary: { en: 'Plan-Do-Study-Act (PDSA) cycles, root cause analysis, and safety audit protocols.', fr: 'Cycles PDSA, analyse des causes profondes et protocoles d\'audit de securite.', ar: 'دورات خطط-افعل-ادرس-نفذ (PDSA)، وتحليل الأسباب الجذرية، وأمن التدقيق.' }, instructor: 'Dr. Rachel Goldstein, MD', date: '2026-04-25', size: '3.9 MB', pages: 3 },
   { id: 'mc-18', title: { en: 'Healthcare Data Visualization', fr: 'Visualisation des données de santé', ar: 'تصور بيانات الرعاية الصحية' }, category: 'Technology', summary: { en: 'Creating clinical dashboards, survival curves, and patient trend diagrams.', fr: 'Creation de tableaux de bord cliniques, courbes de survie et graphiques.', ar: 'إنشاء لوحات معلومات سريرية، ومنحنيات البقاء على قيد الحياة، ومخططات المرضى.' }, instructor: 'CareCalculus Engineering', date: '2026-04-22', size: '5.4 MB', pages: 4 },
   { id: 'mc-19', title: { en: 'Machine Learning in Medicine', fr: 'Apprentissage automatique en médecine', ar: 'التعلم الآلي في الطب' }, category: 'Technology', summary: { en: 'Supervised vs unsupervised classifiers, diagnostic ROC curves, and algorithms.', fr: 'Classificateurs supervises, courbes ROC diagnostiques et algorithmes.', ar: 'المصنفات الخاضعة وغير الخاضعة للإشراف، ومنحنيات ROC التشخيصية، والخوارزميات.' }, instructor: 'Dr. Marcus Thorne, Ph.D.', date: '2026-04-19', size: '6.0 MB', pages: 4 },
-  { id: 'mc-20', title: { en: 'Precision Medicine Foundations', fr: 'Bases de la médecine de précision', ar: 'أسس الطب الدقيق' }, category: 'General Medicine', summary: { en: 'Translating genetic sequencing data into target-specific therapeutic indices.', fr: 'Traduction des donnees de sequençage en indices therapeutiques cibles.', ar: 'ترجمة بيانات التسلسل الجيني إلى مؤشرات علاجية محددة الهدف.' }, instructor: 'Prof. Alice Vance, MD', date: '2026-04-16', size: '4.1 MB', pages: 3 }
+  { id: 'mc-20', title: { en: 'Precision Medicine Foundations', fr: 'Bases de la médecine de précision', ar: 'أسس الطب الدقيق' }, category: 'General Medicine', summary: { en: 'Translating genetic sequencing data into target-specific therapeutic indices.', fr: 'Traduction des donnees de sequençage en indices therapeutiques cibles.', ar: 'ترجمة بيانات التسلسل الجيني إلى مؤشرات علاجية محددة الهدف.' }, instructor: 'Prof. Alice Vance, MD', date: '2026-04-16', size: '4.1 MB', pages: 3 },
+  { id: 'mc-21', title: { en: 'Medical Writing for the Digital Age: Create Authority Content That Ranks, Gets Cited, and Builds Your Clinical Brand', fr: 'Rédaction médicale à l\'ère numérique : créer un contenu d\'autorité qui se classe, est cité et développe votre marque clinique', ar: 'الكتابة الطبية في العصر الرقمي: صياغة محتوى موثوق يتصدر محركات البحث، ويُقتبس منه، ويبني هويتك المهنية' }, category: 'Clinical Research', summary: { en: 'A masterclass for healthcare professionals on writing high-ranking blogs, narrative journal reviews, and optimizing medical content for AI answer engines.', fr: 'Une masterclass pour les professionnels de la santé sur la rédaction de blogs et de revues de journaux narratives.', ar: 'دورة تدريبية متقدمة للممارسين الصحيين لكتابة مدونات عالية التصنيف، ومراجعات سردية للمجلات، وتحسين المحتوى لمحركات إجابة الذكاء الاصطناعي.' }, instructor: 'CareCalculus Editorial Team', date: '2026-06-12', size: '4.2 MB', pages: 3 }
 ];
 
 // 4. 20 PRESENTATIONS
@@ -1137,14 +1223,14 @@ export const MASTER_ORL: MasterOrl[] = [
   {
     id: 'orl-1',
     title: {
-      en: 'Epidemiology of Laryngeal Cancer in Morocco',
-      fr: 'Épidémiologie du cancer du larynx au Maroc',
-      ar: 'وبائيات سرطان الحنجرة في المغرب'
+      en: 'Laryngeal Cancer in Morocco: Incidence Trends, Risk Factor Profile, and Implications for Sub-Saharan and MENA Healthcare Systems',
+      fr: 'Le cancer du larynx au Maroc : tendances de l\'incidence, profil des facteurs de risque et implications pour les systèmes de santé subsahariens et de la région MENA',
+      ar: 'سرطان الحنجرة في المغرب: اتجاهات الإصابة، ومحددات عوامل الخطر، والآثار المترتبة على النظم الصحية في أفريقيا والشرق الأوسط'
     },
     snippet: {
-      en: 'A comprehensive demographic study analyzing tumor subsites, staging at presentation, and tobacco-alcohol associations in Moroccan cohorts.',
-      fr: 'Une étude démographique analysant les sous-sites tumoraux, le stade au diagnostic et l\'association tabac-alcool au Maroc.',
-      ar: 'دراسة ديموغرافية شاملة لتحليل المواقع الفرعية للأورام، والمرحلة عند التشخيص، والارتباط بين التبغ والكحول في المغرب.'
+      en: 'A comprehensive demographic study analyzing tumor subsites, staging at presentation, and tobacco-alcohol associations in Moroccan cohorts, with regional MENA comparisons.',
+      fr: 'Une étude démographique analysant les sous-sites, le stade au diagnostic et l\'association tabac-alcool avec des comparaisons régionales MENA.',
+      ar: 'دراسة ديموغرافية شاملة لتحليل المواقع الفرعية للأورام، ومرحلة التشخيص، وتأثير التبغ والكحول مع مقارنات إقليمية للشرق الأوسط.'
     },
     category: 'ORL / Laryngeal Cancer',
     readTime: '8 min read',
@@ -1154,9 +1240,9 @@ export const MASTER_ORL: MasterOrl[] = [
     doi: '10.1002/orl.mor.2026',
     citationCount: 39,
     clinicalImpact: {
-      en: 'Reveals that glottic cancer is the most prevalent subsite (64%), with 78% of supraglottic presenting at Stage III/IV.',
-      fr: 'Révèle que le cancer glottique est le sous-site le plus fréquent (64%), 78% des cancers supraglottiques étant diagnostiqués au stade III/IV.',
-      ar: 'كشفت الدراسة أن سرطان المزمار هو الأكثر انتشاراً (64٪)، مع تشخيص 78٪ من حالات سرطان فوق المزمار في المرحلة الثالثة/الرابعة.'
+      en: 'Reveals that glottic cancer is the most prevalent subsite (64%), with 78% of supraglottic presenting at Stage III/IV in North African cohorts.',
+      fr: 'Révèle que le cancer glottique est le plus fréquent (64%), 78% des cancers supraglottiques étant diagnostiqués au stade III/IV dans les cohortes nord-africaines.',
+      ar: 'كشفت الدراسة أن سرطان المزمار هو الأكثر انتشاراً (64٪)، مع تشخيص 78٪ من حالات سرطان فوق المزمار في المرحلة الثالثة/الرابعة في شمال إفريقيا.'
     }
   },
   {
@@ -1237,14 +1323,14 @@ export const MASTER_ORL: MasterOrl[] = [
   {
     id: 'orl-5',
     title: {
-      en: 'Artificial Intelligence in Laryngeal Cancer Diagnosis',
-      fr: 'L\'intelligence artificielle dans le diagnostic du cancer du larynx',
-      ar: 'الذكاء الاصطناعي في تشخيص سرطان الحنجرة'
+      en: 'AI-Assisted Laryngoscopy and Pathology in Laryngeal Cancer: Current Accuracy, Clinical Adoption Barriers, and Future Directions',
+      fr: 'Laryngoscopie et pathologie assistées par IA dans le cancer du larynx : précision actuelle, obstacles à l\'adoption clinique et orientations futures',
+      ar: 'تنظير الحنجرة وعلم الأمراض بمساعدة الذكاء الاصطناعي في سرطان الحنجرة: الدقة الحالية، وعوائق الاعتماد السريري، والتوجهات المستقبلية'
     },
     snippet: {
-      en: 'Utilizing deep learning on laryngoscopic video frames for early detection of precancerous and neoplastic vocal cord lesions.',
-      fr: 'Utilisation du deep learning sur vidéos laryngoscopiques pour détecter les lésions précancéreuses des cordes vocales.',
-      ar: 'استخدام التعلم العميق في لقطات الفيديو لتنظير الحنجرة للكشف المبكر عن الآفات السريرية ما قبل السرطانية والورمية.'
+      en: 'Analyzing convolutional neural networks and deep learning on laryngoscopic frames, highlighting diagnostic accuracy and clinical integration barriers.',
+      fr: 'Analyse des réseaux neuronaux et du deep learning sur les images laryngoscopiques, soulignant la précision et les obstacles à l\'intégration.',
+      ar: 'تحليل الشبكات العصبية الالتفافية والتعلم العميق في صور تنظير الحنجرة، مع تسليط الضوء على الدقة وعوائق التكامل السريري.'
     },
     category: 'ORL / Laryngeal Cancer',
     readTime: '8 min read',
@@ -1254,9 +1340,9 @@ export const MASTER_ORL: MasterOrl[] = [
     doi: '10.1002/orl.ai.2026',
     citationCount: 42,
     clinicalImpact: {
-      en: 'Deep learning classifiers achieved a 93.4% diagnostic accuracy rate in differentiating vocal fold leukoplakia types.',
-      fr: 'Les classificateurs d\'IA ont atteint 93,4 % de précision pour différencier les leucoplasies des cordes vocales.',
-      ar: 'حققت مصنفات التعلم العميق دقة تشخيصية بنسبة 93.4٪ في التمييز بين أنواع الطلاوة الحنجرية.'
+      en: 'Deep learning classifiers achieved a 93.4% diagnostic accuracy rate in differentiating vocal fold leukoplakia, but workflow integration remains limited by software validation gaps.',
+      fr: 'Les classificateurs ont atteint 93,4 % de précision pour différencier les leucoplasies, mais l\'intégration reste limitée par des lacunes de validation.',
+      ar: 'حققت مصنفات التعلم العميق دقة تشخيصية بنسبة 93.4٪ في التمييز بين الطلاوة، ولكن تكامل سير العمل لا يزال محدوداً بسبب فجوات التحقق.'
     }
   },
   {
@@ -1337,14 +1423,14 @@ export const MASTER_ORL: MasterOrl[] = [
   {
     id: 'orl-9',
     title: {
-      en: 'Quality of Life After Laryngectomy',
-      fr: 'Qualité de vie après laryngectomie',
-      ar: 'جودة الحياة بعد استئصال الحنجرة'
+      en: 'Voice, Identity, and Recovery: Quality of Life Outcomes After Total Laryngectomy — A Patient-Centered Review with Validated QoL Instruments',
+      fr: 'Voix, identité et rétablissement : qualité de vie après laryngectomie totale — examen axé sur le patient avec des instruments de qualité de vie validés',
+      ar: 'الصوت، والهوية، والتعافي: نتائج جودة الحياة بعد استئصال الحنجرة الكامل — مراجعة تتمحور حول المريض مع أدوات قياس معتمدة'
     },
     snippet: {
-      en: 'Evaluating speech rehabilitation, tracheostomal care compliance, and social integration in post-laryngectomy cohorts.',
-      fr: 'Évaluation de la rééducation de la parole, des soins de trachéostome et de l\'intégration sociale.',
-      ar: 'تقييم إعادة تأهيل النطق، والالتزام برعاية فغر الرغامي، والاندماج الاجتماعي لدى المرضى بعد استئصال الحنجرة.'
+      en: 'Evaluating speech rehabilitation, tracheostomal care compliance, and social integration in post-laryngectomy cohorts using validated EORTC QLQ-H&N35 scales.',
+      fr: 'Évaluation de la rééducation, de l\'observance des soins et de l\'intégration sociale en utilisant les échelles validées EORTC QLQ-H&N35.',
+      ar: 'تقييم إعادة تأهيل النطق، والالتزام برعاية فغر الرغامي، والاندماج الاجتماعي لدى مرضى الاستئصال باستخدام مقاييس EORTC QLQ-H&N35 المعتمدة.'
     },
     category: 'ORL / Laryngeal Cancer',
     readTime: '8 min read',
@@ -1354,9 +1440,9 @@ export const MASTER_ORL: MasterOrl[] = [
     doi: '10.1002/orl.qol.2026',
     citationCount: 19,
     clinicalImpact: {
-      en: 'Early voice rehabilitation using tracheoesophageal puncture improved post-op QoL scores by 34%.',
-      fr: 'La réhabilitation vocale précoce par prothèse phonatoire a amélioré les scores de qualité de vie de 34%.',
-      ar: 'حسّن التأهيل الصوتي المبكر باستخدام الثقب المريئي الرغامي من درجات جودة الحياة بعد العملية بنسبة 34٪.'
+      en: 'Early voice rehabilitation using tracheoesophageal puncture combined with structured psychosocial support improved post-operative patient-reported QoL scores by 34%.',
+      fr: 'La réhabilitation vocale précoce combinée à un soutien psychosocial structuré a amélioré les scores de qualité de vie postopératoires de 34 %.',
+      ar: 'حسّن التأهيل الصوتي المبكر مصحوباً بالدعم النفسي والاجتماعي المنظم من درجات جودة الحياة بعد العملية بنسبة 34٪.'
     }
   },
   {

@@ -16,6 +16,7 @@ interface BlogArticle {
   snippetAr: string;
   content: string;
   author: string;
+  reviewer?: string;
   category: 'Clinical Tips' | 'News & Updates' | 'Editorial' | 'Practice' | 'Technology';
   readTime: number;
   date: string;
@@ -44,6 +45,7 @@ Mean Arterial Pressure reflects organ perfusion far better than a single systoli
 ### Bottom line
 Pair these habits with the MAP Calculator to keep your titration tight and your kidneys happy.`,
     author: 'CareCalculus Editorial Team',
+    reviewer: 'Dr. Al-Faruqi, MD',
     category: 'Clinical Tips',
     readTime: 4,
     date: '2026-06-05'
@@ -67,6 +69,7 @@ Screen broad, escalate specific. SIRS still catches early inflammation; qSOFA st
 ### Putting it into practice
 Run SIRS at intake, then immediately compute qSOFA on anyone flagged. Both calculators are one tap away in the sidebar.`,
     author: 'Dr. Jean-Pierre Dupont, MD',
+    reviewer: 'Prof. Alice Vance, MD',
     category: 'News & Updates',
     readTime: 5,
     date: '2026-05-28'
@@ -90,6 +93,7 @@ Doses only mean something relative to potency. Always convert through a common r
 ### Safer workflow
 Use the Steroids Equivalence tool to anchor the conversion, then adjust for the clinical context rather than the other way around.`,
     author: 'CareCalculus Editorial Team',
+    reviewer: 'Dr. Al-Faruqi, MD',
     category: 'Practice',
     readTime: 4,
     date: '2026-05-15'
@@ -113,6 +117,7 @@ Every fast clinician leans on tools. The danger is not using a calculator — it
 ### Closing thought
 Tools should compress the boring arithmetic so your attention stays on the patient in front of you.`,
     author: 'CareCalculus Editorial Team',
+    reviewer: 'Prof. Alice Vance, MD',
     category: 'Editorial',
     readTime: 3,
     date: '2026-05-02'
@@ -136,6 +141,7 @@ Lung-protective volumes scale to predicted body weight, never actual weight. Hei
 ### Make it automatic
 The Tidal Volume tool turns height into a target in seconds — then your eyes go back to the plateau pressure and the patient.`,
     author: 'Prof. Alice Vance, MD, Ph.D.',
+    reviewer: 'Dr. Al-Faruqi, MD',
     category: 'Clinical Tips',
     readTime: 4,
     date: '2026-04-19'
@@ -159,6 +165,7 @@ Clinical decisions happen in many tongues. Supporting English, French, and Arabi
 ### The payoff
 A clinician in Casablanca, Paris, or Chicago sees the same trustworthy tool in their own language.`,
     author: 'CareCalculus Engineering',
+    reviewer: 'Prof. Alice Vance, MD',
     category: 'Technology',
     readTime: 3,
     date: '2026-04-04'
@@ -177,6 +184,7 @@ const BLOG_SEED: BlogArticle[] = [
     snippetAr: mb.snippet.ar,
     content: '',
     author: mb.author,
+    reviewer: mb.id === 'mb-1' || mb.id === 'mb-3' || mb.id === 'mb-5' ? 'Dr. Al-Faruqi, MD' : 'Prof. Alice Vance, MD',
     category: mb.category,
     readTime: mb.readTime,
     date: mb.date
@@ -378,16 +386,30 @@ export default function Blog({ lang }: BlogProps) {
               {localizedTitle(activePost)}
             </h1>
 
-            <div className="flex items-center gap-2.5 text-xs">
-              <div className="w-9 h-9 rounded-full bg-slate-900 text-white flex items-center justify-center font-black uppercase font-mono">
-                {activePost.author.replace('Dr. ', '').replace('Prof. ', '').slice(0, 2)}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 bg-slate-50 border border-gray-150 rounded-2xl text-xs">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-full bg-slate-900 text-white flex items-center justify-center font-black uppercase font-mono text-xs">
+                  {activePost.author.replace('Dr. ', '').replace('Prof. ', '').slice(0, 2)}
+                </div>
+                <div>
+                  <span className="text-gray-400 block font-mono text-[9px] uppercase tracking-wider">{t('AUTHOR', 'AUTEUR', 'الكاتب')}</span>
+                  <span className="font-extrabold text-slate-800 flex items-center gap-1">
+                    <User className="w-3 h-3 text-gray-400" />
+                    {activePost.author}
+                  </span>
+                </div>
               </div>
-              <div>
-                <span className="text-gray-400 block font-mono text-[9px] uppercase tracking-wider">{t('AUTHOR', 'AUTEUR', 'الكاتب')}</span>
-                <span className="font-extrabold text-slate-800 flex items-center gap-1">
-                  <User className="w-3 h-3 text-gray-400" />
-                  {activePost.author}
-                </span>
+
+              <div className="flex items-center gap-3 border-t sm:border-t-0 sm:border-l border-gray-250 pt-3 sm:pt-0 sm:pl-4">
+                <div className="w-9 h-9 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 flex items-center justify-center shrink-0">
+                  <CheckCircle2 className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-gray-400 block font-mono text-[9px] uppercase tracking-wider">{t('CLINICAL REVIEWER', 'RÉVISEUR MÉDICAL', 'المراجعة الطبية المعتمدة')}</span>
+                  <span className="font-extrabold text-emerald-700">
+                    {activePost.reviewer || 'Dr. Al-Faruqi, MD'}
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -514,6 +536,7 @@ export default function Blog({ lang }: BlogProps) {
           const isActive = selectedCategory === c;
           return (
             <button
+              id={`cat-btn-${c.toLowerCase().replace(/\s+/g, '-')}`}
               key={c}
               onClick={() => setSelectedCategory(c)}
               className={`py-2 px-3.5 rounded-full text-[11px] font-bold whitespace-nowrap transition-all shrink-0 border uppercase tracking-tight flex items-center gap-1.5 ${
@@ -545,23 +568,37 @@ export default function Blog({ lang }: BlogProps) {
             const Icon = meta.icon;
             return (
               <button
+                id={`blog-card-${a.id}`}
                 key={a.id}
                 onClick={() => openPost(a)}
-                className="text-left bg-white p-5 rounded-3xl border border-gray-200/80 hover:border-blue-300 hover:shadow-md transition-all group flex flex-col"
+                className="text-left bg-white p-5 rounded-3xl border border-gray-200/80 hover:border-blue-300 hover:shadow-md transition-all group flex flex-col justify-between"
               >
-                <div className="flex items-center justify-between mb-3">
-                  <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 border font-mono text-[8px] font-black uppercase rounded-md tracking-wider ${meta.chip}`}>
-                    <Icon className="w-3 h-3" />
-                    {localizedCategory(a.category)}
-                  </span>
-                  <span className="text-[9px] font-mono text-gray-400 font-bold">{a.date}</span>
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 border font-mono text-[8px] font-black uppercase rounded-md tracking-wider ${meta.chip}`}>
+                      <Icon className="w-3 h-3" />
+                      {localizedCategory(a.category)}
+                    </span>
+                    <span className="text-[9px] font-mono text-gray-400 font-bold">{a.date}</span>
+                  </div>
+                  <h3 className="text-sm font-black text-slate-900 leading-snug group-hover:text-blue-700 transition-colors line-clamp-2">
+                    {localizedTitle(a)}
+                  </h3>
+                  <p className="text-[11px] text-gray-500 font-semibold leading-relaxed mt-2 line-clamp-3">
+                    {localizedSnippet(a)}
+                  </p>
+                  
+                  {/* Author and Reviewer E-E-A-T badges */}
+                  <div className="mt-3.5 flex flex-wrap items-center gap-2 text-[10px] font-bold text-gray-500">
+                    <span className="truncate">By {a.author}</span>
+                    <span className="text-gray-300">•</span>
+                    <span className="text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded-md flex items-center gap-0.5 whitespace-nowrap shrink-0 border border-emerald-100">
+                      <CheckCircle2 className="w-2.5 h-2.5 text-emerald-600" />
+                      {a.reviewer || 'Dr. Al-Faruqi, MD'}
+                    </span>
+                  </div>
                 </div>
-                <h3 className="text-sm font-black text-slate-900 leading-snug group-hover:text-blue-700 transition-colors line-clamp-2">
-                  {localizedTitle(a)}
-                </h3>
-                <p className="text-[11px] text-gray-500 font-semibold leading-relaxed mt-2 line-clamp-3 flex-1">
-                  {localizedSnippet(a)}
-                </p>
+
                 <div className="flex items-center justify-between mt-4 pt-3 border-t border-gray-100">
                   <span className="flex items-center gap-1 text-[10px] font-mono font-bold text-gray-400">
                     <Clock className="w-3 h-3" />

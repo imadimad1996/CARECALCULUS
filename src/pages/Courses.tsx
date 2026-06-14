@@ -518,15 +518,16 @@ export default function Courses({ lang }: { lang: LangCode }) {
                 {/* Center & Right reading frame */}
                 <div className="lg:col-span-9 space-y-6 flex flex-col justify-between">
                   {/* Active Section Study Content */}
-                  <div className="p-6 md:p-8 bg-slate-950 border border-slate-800 rounded-xl space-y-4 shadow-inner relative overflow-hidden">
+                  <div className="p-6 sm:p-8 md:p-10 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 border-l-4 border-l-blue-500 border border-slate-800 rounded-xl space-y-4 shadow-2xl relative overflow-hidden">
                     <div className="absolute top-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 w-full" />
+                    <div className="absolute top-0 left-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
                     
-                    <h2 className="text-lg font-black text-white tracking-tight flex items-center gap-2">
+                    <h2 className="text-lg sm:text-xl font-black text-white tracking-tight flex items-center gap-2 relative z-10">
                       <span className="text-blue-400 font-mono text-sm">[0{activeSectionIndex + 1}]</span>
                       <span>{activeSection.heading}</span>
                     </h2>
                     
-                    <p className="text-gray-350 text-sm leading-relaxed text-justify">
+                    <p className="text-gray-350 text-xs sm:text-sm md:text-[15px] leading-relaxed text-justify relative z-10">
                       {activeSection.text}
                     </p>
                   </div>
@@ -719,6 +720,10 @@ export default function Courses({ lang }: { lang: LangCode }) {
                     <div className="flex items-center gap-2 flex-wrap">
                       <span className="px-2 py-0.5 bg-gray-100 text-gray-500 font-mono text-[9px] uppercase tracking-wider font-extrabold rounded-md">
                         {cs.category}
+                      </span>
+                      <span className="px-2 py-0.5 bg-indigo-50 border border-indigo-100 text-indigo-700 font-mono text-[9px] uppercase tracking-wider font-black rounded-md flex items-center gap-0.5 shadow-xs">
+                        <Sparkles className="w-2.5 h-2.5 text-indigo-500" />
+                        {lang === 'fr' ? 'Éligible CME' : lang === 'ar' ? 'معتمد للتعليم المستمر' : 'CME Eligible'}
                       </span>
                       <span className="text-[10px] font-mono text-gray-400 flex items-center gap-1">
                         <Calendar className="w-3.5 h-3.5" />
