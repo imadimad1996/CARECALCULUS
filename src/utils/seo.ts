@@ -16,7 +16,7 @@ export const ORIGIN = 'https://carecalculus.com';
 
 const OG_IMAGE = 'https://carecalculus.com/og-image.png';
 
-const nameEnMap: Record<string, string> = {
+export const nameEnMap: Record<string, string> = {
   '/map-calculator': 'Mean Arterial Pressure (MAP) Calculator',
   '/bmi-calculator': 'Body Mass Index (BMI) Calculator',
   '/glasgow-coma-scale': 'Glasgow Coma Scale (GCS) Calculator',
@@ -637,11 +637,14 @@ export function buildHead(logicalPath: string, lang: LangCode): HeadModel {
   }));
   hreflang.push({ hreflang: 'x-default', href: `${ORIGIN}${pathSuffix}` });
 
+  const ogImageFileName = logicalPath === '/' ? 'index.png' : `${logicalPath.replace(/^\//, '')}.png`;
+  const dynamicOgImage = `${ORIGIN}/og-images/${lang}/${ogImageFileName}`;
+
   return {
     title: meta.title,
     meta,
     url,
-    ogImage: OG_IMAGE,
+    ogImage: dynamicOgImage,
     jsonLd: [...buildJsonLd(logicalPath, lang), ...organizationJsonLd()],
     hreflang,
   };
