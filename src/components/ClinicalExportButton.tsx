@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Printer, Copy, Check, FileText, X, User, Calendar, FileDown, Lock } from 'lucide-react';
+import { Printer, Copy, Check, FileText, X, User, Calendar, FileDown, Lock, Share2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { LangCode } from '../types';
 
@@ -34,6 +34,9 @@ const localizations = {
     formula: "Formula Reference",
     disclaimer: "Clinical Disclaimer",
     references: "References & Scientific Guidelines",
+    shareBtn: "Share Result",
+    shareSuccess: "Result link copied to clipboard!",
+    shareTemplate: "I just calculated a {result} using CareCalculus! Check out the free clinical tool here: {url}"
   },
   fr: {
     btnText: "Imprimer / Exporter le Bilan",
@@ -55,6 +58,9 @@ const localizations = {
     formula: "Référence de la Formule",
     disclaimer: "Clause d'Exclusion de Responsabilité Sévère",
     references: "Références & Lignes Directrices Scientifiques",
+    shareBtn: "Partager",
+    shareSuccess: "Lien de résultat copié !",
+    shareTemplate: "Je viens de calculer un {result} en utilisant CareCalculus ! Découvrez l'outil clinique gratuit ici : {url}"
   },
   ar: {
     btnText: "طباعة وتصدير التقرير",
@@ -76,6 +82,9 @@ const localizations = {
     formula: "المعادلة الرياضية المعتمدة",
     disclaimer: "إخلاء المسؤولية السريرية والطبية",
     references: "الأبحاث العلمية والمصادر المعتمدة",
+    shareBtn: "مشاركة النتيجة",
+    shareSuccess: "تم نسخ رابط النتيجة!",
+    shareTemplate: "لقد قمت للتو بحساب {result} باستخدام CareCalculus! تحقق من الأداة السريرية المجانية هنا: {url}"
   }
 };
 
@@ -94,8 +103,34 @@ export default function ClinicalExportButton({
   const [customNotes, setCustomNotes] = useState("");
   const [currentTime, setCurrentTime] = useState("");
   const [copied, setCopied] = useState(false);
+  const [shareCopied, setShareCopied] = useState(false);
 
-  const t = localizations[lang] || localizations.en;
+  const t = localizations[lang] || (localizations.en as typeof localizations.en);
+
+  const handleShare = () => {
+    if (typeof window === 'undefined') return;
+    
+    const resultStr = results.map(r => `${r.label}: ${r.value}${r.unit ? ` ${r.unit}` : ""}`).join(", ");
+    const currentUrl = window.location.href;
+    
+    const rawTemplate = t.shareTemplate || "I just calculated a {result} using CareCalculus! Check out the free clinical tool here: {url}";
+    const shareText = rawTemplate.replace("{result}", `${title} (${resultStr})`).replace("{url}", currentUrl);
+
+    if (navigator.share) {
+      navigator.share({
+        title: `CareCalculus - ${title}`,
+        text: shareText,
+        url: currentUrl
+      }).catch(err => {
+        console.error("Error sharing:", err);
+      });
+    } else {
+      navigator.clipboard.writeText(shareText).then(() => {
+        setShareCopied(true);
+        setTimeout(() => setShareCopied(false), 3000);
+      });
+    }
+  };
   const isRtl = lang === 'ar';
 
   useEffect(() => {
@@ -305,17 +340,43 @@ ${divider}`;
 
   return (
     <>
-      {/* Tactical action button placed cleanly inside results card */}
-      <button
-        onClick={handleOpen}
-        className="w-full mt-4 py-3 px-4 rounded-xl flex items-center justify-center gap-2.5 bg-white/10 hover:bg-white/20 active:bg-white/35 text-white text-xs font-bold font-mono uppercase tracking-wider transition-all duration-300 border border-white/20 hover:border-white/40 shadow-sm relative overflow-hidden group cursor-pointer"
-        style={{ minHeight: '44px' }}
-        id={`btn-open-export-${title.split(' ')[0].toLowerCase()}`}
-      >
-        <Printer className="w-4 h-4 text-blue-300 group-hover:text-white transition-colors animate-pulse" />
-        <span>{t.btnText}</span>
-        <FileDown className="w-3.5 h-3.5 opacity-55 absolute right-4 group-hover:translate-y-0.5 transition-transform" />
-      </button>
+      <div className="flex flex-col sm:flex-row gap-3 mt-4 w-full">
+        {/* Tactical action button placed cleanly inside results card */}
+        <button
+          onClick={handleOpen}
+          className="flex-1 py-3 px-4 rounded-xl flex items-center justify-center gap-2.5 bg-white/10 hover:bg-white/20 active:bg-white/35 text-white text-xs font-bold font-mono uppercase tracking-wider transition-all duration-300 border border-white/20 hover:border-white/40 shadow-sm relative overflow-hidden group cursor-pointer"
+          style={{ minHeight: '44px' }}
+          id={`btn-open-export-${title.split(' ')[0].toLowerCase()}`}
+        >
+          <Printer className="w-4 h-4 text-blue-300 group-hover:text-white transition-colors animate-pulse" />
+          <span>{t.btnText}</span>
+          <FileDown className="w-3.5 h-3.5 opacity-55 absolute right-4 group-hover:translate-y-0.5 transition-transform" />
+        </button>
+
+        {/* New Social Share Result button */}
+        <button
+          onClick={handleShare}
+          className={`flex-1 py-3 px-4 rounded-xl flex items-center justify-center gap-2.5 text-xs font-bold font-mono uppercase tracking-wider transition-all duration-300 border shadow-sm relative overflow-hidden group cursor-pointer ${
+            shareCopied
+              ? 'bg-emerald-600/80 border-emerald-500 text-emerald-100'
+              : 'bg-white/10 hover:bg-white/20 active:bg-white/35 text-white border-white/20 hover:border-white/40'
+          }`}
+          style={{ minHeight: '44px' }}
+          id={`btn-share-result-${title.split(' ')[0].toLowerCase()}`}
+        >
+          {shareCopied ? (
+            <>
+              <Check className="w-4 h-4 text-emerald-300" />
+              <span>{t.shareSuccess}</span>
+            </>
+          ) : (
+            <>
+              <Share2 className="w-4 h-4 text-blue-300 group-hover:text-white transition-colors" />
+              <span>{t.shareBtn}</span>
+            </>
+          )}
+        </button>
+      </div>
 
       {/* Interactive AnimatePresence modal rendering */}
       <AnimatePresence>
@@ -447,10 +508,32 @@ ${divider}`;
                   </div>
 
                   {/* Actions buttons */}
-                  <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 w-full">
+                    <button
+                      onClick={handleShare}
+                      className={`py-3 px-4 rounded-xl flex items-center justify-center gap-2 text-xs font-bold transition-all border shrink-0 cursor-pointer ${
+                        shareCopied
+                          ? 'bg-emerald-600 border-emerald-500 text-emerald-100'
+                          : 'bg-slate-800 border-slate-700 text-slate-200 hover:bg-slate-700 hover:text-white'
+                      }`}
+                      style={{ minHeight: '44px' }}
+                    >
+                      {shareCopied ? (
+                        <>
+                          <Check className="w-4 h-4 text-emerald-300" />
+                          <span>{t.shareSuccess}</span>
+                        </>
+                      ) : (
+                        <>
+                          <Share2 className="w-4 h-4 text-blue-300" />
+                          <span>{t.shareBtn}</span>
+                        </>
+                      )}
+                    </button>
+
                     <button
                       onClick={handleCopy}
-                      className={`flex-1 py-3 px-4 rounded-xl flex items-center justify-center gap-2 text-xs font-bold transition-all border shrink-0 cursor-pointer ${
+                      className={`py-3 px-4 rounded-xl flex items-center justify-center gap-2 text-xs font-bold transition-all border shrink-0 cursor-pointer ${
                         copied
                           ? 'bg-emerald-650 border-emerald-500 text-emerald-100'
                           : 'bg-slate-800 border-slate-700 text-slate-200 hover:bg-slate-700 hover:text-white'
@@ -472,7 +555,7 @@ ${divider}`;
 
                     <button
                       onClick={handlePrint}
-                      className="flex-1 py-3 px-4 rounded-xl flex items-center justify-center gap-2 text-xs font-extrabold bg-blue-600 hover:bg-blue-500 active:bg-blue-700 border border-blue-500 text-white cursor-pointer hover:shadow-[0_0_15px_-3px_rgba(59,130,246,0.5)] transition-all"
+                      className="py-3 px-4 rounded-xl flex items-center justify-center gap-2 text-xs font-extrabold bg-blue-600 hover:bg-blue-500 active:bg-blue-700 border border-blue-500 text-white cursor-pointer hover:shadow-[0_0_15px_-3px_rgba(59,130,246,0.5)] transition-all"
                       style={{ minHeight: '44px' }}
                     >
                       <Printer className="w-4 h-4 animate-bounce" />
