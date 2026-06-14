@@ -384,6 +384,37 @@ const faqSchemaDb: Record<string, { question: string; answer: string }[]> = {
     { question: 'What are the anatomical subsites of the larynx?', answer: 'The larynx is divided into three subsites: the supraglottis (above the vocal cords), the glottis (the vocal cords), and the subglottis (below the vocal cords).' },
     { question: 'What is the significance of the T4 stage in laryngeal cancer?', answer: 'T4 indicates advanced disease. T4a represents moderately advanced local disease (invading through thyroid cartilage or trachea), while T4b represents very advanced local disease (invading prevertebral space, mediastinal structures, or carotid encasement).' },
   ],
+  '/meld-score': [
+    { question: 'What is the MELD score?', answer: 'The Model for End-Stage Liver Disease (MELD) score is a numerical scale (6–40) that predicts 3-month mortality risk in patients with end-stage liver disease. It uses serum bilirubin, serum creatinine, and INR to calculate the score.' },
+    { question: 'What MELD score qualifies for liver transplant?', answer: 'A MELD score of 15 or higher generally qualifies a patient for liver transplant listing. Higher scores indicate greater urgency. Scores above 30 are associated with >50% 90-day mortality without transplant.' },
+    { question: 'How is MELD score calculated?', answer: 'MELD = 3.78 × ln(bilirubin mg/dL) + 11.2 × ln(INR) + 9.57 × ln(creatinine mg/dL) + 6.43. All values below 1.0 are set to 1.0. Maximum creatinine is capped at 4.0.' },
+  ],
+  '/wells-score': [
+    { question: 'What is the Wells score used for?', answer: 'The Wells score is a clinical prediction rule used to estimate the pretest probability of deep vein thrombosis (DVT) or pulmonary embolism (PE). It helps guide diagnostic testing decisions.' },
+    { question: 'What Wells score indicates high risk for DVT?', answer: 'A Wells score of ≥3 indicates high probability of DVT (prevalence ~75%). Score 1-2 is moderate probability (~17%), and ≤0 is low probability (~5%). High-probability patients typically proceed directly to imaging.' },
+    { question: 'What is the difference between Wells criteria for DVT and PE?', answer: 'Wells for DVT and Wells for PE are separate scoring systems with different criteria. DVT Wells evaluates leg-specific findings, while PE Wells includes heart rate >100, hemoptysis, and whether PE is the most likely diagnosis.' },
+  ],
+  '/cha2ds2-vasc': [
+    { question: 'What is CHA2DS2-VASc score?', answer: 'CHA2DS2-VASc is a clinical prediction score that estimates stroke risk in patients with non-valvular atrial fibrillation (AF). It guides decisions about anticoagulation therapy. The acronym stands for: Congestive heart failure, Hypertension, Age ≥75 (2 points), Diabetes, Stroke/TIA (2 points), Vascular disease, Age 65-74, Sex category (female).' },
+    { question: 'What CHA2DS2-VASc score requires anticoagulation?', answer: 'Per ESC/AHA guidelines: Score 0 (males) or 1 (females) = no anticoagulation needed. Score ≥1 (males) or ≥2 (females) = consider anticoagulation. Score ≥2 (males) or ≥3 (females) = anticoagulation recommended.' },
+  ],
+  '/creatinine-clearance': [
+    { question: 'What is creatinine clearance?', answer: 'Creatinine clearance (CrCl) is a measure of kidney function that estimates the glomerular filtration rate (GFR). It reflects how efficiently the kidneys filter creatinine from the blood and is measured in mL/min.' },
+    { question: 'What is the Cockcroft-Gault formula?', answer: 'CrCl = [(140 - Age) × Weight (kg)] / [72 × Serum Creatinine (mg/dL)] × 0.85 if female. It was published by Cockcroft and Gault in 1976 and remains the standard for drug dosing adjustments.' },
+    { question: 'What creatinine clearance is considered normal?', answer: 'Normal creatinine clearance is approximately 90-120 mL/min for healthy adults. Values below 60 mL/min indicate chronic kidney disease (CKD) Stage 3 or worse. Below 15 mL/min indicates kidney failure (Stage 5).' },
+  ],
+  '/corrected-calcium': [
+    { question: 'Why do we correct calcium for albumin?', answer: 'Approximately 40% of serum calcium is bound to albumin. When albumin is low (hypoalbuminemia), total calcium appears falsely low even when ionized (active) calcium is normal. The correction formula adjusts for this protein binding.' },
+    { question: 'What is the corrected calcium formula?', answer: 'Corrected Calcium (mg/dL) = Measured Total Calcium (mg/dL) + 0.8 × (4.0 − Serum Albumin g/dL). The constant 4.0 represents normal albumin and 0.8 is the correction factor.' },
+  ],
+  '/drip-rate-calculator': [
+    { question: 'How do you calculate IV drip rate?', answer: 'Drip Rate (drops/min) = [Volume (mL) × Drop Factor (drops/mL)] / Time (min). Common drop factors are: 10 drops/mL (blood sets), 15 drops/mL (standard), 20 drops/mL (standard), and 60 drops/mL (micro-drip).' },
+    { question: 'What is a normal IV drip rate?', answer: 'Normal IV maintenance rates vary by patient weight: approximately 80-120 mL/hour for adults (roughly 25-40 drops/min with standard tubing). Critical infusions like vasopressors may run at much lower rates (1-20 mL/hr).' },
+  ],
+  '/steroid-conversion': [
+    { question: 'How do you convert between corticosteroids?', answer: 'Corticosteroids have different potencies. Using hydrocortisone 20mg as the reference: Prednisone 5mg = Prednisolone 5mg = Methylprednisolone 4mg = Dexamethasone 0.75mg = Betamethasone 0.6mg = Hydrocortisone 20mg are all equipotent doses.' },
+    { question: 'Why is steroid conversion important?', answer: 'Steroid conversion is critical when switching between agents (e.g., IV methylprednisolone to oral prednisone), when tapering steroids, or when comparing dosages across different formulations. Incorrect conversion can cause adrenal crisis or Cushing syndrome.' },
+  ],
 };
 
 const howToSchemaDb: Record<string, { name: string; description: string; steps: { name: string; text: string }[] }> = {
