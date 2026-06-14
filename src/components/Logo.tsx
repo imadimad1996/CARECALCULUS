@@ -5,7 +5,7 @@ interface LogoProps {
   mode?: 'light' | 'dark';
 }
 
-export default function Logo({ className = 'w-6 h-6', mode = 'light' }: LogoProps) {
+export default function Logo({ className = 'w-8 h-8', mode = 'light' }: LogoProps) {
   const leftColor = mode === 'light' ? '#0f3d59' : '#ffffff';
   const rightColor = mode === 'light' ? '#0096a6' : '#00d2e0';
   const centerPlus = mode === 'light' ? '#ffffff' : '#0f172a';

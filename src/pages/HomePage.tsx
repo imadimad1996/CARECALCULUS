@@ -164,7 +164,7 @@ export default function HomePage({ lang }: HomePageProps) {
         </div>
         <div className="relative z-10 max-w-2xl">
           <div className="flex items-center gap-2 mb-5">
-            <Logo className="w-5 h-5" mode="dark" />
+            <Logo className="w-7 h-7" mode="dark" />
             <span className="text-[11px] font-mono font-black text-teal-400 uppercase tracking-widest">{hero.badge}</span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-black tracking-tight text-white leading-tight mb-3">
