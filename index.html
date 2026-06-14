@@ -3,6 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Preconnect: eliminate DNS/TLS latency for critical third-party origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="alternate icon" type="image/svg+xml" href="/icon.svg" />
     <link rel="manifest" href="/manifest.json" />
@@ -12,7 +19,13 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="CareCalculus" />
-    <title>CareCalculus — Clinical Decision Support Suite</title>
+
+    <!-- Primary SEO: keyword-rich title + static meta description visible before JS hydration -->
+    <title>Free Medical Calculators Online — MAP, GCS, BMI, qSOFA, MELD | CareCalculus</title>
+    <meta name="description" content="Free evidence-based clinical calculators for ICU, ER, and hospital clinicians. MAP, GCS, BMI, qSOFA, CURB-65, MELD, Wells Score, CHA2DS2-VASc and more — multilingual (English, French, Arabic), peer-reviewed, works offline." />
+
+    <!-- Google AdSense — async load to avoid blocking rendering -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygui.js?client=ca-pub-7102695194621911" crossorigin="anonymous"></script>
   </head>
   <body>
     <div id="root"></div>
