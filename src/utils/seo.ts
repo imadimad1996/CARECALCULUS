@@ -533,47 +533,6 @@ export function buildJsonLd(logicalPath: string, lang: LangCode) {
   const howTo = getHowToSchema(logicalPath);
   if (howTo) list.push(howTo);
 
-  // BlogPosting schema for blog articles (enables Google Discover + rich snippets)
-  if (logicalPath.startsWith('/blog-articles')) {
-    list.push({
-      '@context': 'https://schema.org',
-      '@type': 'BlogPosting',
-      headline: meta.title.split(' | ')[0],
-      description: meta.desc,
-      url,
-      inLanguage: lang,
-      isAccessibleForFree: true,
-      publisher: {
-        '@type': 'Organization',
-        name: 'CareCalculus',
-        url: ORIGIN,
-        logo: { '@type': 'ImageObject', url: `${ORIGIN}/icon.svg` },
-      },
-      author: { '@type': 'Organization', name: 'CareCalculus', url: ORIGIN },
-      mainEntityOfPage: { '@type': 'WebPage', '@id': url },
-    });
-  }
-
-  // ScholarlyArticle schema for medical journals
-  if (logicalPath.startsWith('/blog') && !logicalPath.startsWith('/blog-articles')) {
-    list.push({
-      '@context': 'https://schema.org',
-      '@type': 'ScholarlyArticle',
-      headline: meta.title.split(' | ')[0],
-      description: meta.desc,
-      url,
-      inLanguage: lang,
-      isAccessibleForFree: true,
-      publisher: {
-        '@type': 'Organization',
-        name: 'CareCalculus',
-        url: ORIGIN,
-        logo: { '@type': 'ImageObject', url: `${ORIGIN}/icon.svg` },
-      },
-      about: { '@type': 'MedicalScholarlyArticle' },
-    });
-  }
-
   // Course schema for course pages
   if (logicalPath.startsWith('/cours')) {
     list.push({

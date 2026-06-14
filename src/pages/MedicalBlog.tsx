@@ -290,7 +290,9 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
       const title = `${p} ${s} ${t} ${b}`;
       const category = categories[Math.floor(random() * categories.length)];
       const author = authors[Math.floor(random() * authors.length)];
-      const reviewer = reviewers[Math.floor(random() * reviewers.length)];
+      const authorLastName = author.split(' ')[1].replace(',', '');
+      const reviewerCandidates = reviewers.filter(r => !r.includes(authorLastName));
+      const reviewer = reviewerCandidates[Math.floor(random() * reviewerCandidates.length)];
       const docId = `10.1002/cmr.${1000 + i}`;
       const readingMinutes = 4 + Math.floor(random() * 8);
       const year = 2024 + Math.floor(random() * 3);
@@ -448,12 +450,12 @@ ${s} exhibits progressive vascular, parenchymal, or endocrine triggers. Using ${
     kwMeta.setAttribute('content', `${activePost.category.toLowerCase()}, peer-reviewed medical study, pubmed clinical, clinical evidence`);
 
     // 4. In-Page Dynamic JSON-LD structured schema referencing scholarly medical literature
-    let schemaScript = document.getElementById('carecalculus-json-ld');
+    let schemaScript = document.getElementById('article-json-ld');
     if (schemaScript) {
       schemaScript.remove();
     }
     schemaScript = document.createElement('script');
-    schemaScript.setAttribute('id', 'carecalculus-json-ld');
+    schemaScript.setAttribute('id', 'article-json-ld');
     schemaScript.setAttribute('type', 'application/ld+json');
 
     const schemaObj = {

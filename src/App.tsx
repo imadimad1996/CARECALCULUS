@@ -3,12 +3,13 @@ import { Activity, BookOpen, HeartPulse, Menu, X, LayoutDashboard, Calculator, D
 import { BrowserRouter, Routes, Route, Link, useLocation, Navigate, useNavigate } from 'react-router-dom';
 import { StaticRouter } from 'react-router';
 import { LangContext, parsePathname, buildPath, PREFIXED_LANGS } from './utils/lang';
-import { organizationJsonLd, getLocalizedMeta as seoGetLocalizedMeta, getMedicalSchema, pageUrl as seoPageUrl, getBreadcrumbSchema } from './utils/seo';
+import { organizationJsonLd, getLocalizedMeta as seoGetLocalizedMeta, getMedicalSchema, pageUrl as seoPageUrl, getBreadcrumbSchema, buildJsonLd } from './utils/seo';
 import Logo from './components/Logo';
 import AdUnit from './components/AdUnit';
 import SocialShare from './components/SocialShare';
 import ReadingProgress from './components/ReadingProgress';
 import NewsletterCapture from './components/NewsletterCapture';
+import CookieConsent from './components/CookieConsent';
 
 // Page import factories kept in one list so they can be (a) wrapped in
 // React.lazy for client-side code-splitting and (b) eagerly awaited during
@@ -480,34 +481,7 @@ function AppLayout() {
     schemaScript.setAttribute('id', 'carecalculus-json-ld');
     schemaScript.setAttribute('type', 'application/ld+json');
 
-    const schemaList: any[] = [
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": meta.title,
-        "operatingSystem": "Web Browser",
-        "applicationCategory": "HealthApplication",
-        "description": meta.desc,
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "url": pageUrl,
-        "inLanguage": lang,
-        "isAccessibleForFree": true,
-        "author": {
-          "@type": "Organization",
-          "name": "CareCalculus",
-          "url": "https://carecalculus.com"
-        }
-      }
-    ];
-
-    const medicalNode = getMedicalSchema(logicalPath);
-    if (medicalNode) {
-      schemaList.push(medicalNode);
-    }
+    const schemaList = buildJsonLd(logicalPath, lang);
 
     const breadcrumbNode = getBreadcrumbSchema(logicalPath, lang);
     if (breadcrumbNode) {
@@ -954,18 +928,6 @@ function AppLayout() {
         </Link>
 
         <div className="flex items-center gap-2">
-          <div className="bg-gray-100 p-0.5 rounded-lg border border-gray-205 flex text-[10px]">
-            {(['en', 'fr', 'ar'] as const).map(l => (
-              <button
-                key={l}
-                onClick={() => setLang(l)}
-                className={`px-2 py-1 font-bold rounded uppercase transition-all ${lang === l ? 'bg-white text-blue-600 shadow-xs' : 'text-gray-400'}`}
-                style={{ minWidth: '24px', minHeight: '24px' }}
-              >
-                {l}
-              </button>
-            ))}
-          </div>
           {!isContentPage && (
             <button
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -1394,6 +1356,9 @@ function AppLayout() {
       
       {/* Newsletter capture (appears after 2 page views) */}
       <NewsletterCapture lang={lang} />
+
+      {/* GDPR Cookie Consent banner */}
+      <CookieConsent lang={lang} />
 
       {/* Overlay for mobile sidebar */}
       {isSidebarOpen && (

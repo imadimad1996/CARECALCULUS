@@ -184,7 +184,7 @@ const BLOG_SEED: BlogArticle[] = [
     snippetAr: mb.snippet.ar,
     content: '',
     author: mb.author,
-    reviewer: mb.id === 'mb-1' || mb.id === 'mb-3' || mb.id === 'mb-5' ? 'Dr. Al-Faruqi, MD' : 'Prof. Alice Vance, MD',
+    reviewer: mb.author.includes('Alice') ? 'Dr. Al-Faruqi, MD' : 'Prof. Alice Vance, MD',
     category: mb.category,
     readTime: mb.readTime,
     date: mb.date
@@ -295,6 +295,40 @@ export default function Blog({ lang }: BlogProps) {
       document.head.appendChild(descMeta);
     }
     descMeta.setAttribute('content', localizedSnippet(activePost));
+
+    // Dynamic JSON-LD structured schema for BlogPosting
+    let schemaScript = document.getElementById('article-json-ld');
+    if (schemaScript) {
+      schemaScript.remove();
+    }
+    schemaScript = document.createElement('script');
+    schemaScript.setAttribute('id', 'article-json-ld');
+    schemaScript.setAttribute('type', 'application/ld+json');
+
+    const schemaObj = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": localizedTitle(activePost),
+      "description": localizedSnippet(activePost),
+      "datePublished": activePost.date,
+      "inLanguage": lang,
+      "author": {
+        "@type": "Person",
+        "name": activePost.author
+      },
+      "editor": {
+        "@type": "Person",
+        "name": activePost.reviewer || 'Dr. Al-Faruqi, MD'
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "CareCalculus",
+        "url": "https://carecalculus.com"
+      }
+    };
+
+    schemaScript.textContent = JSON.stringify(schemaObj, null, 2);
+    document.head.appendChild(schemaScript);
   }, [activePost, lang]);
 
   const toggleBookmark = (id: string, e: React.MouseEvent) => {
