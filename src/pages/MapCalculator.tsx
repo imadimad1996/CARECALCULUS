@@ -3,6 +3,7 @@ import { Activity, Info, BookOpen, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { LangCode, Translations } from '../types';
 import ClinicalExportButton from '../components/ClinicalExportButton';
+import { layoutTranslations } from '../utils/lang';
 
 const translations: Translations = {
   en: {
@@ -19,6 +20,14 @@ const translations: Translations = {
     clinicalTitle: "Clinical Interventions",
     clinicalText: "A MAP of at least 65 mmHg is critical to maintain vital organ perfusion in septic shock or acute conditions.",
     references: "References: Intensive Care Medicine Standards / American Heart Association guidelines.",
+    faqQ1: "What is Mean Arterial Pressure (MAP)?",
+    faqA1: "Mean Arterial Pressure (MAP) is the average arterial pressure throughout one cardiac cycle. It reflects the average perfusion pressure driving blood to organs and is calculated as: MAP = DBP + 1/3 × (SBP − DBP).",
+    faqQ2: "What MAP value indicates adequate organ perfusion?",
+    faqA2: "A MAP of at least 65 mmHg is the widely accepted minimum threshold for adequate perfusion of vital organs, particularly in septic shock, as per Surviving Sepsis Campaign and AHA guidelines.",
+    faqQ3: "When should I use the MAP calculator?",
+    faqA3: "Use the MAP calculator in ICU, ER, or any acute care setting — septic shock resuscitation, vasopressor titration, hypertensive emergencies, and post-operative hemodynamic monitoring.",
+    faqQ4: "What is the difference between MAP and systolic blood pressure?",
+    faqA4: "Systolic BP is the peak pressure during ventricular contraction. MAP accounts for the entire cardiac cycle and better reflects tissue perfusion because diastole occupies approximately 2/3 of the cycle.",
   },
   fr: {
     title: "Pression Artérielle Moyenne",
@@ -34,6 +43,14 @@ const translations: Translations = {
     clinicalTitle: "Interventions Cliniques",
     clinicalText: "Une PAM d'au moins 65 mmHg est indispensable pour assurer la perfusion des organes cibles en cas de choc septique.",
     references: "Références : Recommandations de la SFAR / SRLF.",
+    faqQ1: "Qu'est-ce que la pression artérielle moyenne (PAM) ?",
+    faqA1: "La pression artérielle moyenne (PAM) est la pression moyenne dans les artères d'un patient pendant un cycle cardiaque complet. Elle reflète la pression de perfusion des organes et se calcule ainsi : PAM = PAD + 1/3 × (PAS − PAD).",
+    faqQ2: "Quelle valeur de PAM indique une perfusion d'organe adéquate ?",
+    faqA2: "Une PAM d'au moins 65 mmHg est le seuil minimal généralement accepté pour assurer une perfusion adéquate des organes vitaux, notamment lors d'un choc septique, conformément aux directives de la Surviving Sepsis Campaign et de l'AHA.",
+    faqQ3: "Quand dois-je utiliser le calculateur de PAM ?",
+    faqA3: "Utilisez le calculateur de PAM en réanimation, aux urgences ou dans tout service de soins critiques : réanimation de choc septique, titration des vasopresseurs, urgences hypertensives et surveillance hémodynamique postopératoire.",
+    faqQ4: "Quelle est la différence entre la PAM et la pression artérielle systolique ?",
+    faqA4: "La pression artérielle systolique (PAS) est la pression maximale pendant la contraction ventriculaire. La PAM prend en compte l'ensemble du cycle cardiaque et reflète mieux la perfusion tissulaire car la diastole occupe environ les 2/3 du cycle.",
   },
   ar: {
     title: "حاسبة الضغط الشرياني المتوسط",
@@ -48,6 +65,17 @@ const translations: Translations = {
     formula: "الضغط المتوسط = الانبساطي + 1/3 (الانقباضي - الانبساطي)",
     clinicalTitle: "التدخلات السريرية والتطبيق",
     clinicalText: "يعد الحفاظ على معدل ضغط شرياني لا يقل عن 65 مم زئبق أمراً بالغ الأهمية لضمان تروية الأعضاء الحيوية في حالات الصدمة الإنتانية.",
+    references: "المراجع: معايير طب العناية المركزة / جمعية القلب الأمريكية.",
+    faqQ1: "ما هو متوسط الضغط الشرياني (MAP)؟",
+    faqA1: "متوسط الضغط الشرياني (MAP) هو متوسط الضغط في شرايين المريض خلال دورة قلبية كاملة. يعكس ضغط تروية الأعضاء ويُحسب بالمعادلة: الضغط المتوسط = الانبساطي + 1/3 (الانقباضي - الانبساطي).",
+    faqQ2: "ما هي قيمة الضغط المتوسط التي تشير إلى تروية كافية للأعضاء؟",
+    faqA2: "يعتبر معدل 65 مم زئبق على الأقل هو الحد الأدنى المقبول لضمان التروية الكافية للأعضاء الحيوية، خاصة في حالات الصدمة الإنتانية وتسمم الدم، وفقاً لإرشادات جمعية القلب الأمريكية.",
+    faqQ3: "متى يجب استخدام حاسبة الضغط الشرياني المتوسط؟",
+    faqA3: "تستخدم في وحدات العناية المركزة، غرف الطوارئ، أو أي إعداد للرعاية الحرجة: إنعاش الصدمة الإنتانية، ضبط جرعات الأدوية الرافعة للضغط، حالات طوارئ ارتفاع الضغط، والمراقبة بعد العمليات الجراحية.",
+    faqQ4: "ما الفرق بين الضغط الشرياني المتوسط وضغط الدم الانقباضي؟",
+    faqA4: "الضغط الانقباضي هو ذروة الضغط أثناء انقباض البطين. أما الضغط المتوسط فيأخذ في الاعتبار الدورة القلبية بأكملها ويعبر بشكل أفضل عن تروية الأنسجة لأن الارتخاء (الانبساط) يستغرق ثلثي الدورة تقريباً.",
+  }
+};inicalText: "يعد الحفاظ على معدل ضغط شرياني لا يقل عن 65 مم زئبق أمراً بالغ الأهمية لضمان تروية الأعضاء الحيوية في حالات الصدمة الإنتانية.",
     references: "المراجع: معايير طب العناية المركزة / جمعية القلب الأمريكية.",
   }
 };
@@ -202,11 +230,11 @@ export default function MapCalculator({ lang }: { lang: LangCode }) {
 
       <div className="mt-16 pt-10 border-t border-gray-200">
         <div className="flex items-center gap-3 mb-8 text-xs text-gray-400">
-          <span className="font-semibold text-gray-500">Reviewed by the CareCalculus Clinical Team</span>
+          <span className="font-semibold text-gray-500">{layoutTranslations[lang].reviewedBy}</span>
           <span>&middot;</span>
-          <span>MD, ICU &amp; Emergency Medicine specialists</span>
+          <span>{layoutTranslations[lang].specialists}</span>
           <span>&middot;</span>
-          <span>Updated 2026</span>
+          <span>{layoutTranslations[lang].updated}</span>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
@@ -225,7 +253,7 @@ export default function MapCalculator({ lang }: { lang: LangCode }) {
               <Activity className="w-5 h-5" />
             </div>
             <div className="w-full">
-              <h2 className="font-semibold text-gray-900 mb-2 text-base">Mathematical Metric</h2>
+              <h2 className="font-semibold text-gray-900 mb-2 text-base">{layoutTranslations[lang].mathMetric}</h2>
               <div className="font-mono text-xs bg-gray-100 text-gray-700 py-2 px-3 rounded-md border border-gray-200 uppercase tracking-tight" dir="ltr">
                 {currentText.formula}
               </div>
@@ -237,7 +265,7 @@ export default function MapCalculator({ lang }: { lang: LangCode }) {
               <BookOpen className="w-5 h-5" />
             </div>
             <div>
-              <h2 className="font-semibold text-gray-900 mb-2 text-base">Evidence & Lit</h2>
+              <h2 className="font-semibold text-gray-900 mb-2 text-base">{layoutTranslations[lang].evidenceLit}</h2>
               <p className="text-gray-500 text-xs leading-relaxed italic">{currentText.references}</p>
               <a href="https://pubmed.ncbi.nlm.nih.gov/26253338/" target="_blank" rel="noopener noreferrer" className="text-xs text-blue-600 hover:underline mt-1 inline-block">Singer et al., JAMA 2016 (Sepsis-3) →</a>
             </div>
@@ -245,8 +273,9 @@ export default function MapCalculator({ lang }: { lang: LangCode }) {
 
         </div>
       </div>
+
       <div className="mt-12 pt-8 border-t border-gray-100">
-        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">See Also</h2>
+        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">{layoutTranslations[lang].seeAlso}</h2>
         <div className="flex flex-wrap gap-2 mb-10">
           {[
             { label: 'qSOFA Score', path: '/qsofa-score' },
@@ -265,13 +294,13 @@ export default function MapCalculator({ lang }: { lang: LangCode }) {
       </div>
 
       <div className="mt-0 pt-0 border-t border-gray-100">
-        <h2 className="text-xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+        <h2 className="text-xl font-bold text-gray-900 mb-6">{layoutTranslations[lang].faqTitle}</h2>
         <div className="space-y-3">
           {[
-            { q: 'What is Mean Arterial Pressure (MAP)?', a: 'Mean Arterial Pressure (MAP) is the average arterial pressure throughout one cardiac cycle. It reflects the average perfusion pressure driving blood to organs and is calculated as: MAP = DBP + 1/3 × (SBP − DBP).' },
-            { q: 'What MAP value indicates adequate organ perfusion?', a: 'A MAP of at least 65 mmHg is the widely accepted minimum threshold for adequate perfusion of vital organs, particularly in septic shock, as per Surviving Sepsis Campaign and AHA guidelines.' },
-            { q: 'When should I use the MAP calculator?', a: 'Use the MAP calculator in ICU, ER, or any acute care setting — septic shock resuscitation, vasopressor titration, hypertensive emergencies, and post-operative hemodynamic monitoring.' },
-            { q: 'What is the difference between MAP and systolic blood pressure?', a: 'Systolic BP is the peak pressure during ventricular contraction. MAP accounts for the entire cardiac cycle and better reflects tissue perfusion because diastole occupies approximately 2/3 of the cycle.' },
+            { q: currentText.faqQ1, a: currentText.faqA1 },
+            { q: currentText.faqQ2, a: currentText.faqA2 },
+            { q: currentText.faqQ3, a: currentText.faqA3 },
+            { q: currentText.faqQ4, a: currentText.faqA4 },
           ].map(({ q, a }) => (
             <details key={q} className="group border border-gray-200 rounded-xl overflow-hidden">
               <summary className="flex items-center justify-between px-5 py-4 cursor-pointer list-none font-medium text-gray-800 hover:bg-gray-50 transition-colors">

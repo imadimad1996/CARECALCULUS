@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { Activity, Info, BookOpen, ChevronDown } from 'lucide-react';
 import { LangCode, Translations } from '../types';
+import { layoutTranslations } from '../utils/lang';
 
 const translations: Translations = {
   en: {
@@ -15,7 +16,15 @@ const translations: Translations = {
     clinicalText: "Score ≥ 2 indicates a high risk of poor outcome and suggests the patient should be investigated for sepsis.",
     references: "References: Singer M, et al. The Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3).",
     lowRisk: "Low Risk (< 2)",
-    highRisk: "High Risk of Sepsis (≥ 2)"
+    highRisk: "High Risk of Sepsis (≥ 2)",
+    faqQ1: "What is the qSOFA score?",
+    faqA1: "The quick SOFA (qSOFA) is a bedside clinical tool for rapid identification of patients likely to have poor outcomes due to infection-related organ dysfunction (sepsis). It scores three criteria: Respiratory Rate ≥22/min, Altered Mentation (GCS <15), and Systolic BP ≤100 mmHg.",
+    faqQ2: "What qSOFA score is considered high risk?",
+    faqA2: "A qSOFA score of ≥2 out of 3 indicates high risk of poor outcome and should prompt clinicians to investigate for sepsis, initiate monitoring, and consider ICU-level care, per the Sepsis-3 consensus (Singer et al., JAMA 2016).",
+    faqQ3: "What is the difference between qSOFA and SOFA?",
+    faqA3: "qSOFA is a 3-item bedside screening tool usable without lab tests. Full SOFA requires lab values (PaO2, bilirubin, creatinine, platelets) and is used for formal organ failure quantification in the ICU.",
+    faqQ4: "Should qSOFA replace SIRS criteria for sepsis screening?",
+    faqA4: "The Sepsis-3 consensus replaced SIRS with qSOFA for out-of-ICU sepsis screening, arguing SIRS lacked specificity. Both tools remain in use across different guidelines and settings.",
   },
   fr: {
     title: "Score qSOFA",
@@ -29,7 +38,15 @@ const translations: Translations = {
     clinicalText: "Un score ≥ 2 indique un risque élevé de mortalité et suggère d'investiguer un sepsis.",
     references: "Références: Singer M, et al. (Sepsis-3).",
     lowRisk: "Faible Risque (< 2)",
-    highRisk: "Haut Risque de Sepsis (≥ 2)"
+    highRisk: "Haut Risque de Sepsis (≥ 2)",
+    faqQ1: "Qu'est-ce que le score qSOFA ?",
+    faqA1: "Le score qSOFA (quick SOFA) est un outil clinique de chevet permettant d'identifier rapidement les patients risquant de présenter des complications graves liées à un dysfonctionnement d'organe induit par une infection (sepsis). Il évalue trois critères : Fréquence respiratoire ≥22/min, État mental altéré (GCS <15) et Pression artérielle systolique ≤100 mmHg.",
+    faqQ2: "Quel score qSOFA est considéré comme à haut risque ?",
+    faqA2: "Un score qSOFA ≥2 sur 3 indique un risque élevé d'évolution défavorable. Il doit inciter les cliniciens à rechercher un sepsis, à renforcer la surveillance et à envisager une admission en réanimation, selon le consensus Sepsis-3 (Singer et al., JAMA 2016).",
+    faqQ3: "Quelle est la différence entre le qSOFA et le SOFA ?",
+    faqA3: "Le qSOFA est un outil de dépistage rapide au chevet utilisable sans examen biologique. Le score SOFA complet nécessite des analyses de laboratoire (PaO2, bilirubine, créatinine, plaquettes) pour quantifier formellement les défaillances d'organes en soins intensifs.",
+    faqQ4: "Le score qSOFA doit-il remplacer les critères SIRS pour le dépistage du sepsis ?",
+    faqA4: "Le consensus Sepsis-3 a remplacé le SIRS par le qSOFA pour le dépistage hors réanimation, estimant que le SIRS manquait de spécificité. Cependant, les deux outils restent couramment utilisés selon les directives et les contextes cliniques.",
   },
   ar: {
     title: "مقياس qSOFA",
@@ -43,7 +60,15 @@ const translations: Translations = {
     clinicalText: "درجة ≥ 2 تشير إلى ارتفاع خطر النتائج السيئة ويجب تقييم المريض لاحتمال وجود إنتان.",
     references: "المراجع: إجماع Sepsis-3.",
     lowRisk: "خطر منخفض (< 2)",
-    highRisk: "خطر عالٍ للإنتان (≥ 2)"
+    highRisk: "خطر عالٍ للإنتان (≥ 2)",
+    faqQ1: "ما هو مقياس qSOFA السريع؟",
+    faqA1: "مقياس qSOFA (quick SOFA) هو أداة سريرية سريعة تستخدم بجانب سرير المريض لتحديد المرضى المعرضين لنتائج سيئة بسبب خلل وظائف الأعضاء الناتج عن العدوى (الإنتان). يقيس ثلاثة معايير: معدل التنفس ≥ 22/دقيقة، الاضطراب الذهني (GCS < 15)، والضغط الانقباضي ≤ 100 مم زئبق.",
+    faqQ2: "ما هي درجة مقياس qSOFA التي تمثل خطورة عالية؟",
+    faqA2: "تمثل نتيجة 2 أو أكثر من 3 خطورة عالية لنتائج سريرية سيئة، ويجب أن تدفع الطبيب فوراً لفحص المريض تحسباً للإنتان وتفعيل بروتوكولات العلاج والمراقبة، وفقاً لتوصيات Sepsis-3.",
+    faqQ3: "ما الفرق بين qSOFA ومقياس SOFA الكامل؟",
+    faqA3: "مقياس qSOFA هو أداة فحص سريرية سريعة يمكن إجراؤها فوراً بدون فحوصات مخبرية. بينما يتطلب SOFA الكامل فحوصات مخبرية مثل مستويات الكرياتينين، والصفائح الدموية، والبليروبين، وغازات الدم الشرياني لتقييم الأعضاء بالتفصيل في العناية المركزة.",
+    faqQ4: "هل يجب أن يحل qSOFA محل معايير SIRS للالتهاب العام؟",
+    faqA4: "استبدل إجماع Sepsis-3 معايير SIRS بمقياس qSOFA لفرز حالات الإنتان خارج العناية المركزة لكونه أكثر دقة وتحديداً للوفيات. ومع ذلك، لا تزال كلتا الأداتين تستخدمان بشكل متكامل في العديد من الإرشادات الطبية.",
   }
 };
 
@@ -144,11 +169,11 @@ export default function QsofaScore({ lang }: { lang: LangCode }) {
 
       <div className="mt-16 pt-10 border-t border-gray-200">
         <div className="flex items-center gap-3 mb-8 text-xs text-gray-400">
-          <span className="font-semibold text-gray-500">Reviewed by the CareCalculus Clinical Team</span>
+          <span className="font-semibold text-gray-500">{layoutTranslations[lang].reviewedBy}</span>
           <span>&middot;</span>
-          <span>MD, ICU &amp; Emergency Medicine specialists</span>
+          <span>{layoutTranslations[lang].specialists}</span>
           <span>&middot;</span>
-          <span>Updated 2026</span>
+          <span>{layoutTranslations[lang].updated}</span>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="flex items-start gap-4">
@@ -165,7 +190,7 @@ export default function QsofaScore({ lang }: { lang: LangCode }) {
               <Activity className="w-5 h-5" />
             </div>
             <div className="w-full">
-              <h2 className="font-semibold text-gray-900 mb-2 text-base">Mathematical Metric</h2>
+              <h2 className="font-semibold text-gray-900 mb-2 text-base">{layoutTranslations[lang].mathMetric}</h2>
               <div className="font-mono text-xs bg-gray-100 text-gray-700 py-2 px-3 rounded-md border border-gray-200 uppercase tracking-tight" dir="ltr">
                 {currentText.formula}
               </div>
@@ -176,7 +201,7 @@ export default function QsofaScore({ lang }: { lang: LangCode }) {
               <BookOpen className="w-5 h-5" />
             </div>
             <div>
-              <h2 className="font-semibold text-gray-900 mb-2 text-base">Evidence & Lit</h2>
+              <h2 className="font-semibold text-gray-900 mb-2 text-base">{layoutTranslations[lang].evidenceLit}</h2>
               <p className="text-gray-500 text-xs leading-relaxed italic">{currentText.references}</p>
               <a href="https://pubmed.ncbi.nlm.nih.gov/26973543/" target="_blank" rel="noopener noreferrer" className="text-xs text-blue-600 hover:underline mt-1 inline-block">Singer et al., JAMA 2016 — Sepsis-3 Definitions (PMID: 26973543) →</a>
             </div>
@@ -184,7 +209,7 @@ export default function QsofaScore({ lang }: { lang: LangCode }) {
         </div>
       </div>
       <div className="mt-12 pt-8 border-t border-gray-100">
-        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">See Also</h2>
+        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">{layoutTranslations[lang].seeAlso}</h2>
         <div className="flex flex-wrap gap-2 mb-10">
           {[
             { label: 'SIRS Criteria', path: '/sirs-criteria' },
@@ -203,13 +228,13 @@ export default function QsofaScore({ lang }: { lang: LangCode }) {
       </div>
 
       <div className="mt-0 pt-0 border-t border-gray-100">
-        <h2 className="text-xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+        <h2 className="text-xl font-bold text-gray-900 mb-6">{layoutTranslations[lang].faqTitle}</h2>
         <div className="space-y-3">
           {[
-            { q: 'What is the qSOFA score?', a: 'The quick SOFA (qSOFA) is a bedside clinical tool for rapid identification of patients likely to have poor outcomes due to infection-related organ dysfunction (sepsis). It scores three criteria: Respiratory Rate ≥22/min, Altered Mentation (GCS <15), and Systolic BP ≤100 mmHg.' },
-            { q: 'What qSOFA score is considered high risk?', a: 'A qSOFA score of ≥2 out of 3 indicates high risk of poor outcome and should prompt clinicians to investigate for sepsis, initiate monitoring, and consider ICU-level care, per the Sepsis-3 consensus (Singer et al., JAMA 2016).' },
-            { q: 'What is the difference between qSOFA and SOFA?', a: 'qSOFA is a 3-item bedside screening tool usable without lab tests. Full SOFA requires lab values (PaO2, bilirubin, creatinine, platelets) and is used for formal organ failure quantification in the ICU.' },
-            { q: 'Should qSOFA replace SIRS criteria for sepsis screening?', a: 'The Sepsis-3 consensus replaced SIRS with qSOFA for out-of-ICU sepsis screening, arguing SIRS lacked specificity. Both tools remain in use across different guidelines and settings.' },
+            { q: currentText.faqQ1, a: currentText.faqA1 },
+            { q: currentText.faqQ2, a: currentText.faqA2 },
+            { q: currentText.faqQ3, a: currentText.faqA3 },
+            { q: currentText.faqQ4, a: currentText.faqA4 },
           ].map(({ q, a }) => (
             <details key={q} className="group border border-gray-200 rounded-xl overflow-hidden">
               <summary className="flex items-center justify-between px-5 py-4 cursor-pointer list-none font-medium text-gray-800 hover:bg-gray-50 transition-colors">

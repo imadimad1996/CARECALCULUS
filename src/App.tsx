@@ -3,7 +3,7 @@ import { Activity, BookOpen, HeartPulse, Menu, X, LayoutDashboard, Calculator, D
 import { BrowserRouter, Routes, Route, Link, useLocation, Navigate, useNavigate } from 'react-router-dom';
 import { StaticRouter } from 'react-router';
 import { LangContext, parsePathname, buildPath, PREFIXED_LANGS } from './utils/lang';
-import { organizationJsonLd, getLocalizedMeta as seoGetLocalizedMeta, getMedicalSchema, pageUrl as seoPageUrl, getBreadcrumbSchema, buildJsonLd } from './utils/seo';
+import { organizationJsonLd, getLocalizedMeta as seoGetLocalizedMeta, getMedicalSchema, pageUrl as seoPageUrl, getBreadcrumbSchema, buildJsonLd, buildHead } from './utils/seo';
 import Logo from './components/Logo';
 import AdUnit from './components/AdUnit';
 import SocialShare from './components/SocialShare';
@@ -376,13 +376,10 @@ function AppLayout() {
 
   // Dynamic header meta, automated hreflang injection, canonical and Open Graph (OG) social card SEO configurations
   useEffect(() => {
-    const meta = seoGetLocalizedMeta(logicalPath, lang);
-    const pageUrl = seoPageUrl(logicalPath, lang);
-    const mainTitle = meta.title;
-    const mainDesc = meta.desc;
+    const head = buildHead(logicalPath, lang);
     
     // 1. Dynamic Title
-    document.title = mainTitle;
+    document.title = head.title;
 
     // 2. Dynamic Description
     let descMeta = document.querySelector('meta[name="description"]');
@@ -391,7 +388,7 @@ function AppLayout() {
       descMeta.setAttribute('name', 'description');
       document.head.appendChild(descMeta);
     }
-    descMeta.setAttribute('content', mainDesc);
+    descMeta.setAttribute('content', head.meta.desc);
 
     // 3. Dynamic Keywords
     let kwMeta = document.querySelector('meta[name="keywords"]');
@@ -400,7 +397,7 @@ function AppLayout() {
       kwMeta.setAttribute('name', 'keywords');
       document.head.appendChild(kwMeta);
     }
-    kwMeta.setAttribute('content', meta.keywords);
+    kwMeta.setAttribute('content', head.meta.keywords);
 
     // 4. Dynamic Canonical Link Tag
     let canonicalLink = document.querySelector('link[rel="canonical"]');
@@ -409,16 +406,16 @@ function AppLayout() {
       canonicalLink.setAttribute('rel', 'canonical');
       document.head.appendChild(canonicalLink);
     }
-    canonicalLink.setAttribute('href', pageUrl);
+    canonicalLink.setAttribute('href', head.url);
 
     // 5. Open Graph (OG) Tag Matrix
     const ogTags = {
-      'og:title': mainTitle,
-      'og:description': mainDesc,
-      'og:url': pageUrl,
+      'og:title': head.title,
+      'og:description': head.meta.desc,
+      'og:url': head.url,
       'og:type': 'website',
       'og:site_name': 'CareCalculus Clinical Suite',
-      'og:image': 'https://carecalculus.com/og-image.png',
+      'og:image': head.ogImage,
       'og:image:alt': 'CareCalculus — Free multilingual clinical calculators for ICU, ER and hospital clinicians',
       'og:locale': lang === 'fr' ? 'fr_FR' : (lang === 'ar' ? 'ar_AR' : 'en_US'),
     };
@@ -435,9 +432,9 @@ function AppLayout() {
     // 6. Twitter Card Tag Matrix
     const twitterTags = {
       'twitter:card': 'summary_large_image',
-      'twitter:title': mainTitle,
-      'twitter:description': mainDesc,
-      'twitter:image': 'https://carecalculus.com/og-image.png',
+      'twitter:title': head.title,
+      'twitter:description': head.meta.desc,
+      'twitter:image': head.ogImage,
       'twitter:site': '@CareCalculus',
       'twitter:creator': '@CareCalculus',
     };
@@ -453,24 +450,13 @@ function AppLayout() {
 
     // 7. Dynamic Alternate Hreflang Tags (TECHNICAL SEO STEP 1)
     document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(el => el.remove());
-    (['en', 'fr', 'ar'] as const).forEach(l => {
+    head.hreflang.forEach(alt => {
       const link = document.createElement('link');
       link.setAttribute('rel', 'alternate');
-      link.setAttribute('hreflang', l);
-      const prefix = l === 'en' ? '' : `/${l}`;
-      const pathSuffix = logicalPath === '/' ? '/map-calculator' : logicalPath;
-      link.setAttribute('href', `https://carecalculus.com${prefix}${pathSuffix}`);
+      link.setAttribute('hreflang', alt.hreflang);
+      link.setAttribute('href', alt.href);
       document.head.appendChild(link);
     });
-
-    // Inject x-default language fallback for standard-conforming global indexers
-    document.querySelectorAll('link[rel="alternate"][hreflang="x-default"]').forEach(el => el.remove());
-    const xDefaultLink = document.createElement('link');
-    xDefaultLink.setAttribute('rel', 'alternate');
-    xDefaultLink.setAttribute('hreflang', 'x-default');
-    const xPathSuffix = logicalPath === '/' ? '/map-calculator' : logicalPath;
-    xDefaultLink.setAttribute('href', `https://carecalculus.com${xPathSuffix}`);
-    document.head.appendChild(xDefaultLink);
 
     // 8. Schema JSON-LD Structured Data Node
     let schemaScript = document.getElementById('carecalculus-json-ld');
@@ -481,17 +467,7 @@ function AppLayout() {
     schemaScript.setAttribute('id', 'carecalculus-json-ld');
     schemaScript.setAttribute('type', 'application/ld+json');
 
-    const schemaList = buildJsonLd(logicalPath, lang);
-
-    const breadcrumbNode = getBreadcrumbSchema(logicalPath, lang);
-    if (breadcrumbNode) {
-      schemaList.push(breadcrumbNode);
-    }
-
-    // Sitewide Organization + WebSite nodes (E-E-A-T / GEO) on every page.
-    schemaList.push(...organizationJsonLd());
-
-    schemaScript.textContent = JSON.stringify(schemaList, null, 2);
+    schemaScript.textContent = JSON.stringify(head.jsonLd, null, 2);
     document.head.appendChild(schemaScript);
 
   }, [logicalPath, lang]);

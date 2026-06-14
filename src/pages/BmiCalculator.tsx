@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Activity, Info, BookOpen, ChevronDown } from 'lucide-react';
 import { LangCode, Translations } from '../types';
 import ClinicalExportButton from '../components/ClinicalExportButton';
+import { layoutTranslations } from '../utils/lang';
 
 const translations: Translations = {
   en: {
@@ -18,6 +19,14 @@ const translations: Translations = {
     categoryNormal: "Normal",
     categoryOver: "Overweight",
     categoryObese: "Obese",
+    faqQ1: "What is Body Mass Index (BMI)?",
+    faqA1: "BMI is a numeric value derived from a person's weight and height: Weight(kg) ÷ Height(m)². It is used as a population-level screening tool for underweight, normal weight, overweight, and obesity categories.",
+    faqQ2: "What are the WHO BMI classification categories?",
+    faqA2: "WHO classifies BMI as: Underweight (<18.5), Normal weight (18.5–24.9), Overweight (25–29.9), and Obese (≥30). The obese category is further divided into Class I (30–34.9), II (35–39.9), and III (≥40, severe obesity).",
+    faqQ3: "What are the limitations of BMI in clinical practice?",
+    faqA3: "BMI does not distinguish between fat and muscle mass, does not reflect fat distribution, and may misclassify athletes or elderly patients. It should be interpreted alongside waist circumference, clinical context, and comorbidities.",
+    faqQ4: "Is BMI accurate for all ethnicities?",
+    faqA4: "Asian populations have higher cardiometabolic risk at lower BMI thresholds. WHO and several national guidelines recommend lower obesity cut-offs for Asian adults: overweight ≥23, obese ≥27.5.",
   },
   fr: {
     title: "Indice de Masse Corporelle (IMC)",
@@ -33,6 +42,14 @@ const translations: Translations = {
     categoryNormal: "Normale",
     categoryOver: "Surpoids",
     categoryObese: "Obésité",
+    faqQ1: "Qu'est-ce que l'indice de masse corporelle (IMC) ?",
+    faqA1: "L'IMC est une valeur numérique dérivée du poids et de la taille d'une personne : Poids(kg) ÷ Taille(m)². Il est utilisé comme outil de dépistage de l'insuffisance pondérale, du poids normal, du surpoids et de l'obésité.",
+    faqQ2: "Quelles sont les catégories de classification de l'IMC de l'OMS ?",
+    faqA2: "L'OMS classe l'IMC comme suit : Insuffisance pondérale (<18,5), Poids normal (18,5-24,9), Surpoids (25-29,9) et Obésité (≥30). La catégorie obèse est subdivisée en classe I (30-34,9), II (35-39,9) et III (≥40, obésité sévère).",
+    faqQ3: "Quelles sont les limites de l'IMC en pratique clinique ?",
+    faqA3: "L'IMC ne distingue pas la masse grasse de la masse musculaire, ne reflète pas la répartition des graisses et peut mal classer les athlètes ou les patients âgés. Il doit être interprété avec la circonférence de la taille, le contexte clinique et les comorbidités.",
+    faqQ4: "L'IMC est-il précis pour toutes les ethnies ?",
+    faqA4: "Les populations asiatiques présentent un risque cardiométabolique plus élevé à des seuils d'IMC plus bas. L'OMS et plusieurs directives nationales recommandent des seuils d'obésité plus bas pour les adultes asiatiques : surpoids ≥23, obésité ≥27,5.",
   },
   ar: {
     title: "مؤشر كتلة الجسم (BMI)",
@@ -48,6 +65,14 @@ const translations: Translations = {
     categoryNormal: "طبيعي",
     categoryOver: "زيادة الوزن",
     categoryObese: "سمنة",
+    faqQ1: "ما هو مؤشر كتلة الجسم (BMI)؟",
+    faqA1: "مؤشر كتلة الجسم هو قيمة عددية مشتقة من وزن الشخص وطوله: الوزن (كجم) ÷ مربع الطول (متر). ويستخدم كأداة فحص عامة لتصنيف الوزن الزائد والنحافة والسمنة.",
+    faqQ2: "ما هي تصنيفات مؤشر كتلة الجسم المعتمدة من منظمة الصحة العالمية؟",
+    faqA2: "تصنف المنظمة الوزن كالتالي: نقص الوزن (<18.5)، الوزن الطبيعي (18.5-24.9)، زيادة الوزن (25-29.9)، والسمنة (≥30). وتنقسم السمنة إلى الدرجة الأولى (30-34.9)، الثانية (35-39.9)، والثالثة (≥40، السمنة المفرطة).",
+    faqQ3: "ما هي عيوب أو حدود مؤشر كتلة الجسم في الممارسة السريرية؟",
+    faqA3: "لا يفرق مؤشر كتلة الجسم بين كتلة الدهون والعضلات، ولا يعكس توزيع الدهون في الجسم، وقد يعطي تقييماً غير دقيق للرياضيين (عضلات أكثر) أو كبار السن (عضلات أقل). يجب تفسيره دائماً مع محيط الخصر والوضع الصحي العام.",
+    faqQ4: "هل مؤشر كتلة الجسم دقيق لجميع الأعراق؟",
+    faqA4: "تظهر الدراسات أن الشعوب الآسيوية تواجه مخاطر استقلابية وقلبية أعلى عند مستويات مؤشر كتلة جسم أقل. وتوصي منظمة الصحة العالمية بوضع حدود أقل للسمنة لدى البالغين الآسيويين: زيادة الوزن ≥23، والسمنة ≥27.5.",
   }
 };
 
@@ -195,11 +220,11 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
 
       <div className="mt-16 pt-10 border-t border-gray-200">
         <div className="flex items-center gap-3 mb-8 text-xs text-gray-400">
-          <span className="font-semibold text-gray-500">Reviewed by the CareCalculus Clinical Team</span>
+          <span className="font-semibold text-gray-500">{layoutTranslations[lang].reviewedBy}</span>
           <span>&middot;</span>
-          <span>MD, ICU &amp; Emergency Medicine specialists</span>
+          <span>{layoutTranslations[lang].specialists}</span>
           <span>&middot;</span>
-          <span>Updated 2026</span>
+          <span>{layoutTranslations[lang].updated}</span>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="flex items-start gap-4">
@@ -216,7 +241,7 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
               <Activity className="w-5 h-5" />
             </div>
             <div className="w-full">
-              <h2 className="font-semibold text-gray-900 mb-2 text-base">Mathematical Metric</h2>
+              <h2 className="font-semibold text-gray-900 mb-2 text-base">{layoutTranslations[lang].mathMetric}</h2>
               <div className="font-mono text-xs bg-gray-100 text-gray-700 py-2 px-3 rounded-md border border-gray-200 uppercase tracking-tight" dir="ltr">
                 {currentText.formula}
               </div>
@@ -227,7 +252,7 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
               <BookOpen className="w-5 h-5" />
             </div>
             <div>
-              <h2 className="font-semibold text-gray-900 mb-2 text-base">Evidence & Lit</h2>
+              <h2 className="font-semibold text-gray-900 mb-2 text-base">{layoutTranslations[lang].evidenceLit}</h2>
               <p className="text-gray-500 text-xs leading-relaxed italic">{currentText.references}</p>
               <a href="https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight" target="_blank" rel="noopener noreferrer" className="text-xs text-blue-600 hover:underline mt-1 inline-block">WHO BMI Classification (who.int) →</a>
             </div>
@@ -235,7 +260,7 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
         </div>
       </div>
       <div className="mt-12 pt-8 border-t border-gray-100">
-        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">See Also</h2>
+        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">{layoutTranslations[lang].seeAlso}</h2>
         <div className="flex flex-wrap gap-2 mb-10">
           {[
             { label: 'Ideal & Adjusted Body Weight', path: '/adjusted-body-weight' },
@@ -254,13 +279,13 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
       </div>
 
       <div className="mt-0 pt-0 border-t border-gray-100">
-        <h2 className="text-xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+        <h2 className="text-xl font-bold text-gray-900 mb-6">{layoutTranslations[lang].faqTitle}</h2>
         <div className="space-y-3">
           {[
-            { q: 'What is Body Mass Index (BMI)?', a: "BMI is a numeric value derived from a person's weight and height: Weight(kg) ÷ Height(m)². It is used as a population-level screening tool for underweight, normal weight, overweight, and obesity categories." },
-            { q: 'What are the WHO BMI classification categories?', a: 'WHO classifies BMI as: Underweight (<18.5), Normal weight (18.5–24.9), Overweight (25–29.9), and Obese (≥30). The obese category is further divided into Class I (30–34.9), II (35–39.9), and III (≥40, severe obesity).' },
-            { q: 'What are the limitations of BMI in clinical practice?', a: "BMI does not distinguish between fat and muscle mass, does not reflect fat distribution, and may misclassify athletes or elderly patients. It should be interpreted alongside waist circumference, clinical context, and comorbidities." },
-            { q: 'Is BMI accurate for all ethnicities?', a: 'Asian populations have higher cardiometabolic risk at lower BMI thresholds. WHO and several national guidelines recommend lower obesity cut-offs for Asian adults: overweight ≥23, obese ≥27.5.' },
+            { q: currentText.faqQ1, a: currentText.faqA1 },
+            { q: currentText.faqQ2, a: currentText.faqA2 },
+            { q: currentText.faqQ3, a: currentText.faqA3 },
+            { q: currentText.faqQ4, a: currentText.faqA4 },
           ].map(({ q, a }) => (
             <details key={q} className="group border border-gray-200 rounded-xl overflow-hidden">
               <summary className="flex items-center justify-between px-5 py-4 cursor-pointer list-none font-medium text-gray-800 hover:bg-gray-50 transition-colors">

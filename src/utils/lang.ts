@@ -6,6 +6,36 @@ export const LANGS: LangCode[] = ['en', 'fr', 'ar'];
 // English is served bare (no prefix); French and Arabic are prefixed.
 export const PREFIXED_LANGS: LangCode[] = ['fr', 'ar'];
 
+export const layoutTranslations = {
+  en: {
+    reviewedBy: "Reviewed by the CareCalculus Clinical Team",
+    specialists: "MD, ICU & Emergency Medicine specialists",
+    updated: "Updated 2026",
+    mathMetric: "Mathematical Metric",
+    evidenceLit: "Evidence & Lit",
+    seeAlso: "See Also",
+    faqTitle: "Frequently Asked Questions"
+  },
+  fr: {
+    reviewedBy: "Revu par l'équipe clinique de CareCalculus",
+    specialists: "Médecins, spécialistes en réanimation & urgences",
+    updated: "Mis à jour en 2026",
+    mathMetric: "Métrique Mathématique",
+    evidenceLit: "Preuves & Littérature",
+    seeAlso: "Voir aussi",
+    faqTitle: "Questions Fréquemment Posées"
+  },
+  ar: {
+    reviewedBy: "تمت المراجعة من قبل الفريق الطبي السريري لـ CareCalculus",
+    specialists: "أطباء استشاريين، أخصائيي العناية المركزة وطب الطوارئ",
+    updated: "تم التحديث 2026",
+    mathMetric: "المعادلة الرياضية",
+    evidenceLit: "الأدلة والدراسات العلمية",
+    seeAlso: "اقرأ أيضاً",
+    faqTitle: "الأسئلة الشائعة"
+  }
+};
+
 /**
  * Split a pathname into its language and the language-agnostic "logical" path.
  *   /fr/map-calculator      -> { lang: 'fr', path: '/map-calculator' }
@@ -46,3 +76,4 @@ export const LangContext = createContext<LangContextValue>({
 
 /** Access the active language and a helper to build language-aware URLs. */
 export const useLang = () => useContext(LangContext);
+

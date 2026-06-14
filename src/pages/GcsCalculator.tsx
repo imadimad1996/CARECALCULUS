@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Activity, Info, BookOpen, ChevronDown } from 'lucide-react';
 import { LangCode, Translations } from '../types';
 import ClinicalExportButton from '../components/ClinicalExportButton';
+import { layoutTranslations } from '../utils/lang';
 
 const translations: Translations = {
   en: {
@@ -32,7 +33,15 @@ const translations: Translations = {
     references: "References: Teasdale G, Jennett B. Assessment of coma and impaired consciousness.",
     severe: "Severe Brain Injury (≤8)",
     moderate: "Moderate Brain Injury (9-12)",
-    minor: "Minor Brain Injury (13-15)"
+    minor: "Minor Brain Injury (13-15)",
+    faqQ1: "What is the Glasgow Coma Scale (GCS)?",
+    faqA1: "The Glasgow Coma Scale (GCS) is a standardized neurological assessment tool that measures level of consciousness by scoring three components: Eye Opening (E, 1-4), Verbal Response (V, 1-5), and Motor Response (M, 1-6). Total score ranges from 3 to 15.",
+    faqQ2: "What GCS score indicates severe brain injury?",
+    faqA2: "A GCS score of 8 or below indicates severe brain injury. A score of 9-12 indicates moderate injury, and 13-15 indicates mild injury. Patients with GCS ≤ 8 are generally considered for intubation to protect the airway.",
+    faqQ3: "Who developed the Glasgow Coma Scale?",
+    faqA3: "The GCS was developed by Teasdale and Jennett in 1974 at the University of Glasgow, published in The Lancet. It has since become the global standard for consciousness assessment after traumatic brain injury.",
+    faqQ4: "Can GCS be used in children?",
+    faqA4: "The standard GCS is validated for adults and older children. For infants and young children, a modified Pediatric GCS is preferred, which adapts verbal and motor components to age-appropriate responses.",
   },
   fr: {
     title: "Score de Glasgow (GCS)",
@@ -62,7 +71,15 @@ const translations: Translations = {
     references: "Références : Teasdale G, Jennett B. Assessment of coma and impaired consciousness.",
     severe: "Lésion cérébrale sévère (≤8)",
     moderate: "Lésion cérébrale modérée (9-12)",
-    minor: "Lésion cérébrale mineure (13-15)"
+    minor: "Lésion cérébrale mineure (13-15)",
+    faqQ1: "Qu'est-ce que l'échelle de Glasgow (GCS) ?",
+    faqA1: "L'échelle de Glasgow (GCS) est un outil d'évaluation neurologique standardisé mesurant l'état de conscience d'un patient à l'aide de trois critères : ouverture des yeux (E, 1-4), réponse verbale (V, 1-5) et réponse motrice (M, 1-6). Le score total varie de 3 à 15.",
+    faqQ2: "Quel score GCS indique un traumatisme crânien sévère ?",
+    faqA2: "Un score GCS inférieur ou égal à 8 indique un traumatisme crânien sévère. Un score de 9 à 12 indique un traumatisme modéré et un score de 13 à 15 indique un traumatisme léger. Une intubation protectrice est généralement recommandée pour un GCS ≤ 8.",
+    faqQ3: "Qui a développé l'échelle de Glasgow ?",
+    faqA3: "L'échelle GCS a été développée en 1974 par Graham Teasdale et Bryan Jennett à l'Université de Glasgow, et publiée dans The Lancet. Elle est depuis devenue la référence mondiale d'évaluation après traumatisme crânien.",
+    faqQ4: "L'échelle GCS peut-elle être utilisée chez l'enfant ?",
+    faqA4: "L'échelle GCS standard est validée pour l'adulte et l'enfant grand. Pour les nourrissons et jeunes enfants, on utilise l'échelle de Glasgow pédiatrique modifiée, adaptant les critères de réponses verbales et motrices à l'âge.",
   },
   ar: {
     title: "مقياس غلاسكو للغيبوبة (GCS)",
@@ -92,7 +109,15 @@ const translations: Translations = {
     references: "المراجع: Teasdale G, Jennett B. تقييم الغيبوبة وضعف الوعي.",
     severe: "إصابة شديدة (≤8)",
     moderate: "إصابة متوسطة (9-12)",
-    minor: "إصابة طفيفة (13-15)"
+    minor: "إصابة طفيفة (13-15)",
+    faqQ1: "ما هو مقياس غلاسكو للغيبوبة (GCS)؟",
+    faqA1: "مقياس غلاسكو للغيبوبة (GCS) هو أداة تقييم عصبي معيارية تُستخدم لقياس مستوى وعي المريض بناءً على ثلاثة استجابات: فتح العين (1-4)، الاستجابة اللفظية (1-5)، والاستجابة الحركية (1-6). يتراوح المجموع من 3 إلى 15.",
+    faqQ2: "ما هي درجة GCS التي تشير إلى إصابة شديدة في الدماغ؟",
+    faqA2: "تشير النتيجة 8 أو أقل إلى إصابة شديدة في الدماغ. النتيجة من 9-12 تشير إلى إصابة متوسطة، ومن 13-15 تشير إلى إصابة طفيفة. ويُنصح عادة بالتنبيب وحماية المجرى التنفسي للمريض عندما تكون النتيجة 8 أو أقل.",
+    faqQ3: "من الذي طور مقياس غلاسكو للغيبوبة؟",
+    faqA3: "تم تطوير مقياس GCS بواسطة جراهام تيسديل وبريان جينيت عام 1974 في جامعة غلاسكو، ونُشر في مجلة ذا لانسيت. ومنذ ذلك الحين أصبح المعيار العالمي لتقييم الوعي بعد إصابات الدماغ.",
+    faqQ4: "هل يمكن استخدام مقياس غلاسكو للأطفال؟",
+    faqA4: "المقياس القياسي مخصص للبالغين والأطفال الأكبر سناً. أما بالنسبة للرضع والأطفال الصغار، فيُفضّل استخدام مقياس غلاسكو المعدل للأطفال (Pediatric GCS) الذي يوائم الاستجابات اللفظية والحركية مع مرحلتهم العمرية.",
   }
 };
 
@@ -230,11 +255,11 @@ export default function GcsCalculator({ lang }: { lang: LangCode }) {
 
       <div className="mt-16 pt-10 border-t border-gray-200">
         <div className="flex items-center gap-3 mb-8 text-xs text-gray-400">
-          <span className="font-semibold text-gray-500">Reviewed by the CareCalculus Clinical Team</span>
+          <span className="font-semibold text-gray-500">{layoutTranslations[lang].reviewedBy}</span>
           <span>&middot;</span>
-          <span>MD, ICU &amp; Emergency Medicine specialists</span>
+          <span>{layoutTranslations[lang].specialists}</span>
           <span>&middot;</span>
-          <span>Updated 2026</span>
+          <span>{layoutTranslations[lang].updated}</span>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="flex items-start gap-4">
@@ -251,7 +276,7 @@ export default function GcsCalculator({ lang }: { lang: LangCode }) {
               <Activity className="w-5 h-5" />
             </div>
             <div className="w-full">
-              <h2 className="font-semibold text-gray-900 mb-2 text-base">Mathematical Metric</h2>
+              <h2 className="font-semibold text-gray-900 mb-2 text-base">{layoutTranslations[lang].mathMetric}</h2>
               <div className="font-mono text-xs bg-gray-100 text-gray-700 py-2 px-3 rounded-md border border-gray-200 uppercase tracking-tight" dir="ltr">
                 {currentText.formula}
               </div>
@@ -262,7 +287,7 @@ export default function GcsCalculator({ lang }: { lang: LangCode }) {
               <BookOpen className="w-5 h-5" />
             </div>
             <div>
-              <h2 className="font-semibold text-gray-900 mb-2 text-base">Evidence & Lit</h2>
+              <h2 className="font-semibold text-gray-900 mb-2 text-base">{layoutTranslations[lang].evidenceLit}</h2>
               <p className="text-gray-500 text-xs leading-relaxed italic">{currentText.references}</p>
               <a href="https://pubmed.ncbi.nlm.nih.gov/4136544/" target="_blank" rel="noopener noreferrer" className="text-xs text-blue-600 hover:underline mt-1 inline-block">Teasdale & Jennett, Lancet 1974 (PMID: 4136544) →</a>
             </div>
@@ -270,7 +295,7 @@ export default function GcsCalculator({ lang }: { lang: LangCode }) {
         </div>
       </div>
       <div className="mt-12 pt-8 border-t border-gray-100">
-        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">See Also</h2>
+        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">{layoutTranslations[lang].seeAlso}</h2>
         <div className="flex flex-wrap gap-2 mb-10">
           {[
             { label: 'qSOFA Score', path: '/qsofa-score' },
@@ -289,13 +314,13 @@ export default function GcsCalculator({ lang }: { lang: LangCode }) {
       </div>
 
       <div className="mt-0 pt-0 border-t border-gray-100">
-        <h2 className="text-xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+        <h2 className="text-xl font-bold text-gray-900 mb-6">{layoutTranslations[lang].faqTitle}</h2>
         <div className="space-y-3">
           {[
-            { q: 'What is the Glasgow Coma Scale (GCS)?', a: "The Glasgow Coma Scale (GCS) is a standardized neurological assessment tool that measures level of consciousness by scoring three components: Eye Opening (E, 1-4), Verbal Response (V, 1-5), and Motor Response (M, 1-6). Total score ranges from 3 to 15." },
-            { q: 'What GCS score indicates severe brain injury?', a: 'A GCS score of 8 or below indicates severe brain injury. A score of 9-12 indicates moderate injury, and 13-15 indicates mild injury. Patients with GCS ≤ 8 are generally considered for intubation to protect the airway.' },
-            { q: 'Who developed the Glasgow Coma Scale?', a: 'The GCS was developed by Teasdale and Jennett in 1974 at the University of Glasgow, published in The Lancet. It has since become the global standard for consciousness assessment after traumatic brain injury.' },
-            { q: 'Can GCS be used in children?', a: "The standard GCS is validated for adults and older children. For infants and young children, a modified Pediatric GCS is preferred, which adapts verbal and motor components to age-appropriate responses." },
+            { q: currentText.faqQ1, a: currentText.faqA1 },
+            { q: currentText.faqQ2, a: currentText.faqA2 },
+            { q: currentText.faqQ3, a: currentText.faqA3 },
+            { q: currentText.faqQ4, a: currentText.faqA4 },
           ].map(({ q, a }) => (
             <details key={q} className="group border border-gray-200 rounded-xl overflow-hidden">
               <summary className="flex items-center justify-between px-5 py-4 cursor-pointer list-none font-medium text-gray-800 hover:bg-gray-50 transition-colors">
