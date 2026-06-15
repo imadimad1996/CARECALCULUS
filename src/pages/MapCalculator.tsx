@@ -1,8 +1,10 @@
-import React, { useState, useMemo } from 'react';
-import { Activity, Info, BookOpen, ChevronDown } from 'lucide-react';
+import React, { useState, useMemo, useEffect } from 'react';
+import { Activity, Info, BookOpen, ChevronDown, Copy, Check } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { LangCode, Translations } from '../types';
 import ClinicalExportButton from '../components/ClinicalExportButton';
+import CalculatorInput from '../components/ui/CalculatorInput';
+import { trackCalculatorUsage } from '../utils/telemetry';
 import { layoutTranslations } from '../utils/lang';
 
 const translations: Translations = {
@@ -75,14 +77,12 @@ const translations: Translations = {
     faqQ4: "ما الفرق بين الضغط الشرياني المتوسط وضغط الدم الانقباضي؟",
     faqA4: "الضغط الانقباضي هو ذروة الضغط أثناء انقباض البطين. أما الضغط المتوسط فيأخذ في الاعتبار الدورة القلبية بأكملها ويعبر بشكل أفضل عن تروية الأنسجة لأن الارتخاء (الانبساط) يستغرق ثلثي الدورة تقريباً.",
   }
-};inicalText: "يعد الحفاظ على معدل ضغط شرياني لا يقل عن 65 مم زئبق أمراً بالغ الأهمية لضمان تروية الأعضاء الحيوية في حالات الصدمة الإنتانية.",
-    references: "المراجع: معايير طب العناية المركزة / جمعية القلب الأمريكية.",
-  }
 };
 
 export default function MapCalculator({ lang }: { lang: LangCode }) {
   const [sys, setSys] = useState<number>(120);
   const [dia, setDia] = useState<number>(80);
+  const [copied, setCopied] = useState(false);
 
   const currentText = translations[lang];
   const isRtl = lang === 'ar';
@@ -94,6 +94,21 @@ export default function MapCalculator({ lang }: { lang: LangCode }) {
   }, [sys, dia]);
 
   const mapValueIsNormal = mapValue >= 65;
+
+  useEffect(() => {
+    if (mapValue > 0) {
+      const timer = setTimeout(() => {
+        trackCalculatorUsage('map-calculator', lang, mapValue);
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
+  }, [mapValue, lang]);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(`MAP: ${mapValue} mmHg (${mapValue >= 65 ? currentText.normal : currentText.low})`);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     <>
@@ -110,59 +125,25 @@ export default function MapCalculator({ lang }: { lang: LangCode }) {
         <div className="lg:col-span-7 space-y-6">
           <div className="bg-white rounded-2xl shadow-[0_2px_10px_-3px_rgba(6,81,237,0.1)] ring-1 ring-gray-950/5 p-6 md:p-8">
             <div className="space-y-8">
-              <div className="group">
-                <div className="flex justify-between items-baseline mb-2">
-                  <label className="text-sm font-semibold text-gray-700 uppercase tracking-wider">{currentText.systolic}</label>
-                  <span className="text-xs font-medium text-gray-400 tabular-nums">mmHg</span>
-                </div>
-                <div className="relative flex items-center">
-                  <input
-                    type="number"
-                    value={sys === 0 ? '' : sys}
-                    onChange={(e) => {
-                      const v = Number(e.target.value);
-                      setSys(v);
-                    }}
-                    className="w-full bg-gray-50/50 px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600 text-3xl tabular-nums font-semibold text-gray-900 transition-all placeholder:text-gray-300"
-                    min="40"
-                    max="260"
-                    placeholder="120"
-                  />
-                </div>
-                <input 
-                  type="range" min="40" max="260" 
-                  value={sys}
-                  onChange={(e) => setSys(Number(e.target.value))}
-                  className="w-full mt-4 h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
-                />
-              </div>
+              <CalculatorInput
+                label={currentText.systolic}
+                unit="mmHg"
+                value={sys}
+                min={40}
+                max={260}
+                placeholder="120"
+                onChange={setSys}
+              />
 
-              <div className="group">
-                <div className="flex justify-between items-baseline mb-2">
-                  <label className="text-sm font-semibold text-gray-700 uppercase tracking-wider">{currentText.diastolic}</label>
-                  <span className="text-xs font-medium text-gray-400 tabular-nums">mmHg</span>
-                </div>
-                <div className="relative flex items-center">
-                  <input
-                    type="number"
-                    value={dia === 0 ? '' : dia}
-                    onChange={(e) => {
-                      const v = Number(e.target.value);
-                      setDia(v);
-                    }}
-                    className="w-full bg-gray-50/50 px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600 text-3xl tabular-nums font-semibold text-gray-900 transition-all placeholder:text-gray-300"
-                    min="20"
-                    max="180"
-                    placeholder="80"
-                  />
-                </div>
-                <input 
-                  type="range" min="20" max="180" 
-                  value={dia}
-                  onChange={(e) => setDia(Number(e.target.value))}
-                  className="w-full mt-4 h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
-                />
-              </div>
+              <CalculatorInput
+                label={currentText.diastolic}
+                unit="mmHg"
+                value={dia}
+                min={20}
+                max={180}
+                placeholder="80"
+                onChange={setDia}
+              />
             </div>
           </div>
         </div>
@@ -171,20 +152,32 @@ export default function MapCalculator({ lang }: { lang: LangCode }) {
           <div className="sticky top-28 bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden ring-1 ring-white/10 flex flex-col justify-between p-8 min-h-[320px]">
             <div className="absolute top-0 right-0 p-32 bg-gradient-to-bl from-blue-500/20 to-transparent rounded-bl-[100px] pointer-events-none" />
             
-            <div className="relative z-10">
-              <span className="text-xs font-bold uppercase tracking-wider text-gray-400 block mb-3">
-                {currentText.result}
-              </span>
-              
-              <div className="flex items-baseline gap-2 tabular-nums">
-                <span 
-                  key={mapValue || 'empty'}
-                  className="text-7xl font-bold tracking-tighter transition-all duration-300"
-                >
-                  {mapValue > 0 ? mapValue : '--'}
+            <div className="relative z-10 flex items-start justify-between">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-gray-400 block mb-3">
+                  {currentText.result}
                 </span>
-                <span className="text-xl font-medium text-gray-400">mmHg</span>
+                
+                <div className="flex items-baseline gap-2 tabular-nums">
+                  <span 
+                    key={mapValue || 'empty'}
+                    className="text-7xl font-bold tracking-tighter transition-all duration-300"
+                  >
+                    {mapValue > 0 ? mapValue : '--'}
+                  </span>
+                  <span className="text-xl font-medium text-gray-400">mmHg</span>
+                </div>
               </div>
+              
+              {mapValue > 0 && (
+                <button
+                  onClick={handleCopy}
+                  className="mt-2 p-2.5 bg-gray-800 hover:bg-gray-700 rounded-xl transition-colors border border-gray-700/50 flex items-center justify-center text-gray-300 hover:text-white"
+                  title="Copy Result"
+                >
+                  {copied ? <Check className="w-5 h-5 text-emerald-400" /> : <Copy className="w-5 h-5" />}
+                </button>
+              )}
             </div>
 
             <div className="relative z-10 mt-10">

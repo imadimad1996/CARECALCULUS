@@ -10,6 +10,7 @@ import SocialShare from './components/SocialShare';
 import ReadingProgress from './components/ReadingProgress';
 import NewsletterCapture from './components/NewsletterCapture';
 import CookieConsent from './components/CookieConsent';
+import MedicalDisclaimer from './components/MedicalDisclaimer';
 
 // Page import factories kept in one list so they can be (a) wrapped in
 // React.lazy for client-side code-splitting and (b) eagerly awaited during
@@ -1335,6 +1336,9 @@ function AppLayout() {
 
       {/* GDPR Cookie Consent banner */}
       <CookieConsent lang={lang} />
+
+      {/* Mandatory Medical Disclaimer modal */}
+      <MedicalDisclaimer lang={lang} />
 
       {/* Overlay for mobile sidebar */}
       {isSidebarOpen && (
