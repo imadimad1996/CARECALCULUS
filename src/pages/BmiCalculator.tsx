@@ -1,8 +1,9 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Activity, Info, BookOpen, ChevronDown } from 'lucide-react';
 import { LangCode, Translations } from '../types';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 import { layoutTranslations } from '../utils/lang';
+import { trackCalculatorUsage } from '../utils/telemetry';
 
 const translations: Translations = {
   en: {
@@ -89,6 +90,15 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
     const computed = weight / (heightInMeters * heightInMeters);
     return parseFloat(computed.toFixed(1));
   }, [height, weight]);
+
+  useEffect(() => {
+    if (bmiValue > 0) {
+      const timer = setTimeout(() => {
+        trackCalculatorUsage('bmi-calculator', lang, bmiValue);
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
+  }, [bmiValue, lang]);
 
   const getBmiCategory = (bmi: number) => {
     if (bmi === 0) return { label: '', color: '' };

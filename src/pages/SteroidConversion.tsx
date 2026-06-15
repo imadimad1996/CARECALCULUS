@@ -1,6 +1,9 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Activity, Info, BookOpen } from 'lucide-react';
 import { LangCode, Translations } from '../types';
+import { layoutTranslations } from '../utils/lang';
+import { trackCalculatorUsage } from '../utils/telemetry';
+import ClinicalExportButton from '../components/ClinicalExportButton';
 
 const translations: Translations = {
   en: {
@@ -67,6 +70,15 @@ export default function SteroidConversion({ lang }: { lang: LangCode }) {
     if (!fromDrug || !toDrug) return null;
     return (Number(dose) / fromDrug.dose) * toDrug.dose;
   }, [fromId, toId, dose]);
+
+  useEffect(() => {
+    if (equivalent !== null && equivalent > 0) {
+      const timer = setTimeout(() => {
+        trackCalculatorUsage('steroid-conversion', lang, equivalent);
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
+  }, [equivalent, lang]);
 
   return (
     <>
@@ -136,6 +148,24 @@ export default function SteroidConversion({ lang }: { lang: LangCode }) {
                    </span>
                    <span className="text-xl font-medium text-gray-400">mg</span>
                  </div>
+
+                  {equivalent !== null && (
+                    <ClinicalExportButton
+                      title={currentText.title}
+                      inputs={[
+                        { label: currentText.dose, value: `${dose} mg` },
+                        { label: currentText.from, value: steroids.find(s => s.id === fromId)?.name || '' },
+                        { label: currentText.to, value: steroids.find(s => s.id === toId)?.name || '' }
+                      ]}
+                      results={[
+                        { label: currentText.result, value: equivalent % 1 === 0 ? equivalent : equivalent.toFixed(2), unit: 'mg' }
+                      ]}
+                      formula={currentText.formula}
+                      disclaimer={currentText.clinicalText}
+                      references={currentText.references}
+                      lang={lang}
+                    />
+                  )}
               </div>
             </div>
           </div>
@@ -144,11 +174,11 @@ export default function SteroidConversion({ lang }: { lang: LangCode }) {
 
       <div className="mt-16 pt-10 border-t border-gray-200">
         <div className="flex items-center gap-3 mb-8 text-xs text-gray-400">
-          <span className="font-semibold text-gray-500">Reviewed by the CareCalculus Clinical Team</span>
+          <span className="font-semibold text-gray-500">{layoutTranslations[lang].reviewedBy}</span>
           <span>&middot;</span>
-          <span>MD, ICU &amp; Emergency Medicine specialists</span>
+          <span>{layoutTranslations[lang].specialists}</span>
           <span>&middot;</span>
-          <span>Updated 2026</span>
+          <span>{layoutTranslations[lang].updated}</span>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="flex items-start gap-4">
@@ -161,10 +191,17 @@ export default function SteroidConversion({ lang }: { lang: LangCode }) {
           <div className="flex items-start gap-4">
             <div className="p-2 bg-purple-50 text-purple-600 rounded-lg shrink-0"><Activity className="w-5 h-5"/></div>
             <div className="w-full">
-              <h2 className="font-semibold text-gray-900 mb-1 text-base">Mathematical Metric</h2>
-              <div className="font-mono text-xs bg-gray-100 text-gray-700 py-2 px-3 rounded-md border border-gray-200">
+              <h2 className="font-semibold text-gray-900 mb-1 text-base">{layoutTranslations[lang].mathMetric}</h2>
+              <div className="font-mono text-xs bg-gray-100 text-gray-700 py-2 px-3 rounded-md border border-gray-200 uppercase tracking-tight" dir="ltr">
                 {currentText.formula}
               </div>
+            </div>
+          </div>
+          <div className="flex items-start gap-4">
+            <div className="p-2 bg-emerald-50 text-emerald-600 rounded-lg shrink-0"><BookOpen className="w-5 h-5"/></div>
+            <div>
+              <h2 className="font-semibold text-gray-900 mb-1 text-base">{layoutTranslations[lang].evidenceLit}</h2>
+              <p className="text-gray-500 text-xs leading-relaxed italic">{currentText.references}</p>
             </div>
           </div>
         </div>

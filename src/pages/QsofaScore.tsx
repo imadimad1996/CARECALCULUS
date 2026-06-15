@@ -1,7 +1,9 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Activity, Info, BookOpen, ChevronDown } from 'lucide-react';
 import { LangCode, Translations } from '../types';
 import { layoutTranslations } from '../utils/lang';
+import { trackCalculatorUsage } from '../utils/telemetry';
+import ClinicalExportButton from '../components/ClinicalExportButton';
 
 const translations: Translations = {
   en: {
@@ -94,6 +96,15 @@ export default function QsofaScore({ lang }: { lang: LangCode }) {
     }, 0);
   }, [selections]);
 
+  useEffect(() => {
+    if (scoreValue > 0) {
+      const timer = setTimeout(() => {
+        trackCalculatorUsage('qsofa-score', lang, scoreValue);
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
+  }, [scoreValue, lang]);
+
   const category = scoreValue >= 2 
     ? { label: currentText.highRisk, bg: 'bg-red-500/10 border-red-500/20', color: 'text-red-500' }
     : { label: currentText.lowRisk, bg: 'bg-emerald-500/10 border-emerald-500/20', color: 'text-emerald-500' };
@@ -162,6 +173,23 @@ export default function QsofaScore({ lang }: { lang: LangCode }) {
                   {category.label}
                 </div>
               </div>
+
+              <ClinicalExportButton
+                title={currentText.title}
+                inputs={[
+                  { label: currentText.rr22, value: selections.rr22 ? 'Yes (1)' : 'No (0)' },
+                  { label: currentText.mentation, value: selections.mentation ? 'Yes (1)' : 'No (0)' },
+                  { label: currentText.sbp100, value: selections.sbp100 ? 'Yes (1)' : 'No (0)' }
+                ]}
+                results={[
+                  { label: currentText.result, value: `${scoreValue} / 3` },
+                  { label: 'Risk Stratification', value: category.label }
+                ]}
+                formula={currentText.formula}
+                disclaimer={currentText.clinicalText}
+                references={currentText.references}
+                lang={lang}
+              />
             </div>
           </div>
         </div>

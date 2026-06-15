@@ -1,8 +1,9 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Activity, Info, BookOpen, ChevronDown } from 'lucide-react';
 import { LangCode, Translations } from '../types';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 import { layoutTranslations } from '../utils/lang';
+import { trackCalculatorUsage } from '../utils/telemetry';
 
 const translations: Translations = {
   en: {
@@ -130,6 +131,15 @@ export default function GcsCalculator({ lang }: { lang: LangCode }) {
   const isRtl = lang === 'ar';
 
   const gcsValue = eye + verbal + motor;
+
+  useEffect(() => {
+    if (gcsValue > 0) {
+      const timer = setTimeout(() => {
+        trackCalculatorUsage('glasgow-coma-scale', lang, gcsValue);
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
+  }, [gcsValue, lang]);
 
 
   const getGcsCategory = (val: number) => {

@@ -1,6 +1,9 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Activity, Info, BookOpen } from 'lucide-react';
 import { LangCode, Translations } from '../types';
+import { layoutTranslations } from '../utils/lang';
+import { trackCalculatorUsage } from '../utils/telemetry';
+import ClinicalExportButton from '../components/ClinicalExportButton';
 
 const translations: Translations = {
   en: {
@@ -91,6 +94,15 @@ export default function MeldScore({ lang }: { lang: LangCode }) {
     
     return Math.round(meld);
   }, [bilirubin, inr, creatinine, sodium, dialysis]);
+
+  useEffect(() => {
+    if (meldScore !== null && meldScore > 0) {
+      const timer = setTimeout(() => {
+        trackCalculatorUsage('meld-score', lang, meldScore);
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
+  }, [meldScore, lang]);
 
   return (
     <>
@@ -207,6 +219,25 @@ export default function MeldScore({ lang }: { lang: LangCode }) {
                      meldScore >= 10 ? '6.0% 3-month mortality' : '1.9% 3-month mortality'}
                   </div>
                 </div>
+
+                <ClinicalExportButton
+                  title={currentText.title}
+                  inputs={[
+                    { label: currentText.bilirubin, value: `${bilirubin} mg/dL` },
+                    { label: currentText.inr, value: `${inr}` },
+                    { label: currentText.creatinine, value: `${creatinine} mg/dL` },
+                    { label: currentText.sodium, value: `${sodium} mEq/L` },
+                    { label: currentText.dialysis, value: dialysis ? currentText.yes : currentText.no }
+                  ]}
+                  results={[
+                    { label: currentText.result, value: meldScore, unit: 'Points' },
+                    { label: 'Estimated 3-Month Mortality', value: meldScore >= 40 ? '71.3%' : meldScore >= 30 ? '52.6%' : meldScore >= 20 ? '19.6%' : meldScore >= 10 ? '6.0%' : '1.9%' }
+                  ]}
+                  formula="MELD(Na) = MELD + 1.32 * (137 - Na) - (0.033 * MELD * (137 - Na))"
+                  disclaimer={currentText.clinicalText}
+                  references={currentText.references}
+                  lang={lang}
+                />
               </div>
             )}
           </div>
@@ -215,11 +246,11 @@ export default function MeldScore({ lang }: { lang: LangCode }) {
 
       <div className="mt-16 pt-10 border-t border-gray-200">
         <div className="flex items-center gap-3 mb-8 text-xs text-gray-400">
-          <span className="font-semibold text-gray-500">Reviewed by the CareCalculus Clinical Team</span>
+          <span className="font-semibold text-gray-500">{layoutTranslations[lang].reviewedBy}</span>
           <span>&middot;</span>
-          <span>MD, ICU &amp; Emergency Medicine specialists</span>
+          <span>{layoutTranslations[lang].specialists}</span>
           <span>&middot;</span>
-          <span>Updated 2026</span>
+          <span>{layoutTranslations[lang].updated}</span>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="flex items-start gap-4">
@@ -236,7 +267,7 @@ export default function MeldScore({ lang }: { lang: LangCode }) {
               <Activity className="w-5 h-5" />
             </div>
             <div className="w-full">
-              <h2 className="font-semibold text-gray-900 mb-2 text-base">Mathematical Metric</h2>
+              <h2 className="font-semibold text-gray-900 mb-2 text-base">{layoutTranslations[lang].mathMetric}</h2>
               <div className="font-mono text-xs bg-gray-100 text-gray-700 py-2 px-3 rounded-md border border-gray-200 uppercase tracking-tight" dir="ltr">
                 {currentText.formula}
               </div>
@@ -247,7 +278,7 @@ export default function MeldScore({ lang }: { lang: LangCode }) {
               <BookOpen className="w-5 h-5" />
             </div>
             <div>
-              <h2 className="font-semibold text-gray-900 mb-2 text-base">Evidence & Lit</h2>
+              <h2 className="font-semibold text-gray-900 mb-2 text-base">{layoutTranslations[lang].evidenceLit}</h2>
               <p className="text-gray-500 text-xs leading-relaxed italic">{currentText.references}</p>
             </div>
           </div>

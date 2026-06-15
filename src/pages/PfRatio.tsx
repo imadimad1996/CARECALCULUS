@@ -1,6 +1,9 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Activity, Info, BookOpen } from 'lucide-react';
 import { LangCode, Translations } from '../types';
+import { layoutTranslations } from '../utils/lang';
+import { trackCalculatorUsage } from '../utils/telemetry';
+import ClinicalExportButton from '../components/ClinicalExportButton';
 
 const translations: Translations = {
   en: {
@@ -62,6 +65,15 @@ export default function PfRatio({ lang }: { lang: LangCode }) {
     const decimalFio2 = fio2 > 1.0 ? fio2 / 100 : fio2;
     return Math.round(pao2 / decimalFio2);
   }, [pao2, fio2]);
+
+  useEffect(() => {
+    if (pfRatio !== null && pfRatio > 0) {
+      const timer = setTimeout(() => {
+        trackCalculatorUsage('oxygenation-ratio', lang, pfRatio);
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
+  }, [pfRatio, lang]);
 
   const getCategory = (val: number) => {
     if (val >= 300) return { label: currentText.normal, color: 'text-emerald-500', bg: 'bg-emerald-500/10 border-emerald-500/20' };
@@ -138,6 +150,22 @@ export default function PfRatio({ lang }: { lang: LangCode }) {
                     {category.label}
                   </div>
                 </div>
+
+                <ClinicalExportButton
+                  title={currentText.title}
+                  inputs={[
+                    { label: currentText.pao2, value: `${pao2} mmHg` },
+                    { label: currentText.fio2, value: `${fio2} %` }
+                  ]}
+                  results={[
+                    { label: currentText.result, value: pfRatio !== null ? pfRatio : 0, unit: 'mmHg' },
+                    { label: 'ARDS Severity Stage', value: category.label }
+                  ]}
+                  formula={currentText.formula}
+                  disclaimer={currentText.clinicalText}
+                  references={currentText.references}
+                  lang={lang}
+                />
               </div>
             )}
           </div>
@@ -146,11 +174,11 @@ export default function PfRatio({ lang }: { lang: LangCode }) {
 
       <div className="mt-16 pt-10 border-t border-gray-200">
         <div className="flex items-center gap-3 mb-8 text-xs text-gray-400">
-          <span className="font-semibold text-gray-500">Reviewed by the CareCalculus Clinical Team</span>
+          <span className="font-semibold text-gray-500">{layoutTranslations[lang].reviewedBy}</span>
           <span>&middot;</span>
-          <span>MD, ICU &amp; Emergency Medicine specialists</span>
+          <span>{layoutTranslations[lang].specialists}</span>
           <span>&middot;</span>
-          <span>Updated 2026</span>
+          <span>{layoutTranslations[lang].updated}</span>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="flex items-start gap-4">
@@ -167,10 +195,19 @@ export default function PfRatio({ lang }: { lang: LangCode }) {
               <Activity className="w-5 h-5" />
             </div>
             <div className="w-full">
-              <h2 className="font-semibold text-gray-900 mb-2 text-base">Mathematical Metric</h2>
+              <h2 className="font-semibold text-gray-900 mb-2 text-base">{layoutTranslations[lang].mathMetric}</h2>
               <div className="font-mono text-xs bg-gray-100 text-gray-700 py-2 px-3 rounded-md border border-gray-200 uppercase tracking-tight" dir="ltr">
                 {currentText.formula}
               </div>
+            </div>
+          </div>
+          <div className="flex items-start gap-4">
+            <div className="p-2.5 bg-emerald-50 text-emerald-600 rounded-lg shrink-0">
+              <BookOpen className="w-5 h-5" />
+            </div>
+            <div>
+              <h2 className="font-semibold text-gray-900 mb-2 text-base">{layoutTranslations[lang].evidenceLit}</h2>
+              <p className="text-gray-550 text-xs leading-relaxed italic">{currentText.references}</p>
             </div>
           </div>
         </div>

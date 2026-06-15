@@ -2,6 +2,8 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { Activity, Info, BookOpen } from 'lucide-react';
 import { LangCode, Translations } from '../types';
 import ClinicalExportButton from '../components/ClinicalExportButton';
+import { trackCalculatorUsage } from '../utils/telemetry';
+import { layoutTranslations } from '../utils/lang';
 
 const translations: Translations = {
   en: {
@@ -92,6 +94,15 @@ export default function AdjustedBodyWeight({ lang }: { lang: LangCode }) {
       isObese
     };
   }, [height, weight, sex]);
+
+  useEffect(() => {
+    if (results !== null) {
+      const timer = setTimeout(() => {
+        trackCalculatorUsage('adjusted-body-weight', lang, results.ibw);
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
+  }, [results, lang]);
 
   return (
     <>
@@ -228,6 +239,47 @@ export default function AdjustedBodyWeight({ lang }: { lang: LangCode }) {
 
                </div>
             </div>
+        </div>
+      </div>
+
+      <div className="mt-16 pt-10 border-t border-gray-200">
+        <div className="flex items-center gap-3 mb-8 text-xs text-gray-400">
+          <span className="font-semibold text-gray-500">{layoutTranslations[lang].reviewedBy}</span>
+          <span>&middot;</span>
+          <span>{layoutTranslations[lang].specialists}</span>
+          <span>&middot;</span>
+          <span>{layoutTranslations[lang].updated}</span>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="flex items-start gap-4">
+            <div className="p-2.5 bg-blue-50 text-blue-600 rounded-lg shrink-0">
+              <Info className="w-5 h-5" />
+            </div>
+            <div>
+              <h2 className="font-semibold text-gray-900 mb-2 text-base">{currentText.clinicalTitle}</h2>
+              <p className="text-gray-600 text-sm leading-relaxed">{currentText.clinicalText}</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-4">
+            <div className="p-2.5 bg-purple-50 text-purple-600 rounded-lg shrink-0">
+              <Activity className="w-5 h-5" />
+            </div>
+            <div className="w-full">
+              <h2 className="font-semibold text-gray-900 mb-2 text-base">{layoutTranslations[lang].mathMetric}</h2>
+              <div className="font-mono text-xs bg-gray-100 text-gray-700 py-2 px-3 rounded-md border border-gray-200 uppercase tracking-tight" dir="ltr">
+                {currentText.formula}
+              </div>
+            </div>
+          </div>
+          <div className="flex items-start gap-4">
+            <div className="p-2.5 bg-emerald-50 text-emerald-600 rounded-lg shrink-0">
+              <BookOpen className="w-5 h-5" />
+            </div>
+            <div>
+              <h2 className="font-semibold text-gray-900 mb-2 text-base">{layoutTranslations[lang].evidenceLit}</h2>
+              <p className="text-gray-500 text-xs leading-relaxed italic">{currentText.references}</p>
+            </div>
+          </div>
         </div>
       </div>
     </>

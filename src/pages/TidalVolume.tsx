@@ -1,6 +1,9 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Activity, Info, BookOpen } from 'lucide-react';
 import { LangCode, Translations } from '../types';
+import { layoutTranslations } from '../utils/lang';
+import { trackCalculatorUsage } from '../utils/telemetry';
+import ClinicalExportButton from '../components/ClinicalExportButton';
 
 const translations: Translations = {
   en: {
@@ -63,6 +66,15 @@ export default function TidalVolume({ lang }: { lang: LangCode }) {
       return 45.5 + 0.91 * (h - 152.4);
     }
   }, [height, sex]);
+
+  useEffect(() => {
+    if (pbw !== null && pbw > 0) {
+      const timer = setTimeout(() => {
+        trackCalculatorUsage('tidal-volume', lang, pbw);
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
+  }, [pbw, lang]);
 
   return (
     <>
@@ -129,17 +141,36 @@ export default function TidalVolume({ lang }: { lang: LangCode }) {
               </div>
               
               {pbw !== null && (
-                 <div className="pt-6 border-t border-white/10">
-                   <span className="text-xs font-bold uppercase tracking-wider text-blue-400 block mb-2">
-                     {currentText.target}
-                   </span>
-                   <div className="text-4xl font-bold text-white tracking-tight">
-                     {Math.round(pbw * 6)} <span className="text-lg font-normal text-gray-400">mL</span>
+                 <>
+                   <div className="pt-6 border-t border-white/10">
+                     <span className="text-xs font-bold uppercase tracking-wider text-blue-400 block mb-2">
+                       {currentText.target}
+                     </span>
+                     <div className="text-4xl font-bold text-white tracking-tight">
+                       {Math.round(pbw * 6)} <span className="text-lg font-normal text-gray-400">mL</span>
+                     </div>
+                     <div className="text-sm text-gray-400 mt-2">
+                       Range (4-8 mL/kg): {Math.round(pbw * 4)} - {Math.round(pbw * 8)} mL
+                     </div>
                    </div>
-                   <div className="text-sm text-gray-400 mt-2">
-                     Range (4-8 mL/kg): {Math.round(pbw * 4)} - {Math.round(pbw * 8)} mL
-                   </div>
-                 </div>
+
+                   <ClinicalExportButton
+                     title={currentText.title}
+                     inputs={[
+                       { label: currentText.sex, value: sex === 0 ? currentText.male : currentText.female },
+                       { label: currentText.height, value: `${height} cm` }
+                     ]}
+                     results={[
+                       { label: currentText.result, value: pbw.toFixed(1), unit: 'kg (PBW)' },
+                       { label: currentText.target, value: `${Math.round(pbw * 6)} mL` },
+                       { label: 'Ventilation Range (4-8 mL/kg)', value: `${Math.round(pbw * 4)} - ${Math.round(pbw * 8)} mL` }
+                     ]}
+                     formula={currentText.formula}
+                     disclaimer={currentText.clinicalText}
+                     references={currentText.references}
+                     lang={lang}
+                   />
+                 </>
               )}
             </div>
           </div>
@@ -148,11 +179,11 @@ export default function TidalVolume({ lang }: { lang: LangCode }) {
 
       <div className="mt-16 pt-10 border-t border-gray-200">
         <div className="flex items-center gap-3 mb-8 text-xs text-gray-400">
-          <span className="font-semibold text-gray-500">Reviewed by the CareCalculus Clinical Team</span>
+          <span className="font-semibold text-gray-500">{layoutTranslations[lang].reviewedBy}</span>
           <span>&middot;</span>
-          <span>MD, ICU &amp; Emergency Medicine specialists</span>
+          <span>{layoutTranslations[lang].specialists}</span>
           <span>&middot;</span>
-          <span>Updated 2026</span>
+          <span>{layoutTranslations[lang].updated}</span>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="flex items-start gap-4">
@@ -169,10 +200,19 @@ export default function TidalVolume({ lang }: { lang: LangCode }) {
               <Activity className="w-5 h-5" />
             </div>
             <div className="w-full">
-              <h2 className="font-semibold text-gray-900 mb-2 text-base">Mathematical Metric</h2>
+              <h2 className="font-semibold text-gray-900 mb-2 text-base">{layoutTranslations[lang].mathMetric}</h2>
               <div className="font-mono text-xs bg-gray-100 text-gray-700 py-2 px-3 rounded-md border border-gray-200 uppercase tracking-tight" dir="ltr">
                 {currentText.formula}
               </div>
+            </div>
+          </div>
+          <div className="flex items-start gap-4">
+            <div className="p-2.5 bg-emerald-50 text-emerald-600 rounded-lg shrink-0">
+              <BookOpen className="w-5 h-5" />
+            </div>
+            <div>
+              <h2 className="font-semibold text-gray-900 mb-2 text-base">{layoutTranslations[lang].evidenceLit}</h2>
+              <p className="text-gray-500 text-xs leading-relaxed italic">{currentText.references}</p>
             </div>
           </div>
         </div>

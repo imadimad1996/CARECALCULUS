@@ -1,7 +1,9 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Activity, Info, BookOpen, ChevronDown } from 'lucide-react';
 import { LangCode, Translations } from '../types';
 import { layoutTranslations } from '../utils/lang';
+import { trackCalculatorUsage } from '../utils/telemetry';
+import ClinicalExportButton from '../components/ClinicalExportButton';
 
 const translations: Translations = {
   en: {
@@ -105,6 +107,15 @@ export default function Curb65Score({ lang }: { lang: LangCode }) {
     }, 0);
   }, [selections]);
 
+  useEffect(() => {
+    if (scoreValue > 0) {
+      const timer = setTimeout(() => {
+        trackCalculatorUsage('curb65-score', lang, scoreValue);
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
+  }, [scoreValue, lang]);
+
   const getCategory = (val: number) => {
     if (val <= 1) return { label: currentText.low, color: 'text-emerald-500', bg: 'bg-emerald-500/10 border-emerald-500/20' };
     if (val === 2) return { label: currentText.inter, color: 'text-amber-500', bg: 'bg-amber-500/10 border-amber-500/20' };
@@ -177,6 +188,25 @@ export default function Curb65Score({ lang }: { lang: LangCode }) {
                   {category.label}
                 </div>
               </div>
+
+              <ClinicalExportButton
+                title={currentText.title}
+                inputs={[
+                  { label: currentText.confusion, value: selections.confusion ? 'Yes (1)' : 'No (0)' },
+                  { label: currentText.urea, value: selections.urea ? 'Yes (1)' : 'No (0)' },
+                  { label: currentText.rr30, value: selections.rr30 ? 'Yes (1)' : 'No (0)' },
+                  { label: currentText.bp, value: selections.bp ? 'Yes (1)' : 'No (0)' },
+                  { label: currentText.age65, value: selections.age65 ? 'Yes (1)' : 'No (0)' }
+                ]}
+                results={[
+                  { label: currentText.result, value: `${scoreValue} / 5` },
+                  { label: 'Risk Stratification', value: category.label }
+                ]}
+                formula={currentText.formula}
+                disclaimer={currentText.clinicalText}
+                references={currentText.references}
+                lang={lang}
+              />
             </div>
           </div>
         </div>

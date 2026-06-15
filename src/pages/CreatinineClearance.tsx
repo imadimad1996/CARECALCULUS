@@ -1,6 +1,9 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Activity, Info, BookOpen } from 'lucide-react';
 import { LangCode, Translations } from '../types';
+import { layoutTranslations } from '../utils/lang';
+import { trackCalculatorUsage } from '../utils/telemetry';
+import ClinicalExportButton from '../components/ClinicalExportButton';
 
 const translations: Translations = {
   en: {
@@ -80,6 +83,15 @@ export default function CreatinineClearance({ lang }: { lang: LangCode }) {
     if (isFemale) computed = computed * 0.85;
     return parseFloat(computed.toFixed(1));
   }, [age, weight, creatinine, isFemale]);
+
+  useEffect(() => {
+    if (crclValue > 0) {
+      const timer = setTimeout(() => {
+        trackCalculatorUsage('creatinine-clearance', lang, crclValue);
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
+  }, [crclValue, lang]);
 
   const getStage = (val: number) => {
     if (val === 0) return { label: '', color: '' };
@@ -194,11 +206,31 @@ export default function CreatinineClearance({ lang }: { lang: LangCode }) {
 
             <div className="relative z-10 mt-10">
               {crclValue > 0 && (
-                <div className={`p-4 rounded-xl border flex justify-between items-center transition-all ${stage.bg} ${stage.color}`}>
-                  <div className="font-semibold text-sm">
-                    {stage.label}
+                <>
+                  <div className={`p-4 rounded-xl border flex justify-between items-center transition-all ${stage.bg} ${stage.color}`}>
+                    <div className="font-semibold text-sm">
+                      {stage.label}
+                    </div>
                   </div>
-                </div>
+
+                  <ClinicalExportButton
+                    title={currentText.title}
+                    inputs={[
+                      { label: currentText.gender, value: isFemale ? currentText.female : currentText.male },
+                      { label: currentText.age, value: `${age} years` },
+                      { label: currentText.weight, value: `${weight} kg` },
+                      { label: currentText.creatinine, value: `${creatinine} mg/dL` }
+                    ]}
+                    results={[
+                      { label: currentText.result, value: crclValue, unit: 'mL/min' },
+                      { label: 'Renal Function Stage', value: stage.label }
+                    ]}
+                    formula={currentText.formula}
+                    disclaimer={currentText.clinicalText}
+                    references={currentText.references}
+                    lang={lang}
+                  />
+                </>
               )}
             </div>
           </div>
@@ -207,11 +239,11 @@ export default function CreatinineClearance({ lang }: { lang: LangCode }) {
 
       <div className="mt-16 pt-10 border-t border-gray-200">
         <div className="flex items-center gap-3 mb-8 text-xs text-gray-400">
-          <span className="font-semibold text-gray-500">Reviewed by the CareCalculus Clinical Team</span>
+          <span className="font-semibold text-gray-500">{layoutTranslations[lang].reviewedBy}</span>
           <span>&middot;</span>
-          <span>MD, ICU &amp; Emergency Medicine specialists</span>
+          <span>{layoutTranslations[lang].specialists}</span>
           <span>&middot;</span>
-          <span>Updated 2026</span>
+          <span>{layoutTranslations[lang].updated}</span>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="flex items-start gap-4">
@@ -228,7 +260,7 @@ export default function CreatinineClearance({ lang }: { lang: LangCode }) {
               <Activity className="w-5 h-5" />
             </div>
             <div className="w-full">
-              <h2 className="font-semibold text-gray-900 mb-2 text-base">Mathematical Metric</h2>
+              <h2 className="font-semibold text-gray-900 mb-2 text-base">{layoutTranslations[lang].mathMetric}</h2>
               <div className="font-mono text-xs bg-gray-100 text-gray-700 py-2 px-3 rounded-md border border-gray-200 uppercase tracking-tight" dir="ltr">
                 {currentText.formula}
               </div>
@@ -239,7 +271,7 @@ export default function CreatinineClearance({ lang }: { lang: LangCode }) {
               <BookOpen className="w-5 h-5" />
             </div>
             <div>
-              <h2 className="font-semibold text-gray-900 mb-2 text-base">Evidence & Lit</h2>
+              <h2 className="font-semibold text-gray-900 mb-2 text-base">{layoutTranslations[lang].evidenceLit}</h2>
               <p className="text-gray-500 text-xs leading-relaxed italic">{currentText.references}</p>
             </div>
           </div>
