@@ -16,6 +16,15 @@ export default defineConfig(() => {
         renderTarget: '#root',
         prerenderScript: path.resolve(__dirname, 'src/entry-prerender.tsx'),
       }),
+      {
+        name: 'force-close',
+        closeBundle() {
+          console.log('Build finished, forcing process exit to prevent hanging...');
+          setTimeout(() => {
+            process.exit(0);
+          }, 200);
+        }
+      },
     ],
     resolve: {
       alias: {
