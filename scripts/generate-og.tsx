@@ -171,6 +171,7 @@ async function main() {
     console.log(`Generated all images for language: ${lang}`);
   }
   console.log('Successfully completed OG Image generation.');
+  process.exit(0);
 }
 
 main().catch(e => {
