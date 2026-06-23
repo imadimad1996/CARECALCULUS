@@ -60,6 +60,7 @@ export const nameEnMap: Record<string, string> = {
   '/child-pugh-score': 'Child-Pugh Score Calculator',
   '/anion-gap': 'Anion Gap Calculator',
   '/aa-gradient': 'Alveolar-Arterial (A-a) Gradient Calculator',
+  '/fmp-medecine': 'FMPC Medicine Modules & PDF Handbooks',
 };
 
 const nameFrMap: Record<string, string> = {
@@ -100,6 +101,7 @@ const nameFrMap: Record<string, string> = {
   '/child-pugh-score': 'Calculateur Score Child-Pugh (Cirrhose)',
   '/anion-gap': 'Calculateur Trou Anionique (Acidose)',
   '/aa-gradient': 'Calculateur Gradient Alvéolo-Artériel (A-a)',
+  '/fmp-medecine': 'Modules Médecine FMPC & Livres PDF',
 };
 
 const nameArMap: Record<string, string> = {
@@ -140,6 +142,7 @@ const nameArMap: Record<string, string> = {
   '/child-pugh-score': 'مؤشر تشايلد بيو لشدة تليف الكبد (Child-Pugh)',
   '/anion-gap': 'حساب الفجوة الأنيونية وحموضة الدم (Anion Gap)',
   '/aa-gradient': 'حساب الفرق الألوفي-الشرياني للأكسجين (A-a Gradient)',
+  '/fmp-medecine': 'حقيبة محاضرات كلية الطب والصيدلة (FMPC)',
 };
 
 export interface RouteMeta {

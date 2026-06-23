@@ -51,6 +51,7 @@ const pageLoaders = [
   () => import('./pages/ChildPughScore'),
   () => import('./pages/AnionGap'),
   () => import('./pages/AaGradient'),
+  () => import('./pages/FmpMedecine'),
 ] as const;
 
 const [
@@ -60,6 +61,7 @@ const [
   AncCalculator, AdjustedBodyWeight, SteroidConversion, MedicalBlog, Blog,
   Presentations, Courses, OrlSpecialization, About, Disclaimer, Privacy, Terms,
   Glp1Hub, ApgarScore, SofaScore, ChildPughScore, AnionGap, AaGradient,
+  FmpMedecine,
 ] = pageLoaders.map((loader) => React.lazy(loader as any)) as any[];
 
 const HomePage = React.lazy(() => import('./pages/HomePage'));
@@ -149,6 +151,7 @@ export const navItems = [
   { path: '/orl', nameEn: 'ORL Specialization', nameFr: 'Spécialisation ORL', nameAr: 'تخصص سرطان الحنجرة ORL', icon: HeartPulse, tier: 4, group: 'reading' as const, badge: 'NEW' },
   { path: '/presentations', nameEn: 'Presentations', nameFr: 'Présentations', nameAr: 'العروض التقديمية', icon: MonitorPlay, tier: 4, group: 'learning' as const, badge: 'PPTX' },
   { path: '/cours', nameEn: 'Courses (PDF)', nameFr: 'Cours (PDF)', nameAr: 'المحاضرات والدروس', icon: GraduationCap, tier: 4, group: 'learning' as const, badge: 'PDF' },
+  { path: '/fmp-medecine', nameEn: 'Faculty of Medicine (FMPC)', nameFr: 'Faculté de Médecine (FMPC)', nameAr: 'كلية الطب والصيدلة (FMPC)', icon: GraduationCap, tier: 4, group: 'learning' as const, badge: 'PDF' },
 ];
 
 export const TIER_HEADERS: Record<number, Record<LangCode, string>> = {
@@ -205,6 +208,7 @@ function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="presentations/:slug" element={<Presentations lang={lang} />} />
       <Route path="cours" element={<Courses lang={lang} />} />
       <Route path="cours/:slug" element={<Courses lang={lang} />} />
+      <Route path="fmp-medecine" element={<FmpMedecine lang={lang} />} />
       <Route path="orl" element={<OrlSpecialization lang={lang} />} />
       <Route path="orl/:slug" element={<OrlSpecialization lang={lang} />} />
       <Route path="glp-1-hub" element={<Glp1Hub lang={lang} />} />
@@ -1167,6 +1171,35 @@ function AppLayout() {
               </div>
             )}
 
+            {/* Faculté de Médecine et de Pharmacie (FMPC) Section */}
+            {matchesSearch({ nameEn: 'Faculty of Medicine & Pharmacy FMPC', nameFr: 'Faculté de Médecine et de Pharmacie FMPC', nameAr: 'كلية الطب والصيدلة', path: '/fmp-medecine' }, sidebarSearch) && (
+              <div className="space-y-1.5 pt-4 border-t border-gray-100">
+                <div className="px-2.5 text-[10px] font-mono leading-none tracking-wider text-gray-400 font-extrabold uppercase pb-1 flex items-center justify-between">
+                  <span>{lang === 'fr' ? 'Faculté de Médecine et de Pharmacie' : (lang === 'ar' ? 'كلية الطب والصيدلة' : 'Faculty of Medicine & Pharmacy')}</span>
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
+                  </span>
+                </div>
+                <div className="space-y-0.5">
+                  <Link
+                    to={langPath('/fmp-medecine')}
+                    className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all relative ${
+                      logicalPath === '/fmp-medecine'
+                        ? 'bg-gradient-to-r from-teal-50 to-teal-50/50 text-teal-700 font-extrabold shadow-sm border border-teal-100/50'
+                        : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900 border border-transparent'
+                    }`}
+                    style={{ minHeight: '44px' }}
+                  >
+                    <GraduationCap className={`w-4 h-4 shrink-0 ${logicalPath === '/fmp-medecine' ? 'text-teal-600' : 'text-gray-400'}`} />
+                    <span className="truncate">{lang === 'fr' ? 'Cours & Livres PDF' : (lang === 'ar' ? 'الدروس والكتب الطبية' : 'Courses & PDF Books')}</span>
+                    <span className="absolute right-2 px-1.5 py-0.5 text-[8px] font-mono font-bold rounded-md border bg-teal-500/10 border-teal-500/20 text-teal-600">
+                      PDF
+                    </span>
+                  </Link>
+                </div>
+              </div>
+            )}
           </nav>
         </div>
       </aside>}
