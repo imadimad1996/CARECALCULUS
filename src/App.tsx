@@ -52,6 +52,7 @@ const pageLoaders = [
   () => import('./pages/AnionGap'),
   () => import('./pages/AaGradient'),
   () => import('./pages/FmpMedecine'),
+  () => import('./pages/IspitsAcademic'),
 ] as const;
 
 const [
@@ -61,7 +62,7 @@ const [
   AncCalculator, AdjustedBodyWeight, SteroidConversion, MedicalBlog, Blog,
   Presentations, Courses, OrlSpecialization, About, Disclaimer, Privacy, Terms,
   Glp1Hub, ApgarScore, SofaScore, ChildPughScore, AnionGap, AaGradient,
-  FmpMedecine,
+  FmpMedecine, IspitsAcademic,
 ] = pageLoaders.map((loader) => React.lazy(loader as any)) as any[];
 
 const HomePage = React.lazy(() => import('./pages/HomePage'));
@@ -84,7 +85,7 @@ export async function preloadPages() {
 const LEGAL_ROUTES = ['/about', '/disclaimer', '/privacy', '/terms'];
 
 // Routes that open in full-width reading mode (no sidebar, no top widgets)
-const CONTENT_ROUTES = ['/blog', '/blog-articles', '/presentations', '/cours', '/orl', '/about', '/disclaimer', '/privacy', '/terms', '/glp-1-hub', '/hub-glp1', '/%D9%85%D8%B1%D9%83%D8%B2-glp1', '/مركز-glp1'];
+const CONTENT_ROUTES = ['/blog', '/blog-articles', '/presentations', '/cours', '/orl', '/about', '/disclaimer', '/privacy', '/terms', '/glp-1-hub', '/hub-glp1', '/%D9%85%D8%B1%D9%83%D8%B2-glp1', '/مركز-glp1', '/ispits'];
 
 import { LangCode } from './types';
 
@@ -152,6 +153,7 @@ export const navItems = [
   { path: '/presentations', nameEn: 'Presentations', nameFr: 'Présentations', nameAr: 'العروض التقديمية', icon: MonitorPlay, tier: 4, group: 'learning' as const, badge: 'PPTX' },
   { path: '/cours', nameEn: 'Courses (PDF)', nameFr: 'Cours (PDF)', nameAr: 'المحاضرات والدروس', icon: GraduationCap, tier: 4, group: 'learning' as const, badge: 'PDF' },
   { path: '/fmp-medecine', nameEn: 'Faculty of Medicine (FMPC)', nameFr: 'Faculté de Médecine (FMPC)', nameAr: 'كلية الطب والصيدلة (FMPC)', icon: GraduationCap, tier: 4, group: 'learning' as const, badge: 'PDF' },
+  { path: '/ispits', nameEn: 'ISPITS Paramedical', nameFr: 'ISPITS Paramédical', nameAr: 'مناهج معاهد التمريض (ISPITS)', icon: GraduationCap, tier: 4, group: 'learning' as const, badge: 'NEW' },
 ];
 
 export const TIER_HEADERS: Record<number, Record<LangCode, string>> = {
@@ -210,6 +212,8 @@ function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="cours/:slug" element={<Courses lang={lang} />} />
       <Route path="fmp-medecine" element={<FmpMedecine lang={lang} />} />
       <Route path="fmp-medecine/:moduleSlug" element={<FmpMedecine lang={lang} />} />
+      <Route path="ispits" element={<IspitsAcademic lang={lang} />} />
+      <Route path="ispits/:moduleSlug" element={<IspitsAcademic lang={lang} />} />
       <Route path="orl" element={<OrlSpecialization lang={lang} />} />
       <Route path="orl/:slug" element={<OrlSpecialization lang={lang} />} />
       <Route path="glp-1-hub" element={<Glp1Hub lang={lang} />} />
