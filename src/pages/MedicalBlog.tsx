@@ -168,6 +168,7 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
   const navigate = useNavigate();
   const { langPath } = useLang();
 
+  const [searchQuery, setSearchQuery] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All Specialties');
   const [currentPage, setCurrentPage] = useState(1);
@@ -175,6 +176,17 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [textSize, setTextSize] = useState<'normal' | 'large' | 'extra'>('normal');
   const [scrollPercent, setScrollPercent] = useState(0);
+
+  useEffect(() => {
+    if (!searchQuery) {
+      setSearchTerm('');
+      return;
+    }
+    const handler = setTimeout(() => {
+      setSearchTerm(searchQuery);
+    }, 150);
+    return () => clearTimeout(handler);
+  }, [searchQuery]);
 
   const postsPerPage = 9;
   const isRtl = lang === 'ar';
@@ -1025,8 +1037,8 @@ ${s} exhibits progressive vascular, parenchymal, or endocrine triggers. Using ${
                   'Rechercher plus de 2 100 articles cliniques, auteurs ou DOIs...',
                   'ابحث في أكثر من ٢١٠٠ مقال طبي، كاتب، أو معيار الرقم الرقمي المباشر...'
                 )}
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-11 pr-4 py-3 bg-white/10 focus:bg-white text-white focus:text-slate-900 border border-white/10 focus:border-blue-500 outline-none rounded-xl text-xs font-bold font-mono tracking-wide placeholder-gray-400 transition-all shadow-inner focus:ring-4 focus:ring-blue-500/10"
                 style={{ minHeight: '44px' }}
               />
@@ -1090,7 +1102,7 @@ ${s} exhibits progressive vascular, parenchymal, or endocrine triggers. Using ${
               )}
             </p>
             <button
-              onClick={() => { setSearchTerm(''); setSelectedCategory('All Specialties'); }}
+              onClick={() => { setSearchQuery(''); setSearchTerm(''); setSelectedCategory('All Specialties'); }}
               className="px-5 py-2.5 bg-blue-600 text-white font-extrabold text-xs tracking-tight rounded-xl hover:bg-blue-700 transition shadow-md"
             >
               {getLocalizedLabel('Clear Filters', 'Effacer les Filtres', 'إعادة تعيين خيارات الفحص والمجلة')}
