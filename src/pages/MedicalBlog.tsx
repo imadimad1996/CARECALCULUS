@@ -28,7 +28,7 @@ interface BlogPost {
 }
 
 // 20 High-Quality Curated Seeds
-const ORIGINAL_CURATED_SEED_POSTS: BlogPost[] = [
+export const ORIGINAL_CURATED_SEED_POSTS: BlogPost[] = [
   {
     id: 'seed-1',
     title: 'Precision Mean Arterial Pressure (MAP) Targets: Balancing Perfusion & Vasopressor Toxicity',
@@ -234,125 +234,9 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
     setTimeout(() => setCopiedId(null), 2500);
   };
 
-  // Deterministic PRNG based on string seed to generate realistic clinical abstracts & metrics for the "Thousands of Blogs"
-  const getStablePRNG = (seed: string) => {
-    let hash = 0;
-    for (let i = 0; i < seed.length; i++) {
-      hash = seed.charCodeAt(i) + ((hash << 5) - hash);
-    }
-    return () => {
-      const x = Math.sin(hash++) * 10000;
-      return x - Math.floor(x);
-    };
-  };
-
-  // Dynamic Generator representing "thousands of peer-reviewed clinical articles"
+  // Curated clinical articles & journals list
   const generatedBlogs = useMemo(() => {
-    const totalSimulatedCount = 2100; // Over 2000 fully searchable clinical articles
-    const combined: BlogPost[] = [...CURATED_SEED_POSTS];
-
-    const prefixes = [
-      'Comparative Efficacy of', 'Clinical Utility of', 'Optimal Management of', 'Predictive Modeling for',
-      'Evaluation of', 'Evaluating Efficacy in', 'Optimizing Perfusion Parameters in', 'Early Stratification of',
-      'Diagnostic Precision of', 'Therapeutic Equivalences in', 'Retrospective Pathophysiological Review on'
-    ];
-
-    const subjects = [
-      'Decompensated Atrial Fibrillation', 'Severe Pulmonary Thromboembolism', 'Refractory Sepsis Syndromes',
-      'Acute Kidney Injury Stages', 'Acute Hepatic Failure & Encephalopathy', 'Severe Hypernatremia',
-      'Mild-to-Moderate Traumatic Brain Injury', 'Occult Neutropenia Episodes', 'Therapy-Resistant Pleural Effusion',
-      'Severe Ketoacidosis presentations', 'Glucocorticoid-Induced Adrenal Insufficiency', 'Ventilator-Induced Lung Injury'
-    ];
-
-    const triggers = [
-      'using Target-Guided Perfusion', 'Validated via Multivariable Predictors', 'Calculated through Micro-Volume Models',
-      'Triage Activated by Advanced GCS Rubrics', 'Stratified via Wells Score Protocols', 'Monitored by Serum Albumin Variables',
-      'Based on Interrupted Low Tidal Volume Cycles', 'Established by Hydrocortisone Equivalence Factors', 'Correlated with Creatinine t1/2 variables'
-    ];
-
-    const benefits = [
-      'to Minimize Multiorgan Distress Incidence', 'Providing Predictive Resolution of Adverse Events', 'Improving Post-Intubation Recovery Variables',
-      'Minimizing Adverse Drug Reaction Risks', 'Accelerating Time-to-Extubation in ICU Cohorts', 'Validating Non-Invasive Hemodynamic Markers',
-      'Optimizing Pharmacokinetic Half-Life Performance', 'Guaranteeing Safety in Geriatric Registries', 'Mitigating Over-Sedation Hospital Cohorts'
-    ];
-
-    const authors = [
-      'Dr. Rachel Goldstein, MD (Mayo Clinic)', 'Prof. Ahmed Al-Mansoori, MD (Cleveland Clinic)',
-      'Dr. Helen Wu, Ph.D. (Johns Hopkins Residency)', 'Dr. Elena Rostova, MD (Charité, Berlin)',
-      'Dr. Charles Babbage Jr., MD (Harvard Medical)', 'Prof. Yasmin Ghadban, MD (Beirut Medical College)',
-      'Prof. Liam O’Connor, MD (Triniti College Dublin)', 'Dr. Yuki Sato, MD (Tokyo Medical University)'
-    ];
-
-    const reviewers = [
-      'Prof. Alice Vance, MD, Ph.D. (Stanford Health)', 'Dr. Jean-Pierre Dupont, MD (Paris-Sud)',
-      'Dr. Al-Faruqi, MD (Morocco Medical Board)'
-    ];
-
-    const categories = ['Critical Care', 'Cardiology', 'Nephrology', 'Hepatology', 'Pharmacology', 'Diagnostics'];
-
-    for (let i = 1; i <= totalSimulatedCount; i++) {
-      const itemSeed = `gen-item-key-${i}`;
-      const random = getStablePRNG(itemSeed);
-
-      // Select indices deterministically
-      const p = prefixes[Math.floor(random() * prefixes.length)];
-      const s = subjects[Math.floor(random() * subjects.length)];
-      const t = triggers[Math.floor(random() * triggers.length)];
-      const b = benefits[Math.floor(random() * benefits.length)];
-
-      const title = `${p} ${s} ${t} ${b}`;
-      const category = categories[Math.floor(random() * categories.length)];
-      const author = authors[Math.floor(random() * authors.length)];
-      const authorLastName = author.split(' ')[1].replace(',', '');
-      const reviewerCandidates = reviewers.filter(r => !r.includes(authorLastName));
-      const reviewer = reviewerCandidates[Math.floor(random() * reviewerCandidates.length)];
-      const docId = `10.1002/cmr.${1000 + i}`;
-      const readingMinutes = 4 + Math.floor(random() * 8);
-      const year = 2024 + Math.floor(random() * 3);
-      const month = String(1 + Math.floor(random() * 12)).padStart(2, '0');
-      const day = String(1 + Math.floor(random() * 28)).padStart(2, '0');
-      const citationCount = Math.floor(random() * 180);
-
-      const snippet = `This medical analysis reviews the prognostic indicators of ${s.toLowerCase()} ${t.toLowerCase()}. Outcomes indicate that prioritizing clinical scores yields a statistically significant margin of optimization as evaluated in multi-center retrospective registry analyses.`;
-
-      const content = `### Clinical Background
-Advanced clinical protocols describe ${s.toLowerCase()} as a highly dynamic, time-sensitive diagnosis. This analysis reviews ${title} based on long-term clinical trial and retrospective cohort registry data involving multi-center validation protocols.
-
-### Pathological Mechanisms
-${s} exhibits progressive vascular, parenchymal, or endocrine triggers. Using ${t.toLowerCase()} optimizes diagnostic latency. The integration of precision guidelines prevents sub-therapeutic levels and minimizes adverse physiological responses.
-
-### Key Study Outcomes
-1. **Dynamic Risk Control**: Real-time diagnostic evaluation minimizes diagnostic delays by approximately 24-38 minutes.
-2. **Resource Efficiency**: Use of automated validation scales reduces ICU stay variability and unnecessary imaging referrals.
-3. **Clinical Integration Index**: Strong correlation with secondary physiological outcomes allows for seamless triage handoffs.
-
-### Medical Directives
-* Ensure baseline physiological profiles are established before administering pharmacotherapy or altering organ perfusion goals.
-* Continuously audit patient metabolic, renal, or ventilation indices as calculated in companion digital calculators.
-* Re-assess variables if the patient shows high-grade inflammatory markers, fluctuating conscious level, or dynamic blood pressure updates.
-
-### Secondary Citations
-* *Vance A. et al. Personalized Critical Care Indexing (2025).*
-* *Dupont J-P., Hemodynamic Metrics and Kidney Shock Outcomes (2024).*`;
-
-      combined.push({
-        id: `gen-${i}`,
-        title,
-        snippet,
-        content,
-        author,
-        reviewer,
-        category,
-        readTime: `${readingMinutes} min read`,
-        date: `${year}-${month}-${day}`,
-        doi: docId,
-        citationCount,
-        clinicalImpact: `Adoption of this algorithmic framework resulted in a ${10 + Math.floor(random() * 15)}% improvement in primary diagnostic endpoints.`,
-        relevance: `Fully clinical guideline aligned.`
-      });
-    }
-
-    return combined;
+    return CURATED_SEED_POSTS;
   }, []);
 
   // Filter and Search Logic

@@ -11,6 +11,12 @@
 // Keep the route metadata maps here in lockstep with navItems in App.tsx.
 
 import { LangCode } from '../types';
+import { slugify } from './slug';
+import { MASTER_BLOGS, MASTER_JOURNALS, MASTER_COURSES, MASTER_PRESENTATIONS } from './masterListContent';
+import { ORIGINAL_CURATED_SEED_POSTS } from '../pages/MedicalBlog';
+import { ORIGINAL_BLOG_SEED } from '../pages/Blog';
+import { DEFAULT_COURSES } from '../pages/Courses';
+import { DEFAULT_SUBJECTS } from '../pages/Presentations';
 
 export const ORIGIN = 'https://carecalculus.com';
 
@@ -128,6 +134,136 @@ export interface RouteMeta {
 }
 
 export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
+  // 1. Journal Articles (/blog/:slug)
+  if (path.startsWith('/blog/')) {
+    const slug = path.replace(/^\/blog\//, '');
+    const combinedJournals = [
+      ...ORIGINAL_CURATED_SEED_POSTS,
+      ...MASTER_JOURNALS.map(mj => ({
+        id: mj.id,
+        title: mj.title.en,
+        snippet: mj.snippet.en,
+        multilingualTitle: { fr: mj.title.fr, ar: mj.title.ar },
+        multilingualSnippet: { fr: mj.snippet.fr, ar: mj.snippet.ar },
+        category: mj.category,
+      }))
+    ];
+    const post = combinedJournals.find(p => slugify(p.title, p.id) === slug || p.id.toLowerCase() === slug.toLowerCase()) as any;
+    if (post) {
+      const titleText = (lang === 'fr' && post.multilingualTitle?.fr)
+        ? post.multilingualTitle.fr
+        : (lang === 'ar' && post.multilingualTitle?.ar)
+        ? post.multilingualTitle.ar
+        : post.title;
+      const snippetText = (lang === 'fr' && post.multilingualSnippet?.fr)
+        ? post.multilingualSnippet.fr
+        : (lang === 'ar' && post.multilingualSnippet?.ar)
+        ? post.multilingualSnippet.ar
+        : post.snippet;
+      return {
+        title: `${titleText} | CareCalculus Scientific Journal`,
+        desc: snippetText,
+        keywords: `${post.category.toLowerCase()}, peer-reviewed medical study, pubmed clinical, clinical evidence`
+      };
+    }
+  }
+
+  // 2. Blog Articles (/blog-articles/:slug)
+  if (path.startsWith('/blog-articles/')) {
+    const slug = path.replace(/^\/blog-articles\//, '');
+    const combinedBlogs = [
+      ...ORIGINAL_BLOG_SEED,
+      ...MASTER_BLOGS.map(mb => ({
+        id: mb.id,
+        title: mb.title.en,
+        titleFr: mb.title.fr,
+        titleAr: mb.title.ar,
+        snippet: mb.snippet.en,
+        snippetFr: mb.snippet.fr,
+        snippetAr: mb.snippet.ar,
+        category: mb.category,
+      }))
+    ];
+    const post = combinedBlogs.find(p => slugify(p.title, p.id) === slug || p.id.toLowerCase() === slug.toLowerCase());
+    if (post) {
+      const titleText = lang === 'fr' ? post.titleFr : lang === 'ar' ? post.titleAr : post.title;
+      const snippetText = lang === 'fr' ? post.snippetFr : lang === 'ar' ? post.snippetAr : post.snippet;
+      return {
+        title: `${titleText} | CareCalculus Blog`,
+        desc: snippetText,
+        keywords: `${post.category.toLowerCase()}, clinical tips, medical blog, health advice`
+      };
+    }
+  }
+
+  // 3. Courses (/cours/:slug)
+  if (path.startsWith('/cours/')) {
+    const slug = path.replace(/^\/cours\//, '');
+    const combinedCourses = [
+      ...DEFAULT_COURSES,
+      ...MASTER_COURSES.map(mc => ({
+        id: mc.id,
+        title: mc.title,
+        summary: mc.summary,
+        category: mc.category,
+      }))
+    ];
+    const post = combinedCourses.find(p => {
+      const titleEn = typeof p.title === 'string' ? p.title : p.title.en;
+      return slugify(titleEn, p.id) === slug || p.id.toLowerCase() === slug.toLowerCase();
+    });
+    if (post) {
+      const titleText = typeof post.title === 'string'
+        ? post.title
+        : (lang === 'fr' ? post.title.fr : lang === 'ar' ? post.title.ar : post.title.en);
+      const snippetText = typeof post.summary === 'string'
+        ? post.summary
+        : (lang === 'fr' ? post.summary.fr : lang === 'ar' ? post.summary.ar : post.summary.en);
+      const categoryText = typeof post.category === 'string'
+        ? post.category
+        : (lang === 'fr' ? post.category : lang === 'ar' ? post.category : post.category);
+      return {
+        title: `${titleText} | CareCalculus Course`,
+        desc: snippetText,
+        keywords: `${categoryText.toLowerCase()}, medical syllabus, pdf tutorial, clinical course`
+      };
+    }
+  }
+
+  // 4. Presentations (/presentations/:slug)
+  if (path.startsWith('/presentations/')) {
+    const slug = path.replace(/^\/presentations\//, '');
+    const combinedDecks = [
+      ...DEFAULT_SUBJECTS,
+      ...MASTER_PRESENTATIONS.map(mp => ({
+        id: mp.id,
+        title: mp.title,
+        description: mp.description,
+        category: mp.category,
+      }))
+    ];
+    const post = combinedDecks.find(p => {
+      const titleEn = typeof p.title === 'string' ? p.title : p.title.en;
+      return slugify(titleEn, p.id) === slug || p.id.toLowerCase() === slug.toLowerCase();
+    });
+    if (post) {
+      const titleText = typeof post.title === 'string'
+        ? post.title
+        : (lang === 'fr' ? post.title.fr : lang === 'ar' ? post.title.ar : post.title.en);
+      const snippetText = typeof post.description === 'string'
+        ? post.description
+        : (lang === 'fr' ? post.description.fr : lang === 'ar' ? post.description.ar : post.description.en);
+      const categoryText = typeof post.category === 'string'
+        ? post.category
+        : (lang === 'fr' ? post.category : lang === 'ar' ? post.category : post.category);
+      return {
+        title: `${titleText} | CareCalculus Presentation`,
+        desc: snippetText,
+        keywords: `${categoryText.toLowerCase()}, pptx deck, slides, medical study guide`
+      };
+    }
+  }
+
   const nameEn = nameEnMap[path] || 'Multilingual Care Calculators';
   const nameFr = nameFrMap[path] || 'Calculateur Médical Gratuit';
   const nameAr = nameArMap[path] || 'الحاسبة الطبية الشاملة المعتمدة';

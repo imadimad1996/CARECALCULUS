@@ -29,7 +29,7 @@ interface MedicalCourse {
   isUserUploaded?: boolean;
 }
 
-const DEFAULT_COURSES: MedicalCourse[] = [
+export const DEFAULT_COURSES: MedicalCourse[] = [
   {
     id: 'pdf-1',
     title: 'Clinical Nephrology: Cockcroft-Gault & Drug Clearance Kinetics',

@@ -15,6 +15,8 @@ interface BlogArticle {
   snippetFr: string;
   snippetAr: string;
   content: string;
+  contentFr?: string;
+  contentAr?: string;
   author: string;
   reviewer?: string;
   category: 'Clinical Tips' | 'News & Updates' | 'Editorial' | 'Practice' | 'Technology';
@@ -23,7 +25,165 @@ interface BlogArticle {
 }
 
 // Editorial blog seeds — lighter, practical companion to the formal Clinical Journal.
-const ORIGINAL_BLOG_SEED: BlogArticle[] = [
+export const ORIGINAL_BLOG_SEED: BlogArticle[] = [
+  {
+    id: 'post-7',
+    title: 'Top 10 Global Medical Blogs in 2026: E-E-A-T, Authority, and Editorial Best Practices',
+    titleFr: 'Top 10 des Blogs Médicaux Mondiaux en 2026 : E-E-A-T, Autorité et Bonnes Pratiques Éditoriales',
+    titleAr: 'أفضل ١٠ مدونات طبية عالمية في عام ٢٠٢٦: معايير الثقة المعتمدة E-E-A-T وأفضل الممارسات التحريرية',
+    snippet: 'A masterclass review of the top 10 global medical blogs in 2026, analyzing their domain authority, E-E-A-T compliance, and key lessons for healthcare publishers.',
+    snippetFr: 'Une analyse approfondie des 10 meilleurs blogs médicaux mondiaux en 2026, décryptant leur autorité de domaine, conformité E-E-A-T et leçons clés.',
+    snippetAr: 'تحليل سريري شامل لأفضل ١٠ مدونات ومجلات طبية في العالم لعام ٢٠٢٦، مع دراسة معايير E-E-A-T وكيفية تصدر نتائج البحث.',
+    content: `### Introduction: The Battle for Health Authority Online
+
+Who controls the global flow of medical information in 2026? With AI search engines like Perplexity, ChatGPT, and Google Search Generative Experience (SGE) summarizing health queries at the top of results pages, traditional blogging is dead. What survived—and thrived—is clinical authority. Search engines and AI models only cite sites with bulletproof E-E-A-T (Experience, Expertise, Authoritativeness, and Trustworthiness). The health landscape is divided between consumer giants, hospital systems, and professional clinical news platforms. Here is the clinical breakdown of the top 10 publications.
+
+### Part 1: Consumer Health & Medical Information
+
+1. **Healthline**
+Consistently ranking as one of the most visited health sites in the world, Healthline covers everything from mental health to nutrition. Its dominance is driven by its rigorous **Medical Review Board** comprising over 150 clinicians. No article is published without dual validation: a medical writer drafts it from peer-reviewed journals, and a specialist clinician signs off on its clinical accuracy.
+
+2. **WebMD**
+A dominant force in global medical traffic, WebMD remains the go-to platform for acute symptom checking, prescription drug interactions, and general medical news. Its articles are heavily vetted by a network of licensed physicians and medical journalists. Its primary asset is the structured symptom checker database, which acts as a powerful SEO anchor.
+
+3. **Medical News Today (MNT)**
+Focused heavily on clinical research updates, MNT is widely read by both consumers and healthcare professionals. It breaks down complex, peer-reviewed clinical trials into accessible daily articles. Every article includes direct DOI links to primary studies, satisfying search engine algorithm needs for citation integrity.
+
+4. **Verywell Health**
+A massive platform dedicated specifically to chronic conditions, treatment guides, and patient empowerment. It is highly trusted because its content is exclusively written and reviewed by board-certified physicians. Verywell Health uses a distinct "Medical Reviewer Badge" showing the reviewer's qualifications, a powerful trust indicator.
+
+5. **Everyday Health**
+A major global blog focusing on the intersection of lifestyle and chronic illness management. It bridges the gap between daily wellness habits and formal medical treatments, optimizing keywords related to patient recovery protocols and nutrition.
+
+### Part 2: Institutional Medical Blogs
+
+6. **Cleveland Clinic Health Essentials**
+Run by one of the top hospital systems in the world, this is the gold standard for hospital-run blogs. It provides highly authoritative, physician-authored advice on disease prevention, treatments, and daily health. Because it is written directly by CC's practicing clinicians, it carries unmatched institutional trust.
+
+7. **Harvard Health Blog**
+Published directly by Harvard Medical School, this blog translates complex medical research and institutional knowledge into practical, everyday advice for the general public. It leverages the global prestige of the Harvard brand, resulting in a domain authority (DA) close to 100.
+
+8. **Mayo Clinic News Network**
+While Mayo Clinic's primary site is a massive medical encyclopedia, their publishing network functions as a daily blog covering breaking medical research, public health alerts, and clinical innovations directly from their researchers. It is highly cited by global news networks for primary medical statements.
+
+### Part 3: Clinical, Professional & Industry News
+
+9. **STAT News**
+The premier global journalism platform for life sciences, biotechnology, and pharmacology. While it is highly technical, it is essential reading for tracking FDA approvals, clinical trials, and the business of medicine. Its investigative journalism makes it a primary source for other news outlets.
+
+10. **KevinMD**
+Founded by Dr. Kevin Pho, this remains the most widely read physician-authored blog in the world. It features personal narratives, clinical commentaries, and ethical discussions written directly by doctors, nurses, and medical students. It is a powerful platform for professional peer-to-peer networking.
+
+### Best Practices for Medical Publishers: Replicating Success
+
+To scale a medical blog in 2026, you must implement these five rules:
+1. **Clinical Peer Review**: Every article must be reviewed by a qualified doctor or pharmacist.
+2. **Primary Citation Links**: link to PubMed, DOI, or official guidelines.
+3. **Structured Schemas**: Use \`MedicalWebPage\` or \`BlogPosting\` JSON-LD structured data.
+4. **Actionable Clinical Hooks**: Start with definitive, clinical summaries.
+5. **Multi-lingual and RTL Accessibility**: Support global readers in their native languages.`,
+    contentFr: `### Introduction : La Bataille pour l'Autorité Médicale en Ligne
+
+Qui contrôle le flux mondial d'informations médicales en 2026 ? Avec l'avènement des moteurs de recherche IA comme Perplexity et Google SGE, les blogs traditionnels ont disparu. Ce qui a survécu, c'est l'autorité clinique. Les moteurs de recherche et les modèles d'IA ne citent que les sites respectant strictement les critères E-E-A-T (Expérience, Expertise, Autorité et Fiabilité). Le paysage se divise entre géants grand public, autorités institutionnelles et plateformes d'actualités professionnelles. Voici l'analyse clinique des 10 publications leaders.
+
+### Partie 1 : Information Médicale Grand Public
+
+1. **Healthline**
+Classé parmi les sites de santé les plus visités au monde, Healthline couvre tout, de la santé mentale à la nutrition. Sa dominance repose sur son **comité de révision médicale** composé de plus de 150 cliniciens. Chaque article subit une double validation : un rédacteur rédige à partir de revues à comité de lecture, et un clinicien valide l'exactitude scientifique.
+
+2. **WebMD**
+Force dominante du trafic médical mondial, WebMD reste la référence pour la vérification des symptômes et les informations sur les médicaments. Ses articles sont validés par un réseau de médecins agréés et de journalistes médicaux. Son outil de diagnostic en ligne est un ancrage SEO majeur.
+
+3. **Medical News Today (MNT)**
+Axé sur la recherche clinique, MNT est lu par les consommateurs et les professionnels. Il simplifie les essais cliniques complexes en articles quotidiens. Chaque article intègre des liens DOI vers les études primaires, garantissant l'intégrité des citations exigée par les algorithmes.
+
+4. **Verywell Health**
+Dédié aux maladies chroniques et aux guides de traitement, ce site se distingue par son contenu rédigé et révisé exclusivement par des médecins certifiés. Il utilise un badge de révision médicale indiquant les qualifications de l'expert, renforçant la confiance.
+
+5. **Everyday Health**
+Un blog axé sur l'intersection du mode de vie et de la gestion des maladies chroniques. Il fait le pont entre le bien-être quotidien et les traitements formels, en optimisant les mots-clés liés aux protocoles de récupération.
+
+### Partie 2 : Blogs Médicaux Institutionnels
+
+6. **Cleveland Clinic Health Essentials**
+Géré par l'un des meilleurs systèmes hospitaliers au monde, c'est la référence absolue des blogs hospitaliers. Il fournit des conseils rédigés par des médecins sur la prévention et les traitements, bénéficiant d'une immense confiance institutionnelle.
+
+7. **Harvard Health Blog**
+Publié par la Harvard Medical School, ce blog traduit les recherches complexes en conseils pratiques. Il s'appuie sur le prestige mondial de Harvard, affichant une autorité de domaine proche de 100.
+
+8. **Mayo Clinic News Network**
+Ce réseau fonctionne comme un blog quotidien couvrant les recherches de pointe, les alertes de santé publique et les innovations cliniques directes de leurs chercheurs. Il est massivement cité comme source primaire mondiale.
+
+### Partie 3 : Actualités Cliniques et Professionnelles
+
+9. **STAT News**
+La plateforme leader du journalisme pour les sciences de la vie, la biotechnologie et la pharmacologie. Essentiel pour suivre les approbations de la FDA et les essais cliniques, c'est une source primaire pour les médias généralistes.
+
+10. **KevinMD**
+Fondé par le Dr Kevin Pho, c'est le blog rédigé par des médecins le plus lu au monde. Il propose des récits personnels et des discussions éthiques écrits directement par des soignants sur le terrain.
+
+### Bonnes Pratiques Éditoriales : Répliquer ce Succès
+
+Pour développer un blog médical en 2026, vous devez appliquer ces cinq règles :
+1. **Révision Clinique par les Pairs** : Tout contenu doit être validé par un médecin ou un pharmacien.
+2. **Citations de Sources Primaires** : Intégrez des liens directs vers PubMed, les DOI ou les directives officielles.
+3. **Schémas Structurés** : Utilisez les balises JSON-LD \`MedicalWebPage\` ou \`BlogPosting\`.
+4. **Accroches Cliniques Impactantes** : Commencez par des résumés clairs et factuels.
+5. **Accessibilité Multilingue** : Offrez le contenu dans la langue maternelle des utilisateurs (EN/FR/AR).`,
+    contentAr: `### مقدمة: معركة السيطرة على المحتوى الطبي الرقمي
+
+من يسيطر على تدفق المعلومات الطبية عالمياً في عام ٢٠٢٦؟ في عصر محركات البحث المدعومة بالذكاء الاصطناعي مثل Perplexity وGoogle SGE، انتهت حقبة المدونات التقليدية. ما نجا وازدهر هو "السلطة السريرية الموثوقة". محركات البحث ونماذج الذكاء الاصطناعي لا تقتبس إلا من المواقع التي تلتزم بمعايير E-E-A-T (الخبرة، التخصص، المصداقية، والموثوقية). ينقسم المشهد الطبي بين العمالقة الموجهين للمستهلكين، والمؤسسات الطبية الكبرى، ومنصات الأخبار السريرية المتخصصة. إليك التحليل السريري لأفضل ١٠ منصات.
+
+### القسم ١: منصات المعلومات الطبية الموجهة للمستهلكين
+
+1. **Healthline**
+تتصدر كواحدة من أكثر المواقع الطبية زيارة في العالم. يرجع نجاحها إلى **مجلس المراجعة الطبية** الذي يضم أكثر من ١٥٠ طبيباً وأخصائياً. لا يتم نشر أي مقال دون تدقيق ثنائي: يكتب كاتب طبي المقال استناداً للأبحاث المعتمدة، ثم يراجعه طبيب مختص للتأكد من دقته السريرية.
+
+2. **WebMD**
+القوة الضاربة في الحركة المرورية الطبية العالمية. المنصة الأولى للتحقق من الأعراض، والتداخلات الدوائية، والأخبار الطبية العامة. تتم مراجعة محتواها بدقة من قبل شبكة من الأطباء المرخصين والصحفيين الطبيين.
+
+3. **Medical News Today (MNT)**
+تركز بشكل مكثف على أبحاث وتحديثات التجارب السريرية. تبسط نتائج الدراسات الطبية المعقدة للمستهلكين والممارسين. يحتوي كل مقال على روابط معرّف الكائن الرقمي (DOI) للأبحاث الأصلية لتعزيز قوة الأرشفة.
+
+4. **Verywell Health**
+منصة ضخمة مخصصة للأمراض المزمنة، وتوجيه المرضى. تحظى بثقة عالية لأن محتواها يُكتب ويُراجع حصرياً بواسطة أطباء معتمدين. وتستخدم شارة المراجعة الطبية لعرض مؤهلات الطبيب المراجع.
+
+5. **Everyday Health**
+تركز على الربط بين نمط الحياة اليومي وإدارة الأمراض المزمنة، وتسهيل الفهم العام للبروتولولات العلاجية ومراحل تعافي المرضى.
+
+### القسم ٢: المدونات الطبية التابعة للمؤسسات الصحية الكبرى
+
+6. **Cleveland Clinic Health Essentials**
+البوابة التابعة لمستشفيات كليفلاند كلينك، وتعتبر المعيار الذهبي للمدونات الطبية للمستشفيات. تقدم نصائح طبية موثوقة يكتبها أطباؤهم الممارسون مباشرة.
+
+7. **Harvard Health Blog**
+تصدر مباشرة عن كلية الطب بجامعة هارفارد. تترجم الأبحاث الطبية المعقدة إلى نصائح عملية يومية للجمهور. وتستفيد من القوة العالمية لعلامة هارفارد التجارية لتسجيل سلطة نطاق (DA) تقترب من ١٠٠.
+
+8. **Mayo Clinic News Network**
+شبكة إخبارية يومية تغطي أحدث الأبحاث السريرية وتنبيهات الصحة العامة الصادرة مباشرة من باحثي مايو كلينك، وتعتبر مصدراً أساسياً تقتبس منه شبكات الأخبار العالمية.
+
+### القسم ٣: الأخبار المهنية والصناعية السريرية
+
+9. **STAT News**
+المنصة الصحفية الطبية الأولى لعلوم الحياة والتقنية الحيوية والأدوية. تعتبر مصدراً أساسياً لتتبع موافقات هيئة الغذاء والدواء الأمريكية (FDA) والتجارب السريرية وتجارة الأدوية.
+
+10. **KevinMD**
+أسسها الدكتور كيفن فو، وهي المدونة الطبية الأكثر قراءة التي يكتبها الأطباء أنفسهم في العالم. تعرض تجارب واقعية، وتعليقات سريرية، ونقاشات أخلاقية يكتبها الأطباء والممرضون وطلاب الطب مباشرة من خطوط الدفاع الأمامية.
+
+### أفضل الممارسات للناشرين الطبيين: كيف تحقق هذا النجاح؟
+
+لتطوير منصتك الطبية وتصدر نتائج البحث في عام ٢٠٢٦، يجب تطبيق خمس قواعد أساسية:
+١. **المراجعة السريرية الثنائية**: يجب مراجعة وتدقيق كل مقال من قبل طبيب أو صيدلي مؤهل.
+٢. **روابط المصادر الأولية**: أدرج روابط مباشرة لـ PubMed أو معرفات الأبحاث DOI أو الإرشادات الرسمية للهيئات الصحية.
+٣. **البيانات المهيكلة (Schema)**: استخدم أكواد JSON-LD مثل \`MedicalWebPage\` or \`BlogPosting\`.
+٤. **عناوين سريرية جاذبة**: ابدأ مقالك بملخص سريري واضح ومباشر دون حشو.
+٥. **دعم تعدد اللغات والكتابة من اليمين لليسار (RTL)**: تواصل مع المرضى والممارسين بلغاتهم الأم لضمان سهولة الوصول والاستخدام.`,
+    author: 'CareCalculus Editorial Team',
+    reviewer: 'Dr. Jean-Pierre Dupont, MD',
+    category: 'Editorial',
+    readTime: 6,
+    date: '2026-06-23'
+  },
   {
     id: 'post-1',
     title: '5 Bedside Pearls for Faster MAP-Guided Resuscitation',
@@ -276,6 +436,8 @@ export default function Blog({ lang }: BlogProps) {
     if (activePost.id.startsWith('mb-')) {
       return generateMasterContent(activePost.id, localizedTitle(activePost), localizedSnippet(activePost), lang);
     }
+    if (lang === 'fr' && activePost.contentFr) return activePost.contentFr;
+    if (lang === 'ar' && activePost.contentAr) return activePost.contentAr;
     return activePost.content;
   }, [activePost, lang]);
 

@@ -14,6 +14,12 @@ import App, { preloadPages } from './App';
 import { parsePathname } from './utils/lang';
 import { buildHead } from './utils/seo';
 import { LangCode } from './types';
+import { slugify } from './utils/slug';
+import { MASTER_JOURNALS, MASTER_BLOGS, MASTER_COURSES, MASTER_PRESENTATIONS } from './utils/masterListContent';
+import { ORIGINAL_CURATED_SEED_POSTS } from './pages/MedicalBlog';
+import { ORIGINAL_BLOG_SEED } from './pages/Blog';
+import { DEFAULT_COURSES } from './pages/Courses';
+import { DEFAULT_SUBJECTS } from './pages/Presentations';
 
 let pagesReady: Promise<void> | null = null;
 
@@ -32,6 +38,26 @@ async function renderResolved(url: string): Promise<string> {
   }
   return html;
 }
+
+const journalSlugs = [
+  ...ORIGINAL_CURATED_SEED_POSTS,
+  ...MASTER_JOURNALS.map(mj => ({ id: mj.id, title: mj.title.en }))
+].map(p => `/blog/${slugify(p.title, p.id)}`);
+
+const blogSlugs = [
+  ...ORIGINAL_BLOG_SEED,
+  ...MASTER_BLOGS.map(mb => ({ id: mb.id, title: mb.title.en }))
+].map(p => `/blog-articles/${slugify(p.title, p.id)}`);
+
+const courseSlugs = [
+  ...DEFAULT_COURSES,
+  ...MASTER_COURSES.map(mc => ({ id: mc.id, title: mc.title.en }))
+].map(p => `/cours/${slugify(p.title, p.id)}`);
+
+const presentationSlugs = [
+  ...DEFAULT_SUBJECTS,
+  ...MASTER_PRESENTATIONS.map(mp => ({ id: mp.id, title: mp.title.en }))
+].map(p => `/presentations/${slugify(p.title, p.id)}`);
 
 // Logical (language-agnostic) structural routes worth prerendering. These are
 // statically generated so Googlebot + AI crawlers get complete HTML on first
@@ -68,6 +94,10 @@ const LOGICAL_ROUTES = [
   '/disclaimer',
   '/privacy',
   '/terms',
+  ...journalSlugs,
+  ...blogSlugs,
+  ...courseSlugs,
+  ...presentationSlugs,
 ];
 
 const LANGS: LangCode[] = ['en', 'fr', 'ar'];

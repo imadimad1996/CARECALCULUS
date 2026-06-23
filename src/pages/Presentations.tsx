@@ -25,7 +25,7 @@ interface PresentationSubject {
   isUserUploaded?: boolean;
 }
 
-const DEFAULT_SUBJECTS: PresentationSubject[] = [
+export const DEFAULT_SUBJECTS: PresentationSubject[] = [
   {
     id: 'pptx-1',
     title: 'Advanced Hemodynamic Performance & Organ Flow Targets',

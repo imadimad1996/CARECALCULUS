@@ -82,6 +82,25 @@ function extractItems(block) {
   return items;
 }
 
+/**
+ * Pair each top-level `id: '...'` with the FIRST `en: '...'` that follows it.
+ * This is used to extract English titles from translated master lists.
+ */
+function extractMasterItems(block) {
+  const items = [];
+  const idRe = /\bid:\s*['"]([^'"]+)['"]/g;
+  let m;
+  while ((m = idRe.exec(block)) !== null) {
+    const id = m[1];
+    const after = block.slice(m.index);
+    const titleMatch = after.match(/\ben:\s*(['"`])((?:\\.|(?!\1).)*)\1/);
+    if (titleMatch) {
+      items.push({ id, title: titleMatch[2].replace(/\\(['"`])/g, '$1') });
+    }
+  }
+  return items;
+}
+
 /** Parse the path strings out of the exported navItems array in App.tsx. */
 function extractNavPaths(src) {
   const block = extractArrayBlock(src, 'navItems');
@@ -96,10 +115,28 @@ function extractNavPaths(src) {
 const appSrc = read('src/App.tsx');
 const navPaths = extractNavPaths(appSrc);
 
-const blogPosts = extractItems(extractArrayBlock(read('src/pages/Blog.tsx'), 'BLOG_SEED'));
-const journalPosts = extractItems(extractArrayBlock(read('src/pages/MedicalBlog.tsx'), 'CURATED_SEED_POSTS'));
-const courses = extractItems(extractArrayBlock(read('src/pages/Courses.tsx'), 'DEFAULT_COURSES'));
-const decks = extractItems(extractArrayBlock(read('src/pages/Presentations.tsx'), 'DEFAULT_SUBJECTS'));
+const masterSrc = read('src/utils/masterListContent.ts');
+const masterBlogs = extractMasterItems(extractArrayBlock(masterSrc, 'MASTER_BLOGS'));
+const masterJournals = extractMasterItems(extractArrayBlock(masterSrc, 'MASTER_JOURNALS'));
+const masterCourses = extractMasterItems(extractArrayBlock(masterSrc, 'MASTER_COURSES'));
+const masterDecks = extractMasterItems(extractArrayBlock(masterSrc, 'MASTER_PRESENTATIONS'));
+
+const blogPosts = [
+  ...extractItems(extractArrayBlock(read('src/pages/Blog.tsx'), 'ORIGINAL_BLOG_SEED')),
+  ...masterBlogs
+];
+const journalPosts = [
+  ...extractItems(extractArrayBlock(read('src/pages/MedicalBlog.tsx'), 'ORIGINAL_CURATED_SEED_POSTS')),
+  ...masterJournals
+];
+const courses = [
+  ...extractItems(extractArrayBlock(read('src/pages/Courses.tsx'), 'DEFAULT_COURSES')),
+  ...masterCourses
+];
+const decks = [
+  ...extractItems(extractArrayBlock(read('src/pages/Presentations.tsx'), 'DEFAULT_SUBJECTS')),
+  ...masterDecks
+];
 
 // --- Build the set of LOGICAL paths (language-agnostic) -----------------------
 // English is served bare, French at /fr, Arabic at /ar. Each logical path below
