@@ -5,6 +5,7 @@ export interface FmpModule {
   year: string;
   popularity: string;
   pdf_file: string | null;
+  pdf_parts?: string[];
   slug: string;
 }
 
@@ -107,7 +108,12 @@ const _RAW: Omit<FmpModule, 'slug'>[] = [
     "description": "Rhumatologie · Traumatologie, orthopédie et réadaptation",
     "year": "4ème – S8",
     "popularity": "82 %",
-    "pdf_file": "livre iECN orthopédie traumatologie v2.pdf"
+    "pdf_file": null,
+    "pdf_parts": [
+      "livre iECN orthopédie traumatologie v2 - Partie 1.pdf",
+      "livre iECN orthopédie traumatologie v2 - Partie 2.pdf",
+      "livre iECN orthopédie traumatologie v2 - Partie 3.pdf"
+    ]
   },
   {
     "rank": 12,

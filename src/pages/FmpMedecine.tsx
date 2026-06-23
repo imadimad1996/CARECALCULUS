@@ -117,6 +117,9 @@ export default function FmpMedecine({ lang }: { lang: LangCode }) {
   const [selectedYear, setSelectedYear] = useState<'all' | '1' | '2' | '3' | '4' | '5'>('all');
   const [selectedPopFilter, setSelectedPopFilter] = useState<'all' | 'very_high' | 'high' | 'medium' | 'moderate'>('all');
   
+  // Active part index if a module has split PDF parts
+  const [activePartIndex, setActivePartIndex] = useState(0);
+
   // Mobile detail view overlay toggle
   const [isMobileDetailOpen, setIsMobileDetailOpen] = useState(false);
 
@@ -127,6 +130,7 @@ export default function FmpMedecine({ lang }: { lang: LangCode }) {
     } else if (!moduleSlug) {
       setSelectedModule(null);
     }
+    setActivePartIndex(0);
   }, [moduleSlug]);
 
   // Helper to determine year category from module.year string
@@ -203,7 +207,7 @@ export default function FmpMedecine({ lang }: { lang: LangCode }) {
   // Count availability
   const stats = useMemo(() => {
     const total = FMP_MODULES.length;
-    const withPdfs = FMP_MODULES.filter(m => m.pdf_file).length;
+    const withPdfs = FMP_MODULES.filter(m => m.pdf_file || (m.pdf_parts && m.pdf_parts.length > 0)).length;
     return { total, withPdfs };
   }, []);
 
@@ -329,7 +333,7 @@ export default function FmpMedecine({ lang }: { lang: LangCode }) {
           ) : (
             filteredModules.map((item) => {
               const isSelected = selectedModule?.rank === item.rank;
-              const hasPdf = !!item.pdf_file;
+              const hasPdf = !!item.pdf_file || !!(item.pdf_parts && item.pdf_parts.length > 0);
               return (
                 <div
                   key={item.rank}
@@ -448,11 +452,28 @@ export default function FmpMedecine({ lang }: { lang: LangCode }) {
 
               {/* PDF Preview Frame or Web search suggestions */}
               <div className="flex-1 bg-gray-100 p-4 min-h-[460px] flex flex-col">
-                {selectedModule.pdf_file ? (
+                {selectedModule.pdf_parts && selectedModule.pdf_parts.length > 0 && (
+                  <div className="flex gap-2 mb-3 bg-white p-1.5 rounded-xl border border-gray-200">
+                    {selectedModule.pdf_parts.map((part, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setActivePartIndex(index)}
+                        className={`flex-1 py-1.5 px-3 rounded-lg text-xs font-bold transition-all uppercase cursor-pointer ${
+                          activePartIndex === index
+                            ? 'bg-teal-600 text-white shadow-xs'
+                            : 'bg-gray-50 text-gray-500 hover:bg-gray-100 hover:text-gray-700'
+                        }`}
+                      >
+                        Partie {index + 1}
+                      </button>
+                    ))}
+                  </div>
+                )}
+                {selectedModule.pdf_file || (selectedModule.pdf_parts && selectedModule.pdf_parts[activePartIndex]) ? (
                   <div className="flex-1 bg-white border border-gray-200 rounded-xl overflow-hidden shadow-xs relative min-h-[420px]">
                     <iframe
                       id="fmp-pdf-frame"
-                      src={`/pdf/fmp/${encodeURIComponent(selectedModule.pdf_file)}#toolbar=0&navpanes=0`}
+                      src={`/pdf/fmp/${encodeURIComponent(selectedModule.pdf_file || selectedModule.pdf_parts![activePartIndex])}#toolbar=0&navpanes=0`}
                       className="w-full h-full border-0 absolute inset-0"
                       title={selectedModule.name}
                     />
@@ -508,10 +529,10 @@ export default function FmpMedecine({ lang }: { lang: LangCode }) {
                   Université Hassan II Casablanca — Faculté de Médecine et de Pharmacie
                 </span>
                 
-                {selectedModule.pdf_file && (
+                {(selectedModule.pdf_file || (selectedModule.pdf_parts && selectedModule.pdf_parts[activePartIndex])) && (
                   <div className="flex gap-2">
                     <a
-                      href={`/pdf/fmp/${encodeURIComponent(selectedModule.pdf_file)}`}
+                      href={`/pdf/fmp/${encodeURIComponent(selectedModule.pdf_file || selectedModule.pdf_parts![activePartIndex])}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs font-bold rounded-lg transition-all flex items-center gap-1.5 font-mono uppercase border border-gray-300"
@@ -522,8 +543,8 @@ export default function FmpMedecine({ lang }: { lang: LangCode }) {
                     </a>
 
                     <a
-                      href={`/pdf/fmp/${encodeURIComponent(selectedModule.pdf_file)}`}
-                      download={selectedModule.pdf_file}
+                      href={`/pdf/fmp/${encodeURIComponent(selectedModule.pdf_file || selectedModule.pdf_parts![activePartIndex])}`}
+                      download={selectedModule.pdf_file || selectedModule.pdf_parts![activePartIndex]}
                       className="px-4 py-2 bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold rounded-lg transition-all flex items-center gap-1.5 font-mono uppercase shadow-md active:scale-95 cursor-pointer"
                       style={{ minHeight: '38px' }}
                     >
@@ -573,10 +594,27 @@ export default function FmpMedecine({ lang }: { lang: LangCode }) {
               </p>
 
               {/* PDF Preview inside Mobile Modal (Only if file is available) */}
-              {selectedModule.pdf_file ? (
+              {selectedModule.pdf_parts && selectedModule.pdf_parts.length > 0 && (
+                <div className="flex gap-2 mb-3 bg-white p-1 rounded-lg border border-gray-200">
+                  {selectedModule.pdf_parts.map((part, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setActivePartIndex(index)}
+                      className={`flex-1 py-1 px-2 rounded text-xs font-bold transition-all uppercase cursor-pointer ${
+                        activePartIndex === index
+                          ? 'bg-teal-600 text-white shadow-xs'
+                          : 'bg-gray-50 text-gray-500 hover:bg-gray-100'
+                      }`}
+                    >
+                      Partie {index + 1}
+                    </button>
+                  ))}
+                </div>
+              )}
+              {selectedModule.pdf_file || (selectedModule.pdf_parts && selectedModule.pdf_parts[activePartIndex]) ? (
                 <div className="w-full h-80 bg-white border border-gray-200 rounded-xl overflow-hidden shadow-xs relative">
                   <iframe
-                    src={`/pdf/fmp/${encodeURIComponent(selectedModule.pdf_file)}#toolbar=0&navpanes=0`}
+                    src={`/pdf/fmp/${encodeURIComponent(selectedModule.pdf_file || selectedModule.pdf_parts![activePartIndex])}#toolbar=0&navpanes=0`}
                     className="w-full h-full border-0 absolute inset-0"
                     title={selectedModule.name}
                   />
@@ -626,10 +664,10 @@ export default function FmpMedecine({ lang }: { lang: LangCode }) {
               >
                 Fermer
               </button>
-              {selectedModule.pdf_file && (
+              {(selectedModule.pdf_file || (selectedModule.pdf_parts && selectedModule.pdf_parts[activePartIndex])) && (
                 <a
-                  href={`/pdf/fmp/${encodeURIComponent(selectedModule.pdf_file)}`}
-                  download={selectedModule.pdf_file}
+                  href={`/pdf/fmp/${encodeURIComponent(selectedModule.pdf_file || selectedModule.pdf_parts![activePartIndex])}`}
+                  download={selectedModule.pdf_file || selectedModule.pdf_parts![activePartIndex]}
                   className="flex-1 py-2.5 bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold rounded-lg transition flex items-center justify-center gap-1.5 font-mono uppercase shadow-md cursor-pointer"
                   style={{ minHeight: '44px' }}
                 >
