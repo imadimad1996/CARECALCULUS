@@ -5,9 +5,22 @@ export interface FmpModule {
   year: string;
   popularity: string;
   pdf_file: string | null;
+  slug: string;
 }
 
-export const FMP_MODULES: FmpModule[] = [
+/** Derive a URL-safe slug from a module name (mirrors the app-wide slugify logic). */
+function fmpSlug(name: string): string {
+  return name
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/['''"""]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 80);
+}
+
+const _RAW: Omit<FmpModule, 'slug'>[] = [
   {
     "rank": 1,
     "name": "Pharmacologie générale",
@@ -369,3 +382,10 @@ export const FMP_MODULES: FmpModule[] = [
     "pdf_file": "m1.pdf"
   }
 ];
+
+export const FMP_MODULES: FmpModule[] = _RAW.map(m => ({ ...m, slug: fmpSlug(m.name) }));
+
+/** O(1) lookup: slug → module */
+export const FMP_MODULE_BY_SLUG: Record<string, FmpModule> = Object.fromEntries(
+  FMP_MODULES.map(m => [m.slug, m])
+);

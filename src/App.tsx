@@ -209,6 +209,7 @@ function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="cours" element={<Courses lang={lang} />} />
       <Route path="cours/:slug" element={<Courses lang={lang} />} />
       <Route path="fmp-medecine" element={<FmpMedecine lang={lang} />} />
+      <Route path="fmp-medecine/:moduleSlug" element={<FmpMedecine lang={lang} />} />
       <Route path="orl" element={<OrlSpecialization lang={lang} />} />
       <Route path="orl/:slug" element={<OrlSpecialization lang={lang} />} />
       <Route path="glp-1-hub" element={<Glp1Hub lang={lang} />} />

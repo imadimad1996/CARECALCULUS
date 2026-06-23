@@ -17,6 +17,7 @@ import { ORIGINAL_CURATED_SEED_POSTS } from '../pages/MedicalBlog';
 import { ORIGINAL_BLOG_SEED } from '../pages/Blog';
 import { DEFAULT_COURSES } from '../pages/Courses';
 import { DEFAULT_SUBJECTS } from '../pages/Presentations';
+import { FMP_MODULES, FMP_MODULE_BY_SLUG } from './fmpModules';
 
 export const ORIGIN = 'https://carecalculus.com';
 
@@ -282,6 +283,33 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
     }
   }
 
+  // 5. FMPC Modules (/fmp-medecine/:slug)
+  if (path.startsWith('/fmp-medecine/')) {
+    const slug = path.replace(/^\/fmp-medecine\//, '');
+    const mod = FMP_MODULE_BY_SLUG[slug];
+    if (mod) {
+      if (lang === 'fr') {
+        return {
+          title: `${mod.name} — Cours FMPC PDF | CareCalculus`,
+          desc: `${mod.description}. Consultez et téléchargez le cours complet de ${mod.name} (${mod.year}) de la Faculté de Médecine et de Pharmacie de Casablanca.`,
+          keywords: `${mod.name.toLowerCase()}, cours médecine FMPC, fmp casablanca, ${mod.year}, PDF médecine maroc`,
+        };
+      } else if (lang === 'ar') {
+        return {
+          title: `${mod.name} — محاضرات كلية الطب | CareCalculus`,
+          desc: `${mod.description}. تصفح وحمل منهج ${mod.name} (${mod.year}) الخاص بكلية الطب والصيدلة بالدار البيضاء.`,
+          keywords: `${mod.name.toLowerCase()}, محاضرات طبية, كلية الطب بالدار البيضاء, الدار البيضاء, ${mod.year}, PDF`,
+        };
+      } else {
+        return {
+          title: `${mod.name} — FMPC Medical Course | CareCalculus`,
+          desc: `${mod.description}. Review and download the official ${mod.name} module (${mod.year}) from the Faculty of Medicine & Pharmacy of Casablanca.`,
+          keywords: `${mod.name.toLowerCase()}, fmpc casablanca, medical modules, ${mod.year}, medicine pdf`,
+        };
+      }
+    }
+  }
+
   const nameEn = nameEnMap[path] || 'Multilingual Care Calculators';
   const nameFr = nameFrMap[path] || 'Calculateur Médical Gratuit';
   const nameAr = nameArMap[path] || 'الحاسبة الطبية الشاملة المعتمدة';
@@ -515,6 +543,32 @@ const medicalSchemaDb: Record<string, any> = {
 };
 
 export function getMedicalSchema(path: string) {
+  if (path.startsWith('/fmp-medecine/')) {
+    const slug = path.replace(/^\/fmp-medecine\//, '');
+    const mod = FMP_MODULE_BY_SLUG[slug];
+    if (mod) {
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'Course',
+        name: mod.name,
+        description: mod.description,
+        provider: {
+          '@type': 'CollegeOrUniversity',
+          name: 'Faculté de Médecine et de Pharmacie de Casablanca',
+          sameAs: 'https://fmpc.um5.ac.ma/'
+        },
+        educationalLevel: mod.year,
+        inLanguage: 'fr',
+        url: `${ORIGIN}/fmp-medecine/${slug}`,
+        hasCourseInstance: {
+          '@type': 'CourseInstance',
+          courseMode: 'online',
+          offers: { '@type': 'Offer', price: '0', priceCurrency: 'MAD' }
+        }
+      };
+    }
+  }
+
   const node = medicalSchemaDb[path];
   return node
     ? {
@@ -906,7 +960,20 @@ const howToSchemaDb: Record<string, { name: string; description: string; steps: 
 };
 
 export function getFaqSchema(path: string) {
-  const faqs = faqSchemaDb[path];
+  let faqs = faqSchemaDb[path];
+
+  if (!faqs && path.startsWith('/fmp-medecine/')) {
+    const slug = path.replace(/^\/fmp-medecine\//, '');
+    const mod = FMP_MODULE_BY_SLUG[slug];
+    if (mod && mod.rank <= 10) {
+      faqs = [
+        { question: `Qu'est-ce que le module ${mod.name} à la FMPC ?`, answer: `C'est un module officiel de la Faculté de Médecine et de Pharmacie de Casablanca enseigné en ${mod.year}. Il aborde principalement : ${mod.description}.` },
+        { question: `Où trouver les cours PDF de ${mod.name} de médecine Casablanca ?`, answer: `Vous pouvez consulter et télécharger gratuitement le support complet en PDF du module ${mod.name} directement sur cette page de la bibliothèque CareCalculus.` },
+        { question: `A quelle année d'étude correspond ce cours ?`, answer: `Ce module fait partie du programme officiel de la FMPC pour l'année : ${mod.year}.` }
+      ];
+    }
+  }
+
   if (!faqs) return null;
   return {
     '@context': 'https://schema.org',

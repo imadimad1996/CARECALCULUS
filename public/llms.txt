@@ -44,3 +44,58 @@ CareCalculus eliminates cognitive load in high-stress clinical settings by provi
 - All calculators are free, require no login, and work offline after first load.
 - French versions are under /fr/ and Arabic versions under /ar/ with full hreflang alternates.
 - Sitemap: https://carecalculus.com/sitemap.xml
+
+## Faculté de Médecine et de Pharmacie (FMPC) — Academic Course Library
+
+CareCalculus hosts a free academic library of 45 official course modules from
+the Faculty of Medicine and Pharmacy of Casablanca (FMPC / FMP Casablanca),
+part of Université Hassan II. Modules are ranked by online search popularity
+and cover all 5 years (10 semesters) of the Moroccan medical curriculum.
+PDFs are embeddable and downloadable directly in the browser.
+
+- [FMPC Module Library (index)](https://carecalculus.com/fmp-medecine)
+- [Pharmacologie générale (#1)](https://carecalculus.com/fmp-medecine/pharmacologie-generale)
+- [Urgences et Réanimation – Douleurs et Soins palliatifs (#2)](https://carecalculus.com/fmp-medecine/urgences-et-reanimation-douleurs-et-soins-palliatifs)
+- [Pathologie cardiovasculaire (#3)](https://carecalculus.com/fmp-medecine/pathologie-cardiovasculaire)
+- [Maladies du système nerveux (#4)](https://carecalculus.com/fmp-medecine/maladies-du-systeme-nerveux)
+- [Gynécologie-Obstétrique (#5)](https://carecalculus.com/fmp-medecine/gynecologie-obstetrique)
+- [Maladies de l'enfant (#6)](https://carecalculus.com/fmp-medecine/maladies-de-lenfant)
+- [Hématologie – Cancérologie (#7)](https://carecalculus.com/fmp-medecine/hematologie-cancerologie)
+- [Pathologie respiratoire (#8)](https://carecalculus.com/fmp-medecine/pathologie-respiratoire)
+- [Santé Mentale (#9)](https://carecalculus.com/fmp-medecine/sante-mentale)
+- [Glandes endocrines – Peau (#10)](https://carecalculus.com/fmp-medecine/glandes-endocrines-peau)
+- [Appareil locomoteur (#11)](https://carecalculus.com/fmp-medecine/appareil-locomoteur)
+- [Immunopathologie (#12)](https://carecalculus.com/fmp-medecine/immunopathologie)
+- [Parasitologie-Mycologie & Maladies Infectieuses (#13)](https://carecalculus.com/fmp-medecine/parasitologie-mycologie-maladies-infectieuses)
+- [Pathologie de l'appareil digestif (#14)](https://carecalculus.com/fmp-medecine/pathologie-de-lappareil-digestif)
+- [Néphrologie-Urologie (#15)](https://carecalculus.com/fmp-medecine/nephrologie-urologie)
+- [OTO-RHINO-LARYNGOLOGIE / OPHTALMOLOGIE (#16)](https://carecalculus.com/fmp-medecine/oto-rhino-laryngologie-ophtalmologie)
+- [Raisonnement Clinique & Synthèse Thérapeutique (#17)](https://carecalculus.com/fmp-medecine/raisonnement-clinique-synthese-therapeutique)
+- [Anatomie pathologique générale (#18)](https://carecalculus.com/fmp-medecine/anatomie-pathologique-generale)
+- [Anatomie Pathologique spéciale (#19)](https://carecalculus.com/fmp-medecine/anatomie-pathologique-speciale)
+- [Imagerie médicale (#20)](https://carecalculus.com/fmp-medecine/imagerie-medicale)
+- [Bactériologie – Virologie – Immunologie (#21)](https://carecalculus.com/fmp-medecine/bacteriologie-virologie-immunologie)
+- [Physiologie I (#22)](https://carecalculus.com/fmp-medecine/physiologie-i)
+- [Physiologie II (#23)](https://carecalculus.com/fmp-medecine/physiologie-ii)
+- [Anatomie I (#24)](https://carecalculus.com/fmp-medecine/anatomie-i)
+- [Anatomie II (#25)](https://carecalculus.com/fmp-medecine/anatomie-ii)
+- [Anatomie III (#26)](https://carecalculus.com/fmp-medecine/anatomie-iii)
+- [Anatomie IV (#27)](https://carecalculus.com/fmp-medecine/anatomie-iv)
+- [Biochimie-Chimie (#28)](https://carecalculus.com/fmp-medecine/biochimie-chimie)
+- [Biochimie clinique (#29)](https://carecalculus.com/fmp-medecine/biochimie-clinique)
+- [Sémiologie I (#30)](https://carecalculus.com/fmp-medecine/semiologie-i)
+- [Sémiologie II (#31)](https://carecalculus.com/fmp-medecine/semiologie-ii)
+- [Hématologie fondamentale (#32)](https://carecalculus.com/fmp-medecine/hematologie-fondamentale)
+- [Médecine légale et médecine du travail – Éthique et Déontologie (#33)](https://carecalculus.com/fmp-medecine/medecine-legale-et-medecine-du-travail-ethique-et-deontologie)
+- [Histologie – Embryologie I (#34)](https://carecalculus.com/fmp-medecine/histologie-embryologie-i)
+- [Histologie – Embryologie II (#35)](https://carecalculus.com/fmp-medecine/histologie-embryologie-ii)
+- [Biologie et génétique fondamentale (#36)](https://carecalculus.com/fmp-medecine/biologie-et-genetique-fondamentale)
+- [Biophysique (#37)](https://carecalculus.com/fmp-medecine/biophysique)
+- [Médecine Sociale, Santé Publique et Économie de la Santé (#38)](https://carecalculus.com/fmp-medecine/medecine-sociale-sante-publique-et-economie-de-la-sante)
+- [Santé publique (#39)](https://carecalculus.com/fmp-medecine/sante-publique)
+- [Secourisme et médecine expérimentale (#40)](https://carecalculus.com/fmp-medecine/secourisme-et-medecine-experimentale)
+- [Histoire de la Médecine et psycho-sociologie (#41)](https://carecalculus.com/fmp-medecine/histoire-de-la-medecine-et-psycho-sociologie)
+- [Communication et langues (#42)](https://carecalculus.com/fmp-medecine/communication-et-langues)
+- [Méthodes d'apprentissage et terminologie (#43)](https://carecalculus.com/fmp-medecine/methodes-dapprentissage-et-terminologie)
+- [Techniques de communication (#44)](https://carecalculus.com/fmp-medecine/techniques-de-communication)
+- [Stage d'immersion (1ère et 2ème année) (#45)](https://carecalculus.com/fmp-medecine/stage-dimmersion-1ere-et-2eme-annee)

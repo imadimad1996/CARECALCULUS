@@ -1,7 +1,7 @@
-import React, { useState, useMemo } from 'react';
-import { BookOpen, Download, GraduationCap, Search, Sparkles, ExternalLink, FileText, ChevronRight, Flame, Layers } from 'lucide-react';
-import { FMP_MODULES, FmpModule } from '../utils/fmpModules';
-import { useLang } from '../utils/lang';
+import React, { useState, useMemo, useEffect } from 'react';
+import { BookOpen, Download, GraduationCap, Search, ExternalLink, FileText, Flame, Layers } from 'lucide-react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { FMP_MODULES, FMP_MODULE_BY_SLUG, FmpModule } from '../utils/fmpModules';
 import { LangCode } from '../types';
 
 const translations = {
@@ -106,14 +106,28 @@ const translations = {
 export default function FmpMedecine({ lang }: { lang: LangCode }) {
   const t = translations[lang] || translations.en;
   const isRtl = lang === 'ar';
+  const { moduleSlug } = useParams<{ moduleSlug?: string }>();
+  const navigate = useNavigate();
 
-  const [selectedModule, setSelectedModule] = useState<FmpModule | null>(null);
+  const [selectedModule, setSelectedModule] = useState<FmpModule | null>(() => {
+    if (moduleSlug && FMP_MODULE_BY_SLUG[moduleSlug]) return FMP_MODULE_BY_SLUG[moduleSlug];
+    return null;
+  });
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedYear, setSelectedYear] = useState<'all' | '1' | '2' | '3' | '4' | '5'>('all');
   const [selectedPopFilter, setSelectedPopFilter] = useState<'all' | 'very_high' | 'high' | 'medium' | 'moderate'>('all');
   
   // Mobile detail view overlay toggle
   const [isMobileDetailOpen, setIsMobileDetailOpen] = useState(false);
+
+  // Sync selected module when the URL slug changes (e.g. browser back/forward)
+  useEffect(() => {
+    if (moduleSlug && FMP_MODULE_BY_SLUG[moduleSlug]) {
+      setSelectedModule(FMP_MODULE_BY_SLUG[moduleSlug]);
+    } else if (!moduleSlug) {
+      setSelectedModule(null);
+    }
+  }, [moduleSlug]);
 
   // Helper to determine year category from module.year string
   const getYearNumber = (yearStr: string): string => {
@@ -181,6 +195,9 @@ export default function FmpMedecine({ lang }: { lang: LangCode }) {
   const handleSelectModule = (mod: FmpModule) => {
     setSelectedModule(mod);
     setIsMobileDetailOpen(true);
+    // Update the URL so each module gets its own deep-linkable, crawlable URL.
+    const prefix = lang === 'en' ? '' : `/${lang}`;
+    navigate(`${prefix}/fmp-medecine/${mod.slug}`, { replace: false });
   };
 
   // Count availability

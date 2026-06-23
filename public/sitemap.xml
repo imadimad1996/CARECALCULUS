@@ -854,6 +854,36 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/cours"/>
   </url>
   <url>
+    <loc>https://carecalculus.com/fmp-medecine</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/fmp-medecine"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/fmp-medecine"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/fmp-medecine"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/fmp-medecine"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/fmp-medecine</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/fmp-medecine"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/fmp-medecine"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/fmp-medecine"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/fmp-medecine"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/fmp-medecine</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/fmp-medecine"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/fmp-medecine"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/fmp-medecine"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/fmp-medecine"/>
+  </url>
+  <url>
     <loc>https://carecalculus.com/blog-articles/top-10-global-medical-blogs-in-2026-e-e-a-t-authority-and-editorial-best-practic</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>

@@ -20,6 +20,7 @@ import { ORIGINAL_CURATED_SEED_POSTS } from './pages/MedicalBlog';
 import { ORIGINAL_BLOG_SEED } from './pages/Blog';
 import { DEFAULT_COURSES } from './pages/Courses';
 import { DEFAULT_SUBJECTS } from './pages/Presentations';
+import { FMP_MODULES } from './utils/fmpModules';
 
 let pagesReady: Promise<void> | null = null;
 
@@ -59,6 +60,8 @@ const presentationSlugs = [
   ...MASTER_PRESENTATIONS.map(mp => ({ id: mp.id, title: mp.title.en }))
 ].map(p => `/presentations/${slugify(p.title, p.id)}`);
 
+const fmpSlugs = FMP_MODULES.map(m => `/fmp-medecine/${m.slug}`);
+
 // Logical (language-agnostic) structural routes worth prerendering. These are
 // statically generated so Googlebot + AI crawlers get complete HTML on first
 // fetch. Article detail pages (/blog/:slug, etc.) will be added as full-body
@@ -93,6 +96,7 @@ const LOGICAL_ROUTES = [
   '/blog-articles',
   '/presentations',
   '/cours',
+  '/fmp-medecine',
   '/orl',
   '/glp-1-hub',
   '/about',
@@ -103,6 +107,7 @@ const LOGICAL_ROUTES = [
   ...blogSlugs,
   ...courseSlugs,
   ...presentationSlugs,
+  ...fmpSlugs,
 ];
 
 const LANGS: LangCode[] = ['en', 'fr', 'ar'];
