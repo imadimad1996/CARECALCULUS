@@ -8,6 +8,7 @@ import {
 import { LangCode } from '../types';
 import { useLang } from '../utils/lang';
 import Logo from '../components/Logo';
+import AdsterraNativeBanner from '../components/AdsterraNativeBanner';
 
 interface HomePageProps {
   lang: LangCode;
@@ -252,6 +253,9 @@ export default function HomePage({ lang }: HomePageProps) {
           );
         })}
       </section>
+
+      {/* Adsterra Native Banner */}
+      <AdsterraNativeBanner />
 
       {/* Trust bar */}
       <section className="bg-slate-900 rounded-2xl px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center gap-4">
