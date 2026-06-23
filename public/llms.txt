@@ -99,3 +99,35 @@ PDFs are embeddable and downloadable directly in the browser.
 - [Méthodes d'apprentissage et terminologie (#43)](https://carecalculus.com/fmp-medecine/methodes-dapprentissage-et-terminologie)
 - [Techniques de communication (#44)](https://carecalculus.com/fmp-medecine/techniques-de-communication)
 - [Stage d'immersion (1ère et 2ème année) (#45)](https://carecalculus.com/fmp-medecine/stage-dimmersion-1ere-et-2eme-annee)
+
+## ISPITS Paramedical Academy — Nursing & Health Technology Course Library
+
+CareCalculus hosts a free academic library of 25 official course modules from the Higher Institute of Nursing Professions and Health Techniques (ISPITS / ISPITS Maroc) covering various semesters and specialties (Nursing, Anesthesia, Midwifery, Rehab, Health Tech). PDFs are viewable and downloadable directly in the browser.
+
+- [ISPITS Paramedical Library (index)](https://carecalculus.com/ispits)
+- [Introduction aux sciences infirmières (#1)](https://carecalculus.com/ispits/introduction-aux-sciences-infirmieres)
+- [Anatomie et Physiologie I (#2)](https://carecalculus.com/ispits/anatomie-et-physiologie-i)
+- [Soins infirmiers de base (#3)](https://carecalculus.com/ispits/soins-infirmiers-de-base)
+- [Pharmacologie fondamentale et clinique (#4)](https://carecalculus.com/ispits/pharmacologie-fondamentale-et-clinique)
+- [Physiopathologie générale (#5)](https://carecalculus.com/ispits/physiopathologie-generale)
+- [Microbiologie, Parasitologie et Immunologie (#6)](https://carecalculus.com/ispits/microbiologie-parasitologie-et-immunologie)
+- [Anesthésiologie générale et Pharmacie spécifique (#7)](https://carecalculus.com/ispits/anesthesiologie-generale-et-pharmacie-specifique)
+- [Secourisme et Urgences Pré-hospitalières (#8)](https://carecalculus.com/ispits/secourisme-et-urgences-pre-hospitalieres)
+- [Soins infirmiers en Anesthésie Réanimation I (#9)](https://carecalculus.com/ispits/soins-infirmiers-en-anesthesie-reanimation-i)
+- [Obstétrique et Physiologie de la Grossesse (#10)](https://carecalculus.com/ispits/obstetrique-et-physiologie-de-la-grossesse)
+- [Pédiatrie et Néonatologie de base (#11)](https://carecalculus.com/ispits/pediatrie-et-neonatologie-de-base)
+- [Pathologies Médicales et Chirurgicales I (#12)](https://carecalculus.com/ispits/pathologies-medicales-et-chirurgicales-i)
+- [Soins de Santé Primaires et Santé Communautaire (#13)](https://carecalculus.com/ispits/soins-de-sante-primaires-et-sante-communautaire)
+- [Soins infirmiers en Médecine et Spécialités (#14)](https://carecalculus.com/ispits/soins-infirmiers-en-medecine-et-specialites)
+- [Soins infirmiers en Chirurgie et Bloc Opératoire (#15)](https://carecalculus.com/ispits/soins-infirmiers-en-chirurgie-et-bloc-operatoire)
+- [Techniques de Radiologie Diagnostique (#16)](https://carecalculus.com/ispits/techniques-de-radiologie-diagnostique)
+- [Hématologie et Biochimie Clinique (#17)](https://carecalculus.com/ispits/hematologie-et-biochimie-clinique)
+- [Épidémiologie et Santé Publique (#18)](https://carecalculus.com/ispits/epidemiologie-et-sante-publique)
+- [Éthique, Déontologie et Droit de la Santé (#19)](https://carecalculus.com/ispits/ethique-deontologie-et-droit-de-la-sante)
+- [Psychiatrie et Santé Mentale (#20)](https://carecalculus.com/ispits/psychiatrie-et-sante-mentale)
+- [Rééducation fonctionnelle et Kinésithérapie active (#21)](https://carecalculus.com/ispits/reeducation-fonctionnelle-et-kinesitherapie-active)
+- [Soins infirmiers en Néphrologie et Dialyse (#22)](https://carecalculus.com/ispits/soins-infirmiers-en-nephrologie-et-dialyse)
+- [Soins d'Urgence et de Réanimation complexes (#23)](https://carecalculus.com/ispits/soins-durgence-et-de-reanimation-complexes)
+- [Gestion des Services de Santé et Management (#24)](https://carecalculus.com/ispits/gestion-des-services-de-sante-et-management)
+- [Méthodologie de Recherche et PFE (#25)](https://carecalculus.com/ispits/methodologie-de-recherche-et-pfe)
+

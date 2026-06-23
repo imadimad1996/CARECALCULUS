@@ -21,6 +21,7 @@ import { ORIGINAL_BLOG_SEED } from './pages/Blog';
 import { DEFAULT_COURSES } from './pages/Courses';
 import { DEFAULT_SUBJECTS } from './pages/Presentations';
 import { FMP_MODULES } from './utils/fmpModules';
+import { ISPITS_MODULES } from './utils/ispitsModules';
 
 let pagesReady: Promise<void> | null = null;
 
@@ -61,6 +62,7 @@ const presentationSlugs = [
 ].map(p => `/presentations/${slugify(p.title, p.id)}`);
 
 const fmpSlugs = FMP_MODULES.map(m => `/fmp-medecine/${m.slug}`);
+const ispitsSlugs = ISPITS_MODULES.map(m => `/ispits/${m.slug}`);
 
 // Logical (language-agnostic) structural routes worth prerendering. These are
 // statically generated so Googlebot + AI crawlers get complete HTML on first
@@ -97,6 +99,7 @@ const LOGICAL_ROUTES = [
   '/presentations',
   '/cours',
   '/fmp-medecine',
+  '/ispits',
   '/orl',
   '/glp-1-hub',
   '/about',
@@ -108,6 +111,7 @@ const LOGICAL_ROUTES = [
   ...courseSlugs,
   ...presentationSlugs,
   ...fmpSlugs,
+  ...ispitsSlugs,
 ];
 
 const LANGS: LangCode[] = ['en', 'fr', 'ar'];

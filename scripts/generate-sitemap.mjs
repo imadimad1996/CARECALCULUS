@@ -141,10 +141,19 @@ const decks = [
 // FMPC Modules
 const fmpModulesSrc = read('src/utils/fmpModules.ts');
 const fmpModules = [];
-const fmpNameRe = /\bname:\s*['"]([^'"]+)['"]/g;
+const fmpNameRe = /\b"?name"?:\s*['"]([^'"]+)['"]/g;
 let fmpMatch;
 while ((fmpMatch = fmpNameRe.exec(fmpModulesSrc)) !== null) {
   fmpModules.push({ title: fmpMatch[1] });
+}
+
+// ISPITS Modules
+const ispitsModulesSrc = read('src/utils/ispitsModules.ts');
+const ispitsModules = [];
+const ispitsNameRe = /\b"?name"?:\s*['"]([^'"]+)['"]/g;
+let ispitsMatch;
+while ((ispitsMatch = ispitsNameRe.exec(ispitsModulesSrc)) !== null) {
+  ispitsModules.push({ title: ispitsMatch[1] });
 }
 
 // --- Build the set of LOGICAL paths (language-agnostic) -----------------------
@@ -169,7 +178,7 @@ const add = (path, priority, changefreq) => {
 add('/', '1.0', 'weekly');
 
 // Top-level routes (calculators + resource landing pages)
-const RESOURCE_PATHS = new Set(['/blog', '/blog-articles', '/presentations', '/cours', '/fmp-medecine']);
+const RESOURCE_PATHS = new Set(['/blog', '/blog-articles', '/presentations', '/cours', '/fmp-medecine', '/ispits']);
 for (const path of navPaths) {
   if (RESOURCE_PATHS.has(path)) add(path, '0.7', 'weekly');
   else add(path, '0.8');
@@ -181,6 +190,7 @@ for (const p of journalPosts) add(`/blog/${slugify(p.title, p.id)}`, '0.6', 'mon
 for (const c of courses) add(`/cours/${slugify(c.title, c.id)}`, '0.5', 'monthly');
 for (const d of decks) add(`/presentations/${slugify(d.title, d.id)}`, '0.5', 'monthly');
 for (const f of fmpModules) add(`/fmp-medecine/${slugify(f.title)}`, '0.6', 'monthly');
+for (const i of ispitsModules) add(`/ispits/${slugify(i.title)}`, '0.6', 'monthly');
 
 // --- Emit XML with hreflang alternates ----------------------------------------
 // Per Google's multilingual sitemap spec, every <url> lists all language
@@ -215,4 +225,4 @@ ${blocks.join('\n')}
 writeFileSync(join(ROOT, 'public/sitemap.xml'), xml, 'utf8');
 console.log(`✓ sitemap.xml generated — ${pages.length} pages × ${LANGS.length} languages = ${blocks.length} URLs (lastmod ${today})`);
 console.log(`  • ${navPaths.length} top-level routes`);
-console.log(`  • ${blogPosts.length} blog · ${journalPosts.length} journal · ${courses.length} courses · ${decks.length} presentations · ${fmpModules.length} FMPC modules`);
+console.log(`  • ${blogPosts.length} blog · ${journalPosts.length} journal · ${courses.length} courses · ${decks.length} presentations · ${fmpModules.length} FMPC modules · ${ispitsModules.length} ISPITS modules`);

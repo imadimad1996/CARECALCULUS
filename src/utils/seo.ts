@@ -18,6 +18,7 @@ import { ORIGINAL_BLOG_SEED } from '../pages/Blog';
 import { DEFAULT_COURSES } from '../pages/Courses';
 import { DEFAULT_SUBJECTS } from '../pages/Presentations';
 import { FMP_MODULES, FMP_MODULE_BY_SLUG } from './fmpModules';
+import { ISPITS_MODULES, ISPITS_MODULE_BY_SLUG } from './ispitsModules';
 
 export const ORIGIN = 'https://carecalculus.com';
 
@@ -62,6 +63,7 @@ export const nameEnMap: Record<string, string> = {
   '/anion-gap': 'Anion Gap Calculator',
   '/aa-gradient': 'Alveolar-Arterial (A-a) Gradient Calculator',
   '/fmp-medecine': 'FMPC Medicine Modules & PDF Handbooks',
+  '/ispits': 'ISPITS Paramedical Academy Course Library & PDFs',
 };
 
 const nameFrMap: Record<string, string> = {
@@ -103,6 +105,7 @@ const nameFrMap: Record<string, string> = {
   '/anion-gap': 'Calculateur Trou Anionique (Acidose)',
   '/aa-gradient': 'Calculateur Gradient Alvéolo-Artériel (A-a)',
   '/fmp-medecine': 'Modules Médecine FMPC & Livres PDF',
+  '/ispits': 'Académie Paramédicale ISPITS — Cours & Modules PDF',
 };
 
 const nameArMap: Record<string, string> = {
@@ -144,6 +147,7 @@ const nameArMap: Record<string, string> = {
   '/anion-gap': 'حساب الفجوة الأنيونية وحموضة الدم (Anion Gap)',
   '/aa-gradient': 'حساب الفرق الألوفي-الشرياني للأكسجين (A-a Gradient)',
   '/fmp-medecine': 'حقيبة محاضرات كلية الطب والصيدلة (FMPC)',
+  '/ispits': 'أكاديمية العلوم التمريضية وتقنيات الصحة ISPITS',
 };
 
 export interface RouteMeta {
@@ -305,6 +309,33 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
           title: `${mod.name} — FMPC Medical Course | CareCalculus`,
           desc: `${mod.description}. Review and download the official ${mod.name} module (${mod.year}) from the Faculty of Medicine & Pharmacy of Casablanca.`,
           keywords: `${mod.name.toLowerCase()}, fmpc casablanca, medical modules, ${mod.year}, medicine pdf`,
+        };
+      }
+    }
+  }
+
+  // 6. ISPITS Modules (/ispits/:slug)
+  if (path.startsWith('/ispits/')) {
+    const slug = path.replace(/^\/ispits\//, '');
+    const mod = ISPITS_MODULE_BY_SLUG[slug];
+    if (mod) {
+      if (lang === 'fr') {
+        return {
+          title: `${mod.name} — Cours ISPITS PDF | CareCalculus`,
+          desc: `${mod.description}. Consultez et téléchargez le cours complet de ${mod.name} (Semestre ${mod.semester}) pour les Instituts Supérieurs des Professions Infirmières et Techniques de Santé (ISPITS).`,
+          keywords: `${mod.name.toLowerCase()}, cours infirmiers ispits, ispits maroc, module ${mod.semester}, PDF paramédical maroc`,
+        };
+      } else if (lang === 'ar') {
+        return {
+          title: `${mod.name} — محاضرات معاهد التمريض ISPITS | CareCalculus`,
+          desc: `${mod.description}. تصفح وحمل منهج ${mod.name} (الفصل الدراسي ${mod.semester}) الخاص بمعاهد التمريض وتقنيات الصحة بالمغرب ISPITS.`,
+          keywords: `${mod.name.toLowerCase()}, محاضرات التمريض, معاهد التمريض وتقنيات الصحة, ISPITS, الفصل ${mod.semester}, PDF`,
+        };
+      } else {
+        return {
+          title: `${mod.name} — ISPITS Nursing Module | CareCalculus`,
+          desc: `${mod.description}. Review and download the official ${mod.name} course (Semester ${mod.semester}) from the Higher Institute of Nursing Professions and Health Techniques (ISPITS) Morocco.`,
+          keywords: `${mod.name.toLowerCase()}, ispits nursing, health technology modules, semester ${mod.semester}, paramedic pdf`,
         };
       }
     }
@@ -569,6 +600,32 @@ export function getMedicalSchema(path: string) {
     }
   }
 
+  if (path.startsWith('/ispits/')) {
+    const slug = path.replace(/^\/ispits\//, '');
+    const mod = ISPITS_MODULE_BY_SLUG[slug];
+    if (mod) {
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'Course',
+        name: mod.name,
+        description: mod.description,
+        provider: {
+          '@type': 'CollegeOrUniversity',
+          name: 'Institut Supérieur des Professions Infirmières et Techniques de Santé',
+          sameAs: 'http://ispits.sante.gov.ma/'
+        },
+        educationalLevel: `Semester ${mod.semester}`,
+        inLanguage: 'fr',
+        url: `${ORIGIN}/ispits/${slug}`,
+        hasCourseInstance: {
+          '@type': 'CourseInstance',
+          courseMode: 'online',
+          offers: { '@type': 'Offer', price: '0', priceCurrency: 'MAD' }
+        }
+      };
+    }
+  }
+
   const node = medicalSchemaDb[path];
   return node
     ? {
@@ -717,6 +774,11 @@ const faqSchemaDb: Record<string, { question: string; answer: string }[]> = {
     { question: 'What is the Alveolar-Arterial (A-a) oxygen gradient?', answer: 'The A-a gradient is the difference between the partial pressure of oxygen in the alveoli (PAO2) and in arterial blood (PaO2). It evaluates the integrity of the alveolar-capillary membrane.' },
     { question: 'How is the expected normal A-a gradient calculated?', answer: 'A normal A-a gradient increases with age. It can be estimated as: Expected Normal Gradient = (Age / 4) + 4. It also depends on the fraction of inspired oxygen (FiO2).' },
     { question: 'What causes an elevated A-a gradient?', answer: 'An elevated A-a gradient indicates an oxygenation defect, caused by ventilation-perfusion (V/Q) mismatch (e.g., pulmonary embolism, pneumonia), right-to-left shunt (e.g., anatomical shunt), or diffusion limitation.' }
+  ],
+  '/ispits': [
+    { question: 'What is the ISPITS Paramedical Academy?', answer: 'The ISPITS Paramedical Academy is an academic library on CareCalculus containing course modules, syllabi, and PDF guides for the Higher Institute of Nursing Professions and Health Techniques (ISPITS Maroc).' },
+    { question: 'Who can use the ISPITS modules on CareCalculus?', answer: 'These modules are designed for nursing students, midwives, health technicians, anesthesia technicians, and rehabilitators preparing for exams or clinical practice.' },
+    { question: 'Are the ISPITS courses free to download?', answer: 'Yes. All course modules and PDF materials on CareCalculus are 100% free, require no login, and can be viewed or downloaded directly in your browser.' }
   ],
 };
 
@@ -970,6 +1032,18 @@ export function getFaqSchema(path: string) {
         { question: `Qu'est-ce que le module ${mod.name} à la FMPC ?`, answer: `C'est un module officiel de la Faculté de Médecine et de Pharmacie de Casablanca enseigné en ${mod.year}. Il aborde principalement : ${mod.description}.` },
         { question: `Où trouver les cours PDF de ${mod.name} de médecine Casablanca ?`, answer: `Vous pouvez consulter et télécharger gratuitement le support complet en PDF du module ${mod.name} directement sur cette page de la bibliothèque CareCalculus.` },
         { question: `A quelle année d'étude correspond ce cours ?`, answer: `Ce module fait partie du programme officiel de la FMPC pour l'année : ${mod.year}.` }
+      ];
+    }
+  }
+
+  if (!faqs && path.startsWith('/ispits/')) {
+    const slug = path.replace(/^\/ispits\//, '');
+    const mod = ISPITS_MODULE_BY_SLUG[slug];
+    if (mod) {
+      faqs = [
+        { question: `Qu'est-ce que le cours ${mod.name} en ISPITS ?`, answer: `C'est un cours officiel du programme des Instituts Supérieurs des Professions Infirmières et Techniques de Santé (ISPITS Maroc), enseigné au cours du semestre ${mod.semester}.` },
+        { question: `Où télécharger le cours ${mod.name} d'études infirmières au Maroc ?`, answer: `Vous pouvez consulter et télécharger gratuitement les modules et cours d'infirmiers en format PDF directement sur CareCalculus.` },
+        { question: `Quelles sont les spécialités concernées par le module ${mod.name} ?`, answer: `Ce module s'adresse aux étudiants des spécialités : ${mod.specialty} (Semestre ${mod.semester}) en ISPITS.` }
       ];
     }
   }
