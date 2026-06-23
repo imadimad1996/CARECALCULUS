@@ -55,6 +55,11 @@ export const nameEnMap: Record<string, string> = {
   '/hub-glp1': 'GLP-1 & Metabolic Health Resource Hub',
   '/مركز-glp1': 'GLP-1 & Metabolic Health Resource Hub',
   '/%D9%85%D8%B1%D9%83%D8%B2-glp1': 'GLP-1 & Metabolic Health Resource Hub',
+  '/apgar-score': 'APGAR Score Calculator',
+  '/sofa-score': 'SOFA Score ICU Calculator',
+  '/child-pugh-score': 'Child-Pugh Score Calculator',
+  '/anion-gap': 'Anion Gap Calculator',
+  '/aa-gradient': 'Alveolar-Arterial (A-a) Gradient Calculator',
 };
 
 const nameFrMap: Record<string, string> = {
@@ -90,6 +95,11 @@ const nameFrMap: Record<string, string> = {
   '/hub-glp1': "Centre d'Intelligence GLP-1 & Métabolique",
   '/مركز-glp1': "Centre d'Intelligence GLP-1 & Métabolique",
   '/%D9%85%D8%B1%D9%83%D8%B2-glp1': "Centre d'Intelligence GLP-1 & Métabolique",
+  '/apgar-score': 'Calculateur Score APGAR (Nouveau-né)',
+  '/sofa-score': 'Calculateur Score SOFA (Réanimation)',
+  '/child-pugh-score': 'Calculateur Score Child-Pugh (Cirrhose)',
+  '/anion-gap': 'Calculateur Trou Anionique (Acidose)',
+  '/aa-gradient': 'Calculateur Gradient Alvéolo-Artériel (A-a)',
 };
 
 const nameArMap: Record<string, string> = {
@@ -125,6 +135,11 @@ const nameArMap: Record<string, string> = {
   '/hub-glp1': 'مركز معلومات أدوية GLP-1 والصحة الاستقلابية',
   '/مركز-glp1': 'مركز معلومات أدوية GLP-1 والصحة الاستقلابية',
   '/%D9%85%D8%B1%D9%83%D8%B2-glp1': 'مركز معلومات أدوية GLP-1 والصحة الاستقلابية',
+  '/apgar-score': 'حساب مقياس أبغار لحديثي الولادة (APGAR)',
+  '/sofa-score': 'حساب مقياس تقييم فشل الأعضاء المتتابع (SOFA)',
+  '/child-pugh-score': 'مؤشر تشايلد بيو لشدة تليف الكبد (Child-Pugh)',
+  '/anion-gap': 'حساب الفجوة الأنيونية وحموضة الدم (Anion Gap)',
+  '/aa-gradient': 'حساب الفرق الألوفي-الشرياني للأكسجين (A-a Gradient)',
 };
 
 export interface RouteMeta {
@@ -464,6 +479,36 @@ const medicalSchemaDb: Record<string, any> = {
       { '@type': 'MedicalCondition', name: 'Cardiovascular Disease' }
     ],
   },
+  '/apgar-score': {
+    '@type': 'MedicalWebPage',
+    name: 'APGAR Score Calculator',
+    aspect: 'Neonatal Assessment & Triage',
+    about: { '@type': 'MedicalCondition', name: 'Asphyxia Neonatorum' },
+  },
+  '/sofa-score': {
+    '@type': 'MedicalWebPage',
+    name: 'Sequential Organ Failure Assessment (SOFA) Score',
+    aspect: 'ICU Organ Dysfunction Severity',
+    about: { '@type': 'MedicalCondition', name: 'Sepsis' },
+  },
+  '/child-pugh-score': {
+    '@type': 'MedicalWebPage',
+    name: 'Child-Pugh Score for Liver Disease Severity',
+    aspect: 'Hepatology Triage & Prognosis',
+    about: { '@type': 'MedicalCondition', name: 'Liver Cirrhosis' },
+  },
+  '/anion-gap': {
+    '@type': 'MedicalWebPage',
+    name: 'Anion Gap Calculator',
+    aspect: 'Acid-Base Disorders',
+    about: { '@type': 'MedicalCondition', name: 'Metabolic Acidosis' },
+  },
+  '/aa-gradient': {
+    '@type': 'MedicalWebPage',
+    name: 'Alveolar-Arterial (A-a) Oxygen Gradient Calculator',
+    aspect: 'Pulmonary Ventilation & Gas Exchange',
+    about: { '@type': 'MedicalCondition', name: 'Hypoxemia' },
+  },
 };
 
 export function getMedicalSchema(path: string) {
@@ -551,6 +596,71 @@ const faqSchemaDb: Record<string, { question: string; answer: string }[]> = {
     { question: 'How do you convert between corticosteroids?', answer: 'Corticosteroids have different potencies. Using hydrocortisone 20mg as the reference: Prednisone 5mg = Prednisolone 5mg = Methylprednisolone 4mg = Dexamethasone 0.75mg = Betamethasone 0.6mg = Hydrocortisone 20mg are all equipotent doses.' },
     { question: 'Why is steroid conversion important?', answer: 'Steroid conversion is critical when switching between agents (e.g., IV methylprednisolone to oral prednisone), when tapering steroids, or when comparing dosages across different formulations. Incorrect conversion can cause adrenal crisis or Cushing syndrome.' },
   ],
+  '/medical-conversions': [
+    { question: 'Why is medical unit conversion necessary?', answer: 'Different laboratories and international guidelines use different units (e.g., mass vs. molar concentrations like mg/dL vs. mmol/L for glucose). Accurate conversion is critical for comparing research, diagnosing patients, and avoiding dosing errors.' },
+    { question: 'How do you convert glucose from mg/dL to mmol/L?', answer: 'To convert glucose from mg/dL to mmol/L, divide the mg/dL value by 18.02 (e.g., 180 mg/dL / 18.02 = 10.0 mmol/L). To convert back, multiply by 18.02.' },
+    { question: 'How do you convert creatinine from mg/dL to umol/L?', answer: 'To convert creatinine from mg/dL to micromoles per liter (µmol/L), multiply the mg/dL value by 88.4.' }
+  ],
+  '/pf-ratio': [
+    { question: 'What is the P/F ratio?', answer: 'The P/F ratio is the ratio of arterial oxygen partial pressure (PaO2 in mmHg) to fractional inspired oxygen (FiO2 as a decimal). It is used to quantify the severity of hypoxemia and lung injury.' },
+    { question: 'What is a normal P/F ratio?', answer: 'A normal P/F ratio is approximately 400 to 500 mmHg. A value below 300 mmHg indicates acute lung injury, and below 200 mmHg is a hallmark of ARDS.' },
+    { question: 'How does the P/F ratio classify ARDS?', answer: 'Under the Berlin Definition, ARDS is classified by P/F ratio with PEEP/CPAP ≥5 cmH2O: Mild (201-300 mmHg), Moderate (101-200 mmHg), and Severe (≤100 mmHg).' }
+  ],
+  '/tidal-volume': [
+    { question: 'Why should tidal volume be calculated based on predicted body weight (PBW)?', answer: 'Lung size is determined by biological sex and height, not by actual body weight. Using actual body weight in obese patients would result in excessively large tidal volumes, leading to ventilator-induced lung injury (volutrauma/barotrauma).' },
+    { question: 'What is the standard protective tidal volume target in ARDS?', answer: 'The ARDSNet protocol recommends starting at 6 mL/kg of predicted body weight (PBW), with a range between 4 to 8 mL/kg, while maintaining plateau pressure < 30 cmH2O.' },
+    { question: 'What formula is used to calculate predicted body weight?', answer: 'The Devine formula is typically used. Males: 50 + 2.3 × (Height in inches - 60). Females: 45.5 + 2.3 × (Height in inches - 60).' }
+  ],
+  '/anc-calculator': [
+    { question: 'What is the Absolute Neutrophil Count (ANC)?', answer: 'The ANC measures the real number of neutrophil granulocytes (both segmentals/mature and bands/immature) in a microliter of blood. It is a key metric for evaluating a patient\'s immune defense.' },
+    { question: 'How is ANC calculated?', answer: 'ANC = WBC (cells/µL) × [Segmented Neutrophils (%) + Band Neutrophils (%)] / 100.' },
+    { question: 'What ANC level indicates neutropenia?', answer: 'Neutropenia is classified as: Mild (ANC 1000–1500 cells/µL), Moderate (500–1000 cells/µL), and Severe (ANC < 500 cells/µL). Severe neutropenia represents a critical infection risk.' }
+  ],
+  '/adjusted-body-weight': [
+    { question: 'When is Adjusted Body Weight (AjBW) used?', answer: 'Adjusted Body Weight is used for drug dosing (e.g., aminoglycosides, acyclovir) in obese patients (typically when actual body weight is >120% of ideal body weight) to avoid overdosing water-soluble medications.' },
+    { question: 'How is Ideal Body Weight calculated?', answer: 'IBW is calculated using the Devine formula: Males: 50.0 kg + 2.3 kg per inch over 5 feet (152.4 cm). Females: 45.5 kg + 2.3 kg per inch over 5 feet.' },
+    { question: 'What is the formula for Adjusted Body Weight?', answer: 'AjBW = IBW + 0.4 × (Actual Weight - IBW).' }
+  ],
+  '/phq9-score': [
+    { question: 'What is the PHQ-9?', answer: 'The Patient Health Questionnaire-9 (PHQ-9) is a self-administered diagnostic screening instrument for measuring the severity of depression. It is based on the 9 DSM-IV diagnostic criteria.' },
+    { question: 'How is the PHQ-9 scored?', answer: 'Each of the 9 items is scored from 0 (not at all) to 3 (nearly every day), yielding a total score between 0 and 27.' },
+    { question: 'What do the PHQ-9 score ranges mean?', answer: 'Scores indicate depression severity: 0-4 (Minimal/None), 5-9 (Mild), 10-14 (Moderate), 15-19 (Moderately Severe), and 20-27 (Severe).' }
+  ],
+  '/sirs-criteria': [
+    { question: 'What are the SIRS criteria?', answer: 'Systemic Inflammatory Response Syndrome (SIRS) is defined by meeting ≥2 of: Temperature <36°C or >38°C; Heart Rate >90 bpm; Respiratory Rate >20/min or PaCO2 <32 mmHg; WBC Count <4,000/µL, >12,000/µL, or >10% bands.' },
+    { question: 'What is the difference between SIRS and Sepsis?', answer: 'SIRS is a systemic inflammatory response to any insult (infectious or non-infectious, e.g., pancreatitis). Sepsis is defined as SIRS (or organ dysfunction) caused by a documented or suspected infection.' },
+    { question: 'Is SIRS still used to diagnose sepsis?', answer: 'While Sepsis-3 guidelines transitioned to using the SOFA/qSOFA scores for defining sepsis due to better specificity, SIRS remains widely monitored in clinical triage as a highly sensitive screening tool.' }
+  ],
+  '/glp-1-hub': [
+    { question: 'What are GLP-1 receptor agonists?', answer: 'GLP-1 receptor agonists (GLP-1 RAs) are a class of medications that mimic the glucagon-like peptide-1 hormone, enhancing insulin secretion, suppressing glucagon, delaying gastric emptying, and promoting satiety.' },
+    { question: 'What are the primary indications for GLP-1 RAs?', answer: 'They are FDA-approved for the treatment of type 2 diabetes mellitus to improve glycemic control and reduce major adverse cardiovascular events, and for chronic weight management in obesity.' },
+    { question: 'What are common side effects of GLP-1 agonists?', answer: 'Gastrointestinal adverse effects are most common, including nausea, vomiting, diarrhea, constipation, and dyspepsia. They are typically mild-to-moderate and transient.' }
+  ],
+  '/apgar-score': [
+    { question: 'What is the APGAR score?', answer: 'The APGAR score is a rapid assessment of a newborn\'s clinical status performed at 1 minute and 5 minutes after birth. It evaluates: Appearance (color), Pulse (heart rate), Grimace (reflex irritability), Activity (muscle tone), and Respiration.' },
+    { question: 'What does a normal APGAR score mean?', answer: 'An APGAR score of 7 to 10 is considered normal and indicates the newborn is in good health. Scores of 4 to 6 indicate moderate depression, and 0 to 3 indicate severe distress requiring immediate resuscitation.' },
+    { question: 'When is the APGAR score calculated?', answer: 'It is calculated routinely at 1 and 5 minutes after birth. If the 5-minute score is low (<7), it may be repeated every 5 minutes up to 20 minutes to monitor resuscitation progress.' }
+  ],
+  '/sofa-score': [
+    { question: 'What is the SOFA score?', answer: 'The Sequential Organ Failure Assessment (SOFA) score is a scoring system used in ICU settings to track a patient\'s organ dysfunction level across six organ systems: respiratory, cardiovascular, hepatic, coagulation, renal, and neurological.' },
+    { question: 'How does the SOFA score define organ dysfunction severity?', answer: 'Each of the six organ systems is scored from 0 (normal) to 4 (severe dysfunction), yielding a total score between 0 and 24. A higher score is associated with higher mortality risk.' },
+    { question: 'What is the clinical significance of a change in SOFA score?', answer: 'An increase in SOFA score of ≥2 points from baseline indicates acute organ dysfunction, representing a positive screen for sepsis under Sepsis-3 criteria and indicating a 10% or greater hospital mortality risk.' }
+  ],
+  '/child-pugh-score': [
+    { question: 'What is the Child-Pugh score?', answer: 'The Child-Pugh score is a clinical staging system used to assess the prognosis of chronic liver disease, particularly cirrhosis. It evaluates total bilirubin, serum albumin, INR, ascites, and hepatic encephalopathy.' },
+    { question: 'What are the Child-Pugh classification classes?', answer: 'Patients are categorized into three classes: Class A (Score 5-6, 100% 1-year survival), Class B (Score 7-9, 81% 1-year survival), and Class C (Score 10-15, 45% 1-year survival).' },
+    { question: 'How does the Child-Pugh score differ from the MELD score?', answer: 'The Child-Pugh score includes subjective parameters (ascites and encephalopathy) alongside labs. The MELD score is purely objective and laboratory-based (creatinine, bilirubin, INR, sodium), making it preferred for transplant allocation.' }
+  ],
+  '/anion-gap': [
+    { question: 'What is the serum Anion Gap?', answer: 'The serum anion gap is a calculated metric representing the difference between measured cations (sodium) and measured anions (chloride and bicarbonate). It helps identify the cause of metabolic acidosis.' },
+    { question: 'What is a normal serum Anion Gap?', answer: 'A normal anion gap is typically 8 to 12 mEq/L (without potassium) or 12 to 16 mEq/L if potassium is included. However, reference ranges vary by laboratory.' },
+    { question: 'What causes a high Anion Gap metabolic acidosis (HAGMA)?', answer: 'Common causes of HAGMA can be remembered using the acronym GOLD MARK: Glycols, Oxoproline, L-lactate, D-lactate, Methanol, Aspirin (salicylates), Renal failure (uremia), and Ketoacidosis.' }
+  ],
+  '/aa-gradient': [
+    { question: 'What is the Alveolar-Arterial (A-a) oxygen gradient?', answer: 'The A-a gradient is the difference between the partial pressure of oxygen in the alveoli (PAO2) and in arterial blood (PaO2). It evaluates the integrity of the alveolar-capillary membrane.' },
+    { question: 'How is the expected normal A-a gradient calculated?', answer: 'A normal A-a gradient increases with age. It can be estimated as: Expected Normal Gradient = (Age / 4) + 4. It also depends on the fraction of inspired oxygen (FiO2).' },
+    { question: 'What causes an elevated A-a gradient?', answer: 'An elevated A-a gradient indicates an oxygenation defect, caused by ventilation-perfusion (V/Q) mismatch (e.g., pulmonary embolism, pneumonia), right-to-left shunt (e.g., anatomical shunt), or diffusion limitation.' }
+  ],
 };
 
 const howToSchemaDb: Record<string, { name: string; description: string; steps: { name: string; text: string }[] }> = {
@@ -605,6 +715,190 @@ const howToSchemaDb: Record<string, { name: string; description: string; steps: 
       { name: 'Check Age ≥65', text: 'If the patient is 65 years or older, select this criterion. Age ≥65 is an independent predictor of 30-day mortality in community-acquired pneumonia.' },
       { name: 'Interpret the Total CURB-65 Score', text: 'Score 0-1: Low risk (outpatient care). Score 2: Intermediate (consider hospitalization). Score 3-5: High risk — hospitalize, consider ICU for score ≥4.' },
     ],
+  },
+  '/meld-score': {
+    name: 'How to Calculate MELD Score',
+    description: 'Step-by-step guide to calculating the Model for End-Stage Liver Disease (MELD) score.',
+    steps: [
+      { name: 'Retrieve Laboratory Values', text: 'Obtain the patient\'s serum bilirubin (mg/dL), serum creatinine (mg/dL), and INR from recent blood tests.' },
+      { name: 'Check Dialysis Status', text: 'Determine if the patient has had dialysis twice or more within the last week. If yes, the creatinine value is set to 4.0 mg/dL.' },
+      { name: 'Input Laboratory Parameters', text: 'Enter the creatinine, bilirubin, and INR values into the respective calculator inputs.' },
+      { name: 'Read MELD Score and Risk', text: 'The calculator computes the MELD score and displays the corresponding 3-month survival probability and transplant listing guidance.' }
+    ]
+  },
+  '/wells-score': {
+    name: 'How to Calculate Wells Criteria for DVT',
+    description: 'Step-by-step guide to calculating the Wells Score to assess pretest probability of DVT.',
+    steps: [
+      { name: 'Select Clinical Risk Factors', text: 'Review the patient for clinical symptoms such as active cancer, paralysis, leg swelling, collateral superficial veins, and localized tenderness. Check each matching box.' },
+      { name: 'Assess Alternative Diagnoses', text: 'Evaluate if an alternative diagnosis (e.g., muscle strain, cellulitis) is at least as likely as DVT. If yes, subtract 2 points.' },
+      { name: 'Review the Risk Category', text: 'A score of ≤0 indicates low risk, 1-2 indicates moderate risk, and ≥3 indicates high risk of DVT.' }
+    ]
+  },
+  '/cha2ds2-vasc': {
+    name: 'How to Calculate CHA2DS2-VASc Score',
+    description: 'Step-by-step guide to calculating stroke risk in patients with non-valvular atrial fibrillation.',
+    steps: [
+      { name: 'Input Patient Age and Sex', text: 'Select the biological sex and input the patient\'s age. Age ≥75 adds 2 points; age 65-74 adds 1 point.' },
+      { name: 'Select Cardiovascular Comorbidities', text: 'Check the boxes for congestive heart failure, hypertension, diabetes, stroke/TIA/thromboembolism (2 points), and vascular disease.' },
+      { name: 'Determine Anticoagulation Recommendation', text: 'Review the total score. A score of 0-1 generally requires no or individual anticoagulation choice; score ≥2 recommends oral anticoagulation.' }
+    ]
+  },
+  '/creatinine-clearance': {
+    name: 'How to Calculate Creatinine Clearance',
+    description: 'Step-by-step guide to estimating creatinine clearance using the Cockcroft-Gault formula.',
+    steps: [
+      { name: 'Input Patient Characteristics', text: 'Enter the patient\'s age, biological sex, and weight in kilograms.' },
+      { name: 'Input Serum Creatinine', text: 'Enter the serum creatinine level in mg/dL or µmol/L.' },
+      { name: 'Review GFR and Renal Stage', text: 'Read the estimated creatinine clearance (mL/min) and check the corresponding CKD stage to adjust medication dosages if necessary.' }
+    ]
+  },
+  '/corrected-calcium': {
+    name: 'How to Calculate Albumin-Corrected Calcium',
+    description: 'Step-by-step guide to calculating corrected calcium in patients with hypoalbuminemia.',
+    steps: [
+      { name: 'Input Total Calcium', text: 'Enter the measured total serum calcium in mg/dL.' },
+      { name: 'Input Serum Albumin', text: 'Enter the measured serum albumin level in g/dL.' },
+      { name: 'Evaluate the Adjusted Value', text: 'The corrected calcium is calculated as: Measured Calcium + 0.8 × (4.0 - Albumin). Compare the result against the normal reference range (8.5–10.2 mg/dL).' }
+    ]
+  },
+  '/drip-rate-calculator': {
+    name: 'How to Calculate IV Drip Rate',
+    description: 'Step-by-step guide to calculating IV infusion and drip rates.',
+    steps: [
+      { name: 'Enter Infusion Volume', text: 'Enter the total volume to be infused in milliliters (mL).' },
+      { name: 'Enter Infusion Time', text: 'Enter the target time period in minutes or hours.' },
+      { name: 'Select Drop Factor', text: 'Choose the drop factor of your administration tubing (e.g., 10, 15, 20, or 60 drops/mL).' },
+      { name: 'Set the Drip Rate', text: 'Read the output in drops per minute and mL/hr to calibrate the infusion clamp or pump.' }
+    ]
+  },
+  '/steroid-conversion': {
+    name: 'How to Convert Corticosteroid Doses',
+    description: 'Step-by-step guide to calculating equivalent doses of different corticosteroids.',
+    steps: [
+      { name: 'Select Input Corticoid', text: 'Select the corticosteroid the patient is currently receiving.' },
+      { name: 'Enter Current Dose', text: 'Input the current daily dose in milligrams (mg).' },
+      { name: 'Review Equipotent Doses', text: 'The converter instantly displays equivalent doses for Prednisone, Methylprednisolone, Dexamethasone, Hydrocortisone, and others.' }
+    ]
+  },
+  '/medical-conversions': {
+    name: 'How to Convert Clinical Units',
+    description: 'Step-by-step guide to converting between mass and molar clinical units.',
+    steps: [
+      { name: 'Select Lab Parameter', text: 'Choose the laboratory parameter you wish to convert (e.g., Glucose, Creatinine, Cholesterol).' },
+      { name: 'Enter Current Value', text: 'Enter the clinical value and its current unit (e.g., mg/dL).' },
+      { name: 'Read Converted Value', text: 'The tool instantly converts the value to the alternative clinical unit (e.g., mmol/L).' }
+    ]
+  },
+  '/pf-ratio': {
+    name: 'How to Calculate P/F Ratio',
+    description: 'Step-by-step guide to calculating the PaO2/FiO2 ratio for lung injury assessment.',
+    steps: [
+      { name: 'Input Arterial PaO2', text: 'Enter the partial pressure of oxygen (PaO2) from the patient\'s arterial blood gas (ABG) in mmHg.' },
+      { name: 'Input Inspired FiO2', text: 'Enter the fraction of inspired oxygen (FiO2) as a percentage (e.g., 40% for room air plus supplemental O2, or 21% for ambient air).' },
+      { name: 'Read Ratio and ARDS Category', text: 'Review the P/F ratio in mmHg. The calculator classifies the severity of hypoxemia as mild, moderate, or severe ARDS.' }
+    ]
+  },
+  '/tidal-volume': {
+    name: 'How to Calculate Tidal Volume',
+    description: 'Step-by-step guide to calculating protective tidal volumes for mechanical ventilation.',
+    steps: [
+      { name: 'Select Biological Sex', text: 'Choose the patient\'s biological sex (male or female).' },
+      { name: 'Enter Patient Height', text: 'Enter the patient\'s height in feet/inches or centimeters.' },
+      { name: 'Determine Target Volume', text: 'Select the target tidal volume setting (e.g., 6 mL/kg or 8 mL/kg of predicted body weight). The calculator outputs the exact target volume in mL.' }
+    ]
+  },
+  '/anc-calculator': {
+    name: 'How to Calculate Absolute Neutrophil Count',
+    description: 'Step-by-step guide to calculating ANC to assess immune status.',
+    steps: [
+      { name: 'Input Total WBC Count', text: 'Enter the total white blood cell count (WBC) in cells/µL.' },
+      { name: 'Input Neutrophil Percentages', text: 'Enter the percentage of segmented neutrophils and band neutrophils from the differential.' },
+      { name: 'Interpret Neutropenia Risk', text: 'Read the calculated ANC. Values below 500 indicate severe neutropenia and high susceptibility to infections.' }
+    ]
+  },
+  '/adjusted-body-weight': {
+    name: 'How to Calculate Ideal and Adjusted Body Weight',
+    description: 'Step-by-step guide to calculating weight metrics for clinical dosing.',
+    steps: [
+      { name: 'Select Biological Sex', text: 'Choose the patient\'s biological sex.' },
+      { name: 'Enter Height and Actual Weight', text: 'Enter the patient\'s height (cm or inches) and current actual weight (kg).' },
+      { name: 'Analyze Dosing Weights', text: 'Review the calculated Ideal Body Weight (IBW) and Adjusted Body Weight (AjBW) for clinical drug dosing.' }
+    ]
+  },
+  '/phq9-score': {
+    name: 'How to Administer and Score the PHQ-9',
+    description: 'Step-by-step guide to scoring the Patient Health Questionnaire-9.',
+    steps: [
+      { name: 'Answer the 9 Questions', text: 'Select a score from 0 (not at all) to 3 (nearly every day) for each of the 9 items representing depressive symptoms over the last two weeks.' },
+      { name: 'Review Total Score', text: 'The sum of the 9 questions produces the final score (0 to 27).' },
+      { name: 'Read Depression Severity', text: 'Review the corresponding depression severity category and clinical recommendation.' }
+    ]
+  },
+  '/sirs-criteria': {
+    name: 'How to Screen for SIRS Criteria',
+    description: 'Step-by-step guide to checking the Systemic Inflammatory Response Syndrome criteria.',
+    steps: [
+      { name: 'Assess Body Temperature', text: 'Enter the patient\'s temperature. Values <36°C or >38°C meet the criterion.' },
+      { name: 'Measure Heart Rate and Respiratory Rate', text: 'Enter heart rate (bpm) and respiratory rate (breaths/min) or PaCO2 (mmHg). Heart rate >90 bpm or respiratory rate >20 breaths/min (or PaCO2 <32 mmHg) meet the criteria.' },
+      { name: 'Input WBC Count', text: 'Enter white blood cell count (cells/µL) or percentage of immature band cells. WBC >12,000, <4,000, or >10% bands meet the criterion.' },
+      { name: 'Count Selected Criteria', text: 'If 2 or more of the 4 criteria are met, the patient is positive for SIRS.' }
+    ]
+  },
+  '/apgar-score': {
+    name: 'How to Score the Neonatal APGAR Scale',
+    description: 'Step-by-step guide to assessing a newborn\'s status at 1 and 5 minutes.',
+    steps: [
+      { name: 'Evaluate Appearance', text: 'Select 0 for blue/pale all over, 1 for pink body with blue extremities (acrocyanosis), or 2 for completely pink.' },
+      { name: 'Evaluate Pulse', text: 'Select 0 for absent pulse, 1 for slow pulse (<100 bpm), or 2 for normal pulse (≥100 bpm).' },
+      { name: 'Evaluate Grimace', text: 'Select 0 for no response to stimulation, 1 for a grimace or weak cry, or 2 for a vigorous cry, sneeze, or cough.' },
+      { name: 'Evaluate Activity', text: 'Select 0 for limp/flaccid tone, 1 for some flexion of extremities, or 2 for active motion.' },
+      { name: 'Evaluate Respiration', text: 'Select 0 for absent respiration, 1 for slow/irregular/weak cry, or 2 for a strong, robust cry.' },
+      { name: 'Review Total APGAR Score', text: 'Review the sum of the components (0 to 10). Scores ≥7 indicate a normal, stable newborn.' }
+    ]
+  },
+  '/sofa-score': {
+    name: 'How to Calculate the SOFA Score',
+    description: 'Step-by-step guide to calculating the Sequential Organ Failure Assessment (SOFA) score in ICU patients.',
+    steps: [
+      { name: 'Input Respiratory Status', text: 'Enter the P/F ratio (PaO2/FiO2) and check if mechanical ventilation is active.' },
+      { name: 'Input Coagulation & Hepatic Function', text: 'Enter the platelet count (×10³/µL) and total bilirubin level (mg/dL).' },
+      { name: 'Input Cardiovascular Perfusion', text: 'Enter the Mean Arterial Pressure (MAP) and select any vasopressors currently being infused (Dopamine, Dobutamine, Epinephrine, or Norepinephrine).' },
+      { name: 'Input Neurological Status', text: 'Enter the patient\'s Glasgow Coma Scale (GCS) score.' },
+      { name: 'Input Renal Function', text: 'Enter the serum creatinine level (mg/dL) or daily urine output volume.' },
+      { name: 'Read Total SOFA Score', text: 'The calculator sums the sub-scores (0-4 per system) to yield the total SOFA score (0-24).' }
+    ]
+  },
+  '/child-pugh-score': {
+    name: 'How to Calculate Child-Pugh Score for Cirrhosis',
+    description: 'Step-by-step guide to scoring liver cirrhosis severity.',
+    steps: [
+      { name: 'Input Bilirubin and Albumin', text: 'Enter serum bilirubin (mg/dL) and serum albumin (g/dL).' },
+      { name: 'Input INR', text: 'Enter the International Normalized Ratio (INR).' },
+      { name: 'Evaluate Ascites', text: 'Select the severity of ascites: None, Mild (diuretic-responsive), or Moderate-to-Severe (diuretic-refractory).' },
+      { name: 'Evaluate Encephalopathy', text: 'Select the grade of hepatic encephalopathy: None, Grade 1-2, or Grade 3-4.' },
+      { name: 'Read Class and 1-Year Survival', text: 'The sum of all inputs (5-15) determines Child-Pugh Class A, B, or C, indicating the 1-year and 2-year survival probability.' }
+    ]
+  },
+  '/anion-gap': {
+    name: 'How to Calculate Serum Anion Gap',
+    description: 'Step-by-step guide to calculating anion gap to screen for metabolic acidosis.',
+    steps: [
+      { name: 'Enter Serum Sodium', text: 'Enter the measured sodium level (Na+) in mEq/L.' },
+      { name: 'Enter Chloride and Bicarbonate', text: 'Enter the measured chloride (Cl-) and bicarbonate (HCO3-) levels in mEq/L.' },
+      { name: 'Optional: Adjust for Albumin', text: 'If hypoalbuminemia is present, enter the patient\'s albumin level (g/dL) to obtain the corrected anion gap.' },
+      { name: 'Read Calculated Anion Gap', text: 'Review the calculated anion gap. A value >12 mEq/L suggests anion gap metabolic acidosis.' }
+    ]
+  },
+  '/aa-gradient': {
+    name: 'How to Calculate Alveolar-Arterial (A-a) Oxygen Gradient',
+    description: 'Step-by-step guide to calculating A-a gradient for hypoxemia workup.',
+    steps: [
+      { name: 'Enter Patient Age', text: 'Enter the patient\'s age in years to calculate the expected normal gradient.' },
+      { name: 'Enter Arterial PaO2 and PaCO2', text: 'Enter the arterial partial pressures of oxygen (PaO2) and carbon dioxide (PaCO2) from an ABG in mmHg.' },
+      { name: 'Enter Inspired FiO2 and Pressure', text: 'Enter the fraction of inspired oxygen (FiO2) and barometric pressure (default is sea level, 760 mmHg).' },
+      { name: 'Interpret the Gradient', text: 'Compare the calculated A-a gradient with the expected age-adjusted normal. An elevated gradient suggests V/Q mismatch or shunt.' }
+    ]
   },
 };
 

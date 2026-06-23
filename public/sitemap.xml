@@ -221,6 +221,60 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/tidal-volume"/>
   </url>
   <url>
+    <loc>https://carecalculus.com/apgar-score</loc>
+    <lastmod>2026-06-23</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/apgar-score"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/apgar-score"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/apgar-score"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/apgar-score"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/apgar-score</loc>
+    <lastmod>2026-06-23</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/apgar-score"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/apgar-score"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/apgar-score"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/apgar-score"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/apgar-score</loc>
+    <lastmod>2026-06-23</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/apgar-score"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/apgar-score"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/apgar-score"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/apgar-score"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/sofa-score</loc>
+    <lastmod>2026-06-23</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/sofa-score"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/sofa-score"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/sofa-score"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/sofa-score"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/sofa-score</loc>
+    <lastmod>2026-06-23</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/sofa-score"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/sofa-score"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/sofa-score"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/sofa-score"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/sofa-score</loc>
+    <lastmod>2026-06-23</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/sofa-score"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/sofa-score"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/sofa-score"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/sofa-score"/>
+  </url>
+  <url>
     <loc>https://carecalculus.com/creatinine-clearance</loc>
     <lastmod>2026-06-23</lastmod>
     <priority>0.8</priority>
@@ -381,6 +435,87 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/anc-calculator"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/anc-calculator"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/anc-calculator"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/child-pugh-score</loc>
+    <lastmod>2026-06-23</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/child-pugh-score"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/child-pugh-score"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/child-pugh-score"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/child-pugh-score"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/child-pugh-score</loc>
+    <lastmod>2026-06-23</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/child-pugh-score"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/child-pugh-score"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/child-pugh-score"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/child-pugh-score"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/child-pugh-score</loc>
+    <lastmod>2026-06-23</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/child-pugh-score"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/child-pugh-score"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/child-pugh-score"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/child-pugh-score"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/anion-gap</loc>
+    <lastmod>2026-06-23</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/anion-gap"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/anion-gap"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/anion-gap"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/anion-gap"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/anion-gap</loc>
+    <lastmod>2026-06-23</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/anion-gap"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/anion-gap"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/anion-gap"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/anion-gap"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/anion-gap</loc>
+    <lastmod>2026-06-23</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/anion-gap"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/anion-gap"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/anion-gap"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/anion-gap"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/aa-gradient</loc>
+    <lastmod>2026-06-23</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/aa-gradient"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/aa-gradient"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/aa-gradient"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/aa-gradient"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/aa-gradient</loc>
+    <lastmod>2026-06-23</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/aa-gradient"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/aa-gradient"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/aa-gradient"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/aa-gradient"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/aa-gradient</loc>
+    <lastmod>2026-06-23</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/aa-gradient"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/aa-gradient"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/aa-gradient"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/aa-gradient"/>
   </url>
   <url>
     <loc>https://carecalculus.com/drip-rate-calculator</loc>

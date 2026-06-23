@@ -46,6 +46,11 @@ const pageLoaders = [
   () => import('./pages/Privacy'),
   () => import('./pages/Terms'),
   () => import('./pages/Glp1Hub'),
+  () => import('./pages/ApgarScore'),
+  () => import('./pages/SofaScore'),
+  () => import('./pages/ChildPughScore'),
+  () => import('./pages/AnionGap'),
+  () => import('./pages/AaGradient'),
 ] as const;
 
 const [
@@ -54,7 +59,7 @@ const [
   Cha2ds2VascScore, Phq9Score, MeldScore, SirsCriteria, PfRatio, TidalVolume,
   AncCalculator, AdjustedBodyWeight, SteroidConversion, MedicalBlog, Blog,
   Presentations, Courses, OrlSpecialization, About, Disclaimer, Privacy, Terms,
-  Glp1Hub,
+  Glp1Hub, ApgarScore, SofaScore, ChildPughScore, AnionGap, AaGradient,
 ] = pageLoaders.map((loader) => React.lazy(loader as any)) as any[];
 
 const HomePage = React.lazy(() => import('./pages/HomePage'));
@@ -116,6 +121,8 @@ export const navItems = [
   { path: '/curb65-score', nameEn: 'CURB-65 Pneumonia', nameFr: 'Score CURB-65 Pneumonie', nameAr: 'معيار CURB-65 للالتهاب الرئوي', icon: Stethoscope, tier: 1 },
   { path: '/pf-ratio', nameEn: 'P/F Ratio Lung Injury', nameFr: 'Rapport P/F Respiratoire', nameAr: 'نسبة PaO2/FiO2 للرئتين', icon: Wind, tier: 1 },
   { path: '/tidal-volume', nameEn: 'Tidal Volume ARDS', nameFr: 'Volume Courant (Tidal)', nameAr: 'حجم الهواء التنفسي المتوقع', icon: Wind, tier: 1 },
+  { path: '/apgar-score', nameEn: 'APGAR Score', nameFr: 'Score d’APGAR', nameAr: 'مقياس أبغار للوليد APGAR', icon: Activity, tier: 1 },
+  { path: '/sofa-score', nameEn: 'SOFA Score ICU', nameFr: 'Score SOFA Réanimation', nameAr: 'مقياس SOFA للفشل العضوي', icon: AlertOctagon, tier: 1 },
 
   // Tier 2: Organ Function & Internal Medicine
   { path: '/creatinine-clearance', nameEn: 'Creatinine Clearance', nameFr: 'Clairance Créatinine', nameAr: 'تصفية الكرياتينين وكفاءة الكلى', icon: TestTube, tier: 2 },
@@ -124,6 +131,9 @@ export const navItems = [
   { path: '/cha2ds2-vasc', nameEn: 'CHA2DS2-VASc stroke', nameFr: 'Score CHA2DS2-VASc FA', nameAr: 'معيار سكتة الرجفان الأذيني', icon: HeartPulse, tier: 2 },
   { path: '/corrected-calcium', nameEn: 'Corrected Calcium', nameFr: 'Calcium Corrigé Albumin', nameAr: 'الكالسيوم المصحح بالألبومين', icon: TestTube, tier: 2 },
   { path: '/anc-calculator', nameEn: 'ANC Calculator', nameFr: 'Calculateur NAN Neutro', nameAr: 'حساب خلايا الدم المتعادلة ANC', icon: TestTube, tier: 2 },
+  { path: '/child-pugh-score', nameEn: 'Child-Pugh Score', nameFr: 'Score de Child-Pugh', nameAr: 'تصنيف تشايلد بيو للكبد', icon: Activity, tier: 2 },
+  { path: '/anion-gap', nameEn: 'Anion Gap', nameFr: 'Trou Anionique', nameAr: 'الفجوة الأنيونية للدم', icon: TestTube, tier: 2 },
+  { path: '/aa-gradient', nameEn: 'A-a Gradient', nameFr: 'Gradient Alvéolo-Artériel', nameAr: 'فرق الأكسجين A-a Gradient', icon: Wind, tier: 2 },
 
   // Tier 3: Infusions, Metrics & Pharmacology
   { path: '/drip-rate-calculator', nameEn: 'IV Drip Rate Tool', nameFr: 'Calcul Débit Perfusion', nameAr: 'سرعة تنقيط المحلول الوريدي', icon: Droplet, tier: 3 },
@@ -205,6 +215,11 @@ function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="disclaimer" element={<Disclaimer lang={lang} />} />
       <Route path="privacy" element={<Privacy lang={lang} />} />
       <Route path="terms" element={<Terms lang={lang} />} />
+      <Route path="apgar-score" element={<ApgarScore lang={lang} />} />
+      <Route path="sofa-score" element={<SofaScore lang={lang} />} />
+      <Route path="child-pugh-score" element={<ChildPughScore lang={lang} />} />
+      <Route path="anion-gap" element={<AnionGap lang={lang} />} />
+      <Route path="aa-gradient" element={<AaGradient lang={lang} />} />
     </>
   );
 }
