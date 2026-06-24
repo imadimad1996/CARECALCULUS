@@ -1214,6 +1214,9 @@ function AppLayout() {
         <div className={`mx-auto px-4 sm:px-6 py-6 md:py-10 relative flex flex-col justify-between min-h-screen ${isContentPage ? 'max-w-6xl' : 'max-w-5xl'}`}>
           <div>
 
+            {/* Global Top Leaderboard Ad */}
+            <AdUnit format="leaderboard" className="mb-6" />
+
             {/* Unified top navigation widget — calculator pages only */}
             {!isContentPage && !isHomePage && renderUnifiedTopNav()}
 
@@ -1377,6 +1380,11 @@ function AppLayout() {
                 <Link to={langPath('/terms')} className="text-gray-400 hover:text-blue-600 transition-colors text-xs">
                   {lang === 'fr' ? 'Conditions' : lang === 'ar' ? 'الشروط' : 'Terms'}
                 </Link>
+                {/* Adsterra Smartlink (Sponsor) */}
+                <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-600 transition-colors text-xs font-bold flex items-center gap-1">
+                  <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+                  {lang === 'fr' ? 'Sponsorisé' : lang === 'ar' ? 'برعاية' : 'Sponsored'}
+                </a>
               </div>
             </div>
           </footer>

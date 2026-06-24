@@ -1,58 +1,62 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
+import AdsterraNativeBanner from './AdsterraNativeBanner';
 
 /**
- * CareCalculus Responsive AdSense Unit
+ * CareCalculus Responsive Adsterra Unit
  *
- * Lazy-loads Google AdSense ads to protect Core Web Vitals.
- * Supports multiple ad formats and gracefully degrades when
- * AdSense hasn't loaded or when in development.
- *
- * Usage:
- *   <AdUnit format="in-article" />
- *   <AdUnit format="sidebar" />
- *   <AdUnit format="leaderboard" />
- *   <AdUnit format="multiplex" />
+ * Sandboxes Adsterra iframe banners to protect React from `document.write`
+ * and dynamically renders the Native Banner format.
  */
 
-export type AdFormat = 'in-article' | 'sidebar' | 'leaderboard' | 'multiplex' | 'rectangle';
+export type AdFormat = 'leaderboard' | 'in-article';
 
 interface AdUnitProps {
-  /** Ad format determines sizing and responsive behavior */
   format: AdFormat;
-  /** Optional CSS class for positioning */
   className?: string;
-  /** Whether to use the fluid layout (for in-article) */
-  fluid?: boolean;
-}
-
-// Format-specific styles and ad slot configuration
-const FORMAT_CONFIG: Record<AdFormat, { style: React.CSSProperties; layout?: string; layoutKey?: string }> = {
-  'in-article': {
-    style: { display: 'block', textAlign: 'center' as const, minHeight: '100px' },
-    layout: 'in-article',
-  },
-  'sidebar': {
-    style: { display: 'block', minHeight: '250px', width: '100%' },
-  },
-  'leaderboard': {
-    style: { display: 'block', textAlign: 'center' as const, minHeight: '90px', width: '100%' },
-  },
-  'multiplex': {
-    style: { display: 'block', minHeight: '200px', width: '100%' },
-    layout: 'in-article',
-    layoutKey: '-gw-3+1f-3d+2z',
-  },
-  'rectangle': {
-    style: { display: 'inline-block', width: '300px', height: '250px' },
-  },
-};
-
-declare global {
-  interface Window {
-    adsbygoogle?: any[];
-  }
 }
 
 export default function AdUnit({ format, className = '' }: AdUnitProps) {
-  return null;
+  if (format === 'in-article') {
+    return <AdsterraNativeBanner />;
+  }
+
+  // 728x90 Banner
+  // We use an iframe with srcDoc to sandbox the Adsterra document.write script.
+  // This guarantees it won't crash the React SPA while ensuring it refreshes
+  // dynamically on route changes.
+  const srcDoc = `
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <style>
+          body { margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; overflow: hidden; background: transparent; }
+        </style>
+      </head>
+      <body>
+        <script type="text/javascript">
+          atOptions = {
+            'key' : '3c062c9261b205d552d240d01fa0a70e',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+          };
+        </script>
+        <script type="text/javascript" src="https://www.highperformanceformat.com/3c062c9261b205d552d240d01fa0a70e/invoke.js"></script>
+      </body>
+    </html>
+  `;
+
+  return (
+    <div className={`w-full flex justify-center overflow-hidden ${className}`} style={{ minHeight: '90px' }}>
+      <iframe
+        title="Advertisement"
+        srcDoc={srcDoc}
+        width="728"
+        height="90"
+        style={{ border: 'none', overflow: 'hidden', maxWidth: '100%' }}
+        scrolling="no"
+      />
+    </div>
+  );
 }
