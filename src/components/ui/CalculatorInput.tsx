@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useId } from 'react';
 
 interface CalculatorInputProps {
   label: string;
@@ -21,10 +21,12 @@ export default function CalculatorInput({
   onChange,
   step = 1,
 }: CalculatorInputProps) {
+  const inputId = useId();
+
   return (
     <div className="group">
       <div className="flex justify-between items-baseline mb-2">
-        <label className="text-sm font-semibold text-gray-700 uppercase tracking-wider">
+        <label htmlFor={inputId} className="text-sm font-semibold text-gray-700 uppercase tracking-wider">
           {label}
         </label>
         <span className="text-xs font-medium text-gray-400 tabular-nums">
@@ -33,6 +35,7 @@ export default function CalculatorInput({
       </div>
       <div className="relative flex items-center">
         <input
+          id={inputId}
           type="number"
           value={value === 0 ? '' : value}
           onChange={(e) => {
@@ -48,6 +51,7 @@ export default function CalculatorInput({
       </div>
       <input
         type="range"
+        aria-label={`${label} range slider`}
         min={min}
         max={max}
         step={step}

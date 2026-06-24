@@ -11,6 +11,7 @@ import ReadingProgress from './components/ReadingProgress';
 import NewsletterCapture from './components/NewsletterCapture';
 import CookieConsent from './components/CookieConsent';
 import MedicalDisclaimer from './components/MedicalDisclaimer';
+import CommandPalette from './components/ui/CommandPalette';
 
 // Page import factories kept in one list so they can be (a) wrapped in
 // React.lazy for client-side code-splitting and (b) eagerly awaited during
@@ -913,6 +914,7 @@ function AppLayout() {
   return (
    <LangContext.Provider value={{ lang, langPath }}>
     <div className={`min-h-screen bg-[#fafafa] text-[#111] transition-colors duration-300 flex flex-col md:flex-row ${isRtl ? 'font-arabic' : 'font-sans'}`} dir={isRtl ? 'rtl' : 'ltr'}>
+      <CommandPalette />
       {/* Reading progress indicator for content pages */}
       {isContentPage && <ReadingProgress />}
       
@@ -929,6 +931,14 @@ function AppLayout() {
         </Link>
 
         <div className="flex items-center gap-2">
+          <button
+            onClick={() => window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }))}
+            className="p-2 text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600/20 rounded-lg"
+            aria-label="Global Search"
+            style={{ minWidth: '44px', minHeight: '44px' }}
+          >
+            <Search className="w-5 h-5" />
+          </button>
           {!isContentPage && (
             <button
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -971,32 +981,21 @@ function AppLayout() {
             </div>
           </div>
 
-          {/* Sidebar Search Bar */}
+          {/* Sidebar Search Bar (Triggers Global Command Palette) */}
           <div className="px-6 mb-4">
-            <div className="relative">
-              <Search className={`absolute ${isRtl ? 'right-3' : 'left-3'} top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400`} />
-              <input
-                id="sidebar-search-input"
-                type="text"
-                placeholder={lang === 'fr' ? 'Rechercher un outil...' : (lang === 'ar' ? 'بحث عن أداة حسابية...' : 'Search clinical tools...')}
-                value={sidebarSearch}
-                onChange={(e) => setSidebarSearch(e.target.value)}
-                className={`w-full py-2 bg-gray-50 focus:bg-white text-gray-800 border border-gray-200 focus:border-blue-500 rounded-xl text-xs font-semibold outline-none transition-all duration-300 placeholder-gray-400 ${
-                  isRtl ? 'pr-9 pl-8 text-right' : 'pl-9 pr-8 text-left'
-                }`}
-                style={{ minHeight: '38px' }}
-              />
-              {sidebarSearch && (
-                <button
-                  onClick={() => setSidebarSearch('')}
-                  className={`absolute ${isRtl ? 'left-2.5' : 'right-2.5'} top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-700 p-0.5 rounded-md hover:bg-gray-100 transition`}
-                  style={{ minWidth: '20px', minHeight: '20px' }}
-                  aria-label="Clear sidebar search"
-                >
-                  <X className="w-3 h-3" />
-                </button>
-              )}
-            </div>
+            <button
+              onClick={() => window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }))}
+              className={`w-full flex items-center justify-between py-2 px-3 bg-gray-50 hover:bg-white text-gray-400 hover:text-gray-600 border border-gray-200 hover:border-blue-300 rounded-xl text-xs font-semibold outline-none transition-all duration-300`}
+              style={{ minHeight: '38px' }}
+            >
+              <div className="flex items-center gap-2">
+                <Search className="w-4 h-4" />
+                <span>{lang === 'fr' ? 'Rechercher...' : (lang === 'ar' ? 'بحث...' : 'Search tools...')}</span>
+              </div>
+              <span className="font-mono text-[10px] bg-gray-200/50 px-1.5 py-0.5 rounded text-gray-500">
+                Ctrl K
+              </span>
+            </button>
           </div>
 
           {/* Collapsible/Grouped Tiers Layout */}

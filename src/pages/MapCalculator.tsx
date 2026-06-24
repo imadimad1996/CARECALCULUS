@@ -6,6 +6,7 @@ import ClinicalExportButton from '../components/ClinicalExportButton';
 import CalculatorInput from '../components/ui/CalculatorInput';
 import { trackCalculatorUsage } from '../utils/telemetry';
 import { layoutTranslations } from '../utils/lang';
+import MobileResultDock from '../components/ui/MobileResultDock';
 
 const translations: Translations = {
   en: {
@@ -305,6 +306,16 @@ export default function MapCalculator({ lang }: { lang: LangCode }) {
           ))}
         </div>
       </div>
+      <MobileResultDock
+        value={mapValue > 0 ? mapValue : '--'}
+        unit="mmHg"
+        label={currentText.result}
+        status={mapValue >= 65 ? currentText.normal : currentText.low}
+        statusColor={mapValue >= 65 ? 'emerald' : 'red'}
+        copied={copied}
+        onCopy={handleCopy}
+        isVisible={mapValue > 0}
+      />
     </>
   );
 }

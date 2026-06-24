@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
 import {vitePrerenderPlugin} from 'vite-prerender-plugin';
+import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig(() => {
   return {
@@ -15,6 +16,29 @@ export default defineConfig(() => {
       vitePrerenderPlugin({
         renderTarget: '#root',
         prerenderScript: path.resolve(__dirname, 'src/entry-prerender.tsx'),
+      }),
+      VitePWA({
+        registerType: 'autoUpdate',
+        manifest: {
+          name: 'CareCalculus',
+          short_name: 'CareCalculus',
+          description: 'Clinical Calculators Suite',
+          theme_color: '#ffffff',
+        },
+        workbox: {
+          globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
+          runtimeCaching: [
+            {
+              urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
+              handler: 'CacheFirst',
+              options: {
+                cacheName: 'google-fonts-cache',
+                expiration: { maxEntries: 10, maxAgeSeconds: 60 * 60 * 24 * 365 },
+                cacheableResponse: { statuses: [0, 200] },
+              },
+            },
+          ],
+        },
       }),
       {
         name: 'force-close',
