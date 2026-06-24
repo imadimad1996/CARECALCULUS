@@ -42,6 +42,40 @@ export default function TrackingScripts() {
       `;
       document.head.appendChild(clarityInit);
     }
+
+    // 3. Adsterra RTL Overlap Fix Mutation Observer
+    // Detects dynamically injected fixed-position ads (e.g., Social Bar) and shifts them to the left
+    // when layout direction is RTL, preventing them from blocking the sidebar navigation or language switcher.
+    const observer = new MutationObserver((mutations) => {
+      const isRtl = document.documentElement.dir === 'rtl';
+      if (!isRtl) return;
+
+      mutations.forEach((mutation) => {
+        mutation.addedNodes.forEach((node) => {
+          if (node.nodeType === Node.ELEMENT_NODE) {
+            const el = node as HTMLElement;
+            const style = window.getComputedStyle(el);
+            if (
+              style.position === 'fixed' &&
+              el.tagName !== 'ASIDE' &&
+              !el.classList.contains('z-30') && // Mobile menu overlay
+              !el.classList.contains('z-40') && // Sidebar navigation
+              !el.id.includes('root') &&
+              !el.id.includes('command-palette')
+            ) {
+              el.style.setProperty('right', 'auto', 'important');
+              el.style.setProperty('left', '16px', 'important');
+            }
+          }
+        });
+      });
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      observer.disconnect();
+    };
   }, []);
 
   return null;

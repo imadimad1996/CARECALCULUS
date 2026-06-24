@@ -33,6 +33,11 @@
     <!-- Adsterra Popunder (Deferred & Delayed to protect Core Web Vitals) -->
     <script type="text/javascript">
       (function() {
+        const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname.includes('local');
+        if (isLocal) {
+          console.log('Adsterra Popunder disabled in development.');
+          return;
+        }
         const loadAd = () => {
           setTimeout(() => {
             const script = document.createElement('script');
@@ -57,6 +62,11 @@
     <!-- Adsterra Social Bar (Deferred & Delayed to protect Core Web Vitals) -->
     <script type="text/javascript">
       (function() {
+        const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname.includes('local');
+        if (isLocal) {
+          console.log('Adsterra Social Bar disabled in development.');
+          return;
+        }
         const loadSocial = () => {
           setTimeout(() => {
             const script = document.createElement('script');
