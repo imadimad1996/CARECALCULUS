@@ -166,6 +166,10 @@ async function main() {
 
       const fileName = route === '/' ? 'index.png' : `${route.replace(/^\//, '')}.png`;
       const filePath = path.join(langDir, fileName);
+      const dirPath = path.dirname(filePath);
+      if (!fs.existsSync(dirPath)) {
+        fs.mkdirSync(dirPath, { recursive: true });
+      }
       fs.writeFileSync(filePath, pngBuffer);
     }
     console.log(`Generated all images for language: ${lang}`);

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, ErrorInfo, ReactNode } from 'react';
-import { Activity, BookOpen, HeartPulse, Menu, X, LayoutDashboard, Calculator, Droplet, Brain, TestTube, AlertOctagon, ArrowRightLeft, AlertTriangle, Stethoscope, Wind, FileText, ShieldCheck, Sparkles, ChevronRight, Search, Globe, Scale, MonitorPlay, GraduationCap, Newspaper, Scissors, Layers } from 'lucide-react';
+import { Activity, BookOpen, HeartPulse, Menu, X, LayoutDashboard, Calculator, Droplet, Brain, TestTube, AlertOctagon, ArrowRightLeft, AlertTriangle, Stethoscope, Wind, FileText, ShieldCheck, Sparkles, ChevronRight, Search, Globe, Scale, MonitorPlay, GraduationCap, Newspaper, Scissors, Layers, Award } from 'lucide-react';
 import { BrowserRouter, Routes, Route, Link, useLocation, Navigate, useNavigate } from 'react-router-dom';
 import { StaticRouter } from 'react-router';
 import { LangContext, parsePathname, buildPath, PREFIXED_LANGS } from './utils/lang';
@@ -57,6 +57,11 @@ const pageLoaders = [
   () => import('./pages/AaGradient'),
   () => import('./pages/FmpMedecine'),
   () => import('./pages/IspitsAcademic'),
+  () => import('./pages/FlashcardGenerator'),
+  () => import('./pages/CaseStudyViewer'),
+  () => import('./pages/DrugSheets'),
+  () => import('./pages/StudyTracker'),
+  () => import('./pages/AbbreviationLookup'),
 ] as const;
 
 const [
@@ -67,6 +72,7 @@ const [
   PdfSplitter, PdfMerger, Presentations, Courses, OrlSpecialization, About, Disclaimer, Privacy, Terms,
   Glp1Hub, ApgarScore, SofaScore, ChildPughScore, AnionGap, AaGradient,
   FmpMedecine, IspitsAcademic,
+  FlashcardGenerator, CaseStudyViewer, DrugSheets, StudyTracker, AbbreviationLookup,
 ] = pageLoaders.map((loader) => React.lazy(loader as any)) as any[];
 
 const HomePage = React.lazy(() => import('./pages/HomePage'));
@@ -159,6 +165,11 @@ export const navItems = [
   { path: '/cours', nameEn: 'Courses (PDF)', nameFr: 'Cours (PDF)', nameAr: 'المحاضرات والدروس', icon: GraduationCap, tier: 4, group: 'learning' as const, badge: 'PDF' },
   { path: '/fmp-medecine', nameEn: 'Faculty of Medicine (FMPC)', nameFr: 'Faculté de Médecine (FMPC)', nameAr: 'كلية الطب والصيدلة (FMPC)', icon: GraduationCap, tier: 4, group: 'learning' as const, badge: 'PDF' },
   { path: '/ispits', nameEn: 'ISPITS Paramedical', nameFr: 'ISPITS Paramédical', nameAr: 'مناهج معاهد التمريض (ISPITS)', icon: GraduationCap, tier: 4, group: 'learning' as const, badge: 'NEW' },
+  { path: '/study-tracker', nameEn: 'Study Progress Tracker', nameFr: 'Suivi d\'Études', nameAr: 'متابع التقدم الدراسي', icon: Award, tier: 4, group: 'learning' as const, badge: 'LOCAL' },
+  { path: '/flashcard-generator', nameEn: 'Medical Flashcards', nameFr: 'Flashcards Médicales', nameAr: 'البطاقات التعليمية الطبية', icon: Layers, tier: 4, group: 'learning' as const, badge: 'REV' },
+  { path: '/case-study-viewer', nameEn: 'Clinical Case Studies', nameFr: 'Cas Cliniques', nameAr: 'الحالات السريرية التفاعلية', icon: Stethoscope, tier: 4, group: 'learning' as const, badge: 'LIVE' },
+  { path: '/drug-sheets', nameEn: 'ICU Drug Reference', nameFr: 'Fiches Médicaments', nameAr: 'جرعات أدوية العناية', icon: Droplet, tier: 4, group: 'learning' as const, badge: 'PDF' },
+  { path: '/abbreviation-lookup', nameEn: 'Medical Abbreviations', nameFr: 'Abréviations Médicales', nameAr: 'قاموس الاختصارات الطبية', icon: FileText, tier: 4, group: 'learning' as const, badge: '500+' },
 
   // Tier 5 — Utilities
   { path: '/pdf-splitter', nameEn: 'PDF Splitter', nameFr: 'Découpeur PDF', nameAr: 'تقسيم ملفات PDF', icon: Scissors, tier: 5 },
@@ -236,6 +247,11 @@ function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="hub-glp1" element={<Glp1Hub lang={lang} />} />
       <Route path="مركز-glp1" element={<Glp1Hub lang={lang} />} />
       <Route path="%D9%85%D8%B1%D9%83%D8%B2-glp1" element={<Glp1Hub lang={lang} />} />
+      <Route path="flashcard-generator" element={<FlashcardGenerator lang={lang} />} />
+      <Route path="case-study-viewer" element={<CaseStudyViewer lang={lang} />} />
+      <Route path="drug-sheets" element={<DrugSheets lang={lang} />} />
+      <Route path="study-tracker" element={<StudyTracker lang={lang} />} />
+      <Route path="abbreviation-lookup" element={<AbbreviationLookup lang={lang} />} />
       <Route path="about" element={<About lang={lang} />} />
       <Route path="disclaimer" element={<Disclaimer lang={lang} />} />
       <Route path="privacy" element={<Privacy lang={lang} />} />

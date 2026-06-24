@@ -27,6 +27,7 @@ export default function AdUnit({ format, className = '' }: AdUnitProps) {
 
   const { lang, langPath } = useLang();
   const [adBlocked, setAdBlocked] = useState(() => {
+    if (typeof window === 'undefined') return false;
     return window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname.includes('local');
   });
   const iframeRef = useRef<HTMLIFrameElement>(null);
