@@ -3,6 +3,7 @@ import { BookOpen, Download, GraduationCap, Search, ExternalLink, FileText, Flam
 import { useParams, useNavigate } from 'react-router-dom';
 import { FMP_MODULES, FMP_MODULE_BY_SLUG, FmpModule } from '../utils/fmpModules';
 import { LangCode } from '../types';
+import { buildJsonLd } from '../utils/seo';
 
 const translations = {
   en: {
@@ -126,12 +127,26 @@ export default function FmpMedecine({ lang }: { lang: LangCode }) {
   // Sync selected module when the URL slug changes (e.g. browser back/forward)
   useEffect(() => {
     if (moduleSlug && FMP_MODULE_BY_SLUG[moduleSlug]) {
-      setSelectedModule(FMP_MODULE_BY_SLUG[moduleSlug]);
+      const mod = FMP_MODULE_BY_SLUG[moduleSlug];
+      setSelectedModule(mod);
+      document.title = `${mod.name} - Cours Médecine FMP | CareCalculus`;
+      
+      // Inject JSON-LD Schema dynamically for SEO
+      const existingScript = document.getElementById('fmp-schema');
+      if (existingScript) existingScript.remove();
+      
+      const schemaScript = document.createElement('script');
+      schemaScript.type = 'application/ld+json';
+      schemaScript.id = 'fmp-schema';
+      schemaScript.innerHTML = JSON.stringify(buildJsonLd(`/fmp-medecine/${mod.slug}`, lang));
+      document.head.appendChild(schemaScript);
+      
     } else if (!moduleSlug) {
       setSelectedModule(null);
+      document.title = t.title + ' | CareCalculus';
     }
     setActivePartIndex(0);
-  }, [moduleSlug]);
+  }, [moduleSlug, t.title]);
 
   // Helper to determine year category from module.year string
   const getYearNumber = (yearStr: string): string => {

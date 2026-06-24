@@ -1,5 +1,5 @@
 import React, { useState, useEffect, ErrorInfo, ReactNode } from 'react';
-import { Activity, BookOpen, HeartPulse, Menu, X, LayoutDashboard, Calculator, Droplet, Brain, TestTube, AlertOctagon, ArrowRightLeft, AlertTriangle, Stethoscope, Wind, FileText, ShieldCheck, Sparkles, ChevronRight, Search, Globe, Scale, MonitorPlay, GraduationCap, Newspaper } from 'lucide-react';
+import { Activity, BookOpen, HeartPulse, Menu, X, LayoutDashboard, Calculator, Droplet, Brain, TestTube, AlertOctagon, ArrowRightLeft, AlertTriangle, Stethoscope, Wind, FileText, ShieldCheck, Sparkles, ChevronRight, Search, Globe, Scale, MonitorPlay, GraduationCap, Newspaper, Scissors, Layers } from 'lucide-react';
 import { BrowserRouter, Routes, Route, Link, useLocation, Navigate, useNavigate } from 'react-router-dom';
 import { StaticRouter } from 'react-router';
 import { LangContext, parsePathname, buildPath, PREFIXED_LANGS } from './utils/lang';
@@ -12,6 +12,7 @@ import NewsletterCapture from './components/NewsletterCapture';
 import CookieConsent from './components/CookieConsent';
 import MedicalDisclaimer from './components/MedicalDisclaimer';
 import CommandPalette from './components/ui/CommandPalette';
+import TrackingScripts from './components/TrackingScripts';
 
 // Page import factories kept in one list so they can be (a) wrapped in
 // React.lazy for client-side code-splitting and (b) eagerly awaited during
@@ -39,6 +40,8 @@ const pageLoaders = [
   () => import('./pages/SteroidConversion'),
   () => import('./pages/MedicalBlog'),
   () => import('./pages/Blog'),
+  () => import('./pages/PdfSplitter'),
+  () => import('./pages/PdfMerger'),
   () => import('./pages/Presentations'),
   () => import('./pages/Courses'),
   () => import('./pages/OrlSpecialization'),
@@ -61,7 +64,7 @@ const [
   WellsScore, MedicalConversions, CorrectedCalcium, QsofaScore, Curb65Score,
   Cha2ds2VascScore, Phq9Score, MeldScore, SirsCriteria, PfRatio, TidalVolume,
   AncCalculator, AdjustedBodyWeight, SteroidConversion, MedicalBlog, Blog,
-  Presentations, Courses, OrlSpecialization, About, Disclaimer, Privacy, Terms,
+  PdfSplitter, PdfMerger, Presentations, Courses, OrlSpecialization, About, Disclaimer, Privacy, Terms,
   Glp1Hub, ApgarScore, SofaScore, ChildPughScore, AnionGap, AaGradient,
   FmpMedecine, IspitsAcademic,
 ] = pageLoaders.map((loader) => React.lazy(loader as any)) as any[];
@@ -146,7 +149,8 @@ export const navItems = [
   { path: '/medical-conversions', nameEn: 'Unit Conversions', nameFr: 'Conversions d’Unités', nameAr: 'تحويل الوحدات المخبرية والطبية', icon: ArrowRightLeft, tier: 3 },
   { path: '/bmi-calculator', nameEn: 'BMI Calculator', nameFr: 'Calculateur IMC', nameAr: 'مؤشر كتلة وزن الجسم BMI', icon: LayoutDashboard, tier: 3 },
   { path: '/phq9-score', nameEn: 'PHQ-9 Depression', nameFr: 'Score PHQ-9 Dépression', nameAr: 'مقياس PHQ-9 لتشخيص الاكتئاب', icon: Brain, tier: 3 },
-  // Tier 4 — Resources & Library (grouped: Reading vs Learning)
+  
+  // Tier 4 — Resources & Library
   { path: '/glp-1-hub', nameEn: 'GLP-1 Hub', nameFr: 'Hub GLP-1', nameAr: 'مركز أدوية GLP-1', icon: Sparkles, tier: 4, group: 'reading' as const, badge: 'NEW' },
   { path: '/blog', nameEn: 'Medical Journals', nameFr: 'Journaux Médicaux', nameAr: 'المجلات الطبية', icon: BookOpen, tier: 4, group: 'reading' as const, badge: '2k+' },
   { path: '/blog-articles', nameEn: 'Blog', nameFr: 'Blog', nameAr: 'المدونة', icon: Newspaper, tier: 4, group: 'reading' as const, badge: 'NEW' },
@@ -155,6 +159,10 @@ export const navItems = [
   { path: '/cours', nameEn: 'Courses (PDF)', nameFr: 'Cours (PDF)', nameAr: 'المحاضرات والدروس', icon: GraduationCap, tier: 4, group: 'learning' as const, badge: 'PDF' },
   { path: '/fmp-medecine', nameEn: 'Faculty of Medicine (FMPC)', nameFr: 'Faculté de Médecine (FMPC)', nameAr: 'كلية الطب والصيدلة (FMPC)', icon: GraduationCap, tier: 4, group: 'learning' as const, badge: 'PDF' },
   { path: '/ispits', nameEn: 'ISPITS Paramedical', nameFr: 'ISPITS Paramédical', nameAr: 'مناهج معاهد التمريض (ISPITS)', icon: GraduationCap, tier: 4, group: 'learning' as const, badge: 'NEW' },
+
+  // Tier 5 — Utilities
+  { path: '/pdf-splitter', nameEn: 'PDF Splitter', nameFr: 'Découpeur PDF', nameAr: 'تقسيم ملفات PDF', icon: Scissors, tier: 5 },
+  { path: '/pdf-merger', nameEn: 'PDF Merger', nameFr: 'Fusionneur PDF', nameAr: 'دمج ملفات PDF', icon: Layers, tier: 5 },
 ];
 
 export const TIER_HEADERS: Record<number, Record<LangCode, string>> = {
@@ -172,6 +180,11 @@ export const TIER_HEADERS: Record<number, Record<LangCode, string>> = {
     en: 'Tier 3 — Therapeutic & Dosing Metrics',
     fr: 'Tier III — Métriques, Perfusions & Doses',
     ar: 'الفئة الثالثة — المحاليل والقياسات والجرعات'
+  },
+  5: {
+    en: 'Tier 5 — Medical Utilities',
+    fr: 'Tier V — Utilitaires Médicaux',
+    ar: 'الفئة الخامسة — الأدوات الطبية'
   }
 };
 
@@ -203,6 +216,8 @@ function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="anc-calculator" element={<AncCalculator lang={lang} />} />
       <Route path="adjusted-body-weight" element={<AdjustedBodyWeight lang={lang} />} />
       <Route path="steroid-conversion" element={<SteroidConversion lang={lang} />} />
+      <Route path="pdf-splitter" element={<PdfSplitter lang={lang} />} />
+      <Route path="pdf-merger" element={<PdfMerger lang={lang} />} />
       <Route path="blog" element={<MedicalBlog lang={lang} />} />
       <Route path="blog/:slug" element={<MedicalBlog lang={lang} />} />
       <Route path="blog-articles" element={<Blog lang={lang} />} />
@@ -913,6 +928,7 @@ function AppLayout() {
 
   return (
    <LangContext.Provider value={{ lang, langPath }}>
+    <TrackingScripts />
     <div className={`min-h-screen bg-[#fafafa] text-[#111] transition-colors duration-300 flex flex-col md:flex-row ${isRtl ? 'font-arabic' : 'font-sans'}`} dir={isRtl ? 'rtl' : 'ltr'}>
       <CommandPalette />
       {/* Reading progress indicator for content pages */}
@@ -1108,7 +1124,7 @@ function AppLayout() {
               </div>
             )}
 
-            {/* TIER IV COMPONENT (RESOURCES & LIBRARY — grouped: Reading / Learning) */}
+            {/* TIER IV COMPONENT (RESOURCES & LIBRARY) */}
             {navItems.filter(i => i.tier === 4 && matchesSearch(i, sidebarSearch)).length > 0 && (
               <div className="space-y-4 pt-2 border-t border-gray-100">
                 <div className="px-2.5 text-[10px] font-mono leading-none tracking-wider text-gray-400 font-extrabold uppercase pb-0.5 flex items-center justify-between">
@@ -1164,6 +1180,37 @@ function AppLayout() {
                     </div>
                   );
                 })}
+              </div>
+            )}
+            
+            {/* TIER V COMPONENT (UTILITIES) */}
+            {navItems.filter(i => i.tier === 5 && matchesSearch(i, sidebarSearch)).length > 0 && (
+              <div className="space-y-1.5 pt-4 border-t border-gray-100">
+                <div className="px-2.5 text-[10px] font-mono leading-none tracking-wider text-gray-400 font-extrabold uppercase pb-1 flex items-center justify-between">
+                  <span>{getLocalizedTierHeader(5)}</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-purple-500" />
+                </div>
+                <div className="space-y-0.5">
+                  {navItems.filter(i => i.tier === 5 && matchesSearch(i, sidebarSearch)).map((item) => {
+                    const isActive = logicalPath === item.path;
+                    const Icon = item.icon;
+                    return (
+                      <Link
+                        key={item.path}
+                        to={langPath(item.path)}
+                        className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all ${
+                          isActive 
+                            ? 'bg-purple-50 text-purple-700 font-extrabold shadow-sm' 
+                            : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                        }`}
+                        style={{ minHeight: '44px' }}
+                      >
+                        <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-purple-600' : 'text-gray-400'}`} />
+                        <span className="truncate">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
+                      </Link>
+                    );
+                  })}
+                </div>
               </div>
             )}
 
