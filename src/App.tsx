@@ -13,6 +13,8 @@ import CookieConsent from './components/CookieConsent';
 import MedicalDisclaimer from './components/MedicalDisclaimer';
 import CommandPalette from './components/ui/CommandPalette';
 import TrackingScripts from './components/TrackingScripts';
+import EmbedLayout from './components/EmbedLayout';
+import InstallAppButton from './components/ui/InstallAppButton';
 
 // Page import factories kept in one list so they can be (a) wrapped in
 // React.lazy for client-side code-splitting and (b) eagerly awaited during
@@ -62,6 +64,7 @@ const pageLoaders = [
   () => import('./pages/DrugSheets'),
   () => import('./pages/StudyTracker'),
   () => import('./pages/AbbreviationLookup'),
+  () => import('./pages/Compare'),
 ] as const;
 
 const [
@@ -73,6 +76,7 @@ const [
   Glp1Hub, ApgarScore, SofaScore, ChildPughScore, AnionGap, AaGradient,
   FmpMedecine, IspitsAcademic,
   FlashcardGenerator, CaseStudyViewer, DrugSheets, StudyTracker, AbbreviationLookup,
+  Compare,
 ] = pageLoaders.map((loader) => React.lazy(loader as any)) as any[];
 
 const HomePage = React.lazy(() => import('./pages/HomePage'));
@@ -261,6 +265,18 @@ function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="child-pugh-score" element={<ChildPughScore lang={lang} />} />
       <Route path="anion-gap" element={<AnionGap lang={lang} />} />
       <Route path="aa-gradient" element={<AaGradient lang={lang} />} />
+      <Route path="compare/:slug1-vs-:slug2" element={<Compare lang={lang} />} />
+    </>
+  );
+}
+
+// Routes for the embed widgets
+function embedRoutes(lang: LangCode) {
+  return (
+    <>
+      <Route path="embed/map-calculator" element={<EmbedLayout lang={lang} calculatorSlug="map-calculator"><MapCalculator lang={lang} /></EmbedLayout>} />
+      <Route path="embed/bmi-calculator" element={<EmbedLayout lang={lang} calculatorSlug="bmi-calculator"><BmiCalculator lang={lang} /></EmbedLayout>} />
+      <Route path="embed/glasgow-coma-scale" element={<EmbedLayout lang={lang} calculatorSlug="glasgow-coma-scale"><GcsCalculator lang={lang} /></EmbedLayout>} />
     </>
   );
 }
@@ -287,6 +303,7 @@ function AppLayout() {
   // Detect layout mode
   const isContentPage = CONTENT_ROUTES.some(r => logicalPath === r || logicalPath.startsWith(r + '/'));
   const isHomePage = logicalPath === '/' || logicalPath === '/home';
+  const isEmbedPage = logicalPath.startsWith('/embed/');
 
   // Switching language navigates to the same logical page under the new prefix.
   const setLang = (next: LangCode) => {
@@ -810,6 +827,8 @@ function AppLayout() {
               </button>
             )}
           </div>
+          {/* Install App Button */}
+          <InstallAppButton lang={lang} />
           {/* GEO unit toggle chip */}
           <button
             onClick={toggleGeoStandard}
@@ -942,6 +961,20 @@ function AppLayout() {
     );
   };
 
+  if (isEmbedPage) {
+    return (
+      <LangContext.Provider value={{ lang, langPath }}>
+        <React.Suspense fallback={<div className="p-4 text-center text-sm text-gray-500">Loading calculator widget...</div>}>
+          <Routes>
+            <Route path="/">{embedRoutes(lang)}</Route>
+            <Route path="/fr">{embedRoutes('fr')}</Route>
+            <Route path="/ar">{embedRoutes('ar')}</Route>
+          </Routes>
+        </React.Suspense>
+      </LangContext.Provider>
+    );
+  }
+
   return (
    <LangContext.Provider value={{ lang, langPath }}>
     <TrackingScripts />
@@ -963,6 +996,7 @@ function AppLayout() {
         </Link>
 
         <div className="flex items-center gap-2">
+          <InstallAppButton lang={lang} />
           <button
             onClick={() => window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }))}
             className="p-2 text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600/20 rounded-lg"

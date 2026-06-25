@@ -39,7 +39,7 @@ export default function AdUnit({ format, className = '' }: AdUnitProps) {
     return isLocal || ADSENSE_PUBLISHER_ID === 'ca-pub-XXXXXXXXXXXXXXXX';
   });
 
-  const adRef = useRef<HTMLDivElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
   const initialized = useRef(false);
 
   useEffect(() => {
@@ -115,7 +115,7 @@ export default function AdUnit({ format, className = '' }: AdUnitProps) {
     }
 
     return (
-      <div ref={adRef} className={`w-full flex justify-center overflow-hidden ${className}`} style={{ minHeight: '250px' }}>
+      <div className={`w-full flex justify-center overflow-hidden ${className}`} style={{ minHeight: '250px' }}>
         <ins
           className="adsbygoogle"
           style={{ display: 'block', width: '100%', maxWidth: '300px', height: '250px' }}
@@ -164,15 +164,39 @@ export default function AdUnit({ format, className = '' }: AdUnitProps) {
     );
   }
 
+  const srcDoc = `
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <style>
+          body { margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; overflow: hidden; background: transparent; }
+        </style>
+      </head>
+      <body>
+        <script type="text/javascript">
+          atOptions = {
+            'key' : '3c062c9261b205d552d240d01fa0a70e',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+          };
+        </script>
+        <script type="text/javascript" src="https://www.highperformanceformat.com/3c062c9261b205d552d240d01fa0a70e/invoke.js"></script>
+      </body>
+    </html>
+  `;
+
   return (
-    <div ref={adRef} className={`w-full flex justify-center overflow-hidden ${className}`} style={{ minHeight: '90px' }}>
-      <ins
-        className="adsbygoogle"
-        style={{ display: 'block', width: '100%', maxWidth: '728px', height: '90px' }}
-        data-ad-client={ADSENSE_PUBLISHER_ID}
-        data-ad-slot={ADSENSE_LEADERBOARD_SLOT}
-        data-ad-format="horizontal"
-        data-full-width-responsive="true"
+    <div className={`w-full flex justify-center overflow-hidden ${className}`} style={{ minHeight: '90px' }}>
+      <iframe
+        ref={iframeRef}
+        title="Advertisement"
+        srcDoc={srcDoc}
+        width="728"
+        height="90"
+        style={{ border: 'none', overflow: 'hidden', maxWidth: '100%' }}
+        scrolling="no"
       />
     </div>
   );

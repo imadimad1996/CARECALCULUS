@@ -2,100 +2,95 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Sparkles, ArrowRight } from 'lucide-react';
 import { useLang } from '../utils/lang';
-import { ADSENSE_PUBLISHER_ID } from './AdUnit';
-
-export const ADSENSE_NATIVE_SLOT = '9876543210'; // Replace with actual native/fluid Slot ID
 
 /**
- * CareCalculus Responsive Google AdSense Native Banner Component
+ * Adsterra Native Banner Component
  * 
- * Renders a Google AdSense native fluid ad unit.
+ * Safely injects the Adsterra native banner script into the React lifecycle.
+ * The script uses the unique container ID to render the ad.
  * Automatically falls back to a premium internal promotional card if the ad is blocked.
  */
 export default function AdsterraNativeBanner() {
   const { lang, langPath } = useLang();
-  const adRef = useRef<HTMLDivElement>(null);
-  const initialized = useRef(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const scriptLoaded = useRef(false);
 
   const [adBlocked, setAdBlocked] = useState(() => {
     if (typeof window === 'undefined') return false;
-    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname.includes('local');
-    return isLocal || ADSENSE_PUBLISHER_ID === 'ca-pub-XXXXXXXXXXXXXXXX';
+    return window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname.includes('local');
   });
 
   useEffect(() => {
-    if (adBlocked) return;
+    // Prevent duplicate script injections during React StrictMode or re-renders
+    if (scriptLoaded.current || document.getElementById('adsterra-native-banner-script')) {
+      return;
+    }
 
-    const loadAd = () => {
-      if (initialized.current) return;
-      try {
-        const adsbygoogle = (window as any).adsbygoogle || [];
-        adsbygoogle.push({});
-        initialized.current = true;
-      } catch (e) {
-        console.warn('Native AdSense push failed:', e);
-        setAdBlocked(true);
-      }
-    };
+    const script = document.createElement('script');
+    script.id = 'adsterra-native-banner-script';
+    script.type = 'text/javascript';
+    script.async = true;
+    script.setAttribute('data-cfasync', 'false');
+    script.src = 'https://pl29869264.effectivecpmnetwork.com/44cfd4429085b087e60c41dbe6b342fe/invoke.js';
 
+    document.head.appendChild(script);
+    scriptLoaded.current = true;
+  }, []);
+
+  useEffect(() => {
+    // 2-second timeout to check if the Adsterra script ran and filled the container
     const timer = setTimeout(() => {
-      const isAdBlocked = !(window as any).adsbygoogle || typeof (window as any).adsbygoogle.push !== 'function';
-      if (isAdBlocked) {
+      if (containerRef.current && containerRef.current.children.length === 0) {
         setAdBlocked(true);
-      } else {
-        loadAd();
       }
-    }, 1500);
+    }, 2000);
 
     return () => clearTimeout(timer);
-  }, [adBlocked]);
+  }, []);
 
   if (adBlocked) {
     const isRtl = lang === 'ar';
     return (
       <div 
-        className="w-full max-w-[650px] mx-auto bg-gradient-to-br from-indigo-50/50 via-white to-purple-50/30 border border-indigo-100/60 rounded-2xl p-5 my-8 flex flex-col md:flex-row items-center justify-between gap-5 transition-all duration-300 hover:shadow-xs hover:border-indigo-200/80"
+        className="w-full max-w-[650px] mx-auto my-8 bg-gradient-to-br from-indigo-50/80 to-blue-50/50 border border-indigo-100 rounded-3xl p-6 relative overflow-hidden transition-all duration-300 hover:shadow-xs group"
         dir={isRtl ? 'rtl' : 'ltr'}
       >
-        <div className="flex items-start gap-3.5 text-right md:text-left">
-          <div className="p-3 bg-indigo-600 text-white rounded-xl shadow-xs shrink-0 mt-0.5">
-            <Sparkles className="w-5 h-5 animate-pulse" />
+        <div className="absolute top-0 right-0 p-1.5 bg-indigo-100 text-[8px] font-black font-mono text-indigo-500 uppercase tracking-widest rounded-bl-xl border-l border-b border-indigo-200">
+          {lang === 'fr' ? 'Recommandé' : (lang === 'ar' ? 'موصى به' : 'Featured Resource')}
+        </div>
+        
+        <div className="flex flex-col sm:flex-row items-center gap-5 relative z-10">
+          <div className="w-16 h-16 rounded-2xl bg-white border border-indigo-100 shadow-sm flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+            <Sparkles className="w-8 h-8 text-indigo-500" />
           </div>
-          <div className="space-y-1">
-            <h4 className="text-xs font-black text-slate-800 uppercase tracking-tight flex items-center gap-1.5 justify-center md:justify-start">
+          <div className="text-center sm:text-left space-y-1.5 flex-1">
+            <h4 className="text-sm font-black text-slate-800 uppercase tracking-tight">
               {lang === 'fr' 
-                ? 'Hub de Référence Clinique GLP-1' 
-                : (lang === 'ar' ? 'مركز معلومات أدوية GLP-1 السريري' : 'GLP-1 Reference Hub')}
+                ? 'Le Guide GLP-1 : Nutrition & Masse Musculaire' 
+                : (lang === 'ar' ? 'الدليل السريري: التغذية وكتلة العضلات مع حقن التخسيس' : 'The GLP-1 Diet Blueprint')}
             </h4>
-            <p className="text-[11px] text-gray-500 font-semibold leading-relaxed">
-              {lang === 'fr' 
-                ? 'Découvrez les calculateurs de doses de sémaglutide, tirzépatide et les protocoles de traitement.' 
-                : (lang === 'ar' ? 'استكشف أحدث حاسبات جرعات أدوية السكري والتخسيس المعتمدة علميًا.' : 'Semaglutide/Tirzepatide dosage guidelines, calculators, and clinical protocols.')}
+            <p className="text-xs text-gray-500 font-semibold leading-relaxed">
+              {lang === 'fr'
+                ? 'Protégez vos patients contre la sarcopénie induite par les agonistes du GLP-1. Un protocole basé sur l\'E-E-A-T.'
+                : (lang === 'ar' ? 'احمِ مرضاك من فقدان الكتلة العضلية الناتج عن أدوية التخسيس ببروتوكول معتمد علمياً.' : 'Protect patients from GLP-1 induced sarcopenia with this E-E-A-T validated protocol.')}
             </p>
           </div>
+          <Link 
+            to={langPath('/blog/glp-1-diet-blueprint')}
+            className="shrink-0 flex items-center gap-1.5 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold uppercase rounded-xl shadow-xs transition-colors"
+          >
+            <span>{lang === 'fr' ? 'Lire le Guide' : (lang === 'ar' ? 'اقرأ الدليل' : 'Read Guide')}</span>
+            <ArrowRight className={`w-4 h-4 ${isRtl ? 'rotate-180' : ''}`} />
+          </Link>
         </div>
-        <Link 
-          to={langPath('/glp-1-hub')} 
-          className="shrink-0 w-full md:w-auto flex items-center justify-center gap-1.5 px-4.5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl shadow-xs hover:shadow-md transition-all active:scale-95"
-          style={{ minHeight: '40px' }}
-        >
-          <span>{lang === 'fr' ? 'Accéder au Hub' : (lang === 'ar' ? 'دخول المركز' : 'Explore Hub')}</span>
-          <ArrowRight className={`w-3.5 h-3.5 ${isRtl ? 'rotate-180' : ''}`} />
-        </Link>
       </div>
     );
   }
 
   return (
-    <div ref={adRef} className="w-full flex justify-center my-8 min-h-[100px]">
-      <ins
-        className="adsbygoogle"
-        style={{ display: 'block', width: '100%', maxWidth: '650px', textAlign: 'center' }}
-        data-ad-layout="in-article"
-        data-ad-format="fluid"
-        data-ad-client={ADSENSE_PUBLISHER_ID}
-        data-ad-slot={ADSENSE_NATIVE_SLOT}
-      />
+    <div className="w-full flex justify-center my-8">
+      {/* Adsterra requires this exact ID for the native banner to render */}
+      <div id="container-44cfd4429085b087e60c41dbe6b342fe" ref={containerRef}></div>
     </div>
   );
 }

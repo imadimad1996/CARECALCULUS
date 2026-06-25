@@ -7,6 +7,7 @@ import CalculatorInput from '../components/ui/CalculatorInput';
 import { trackCalculatorUsage } from '../utils/telemetry';
 import { layoutTranslations } from '../utils/lang';
 import MobileResultDock from '../components/ui/MobileResultDock';
+import EmbedCodeButton from '../components/ui/EmbedCodeButton';
 
 const translations: Translations = {
   en: {
@@ -114,10 +115,13 @@ export default function MapCalculator({ lang }: { lang: LangCode }) {
   return (
     <>
       <div className="max-w-3xl mb-12">
-        <h1 className={`text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-3 ${isRtl ? 'leading-normal' : ''}`}>
-          {currentText.title}
-        </h1>
-        <p className="text-lg text-gray-500 max-w-2xl">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <h1 className={`text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-3 ${isRtl ? 'leading-normal' : ''}`}>
+            {currentText.title}
+          </h1>
+          <EmbedCodeButton calculatorSlug="map-calculator" lang={lang} title={currentText.title} />
+        </div>
+        <p className="text-lg text-gray-500 max-w-2xl mt-3">
           {currentText.subtitle}
         </p>
       </div>

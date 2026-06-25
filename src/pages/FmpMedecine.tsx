@@ -4,6 +4,9 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { FMP_MODULES, FMP_MODULE_BY_SLUG, FmpModule } from '../utils/fmpModules';
 import { LangCode } from '../types';
 import { buildJsonLd } from '../utils/seo';
+import pdfTranscriptsData from '../data/pdf-transcripts.json';
+
+const pdfTranscripts = pdfTranscriptsData as Record<string, { text: string; numpages: number }>;
 
 const translations = {
   en: {
@@ -505,6 +508,36 @@ export default function FmpMedecine({ lang }: { lang: LangCode }) {
                       </p>
                     </div>
                   </div>
+                )}
+
+                {/* SEO Text Content Container */}
+                {(selectedModule.pdf_file || (selectedModule.pdf_parts && selectedModule.pdf_parts[activePartIndex])) && (
+                  (() => {
+                    const pdfFileName = selectedModule.pdf_file || selectedModule.pdf_parts![activePartIndex];
+                    const transcriptKey = `pdf/fmp/${pdfFileName}`;
+                    const transcript = pdfTranscripts[transcriptKey];
+                    
+                    if (transcript && transcript.text) {
+                      return (
+                        <div className="mt-4 bg-white rounded-xl border border-gray-200 overflow-hidden">
+                          <details className="group">
+                            <summary className="px-4 py-3 text-xs font-bold text-gray-600 cursor-pointer list-none flex items-center justify-between hover:bg-gray-50 transition">
+                              <span>Voir le texte du document (SEO)</span>
+                              <span className="transition group-open:rotate-180">
+                                <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="16"><polyline points="6 9 12 15 18 9"/></svg>
+                              </span>
+                            </summary>
+                            <div className="p-4 border-t border-gray-100 max-h-96 overflow-y-auto">
+                              <div className="prose prose-sm max-w-none text-xs text-gray-500 whitespace-pre-wrap">
+                                {transcript.text}
+                              </div>
+                            </div>
+                          </details>
+                        </div>
+                      );
+                    }
+                    return null;
+                  })()
                 )}
 
                 {/* External Action Links Panel */}

@@ -192,6 +192,19 @@ for (const d of decks) add(`/presentations/${slugify(d.title, d.id)}`, '0.5', 'm
 for (const f of fmpModules) add(`/fmp-medecine/${slugify(f.title)}`, '0.6', 'monthly');
 for (const i of ispitsModules) add(`/ispits/${slugify(i.title)}`, '0.6', 'monthly');
 
+// High-value programmatic comparison routes
+const comparisons = [
+  'map-calculator-vs-qsofa-score',
+  'qsofa-score-vs-sirs-criteria',
+  'qsofa-score-vs-sofa-score',
+  'glasgow-coma-scale-vs-qsofa-score',
+  'curb65-score-vs-qsofa-score',
+  'apgar-score-vs-glasgow-coma-scale',
+  'creatinine-clearance-vs-meld-score',
+  'bmi-calculator-vs-adjusted-body-weight'
+];
+for (const comp of comparisons) add(`/compare/${comp}`, '0.7', 'monthly');
+
 // --- Emit XML with hreflang alternates ----------------------------------------
 // Per Google's multilingual sitemap spec, every <url> lists all language
 // variants (plus x-default → English) via xhtml:link rel="alternate".
