@@ -7,6 +7,8 @@ import { LangCode } from '../types';
 import { slugify, findBySlug } from '../utils/slug';
 import { useLang } from '../utils/lang';
 import { MASTER_JOURNALS, generateMasterContent } from '../utils/masterListContent';
+import { injectInternalLinks } from '../utils/internalLinking';
+import SEO from '../components/SEO';
 
 interface BlogPost {
   id: string;
@@ -299,16 +301,21 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
   }, [activePost, lang]);
 
   const postContent = useMemo(() => {
+    let rawContent = '';
     if (!activePost) return '';
     if (activePost.id.startsWith('mj-')) {
       const mj = MASTER_JOURNALS.find(x => x.id === activePost.id);
       if (mj) {
         const titleText = lang === 'fr' ? mj.title.fr : lang === 'ar' ? mj.title.ar : mj.title.en;
         const snippetText = lang === 'fr' ? mj.snippet.fr : lang === 'ar' ? mj.snippet.ar : mj.snippet.en;
-        return generateMasterContent(mj.id, titleText, snippetText, lang);
+        rawContent = generateMasterContent(mj.id, titleText, snippetText, lang);
       }
+    } else {
+      rawContent = activePost.content;
     }
-    return activePost.content;
+    
+    // Auto-inject SEO internal links
+    return injectInternalLinks(rawContent, lang);
   }, [activePost, lang]);
 
   // Unknown slug → fall back to the journal directory.
@@ -318,72 +325,7 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
     }
   }, [slug, activePost, generatedBlogs, navigate]);
 
-  // Dynamic SEO and Structured Schema update when reading an authentic clinical article
-  useEffect(() => {
-    if (!activePost) return;
 
-    const postTitle = activePost.multilingualTitle && lang !== 'en'
-      ? (lang === 'fr' ? activePost.multilingualTitle.fr : activePost.multilingualTitle.ar)
-      : activePost.title;
-
-    // 1. Dynamic document title tailored for maximum SEO indexing
-    document.title = `${postTitle} | CareCalculus Scientific Journal`;
-
-    // 2. Dynamic description tag updates
-    let descMeta = document.querySelector('meta[name="description"]');
-    if (!descMeta) {
-      descMeta = document.createElement('meta');
-      descMeta.setAttribute('name', 'description');
-      document.head.appendChild(descMeta);
-    }
-    descMeta.setAttribute('content', postSnippet);
-
-    // 3. Dynamic keywords tag update
-    let kwMeta = document.querySelector('meta[name="keywords"]');
-    if (!kwMeta) {
-      kwMeta = document.createElement('meta');
-      kwMeta.setAttribute('name', 'keywords');
-      document.head.appendChild(kwMeta);
-    }
-    kwMeta.setAttribute('content', `${activePost.category.toLowerCase()}, peer-reviewed medical study, pubmed clinical, clinical evidence`);
-
-    // 4. In-Page Dynamic JSON-LD structured schema referencing scholarly medical literature
-    let schemaScript = document.getElementById('article-json-ld');
-    if (schemaScript) {
-      schemaScript.remove();
-    }
-    schemaScript = document.createElement('script');
-    schemaScript.setAttribute('id', 'article-json-ld');
-    schemaScript.setAttribute('type', 'application/ld+json');
-
-    const schemaObj = {
-      "@context": "https://schema.org",
-      "@type": "MedicalScholarlyArticle",
-      "headline": postTitle,
-      "description": postSnippet,
-      "datePublished": activePost.date,
-      "inLanguage": lang,
-      "identifier": activePost.doi,
-      "citation": activePost.citationCount,
-      "author": {
-        "@type": "Person",
-        "name": activePost.author
-      },
-      "editor": {
-        "@type": "Person",
-        "name": activePost.reviewer
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "CareCalculus Medical Publisher",
-        "url": "https://carecalculus.com"
-      }
-    };
-
-    schemaScript.textContent = JSON.stringify(schemaObj, null, 2);
-    document.head.appendChild(schemaScript);
-
-  }, [activePost, lang]);
 
   const getLocalizedLabel = (enKey: string, frKey: string, arKey: string) => {
     if (lang === 'fr') return frKey;
@@ -411,6 +353,7 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
 
     return (
       <div className="animate-fade-in space-y-6 text-gray-850">
+        <SEO logicalPath={`/blog/${slug}`} lang={lang} />
         
         {/* Fixed progress bar at top of the screen */}
         <div className="fixed top-0 left-0 w-full h-[4.5px] bg-slate-100/80 z-50">
@@ -840,6 +783,7 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
 
   return (
     <div className="space-y-8 animate-fade-in text-gray-850">
+      <SEO logicalPath="/blog" lang={lang} />
       
       {/* Blog Hero & Search section */}
       <div className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white rounded-3xl p-6 md:p-10 border border-slate-800 shadow-xl">

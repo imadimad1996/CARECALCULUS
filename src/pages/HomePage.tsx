@@ -132,6 +132,8 @@ const colorMap: Record<string, { bg: string; border: string; text: string; badge
   purple:  { bg: 'bg-purple-50',  border: 'border-purple-100', text: 'text-purple-700', badge: 'bg-purple-100 text-purple-700', dot: 'bg-purple-500' },
 };
 
+import SEO from '../components/SEO';
+
 export default function HomePage({ lang }: HomePageProps) {
   const { langPath } = useLang();
   const isRtl = lang === 'ar';
@@ -143,20 +145,9 @@ export default function HomePage({ lang }: HomePageProps) {
 
   const tierLabels = [tiers.t1, tiers.t2, tiers.t3, tiers.t4];
 
-  React.useEffect(() => {
-    document.title = `${hero.title} | CareCalculus`;
-    let descMeta = document.querySelector('meta[name="description"]');
-    if (!descMeta) {
-      descMeta = document.createElement('meta');
-      descMeta.setAttribute('name', 'description');
-      document.head.appendChild(descMeta);
-    }
-    descMeta.setAttribute('content', hero.desc);
-  }, [lang, hero]);
-
   return (
     <div className="space-y-12 pb-8" dir={isRtl ? 'rtl' : 'ltr'}>
-
+      <SEO logicalPath="/" lang={lang} />
       {/* Hero */}
       <section className="relative bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 rounded-3xl overflow-hidden px-8 py-14 sm:py-20 text-white shadow-xl">
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
