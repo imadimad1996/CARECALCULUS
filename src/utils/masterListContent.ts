@@ -662,6 +662,23 @@ export const MASTER_BLOGS: MasterBlog[] = [
     readTime: 6,
     date: '2026-06-07',
     author: 'CareCalculus Engineering'
+  },
+  {
+    id: 'mb-36',
+    title: {
+      en: 'The GLP-1 Muscle Crisis: What to Eat When You Forget to Eat',
+      fr: 'La crise musculaire du GLP-1 : quoi manger quand on oublie de manger',
+      ar: 'أزمة العضلات المصاحبة لعلاج GLP-1: ماذا تأكل عندما تنسى تناول الطعام'
+    },
+    snippet: {
+      en: 'Ozempic and Wegovy quiet the food noise, but they can cause muscle loss. Here is exactly how to rewrite your diet.',
+      fr: 'Les molécules GLP-1 calment la faim, mais peuvent entraîner une fonte musculaire. Voici comment adapter votre alimentation.',
+      ar: 'تُسكت أدوية التنحيف رغبة الطعام ولكنها قد تؤدي لفقدان الكتلة العضلية. إليك كيفية إعادة هيكلة نظامك الغذائي.'
+    },
+    category: 'Clinical Tips',
+    readTime: 5,
+    date: '2026-06-25',
+    author: 'Dr. Jean-Pierre Dupont, MD'
   }
 ];
 
@@ -1599,6 +1616,118 @@ export const MASTER_ORL: MasterOrl[] = [
 
 // --- Deterministic Medical Content Generator ---
 export function generateMasterContent(id: string, title: string, snippet: string, lang: LangCode): string {
+  if (id === 'mb-36') {
+    if (lang === 'fr') {
+      return `### La crise musculaire du GLP-1 : quoi manger quand on oublie de manger
+
+**Vous avez enfin fait taire les pensées obsessives liées à la nourriture, mais il y a un coût caché dont personne ne vous a parlé dans le cabinet du médecin : vous ne perdez pas seulement de la graisse. Vous brûlez tranquillement votre masse musculaire.**
+
+Des millions de personnes bénéficient des avantages indéniables des médicaments GLP-1. Mais cette suppression miraculeuse de l'appétit s'accompagne d'un coût invisible. Lorsque l'envie de manger disparaît, l'instinct de nourrir correctement son corps disparaît également. Le résultat ? Une vague de patients qui perdent du poids, mais se retrouvent confrontés à une fatigue profonde, une perte de cheveux et une détérioration physique.
+
+Si vous perdez des tailles mais vous sentez plus faible chaque semaine, votre traitement fonctionne, mais votre stratégie nutritionnelle échoue. Voici comment réécrire votre alimentation.
+
+### Le dilemme des "deux bouchées" : Pourquoi les régimes classiques échouent
+Les conseils traditionnels reposent sur le volume : remplir son assiette de salades pour tromper l'estomac. Avec le GLP-1, c'est la pire chose à faire. Votre vidange gastrique est déjà ralentie. Si vous remplissez le peu de place disponible avec de la laitue, vous serez rassasié avant d'avoir consommé les blocs de construction structurels. Vous n'avez pas besoin de volume, vous avez besoin de *densité*.
+
+### 1. La règle absolue des 30 grammes de protéines
+En déficit calorique sévère, le corps cherche de l'énergie. Sans apport suffisant en protéines, il cannibalise vos muscles. Perdre de la masse maigre détruit votre métabolisme, préparant le terrain pour un rebond de poids catastrophique si vous arrêtez le traitement.
+* **La solution :** Un minimum de 30 g de protéines de haute qualité par repas.
+* **La réalité :** Manger un gros blanc de poulet avec des nausées est difficile.
+* **La stratégie :** Privilégiez les protéines liquides et semi-solides. Le lait filtré, le lactosérum (whey isolate), le yaourt grec et le bouillon d'os sont vos alliés. Buvez vos protéines en premier.
+
+### 2. Privilégiez les micro-repas
+Oubliez les "trois repas par jour". Essayer de forcer un repas de 600 calories provoquera des reflux et des troubles gastriques.
+Adoptez plutôt une approche fractionnée : 4 à 5 micro-repas par jour. Un micro-repas est un concentré de nutriments, pas une simple collation. Par exemple, 80 g de saumon fumé sur un craquelin riche en fibres, ou deux œufs durs avec quelques noix de macadamia.
+
+### 3. Le piège de l'hydratation et des électrolytes
+En mangeant moins, vous réduisez aussi l'eau et les minéraux apportés par la nourriture. C'est la cause principale de la fatigue et des vertiges sous GLP-1.
+Boire de l'eau pure ne suffit pas et peut même éliminer le peu d'électrolytes restants.
+* **La stratégie :** Ajoutez une poudre d'électrolytes sans sucre à votre eau une fois par jour (sodium, potassium, magnésium). Le magnésium aidera également à lutter contre la constipation.
+
+### 4. Le timing stratégique des fibres
+Les fibres sont essentielles mais très rassasiantes. Manger une pomme riche en fibres avant le dîner vous empêchera de manger vos protéines.
+* **La stratégie :** Séparez les fibres des protéines. Consommez les aliments fibreux (petits fruits, graines de chia, légumes rôtis) à la fin de la journée ou seuls, pour ne pas encombrer vos apports protéiques.
+
+### En conclusion
+Le sémaglutide et le tirzépatide modifient les règles de la faim, mais pas la physiologie humaine. Votre corps a besoin de nutriments pour survivre. Utilisez ce moment de calme pour bâtir une base solide, nourrie et musclée pour le reste de votre vie.`;
+    } else if (lang === 'ar') {
+      return `### أزمة العضلات المصاحبة لعلاج GLP-1: ماذا تأكل عندما تنسى تناول الطعام
+
+**لقد تمكنت أخيراً من إسكات التفكير المستمر في الطعام، ولكن هناك ضريبة خفية لم يحذرك منها أحد في عيادة الطبيب: أنت لا تفقد الدهون فحسب، بل تحرق كتلتك العضلية بصمت.**
+
+يختبر الملايين من الناس الفوائد الكبيرة لأدوية GLP-1. لكن هذا الكبح المعجز للشهية يأتي بتكلفة باهظة غير معلنة. فعندما يتلاشى الدافع المستمر لتناول الطعام، تتلاشى معه غريزة تغذية جسمك بشكل صحيح. النتيجة؟ موجة من المرضى يفقدون وزناً غير مسبوق، فقط ليجدوا أنفسهم يصارعون التعب الشديد، وتساقط الشعر، وضعف البنية الجسدية.
+
+إذا كنت تفقد مقاسات ملابسك ولكنك تشعر بالضعف أسبوعاً بعد أسبوع، فإن دواءك يعمل، ولكن استراتيجيتك الغذائية تفشل. إليك كيفية إعادة صياغة نظامك الغذائي عندما تنسى تناول الطعام فعلياً.
+
+### معضلة "اللقمتين": لماذا تفشل الحميات القياسية هنا؟
+تعتمد نصائح إنقاص الوزن التقليدية على تناول كميات كبيرة: ملء طبقك بالسلطات الضخمة والخخضروات منخفضة السعرات الحرارية لخداع معدتك بالشبع. مع أدوية GLP-1، هذا هو أسوأ شيء يمكنك القيام به.
+إن إفراغ معدتك بطيء بالفعل بسبب الدواء. فإذا ملأت المساحة المحدودة في معدتك بالخس والجرجير، فستشعر بالشبع الشديد قبل تناول أي بروتينات بناء أساسية. لا تحتاج إلى حجم؛ بل تحتاج إلى *كثافة*.
+
+### ١. قاعدة الـ ٣0 جراماً من البروتين (غير القابلة للتفاوض)
+عندما تكون في عجز حاد في السعرات الحرارية، يبحث جسمك عن الطاقة. وإذا لم تغذه بالبروتين، فسوف يتغذى على أنسجة عضلاتك. لا يتعلق هذا بالمظهر المشدود فحسب؛ بل إن فقدان الكتلة العضلية يدمر معدل الأيض لديك، مما يهيئك لزيادة كارثية في الوزن إذا توقفت عن تناول الدواء.
+* **الحل:** تحتاج إلى ما لا يقل عن 30 جراماً من البروتين عالي الجودة في كل وجبة.
+* **الواقع:** تناول صدر دجاج كبير عندما تشعر بالغثيان الخفيف هو أمر شاق.
+* **الاستراتيجية:** اتجه نحو البروتينات السائلة وشبه الصلبة. الحليب المصفى، مشروبات مصل اللبن (Whey Isolate) الصافية، الزبادي اليوناني، ومرق العظام هي شريان الحياة لك. اشرب البروتين أولاً قبل تناول أي شيء آخر.
+
+### ٢. الوجبات الصغيرة المتعددة بدلاً من الوجبات الكبيرة
+يجب التخلي عن فكرة "ثلاث وجبات كاملة في اليوم". فمحاولة إدخال وجبة قياسية تحتوي على 600 سعرة حرارية ستؤدي على الأرجح إلى اضطرابات معوية أو ارتداد حمضي شديد.
+بدلاً من ذلك، تناول 4 إلى 5 وجبات صغيرة جداً طوال اليوم. الوجبة الصغيرة ليست مجرد تسلية؛ بل هي كبسولة غذائية مكثفة. مثل 80 جراماً من السلمون المدخن على شريحة بسكويت واحدة غنية بالألياف، أو بيضتين مسلوقتين مع حفنة من مكسرات المكاديميا.
+
+### ٣. فخ الترطيب والإلكتروليتات
+نظراً لأنك تأكل أقل بكثير، فإنك تقلل أيضاً بشكل كبير من تناول المياه المرتبطة بالطعام والمعادن النادرة. هذا هو المحرك الأساسي للشعور بالتعب والدوخة المصاحبين لعلاجات GLP-1.
+شرب الماء النقي ليس كافياً لحل المشكلة، بل قد يؤدي شرب الماء الزائد إلى غسل الإلكتروليتات القليلة المتبقية في جسمك.
+* **الاستراتيجية:** أضف مسحوق إلكتروليتات عالي الجودة وخالٍ من السكر إلى الماء مرة واحدة يومياً (يحتوي الصوديوم والبوتاسيوم والمغنيسيوم). المغنيسيوم تحديداً سيسهم في تخفيف الإمساك الشائع المصاحب لبطء حركة الأمعاء.
+
+### ٤. التوقيت الاستراتيجي للألياف
+الألياف ضرورية لصحة الأمعاء، ولكنها أيضاً عامل شبع قوي. إذا تناولت تفاحة غنية بالألياف قبل ساعة من العشاء، فلن تتمكن ببساطة من تناول وجبتك الأساسية.
+* **الاستراتيجية:** افصل الألياف عن وجبات البروتين. تناول الأطعمة الغنية بالألياف (مثل التوت أو بذور الشيا أو حصة صغيرة من الخضار المشوية) في نهاية اليوم أو كوجبة صغيرة منفصلة.
+
+### الخلاصة
+تغير أدوية مثل السيماغلوتيد والتيرزيباتيد قواعد الجوع، لكنها لا تغير القواعد الأساسية لفيزيولوجيا الإنسان. لا يزال جسمك بحاجة إلى العناصر الأساسية للبقاء على قيد الحياة.
+لقد مُنحت فرصة فريدة: الإرادة الكيميائية لاختيار ما يدخل جسمك بدقة دون صراع مع الرغبة الشديدة في تناول الطعام. لا تضيعها في التجويع، بل استخدم هذا الهدوء لبناء أساس عضلي قوي ومغذٍ لبقية حياتك.`;
+    } else {
+      return `### The GLP-1 Muscle Crisis: What to Eat When You Forget to Eat
+
+**You’ve finally quieted the food noise, but there’s a hidden tax nobody warned you about in the doctor's office: you aren’t just losing fat. You’re quietly burning through your muscle mass.**
+
+Millions of people are experiencing the undeniable, life-changing benefits of GLP-1 medications. But the miraculous suppression of appetite comes with a steep, often unspoken cost. When the relentless drive to eat finally fades, so does the instinct to properly nourish your body. The result? A wave of patients shedding unprecedented weight, only to find themselves battling profound fatigue, hair loss, and a deteriorating physical frame. 
+
+If you are dropping sizes but feeling weaker by the week, your medication is working—but your nutrition strategy is failing. Here is exactly how to rewrite your diet when you literally forget to eat.
+
+### The "Two-Bite" Dilemma: Why Standard Dieting Fails Here
+Traditional weight loss advice hinges on volume eating: filling your plate with massive salads and low-calorie vegetables to trick your stomach into feeling full. On a GLP-1, this is the worst thing you can do. 
+
+Your gastric emptying is already delayed. If you fill the limited real estate in your stomach with plain lettuce, you will trigger severe satiety before you’ve consumed any structural building blocks. You don’t need volume anymore; you need *density*.
+
+### 1. The Protein Non-Negotiable (The 30-Gram Rule)
+When you are in a steep caloric deficit, your body panics and looks for energy. If you aren't feeding it protein, it will cannibalize your own muscle tissue. This isn't just about looking toned; losing lean mass destroys your metabolic rate, setting you up for catastrophic rebound weight gain if you ever stop the medication.
+
+* **The Fix:** You need a minimum of 30 grams of high-quality protein per meal. 
+* **The Reality:** Eating a large chicken breast when you are slightly nauseous is daunting. 
+* **The Strategy:** Pivot to liquid and soft-solid proteins. Ultra-filtered milk, whey isolate clear drinks (which taste like juice, not heavy milkshakes), Greek yogurt, and bone broth are your lifelines. Drink your protein first, before you take a single bite of anything else.
+
+### 2. Micro-Meals Over Macro-Plates
+The concept of "three square meals a day" needs to be abandoned. Trying to force down a standard 600-calorie meal will likely result in gastrointestinal distress or severe acid reflux. 
+
+Instead, adopt the "grazing apex predator" approach. You need 4 to 5 micro-meals throughout the day. A micro-meal isn't a snack like a handful of chips; it is a condensed capsule of nutrition. Think 3 ounces of smoked salmon on a single high-fiber cracker, or two hard-boiled eggs with a handful of macadamia nuts. 
+
+### 3. The Hydration and Electrolyte Trap
+Because you are eating significantly less food, you are also drastically reducing your intake of food-bound water and trace minerals. This is the primary driver of the dreaded "GLP-1 fatigue" and dizziness. 
+
+Drinking plain water isn't enough to fix this. In fact, excessive plain water can flush out the few electrolytes you have left. 
+* **The Strategy:** Add a high-quality, zero-sugar electrolyte powder to your water once a day. Look for a balance of sodium, potassium, and magnesium. Magnesium, in particular, will pull double duty by helping alleviate the constipation commonly associated with delayed gastric emptying.
+
+### 4. Strategic Fiber Timing
+Fiber is essential for gut health, but it is also a powerful satiety agent. If you eat a high-fiber apple an hour before dinner, you simply won't be able to eat your dinner. 
+* **The Strategy:** Separate your fiber from your protein heavy-lifting. Consume your fibrous foods—like berries, chia seeds, or a small portion of roasted vegetables—at the *end* of the day or as a standalone micro-meal, ensuring it doesn't interfere with your crucial protein intake.
+
+### The Bottom Line
+Medications like semaglutide and tirzepatide change the rules of hunger, but they do not change the fundamental rules of human physiology. Your body still requires building blocks to survive. 
+
+You have been given a unique opportunity: the chemical willpower to choose exactly what goes into your body without battling cravings. Don't waste it on starvation. Use this quiet time to build a resilient, nourished, and muscular foundation for the rest of your life.`;
+    }
+  }
+
   const t = {
     clinicalOverview: { en: 'Clinical Overview & Background', fr: 'Aperçu clinique & contexte', ar: 'نظرة عامة وخلفية سريرية' },
     pathology: { en: 'Pathophysiological Insights', fr: 'Mécanismes physiopathologiques', ar: 'الآليات الفسيولوجية والتشريحية' },

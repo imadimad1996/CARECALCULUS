@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
+import AdUnit from '../components/AdUnit';
 import AdsterraNativeBanner from '../components/AdsterraNativeBanner';
 import { Search, BookOpen, Clock, Tag, ExternalLink, Calendar, Award, User, ChevronRight, Compass, Bookmark, Share2, Sparkles, AlertCircle, FileText, CheckCircle2, RefreshCw, ArrowLeft, ArrowRight, Printer, Plus, Minus, Building2 } from 'lucide-react';
 import { LangCode } from '../types';
@@ -555,9 +556,9 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
               </p>
             </div>
             <a 
-              href="https://www.effectivecpmnetwork.com/q0ysm7qyjf?key=f1aad587a1df93a4eddf198623f3685c" 
+              href="https://diagnostics.roche.com" 
               target="_blank" 
-              referrerPolicy="no-referrer" 
+              rel="noopener noreferrer" 
               className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-[10px] font-black uppercase rounded-lg transition shadow-xs whitespace-nowrap"
             >
               Learn More
@@ -621,17 +622,8 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
               </div>
             </div>
 
-            {/* In-feed AdSense space #1 */}
-            <div className="p-4 bg-slate-50 border border-dashed border-slate-200 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-4 text-xs select-none">
-              <span className="text-[9px] font-black font-mono text-gray-400 uppercase tracking-widest">{getLocalizedLabel('SPONSORED CLINICAL PEARL', 'SPONSOR CLINIQUE BIOPHARMACEUTIQUE', 'شريك طبي مصنف')}</span>
-              <p className="text-[10px] text-gray-500 italic max-w-lg leading-snug">
-                {getLocalizedLabel(
-                  'Optimize steroid therapeutic equivalency strategies using correct diagnostic calculators. Consult manufacturer product circulars before converting.',
-                  'Consultez toujours les notices officielles ou les guides d’équivalence de corticoïdes en complément de l’outil de calcul.',
-                  'الاستغلال الأمثل لجرعات الكورتيزون يستلزم استخدام الحاسبة السريرية بشكل مدروس مع الرجوع للشركة المصنعة للتحقق.'
-                )}
-              </p>
-            </div>
+            {/* Real In-feed Ad Unit */}
+            <AdUnit format="in-article" />
 
             {/* Rendered main article content text */}
             <div className={`prose max-w-none text-slate-700 ${getTextSizeClass()}`}>
@@ -687,14 +679,14 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
                     <React.Fragment key={index}>
                       {renderBlock}
 
-                      {/* Native inline advertisement element - AdSense compliant */}
-                      <div className="my-6 p-4 bg-gradient-to-br from-indigo-50 to-blue-50 border border-blue-250 rounded-2xl relative overflow-hidden select-none text-left">
-                        <div className="absolute top-0 right-0 p-1.5 bg-indigo-150 text-[7px] font-black font-mono text-indigo-500 uppercase tracking-wider rounded-bl-xl border-l border-b border-indigo-200/60">
-                          {getLocalizedLabel('ADVERTISEMENT / PHARMA INSIGHT', 'PUBLICITÉ / RECOMMANDÉ', 'مساهمة رعاية')}
+                      {/* Clinical practice note - E-E-A-T compliant */}
+                      <div className="my-6 p-4 bg-gradient-to-br from-teal-50/50 to-emerald-50/30 border border-teal-150 rounded-2xl relative overflow-hidden text-left">
+                        <div className="absolute top-0 right-0 p-1.5 bg-teal-100/80 text-[7px] font-black font-mono text-teal-700 uppercase tracking-wider rounded-bl-xl border-l border-b border-teal-150/60">
+                          {getLocalizedLabel('CLINICAL PRACTICE NOTE', 'NOTE DE PRATIQUE CLINIQUE', 'توجيهات ممارسة سريرية')}
                         </div>
                         <div className="space-y-1">
-                          <span className="text-[10px] font-bold text-indigo-600 uppercase tracking-wider block">
-                            {getLocalizedLabel('PEER-REVIEWED SPONSOR', 'VEDETTE SPONSOR', 'مراجعة الممول السريرية')}
+                          <span className="text-[10px] font-bold text-teal-700 uppercase tracking-wider block">
+                            {getLocalizedLabel('PEER-REVIEWED CLINICAL PEARL', 'RECOMMANDATION DE PRATIQUE', 'مراجعة الممارسة السريرية')}
                           </span>
                           <h4 className="text-xs font-bold text-slate-800">
                             {getLocalizedLabel('Corticosteroid Replacement Directives in Shock Protocols', 'Directives Cliniques sur les Corticostéroïdes dans les Chocs', 'إرشادات استبدال الكورتيكوستيرويدات وموازنة المحاليل الوريدية')}
@@ -743,24 +735,24 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
               </div>
             </div>
 
-            {/* Bottom Responsive AdSense Link block */}
+            {/* Bottom Companion Tools Link block */}
             <div className="border-t border-dashed border-gray-200 pt-6 mt-8">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <div className="bg-gray-50 hover:bg-slate-50 p-3 rounded-xl border border-gray-200 text-left select-none cursor-pointer transition">
-                  <span className="text-[8px] font-mono font-black text-gray-400 block uppercase tracking-widest">Sponsored Link</span>
-                  <span className="text-[11px] font-bold text-blue-600 block mt-0.5 hover:underline">Sepsis Bundle Guidelines 2026</span>
-                  <span className="text-[9px] text-gray-400 block truncate">Surviving Sepsis Campaign direct updates</span>
-                </div>
-                <div className="bg-gray-50 hover:bg-slate-50 p-3 rounded-xl border border-gray-200 text-left select-none cursor-pointer transition">
-                  <span className="text-[8px] font-mono font-black text-gray-400 block uppercase tracking-widest">Sponsored Link</span>
-                  <span className="text-[11px] font-bold text-blue-600 block mt-0.5 hover:underline">Renal Dosage Adjustments FAQ</span>
-                  <span className="text-[9px] text-gray-400 block truncate">CRRT & creatinine clearance metrics</span>
-                </div>
-                <div className="bg-gray-50 hover:bg-slate-50 p-3 rounded-xl border border-gray-200 text-left select-none cursor-pointer transition">
-                  <span className="text-[8px] font-mono font-black text-gray-400 block uppercase tracking-widest">Sponsored Link</span>
-                  <span className="text-[11px] font-bold text-blue-600 block mt-0.5 hover:underline">Steroid Conversion Guidelines</span>
-                  <span className="text-[9px] text-gray-400 block truncate">Equivalent glucocorticoid dosing ratios</span>
-                </div>
+                <Link to={langPath('/qsofa-score')} className="bg-gray-50 hover:bg-slate-50 p-3 rounded-xl border border-gray-200 text-left cursor-pointer transition block">
+                  <span className="text-[8px] font-mono font-black text-teal-600 block uppercase tracking-widest">{lang === 'fr' ? 'Calculateur Associé' : (lang === 'ar' ? 'حاسبة سريرية' : 'Companion Tool')}</span>
+                  <span className="text-[11px] font-bold text-blue-600 block mt-0.5 hover:underline">{lang === 'fr' ? 'Score qSOFA & SOFA' : (lang === 'ar' ? 'مؤشر قصر وضوح الصدمة qSOFA' : 'qSOFA / SOFA Score Calculator')}</span>
+                  <span className="text-[9px] text-gray-400 block truncate">{lang === 'fr' ? 'Évaluation rapide du sepsis' : (lang === 'ar' ? 'التقييم السريع للإنتان الرئوي والدموي' : 'Bedside clinical sepsis assessment')}</span>
+                </Link>
+                <Link to={langPath('/creatinine-clearance')} className="bg-gray-50 hover:bg-slate-50 p-3 rounded-xl border border-gray-200 text-left cursor-pointer transition block">
+                  <span className="text-[8px] font-mono font-black text-teal-600 block uppercase tracking-widest">{lang === 'fr' ? 'Calculateur Associé' : (lang === 'ar' ? 'حاسبة سريرية' : 'Companion Tool')}</span>
+                  <span className="text-[11px] font-bold text-blue-600 block mt-0.5 hover:underline">{lang === 'fr' ? 'Clairance de la Créatinine' : (lang === 'ar' ? 'تصفية الكرياتينين ومعدل الترشيح' : 'Creatinine Clearance & GFR')}</span>
+                  <span className="text-[9px] text-gray-400 block truncate">{lang === 'fr' ? 'Formules Cockcroft-Gault & GFR' : (lang === 'ar' ? 'حساب وظائف الكلى وجرعات الأدوية' : 'Renal adjustment clearance formulas')}</span>
+                </Link>
+                <Link to={langPath('/steroid-conversion')} className="bg-gray-50 hover:bg-slate-50 p-3 rounded-xl border border-gray-200 text-left cursor-pointer transition block">
+                  <span className="text-[8px] font-mono font-black text-teal-600 block uppercase tracking-widest">{lang === 'fr' ? 'Calculateur Associé' : (lang === 'ar' ? 'حاسبة سريرية' : 'Companion Tool')}</span>
+                  <span className="text-[11px] font-bold text-blue-600 block mt-0.5 hover:underline">{lang === 'fr' ? 'Conversion des Corticoïdes' : (lang === 'ar' ? 'تحويل وجرعات الكورتيكوستيرويد' : 'Corticosteroid Equivalence')}</span>
+                  <span className="text-[9px] text-gray-400 block truncate">{lang === 'fr' ? 'Calcul des équivalences de stéroïdes' : (lang === 'ar' ? 'حساب جرعات الكورتيزون المكافئة' : 'Glucocorticoid dosing ratios')}</span>
+                </Link>
               </div>
             </div>
 
@@ -769,45 +761,8 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
           {/* Right Sidebar Column with Article Metadata and related links */}
           <aside className="lg:col-span-1 space-y-6">
             
-            {/* Sponsor Square Ad (AdSense Right Side Panel) */}
-            <div className="bg-white p-5 rounded-3xl border border-gray-200 shadow-xs relative overflow-hidden select-none text-left">
-              <div className="absolute top-0 right-0 p-1.5 bg-amber-50 text-[7px] font-black font-mono text-amber-500 uppercase tracking-widest rounded-bl-xl border-l border-b border-amber-100">
-                {getLocalizedLabel('HEALTHCARE PARTNER', 'PARTENAIRE SANTÉ', 'شريك طبي')}
-              </div>
-              
-              <div className="space-y-4">
-                <span className="text-[9px] font-mono font-black text-amber-600 uppercase tracking-widest block pt-1">
-                  {getLocalizedLabel('FEATURED CME EVENT', 'ÉVÈNEMENT DE FORMATION MÉDICALE', 'المؤتمر والتعليم الطبي المستمر')}
-                </span>
-                
-                <div className="w-full h-24 bg-gradient-to-br from-slate-900 to-indigo-950 rounded-xl relative overflow-hidden flex items-center justify-center p-3 text-center text-white border border-slate-800">
-                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/30 via-slate-950/20 to-transparent pointer-events-none" />
-                  <div className="space-y-1 text-center">
-                    <span className="text-[9px] font-mono text-emerald-400 font-bold uppercase tracking-wider block">
-                      Oct 14-16, 2026 • Geneva
-                    </span>
-                    <h5 className="text-[10px] sm:text-xs font-black uppercase tracking-tight text-white leading-tight">
-                      Annual Resuscitation Council Summit™
-                    </h5>
-                  </div>
-                </div>
-
-                <p className="text-[10px] text-gray-500 leading-normal font-semibold">
-                  {getLocalizedLabel(
-                    'Join 3,000 global cardiologists and intensivists to debate targeted mean arterial pressure and low tidal volume ventilation updates.',
-                    'Rejoignez 3 000 cardiologues à Genève pour débattre de la pression artérielle moyenne et de la ventilation en réanimation.',
-                    'شارك مع ٣٠٠٠ طبيب قلب وعنائية مركزة حول العالم لمناقشة أحدث آليات تنظيم الضغط الشرياني الاصطناعي والتنفس الميكانيكي.'
-                  )}
-                </p>
-
-                <button 
-                  onClick={() => window.open('https://diagnostics.roche.com', '_blank', 'noopener,noreferrer')}
-                  className="w-full py-2 bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-[10px] uppercase rounded-xl transition shadow-xs"
-                >
-                  Register Online
-                </button>
-              </div>
-            </div>
+            {/* Real Sidebar Ad Unit with Resuscitation Summit Event Fallback */}
+            <AdUnit format="sidebar" />
 
             {/* Direct Calculator Shortcuts based on categories */}
             <div className="bg-white p-5 rounded-3xl border border-gray-200/80 shadow-xs space-y-3.5 text-left">

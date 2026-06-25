@@ -5,15 +5,19 @@ import { useLang } from '../utils/lang';
 import AdsterraNativeBanner from './AdsterraNativeBanner';
 
 /**
- * CareCalculus Responsive Adsterra Unit
+ * CareCalculus Responsive Google AdSense / Programmatic Ad Unit
  *
- * Sandboxes Adsterra iframe banners to protect React from `document.write`
- * and dynamically renders the Native Banner format.
+ * Renders an AdSense responsive banner unit.
  * Automatically falls back to a premium internal clinical resources banner
- * if the ad script fails to load or is blocked.
+ * if the ad script fails to load, is blocked, or publisher ID is default.
  */
 
-export type AdFormat = 'leaderboard' | 'in-article';
+// Replace ca-pub-XXXXXXXXXXXXXXXX with your actual Google AdSense Publisher ID
+export const ADSENSE_PUBLISHER_ID = 'ca-pub-XXXXXXXXXXXXXXXX';
+export const ADSENSE_LEADERBOARD_SLOT = '1234567890'; // Replace with actual leaderboard Slot ID
+export const ADSENSE_SIDEBAR_SLOT = '1122334455'; // Replace with actual sidebar Slot ID
+
+export type AdFormat = 'leaderboard' | 'in-article' | 'sidebar';
 
 interface AdUnitProps {
   format: AdFormat;
@@ -26,64 +30,102 @@ export default function AdUnit({ format, className = '' }: AdUnitProps) {
   }
 
   const { lang, langPath } = useLang();
+  
+  // Default to blocked/fallback if developer publisher ID hasn't been set, 
+  // or if we are in local development to display fallback previews.
   const [adBlocked, setAdBlocked] = useState(() => {
     if (typeof window === 'undefined') return false;
-    return window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname.includes('local');
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname.includes('local');
+    return isLocal || ADSENSE_PUBLISHER_ID === 'ca-pub-XXXXXXXXXXXXXXXX';
   });
-  const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  const adRef = useRef<HTMLDivElement>(null);
+  const initialized = useRef(false);
 
   useEffect(() => {
-    // 2-second timeout to check if the Adsterra iframe succeeded in injecting content
-    const timer = setTimeout(() => {
+    if (adBlocked) return;
+
+    // Check if AdSense is loaded and push the ad
+    const loadAd = () => {
+      if (initialized.current) return;
+      
       try {
-        const doc = iframeRef.current?.contentDocument;
-        if (doc) {
-          // If the script ran successfully, the iframe body will have newly added ad elements.
-          // If blocked, only standard style/script tags will remain.
-          const hasActiveAd = Array.from(doc.body.children).some(
-            (node) => node.tagName !== 'SCRIPT' && node.tagName !== 'STYLE'
-          );
-          if (!hasActiveAd) {
-            setAdBlocked(true);
-          }
-        } else {
-          setAdBlocked(true);
-        }
+        const adsbygoogle = (window as any).adsbygoogle || [];
+        adsbygoogle.push({});
+        initialized.current = true;
       } catch (e) {
-        // Fall back if security blocks DOM access or another runtime error occurs
+        console.warn('AdSense push failed:', e);
         setAdBlocked(true);
       }
-    }, 2000);
+    };
+
+    // Give AdSense 1.5 seconds to load or verify if blocked
+    const timer = setTimeout(() => {
+      const isAdBlocked = !(window as any).adsbygoogle || typeof (window as any).adsbygoogle.push !== 'function';
+      if (isAdBlocked) {
+        setAdBlocked(true);
+      } else {
+        loadAd();
+      }
+    }, 1500);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [adBlocked]);
 
-  // 728x90 Banner
-  // We use an iframe with srcDoc to sandbox the Adsterra document.write script.
-  // This guarantees it won't crash the React SPA while ensuring it refreshes
-  // dynamically on route changes.
-  const srcDoc = `
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <style>
-          body { margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; overflow: hidden; background: transparent; }
-        </style>
-      </head>
-      <body>
-        <script type="text/javascript">
-          atOptions = {
-            'key' : '3c062c9261b205d552d240d01fa0a70e',
-            'format' : 'iframe',
-            'height' : 90,
-            'width' : 728,
-            'params' : {}
-          };
-        </script>
-        <script type="text/javascript" src="https://www.highperformanceformat.com/3c062c9261b205d552d240d01fa0a70e/invoke.js"></script>
-      </body>
-    </html>
-  `;
+  if (format === 'sidebar') {
+    if (adBlocked) {
+      return (
+        <div className={`bg-white p-5 rounded-3xl border border-gray-200 shadow-xs relative overflow-hidden select-none text-left ${className}`}>
+          <div className="absolute top-0 right-0 p-1.5 bg-amber-50 text-[7px] font-black font-mono text-amber-500 uppercase tracking-widest rounded-bl-xl border-l border-b border-amber-100">
+            {lang === 'fr' ? 'PARTENAIRE SANTÉ' : (lang === 'ar' ? 'شريك طبي' : 'HEALTHCARE PARTNER')}
+          </div>
+          
+          <div className="space-y-4">
+            <span className="text-[9px] font-mono font-black text-amber-600 uppercase tracking-widest block pt-1">
+              {lang === 'fr' ? 'ÉVÈNEMENT DE FORMATION MÉDICALE' : (lang === 'ar' ? 'المؤتمر والتعليم الطبي المستمر' : 'FEATURED CME EVENT')}
+            </span>
+            
+            <div className="w-full h-24 bg-gradient-to-br from-slate-900 to-indigo-950 rounded-xl relative overflow-hidden flex items-center justify-center p-3 text-center text-white border border-slate-800">
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/30 via-slate-950/20 to-transparent pointer-events-none" />
+              <div className="space-y-1 text-center">
+                <span className="text-[9px] font-mono text-emerald-400 font-bold uppercase tracking-wider block">
+                  Oct 14-16, 2026 • Geneva
+                </span>
+                <h5 className="text-[10px] sm:text-xs font-black uppercase tracking-tight text-white leading-tight">
+                  Annual Resuscitation Council Summit™
+                </h5>
+              </div>
+            </div>
+
+            <p className="text-[10px] text-gray-500 leading-normal font-semibold">
+              {lang === 'fr'
+                ? 'Rejoignez 3 000 cardiologues à Genève pour débattre de la pression artérielle moyenne et de la ventilation en réanimation.'
+                : (lang === 'ar' ? 'شارك مع ٣٠٠٠ طبيب قلب وعنائية مركزة حول العالم لمناقشة أحدث آليات تنظيم الضغط الشرياني الاصطناعي والتنفس الميكانيكي.' : 'Join 3,000 global cardiologists and intensivists to debate targeted mean arterial pressure and low tidal volume ventilation updates.')}
+            </p>
+
+            <button 
+              onClick={() => window.open('https://diagnostics.roche.com', '_blank', 'noopener,noreferrer')}
+              className="w-full py-2 bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-[10px] uppercase rounded-xl transition shadow-xs cursor-pointer active:scale-95"
+            >
+              {lang === 'fr' ? 'S\'inscrire en ligne' : (lang === 'ar' ? 'التسجيل عبر الإنترنت' : 'Register Online')}
+            </button>
+          </div>
+        </div>
+      );
+    }
+
+    return (
+      <div ref={adRef} className={`w-full flex justify-center overflow-hidden ${className}`} style={{ minHeight: '250px' }}>
+        <ins
+          className="adsbygoogle"
+          style={{ display: 'block', width: '100%', maxWidth: '300px', height: '250px' }}
+          data-ad-client={ADSENSE_PUBLISHER_ID}
+          data-ad-slot={ADSENSE_SIDEBAR_SLOT}
+          data-ad-format="rectangle"
+        />
+      </div>
+    );
+  }
 
   if (adBlocked) {
     const isRtl = lang === 'ar';
@@ -123,15 +165,14 @@ export default function AdUnit({ format, className = '' }: AdUnitProps) {
   }
 
   return (
-    <div className={`w-full flex justify-center overflow-hidden ${className}`} style={{ minHeight: '90px' }}>
-      <iframe
-        ref={iframeRef}
-        title="Advertisement"
-        srcDoc={srcDoc}
-        width="728"
-        height="90"
-        style={{ border: 'none', overflow: 'hidden', maxWidth: '100%' }}
-        scrolling="no"
+    <div ref={adRef} className={`w-full flex justify-center overflow-hidden ${className}`} style={{ minHeight: '90px' }}>
+      <ins
+        className="adsbygoogle"
+        style={{ display: 'block', width: '100%', maxWidth: '728px', height: '90px' }}
+        data-ad-client={ADSENSE_PUBLISHER_ID}
+        data-ad-slot={ADSENSE_LEADERBOARD_SLOT}
+        data-ad-format="horizontal"
+        data-full-width-responsive="true"
       />
     </div>
   );

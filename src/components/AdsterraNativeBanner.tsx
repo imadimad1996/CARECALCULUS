@@ -2,49 +2,53 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Sparkles, ArrowRight } from 'lucide-react';
 import { useLang } from '../utils/lang';
+import { ADSENSE_PUBLISHER_ID } from './AdUnit';
+
+export const ADSENSE_NATIVE_SLOT = '9876543210'; // Replace with actual native/fluid Slot ID
 
 /**
- * Adsterra Native Banner Component
+ * CareCalculus Responsive Google AdSense Native Banner Component
  * 
- * Safely injects the Adsterra native banner script into the React lifecycle.
- * The script uses the unique container ID to render the ad.
+ * Renders a Google AdSense native fluid ad unit.
  * Automatically falls back to a premium internal promotional card if the ad is blocked.
  */
 export default function AdsterraNativeBanner() {
   const { lang, langPath } = useLang();
-  const containerRef = useRef<HTMLDivElement>(null);
-  const scriptLoaded = useRef(false);
+  const adRef = useRef<HTMLDivElement>(null);
+  const initialized = useRef(false);
+
   const [adBlocked, setAdBlocked] = useState(() => {
     if (typeof window === 'undefined') return false;
-    return window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname.includes('local');
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname.includes('local');
+    return isLocal || ADSENSE_PUBLISHER_ID === 'ca-pub-XXXXXXXXXXXXXXXX';
   });
 
   useEffect(() => {
-    // Prevent duplicate script injections during React StrictMode or re-renders
-    if (scriptLoaded.current || document.getElementById('adsterra-native-banner-script')) {
-      return;
-    }
+    if (adBlocked) return;
 
-    const script = document.createElement('script');
-    script.id = 'adsterra-native-banner-script';
-    script.type = 'text/javascript';
-    script.async = true;
-    script.setAttribute('data-cfasync', 'false');
-    script.src = 'https://pl29869264.effectivecpmnetwork.com/44cfd4429085b087e60c41dbe6b342fe/invoke.js';
-
-    document.head.appendChild(script);
-    scriptLoaded.current = true;
-  }, []);
-
-  useEffect(() => {
-    // 2-second timeout to check if the Adsterra script ran and filled the container
-    const timer = setTimeout(() => {
-      if (containerRef.current && containerRef.current.children.length === 0) {
+    const loadAd = () => {
+      if (initialized.current) return;
+      try {
+        const adsbygoogle = (window as any).adsbygoogle || [];
+        adsbygoogle.push({});
+        initialized.current = true;
+      } catch (e) {
+        console.warn('Native AdSense push failed:', e);
         setAdBlocked(true);
       }
-    }, 2000);
+    };
+
+    const timer = setTimeout(() => {
+      const isAdBlocked = !(window as any).adsbygoogle || typeof (window as any).adsbygoogle.push !== 'function';
+      if (isAdBlocked) {
+        setAdBlocked(true);
+      } else {
+        loadAd();
+      }
+    }, 1500);
+
     return () => clearTimeout(timer);
-  }, []);
+  }, [adBlocked]);
 
   if (adBlocked) {
     const isRtl = lang === 'ar';
@@ -83,9 +87,15 @@ export default function AdsterraNativeBanner() {
   }
 
   return (
-    <div className="w-full flex justify-center my-8">
-      {/* Adsterra requires this exact ID for the native banner to render */}
-      <div id="container-44cfd4429085b087e60c41dbe6b342fe" ref={containerRef}></div>
+    <div ref={adRef} className="w-full flex justify-center my-8 min-h-[100px]">
+      <ins
+        className="adsbygoogle"
+        style={{ display: 'block', width: '100%', maxWidth: '650px', textAlign: 'center' }}
+        data-ad-layout="in-article"
+        data-ad-format="fluid"
+        data-ad-client={ADSENSE_PUBLISHER_ID}
+        data-ad-slot={ADSENSE_NATIVE_SLOT}
+      />
     </div>
   );
 }

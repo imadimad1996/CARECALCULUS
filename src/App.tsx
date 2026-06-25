@@ -1276,8 +1276,8 @@ function AppLayout() {
         <div className={`mx-auto px-4 sm:px-6 py-6 md:py-10 relative flex flex-col justify-between min-h-screen ${isContentPage ? 'max-w-6xl' : 'max-w-5xl'}`}>
           <div>
 
-            {/* Global Top Leaderboard Ad */}
-            <AdUnit format="leaderboard" className="mb-6" />
+            {/* Global Top Leaderboard Ad — only on content pages to protect calculator UX above-the-fold */}
+            {isContentPage && <AdUnit format="leaderboard" className="mb-6" />}
 
             {/* Unified top navigation widget — calculator pages only */}
             {!isContentPage && !isHomePage && renderUnifiedTopNav()}
