@@ -46,7 +46,6 @@ const pageLoaders = [
   () => import('./pages/PdfMerger'),
   () => import('./pages/Presentations'),
   () => import('./pages/Courses'),
-  () => import('./pages/OrlSpecialization'),
   () => import('./pages/About'),
   () => import('./pages/Disclaimer'),
   () => import('./pages/Privacy'),
@@ -65,6 +64,9 @@ const pageLoaders = [
   () => import('./pages/StudyTracker'),
   () => import('./pages/AbbreviationLookup'),
   () => import('./pages/Compare'),
+  () => import('./pages/NutritionTdee'),
+  () => import('./pages/NutritionMust'),
+  () => import('./pages/NutritionNrs2002'),
 ] as const;
 
 const [
@@ -72,11 +74,11 @@ const [
   WellsScore, MedicalConversions, CorrectedCalcium, QsofaScore, Curb65Score,
   Cha2ds2VascScore, Phq9Score, MeldScore, SirsCriteria, PfRatio, TidalVolume,
   AncCalculator, AdjustedBodyWeight, SteroidConversion, MedicalBlog, Blog,
-  PdfSplitter, PdfMerger, Presentations, Courses, OrlSpecialization, About, Disclaimer, Privacy, Terms,
+  PdfSplitter, PdfMerger, Presentations, Courses, About, Disclaimer, Privacy, Terms,
   Glp1Hub, ApgarScore, SofaScore, ChildPughScore, AnionGap, AaGradient,
   FmpMedecine, IspitsAcademic,
   FlashcardGenerator, CaseStudyViewer, DrugSheets, StudyTracker, AbbreviationLookup,
-  Compare,
+  Compare, NutritionTdee, NutritionMust, NutritionNrs2002,
 ] = pageLoaders.map((loader) => React.lazy(loader as any)) as any[];
 
 const HomePage = React.lazy(() => import('./pages/HomePage'));
@@ -99,7 +101,7 @@ export async function preloadPages() {
 const LEGAL_ROUTES = ['/about', '/disclaimer', '/privacy', '/terms'];
 
 // Routes that open in full-width reading mode (no sidebar, no top widgets)
-const CONTENT_ROUTES = ['/blog', '/blog-articles', '/presentations', '/cours', '/orl', '/about', '/disclaimer', '/privacy', '/terms', '/glp-1-hub', '/hub-glp1', '/%D9%85%D8%B1%D9%83%D8%B2-glp1', '/مركز-glp1', '/ispits'];
+const CONTENT_ROUTES = ['/blog', '/blog-articles', '/presentations', '/cours', '/about', '/disclaimer', '/privacy', '/terms', '/glp-1-hub', '/hub-glp1', '/%D9%85%D8%B1%D9%83%D8%B2-glp1', '/مركز-glp1', '/ispits'];
 
 import { LangCode } from './types';
 
@@ -151,6 +153,9 @@ export const navItems = [
   { path: '/child-pugh-score', nameEn: 'Child-Pugh Score', nameFr: 'Score de Child-Pugh', nameAr: 'تصنيف تشايلد بيو للكبد', icon: Activity, tier: 2 },
   { path: '/anion-gap', nameEn: 'Anion Gap', nameFr: 'Trou Anionique', nameAr: 'الفجوة الأنيونية للدم', icon: TestTube, tier: 2 },
   { path: '/aa-gradient', nameEn: 'A-a Gradient', nameFr: 'Gradient Alvéolo-Artériel', nameAr: 'فرق الأكسجين A-a Gradient', icon: Wind, tier: 2 },
+  { path: '/nutrition-tdee', nameEn: 'TDEE & BMR Nutrition', nameFr: 'TDEE & Métabolisme de Base', nameAr: 'احتياجات الطاقة والسعرات', icon: Activity, tier: 2 },
+  { path: '/nutrition-must', nameEn: 'MUST Malnutrition Score', nameFr: 'Score MUST Dénutrition', nameAr: 'أداة MUST لسوء التغذية', icon: Activity, tier: 2 },
+  { path: '/nutrition-nrs2002', nameEn: 'NRS-2002 Nutrition Risk', nameFr: 'NRS-2002 Risque Nutritionnel', nameAr: 'أداة NRS-2002 للمخاطر الغذائية', icon: AlertOctagon, tier: 2 },
 
   // Tier 3: Infusions, Metrics & Pharmacology
   { path: '/drip-rate-calculator', nameEn: 'IV Drip Rate Tool', nameFr: 'Calcul Débit Perfusion', nameAr: 'سرعة تنقيط المحلول الوريدي', icon: Droplet, tier: 3 },
@@ -164,7 +169,6 @@ export const navItems = [
   { path: '/glp-1-hub', nameEn: 'GLP-1 Hub', nameFr: 'Hub GLP-1', nameAr: 'مركز أدوية GLP-1', icon: Sparkles, tier: 4, group: 'reading' as const, badge: 'NEW' },
   { path: '/blog', nameEn: 'Medical Journals', nameFr: 'Journaux Médicaux', nameAr: 'المجلات الطبية', icon: BookOpen, tier: 4, group: 'reading' as const, badge: '2k+' },
   { path: '/blog-articles', nameEn: 'Blog', nameFr: 'Blog', nameAr: 'المدونة', icon: Newspaper, tier: 4, group: 'reading' as const, badge: 'NEW' },
-  { path: '/orl', nameEn: 'ORL Specialization', nameFr: 'Spécialisation ORL', nameAr: 'تخصص سرطان الحنجرة ORL', icon: HeartPulse, tier: 4, group: 'reading' as const, badge: 'NEW' },
   { path: '/presentations', nameEn: 'Presentations', nameFr: 'Présentations', nameAr: 'العروض التقديمية', icon: MonitorPlay, tier: 4, group: 'learning' as const, badge: 'PPTX' },
   { path: '/cours', nameEn: 'Courses (PDF)', nameFr: 'Cours (PDF)', nameAr: 'المحاضرات والدروس', icon: GraduationCap, tier: 4, group: 'learning' as const, badge: 'PDF' },
   { path: '/fmp-medecine', nameEn: 'Faculty of Medicine (FMPC)', nameFr: 'Faculté de Médecine (FMPC)', nameAr: 'كلية الطب والصيدلة (FMPC)', icon: GraduationCap, tier: 4, group: 'learning' as const, badge: 'PDF' },
@@ -245,8 +249,9 @@ function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="fmp-medecine/:moduleSlug" element={<FmpMedecine lang={lang} />} />
       <Route path="ispits" element={<IspitsAcademic lang={lang} />} />
       <Route path="ispits/:moduleSlug" element={<IspitsAcademic lang={lang} />} />
-      <Route path="orl" element={<OrlSpecialization lang={lang} />} />
-      <Route path="orl/:slug" element={<OrlSpecialization lang={lang} />} />
+      <Route path="nutrition-tdee" element={<NutritionTdee lang={lang} />} />
+      <Route path="nutrition-must" element={<NutritionMust lang={lang} />} />
+      <Route path="nutrition-nrs2002" element={<NutritionNrs2002 lang={lang} />} />
       <Route path="glp-1-hub" element={<Glp1Hub lang={lang} />} />
       <Route path="hub-glp1" element={<Glp1Hub lang={lang} />} />
       <Route path="مركز-glp1" element={<Glp1Hub lang={lang} />} />
@@ -896,7 +901,6 @@ function AppLayout() {
     const sectionMap: Record<string, { en: string; fr: string; ar: string; icon: any }> = {
       '/blog':          { en: 'Medical Journals', fr: 'Journaux Médicaux', ar: 'المجلات الطبية', icon: BookOpen },
       '/blog-articles': { en: 'Blog Articles',    fr: 'Articles de Blog',  ar: 'مقالات المدونة', icon: Newspaper },
-      '/orl':           { en: 'ORL Specialization', fr: 'Spécialisation ORL', ar: 'تخصص سرطان الحنجرة ORL', icon: HeartPulse },
       '/presentations': { en: 'Presentations',    fr: 'Présentations',     ar: 'العروض التقديمية', icon: MonitorPlay },
       '/cours':         { en: 'Courses (PDF)',     fr: 'Cours (PDF)',       ar: 'المحاضرات والدروس', icon: GraduationCap },
       '/about':         { en: 'About',            fr: 'À propos',          ar: 'عن المنصة', icon: ShieldCheck },

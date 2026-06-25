@@ -96,6 +96,8 @@ const TIER_HIGHLIGHTS = [
       { icon: Activity, en: 'MELD Score', fr: 'Score MELD', ar: 'نقاط MELD', path: '/meld-score' },
       { icon: AlertOctagon, en: 'Wells Score', fr: 'Score de Wells', ar: 'نقاط ويلز', path: '/wells-score' },
       { icon: HeartPulse, en: 'CHA₂DS₂-VASc', fr: 'CHA₂DS₂-VASc', ar: 'مؤشر CHA₂DS₂-VASc', path: '/cha2ds2-vasc' },
+      { icon: Activity, en: 'Nutrition TDEE', fr: 'Nutrition TDEE', ar: 'تغذية TDEE', path: '/nutrition-tdee' },
+      { icon: Activity, en: 'MUST Score', fr: 'Score MUST', ar: 'أداة MUST', path: '/nutrition-must' },
     ],
   },
   {
@@ -118,7 +120,6 @@ const TIER_HIGHLIGHTS = [
     items: [
       { icon: BookOpen, en: 'Medical Journals', fr: 'Journaux Médicaux', ar: 'المجلات الطبية', path: '/blog' },
       { icon: Newspaper, en: 'Blog Articles', fr: 'Articles de Blog', ar: 'مقالات المدونة', path: '/blog-articles' },
-      { icon: HeartPulse, en: 'ORL Specialization', fr: 'Spécialisation ORL', ar: 'تخصص سرطان الحنجرة', path: '/orl' },
       { icon: MonitorPlay, en: 'Presentations', fr: 'Présentations', ar: 'العروض التقديمية', path: '/presentations' },
       { icon: GraduationCap, en: 'Courses (PDF)', fr: 'Cours (PDF)', ar: 'المحاضرات والدروس', path: '/cours' },
     ],
