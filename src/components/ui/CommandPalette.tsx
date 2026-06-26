@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Search, X, Calculator, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { navItems } from '../../App';
+import { navItems } from '../../routes';
 import { useLang } from '../../utils/lang';
 
 export default function CommandPalette() {

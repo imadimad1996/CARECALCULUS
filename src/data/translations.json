@@ -1,0 +1,29 @@
+{
+  "en": {
+    "reviewedBy": "Reviewed by the CareCalculus Clinical Team",
+    "specialists": "MD, ICU & Emergency Medicine specialists",
+    "updated": "Updated 2026",
+    "mathMetric": "Mathematical Metric",
+    "evidenceLit": "Evidence & Lit",
+    "seeAlso": "See Also",
+    "faqTitle": "Frequently Asked Questions"
+  },
+  "fr": {
+    "reviewedBy": "Revu par l'équipe clinique de CareCalculus",
+    "specialists": "Médecins, spécialistes en réanimation & urgences",
+    "updated": "Mis à jour en 2026",
+    "mathMetric": "Métrique Mathématique",
+    "evidenceLit": "Preuves & Littérature",
+    "seeAlso": "Voir aussi",
+    "faqTitle": "Questions Fréquemment Posées"
+  },
+  "ar": {
+    "reviewedBy": "تمت المراجعة من قبل الفريق الطبي السريري لـ CareCalculus",
+    "specialists": "أطباء استشاريين، أخصائيي العناية المركزة وطب الطوارئ",
+    "updated": "تم التحديث 2026",
+    "mathMetric": "المعادلة الرياضية",
+    "evidenceLit": "الأدلة والدراسات العلمية",
+    "seeAlso": "اقرأ أيضاً",
+    "faqTitle": "الأسئلة الشائعة"
+  }
+}

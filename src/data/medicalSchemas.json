@@ -1,0 +1,342 @@
+{
+  "/map-calculator": {
+    "@type": "MedicalWebPage",
+    "name": "Mean Arterial Pressure (MAP) Calculator",
+    "aspect": "Cardiovascular Assessment",
+    "about": [
+      {
+        "@type": "MedicalCondition",
+        "name": "Hypotension"
+      },
+      {
+        "@type": "MedicalCondition",
+        "name": "Sepsis"
+      }
+    ]
+  },
+  "/bmi-calculator": {
+    "@type": "MedicalWebPage",
+    "name": "Body Mass Index (BMI) Estimation",
+    "aspect": "Obesity & Nutritional Triage",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Obesity"
+    }
+  },
+  "/glasgow-coma-scale": {
+    "@type": "MedicalWebPage",
+    "name": "Glasgow Coma Scale (GCS) Score",
+    "aspect": "Neurological Triage",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Traumatic Brain Injury"
+    }
+  },
+  "/drip-rate-calculator": {
+    "@type": "MedicalWebPage",
+    "name": "IV Infusion & Drip Rate Calculator",
+    "aspect": "Therapeutics & Dosing",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Dehydration"
+    }
+  },
+  "/creatinine-clearance": {
+    "@type": "MedicalWebPage",
+    "name": "Cockcroft-Gault Creatinine Clearance Calculator",
+    "aspect": "Renal Pharmacokinetics",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Renal Failure"
+    }
+  },
+  "/wells-score": {
+    "@type": "MedicalWebPage",
+    "name": "Wells Criteria for Deep Vein Thrombosis (DVT)",
+    "aspect": "Thromboembolism Risk Triage",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Deep Vein Thrombosis"
+    }
+  },
+  "/medical-conversions": {
+    "@type": "MedicalWebPage",
+    "name": "Clinical Unit Converter & Laboratory Conversions",
+    "aspect": "Laboratory Metrics Converter",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Diabetes Mellitus"
+    }
+  },
+  "/corrected-calcium": {
+    "@type": "MedicalWebPage",
+    "name": "Albumin-Corrected Calcium Calculator",
+    "aspect": "Electrolyte Disorders",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Hypercalcemia"
+    }
+  },
+  "/qsofa-score": {
+    "@type": "MedicalWebPage",
+    "name": "qSOFA Sepsis Risk Assessment",
+    "aspect": "Sepsis Organ Dysfunction Triage",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Sepsis"
+    }
+  },
+  "/curb65-score": {
+    "@type": "MedicalWebPage",
+    "name": "CURB-65 Pneumonia Severity Score",
+    "aspect": "Infectious Disease Triage",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Pneumonia"
+    }
+  },
+  "/cha2ds2-vasc": {
+    "@type": "MedicalWebPage",
+    "name": "CHA2DS2-VASc Stroke Risk in Atrial Fibrillation",
+    "aspect": "Cardiovascular Stroke Prophylaxis",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Atrial Fibrillation"
+    }
+  },
+  "/phq9-score": {
+    "@type": "MedicalWebPage",
+    "name": "PHQ-9 Depression Patient Health Questionnaire",
+    "aspect": "Psychiatric Triage",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Depressive Disorder"
+    }
+  },
+  "/meld-score": {
+    "@type": "MedicalWebPage",
+    "name": "MELD Score for End-Stage Liver Disease",
+    "aspect": "Hepatology Survival Estimation",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Liver Cirrhosis"
+    }
+  },
+  "/sirs-criteria": {
+    "@type": "MedicalWebPage",
+    "name": "Systemic Inflammatory Response Syndrome (SIRS)",
+    "aspect": "Inflammatory Triage",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Sepsis"
+    }
+  },
+  "/pf-ratio": {
+    "@type": "MedicalWebPage",
+    "name": "Horovitz P/F Ratio Calculator",
+    "aspect": "Pulmonary & ICU Metrics",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Acute Respiratory Distress Syndrome"
+    }
+  },
+  "/tidal-volume": {
+    "@type": "MedicalWebPage",
+    "name": "ARDSNet Lung-Protective Tidal Volume Calculator",
+    "aspect": "Mechanical Ventilation Support",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Acute Respiratory Distress Syndrome"
+    }
+  },
+  "/anc-calculator": {
+    "@type": "MedicalWebPage",
+    "name": "Absolute Neutrophil Count (ANC) Calculator",
+    "aspect": "Hematology Oncology Triage",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Neutropenia"
+    }
+  },
+  "/adjusted-body-weight": {
+    "@type": "MedicalWebPage",
+    "name": "Ideal & Adjusted Body Weight (Devine Formula)",
+    "aspect": "Pharmacokinetic Body Metrics",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Obesity"
+    }
+  },
+  "/steroid-conversion": {
+    "@type": "MedicalWebPage",
+    "name": "Corticosteroids Dose Equivalents Conversion",
+    "aspect": "Endocrinology & Therapeutics",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Adrenal Insufficiency"
+    }
+  },
+  "/blog": {
+    "@type": "MedicalWebPage",
+    "name": "E-E-A-T Evidence-Based Clinical Medical Journal",
+    "aspect": "Scientific Medical Literature Review",
+    "about": [
+      {
+        "@type": "MedicalCondition",
+        "name": "Sepsis"
+      },
+      {
+        "@type": "MedicalCondition",
+        "name": "Renal Failure"
+      }
+    ]
+  },
+  "/nutrition-tdee": {
+    "@type": "MedicalWebPage",
+    "name": "TDEE & BMR Nutrition Calculator",
+    "aspect": "Clinical Nutrition & Dietetics",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Malnutrition"
+    }
+  },
+  "/nutrition-must": {
+    "@type": "MedicalWebPage",
+    "name": "MUST Score Malnutrition Screening Tool",
+    "aspect": "Clinical Nutrition & Dietetics",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Malnutrition"
+    }
+  },
+  "/nutrition-nrs2002": {
+    "@type": "MedicalWebPage",
+    "name": "NRS-2002 Nutritional Risk Screening Calculator",
+    "aspect": "Clinical Nutrition & Dietetics",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Malnutrition"
+    }
+  },
+  "/glp-1-hub": {
+    "@type": "MedicalWebPage",
+    "name": "GLP-1 & Metabolic Health Resource Hub",
+    "aspect": "Metabolic & Cardiomedical Guidelines",
+    "about": [
+      {
+        "@type": "MedicalCondition",
+        "name": "Diabetes Mellitus, Type 2"
+      },
+      {
+        "@type": "MedicalCondition",
+        "name": "Obesity"
+      },
+      {
+        "@type": "MedicalCondition",
+        "name": "Cardiovascular Disease"
+      }
+    ]
+  },
+  "/hub-glp1": {
+    "@type": "MedicalWebPage",
+    "name": "Centre d'Intelligence GLP-1 & Métabolique",
+    "aspect": "Metabolic & Cardiomedical Guidelines",
+    "about": [
+      {
+        "@type": "MedicalCondition",
+        "name": "Diabetes Mellitus, Type 2"
+      },
+      {
+        "@type": "MedicalCondition",
+        "name": "Obesity"
+      },
+      {
+        "@type": "MedicalCondition",
+        "name": "Cardiovascular Disease"
+      }
+    ]
+  },
+  "/مركز-glp1": {
+    "@type": "MedicalWebPage",
+    "name": "مركز معلومات أدوية GLP-1 والصحة الاستقلابية",
+    "aspect": "Metabolic & Cardiomedical Guidelines",
+    "about": [
+      {
+        "@type": "MedicalCondition",
+        "name": "Diabetes Mellitus, Type 2"
+      },
+      {
+        "@type": "MedicalCondition",
+        "name": "Obesity"
+      },
+      {
+        "@type": "MedicalCondition",
+        "name": "Cardiovascular Disease"
+      }
+    ]
+  },
+  "/%D9%85%D8%B1%D9%83%D8%B2-glp1": {
+    "@type": "MedicalWebPage",
+    "name": "مركز معلومات أدوية GLP-1 والصحة الاستقلابية",
+    "aspect": "Metabolic & Cardiomedical Guidelines",
+    "about": [
+      {
+        "@type": "MedicalCondition",
+        "name": "Diabetes Mellitus, Type 2"
+      },
+      {
+        "@type": "MedicalCondition",
+        "name": "Obesity"
+      },
+      {
+        "@type": "MedicalCondition",
+        "name": "Cardiovascular Disease"
+      }
+    ]
+  },
+  "/apgar-score": {
+    "@type": "MedicalWebPage",
+    "name": "APGAR Score Calculator",
+    "aspect": "Neonatal Assessment & Triage",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Asphyxia Neonatorum"
+    }
+  },
+  "/sofa-score": {
+    "@type": "MedicalWebPage",
+    "name": "Sequential Organ Failure Assessment (SOFA) Score",
+    "aspect": "ICU Organ Dysfunction Severity",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Sepsis"
+    }
+  },
+  "/child-pugh-score": {
+    "@type": "MedicalWebPage",
+    "name": "Child-Pugh Score for Liver Disease Severity",
+    "aspect": "Hepatology Triage & Prognosis",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Liver Cirrhosis"
+    }
+  },
+  "/anion-gap": {
+    "@type": "MedicalWebPage",
+    "name": "Anion Gap Calculator",
+    "aspect": "Acid-Base Disorders",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Metabolic Acidosis"
+    }
+  },
+  "/aa-gradient": {
+    "@type": "MedicalWebPage",
+    "name": "Alveolar-Arterial (A-a) Oxygen Gradient Calculator",
+    "aspect": "Pulmonary Ventilation & Gas Exchange",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Hypoxemia"
+    }
+  }
+}

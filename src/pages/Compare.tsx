@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { ArrowLeft, CheckCircle, Scale, ShieldCheck, ChevronRight } from 'lucide-react';
 import { LangCode } from '../types';
-import { navItems } from '../App';
+import { navItems } from '../routes';
 import SEO from '../components/SEO';
 
 interface CompareProps {

@@ -10,7 +10,8 @@
 // The client bundle then hydrates over this markup as a normal SPA.
 
 import { renderToString } from 'react-dom/server';
-import App, { preloadPages } from './App';
+import App from './App';
+import { preloadPages } from './routes';
 import { parsePathname } from './utils/lang';
 import { buildHead } from './utils/seo';
 import { LangCode } from './types';
