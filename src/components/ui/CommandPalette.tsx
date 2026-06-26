@@ -52,7 +52,7 @@ export default function CommandPalette() {
       onClick={() => setIsOpen(false)}
     >
       <div 
-        className="bg-white w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden ring-1 ring-black/5 animate-in slide-in-from-top-4 duration-200" 
+        className="bg-white w-full max-w-[672px] rounded-2xl shadow-2xl overflow-hidden ring-1 ring-black/5 animate-in slide-in-from-top-4 duration-200" 
         onClick={(e) => e.stopPropagation()}
         dir={lang === 'ar' ? 'rtl' : 'ltr'}
       >

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {
   Activity, Brain, Stethoscope, Wind, TestTube, AlertOctagon, HeartPulse,
   Droplet, ArrowRightLeft, LayoutDashboard, BookOpen, MonitorPlay, GraduationCap,
-  Newspaper, Calculator, ChevronRight, ShieldCheck, Globe, Sparkles, AlertTriangle,
+  Newspaper, Calculator, ChevronRight, ShieldCheck, Globe, Sparkles, AlertTriangle, Search,
 } from 'lucide-react';
 import { LangCode } from '../types';
 import { useLang } from '../utils/lang';
@@ -64,6 +64,11 @@ const T = {
       { value: '١٠٠٪', label: 'مراجعة علمية' },
       { value: 'E-E-A-T', label: 'معتمد' },
     ],
+  },
+  search: {
+    en: 'Search calculators, clinical scores & ICU reference...',
+    fr: 'Rechercher un calculateur, score ou fiche clinique...',
+    ar: 'البحث السريع عن الحاسبات والمقاييس والأدوية...',
   },
   trust: {
     en: 'All tools are validated against peer-reviewed literature (AHA, ESC, CDC, SFAR, NIH) and aligned with international clinical guidelines.',
@@ -141,8 +146,14 @@ export default function HomePage({ lang }: HomePageProps) {
 
   const hero = T.hero[lang];
   const cta = T.cta[lang];
+  const searchPlaceholder = T.search[lang];
   const tiers = T.tiers[lang];
   const stats = T.stats[lang];
+  const popular = {
+    en: { label: 'Popular:', items: [{ name: 'MAP', path: '/map-calculator' }, { name: 'GCS', path: '/glasgow-coma-scale' }, { name: 'Wells', path: '/wells-score' }, { name: 'Creatinine', path: '/creatinine-clearance' }] },
+    fr: { label: 'Populaire :', items: [{ name: 'PAM', path: '/map-calculator' }, { name: 'Glasgow', path: '/glasgow-coma-scale' }, { name: 'Wells', path: '/wells-score' }, { name: 'Créatinine', path: '/creatinine-clearance' }] },
+    ar: { label: 'شائع:', items: [{ name: 'MAP', path: '/map-calculator' }, { name: 'Glasgow', path: '/glasgow-coma-scale' }, { name: 'Wells', path: '/wells-score' }, { name: 'الكرياتينين', path: '/creatinine-clearance' }] }
+  }[lang];
 
   const tierLabels = [tiers.t1, tiers.t2, tiers.t3, tiers.t4];
 
@@ -150,25 +161,59 @@ export default function HomePage({ lang }: HomePageProps) {
     <div className="space-y-12 pb-8" dir={isRtl ? 'rtl' : 'ltr'}>
       <SEO logicalPath="/" lang={lang} />
       {/* Hero */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-[#134E4A] to-slate-900 rounded-3xl overflow-hidden px-8 py-14 sm:py-20 text-white shadow-xl">
+      <section className="relative bg-gradient-to-br from-slate-950 via-[#0b3c39] to-slate-950 rounded-2xl overflow-hidden px-6 sm:px-10 py-10 sm:py-14 text-white shadow-xl border border-teal-500/20">
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute -top-20 -right-20 w-80 h-80 bg-[#0891B2]/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-60 h-60 bg-emerald-500/10 rounded-full blur-3xl" />
+          <div className="absolute -top-40 -right-40 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
+          <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl" />
         </div>
-        <div className="relative z-10 max-w-2xl">
-          <div className="flex items-center gap-2 mb-5">
-            <Logo className="w-7 h-7" mode="dark" />
-            <span className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest">{hero.badge}</span>
+        <div className="relative z-10 w-full max-w-[760px] mx-auto flex flex-col items-center text-center">
+          <div className="inline-flex items-center gap-2 mb-4 px-3 py-1 bg-white/5 rounded-full border border-white/10 backdrop-blur-xs">
+            <Logo className="w-4.5 h-4.5" mode="dark" />
+            <span className="text-[10px] font-mono font-extrabold text-emerald-400 uppercase tracking-widest">{hero.badge}</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-black tracking-tight text-white leading-tight mb-3">
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight mb-3 text-center">
             {hero.title}
           </h1>
-          <p className="text-lg text-[#CCFBF1] font-semibold mb-2">{hero.subtitle}</p>
-          <p className="text-sm text-slate-300 leading-relaxed mb-8 max-w-xl">{hero.desc}</p>
-          <div className="flex flex-wrap gap-3">
+          <p className="text-sm sm:text-base text-cyan-200/90 font-medium mb-3 text-center tracking-wide">{hero.subtitle}</p>
+          <p className="text-xs sm:text-sm text-slate-300/90 leading-relaxed mb-8 w-full max-w-[620px] text-center mx-auto">{hero.desc}</p>
+          
+          {/* Premium Centered Global Search Trigger Card */}
+          <div className="mb-4 w-full max-w-[580px] mx-auto">
+            <button
+              onClick={() => window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }))}
+              className="w-full flex items-center justify-between px-4 sm:px-5 py-4 bg-slate-900/60 hover:bg-slate-900/85 text-slate-300 rounded-2xl border border-white/10 hover:border-cyan-400/40 shadow-lg backdrop-blur-md transition-all duration-300 group active:scale-[0.98] cursor-pointer text-left rtl:text-right"
+              style={{ minHeight: '52px' }}
+            >
+              <div className="flex items-center gap-3 min-w-0 pr-2 rtl:pr-0 rtl:pl-2">
+                <Search className="w-5 h-5 text-cyan-400 shrink-0 group-hover:scale-110 transition-transform duration-300" />
+                <span className="text-xs sm:text-sm font-medium truncate text-slate-300/80 block">{searchPlaceholder}</span>
+              </div>
+              <div className="hidden sm:flex items-center gap-1 shrink-0 px-2 py-0.5 rounded-md bg-white/5 text-[10px] font-mono font-bold text-cyan-400 border border-white/5 shadow-2xs group-hover:bg-cyan-500/10 group-hover:border-cyan-400/20 transition-colors">
+                <span>Ctrl</span>
+                <span>+</span>
+                <span>K</span>
+              </div>
+            </button>
+          </div>
+
+          {/* Quick-links row to reduce search friction */}
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-8 text-[11px] sm:text-xs">
+            <span className="text-slate-400 font-medium">{popular.label}</span>
+            {popular.items.map((item, idx) => (
+              <Link
+                key={idx}
+                to={langPath(item.path)}
+                className="px-2.5 py-0.5 bg-white/5 hover:bg-cyan-500/10 text-slate-300 hover:text-cyan-300 rounded-md border border-white/5 hover:border-cyan-500/20 transition-all font-medium cursor-pointer"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
               to={langPath('/map-calculator')}
-              className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#0891B2] hover:bg-[#0891B2]/90 text-white font-bold rounded-xl text-sm transition-all shadow-lg hover:shadow-[#0891B2]/25 active:scale-95 cursor-pointer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#0891B2] hover:bg-[#0891B2]/95 text-white font-extrabold rounded-xl text-xs transition-all shadow-lg hover:shadow-cyan-500/15 active:scale-95 cursor-pointer border border-cyan-400/20"
             >
               <Calculator className="w-4 h-4" />
               {cta.primary}
@@ -176,7 +221,7 @@ export default function HomePage({ lang }: HomePageProps) {
             </Link>
             <Link
               to={langPath('/blog')}
-              className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/10 hover:bg-white/15 text-white font-bold rounded-xl text-sm transition-all border border-white/20 active:scale-95 cursor-pointer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 text-white font-bold rounded-xl text-xs transition-all border border-white/10 active:scale-95 cursor-pointer"
             >
               <BookOpen className="w-4 h-4" />
               {cta.secondary}

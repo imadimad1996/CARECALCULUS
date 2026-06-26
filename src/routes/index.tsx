@@ -160,18 +160,18 @@ export const navItems = [
   { path: '/phq9-score', nameEn: 'PHQ-9 Depression', nameFr: 'Score PHQ-9 Dépression', nameAr: 'مقياس PHQ-9 لتشخيص الاكتئاب', icon: Brain, tier: 3 },
   
   // Tier 4 — Resources & Library
-  { path: '/glp-1-hub', nameEn: 'GLP-1 Hub', nameFr: 'Hub GLP-1', nameAr: 'مركز أدوية GLP-1', icon: Sparkles, tier: 4, group: 'reading' as const, badge: 'NEW' },
-  { path: '/blog', nameEn: 'Medical Journals', nameFr: 'Journaux Médicaux', nameAr: 'المجلات الطبية', icon: BookOpen, tier: 4, group: 'reading' as const, badge: '2k+' },
-  { path: '/blog-articles', nameEn: 'Blog', nameFr: 'Blog', nameAr: 'المدونة', icon: Newspaper, tier: 4, group: 'reading' as const, badge: 'NEW' },
-  { path: '/presentations', nameEn: 'Presentations', nameFr: 'Présentations', nameAr: 'العروض التقديمية', icon: MonitorPlay, tier: 4, group: 'learning' as const, badge: 'PPTX' },
-  { path: '/cours', nameEn: 'Courses (PDF)', nameFr: 'Cours (PDF)', nameAr: 'المحاضرات والدروس', icon: GraduationCap, tier: 4, group: 'learning' as const, badge: 'PDF' },
-  { path: '/fmp-medecine', nameEn: 'Faculty of Medicine (FMPC)', nameFr: 'Faculté de Médecine (FMPC)', nameAr: 'كلية الطب والصيدلة (FMPC)', icon: GraduationCap, tier: 4, group: 'learning' as const, badge: 'PDF' },
-  { path: '/ispits', nameEn: 'ISPITS Paramedical', nameFr: 'ISPITS Paramédical', nameAr: 'مناهج معاهد التمريض (ISPITS)', icon: GraduationCap, tier: 4, group: 'learning' as const, badge: 'NEW' },
-  { path: '/study-tracker', nameEn: 'Study Progress Tracker', nameFr: 'Suivi d\'Études', nameAr: 'متابع التقدم الدراسي', icon: Award, tier: 4, group: 'learning' as const, badge: 'LOCAL' },
-  { path: '/flashcard-generator', nameEn: 'Medical Flashcards', nameFr: 'Flashcards Médicales', nameAr: 'البطاقات التعليمية الطبية', icon: Layers, tier: 4, group: 'learning' as const, badge: 'REV' },
-  { path: '/case-study-viewer', nameEn: 'Clinical Case Studies', nameFr: 'Cas Cliniques', nameAr: 'الحالات السريرية التفاعلية', icon: Stethoscope, tier: 4, group: 'learning' as const, badge: 'LIVE' },
-  { path: '/drug-sheets', nameEn: 'ICU Drug Reference', nameFr: 'Fiches Médicaments', nameAr: 'جرعات أدوية العناية', icon: Droplet, tier: 4, group: 'learning' as const, badge: 'PDF' },
-  { path: '/abbreviation-lookup', nameEn: 'Medical Abbreviations', nameFr: 'Abréviations Médicales', nameAr: 'قاموس الاختصارات الطبية', icon: FileText, tier: 4, group: 'learning' as const, badge: '500+' },
+  { path: '/glp-1-hub', nameEn: 'GLP-1 Hub', nameFr: 'Hub GLP-1', nameAr: 'مركز أدوية GLP-1', icon: Sparkles, tier: 4, group: 'reading' as const },
+  { path: '/blog', nameEn: 'Medical Journals', nameFr: 'Journaux Médicaux', nameAr: 'المجلات الطبية', icon: BookOpen, tier: 4, group: 'reading' as const },
+  { path: '/blog-articles', nameEn: 'Blog', nameFr: 'Blog', nameAr: 'المدونة', icon: Newspaper, tier: 4, group: 'reading' as const },
+  { path: '/presentations', nameEn: 'Presentations', nameFr: 'Présentations', nameAr: 'العروض التقديمية', icon: MonitorPlay, tier: 4, group: 'learning' as const },
+  { path: '/cours', nameEn: 'Courses (PDF)', nameFr: 'Cours (PDF)', nameAr: 'المحاضرات والدروس', icon: GraduationCap, tier: 4, group: 'learning' as const },
+  { path: '/fmp-medecine', nameEn: 'Faculty of Medicine', nameFr: 'Faculté de Médecine', nameAr: 'كلية الطب والصيدلة', icon: GraduationCap, tier: 4, group: 'learning' as const },
+  { path: '/ispits', nameEn: 'ISPITS Paramedical', nameFr: 'ISPITS Paramédical', nameAr: 'مناهج معاهد التمريض (ISPITS)', icon: GraduationCap, tier: 4, group: 'learning' as const },
+  { path: '/study-tracker', nameEn: 'Study Progress Tracker', nameFr: 'Suivi d\'Études', nameAr: 'متابع التقدم الدراسي', icon: Award, tier: 4, group: 'learning' as const },
+  { path: '/flashcard-generator', nameEn: 'Medical Flashcards', nameFr: 'Flashcards Médicales', nameAr: 'البطاقات التعليمية الطبية', icon: Layers, tier: 4, group: 'learning' as const },
+  { path: '/case-study-viewer', nameEn: 'Clinical Case Studies', nameFr: 'Cas Cliniques', nameAr: 'الحالات السريرية التفاعلية', icon: Stethoscope, tier: 4, group: 'learning' as const },
+  { path: '/drug-sheets', nameEn: 'ICU Drug Reference', nameFr: 'Fiches Médicaments', nameAr: 'جرعات أدوية العناية', icon: Droplet, tier: 4, group: 'learning' as const },
+  { path: '/abbreviation-lookup', nameEn: 'Medical Abbreviations', nameFr: 'Abréviations Médicales', nameAr: 'قاموس الاختصارات الطبية', icon: FileText, tier: 4, group: 'learning' as const },
 
   // Tier 5 — Utilities
   { path: '/pdf-splitter', nameEn: 'PDF Splitter', nameFr: 'Découpeur PDF', nameAr: 'تقسيم ملفات PDF', icon: Scissors, tier: 5 },
@@ -180,24 +180,24 @@ export const navItems = [
 
 export const TIER_HEADERS: Record<number, Record<LangCode, string>> = {
   1: {
-    en: 'Tier 1 — Emergency & Critical Care',
-    fr: 'Tier I — Urgences & Soins Critiques',
-    ar: 'الفئة الأولى — الحالات الحرجة والعناية المركزة'
+    en: 'Emergency & Critical Care',
+    fr: 'Urgences & Soins Critiques',
+    ar: 'الحالات الحرجة والعناية المركزة'
   },
   2: {
-    en: 'Tier 2 — Metabolic & Cardiorenal',
-    fr: 'Tier II — Métabolique & Cardiorénal',
-    ar: 'الفئة الثانية — الاستقلاب والقلب والكلية'
+    en: 'Metabolic & Cardiorenal',
+    fr: 'Métabolique & Cardiorénal',
+    ar: 'الاستقلاب والقلب والكلية'
   },
   3: {
-    en: 'Tier 3 — Therapeutic & Dosing Metrics',
-    fr: 'Tier III — Métriques, Perfusions & Doses',
-    ar: 'الفئة الثالثة — المحاليل والقياسات والجرعات'
+    en: 'Therapeutic & Dosing Metrics',
+    fr: 'Métriques, Perfusions & Doses',
+    ar: 'المحاليل والجرعات والقياسات'
   },
   5: {
-    en: 'Tier 5 — Medical Utilities',
-    fr: 'Tier V — Utilitaires Médicaux',
-    ar: 'الفئة الخامسة — الأدوات الطبية'
+    en: 'Medical Utilities',
+    fr: 'Utilitaires Médicaux',
+    ar: 'الأدوات الطبية'
   }
 };
 

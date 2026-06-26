@@ -1,5 +1,5 @@
 import React, { useState, useEffect, ErrorInfo, ReactNode } from 'react';
-import { Activity, BookOpen, HeartPulse, Menu, X, LayoutDashboard, Calculator, Droplet, Brain, TestTube, AlertOctagon, ArrowRightLeft, AlertTriangle, Stethoscope, Wind, FileText, ShieldCheck, Sparkles, ChevronRight, Search, Globe, Scale, MonitorPlay, GraduationCap, Newspaper, Scissors, Layers, Award } from 'lucide-react';
+import { Activity, BookOpen, HeartPulse, Menu, X, LayoutDashboard, Calculator, Droplet, Brain, TestTube, AlertOctagon, ArrowRightLeft, AlertTriangle, Stethoscope, Wind, FileText, ShieldCheck, Sparkles, ChevronRight, ChevronDown, Search, Globe, Scale, MonitorPlay, GraduationCap, Newspaper, Scissors, Layers, Award } from 'lucide-react';
 import { BrowserRouter, Routes, Route, Link, useLocation, Navigate, useNavigate } from 'react-router-dom';
 import { StaticRouter } from 'react-router';
 import { LangContext, parsePathname, buildPath, PREFIXED_LANGS } from './utils/lang';
@@ -93,6 +93,23 @@ function AppLayout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [sidebarSearch, setSidebarSearch] = useState('');
   const [topSearch, setTopSearch] = useState('');
+
+  const [expandedTiers, setExpandedTiers] = useState<Record<number, boolean>>(() => {
+    try {
+      const stored = localStorage.getItem('carecalculus-expanded-tiers');
+      return stored ? JSON.parse(stored) : { 1: true, 2: false, 3: false, 4: false, 5: false };
+    } catch {
+      return { 1: true, 2: false, 3: false, 4: false, 5: false };
+    }
+  });
+
+  const toggleTier = (tier: number) => {
+    const next = { ...expandedTiers, [tier]: !expandedTiers[tier] };
+    setExpandedTiers(next);
+    try {
+      localStorage.setItem('carecalculus-expanded-tiers', JSON.stringify(next));
+    } catch (e) {}
+  };
 
   const isRtl = lang === 'ar';
 
@@ -706,7 +723,7 @@ function AppLayout() {
           <InstallAppButton lang={lang} />
           <button
             onClick={() => window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }))}
-            className="p-2 text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600/20 rounded-lg"
+            className="p-2 text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600/20 rounded-lg animate-fade-in"
             aria-label="Global Search"
             style={{ minWidth: '44px', minHeight: '44px' }}
           >
@@ -734,7 +751,7 @@ function AppLayout() {
             <span className="font-bold text-2xl tracking-tight text-slate-800">Care<span className="text-teal-600 font-black">Calculus</span></span>
           </Link>
 
-          {/* Desktop Language Switcher (Spacious 44px targets) */}
+          {/* Desktop Language Switcher */}
           <div className="px-6 mb-6">
             <div className="bg-gray-100/90 p-1 rounded-xl border border-gray-200/80 shadow-inner flex">
               {(['en', 'fr', 'ar'] as LangCode[]).map((l) => (
@@ -754,32 +771,40 @@ function AppLayout() {
             </div>
           </div>
 
-          {/* Sidebar Search Bar (Triggers Global Command Palette) */}
-          <div className="px-6 mb-4">
-            <button
-              onClick={() => window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }))}
-              className={`w-full flex items-center justify-between py-2 px-3 bg-gray-50 hover:bg-white text-gray-400 hover:text-gray-600 border border-gray-200 hover:border-blue-300 rounded-xl text-xs font-semibold outline-none transition-all duration-300`}
+          {/* Sidebar Search Bar (Live local filtering input + keyboard shortcuts reminder) */}
+          <div className="px-6 mb-4 relative">
+            <Search className={`absolute ${isRtl ? 'right-9' : 'left-9'} top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400`} />
+            <input
+              type="text"
+              placeholder={lang === 'fr' ? 'Filtrer les outils...' : (lang === 'ar' ? 'تصفية الحاسبات...' : 'Filter calculators...')}
+              value={sidebarSearch}
+              onChange={(e) => setSidebarSearch(e.target.value)}
+              className={`w-full py-2 bg-gray-50 focus:bg-white text-gray-800 border border-gray-200 focus:border-[#0891B2] focus:ring-4 focus:ring-[#0891B2]/5 outline-none rounded-xl text-xs font-bold transition-all ${isRtl ? 'pr-9 pl-8 text-right' : 'pl-9 pr-8 text-left'}`}
               style={{ minHeight: '38px' }}
-            >
-              <div className="flex items-center gap-2">
-                <Search className="w-4 h-4" />
-                <span>{lang === 'fr' ? 'Rechercher...' : (lang === 'ar' ? 'بحث...' : 'Search tools...')}</span>
-              </div>
-              <span className="font-mono text-[10px] bg-gray-200/50 px-1.5 py-0.5 rounded text-gray-500">
-                Ctrl K
+            />
+            {sidebarSearch ? (
+              <button
+                onClick={() => setSidebarSearch('')}
+                className={`absolute ${isRtl ? 'left-9' : 'right-9'} top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-700 p-0.5 rounded-md hover:bg-gray-200 transition`}
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+            ) : (
+              <span className={`hidden sm:inline absolute ${isRtl ? 'left-9' : 'right-9'} top-1/2 -translate-y-1/2 font-mono text-[9px] bg-gray-200/50 px-1 py-0.5 rounded text-gray-450`}>
+                ⌘K
               </span>
-            </button>
+            )}
           </div>
 
           {/* Collapsible/Grouped Tiers Layout */}
-          <nav className="flex-1 px-4 space-y-6 pb-6">
+          <nav className="flex-1 px-4 space-y-4 pb-6">
 
             {/* Home link */}
             <Link
               to={langPath('/')}
-              className={`flex items-center gap-3 px-3 py-2 rounded-xl text-xs font-bold transition-all duration-150 ${
+              className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold transition-all duration-200 ${
                 isHomePage
-                  ? 'bg-teal-50 text-teal-700 font-extrabold border border-teal-100'
+                  ? 'bg-teal-50 text-teal-700 font-extrabold border border-teal-100 shadow-2xs'
                   : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900 border border-transparent'
               }`}
               style={{ minHeight: '44px' }}
@@ -790,220 +815,236 @@ function AppLayout() {
 
             {/* TIER I COMPONENT */}
             {navItems.filter(i => i.tier === 1 && matchesSearch(i, sidebarSearch)).length > 0 && (
-              <div className="space-y-1.5">
-                <div className="px-2.5 text-[10px] font-mono leading-none tracking-wider text-gray-400 font-extrabold uppercase border-b border-gray-100 pb-1 flex items-center justify-between">
-                  <span>{getLocalizedTierHeader(1)}</span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
-                </div>
-                <div className="space-y-0.5">
-                  {navItems.filter(i => i.tier === 1 && matchesSearch(i, sidebarSearch)).map((item) => {
-                    const isActive = logicalPath === item.path || (logicalPath === '/' && item.path === '/map-calculator');
-                    const Icon = item.icon;
-                    return (
-                      <Link
-                        key={item.path}
-                        to={langPath(item.path)}
-                        className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all ${
-                          isActive 
-                            ? 'bg-[#0891B2]/10 text-[#0891B2] font-extrabold shadow-sm border border-[#0891B2]/20' 
-                            : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
-                        }`}
-                        style={{ minHeight: '44px' }}
-                      >
-                        <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-[#0891B2]' : 'text-gray-400'}`} />
-                        <span className="truncate">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
-                      </Link>
-                    );
-                  })}
-                </div>
+              <div className="space-y-1">
+                <button
+                  onClick={() => toggleTier(1)}
+                  className="w-full text-left rtl:text-right px-2.5 py-2 text-[10px] font-mono leading-none tracking-wider text-slate-400 font-extrabold uppercase border-b border-gray-100 hover:text-slate-800 flex items-center justify-between group cursor-pointer"
+                >
+                  <span className="flex items-center gap-1.5">
+                    <ChevronDown className={`w-3.5 h-3.5 text-gray-455 transition-transform duration-200 ${(sidebarSearch || expandedTiers[1]) ? '' : (isRtl ? 'rotate-90' : '-rotate-90')}`} />
+                    <span>{getLocalizedTierHeader(1)}</span>
+                  </span>
+                </button>
+                {(sidebarSearch || expandedTiers[1]) && (
+                  <div className="space-y-0.5 mt-1">
+                    {navItems.filter(i => i.tier === 1 && matchesSearch(i, sidebarSearch)).map((item) => {
+                      const isActive = logicalPath === item.path || (logicalPath === '/' && item.path === '/map-calculator');
+                      const Icon = item.icon;
+                      return (
+                        <Link
+                          key={item.path}
+                          to={langPath(item.path)}
+                          className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all duration-200 ${
+                            isActive 
+                              ? `bg-rose-50/70 text-rose-700 border border-rose-200/50 font-black shadow-2xs ${isRtl ? 'border-r-2 border-r-rose-600 rounded-r-none' : 'border-l-2 border-l-rose-600 rounded-l-none'}` 
+                              : 'text-gray-600 hover:bg-slate-50 hover:text-gray-900 border border-transparent'
+                          }`}
+                          style={{ minHeight: '44px' }}
+                        >
+                          <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-rose-600' : 'text-gray-400'}`} />
+                          <span className="truncate">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
             )}
 
             {/* TIER II COMPONENT */}
             {navItems.filter(i => i.tier === 2 && matchesSearch(i, sidebarSearch)).length > 0 && (
-              <div className="space-y-1.5">
-                <div className="px-2.5 text-[10px] font-mono leading-none tracking-wider text-gray-400 font-extrabold uppercase border-b border-gray-100 pb-1 flex items-center justify-between">
-                  <span>{getLocalizedTierHeader(2)}</span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                </div>
-                <div className="space-y-0.5">
-                  {navItems.filter(i => i.tier === 2 && matchesSearch(i, sidebarSearch)).map((item) => {
-                    const isActive = logicalPath === item.path;
-                    const Icon = item.icon;
-                    return (
-                      <Link
-                        key={item.path}
-                        to={langPath(item.path)}
-                        className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all ${
-                          isActive 
-                            ? 'bg-[#0891B2]/10 text-[#0891B2] font-extrabold shadow-sm border border-[#0891B2]/20' 
-                            : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
-                        }`}
-                        style={{ minHeight: '44px' }}
-                      >
-                        <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-[#0891B2]' : 'text-gray-400'}`} />
-                        <span className="truncate">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
-                      </Link>
-                    );
-                  })}
-                </div>
+              <div className="space-y-1">
+                <button
+                  onClick={() => toggleTier(2)}
+                  className="w-full text-left rtl:text-right px-2.5 py-2 text-[10px] font-mono leading-none tracking-wider text-slate-400 font-extrabold uppercase border-b border-gray-100 hover:text-slate-800 flex items-center justify-between group cursor-pointer"
+                >
+                  <span className="flex items-center gap-1.5">
+                    <ChevronDown className={`w-3.5 h-3.5 text-gray-455 transition-transform duration-200 ${(sidebarSearch || expandedTiers[2]) ? '' : (isRtl ? 'rotate-90' : '-rotate-90')}`} />
+                    <span>{getLocalizedTierHeader(2)}</span>
+                  </span>
+                </button>
+                {(sidebarSearch || expandedTiers[2]) && (
+                  <div className="space-y-0.5 mt-1">
+                    {navItems.filter(i => i.tier === 2 && matchesSearch(i, sidebarSearch)).map((item) => {
+                      const isActive = logicalPath === item.path;
+                      const Icon = item.icon;
+                      return (
+                        <Link
+                          key={item.path}
+                          to={langPath(item.path)}
+                          className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all duration-200 ${
+                            isActive 
+                              ? `bg-cyan-50/70 text-cyan-700 border border-cyan-200/50 font-black shadow-2xs ${isRtl ? 'border-r-2 border-r-cyan-600 rounded-r-none' : 'border-l-2 border-l-cyan-600 rounded-l-none'}` 
+                              : 'text-gray-600 hover:bg-slate-50 hover:text-gray-900 border border-transparent'
+                          }`}
+                          style={{ minHeight: '44px' }}
+                        >
+                          <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-cyan-600' : 'text-gray-400'}`} />
+                          <span className="truncate">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
             )}
 
             {/* TIER III COMPONENT */}
             {navItems.filter(i => i.tier === 3 && matchesSearch(i, sidebarSearch)).length > 0 && (
-              <div className="space-y-1.5">
-                <div className="px-2.5 text-[10px] font-mono leading-none tracking-wider text-gray-400 font-extrabold uppercase border-b border-gray-100 pb-1 flex items-center justify-between">
-                  <span>{getLocalizedTierHeader(3)}</span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                </div>
-                <div className="space-y-0.5">
-                  {navItems.filter(i => i.tier === 3 && matchesSearch(i, sidebarSearch)).map((item) => {
-                    const isActive = logicalPath === item.path;
-                    const Icon = item.icon;
-                    return (
-                      <Link
-                        key={item.path}
-                        to={langPath(item.path)}
-                        className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all ${
-                          isActive 
-                            ? 'bg-[#0891B2]/10 text-[#0891B2] font-extrabold shadow-sm border border-[#0891B2]/20' 
-                            : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
-                        }`}
-                        style={{ minHeight: '44px' }}
-                      >
-                        <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-[#0891B2]' : 'text-gray-400'}`} />
-                        <span className="truncate">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
-                      </Link>
-                    );
-                  })}
-                </div>
+              <div className="space-y-1">
+                <button
+                  onClick={() => toggleTier(3)}
+                  className="w-full text-left rtl:text-right px-2.5 py-2 text-[10px] font-mono leading-none tracking-wider text-slate-400 font-extrabold uppercase border-b border-gray-100 hover:text-slate-800 flex items-center justify-between group cursor-pointer"
+                >
+                  <span className="flex items-center gap-1.5">
+                    <ChevronDown className={`w-3.5 h-3.5 text-gray-455 transition-transform duration-200 ${(sidebarSearch || expandedTiers[3]) ? '' : (isRtl ? 'rotate-90' : '-rotate-90')}`} />
+                    <span>{getLocalizedTierHeader(3)}</span>
+                  </span>
+                </button>
+                {(sidebarSearch || expandedTiers[3]) && (
+                  <div className="space-y-0.5 mt-1">
+                    {navItems.filter(i => i.tier === 3 && matchesSearch(i, sidebarSearch)).map((item) => {
+                      const isActive = logicalPath === item.path;
+                      const Icon = item.icon;
+                      return (
+                        <Link
+                          key={item.path}
+                          to={langPath(item.path)}
+                          className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all duration-200 ${
+                            isActive 
+                              ? `bg-emerald-50/70 text-emerald-700 border border-emerald-200/50 font-black shadow-2xs ${isRtl ? 'border-r-2 border-r-emerald-600 rounded-r-none' : 'border-l-2 border-l-emerald-600 rounded-l-none'}` 
+                              : 'text-gray-600 hover:bg-slate-50 hover:text-gray-900 border border-transparent'
+                          }`}
+                          style={{ minHeight: '44px' }}
+                        >
+                          <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-emerald-600' : 'text-gray-400'}`} />
+                          <span className="truncate">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
             )}
 
             {/* TIER IV COMPONENT (RESOURCES & LIBRARY) */}
             {navItems.filter(i => i.tier === 4 && matchesSearch(i, sidebarSearch)).length > 0 && (
-              <div className="space-y-4 pt-2 border-t border-gray-100">
-                <div className="px-2.5 text-[10px] font-mono leading-none tracking-wider text-gray-400 font-extrabold uppercase pb-0.5 flex items-center justify-between">
-                  <span>{lang === 'fr' ? 'RESSOURCES & BIBLIOTHÈQUE' : (lang === 'ar' ? 'المصادر والمكتبة' : 'RESOURCES & LIBRARY')}</span>
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+              <div className="space-y-2">
+                <button
+                  onClick={() => toggleTier(4)}
+                  className="w-full text-left rtl:text-right px-2.5 py-2 text-[10px] font-mono leading-none tracking-wider text-slate-400 font-extrabold uppercase border-b border-gray-100 hover:text-slate-800 flex items-center justify-between group cursor-pointer"
+                >
+                  <span className="flex items-center gap-1.5">
+                    <ChevronDown className={`w-3.5 h-3.5 text-gray-455 transition-transform duration-200 ${(sidebarSearch || expandedTiers[4]) ? '' : (isRtl ? 'rotate-90' : '-rotate-90')}`} />
+                    <span>{lang === 'fr' ? 'RESSOURCES & BIBLIOTHÈQUE' : (lang === 'ar' ? 'المصادر والمكتبة' : 'RESOURCES & LIBRARY')}</span>
                   </span>
-                </div>
-
-                {([
-                  { key: 'reading', en: 'Reading', fr: 'Lecture', ar: 'القراءة', dot: 'bg-indigo-500' },
-                  { key: 'learning', en: 'Learning', fr: 'Apprentissage', ar: 'التعلّم', dot: 'bg-emerald-500' },
-                ] as const).map((sub) => {
-                  const groupItems = navItems.filter(i => i.tier === 4 && (i as any).group === sub.key && matchesSearch(i, sidebarSearch));
-                  if (groupItems.length === 0) return null;
-                  return (
-                    <div key={sub.key} className="space-y-1">
-                      <div className="px-2.5 flex items-center gap-1.5 text-[9px] font-mono font-bold uppercase tracking-wider text-gray-400">
-                        <span className={`w-1.5 h-1.5 rounded-full ${sub.dot}`} />
-                        <span>{lang === 'fr' ? sub.fr : (lang === 'ar' ? sub.ar : sub.en)}</span>
-                      </div>
-                      <div className="space-y-0.5">
-                        {groupItems.map((item) => {
-                          const isActive = logicalPath === item.path;
-                          const Icon = item.icon;
-                          return (
-                            <Link
-                              key={item.path}
-                              to={langPath(item.path)}
-                              className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all relative ${
-                                isActive
-                                  ? 'bg-[#0891B2]/10 text-[#0891B2] font-extrabold shadow-sm border border-[#0891B2]/20'
-                                  : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
-                              }`}
-                              style={{ minHeight: '44px' }}
-                            >
-                              <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-[#0891B2]' : 'text-gray-400'}`} />
-                              <span className="truncate">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
-                              {(item as any).badge && (
-                                <span className={`absolute ${isRtl ? 'left-2' : 'right-2'} px-1.5 py-0.5 text-[8px] font-mono font-bold rounded-md border ${
-                                  (item as any).badge === 'NEW'
-                                    ? 'bg-blue-500/10 border-blue-500/20 text-blue-600'
-                                    : 'bg-emerald-500/10 border-emerald-500/20 text-emerald-600'
-                                }`}>
-                                  {(item as any).badge}
-                                </span>
-                              )}
-                            </Link>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  );
-                })}
+                </button>
+                {(sidebarSearch || expandedTiers[4]) && (
+                  <div className="space-y-3 mt-1 pl-2 rtl:pl-0 rtl:pr-2">
+                    {([
+                      { key: 'reading', en: 'Reading', fr: 'Lecture', ar: 'القراءة', dot: 'bg-indigo-500' },
+                      { key: 'learning', en: 'Learning', fr: 'Apprentissage', ar: 'التعلّم', dot: 'bg-emerald-500' },
+                    ] as const).map((sub) => {
+                      const groupItems = navItems.filter(i => i.tier === 4 && (i as any).group === sub.key && matchesSearch(i, sidebarSearch));
+                      if (groupItems.length === 0) return null;
+                      return (
+                        <div key={sub.key} className="space-y-0.5">
+                          <div className="px-2 flex items-center gap-1.5 text-[9px] font-mono font-bold uppercase tracking-wider text-slate-450 mb-1">
+                            <span>{lang === 'fr' ? sub.fr : (lang === 'ar' ? sub.ar : sub.en)}</span>
+                          </div>
+                          <div className="space-y-0.5">
+                            {groupItems.map((item) => {
+                              const isActive = logicalPath === item.path;
+                              const Icon = item.icon;
+                              return (
+                                <Link
+                                  key={item.path}
+                                  to={langPath(item.path)}
+                                  className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all duration-200 relative ${
+                                    isActive
+                                      ? `bg-indigo-50/70 text-indigo-700 border border-indigo-200/50 font-black shadow-2xs ${isRtl ? 'border-r-2 border-r-indigo-600 rounded-r-none' : 'border-l-2 border-l-indigo-600 rounded-l-none'}`
+                                      : 'text-gray-600 hover:bg-slate-50 hover:text-gray-900 border border-transparent'
+                                  }`}
+                                  style={{ minHeight: '44px' }}
+                                >
+                                  <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-indigo-600' : 'text-gray-400'}`} />
+                                  <span className="truncate">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
+                                </Link>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
             )}
             
             {/* TIER V COMPONENT (UTILITIES) */}
             {navItems.filter(i => i.tier === 5 && matchesSearch(i, sidebarSearch)).length > 0 && (
-              <div className="space-y-1.5 pt-4 border-t border-gray-100">
-                <div className="px-2.5 text-[10px] font-mono leading-none tracking-wider text-gray-400 font-extrabold uppercase pb-1 flex items-center justify-between">
-                  <span>{getLocalizedTierHeader(5)}</span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-purple-500" />
-                </div>
-                <div className="space-y-0.5">
-                  {navItems.filter(i => i.tier === 5 && matchesSearch(i, sidebarSearch)).map((item) => {
-                    const isActive = logicalPath === item.path;
-                    const Icon = item.icon;
-                    return (
-                      <Link
-                        key={item.path}
-                        to={langPath(item.path)}
-                        className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all ${
-                          isActive 
-                            ? 'bg-[#0891B2]/10 text-[#0891B2] font-extrabold shadow-sm border border-[#0891B2]/20' 
-                            : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
-                        }`}
-                        style={{ minHeight: '44px' }}
-                      >
-                        <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-[#0891B2]' : 'text-gray-400'}`} />
-                        <span className="truncate">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
-                      </Link>
-                    );
-                  })}
-                </div>
+              <div className="space-y-1">
+                <button
+                  onClick={() => toggleTier(5)}
+                  className="w-full text-left rtl:text-right px-2.5 py-2 text-[10px] font-mono leading-none tracking-wider text-slate-400 font-extrabold uppercase border-b border-gray-100 hover:text-slate-800 flex items-center justify-between group cursor-pointer"
+                >
+                  <span className="flex items-center gap-1.5">
+                    <ChevronDown className={`w-3.5 h-3.5 text-gray-455 transition-transform duration-200 ${(sidebarSearch || expandedTiers[5]) ? '' : (isRtl ? 'rotate-90' : '-rotate-90')}`} />
+                    <span>{getLocalizedTierHeader(5)}</span>
+                  </span>
+                </button>
+                {(sidebarSearch || expandedTiers[5]) && (
+                  <div className="space-y-0.5 mt-1">
+                    {navItems.filter(i => i.tier === 5 && matchesSearch(i, sidebarSearch)).map((item) => {
+                      const isActive = logicalPath === item.path;
+                      const Icon = item.icon;
+                      return (
+                        <Link
+                          key={item.path}
+                          to={langPath(item.path)}
+                          className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all duration-200 ${
+                            isActive 
+                              ? `bg-amber-50/70 text-amber-700 border border-amber-200/50 font-black shadow-2xs ${isRtl ? 'border-r-2 border-r-amber-600 rounded-r-none' : 'border-l-2 border-l-amber-600 rounded-l-none'}` 
+                              : 'text-gray-600 hover:bg-slate-50 hover:text-gray-900 border border-transparent'
+                          }`}
+                          style={{ minHeight: '44px' }}
+                        >
+                          <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-amber-600' : 'text-gray-400'}`} />
+                          <span className="truncate">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
             )}
 
             {/* Zero results placeholder */}
             {navItems.filter(i => matchesSearch(i, sidebarSearch)).length === 0 && (
               <div className="py-8 px-2 text-center text-xs text-gray-400 font-semibold space-y-1.5 select-none">
-                <AlertOctagon className="w-5 h-5 text-gray-300 mx-auto animate-pulse" />
+                <AlertOctagon className="w-5 h-5 text-gray-305 mx-auto animate-pulse" />
                 <p>{lang === 'fr' ? 'Aucun outil correspond' : (lang === 'ar' ? 'لا توجد أدوات مطابقة' : 'No tools found')}</p>
               </div>
             )}
 
             {/* Faculté de Médecine et de Pharmacie (FMPC) Section */}
             {matchesSearch({ nameEn: 'Faculty of Medicine & Pharmacy FMPC', nameFr: 'Faculté de Médecine et de Pharmacie FMPC', nameAr: 'كلية الطب والصيدلة', path: '/fmp-medecine' }, sidebarSearch) && (
-              <div className="space-y-1.5 pt-4 border-t border-gray-100">
-                <div className="px-2.5 text-[10px] font-mono leading-none tracking-wider text-gray-400 font-extrabold uppercase pb-1 flex items-center justify-between">
-                  <span>{lang === 'fr' ? 'Faculté de Médecine et de Pharmacie' : (lang === 'ar' ? 'كلية الطب والصيدلة' : 'Faculty of Medicine & Pharmacy')}</span>
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
-                  </span>
+              <div className="space-y-1 pt-2 border-t border-gray-150">
+                <div className="px-2.5 text-[9px] font-mono leading-none tracking-wider text-gray-400 font-extrabold uppercase pb-1 flex items-center justify-between">
+                  <span>{lang === 'fr' ? 'FMP ACCUEIL COURS' : (lang === 'ar' ? 'دروس كلية الطب والصيدلة' : 'FMP ACADEMIC HUB')}</span>
                 </div>
                 <div className="space-y-0.5">
                   <Link
                     to={langPath('/fmp-medecine')}
-                    className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all relative ${
+                    className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all duration-200 relative ${
                       logicalPath === '/fmp-medecine'
-                        ? 'bg-gradient-to-r from-teal-50 to-teal-50/50 text-teal-700 font-extrabold shadow-sm border border-teal-100/50'
-                        : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900 border border-transparent'
+                        ? `bg-teal-50/70 text-teal-700 border border-teal-200/50 font-black shadow-2xs ${isRtl ? 'border-r-2 border-r-teal-600 rounded-r-none' : 'border-l-2 border-l-teal-600 rounded-l-none'}`
+                        : 'text-gray-600 hover:bg-slate-50 hover:text-gray-900 border border-transparent'
                     }`}
                     style={{ minHeight: '44px' }}
                   >
                     <GraduationCap className={`w-4 h-4 shrink-0 ${logicalPath === '/fmp-medecine' ? 'text-teal-600' : 'text-gray-400'}`} />
                     <span className="truncate">{lang === 'fr' ? 'Cours & Livres PDF' : (lang === 'ar' ? 'الدروس والكتب الطبية' : 'Courses & PDF Books')}</span>
-                    <span className="absolute right-2 px-1.5 py-0.5 text-[8px] font-mono font-bold rounded-md border bg-teal-500/10 border-teal-500/20 text-teal-600">
-                      PDF
-                    </span>
                   </Link>
                 </div>
               </div>
