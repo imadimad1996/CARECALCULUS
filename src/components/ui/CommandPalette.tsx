@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Search, X, Calculator, ArrowRight } from 'lucide-react';
+import { Search, X, Calculator, ChevronRight, Home } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { navItems } from '../../routes';
 import { useLang } from '../../utils/lang';
@@ -75,8 +75,23 @@ export default function CommandPalette() {
         </div>
         <div className="max-h-[60vh] overflow-y-auto p-2 scrollbar-thin scrollbar-thumb-gray-200">
           {filteredItems.length === 0 ? (
-            <div className="p-8 text-center text-gray-500">
-              {lang === 'fr' ? 'Aucun résultat trouvé.' : lang === 'ar' ? 'لم يتم العثور على نتائج.' : 'No results found.'}
+            <div className="p-10 text-center flex flex-col items-center">
+              <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mb-3">
+                <Search className="w-6 h-6 text-gray-400" />
+              </div>
+              <p className="text-gray-600 font-semibold mb-1">
+                {lang === 'fr' ? 'Aucun résultat trouvé' : lang === 'ar' ? 'لم يتم العثور على نتائج' : 'No results found'}
+              </p>
+              <p className="text-gray-400 text-sm mb-5">
+                {lang === 'fr' ? 'Vérifiez l\'orthographe ou parcourez notre catalogue.' : lang === 'ar' ? 'تحقق من الإملاء أو تصفح القائمة.' : 'Check your spelling or browse our full catalogue.'}
+              </p>
+              <button
+                onClick={() => handleSelect('/')}
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-50 text-blue-700 hover:bg-blue-100 rounded-xl font-medium transition-colors text-sm"
+              >
+                <Home className="w-4 h-4" />
+                {lang === 'fr' ? 'Parcourir les Outils' : lang === 'ar' ? 'تصفح الأدوات' : 'Browse All Tools'}
+              </button>
             </div>
           ) : (
             filteredItems.map((item) => {
@@ -94,7 +109,7 @@ export default function CommandPalette() {
                   <div className="flex-1 font-medium text-gray-800 group-hover:text-blue-800">
                     {name}
                   </div>
-                  <ArrowRight className={`w-4 h-4 text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity ${lang === 'ar' ? 'rotate-180' : ''}`} />
+                  <ChevronRight className={`w-4 h-4 text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity ${lang === 'ar' ? 'rotate-180' : ''}`} />
                 </button>
               );
             })

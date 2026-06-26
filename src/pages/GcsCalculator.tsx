@@ -124,23 +124,24 @@ const translations: Translations = {
 };
 
 export default function GcsCalculator({ lang }: { lang: LangCode }) {
-  const [eye, setEye] = useState<number>(4);
-  const [verbal, setVerbal] = useState<number>(5);
-  const [motor, setMotor] = useState<number>(6);
+  const [eye, setEye] = useState<number>(0);
+  const [verbal, setVerbal] = useState<number>(0);
+  const [motor, setMotor] = useState<number>(0);
 
   const currentText = translations[lang];
   const isRtl = lang === 'ar';
 
-  const gcsValue = eye + verbal + motor;
+  const isComplete = eye > 0 && verbal > 0 && motor > 0;
+  const gcsValue = isComplete ? eye + verbal + motor : 0;
 
   useEffect(() => {
-    if (gcsValue > 0) {
+    if (isComplete) {
       const timer = setTimeout(() => {
         trackCalculatorUsage('glasgow-coma-scale', lang, gcsValue);
       }, 1500);
       return () => clearTimeout(timer);
     }
-  }, [gcsValue, lang]);
+  }, [isComplete, gcsValue, lang]);
 
 
   const getGcsCategory = (val: number) => {
@@ -233,29 +234,37 @@ export default function GcsCalculator({ lang }: { lang: LangCode }) {
               
               <div className="flex items-baseline gap-2 tabular-nums">
                 <span className="text-7xl font-bold tracking-tighter transition-all duration-300">
-                  {gcsValue}
+                  {isComplete ? gcsValue : '--'}
                 </span>
                 <span className="text-xl font-medium text-gray-400">/ 15</span>
               </div>
             </div>
 
             <div className="relative z-10 mt-10">
-              <div className={`p-4 rounded-xl border flex justify-between items-center transition-all ${category.bg} ${category.color}`}>
-                <div className="font-semibold text-sm">
-                  {category.label}
+              {isComplete ? (
+                <div className={`p-4 rounded-xl border flex justify-between items-center transition-all ${category.bg} ${category.color}`}>
+                  <div className="font-semibold text-sm">
+                    {category.label}
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <div className="p-4 rounded-xl border flex justify-between items-center transition-all bg-gray-800/50 border-gray-700 text-gray-400">
+                  <div className="font-semibold text-sm">
+                    {lang === 'fr' ? 'Sélectionnez les critères pour le résultat' : lang === 'ar' ? 'يرجى تحديد المعايير للنتيجة' : 'Select criteria to calculate'}
+                  </div>
+                </div>
+              )}
 
               <ClinicalExportButton
                 title={currentText.title}
                 inputs={[
-                  { label: currentText.eye, value: `${eye} - ${currentText[`eye${eye}`]}` },
-                  { label: currentText.verbal, value: `${verbal} - ${currentText[`verbal${verbal}`]}` },
-                  { label: currentText.motor, value: `${motor} - ${currentText[`motor${motor}`]}` }
+                  { label: currentText.eye, value: eye > 0 ? `${eye} - ${currentText[`eye${eye}` as keyof typeof currentText]}` : '--' },
+                  { label: currentText.verbal, value: verbal > 0 ? `${verbal} - ${currentText[`verbal${verbal}` as keyof typeof currentText]}` : '--' },
+                  { label: currentText.motor, value: motor > 0 ? `${motor} - ${currentText[`motor${motor}` as keyof typeof currentText]}` : '--' }
                 ]}
                 results={[
-                  { label: currentText.result, value: `${gcsValue} / 15` },
-                  { label: 'Severity Score', value: category.label }
+                  { label: currentText.result, value: isComplete ? `${gcsValue} / 15` : '-- / 15' },
+                  { label: 'Severity Score', value: isComplete ? category.label : '--' }
                 ]}
                 formula={currentText.formula}
                 disclaimer={currentText.clinicalText}

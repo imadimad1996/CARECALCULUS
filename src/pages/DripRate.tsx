@@ -45,14 +45,15 @@ const translations: Translations = {
 };
 
 export default function DripRate({ lang }: { lang: LangCode }) {
-  const [volume, setVolume] = useState<number>(1000);
-  const [time, setTime] = useState<number>(480); // 8 hours in mins
-  const [dropFactor, setDropFactor] = useState<number>(20);
+  const [volume, setVolume] = useState<number | ''>('');
+  const [time, setTime] = useState<number | ''>('');
+  const [dropFactor, setDropFactor] = useState<number | ''>('');
 
   const currentText = translations[lang];
   const isRtl = lang === 'ar';
 
   const rateValue = useMemo(() => {
+    if (volume === '' || time === '' || dropFactor === '') return 0;
     if (volume <= 0 || time <= 0 || dropFactor <= 0) return 0;
     const computed = (volume * dropFactor) / time;
     return parseFloat(computed.toFixed(1));
@@ -90,11 +91,21 @@ export default function DripRate({ lang }: { lang: LangCode }) {
                 <div className="relative flex items-center">
                   <input
                     type="number"
-                    value={volume === 0 ? '' : volume}
-                    onChange={(e) => setVolume(Number(e.target.value))}
+                    value={volume}
+                    onChange={(e) => {
+                      if (e.target.value === '') {
+                        setVolume('');
+                      } else {
+                        let val = Number(e.target.value);
+                        if (val > 5000) val = 5000;
+                        if (val < 0) val = 0;
+                        setVolume(val);
+                      }
+                    }}
                     className="w-full bg-gray-50/50 px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600 text-3xl tabular-nums font-semibold text-gray-900 transition-all placeholder:text-gray-300"
                     min="1"
                     max="5000"
+                    placeholder="0"
                   />
                 </div>
               </div>
@@ -106,11 +117,21 @@ export default function DripRate({ lang }: { lang: LangCode }) {
                 <div className="relative flex items-center">
                   <input
                     type="number"
-                    value={time === 0 ? '' : time}
-                    onChange={(e) => setTime(Number(e.target.value))}
+                    value={time}
+                    onChange={(e) => {
+                      if (e.target.value === '') {
+                        setTime('');
+                      } else {
+                        let val = Number(e.target.value);
+                        if (val > 1440) val = 1440;
+                        if (val < 0) val = 0;
+                        setTime(val);
+                      }
+                    }}
                     className="w-full bg-gray-50/50 px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600 text-3xl tabular-nums font-semibold text-gray-900 transition-all placeholder:text-gray-300"
                     min="1"
                     max="1440" // up to 24 hr
+                    placeholder="0"
                   />
                 </div>
               </div>
@@ -152,22 +173,22 @@ export default function DripRate({ lang }: { lang: LangCode }) {
             </div>
             
              <div className="relative z-10 mt-10">
-              <div className="p-4 rounded-xl border flex justify-between items-center transition-all bg-indigo-500/10 text-indigo-400 border-indigo-500/20">
+              <div className={`p-4 rounded-xl border flex justify-between items-center transition-all ${rateValue > 0 ? 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20' : 'bg-gray-800/50 border-gray-700 text-gray-400'}`}>
                 <div className="font-semibold text-sm">
-                  {rateValue > 0 ? `${(volume / (time/60)).toFixed(1)} mL/hr` : '-- mL/hr'}
+                  {rateValue > 0 && typeof volume === 'number' && typeof time === 'number' ? `${(volume / (time/60)).toFixed(1)} mL/hr` : (lang === 'fr' ? 'Saisissez les valeurs' : lang === 'ar' ? 'أدخل القيم' : 'Awaiting inputs')}
                 </div>
               </div>
 
               <ClinicalExportButton
                 title={currentText.title}
                 inputs={[
-                  { label: currentText.volume, value: `${volume} mL` },
-                  { label: currentText.time, value: `${time} minutes` },
-                  { label: currentText.dropFactor, value: `${dropFactor} gtt/mL` }
+                  { label: currentText.volume, value: volume ? `${volume} mL` : '--' },
+                  { label: currentText.time, value: time ? `${time} minutes` : '--' },
+                  { label: currentText.dropFactor, value: dropFactor ? `${dropFactor} gtt/mL` : '--' }
                 ]}
                 results={[
-                  { label: currentText.result, value: rateValue, unit: 'gtt/min' },
-                  { label: 'Flow Rate (mL/hr)', value: `${(volume / (time/60)).toFixed(1)} mL/hr` }
+                  { label: currentText.result, value: rateValue > 0 ? rateValue : '--', unit: 'gtt/min' },
+                  { label: 'Flow Rate (mL/hr)', value: volume && time ? `${(Number(volume) / (Number(time)/60)).toFixed(1)} mL/hr` : '--' }
                 ]}
                 formula={currentText.formula}
                 disclaimer={currentText.clinicalText}
