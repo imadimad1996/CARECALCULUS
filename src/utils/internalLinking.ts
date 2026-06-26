@@ -6,27 +6,9 @@ interface LinkTarget {
   url: string;
 }
 
-// Map of keywords to their target paths. We use the full URL to ensure it works correctly across languages.
-const linkingDb: LinkTarget[] = [
-  { keywords: ['map', 'mean arterial pressure', 'pression artérielle moyenne', 'الضغط الشرياني'], url: '/map-calculator' },
-  { keywords: ['bmi', 'body mass index', 'imc', 'indice de masse corporelle', 'كتلة الجسم'], url: '/bmi-calculator' },
-  { keywords: ['gcs', 'glasgow coma scale', 'échelle de glasgow', 'غلاسكو'], url: '/glasgow-coma-scale' },
-  { keywords: ['drip rate', 'débit perfusion', 'معدل التنقيط'], url: '/drip-rate-calculator' },
-  { keywords: ['creatinine clearance', 'clairance créatinine', 'تصفية الكرياتينين'], url: '/creatinine-clearance' },
-  { keywords: ['wells score', 'score de wells', 'نقاط ويلز'], url: '/wells-score' },
-  { keywords: ['corrected calcium', 'calcium corrigé', 'الكالسيوم المصحح'], url: '/corrected-calcium' },
-  { keywords: ['qsofa', 'qsofa score', 'score qsofa', 'مؤشر qsofa'], url: '/qsofa-score' },
-  { keywords: ['curb-65', 'curb65', 'score curb-65', 'مقياس curb-65'], url: '/curb65-score' },
-  { keywords: ['cha2ds2-vasc', 'cha2ds2'], url: '/cha2ds2-vasc' },
-  { keywords: ['phq-9', 'phq9'], url: '/phq9-score' },
-  { keywords: ['meld', 'meld score', 'score meld'], url: '/meld-score' },
-  { keywords: ['sirs', 'sirs criteria', 'critères sirs'], url: '/sirs-criteria' },
-  { keywords: ['p/f ratio', 'rapport p/f', 'pao2/fio2'], url: '/pf-ratio' },
-  { keywords: ['tidal volume', 'volume courant'], url: '/tidal-volume' },
-  { keywords: ['anc', 'absolute neutrophil count', 'neutrophil count', 'nan'], url: '/anc-calculator' },
-  { keywords: ['adjusted body weight', 'ideal body weight', 'poids idéal', 'الوزن المثالي'], url: '/adjusted-body-weight' },
-  { keywords: ['steroid conversion', 'corticosteroid conversion', 'conversion corticoïdes', 'الستيرويد'], url: '/steroid-conversion' },
-];
+import linkingDbRaw from '../data/internalLinks.json';
+
+const linkingDb: LinkTarget[] = linkingDbRaw;
 
 /**
  * Parses markdown content and injects internal markdown links for key terms.
