@@ -18,6 +18,7 @@ import InstallAppButton from './components/ui/InstallAppButton';
 
 import { preloadPages, moduleRoutes, embedRoutes, navItems, TIER_HEADERS, LEGAL_ROUTES, CONTENT_ROUTES, ErrorBoundary, NotFound } from './routes';
 import { LangCode } from './types';
+import { UnitSystemProvider, useUnitSystem } from './contexts/UnitSystemContext';
 
 function AppLayout() {
   const location = useLocation();
@@ -78,46 +79,12 @@ function AppLayout() {
     }
   }, [location.pathname, navigate]);
 
-  const [geoState, setGeoState] = useState<{
-    region: string;
-    standard: 'Metric (SI)' | 'US Customary / Imperial';
-    zone: string;
-  }>(() => {
-    let region = 'Global';
-    let standard: 'Metric (SI)' | 'US Customary / Imperial' = 'Metric (SI)';
-    let zone = 'UTC';
-    try {
-      zone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
-      const lowercaseZone = zone.toLowerCase();
-      if (lowercaseZone.includes('america') || lowercaseZone.includes('us/') || lowercaseZone.includes('canada')) {
-        region = 'North America (US/CA)';
-        standard = 'US Customary / Imperial';
-      } else if (lowercaseZone.includes('europe') || lowercaseZone.includes('london') || lowercaseZone.includes('paris')) {
-        region = 'Europe (EU/UK)';
-        standard = 'Metric (SI)';
-      } else if (lowercaseZone.includes('africa') || lowercaseZone.includes('middleeast') || lowercaseZone.includes('riyadh') || lowercaseZone.includes('cairo') || lowercaseZone.includes('casablanca')) {
-        region = 'Middle East & North Africa (MENA)';
-        standard = 'Metric (SI)';
-      } else if (lowercaseZone.includes('asia') || lowercaseZone.includes('tokyo') || lowercaseZone.includes('sydney')) {
-        region = 'Asia Pacific';
-        standard = 'Metric (SI)';
-      }
-    } catch (e) {
-      console.warn("Failed to auto-detect geo metrics.", e);
-    }
-
-    const savedStandard = typeof window !== 'undefined' ? localStorage.getItem('carecalculus-standard') : null;
-    if (savedStandard === 'Metric (SI)' || savedStandard === 'US Customary / Imperial') {
-      standard = savedStandard as 'Metric (SI)' | 'US Customary / Imperial';
-    }
-
-    return { region, standard, zone };
-  });
+  const { standard, toggleStandard } = useUnitSystem();
+  
+  const geoState = { standard };
 
   const toggleGeoStandard = () => {
-    const nextStandard = geoState.standard === 'Metric (SI)' ? 'US Customary / Imperial' : 'Metric (SI)';
-    setGeoState(prev => ({ ...prev, standard: nextStandard }));
-    localStorage.setItem('carecalculus-standard', nextStandard);
+    toggleStandard();
   };
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -1253,17 +1220,21 @@ export default function App({ url }: { url?: string }) {
   if (url) {
     return (
       <ErrorBoundary>
-        <StaticRouter location={url}>
-          <AppLayout />
-        </StaticRouter>
+        <UnitSystemProvider>
+          <StaticRouter location={url}>
+            <AppLayout />
+          </StaticRouter>
+        </UnitSystemProvider>
       </ErrorBoundary>
     );
   }
   return (
     <ErrorBoundary>
-      <BrowserRouter>
-        <AppLayout />
-      </BrowserRouter>
+      <UnitSystemProvider>
+        <BrowserRouter>
+          <AppLayout />
+        </BrowserRouter>
+      </UnitSystemProvider>
     </ErrorBoundary>
   );
 }

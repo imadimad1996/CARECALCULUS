@@ -6,6 +6,14 @@
   --font-display: "Plus Jakarta Sans", "Inter", sans-serif;
   --font-arabic: "Cairo", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
+
+  /* NEW: Clinical Trust Color System */
+  --color-trust-teal: #117d67;
+  --color-trust-green: #37cd84;
+  --color-trust-blue: #0f428a;
+  --color-trust-cyan: #1eaedb;
+  --color-danger-red: #ed4134;
+  --color-surface-clinical: #f6f6f4;
 }
 
 /* Accessibility: skip-to-content link for keyboard navigation */

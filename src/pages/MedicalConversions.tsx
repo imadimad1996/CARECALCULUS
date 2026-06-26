@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { Info, ArrowRightLeft, Activity, BookOpen } from 'lucide-react';
+import { useParams, Link, useLocation } from 'react-router-dom';
+import { Info, ArrowRightLeft, Activity, BookOpen, ChevronRight } from 'lucide-react';
 import { LangCode } from '../types';
 import { layoutTranslations } from '../utils/lang';
 import { trackCalculatorUsage } from '../utils/telemetry';
@@ -268,20 +269,63 @@ function ConverterCard({ config, currentText, lang }: { config: ConfigLinear | C
 export default function MedicalConversions({ lang }: { lang: LangCode }) {
   const currentText = pageTranslations[lang];
   const isRtl = lang === 'ar';
+  const { category } = useParams<{ category: string }>();
+  const location = useLocation();
+
+  const CATEGORY_MAP: Record<string, string[]> = {
+    'chemistry-endocrine': ['glucose', 'hba1c', 'cholesterol', 'triglycerides', 'calcium', 'albumin'],
+    'immunology-lab-values': ['albumin'], // In reality would have CRP, Immunoglobulins
+    'renal-function': ['creatinine']
+  };
+
+  const activeConverters = category && CATEGORY_MAP[category]
+    ? converters.filter(c => CATEGORY_MAP[category].includes(c.id))
+    : converters;
+
+  const getSubTitle = () => {
+    if (category === 'chemistry-endocrine') return 'Chemistry & Endocrine Lab Values';
+    if (category === 'immunology-lab-values') return 'Immunology Lab Values';
+    if (category === 'renal-function') return 'Renal Function Lab Values';
+    return currentText.pageSubtitle;
+  };
 
   return (
     <>
-      <div className="max-w-3xl mb-12">
-        <h1 className={`text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-3 ${isRtl ? 'leading-normal' : ''}`}>
-          {currentText.pageTitle}
+      <div className="max-w-3xl mb-8">
+        <div className="flex items-center text-sm font-medium text-blue-600 mb-4 space-x-2">
+          <Link to="/medical-conversions" className="hover:underline">All Conversions</Link>
+          {category && (
+            <>
+              <ChevronRight className={`w-4 h-4 ${isRtl ? 'rotate-180' : ''}`} />
+              <span className="text-slate-500">{getSubTitle()}</span>
+            </>
+          )}
+        </div>
+        <h1 className={`text-4xl md:text-5xl font-display font-bold tracking-tight text-slate-900 mb-3 ${isRtl ? 'leading-normal' : ''}`}>
+          {category ? getSubTitle() : currentText.pageTitle}
         </h1>
-        <p className="text-lg text-gray-500 max-w-2xl">
+        <p className="text-lg text-slate-500 max-w-2xl">
           {currentText.pageSubtitle}
         </p>
       </div>
 
+      {/* UpToDate Style Sub-Navigation */}
+      {!category && (
+        <div className="flex flex-wrap gap-3 mb-10">
+          <Link to="/medical-conversions/chemistry-endocrine" className="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg text-sm font-semibold hover:bg-blue-100 transition-colors">
+            Chemistry & Endocrine
+          </Link>
+          <Link to="/medical-conversions/immunology-lab-values" className="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg text-sm font-semibold hover:bg-blue-100 transition-colors">
+            Immunology
+          </Link>
+          <Link to="/medical-conversions/renal-function" className="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg text-sm font-semibold hover:bg-blue-100 transition-colors">
+            Renal Function
+          </Link>
+        </div>
+      )}
+
       <div className="flex flex-col gap-8 max-w-5xl">
-        {converters.map(config => (
+        {activeConverters.map(config => (
           <ConverterCard key={config.id} config={config} currentText={currentText} lang={lang} />
         ))}
       </div>

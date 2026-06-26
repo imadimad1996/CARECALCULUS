@@ -55,6 +55,11 @@ const pageLoaders = [
   () => import('../pages/NutritionTdee'),
   () => import('../pages/NutritionMust'),
   () => import('../pages/NutritionNrs2002'),
+  () => import('../pages/ConditionHub'),
+  () => import('../pages/MdrdGfr'),
+  () => import('../pages/CkdEpiGfr'),
+  () => import('../pages/EmbedGallery'),
+  () => import('../pages/ForHospitals'),
 ] as const;
 
 const [
@@ -66,7 +71,8 @@ const [
   Glp1Hub, ApgarScore, SofaScore, ChildPughScore, AnionGap, AaGradient,
   FmpMedecine, IspitsAcademic,
   FlashcardGenerator, CaseStudyViewer, DrugSheets, StudyTracker, AbbreviationLookup,
-  Compare, NutritionTdee, NutritionMust, NutritionNrs2002,
+  Compare, NutritionTdee, NutritionMust, NutritionNrs2002, ConditionHub,
+  MdrdGfr, CkdEpiGfr, EmbedGallery, ForHospitals,
 ] = pageLoaders.map((loader) => React.lazy(loader as any)) as any[];
 
 export const HomePage = React.lazy(() => import('../pages/HomePage'));
@@ -86,10 +92,10 @@ export async function preloadPages() {
 }
 
 // Routes for the static legal/about pages (no lang prop needed)
-export const LEGAL_ROUTES = ['/about', '/disclaimer', '/privacy', '/terms'];
+export const LEGAL_ROUTES = ['/about', '/disclaimer', '/privacy', '/terms', '/embed-gallery', '/for-hospitals'];
 
 // Routes that open in full-width reading mode (no sidebar, no top widgets)
-export const CONTENT_ROUTES = ['/blog', '/blog-articles', '/presentations', '/cours', '/about', '/disclaimer', '/privacy', '/terms', '/glp-1-hub', '/hub-glp1', '/%D9%85%D8%B1%D9%83%D8%B2-glp1', '/مركز-glp1', '/ispits'];
+export const CONTENT_ROUTES = ['/blog', '/blog-articles', '/presentations', '/cours', '/about', '/disclaimer', '/privacy', '/terms', '/glp-1-hub', '/hub-glp1', '/%D9%85%D8%B1%D9%83%D8%B2-glp1', '/مركز-glp1', '/ispits', '/embed-gallery', '/for-hospitals'];
 
 export class ErrorBoundary extends React.Component<any, any> {
   constructor(props: any) {
@@ -131,6 +137,8 @@ export const navItems = [
 
   // Tier 2: Organ Function & Internal Medicine
   { path: '/creatinine-clearance', nameEn: 'Creatinine Clearance', nameFr: 'Clairance Créatinine', nameAr: 'تصفية الكرياتينين وكفاءة الكلى', icon: TestTube, tier: 2 },
+  { path: '/mdrd-gfr', nameEn: 'MDRD GFR Score', nameFr: 'MDRD DFG Score', nameAr: 'معدل الترشيح الكبيبي MDRD', icon: TestTube, tier: 2 },
+  { path: '/ckd-epi-gfr', nameEn: 'CKD-EPI GFR Score', nameFr: 'CKD-EPI DFG Score', nameAr: 'معدل الترشيح الكبيبي CKD-EPI', icon: TestTube, tier: 2 },
   { path: '/meld-score', nameEn: 'MELD Score Liver', nameFr: 'Score MELD Hépatique', nameAr: 'نقاط MELD لتليف وفشل الكبد', icon: Activity, tier: 2 },
   { path: '/wells-score', nameEn: 'Wells Score', nameFr: 'Score de Wells DVT/PE', nameAr: 'نقاط ويلز للانسداد الرئوي والجلطة', icon: AlertOctagon, tier: 2 },
   { path: '/cha2ds2-vasc', nameEn: 'CHA2DS2-VASc stroke', nameFr: 'Score CHA2DS2-VASc FA', nameAr: 'معيار سكتة الرجفان الأذيني', icon: HeartPulse, tier: 2 },
@@ -207,8 +215,11 @@ export function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="glasgow-coma-scale" element={<GcsCalculator lang={lang} />} />
       <Route path="drip-rate-calculator" element={<DripRate lang={lang} />} />
       <Route path="creatinine-clearance" element={<CreatinineClearance lang={lang} />} />
+      <Route path="mdrd-gfr" element={<MdrdGfr lang={lang} />} />
+      <Route path="ckd-epi-gfr" element={<CkdEpiGfr lang={lang} />} />
       <Route path="wells-score" element={<WellsScore lang={lang} />} />
       <Route path="medical-conversions" element={<MedicalConversions lang={lang} />} />
+      <Route path="medical-conversions/:category" element={<MedicalConversions lang={lang} />} />
       <Route path="corrected-calcium" element={<CorrectedCalcium lang={lang} />} />
       <Route path="qsofa-score" element={<QsofaScore lang={lang} />} />
       <Route path="curb65-score" element={<Curb65Score lang={lang} />} />
@@ -248,9 +259,12 @@ export function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="study-tracker" element={<StudyTracker lang={lang} />} />
       <Route path="abbreviation-lookup" element={<AbbreviationLookup lang={lang} />} />
       <Route path="about" element={<About lang={lang} />} />
+      <Route path="conditions/:conditionSlug" element={<ConditionHub lang={lang} />} />
       <Route path="disclaimer" element={<Disclaimer lang={lang} />} />
       <Route path="privacy" element={<Privacy lang={lang} />} />
       <Route path="terms" element={<Terms lang={lang} />} />
+      <Route path="embed-gallery" element={<EmbedGallery lang={lang} />} />
+      <Route path="for-hospitals" element={<ForHospitals lang={lang} />} />
       <Route path="apgar-score" element={<ApgarScore lang={lang} />} />
       <Route path="sofa-score" element={<SofaScore lang={lang} />} />
       <Route path="child-pugh-score" element={<ChildPughScore lang={lang} />} />

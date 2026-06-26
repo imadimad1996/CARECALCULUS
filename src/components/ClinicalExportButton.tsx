@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Printer, Copy, Check, FileText, X, User, Calendar, FileDown, Lock, Share2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { LangCode } from '../types';
+import PremiumGate from './PremiumGate';
 
 export interface ClinicalExportButtonProps {
   title: string;
@@ -420,150 +421,8 @@ ${divider}`;
               </div>
 
               {/* Scrollable contents split layout */}
-              <div className="p-6 md:p-8 overflow-y-auto flex-1 grid grid-cols-1 lg:grid-cols-12 gap-8 scrollbar-thin">
-                
-                {/* Left col: Simulator input form */}
-                <div className="lg:col-span-5 space-y-5">
-                  <div className="p-4 bg-slate-950/50 rounded-xl border border-slate-850 space-y-4">
-                    <div className="flex items-center gap-1 text-[10px] uppercase font-mono font-extrabold text-blue-400">
-                      <Lock className="w-3.5 h-3.5" />
-                      <span>EHR Patient De-Identification Hud</span>
-                    </div>
-
-                    <div>
-                      <label className="block text-[10px] font-bold text-slate-350 uppercase tracking-widest mb-1.5">
-                        {t.patientId}
-                      </label>
-                      <div className="relative flex items-center">
-                        <User className="w-4 h-4 text-slate-500 absolute left-3 pointer-events-none" />
-                        <input
-                          type="text"
-                          value={patientId}
-                          onChange={(e) => {
-                            setPatientId(e.target.value);
-                          }}
-                          placeholder={t.patientIdPlc}
-                          className="w-full bg-slate-900 border border-slate-700 focus:border-blue-500 rounded-lg pl-9 pr-4 py-2.5 text-xs text-white outline-none font-mono tracking-wider focus:ring-1 focus:ring-blue-500/20"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-[10px] font-bold text-slate-350 uppercase tracking-widest mb-1.5">
-                        {t.clinician}
-                      </label>
-                      <div className="relative flex items-center">
-                        <User className="w-4 h-4 text-slate-500 absolute left-3 pointer-events-none" />
-                        <input
-                          type="text"
-                          value={clinician}
-                          onChange={(e) => {
-                            setClinician(e.target.value);
-                          }}
-                          placeholder={t.clinicianPlc}
-                          className="w-full bg-slate-900 border border-slate-700 focus:border-blue-500 rounded-lg pl-9 pr-4 py-2.5 text-xs text-white outline-none tracking-tight focus:ring-1 focus:ring-blue-500/20"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-[10px] font-bold text-slate-350 uppercase tracking-widest mb-1.5">
-                        {t.date}
-                      </label>
-                      <div className="relative flex items-center">
-                        <Calendar className="w-4 h-4 text-slate-550 absolute left-3 pointer-events-none" />
-                        <input
-                          type="text"
-                          readOnly
-                          value={currentTime}
-                          className="w-full bg-slate-950/80 border border-slate-800 text-slate-400 rounded-lg pl-9 pr-4 py-2.5 text-xs font-mono select-all outline-none"
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-[10px] font-bold text-slate-350 uppercase tracking-widest mb-1.5">
-                      {t.notes}
-                    </label>
-                    <textarea
-                      rows={3}
-                      value={customNotes}
-                      onChange={(e) => {
-                        setCustomNotes(e.target.value);
-                      }}
-                      placeholder={t.notesPlc}
-                      className="w-full bg-slate-900 border border-slate-700 focus:border-blue-550 rounded-xl p-3 text-xs text-white outline-none transition-all focus:ring-1 focus:ring-blue-500/20 placeholder:text-gray-600 resize-none"
-                    />
-                  </div>
-                </div>
-
-                {/* Right col: Live terminal preview console */}
-                <div className="lg:col-span-7 flex flex-col justify-between space-y-4">
-                  <div className="rounded-xl border border-slate-800 bg-slate-950 p-4 font-mono text-[10px] overflow-auto max-h-[380px] text-gray-300 leading-normal select-all relative scrollbar-thin">
-                    <div className="absolute top-2 right-2 bg-slate-900 border border-slate-800 text-blue-400 font-extrabold px-2 py-0.5 rounded-[4px] shadow-sm select-none tracking-widest text-[8px] animate-pulse">
-                      {t.previewTitle}
-                    </div>
-                    <pre className="whitespace-pre-wrap">{getASCIIReportText()}</pre>
-                  </div>
-
-                  {/* Actions buttons */}
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 w-full">
-                    <button
-                      onClick={handleShare}
-                      className={`py-3 px-4 rounded-xl flex items-center justify-center gap-2 text-xs font-bold transition-all border shrink-0 cursor-pointer ${
-                        shareCopied
-                          ? 'bg-emerald-600 border-emerald-500 text-emerald-100'
-                          : 'bg-slate-800 border-slate-700 text-slate-200 hover:bg-slate-700 hover:text-white'
-                      }`}
-                      style={{ minHeight: '44px' }}
-                    >
-                      {shareCopied ? (
-                        <>
-                          <Check className="w-4 h-4 text-emerald-300" />
-                          <span>{t.shareSuccess}</span>
-                        </>
-                      ) : (
-                        <>
-                          <Share2 className="w-4 h-4 text-blue-300" />
-                          <span>{t.shareBtn}</span>
-                        </>
-                      )}
-                    </button>
-
-                    <button
-                      onClick={handleCopy}
-                      className={`py-3 px-4 rounded-xl flex items-center justify-center gap-2 text-xs font-bold transition-all border shrink-0 cursor-pointer ${
-                        copied
-                          ? 'bg-emerald-650 border-emerald-500 text-emerald-100'
-                          : 'bg-slate-800 border-slate-700 text-slate-200 hover:bg-slate-700 hover:text-white'
-                      }`}
-                      style={{ minHeight: '44px' }}
-                    >
-                      {copied ? (
-                        <>
-                          <Check className="w-4 h-4 text-emerald-300" />
-                          <span>{t.copySuccess}</span>
-                        </>
-                      ) : (
-                        <>
-                          <Copy className="w-4 h-4" />
-                          <span>{t.copyBtn}</span>
-                        </>
-                      )}
-                    </button>
-
-                    <button
-                      onClick={handlePrint}
-                      className="py-3 px-4 rounded-xl flex items-center justify-center gap-2 text-xs font-extrabold bg-blue-600 hover:bg-blue-500 active:bg-blue-700 border border-blue-500 text-white cursor-pointer hover:shadow-[0_0_15px_-3px_rgba(59,130,246,0.5)] transition-all"
-                      style={{ minHeight: '44px' }}
-                    >
-                      <Printer className="w-4 h-4 animate-bounce" />
-                      <span>{t.printBtn}</span>
-                    </button>
-                  </div>
-                </div>
-
+              <div className="p-6 md:p-8 overflow-y-auto flex-1 flex flex-col items-center justify-center scrollbar-thin bg-white text-slate-900">
+                <PremiumGate featureName={lang === 'fr' ? 'L\'exportation clinique PDF' : lang === 'ar' ? 'تصدير التقرير السريري' : 'Clinical PDF Export'} lang={lang} />
               </div>
 
             </motion.div>

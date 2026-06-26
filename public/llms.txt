@@ -4,6 +4,13 @@
 
 CareCalculus eliminates cognitive load in high-stress clinical settings by providing instantaneous, error-free calculations. Results are computed live as values are entered. Pages are available in three languages: English (carecalculus.com/), French (carecalculus.com/fr/), and Arabic (carecalculus.com/ar/).
 
+## Condition-Based Calculators
+- [Sepsis & Infection Calculators](https://carecalculus.com/conditions/sepsis): Early detection, risk stratification, and management.
+- [Liver Disease & Cirrhosis Calculators](https://carecalculus.com/conditions/liver-disease): Prognostic scoring systems and severity calculators.
+- [Atrial Fibrillation Calculators](https://carecalculus.com/conditions/atrial-fibrillation): Stroke and bleeding risk stratification.
+- [Respiratory Failure & ARDS Calculators](https://carecalculus.com/conditions/respiratory-failure): Oxygenation indices, lung-protective ventilation.
+- [Renal Failure & CKD Calculators](https://carecalculus.com/conditions/renal-failure): Estimating GFR, creatinine clearance.
+
 ## Emergency & Critical Care calculators
 
 - [Mean Arterial Pressure (MAP) Calculator](https://carecalculus.com/map-calculator): Computes MAP from systolic and diastolic blood pressure to assess organ perfusion in hypotension and sepsis.
@@ -17,6 +24,8 @@ CareCalculus eliminates cognitive load in high-stress clinical settings by provi
 ## Organ Function & Internal Medicine
 
 - [Creatinine Clearance (Cockcroft-Gault)](https://carecalculus.com/creatinine-clearance): Estimates renal function for drug dosing.
+- [MDRD GFR Equation](https://carecalculus.com/mdrd-gfr): Estimates glomerular filtration rate and CKD staging.
+- [CKD-EPI GFR Equation](https://carecalculus.com/ckd-epi-gfr): Estimates GFR using the 2021 race-free equation.
 - [MELD Score](https://carecalculus.com/meld-score): Model for End-Stage Liver Disease mortality estimate.
 - [Wells Score (DVT/PE)](https://carecalculus.com/wells-score): Pretest probability for deep vein thrombosis and pulmonary embolism.
 - [CHA2DS2-VASc Score](https://carecalculus.com/cha2ds2-vasc): Stroke risk in atrial fibrillation to guide anticoagulation.

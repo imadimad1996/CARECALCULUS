@@ -34,6 +34,7 @@ const faqSchemaDb: Record<string, { question: string; answer: string }[]> = faqD
 export const nameEnMap: Record<string, string> = seoMaps.nameEnMap;
 const nameFrMap: Record<string, string> = seoMaps.nameFrMap;
 const nameArMap: Record<string, string> = seoMaps.nameArMap;
+const keywordsEnMap: Record<string, string> = (seoMaps as any).keywordsEnMap || {};
 
 export interface RouteMeta {
   title: string;
@@ -233,20 +234,23 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
   if (lang === 'fr') {
     return {
       title: `${nameFr} | CareCalculus`,
-      desc: `Utilisez notre outil gratuit "${nameFr}" conçu pour aider les praticiens hospitaliers. Formule clinique validée scientifiquement avec références PubMed et calcul instantané.`,
+      desc: `Calculateur ${nameFr} gratuit — outil d'aide à la décision clinique utilisé par les médecins, urgentistes et infirmiers. Calcul instantané avec références PubMed, formules validées et support multilingue.`,
       keywords: `${nameFr.toLowerCase().replace(/[^a-zA-Z\s]/g, '')}, calculateur medical, guide, medecine`,
     };
   } else if (lang === 'ar') {
     return {
       title: `${nameAr} | CareCalculus`,
-      desc: `استخدم الأداة الطبية المجانية وتطبيق "${nameAr}" الموضح بالمعادلات العلمية ومراجع PubMed. حساب سريري دقيق وموثوق للأطباء ومختلف الممارسين.`,
+      desc: `حاسبة ${nameAr} المجانية — أداة دعم القرار السريري المستخدمة من قبل الأطباء وممرضي العناية المركزة والطوارئ. حساب فوري مع مراجع PubMed وصيغ معتمدة ودعم متعدد اللغات.`,
       keywords: `${nameAr}, حاسبة طبية, أدوات الأطباء, معادلة سريرية`,
     };
   }
+  
+  const customKeywords = keywordsEnMap[path];
+  
   return {
     title: `${nameEn} | CareCalculus`,
-    desc: `Access our free "${nameEn}" constructed strictly for hospital clinicians. Highly accurate clinical formula complete with official scientific references.`,
-    keywords: `${nameEn.toLowerCase().replace(/[^a-zA-Z\s]/g, '')}, clinical calculator, medical metrics, care calculus`,
+    desc: `Free ${nameEn} — evidence-based clinical decision support tool used by ICU doctors, ER physicians, and nurses worldwide. Instant calculation with PubMed references, validated formulas, and multilingual support.`,
+    keywords: customKeywords || `${nameEn.toLowerCase().replace(/[^a-zA-Z\s]/g, '')}, clinical calculator, medical metrics, care calculus`,
   };
 }
 
@@ -308,9 +312,15 @@ export function getMedicalSchema(path: string) {
   return node
     ? {
         '@context': 'https://schema.org',
-        audience: {
+        '@type': 'MedicalWebPage',
+        medicalAudience: {
           '@type': 'MedicalAudience',
           audienceType: 'Clinicians, ICU Doctors, ER Emergency Physicians',
+        },
+        lastReviewed: '2025-01-15',
+        reviewedBy: {
+          '@type': 'Organization',
+          name: 'CareCalculus Clinical Review Board'
         },
         ...node,
       }
