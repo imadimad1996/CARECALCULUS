@@ -1,5 +1,5 @@
 ---
-name: seo-expert
+name: SEO SKILL
 description: "SEO and search engine optimization expert. PROACTIVELY use when working with meta tags, structured data, Core Web Vitals, sitemap, robots.txt, canonical URLs. Triggers: SEO, meta tags, schema markup, search ranking"
 allowed-tools: Read, Grep, Glob, Edit, Write
 autoInvoke: true
