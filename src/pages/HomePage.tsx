@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {
   Activity, Brain, Stethoscope, Wind, TestTube, AlertOctagon, HeartPulse,
   Droplet, ArrowRightLeft, LayoutDashboard, BookOpen, MonitorPlay, GraduationCap,
-  Newspaper, Calculator, ChevronRight, ShieldCheck, Globe, Sparkles, AlertTriangle, Search,
+  Newspaper, Calculator, ChevronRight, ShieldCheck, Globe, Sparkles, AlertTriangle, Search, Award,
 } from 'lucide-react';
 import { LangCode } from '../types';
 import { useLang } from '../utils/lang';
@@ -232,41 +232,49 @@ export default function HomePage({ lang }: HomePageProps) {
 
       {/* Stats row */}
       <section className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        {stats.map((s, i) => (
-          <div key={i} className="bg-white border border-slate-200/80 rounded-2xl p-5 text-center shadow-xs transition-all hover:shadow-sm">
-            <div className="text-2xl sm:text-3xl font-black text-[#0891B2] tracking-tight font-mono">{s.value}</div>
-            <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mt-1">{s.label}</div>
-          </div>
-        ))}
+        {stats.map((s, i) => {
+          const StatIcon = [Calculator, Globe, ShieldCheck, Award][i];
+          return (
+            <div key={i} className="bg-white/80 border border-slate-200/60 rounded-2xl p-5 flex flex-col items-center justify-between text-center shadow-xs transition-all duration-300 hover:shadow-sm hover:border-cyan-500/20 group relative overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500/50 to-emerald-500/50 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="p-2.5 rounded-xl bg-slate-50 text-cyan-600 mb-2.5 group-hover:scale-105 transition-transform duration-300">
+                <StatIcon className="w-5 h-5" />
+              </div>
+              <div>
+                <div className="text-2xl sm:text-3xl font-black text-slate-800 tracking-tight font-mono leading-none">{s.value}</div>
+                <div className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mt-1.5">{s.label}</div>
+              </div>
+            </div>
+          );
+        })}
       </section>
 
       {/* Tier cards (Bento Grid) */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {TIER_HIGHLIGHTS.map((tier, idx) => {
-          const c = colorMap[tier.color];
+          const c = {
+            red:     { bg: 'from-rose-50/40 to-slate-50/20',     border: 'border-rose-100/70',    text: 'text-rose-700',    badge: 'bg-rose-100/60 text-rose-700' },
+            blue:    { bg: 'from-cyan-50/40 to-slate-50/20',     border: 'border-cyan-100/70',    text: 'text-cyan-700',    badge: 'bg-cyan-100/60 text-cyan-700' },
+            emerald: { bg: 'from-emerald-50/40 to-slate-50/20',  border: 'border-emerald-100/70', text: 'text-emerald-700', badge: 'bg-emerald-100/60 text-emerald-700' },
+            purple:  { bg: 'from-purple-50/40 to-slate-50/20',   border: 'border-purple-100/70',  text: 'text-purple-700',  badge: 'bg-purple-100/60 text-purple-700' },
+          }[tier.color];
           const tl = tierLabels[idx];
           const TierIcon = tier.icon;
           return (
-            <div key={tier.tier} className={`${c.bg} border ${c.border} rounded-2xl p-6 space-y-4 shadow-xs transition-all hover:shadow-sm`}>
+            <div key={tier.tier} className={`bg-gradient-to-br ${c.bg} border ${c.border} rounded-3xl p-6 sm:p-7 space-y-5 shadow-xs transition-all hover:shadow-sm`}>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className={`p-2.5 rounded-xl ${c.badge}`}>
+                  <div className={`p-2.5 rounded-2xl ${c.badge} shadow-2xs`}>
                     <TierIcon className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="flex items-center gap-2">
-                      <span className={`w-1.5 h-1.5 rounded-full ${c.dot}`} />
-                      <span className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
-                        Tier {tier.tier}
-                      </span>
-                    </div>
-                    <h3 className={`text-base font-bold ${c.text}`}>{tl.label}</h3>
-                    <p className="text-xs text-slate-500 mt-0.5">{tl.desc}</p>
+                    <h3 className={`text-base font-black tracking-tight ${c.text}`}>{tl.label}</h3>
+                    <p className="text-xs text-slate-500 font-medium mt-0.5">{tl.desc}</p>
                   </div>
                 </div>
               </div>
 
-              <div className="space-y-1.5">
+              <div className="space-y-2">
                 {tier.items.map((item) => {
                   const ItemIcon = item.icon;
                   const label = lang === 'fr' ? item.fr : lang === 'ar' ? item.ar : item.en;
@@ -274,14 +282,16 @@ export default function HomePage({ lang }: HomePageProps) {
                     <Link
                       key={item.path}
                       to={langPath(item.path)}
-                      className="flex items-center justify-between p-3 bg-white rounded-xl border border-slate-200/60 hover:border-[#0891B2]/40 hover:shadow-xs transition-all group cursor-pointer"
+                      className="flex items-center justify-between p-3 bg-white/90 hover:bg-white rounded-xl border border-slate-200/50 hover:border-cyan-500/20 hover:shadow-xs transition-all duration-300 group cursor-pointer active:scale-[0.99]"
                       style={{ minHeight: '44px' }}
                     >
-                      <div className="flex items-center gap-3">
-                        <ItemIcon className={`w-4 h-4 shrink-0 ${c.text} opacity-80 group-hover:opacity-100 transition-opacity`} />
-                        <span className="text-xs font-bold text-slate-800 group-hover:text-[#0891B2] transition-colors">{label}</span>
+                      <div className="flex items-center gap-3 min-w-0">
+                        <div className="p-1.5 rounded-lg bg-slate-55/40 text-slate-500 group-hover:bg-cyan-500/10 group-hover:text-cyan-600 transition-colors">
+                          <ItemIcon className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover:scale-105" />
+                        </div>
+                        <span className="text-xs font-bold text-slate-700 group-hover:text-cyan-700 transition-colors truncate">{label}</span>
                       </div>
-                      <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-[#0891B2] group-hover:translate-x-0.5 transition-all" />
+                      <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-cyan-600 group-hover:translate-x-0.5 transition-all" />
                     </Link>
                   );
                 })}
