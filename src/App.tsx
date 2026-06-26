@@ -81,7 +81,10 @@ function AppLayout() {
 
   const { standard, toggleStandard } = useUnitSystem();
   
-  const geoState = { standard };
+  const geoState = {
+    standard,
+    region: standard === 'Metric (SI)' ? 'Global / SI' : 'US / Imperial'
+  };
 
   const toggleGeoStandard = () => {
     toggleStandard();
@@ -358,7 +361,7 @@ function AppLayout() {
             <div>
               <div className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="text-[9px] font-mono font-black text-blue-400 uppercase tracking-widest leading-none">
+                <span className="text-[9px] font-mono font-bold text-[#22D3EE] uppercase tracking-widest leading-none">
                   CareCalculus GEO-Intelligence Node
                 </span>
               </div>
@@ -388,10 +391,10 @@ function AppLayout() {
             {/* Quick Standard override control */}
             <button
               onClick={toggleGeoStandard}
-              className="py-2 px-3.5 bg-blue-600 hover:bg-blue-500 text-xs text-white font-mono font-bold rounded-xl transition border border-blue-500 shadow-sm cursor-pointer active:scale-95 flex items-center gap-1"
+              className="py-2 px-3.5 bg-[#0891B2] hover:bg-[#0891B2]/90 text-xs text-white font-mono font-bold rounded-xl transition border border-[#0891B2] shadow-sm cursor-pointer active:scale-95 flex items-center gap-1"
               style={{ minHeight: '44px' }}
             >
-              <Sparkles className="w-3.5 h-3.5 text-blue-200" />
+              <Sparkles className="w-3.5 h-3.5 text-[#CCFBF1]" />
               <span>{lang === 'fr' ? 'Intervertir' : (lang === 'ar' ? 'تبديل المعيار' : 'Toggle Unit Mode')}</span>
             </button>
           </div>
@@ -548,7 +551,7 @@ function AppLayout() {
 
         {/* Live search results */}
         {topSearch && (
-          <div className="px-4 py-3 bg-blue-50/60 border-b border-blue-100">
+          <div className="px-4 py-3 bg-[#0891B2]/5 border-b border-[#0891B2]/20">
             {filteredTopResults.length === 0 ? (
               <p className="text-xs text-gray-500 font-semibold flex items-center gap-1.5">
                 <AlertOctagon className="w-3.5 h-3.5 text-gray-400" />
@@ -561,9 +564,9 @@ function AppLayout() {
                   const label = lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn);
                   return (
                     <Link key={item.path} to={langPath(item.path)} onClick={() => setTopSearch('')}
-                      className="flex items-center gap-2 p-2 bg-white rounded-lg border border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all text-xs font-bold text-gray-800"
+                      className="flex items-center gap-2 p-2 bg-white rounded-lg border border-gray-200 hover:border-[#0891B2] hover:bg-[#0891B2]/5 transition-all text-xs font-bold text-gray-800"
                       style={{ minHeight: '40px' }}>
-                      <Icon className="w-3.5 h-3.5 text-blue-500 shrink-0" />
+                      <Icon className="w-3.5 h-3.5 text-[#0891B2] shrink-0" />
                       <span className="truncate">{label}</span>
                     </Link>
                   );
@@ -582,7 +585,7 @@ function AppLayout() {
               <Link key={tag.path} to={langPath(tag.path)}
                 className={`shrink-0 px-3 py-1.5 rounded-full text-[11px] font-bold whitespace-nowrap transition-all border ${
                   isActive
-                    ? 'bg-blue-600 text-white border-blue-600 shadow-sm'
+                    ? 'bg-[#0891B2] text-white border-[#0891B2] shadow-sm'
                     : 'bg-gray-50 text-gray-600 border-gray-200 hover:bg-gray-100 hover:text-gray-900'
                 }`}
                 style={{ minHeight: '32px' }}
@@ -740,7 +743,7 @@ function AppLayout() {
                   onClick={() => setLang(l)}
                   className={`flex-1 py-2 text-xs font-black rounded-lg uppercase tracking-wide transition-all duration-300 ${
                     lang === l
-                      ? 'bg-white text-blue-600 shadow-md ring-1 ring-gray-905/5'
+                      ? 'bg-white text-[#0891B2] shadow-md ring-1 ring-gray-905/5'
                       : 'text-gray-500 hover:text-gray-800 hover:bg-gray-200'
                   }`}
                   style={{ minHeight: '44px' }}
@@ -802,12 +805,12 @@ function AppLayout() {
                         to={langPath(item.path)}
                         className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all ${
                           isActive 
-                            ? 'bg-blue-50 text-blue-700 font-extrabold shadow-sm' 
+                            ? 'bg-[#0891B2]/10 text-[#0891B2] font-extrabold shadow-sm border border-[#0891B2]/20' 
                             : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                         }`}
                         style={{ minHeight: '44px' }}
                       >
-                        <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-blue-600' : 'text-gray-400'}`} />
+                        <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-[#0891B2]' : 'text-gray-400'}`} />
                         <span className="truncate">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
                       </Link>
                     );
@@ -833,12 +836,12 @@ function AppLayout() {
                         to={langPath(item.path)}
                         className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all ${
                           isActive 
-                            ? 'bg-blue-50 text-blue-700 font-extrabold shadow-sm' 
+                            ? 'bg-[#0891B2]/10 text-[#0891B2] font-extrabold shadow-sm border border-[#0891B2]/20' 
                             : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                         }`}
                         style={{ minHeight: '44px' }}
                       >
-                        <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-blue-600' : 'text-gray-400'}`} />
+                        <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-[#0891B2]' : 'text-gray-400'}`} />
                         <span className="truncate">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
                       </Link>
                     );
@@ -864,12 +867,12 @@ function AppLayout() {
                         to={langPath(item.path)}
                         className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all ${
                           isActive 
-                            ? 'bg-blue-50 text-blue-700 font-extrabold shadow-sm' 
+                            ? 'bg-[#0891B2]/10 text-[#0891B2] font-extrabold shadow-sm border border-[#0891B2]/20' 
                             : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                         }`}
                         style={{ minHeight: '44px' }}
                       >
-                        <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-blue-600' : 'text-gray-400'}`} />
+                        <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-[#0891B2]' : 'text-gray-400'}`} />
                         <span className="truncate">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
                       </Link>
                     );
@@ -911,12 +914,12 @@ function AppLayout() {
                               to={langPath(item.path)}
                               className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all relative ${
                                 isActive
-                                  ? 'bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 font-extrabold shadow-sm'
+                                  ? 'bg-[#0891B2]/10 text-[#0891B2] font-extrabold shadow-sm border border-[#0891B2]/20'
                                   : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                               }`}
                               style={{ minHeight: '44px' }}
                             >
-                              <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-blue-600' : 'text-gray-400'}`} />
+                              <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-[#0891B2]' : 'text-gray-400'}`} />
                               <span className="truncate">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
                               {(item as any).badge && (
                                 <span className={`absolute ${isRtl ? 'left-2' : 'right-2'} px-1.5 py-0.5 text-[8px] font-mono font-bold rounded-md border ${
@@ -954,12 +957,12 @@ function AppLayout() {
                         to={langPath(item.path)}
                         className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all ${
                           isActive 
-                            ? 'bg-purple-50 text-purple-700 font-extrabold shadow-sm' 
+                            ? 'bg-[#0891B2]/10 text-[#0891B2] font-extrabold shadow-sm border border-[#0891B2]/20' 
                             : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                         }`}
                         style={{ minHeight: '44px' }}
                       >
-                        <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-purple-600' : 'text-gray-400'}`} />
+                        <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-[#0891B2]' : 'text-gray-400'}`} />
                         <span className="truncate">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
                       </Link>
                     );

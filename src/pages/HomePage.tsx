@@ -127,10 +127,10 @@ const TIER_HIGHLIGHTS = [
 ];
 
 const colorMap: Record<string, { bg: string; border: string; text: string; badge: string; dot: string }> = {
-  red:     { bg: 'bg-red-50',     border: 'border-red-100',    text: 'text-red-700',    badge: 'bg-red-100 text-red-700',    dot: 'bg-red-500' },
-  blue:    { bg: 'bg-blue-50',    border: 'border-blue-100',   text: 'text-blue-700',   badge: 'bg-blue-100 text-blue-700',  dot: 'bg-blue-500' },
-  emerald: { bg: 'bg-emerald-50', border: 'border-emerald-100',text: 'text-emerald-700',badge: 'bg-emerald-100 text-emerald-700', dot: 'bg-emerald-500' },
-  purple:  { bg: 'bg-purple-50',  border: 'border-purple-100', text: 'text-purple-700', badge: 'bg-purple-100 text-purple-700', dot: 'bg-purple-500' },
+  red:     { bg: 'bg-red-50/70',     border: 'border-red-100',    text: 'text-red-700',    badge: 'bg-red-100 text-red-700',    dot: 'bg-red-500' },
+  blue:    { bg: 'bg-[#0891B2]/5',   border: 'border-[#0891B2]/20',text: 'text-[#0891B2]', badge: 'bg-[#0891B2]/10 text-[#0891B2]', dot: 'bg-[#0891B2]' },
+  emerald: { bg: 'bg-emerald-50/70', border: 'border-emerald-100',text: 'text-emerald-700',badge: 'bg-emerald-100 text-emerald-700', dot: 'bg-emerald-500' },
+  purple:  { bg: 'bg-purple-50/70',  border: 'border-purple-100', text: 'text-purple-700', badge: 'bg-purple-100 text-purple-700', dot: 'bg-purple-500' },
 };
 
 import SEO from '../components/SEO';
@@ -150,25 +150,25 @@ export default function HomePage({ lang }: HomePageProps) {
     <div className="space-y-12 pb-8" dir={isRtl ? 'rtl' : 'ltr'}>
       <SEO logicalPath="/" lang={lang} />
       {/* Hero */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 rounded-3xl overflow-hidden px-8 py-14 sm:py-20 text-white shadow-xl">
+      <section className="relative bg-gradient-to-br from-slate-900 via-[#134E4A] to-slate-900 rounded-3xl overflow-hidden px-8 py-14 sm:py-20 text-white shadow-xl">
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute -top-20 -right-20 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-60 h-60 bg-indigo-500/10 rounded-full blur-3xl" />
+          <div className="absolute -top-20 -right-20 w-80 h-80 bg-[#0891B2]/20 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-60 h-60 bg-emerald-500/10 rounded-full blur-3xl" />
         </div>
         <div className="relative z-10 max-w-2xl">
           <div className="flex items-center gap-2 mb-5">
             <Logo className="w-7 h-7" mode="dark" />
-            <span className="text-[11px] font-mono font-black text-teal-400 uppercase tracking-widest">{hero.badge}</span>
+            <span className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest">{hero.badge}</span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-black tracking-tight text-white leading-tight mb-3">
             {hero.title}
           </h1>
-          <p className="text-lg text-blue-200 font-semibold mb-2">{hero.subtitle}</p>
-          <p className="text-sm text-slate-400 leading-relaxed mb-8 max-w-xl">{hero.desc}</p>
+          <p className="text-lg text-[#CCFBF1] font-semibold mb-2">{hero.subtitle}</p>
+          <p className="text-sm text-slate-300 leading-relaxed mb-8 max-w-xl">{hero.desc}</p>
           <div className="flex flex-wrap gap-3">
             <Link
               to={langPath('/map-calculator')}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-sm transition-all shadow-lg hover:shadow-blue-500/25 active:scale-95"
+              className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#0891B2] hover:bg-[#0891B2]/90 text-white font-bold rounded-xl text-sm transition-all shadow-lg hover:shadow-[#0891B2]/25 active:scale-95 cursor-pointer"
             >
               <Calculator className="w-4 h-4" />
               {cta.primary}
@@ -176,7 +176,7 @@ export default function HomePage({ lang }: HomePageProps) {
             </Link>
             <Link
               to={langPath('/blog')}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/15 text-white font-bold rounded-xl text-sm transition-all border border-white/20 active:scale-95"
+              className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/10 hover:bg-white/15 text-white font-bold rounded-xl text-sm transition-all border border-white/20 active:scale-95 cursor-pointer"
             >
               <BookOpen className="w-4 h-4" />
               {cta.secondary}
@@ -188,35 +188,35 @@ export default function HomePage({ lang }: HomePageProps) {
       {/* Stats row */}
       <section className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         {stats.map((s, i) => (
-          <div key={i} className="bg-white border border-gray-100 rounded-2xl p-5 text-center shadow-xs">
-            <div className="text-2xl font-black text-blue-600 tracking-tight">{s.value}</div>
-            <div className="text-[11px] font-semibold text-gray-500 uppercase tracking-wider mt-1">{s.label}</div>
+          <div key={i} className="bg-white border border-slate-200/80 rounded-2xl p-5 text-center shadow-xs transition-all hover:shadow-sm">
+            <div className="text-2xl sm:text-3xl font-black text-[#0891B2] tracking-tight font-mono">{s.value}</div>
+            <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mt-1">{s.label}</div>
           </div>
         ))}
       </section>
 
-      {/* Tier cards */}
+      {/* Tier cards (Bento Grid) */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {TIER_HIGHLIGHTS.map((tier, idx) => {
           const c = colorMap[tier.color];
           const tl = tierLabels[idx];
           const TierIcon = tier.icon;
           return (
-            <div key={tier.tier} className={`${c.bg} border ${c.border} rounded-2xl p-6 space-y-4`}>
+            <div key={tier.tier} className={`${c.bg} border ${c.border} rounded-2xl p-6 space-y-4 shadow-xs transition-all hover:shadow-sm`}>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className={`p-2 rounded-xl ${c.badge}`}>
+                  <div className={`p-2.5 rounded-xl ${c.badge}`}>
                     <TierIcon className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="flex items-center gap-2">
                       <span className={`w-1.5 h-1.5 rounded-full ${c.dot}`} />
-                      <span className="text-[10px] font-mono font-black text-gray-400 uppercase tracking-widest">
+                      <span className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
                         Tier {tier.tier}
                       </span>
                     </div>
-                    <h3 className={`text-sm font-black ${c.text}`}>{tl.label}</h3>
-                    <p className="text-[11px] text-gray-500 mt-0.5">{tl.desc}</p>
+                    <h3 className={`text-base font-bold ${c.text}`}>{tl.label}</h3>
+                    <p className="text-xs text-slate-500 mt-0.5">{tl.desc}</p>
                   </div>
                 </div>
               </div>
@@ -229,14 +229,14 @@ export default function HomePage({ lang }: HomePageProps) {
                     <Link
                       key={item.path}
                       to={langPath(item.path)}
-                      className="flex items-center justify-between p-2.5 bg-white rounded-xl border border-gray-100 hover:border-gray-200 hover:shadow-xs transition-all group"
+                      className="flex items-center justify-between p-3 bg-white rounded-xl border border-slate-200/60 hover:border-[#0891B2]/40 hover:shadow-xs transition-all group cursor-pointer"
                       style={{ minHeight: '44px' }}
                     >
-                      <div className="flex items-center gap-2.5">
-                        <ItemIcon className={`w-4 h-4 shrink-0 ${c.text} opacity-70`} />
-                        <span className="text-xs font-bold text-gray-800 group-hover:text-gray-900">{label}</span>
+                      <div className="flex items-center gap-3">
+                        <ItemIcon className={`w-4 h-4 shrink-0 ${c.text} opacity-80 group-hover:opacity-100 transition-opacity`} />
+                        <span className="text-xs font-bold text-slate-800 group-hover:text-[#0891B2] transition-colors">{label}</span>
                       </div>
-                      <ChevronRight className="w-3.5 h-3.5 text-gray-300 group-hover:text-gray-500 transition-colors" />
+                      <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-[#0891B2] group-hover:translate-x-0.5 transition-all" />
                     </Link>
                   );
                 })}
@@ -249,15 +249,15 @@ export default function HomePage({ lang }: HomePageProps) {
       {/* Adsterra Native Banner */}
       <AdsterraNativeBanner />
 
-      {/* Trust bar */}
-      <section className="bg-slate-900 rounded-2xl px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-        <div className="p-2.5 rounded-xl bg-blue-500/15 border border-blue-500/20 shrink-0">
-          <ShieldCheck className="w-5 h-5 text-blue-400" />
+      {/* Clinical Trust & Evidence strip */}
+      <section className="bg-slate-900 rounded-2xl px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 shadow-md">
+        <div className="p-2.5 rounded-xl bg-[#0891B2]/20 border border-[#0891B2]/30 shrink-0">
+          <ShieldCheck className="w-5 h-5 text-[#22D3EE]" />
         </div>
-        <p className="text-[12px] text-slate-400 leading-relaxed flex-1">{T.trust[lang]}</p>
+        <p className="text-xs text-slate-300 leading-relaxed flex-1 font-medium">{T.trust[lang]}</p>
         <div className="flex items-center gap-2 shrink-0">
-          <span className="px-2.5 py-1 bg-blue-500/15 border border-blue-500/20 rounded-lg text-[10px] font-black text-blue-400 uppercase tracking-wider">E-E-A-T</span>
-          <span className="px-2.5 py-1 bg-emerald-500/15 border border-emerald-500/20 rounded-lg text-[10px] font-black text-emerald-400 uppercase tracking-wider">PubMed</span>
+          <span className="px-2.5 py-1 bg-[#0891B2]/20 border border-[#0891B2]/30 rounded-lg text-[10px] font-mono font-bold text-[#22D3EE] uppercase tracking-wider">E-E-A-T</span>
+          <span className="px-2.5 py-1 bg-emerald-500/15 border border-emerald-500/20 rounded-lg text-[10px] font-mono font-bold text-emerald-400 uppercase tracking-wider">PubMed</span>
         </div>
       </section>
 
