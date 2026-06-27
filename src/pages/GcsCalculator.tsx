@@ -164,6 +164,16 @@ export default function GcsCalculator({ lang }: { lang: LangCode }) {
         <p className="text-lg text-gray-500 max-w-2xl mt-3">
           {currentText.subtitle}
         </p>
+
+        {/* GEO Definition Block - 40-60 words for AI extraction */}
+        <div className="bg-blue-50/50 border border-blue-100 rounded-xl p-4 md:p-5 mt-6 mb-2">
+          <h2 className="text-sm font-semibold text-blue-900 mb-2 uppercase tracking-wide">
+            {lang === 'en' ? 'Clinical Definition' : lang === 'fr' ? 'Définition Clinique' : 'التعريف السريري'}
+          </h2>
+          <p className="text-gray-700 text-sm leading-relaxed">
+            {currentText.faqA1}
+          </p>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -271,6 +281,17 @@ export default function GcsCalculator({ lang }: { lang: LangCode }) {
                 references={currentText.references}
                 lang={lang}
               />
+
+              {/* Reciprocity Prompt */}
+              {isComplete && (
+                <div className="mt-4 p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-emerald-400 text-sm flex flex-col sm:flex-row items-center justify-between gap-3 transition-all">
+                  <div className="font-medium text-center sm:text-left">
+                    {lang === 'en' ? 'Did this save you time? Bookmark us or share with a colleague!' : 
+                     lang === 'fr' ? 'Cela vous a-t-il fait gagner du temps ? Partagez avec un collègue !' :
+                     'هل وفر هذا من وقتك؟ شاركها مع زملائك!'}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

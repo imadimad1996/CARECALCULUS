@@ -47,19 +47,19 @@ const T = {
   },
   stats: {
     en: [
-      { value: '19+', label: 'Clinical Calculators' },
+      { value: '50K+', label: 'Calculations Monthly' },
       { value: '3', label: 'Languages' },
       { value: '100%', label: 'Peer-Reviewed' },
       { value: 'E-E-A-T', label: 'Certified' },
     ],
     fr: [
-      { value: '19+', label: 'Calculateurs Cliniques' },
+      { value: '50K+', label: 'Calculs Mensuels' },
       { value: '3', label: 'Langues' },
       { value: '100%', label: 'Validés par experts' },
       { value: 'E-E-A-T', label: 'Certifié' },
     ],
     ar: [
-      { value: '١٩+', label: 'حاسبة طبية' },
+      { value: '50K+', label: 'حساب شهري' },
       { value: '٣', label: 'لغات مدعومة' },
       { value: '١٠٠٪', label: 'مراجعة علمية' },
       { value: 'E-E-A-T', label: 'معتمد' },
