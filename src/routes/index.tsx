@@ -2,6 +2,7 @@ import React, { ErrorInfo } from 'react';
 import { Route } from 'react-router-dom';
 import { LangCode } from '../types';
 import EmbedLayout from '../components/EmbedLayout';
+import CalculatorShell from '../components/CalculatorShell';
 import { Activity, BookOpen, HeartPulse, Menu, X, LayoutDashboard, Calculator, Droplet, Brain, TestTube, AlertOctagon, ArrowRightLeft, AlertTriangle, Stethoscope, Wind, FileText, ShieldCheck, Sparkles, ChevronRight, Search, Globe, Scale, MonitorPlay, GraduationCap, Newspaper, Scissors, Layers, Award } from 'lucide-react';
 
 // Page import factories kept in one list so they can be (a) wrapped in
@@ -206,32 +207,38 @@ export const TIER_HEADERS: Record<number, Record<LangCode, string>> = {
 // be mounted under "/", "/fr", and "/ar" without duplication. `langPath` builds
 // the redirect targets for the index/fallback routes in the active language.
 export function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
+  const wrapCalculator = (logicalPath: string, node: React.ReactNode) => (
+    <CalculatorShell logicalPath={logicalPath} lang={lang}>
+      {node}
+    </CalculatorShell>
+  );
+
   return (
     <>
       <Route index element={<HomePage lang={lang} />} />
       <Route path="home" element={<HomePage lang={lang} />} />
-      <Route path="map-calculator" element={<MapCalculator lang={lang} />} />
-      <Route path="bmi-calculator" element={<BmiCalculator lang={lang} />} />
-      <Route path="glasgow-coma-scale" element={<GcsCalculator lang={lang} />} />
-      <Route path="drip-rate-calculator" element={<DripRate lang={lang} />} />
-      <Route path="creatinine-clearance" element={<CreatinineClearance lang={lang} />} />
-      <Route path="mdrd-gfr" element={<MdrdGfr lang={lang} />} />
-      <Route path="ckd-epi-gfr" element={<CkdEpiGfr lang={lang} />} />
-      <Route path="wells-score" element={<WellsScore lang={lang} />} />
-      <Route path="medical-conversions" element={<MedicalConversions lang={lang} />} />
-      <Route path="medical-conversions/:category" element={<MedicalConversions lang={lang} />} />
-      <Route path="corrected-calcium" element={<CorrectedCalcium lang={lang} />} />
-      <Route path="qsofa-score" element={<QsofaScore lang={lang} />} />
-      <Route path="curb65-score" element={<Curb65Score lang={lang} />} />
-      <Route path="cha2ds2-vasc" element={<Cha2ds2VascScore lang={lang} />} />
-      <Route path="phq9-score" element={<Phq9Score lang={lang} />} />
-      <Route path="meld-score" element={<MeldScore lang={lang} />} />
-      <Route path="sirs-criteria" element={<SirsCriteria lang={lang} />} />
-      <Route path="pf-ratio" element={<PfRatio lang={lang} />} />
-      <Route path="tidal-volume" element={<TidalVolume lang={lang} />} />
-      <Route path="anc-calculator" element={<AncCalculator lang={lang} />} />
-      <Route path="adjusted-body-weight" element={<AdjustedBodyWeight lang={lang} />} />
-      <Route path="steroid-conversion" element={<SteroidConversion lang={lang} />} />
+      <Route path="map-calculator" element={wrapCalculator('/map-calculator', <MapCalculator lang={lang} />)} />
+      <Route path="bmi-calculator" element={wrapCalculator('/bmi-calculator', <BmiCalculator lang={lang} />)} />
+      <Route path="glasgow-coma-scale" element={wrapCalculator('/glasgow-coma-scale', <GcsCalculator lang={lang} />)} />
+      <Route path="drip-rate-calculator" element={wrapCalculator('/drip-rate-calculator', <DripRate lang={lang} />)} />
+      <Route path="creatinine-clearance" element={wrapCalculator('/creatinine-clearance', <CreatinineClearance lang={lang} />)} />
+      <Route path="mdrd-gfr" element={wrapCalculator('/mdrd-gfr', <MdrdGfr lang={lang} />)} />
+      <Route path="ckd-epi-gfr" element={wrapCalculator('/ckd-epi-gfr', <CkdEpiGfr lang={lang} />)} />
+      <Route path="wells-score" element={wrapCalculator('/wells-score', <WellsScore lang={lang} />)} />
+      <Route path="medical-conversions" element={wrapCalculator('/medical-conversions', <MedicalConversions lang={lang} />)} />
+      <Route path="medical-conversions/:category" element={wrapCalculator('/medical-conversions', <MedicalConversions lang={lang} />)} />
+      <Route path="corrected-calcium" element={wrapCalculator('/corrected-calcium', <CorrectedCalcium lang={lang} />)} />
+      <Route path="qsofa-score" element={wrapCalculator('/qsofa-score', <QsofaScore lang={lang} />)} />
+      <Route path="curb65-score" element={wrapCalculator('/curb65-score', <Curb65Score lang={lang} />)} />
+      <Route path="cha2ds2-vasc" element={wrapCalculator('/cha2ds2-vasc', <Cha2ds2VascScore lang={lang} />)} />
+      <Route path="phq9-score" element={wrapCalculator('/phq9-score', <Phq9Score lang={lang} />)} />
+      <Route path="meld-score" element={wrapCalculator('/meld-score', <MeldScore lang={lang} />)} />
+      <Route path="sirs-criteria" element={wrapCalculator('/sirs-criteria', <SirsCriteria lang={lang} />)} />
+      <Route path="pf-ratio" element={wrapCalculator('/pf-ratio', <PfRatio lang={lang} />)} />
+      <Route path="tidal-volume" element={wrapCalculator('/tidal-volume', <TidalVolume lang={lang} />)} />
+      <Route path="anc-calculator" element={wrapCalculator('/anc-calculator', <AncCalculator lang={lang} />)} />
+      <Route path="adjusted-body-weight" element={wrapCalculator('/adjusted-body-weight', <AdjustedBodyWeight lang={lang} />)} />
+      <Route path="steroid-conversion" element={wrapCalculator('/steroid-conversion', <SteroidConversion lang={lang} />)} />
       <Route path="pdf-splitter" element={<PdfSplitter lang={lang} />} />
       <Route path="pdf-merger" element={<PdfMerger lang={lang} />} />
       <Route path="blog" element={<MedicalBlog lang={lang} />} />
@@ -246,9 +253,9 @@ export function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="fmp-medecine/:moduleSlug" element={<FmpMedecine lang={lang} />} />
       <Route path="ispits" element={<IspitsAcademic lang={lang} />} />
       <Route path="ispits/:moduleSlug" element={<IspitsAcademic lang={lang} />} />
-      <Route path="nutrition-tdee" element={<NutritionTdee lang={lang} />} />
-      <Route path="nutrition-must" element={<NutritionMust lang={lang} />} />
-      <Route path="nutrition-nrs2002" element={<NutritionNrs2002 lang={lang} />} />
+      <Route path="nutrition-tdee" element={wrapCalculator('/nutrition-tdee', <NutritionTdee lang={lang} />)} />
+      <Route path="nutrition-must" element={wrapCalculator('/nutrition-must', <NutritionMust lang={lang} />)} />
+      <Route path="nutrition-nrs2002" element={wrapCalculator('/nutrition-nrs2002', <NutritionNrs2002 lang={lang} />)} />
       <Route path="glp-1-hub" element={<Glp1Hub lang={lang} />} />
       <Route path="hub-glp1" element={<Glp1Hub lang={lang} />} />
       <Route path="مركز-glp1" element={<Glp1Hub lang={lang} />} />
@@ -265,11 +272,11 @@ export function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="terms" element={<Terms lang={lang} />} />
       <Route path="embed-gallery" element={<EmbedGallery lang={lang} />} />
       <Route path="for-hospitals" element={<ForHospitals lang={lang} />} />
-      <Route path="apgar-score" element={<ApgarScore lang={lang} />} />
-      <Route path="sofa-score" element={<SofaScore lang={lang} />} />
-      <Route path="child-pugh-score" element={<ChildPughScore lang={lang} />} />
-      <Route path="anion-gap" element={<AnionGap lang={lang} />} />
-      <Route path="aa-gradient" element={<AaGradient lang={lang} />} />
+      <Route path="apgar-score" element={wrapCalculator('/apgar-score', <ApgarScore lang={lang} />)} />
+      <Route path="sofa-score" element={wrapCalculator('/sofa-score', <SofaScore lang={lang} />)} />
+      <Route path="child-pugh-score" element={wrapCalculator('/child-pugh-score', <ChildPughScore lang={lang} />)} />
+      <Route path="anion-gap" element={wrapCalculator('/anion-gap', <AnionGap lang={lang} />)} />
+      <Route path="aa-gradient" element={wrapCalculator('/aa-gradient', <AaGradient lang={lang} />)} />
       <Route path="compare/:slug1-vs-:slug2" element={<Compare lang={lang} />} />
     </>
   );

@@ -16,9 +16,9 @@ interface HomePageProps {
 
 const T = {
   hero: {
-    en: { badge: 'Clinical Decision Suite', title: 'Medical Calculators', subtitle: 'Trusted by clinicians worldwide', desc: 'Evidence-based tools for critical care, internal medicine, pharmacology, and clinical research — multilingual, offline-ready, peer-reviewed.' },
-    fr: { badge: 'Suite de Décision Clinique', title: 'Calculateurs Médicaux', subtitle: 'Utilisé par des cliniciens du monde entier', desc: 'Outils fondés sur les preuves pour les soins intensifs, la médecine interne, la pharmacologie — multilingue, hors ligne, validés.' },
-    ar: { badge: 'منصة القرار الطبي السريري', title: 'الحاسبات الطبية المتخصصة', subtitle: 'يثق به الأطباء حول العالم', desc: 'أدوات قائمة على الأدلة للعناية المركزة والطب الباطني وعلم الأدوية — متعددة اللغات، تعمل بدون اتصال، مُراجعة علميًا.' },
+    en: { badge: 'Clinical Decision Suite', title: 'Medical Calculators', subtitle: 'Trusted by clinicians worldwide', desc: 'Evidence-based tools for critical care, internal medicine, pharmacology, and clinical research - multilingual, offline-ready, peer-reviewed, and structured for fast retrieval by search engines and AI assistants.' },
+    fr: { badge: 'Suite de Décision Clinique', title: 'Calculateurs Médicaux', subtitle: 'Utilisé par des cliniciens du monde entier', desc: 'Outils fondés sur les preuves pour les soins intensifs, la médecine interne et la pharmacologie - multilingues, hors ligne, validés et structurés pour une récupération rapide par les moteurs de recherche et les assistants IA.' },
+    ar: { badge: 'منصة القرار الطبي السريري', title: 'الحاسبات الطبية المتخصصة', subtitle: 'يثق به الأطباء حول العالم', desc: 'أدوات قائمة على الأدلة للعناية المركزة والطب الباطني وعلم الأدوية - متعددة اللغات، تعمل بدون اتصال، مُراجعة علميًا، ومهيأة للاستخراج السريع بواسطة محركات البحث والمساعدات الذكية.' },
   },
   cta: {
     en: { primary: 'Open Calculators', secondary: 'Browse Library' },
@@ -155,6 +155,48 @@ export default function HomePage({ lang }: HomePageProps) {
     ar: { label: 'شائع:', items: [{ name: 'MAP', path: '/map-calculator' }, { name: 'Glasgow', path: '/glasgow-coma-scale' }, { name: 'Wells', path: '/wells-score' }, { name: 'الكرياتينين', path: '/creatinine-clearance' }] }
   }[lang];
 
+  const aiSummary = {
+    en: {
+      badge: 'AI-ready answer',
+      title: 'What CareCalculus answers',
+      desc: 'Use this site when you need a bedside calculator, a dosing reference, or a quick clinical score. The core pages are built around direct definitions, formula blocks, interpretation ranges, and linked references so humans and AI systems can extract the answer quickly.',
+      chips: [
+        { label: 'MAP / perfusion', path: '/map-calculator' },
+        { label: 'GCS / neuro', path: '/glasgow-coma-scale' },
+        { label: 'qSOFA / sepsis', path: '/qsofa-score' },
+        { label: 'CKD-EPI / kidney', path: '/ckd-epi-gfr' },
+        { label: 'CURB-65 / pneumonia', path: '/curb65-score' },
+        { label: 'MELD / liver', path: '/meld-score' },
+      ],
+    },
+    fr: {
+      badge: 'Réponse prête pour IA',
+      title: 'Ce que CareCalculus permet de calculer',
+      desc: 'Utilisez ce site pour un calcul au lit du patient, une référence de dosage ou un score clinique rapide. Les pages principales sont structurées autour de définitions directes, de formules, de plages d’interprétation et de références reliées pour faciliter l’extraction par les humains et les IA.',
+      chips: [
+        { label: 'PAM / perfusion', path: '/map-calculator' },
+        { label: 'GCS / neuro', path: '/glasgow-coma-scale' },
+        { label: 'qSOFA / sepsis', path: '/qsofa-score' },
+        { label: 'CKD-EPI / rein', path: '/ckd-epi-gfr' },
+        { label: 'CURB-65 / pneumonie', path: '/curb65-score' },
+        { label: 'MELD / foie', path: '/meld-score' },
+      ],
+    },
+    ar: {
+      badge: 'إجابة جاهزة للذكاء الاصطناعي',
+      title: 'ما الذي يجيب عنه CareCalculus',
+      desc: 'استخدم الموقع عندما تحتاج إلى حاسبة سريرية، أو مرجع للجرعات، أو مقياس سريع بجانب السرير. الصفحات الأساسية مبنية على تعريف مباشر، ومعادلة واضحة، ونطاقات تفسير، ومراجع مرتبطة بحيث يمكن للإنسان وأنظمة الذكاء الاصطناعي استخراج الإجابة بسرعة.',
+      chips: [
+        { label: 'MAP / التروية', path: '/map-calculator' },
+        { label: 'GCS / الأعصاب', path: '/glasgow-coma-scale' },
+        { label: 'qSOFA / الإنتان', path: '/qsofa-score' },
+        { label: 'CKD-EPI / الكلى', path: '/ckd-epi-gfr' },
+        { label: 'CURB-65 / الرئة', path: '/curb65-score' },
+        { label: 'MELD / الكبد', path: '/meld-score' },
+      ],
+    },
+  }[lang];
+
   const tierLabels = [tiers.t1, tiers.t2, tiers.t3, tiers.t4];
 
   return (
@@ -226,6 +268,61 @@ export default function HomePage({ lang }: HomePageProps) {
               <BookOpen className="w-4 h-4" />
               {cta.secondary}
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+        <div className="rounded-3xl border border-slate-200/80 bg-white/90 shadow-sm p-6 sm:p-8">
+          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-100 bg-cyan-50 px-3 py-1 text-[10px] font-mono font-extrabold uppercase tracking-[0.24em] text-cyan-700">
+            <Sparkles className="w-3.5 h-3.5" />
+            {aiSummary.badge}
+          </div>
+          <h2 className="mt-4 text-2xl sm:text-3xl font-black tracking-tight text-slate-900">
+            {aiSummary.title}
+          </h2>
+          <p className="mt-4 max-w-3xl text-sm sm:text-base leading-7 text-slate-600">
+            {aiSummary.desc}
+          </p>
+          <div className="mt-6 flex flex-wrap gap-2">
+            {aiSummary.chips.map((item) => (
+              <Link
+                key={item.path}
+                to={langPath(item.path)}
+                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3.5 py-2 text-xs font-semibold text-slate-700 transition-colors hover:border-cyan-200 hover:bg-cyan-50 hover:text-cyan-700"
+              >
+                <Search className="w-3.5 h-3.5" />
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <div className="rounded-3xl border border-slate-200/80 bg-slate-950 px-6 py-6 text-white shadow-sm relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute -top-20 right-0 h-56 w-56 rounded-full bg-cyan-400/10 blur-3xl" />
+            <div className="absolute -bottom-24 -left-10 h-56 w-56 rounded-full bg-emerald-400/10 blur-3xl" />
+          </div>
+          <div className="relative z-10">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] font-mono font-extrabold uppercase tracking-[0.24em] text-cyan-300">
+              <ShieldCheck className="w-3.5 h-3.5" />
+              Fast citation targets
+            </div>
+            <div className="mt-4 space-y-3 text-sm leading-7 text-slate-300">
+              <p>1. Direct formula and score explanations are visible on-page.</p>
+              <p>2. Pages use English, French, and Arabic with matching alternates.</p>
+              <p>3. The site exposes clinical references, FAQs, and clear titles for retrieval.</p>
+            </div>
+            <div className="mt-6 grid grid-cols-2 gap-3 text-center">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
+                <div className="text-2xl font-black tracking-tight text-white">19+</div>
+                <div className="mt-1 text-[10px] font-mono font-semibold uppercase tracking-[0.2em] text-slate-400">calculators</div>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
+                <div className="text-2xl font-black tracking-tight text-white">3</div>
+                <div className="mt-1 text-[10px] font-mono font-semibold uppercase tracking-[0.2em] text-slate-400">languages</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

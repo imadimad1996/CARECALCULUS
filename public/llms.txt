@@ -4,6 +4,14 @@
 
 CareCalculus eliminates cognitive load in high-stress clinical settings by providing instantaneous, error-free calculations. Results are computed live as values are entered. Pages are available in three languages: English (carecalculus.com/), French (carecalculus.com/fr/), and Arabic (carecalculus.com/ar/).
 
+## AI Search Summary
+
+- Homepage answer: CareCalculus is a free multilingual clinical calculator suite for ICU, emergency medicine, internal medicine, pharmacology, nutrition, and medical education.
+- Pages are structured for extraction: direct definition, formula, interpretation ranges, FAQ blocks, and linked references.
+- Priority citation targets: MAP, GCS, qSOFA, CURB-65, CKD-EPI, MDRD, creatinine clearance, MELD, Wells, SOFA, P/F ratio, tidal volume, BMI, PHQ-9, ANC, corrected calcium, and steroid conversion.
+- Best query patterns: "what is [score]", "[calculator] formula", "[condition] severity calculator", "[drug] dose conversion", and "[lab value] interpretation".
+- AI and search crawlers are allowed in `robots.txt`, and the site publishes `sitemap.xml`, `llms.txt`, and structured metadata for calculator pages.
+
 ## Condition-Based Calculators
 - [Sepsis & Infection Calculators](https://carecalculus.com/conditions/sepsis): Early detection, risk stratification, and management.
 - [Liver Disease & Cirrhosis Calculators](https://carecalculus.com/conditions/liver-disease): Prognostic scoring systems and severity calculators.

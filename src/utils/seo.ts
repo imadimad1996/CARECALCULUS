@@ -43,6 +43,28 @@ export interface RouteMeta {
 }
 
 export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
+  if (path === '/' || path === '/home') {
+    if (lang === 'fr') {
+      return {
+        title: 'CareCalculus | Calculateurs Médicaux Gratuits en Français, Anglais et Arabe',
+        desc: 'CareCalculus est une suite gratuite de calculateurs cliniques multilingues pour les soins intensifs, les urgences, la médecine interne, la pharmacologie, la nutrition et l’enseignement médical. Utilisez des outils validés pour MAP, GCS, qSOFA, CURB-65, CKD-EPI, MELD, IMC et plus encore.',
+        keywords: 'calculateurs médicaux, scores cliniques, calculateur réanimation, calculateur urgences, outil dosage, outils médicaux multilingues',
+      };
+    }
+    if (lang === 'ar') {
+      return {
+        title: 'CareCalculus | حاسبات طبية مجانية بالإنجليزية والفرنسية والعربية',
+        desc: 'CareCalculus هي منصة مجانية متعددة اللغات للحاسبات السريرية وأدوات دعم القرار الطبي للعناية المركزة والطوارئ والطب الباطني والصيدلة والتغذية والتعليم الطبي. استخدم أدوات موثوقة مثل MAP وGCS وqSOFA وCURB-65 وCKD-EPI وMELD وBMI وغيرها.',
+        keywords: 'حاسبات طبية, مقاييس سريرية, أدوات العناية المركزة, حاسبة الطوارئ, جرعات الدواء, أدوات طبية متعددة اللغات',
+      };
+    }
+    return {
+      title: 'CareCalculus | Free Clinical Calculators in English, French, and Arabic',
+      desc: 'CareCalculus is a free multilingual clinical calculator suite for ICU, emergency, internal medicine, pharmacology, nutrition, and medical education. Use validated tools for MAP, GCS, qSOFA, CURB-65, CKD-EPI, MELD, BMI, and more.',
+      keywords: 'clinical calculators, medical scores, ICU calculator, emergency medicine tool, dosing calculator, multilingual medical tools',
+    };
+  }
+
   // 1. Journal Articles (/blog/:slug)
   if (path.startsWith('/blog/')) {
     const slug = path.replace(/^\/blog\//, '');
@@ -328,6 +350,9 @@ export function getMedicalSchema(path: string) {
 }
 
 export function pageUrl(logicalPath: string, lang: LangCode): string {
+  if (logicalPath === '/' || logicalPath === '/home') {
+    return `${ORIGIN}${lang === 'en' ? '' : '/' + lang}`;
+  }
   return `${ORIGIN}${lang === 'en' ? '' : '/' + lang}${logicalPath}`;
 }
 
@@ -635,6 +660,37 @@ export function getFaqData(path: string) {
 export function buildJsonLd(logicalPath: string, lang: LangCode) {
   const meta = getLocalizedMeta(logicalPath, lang);
   const url = pageUrl(logicalPath, lang);
+  if (logicalPath === '/' || logicalPath === '/home') {
+    const coreLinks = [
+      '/map-calculator',
+      '/glasgow-coma-scale',
+      '/qsofa-score',
+      '/curb65-score',
+      '/ckd-epi-gfr',
+      '/meld-score',
+    ];
+    return [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        name: meta.title,
+        description: meta.desc,
+        url,
+        inLanguage: lang,
+        isAccessibleForFree: true,
+        author: { '@type': 'Organization', name: 'CareCalculus', url: ORIGIN },
+        mainEntity: {
+          '@type': 'ItemList',
+          itemListElement: coreLinks.map((path, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            name: getLocalizedMeta(path, lang).title.split(' | ')[0],
+            url: pageUrl(path, lang),
+          })),
+        },
+      },
+    ];
+  }
   const list: any[] = [
     {
       '@context': 'https://schema.org',
@@ -759,9 +815,10 @@ export interface HeadModel {
 
 /** Compute the complete head model for a route (pure, no DOM). */
 export function buildHead(logicalPath: string, lang: LangCode): HeadModel {
-  const meta = getLocalizedMeta(logicalPath, lang);
-  const url = pageUrl(logicalPath, lang);
-  const pathSuffix = logicalPath === '/' ? '/map-calculator' : logicalPath;
+  const effectivePath = logicalPath === '/home' ? '/' : logicalPath;
+  const meta = getLocalizedMeta(effectivePath, lang);
+  const url = pageUrl(effectivePath, lang);
+  const pathSuffix = effectivePath === '/' ? '' : effectivePath;
 
   const hreflang: { hreflang: string; href: string }[] = (['en', 'fr', 'ar'] as LangCode[]).map((l) => ({
     hreflang: l as string,
