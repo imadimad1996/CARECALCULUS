@@ -156,6 +156,26 @@ while ((ispitsMatch = ispitsNameRe.exec(ispitsModulesSrc)) !== null) {
   ispitsModules.push({ title: ispitsMatch[1] });
 }
 
+// Conditions
+const conditionsSrc = read('src/data/conditions.ts');
+const conditionsBlock = extractArrayBlock(conditionsSrc, 'CONDITIONS_DB');
+const conditions = [];
+const conditionIdRe = /\bid:\s*['"]([^'"]+)['"]/g;
+let cMatch;
+while ((cMatch = conditionIdRe.exec(conditionsBlock)) !== null) {
+  conditions.push(cMatch[1]);
+}
+
+// Specialties
+const specialtiesSrc = read('src/data/specialties.ts');
+const specialtiesBlock = extractArrayBlock(specialtiesSrc, 'SPECIALTIES_DB');
+const specialties = [];
+const specialtyIdRe = /\bid:\s*['"]([^'"]+)['"]/g;
+let sMatch;
+while ((sMatch = specialtyIdRe.exec(specialtiesBlock)) !== null) {
+  specialties.push(sMatch[1]);
+}
+
 // --- Build the set of LOGICAL paths (language-agnostic) -----------------------
 // English is served bare, French at /fr, Arabic at /ar. Each logical path below
 // is emitted once per language with full hreflang alternates.
@@ -191,6 +211,8 @@ for (const c of courses) add(`/cours/${slugify(c.title, c.id)}`, '0.5', 'monthly
 for (const d of decks) add(`/presentations/${slugify(d.title, d.id)}`, '0.5', 'monthly');
 for (const f of fmpModules) add(`/fmp-medecine/${slugify(f.title)}`, '0.6', 'monthly');
 for (const i of ispitsModules) add(`/ispits/${slugify(i.title)}`, '0.6', 'monthly');
+for (const c of conditions) add(`/conditions/${c}`, '0.8', 'monthly');
+for (const s of specialties) add(`/specialties/${s}`, '0.8', 'monthly');
 
 // High-value programmatic comparison routes
 const comparisons = [
@@ -239,3 +261,4 @@ writeFileSync(join(ROOT, 'public/sitemap.xml'), xml, 'utf8');
 console.log(`✓ sitemap.xml generated — ${pages.length} pages × ${LANGS.length} languages = ${blocks.length} URLs (lastmod ${today})`);
 console.log(`  • ${navPaths.length} top-level routes`);
 console.log(`  • ${blogPosts.length} blog · ${journalPosts.length} journal · ${courses.length} courses · ${decks.length} presentations · ${fmpModules.length} FMPC modules · ${ispitsModules.length} ISPITS modules`);
+console.log(`  • ${conditions.length} condition hubs · ${specialties.length} specialty hubs`);

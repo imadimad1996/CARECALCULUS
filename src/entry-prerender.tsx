@@ -23,6 +23,8 @@ import { DEFAULT_COURSES } from './pages/Courses';
 import { DEFAULT_SUBJECTS } from './pages/Presentations';
 import { FMP_MODULES } from './utils/fmpModules';
 import { ISPITS_MODULES } from './utils/ispitsModules';
+import { CONDITIONS_DB } from './data/conditions';
+import { SPECIALTIES_DB } from './data/specialties';
 
 let pagesReady: Promise<void> | null = null;
 
@@ -64,6 +66,9 @@ const presentationSlugs = [
 
 const fmpSlugs = FMP_MODULES.map(m => `/fmp-medecine/${m.slug}`);
 const ispitsSlugs = ISPITS_MODULES.map(m => `/ispits/${m.slug}`);
+
+const conditionSlugs = CONDITIONS_DB.map(c => `/conditions/${c.id}`);
+const specialtySlugs = SPECIALTIES_DB.map(s => `/specialties/${s.id}`);
 
 // Logical (language-agnostic) structural routes worth prerendering. These are
 // statically generated so Googlebot + AI crawlers get complete HTML on first
@@ -120,6 +125,8 @@ const LOGICAL_ROUTES = [
   ...presentationSlugs,
   ...fmpSlugs,
   ...ispitsSlugs,
+  ...conditionSlugs,
+  ...specialtySlugs,
 ];
 
 const LANGS: LangCode[] = ['en', 'fr', 'ar'];

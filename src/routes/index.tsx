@@ -61,6 +61,7 @@ const pageLoaders = [
   () => import('../pages/CkdEpiGfr'),
   () => import('../pages/EmbedGallery'),
   () => import('../pages/ForHospitals'),
+  () => import('../pages/SpecialtyHub'),
 ] as const;
 
 const [
@@ -73,7 +74,7 @@ const [
   FmpMedecine, IspitsAcademic,
   FlashcardGenerator, CaseStudyViewer, DrugSheets, StudyTracker, AbbreviationLookup,
   Compare, NutritionTdee, NutritionMust, NutritionNrs2002, ConditionHub,
-  MdrdGfr, CkdEpiGfr, EmbedGallery, ForHospitals,
+  MdrdGfr, CkdEpiGfr, EmbedGallery, ForHospitals, SpecialtyHub,
 ] = pageLoaders.map((loader) => React.lazy(loader as any)) as any[];
 
 export const HomePage = React.lazy(() => import('../pages/HomePage'));
@@ -267,6 +268,7 @@ export function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="abbreviation-lookup" element={<AbbreviationLookup lang={lang} />} />
       <Route path="about" element={<About lang={lang} />} />
       <Route path="conditions/:conditionSlug" element={<ConditionHub lang={lang} />} />
+      <Route path="specialties/:specialtySlug" element={<SpecialtyHub lang={lang} />} />
       <Route path="disclaimer" element={<Disclaimer lang={lang} />} />
       <Route path="privacy" element={<Privacy lang={lang} />} />
       <Route path="terms" element={<Terms lang={lang} />} />

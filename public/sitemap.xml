@@ -6641,6 +6641,366 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/ispits/methodologie-de-recherche-et-pfe"/>
   </url>
   <url>
+    <loc>https://carecalculus.com/conditions/sepsis</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/conditions/sepsis"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/conditions/sepsis"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/conditions/sepsis"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/conditions/sepsis"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/conditions/sepsis</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/conditions/sepsis"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/conditions/sepsis"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/conditions/sepsis"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/conditions/sepsis"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/conditions/sepsis</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/conditions/sepsis"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/conditions/sepsis"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/conditions/sepsis"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/conditions/sepsis"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/conditions/liver-disease</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/conditions/liver-disease"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/conditions/liver-disease"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/conditions/liver-disease"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/conditions/liver-disease"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/conditions/liver-disease</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/conditions/liver-disease"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/conditions/liver-disease"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/conditions/liver-disease"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/conditions/liver-disease"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/conditions/liver-disease</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/conditions/liver-disease"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/conditions/liver-disease"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/conditions/liver-disease"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/conditions/liver-disease"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/conditions/atrial-fibrillation</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/conditions/atrial-fibrillation"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/conditions/atrial-fibrillation"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/conditions/atrial-fibrillation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/conditions/atrial-fibrillation"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/conditions/atrial-fibrillation</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/conditions/atrial-fibrillation"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/conditions/atrial-fibrillation"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/conditions/atrial-fibrillation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/conditions/atrial-fibrillation"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/conditions/atrial-fibrillation</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/conditions/atrial-fibrillation"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/conditions/atrial-fibrillation"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/conditions/atrial-fibrillation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/conditions/atrial-fibrillation"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/conditions/respiratory-failure</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/conditions/respiratory-failure"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/conditions/respiratory-failure"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/conditions/respiratory-failure"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/conditions/respiratory-failure"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/conditions/respiratory-failure</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/conditions/respiratory-failure"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/conditions/respiratory-failure"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/conditions/respiratory-failure"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/conditions/respiratory-failure"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/conditions/respiratory-failure</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/conditions/respiratory-failure"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/conditions/respiratory-failure"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/conditions/respiratory-failure"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/conditions/respiratory-failure"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/conditions/renal-failure</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/conditions/renal-failure"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/conditions/renal-failure"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/conditions/renal-failure"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/conditions/renal-failure"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/conditions/renal-failure</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/conditions/renal-failure"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/conditions/renal-failure"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/conditions/renal-failure"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/conditions/renal-failure"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/conditions/renal-failure</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/conditions/renal-failure"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/conditions/renal-failure"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/conditions/renal-failure"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/conditions/renal-failure"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/specialties/intensive-care</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/specialties/intensive-care"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/specialties/intensive-care"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/specialties/intensive-care"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/specialties/intensive-care"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/specialties/intensive-care</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/specialties/intensive-care"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/specialties/intensive-care"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/specialties/intensive-care"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/specialties/intensive-care"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/specialties/intensive-care</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/specialties/intensive-care"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/specialties/intensive-care"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/specialties/intensive-care"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/specialties/intensive-care"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/specialties/emergency-medicine</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/specialties/emergency-medicine"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/specialties/emergency-medicine"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/specialties/emergency-medicine"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/specialties/emergency-medicine"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/specialties/emergency-medicine</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/specialties/emergency-medicine"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/specialties/emergency-medicine"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/specialties/emergency-medicine"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/specialties/emergency-medicine"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/specialties/emergency-medicine</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/specialties/emergency-medicine"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/specialties/emergency-medicine"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/specialties/emergency-medicine"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/specialties/emergency-medicine"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/specialties/internal-medicine</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/specialties/internal-medicine"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/specialties/internal-medicine"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/specialties/internal-medicine"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/specialties/internal-medicine"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/specialties/internal-medicine</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/specialties/internal-medicine"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/specialties/internal-medicine"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/specialties/internal-medicine"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/specialties/internal-medicine"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/specialties/internal-medicine</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/specialties/internal-medicine"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/specialties/internal-medicine"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/specialties/internal-medicine"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/specialties/internal-medicine"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/specialties/nephrology</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/specialties/nephrology"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/specialties/nephrology"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/specialties/nephrology"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/specialties/nephrology"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/specialties/nephrology</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/specialties/nephrology"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/specialties/nephrology"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/specialties/nephrology"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/specialties/nephrology"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/specialties/nephrology</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/specialties/nephrology"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/specialties/nephrology"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/specialties/nephrology"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/specialties/nephrology"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/specialties/cardiology</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/specialties/cardiology"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/specialties/cardiology"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/specialties/cardiology"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/specialties/cardiology"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/specialties/cardiology</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/specialties/cardiology"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/specialties/cardiology"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/specialties/cardiology"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/specialties/cardiology"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/specialties/cardiology</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/specialties/cardiology"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/specialties/cardiology"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/specialties/cardiology"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/specialties/cardiology"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/specialties/pulmonology</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/specialties/pulmonology"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/specialties/pulmonology"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/specialties/pulmonology"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/specialties/pulmonology"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/specialties/pulmonology</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/specialties/pulmonology"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/specialties/pulmonology"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/specialties/pulmonology"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/specialties/pulmonology"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/specialties/pulmonology</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/specialties/pulmonology"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/specialties/pulmonology"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/specialties/pulmonology"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/specialties/pulmonology"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/specialties/neurology</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/specialties/neurology"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/specialties/neurology"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/specialties/neurology"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/specialties/neurology"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/specialties/neurology</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/specialties/neurology"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/specialties/neurology"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/specialties/neurology"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/specialties/neurology"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/specialties/neurology</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/specialties/neurology"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/specialties/neurology"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/specialties/neurology"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/specialties/neurology"/>
+  </url>
+  <url>
     <loc>https://carecalculus.com/compare/map-calculator-vs-qsofa-score</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>monthly</changefreq>
