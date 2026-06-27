@@ -291,5 +291,5 @@
 }
 
 .input {
-  @apply px-4 py-3 border border-slate-250 rounded-xl text-base transition-all duration-200 focus:border-[#0891B2] focus:ring-4 focus:ring-[#0891B2]/10 outline-none;
+  @apply px-4 py-3 border border-slate-300 rounded-xl text-base transition-all duration-200 focus:border-[#0891B2] focus:ring-4 focus:ring-[#0891B2]/10 outline-none;
 }
