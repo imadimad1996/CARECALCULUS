@@ -112,7 +112,7 @@ function extractNavPaths(src) {
 }
 
 // --- Gather sources -----------------------------------------------------------
-const routesSrc = read('src/routes.tsx');
+const routesSrc = read('src/routes/index.tsx');
 const navPaths = extractNavPaths(routesSrc);
 
 const masterSrc = read('src/utils/masterListContent.ts');
