@@ -685,6 +685,81 @@ export const MASTER_BLOGS: MasterBlog[] = [
 // 2. 20 MEDICAL JOURNALS
 export const MASTER_JOURNALS: MasterJournal[] = [
   {
+    id: 'mj-new-1',
+    title: {
+      en: 'ESPEN Guideline on Nutrition and Hydration in Dementia: 2024 Update',
+      fr: 'Recommandations de l\'ESPEN sur la nutrition et l\'hydratation dans la démence : mise à jour 2024',
+      ar: 'إرشادات ESPEN حول التغذية والترطيب في الخرف: تحديث 2024'
+    },
+    snippet: {
+      en: 'Updated evidence-based recommendations on the prevention and management of malnutrition and dehydration in older adults with dementia.',
+      fr: 'Recommandations actualisées basées sur des preuves pour la prévention et la gestion de la malnutrition et de la déshydratation chez les personnes âgées atteintes de démence.',
+      ar: 'توصيات محدثة مبنية على الأدلة حول الوقاية من سوء التغذية والجفاف وإدارتها لدى كبار السن المصابين بالخرف.'
+    },
+    category: 'Clinical Guidelines',
+    readTime: '15',
+    date: '2024-05-15',
+    author: 'ESPEN Working Group',
+    reviewer: 'Clinical Nutrition Journal',
+    doi: '10.1016/j.clnu.2024.04.008',
+    citationCount: 45,
+    clinicalImpact: {
+      en: 'Provides essential protocols to optimize quality of life and nutritional status in dementia patients.',
+      fr: 'Fournit des protocoles essentiels pour optimiser la qualité de vie et l\'état nutritionnel des patients atteints de démence.',
+      ar: 'يوفر بروتوكولات أساسية لتحسين جودة الحياة والحالة التغذوية لدى مرضى الخرف.'
+    }
+  },
+  {
+    id: 'mj-new-2',
+    title: {
+      en: 'Clinical Nutrition in Acute and Chronic Kidney Disease: Practical ESPEN Guidelines 2024',
+      fr: 'Nutrition clinique dans les maladies rénales aiguës et chroniques : recommandations pratiques de l\'ESPEN 2024',
+      ar: 'التغذية السريرية في أمراض الكلى الحادة والمزمنة: إرشادات ESPEN العملية لعام 2024'
+    },
+    snippet: {
+      en: 'Key statements and 32 practical recommendations for nutritional assessment, feeding routes, and kidney replacement therapy integration.',
+      fr: 'Déclarations clés et 32 recommandations pratiques pour l\'évaluation nutritionnelle, les voies d\'alimentation et l\'intégration de la thérapie de remplacement rénal.',
+      ar: 'بيانات رئيسية و32 توصية عملية للتقييم التغذوي، وطرق التغذية، وتكامل العلاج البديل للكلى.'
+    },
+    category: 'Clinical Guidelines',
+    readTime: '20',
+    date: '2024-08-20',
+    author: 'Alice Sabatino et al.',
+    reviewer: 'Clinical Nutrition Journal',
+    doi: '10.1016/j.clnu.2024.08.002',
+    citationCount: 112,
+    clinicalImpact: {
+      en: 'Standardizes nutritional interventions tailored to patients undergoing KRT and conservative kidney management.',
+      fr: 'Standardise les interventions nutritionnelles adaptées aux patients sous TRR et gestion rénale conservatrice.',
+      ar: 'يوحد التدخلات التغذوية المصممة للمرضى الذين يخضعون لعلاج استبدال الكلى والإدارة الكلوية التحفظية.'
+    }
+  },
+  {
+    id: 'mj-new-3',
+    title: {
+      en: 'ESPEN Practical Guideline: Clinical Nutrition in Acute and Chronic Pancreatitis 2024',
+      fr: 'Recommandation pratique ESPEN : nutrition clinique dans la pancréatite aiguë et chronique 2024',
+      ar: 'إرشادات ESPEN العملية: التغذية السريرية في التهاب البنكرياس الحاد والمزمن 2024'
+    },
+    snippet: {
+      en: 'Standardized protocols for optimizing enteral nutrition and metabolic support in patients hospitalized with acute or chronic pancreatitis.',
+      fr: 'Protocoles standardisés pour optimiser la nutrition entérale et le soutien métabolique chez les patients hospitalisés pour pancréatite aiguë ou chronique.',
+      ar: 'بروتوكولات موحدة لتحسين التغذية المعوية والدعم الأيضي لدى المرضى في المستشفى المصابين بالتهاب البنكرياس الحاد أو المزمن.'
+    },
+    category: 'Clinical Guidelines',
+    readTime: '18',
+    date: '2024-02-10',
+    author: 'ESPEN Guidelines Committee',
+    reviewer: 'Clinical Nutrition Journal',
+    doi: '10.1016/j.clnu.2023.12.024',
+    citationCount: 89,
+    clinicalImpact: {
+      en: 'Updates the timing of enteral feeding and management of exocrine pancreatic insufficiency.',
+      fr: 'Met à jour le moment de l\'alimentation entérale et la gestion de l\'insuffisance pancréatique exocrine.',
+      ar: 'يُحدث توقيت التغذية المعوية وإدارة قصور البنكرياس الإفرازي.'
+    }
+  },
+  {
     id: 'mj-1',
     title: {
       en: 'GLP-1 Receptor Agonists in Obesity and Cardiometabolic Disease: A Systematic Review of Efficacy, Safety, and Emerging Indications (2020–2026)',

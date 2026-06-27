@@ -1,4 +1,13 @@
 {
+  "/nutrition-hub": {
+    "@type": "CollectionPage",
+    "name": "Clinical Nutrition Hub",
+    "description": "Evidence-based tools, leading journals, and clinical calculators for medical nutrition therapy including ESPEN guidelines.",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Malnutrition"
+    }
+  },
   "/map-calculator": {
     "@type": "MedicalWebPage",
     "name": "Mean Arterial Pressure (MAP) Calculator",

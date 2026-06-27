@@ -8,6 +8,8 @@ import { useLang } from '../utils/lang';
 import { MASTER_BLOGS, MASTER_JOURNALS, t } from '../utils/masterListContent';
 import { slugify } from '../utils/slug';
 import SEO from '../components/SEO';
+import { HelpCircle, TrendingUp, AlertCircle } from 'lucide-react';
+import faqDbRaw from '../data/faqDb.json';
 
 interface NutritionHubProps {
   lang: LangCode;
@@ -127,6 +129,8 @@ export default function NutritionHub({ lang }: NutritionHubProps) {
     }
   };
 
+  const faqs = (faqDbRaw as any)['/nutrition-hub'] || [];
+
   return (
     <div className={`min-h-screen bg-slate-50 ${isRtl ? 'rtl' : 'ltr'}`}>
       <SEO 
@@ -172,6 +176,22 @@ export default function NutritionHub({ lang }: NutritionHubProps) {
                 {tLabels.backBtn}
               </Link>
             </div>
+          </div>
+        </div>
+
+        {/* GEO Statistics Banner */}
+        <div className="mb-12 bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-emerald-100 flex flex-col md:flex-row gap-6 items-center">
+          <div className="w-16 h-16 rounded-full bg-emerald-50 flex items-center justify-center shrink-0">
+            <TrendingUp className="w-8 h-8 text-emerald-600" />
+          </div>
+          <div>
+            <h3 className="text-xl font-bold text-slate-900 mb-2">
+              Did you know?
+            </h3>
+            <p className="text-slate-600 leading-relaxed">
+              According to recent ESPEN clinical guidelines, malnutrition affects up to <strong className="text-emerald-700">30-50%</strong> of hospitalized patients. 
+              Implementing early medical nutrition therapy and validated screening tools (like NRS-2002 or MUST) can significantly reduce mortality and hospital length of stay.
+            </p>
           </div>
         </div>
 
@@ -345,6 +365,35 @@ export default function NutritionHub({ lang }: NutritionHubProps) {
             </div>
           )}
         </section>
+        
+        {/* GEO FAQ Section */}
+        {faqs.length > 0 && (
+          <section className="mb-16">
+            <div className="flex items-center mb-8">
+              <div className="w-12 h-12 bg-slate-100 rounded-2xl flex items-center justify-center mr-4 shadow-sm border border-slate-200">
+                <HelpCircle className="w-6 h-6 text-slate-600" />
+              </div>
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900">Frequently Asked Questions</h2>
+                <p className="text-slate-500 mt-1">Common clinical queries related to medical nutrition therapy.</p>
+              </div>
+            </div>
+            
+            <div className="space-y-4">
+              {faqs.map((faq: any, index: number) => (
+                <div key={index} className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                  <h3 className="text-lg font-bold text-slate-900 flex items-start gap-3">
+                    <span className="text-emerald-500 font-black">Q.</span>
+                    {faq.question}
+                  </h3>
+                  <p className="mt-3 text-slate-600 leading-relaxed pl-8">
+                    <strong className="text-slate-800">A.</strong> {faq.answer}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
         
       </div>
     </div>

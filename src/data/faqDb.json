@@ -1,4 +1,18 @@
 {
+  "/nutrition-hub": [
+    {
+      "question": "Why is clinical nutrition screening important in hospitals?",
+      "answer": "According to ESPEN guidelines, malnutrition affects up to 30-50% of hospitalized patients, leading to increased morbidity, mortality, and length of stay. Routine screening using validated tools like MUST or NRS-2002 is critical for early intervention."
+    },
+    {
+      "question": "What is the recommended Total Daily Energy Expenditure (TDEE) for ICU patients?",
+      "answer": "ESPEN practical guidelines recommend targeting 20-25 kcal/kg/day during the acute phase of critical illness to avoid overfeeding complications, while ensuring adequate protein delivery (1.3 g/kg/day) to mitigate muscle wasting."
+    },
+    {
+      "question": "How often should malnutrition risk be assessed?",
+      "answer": "Clinical nutrition protocols suggest assessing malnutrition risk within 24-48 hours of hospital admission. For high-risk patients, weekly reassessments using NRS-2002 or the MUST tool are necessary to track medical nutrition therapy efficacy."
+    }
+  ],
   "/map-calculator": [
     {
       "question": "What is Mean Arterial Pressure (MAP)?",

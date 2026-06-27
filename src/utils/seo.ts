@@ -65,6 +65,28 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
     };
   }
 
+  if (path === '/nutrition-hub') {
+    if (lang === 'fr') {
+      return {
+        title: 'Centre de Nutrition Clinique | CareCalculus',
+        desc: 'Directives de nutrition clinique ESPEN 2024, outils d\'évaluation de la malnutrition (MUST, NRS-2002), et calculateurs TDEE pour la thérapie nutritionnelle médicale.',
+        keywords: 'nutrition clinique, directives ESPEN, évaluation de la malnutrition, calculateur TDEE, thérapie nutritionnelle médicale',
+      };
+    }
+    if (lang === 'ar') {
+      return {
+        title: 'مركز التغذية السريرية | CareCalculus',
+        desc: 'إرشادات التغذية السريرية ESPEN لعام 2024، أدوات تقييم سوء التغذية (MUST، NRS-2002)، وحاسبات TDEE للعلاج الغذائي الطبي.',
+        keywords: 'التغذية السريرية, إرشادات ESPEN, تقييم سوء التغذية, حاسبة TDEE, العلاج الغذائي الطبي',
+      };
+    }
+    return {
+      title: 'Clinical Nutrition Hub | CareCalculus',
+      desc: '2024 ESPEN clinical nutrition guidelines, malnutrition screening tools (MUST, NRS-2002), and TDEE calculators for medical nutrition therapy.',
+      keywords: 'clinical nutrition guidelines, ESPEN practical guidelines, medical nutrition therapy, malnutrition screening, TDEE calculator for clinicians',
+    };
+  }
+
   // 1. Journal Articles (/blog/:slug)
   if (path.startsWith('/blog/')) {
     const slug = path.replace(/^\/blog\//, '');
