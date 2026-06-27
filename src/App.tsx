@@ -208,13 +208,16 @@ function AppLayout() {
     canonicalLink.setAttribute('href', head.url);
 
     // 5. Open Graph (OG) Tag Matrix
+    const isArticlePage = logicalPath.startsWith('/blog/') || logicalPath.startsWith('/blog-articles/');
     const ogTags = {
       'og:title': head.title,
       'og:description': head.meta.desc,
       'og:url': head.url,
-      'og:type': 'website',
+      'og:type': isArticlePage ? 'article' : 'website',
       'og:site_name': 'CareCalculus Clinical Suite',
       'og:image': head.ogImage,
+      'og:image:width': '1200',
+      'og:image:height': '630',
       'og:image:alt': 'CareCalculus — Free multilingual clinical calculators for ICU, ER and hospital clinicians',
       'og:locale': lang === 'fr' ? 'fr_FR' : (lang === 'ar' ? 'ar_AR' : 'en_US'),
     };

@@ -704,6 +704,14 @@ export function organizationJsonLd() {
       name: 'CareCalculus',
       url: ORIGIN,
       inLanguage: ['en', 'fr', 'ar'],
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: {
+          '@type': 'EntryPoint',
+          urlTemplate: `${ORIGIN}/?q={search_term_string}`,
+        },
+        'query-input': 'required name=search_term_string',
+      },
     },
   ];
 }
@@ -761,8 +769,8 @@ export function buildHead(logicalPath: string, lang: LangCode): HeadModel {
   }));
   hreflang.push({ hreflang: 'x-default', href: `${ORIGIN}${pathSuffix}` });
 
-  const ogImageFileName = logicalPath === '/' ? 'index.png' : `${logicalPath.replace(/^\//, '')}.png`;
-  const dynamicOgImage = `${ORIGIN}/og-images/${lang}/${ogImageFileName}`;
+  // Use the single verified OG image (per-page images are not generated yet)
+  const dynamicOgImage = OG_IMAGE;
 
   return {
     title: meta.title,

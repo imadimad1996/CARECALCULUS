@@ -5,7 +5,7 @@
   "start_url": "/",
   "display": "standalone",
   "background_color": "#fafafa",
-  "theme_color": "#2563eb",
+  "theme_color": "#0891B2",
   "orientation": "any",
   "lang": "en",
   "categories": ["medical", "health", "utilities"],
