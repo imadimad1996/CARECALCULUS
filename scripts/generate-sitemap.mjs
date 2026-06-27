@@ -112,8 +112,8 @@ function extractNavPaths(src) {
 }
 
 // --- Gather sources -----------------------------------------------------------
-const appSrc = read('src/App.tsx');
-const navPaths = extractNavPaths(appSrc);
+const routesSrc = read('src/routes.tsx');
+const navPaths = extractNavPaths(routesSrc);
 
 const masterSrc = read('src/utils/masterListContent.ts');
 const masterBlogs = extractMasterItems(extractArrayBlock(masterSrc, 'MASTER_BLOGS'));
