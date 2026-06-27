@@ -318,20 +318,46 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
     return injectInternalLinks(rawContent, lang);
   }, [activePost, lang]);
 
-  // Unknown slug → fall back to the journal directory.
-  useEffect(() => {
-    if (slug && generatedBlogs.length > 0 && !activePost) {
-      navigate(langPath('/blog'), { replace: true });
-    }
-  }, [slug, activePost, generatedBlogs, navigate]);
-
-
-
   const getLocalizedLabel = (enKey: string, frKey: string, arKey: string) => {
     if (lang === 'fr') return frKey;
     if (lang === 'ar') return arKey;
     return enKey;
   };
+
+  // Unknown slug → show a friendly message and redirect after a short delay.
+  useEffect(() => {
+    if (slug && generatedBlogs.length > 0 && !activePost) {
+      const timer = setTimeout(() => navigate(langPath('/blog'), { replace: true }), 2500);
+      return () => clearTimeout(timer);
+    }
+  }, [slug, activePost, generatedBlogs, navigate]);
+
+  // Render a user-friendly "Post not found" UI while the redirect fires.
+  if (slug && generatedBlogs.length > 0 && !activePost) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[40vh] py-20 space-y-5 animate-fade-in">
+        <div className="w-14 h-14 rounded-2xl bg-indigo-50 border border-indigo-100 flex items-center justify-center">
+          <BookOpen className="w-7 h-7 text-indigo-500" />
+        </div>
+        <h2 className="text-xl font-black text-slate-800">
+          {getLocalizedLabel('Post not found', 'Article introuvable', 'المقال غير موجود')}
+        </h2>
+        <p className="text-sm text-gray-500 font-semibold max-w-sm text-center leading-relaxed">
+          {getLocalizedLabel(
+            'The article you are looking for might be scheduled for release or does not exist. Check back daily for new updates!',
+            "Cet article est peut-être prévu prochainement ou n'existe pas. Revenez chaque jour pour de nouveaux contenus !",
+            'قد يكون هذا المقال مجدولاً للنشر قريباً أو غير موجود. تفقد الموقع يومياً للاطلاع على آخر المستجدات!'
+          )}
+        </p>
+        <button
+          onClick={() => navigate(langPath('/blog'))}
+          className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-extrabold text-xs rounded-xl transition shadow-md"
+        >
+          {getLocalizedLabel('Back to Journal', 'Retour au Journal', 'الرجوع للمجلة')}
+        </button>
+      </div>
+    );
+  }
 
   if (activePost) {
     const isBookmarked = bookmarkedIds.includes(activePost.id);

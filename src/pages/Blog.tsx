@@ -441,10 +441,40 @@ export default function Blog({ lang }: BlogProps) {
     return activePost.content;
   }, [activePost, lang]);
 
-  // Unknown slug → fall back to the directory so deep links never dead-end.
+  // Unknown slug → show a friendly message and redirect to the listing.
   useEffect(() => {
-    if (slug && !activePost) navigate(langPath('/blog-articles'), { replace: true });
+    if (slug && !activePost) {
+      const timer = setTimeout(() => navigate(langPath('/blog-articles'), { replace: true }), 2500);
+      return () => clearTimeout(timer);
+    }
   }, [slug, activePost, navigate]);
+
+  // Render a user-friendly "Post not found" UI while the redirect fires.
+  if (slug && !activePost) {
+    return (
+      <div className={`flex flex-col items-center justify-center min-h-[40vh] py-20 space-y-5 animate-fade-in ${isRtl ? 'text-right' : 'text-left'}`}>
+        <div className="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center">
+          <Newspaper className="w-7 h-7 text-blue-500" />
+        </div>
+        <h2 className="text-xl font-black text-slate-800">
+          {t('Post not found', 'Article introuvable', 'المقال غير موجود')}
+        </h2>
+        <p className="text-sm text-gray-500 font-semibold max-w-sm text-center leading-relaxed">
+          {t(
+            'The article you are looking for might be scheduled for release or does not exist. Check back daily for new updates!',
+            "Cet article est peut-être prévu prochainement ou n'existe pas. Revenez chaque jour pour de nouveaux contenus !",
+            'قد يكون هذا المقال مجدولاً للنشر قريباً أو غير موجود. تفقد الموقع يومياً للاطلاع على آخر المستجدات!'
+          )}
+        </p>
+        <button
+          onClick={() => navigate(langPath('/blog-articles'))}
+          className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-xs rounded-xl transition shadow-md"
+        >
+          {t('Back to Blog', 'Retour au Blog', 'الرجوع للمدونة')}
+        </button>
+      </div>
+    );
+  }
 
   // Dynamic SEO for an open article
   useEffect(() => {
