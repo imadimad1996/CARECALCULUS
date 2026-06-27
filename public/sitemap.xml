@@ -1157,6 +1157,33 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/abbreviation-lookup"/>
   </url>
   <url>
+    <loc>https://carecalculus.com/nutrition-hub</loc>
+    <lastmod>2026-06-27</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/nutrition-hub"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/nutrition-hub"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/nutrition-hub"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/nutrition-hub"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/nutrition-hub</loc>
+    <lastmod>2026-06-27</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/nutrition-hub"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/nutrition-hub"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/nutrition-hub"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/nutrition-hub"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/nutrition-hub</loc>
+    <lastmod>2026-06-27</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/nutrition-hub"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/nutrition-hub"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/nutrition-hub"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/nutrition-hub"/>
+  </url>
+  <url>
     <loc>https://carecalculus.com/pdf-splitter</loc>
     <lastmod>2026-06-27</lastmod>
     <priority>0.8</priority>

@@ -62,6 +62,7 @@ const pageLoaders = [
   () => import('../pages/EmbedGallery'),
   () => import('../pages/ForHospitals'),
   () => import('../pages/SpecialtyHub'),
+  () => import('../pages/NutritionHub'),
 ] as const;
 
 const [
@@ -74,7 +75,7 @@ const [
   FmpMedecine, IspitsAcademic,
   FlashcardGenerator, CaseStudyViewer, DrugSheets, StudyTracker, AbbreviationLookup,
   Compare, NutritionTdee, NutritionMust, NutritionNrs2002, ConditionHub,
-  MdrdGfr, CkdEpiGfr, EmbedGallery, ForHospitals, SpecialtyHub,
+  MdrdGfr, CkdEpiGfr, EmbedGallery, ForHospitals, SpecialtyHub, NutritionHub
 ] = pageLoaders.map((loader) => React.lazy(loader as any)) as any[];
 
 export const HomePage = React.lazy(() => import('../pages/HomePage'));
@@ -174,6 +175,7 @@ export const navItems = [
   { path: '/case-study-viewer', nameEn: 'Clinical Case Studies', nameFr: 'Cas Cliniques', nameAr: 'الحالات السريرية التفاعلية', icon: Stethoscope, tier: 4, group: 'learning' as const },
   { path: '/drug-sheets', nameEn: 'ICU Drug Reference', nameFr: 'Fiches Médicaments', nameAr: 'جرعات أدوية العناية', icon: Droplet, tier: 4, group: 'learning' as const },
   { path: '/abbreviation-lookup', nameEn: 'Medical Abbreviations', nameFr: 'Abréviations Médicales', nameAr: 'قاموس الاختصارات الطبية', icon: FileText, tier: 4, group: 'learning' as const },
+  { path: '/nutrition-hub', nameEn: 'Nutrition Hub', nameFr: 'Hub Nutrition', nameAr: 'تغذية', icon: BookOpen, tier: 4, group: 'reading' as const },
 
   // Tier 5 — Utilities
   { path: '/pdf-splitter', nameEn: 'PDF Splitter', nameFr: 'Découpeur PDF', nameAr: 'تقسيم ملفات PDF', icon: Scissors, tier: 5 },
@@ -257,6 +259,7 @@ export function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="nutrition-tdee" element={wrapCalculator('/nutrition-tdee', <NutritionTdee lang={lang} />)} />
       <Route path="nutrition-must" element={wrapCalculator('/nutrition-must', <NutritionMust lang={lang} />)} />
       <Route path="nutrition-nrs2002" element={wrapCalculator('/nutrition-nrs2002', <NutritionNrs2002 lang={lang} />)} />
+      <Route path="nutrition-hub" element={<NutritionHub lang={lang} />} />
       <Route path="glp-1-hub" element={<Glp1Hub lang={lang} />} />
       <Route path="hub-glp1" element={<Glp1Hub lang={lang} />} />
       <Route path="مركز-glp1" element={<Glp1Hub lang={lang} />} />
