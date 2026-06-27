@@ -27,6 +27,9 @@ const translations: Translations = {
     moderateB: "G3b: Moderate-Severe (30-44)",
     severe: "G4: Severely Decreased (15-29)",
     failure: "G5: Kidney Failure (< 15)",
+    ageRange: "Age should be between 18 and 120 years.",
+    creatinineRange: "Creatinine should be between 0.1 and 20 mg/dL.",
+    resetBtn: "Reset"
   },
   fr: {
     title: "Équation CKD-EPI DFG",
@@ -49,6 +52,9 @@ const translations: Translations = {
     moderateB: "G3b: Modéré-Sévère (30-44)",
     severe: "G4: Sévèrement diminué (15-29)",
     failure: "G5: Insuffisance rénale (< 15)",
+    ageRange: "L'âge doit être compris entre 18 et 120 ans.",
+    creatinineRange: "La créatininémie doit être comprise entre 0,1 et 20 mg/dL.",
+    resetBtn: "Réinitialiser"
   },
   ar: {
     title: "معادلة CKD-EPI لتقدير GFR",
@@ -71,6 +77,9 @@ const translations: Translations = {
     moderateB: "G3b: متوسط-شديد (30-44)",
     severe: "G4: انخفاض شديد (15-29)",
     failure: "G5: فشل كلوي (< 15)",
+    ageRange: "يجب أن يكون العمر بين 18 و 120 عاماً.",
+    creatinineRange: "يجب أن يكون الكرياتينين بين 0.1 و 20 مجم/ديسيلتر.",
+    resetBtn: "إعادة تعيين"
   }
 };
 
@@ -82,6 +91,9 @@ export default function CkdEpiGfr({ lang }: { lang: LangCode }) {
   const currentText = translations[lang];
   const uiText = layoutTranslations[lang];
   const isRtl = lang === 'ar';
+
+  const isAgeWarning = age > 0 && (age < 18 || age > 120);
+  const isCreatinineWarning = creatinine > 0 && (creatinine < 0.1 || creatinine > 20);
 
   const gfrValue = useMemo(() => {
     if (age <= 0 || creatinine <= 0) return 0;
@@ -141,12 +153,20 @@ export default function CkdEpiGfr({ lang }: { lang: LangCode }) {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
         <div className="lg:col-span-7 space-y-6">
           <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 sm:p-6 transition-all hover:shadow-md">
-            <h3 className="text-lg font-semibold text-slate-800 mb-6 flex items-center">
-              <span className={`w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-sm ${isRtl ? 'ml-3' : 'mr-3'}`}>
-                1
-              </span>
-              {uiText.parameters}
-            </h3>
+            <div className="flex justify-between items-center border-b border-slate-100 pb-4 mb-6">
+              <h3 className="text-lg font-semibold text-slate-800 flex items-center">
+                <span className={`w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-sm ${isRtl ? 'ml-3' : 'mr-3'}`}>
+                  1
+                </span>
+                {uiText.parameters}
+              </h3>
+              <button
+                onClick={() => { setAge(65); setCreatinine(1.2); setIsFemale(false); }}
+                className="px-3 py-1.5 text-xs bg-slate-50 hover:bg-slate-105 text-slate-600 font-bold rounded-xl border border-gray-205 transition-all cursor-pointer active:scale-95"
+              >
+                {currentText.resetBtn}
+              </button>
+            </div>
 
             <div className="space-y-6">
               {/* Gender Toggle */}
@@ -189,6 +209,12 @@ export default function CkdEpiGfr({ lang }: { lang: LangCode }) {
                   className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
                   aria-label={currentText.age}
                 />
+                {isAgeWarning && (
+                  <p className="text-xs text-rose-550 font-bold mt-1.5 flex items-center gap-1">
+                    <Info className="w-3.5 h-3.5" />
+                    <span>{currentText.ageRange}</span>
+                  </p>
+                )}
               </div>
 
               {/* Creatinine */}
@@ -205,9 +231,19 @@ export default function CkdEpiGfr({ lang }: { lang: LangCode }) {
                   step="0.1"
                   value={creatinine || ''}
                   onChange={(e) => setCreatinine(Number(e.target.value))}
-                  className="w-full bg-slate-50 border border-slate-200 text-slate-900 text-lg rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block p-3.5 transition-colors"
+                  className={`w-full bg-slate-50 border text-lg rounded-xl focus:ring-2 block p-3.5 transition-colors ${
+                    isCreatinineWarning 
+                      ? 'border-rose-500 focus:ring-rose-500 focus:border-rose-500 text-rose-900 bg-rose-50/10' 
+                      : 'border-slate-200 focus:ring-blue-500 focus:border-blue-500 text-slate-900'
+                  }`}
                   placeholder="e.g. 1.2"
                 />
+                {isCreatinineWarning && (
+                  <p className="text-xs text-rose-550 font-bold mt-1.5 flex items-center gap-1">
+                    <Info className="w-3.5 h-3.5" />
+                    <span>{currentText.creatinineRange}</span>
+                  </p>
+                )}
               </div>
             </div>
           </div>
@@ -242,17 +278,20 @@ export default function CkdEpiGfr({ lang }: { lang: LangCode }) {
             
             <div className="mt-8">
               <ClinicalExportButton 
+                title={currentText.title}
+                inputs={[
+                  { label: currentText.age, value: `${age} years` },
+                  { label: currentText.gender, value: isFemale ? currentText.female : currentText.male },
+                  { label: currentText.creatinine, value: `${creatinine} ${currentText.creatinineMg}` }
+                ]}
+                results={[
+                  { label: currentText.result, value: gfrValue, unit: currentText.unit },
+                  { label: 'Interpretation', value: stage.label }
+                ]}
+                formula={currentText.formula}
+                disclaimer={currentText.clinicalText}
+                references={currentText.references}
                 lang={lang}
-                data={{
-                  calculator: currentText.title,
-                  result: `${gfrValue} ${currentText.unit}`,
-                  interpretation: stage.label,
-                  parameters: {
-                    [currentText.age]: `${age} years`,
-                    [currentText.gender]: isFemale ? currentText.female : currentText.male,
-                    [currentText.creatinine]: `${creatinine} ${currentText.creatinineMg}`
-                  }
-                }}
               />
             </div>
           </div>

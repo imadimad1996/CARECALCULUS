@@ -29,6 +29,9 @@ const translations: Translations = {
     faqA3: "BMI does not distinguish between fat and muscle mass, does not reflect fat distribution, and may misclassify athletes or elderly patients. It should be interpreted alongside waist circumference, clinical context, and comorbidities.",
     faqQ4: "Is BMI accurate for all ethnicities?",
     faqA4: "Asian populations have higher cardiometabolic risk at lower BMI thresholds. WHO and several national guidelines recommend lower obesity cut-offs for Asian adults: overweight ≥23, obese ≥27.5.",
+    heightRange: "Height should be between 50 and 250 cm.",
+    weightRange: "Weight should be between 10 and 300 kg.",
+    resetBtn: "Reset to Default"
   },
   fr: {
     title: "Indice de Masse Corporelle (IMC)",
@@ -52,6 +55,9 @@ const translations: Translations = {
     faqA3: "L'IMC ne distingue pas la masse grasse de la masse musculaire, ne reflète pas la répartition des graisses et peut mal classer les athlètes ou les patients âgés. Il doit être interprété avec la circonférence de la taille, le contexte clinique et les comorbidités.",
     faqQ4: "L'IMC est-il précis pour toutes les ethnies ?",
     faqA4: "Les populations asiatiques présentent un risque cardiométabolique plus élevé à des seuils d'IMC plus bas. L'OMS et plusieurs directives nationales recommandent des seuils d'obésité plus bas pour les adultes asiatiques : surpoids ≥23, obésité ≥27,5.",
+    heightRange: "La taille doit être comprise entre 50 et 250 cm.",
+    weightRange: "Le poids doit être compris entre 10 et 300 kg.",
+    resetBtn: "Réinitialiser"
   },
   ar: {
     title: "مؤشر كتلة الجسم (BMI)",
@@ -75,6 +81,9 @@ const translations: Translations = {
     faqA3: "لا يفرق مؤشر كتلة الجسم بين كتلة الدهون والعضلات، ولا يعكس توزيع الدهون في الجسم، وقد يعطي تقييماً غير دقيق للرياضيين (عضلات أكثر) أو كبار السن (عضلات أقل). يجب تفسيره دائماً مع محيط الخصر والوضع الصحي العام.",
     faqQ4: "هل مؤشر كتلة الجسم دقيق لجميع الأعراق؟",
     faqA4: "تظهر الدراسات أن الشعوب الآسيوية تواجه مخاطر استقلابية وقلبية أعلى عند مستويات مؤشر كتلة جسم أقل. وتوصي منظمة الصحة العالمية بوضع حدود أقل للسمنة لدى البالغين الآسيويين: زيادة الوزن ≥23، والسمنة ≥27.5.",
+    heightRange: "يجب أن يكون الطول بين 50 و 250 سم.",
+    weightRange: "يجب أن يكون الوزن بين 10 و 300 كجم.",
+    resetBtn: "إعادة تعيين الافتراضي"
   }
 };
 
@@ -84,6 +93,9 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
 
   const currentText = translations[lang];
   const isRtl = lang === 'ar';
+  
+  const isHeightWarning = height > 0 && (height < 50 || height > 250);
+  const isWeightWarning = weight > 0 && (weight < 10 || weight > 300);
 
   const bmiValue = useMemo(() => {
     if (height <= 0 || weight <= 0) return 0;
@@ -131,6 +143,19 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
         <div className="lg:col-span-7 space-y-6">
           <div className="bg-white rounded-2xl shadow-[0_2px_10px_-3px_rgba(6,81,237,0.1)] ring-1 ring-gray-950/5 p-6 md:p-8">
             <div className="space-y-8">
+              <div className="flex justify-between items-center border-b border-gray-100 pb-4">
+                <h3 className="text-sm font-bold text-slate-800 uppercase tracking-wider flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-blue-500" />
+                  {layoutTranslations[lang].parameters}
+                </h3>
+                <button
+                  onClick={() => { setHeight(170); setWeight(70); }}
+                  className="px-3 py-1.5 text-xs bg-slate-50 hover:bg-slate-100 text-slate-600 font-bold rounded-xl border border-gray-200 transition-all cursor-pointer active:scale-95 flex items-center gap-1"
+                >
+                  {currentText.resetBtn}
+                </button>
+              </div>
+
               <div className="group">
                 <div className="flex justify-between items-baseline mb-2">
                   <label className="text-sm font-semibold text-gray-700 uppercase tracking-wider">{currentText.height}</label>
@@ -143,7 +168,11 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
                       const v = Number(e.target.value);
                       setHeight(v);
                     }}
-                    className="w-full bg-gray-50/50 px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600 text-3xl tabular-nums font-semibold text-gray-900 transition-all placeholder:text-gray-300"
+                    className={`w-full bg-gray-50/50 px-4 py-4 border rounded-xl focus:outline-none focus:bg-white focus:ring-4 text-3xl tabular-nums font-semibold transition-all placeholder:text-gray-300 ${
+                      isHeightWarning 
+                        ? 'border-rose-500 focus:ring-rose-550/10 focus:border-rose-500 text-rose-900 bg-rose-50/10' 
+                        : 'border-gray-200 focus:ring-blue-600/10 focus:border-blue-600 text-gray-900'
+                    }`}
                     min="50"
                     max="250"
                   />
@@ -154,6 +183,12 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
                   onChange={(e) => setHeight(Number(e.target.value))}
                   className="w-full mt-4 h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
                 />
+                {isHeightWarning && (
+                  <p className="text-xs text-rose-550 font-bold mt-1.5 flex items-center gap-1">
+                    <Info className="w-3.5 h-3.5" />
+                    <span>{currentText.heightRange}</span>
+                  </p>
+                )}
               </div>
 
               <div className="group">
@@ -168,7 +203,11 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
                       const v = Number(e.target.value);
                       setWeight(v);
                     }}
-                    className="w-full bg-gray-50/50 px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600 text-3xl tabular-nums font-semibold text-gray-900 transition-all placeholder:text-gray-300"
+                    className={`w-full bg-gray-50/50 px-4 py-4 border rounded-xl focus:outline-none focus:bg-white focus:ring-4 text-3xl tabular-nums font-semibold transition-all placeholder:text-gray-300 ${
+                      isWeightWarning 
+                        ? 'border-rose-500 focus:ring-rose-550/10 focus:border-rose-500 text-rose-900 bg-rose-50/10' 
+                        : 'border-gray-200 focus:ring-blue-600/10 focus:border-blue-600 text-gray-900'
+                    }`}
                     min="10"
                     max="300"
                   />
@@ -179,6 +218,12 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
                   onChange={(e) => setWeight(Number(e.target.value))}
                   className="w-full mt-4 h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
                 />
+                {isWeightWarning && (
+                  <p className="text-xs text-rose-550 font-bold mt-1.5 flex items-center gap-1">
+                    <Info className="w-3.5 h-3.5" />
+                    <span>{currentText.weightRange}</span>
+                  </p>
+                )}
               </div>
             </div>
           </div>

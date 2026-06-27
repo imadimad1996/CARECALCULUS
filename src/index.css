@@ -2,11 +2,17 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", "Noto Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Literata", "Georgia", serif;
-  --font-serif: "Literata", "Georgia", serif;
+  --font-sans: "Noto Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Figtree", "Literata", "Georgia", serif;
+  --font-serif: "Figtree", "Literata", "Georgia", serif;
   --font-arabic: "Cairo", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
+
+  /* Popularity state colors for textbook modules */
+  --color-popularity-very-high: #DC2626;
+  --color-popularity-high: #D97706;
+  --color-popularity-medium: #2563EB;
+  --color-popularity-moderate: #4B5563;
 
   /* Clinical Trust & Ethical Color Palette (MASTER.md) */
   --color-primary: #0891B2;
@@ -266,4 +272,24 @@
   #clinical-print-area {
     display: none !important;
   }
+}
+
+/* Centralized UI Pro Max Components */
+.btn-primary {
+  @apply bg-accent text-white px-6 py-3 rounded-xl font-bold transition-all shadow-md active:scale-95 cursor-pointer inline-flex items-center justify-center gap-2;
+}
+.btn-primary:hover {
+  @apply opacity-90 -translate-y-0.5;
+}
+
+.btn-secondary {
+  @apply bg-transparent text-[#0891B2] border-2 border-[#0891B2] px-6 py-3 rounded-xl font-bold transition-all hover:bg-[#0891B2]/5 active:scale-95 cursor-pointer inline-flex items-center justify-center gap-2;
+}
+
+.card {
+  @apply bg-[#F0FDFA] rounded-2xl p-6 shadow-md transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 cursor-pointer border border-[#CCFBF1];
+}
+
+.input {
+  @apply px-4 py-3 border border-slate-250 rounded-xl text-base transition-all duration-200 focus:border-[#0891B2] focus:ring-4 focus:ring-[#0891B2]/10 outline-none;
 }

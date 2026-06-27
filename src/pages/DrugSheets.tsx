@@ -4,10 +4,29 @@ import { LangCode } from '../types';
 import { useLang } from '../utils/lang';
 import { DRUG_SHEETS_DB } from '../utils/drugSheetsDb';
 
+const T = {
+  en: {
+    printTitle: "CareCalculus Bedside Drug Guideline Matrix",
+    printSubtitle: "Printed 2026 — Verified ICU Reference",
+    badge: "CRITICAL CARE NODE"
+  },
+  fr: {
+    printTitle: "Matrice des Lignes Directrices des Médicaments au Chevet CareCalculus",
+    printSubtitle: "Imprimé 2026 — Référence Réanimation Validée",
+    badge: "REANIMATION COMPORTEMENT"
+  },
+  ar: {
+    printTitle: "مصفوفة إرشادات أدوية العناية المركزة كير كالكولوس",
+    printSubtitle: "تمت الطباعة 2026 — مرجع العناية المركزة المعتمد",
+    badge: "وحدة العناية المركزة"
+  }
+};
+
 export default function DrugSheets({ lang }: { lang: LangCode }) {
   const { langPath } = useLang();
   const isRtl = lang === 'ar';
   const [filter, setFilter] = useState('');
+  const t = T[lang];
 
   const filtered = DRUG_SHEETS_DB.filter(d => d.name.toLowerCase().includes(filter.toLowerCase()));
 
@@ -43,7 +62,7 @@ export default function DrugSheets({ lang }: { lang: LangCode }) {
           placeholder="Search ICU drug name..."
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
-          className={`w-full py-2.5 bg-white border border-gray-200 outline-none rounded-xl text-xs font-bold transition-all ${isRtl ? 'pr-9 pl-4 text-right' : 'pl-9 pr-4 text-left'}`}
+          className={`w-full py-2.5 bg-white border border-gray-200 outline-none rounded-xl text-xs font-bold transition-all ${isRtl ? 'pr-9 pl-4 text-right' : 'pr-9 pl-4 text-left'}`}
           style={{ minHeight: '40px' }}
         />
       </div>
@@ -52,10 +71,10 @@ export default function DrugSheets({ lang }: { lang: LangCode }) {
       <div className="bg-white rounded-3xl border border-gray-200 p-6 md:p-8 space-y-6 shadow-xs print:border-none print:shadow-none print:p-0">
         <div className="hidden print:flex items-center justify-between border-b pb-4 mb-6">
           <div>
-            <h2 className="text-lg font-black text-slate-900">CareCalculus Bedside Drug Guideline Matrix</h2>
-            <p className="text-[10px] text-gray-400">Printed 2026 — Verified ICU Reference</p>
+            <h2 className="text-lg font-black text-slate-900">{t.printTitle}</h2>
+            <p className="text-[10px] text-gray-400">{t.printSubtitle}</p>
           </div>
-          <span className="text-xs font-bold text-red-600 font-mono">CRITICAL CARE NODE</span>
+          <span className="text-xs font-bold text-red-600 font-mono">{t.badge}</span>
         </div>
 
         <div className="overflow-x-auto">

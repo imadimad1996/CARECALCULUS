@@ -263,18 +263,21 @@ export default function MdrdGfr({ lang }: { lang: LangCode }) {
             
             <div className="mt-8">
               <ClinicalExportButton 
+                title={currentText.title}
+                inputs={[
+                  { label: currentText.age, value: `${age} years` },
+                  { label: currentText.gender, value: isFemale ? currentText.female : currentText.male },
+                  { label: currentText.race, value: isBlack ? currentText.black : currentText.other },
+                  { label: currentText.creatinine, value: `${creatinine} ${currentText.creatinineMg}` }
+                ]}
+                results={[
+                  { label: currentText.result, value: gfrValue, unit: currentText.unit },
+                  { label: 'Interpretation', value: stage.label }
+                ]}
+                formula={currentText.formula}
+                disclaimer={currentText.clinicalText}
+                references={currentText.references}
                 lang={lang}
-                data={{
-                  calculator: currentText.title,
-                  result: `${gfrValue} ${currentText.unit}`,
-                  interpretation: stage.label,
-                  parameters: {
-                    [currentText.age]: `${age} years`,
-                    [currentText.gender]: isFemale ? currentText.female : currentText.male,
-                    [currentText.race]: isBlack ? currentText.black : currentText.other,
-                    [currentText.creatinine]: `${creatinine} ${currentText.creatinineMg}`
-                  }
-                }}
               />
             </div>
           </div>

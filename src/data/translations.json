@@ -6,7 +6,8 @@
     "mathMetric": "Mathematical Metric",
     "evidenceLit": "Evidence & Lit",
     "seeAlso": "See Also",
-    "faqTitle": "Frequently Asked Questions"
+    "faqTitle": "Frequently Asked Questions",
+    "parameters": "Parameters"
   },
   "fr": {
     "reviewedBy": "Revu par l'équipe clinique de CareCalculus",
@@ -15,7 +16,8 @@
     "mathMetric": "Métrique Mathématique",
     "evidenceLit": "Preuves & Littérature",
     "seeAlso": "Voir aussi",
-    "faqTitle": "Questions Fréquemment Posées"
+    "faqTitle": "Questions Fréquemment Posées",
+    "parameters": "Paramètres"
   },
   "ar": {
     "reviewedBy": "تمت المراجعة من قبل الفريق الطبي السريري لـ CareCalculus",
@@ -24,6 +26,7 @@
     "mathMetric": "المعادلة الرياضية",
     "evidenceLit": "الأدلة والدراسات العلمية",
     "seeAlso": "اقرأ أيضاً",
-    "faqTitle": "الأسئلة الشائعة"
+    "faqTitle": "الأسئلة الشائعة",
+    "parameters": "العوامل"
   }
 }

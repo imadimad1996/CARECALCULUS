@@ -67,9 +67,8 @@ export default function ConditionHub({ lang }: { lang: LangCode }) {
       
       <div className="mb-10">
         <SocialShare 
-          url={`https://carecalculus.com/conditions/${conditionSlug}`} 
           title={seoTitle} 
-          description={seoDesc} 
+          lang={lang} 
         />
       </div>
 

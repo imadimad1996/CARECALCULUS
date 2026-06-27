@@ -197,13 +197,13 @@ export default function FmpMedecine({ lang }: { lang: LangCode }) {
     return 'bg-rose-50 text-rose-700 border-rose-100';
   };
 
-  // Popularity color indicators
+  // Popularity color indicators mapped to CSS variables
   const getPopularityColor = (pctStr: string): string => {
     const pct = parseInt(pctStr.replace('%', '').trim());
-    if (pct >= 85) return '#E74C3C'; // Red
-    if (pct >= 65) return '#F0B429'; // Gold
-    if (pct >= 45) return '#4A90D9'; // Blue
-    return '#7A8099'; // Gray
+    if (pct >= 85) return 'var(--color-popularity-very-high)'; // Red
+    if (pct >= 65) return 'var(--color-popularity-high)'; // Gold
+    if (pct >= 45) return 'var(--color-popularity-medium)'; // Blue
+    return 'var(--color-popularity-moderate)'; // Gray
   };
 
   const getPopularityBgClass = (pctStr: string): string => {
@@ -327,7 +327,7 @@ export default function FmpMedecine({ lang }: { lang: LangCode }) {
                 onClick={() => setSelectedYear(tab.value)}
                 className={`py-2 px-4 rounded-full text-xs font-bold whitespace-nowrap transition-all border tracking-tight uppercase cursor-pointer ${
                   isActive
-                    ? 'bg-teal-600 text-white border-teal-600 shadow-md font-extrabold'
+                    ? 'bg-primary text-white border-primary shadow-md font-extrabold'
                     : 'bg-gray-50 text-gray-500 border-gray-200 hover:bg-gray-100 hover:text-gray-800'
                 }`}
                 style={{ minHeight: '36px' }}
@@ -478,7 +478,7 @@ export default function FmpMedecine({ lang }: { lang: LangCode }) {
                         onClick={() => setActivePartIndex(index)}
                         className={`flex-1 py-1.5 px-3 rounded-lg text-xs font-bold transition-all uppercase cursor-pointer ${
                           activePartIndex === index
-                            ? 'bg-teal-600 text-white shadow-xs'
+                            ? 'bg-primary text-white shadow-xs'
                             : 'bg-gray-50 text-gray-500 hover:bg-gray-100 hover:text-gray-700'
                         }`}
                       >
@@ -583,7 +583,7 @@ export default function FmpMedecine({ lang }: { lang: LangCode }) {
                       href={`/pdf/fmp/${encodeURIComponent(selectedModule.pdf_file || selectedModule.pdf_parts![activePartIndex])}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs font-bold rounded-lg transition-all flex items-center gap-1.5 font-mono uppercase border border-gray-300"
+                      className="btn-secondary !text-xs !py-2 !px-4 font-mono"
                       style={{ minHeight: '38px' }}
                     >
                       <ExternalLink className="w-3.5 h-3.5" />
@@ -593,7 +593,7 @@ export default function FmpMedecine({ lang }: { lang: LangCode }) {
                     <a
                       href={`/pdf/fmp/${encodeURIComponent(selectedModule.pdf_file || selectedModule.pdf_parts![activePartIndex])}`}
                       download={selectedModule.pdf_file || selectedModule.pdf_parts![activePartIndex]}
-                      className="px-4 py-2 bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold rounded-lg transition-all flex items-center gap-1.5 font-mono uppercase shadow-md active:scale-95 cursor-pointer"
+                      className="btn-primary !text-xs !py-2 !px-4 font-mono"
                       style={{ minHeight: '38px' }}
                     >
                       <Download className="w-3.5 h-3.5" />
@@ -650,7 +650,7 @@ export default function FmpMedecine({ lang }: { lang: LangCode }) {
                       onClick={() => setActivePartIndex(index)}
                       className={`flex-1 py-1 px-2 rounded text-xs font-bold transition-all uppercase cursor-pointer ${
                         activePartIndex === index
-                          ? 'bg-teal-600 text-white shadow-xs'
+                          ? 'bg-primary text-white shadow-xs'
                           : 'bg-gray-50 text-gray-500 hover:bg-gray-100'
                       }`}
                     >
@@ -707,7 +707,7 @@ export default function FmpMedecine({ lang }: { lang: LangCode }) {
             <div className="p-4 bg-gray-50 border-t border-gray-150 flex gap-2">
               <button
                 onClick={() => setIsMobileDetailOpen(false)}
-                className="flex-1 py-2.5 bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs font-bold rounded-lg transition font-mono uppercase cursor-pointer border border-gray-300"
+                className="flex-1 btn-secondary !text-xs font-mono"
                 style={{ minHeight: '44px' }}
               >
                 Fermer
@@ -716,7 +716,7 @@ export default function FmpMedecine({ lang }: { lang: LangCode }) {
                 <a
                   href={`/pdf/fmp/${encodeURIComponent(selectedModule.pdf_file || selectedModule.pdf_parts![activePartIndex])}`}
                   download={selectedModule.pdf_file || selectedModule.pdf_parts![activePartIndex]}
-                  className="flex-1 py-2.5 bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold rounded-lg transition flex items-center justify-center gap-1.5 font-mono uppercase shadow-md cursor-pointer"
+                  className="flex-1 btn-primary !text-xs font-mono"
                   style={{ minHeight: '44px' }}
                 >
                   <Download className="w-4 h-4" />

@@ -15,6 +15,7 @@ import CommandPalette from './components/ui/CommandPalette';
 import TrackingScripts from './components/TrackingScripts';
 import EmbedLayout from './components/EmbedLayout';
 import InstallAppButton from './components/ui/InstallAppButton';
+import SidebarNewsletter from './components/SidebarNewsletter';
 
 import { preloadPages, moduleRoutes, embedRoutes, navItems, TIER_HEADERS, LEGAL_ROUTES, CONTENT_ROUTES, ErrorBoundary, NotFound } from './routes';
 import { LangCode } from './types';
@@ -1051,6 +1052,9 @@ function AppLayout() {
                 </div>
               </div>
             )}
+
+            {/* Sidebar Newsletter subscription widget */}
+            <SidebarNewsletter lang={lang} />
           </nav>
         </div>
       </aside>}

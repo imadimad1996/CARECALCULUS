@@ -213,7 +213,7 @@ export default function HomePage({ lang }: HomePageProps) {
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
               to={langPath('/map-calculator')}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#0891B2] hover:bg-[#0891B2]/95 text-white font-extrabold rounded-xl text-xs transition-all shadow-lg hover:shadow-cyan-500/15 active:scale-95 cursor-pointer border border-cyan-400/20"
+              className="btn-primary text-xs"
             >
               <Calculator className="w-4 h-4" />
               {cta.primary}
@@ -221,7 +221,7 @@ export default function HomePage({ lang }: HomePageProps) {
             </Link>
             <Link
               to={langPath('/blog')}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 text-white font-bold rounded-xl text-xs transition-all border border-white/10 active:scale-95 cursor-pointer"
+              className="btn-secondary text-xs !text-white !border-white/20 hover:!bg-white/5"
             >
               <BookOpen className="w-4 h-4" />
               {cta.secondary}
@@ -237,7 +237,7 @@ export default function HomePage({ lang }: HomePageProps) {
           return (
             <div key={i} className="bg-white/80 border border-slate-200/60 rounded-2xl p-5 flex flex-col items-center justify-between text-center shadow-xs transition-all duration-300 hover:shadow-sm hover:border-cyan-500/20 group relative overflow-hidden">
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500/50 to-emerald-500/50 opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="p-2.5 rounded-xl bg-slate-50 text-cyan-600 mb-2.5 group-hover:scale-105 transition-transform duration-300">
+              <div className="p-2.5 rounded-xl bg-slate-55/30 text-cyan-600 mb-2.5 group-hover:scale-105 transition-transform duration-300">
                 <StatIcon className="w-5 h-5" />
               </div>
               <div>
@@ -261,7 +261,7 @@ export default function HomePage({ lang }: HomePageProps) {
           const tl = tierLabels[idx];
           const TierIcon = tier.icon;
           return (
-            <div key={tier.tier} className={`bg-gradient-to-br ${c.bg} border ${c.border} rounded-3xl p-6 sm:p-7 space-y-5 shadow-xs transition-all hover:shadow-sm`}>
+            <div key={tier.tier} className={`card bg-gradient-to-br ${c.bg} border ${c.border} !p-6 sm:!p-7 space-y-5 cursor-default hover:scale-[1.005] hover:shadow-md transition-all`}>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className={`p-2.5 rounded-2xl ${c.badge} shadow-2xs`}>
