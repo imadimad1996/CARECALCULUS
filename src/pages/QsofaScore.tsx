@@ -16,6 +16,12 @@ const translations: Translations = {
     formula: "1 point per positive criterion",
     clinicalTitle: "Clinical Management",
     clinicalText: "Score ≥ 2 indicates a high risk of poor outcome and suggests the patient should be investigated for sepsis.",
+    pillarTitle: "Sepsis-3 Consensus and the Evolution of Sepsis Screening",
+    pillarText: [
+      "The quick Sequential Organ Failure Assessment (qSOFA) score was introduced in 2016 as part of the Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3). Prior to this, the Systemic Inflammatory Response Syndrome (SIRS) criteria were universally used to screen for sepsis. However, the Sepsis-3 task force argued that SIRS criteria lacked specificity, as many non-infectious conditions (like pancreatitis, trauma, or severe burns) routinely trigger a robust systemic inflammatory response without indicating an impending, life-threatening infection.",
+      "The qSOFA score was specifically designed as a bedside prompt for clinicians outside the intensive care unit (such as in emergency departments or general medical wards). It is not diagnostic for sepsis; rather, it is prognostic. A score of 2 or greater signifies a high probability of a poor clinical outcome (specifically, an in-hospital mortality risk of approximately 10% or an impending ICU admission). This should trigger immediate clinical actions, including drawing blood cultures, measuring serum lactate, and initiating empiric broad-spectrum intravenous antibiotics.",
+      "While qSOFA improves specificity over SIRS, it sacrifices sensitivity. Some studies have shown that waiting for a patient to develop two qSOFA criteria may delay the recognition of early sepsis compared to SIRS. Consequently, many modern hospital protocols and the Surviving Sepsis Campaign recommend using qSOFA in conjunction with other clinical early warning scores (like MEWS or NEWS), rather than as a standalone screening tool to replace clinical judgment."
+    ],
     references: "References: Singer M, et al. The Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3).",
     lowRisk: "Low Risk (< 2)",
     highRisk: "High Risk of Sepsis (≥ 2)",
@@ -38,6 +44,12 @@ const translations: Translations = {
     formula: "1 point par critère",
     clinicalTitle: "Prise en charge",
     clinicalText: "Un score ≥ 2 indique un risque élevé de mortalité et suggère d'investiguer un sepsis.",
+    pillarTitle: "Le Consensus Sepsis-3 et l'Évolution du Dépistage du Sepsis",
+    pillarText: [
+      "Le score qSOFA (quick Sequential Organ Failure Assessment) a été introduit en 2016 dans le cadre de la troisième définition du consensus international pour le sepsis et le choc septique (Sepsis-3). Auparavant, les critères du syndrome de réponse inflammatoire systémique (SIRS) étaient universellement utilisés pour dépister le sepsis. Cependant, le groupe de travail Sepsis-3 a fait valoir que les critères SIRS manquaient de spécificité, car de nombreuses affections non infectieuses (comme la pancréatite ou les traumatismes) déclenchent une réponse inflammatoire systémique sans indiquer d'infection mortelle.",
+      "Le score qSOFA a été spécifiquement conçu comme une alerte au chevet du patient pour les cliniciens en dehors des unités de soins intensifs (comme aux urgences ou dans les services de médecine générale). Il ne permet pas de diagnostiquer le sepsis ; il est plutôt pronostique. Un score supérieur ou égal à 2 signifie une forte probabilité d'évolution clinique défavorable (mortalité intra-hospitalière d'environ 10 %). Cela doit déclencher des actions cliniques immédiates, notamment des hémocultures, la mesure des lactates et l'initiation d'une antibiothérapie intraveineuse à large spectre.",
+      "Bien que le qSOFA améliore la spécificité par rapport au SIRS, il sacrifie la sensibilité. Certaines études ont montré qu'attendre qu'un patient développe deux critères qSOFA peut retarder la reconnaissance d'un sepsis précoce. Par conséquent, de nombreux protocoles hospitaliers modernes recommandent d'utiliser le qSOFA en conjonction avec d'autres scores d'alerte clinique (comme le MEWS ou le NEWS)."
+    ],
     references: "Références: Singer M, et al. (Sepsis-3).",
     lowRisk: "Faible Risque (< 2)",
     highRisk: "Haut Risque de Sepsis (≥ 2)",
@@ -60,6 +72,12 @@ const translations: Translations = {
     formula: "نقطة واحدة لكل معيار إيجابي",
     clinicalTitle: "التدبير السريري",
     clinicalText: "درجة ≥ 2 تشير إلى ارتفاع خطر النتائج السيئة ويجب تقييم المريض لاحتمال وجود إنتان.",
+    pillarTitle: "إجماع Sepsis-3 وتطور فحص الإنتان",
+    pillarText: [
+      "تم تقديم مقياس qSOFA السريع في عام 2016 كجزء من تعريفات الإجماع الدولي الثالث للإنتان والصدمة الإنتانية (Sepsis-3). قبل ذلك، كانت معايير متلازمة الاستجابة الالتهابية الجهازية (SIRS) تستخدم عالمياً للكشف عن الإنتان. ومع ذلك، جادل فريق عمل Sepsis-3 بأن معايير SIRS تفتقر إلى التحديد، حيث أن العديد من الحالات غير المعدية (مثل التهاب البنكرياس أو الصدمات أو الحروق الشديدة) تؤدي بشكل روتيني إلى استجابة التهابية جهازية قوية دون الإشارة إلى وجود عدوى وشيكة تهدد الحياة.",
+      "تم تصميم مقياس qSOFA خصيصاً كأداة تحذير بجانب السرير للأطباء خارج وحدة العناية المركزة (كما هو الحال في أقسام الطوارئ أو الأجنحة الطبية العامة). إنه ليس تشخيصياً للإنتان؛ بل هو إنذاري. النتيجة 2 أو أكثر تشير إلى احتمال كبير لنتيجة سريرية سيئة (تحديداً، خطر الوفاة في المستشفى بنسبة تقارب 10٪ أو الدخول الوشيك إلى وحدة العناية المركزة). يجب أن يؤدي هذا إلى إجراءات سريرية فورية، بما في ذلك سحب مزارع الدم، وقياس اللاكتات في المصل، والبدء في إعطاء المضادات الحيوية واسعة الطيف.",
+      "في حين أن qSOFA يحسن التحديد مقارنة بـ SIRS، فإنه يضحي بالحساسية. أظهرت بعض الدراسات أن انتظار إصابة المريض بمعيارين من معايير qSOFA قد يؤخر التعرف على الإنتان المبكر مقارنة بـ SIRS. وبالتالي، توصي العديد من بروتوكولات المستشفيات الحديثة وحملة النجاة من الإنتان باستخدام qSOFA بالاقتران مع درجات الإنذار المبكر السريرية الأخرى (مثل MEWS أو NEWS)."
+    ],
     references: "المراجع: إجماع Sepsis-3.",
     lowRisk: "خطر منخفض (< 2)",
     highRisk: "خطر عالٍ للإنتان (≥ 2)",
@@ -236,6 +254,17 @@ export default function QsofaScore({ lang }: { lang: LangCode }) {
           </div>
         </div>
       </div>
+      
+      {/* Pillar Content Section */}
+      <div className="mt-12 pt-10 border-t border-gray-100">
+        <h2 className="text-xl font-bold text-gray-900 mb-6">{currentText.pillarTitle}</h2>
+        <div className="space-y-4 text-gray-700 leading-relaxed text-sm">
+          {currentText.pillarText.map((paragraph, idx) => (
+            <p key={idx}>{paragraph}</p>
+          ))}
+        </div>
+      </div>
+
       <div className="mt-12 pt-8 border-t border-gray-100">
         <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">{layoutTranslations[lang].seeAlso}</h2>
         <div className="flex flex-wrap gap-2 mb-10">

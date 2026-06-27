@@ -1,0 +1,35 @@
+{
+  "templates": [
+    {
+      "id": "calculator-disease-state",
+      "pathTemplate": "/{calculator}-in-{disease}",
+      "description": "Programmatic pages linking a specific calculator to a specific disease state (e.g. MAP in Sepsis)."
+    },
+    {
+      "id": "calculator-geo",
+      "pathTemplate": "/{geo}/{calculator}",
+      "description": "Programmatic pages targeting localized search queries for specific regions (e.g. /uk/bmi-calculator)."
+    }
+  ],
+  "dataSets": {
+    "calculators": [
+      { "slug": "map-calculator", "name": "Mean Arterial Pressure" },
+      { "slug": "bmi-calculator", "name": "Body Mass Index" },
+      { "slug": "gcs-calculator", "name": "Glasgow Coma Scale" },
+      { "slug": "qsofa-score", "name": "qSOFA Score" }
+    ],
+    "diseases": [
+      { "slug": "sepsis", "name": "Sepsis", "relatedCalculators": ["map-calculator", "qsofa-score"] },
+      { "slug": "ards", "name": "ARDS", "relatedCalculators": ["pf-ratio", "tidal-volume"] },
+      { "slug": "cirrhosis", "name": "Cirrhosis", "relatedCalculators": ["meld-score", "child-pugh-score"] }
+    ],
+    "geos": [
+      { "slug": "uk", "name": "United Kingdom", "lang": "en" },
+      { "slug": "ca", "name": "Canada", "lang": "en" },
+      { "slug": "au", "name": "Australia", "lang": "en" },
+      { "slug": "dz", "name": "Algeria", "lang": "fr" },
+      { "slug": "ma", "name": "Morocco", "lang": "fr" },
+      { "slug": "sa", "name": "Saudi Arabia", "lang": "ar" }
+    ]
+  }
+}

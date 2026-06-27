@@ -16,6 +16,12 @@ const translations: Translations = {
     formula: "BMI = Weight(kg) / (Height(m))²",
     clinicalTitle: "Clinical Implications",
     clinicalText: "BMI is used as a screening tool for overweight and obesity. It must be interpreted with clinical judgement.",
+    pillarTitle: "Clinical Limitations and Modern Anthropometric Context",
+    pillarText: [
+      "Body Mass Index (BMI) was originally developed by Adolphe Quetelet in the 19th century as a population-level statistical metric, not as an individual clinical diagnostic tool. While it remains the globally recognized standard for identifying weight categories—due to its simplicity, cost-effectiveness, and non-invasiveness—its clinical utility is inherently limited by its inability to distinguish between lean body mass and adiposity.",
+      "A primary physiological drawback of BMI is its failure to account for body fat distribution. Visceral adiposity, rather than subcutaneous fat or overall weight, is the primary driver of cardiometabolic risk, insulin resistance, and systemic inflammation. Therefore, clinical guidelines heavily recommend complementing BMI with waist circumference or waist-to-hip ratio measurements to better stratify cardiovascular and metabolic risk.",
+      "Furthermore, the interpretation of BMI must be highly individualized. In athletes and bodybuilders, a high BMI may falsely indicate obesity due to significant muscle hypertrophy. Conversely, in the elderly population or individuals with chronic illnesses, a 'normal' BMI might mask sarcopenic obesity—a condition characterized by severe muscle depletion alongside high fat mass, which carries a poor clinical prognosis. Additionally, ethnic and demographic variations are profound; for instance, Asian populations exhibit elevated risks for type 2 diabetes and cardiovascular disease at significantly lower BMI thresholds compared to Caucasian populations."
+    ],
     references: "References: World Health Organization (WHO) BMI Classification.",
     categoryUnder: "Underweight",
     categoryNormal: "Normal",
@@ -42,6 +48,12 @@ const translations: Translations = {
     formula: "IMC = Poids(kg) / (Taille(m))²",
     clinicalTitle: "Implications Cliniques",
     clinicalText: "L'IMC est utilisé comme outil de dépistage du surpoids et de l'obésité. A interpréter avec jugement clinique.",
+    pillarTitle: "Limites Cliniques et Contexte Anthropométrique Moderne",
+    pillarText: [
+      "L'Indice de Masse Corporelle (IMC) a été initialement développé par Adolphe Quetelet au 19ème siècle comme une mesure statistique à l'échelle de la population, et non comme un outil de diagnostic clinique individuel. Bien qu'il reste la norme mondialement reconnue pour identifier les catégories de poids (en raison de sa simplicité et de son faible coût), son utilité clinique est intrinsèquement limitée par son incapacité à distinguer la masse maigre de l'adiposité.",
+      "L'un des principaux inconvénients physiologiques de l'IMC est son incapacité à tenir compte de la répartition des graisses corporelles. L'adiposité viscérale, plutôt que la graisse sous-cutanée ou le poids global, est le principal moteur du risque cardiométabolique, de l'insulinorésistance et de l'inflammation systémique. Par conséquent, les directives cliniques recommandent fortement de compléter l'IMC par des mesures du tour de taille afin de mieux stratifier le risque métabolique.",
+      "De plus, l'interprétation de l'IMC doit être hautement individualisée. Chez les athlètes, un IMC élevé peut faussement indiquer une obésité en raison d'une hypertrophie musculaire importante. À l'inverse, chez les personnes âgées, un IMC « normal » peut masquer une obésité sarcopénique (épuisement musculaire sévère associé à une masse grasse élevée), qui est de très mauvais pronostic. Enfin, les variations ethniques sont profondes : les populations asiatiques, par exemple, présentent des risques élevés de diabète de type 2 à des seuils d'IMC nettement inférieurs."
+    ],
     references: "Références : Classification IMC de l'Organisation Mondiale de la Santé (OMS).",
     categoryUnder: "Insuffisance pondérale",
     categoryNormal: "Normale",
@@ -68,6 +80,12 @@ const translations: Translations = {
     formula: "مؤشر كتلة الجسم = الوزن(كجم) / (الطول(متر))²",
     clinicalTitle: "الآثار السريرية",
     clinicalText: "يستخدم مؤشر كتلة الجسم كأداة فحص لزيادة الوزن والسمنة. يجب تفسيره بحكم سريري.",
+    pillarTitle: "القيود السريرية والسياق الأنثروبومتري الحديث",
+    pillarText: [
+      "تم تطوير مؤشر كتلة الجسم (BMI) في الأصل في القرن التاسع عشر كمقياس إحصائي على مستوى السكان، وليس كأداة تشخيص سريري فردية. على الرغم من أنه لا يزال المعيار المعترف به عالمياً لتحديد فئات الوزن - نظراً لبساطته وفعاليته من حيث التكلفة - إلا أن فائدته السريرية محدودة بطبيعتها بسبب عدم قدرته على التمييز بين كتلة الجسم الخالية من الدهون والسمنة.",
+      "يتمثل أحد العيوب الفسيولوجية الأساسية لمؤشر كتلة الجسم في فشله في حساب توزيع الدهون في الجسم. تعتبر السمنة الحشوية، بدلاً من الدهون تحت الجلد أو الوزن الإجمالي، المحرك الأساسي لمخاطر القلب والأوعية الدموية، ومقاومة الأنسولين، والالتهاب الجهازي. لذلك، توصي الإرشادات السريرية بشدة بتكملة مؤشر كتلة الجسم بقياسات محيط الخصر لتحسين تقسيم المخاطر.",
+      "علاوة على ذلك، يجب أن يكون تفسير مؤشر كتلة الجسم فردياً للغاية. في الرياضيين، قد يشير ارتفاع مؤشر كتلة الجسم خطأً إلى السمنة بسبب تضخم العضلات الكبير. على العكس من ذلك، في كبار السن، قد يخفي مؤشر كتلة الجسم 'الطبيعي' سمنة ضمور العضلات (نقص حاد في العضلات إلى جانب ارتفاع كتلة الدهون)، والتي تحمل تشخيصاً سريرياً سيئاً. بالإضافة إلى ذلك، فإن الاختلافات العرقية عميقة؛ على سبيل المثال، تظهر الشعوب الآسيوية مخاطر مرتفعة للإصابة بمرض السكري من النوع 2 عند عتبات مؤشر كتلة الجسم أقل بكثير مقارنة بالشعوب القوقازية."
+    ],
     references: "المراجع: تصنيف منظمة الصحة العالمية (WHO) لمؤشر كتلة الجسم.",
     categoryUnder: "نقص الوزن",
     categoryNormal: "طبيعي",
@@ -318,6 +336,17 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
           </div>
         </div>
       </div>
+      
+      {/* Pillar Content Section */}
+      <div className="mt-12 pt-10 border-t border-gray-100">
+        <h2 className="text-xl font-bold text-gray-900 mb-6">{currentText.pillarTitle}</h2>
+        <div className="space-y-4 text-gray-700 leading-relaxed text-sm">
+          {currentText.pillarText.map((paragraph, idx) => (
+            <p key={idx}>{paragraph}</p>
+          ))}
+        </div>
+      </div>
+
       <div className="mt-12 pt-8 border-t border-gray-100">
         <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">{layoutTranslations[lang].seeAlso}</h2>
         <div className="flex flex-wrap gap-2 mb-10">

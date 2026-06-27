@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://carecalculus.com/</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/blog</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/blog</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/blog</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/blog-articles</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog-articles"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog-articles"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog-articles"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog-articles"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/blog-articles</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog-articles"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog-articles"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog-articles"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog-articles"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/blog-articles</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/blog-articles"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/blog-articles"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/blog-articles"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/blog-articles"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/presentations</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/presentations"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/presentations"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/presentations"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/presentations"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/presentations</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/presentations"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/presentations"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/presentations"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/presentations"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/presentations</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/presentations"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/presentations"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/presentations"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/presentations"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/cours</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/cours"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/cours"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/cours"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/cours"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/cours</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/cours"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/cours"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/cours"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/cours"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/cours</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/cours"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/cours"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/cours"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/cours"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fmp-medecine</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/fmp-medecine"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/fmp-medecine"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/fmp-medecine"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/fmp-medecine"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/fmp-medecine</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/fmp-medecine"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/fmp-medecine"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/fmp-medecine"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/fmp-medecine"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/fmp-medecine</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/fmp-medecine"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/fmp-medecine"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/fmp-medecine"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/fmp-medecine"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ispits</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/ispits"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/ispits"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/ispits"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/ispits"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/fr/ispits</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/ispits"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/ispits"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/ispits"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/ispits"/>
+  </url>
+  <url>
+    <loc>https://carecalculus.com/ar/ispits</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carecalculus.com/ispits"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://carecalculus.com/fr/ispits"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carecalculus.com/ar/ispits"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carecalculus.com/ispits"/>
+  </url>
+</urlset>

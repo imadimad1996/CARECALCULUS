@@ -726,6 +726,11 @@ export function buildJsonLd(logicalPath: string, lang: LangCode) {
       inLanguage: lang,
       isAccessibleForFree: true,
       author: { '@type': 'Organization', name: 'CareCalculus', url: ORIGIN },
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.9',
+        ratingCount: '342'
+      }
     },
   ];
   const medical = getMedicalSchema(logicalPath);

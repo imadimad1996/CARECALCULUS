@@ -230,35 +230,89 @@ for (const comp of comparisons) add(`/compare/${comp}`, '0.7', 'monthly');
 // --- Emit XML with hreflang alternates ----------------------------------------
 // Per Google's multilingual sitemap spec, every <url> lists all language
 // variants (plus x-default → English) via xhtml:link rel="alternate".
-const blocks = [];
-for (const { path, priority, changefreq } of pages) {
-  const alternates = [
-    ...LANGS.map(
-      (l) => `    <xhtml:link rel="alternate" hreflang="${l}" href="${langUrl(path, l)}"/>`
-    ),
-    `    <xhtml:link rel="alternate" hreflang="x-default" href="${langUrl(path, 'en')}"/>`,
-  ].join('\n');
 
-  for (const lang of LANGS) {
-    const cf = changefreq ? `\n    <changefreq>${changefreq}</changefreq>` : '';
-    blocks.push(`  <url>
+function generateSitemapXml(pagesList) {
+  const blocks = [];
+  for (const { path, priority, changefreq } of pagesList) {
+    const alternates = [
+      ...LANGS.map(
+        (l) => `    <xhtml:link rel="alternate" hreflang="${l}" href="${langUrl(path, l)}"/>`
+      ),
+      `    <xhtml:link rel="alternate" hreflang="x-default" href="${langUrl(path, 'en')}"/>`,
+    ].join('\n');
+
+    for (const lang of LANGS) {
+      const cf = changefreq ? `\n    <changefreq>${changefreq}</changefreq>` : '';
+      blocks.push(`  <url>
     <loc>${langUrl(path, lang)}</loc>
     <lastmod>${today}</lastmod>${cf}
     <priority>${priority}</priority>
 ${alternates}
   </url>`);
+    }
   }
-}
-
-const xml = `<?xml version="1.0" encoding="UTF-8"?>
+  return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${blocks.join('\n')}
 </urlset>
 `;
+}
 
-writeFileSync(join(ROOT, 'public/sitemap.xml'), xml, 'utf8');
-console.log(`✓ sitemap.xml generated — ${pages.length} pages × ${LANGS.length} languages = ${blocks.length} URLs (lastmod ${today})`);
-console.log(`  • ${navPaths.length} top-level routes`);
-console.log(`  • ${blogPosts.length} blog · ${journalPosts.length} journal · ${courses.length} courses · ${decks.length} presentations · ${fmpModules.length} FMPC modules · ${ispitsModules.length} ISPITS modules`);
-console.log(`  • ${conditions.length} condition hubs · ${specialties.length} specialty hubs`);
+// Group pages by category for chunking
+const sitemaps = {
+  main: [],
+  calculators: [],
+  articles: [],
+  courses: [],
+  presentations: [],
+  modules: [],
+  hubs: []
+};
+
+for (const p of pages) {
+  if (p.path === '/' || RESOURCE_PATHS.has(p.path)) {
+    sitemaps.main.push(p);
+  } else if (p.path.startsWith('/blog') || p.path.startsWith('/blog-articles')) {
+    sitemaps.articles.push(p);
+  } else if (p.path.startsWith('/cours')) {
+    sitemaps.courses.push(p);
+  } else if (p.path.startsWith('/presentations')) {
+    sitemaps.presentations.push(p);
+  } else if (p.path.startsWith('/fmp-medecine') || p.path.startsWith('/ispits')) {
+    sitemaps.modules.push(p);
+  } else if (p.path.startsWith('/conditions') || p.path.startsWith('/specialties') || p.path.startsWith('/compare')) {
+    sitemaps.hubs.push(p);
+  } else {
+    // Top-level calculator routes
+    sitemaps.calculators.push(p);
+  }
+}
+
+const sitemapNames = [];
+
+for (const [name, list] of Object.entries(sitemaps)) {
+  if (list.length === 0) continue;
+  const fileName = `sitemap_${name}.xml`;
+  writeFileSync(join(ROOT, `public/${fileName}`), generateSitemapXml(list), 'utf8');
+  sitemapNames.push(fileName);
+}
+
+// Generate sitemap_index.xml
+const indexBlocks = sitemapNames.map(name => `  <sitemap>
+    <loc>${ORIGIN}/${name}</loc>
+    <lastmod>${today}</lastmod>
+  </sitemap>`);
+
+const sitemapIndexXml = `<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${indexBlocks.join('\n')}
+</sitemapindex>
+`;
+
+writeFileSync(join(ROOT, 'public/sitemap.xml'), sitemapIndexXml, 'utf8'); // Also keep sitemap.xml as index for compatibility
+writeFileSync(join(ROOT, 'public/sitemap_index.xml'), sitemapIndexXml, 'utf8');
+
+console.log(`✓ Sitemaps generated (${sitemapNames.length} chunks):`);
+console.log(sitemapNames.map(n => `  • ${n}`).join('\n'));
+console.log(`✓ sitemap_index.xml generated`);
