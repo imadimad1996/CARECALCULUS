@@ -16,6 +16,7 @@ import TrackingScripts from './components/TrackingScripts';
 import EmbedLayout from './components/EmbedLayout';
 import InstallAppButton from './components/ui/InstallAppButton';
 import SidebarNewsletter from './components/SidebarNewsletter';
+import StickyMobileAd from './components/StickyMobileAd';
 
 import { preloadPages, moduleRoutes, embedRoutes, navItems, TIER_HEADERS, LEGAL_ROUTES, CONTENT_ROUTES, ErrorBoundary, NotFound } from './routes';
 import { LangCode } from './types';
@@ -1258,6 +1259,9 @@ function AppLayout() {
           onClick={() => setIsSidebarOpen(false)}
         />
       )}
+
+      {/* Sticky Mobile Footer Ad */}
+      <StickyMobileAd />
     </div>
    </LangContext.Provider>
   );

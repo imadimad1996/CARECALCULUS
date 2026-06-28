@@ -5,6 +5,7 @@ import ClinicalExportButton from '../components/ClinicalExportButton';
 import { layoutTranslations } from '../utils/lang';
 import { trackCalculatorUsage } from '../utils/telemetry';
 import EmbedCodeButton from '../components/ui/EmbedCodeButton';
+import AdsterraNativeBanner from '../components/AdsterraNativeBanner';
 
 const translations: Translations = {
   en: {
@@ -357,8 +358,11 @@ export default function GcsCalculator({ lang }: { lang: LangCode }) {
         </div>
       </div>
       
+      {/* In-Content Native Ad */}
+      <AdsterraNativeBanner refreshDependency={gcsValue} />
+
       {/* Pillar Content Section */}
-      <div className="mt-12 pt-10 border-t border-gray-100">
+      <div className="mt-8 pt-10 border-t border-gray-100">
         <h2 className="text-xl font-bold text-gray-900 mb-6">{currentText.pillarTitle}</h2>
         <div className="space-y-4 text-gray-700 leading-relaxed text-sm">
           {currentText.pillarText.map((paragraph, idx) => (

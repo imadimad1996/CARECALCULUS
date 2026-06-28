@@ -8,6 +8,8 @@ import { trackCalculatorUsage } from '../utils/telemetry';
 import { layoutTranslations } from '../utils/lang';
 import MobileResultDock from '../components/ui/MobileResultDock';
 import EmbedCodeButton from '../components/ui/EmbedCodeButton';
+import { JsonLd, generateMedicalCalculatorSchema } from '../components/JsonLd';
+import AdsterraNativeBanner from '../components/AdsterraNativeBanner';
 
 const translations: Translations = {
   en: {
@@ -132,6 +134,7 @@ export default function MapCalculator({ lang }: { lang: LangCode }) {
 
   return (
     <>
+      <JsonLd data={generateMedicalCalculatorSchema(currentText.title, currentText.subtitle)} />
       <div className="max-w-3xl mb-12">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <h1 className={`text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-3 ${isRtl ? 'leading-normal' : ''}`}>
@@ -309,8 +312,11 @@ export default function MapCalculator({ lang }: { lang: LangCode }) {
         </div>
       </div>
       
+      {/* In-Content Native Ad */}
+      <AdsterraNativeBanner refreshDependency={mapValue} />
+
       {/* Pillar Content Section */}
-      <div className="mt-12 pt-10 border-t border-gray-100">
+      <div className="mt-8 pt-10 border-t border-gray-100">
         <h2 className="text-xl font-bold text-gray-900 mb-6">{currentText.pillarTitle}</h2>
         <div className="space-y-4 text-gray-700 leading-relaxed text-sm">
           {currentText.pillarText.map((paragraph, idx) => (

@@ -203,11 +203,8 @@ export default function HomePage({ lang }: HomePageProps) {
     <div className="space-y-12 pb-8" dir={isRtl ? 'rtl' : 'ltr'}>
       <SEO logicalPath="/" lang={lang} />
       {/* Hero */}
-      <section className="relative bg-gradient-to-br from-slate-950 via-[#0b3c39] to-slate-950 rounded-2xl overflow-hidden px-6 sm:px-10 py-10 sm:py-14 text-white shadow-xl border border-teal-500/20">
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
-          <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl" />
-        </div>
+      <section className="relative bg-slate-900 rounded-2xl overflow-hidden px-6 sm:px-10 py-10 sm:py-14 text-white shadow-md border border-slate-800">
+        <div className="absolute inset-0 pointer-events-none overflow-hidden" />
         <div className="relative z-10 w-full max-w-[760px] mx-auto flex flex-col items-center text-center">
           <div className="inline-flex items-center gap-2 mb-4 px-3 py-1 bg-white/5 rounded-full border border-white/10 backdrop-blur-xs">
             <Logo className="w-4.5 h-4.5" mode="dark" />
@@ -350,15 +347,15 @@ export default function HomePage({ lang }: HomePageProps) {
       <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {TIER_HIGHLIGHTS.map((tier, idx) => {
           const c = {
-            red:     { bg: 'from-rose-50/40 to-slate-50/20',     border: 'border-rose-100/70',    text: 'text-rose-700',    badge: 'bg-rose-100/60 text-rose-700' },
-            blue:    { bg: 'from-cyan-50/40 to-slate-50/20',     border: 'border-cyan-100/70',    text: 'text-cyan-700',    badge: 'bg-cyan-100/60 text-cyan-700' },
-            emerald: { bg: 'from-emerald-50/40 to-slate-50/20',  border: 'border-emerald-100/70', text: 'text-emerald-700', badge: 'bg-emerald-100/60 text-emerald-700' },
-            purple:  { bg: 'from-purple-50/40 to-slate-50/20',   border: 'border-purple-100/70',  text: 'text-purple-700',  badge: 'bg-purple-100/60 text-purple-700' },
+            red:     { border: 'border-red-100',    text: 'text-red-700',    badge: 'bg-red-50 text-red-700' },
+            blue:    { border: 'border-cyan-100',   text: 'text-cyan-700',   badge: 'bg-cyan-50 text-cyan-700' },
+            emerald: { border: 'border-emerald-100',text: 'text-emerald-700',badge: 'bg-emerald-50 text-emerald-700' },
+            purple:  { border: 'border-purple-100', text: 'text-purple-700', badge: 'bg-purple-50 text-purple-700' },
           }[tier.color];
           const tl = tierLabels[idx];
           const TierIcon = tier.icon;
           return (
-            <div key={tier.tier} className={`card bg-gradient-to-br ${c.bg} border ${c.border} !p-6 sm:!p-7 space-y-5 cursor-default hover:scale-[1.005] hover:shadow-md transition-all`}>
+            <div key={tier.tier} className={`bg-white border ${c.border} rounded-2xl p-6 sm:p-7 space-y-5 shadow-sm transition-all hover:shadow-md cursor-default`}>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className={`p-2.5 rounded-2xl ${c.badge} shadow-2xs`}>

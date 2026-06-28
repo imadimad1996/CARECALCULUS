@@ -16,12 +16,19 @@
       { "slug": "map-calculator", "name": "Mean Arterial Pressure" },
       { "slug": "bmi-calculator", "name": "Body Mass Index" },
       { "slug": "gcs-calculator", "name": "Glasgow Coma Scale" },
-      { "slug": "qsofa-score", "name": "qSOFA Score" }
+      { "slug": "qsofa-score", "name": "qSOFA Score" },
+      { "slug": "wells-score", "name": "Wells Score" },
+      { "slug": "cha2ds2-vasc", "name": "CHA2DS2-VASc Score" },
+      { "slug": "curb65-score", "name": "CURB-65 Score" }
     ],
     "diseases": [
-      { "slug": "sepsis", "name": "Sepsis", "relatedCalculators": ["map-calculator", "qsofa-score"] },
+      { "slug": "sepsis", "name": "Sepsis", "relatedCalculators": ["map-calculator", "qsofa-score", "sirs-criteria"] },
       { "slug": "ards", "name": "ARDS", "relatedCalculators": ["pf-ratio", "tidal-volume"] },
-      { "slug": "cirrhosis", "name": "Cirrhosis", "relatedCalculators": ["meld-score", "child-pugh-score"] }
+      { "slug": "cirrhosis", "name": "Cirrhosis", "relatedCalculators": ["meld-score", "child-pugh-score"] },
+      { "slug": "tbi", "name": "Traumatic Brain Injury", "relatedCalculators": ["gcs-calculator"] },
+      { "slug": "dvt", "name": "Deep Vein Thrombosis", "relatedCalculators": ["wells-score"] },
+      { "slug": "afib", "name": "Atrial Fibrillation", "relatedCalculators": ["cha2ds2-vasc"] },
+      { "slug": "pneumonia", "name": "Pneumonia", "relatedCalculators": ["curb65-score"] }
     ],
     "geos": [
       { "slug": "uk", "name": "United Kingdom", "lang": "en" },
