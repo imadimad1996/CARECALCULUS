@@ -155,23 +155,30 @@ export default function WellsScore({ lang }: { lang: LangCode }) {
   return (
     <>
       <JsonLd data={generateMedicalCalculatorSchema(currentText.title, currentText.subtitle)} />
-      <div className="max-w-3xl mb-12">
+      
+      {/* Ambient 2026 Page Lighting */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-blue-500/10 via-indigo-500/5 to-purple-500/10 blur-3xl -z-10 pointer-events-none rounded-full" />
+
+      <div className="max-w-3xl mb-12 relative">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <h1 className={`text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-3 ${isRtl ? 'leading-normal' : ''}`}>
+          <h1 className={`text-4xl md:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-gray-900 via-gray-800 to-indigo-950 bg-clip-text text-transparent mb-3 ${isRtl ? 'leading-normal' : ''}`}>
             {currentText.title}
           </h1>
           <EmbedCodeButton calculatorSlug="wells-score" lang={lang} title={currentText.title} />
         </div>
-        <p className="text-lg text-gray-500 max-w-2xl mt-3">
+        <p className="text-lg text-gray-500 max-w-2xl mt-3 leading-relaxed">
           {currentText.subtitle}
         </p>
 
-        {/* GEO Definition Block */}
-        <div className="bg-blue-50/50 border border-blue-100 rounded-xl p-4 md:p-5 mt-6 mb-2">
-          <h2 className="text-sm font-semibold text-blue-900 mb-2 uppercase tracking-wide">
-            {lang === 'en' ? 'Clinical Definition' : lang === 'fr' ? 'Définition Clinique' : 'التعريف السريري'}
-          </h2>
-          <p className="text-gray-700 text-sm leading-relaxed">
+        {/* GEO Definition Block with Glassmorphic Accent */}
+        <div className="backdrop-blur-md bg-blue-50/70 border border-blue-200/60 shadow-sm rounded-2xl p-5 mt-6 mb-2 transition-all hover:shadow-md">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
+            <h2 className="text-xs font-bold text-blue-900 uppercase tracking-widest">
+              {lang === 'en' ? 'Clinical Definition' : lang === 'fr' ? 'Définition Clinique' : 'التعريف السريري'}
+            </h2>
+          </div>
+          <p className="text-gray-700 text-sm leading-relaxed font-medium">
             {currentText.faqA1}
           </p>
         </div>
@@ -179,30 +186,30 @@ export default function WellsScore({ lang }: { lang: LangCode }) {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         <div className="lg:col-span-7 space-y-6">
-          <div className="bg-white rounded-2xl shadow-[0_2px_10px_-3px_rgba(6,81,237,0.1)] ring-1 ring-gray-950/5 p-6 md:p-8">
-            <div className="space-y-4">
+          <div className="backdrop-blur-xl bg-white/90 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] ring-1 ring-gray-950/5 p-6 md:p-8 space-y-6 transition-all">
+            <div className="space-y-3">
               
               {itemsList.map(item => (
                 <div 
                   key={item.key}
                   onClick={() => toggleSelection(item.key)}
-                  className={`p-4 border rounded-xl cursor-pointer hover:bg-gray-50 transition-all flex items-start gap-4 ${selections[item.key] ? 'border-blue-500 bg-blue-50/30 ring-1 ring-blue-500/30' : 'border-gray-200'}`}
+                  className={`p-4 border rounded-2xl cursor-pointer transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.99] flex items-center justify-between gap-4 ${selections[item.key] ? 'border-blue-500/60 bg-gradient-to-r from-blue-50/90 to-indigo-50/50 shadow-md ring-1 ring-blue-500/20' : 'border-gray-200/80 bg-white hover:bg-gray-50/60 shadow-sm'}`}
                 >
-                  <div className={`mt-0.5 shrink-0 w-5 h-5 rounded border flex items-center justify-center transition-colors ${selections[item.key] ? 'bg-blue-600 border-blue-600 text-white' : 'border-gray-300'}`}>
-                    {selections[item.key] && (
-                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    )}
-                  </div>
-                  <div className="flex-1 flex justify-between gap-4">
-                    <span className={`text-sm font-medium ${selections[item.key] ? 'text-gray-900' : 'text-gray-700'}`}>
+                  <div className="flex items-center gap-4">
+                    <div className={`shrink-0 w-6 h-6 rounded-xl border flex items-center justify-center transition-all duration-200 ${selections[item.key] ? 'bg-blue-600 border-blue-600 text-white shadow-sm scale-110' : 'border-gray-300 bg-gray-50'}`}>
+                      {selections[item.key] && (
+                        <svg width="14" height="14" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      )}
+                    </div>
+                    <span className={`text-sm font-semibold transition-colors ${selections[item.key] ? 'text-gray-900' : 'text-gray-700'}`}>
                       {currentText[item.key]}
                     </span>
-                    <span className={`text-sm font-mono shrink-0 ${item.points > 0 ? 'text-gray-500' : 'text-red-500'}`}>
-                      {item.points > 0 ? `+${item.points}` : item.points}
-                    </span>
                   </div>
+                  <span className={`text-xs font-mono font-bold px-2.5 py-1 rounded-lg transition-colors ${selections[item.key] ? 'bg-blue-600 text-white shadow-sm' : item.points > 0 ? 'bg-gray-100 text-gray-500' : 'bg-red-100 text-red-600'}`}>
+                    {item.points > 0 ? `+${item.points}` : item.points}
+                  </span>
                 </div>
               ))}
 
@@ -211,26 +218,35 @@ export default function WellsScore({ lang }: { lang: LangCode }) {
         </div>
 
         <div className="lg:col-span-5 relative">
-          <div className="sticky top-28 bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden ring-1 ring-white/10 flex flex-col justify-between p-8 min-h-[320px]">
-            <div className="absolute top-0 right-0 p-32 bg-gradient-to-bl from-blue-500/20 to-transparent rounded-bl-[100px] pointer-events-none" />
+          <div className="sticky top-28 backdrop-blur-2xl bg-gradient-to-b from-slate-900 via-gray-900 to-slate-950 text-white rounded-3xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden ring-1 ring-white/15 flex flex-col justify-between p-8 min-h-[360px] transition-all duration-300">
+            <div className="absolute top-0 right-0 p-36 bg-gradient-to-bl from-blue-500/30 via-indigo-500/10 to-transparent rounded-bl-[120px] pointer-events-none animate-pulse" />
             
             <div className="relative z-10">
-              <span className="text-xs font-bold uppercase tracking-wider text-gray-400 block mb-3">
-                {currentText.result}
-              </span>
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-bold uppercase tracking-widest text-slate-400">
+                  {currentText.result}
+                </span>
+                <span className="flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full bg-white/10 text-slate-300 backdrop-blur-md">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                  Live Score
+                </span>
+              </div>
               
-              <div className="flex items-baseline gap-2 tabular-nums">
-                <span className="text-7xl font-bold tracking-tighter transition-all duration-300">
+              <div className="flex items-baseline gap-2 tabular-nums my-2">
+                <span className="text-8xl font-black tracking-tighter transition-all duration-300 bg-gradient-to-b from-white via-slate-100 to-slate-400 bg-clip-text text-transparent">
                   {scoreValue}
                 </span>
-                <span className="text-xl font-medium text-gray-400">Points</span>
+                <span className="text-2xl font-bold text-slate-500">Points</span>
               </div>
             </div>
 
-            <div className="relative z-10 mt-10">
-              <div className={`p-4 rounded-xl border flex justify-between items-center transition-all ${category.bg} ${category.color}`}>
-                <div className="font-semibold text-sm">
-                  {category.label}
+            <div className="relative z-10 mt-10 space-y-4">
+              <div className={`p-4 rounded-2xl border backdrop-blur-md flex justify-between items-center transition-all shadow-lg ${category.bg} ${category.color}`}>
+                <div className="flex items-center gap-3">
+                  <span className="w-2.5 h-2.5 rounded-full bg-currentColor animate-pulse" />
+                  <span className="font-bold text-sm tracking-wide">
+                    {category.label}
+                  </span>
                 </div>
               </div>
 

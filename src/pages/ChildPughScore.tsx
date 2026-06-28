@@ -4,6 +4,9 @@ import { LangCode, Translations } from '../types';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 import { layoutTranslations } from '../utils/lang';
 import { trackCalculatorUsage } from '../utils/telemetry';
+import EmbedCodeButton from '../components/ui/EmbedCodeButton';
+import { JsonLd, generateMedicalCalculatorSchema } from '../components/JsonLd';
+import AdsterraNativeBanner from '../components/AdsterraNativeBanner';
 
 const translations: Translations = {
   en: {
@@ -164,29 +167,50 @@ export default function ChildPughScore({ lang }: { lang: LangCode }) {
 
   return (
     <>
-      <div className="max-w-3xl mb-12">
-        <h1 className={`text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-3 ${isRtl ? 'leading-normal' : ''}`}>
-          {currentText.title}
-        </h1>
-        <p className="text-lg text-gray-500 max-w-2xl">
+      <JsonLd data={generateMedicalCalculatorSchema(currentText.title, currentText.subtitle)} />
+      
+      {/* Ambient 2026 Page Lighting */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-blue-500/10 via-indigo-500/5 to-purple-500/10 blur-3xl -z-10 pointer-events-none rounded-full" />
+
+      <div className="max-w-3xl mb-12 relative">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <h1 className={`text-4xl md:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-gray-900 via-gray-800 to-indigo-950 bg-clip-text text-transparent mb-3 ${isRtl ? 'leading-normal' : ''}`}>
+            {currentText.title}
+          </h1>
+          <EmbedCodeButton calculatorSlug="child-pugh-score" lang={lang} title={currentText.title} />
+        </div>
+        <p className="text-lg text-gray-500 max-w-2xl mt-3 leading-relaxed">
           {currentText.subtitle}
         </p>
+
+        {/* GEO Definition Block with Glassmorphic Accent */}
+        <div className="backdrop-blur-md bg-blue-50/70 border border-blue-200/60 shadow-sm rounded-2xl p-5 mt-6 mb-2 transition-all hover:shadow-md">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
+            <h2 className="text-xs font-bold text-blue-900 uppercase tracking-widest">
+              {lang === 'en' ? 'Clinical Definition' : lang === 'fr' ? 'Définition Clinique' : 'التعريف السريري'}
+            </h2>
+          </div>
+          <p className="text-gray-700 text-sm leading-relaxed font-medium">
+            {currentText.faqA1}
+          </p>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         <div className="lg:col-span-7 space-y-6">
-          <div className="bg-white rounded-2xl shadow-[0_2px_10px_-3px_rgba(6,81,237,0.1)] ring-1 ring-gray-950/5 p-6 md:p-8">
+          <div className="backdrop-blur-xl bg-white/90 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] ring-1 ring-gray-950/5 p-6 md:p-8 transition-all">
             <div className="space-y-6">
               
               <div className="group">
-                <label className="block text-sm font-semibold text-gray-700 uppercase tracking-wider mb-3">{currentText.bilirubin}</label>
-                <div className="grid grid-cols-1 gap-2">
+                <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">{currentText.bilirubin}</label>
+                <div className="grid grid-cols-1 gap-2.5">
                   {[1, 2, 3].map((val) => (
                     <button
                       key={`bilirubin-${val}`}
                       onClick={() => setBilirubin(val)}
-                      className={`text-left px-4 py-3 rounded-xl border text-sm font-medium transition-all ${bilirubin === val ? 'bg-blue-50 border-blue-600 text-blue-800 font-bold' : 'bg-white border-gray-200 text-gray-700 hover:border-blue-300'}`}
-                      style={{ minHeight: '44px' }}
+                      className={`text-left px-5 py-3.5 rounded-2xl border text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${bilirubin === val ? 'bg-gradient-to-r from-blue-600 to-indigo-600 border-transparent text-white shadow-lg shadow-blue-500/25' : 'bg-white border-gray-200/80 text-gray-700 hover:bg-gray-50/80 hover:border-gray-300 shadow-sm'}`}
+                      style={{ minHeight: '48px' }}
                     >
                       {currentText[`bilirubin${val}`]}
                     </button>
@@ -194,15 +218,15 @@ export default function ChildPughScore({ lang }: { lang: LangCode }) {
                 </div>
               </div>
 
-              <div className="group">
-                <label className="block text-sm font-semibold text-gray-700 uppercase tracking-wider mb-3 mt-4">{currentText.albumin}</label>
-                <div className="grid grid-cols-1 gap-2">
+              <div className="group pt-2">
+                <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 mt-4">{currentText.albumin}</label>
+                <div className="grid grid-cols-1 gap-2.5">
                   {[1, 2, 3].map((val) => (
                     <button
                       key={`albumin-${val}`}
                       onClick={() => setAlbumin(val)}
-                      className={`text-left px-4 py-3 rounded-xl border text-sm font-medium transition-all ${albumin === val ? 'bg-blue-50 border-blue-600 text-blue-800 font-bold' : 'bg-white border-gray-200 text-gray-700 hover:border-blue-300'}`}
-                      style={{ minHeight: '44px' }}
+                      className={`text-left px-5 py-3.5 rounded-2xl border text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${albumin === val ? 'bg-gradient-to-r from-blue-600 to-indigo-600 border-transparent text-white shadow-lg shadow-blue-500/25' : 'bg-white border-gray-200/80 text-gray-700 hover:bg-gray-50/80 hover:border-gray-300 shadow-sm'}`}
+                      style={{ minHeight: '48px' }}
                     >
                       {currentText[`albumin${val}`]}
                     </button>
@@ -210,15 +234,15 @@ export default function ChildPughScore({ lang }: { lang: LangCode }) {
                 </div>
               </div>
 
-              <div className="group">
-                <label className="block text-sm font-semibold text-gray-700 uppercase tracking-wider mb-3 mt-4">{currentText.inr}</label>
-                <div className="grid grid-cols-1 gap-2">
+              <div className="group pt-2">
+                <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 mt-4">{currentText.inr}</label>
+                <div className="grid grid-cols-1 gap-2.5">
                   {[1, 2, 3].map((val) => (
                     <button
                       key={`inr-${val}`}
                       onClick={() => setInr(val)}
-                      className={`text-left px-4 py-3 rounded-xl border text-sm font-medium transition-all ${inr === val ? 'bg-blue-50 border-blue-600 text-blue-800 font-bold' : 'bg-white border-gray-200 text-gray-700 hover:border-blue-300'}`}
-                      style={{ minHeight: '44px' }}
+                      className={`text-left px-5 py-3.5 rounded-2xl border text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${inr === val ? 'bg-gradient-to-r from-blue-600 to-indigo-600 border-transparent text-white shadow-lg shadow-blue-500/25' : 'bg-white border-gray-200/80 text-gray-700 hover:bg-gray-50/80 hover:border-gray-300 shadow-sm'}`}
+                      style={{ minHeight: '48px' }}
                     >
                       {currentText[`inr${val}`]}
                     </button>
@@ -226,15 +250,15 @@ export default function ChildPughScore({ lang }: { lang: LangCode }) {
                 </div>
               </div>
 
-              <div className="group">
-                <label className="block text-sm font-semibold text-gray-700 uppercase tracking-wider mb-3 mt-4">{currentText.ascites}</label>
-                <div className="grid grid-cols-1 gap-2">
+              <div className="group pt-2">
+                <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 mt-4">{currentText.ascites}</label>
+                <div className="grid grid-cols-1 gap-2.5">
                   {[1, 2, 3].map((val) => (
                     <button
                       key={`ascites-${val}`}
                       onClick={() => setAscites(val)}
-                      className={`text-left px-4 py-3 rounded-xl border text-sm font-medium transition-all ${ascites === val ? 'bg-blue-50 border-blue-600 text-blue-800 font-bold' : 'bg-white border-gray-200 text-gray-700 hover:border-blue-300'}`}
-                      style={{ minHeight: '44px' }}
+                      className={`text-left px-5 py-3.5 rounded-2xl border text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${ascites === val ? 'bg-gradient-to-r from-blue-600 to-indigo-600 border-transparent text-white shadow-lg shadow-blue-500/25' : 'bg-white border-gray-200/80 text-gray-700 hover:bg-gray-50/80 hover:border-gray-300 shadow-sm'}`}
+                      style={{ minHeight: '48px' }}
                     >
                       {currentText[`ascites${val}`]}
                     </button>
@@ -242,15 +266,15 @@ export default function ChildPughScore({ lang }: { lang: LangCode }) {
                 </div>
               </div>
 
-              <div className="group">
-                <label className="block text-sm font-semibold text-gray-700 uppercase tracking-wider mb-3 mt-4">{currentText.enceph}</label>
-                <div className="grid grid-cols-1 gap-2">
+              <div className="group pt-2">
+                <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 mt-4">{currentText.enceph}</label>
+                <div className="grid grid-cols-1 gap-2.5">
                   {[1, 2, 3].map((val) => (
                     <button
                       key={`enceph-${val}`}
                       onClick={() => setEnceph(val)}
-                      className={`text-left px-4 py-3 rounded-xl border text-sm font-medium transition-all ${enceph === val ? 'bg-blue-50 border-blue-600 text-blue-800 font-bold' : 'bg-white border-gray-200 text-gray-700 hover:border-blue-300'}`}
-                      style={{ minHeight: '44px' }}
+                      className={`text-left px-5 py-3.5 rounded-2xl border text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${enceph === val ? 'bg-gradient-to-r from-blue-600 to-indigo-600 border-transparent text-white shadow-lg shadow-blue-500/25' : 'bg-white border-gray-200/80 text-gray-700 hover:bg-gray-50/80 hover:border-gray-300 shadow-sm'}`}
+                      style={{ minHeight: '48px' }}
                     >
                       {currentText[`enceph${val}`]}
                     </button>
@@ -263,36 +287,45 @@ export default function ChildPughScore({ lang }: { lang: LangCode }) {
         </div>
 
         <div className="lg:col-span-5 relative">
-          <div className="sticky top-28 bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden ring-1 ring-white/10 flex flex-col justify-between p-8 min-h-[320px]">
-            <div className="absolute top-0 right-0 p-32 bg-gradient-to-bl from-blue-500/20 to-transparent rounded-bl-[100px] pointer-events-none" />
+          <div className="sticky top-28 backdrop-blur-2xl bg-gradient-to-b from-slate-900 via-gray-900 to-slate-950 text-white rounded-3xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden ring-1 ring-white/15 flex flex-col justify-between p-8 min-h-[360px] transition-all duration-300">
+            <div className="absolute top-0 right-0 p-36 bg-gradient-to-bl from-blue-500/30 via-indigo-500/10 to-transparent rounded-bl-[120px] pointer-events-none animate-pulse" />
             
             <div className="relative z-10 flex items-start justify-between">
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-gray-400 block mb-3">
-                  {currentText.result}
-                </span>
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-xs font-bold uppercase tracking-widest text-slate-400">
+                    {currentText.result}
+                  </span>
+                  <span className="flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full bg-white/10 text-slate-300 backdrop-blur-md">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                    Live Score
+                  </span>
+                </div>
                 
-                <div className="flex items-baseline gap-2 tabular-nums">
-                  <span className="text-7xl font-bold tracking-tighter transition-all duration-300">
+                <div className="flex items-baseline gap-2 tabular-nums my-2">
+                  <span className="text-8xl font-black tracking-tighter transition-all duration-300 bg-gradient-to-b from-white via-slate-100 to-slate-400 bg-clip-text text-transparent">
                     {childPughValue}
                   </span>
-                  <span className="text-xl font-medium text-gray-400">/ 15</span>
+                  <span className="text-2xl font-bold text-slate-500">/ 15</span>
                 </div>
               </div>
 
               <button
                 onClick={handleCopy}
-                className="mt-2 p-2.5 bg-gray-800 hover:bg-gray-700 rounded-xl transition-colors border border-gray-700/50 flex items-center justify-center text-gray-300 hover:text-white"
+                className="mt-2 p-3 bg-white/10 hover:bg-white/20 rounded-2xl transition-all border border-white/15 flex items-center justify-center text-slate-300 hover:text-white backdrop-blur-md active:scale-95 shadow-sm"
                 title="Copy Result"
               >
                 {copied ? <Check className="w-5 h-5 text-emerald-400" /> : <Copy className="w-5 h-5" />}
               </button>
             </div>
 
-            <div className="relative z-10 mt-10">
-              <div className={`p-4 rounded-xl border flex justify-between items-center transition-all ${category.bg} ${category.color}`}>
-                <div className="font-semibold text-sm">
-                  {category.label}
+            <div className="relative z-10 mt-10 space-y-4">
+              <div className={`p-4 rounded-2xl border backdrop-blur-md flex justify-between items-center transition-all shadow-lg ${category.bg} ${category.color}`}>
+                <div className="flex items-center gap-3">
+                  <span className="w-2.5 h-2.5 rounded-full bg-currentColor animate-pulse" />
+                  <span className="font-bold text-sm tracking-wide">
+                    {category.label}
+                  </span>
                 </div>
               </div>
 
@@ -360,6 +393,8 @@ export default function ChildPughScore({ lang }: { lang: LangCode }) {
           </div>
         </div>
       </div>
+
+      <AdsterraNativeBanner refreshDependency={childPughValue} />
 
       <div className="mt-12 pt-8 border-t border-gray-100">
         <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">{layoutTranslations[lang].seeAlso}</h2>

@@ -4,6 +4,9 @@ import { LangCode, Translations } from '../types';
 import { layoutTranslations } from '../utils/lang';
 import { trackCalculatorUsage } from '../utils/telemetry';
 import ClinicalExportButton from '../components/ClinicalExportButton';
+import EmbedCodeButton from '../components/ui/EmbedCodeButton';
+import { JsonLd, generateMedicalCalculatorSchema } from '../components/JsonLd';
+import AdsterraNativeBanner from '../components/AdsterraNativeBanner';
 
 const translations: Translations = {
   en: {
@@ -18,6 +21,7 @@ const translations: Translations = {
     formula: "MELD Score predicting 3-month mortality",
     clinicalTitle: "Interpretation",
     clinicalText: "MELD usually ranges from 6 to 40. Higher values indicate higher 3-month mortality and prioritize liver transplantation waitlists.",
+    faqA1: "The MELD Score (Model for End-Stage Liver Disease) is a prognostic scoring system used to estimate 3-month survival in patients with chronic liver disease and cirrhosis, guiding liver transplantation prioritization.",
     references: "References: Kamath PS, et al. A model to predict survival in patients with end-stage liver disease. Biggins SW, et al. Evidence-based incorporation of serum sodium concentration into MELD.",
     yes: "Yes",
     no: "No",
@@ -34,6 +38,7 @@ const translations: Translations = {
     formula: "Score MELD prédisant la mortalité à 3 mois",
     clinicalTitle: "Interprétation",
     clinicalText: "Le MELD varie généralement de 6 à 40. Des valeurs plus élevées indiquent une mortalité à 3 mois plus sévère (priorité greffe).",
+    faqA1: "Le score MELD (Model for End-Stage Liver Disease) est un système de notation pronostique utilisé pour estimer la survie à 3 mois chez les patients atteints de maladie hépatique chronique et de cirrhose.",
     references: "Références: Kamath PS, et al. Biggins SW, et al.",
     yes: "Oui",
     no: "Non"
@@ -50,6 +55,7 @@ const translations: Translations = {
     formula: "مقياس MELD لتوقع الوفاة خلال 3 أشهر",
     clinicalTitle: "التفسير السريري",
     clinicalText: "يتراوح MELD عادة بين 6 و 40. القيم الأعلى تشير لزيادة الوفيات وتمنح أولوية لزراعة الكبد.",
+    faqA1: "مقياس MELD (نموذج لمرض الكبد في المرحلة النهائية) هو نظام تقييم سريري يُستخدم لتقدير احتمال البقاء على قيد الحياة لمدة 3 أشهر لدى مرضى تليف الكبد المزمن وتحديد أولوية زراعة الكبد.",
     references: "المراجع: Kamath PS, et al.",
     yes: "نعم",
     no: "لا"
@@ -106,78 +112,99 @@ export default function MeldScore({ lang }: { lang: LangCode }) {
 
   return (
     <>
-      <div className="max-w-3xl mb-12">
-        <h1 className={`text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-3 ${isRtl ? 'leading-normal' : ''}`}>
-          {currentText.title}
-        </h1>
-        <p className="text-lg text-gray-500 max-w-2xl">
+      <JsonLd data={generateMedicalCalculatorSchema(currentText.title, currentText.subtitle)} />
+      
+      {/* Ambient 2026 Page Lighting */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-blue-500/10 via-indigo-500/5 to-purple-500/10 blur-3xl -z-10 pointer-events-none rounded-full" />
+
+      <div className="max-w-3xl mb-12 relative">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <h1 className={`text-4xl md:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-gray-900 via-gray-800 to-indigo-950 bg-clip-text text-transparent mb-3 ${isRtl ? 'leading-normal' : ''}`}>
+            {currentText.title}
+          </h1>
+          <EmbedCodeButton calculatorSlug="meld-score" lang={lang} title={currentText.title} />
+        </div>
+        <p className="text-lg text-gray-500 max-w-2xl mt-3 leading-relaxed">
           {currentText.subtitle}
         </p>
+
+        {/* GEO Definition Block with Glassmorphic Accent */}
+        <div className="backdrop-blur-md bg-blue-50/70 border border-blue-200/60 shadow-sm rounded-2xl p-5 mt-6 mb-2 transition-all hover:shadow-md">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
+            <h2 className="text-xs font-bold text-blue-900 uppercase tracking-widest">
+              {lang === 'en' ? 'Clinical Definition' : lang === 'fr' ? 'Définition Clinique' : 'التعريف السريري'}
+            </h2>
+          </div>
+          <p className="text-gray-700 text-sm leading-relaxed font-medium">
+            {currentText.faqA1}
+          </p>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         <div className="lg:col-span-7 space-y-6">
-          <div className="bg-white rounded-2xl shadow-[0_2px_10px_-3px_rgba(6,81,237,0.1)] ring-1 ring-gray-950/5 p-6 md:p-8 space-y-6">
+          <div className="backdrop-blur-xl bg-white/90 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] ring-1 ring-gray-950/5 p-6 md:p-8 space-y-6 transition-all">
             
             <div className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="group">
-                  <label className="text-xs font-semibold text-gray-700 uppercase tracking-wider block mb-2">{currentText.bilirubin}</label>
+                  <label className="text-xs font-bold text-gray-500 uppercase tracking-wider block mb-2">{currentText.bilirubin}</label>
                   <input
                     type="number"
                     step="0.1"
                     min="0.1"
                     value={bilirubin}
                     onChange={(e) => setBilirubin(e.target.value === '' ? '' : Number(e.target.value))}
-                    className="w-full bg-gray-50 px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600 text-xl font-semibold text-gray-900 transition-all font-mono"
+                    className="w-full bg-white px-4 py-3 border border-gray-200/80 rounded-2xl focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600 text-xl font-bold text-gray-900 transition-all font-mono shadow-sm hover:border-gray-300"
                   />
                 </div>
                 <div className="group">
-                  <label className="text-xs font-semibold text-gray-700 uppercase tracking-wider block mb-2">{currentText.inr}</label>
+                  <label className="text-xs font-bold text-gray-500 uppercase tracking-wider block mb-2">{currentText.inr}</label>
                   <input
                     type="number"
                     step="0.1"
                     min="0.1"
                     value={inr}
                     onChange={(e) => setInr(e.target.value === '' ? '' : Number(e.target.value))}
-                    className="w-full bg-gray-50 px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600 text-xl font-semibold text-gray-900 transition-all font-mono"
+                    className="w-full bg-white px-4 py-3 border border-gray-200/80 rounded-2xl focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600 text-xl font-bold text-gray-900 transition-all font-mono shadow-sm hover:border-gray-300"
                   />
                 </div>
                 <div className="group">
-                  <label className="text-xs font-semibold text-gray-700 uppercase tracking-wider block mb-2">{currentText.creatinine}</label>
+                  <label className="text-xs font-bold text-gray-500 uppercase tracking-wider block mb-2">{currentText.creatinine}</label>
                   <input
                     type="number"
                     step="0.1"
                     min="0.1"
                     value={creatinine}
                     onChange={(e) => setCreatinine(e.target.value === '' ? '' : Number(e.target.value))}
-                    className="w-full bg-gray-50 px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600 text-xl font-semibold text-gray-900 transition-all font-mono"
+                    className="w-full bg-white px-4 py-3 border border-gray-200/80 rounded-2xl focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600 text-xl font-bold text-gray-900 transition-all font-mono shadow-sm hover:border-gray-300"
                   />
                 </div>
                 <div className="group">
-                  <label className="text-xs font-semibold text-gray-700 uppercase tracking-wider block mb-2">{currentText.sodium}</label>
+                  <label className="text-xs font-bold text-gray-500 uppercase tracking-wider block mb-2">{currentText.sodium}</label>
                   <input
                     type="number"
                     step="1"
                     value={sodium}
                     onChange={(e) => setSodium(e.target.value === '' ? '' : Number(e.target.value))}
-                    className="w-full bg-gray-50 px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600 text-xl font-semibold text-gray-900 transition-all font-mono"
+                    className="w-full bg-white px-4 py-3 border border-gray-200/80 rounded-2xl focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600 text-xl font-bold text-gray-900 transition-all font-mono shadow-sm hover:border-gray-300"
                   />
                 </div>
               </div>
 
               <div className="mt-6 pt-4 border-t border-gray-100">
-                <label className="text-xs font-semibold text-gray-700 uppercase tracking-wider block mb-3">{currentText.dialysis}</label>
+                <label className="text-xs font-bold text-gray-500 uppercase tracking-wider block mb-3">{currentText.dialysis}</label>
                 <div className="flex gap-4">
                   <button
                     onClick={() => setDialysis(false)}
-                    className={`flex-1 py-3 rounded-xl border text-sm font-medium transition-all ${!dialysis ? 'bg-blue-600 border-blue-600 text-white' : 'bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100'}`}
+                    className={`flex-1 p-3.5 rounded-2xl border text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${!dialysis ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white border-transparent shadow-lg shadow-blue-500/25' : 'bg-white border-gray-200/80 text-gray-700 hover:bg-gray-50/80 hover:border-gray-300 shadow-sm'}`}
                   >
                     {currentText.no}
                   </button>
                   <button
                     onClick={() => setDialysis(true)}
-                    className={`flex-1 py-3 rounded-xl border text-sm font-medium transition-all ${dialysis ? 'bg-blue-600 border-blue-600 text-white' : 'bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100'}`}
+                    className={`flex-1 p-3.5 rounded-2xl border text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${dialysis ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white border-transparent shadow-lg shadow-blue-500/25' : 'bg-white border-gray-200/80 text-gray-700 hover:bg-gray-50/80 hover:border-gray-300 shadow-sm'}`}
                   >
                     {currentText.yes}
                   </button>
@@ -189,34 +216,43 @@ export default function MeldScore({ lang }: { lang: LangCode }) {
         </div>
 
         <div className="lg:col-span-5 relative">
-          <div className="sticky top-28 bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden ring-1 ring-white/10 flex flex-col justify-between p-8 min-h-[320px]">
-            <div className="absolute top-0 right-0 p-32 bg-gradient-to-bl from-blue-500/20 to-transparent rounded-bl-[100px] pointer-events-none" />
+          <div className="sticky top-28 backdrop-blur-2xl bg-gradient-to-b from-slate-900 via-gray-900 to-slate-950 text-white rounded-3xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden ring-1 ring-white/15 flex flex-col justify-between p-8 min-h-[360px] transition-all duration-300">
+            <div className="absolute top-0 right-0 p-36 bg-gradient-to-bl from-blue-500/30 via-indigo-500/10 to-transparent rounded-bl-[120px] pointer-events-none animate-pulse" />
             
             <div className="relative z-10">
-              <span className="text-xs font-bold uppercase tracking-wider text-gray-400 block mb-3">
-                {currentText.result}
-              </span>
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-bold uppercase tracking-widest text-slate-400">
+                  {currentText.result}
+                </span>
+                <span className="flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full bg-white/10 text-slate-300 backdrop-blur-md">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                  Live Score
+                </span>
+              </div>
               
-              <div className="flex items-baseline gap-2 tabular-nums">
-                <span className="text-7xl font-bold tracking-tighter transition-all duration-300">
+              <div className="flex items-baseline gap-2 tabular-nums my-2">
+                <span className="text-8xl font-black tracking-tighter transition-all duration-300 bg-gradient-to-b from-white via-slate-100 to-slate-400 bg-clip-text text-transparent">
                   {meldScore !== null ? meldScore : '--'}
                 </span>
-                <span className="text-xl font-medium text-gray-400">Points</span>
+                <span className="text-2xl font-bold text-slate-500">Points</span>
               </div>
             </div>
             
             {meldScore !== null && (
-              <div className="relative z-10 mt-10">
-                <div className={`p-4 rounded-xl border flex justify-between items-center transition-all ${
+              <div className="relative z-10 mt-10 space-y-4">
+                <div className={`p-4 rounded-2xl border backdrop-blur-md flex justify-between items-center transition-all shadow-lg ${
                   meldScore >= 20 ? 'bg-red-500/10 border-red-500/20 text-red-500' :
                   meldScore >= 10 ? 'bg-amber-500/10 border-amber-500/20 text-amber-500' :
                   'bg-emerald-500/10 border-emerald-500/20 text-emerald-500'
                 }`}>
-                  <div className="font-semibold text-sm">
-                    {meldScore >= 40 ? '71.3% 3-month mortality' : 
-                     meldScore >= 30 ? '52.6% 3-month mortality' :
-                     meldScore >= 20 ? '19.6% 3-month mortality' :
-                     meldScore >= 10 ? '6.0% 3-month mortality' : '1.9% 3-month mortality'}
+                  <div className="flex items-center gap-3">
+                    <span className="w-2.5 h-2.5 rounded-full bg-currentColor animate-pulse" />
+                    <span className="font-bold text-sm tracking-wide">
+                      {meldScore >= 40 ? '71.3% 3-month mortality' : 
+                       meldScore >= 30 ? '52.6% 3-month mortality' :
+                       meldScore >= 20 ? '19.6% 3-month mortality' :
+                       meldScore >= 10 ? '6.0% 3-month mortality' : '1.9% 3-month mortality'}
+                    </span>
                   </div>
                 </div>
 
@@ -284,6 +320,9 @@ export default function MeldScore({ lang }: { lang: LangCode }) {
           </div>
         </div>
       </div>
+
+      {/* In-Content Native Ad */}
+      <AdsterraNativeBanner refreshDependency={meldScore || 0} />
     </>
   );
 }
