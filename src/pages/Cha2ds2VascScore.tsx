@@ -4,6 +4,9 @@ import { LangCode, Translations } from '../types';
 import { layoutTranslations } from '../utils/lang';
 import { trackCalculatorUsage } from '../utils/telemetry';
 import ClinicalExportButton from '../components/ClinicalExportButton';
+import EmbedCodeButton from '../components/ui/EmbedCodeButton';
+import { JsonLd, generateMedicalCalculatorSchema } from '../components/JsonLd';
+import AdsterraNativeBanner from '../components/AdsterraNativeBanner';
 
 const translations: Translations = {
   en: {
@@ -25,7 +28,19 @@ const translations: Translations = {
     formula: "Sum of points (0 to 9)",
     clinicalTitle: "Recommendation",
     clinicalText: "Score 0 (Men) / 1 (Women): No anticoagulation recommended. Score 1 (Men): Consider anticoagulation. Score ≥ 2: Anticoagulation highly recommended.",
-    references: "References: Lip GY, et al. Refining clinical risk stratification for predicting stroke and thromboembolism in atrial fibrillation using a novel risk factor-based approach: the euro heart survey on atrial fibrillation.",
+    pillarTitle: "Clinical Guidelines & OAC Anticoagulation Strategy",
+    pillarText: [
+      "The CHA₂DS₂-VASc score is the foundational clinical risk stratification rule recommended by both the European Society of Cardiology (ESC) and the American Heart Association (AHA/ACC) to estimate the risk of stroke and systemic thromboembolism in non-valvular atrial fibrillation (AFib).",
+      "A critical nuance in clinical application is the female sex modifier (+1 point). According to international consensus, female sex alone in an otherwise healthy individual (Score = 1 in women under 65) does not confer an elevated stroke risk that warrants oral anticoagulation (OAC). Anticoagulation is formally indicated only when a patient has at least one additional non-sex risk factor (Score ≥ 2 in men, ≥ 3 in women).",
+      "When OAC therapy is indicated, Direct Oral Anticoagulants (DOACs such as apixaban, rivaroxaban, dabigatran, or edoxaban) are strongly preferred over Vitamin K Antagonists (VKAs like warfarin) due to their superior safety profile, particularly regarding intracranial hemorrhage."
+    ],
+    faqQ1: "What does CHA2DS2-VASc stand for?",
+    faqA1: "CHA2DS2-VASc is an acronym representing Congestive heart failure, Hypertension, Age ≥ 75 (doubled), Diabetes, prior Stroke/TIA (doubled), Vascular disease, Age 65-74, and Sex category (female).",
+    faqQ2: "Does a score of 1 in a female patient require blood thinners?",
+    faqA2: "No. Female sex alone gives 1 point but does not increase stroke risk independently in young women. Oral anticoagulation is typically initiated only when additional clinical risk factors are present.",
+    faqQ3: "Should bleeding risk be assessed alongside this score?",
+    faqA3: "Yes. Clinicians routinely calculate the HAS-BLED score alongside CHA2DS2-VASc to evaluate modifiable bleeding risks, though high bleeding risk rarely contraindicates anticoagulation when stroke risk is severe.",
+    references: "References: Lip GY, et al. Refining clinical risk stratification for predicting stroke and thromboembolism in atrial fibrillation. Chest.",
     low: "Low Risk",
     moderate: "Moderate Risk",
     high: "High Risk"
@@ -49,7 +64,19 @@ const translations: Translations = {
     formula: "Somme des points (0 à 9)",
     clinicalTitle: "Recommandation",
     clinicalText: "Score 0 (H) / 1 (F) : Pas d'anticoagulation. Score 1 (H) : Anticoagulation à envisager. Score ≥ 2 : Anticoagulation fortement recommandée.",
-    references: "Références: Lip GY, et al.",
+    pillarTitle: "Directives Cliniques et Stratégie d'Anticoagulation",
+    pillarText: [
+      "Le score CHA₂DS₂-VASc est l'outil de stratification du risque thromboembolique de référence recommandé par la Société Européenne de Cardiologie (ESC) pour guider le traitement anticoagulant dans la fibrillation atriale (FA) non valvulaire.",
+      "Une nuance fondamentale concerne le critère du sexe féminin (+1 point). Chez une femme de moins de 65 ans sans autre facteur de risque (Score = 1), le risque d'AVC n'est pas augmenté et n'indique pas d'anticoagulation orale (ACO). L'ACO est formellement recommandée dès la présence d'un facteur de risque non lié au sexe (Score ≥ 2 chez l'homme, ≥ 3 chez la femme).",
+      "Lorsque l'anticoagulation est indiquée, les anticoagulants oraux directs (AOD comme l'apixaban ou le rivaroxaban) sont privilégiés par rapport aux anti-vitamines K (AVK) en raison de leur profil de sécurité supérieur."
+    ],
+    faqQ1: "Que signifie l'acronyme CHA2DS2-VASc ?",
+    faqA1: "Il correspond à : Insuffisance Cardiaque, Hypertension, Âge ≥ 75 ans (2 pts), Diabète, AVC/AIT (2 pts), Maladie Vasculaire, Âge 65-74 ans, et Sexe (féminin).",
+    faqQ2: "Une femme avec un score de 1 doit-elle prendre un anticoagulant ?",
+    faqA2: "Non. Le sexe féminin attribue 1 point mais ne justifie pas à lui seul un traitement anticoagulant en l'absence d'autres facteurs de risque cliniques.",
+    faqQ3: "Faut-il évaluer le risque hémorragique ?",
+    faqA3: "Oui, le score HAS-BLED est couramment utilisé en parallèle pour identifier et corriger les facteurs de risque hémorragique modifiables.",
+    references: "Références: Lip GY, et al. Refining clinical risk stratification for predicting stroke.",
     low: "Risque Faible",
     moderate: "Risque Modéré",
     high: "Risque Élevé"
@@ -73,7 +100,19 @@ const translations: Translations = {
     formula: "مجموع النقاط (0 إلى 9)",
     clinicalTitle: "التوصية السريرية",
     clinicalText: "الدرجة 0 (للرجال) / 1 (للنساء): لا ينصح بمضادات التخثر. الدرجة 1 (الرجال): يُنظر في وصف مضادات التخثر. الدرجة ≥ 2: ينصح بشدة بمضادات التخثر.",
-    references: "المراجع: Lip GY, et al.",
+    pillarTitle: "الإرشادات الإكلينيكية واستراتيجية مضادات التخثر (السيولة)",
+    pillarText: [
+      "يُعد مقياس CHA₂DS₂-VASc الأداة المعتمدة عالمياً من الجمعية الأوروبية لأمراض القلب (ESC) وجمعية القلب الأمريكية لتقييم خطر الإصابة بالسكتة الدماغية والتجلط الدموي لدى مرضى الرجفان الأذيني غير الصمامي.",
+      "نقطة إكلينيكية جوهرية تتمثل في عامل الجنس (أنثى +1). اتفاقاً مع الإرشادات الطبية، فإن كون المريضة أنثى وبصحة جيدة (أقل من 65 عاماً بدون أمراض أخرى، أي درجة = 1) لا يستوجب صرف أدوية السيولة. يُوصف العلاج بمضادات التخثر فقط عند وجود عامل خطر إضافي واحد على الأقل (درجة ≥ 2 للرجال، أو ≥ 3 للنساء).",
+      "عند الإقرار بضرورة العلاج، تُفضل مضادات التخثر الفموية المباشرة (DOACs مثل أبيكسابان أو ريفاروكسابان) على مضادات فيتامين ك (الوارفارين) لأمانها الأعلى وقلة مخاطر النزيف الدماغي."
+    ],
+    faqQ1: "ماذا يعني اختصار CHA2DS2-VASc؟",
+    faqA1: "هو اختصار لمعايير الخطر: قصور القلب، ضغط الدم المرتفع، العمر ≥ 75 (نقطتان)، السكري، سكتة سابقة (نقطتان)، أمراض الأوعية، العمر 65-74، والجنس (أنثى).",
+    faqQ2: "هل حصول المرأة على درجة 1 يتطلب أدوية سيولة الدم؟",
+    faqA2: "لا، الجنس الأنثوي يمنح نقطة واحدة ولكنه لا يُعد عاملاً مستقلاً لوصف مسيلات الدم ما لم يترافق مع عوامل خطر مرضية أخرى.",
+    faqQ3: "هل يجب تقييم خطر النزيف بالتزامن مع هذا المقياس؟",
+    faqA3: "نعم، يُستخدم مقياس HAS-BLED جنباً إلى جنب مع هذا الفحص لتحديد مخاطر النزيف القابلة للتعديل والتعامل معها بحذر.",
+    references: "المراجع: Lip GY, et al. تقييم مخاطر السكتة الدماغية في الرجفان الأذيني.",
     low: "خطر منخفض",
     moderate: "خطر متوسط",
     high: "خطر عالٍ"
@@ -124,13 +163,27 @@ export default function Cha2ds2VascScore({ lang }: { lang: LangCode }) {
 
   return (
     <>
+      <JsonLd data={generateMedicalCalculatorSchema(currentText.title, currentText.subtitle)} />
       <div className="max-w-3xl mb-12">
-        <h1 className={`text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-3 ${isRtl ? 'leading-normal' : ''}`}>
-          {currentText.title}
-        </h1>
-        <p className="text-lg text-gray-500 max-w-2xl">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <h1 className={`text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-3 ${isRtl ? 'leading-normal' : ''}`}>
+            {currentText.title}
+          </h1>
+          <EmbedCodeButton calculatorSlug="cha2ds2-vasc" lang={lang} title={currentText.title} />
+        </div>
+        <p className="text-lg text-gray-500 max-w-2xl mt-3">
           {currentText.subtitle}
         </p>
+
+        {/* GEO Definition Block */}
+        <div className="bg-blue-50/50 border border-blue-100 rounded-xl p-4 md:p-5 mt-6 mb-2">
+          <h2 className="text-sm font-semibold text-blue-900 mb-2 uppercase tracking-wide">
+            {lang === 'en' ? 'Clinical Definition' : lang === 'fr' ? 'Définition Clinique' : 'التعريف السريري'}
+          </h2>
+          <p className="text-gray-700 text-sm leading-relaxed">
+            {currentText.faqA1}
+          </p>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -301,6 +354,39 @@ export default function Cha2ds2VascScore({ lang }: { lang: LangCode }) {
               <p className="text-gray-500 text-xs leading-relaxed italic">{currentText.references}</p>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* In-Content Native Ad */}
+      <AdsterraNativeBanner refreshDependency={scoreValue} />
+
+      {/* Pillar Content Section */}
+      <div className="mt-8 pt-10 border-t border-gray-100">
+        <h2 className="text-xl font-bold text-gray-900 mb-6">{currentText.pillarTitle}</h2>
+        <div className="space-y-4 text-gray-700 leading-relaxed text-sm">
+          {currentText.pillarText?.map((paragraph: string, idx: number) => (
+            <p key={idx}>{paragraph}</p>
+          ))}
+        </div>
+      </div>
+
+      {/* FAQ Section */}
+      <div className="mt-12 pt-8 border-t border-gray-100">
+        <h2 className="text-xl font-bold text-gray-900 mb-6">{layoutTranslations[lang].faqTitle}</h2>
+        <div className="space-y-3">
+          {[
+            { q: currentText.faqQ1, a: currentText.faqA1 },
+            { q: currentText.faqQ2, a: currentText.faqA2 },
+            { q: currentText.faqQ3, a: currentText.faqA3 },
+          ].map(({ q, a }) => (
+            <details key={q} className="group border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-5 py-4 cursor-pointer list-none font-medium text-gray-800 hover:bg-gray-50 transition-colors">
+                <span className="text-sm">{q}</span>
+                <span className="w-4 h-4 text-gray-400 shrink-0 ml-3 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="px-5 pb-4 text-sm text-gray-600 leading-relaxed">{a}</p>
+            </details>
+          ))}
         </div>
       </div>
     </>
