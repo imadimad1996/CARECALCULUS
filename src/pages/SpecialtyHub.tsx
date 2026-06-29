@@ -8,24 +8,52 @@ import { AlertCircle, ArrowRight } from 'lucide-react';
 import AdUnit from '../components/AdUnit';
 import SocialShare from '../components/SocialShare';
 
+const T = {
+  en: {
+    notFound: "Specialty Not Found",
+    notFoundDesc: "The medical specialty you are looking for does not exist.",
+    returnHome: "Return to Home",
+    seoTitle: "{title} Calculators & Clinical Tools | CareCalculus",
+    seoDesc: "Access evidence-based medical calculators and clinical decision tools for {title}. {description}",
+    calcDesc: "Calculate {name} and access clinical decision support.",
+  },
+  fr: {
+    notFound: "Spécialité non trouvée",
+    notFoundDesc: "La spécialité médicale que vous recherchez n'existe pas.",
+    returnHome: "Retour à l'accueil",
+    seoTitle: "Calculateurs et outils cliniques pour {title} | CareCalculus",
+    seoDesc: "Accédez aux calculateurs médicaux et outils d'aide à la décision clinique basés sur les preuves pour {title}. {description}",
+    calcDesc: "Calculez le {name} et accédez à l'aide à la décision clinique.",
+  },
+  ar: {
+    notFound: "التخصص الطبي غير موجود",
+    notFoundDesc: "التخصص الطبي الذي تبحث عنه غير موجود في المنصة.",
+    returnHome: "العودة إلى الرئيسية",
+    seoTitle: "حاسبات وأدوات سريرية لـ {title} | كير كالكولوس",
+    seoDesc: "احصل على حاسبات طبية وأدوات دعم القرار السريري القائمة على الأدلة لـ {title}. {description}",
+    calcDesc: "احسب {name} واحصل على دعم القرار السريري.",
+  }
+};
+
 export default function SpecialtyHub({ lang }: { lang: LangCode }) {
   const { specialtySlug } = useParams<{ specialtySlug: string }>();
   const isRtl = lang === 'ar';
+  const t = T[lang] || T.en;
 
   const specialty = SPECIALTIES_DB.find(s => s.id === specialtySlug);
 
   if (!specialty) {
     return (
-      <div className="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8">
+      <div className="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8" dir={isRtl ? 'rtl' : 'ltr'}>
         <div className="bg-red-50 text-red-700 p-6 rounded-xl flex items-center gap-4">
           <AlertCircle className="w-8 h-8 text-red-500" />
           <div>
-            <h2 className="text-xl font-bold">Specialty Not Found</h2>
-            <p>The medical specialty you are looking for does not exist.</p>
+            <h2 className="text-xl font-bold">{t.notFound}</h2>
+            <p>{t.notFoundDesc}</p>
           </div>
         </div>
         <Link to="/" className="mt-6 inline-flex text-blue-600 font-semibold hover:underline">
-          Return to Home
+          {t.returnHome}
         </Link>
       </div>
     );
@@ -35,8 +63,8 @@ export default function SpecialtyHub({ lang }: { lang: LangCode }) {
   const description = lang === 'fr' ? specialty.descriptionFr : lang === 'ar' ? specialty.descriptionAr : specialty.descriptionEn;
   
   // SEO optimization
-  const seoTitle = `${title} Calculators & Clinical Tools | CareCalculus`;
-  const seoDesc = `Access evidence-based medical calculators and clinical decision tools for ${title.toLowerCase()}. ${description}`;
+  const seoTitle = t.seoTitle.replace('{title}', title);
+  const seoDesc = t.seoDesc.replace('{title}', title).replace('{description}', description);
   const Icon = specialty.icon;
 
   const calculators = specialty.calculators.map(calcPath => 
@@ -95,7 +123,7 @@ export default function SpecialtyHub({ lang }: { lang: LangCode }) {
                 {calcName}
               </h2>
               <p className="text-sm text-slate-500 line-clamp-2">
-                Calculate {calcName.toLowerCase()} and access clinical decision support.
+                {t.calcDesc.replace('{name}', calcName)}
               </p>
             </Link>
           );
@@ -108,3 +136,4 @@ export default function SpecialtyHub({ lang }: { lang: LangCode }) {
     </div>
   );
 }
+

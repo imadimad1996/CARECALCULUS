@@ -8,24 +8,52 @@ import { AlertCircle, ArrowRight } from 'lucide-react';
 import AdUnit from '../components/AdUnit';
 import SocialShare from '../components/SocialShare';
 
+const T = {
+  en: {
+    notFound: "Condition Not Found",
+    notFoundDesc: "The clinical condition category you are looking for does not exist.",
+    returnHome: "Return to Home",
+    seoTitle: "{title} Calculators & Clinical Tools | CareCalculus",
+    seoDesc: "Access evidence-based {title} calculators and clinical decision tools. {description}",
+    calcDesc: "Calculate {name} and access clinical decision support.",
+  },
+  fr: {
+    notFound: "Catégorie non trouvée",
+    notFoundDesc: "La catégorie de condition clinique que vous recherchez n'existe pas.",
+    returnHome: "Retour à l'accueil",
+    seoTitle: "Calculateurs et outils cliniques pour {title} | CareCalculus",
+    seoDesc: "Accédez aux calculateurs et outils d'aide à la décision clinique basés sur les preuves pour {title}. {description}",
+    calcDesc: "Calculez le {name} et accédez à l'aide à la décision clinique.",
+  },
+  ar: {
+    notFound: "الحالة الطبية غير موجودة",
+    notFoundDesc: "فئة الحالة السريرية التي تبحث عنها غير موجودة في المنصة.",
+    returnHome: "العودة إلى الرئيسية",
+    seoTitle: "حاسبات وأدوات سريرية لـ {title} | كير كالكولوس",
+    seoDesc: "احصل على حاسبات وأدوات دعم القرار السريري القائمة على الأدلة لـ {title}. {description}",
+    calcDesc: "احسب {name} واحصل على دعم القرار السريري.",
+  }
+};
+
 export default function ConditionHub({ lang }: { lang: LangCode }) {
   const { conditionSlug } = useParams<{ conditionSlug: string }>();
   const isRtl = lang === 'ar';
+  const t = T[lang] || T.en;
 
   const condition = CONDITIONS_DB.find(c => c.id === conditionSlug);
 
   if (!condition) {
     return (
-      <div className="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8">
+      <div className="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8" dir={isRtl ? 'rtl' : 'ltr'}>
         <div className="bg-red-50 text-red-700 p-6 rounded-xl flex items-center gap-4">
           <AlertCircle className="w-8 h-8 text-red-500" />
           <div>
-            <h2 className="text-xl font-bold">Condition Not Found</h2>
-            <p>The clinical condition category you are looking for does not exist.</p>
+            <h2 className="text-xl font-bold">{t.notFound}</h2>
+            <p>{t.notFoundDesc}</p>
           </div>
         </div>
         <Link to="/" className="mt-6 inline-flex text-blue-600 font-semibold hover:underline">
-          Return to Home
+          {t.returnHome}
         </Link>
       </div>
     );
@@ -35,8 +63,8 @@ export default function ConditionHub({ lang }: { lang: LangCode }) {
   const description = lang === 'fr' ? condition.descriptionFr : lang === 'ar' ? condition.descriptionAr : condition.descriptionEn;
   
   // SEO optimization specifically mirroring competitor practices
-  const seoTitle = `${title} Calculators & Clinical Tools | CareCalculus`;
-  const seoDesc = `Access evidence-based ${title.toLowerCase()} calculators and clinical decision tools. ${description}`;
+  const seoTitle = t.seoTitle.replace('{title}', title);
+  const seoDesc = t.seoDesc.replace('{title}', title).replace('{description}', description);
   const Icon = condition.icon;
 
   const calculators = condition.calculators.map(calcPath => 
@@ -96,7 +124,7 @@ export default function ConditionHub({ lang }: { lang: LangCode }) {
               </h2>
               {/* By extracting keywords into the card, we feed the crawler more context */}
               <p className="text-sm text-slate-500 line-clamp-2">
-                Calculate {calcName.toLowerCase()} and access clinical decision support.
+                {t.calcDesc.replace('{name}', calcName)}
               </p>
             </Link>
           );
@@ -109,3 +137,4 @@ export default function ConditionHub({ lang }: { lang: LangCode }) {
     </div>
   );
 }
+

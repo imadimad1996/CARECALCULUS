@@ -187,6 +187,160 @@ const translations: Translations = {
   }
 };
 
+function getLocalizedDefaultCourse(c: MedicalCourse, lang: LangCode): MedicalCourse {
+  if (c.id === 'pdf-1') {
+    return {
+      ...c,
+      title: lang === 'fr' 
+        ? 'Néphrologie clinique : Cockcroft-Gault et cinétique de clairance des médicaments' 
+        : lang === 'ar' 
+        ? 'أحماض الكلى السريرية: حركية تصفية الأدوية ومعادلة كوككروفت-غولت' 
+        : 'Clinical Nephrology: Cockcroft-Gault & Drug Clearance Kinetics',
+      summary: lang === 'fr'
+        ? "Un didacticiel approfondi sur la clairance de la créatinine, l'estimation du débit de filtration glomérulaire (DFG) et l'ajustement de la posologie des médicaments."
+        : lang === 'ar'
+        ? 'برنامج تعليمي متعمق حول تصفية الكرياتينين، وتقدير معدل الترشيح الكبيبي (eGFR)، وضبط جرعات الأدوية ذات النطاق العلاجي الضيق.'
+        : 'A deep-dive tutorial on creatinine clearance, estimating glomerular filtration rate (eGFR), and adjusting therapeutic index dosages.',
+      sections: lang === 'fr' ? [
+        {
+          heading: 'Section 1 : Filtration glomérulaire et clairance endogène',
+          text: "Le principal critère d'évaluation physiologique de la fonction rénale est le débit de filtration glomérulaire (DFG). La mesure directe du DFG à l'aide de substances exogènes comme l'inuline est cliniquement impraticable. Par conséquent, les marqueurs de filtration endogènes — principalement la créatinine sérique — sont utilisés comme ancres de substitution. Les cliniciens doivent comprendre que les niveaux sériques dépendent fortement de l'âge, du sexe biologique et de la masse musculaire active."
+        },
+        {
+          heading: 'Section 2 : L\'équation mathématique de Cockcroft-Gault',
+          text: "Formulée en 1976, Cockcroft-Gault reste l'ancre réglementaire pour les ajustements posologiques des produits pharmaceutiques. Formule standard : ClCr (mL/min) = [((140 - Âge) * Poids) / (72 * CrS)]. Pour les femmes, le résultat est multiplié par 0,85 pour compenser la masse musculaire plus faible. Piège clé : l'utilisation du poids corporel total réel chez les patients cachectiques ou obèses introduit souvent des erreurs de surestimation majeures."
+        },
+        {
+          heading: 'Section 3 : Index thérapeutique et ajustements posologiques',
+          text: "Certains antibiotiques puissants (comme la vancomycine ou les aminosides) présentent des fenêtres thérapeutiques étroites. Des concentrations infra-thérapeutiques déclenchent des mutations bactériennes et un échec du traitement, tandis que des niveaux excessifs entraînent une nécrose tubulaire aiguë ou une toxicité vestibulaire. Des mesures régulières de la clairance rénale doivent guider les configurations posologiques quotidiennes."
+        }
+      ] : lang === 'ar' ? [
+        {
+          heading: 'القسم الأول: الترشيح الكبيبي والتصفية الذاتية',
+          text: 'المعيار الفسيولوجي الأساسي لوظائف الكلى هو معدل الترشيح الكبيبي (GFR). القياس المباشر لـ GFR باستخدام مواد خارجية مثل الإينولين غير عملي سريرياً. وبناءً على ذلك، يتم استخدام مؤشرات الترشيح الداخلية - وبشكل أساسي الكرياتينين في الدم. يجب على الأطباء فهم أن مستويات الكرياتينين تعتمد بشكل كبير على العمر والجنس العضلي والكتلة العضلية النشطة.'
+        },
+        {
+          heading: 'القسم الثاني: معادلة كوككروفت-غولت الرياضية',
+          text: 'صيغت هذه معادلة في عام 1976، وظلت المرجع الأساسي لتعديل جرعات الأدوية. المعادلة القياسية: ClCr (مل/دقيقة) = [((140 - العمر) * الوزن) / (72 * الكرياتينين)]. بالنسبة للإناث، يتم ضرب النتيجة بأكملها في 0.85 للتعويض عن انخفاض الكتلة العضلية لديهن. فخ رئيسي: استخدام الوزن الفعلي للجسم لدى مرضى السمنة أو الهزال غالباً ما يؤدي إلى أخطاء تقديرية كبيرة.'
+        },
+        {
+          heading: 'القسم الثالث: النطاق العلاجي وتعديلات الجرعات',
+          text: 'تظهر بعض المضادات الحيوية عالية الفعالية (مثل الفانكومايسين أو الأمينوغليكوزيدات) هوامش علاجية ضيقة جداً. تؤدي التركيزات المنخفضة إلى حدوث طفرات بكتيرية وفشل العلاج، في حين تؤدي المستويات الزائدة إلى نخر أنبوبي حاد أو تسمم أذني. يجب أن توجه قياسات التصفية الكلوية اليومية عملية ضبط الجرعات.'
+        }
+      ] : c.sections,
+      quiz: lang === 'fr' ? [
+        {
+          question: 'Pourquoi les calculs du score de Cockcroft-Gault doivent-ils utiliser un facteur correctif de 0,85 pour les patientes ?',
+          options: [
+            'Pour tenir compte de la baisse du débit cardiaque.',
+            'Pour compenser une masse musculaire généralement plus faible par rapport à la masse corporelle.',
+            'Pour tenir compte de niveaux de clairance hépatique élevés.',
+            'Pour équilibrer la variance de la pression artérielle.'
+          ],
+          answerIndex: 1
+        },
+        {
+          question: 'Quel paramètre de poids doit être privilégié pour les patients dépassant 120 % de leur poids corporel idéal ?',
+          options: [
+            'Poids total réel',
+            'Poids IMC standard',
+            'Poids corporel ajusté (AdjBW)',
+            'Poids sec'
+          ],
+          answerIndex: 2
+        }
+      ] : lang === 'ar' ? [
+        {
+          question: 'لماذا يجب أن تستخدم حسابات كوككروفت-غولت عاملاً تصحيحياً قدره 0.85 للمريضات من الإناث؟',
+          options: [
+            'لمراعاة انخفاض معدلات نتاج القلب.',
+            'للتعويض عن انخفاض كثافة الكتلة العضلية لديهن مقارنة بالوزن الإجمالي للجسم.',
+            'لمراعاة مستويات التصفية الكبدية المرتفعة.',
+            'لموازنة تباين ضغط الدم الشرياني.'
+          ],
+          answerIndex: 1
+        },
+        {
+          question: 'أي من معايير الوزن التالية يجب تفضيله للمرضى الذين يتجاوز وزنهم 120٪ من الوزن المثالي؟',
+          options: [
+            'الوزن الإجمالي الفعلي',
+            'الوزن القياسي لمؤشر كتلة الجسم',
+            'الوزن المعدل للجسم (AdjBW)',
+            'الوزن الجاف'
+          ],
+          answerIndex: 2
+        }
+      ] : c.quiz
+    };
+  }
+  if (c.id === 'pdf-2') {
+    return {
+      ...c,
+      title: lang === 'fr'
+        ? 'Voies de sepsis : Étalonnage précoce des cibles qSOFA et SIRS'
+        : lang === 'ar'
+        ? 'مسارات التسمم الدموي: المعايرة المبكرة لأهداف qSOFA و SIRS'
+        : 'Sepsis Pathways: Early Calibration of qSOFA & SIRS Targets',
+      summary: lang === 'fr'
+        ? "Directives essentielles pour comparer les critères SIRS d'inflammation systémique aux cibles qSOFA de défaillance d'organes en réanimation."
+        : lang === 'ar'
+        ? 'إرشادات أساسية للمقارنة بين معايير استجابة الالتهاب الجهازية (SIRS) وأهداف فشل الأعضاء السريرية لمؤشر qSOFA.'
+        : 'Essential guidelines for comparing micro-inflammatory SIRS criteria against critical care Sepsis-3 qSOFA organ failure targets.',
+      sections: lang === 'fr' ? [
+        {
+          heading: 'Section 1 : L\'évolution de la pathologie du sepsis',
+          text: "Le sepsis est défini comme un dysfonctionnement d'organes menaçant le pronostic vital, causé par une réponse déréglée de l'hôte à l'infection. Historiquement, le Sepsis-1 associait le diagnostic uniquement à la présence du syndrome de réponse inflammatoire systémique (SIRS) : température élevée/basse, fréquence cardiaque élevée, fréquence respiratoire élevée et taux de globules blancs. Cependant, le SIRS manque de spécificité essentielle."
+        },
+        {
+          heading: 'Section 2 : Les directives Sepsis-3 et le score qSOFA',
+          text: "Le score quick SOFA (qSOFA) a été introduit pour faciliter l'identification rapide des patients présentant un risque élevé de décès hors réanimation. Le score évalue trois variables cliniques critiques : la fréquence respiratoire (>=22 cycles/min), l'état mental altéré (GCS < 15) et la pression artérielle systolique (<=100 mmHg). Un score >= 2 suggère une trajectoire pronostique défavorable."
+        },
+        {
+          heading: 'Section 3 : Protocoles de triage aux urgences',
+          text: "Les approches cliniques idéales intègrent les DEUX rubriques de dépistage. Le SIRS reste supérieur pour un dépistage sensible, garantissant que les bactériémies potentielles soient détectées tôt pour une antibiothérapie rapide. Le score qSOFA est ensuite utilisé comme un puissant outil de triage pour indiquer un dysfonctionnement d'organes grave, nécessitant une escalade immédiate vers les soins intensifs."
+        }
+      ] : lang === 'ar' ? [
+        {
+          heading: 'القسم الأول: التطور الفسيولوجي للتسمم الدموي (Sepsis)',
+          text: 'يُعرَّف التسمم الدموي بأنه خلل وظيفي في الأعضاء يهدد الحياة بسبب استجابة الجسم غير المنتظمة للعدوى. تاريخياً، ربط الأطباء التشخيص فقط بوجود متلازمة الاستجابة الالتهابية الجهازية (SIRS). وكان ذلك يشمل مؤشرات مثل الحرارة المرتفعة/المنخفضة، والنبض السريع، ومعدل التنفس، وكرات الدم البيضاء. ومع ذلك، يفتقر SIRS إلى الخصوصية السريرية المطلوبة.'
+        },
+        {
+          heading: 'القسم الثاني: إرشادات Sepsis-3 ومؤشر qSOFA',
+          text: 'تم تقديم مؤشر quick SOFA (qSOFA) لتسهيل التعرف السريع على المرضى المعرضين لخطر الوفاة المرتفع خارج العناية المركزة. يقيم المؤشر ثلاثة متغيرات سريرية مهمة: معدل التنفس (>=22/دقيقة)، وتغير الحالة العقلية (GCS < 15)، وضغط الدم الانقباضي (<=100 ملم زئبقي). النتيجة >= 2 تشير إلى خطورة عالية.'
+        },
+        {
+          heading: 'القسم الثالث: بروتوكولات الفرز في قسم الطوارئ',
+          text: 'تدمج الأساليب السريرية المثالية كلا الفحصين. يظل SIRS متفوقاً في الفحص الحسي الأولي، مما يضمن اكتشاف حالات التسمم المحتملة مبكراً لبدء المضادات الحيوية فوراً. ثم يتم تطبيق نقاط qSOFA كأداة فرز قوية لتحديد الخلل الوظيفي الشديد للأعضاء، مما يشير إلى الحاجة لتصعيد الرعاية للعناية المركزة.'
+        }
+      ] : c.sections,
+      quiz: lang === 'fr' ? [
+        {
+          question: 'Quelle est la variable principale évaluée par le score qSOFA ?',
+          options: [
+            'Température corporelle',
+            'Fréquence respiratoire ≥22/min',
+            'Clairance du lactate',
+            'Débit cardiaque'
+          ],
+          answerIndex: 1
+        }
+      ] : lang === 'ar' ? [
+        {
+          question: 'ما هي المتغيرات السريرية التي يتم تقييمها بواسطة مؤشر qSOFA؟',
+          options: [
+            'درجة حرارة الجسم الكلية',
+            'معدل التنفس ≥ 22/دقيقة، وتغير الحالة العقلية، وضغط الدم الانقباضي ≤ 100 ملم زئبقي',
+            'تصفية اللاكتات وتعداد كرات الدم البيضاء',
+            'معدل نتاج القلب الكلي'
+          ],
+          answerIndex: 1
+        }
+      ] : c.quiz
+    };
+  }
+  return c;
+}
+
 export default function Courses({ lang }: { lang: LangCode }) {
   const t = translations[lang] || translations.en;
   const isRtl = lang === 'ar';
@@ -197,26 +351,28 @@ export default function Courses({ lang }: { lang: LangCode }) {
 
   const [courses, setCourses] = useState<MedicalCourse[]>(() => {
     const localizedMaster = MASTER_COURSES.map(mc => getLocalizedCourse(mc, lang));
+    const localizedDefault = DEFAULT_COURSES.map(c => getLocalizedDefaultCourse(c, lang));
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('carecalculus-pdf-uploads');
       if (saved) {
         try {
           const parsed = JSON.parse(saved);
-          return [...DEFAULT_COURSES, ...localizedMaster, ...parsed];
+          return [...localizedDefault, ...localizedMaster, ...parsed];
         } catch (e) {
-          return [...DEFAULT_COURSES, ...localizedMaster];
+          return [...localizedDefault, ...localizedMaster];
         }
       }
     }
-    return [...DEFAULT_COURSES, ...localizedMaster];
+    return [...localizedDefault, ...localizedMaster];
   });
 
   // Re-translate courses whenever language changes
   useEffect(() => {
     const localizedMaster = MASTER_COURSES.map(mc => getLocalizedCourse(mc, lang));
+    const localizedDefault = DEFAULT_COURSES.map(c => getLocalizedDefaultCourse(c, lang));
     setCourses(prev => {
       const customOnly = prev.filter(c => c.isUserUploaded);
-      return [...DEFAULT_COURSES, ...localizedMaster, ...customOnly];
+      return [...localizedDefault, ...localizedMaster, ...customOnly];
     });
   }, [lang]);
 

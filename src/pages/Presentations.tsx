@@ -199,6 +199,228 @@ const translations: Translations = {
   }
 };
 
+function getLocalizedDefaultSubject(s: PresentationSubject, lang: LangCode): PresentationSubject {
+  if (s.id === 'pptx-1') {
+    return {
+      ...s,
+      title: lang === 'fr' 
+        ? 'Performance hémodynamique avancée et objectifs de flux d\'organes' 
+        : lang === 'ar' 
+        ? 'الأداء المتقدم للديناميكا الدموية وأهداف تدفق الأعضاء' 
+        : 'Advanced Hemodynamic Performance & Organ Flow Targets',
+      category: lang === 'fr' ? 'Soins Intensifs / Cardiologie' : lang === 'ar' ? 'العناية المركزة / طب القلب' : 'Intensive Care / Cardiology',
+      description: lang === 'fr'
+        ? "Physiopathologie de la pression artérielle moyenne (PAM), décalages d'autorégulation dans l'hypertension chronique et cibles de choc microvasculaire."
+        : lang === 'ar'
+        ? 'الفيزيولوجيا المرضية لضغط الشريان المتوسط (MAP)، وتغيرات التنظيم الذاتي في ارتفاع ضغط الدم المزمن، وأهداف الصدمة الوعائية الدقيقة.'
+        : 'Pathophysiology of Mean Arterial Pressure (MAP), autoregulation shifts in chronic hypertension, and microvascular shock targets.',
+      slides: lang === 'fr' ? [
+        {
+          title: 'Ciblage hémodynamique : au-delà du mandat de 65 mmHg',
+          points: [
+            'Aperçu du gradient de perfusion circulatoire et des facteurs de retour veineux.',
+            'Examen critique de la cible universelle de PAM de 65 mmHg dans les cohortes de choc septique.',
+            'Paralysie vasomotrice induite par le sepsis : physiopathologie du shunt microvasculaire.'
+          ],
+          diagramType: 'hemodynamic'
+        },
+        {
+          title: 'Autorégulation microvasculaire et perfusion d\'organes',
+          points: [
+            'Décalage des courbes de perfusion corticale rénale chez les patients hypertendus.',
+            'Pourquoi les cibles de PAM standard de 65 mmHg déclenchent des lésions rénales aiguës (LRA) infracliniques.',
+            'Définition d\'objectifs de perfusion personnalisés basés sur l\'état diastolique antérieur.'
+          ],
+          diagramType: 'hemodynamic'
+        },
+        {
+          title: 'Mesures d\'évaluation des organes terminaux et rubriques de perfusion',
+          points: [
+            'Indicateurs somatiques : temps de remplissage capillaire (TRC) et marqueurs de lactate sériels.',
+            'Évaluation de la réserve rénale : seuils de débit urinaire horaire (0,5 mL/kg/h).',
+            'Taux de clairance cinétique du lactate : cibler une clairance horaire >10 %.'
+          ],
+          diagramType: 'pharmacology'
+        },
+        {
+          title: 'Soutien inotrope et protocoles de titration des vasopresseurs',
+          points: [
+            'Première ligne : indices de titration de la noradrénaline et limites des récepteurs bêta.',
+            'Sauvetage secondaire : initiation précoce de la vasopressine dans le choc profond.',
+            'Atténuation des tachyarythmies : évitement de la toxicité hyperadrénergique.'
+          ],
+          diagramType: 'pharmacology'
+        },
+        {
+          title: 'Conclusions scientifiques et consensus',
+          points: [
+            'Cibler 65 mmHg chez les sujets jeunes, auparavant normotendus, en choc septique.',
+            'Élever la PAM à 75-80 mmHg chez les patients âgés ou hypertendus chroniques.',
+            'Intégrer les marqueurs de perfusion tissulaire dans les flux DPI en boucle fermée en temps réel.'
+          ],
+          diagramType: 'default'
+        }
+      ] : lang === 'ar' ? [
+        {
+          title: 'الاستهداف الديناميكي الدموي: تجاوز حد الـ 65 ملم زئبقي',
+          points: [
+            'نظرة عامة على تدرج تروية الدورة الدموية ومحركات العائد الوريدي.',
+            'مراجعة نقدية لهدف ضغط الشريان المتوسط العالمي البالغ 65 ملم زئبقي في مرضى الصدمة الإنتانية.',
+            'شلل الأوعية الدموية الناجم عن التسمم: الفيزيولوجيا المرضية للتحويلة الوعائية الدقيقة.'
+          ],
+          diagramType: 'hemodynamic'
+        },
+        {
+          title: 'التنظيم الذاتي للأوعية الدقيقة وتروية الأعضاء',
+          points: [
+            'تغير منحنيات التروية الكلوية القشرية لدى مرضى ارتفاع ضغط الدم.',
+            'لماذا تؤدي أهداف MAP القياسية البالغة 65 ملم زئبقي إلى حدوث إصابة كلوية حادة (AKI) تحت سريرية.',
+            'تحديد أهداف تروية شخصية بناءً على حالة ضغط الدم الانبساطي السابقة للمريض.'
+          ],
+          diagramType: 'hemodynamic'
+        },
+        {
+          title: 'مقاييس تقييم الأعضاء النهائية وبروتوكولات التروية',
+          points: [
+            'المؤشرات الجسدية: وقت إعادة امتلاء الشعيرات الدموية (CRT) ومؤشرات اللاكتات المتسلسلة.',
+            'تقييم الاحتياطي الكلوي: عتبات إخراج البول في الساعة (0.5 مل/كجم/ساعة).',
+            'معدل تصفية اللاكتات الحركي: استهداف تصفية تزيد عن 10٪ كل ساعة.'
+          ],
+          diagramType: 'pharmacology'
+        },
+        {
+          title: 'الدعم المقوي للقلب وبروتوكولات معايرة رافعات الضغط',
+          points: [
+            'الخط الأول: مؤشرات معايرة النورإبينفرين وحدود مستقبلات بيتا.',
+            'الإنقاذ الثانوي: البدء المبكر للـ Vasopressin في حالات الصدمة العميقة.',
+            'تخفيف تسرع ضربات القلب: تجنب السمية الأدرينالية المفرطة.'
+          ],
+          diagramType: 'pharmacology'
+        },
+        {
+          title: 'الاستنتاجات العلمية والتوافق',
+          points: [
+            'استهداف 65 ملم زئبقي في الأفراد الشباب المصابين بالصدمة الإنتانية الذين كانوا طبيعيين سابقاً.',
+            'رفع الضغط الشرياني المتوسط (MAP) إلى 75-80 ملم زئبقي لدى كبار السن أو المصابين بارتفاع ضغط الدم المزمن.',
+            'دمج مؤشرات تروية الأنسجة في تدفقات عمل السجل الصحي الإلكتروني المغلقة في الوقت الفعلي.'
+          ],
+          diagramType: 'default'
+        }
+      ] : s.slides
+    };
+  }
+  if (s.id === 'pptx-2') {
+    return {
+      ...s,
+      title: lang === 'fr' 
+        ? 'Mécanique pulmonaire : protocole de ventilation à bas volume courant' 
+        : lang === 'ar' 
+        ? 'ميكانيكا الرئة: بروتوكول التهوية الميكانيكية بحجم مد وجزر منخفض' 
+        : 'Pulmonary Mechanics: Low-Tidal Volume Vent Protocol',
+      category: lang === 'fr' ? 'Pneumologie / Réanimation' : lang === 'ar' ? 'طب الرئة / العناية المركزة' : 'Pulmonology / ICU',
+      description: lang === 'fr'
+        ? "Diapositives cliniques clarifiant le protocole ARDSNet, les calculs du poids corporel idéal (formule de Devine) et la prévention des lésions pulmonaires."
+        : lang === 'ar'
+        ? 'شرائح سريرية توضح بروتوكول ARDSNet، وحسابات الوزن المثالي للجسم (معادلة ديفين)، والوقاية من إصابات الرئة الناجمة عن التهوية.'
+        : 'Clinical slides clarifying the ARDSNet protocol, ideal body weight calculations (Devine formula), and preventing lung injury.',
+      slides: lang === 'fr' ? [
+        {
+          title: 'Ventilation protectrice pulmonaire et mécanique du SDRA',
+          points: [
+            'Physiopathologie du syndrome de détresse respiratoire aiguë (SDRA).',
+            'Lésions pulmonaires induites par le ventilateur (VILI) : volutrauma et barotrauma.',
+            'Cibler une pression de plateau basse (<30 cm H2O) pour éviter la surdistension.'
+          ],
+          diagramType: 'hemodynamic'
+        },
+        {
+          title: 'La formule de Devine et le poids corporel idéal (PCI)',
+          points: [
+            'Pourquoi le volume courant doit être calculé en fonction du PCI, et non du poids réel.',
+            'Liaison mathématique de la formule de Devine (Hommes : 50 + 2,3 par pouce au-dessus de 5 pieds).',
+            'Le piège clinique de la sur-ventilation chez les patients obèses.'
+          ],
+          diagramType: 'hemodynamic'
+        },
+        {
+          title: 'Calcul de la titration et objectifs du volume courant',
+          points: [
+            'Objectif initial de volume courant : 6 mL/kg de poids corporel idéal (PCI).',
+            'Ajustement progressif du volume de 8 mL/kg à 4 mL/kg selon les pressions et le pH.',
+            'Surveillance des pressions motrices (pression de plateau - PEEP) : cible <15 cm H2O.'
+          ],
+          diagramType: 'pharmacology'
+        },
+        {
+          title: 'Titration de la PEEP et stratégies de recrutement alvéolaire',
+          points: [
+            'Utilisation de la table combinée PEEP/FiO2 basse vs haute de l\'ARDSNet.',
+            'Équilibrer le recrutement alvéolaire avec le retour veineux et la perfusion systémique.',
+            'Détection de la surdistension par l\'analyse des courbes pression-volume.'
+          ],
+          diagramType: 'pharmacology'
+        },
+        {
+          title: 'Résumé du protocole clinique ARDSNet',
+          points: [
+            'Mesurer la taille du patient et calculer le PCI au lit du malade.',
+            'Régler les paramètres initiaux du ventilateur à 6 mL/kg de PCI.',
+            'Maintenir la pression de plateau <30 cm H2O et la pression motrice <15 cm H2O.'
+          ],
+          diagramType: 'default'
+        }
+      ] : lang === 'ar' ? [
+        {
+          title: 'التهوية الوقائية للرئة وميكانيكا متلازمة الضائقة التنفسية (ARDS)',
+          points: [
+            'الفيزيولوجيا المرضية لمتلازمة الضائقة التنفسية الحادة (ARDS).',
+            'تلف الرئة الناجم عن جهاز التنفس الصناعي (VILI): الصدمة الحجمية والصدمة الضغطية.',
+            'استهداف ضغط هضبي منخفض (Plateau Pressure <30 cm H2O) لتجنب التمدد المفرط.'
+          ],
+          diagramType: 'hemodynamic'
+        },
+        {
+          title: 'معادلة ديفين والوزن المثالي للجسم (IBW)',
+          points: [
+            'لماذا يجب حساب حجم المد والجزر (Tidal Volume) بناءً على الوزن المثالي وليس الوزن الفعلي للجسم.',
+            'معادلة ديفين الرياضية (للذكور: 50 + 2.3 كجم لكل بوصة فوق 5 أقدام).',
+            'الفخ السريري المتمثل في الإفراط في تهوية مرضى السمنة عند استخدام الوزن الفعلي.'
+          ],
+          diagramType: 'hemodynamic'
+        },
+        {
+          title: 'حسابات المعايرة وأهداف حجم المد والجزر',
+          points: [
+            'الهدف الأولي لحجم المد والجزر: 6 مل/كجم من الوزن المثالي للجسم (IBW).',
+            'التعديل التدريجي للحجم من 8 مل/كجم إلى 4 مل/كجم بناءً على الضغط والـ pH.',
+            'مراقبة ضغط القيادة (الضغط الهضبي - الـ PEEP): استهداف قيمة أقل من 15 سم ماء.'
+          ],
+          diagramType: 'pharmacology'
+        },
+        {
+          title: 'معايرة الـ PEEP واستراتيجيات فتح الحويصلات الهوائية',
+          points: [
+            'استخدام جدول PEEP/FiO2 المزدوج لبروتوكول ARDSNet.',
+            'موازنة فتح الحويصلات الهوائية مع الحفاظ على العائد الوريدي والتروية العامة.',
+            'الكشف عن التمدد المفرط من خلال تحليل منحنيات الضغط والحجم على جهاز التنفس.'
+          ],
+          diagramType: 'pharmacology'
+        },
+        {
+          title: 'ملخص بروتوكول ARDSNet السريري',
+          points: [
+            'القياس طول المريض وحساب الوزن المثالي (IBW) بجانب السرير مباشرة.',
+            'ضبط جهاز التنفس الصناعي مبدئياً على حجم 6 مل/كجم من الوزن المثالي.',
+            'الحفاظ على الضغط الهضبي أقل من 30 وضغط القيادة أقل من 15 سم ماء.'
+          ],
+          diagramType: 'default'
+        }
+      ] : s.slides
+    };
+  }
+  return s;
+}
+
 export default function Presentations({ lang }: { lang: LangCode }) {
   const t = translations[lang] || translations.en;
   const isRtl = lang === 'ar';
@@ -209,26 +431,28 @@ export default function Presentations({ lang }: { lang: LangCode }) {
 
   const [subjects, setSubjects] = useState<PresentationSubject[]>(() => {
     const localizedMaster = MASTER_PRESENTATIONS.map(mp => getLocalizedPresentation(mp, lang));
+    const localizedDefault = DEFAULT_SUBJECTS.map(s => getLocalizedDefaultSubject(s, lang));
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('carecalculus-pptx-uploads');
       if (saved) {
         try {
           const parsed = JSON.parse(saved);
-          return [...DEFAULT_SUBJECTS, ...localizedMaster, ...parsed];
+          return [...localizedDefault, ...localizedMaster, ...parsed];
         } catch (e) {
-          return [...DEFAULT_SUBJECTS, ...localizedMaster];
+          return [...localizedDefault, ...localizedMaster];
         }
       }
     }
-    return [...DEFAULT_SUBJECTS, ...localizedMaster];
+    return [...localizedDefault, ...localizedMaster];
   });
 
   // Re-translate presentations whenever language changes
   useEffect(() => {
     const localizedMaster = MASTER_PRESENTATIONS.map(mp => getLocalizedPresentation(mp, lang));
+    const localizedDefault = DEFAULT_SUBJECTS.map(s => getLocalizedDefaultSubject(s, lang));
     setSubjects(prev => {
       const customOnly = prev.filter(s => s.isUserUploaded);
-      return [...DEFAULT_SUBJECTS, ...localizedMaster, ...customOnly];
+      return [...localizedDefault, ...localizedMaster, ...customOnly];
     });
   }, [lang]);
 
