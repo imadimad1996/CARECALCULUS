@@ -17,7 +17,7 @@ export default function ForHospitals({ lang }: { lang: LangCode }) {
             Empower your clinical teams with CareCalculus Enterprise
           </h1>
           <p className="text-xl text-slate-600 leading-relaxed mb-8">
-            Seamlessly integrate our evidence-based clinical calculators directly into your hospital's Electronic Health Record (EHR) system. Eliminate cognitive load, reduce medication errors, and standardize clinical decision support across your entire health system.
+            Embed validated clinical calculators directly into your hospital's Electronic Health Record (EHR) workflows. Eliminate cognitive load, reduce medication errors, and standardize clinical decision support across your entire health system.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <button className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold transition-colors flex items-center justify-center gap-2">

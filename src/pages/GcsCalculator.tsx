@@ -38,7 +38,7 @@ const translations: Translations = {
     pillarText: [
       "The Glasgow Coma Scale (GCS) is a vital clinical tool for objectively assessing the level of consciousness in patients with acute brain injury. A hallmark of the GCS is its tripartite evaluation: Eye Opening, Verbal Response, and Motor Response. The motor component is particularly prognostic; specifically, the transition from 'flexion to pain' (decorticate posturing, indicating damage above the red nucleus) to 'extension to pain' (decerebrate posturing, indicating damage at or below the red nucleus) represents a severe neurological deterioration and impending brainstem herniation.",
       "A critical clinical threshold in the GCS is a score of 8 or less, frequently memorized by the mnemonic 'GCS of 8, intubate.' At this level of severe impairment, patients lose their protective airway reflexes (gag and cough reflexes), dramatically increasing the risk of aspiration pneumonitis and hypoxia, which can exacerbate secondary brain injury. Rapid sequence intubation (RSI) is therefore standard practice to secure the airway and allow for controlled ventilation, aiming to maintain normocapnia.",
-      "Despite its ubiquity, the GCS has notable clinical limitations. It cannot be accurately assessed in patients who are chemically paralyzed, sedated, or intubated (often noted as a 'T' in the verbal score, e.g., GCS 10T). Furthermore, it does not account for pupillary reactivity or focal neurological deficits, which are critical in identifying unilateral mass lesions like an epidural hematoma. Modern neurological assessments often combine the GCS with the FOUR (Full Outline of UnResponsiveness) score or detailed pupillary examinations to mitigate these shortcomings."
+      "Despite its ubiquity, the GCS has notable clinical limitations. It cannot be accurately assessed in patients who are chemically paralyzed, sedated, or intubated (often noted as a 'T' in the verbal score, e.g., GCS 10T). It also excludes pupillary reactivity and focal neurological deficits—critical signs when diagnosing unilateral mass lesions such as epidural hematomas. Modern neurological assessments often combine the GCS with the FOUR (Full Outline of UnResponsiveness) score or detailed pupillary examinations to overcome these shortcomings."
     ],
     references: "References: Teasdale G, Jennett B. Assessment of coma and impaired consciousness.",
     severe: "Severe Brain Injury (≤8)",
@@ -58,21 +58,21 @@ const translations: Translations = {
     subtitle: "Évaluer le niveau de conscience après un traumatisme crânien",
     eye: "Ouverture des Yeux",
     eye4: "4 - Spontanée",
-    eye3: "3 - À la parole",
-    eye2: "2 - À la douleur",
+    eye3: "3 - Au Bruit",
+    eye2: "2 - À la Douleur",
     eye1: "1 - Aucune",
     verbal: "Réponse Verbale",
     verbal5: "5 - Orientée",
     verbal4: "4 - Confuse",
-    verbal3: "3 - Mots inappropriés",
-    verbal2: "2 - Sons incompréhensibles",
+    verbal3: "3 - Mots Inappropriés",
+    verbal2: "2 - Sons Incompréhensibles",
     verbal1: "1 - Aucune",
     motor: "Réponse Motrice",
-    motor6: "6 - Obéit aux ordres",
-    motor5: "5 - Orientée à la douleur",
-    motor4: "4 - Évitement de la douleur",
-    motor3: "3 - Décortication (Flexion)",
-    motor2: "2 - Décérébration (Extension)",
+    motor6: "6 - Obéit aux Commandes",
+    motor5: "5 - Oriente vers la Douleur",
+    motor4: "4 - Évitement de la Douleur",
+    motor3: "3 - Flexion à la Douleur (Décortication)",
+    motor2: "2 - Extension à la Douleur (Décérébration)",
     motor1: "1 - Aucune",
     result: "Score GCS Calculé",
     formula: "GCS = Yeux + Verbe + Moteur",
@@ -82,7 +82,7 @@ const translations: Translations = {
     pillarText: [
       "Le score de Glasgow (GCS) est un outil clinique essentiel pour évaluer objectivement le niveau de conscience chez les patients souffrant de lésions cérébrales aiguës. Une caractéristique de ce score est son évaluation tripartite : ouverture des yeux, réponse verbale et réponse motrice. La composante motrice est particulièrement pronostique ; la transition de la « flexion à la douleur » (décortication) à l'« extension à la douleur » (décérébration) représente une détérioration neurologique sévère et un engagement cérébral imminent.",
       "Un seuil clinique critique du GCS est un score inférieur ou égal à 8. À ce niveau d'altération, les patients perdent leurs réflexes de protection des voies aériennes (réflexe nauséeux et de la toux), ce qui augmente considérablement le risque de pneumopathie d'inhalation et d'hypoxie, susceptibles d'aggraver les lésions cérébrales secondaires. L'intubation en séquence rapide (ISR) est donc la pratique standard pour sécuriser les voies aériennes et permettre une ventilation contrôlée.",
-      "Malgré son utilisation universelle, le GCS présente des limites cliniques notables. Il ne peut pas être évalué avec précision chez les patients curarisés, sous sédation ou intubés (souvent noté par un « T » dans le score verbal). De plus, il ne tient pas compte de la réactivité pupillaire ou des déficits neurologiques focaux, qui sont essentiels pour identifier les lésions expansives unilatérales comme un hématome épidural."
+      "Malgré son utilisation universelle, le GCS présente des limites cliniques notables. Il ne peut pas être évalué avec précision chez les patients curarisés, sous sédation ou intubés (souvent noté par un « T » dans le score verbal). Il exclut également la réactivité pupillaire et les déficits neurologiques focaux, signes majeurs pour identifier les lésions expansives unilatérales comme un hématome épidural. Les évaluations neurologiques modernes associent souvent le GCS au score FOUR ou à un examen pupillaire détaillé pour combler ces lacunes."
     ],
     references: "Références : Teasdale G, Jennett B. Assessment of coma and impaired consciousness.",
     severe: "Lésion cérébrale sévère (≤8)",
@@ -126,7 +126,7 @@ const translations: Translations = {
     pillarText: [
       "يعد مقياس غلاسكو للغيبوبة (GCS) أداة سريرية حيوية للتقييم الموضوعي لمستوى الوعي لدى المرضى الذين يعانون من إصابات حادة في الدماغ. السمة المميزة لـ GCS هي التقييم الثلاثي: فتح العين، الاستجابة اللفظية، والاستجابة الحركية. المكون الحركي ذو أهمية إنذارية خاصة؛ وعلى وجه التحديد، فإن الانتقال من 'الانثناء للألم' (وضعية القشرة) إلى 'الامتداد للألم' (وضعية إزالة المخ) يمثل تدهوراً عصبياً حاداً وانفتاقاً وشيكاً لجذع الدماغ.",
       "الحد السريري الحرج في GCS هو درجة 8 أو أقل، وكثيرا ما يتم تذكرها من خلال القاعدة 'GCS 8، قم بالتنبيب'. في هذا المستوى من الضعف الشديد، يفقد المرضى ردود الفعل الوقائية لمجرى الهواء (ردود فعل الكمامة والسعال)، مما يزيد بشكل كبير من خطر الالتهاب الرئوي التنفسي ونقص الأكسجة، والذي يمكن أن يؤدي إلى تفاقم إصابة الدماغ الثانوية. لذلك فإن التنبيب السريع (RSI) هو الممارسة القياسية لتأمين مجرى الهواء والسماح بالتهوية الخاضعة للرقابة.",
-      "على الرغم من انتشاره الواسع، فإن مقياس GCS له قيود سريرية ملحوظة. لا يمكن تقييمه بدقة في المرضى المشلولين كيميائياً أو المهدئين أو المنببين. علاوة على ذلك، فإنه لا يفسر تفاعل الحدقة أو العجز العصبي البؤري، والتي تعتبر بالغة الأهمية في تحديد الآفات الكتلية أحادية الجانب مثل الورم الدموي فوق الجافية. غالباً ما تجمع التقييمات العصبية الحديثة بين مقياس GCS ودرجة FOUR (مخطط كامل لعدم الاستجابة) أو فحوصات حدقة العين التفصيلية للتخفيف من هذه النواقص."
+      "على الرغم من انتشاره الواسع، فإن مقياس GCS له قيود سريرية ملحوظة. لا يمكن تقييمه بدقة في المرضى المشلولين كيميائياً أو المهدئين أو المنببين. كما أنه يتجاهل تفاعل الحدقة والعجز العصبي البؤري، وهي علامات حاسمة لتشخيص الآفات الكتلية أحادية الجانب مثل الورم الدموي فوق الجافية. غالباً ما تجمع التقييمات العصبية الحديثة بين مقياس GCS ودرجة FOUR أو فحوصات حدقة العين التفصيلية للتغلب على هذه النواقص."
     ],
     references: "المراجع: Teasdale G, Jennett B. تقييم الغيبوبة وضعف الوعي.",
     severe: "إصابة شديدة (≤8)",
