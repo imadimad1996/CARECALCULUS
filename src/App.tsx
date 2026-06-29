@@ -737,37 +737,43 @@ function AppLayout() {
           {!isContentPage && (
             <button
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-              className="p-2 text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600/20 rounded-lg"
+              className="p-2 text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-teal-500/30 rounded-xl active:scale-95 transition-all duration-200"
               aria-label="Toggle Navigation Sidebar"
               style={{ minWidth: '44px', minHeight: '44px' }}
             >
-              {isSidebarOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isSidebarOpen ? <X className="w-6 h-6 animate-spin-once" /> : <Menu className="w-6 h-6" />}
             </button>
           )}
         </div>
       </div>
 
-      {!isContentPage && <aside className={`fixed inset-y-0 ${isRtl ? 'right-0' : 'left-0'} z-40 w-64 bg-white/70 backdrop-blur-md border-${isRtl ? 'l' : 'r'} border-slate-200/60 transform transition-transform duration-300 ease-in-out md:translate-x-0 md:static md:flex-shrink-0 ${isSidebarOpen ? 'translate-x-0' : (isRtl ? 'translate-x-full md:translate-x-0' : '-translate-x-full')}`}>
-        <div className="h-full flex flex-col pt-5 md:pt-8 pb-4 overflow-y-auto">
+      {!isContentPage && <aside className={`fixed inset-y-0 ${isRtl ? 'right-0' : 'left-0'} z-40 w-72 md:w-[280px] bg-white/85 dark:bg-slate-900/90 backdrop-blur-2xl border-${isRtl ? 'l' : 'r'} border-slate-200/80 dark:border-slate-800 shadow-[0_10px_40px_rgba(0,0,0,0.06)] transform transition-transform duration-300 ease-out md:translate-x-0 md:static md:flex-shrink-0 relative overflow-hidden ${isSidebarOpen ? 'translate-x-0' : (isRtl ? 'translate-x-full md:translate-x-0' : '-translate-x-full')}`}>
+        {/* Subtle ambient lighting backdrop gradient */}
+        <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-teal-500/10 via-blue-500/5 to-transparent pointer-events-none -z-10" />
+
+        <div className="h-full flex flex-col pt-5 md:pt-8 pb-4 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-200 dark:scrollbar-thumb-slate-700 scrollbar-track-transparent">
           
-          <Link to={langPath('/')} className="px-6 mb-6 hidden md:flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <Logo className="w-10 h-10" mode="light" />
-            <span className="font-bold text-2xl tracking-tight text-slate-800">Care<span className="text-teal-600 font-black">Calculus</span></span>
+          <Link to={langPath('/')} className="px-6 mb-6 hidden md:flex items-center justify-between group hover:opacity-95 transition-all duration-200">
+            <div className="flex items-center gap-2.5">
+              <Logo className="w-10 h-10 group-hover:scale-105 transition-transform duration-300 shadow-sm" mode="light" />
+              <span className="font-extrabold text-2xl tracking-tight text-slate-900 dark:text-white">Care<span className="text-teal-600 dark:text-teal-400 font-black">Calculus</span></span>
+            </div>
+            <span className="px-2 py-0.5 rounded-full bg-teal-50 text-teal-700 dark:bg-teal-950/60 dark:text-teal-300 font-mono text-[9px] font-black tracking-widest border border-teal-200/60 dark:border-teal-800/60 uppercase shadow-2xs">PRO</span>
           </Link>
 
-          {/* Desktop Language Switcher */}
+          {/* Desktop Language Switcher - Segmented Control */}
           <div className="px-6 mb-6">
-            <div className="bg-gray-100/90 p-1 rounded-xl border border-gray-200/80 shadow-inner flex">
+            <div className="bg-slate-100/90 dark:bg-slate-800/90 p-1.5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-inner flex gap-1">
               {(['en', 'fr', 'ar'] as LangCode[]).map((l) => (
                 <button
                   key={l}
                   onClick={() => setLang(l)}
-                  className={`flex-1 py-2 text-xs font-black rounded-lg uppercase tracking-wide transition-all duration-300 ${
+                  className={`flex-1 py-2 text-xs font-black rounded-xl uppercase tracking-wider transition-all duration-200 active:scale-95 ${
                     lang === l
-                      ? 'bg-white text-[#0891B2] shadow-md ring-1 ring-gray-905/5'
-                      : 'text-gray-500 hover:text-gray-800 hover:bg-gray-200'
+                      ? 'bg-white dark:bg-slate-700 text-teal-600 dark:text-teal-400 shadow-sm ring-1 ring-slate-900/5 scale-[1.02]'
+                      : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200/50 dark:hover:bg-slate-700/50'
                   }`}
-                  style={{ minHeight: '44px' }}
+                  style={{ minHeight: '42px' }}
                 >
                   {l}
                 </button>
@@ -775,26 +781,26 @@ function AppLayout() {
             </div>
           </div>
 
-          {/* Sidebar Search Bar (Live local filtering input + keyboard shortcuts reminder) */}
-          <div className="px-6 mb-4 relative">
-            <Search className={`absolute ${isRtl ? 'right-9' : 'left-9'} top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400`} />
+          {/* Sidebar Search Bar */}
+          <div className="px-6 mb-5 relative">
+            <Search className={`absolute ${isRtl ? 'right-9' : 'left-9'} top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 dark:text-slate-500 pointer-events-none transition-colors group-focus-within:text-teal-500`} />
             <input
               type="text"
               placeholder={lang === 'fr' ? 'Filtrer les outils...' : (lang === 'ar' ? 'تصفية الحاسبات...' : 'Filter calculators...')}
               value={sidebarSearch}
               onChange={(e) => setSidebarSearch(e.target.value)}
-              className={`w-full py-2 bg-gray-50 focus:bg-white text-gray-800 border border-gray-200 focus:border-[#0891B2] focus:ring-4 focus:ring-[#0891B2]/5 outline-none rounded-xl text-xs font-bold transition-all ${isRtl ? 'pr-9 pl-8 text-right' : 'pl-9 pr-8 text-left'}`}
-              style={{ minHeight: '38px' }}
+              className={`w-full py-2.5 bg-slate-100/80 dark:bg-slate-800/80 focus:bg-white dark:focus:bg-slate-900 text-slate-900 dark:text-white border border-slate-200/80 dark:border-slate-700 focus:border-teal-500 focus:ring-4 focus:ring-teal-500/10 outline-none rounded-2xl text-xs font-semibold transition-all duration-200 shadow-2xs ${isRtl ? 'pr-10 pl-9 text-right' : 'pl-10 pr-9 text-left'}`}
+              style={{ minHeight: '42px' }}
             />
             {sidebarSearch ? (
               <button
                 onClick={() => setSidebarSearch('')}
-                className={`absolute ${isRtl ? 'left-9' : 'right-9'} top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-700 p-0.5 rounded-md hover:bg-gray-200 transition`}
+                className={`absolute ${isRtl ? 'left-9' : 'right-9'} top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 p-1 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition`}
               >
                 <X className="w-3.5 h-3.5" />
               </button>
             ) : (
-              <span className={`hidden sm:inline absolute ${isRtl ? 'left-9' : 'right-9'} top-1/2 -translate-y-1/2 font-mono text-[9px] bg-gray-200/50 px-1 py-0.5 rounded text-gray-450`}>
+              <span className={`hidden sm:inline absolute ${isRtl ? 'left-9' : 'right-9'} top-1/2 -translate-y-1/2 font-mono text-[10px] font-bold bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 px-1.5 py-0.5 rounded-md text-slate-400 shadow-2xs pointer-events-none`}>
                 ⌘K
               </span>
             )}
@@ -806,31 +812,32 @@ function AppLayout() {
             {/* Home link */}
             <Link
               to={langPath('/')}
-              className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold transition-all duration-200 ${
+              className={`flex items-center gap-3.5 px-4 py-3 rounded-2xl text-[13px] font-bold transition-all duration-200 active:scale-[0.98] ${
                 isHomePage
-                  ? 'bg-teal-50 text-teal-700 font-extrabold border border-teal-100 shadow-2xs'
-                  : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900 border border-transparent'
+                  ? 'bg-gradient-to-r from-teal-500/15 via-teal-500/5 to-transparent text-teal-700 dark:text-teal-300 font-extrabold border-l-4 rtl:border-l-0 rtl:border-r-4 border-teal-600 shadow-xs'
+                  : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100/70 dark:hover:bg-slate-800/60 hover:text-slate-900 dark:hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 border-l-4 rtl:border-l-0 rtl:border-r-4 border-transparent'
               }`}
-              style={{ minHeight: '44px' }}
+              style={{ minHeight: '46px' }}
             >
               <Logo className="w-5 h-5 shrink-0" mode="light" />
-              <span>{lang === 'fr' ? 'Accueil' : lang === 'ar' ? 'الرئيسية' : 'Home'}</span>
+              <span>{lang === 'fr' ? 'Accueil Principal' : lang === 'ar' ? 'لوحة التحكم الرئيسية' : 'Clinical Dashboard'}</span>
             </Link>
 
             {/* TIER I COMPONENT */}
             {navItems.filter(i => i.tier === 1 && matchesSearch(i, sidebarSearch)).length > 0 && (
-              <div className="space-y-1">
+              <div className="space-y-1.5">
                 <button
                   onClick={() => toggleTier(1)}
-                  className="w-full text-left rtl:text-right px-2.5 py-2 text-[10px] font-mono leading-none tracking-wider text-slate-400 font-extrabold uppercase border-b border-gray-100 hover:text-slate-800 flex items-center justify-between group cursor-pointer"
+                  className="w-full text-left rtl:text-right px-3 py-2.5 rounded-xl bg-slate-50/80 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800/80 hover:bg-slate-100 dark:hover:bg-slate-800 text-[11px] font-mono font-extrabold tracking-wider text-slate-600 dark:text-slate-300 uppercase transition-all duration-200 flex items-center justify-between group cursor-pointer shadow-2xs"
                 >
-                  <span className="flex items-center gap-1.5">
-                    <ChevronDown className={`w-3.5 h-3.5 text-gray-455 transition-transform duration-200 ${(sidebarSearch || expandedTiers[1]) ? '' : (isRtl ? 'rotate-90' : '-rotate-90')}`} />
+                  <span className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse shadow-[0_0_8px_rgba(244,63,94,0.6)]" />
                     <span>{getLocalizedTierHeader(1)}</span>
                   </span>
+                  <ChevronDown className={`w-4 h-4 text-slate-400 group-hover:text-slate-700 dark:group-hover:text-white transition-transform duration-200 ${(sidebarSearch || expandedTiers[1]) ? '' : (isRtl ? 'rotate-90' : '-rotate-90')}`} />
                 </button>
                 {(sidebarSearch || expandedTiers[1]) && (
-                  <div className="space-y-0.5 mt-1">
+                  <div className="space-y-1 mt-1.5">
                     {navItems.filter(i => i.tier === 1 && matchesSearch(i, sidebarSearch)).map((item) => {
                       const isActive = logicalPath === item.path || (logicalPath === '/' && item.path === '/map-calculator');
                       const Icon = item.icon;
@@ -838,15 +845,15 @@ function AppLayout() {
                         <Link
                           key={item.path}
                           to={langPath(item.path)}
-                          className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all duration-200 ${
+                          className={`flex items-center gap-3.5 px-4 py-2.5 rounded-2xl text-[13px] font-medium transition-all duration-200 active:scale-[0.98] ${
                             isActive 
-                              ? `bg-rose-50/70 text-rose-700 border border-rose-200/50 font-black shadow-2xs ${isRtl ? 'border-r-2 border-r-rose-600 rounded-r-none' : 'border-l-2 border-l-rose-600 rounded-l-none'}` 
-                              : 'text-gray-600 hover:bg-slate-50 hover:text-gray-900 border border-transparent'
+                              ? 'bg-gradient-to-r from-rose-500/15 via-rose-500/5 to-transparent text-rose-700 dark:text-rose-300 font-bold border-l-4 rtl:border-l-0 rtl:border-r-4 border-rose-500 shadow-xs' 
+                              : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100/70 dark:hover:bg-slate-800/60 hover:text-slate-900 dark:hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 border-l-4 rtl:border-l-0 rtl:border-r-4 border-transparent'
                           }`}
-                          style={{ minHeight: '44px' }}
+                          style={{ minHeight: '46px' }}
                         >
-                          <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-rose-600' : 'text-gray-400'}`} />
-                          <span className="truncate">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
+                          <Icon className={`w-4 h-4 shrink-0 transition-transform group-hover:scale-110 ${isActive ? 'text-rose-600 dark:text-rose-400' : 'text-slate-400 dark:text-slate-500'}`} />
+                          <span className="line-clamp-2 leading-snug">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
                         </Link>
                       );
                     })}
@@ -857,18 +864,19 @@ function AppLayout() {
 
             {/* TIER II COMPONENT */}
             {navItems.filter(i => i.tier === 2 && matchesSearch(i, sidebarSearch)).length > 0 && (
-              <div className="space-y-1">
+              <div className="space-y-1.5">
                 <button
                   onClick={() => toggleTier(2)}
-                  className="w-full text-left rtl:text-right px-2.5 py-2 text-[10px] font-mono leading-none tracking-wider text-slate-400 font-extrabold uppercase border-b border-gray-100 hover:text-slate-800 flex items-center justify-between group cursor-pointer"
+                  className="w-full text-left rtl:text-right px-3 py-2.5 rounded-xl bg-slate-50/80 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800/80 hover:bg-slate-100 dark:hover:bg-slate-800 text-[11px] font-mono font-extrabold tracking-wider text-slate-600 dark:text-slate-300 uppercase transition-all duration-200 flex items-center justify-between group cursor-pointer shadow-2xs"
                 >
-                  <span className="flex items-center gap-1.5">
-                    <ChevronDown className={`w-3.5 h-3.5 text-gray-455 transition-transform duration-200 ${(sidebarSearch || expandedTiers[2]) ? '' : (isRtl ? 'rotate-90' : '-rotate-90')}`} />
+                  <span className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse shadow-[0_0_8px_rgba(6,182,212,0.6)]" />
                     <span>{getLocalizedTierHeader(2)}</span>
                   </span>
+                  <ChevronDown className={`w-4 h-4 text-slate-400 group-hover:text-slate-700 dark:group-hover:text-white transition-transform duration-200 ${(sidebarSearch || expandedTiers[2]) ? '' : (isRtl ? 'rotate-90' : '-rotate-90')}`} />
                 </button>
                 {(sidebarSearch || expandedTiers[2]) && (
-                  <div className="space-y-0.5 mt-1">
+                  <div className="space-y-1 mt-1.5">
                     {navItems.filter(i => i.tier === 2 && matchesSearch(i, sidebarSearch)).map((item) => {
                       const isActive = logicalPath === item.path;
                       const Icon = item.icon;
@@ -876,15 +884,15 @@ function AppLayout() {
                         <Link
                           key={item.path}
                           to={langPath(item.path)}
-                          className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all duration-200 ${
+                          className={`flex items-center gap-3.5 px-4 py-2.5 rounded-2xl text-[13px] font-medium transition-all duration-200 active:scale-[0.98] ${
                             isActive 
-                              ? `bg-cyan-50/70 text-cyan-700 border border-cyan-200/50 font-black shadow-2xs ${isRtl ? 'border-r-2 border-r-cyan-600 rounded-r-none' : 'border-l-2 border-l-cyan-600 rounded-l-none'}` 
-                              : 'text-gray-600 hover:bg-slate-50 hover:text-gray-900 border border-transparent'
+                              ? 'bg-gradient-to-r from-cyan-500/15 via-cyan-500/5 to-transparent text-cyan-700 dark:text-cyan-300 font-bold border-l-4 rtl:border-l-0 rtl:border-r-4 border-cyan-500 shadow-xs' 
+                              : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100/70 dark:hover:bg-slate-800/60 hover:text-slate-900 dark:hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 border-l-4 rtl:border-l-0 rtl:border-r-4 border-transparent'
                           }`}
-                          style={{ minHeight: '44px' }}
+                          style={{ minHeight: '46px' }}
                         >
-                          <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-cyan-600' : 'text-gray-400'}`} />
-                          <span className="truncate">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
+                          <Icon className={`w-4 h-4 shrink-0 transition-transform group-hover:scale-110 ${isActive ? 'text-cyan-600 dark:text-cyan-400' : 'text-slate-400 dark:text-slate-500'}`} />
+                          <span className="line-clamp-2 leading-snug">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
                         </Link>
                       );
                     })}
@@ -895,18 +903,19 @@ function AppLayout() {
 
             {/* TIER III COMPONENT */}
             {navItems.filter(i => i.tier === 3 && matchesSearch(i, sidebarSearch)).length > 0 && (
-              <div className="space-y-1">
+              <div className="space-y-1.5">
                 <button
                   onClick={() => toggleTier(3)}
-                  className="w-full text-left rtl:text-right px-2.5 py-2 text-[10px] font-mono leading-none tracking-wider text-slate-400 font-extrabold uppercase border-b border-gray-100 hover:text-slate-800 flex items-center justify-between group cursor-pointer"
+                  className="w-full text-left rtl:text-right px-3 py-2.5 rounded-xl bg-slate-50/80 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800/80 hover:bg-slate-100 dark:hover:bg-slate-800 text-[11px] font-mono font-extrabold tracking-wider text-slate-600 dark:text-slate-300 uppercase transition-all duration-200 flex items-center justify-between group cursor-pointer shadow-2xs"
                 >
-                  <span className="flex items-center gap-1.5">
-                    <ChevronDown className={`w-3.5 h-3.5 text-gray-455 transition-transform duration-200 ${(sidebarSearch || expandedTiers[3]) ? '' : (isRtl ? 'rotate-90' : '-rotate-90')}`} />
+                  <span className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.6)]" />
                     <span>{getLocalizedTierHeader(3)}</span>
                   </span>
+                  <ChevronDown className={`w-4 h-4 text-slate-400 group-hover:text-slate-700 dark:group-hover:text-white transition-transform duration-200 ${(sidebarSearch || expandedTiers[3]) ? '' : (isRtl ? 'rotate-90' : '-rotate-90')}`} />
                 </button>
                 {(sidebarSearch || expandedTiers[3]) && (
-                  <div className="space-y-0.5 mt-1">
+                  <div className="space-y-1 mt-1.5">
                     {navItems.filter(i => i.tier === 3 && matchesSearch(i, sidebarSearch)).map((item) => {
                       const isActive = logicalPath === item.path;
                       const Icon = item.icon;
@@ -914,15 +923,15 @@ function AppLayout() {
                         <Link
                           key={item.path}
                           to={langPath(item.path)}
-                          className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all duration-200 ${
+                          className={`flex items-center gap-3.5 px-4 py-2.5 rounded-2xl text-[13px] font-medium transition-all duration-200 active:scale-[0.98] ${
                             isActive 
-                              ? `bg-emerald-50/70 text-emerald-700 border border-emerald-200/50 font-black shadow-2xs ${isRtl ? 'border-r-2 border-r-emerald-600 rounded-r-none' : 'border-l-2 border-l-emerald-600 rounded-l-none'}` 
-                              : 'text-gray-600 hover:bg-slate-50 hover:text-gray-900 border border-transparent'
+                              ? 'bg-gradient-to-r from-emerald-500/15 via-emerald-500/5 to-transparent text-emerald-700 dark:text-emerald-300 font-bold border-l-4 rtl:border-l-0 rtl:border-r-4 border-emerald-500 shadow-xs' 
+                              : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100/70 dark:hover:bg-slate-800/60 hover:text-slate-900 dark:hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 border-l-4 rtl:border-l-0 rtl:border-r-4 border-transparent'
                           }`}
-                          style={{ minHeight: '44px' }}
+                          style={{ minHeight: '46px' }}
                         >
-                          <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-emerald-600' : 'text-gray-400'}`} />
-                          <span className="truncate">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
+                          <Icon className={`w-4 h-4 shrink-0 transition-transform group-hover:scale-110 ${isActive ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-400 dark:text-slate-500'}`} />
+                          <span className="line-clamp-2 leading-snug">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
                         </Link>
                       );
                     })}
@@ -936,15 +945,16 @@ function AppLayout() {
               <div className="space-y-2">
                 <button
                   onClick={() => toggleTier(4)}
-                  className="w-full text-left rtl:text-right px-2.5 py-2 text-[10px] font-mono leading-none tracking-wider text-slate-400 font-extrabold uppercase border-b border-gray-100 hover:text-slate-800 flex items-center justify-between group cursor-pointer"
+                  className="w-full text-left rtl:text-right px-3 py-2.5 rounded-xl bg-slate-50/80 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800/80 hover:bg-slate-100 dark:hover:bg-slate-800 text-[11px] font-mono font-extrabold tracking-wider text-slate-600 dark:text-slate-300 uppercase transition-all duration-200 flex items-center justify-between group cursor-pointer shadow-2xs"
                 >
-                  <span className="flex items-center gap-1.5">
-                    <ChevronDown className={`w-3.5 h-3.5 text-gray-455 transition-transform duration-200 ${(sidebarSearch || expandedTiers[4]) ? '' : (isRtl ? 'rotate-90' : '-rotate-90')}`} />
+                  <span className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse shadow-[0_0_8px_rgba(99,102,241,0.6)]" />
                     <span>{lang === 'fr' ? 'RESSOURCES & BIBLIOTHÈQUE' : (lang === 'ar' ? 'المصادر والمكتبة' : 'RESOURCES & LIBRARY')}</span>
                   </span>
+                  <ChevronDown className={`w-4 h-4 text-slate-400 group-hover:text-slate-700 dark:group-hover:text-white transition-transform duration-200 ${(sidebarSearch || expandedTiers[4]) ? '' : (isRtl ? 'rotate-90' : '-rotate-90')}`} />
                 </button>
                 {(sidebarSearch || expandedTiers[4]) && (
-                  <div className="space-y-3 mt-1 pl-2 rtl:pl-0 rtl:pr-2">
+                  <div className="space-y-3 mt-1.5 pl-2 rtl:pl-0 rtl:pr-2">
                     {([
                       { key: 'reading', en: 'Reading', fr: 'Lecture', ar: 'القراءة', dot: 'bg-indigo-500' },
                       { key: 'learning', en: 'Learning', fr: 'Apprentissage', ar: 'التعلّم', dot: 'bg-emerald-500' },
@@ -952,11 +962,12 @@ function AppLayout() {
                       const groupItems = navItems.filter(i => i.tier === 4 && (i as any).group === sub.key && matchesSearch(i, sidebarSearch));
                       if (groupItems.length === 0) return null;
                       return (
-                        <div key={sub.key} className="space-y-0.5">
-                          <div className="px-2 flex items-center gap-1.5 text-[9px] font-mono font-bold uppercase tracking-wider text-slate-450 mb-1">
+                        <div key={sub.key} className="space-y-1">
+                          <div className="px-2 flex items-center gap-2 text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-1">
+                            <span className={`w-1.5 h-1.5 rounded-full ${sub.dot}`} />
                             <span>{lang === 'fr' ? sub.fr : (lang === 'ar' ? sub.ar : sub.en)}</span>
                           </div>
-                          <div className="space-y-0.5">
+                          <div className="space-y-1">
                             {groupItems.map((item) => {
                               const isActive = logicalPath === item.path;
                               const Icon = item.icon;
@@ -964,15 +975,15 @@ function AppLayout() {
                                 <Link
                                   key={item.path}
                                   to={langPath(item.path)}
-                                  className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all duration-200 relative ${
+                                  className={`flex items-center gap-3.5 px-4 py-2.5 rounded-2xl text-[13px] font-medium transition-all duration-200 active:scale-[0.98] ${
                                     isActive
-                                      ? `bg-indigo-50/70 text-indigo-700 border border-indigo-200/50 font-black shadow-2xs ${isRtl ? 'border-r-2 border-r-indigo-600 rounded-r-none' : 'border-l-2 border-l-indigo-600 rounded-l-none'}`
-                                      : 'text-gray-600 hover:bg-slate-50 hover:text-gray-900 border border-transparent'
+                                      ? 'bg-gradient-to-r from-indigo-500/15 via-indigo-500/5 to-transparent text-indigo-700 dark:text-indigo-300 font-bold border-l-4 rtl:border-l-0 rtl:border-r-4 border-indigo-500 shadow-xs'
+                                      : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100/70 dark:hover:bg-slate-800/60 hover:text-slate-900 dark:hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 border-l-4 rtl:border-l-0 rtl:border-r-4 border-transparent'
                                   }`}
-                                  style={{ minHeight: '44px' }}
+                                  style={{ minHeight: '46px' }}
                                 >
-                                  <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-indigo-600' : 'text-gray-400'}`} />
-                                  <span className="truncate">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
+                                  <Icon className={`w-4 h-4 shrink-0 transition-transform group-hover:scale-110 ${isActive ? 'text-indigo-600 dark:text-indigo-400' : 'text-slate-400 dark:text-slate-500'}`} />
+                                  <span className="line-clamp-2 leading-snug">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
                                 </Link>
                               );
                             })}
@@ -987,18 +998,19 @@ function AppLayout() {
             
             {/* TIER V COMPONENT (UTILITIES) */}
             {navItems.filter(i => i.tier === 5 && matchesSearch(i, sidebarSearch)).length > 0 && (
-              <div className="space-y-1">
+              <div className="space-y-1.5">
                 <button
                   onClick={() => toggleTier(5)}
-                  className="w-full text-left rtl:text-right px-2.5 py-2 text-[10px] font-mono leading-none tracking-wider text-slate-400 font-extrabold uppercase border-b border-gray-100 hover:text-slate-800 flex items-center justify-between group cursor-pointer"
+                  className="w-full text-left rtl:text-right px-3 py-2.5 rounded-xl bg-slate-50/80 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800/80 hover:bg-slate-100 dark:hover:bg-slate-800 text-[11px] font-mono font-extrabold tracking-wider text-slate-600 dark:text-slate-300 uppercase transition-all duration-200 flex items-center justify-between group cursor-pointer shadow-2xs"
                 >
-                  <span className="flex items-center gap-1.5">
-                    <ChevronDown className={`w-3.5 h-3.5 text-gray-455 transition-transform duration-200 ${(sidebarSearch || expandedTiers[5]) ? '' : (isRtl ? 'rotate-90' : '-rotate-90')}`} />
+                  <span className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse shadow-[0_0_8px_rgba(245,158,11,0.6)]" />
                     <span>{getLocalizedTierHeader(5)}</span>
                   </span>
+                  <ChevronDown className={`w-4 h-4 text-slate-400 group-hover:text-slate-700 dark:group-hover:text-white transition-transform duration-200 ${(sidebarSearch || expandedTiers[5]) ? '' : (isRtl ? 'rotate-90' : '-rotate-90')}`} />
                 </button>
                 {(sidebarSearch || expandedTiers[5]) && (
-                  <div className="space-y-0.5 mt-1">
+                  <div className="space-y-1 mt-1.5">
                     {navItems.filter(i => i.tier === 5 && matchesSearch(i, sidebarSearch)).map((item) => {
                       const isActive = logicalPath === item.path;
                       const Icon = item.icon;
@@ -1006,15 +1018,15 @@ function AppLayout() {
                         <Link
                           key={item.path}
                           to={langPath(item.path)}
-                          className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all duration-200 ${
+                          className={`flex items-center gap-3.5 px-4 py-2.5 rounded-2xl text-[13px] font-medium transition-all duration-200 active:scale-[0.98] ${
                             isActive 
-                              ? `bg-amber-50/70 text-amber-700 border border-amber-200/50 font-black shadow-2xs ${isRtl ? 'border-r-2 border-r-amber-600 rounded-r-none' : 'border-l-2 border-l-amber-600 rounded-l-none'}` 
-                              : 'text-gray-600 hover:bg-slate-50 hover:text-gray-900 border border-transparent'
+                              ? 'bg-gradient-to-r from-amber-500/15 via-amber-500/5 to-transparent text-amber-700 dark:text-amber-300 font-bold border-l-4 rtl:border-l-0 rtl:border-r-4 border-amber-500 shadow-xs' 
+                              : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100/70 dark:hover:bg-slate-800/60 hover:text-slate-900 dark:hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 border-l-4 rtl:border-l-0 rtl:border-r-4 border-transparent'
                           }`}
-                          style={{ minHeight: '44px' }}
+                          style={{ minHeight: '46px' }}
                         >
-                          <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-amber-600' : 'text-gray-400'}`} />
-                          <span className="truncate">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
+                          <Icon className={`w-4 h-4 shrink-0 transition-transform group-hover:scale-110 ${isActive ? 'text-amber-600 dark:text-amber-400' : 'text-slate-400 dark:text-slate-500'}`} />
+                          <span className="line-clamp-2 leading-snug">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
                         </Link>
                       );
                     })}
@@ -1025,37 +1037,42 @@ function AppLayout() {
 
             {/* Zero results placeholder */}
             {navItems.filter(i => matchesSearch(i, sidebarSearch)).length === 0 && (
-              <div className="py-8 px-2 text-center text-xs text-gray-400 font-semibold space-y-1.5 select-none">
-                <AlertOctagon className="w-5 h-5 text-gray-305 mx-auto animate-pulse" />
+              <div className="py-10 px-4 text-center text-xs text-slate-400 font-semibold space-y-2 select-none bg-slate-50 dark:bg-slate-800/30 rounded-2xl border border-dashed border-slate-200 dark:border-slate-700">
+                <AlertOctagon className="w-6 h-6 text-slate-300 dark:text-slate-600 mx-auto animate-pulse" />
                 <p>{lang === 'fr' ? 'Aucun outil correspond' : (lang === 'ar' ? 'لا توجد أدوات مطابقة' : 'No tools found')}</p>
               </div>
             )}
 
             {/* Faculté de Médecine et de Pharmacie (FMPC) Section */}
             {matchesSearch({ nameEn: 'Faculty of Medicine & Pharmacy FMPC', nameFr: 'Faculté de Médecine et de Pharmacie FMPC', nameAr: 'كلية الطب والصيدلة', path: '/fmp-medecine' }, sidebarSearch) && (
-              <div className="space-y-1 pt-2 border-t border-gray-150">
-                <div className="px-2.5 text-[9px] font-mono leading-none tracking-wider text-gray-400 font-extrabold uppercase pb-1 flex items-center justify-between">
-                  <span>{lang === 'fr' ? 'FMP ACCUEIL COURS' : (lang === 'ar' ? 'دروس كلية الطب والصيدلة' : 'FMP ACADEMIC HUB')}</span>
+              <div className="space-y-1.5 pt-4 border-t border-slate-200/80 dark:border-slate-800">
+                <div className="px-3 py-2 rounded-xl bg-teal-500/10 dark:bg-teal-500/20 border border-teal-500/20 text-[11px] font-mono leading-none tracking-wider text-teal-700 dark:text-teal-300 font-extrabold uppercase flex items-center justify-between">
+                  <span className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse shadow-[0_0_8px_rgba(20,184,166,0.6)]" />
+                    <span>{lang === 'fr' ? 'FMP ACCUEIL COURS' : (lang === 'ar' ? 'دروس كلية الطب والصيدلة' : 'FMP ACADEMIC HUB')}</span>
+                  </span>
                 </div>
-                <div className="space-y-0.5">
+                <div className="space-y-1 mt-1.5">
                   <Link
                     to={langPath('/fmp-medecine')}
-                    className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all duration-200 relative ${
+                    className={`flex items-center gap-3.5 px-4 py-2.5 rounded-2xl text-[13px] font-medium transition-all duration-200 active:scale-[0.98] ${
                       logicalPath === '/fmp-medecine'
-                        ? `bg-teal-50/70 text-teal-700 border border-teal-200/50 font-black shadow-2xs ${isRtl ? 'border-r-2 border-r-teal-600 rounded-r-none' : 'border-l-2 border-l-teal-600 rounded-l-none'}`
-                        : 'text-gray-600 hover:bg-slate-50 hover:text-gray-900 border border-transparent'
+                        ? 'bg-gradient-to-r from-teal-500/15 via-teal-500/5 to-transparent text-teal-700 dark:text-teal-300 font-bold border-l-4 rtl:border-l-0 rtl:border-r-4 border-teal-600 shadow-xs'
+                        : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100/70 dark:hover:bg-slate-800/60 hover:text-slate-900 dark:hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 border-l-4 rtl:border-l-0 rtl:border-r-4 border-transparent'
                     }`}
-                    style={{ minHeight: '44px' }}
+                    style={{ minHeight: '46px' }}
                   >
-                    <GraduationCap className={`w-4 h-4 shrink-0 ${logicalPath === '/fmp-medecine' ? 'text-teal-600' : 'text-gray-400'}`} />
-                    <span className="truncate">{lang === 'fr' ? 'Cours & Livres PDF' : (lang === 'ar' ? 'الدروس والكتب الطبية' : 'Courses & PDF Books')}</span>
+                    <GraduationCap className={`w-4 h-4 shrink-0 transition-transform group-hover:scale-110 ${logicalPath === '/fmp-medecine' ? 'text-teal-600 dark:text-teal-400' : 'text-slate-400 dark:text-slate-500'}`} />
+                    <span className="line-clamp-2 leading-snug">{lang === 'fr' ? 'Cours & Livres PDF' : (lang === 'ar' ? 'الدروس والكتب الطبية' : 'Courses & PDF Books')}</span>
                   </Link>
                 </div>
               </div>
             )}
 
             {/* Sidebar Newsletter subscription widget */}
-            <SidebarNewsletter lang={lang} />
+            <div className="pt-4 border-t border-slate-200/80 dark:border-slate-800">
+              <SidebarNewsletter lang={lang} />
+            </div>
           </nav>
         </div>
       </aside>}
