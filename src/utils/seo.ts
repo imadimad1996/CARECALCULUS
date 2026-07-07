@@ -271,6 +271,43 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
     }
   }
 
+  // 7. Comparisons (/compare/:slug1-vs-:slug2)
+  if (path.startsWith('/compare/')) {
+    const slugs = path.replace(/^\/compare\//, '').split('-vs-');
+    if (slugs.length === 2) {
+      const path1 = `/${slugs[0]}`;
+      const path2 = `/${slugs[1]}`;
+      const cleanName = (raw: string) => raw.replace(/\s+Calculator/gi, '').replace(/\s+Score/gi, '').replace(/\s+Tool/gi, '').replace(/\s+Screener/gi, '').replace(/\s+Converter/gi, '').trim();
+
+      const nEn1 = cleanName(nameEnMap[path1] || slugs[0]);
+      const nEn2 = cleanName(nameEnMap[path2] || slugs[1]);
+      const nFr1 = cleanName(nameFrMap[path1] || slugs[0]);
+      const nFr2 = cleanName(nameFrMap[path2] || slugs[1]);
+      const nAr1 = cleanName(nameArMap[path1] || slugs[0]);
+      const nAr2 = cleanName(nameArMap[path2] || slugs[1]);
+
+      if (lang === 'fr') {
+        return {
+          title: `${nFr1} vs ${nFr2} | Comparaison Clinique | CareCalculus`,
+          desc: `Comparez ${nFr1} et ${nFr2}. Découvrez quel calculateur ou score clinique utiliser selon la situation, les directives et les recommandations d'experts.`,
+          keywords: `${nFr1.toLowerCase()}, ${nFr2.toLowerCase()}, comparaison clinique, diagnostic`,
+        };
+      } else if (lang === 'ar') {
+        return {
+          title: `مقارنة: ${nAr1} ضد ${nAr2} | CareCalculus`,
+          desc: `قارن بين ${nAr1} و ${nAr2}. تعرف على متى تستخدم كل أداة حسابية سريرية بناءً على الإرشادات الطبية وتوصيات الخبراء.`,
+          keywords: `${nAr1}, ${nAr2}, مقارنة سريرية, تشخيص طبي`,
+        };
+      } else {
+        return {
+          title: `${nEn1} vs ${nEn2} | Clinical Comparison | CareCalculus`,
+          desc: `Compare ${nEn1} vs ${nEn2}. Understand which medical calculator or score to use based on clinical context, guidelines, and expert recommendations.`,
+          keywords: `${nEn1.toLowerCase()}, ${nEn2.toLowerCase()}, clinical comparison, medical score comparison`,
+        };
+      }
+    }
+  }
+
   const nameEn = nameEnMap[path] || 'Multilingual Care Calculators';
   const nameFr = nameFrMap[path] || 'Calculateur Médical Gratuit';
   const nameAr = nameArMap[path] || 'الحاسبة الطبية الشاملة المعتمدة';

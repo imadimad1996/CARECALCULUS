@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Printer, Copy, Check, FileText, X, User, Calendar, FileDown, Lock, Share2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { LangCode } from '../types';
-import PremiumGate from './PremiumGate';
+import { useMemo } from 'react';
+import { generateSOAP, generateSBAR, generateDotPhrase, generateShiftHandover, generateCaseShareUrl } from '../utils/soapGenerator';
 
 export interface ClinicalExportButtonProps {
   title: string;
@@ -105,6 +106,70 @@ export default function ClinicalExportButton({
   const [currentTime, setCurrentTime] = useState("");
   const [copied, setCopied] = useState(false);
   const [shareCopied, setShareCopied] = useState(false);
+  const [noteTab, setNoteTab] = useState<'soap' | 'sbar' | 'dotphrase' | 'ascii'>('soap');
+
+  const inputsRecord = useMemo(() => {
+    const rec: Record<string, any> = {};
+    inputs.forEach(item => {
+      rec[item.label] = item.value;
+    });
+    return rec;
+  }, [inputs]);
+
+  const noteInput = useMemo(() => {
+    const scoreVal = results[0] ? results[0].value : '';
+    const interpVal = results.length > 1 
+      ? results.map(r => `${r.label}: ${r.value}${r.unit ? ` ${r.unit}` : ''}`).join(' | ') 
+      : (results[0] ? `${results[0].label}: ${results[0].value}${results[0].unit ? ` ${results[0].unit}` : ''}` : '');
+    
+    return {
+      calculatorName: title,
+      score: scoreVal,
+      interpretation: interpVal,
+      inputs: inputsRecord,
+      lang: lang
+    };
+  }, [title, results, inputsRecord, lang]);
+
+  const getFormattedNote = () => {
+    if (noteTab === 'soap') return generateSOAP(noteInput);
+    if (noteTab === 'sbar') return generateSBAR(noteInput);
+    if (noteTab === 'dotphrase') return generateDotPhrase(noteInput);
+    return getASCIIReportText();
+  };
+
+  const handleCopyNote = () => {
+    const textToCopy = getFormattedNote();
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 3000);
+    });
+  };
+
+  const handleWhatsAppShare = () => {
+    if (typeof window === 'undefined') return;
+    const handoverText = generateShiftHandover(noteInput);
+    const shareUrl = generateCaseShareUrl(window.location.pathname, inputsRecord);
+    const fullText = `${handoverText}\n\n🔗 *Live Case Link:* ${shareUrl}`;
+    window.open(`https://wa.me/?text=${encodeURIComponent(fullText)}`, '_blank');
+  };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('carecalculus:calc-data', {
+        detail: {
+          title,
+          inputs: inputsRecord,
+          results,
+          formula,
+          disclaimer,
+          references,
+          lang,
+          path: window.location.pathname
+        }
+      }));
+    }
+  }, [title, inputsRecord, results, formula, disclaimer, references, lang]);
 
   const t = localizations[lang] || (localizations.en as typeof localizations.en);
 
@@ -421,8 +486,99 @@ ${divider}`;
               </div>
 
               {/* Scrollable contents split layout */}
-              <div className="p-6 md:p-8 overflow-y-auto flex-1 flex flex-col items-center justify-center scrollbar-thin bg-white text-slate-900">
-                <PremiumGate featureName={lang === 'fr' ? 'L\'exportation clinique PDF' : lang === 'ar' ? 'تصدير التقرير السريري' : 'Clinical PDF Export'} lang={lang} />
+              <div className="p-6 md:p-8 overflow-y-auto flex-1 flex flex-col gap-6 scrollbar-thin bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100">
+                
+                {/* Patient & Clinician Metadata Row */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-bold uppercase text-slate-500 mb-1">{t.patientId}</label>
+                    <input
+                      type="text"
+                      placeholder={t.patientIdPlc}
+                      value={patientId}
+                      onChange={(e) => setPatientId(e.target.value)}
+                      className="w-full px-3.5 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs font-mono font-bold outline-none focus:ring-2 focus:ring-blue-500 text-slate-900 dark:text-slate-100"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold uppercase text-slate-500 mb-1">{t.clinician}</label>
+                    <input
+                      type="text"
+                      placeholder={t.clinicianPlc}
+                      value={clinician}
+                      onChange={(e) => setClinician(e.target.value)}
+                      className="w-full px-3.5 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs font-mono font-bold outline-none focus:ring-2 focus:ring-blue-500 text-slate-900 dark:text-slate-100"
+                    />
+                  </div>
+                </div>
+
+                {/* Custom Notes */}
+                <div>
+                  <label className="block text-xs font-bold uppercase text-slate-500 mb-1">{t.notes}</label>
+                  <textarea
+                    rows={2}
+                    placeholder={t.notesPlc}
+                    value={customNotes}
+                    onChange={(e) => setCustomNotes(e.target.value)}
+                    className="w-full px-3.5 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs font-medium outline-none focus:ring-2 focus:ring-blue-500 text-slate-900 dark:text-slate-100"
+                  />
+                </div>
+
+                {/* EHR Note Format Tabs */}
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">EHR SmartPhrase / Progress Note Format</span>
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                    {(['soap', 'sbar', 'dotphrase', 'ascii'] as const).map((type) => (
+                      <button
+                        key={type}
+                        onClick={() => setNoteTab(type)}
+                        className={`py-2 px-3 rounded-xl text-xs font-bold font-mono uppercase transition-all cursor-pointer ${
+                          noteTab === type
+                            ? 'bg-blue-600 text-white shadow-sm'
+                            : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+                        }`}
+                      >
+                        {type === 'soap' ? 'SOAP Note' : type === 'sbar' ? 'SBAR Handover' : type === 'dotphrase' ? 'EPIC DotPhrase' : 'Full Report'}
+                      </button>
+                    ))}
+                  </div>
+                  
+                  {/* Live Preview Box */}
+                  <div className="p-4 rounded-xl bg-slate-950 text-emerald-400 font-mono text-xs overflow-x-auto whitespace-pre-wrap border border-slate-800 shadow-inner max-h-60 select-all">
+                    {getFormattedNote()}
+                  </div>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex flex-col sm:flex-row items-center gap-3 pt-2 border-t border-slate-200 dark:border-slate-800">
+                  <button
+                    onClick={handleCopyNote}
+                    className="w-full sm:flex-1 py-3 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl transition shadow-sm flex items-center justify-center gap-2 cursor-pointer"
+                  >
+                    {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                    <span>{copied ? t.copySuccess : t.copyBtn}</span>
+                  </button>
+
+                  <button
+                    onClick={handlePrint}
+                    className="w-full sm:flex-1 py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl transition shadow-sm flex items-center justify-center gap-2 cursor-pointer"
+                  >
+                    <Printer className="w-4 h-4" />
+                    <span>{t.printBtn}</span>
+                  </button>
+
+                  <button
+                    onClick={handleWhatsAppShare}
+                    className="w-full sm:w-auto py-3 px-5 bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-xs rounded-xl transition shadow-sm flex items-center justify-center gap-2 cursor-pointer"
+                    title="Share Shift Handover to WhatsApp"
+                  >
+                    <Share2 className="w-4 h-4" />
+                    <span>WhatsApp</span>
+                  </button>
+                </div>
+
               </div>
 
             </motion.div>

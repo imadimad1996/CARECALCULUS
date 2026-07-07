@@ -17,6 +17,7 @@ import EmbedLayout from './components/EmbedLayout';
 import InstallAppButton from './components/ui/InstallAppButton';
 import SidebarNewsletter from './components/SidebarNewsletter';
 import StickyMobileAd from './components/StickyMobileAd';
+import SmartPasteModal from './components/SmartPasteModal';
 
 import { preloadPages, moduleRoutes, embedRoutes, navItems, TIER_HEADERS, LEGAL_ROUTES, CONTENT_ROUTES, ErrorBoundary, NotFound } from './routes';
 import { LangCode } from './types';
@@ -559,6 +560,8 @@ function AppLayout() {
           </div>
           {/* Install App Button */}
           <InstallAppButton lang={lang} />
+          {/* Smart Paste EHR Button */}
+          <SmartPasteModal lang={lang} />
           {/* GEO unit toggle chip */}
           <button
             onClick={toggleGeoStandard}

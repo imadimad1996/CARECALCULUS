@@ -9,6 +9,7 @@ import { LangCode } from '../types';
 import { useLang } from '../utils/lang';
 import Logo from '../components/Logo';
 import AdsterraNativeBanner from '../components/AdsterraNativeBanner';
+import SmartPasteModal from '../components/SmartPasteModal';
 
 interface HomePageProps {
   lang: LangCode;
@@ -250,6 +251,7 @@ export default function HomePage({ lang }: HomePageProps) {
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-4">
+            <SmartPasteModal lang={lang} />
             <Link
               to={langPath('/map-calculator')}
               className="btn-primary text-xs"

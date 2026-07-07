@@ -34,16 +34,16 @@ const translations: Translations = {
     enceph3: "Grade III - IV / Severe (3 points)",
     result: "Calculated Child-Pugh Score",
     formula: "Child-Pugh = Bilirubin + Albumin + INR + Ascites + Encephalopathy",
-    clinicalTitle: "Clinical Interpretation",
-    clinicalText: "Class A (5-6 points) represents mild disease. Class B (7-9 points) represents moderate disease. Class C (10-15 points) represents severe disease. High scores correlate with reduced 1-year and 2-year survival.",
-    references: "References: Pugh RN, Murray-Lyon IM, Dawson JL, et al. Transection of the oesophagus for bleeding oesophageal varices. Br J Surg 1973.",
+    clinicalTitle: "Clinical Interpretation & Caveats",
+    clinicalText: "Class A (5-6 points) represents mild/compensated disease (1-year survival: ~100%, 2-year: ~85%). Class B (7-9 points) represents moderate disease (1-year survival: ~81%, 2-year: ~57%). Class C (10-15 points) represents severe/decompensated disease (1-year survival: ~45%, 2-year: ~35%). Clinical Pearl: Ascites and encephalopathy are subjective. Ensure to grade ascites based on ultrasound/physical exam response to diuretics, and grade encephalopathy using the West Haven criteria. Active GI bleeding can transiently skew encephalopathy grades.",
+    references: "Pugh RN, Murray-Lyon IM, Dawson JL, Pietroni MC, Williams R. Transection of the oesophagus for bleeding oesophageal varices. Br J Surg. 1973;60(8):646-649 (PMID: 4515662).",
     classA: "Class A: Good Prognosis (5-6)",
     classB: "Class B: Moderate Prognosis (7-9)",
     classC: "Class C: Poor Prognosis (10-15)",
     faqQ1: "What is the Child-Pugh score?",
     faqA1: "The Child-Pugh score is a clinical staging system used to assess the prognosis of chronic liver disease, particularly cirrhosis. It evaluates total bilirubin, serum albumin, INR, ascites, and hepatic encephalopathy.",
     faqQ2: "What are the Child-Pugh classification classes?",
-    faqA2: "Patients are categorized into three classes: Class A (Score 5-6, 100% 1-year survival), Class B (Score 7-9, 81% 1-year survival), and Class C (Score 10-15, 45% 1-year survival).",
+    faqA2: "Patients are categorized into three classes: Class A (Score 5-6, 100% 1-year survival, 85% 2-year survival), Class B (Score 7-9, 81% 1-year survival, 57% 2-year survival), and Class C (Score 10-15, 45% 1-year survival, 35% 2-year survival). These survival rates guide eligibility for liver transplantation and surgical risk assessment.",
     faqQ3: "How does the Child-Pugh score differ from the MELD score?",
     faqA3: "The Child-Pugh score includes subjective parameters (ascites and encephalopathy) alongside labs. The MELD score is purely objective and laboratory-based (creatinine, bilirubin, INR, sodium), making it preferred for transplant allocation.",
     faqQ4: "What is the maximum Child-Pugh score?",
@@ -74,16 +74,16 @@ const translations: Translations = {
     enceph3: "Stade III - IV / Sévère (3 points)",
     result: "Score de Child-Pugh Calculé",
     formula: "Child-Pugh = Bilirubine + Albumine + INR + Ascite + Encéphalopathie",
-    clinicalTitle: "Interprétation Clinique",
-    clinicalText: "Classe A (5-6 points) : cirrhose compensée (bon pronostic). Classe B (7-9 points) : décompensation modérée. Classe C (10-15 points) : cirrhose décompensée (pronostic sévère).",
-    references: "Références : Pugh RN, Murray-Lyon IM, Dawson JL, et al. Br J Surg 1973.",
+    clinicalTitle: "Interprétation Clinique & Limites",
+    clinicalText: "Classe A (5-6 points) : cirrhose compensée (survie à 1 an : ~100%, 2 ans : ~85%). Classe B (7-9 points) : décompensation modérée (survie à 1 an : ~81%, 2 ans : ~57%). Classe C (10-15 points) : cirrhose décompensée (survie à 1 an : ~45%, 2 ans : ~35%). Note clinique : L'ascite et l'encéphalopathie sont subjectives. Évaluez l'ascite par échographie ou réponse clinique aux diurétiques, et l'encéphalopathie selon les critères de West Haven. Les saignements digestifs actifs peuvent fausser transitoirement les grades d'encéphalopathie.",
+    references: "Pugh RN, Murray-Lyon IM, Dawson JL, Pietroni MC, Williams R. Transection of the oesophagus for bleeding oesophageal varices. Br J Surg. 1973;60(8):646-649 (PMID: 4515662).",
     classA: "Classe A : Bon pronostic (5-6)",
     classB: "Classe B : Pronostic modéré (7-9)",
     classC: "Classe C : Pronostic sévère (10-15)",
     faqQ1: "Qu'est-ce que le score de Child-Pugh ?",
     faqA1: "Le score de Child-Pugh est une classification clinique permettant d'évaluer la fonction hépatique et le pronostic des patients atteints de cirrhose ou d'insuffisance hépatocellulaire.",
     faqQ2: "Quels sont les stades de la classification ?",
-    faqA2: "Il y a 3 stades : Classe A (5-6 points, survie à 1 an ~100%), Classe B (7-9 points, survie à 1 an ~81%) et Classe C (10-15 points, survie à 1 an ~45%).",
+    faqA2: "Il y a 3 stades : Classe A (5-6 points, survie à 1 an ~100%, à 2 ans ~85%), Classe B (7-9 points, survie à 1 an ~81%, à 2 ans ~57%) et Classe C (10-15 points, survie à 1 an ~45%, à 2 ans ~35%). Ces taux orientent l'évaluation du risque chirurgical et l'éligibilité à la transplantation.",
     faqQ3: "Quelle est la différence entre Child-Pugh et MELD ?",
     faqA3: "Child-Pugh intègre des éléments cliniques subjectifs (ascite, encéphalopathie). Le MELD est un score purement biologique (créatinine, bilirubine, INR, sodium), standardisé pour l'attribution des greffons hépatiques.",
     faqQ4: "Quels critères cliniques sont pris en compte dans le score de Child-Pugh ?",
@@ -114,16 +114,16 @@ const translations: Translations = {
     enceph3: "درجة 3 - 4 / غيبوبة (3 نقاط)",
     result: "درجة تشايلد بيو المحسوبة",
     formula: "البيليروبين + الألبومين + INR + الاستسقاء + الاعتلال الدماغي",
-    clinicalTitle: "التفسير السريري والإنذار",
-    clinicalText: "الفئة A (5-6 نقاط) تشير لمرض كبدي معوض. الفئة B (7-9 نقاط) تشير لتثبيط معتدل. الفئة C (10-15 نقطة) تشير لفشل كبدي متقدم مع انخفاض ملحوظ في معدل البقاء لعام وعامين.",
-    references: "المراجع: بيو وآخرون. استئصال المريء لنزيف الدوالي. المجلة البريطانية للجراحة 1973.",
+    clinicalTitle: "التفسير السريري والإنذار والتحذيرات",
+    clinicalText: "الفئة A (5-6 نقاط) تشير لمرض كبدي معوض (نسبة البقاء لعام: ~100%، لعامين: ~85%). الفئة B (7-9 نقاط) تشير لتثبيط معتدل (البقاء لعام: ~81%، لعامين: ~57%). الفئة C (10-15 نقطة) تشير لفشل كبدي متقدم (البقاء لعام: ~45%، لعامين: ~35%). ملحوظة سريرية: الاستسقاء والاعتلال الدماغي معايير شخصية؛ يجب تقييم الاستسقاء بالأشعة الصوتية أو الاستجابة للمدرات، والاعتلال الدماغي وفق معايير ويست هافن. النزيف الهضمي النشط يرفع درجة الاعتلال مؤقتاً.",
+    references: "Pugh RN, Murray-Lyon IM, Dawson JL, Pietroni MC, Williams R. Transection of the oesophagus for bleeding oesophageal varices. Br J Surg. 1973;60(8):646-649 (PMID: 4515662).",
     classA: "الفئة A: إنذار كبدي جيد (5-6)",
     classB: "الفئة B: إنذار كبدي معتدل (7-9)",
     classC: "الفئة C: إنذار كبدي متقدم (10-15)",
     faqQ1: "ما هو تصنيف تشايلد بيو؟",
     faqA1: "تصنيف تشايلد بيو هو أداة تقييم طبي تُستخدم لتحديد مدى تضرر الكبد وتقدير فرصة البقاء على قيد الحياة لدى مرضى تليف الكبد المزمن.",
     faqQ2: "ما هي درجات تصنيف تشايلد بيو؟",
-    faqA2: "يتم تصنيف المرضى إلى ثلاث فئات: الفئة A (5-6 نقاط، إنذار جيد)، الفئة B (7-9 نقاط، إنذار متوسط)، والفئة C (10-15 نقطة، إنذار متقدم/سيء).",
+    faqA2: "يتم تصنيف المرضى إلى ثلاث فئات: الفئة A (5-6 نقاط، بقاء لعام ~100%، لعامين ~85%)، الفئة B (7-9 نقاط، بقاء لعام ~81%، لعامين ~57%)، والفئة C (10-15 نقطة، بقاء لعام ~45%، لعامين ~35%). توجه هذه النسب أولوية زراعة الكبد وتقييم المخاطر الجراحية.",
     faqQ3: "كيف يختلف تصنيف تشايلد بيو عن درجة MELD؟",
     faqA3: "يشتمل تشايلد بيو على معايير سريرية ذاتية التقييم مثل الاستسقاء والاعتلال الدماغي الكبدي. بينما يعتمد مقياس MELD بالكامل على فحوصات معملية موضوعية ومحددة.",
     faqQ4: "ما هي الفحوصات المعملية المطلوبة لحساب المقياس؟",
@@ -396,24 +396,7 @@ export default function ChildPughScore({ lang }: { lang: LangCode }) {
 
       <AdsterraNativeBanner refreshDependency={childPughValue} />
 
-      <div className="mt-12 pt-8 border-t border-gray-100">
-        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">{layoutTranslations[lang].seeAlso}</h2>
-        <div className="flex flex-wrap gap-2 mb-10">
-          {[
-            { label: 'MELD Score', path: '/meld-score' },
-            { label: 'Creatinine Clearance', path: '/creatinine-clearance' },
-            { label: 'Corrected Calcium', path: '/corrected-calcium' },
-            { label: 'qSOFA Score', path: '/qsofa-score' },
-          ].map(({ label, path }) => {
-            const prefix = lang === 'en' ? '' : `/${lang}`;
-            return (
-              <a key={path} href={`${prefix}${path}`} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 hover:bg-blue-50 text-gray-700 hover:text-blue-700 rounded-lg text-sm font-medium transition-colors border border-gray-200 hover:border-blue-200">
-                {label}
-              </a>
-            );
-          })}
-        </div>
-      </div>
+
 
       <div className="mt-0 pt-0 border-t border-gray-100">
         <h2 className="text-xl font-bold text-gray-900 mb-6">{layoutTranslations[lang].faqTitle}</h2>

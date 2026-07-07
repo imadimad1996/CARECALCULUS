@@ -23,19 +23,19 @@ const translations: Translations = {
     low: "Low Perfusion Risk",
     lowSub: "< 65 mmHg",
     formula: "MAP = SBP + (1/3) * (SBP - DBP)",
-    clinicalTitle: "Clinical Interventions",
-    clinicalText: "A MAP of at least 65 mmHg is critical to maintain vital organ perfusion in septic shock or acute conditions.",
+    clinicalTitle: "Clinical Interventions & Autoregulation",
+    clinicalText: "A MAP of at least 65 mmHg is critical to maintain vital organ perfusion in septic shock or acute conditions. Clinical Pearl: Patients with chronic uncontrolled hypertension may require a higher target (75-85 mmHg) to avoid acute kidney injury (AKI), as their renal autoregulatory curve is shifted to the right.",
     pillarTitle: "Clinical Evidence & Pathophysiology of MAP",
     pillarText: [
       "Mean Arterial Pressure (MAP) is the primary driving force for tissue perfusion, making it a more critical hemodynamic target than systolic blood pressure alone, particularly in critically ill patients. The physiological rationale stems from the cardiac cycle: diastole accounts for approximately two-thirds of the cycle duration at normal heart rates. Therefore, the MAP formula heavily weights the diastolic blood pressure.",
       "In states of distributive shock, such as sepsis, profound vasodilation leads to a precipitous drop in systemic vascular resistance (SVR) and consequently MAP. The Surviving Sepsis Campaign guidelines strongly recommend a target MAP of ≥ 65 mmHg for initial resuscitation. Maintaining MAP above this threshold ensures adequate autoregulation of blood flow to vital organs, including the brain, kidneys, and splanchnic bed. Prolonged hypotension below this autoregulatory threshold is directly associated with acute kidney injury (AKI), myocardial ischemia, and increased mortality.",
       "However, individualizing the MAP target is increasingly recognized. In patients with chronic uncontrolled hypertension, a higher MAP target (e.g., 75-85 mmHg) may be necessary to maintain renal perfusion, as their autoregulatory curve is shifted to the right. Conversely, in acute hemorrhagic shock without traumatic brain injury, permissive hypotension (targeting a lower MAP, e.g., 50-60 mmHg) is often employed to minimize blood loss while maintaining basic perfusion until surgical control of bleeding is achieved."
     ],
-    references: "References: Intensive Care Medicine Standards / American Heart Association guidelines.",
+    references: "Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2021. Intensive Care Med. 2021;47(11):1181-1247 (PMID: 34657111). American Heart Association (AHA) Guidelines for Cardiopulmonary Resuscitation.",
     faqQ1: "What is Mean Arterial Pressure (MAP)?",
     faqA1: "Mean Arterial Pressure (MAP) is the average arterial pressure throughout one cardiac cycle. It reflects the average perfusion pressure driving blood to organs and is calculated as: MAP = DBP + 1/3 × (SBP − DBP).",
     faqQ2: "What MAP value indicates adequate organ perfusion?",
-    faqA2: "A MAP of at least 65 mmHg is the widely accepted minimum threshold for adequate perfusion of vital organs, particularly in septic shock, as per Surviving Sepsis Campaign and AHA guidelines.",
+    faqA2: "A MAP of at least 65 mmHg is the widely accepted minimum threshold for adequate perfusion of vital organs, particularly in septic shock. Resuscitation targeting ≥65 mmHg significantly reduces acute kidney injury (AKI) risks, as validated by the Surviving Sepsis Campaign (PMID: 34657111).",
     faqQ3: "When should I use the MAP calculator?",
     faqA3: "Use the MAP calculator in ICU, ER, or any acute care setting — septic shock resuscitation, vasopressor titration, hypertensive emergencies, and post-operative hemodynamic monitoring.",
     faqQ4: "What is the difference between MAP and systolic blood pressure?",
@@ -52,19 +52,19 @@ const translations: Translations = {
     low: "Risque de Perfusion Faible",
     lowSub: "< 65 mmHg",
     formula: "PAM = PAS + (1/3) * (PAS - PAD)",
-    clinicalTitle: "Interventions Cliniques",
-    clinicalText: "Une PAM d'au moins 65 mmHg est indispensable pour assurer la perfusion des organes cibles en cas de choc septique.",
+    clinicalTitle: "Interventions Cliniques & Autorégulation",
+    clinicalText: "Une PAM d'au moins 65 mmHg est indispensable pour assurer la perfusion des organes cibles en cas de choc septique. Note clinique : Les patients souffrant d'hypertension chronique non contrôlée peuvent nécessiter une cible plus élevée (75-85 mmHg) pour éviter l'insuffisance rénale aiguë (IRA), leur courbe d'autorégulation rénale étant décalée vers la droite.",
     pillarTitle: "Preuves Cliniques et Physiopathologie de la PAM",
     pillarText: [
       "La pression artérielle moyenne (PAM) est la principale force motrice de la perfusion tissulaire, ce qui en fait une cible hémodynamique plus critique que la pression artérielle systolique seule, en particulier chez les patients en état critique. La justification physiologique découle du cycle cardiaque : la diastole représente environ les deux tiers de la durée du cycle à des fréquences cardiaques normales. Par conséquent, la formule de la PAM accorde une pondération importante à la pression artérielle diastolique.",
       "Dans les états de choc distributif, tels que la septicémie, une vasodilatation profonde entraîne une chute précipitée des résistances vasculaires systémiques (RVS) et, par conséquent, de la PAM. Les directives de la Surviving Sepsis Campaign recommandent fortement une PAM cible ≥ 65 mmHg pour la réanimation initiale. Le maintien de la PAM au-dessus de ce seuil garantit une autorégulation adéquate du flux sanguin vers les organes vitaux, notamment le cerveau, les reins et le lit splanchnique. Une hypotension prolongée en dessous de ce seuil d'autorégulation est directement associée à une insuffisance rénale aiguë (IRA), une ischémie myocardique et une mortalité accrue.",
       "Cependant, l'individualisation de la cible de la PAM est de plus en plus reconnue. Chez les patients souffrant d'hypertension chronique non contrôlée, une cible de PAM plus élevée (par exemple, 75-85 mmHg) peut être nécessaire pour maintenir la perfusion rénale, car leur courbe d'autorégulation est déplacée vers la droite. À l'inverse, dans le choc hémorragique aigu sans traumatisme crânien, une hypotension permissive (ciblant une PAM plus faible, par exemple, 50-60 mmHg) est souvent utilisée pour minimiser la perte de sang tout en maintenant une perfusion de base jusqu'à ce que le contrôle chirurgical du saignement soit obtenu."
     ],
-    references: "Références : Recommandations de la SFAR / SRLF.",
+    references: "Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2021. Intensive Care Med. 2021;47(11):1181-1247 (PMID: 34657111). American Heart Association (AHA) Guidelines.",
     faqQ1: "Qu'est-ce que la pression artérielle moyenne (PAM) ?",
     faqA1: "La pression artérielle moyenne (PAM) est la pression moyenne dans les artères d'un patient pendant un cycle cardiaque complet. Elle reflète la pression de perfusion des organes et se calcule ainsi : PAM = PAD + 1/3 × (PAS − PAD).",
     faqQ2: "Quelle valeur de PAM indique une perfusion d'organe adéquate ?",
-    faqA2: "Une PAM d'au moins 65 mmHg est le seuil minimal généralement accepté pour assurer une perfusion adéquate des organes vitaux, notamment lors d'un choc septique, conformément aux directives de la Surviving Sepsis Campaign et de l'AHA.",
+    faqA2: "Une PAM d'au moins 65 mmHg est le seuil minimal généralement accepté pour assurer une perfusion adéquate des organes vitaux. Le maintien de la PAM ≥65 mmHg réduit significativement le risque d'insuffisance rénale aiguë (IRA) selon la Surviving Sepsis Campaign (PMID: 34657111).",
     faqQ3: "Quand dois-je utiliser le calculateur de PAM ?",
     faqA3: "Utilisez le calculateur de PAM en réanimation, aux urgences ou dans tout service de soins critiques : réanimation de choc septique, titration des vasopresseurs, urgences hypertensives et surveillance hémodynamique postopératoire.",
     faqQ4: "Quelle est la différence entre la PAM et la pression artérielle systolique ?",
@@ -81,19 +81,19 @@ const translations: Translations = {
     low: "مخاطر نقص التروية",
     lowSub: "< 65 مم زئبق",
     formula: "الضغط المتوسط = الانبساطي + 1/3 (الانقباضي - الانبساطي)",
-    clinicalTitle: "التدخلات السريرية والتطبيق",
-    clinicalText: "يعد الحفاظ على معدل ضغط شرياني لا يقل عن 65 مم زئبق أمراً بالغ الأهمية لضمان تروية الأعضاء الحيوية في حالات الصدمة الإنتانية.",
+    clinicalTitle: "التدخلات السريرية والتحكم الذاتي",
+    clinicalText: "يعد الحفاظ على معدل ضغط شرياني لا يقل عن 65 مم زئبق أمراً بالغ الأهمية لضمان تروية الأعضاء الحيوية في حالات الصدمة الإنتانية. ملحوظة سريرية: قد يحتاج المرضى الذين يعانون من ارتفاع ضغط الدم المزمن غير المنضبط إلى هدف أعلى (75-85 مم زئبق) لتجنب إصابة الكلى الحادة (AKI)، حيث تنحرف منحنيات التنظيم الكلوي لديهم نحو اليمين.",
     pillarTitle: "الأدلة السريرية والفيزيولوجيا المرضية للضغط الشرياني المتوسط",
     pillarText: [
       "يعد الضغط الشرياني المتوسط (MAP) القوة الدافعة الأساسية لتروية الأنسجة، مما يجعله هدفاً ديناميكياً دموياً أكثر أهمية من ضغط الدم الانقباضي وحده، لا سيما لدى المرضى في الحالات الحرجة. ينبع الأساس الفسيولوجي من دورة القلب: تمثل الانبساطية حوالي ثلثي مدة الدورة في معدلات ضربات القلب الطبيعية. ولذلك، فإن صيغة MAP تعطي وزناً كبيراً لضغط الدم الانبساطي.",
       "في حالات الصدمة التوزيعية، مثل تعفن الدم، يؤدي توسع الأوعية الدموية العميق إلى انخفاض حاد في مقاومة الأوعية الدموية الجهازية (SVR) وبالتالي MAP. توصي إرشادات حملة النجاة من تعفن الدم بشدة بهدف MAP يبلغ ≥ 65 ملم زئبقي للإنعاش الأولي. يضمن الحفاظ على MAP فوق هذا الحد التنظيم الذاتي الكافي لتدفق الدم إلى الأعضاء الحيوية، بما في ذلك الدماغ والكلى والسرير الحشوي. يرتبط انخفاض ضغط الدم المطول دون عتبة التنظيم الذاتي هذه ارتباطاً مباشراً بإصابة الكلى الحادة (AKI) ونقص التروية في عضلة القلب وزيادة معدل الوفيات.",
       "ومع ذلك، يتم الاعتراف بشكل متزايد بضرورة إضفاء الطابع الفردي على هدف MAP. في المرضى الذين يعانون من ارتفاع ضغط الدم المزمن غير المنضبط، قد يكون من الضروري تحقيق هدف MAP أعلى (على سبيل المثال، 75-85 ملم زئبقي) للحفاظ على التروية الكلوية، حيث يتحول منحنى التنظيم الذاتي الخاص بهم إلى اليمين. وعلى العكس من ذلك، في الصدمة النزفية الحادة دون إصابة في الدماغ، غالباً ما يتم استخدام انخفاض ضغط الدم المسموح به (استهداف MAP أقل، على سبيل المثال، 50-60 ملم زئبقي) لتقليل فقدان الدم مع الحفاظ على التروية الأساسية حتى يتم تحقيق السيطرة الجراحية على النزيف."
     ],
-    references: "المراجع: معايير طب العناية المركزة / جمعية القلب الأمريكية.",
+    references: "Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2021. Intensive Care Med. 2021;47(11):1181-1247 (PMID: 34657111). American Heart Association (AHA) Guidelines.",
     faqQ1: "ما هو متوسط الضغط الشرياني (MAP)؟",
     faqA1: "متوسط الضغط الشرياني (MAP) هو متوسط الضغط في شرايين المريض خلال دورة قلبية كاملة. يعكس ضغط تروية الأعضاء ويُحسب بالمعادلة: الضغط المتوسط = الانبساطي + 1/3 (الانقباضي - الانبساطي).",
     faqQ2: "ما هي قيمة الضغط المتوسط التي تشير إلى تروية كافية للأعضاء؟",
-    faqA2: "يعتبر معدل 65 مم زئبق على الأقل هو الحد الأدنى المقبول لضمان التروية الكافية للأعضاء الحيوية، خاصة في حالات الصدمة الإنتانية وتسمم الدم، وفقاً لإرشادات جمعية القلب الأمريكية.",
+    faqA2: "يعتبر معدل 65 مم زئبق على الأقل هو الحد الأدنى المقبول لضمان التروية الكافية للأعضاء الحيوية. الحفاظ على الضغط المتوسط ≥65 مم زئبق يقلل بشكل كبير من مخاطر الفشل الكلوي الحاد (AKI) وفقاً لإرشادات حملة النجاة من تعفن الدم (PMID: 34657111).",
     faqQ3: "متى يجب استخدام حاسبة الضغط الشرياني المتوسط؟",
     faqA3: "تستخدم في وحدات العناية المركزة، غرف الطوارئ، أو أي إعداد للرعاية الحرجة: إنعاش الصدمة الإنتانية، ضبط جرعات الأدوية الرافعة للضغط، حالات طوارئ ارتفاع الضغط، والمراقبة بعد العمليات الجراحية.",
     faqQ4: "ما الفرق بين الضغط الشرياني المتوسط وضغط الدم الانقباضي؟",
@@ -325,24 +325,7 @@ export default function MapCalculator({ lang }: { lang: LangCode }) {
         </div>
       </div>
 
-      <div className="mt-12 pt-8 border-t border-gray-100">
-        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">{layoutTranslations[lang].seeAlso}</h2>
-        <div className="flex flex-wrap gap-2 mb-10">
-          {[
-            { label: 'qSOFA Score', path: '/qsofa-score' },
-            { label: 'SIRS Criteria', path: '/sirs-criteria' },
-            { label: 'P/F Ratio', path: '/pf-ratio' },
-            { label: 'Tidal Volume (ARDS)', path: '/tidal-volume' },
-          ].map(({ label, path }) => {
-            const prefix = lang === 'en' ? '' : `/${lang}`;
-            return (
-              <a key={path} href={`${prefix}${path}`} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 hover:bg-blue-50 text-gray-700 hover:text-blue-700 rounded-lg text-sm font-medium transition-colors border border-gray-200 hover:border-blue-200">
-                {label}
-              </a>
-            );
-          })}
-        </div>
-      </div>
+
 
       <div className="mt-0 pt-0 border-t border-gray-100">
         <h2 className="text-xl font-bold text-gray-900 mb-6">{layoutTranslations[lang].faqTitle}</h2>

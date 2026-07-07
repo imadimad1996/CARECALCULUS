@@ -1,10 +1,13 @@
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export default function TrackingScripts() {
+  const location = useLocation();
+
   useEffect(() => {
     const loadScripts = () => {
       // 1. Google Analytics (GA4) Setup
-      const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+      const GA_MEASUREMENT_ID = 'G-FE7C4XH4SK'; // Ensure this is your Measurement ID (Data Stream ID)
       
       if (!document.getElementById('ga-script')) {
         const gaScript = document.createElement('script');
@@ -18,6 +21,7 @@ export default function TrackingScripts() {
         gaInit.innerHTML = `
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag; // Make gtag globally available
           gtag('js', new Date());
           gtag('config', '${GA_MEASUREMENT_ID}', {
             page_path: window.location.pathname,
@@ -25,7 +29,27 @@ export default function TrackingScripts() {
         `;
         document.head.appendChild(gaInit);
       }
+    };
 
+    if ('requestIdleCallback' in window) {
+      (window as any).requestIdleCallback(loadScripts);
+    } else {
+      setTimeout(loadScripts, 2000);
+    }
+  }, []);
+
+  // Automatically track page views when the route changes
+  useEffect(() => {
+    if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+      const GA_MEASUREMENT_ID = 'G-FE7C4XH4SK'; // Ensure this matches your ID above
+      (window as any).gtag('config', GA_MEASUREMENT_ID, {
+        page_path: location.pathname + location.search,
+      });
+    }
+  }, [location]);
+
+  useEffect(() => {
+    const loadSecondaryScripts = () => {
       // 2. Microsoft Clarity Setup
       const CLARITY_PROJECT_ID = 'XXXXXXXXXX';
 
@@ -56,9 +80,9 @@ export default function TrackingScripts() {
     };
 
     if ('requestIdleCallback' in window) {
-      (window as any).requestIdleCallback(loadScripts);
+      (window as any).requestIdleCallback(loadSecondaryScripts);
     } else {
-      setTimeout(loadScripts, 2000);
+      setTimeout(loadSecondaryScripts, 2000);
     }
   }, []);
 

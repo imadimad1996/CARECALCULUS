@@ -223,7 +223,15 @@ const comparisons = [
   'curb65-score-vs-qsofa-score',
   'apgar-score-vs-glasgow-coma-scale',
   'creatinine-clearance-vs-meld-score',
-  'bmi-calculator-vs-adjusted-body-weight'
+  'bmi-calculator-vs-adjusted-body-weight',
+  'meld-score-vs-child-pugh-score',
+  'mdrd-gfr-vs-ckd-epi-gfr',
+  'creatinine-clearance-vs-mdrd-gfr',
+  'creatinine-clearance-vs-ckd-epi-gfr',
+  'sofa-score-vs-sirs-criteria',
+  'pf-ratio-vs-aa-gradient',
+  'bmi-calculator-vs-nutrition-tdee',
+  'nutrition-must-vs-nutrition-nrs2002'
 ];
 for (const comp of comparisons) add(`/compare/${comp}`, '0.7', 'monthly');
 
