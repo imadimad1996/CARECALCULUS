@@ -23,6 +23,20 @@ const translations: Translations = {
     clinicalText: "MELD-Na ranges from 6 to 40. High scores indicate increased severity of hepatic dysfunction. Clinical Pearl: Patients on warfarin or other oral anticoagulants will have an artificially elevated INR, skewing the MELD score higher without reflecting true hepatic decline.",
     faqA1: "The MELD Score (Model for End-Stage Liver Disease) is a validated prognostic score predicting 3-month mortality in liver cirrhosis. A MELD score ≥15 is the standard threshold for liver transplant listing. For scores ≥40, 3-month mortality reaches 71.3%; for 30-39, it is 52.6%; for 20-29, 19.6%; and for 10-19, 6.0%.",
     references: "Kamath PS, et al. A model to predict survival in patients with end-stage liver disease. Hepatology. 2001;33(2):464-470 (PMID: 11172350). Biggins SW, et al. Evidence-based incorporation of serum sodium concentration into MELD. Gastroenterology. 2008;135(4):1197-1205 (PMID: 18718470).",
+    pillarTitle: "Physiologic Derivation, Sodium Incorporation, and Transplant Allocation",
+    pillarText: [
+      "The Model for End-Stage Liver Disease (MELD) was originally derived by Kamath et al. in 2001 to predict survival following transjugular intrahepatic portosystemic shunt (TIPS) placement and subsequently adopted by UNOS/OPTN as the primary quantitative metric for organ allocation in orthotopic liver transplantation. By objectively integrating serum creatinine, total bilirubin, and INR, MELD captures the interconnected physiological triad of renal impairment, hepatocyte synthetic failure, and coagulopathy.",
+      "The addition of serum sodium to formulate MELD-Na in 2008 resolved a critical diagnostic gap in end-stage cirrhosis. Dilutional hyponatremia is a physiological hallmark of portal hypertension: systemic vasodilation induces non-osmotic hypersecretion of arginine vasopressin (AVP), leading to free-water retention. Patients manifesting refractory ascites and profound hyponatremia previously suffered disproportionate pre-transplant mortality despite moderate standard MELD scores. Incorporating sodium (capped between 125 and 137 mEq/L) accurately upweights mortality risk in this high-risk cohort.",
+      "A primary clinical limitation when applying MELD-Na at the bedside is its sensitivity to laboratory confounders. Warfarin or direct oral anticoagulants artificially elevate the INR without indicating intrinsic hepatocellular decline. Furthermore, in acute hepatorenal syndrome (HRS-AKI), serum creatinine can lag behind real-time glomerular filtration rate drops due to muscle wasting in sarcopenic cirrhotic patients. Always correlate laboratory shifts with clinical volume status and urinary diagnostic indices."
+    ],
+    faqTitle: "Frequently Asked Questions",
+    faqQ1: "What is the MELD score and why is it used?",
+    faqQ2: "How does MELD-Na differ from the original MELD score?",
+    faqQ3: "What MELD score qualifies a patient for liver transplant listing?",
+    faqQ4: "How does renal function impact the MELD score calculation?",
+    faqA2: "MELD-Na incorporates serum sodium concentration (bounded between 125 and 137 mEq/L) into the original equation. Because dilutional hyponatremia reflects severe portal hypertension and free-water retention, MELD-Na significantly improves mortality prediction over the standard MELD score.",
+    faqA3: "A MELD score greater than or equal to 15 is the standard clinical threshold where the 1-year mortality benefit of orthotopic liver transplantation outweighs perioperative risks. UNOS allocation policies prioritize patients with the highest MELD-Na scores on regional waiting lists.",
+    faqA4: "Serum creatinine has a logarithmic impact in the MELD equation. If a patient undergoes hemodialysis or continuous renal replacement therapy at least twice within the prior 7 days, the serum creatinine variable is automatically fixed at the upper bound of 4.0 mg/dL.",
     yes: "Yes",
     no: "No",
   },
@@ -40,6 +54,20 @@ const translations: Translations = {
     clinicalText: "Le MELD-Na varie de 6 à 40. Des scores élevés indiquent une gravité accrue. Note clinique : Les patients sous anticoagulants (ex. warfarine) présentent un INR artificiellement élevé, ce qui fausse le score MELD à la hausse sans refléter un déclin hépatique réel.",
     faqA1: "Le score MELD (Model for End-Stage Liver Disease) est un score pronostique validé prédisant la mortalité à 3 mois dans la cirrhose. Un MELD ≥15 est le seuil standard pour l'inscription sur liste de greffe. La mortalité à 3 mois est de 71,3 % pour un score ≥40, 52,6 % pour 30-39, 19,6 % pour 20-29, et 6,0 % pour 10-19.",
     references: "Kamath PS, et al. A model to predict survival in patients with end-stage liver disease. Hepatology. 2001;33(2):464-470 (PMID: 11172350). Biggins SW, et al. Gastroenterology. 2008;135(4):1197-1205 (PMID: 18718470).",
+    pillarTitle: "Dérivation Physiologique, Intégration du Sodium et Allocation de Greffe",
+    pillarText: [
+      "Le score MELD (Model for End-Stage Liver Disease) a été initialement dérivé par Kamath et al. en 2001 pour prédire la survie après la mise en place d'un shunt portosystémique intrahépatique transjugulaire (TIPS), puis adopté comme critère quantitatif principal pour l'allocation des organes en transplantation hépatique. En intégrant objectivement la créatinine sérique, la bilirubine totale et l'INR, le MELD capture la triade physiologique interdépendante de l'atteinte rénale, de la défaillance synthétique hépatocytaire et de la coagulopathie.",
+      "L'ajout du sodium sérique pour formuler le MELD-Na en 2008 a comblé une lacune diagnostique majeure dans la cirrhose terminale. L'hyponatrémie de dilution est une caractéristique physiologique de l'hypertension portale : la vasodilatation systémique induit une hypersécrétion non osmotique d'arginine vasopressine (AVP), conduisant à une rétention d'eau libre. Les patients présentant une ascite réfractaire et une hyponatrémie profonde subissaient auparavant une mortalité pré-greffe disproportionnée malgré des scores MELD standards modérés. L'intégration du sodium (borné entre 125 et 137 mEq/L) ajuste précisément ce risque de mortalité.",
+      "Une limite clinique essentielle lors de l'application du MELD-Na au lit du patient est sa sensibilité aux facteurs confondants de laboratoire. La warfarine ou les anticoagulants oraux directs augmentent artificiellement l'INR sans indiquer de déclin hépatocellulaire intrinsèque. De plus, dans le syndrome hépatorénal aigu (SHR-IRA), la créatinine sérique peut sous-estimer la chute réelle du débit de filtration glomérulaire en raison de la fonte musculaire chez le cirrhotique sarcopénique. Corrélez toujours les variations de laboratoire avec le statut volumique clinique."
+    ],
+    faqTitle: "Questions Fréquentes",
+    faqQ1: "Qu'est-ce que le score MELD et pourquoi est-il utilisé ?",
+    faqQ2: "En quoi le MELD-Na diffère-t-il du score MELD original ?",
+    faqQ3: "Quel score MELD qualifie un patient pour une inscription en greffe hépatique ?",
+    faqQ4: "Comment la fonction rénale influence-t-elle le calcul du score MELD ?",
+    faqA2: "Le MELD-Na intègre la concentration de sodium sérique (bornée entre 125 et 137 mEq/L) dans l'équation d'origine. Étant donné que l'hyponatrémie de dilution reflète une hypertension portale sévère et une rétention d'eau libre, le MELD-Na améliore considérablement la prédiction de mortalité par rapport au MELD standard.",
+    faqA3: "Un score MELD supérieur ou égal à 15 représente le seuil clinique standard où le bénéfice de survie à un an d'une transplantation hépatique dépasse les risques périopératoires. Les politiques d'allocation priorisent les patients ayant les scores MELD-Na les plus élevés.",
+    faqA4: "La créatinine sérique a un impact logarithmique dans l'équation MELD. Si un patient subit une hémodialyse ou une épuration extra-rénale au moins deux fois au cours des 7 jours précédents, la variable créatinine sérique est automatiquement fixée à la valeur maximale de 4,0 mg/dL.",
     yes: "Oui",
     no: "Non"
   }
@@ -116,7 +144,7 @@ export default function MeldScore({ lang }: { lang: LangCode }) {
           <div className="flex items-center gap-2 mb-2">
             <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
             <h2 className="text-xs font-bold text-blue-900 uppercase tracking-widest">
-              {lang === 'en' ? 'Clinical Definition' : lang === 'fr' ? 'Définition Clinique' : 'التعريف السريري'}
+              {lang === 'fr' ? 'Définition Clinique' : 'Clinical Definition'}
             </h2>
           </div>
           <p className="text-gray-700 text-sm leading-relaxed font-medium">
@@ -306,6 +334,57 @@ export default function MeldScore({ lang }: { lang: LangCode }) {
 
       {/* In-Content Native Ad */}
       <AdsterraNativeBanner refreshDependency={meldScore || 0} />
+
+      {/* Pillar Content Section */}
+      <div className="mt-8 pt-10 border-t border-gray-100">
+        <h2 className="text-xl font-bold text-gray-900 mb-6">{currentText.pillarTitle}</h2>
+        <div className="space-y-4 text-gray-700 leading-relaxed text-sm">
+          {currentText.pillarText?.map((paragraph: string, idx: number) => (
+            <p key={idx}>{paragraph}</p>
+          ))}
+        </div>
+      </div>
+
+      {/* See Also Section */}
+      <div className="mt-12 pt-8 border-t border-gray-100">
+        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">{layoutTranslations[lang].seeAlso}</h2>
+        <div className="flex flex-wrap gap-2 mb-10">
+          {[
+            { label: 'Child-Pugh Score', path: '/child-pugh-score' },
+            { label: 'SOFA Score', path: '/sofa-score' },
+            { label: 'Creatinine Clearance', path: '/creatinine-clearance' },
+            { label: 'Anion Gap', path: '/anion-gap' },
+          ].map(({ label, path }) => {
+            const prefix = lang === 'en' ? '' : `/${lang}`;
+            return (
+              <a key={path} href={`${prefix}${path}`} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 hover:bg-blue-50 text-gray-700 hover:text-blue-700 rounded-lg text-sm font-medium transition-colors border border-gray-200 hover:border-blue-200">
+                {label}
+              </a>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* FAQ Section */}
+      <div className="mt-0 pt-0 border-t border-gray-100">
+        <h2 className="text-xl font-bold text-gray-900 mb-6">{currentText.faqTitle}</h2>
+        <div className="space-y-3">
+          {[
+            { q: currentText.faqQ1, a: currentText.faqA1 },
+            { q: currentText.faqQ2, a: currentText.faqA2 },
+            { q: currentText.faqQ3, a: currentText.faqA3 },
+            { q: currentText.faqQ4, a: currentText.faqA4 },
+          ].map(({ q, a }) => (
+            <details key={q} className="group border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-5 py-4 cursor-pointer list-none font-medium text-gray-800 hover:bg-gray-50 transition-colors">
+                <span className="text-sm">{q}</span>
+                <span className="w-4 h-4 text-gray-400 shrink-0 ml-3 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="px-5 pb-4 text-sm text-gray-600 leading-relaxed">{a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
     </>
   );
 }

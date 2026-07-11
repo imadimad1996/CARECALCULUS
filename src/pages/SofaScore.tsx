@@ -63,7 +63,13 @@ const translations: Translations = {
     faqQ3: "What is the clinical significance of a change in SOFA score?",
     faqA3: "An increase in SOFA score of ≥2 points from baseline indicates acute organ dysfunction, representing a positive screen for sepsis under Sepsis-3 criteria and indicating a 10% or greater hospital mortality risk.",
     faqQ4: "Can SOFA score be used to diagnose sepsis?",
-    faqA4: "Yes. Sepsis is defined as a suspected or documented infection accompanied by an acute increase of ≥2 points in the SOFA score, indicating organ dysfunction due to the infection.",
+    faqA4: "Yes. Under Sepsis-3 definitions (2016), sepsis is defined as life-threatening organ dysfunction caused by a dysregulated host response to infection. Organ dysfunction can be identified as an acute change in total SOFA score ≥2 points consequent to the infection.",
+    pillarTitle: "Physiologic Rationale of Sepsis-3, Multi-Organ Assessment, and Delta-SOFA Tracking",
+    pillarText: [
+      "The Sequential (or Sepsis-related) Organ Failure Assessment (SOFA) score was originally conceptualized by Vincent et al. in 1996 for the European Society of Intensive Care Medicine to objectively quantify systemic morbidity and mortality across six distinct organ systems. In 2016, the Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3) fundamentally shifted the definition of sepsis from a systemic inflammatory response syndrome (SIRS) to life-threatening organ dysfunction caused by a dysregulated host response to infection.",
+      "Under Sepsis-3 guidelines, an acute increase in the SOFA score of 2 points or more above baseline is operationalized as the primary diagnostic threshold for sepsis, correlating with an overall hospital mortality rate exceeding 10%. Unlike rapid triage screening tools such as qSOFA, the comprehensive SOFA score demands quantitative laboratory parameters including arterial oxygenation tension to fraction of inspired oxygen (PaO2/FiO2) ratios, platelet counts, total serum bilirubin, and serum creatinine levels alongside vasopressor dosing requirements and Glasgow Coma Scale evaluations.",
+      "Clinically, tracking serial changes ('Delta-SOFA') during the initial 48 to 72 hours of resuscitation provides superior prognostic accuracy over single admission values. A rising or non-resolving SOFA score despite broad-spectrum antimicrobial therapy, aggressive fluid resuscitation, and hemodynamic support strongly indicates refractory distributive shock and irreversible microvascular endothelial failure."
+    ],
   },
   fr: {
     title: "Score SOFA (Réanimation)",
@@ -120,6 +126,12 @@ const translations: Translations = {
     faqA3: "Une hausse d'au moins 2 points par rapport à la valeur de référence indique un dysfonctionnement aigu d'organe, constituant un dépistage positif de sepsis selon les critères Sepsis-3 et signifiant un risque de mortalité hospitalière de 10% ou plus.",
     faqQ4: "Quelle est la différence entre le score SOFA et le score qSOFA ?",
     faqA4: "Le qSOFA (quick SOFA) est un outil de dépistage rapide au lit du patient ne nécessitant pas de tests de laboratoire. Le score SOFA complet requiert des analyses biologiques (PaO2, bilirubine, créatinine, plaquettes) pour évaluer formellement les défaillances.",
+    pillarTitle: "Physiopathologie Sepsis-3, Évaluation Multi-Organes et Suivi Delta-SOFA",
+    pillarText: [
+      "Le score SOFA (Sequential Organ Failure Assessment) a été initialement conçu par Vincent et al. en 1996 pour la Société Européenne de Réanimation afin de quantifier objectivement la morbidité et la mortalité à travers six systèmes d'organes distincts. En 2016, le Troisième Consensus International sur le Sepsis et le Choc Septique (Sepsis-3) a redéfini le sepsis, passant d'un syndrome de réponse inflammatoire systémique (SIRS) à un dysfonctionnement d'organe menaçant le pronostic vital causé par une réponse dysrégulée de l'hôte à l'infection.",
+      "Selon les recommandations Sepsis-3, une augmentation aiguë du score SOFA d'au moins 2 points au-dessus de la valeur de référence constitue le seuil diagnostique de sepsis, corrélé à une mortalité hospitalière globale supérieure à 10 %. Contrairement aux outils de triage rapide comme le qSOFA, le score SOFA complet exige des paramètres biologiques quantitatifs, notamment le rapport PaO2/FiO2, la numération plaquettaire, la bilirubine totale et la créatinine sérique, en plus du support vasopresseur et du score de Glasgow.",
+      "Sur le plan clinique, le suivi des variations en série ('Delta-SOFA') au cours des 48 à 72 premières heures de réanimation offre une précision pronostique bien supérieure aux valeurs initiales d'admission. Un score SOFA en hausse ou persistant malgré une antibiothérapie à large spectre et une réanimation hémodynamique agressive indique un choc distributif réfractaire et une défaillance microvasculaire irréversible."
+    ],
   }
 };
 
@@ -181,7 +193,7 @@ export default function SofaScore({ lang }: { lang: LangCode }) {
           <div className="flex items-center gap-2 mb-2">
             <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
             <h2 className="text-xs font-bold text-blue-900 uppercase tracking-widest">
-              {lang === 'en' ? 'Clinical Definition' : lang === 'fr' ? 'Définition Clinique' : 'التعريف السريري'}
+              {lang === 'fr' ? 'Définition Clinique' : 'Clinical Definition'}
             </h2>
           </div>
           <p className="text-gray-700 text-sm leading-relaxed font-medium">
@@ -405,6 +417,16 @@ export default function SofaScore({ lang }: { lang: LangCode }) {
       </div>
 
       <AdsterraNativeBanner refreshDependency={sofaValue} />
+
+      {/* Pillar Content Section */}
+      <div className="mt-8 pt-10 border-t border-gray-100">
+        <h2 className="text-xl font-bold text-gray-900 mb-6">{currentText.pillarTitle}</h2>
+        <div className="space-y-4 text-gray-700 leading-relaxed text-sm">
+          {currentText.pillarText?.map((paragraph: string, idx: number) => (
+            <p key={idx}>{paragraph}</p>
+          ))}
+        </div>
+      </div>
 
       <div className="mt-12 pt-8 border-t border-gray-100">
         <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">{layoutTranslations[lang].seeAlso}</h2>

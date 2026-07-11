@@ -4,6 +4,7 @@ import { LangCode, Translations } from '../types';
 import { layoutTranslations } from '../utils/lang';
 import { trackCalculatorUsage } from '../utils/telemetry';
 import ClinicalExportButton from '../components/ClinicalExportButton';
+import AdsterraNativeBanner from '../components/AdsterraNativeBanner';
 
 const translations: Translations = {
   en: {
@@ -30,6 +31,12 @@ const translations: Translations = {
     faqA3: "CURB-65 was derived by Lim et al. (2003) from British Thoracic Society CAP guideline data, published in Thorax (PMID: 12668799). It has been validated across multiple international CAP cohorts.",
     faqQ4: "What is the difference between CURB-65 and PSI?",
     faqA4: "PSI (PORT score) uses 20 variables for finer risk stratification. CURB-65 uses only 5 criteria and is faster at the bedside. CURB-65 is preferred for rapid triage in emergency settings.",
+    pillarTitle: "Clinical Validation, Risk Stratification in Community-Acquired Pneumonia, and Bedside Comparison vs. PSI",
+    pillarText: [
+      "The CURB-65 severity score was derived and prospectively validated by Lim et al. in 2003 through a multicenter international study across the United Kingdom, New Zealand, and the Netherlands. By refining the British Thoracic Society (BTS) criteria into a simple 6-point scoring system based on five primary clinical parameters (Confusion, Urea, Respiratory rate, Blood pressure, and Age ≥ 65), CURB-65 enables objective 30-day mortality risk stratification for patients presenting with community-acquired pneumonia (CAP).",
+      "From a pathophysiological and triage perspective, CURB-65 pinpoints patients who are transitioning from localized pulmonary infection to systemic decompensation. Specifically, new-onset confusion indicates cerebral hypoperfusion or severe hypoxia, while blood urea nitrogen (BUN > 19 mg/dL or urea > 7 mmol/L) reflects microvascular dehydration, catabolism, and early renal involvement. Respiratory tachypnea (≥ 30 breaths/min) and hypotension (systolic < 90 mmHg or diastolic ≤ 60 mmHg) signify impending respiratory exhaustion and distributive vasodilation.",
+      "While the Pneumonia Severity Index (PSI/PORT score) evaluates 20 demographic, comorbidity, and laboratory variables to accurately identify very low-risk patients suitable for outpatient management, CURB-65 is significantly faster to calculate at the bedside in emergency departments. For scores of 2, short-term hospitalization or supervised outpatient care is warranted. A score of 3 or higher demands urgent inpatient admission, with immediate assessment for intensive care unit (ICU) transfer and broad-spectrum intravenous antimicrobial coverage."
+    ],
   },
   fr: {
     title: "Score CURB-65",
@@ -55,6 +62,12 @@ const translations: Translations = {
     faqA3: "Le score CURB-65 a été établi par Lim et al. (2003) à partir des données de recommandations de la British Thoracic Society, et publié dans Thorax (PMID: 12668799). Il est largement validé au niveau international.",
     faqQ4: "Quelle est la différence entre le CURB-65 et l'indice PSI (PORT) ?",
     faqA4: "L'indice PSI utilise 20 variables et s'avère plus complexe mais précis pour identifier les patients à très faible risque. Le CURB-65 utilise seulement 5 critères cliniques simples, ce qui le rend beaucoup plus rapide et adapté au triage en urgence.",
+    pillarTitle: "Validation Clinique, Stratification du Risque dans la PAC et Comparaison avec l'Indice PSI",
+    pillarText: [
+      "Le score de sévérité CURB-65 a été dérivé et validé prospectivement par Lim et al. en 2003 lors d'une étude multicentrique internationale menée au Royaume-Uni, en Nouvelle-Zélande et aux Pays-Bas. En simplifiant les critères de la British Thoracic Society (BTS) en un score sur 5 points basé sur cinq paramètres cliniques clés (Confusion, Urée, Fréquence respiratoire, Pression artérielle et Âge ≥ 65 ans), le CURB-65 permet d'évaluer objectivement le risque de mortalité à 30 jours chez les patients atteints de pneumonie aiguë communautaire (PAC).",
+      "Sur le plan physiopathologique et du triage, le CURB-65 identifie les patients évoluant d'une infection pulmonaire localisée vers une décompensation systémique. Une confusion récente traduit une hypoperfusion cérébrale ou une hypoxémie sévère, tandis qu'une urée sanguine élevée (> 7 mmol/L) indique une déshydratation, un catabolisme accru ou une souffrance rénale débutante. Une tachypnée (≥ 30/min) et une hypotension signent un épuisement respiratoire et un collapsus vasculaire imminent.",
+      "Alors que l'indice de sévérité de la pneumonie (PSI/score PORT) évalue 20 variables pour identifier avec précision les patients à très faible risque éligibles à un suivi ambulatoire, le CURB-65 s'avère beaucoup plus rapide à calculer aux urgences. Un score de 2 justifie une hospitalisation courte ou une surveillance ambulatoire étroite. Un score ≥ 3 impose une admission immédiate en milieu hospitalier avec évaluation urgente pour une prise en charge en réanimation."
+    ],
   }
 };
 
@@ -228,6 +241,19 @@ export default function Curb65Score({ lang }: { lang: LangCode }) {
           </div>
         </div>
       </div>
+
+      <AdsterraNativeBanner refreshDependency={scoreValue} />
+
+      {/* Pillar Content Section */}
+      <div className="mt-8 pt-10 border-t border-gray-100">
+        <h2 className="text-xl font-bold text-gray-900 mb-6">{currentText.pillarTitle}</h2>
+        <div className="space-y-4 text-gray-700 leading-relaxed text-sm">
+          {currentText.pillarText?.map((paragraph: string, idx: number) => (
+            <p key={idx}>{paragraph}</p>
+          ))}
+        </div>
+      </div>
+
       <div className="mt-12 pt-8 border-t border-gray-100">
         <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">{layoutTranslations[lang].seeAlso}</h2>
         <div className="flex flex-wrap gap-2 mb-10">

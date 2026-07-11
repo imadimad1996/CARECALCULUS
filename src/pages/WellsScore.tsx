@@ -223,7 +223,7 @@ export default function WellsScore({ lang }: { lang: LangCode }) {
           <div className="flex items-center gap-2 mb-2">
             <span className="w-2 h-2 rounded-full bg-cyan-600 animate-pulse" />
             <h2 className="text-xs font-bold text-cyan-900 uppercase tracking-widest">
-              {lang === 'en' ? 'Clinical Definition' : lang === 'fr' ? 'Définition Clinique' : 'التعريف السريري'}
+              {lang === 'fr' ? 'Définition Clinique' : 'Clinical Definition'}
             </h2>
           </div>
           <p className="text-gray-700 text-sm leading-relaxed font-medium">

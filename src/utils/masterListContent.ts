@@ -1275,7 +1275,7 @@ Drinking plain water isn't enough to fix this. In fact, excessive plain water ca
 
 ### 4. Strategic Fiber Timing
 Fiber is essential for gut health, but it is also a powerful satiety agent. If you eat a high-fiber apple an hour before dinner, you simply won't be able to eat your dinner. 
-* **The Strategy:** Separate your fiber from your protein heavy-lifting. Consume your fibrous foods—like berries, chia seeds, or a small portion of roasted vegetables—at the *end* of the day or as a standalone micro-meal, ensuring it doesn't interfere with your crucial protein intake.
+* **The Strategy:** Separate your fiber from your protein heavy-lifting. Consume your fibrous foods—like berries, chia seeds, or a small portion of roasted vegetables—at the *end* of the day or as a standalone micro-meal, ensuring it doesn't interfere with your daily protein targets.
 
 ### The Bottom Line
 Medications like semaglutide and tirzepatide change the rules of hunger, but they do not change the fundamental rules of human physiology. Your body still requires building blocks to survive. 
@@ -1324,7 +1324,7 @@ You have been given a unique opportunity: the chemical willpower to choose exact
       ];
       closing = `ختاماً، تقدم أدوية GLP-1 فوائد سريرية هامة تتجاوز إنقاص الوزن، لتشمل حماية القلب والأوعية الدموية والكلى لدى الفئات المعرضة لمخاطر مرتفعة.`;
     } else {
-      introParagraph = `Glucagon-like peptide-1 (GLP-1) receptor agonists have revolutionized the clinical approach to obesity and type 2 diabetes. By enhancing glucose-dependent insulin secretion, delaying gastric emptying, and promoting central satiety pathways, these agents achieve significant metabolic control.`;
+      introParagraph = `Glucagon-like peptide-1 (GLP-1) receptor agonists are first-line pharmacological agents in the management of type 2 diabetes and clinical obesity. By stimulating glucose-dependent insulin secretion, suppressing inappropriate glucagon release, delaying gastric emptying, and activating central satiety pathways, these therapies achieve substantial glycemic stabilization and weight reduction.`;
       pathParagraph = `Physiologically, GLP-1 receptors are widely distributed in pancreatic beta cells, cardiac tissue, the central nervous system, and renal vasculature. Activation mitigates endothelial inflammation, decreases glomerular hyperfiltration, and offers profound nephroprotective and cardioprotective benefits.`;
       points = [
         'Monitor creatinine clearance and renal indices to guide dosing adjustments.',
@@ -1368,7 +1368,7 @@ You have been given a unique opportunity: the chemical willpower to choose exact
     }
   } else if (lowerTitle.includes('stroke') || lowerTitle.includes('avc') || lowerTitle.includes('heart') || lowerTitle.includes('hypertension') || lowerTitle.includes('cardiometabolic')) {
     if (lang === 'fr') {
-      introParagraph = `Les accidents vasculaires cérébraux et l'hypertension artérielle représentent des défis majeurs en cardiologie et neurologie. L'optimisation précoce des cibles de pression artérielle et l'identification des profils à risque sont cruciales pour prévenir les dommages irréversibles.`;
+      introParagraph = `Les accidents vasculaires cérébraux et l'hypertension artérielle représentent des défis majeurs en cardiologie et neurologie. L'optimisation précoce des cibles de pression artérielle et l'identification des profils à risque sont indispensables pour prévenir les séquelles ischémiques ou hémorragiques irréversibles.`;
       pathParagraph = `L'hypertension chronique entraîne un remodelage vasculaire et décale la courbe d'autorégulation cérébrale. Une baisse trop abrupte de la pression peut induire une hypoperfusion, tandis qu'une pression non contrôlée augmente le risque d'hémorragie et de fibrillation auriculaire.`;
       points = [
         'Utiliser le score CHA2DS2-VASc pour évaluer le risque thromboembolique dans la FA.',
@@ -1424,7 +1424,7 @@ You have been given a unique opportunity: the chemical willpower to choose exact
       pathParagraph = `The larynx is anatomically divided into the supraglottis, glottis, and subglottis. Tumor extension compromises essential functions of phonation, airway protection, and swallowing, demanding organ-preservation protocols whenever clinically feasible.`;
       points = [
         'Stage the tumor precisely using the AJCC/UICC TNM classification system.',
-        'Determine HPV status as a crucial prognostic biomarker in head and neck squamous carcinomas.',
+        'Determine p16/HPV status as a primary prognostic biomarker in head and neck squamous carcinomas.',
         'Evaluate vocal cord mobility via fiberoptic laryngoscopy or direct visualization.',
         'Manage cases through multidisciplinary tumor boards to coordinate surgery, radiotherapy, and immunotherapies.'
       ];
@@ -1461,7 +1461,7 @@ You have been given a unique opportunity: the chemical willpower to choose exact
         'Periodically audit intervention outcomes within your clinical unit.',
         'Account for patient age, vascular stiffness, and active metabolic comorbidities.'
       ];
-      closing = `In conclusion, adhering to standardized, evidence-based clinical protocols enhances patient safety margins and improves recovery endpoints.`;
+      closing = `Adhering to standardized, evidence-based clinical protocols enhances patient safety margins and optimizes clinical outcomes across acute and ambulatory care settings.`;
     }
   }
 

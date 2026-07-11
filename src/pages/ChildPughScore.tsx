@@ -48,6 +48,12 @@ const translations: Translations = {
     faqA3: "The Child-Pugh score includes subjective parameters (ascites and encephalopathy) alongside labs. The MELD score is purely objective and laboratory-based (creatinine, bilirubin, INR, sodium), making it preferred for transplant allocation.",
     faqQ4: "What is the maximum Child-Pugh score?",
     faqA4: "The score ranges from a minimum of 5 points to a maximum of 15 points. Higher scores indicate more severe hepatic impairment and poorer prognosis.",
+    pillarTitle: "Historical Derivation, Perioperative Risk Assessment, and Subjective Limitations",
+    pillarText: [
+      "The Child-Pugh classification system (originally the Child-Turcotte score formulated by C.G. Child and J.G. Turcotte in 1964 and modified by R.N. Pugh in 1973) remains a cornerstone in hepatology for evaluating hepatic functional reserve. Originally developed to predict operative mortality in patients undergoing elective esophageal transection for variceal bleeding, Child-Pugh stratifies chronic cirrhosis into three discrete prognostic classes based on three objective laboratory markers (total bilirubin, serum albumin, INR) and two clinical variables (ascites and hepatic encephalopathy).",
+      "In modern perioperative medicine, Child-Pugh class serves as a critical triage gatekeeper for abdominal and extrahepatic surgeries. Patients categorized as Class A tolerate general surgical procedures with acceptable perioperative mortality (~10%), whereas Class B patients face significant morbidity and mortality rates (30-40%), necessitating strict optimization or minimally invasive alternatives. Elective extrahepatic surgery is widely contraindicated in Class C cirrhosis (mortality risk exceeding 80%) due to refractory coagulopathy, severe immunoparesis, and impending acute-on-chronic liver failure.",
+      "A significant clinical challenge with Child-Pugh scoring at the bedside is the inherent inter-observer variability of its clinical parameters. Ascites grading (mild vs. moderate/severe) depends on diuretic responsiveness and ultrasound quantification, while hepatic encephalopathy grading relies on subjective interpretation under West Haven criteria. Furthermore, acute gastrointestinal hemorrhage or sedative administration can transiently mimic high-grade hepatic encephalopathy without reflecting true hepatocellular synthetic decline."
+    ],
   },
   fr: {
     title: "Score de Child-Pugh",
@@ -88,6 +94,12 @@ const translations: Translations = {
     faqA3: "Child-Pugh intègre des éléments cliniques subjectifs (ascite, encéphalopathie). Le MELD est un score purement biologique (créatinine, bilirubine, INR, sodium), standardisé pour l'attribution des greffons hépatiques.",
     faqQ4: "Quels critères cliniques sont pris en compte dans le score de Child-Pugh ?",
     faqA4: "Il prend en compte la bilirubine totale, l'albumine sérique, l'INR (ou temps de prothrombine), l'ascite et l'encéphalopathie hépatique.",
+    pillarTitle: "Origine Historique, Évaluation du Risque Périopératoire et Limites Subjectives",
+    pillarText: [
+      "La classification de Child-Pugh (initialement le score de Child-Turcotte formulé en 1964, puis modifié par R.N. Pugh en 1973) constitue un pilier fondamental en hépatologie pour évaluer la réserve fonctionnelle hépatique. Conçu à l'origine pour prédire la mortalité chirurgicale lors de la transection œsophagienne pour rupture de varices, le score Child-Pugh stratifie la cirrhose en trois classes pronostiques distinctes à partir de trois marqueurs biologiques (bilirubine totale, albumine sérique, INR) et deux variables cliniques (ascite et encéphalopathie hépatique).",
+      "En médecine périopératoire moderne, la classe Child-Pugh sert de filtre décisif pour les interventions chirurgicales abdominales et extrahépatiques. Les patients de Classe A tolèrent les chirurgies générales avec une mortalité périopératoire acceptable (~10 %), tandis que les patients de Classe B présentent une morbidité et mortalité élevées (30 à 40 %), exigeant une optimisation rigoureuse. La chirurgie élective est formellement contre-indiquée en Classe C (mortalité > 80 %) en raison de la coagulopathie réfractaire et du risque de défaillance multi-viscérale.",
+      "Un défi majeur du score Child-Pugh au lit du patient réside dans la variabilité inter-observateur de ses critères cliniques. L'évaluation de l'ascite dépend de la réponse aux diurétiques et de l'échographie, tandis que le grade de l'encéphalopathie repose sur l'interprétation subjective des critères de West Haven. De plus, une hémorragie digestive aiguë ou la sédation peuvent imiter une encéphalopathie sévère sans refléter une perte réelle de fonction hépatocytaire."
+    ],
   }
 };
 
@@ -148,7 +160,7 @@ export default function ChildPughScore({ lang }: { lang: LangCode }) {
           <div className="flex items-center gap-2 mb-2">
             <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
             <h2 className="text-xs font-bold text-blue-900 uppercase tracking-widest">
-              {lang === 'en' ? 'Clinical Definition' : lang === 'fr' ? 'Définition Clinique' : 'التعريف السريري'}
+              {lang === 'fr' ? 'Définition Clinique' : 'Clinical Definition'}
             </h2>
           </div>
           <p className="text-gray-700 text-sm leading-relaxed font-medium">
@@ -356,7 +368,35 @@ export default function ChildPughScore({ lang }: { lang: LangCode }) {
 
       <AdsterraNativeBanner refreshDependency={childPughValue} />
 
+      {/* Pillar Content Section */}
+      <div className="mt-8 pt-10 border-t border-gray-100">
+        <h2 className="text-xl font-bold text-gray-900 mb-6">{currentText.pillarTitle}</h2>
+        <div className="space-y-4 text-gray-700 leading-relaxed text-sm">
+          {currentText.pillarText?.map((paragraph: string, idx: number) => (
+            <p key={idx}>{paragraph}</p>
+          ))}
+        </div>
+      </div>
 
+      {/* See Also Section */}
+      <div className="mt-12 pt-8 border-t border-gray-100">
+        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">{layoutTranslations[lang].seeAlso}</h2>
+        <div className="flex flex-wrap gap-2 mb-10">
+          {[
+            { label: 'MELD Score', path: '/meld-score' },
+            { label: 'SOFA Score', path: '/sofa-score' },
+            { label: 'Creatinine Clearance', path: '/creatinine-clearance' },
+            { label: 'MAP Calculator', path: '/map-calculator' },
+          ].map(({ label, path }) => {
+            const prefix = lang === 'en' ? '' : `/${lang}`;
+            return (
+              <a key={path} href={`${prefix}${path}`} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 hover:bg-blue-50 text-gray-700 hover:text-blue-700 rounded-lg text-sm font-medium transition-colors border border-gray-200 hover:border-blue-200">
+                {label}
+              </a>
+            );
+          })}
+        </div>
+      </div>
 
       <div className="mt-0 pt-0 border-t border-gray-100">
         <h2 className="text-xl font-bold text-gray-900 mb-6">{layoutTranslations[lang].faqTitle}</h2>

@@ -17,26 +17,39 @@
       { "slug": "bmi-calculator", "name": "Body Mass Index" },
       { "slug": "gcs-calculator", "name": "Glasgow Coma Scale" },
       { "slug": "qsofa-score", "name": "qSOFA Score" },
+      { "slug": "sofa-score", "name": "SOFA Score" },
       { "slug": "wells-score", "name": "Wells Score" },
       { "slug": "cha2ds2-vasc", "name": "CHA2DS2-VASc Score" },
-      { "slug": "curb65-score", "name": "CURB-65 Score" }
+      { "slug": "curb65-score", "name": "CURB-65 Score" },
+      { "slug": "meld-score", "name": "MELD Score" },
+      { "slug": "child-pugh-score", "name": "Child-Pugh Score" },
+      { "slug": "creatinine-clearance", "name": "Creatinine Clearance (Cockcroft-Gault)" },
+      { "slug": "ckd-epi-gfr", "name": "CKD-EPI eGFR" }
     ],
     "diseases": [
-      { "slug": "sepsis", "name": "Sepsis", "relatedCalculators": ["map-calculator", "qsofa-score", "sirs-criteria"] },
+      { "slug": "sepsis", "name": "Sepsis", "relatedCalculators": ["map-calculator", "sofa-score", "qsofa-score", "sirs-criteria"] },
       { "slug": "ards", "name": "ARDS", "relatedCalculators": ["pf-ratio", "tidal-volume"] },
       { "slug": "cirrhosis", "name": "Cirrhosis", "relatedCalculators": ["meld-score", "child-pugh-score"] },
       { "slug": "tbi", "name": "Traumatic Brain Injury", "relatedCalculators": ["gcs-calculator"] },
       { "slug": "dvt", "name": "Deep Vein Thrombosis", "relatedCalculators": ["wells-score"] },
+      { "slug": "pulmonary-embolism", "name": "Pulmonary Embolism", "relatedCalculators": ["wells-score"] },
       { "slug": "afib", "name": "Atrial Fibrillation", "relatedCalculators": ["cha2ds2-vasc"] },
-      { "slug": "pneumonia", "name": "Pneumonia", "relatedCalculators": ["curb65-score"] }
+      { "slug": "pneumonia", "name": "Pneumonia", "relatedCalculators": ["curb65-score"] },
+      { "slug": "acute-kidney-injury", "name": "Acute Kidney Injury", "relatedCalculators": ["creatinine-clearance", "ckd-epi-gfr", "sofa-score"] },
+      { "slug": "multi-organ-failure", "name": "Multi-Organ Failure", "relatedCalculators": ["sofa-score", "qsofa-score"] }
     ],
     "geos": [
+      { "slug": "us", "name": "United States", "lang": "en" },
       { "slug": "uk", "name": "United Kingdom", "lang": "en" },
       { "slug": "ca", "name": "Canada", "lang": "en" },
       { "slug": "au", "name": "Australia", "lang": "en" },
+      { "slug": "ie", "name": "Ireland", "lang": "en" },
+      { "slug": "fr", "name": "France", "lang": "fr" },
+      { "slug": "be", "name": "Belgium", "lang": "fr" },
+      { "slug": "ch", "name": "Switzerland", "lang": "fr" },
       { "slug": "dz", "name": "Algeria", "lang": "fr" },
       { "slug": "ma", "name": "Morocco", "lang": "fr" },
-      { "slug": "sa", "name": "Saudi Arabia", "lang": "ar" }
+      { "slug": "sn", "name": "Senegal", "lang": "fr" }
     ]
   }
 }

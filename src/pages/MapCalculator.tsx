@@ -120,7 +120,7 @@ export default function MapCalculator({ lang }: { lang: LangCode }) {
         {/* GEO Definition Block - 40-60 words for AI extraction */}
         <div className="bg-blue-50/50 border border-blue-100 rounded-xl p-4 md:p-5 mt-6 mb-2">
           <h2 className="text-sm font-semibold text-blue-900 mb-2 uppercase tracking-wide">
-            {lang === 'en' ? 'Clinical Definition' : lang === 'fr' ? 'Définition Clinique' : 'التعريف السريري'}
+            {lang === 'fr' ? 'Définition Clinique' : 'Clinical Definition'}
           </h2>
           <p className="text-gray-700 text-sm leading-relaxed">
             {currentText.faqA1}

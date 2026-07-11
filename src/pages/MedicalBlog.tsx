@@ -50,7 +50,7 @@ The global perfusion of key organs (brain, kidneys, heart) relies on perfusion p
 3. **Assessment of Diastolic Pressure**: Diastolic shock index (Heart Rate / Diastolic Blood Pressure) above 2.0 indicates progressive vascular tone failure, suggesting immediate combination therapy (e.g., vasopressin addition) rather than pushing norepinephrine past aggressive limits.
 
 ### Conclusions and Clinical Impact
-Clinicians should avoid rigid adherence to generic 65 mmHg targets in populations with chronic vascular remodeling. Periodic assessments of urine output, skin perfusion (Mottling score), and serial lactate clearance are crucial to evaluate if the current perfusion pressure is physiologically adequate.`,
+Clinicians should avoid rigid adherence to generic 65 mmHg targets in populations with chronic vascular remodeling. Periodic assessments of urine output, skin perfusion (Mottling score), and serial lactate clearance are mandatory to evaluate if the current perfusion pressure is physiologically adequate.`,
     author: 'Prof. Alice Vance, MD, Ph.D. (Stanford Health)',
     reviewer: 'Dr. Jean-Pierre Dupont, MD (Paris-Sud)',
     category: 'Critical Care',
