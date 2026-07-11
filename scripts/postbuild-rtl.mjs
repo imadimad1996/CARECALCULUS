@@ -7,11 +7,24 @@
  * prerendered Arabic page under dist/ar. The runtime app already sets this on
  * hydration; this just makes the static document correct for crawlers too.
  */
-import { readFileSync, writeFileSync, existsSync, globSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, globSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
+const distFunctions = join(ROOT, 'dist', 'functions');
+if (!existsSync(distFunctions)) {
+  mkdirSync(distFunctions, { recursive: true });
+}
+if (existsSync(join(ROOT, 'functions', '_middleware.ts'))) {
+  writeFileSync(
+    join(distFunctions, '_middleware.ts'),
+    readFileSync(join(ROOT, 'functions', '_middleware.ts'), 'utf8'),
+    'utf8'
+  );
+  console.log('postbuild: copied functions/_middleware.ts to dist/functions/_middleware.ts');
+}
+
 const distAr = join(ROOT, 'dist', 'ar');
 
 if (!existsSync(distAr)) {

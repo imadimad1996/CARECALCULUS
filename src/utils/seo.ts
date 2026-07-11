@@ -20,7 +20,9 @@ import { DEFAULT_SUBJECTS } from '../pages/Presentations';
 import { FMP_MODULES, FMP_MODULE_BY_SLUG } from './fmpModules';
 import { ISPITS_MODULES, ISPITS_MODULE_BY_SLUG } from './ispitsModules';
 
-export const ORIGIN = 'https://carecalculus.com';
+export const ORIGIN_EN = 'https://www.carecalculus.com';
+export const ORIGIN_FR = 'https://fr.carecalculus.com';
+export const ORIGIN = ORIGIN_EN;
 
 const OG_IMAGE = 'https://carecalculus.com/og-image.png';
 
@@ -319,9 +321,9 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
       keywords: `${nameAr}, حاسبة طبية, أدوات الأطباء, معادلة سريرية`,
     };
   }
-  
+
   const customKeywords = keywordsEnMap[path];
-  
+
   return {
     title: `${nameEn} | CareCalculus`,
     desc: `Free ${nameEn} — evidence-based clinical decision support tool used by ICU doctors, ER physicians, and nurses worldwide. Instant calculation with PubMed references, validated formulas, and multilingual support.`,
@@ -386,27 +388,28 @@ export function getMedicalSchema(path: string) {
   const node = medicalSchemaDb[path];
   return node
     ? {
-        '@context': 'https://schema.org',
-        '@type': 'MedicalWebPage',
-        medicalAudience: {
-          '@type': 'MedicalAudience',
-          audienceType: 'Clinicians, ICU Doctors, ER Emergency Physicians',
-        },
-        lastReviewed: '2025-01-15',
-        reviewedBy: {
-          '@type': 'Organization',
-          name: 'CareCalculus Clinical Review Board'
-        },
-        ...node,
-      }
+      '@context': 'https://schema.org',
+      '@type': 'MedicalWebPage',
+      medicalAudience: {
+        '@type': 'MedicalAudience',
+        audienceType: 'Clinicians, ICU Doctors, ER Emergency Physicians',
+      },
+      lastReviewed: '2025-01-15',
+      reviewedBy: {
+        '@type': 'Organization',
+        name: 'CareCalculus Clinical Review Board'
+      },
+      ...node,
+    }
     : null;
 }
 
 export function pageUrl(logicalPath: string, lang: LangCode): string {
+  const origin = lang === 'fr' ? ORIGIN_FR : ORIGIN_EN;
   if (logicalPath === '/' || logicalPath === '/home') {
-    return `${ORIGIN}${lang === 'en' ? '' : '/' + lang}`;
+    return `${origin}`;
   }
-  return `${ORIGIN}${lang === 'en' ? '' : '/' + lang}${logicalPath}`;
+  return `${origin}${logicalPath}`;
 }
 
 

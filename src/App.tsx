@@ -56,10 +56,22 @@ function AppLayout() {
   const isHomePage = logicalPath === '/' || logicalPath === '/home';
   const isEmbedPage = logicalPath.startsWith('/embed/');
 
-  // Switching language navigates to the same logical page under the new prefix.
+  // Switching language navigates to the same logical page under the new prefix/domain.
   const setLang = (next: LangCode) => {
     localStorage.setItem('carecalculus-lang', next);
     const cleanLogical = logicalPath.startsWith('/') ? logicalPath : `/${logicalPath}`;
+    
+    if (typeof window !== 'undefined' && !window.location.hostname.includes('localhost') && !window.location.hostname.includes('127.0.0.1') && !window.location.hostname.endsWith('.pages.dev')) {
+      if (next === 'fr') {
+        window.location.href = `https://fr.carecalculus.com${cleanLogical === '/' ? '' : cleanLogical}`;
+        return;
+      }
+      if (next === 'en') {
+        window.location.href = `https://www.carecalculus.com${cleanLogical === '/' ? '' : cleanLogical}`;
+        return;
+      }
+    }
+
     if (cleanLogical === '/glp-1-hub' || cleanLogical === '/hub-glp1' || cleanLogical === '/مركز-glp1' || decodeURIComponent(cleanLogical) === '/مركز-glp1') {
       if (next === 'fr') navigate('/fr/hub-glp1');
       else navigate('/glp-1-hub');
@@ -68,11 +80,11 @@ function AppLayout() {
     navigate(buildPath(logicalPath, next));
   };
 
-  // First-visit language routing: only when landing on the bare root ("/") do we
-  // consult a stored preference / browser language and redirect to the matching
-  // prefix. Beyond the root, the URL itself is authoritative.
+  // First-visit language routing: only when landing on the bare root ("/") of the English domain do we
+  // consult a stored preference / browser language and redirect.
   useEffect(() => {
     if (location.pathname !== '/') return;
+    if (typeof window !== 'undefined' && window.location.hostname.startsWith('fr.')) return;
     const stored = localStorage.getItem('carecalculus-lang');
     let preferred: LangCode = 'en';
     if (stored === 'fr' || stored === 'en') {
@@ -85,7 +97,11 @@ function AppLayout() {
       }
     }
     if (preferred !== 'en') {
-      navigate(buildPath('/', preferred), { replace: true });
+      if (typeof window !== 'undefined' && !window.location.hostname.includes('localhost') && !window.location.hostname.includes('127.0.0.1') && !window.location.hostname.endsWith('.pages.dev')) {
+        window.location.href = `https://fr.carecalculus.com/`;
+      } else {
+        navigate(buildPath('/', preferred), { replace: true });
+      }
     }
   }, [location.pathname, navigate]);
 

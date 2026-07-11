@@ -70,15 +70,15 @@ for (const [, entries] of Object.entries(faqDb) as [string, {question: string}[]
   }
 }
 
-const langs = ['', '/fr', '/ar'] as const;
+const domains = ['https://www.carecalculus.com', 'https://fr.carecalculus.com'] as const;
 
 function buildUrls(paths: string[], priority: string, changefreq: string): string {
   const urls: string[] = [];
   for (const path of paths) {
-    for (const lang of langs) {
+    for (const domain of domains) {
       urls.push(`
   <url>
-    <loc>${BASE_URL}${lang}${path}</loc>
+    <loc>${domain}${path}</loc>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
   </url>`);
@@ -92,17 +92,12 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <!-- Homepage -->
   <url>
-    <loc>${BASE_URL}/</loc>
+    <loc>https://www.carecalculus.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>${BASE_URL}/fr</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>${BASE_URL}/ar</loc>
+    <loc>https://fr.carecalculus.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -117,20 +112,20 @@ ${buildUrls(staticPages, '0.5', 'monthly')}
 writeFileSync(OUTPUT_PATH, sitemap, 'utf-8');
 
 const totalUrls = (
-  3 +
-  calculatorPages.length * 3 +
-  conditionPages.length * 3 +
-  specialtyPages.length * 3 +
-  comparisonPages.length * 3 +
-  qaSlugs.length * 3 +
-  staticPages.length * 3
+  2 +
+  calculatorPages.length * 2 +
+  conditionPages.length * 2 +
+  specialtyPages.length * 2 +
+  comparisonPages.length * 2 +
+  qaSlugs.length * 2 +
+  staticPages.length * 2
 );
 
 console.log(`✅ sitemap.xml generated: ${OUTPUT_PATH}`);
 console.log(`📊 Total URLs indexed: ${totalUrls}`);
-console.log(`  - Calculator pages: ${calculatorPages.length * 3}`);
-console.log(`  - Condition pages: ${conditionPages.length * 3}`);
-console.log(`  - Specialty pages: ${specialtyPages.length * 3}`);
-console.log(`  - Comparison pages: ${comparisonPages.length * 3}`);
-console.log(`  - Clinical Q&A pages: ${qaSlugs.length * 3} (THE 100x MULTIPLIER)`);
-console.log(`  - Static pages: ${staticPages.length * 3}`);
+console.log(`  - Calculator pages: ${calculatorPages.length * 2}`);
+console.log(`  - Condition pages: ${conditionPages.length * 2}`);
+console.log(`  - Specialty pages: ${specialtyPages.length * 2}`);
+console.log(`  - Comparison pages: ${comparisonPages.length * 2}`);
+console.log(`  - Clinical Q&A pages: ${qaSlugs.length * 2} (THE 100x MULTIPLIER)`);
+console.log(`  - Static pages: ${staticPages.length * 2}`);

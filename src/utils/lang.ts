@@ -10,29 +10,38 @@ import translationsRaw from '../data/translations.json';
 
 export const layoutTranslations = translationsRaw;
 
+export function getDomainLang(): LangCode | null {
+  if (typeof window === 'undefined') return null;
+  if (window.location.hostname.startsWith('fr.')) return 'fr';
+  return null;
+}
+
 /**
  * Split a pathname into its language and the language-agnostic "logical" path.
- *   /fr/map-calculator      -> { lang: 'fr', path: '/map-calculator' }
- *   /ar/blog/some-slug      -> { lang: 'ar', path: '/blog/some-slug' }
- *   /map-calculator         -> { lang: 'en', path: '/map-calculator' }
- *   /fr                     -> { lang: 'fr', path: '/' }
+ * Supports both /fr/ prefix routing (for local dev / fallback) and fr. domain routing.
  */
 export function parsePathname(pathname: string): { lang: LangCode; path: string } {
   const match = pathname.match(/^\/(fr)(\/.*)?$/);
   if (match) {
     return { lang: match[1] as LangCode, path: match[2] || '/' };
   }
+  const domainLang = getDomainLang();
+  if (domainLang === 'fr') {
+    return { lang: 'fr', path: pathname || '/' };
+  }
   return { lang: 'en', path: pathname || '/' };
 }
 
 /**
  * Prefix a logical path for a given language.
- *   buildPath('/map-calculator', 'fr') -> '/fr/map-calculator'
- *   buildPath('/map-calculator', 'en') -> '/map-calculator'
- *   buildPath('/', 'ar')               -> '/ar'
  */
 export function buildPath(path: string, lang: LangCode): string {
   const clean = path.startsWith('/') ? path : `/${path}`;
+  const domainLang = getDomainLang();
+  if (domainLang === 'fr') {
+    if (lang === 'fr') return clean;
+    return clean;
+  }
   if (lang === 'en') return clean;
   return clean === '/' ? `/${lang}` : `/${lang}${clean}`;
 }
