@@ -41,19 +41,6 @@ const T: Translations = {
     backBtn: 'Retour à l\'Accueil',
     readMore: 'Lire l\'article',
     eeatBadge: 'Suite Certifiée E-E-A-T'
-  },
-  ar: {
-    title: 'مركز التغذية السريرية',
-    subtitle: 'أدوات قائمة على الأدلة، ومجلات رائدة، وحاسبات طبية للعلاج الغذائي.',
-    calculatorsTitle: 'حاسبات التغذية',
-    calculatorsDesc: 'أدوات سريرية معتمدة لتقييم متطلبات الطاقة ومخاطر سوء التغذية.',
-    articlesTitle: 'مجلات ومدونات التغذية',
-    articlesDesc: 'مقالات حديثة، وأبحاث محكمة، وأوراق ممارسة سريرية.',
-    shareBtn: 'مشاركة المركز',
-    copiedText: 'تم نسخ الرابط!',
-    backBtn: 'الرجوع للرئيسية',
-    readMore: 'اقرأ المقال',
-    eeatBadge: 'منصة معتمدة بالكامل E-E-A-T'
   }
 };
 
@@ -63,8 +50,7 @@ const EXTERNAL_JOURNALS = [
     url: 'https://ajcn.nutrition.org/',
     desc: {
       en: 'High-quality basic and clinical nutrition research.',
-      fr: 'Recherche fondamentale et clinique de haute qualité en nutrition.',
-      ar: 'أبحاث التغذية الأساسية والسريرية عالية الجودة.'
+      fr: 'Recherche fondamentale et clinique de haute qualité en nutrition.'
     }
   },
   {
@@ -72,8 +58,7 @@ const EXTERNAL_JOURNALS = [
     url: 'https://www.clinicalnutritionjournal.com/',
     desc: {
       en: 'Leading international journal focused on practical application of nutrition.',
-      fr: 'Revue internationale de premier plan axée sur l\'application pratique de la nutrition.',
-      ar: 'مجلة دولية رائدة تركز على التطبيق العملي للتغذية.'
+      fr: 'Revue internationale de premier plan axée sur l\'application pratique de la nutrition.'
     }
   },
   {
@@ -81,15 +66,14 @@ const EXTERNAL_JOURNALS = [
     url: 'https://jandonline.org/',
     desc: {
       en: 'Premier publication for dietetics practice and policy.',
-      fr: 'Publication de premier plan pour la pratique et la politique diététique.',
-      ar: 'المنشور الأول لممارسة وسياسة التغذية.'
+      fr: 'Publication de premier plan pour la pratique et la politique diététique.'
     }
   }
 ];
 
 export default function NutritionHub({ lang }: NutritionHubProps) {
   const tLabels = T[lang] || T.en;
-  const isRtl = lang === 'ar';
+  const isRtl = false;
   const navigate = useNavigate();
   const { langPath } = useLang();
   const [copied, setCopied] = useState(false);

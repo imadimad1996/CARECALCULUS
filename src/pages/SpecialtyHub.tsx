@@ -24,20 +24,12 @@ const T = {
     seoTitle: "Calculateurs et outils cliniques pour {title} | CareCalculus",
     seoDesc: "Accédez aux calculateurs médicaux et outils d'aide à la décision clinique basés sur les preuves pour {title}. {description}",
     calcDesc: "Calculez le {name} et accédez à l'aide à la décision clinique.",
-  },
-  ar: {
-    notFound: "التخصص الطبي غير موجود",
-    notFoundDesc: "التخصص الطبي الذي تبحث عنه غير موجود في المنصة.",
-    returnHome: "العودة إلى الرئيسية",
-    seoTitle: "حاسبات وأدوات سريرية لـ {title} | كير كالكولوس",
-    seoDesc: "احصل على حاسبات طبية وأدوات دعم القرار السريري القائمة على الأدلة لـ {title}. {description}",
-    calcDesc: "احسب {name} واحصل على دعم القرار السريري.",
   }
 };
 
 export default function SpecialtyHub({ lang }: { lang: LangCode }) {
   const { specialtySlug } = useParams<{ specialtySlug: string }>();
-  const isRtl = lang === 'ar';
+  const isRtl = false;
   const t = T[lang] || T.en;
 
   const specialty = SPECIALTIES_DB.find(s => s.id === specialtySlug);
@@ -59,8 +51,8 @@ export default function SpecialtyHub({ lang }: { lang: LangCode }) {
     );
   }
 
-  const title = lang === 'fr' ? specialty.nameFr : lang === 'ar' ? specialty.nameAr : specialty.nameEn;
-  const description = lang === 'fr' ? specialty.descriptionFr : lang === 'ar' ? specialty.descriptionAr : specialty.descriptionEn;
+  const title = lang === 'fr' ? specialty.nameFr : specialty.nameEn;
+  const description = lang === 'fr' ? specialty.descriptionFr : specialty.descriptionEn;
   
   // SEO optimization
   const seoTitle = t.seoTitle.replace('{title}', title);
@@ -103,7 +95,7 @@ export default function SpecialtyHub({ lang }: { lang: LangCode }) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         {calculators.map((calc, i) => {
           const CalcIcon = calc.icon;
-          const calcName = lang === 'fr' ? calc.nameFr : lang === 'ar' ? calc.nameAr : calc.nameEn;
+          const calcName = lang === 'fr' ? calc.nameFr : calc.nameEn;
           
           return (
             <Link

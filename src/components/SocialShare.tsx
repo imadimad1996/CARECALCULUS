@@ -22,7 +22,7 @@ interface SocialShareProps {
 const T = {
   en: { share: 'Share', copied: 'Copied!', copyLink: 'Copy Link' },
   fr: { share: 'Partager', copied: 'Copié !', copyLink: 'Copier le lien' },
-  ar: { share: 'مشاركة', copied: 'تم النسخ!', copyLink: 'نسخ الرابط' },
+  
 };
 
 export default function SocialShare({ title, shareText, lang, compact = false }: SocialShareProps) {

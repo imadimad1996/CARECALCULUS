@@ -29,14 +29,7 @@ const T = {
     success: 'Inscription réussie ! Vérifiez votre boîte de réception.',
     dismiss: 'Plus tard',
   },
-  ar: {
-    title: 'الملخص السريري الأسبوعي',
-    desc: 'احصل على حاسبات جديدة وإرشادات سريرية ومراجعات علمية كل أسبوع — مجاناً.',
-    placeholder: 'بريدك الإلكتروني',
-    cta: 'اشتراك',
-    success: 'تم الاشتراك بنجاح! تحقق من بريدك.',
-    dismiss: 'لاحقاً',
-  },
+  
 };
 
 export default function NewsletterCapture({ lang }: NewsletterCaptureProps) {
@@ -45,7 +38,7 @@ export default function NewsletterCapture({ lang }: NewsletterCaptureProps) {
   const [submitted, setSubmitted] = useState(false);
 
   const t = T[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   useEffect(() => {
     // Don't show if already dismissed or subscribed

@@ -10,7 +10,7 @@ interface PremiumGateProps {
 }
 
 export default function PremiumGate({ featureName, lang, children }: PremiumGateProps) {
-  const isRtl = lang === 'ar';
+  const isRtl = false;
   const { user } = useAuth();
   
   if (user && children) {
@@ -29,12 +29,6 @@ export default function PremiumGate({ featureName, lang, children }: PremiumGate
       description: `${featureName} est disponible exclusivement pour les membres CareCalculus Pro.`,
       upgrade: 'Passer à la version Pro',
       features: ['Exportation PDF des rapports cliniques', 'Calculs en série', 'PWA hors ligne avec notifications', 'Alertes d\'interactions médicamenteuses'],
-    },
-    ar: {
-      title: 'ميزة بريميوم',
-      description: `${featureName} متاح حصرياً لأعضاء CareCalculus Pro.`,
-      upgrade: 'الترقية إلى Pro',
-      features: ['تصدير تقارير سريرية بتنسيق PDF', 'حسابات مجمعة', 'تطبيق ويب تقدمي (PWA) مع إشعارات', 'تنبيهات التفاعلات الدوائية'],
     }
   };
 
@@ -66,7 +60,7 @@ export default function PremiumGate({ featureName, lang, children }: PremiumGate
           className="flex items-center gap-2 px-8 py-3.5 bg-amber-500 hover:bg-amber-600 text-white rounded-xl font-bold transition-all duration-200 shadow-lg shadow-amber-500/30 active:scale-95 outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
         >
           <LogIn className="w-5 h-5" />
-          {lang === 'fr' ? 'Connectez-vous pour accéder' : lang === 'ar' ? 'سجل الدخول للوصول' : 'Sign in to Access'}
+          {lang === 'fr' ? 'Connectez-vous pour accéder' : 'Sign in to Access'}
         </button>
       </div>
     </div>

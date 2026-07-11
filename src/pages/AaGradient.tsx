@@ -64,35 +64,6 @@ const translations: Translations = {
     faqA3: "Une hypoxémie avec un gradient normal indique que le poumon lui-même est sain mais qu'il y a un manque d'apport d'oxygène aux alvéoles. Les causes courantes sont l'hypoventilation alvéolaire (surdosage en opiacés, maladie neuromusculaire) ou un air inspiré pauvre en oxygène (haute altitude).",
     faqQ4: "Quelles sont les causes d'un gradient A-a élevé ?",
     faqA4: "Un gradient A-a augmenté signale une atteinte intrinsèque du parenchyme ou de la vascularisation pulmonaire. Ses causes principales sont les inégalités de ventilation/perfusion (embolie pulmonaire, BPCO, pneumonie), les shunts anatomiques ou fonctionnels (atélectasie) et les troubles de diffusion.",
-  },
-  ar: {
-    title: "حساب فرق الأوكسجين الألوفي-الشرياني (A-a)",
-    subtitle: "حساب فرق ضغط الأكسجين بين الأسناخ والشرايين لتحديد سبب نقص الأكسجة",
-    age: "عمر المريض",
-    pao2: "ضغط الأكسجين الشرياني (PaO2)",
-    paco2: "ضغط ثاني أكسيد الكربون الشرياني (PaCO2)",
-    fio2: "نسبة الأكسجين المستنشق (FiO2)",
-    patm: "الضغط الجوي (Patm)",
-    result: "الفرق A-a المحسوب",
-    expectedResult: "الفرق المتوقع حسب العمر",
-    normal: "الفرق A-a طبيعي",
-    normalSub: "ضمن الحدود الطبيعية المتوقعة",
-    elevated: "الفرق A-a مرتفع",
-    elevatedSub: "يشير إلى خلل في تبادل الغازات",
-    formula: "PAO2 = FiO2 * (الضغط الجوي - 47) - (ثاني أكسيد الكربون / 0.8)",
-    gradientFormula: "الفرق A-a = السنخي - الشرياني",
-    expectedFormula: "الفرق المتوقع = (العمر / 4) + 4",
-    clinicalTitle: "التفسير السريري والتشخيص",
-    clinicalText: "يشير ارتفاع الفرق A-a إلى وجود خلل في التروية والتهوية داخل الرئتين (مثل الجلطة الرئوية أو الالتهاب الرئوي) أو مشاكل الانتشار. أما الفرق الطبيعي مع نقص الأكسجة فيعني نقص التهوية أو نقص الأكسجين المستنشق.",
-    references: "المراجع: وست. فيزيولوجيا الجهاز التنفسي: الأساسيات.",
-    faqQ1: "ما هو فرق الأكسجين السنخي الشرياني (A-a Gradient)؟",
-    faqA1: "هو الفرق بين الضغط الجزئي للأكسجين في الحويصلات الهوائية (الأسناخ) وضغطه في الشرايين. يعبر عن كفاءة الرئة في نقل الأكسجين إلى الدم.",
-    faqQ2: "كيف يتم حساب فرق الأكسجين المتوقع حسب العمر؟",
-    faqA2: "يزداد هذا الفرق طبيعيًا مع تقدم العمر بسبب التغيرات الفسيولوجية في الرئة. ويُحسب بالمعادلة: الفرق المتوقع = (العمر / 4) + 4.",
-    faqQ3: "ماذا يعني نقص أكسجة الدم مع وجود فرق A-a طبيعي؟",
-    faqA3: "يعني أن الرئة نفسها سليمة ولا يوجد بها انسداد، ونقص الأكسجين ناتج عن أسباب خارج الرئة: مثل نقص التهوية السنخي (جرعة زائدة من المهدئات، أمراض العضلات والأعصاب)، أو استنشاق هواء منخفض الأكسجين (المرتفعات).",
-    faqQ4: "ماذا يعني ارتفاع فرق الأكسجين السنخي الشرياني؟",
-    faqA4: "يعني وجود مشكلة رئوية تمنع انتقال الأكسجين بكفاءة، وأشهرها: عدم تطابق التهوية والتروية (مثل الجلطة الرئوية، الالتهاب الرئوي، الربو)، أو وجود شنت (تحويلة) من اليمين إلى اليسار، أو خلل في انتشار الغازات عبر غشاء الحويصلات.",
   }
 };
 
@@ -105,7 +76,7 @@ export default function AaGradient({ lang }: { lang: LangCode }) {
   const [copied, setCopied] = useState(false);
 
   const currentText = translations[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   const expectedGradient = useMemo(() => {
     if (age <= 0) return 0;

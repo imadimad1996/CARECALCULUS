@@ -35,21 +35,6 @@ const translations: Translations = {
     mild: "SDRA Léger (200 - 300)",
     moderate: "SDRA Modéré (100 - 200)",
     severe: "SDRA Sévère (< 100)",
-  },
-  ar: {
-    title: "نسبة P/F (متلازمة الضائقة التنفسية)",
-    subtitle: "نسبة PaO2/FiO2 لتقييم متلازمة الضائقة التنفسية الحادة (ARDS)",
-    pao2: "الضغط الجزئي للأكسجين PaO2 (مم زئبق)",
-    fio2: "نسبة الأكسجين المستنشق FiO2 (%)",
-    result: "نسبة P/F",
-    formula: "P/F = PaO2 / (FiO2 ككسر عشري)",
-    clinicalTitle: "تصنيف ARDS (تعريف برلين)",
-    clinicalText: "خفيف: 200 - 300. معتدل: 100 - 200. شديد: < 100. (بافتراض PEEP ≥ 5)",
-    references: "المراجع: ARDS Definition Task Force.",
-    normal: "طبيعي (≥ 300)",
-    mild: "خفيف (200 - 300)",
-    moderate: "متوسط (100 - 200)",
-    severe: "شديد (< 100)"
   }
 };
 
@@ -58,7 +43,7 @@ export default function PfRatio({ lang }: { lang: LangCode }) {
   const [fio2, setFio2] = useState<number | ''>(21);
 
   const currentText = translations[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   const pfRatio = useMemo(() => {
     if (pao2 === '' || fio2 === '' || fio2 <= 0) return null;

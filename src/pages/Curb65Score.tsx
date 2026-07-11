@@ -55,31 +55,6 @@ const translations: Translations = {
     faqA3: "Le score CURB-65 a été établi par Lim et al. (2003) à partir des données de recommandations de la British Thoracic Society, et publié dans Thorax (PMID: 12668799). Il est largement validé au niveau international.",
     faqQ4: "Quelle est la différence entre le CURB-65 et l'indice PSI (PORT) ?",
     faqA4: "L'indice PSI utilise 20 variables et s'avère plus complexe mais précis pour identifier les patients à très faible risque. Le CURB-65 utilise seulement 5 critères cliniques simples, ce qui le rend beaucoup plus rapide et adapté au triage en urgence.",
-  },
-  ar: {
-    title: "مقياس CURB-65",
-    subtitle: "تقييم شدة الالتهاب الرئوي المكتسب من المجتمع",
-    confusion: "تخليط ذهني (ارتباك جديد)",
-    urea: "اليوريا > 7 mmol/L (أو BUN > 19 mg/dL)",
-    rr30: "معدل التنفس ≥ 30/دقيقة",
-    bp: "ضغط الدم: الانقباضي < 90 أو الانبساطي ≤ 60 مم زئبق",
-    age65: "العمر ≥ 65 سنة",
-    result: "النتيجة المحسوبة",
-    formula: "نقطة واحدة لكل معيار إيجابي",
-    clinicalTitle: "استراتيجية الإدارة",
-    clinicalText: "0-1: خطر منخفض (علاج بالمنزل). 2: خطر متوسط (فكر في التنويم). 3-5: خطر عالٍ (تنويم، ربما عناية مركزة).",
-    references: "المراجع: Lim WS, et al.",
-    low: "خطر منخفض (0-1)",
-    inter: "خطر متوسط (2)",
-    high: "خطر عالٍ (3-5)",
-    faqQ1: "إلامَ يرمز مقياس CURB-65؟",
-    faqA1: "مقياس CURB-65 هو اختصار لخمسة معايير سريرية: C = تخليط ذهني جديد، U = يوريا > 7 ممول/لتر (BUN > 19 ملجم/ديسيلتر)، R = معدل تنفس ≥ 30/دقيقة، B = ضغط دم منخفض (انقباضي < 90 أو انبساطي ≤ 60 مم زئبق)، 65 = عمر المريض 65 سنة أو أكثر. تمنح نقطة واحدة لكل معيار إيجابي.",
-    faqQ2: "ما هي درجة مقياس CURB-65 التي تستدعي التنويم في المستشفى؟",
-    faqA2: "الدرجة 0-1: خطورة منخفضة (علاج منزلي مناسب). الدرجة 2: خطورة متوسطة (يفضل التنويم القصير). الدرجة 3-5: خطورة عالية (يجب التنويم فوراً، مع مراعاة العناية المركزة للدرجات 4-5).",
-    faqQ3: "ما هي الدراسة المصدر لمقياس CURB-65؟",
-    faqA3: "تم استخلاص المقياس بواسطة Lim et al. عام 2003 بناءً على بيانات المعهد البريطاني لأمراض الصدر ونُشر في دورية Thorax (PMID: 12668799)، وتم إثبات دقته دولياً في فرز حالات الالتهاب الرئوي.",
-    faqQ4: "ما الفرق بين مقياس CURB-65 ومقياس PSI (مؤشر شدة الالتهاب الرئوي)؟",
-    faqA4: "يستخدم مقياس PSI نحو 20 متغيراً مما يجعله معقداً ويستغرق وقتاً طويلاً. بينما يعتمد CURB-65 على 5 معايير سريرية واضحة تجعل استخدامه بجانب المريض سريعاً ومفضلاً في غرف الطوارئ للتوجيه الفوري.",
   }
 };
 
@@ -95,7 +70,7 @@ export default function Curb65Score({ lang }: { lang: LangCode }) {
   const [selections, setSelections] = useState<Record<string, boolean>>({});
 
   const currentText = translations[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   const toggleSelection = (key: string) => {
     setSelections(prev => ({ ...prev, [key]: !prev[key] }));

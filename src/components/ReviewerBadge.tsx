@@ -9,12 +9,11 @@ interface ReviewerBadgeProps {
 }
 
 export default function ReviewerBadge({ reviewerName, lang, date }: ReviewerBadgeProps) {
-  const isRtl = lang === 'ar';
+  const isRtl = false;
   
   const texts = {
     en: { prefix: "Medically Reviewed by", datePrefix: "Updated" },
-    fr: { prefix: "Revue Médicale par", datePrefix: "Mis à jour le" },
-    ar: { prefix: "تمت المراجعة الطبية بواسطة", datePrefix: "آخر تحديث" }
+    fr: { prefix: "Revue Médicale par", datePrefix: "Mis à jour le" }
   };
   
   const currentText = texts[lang];

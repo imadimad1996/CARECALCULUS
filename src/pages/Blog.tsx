@@ -10,13 +10,10 @@ interface BlogArticle {
   id: string;
   title: string;
   titleFr: string;
-  titleAr: string;
   snippet: string;
   snippetFr: string;
-  snippetAr: string;
   content: string;
   contentFr?: string;
-  contentAr?: string;
   author: string;
   reviewer?: string;
   category: 'Clinical Tips' | 'News & Updates' | 'Editorial' | 'Practice' | 'Technology';
@@ -30,10 +27,8 @@ export const ORIGINAL_BLOG_SEED: BlogArticle[] = [
     id: 'post-7',
     title: 'Top 10 Global Medical Blogs in 2026: E-E-A-T, Authority, and Editorial Best Practices',
     titleFr: 'Top 10 des Blogs Médicaux Mondiaux en 2026 : E-E-A-T, Autorité et Bonnes Pratiques Éditoriales',
-    titleAr: 'أفضل ١٠ مدونات طبية عالمية في عام ٢٠٢٦: معايير الثقة المعتمدة E-E-A-T وأفضل الممارسات التحريرية',
     snippet: 'A masterclass review of the top 10 global medical blogs in 2026, analyzing their domain authority, E-E-A-T compliance, and key lessons for healthcare publishers.',
     snippetFr: 'Une analyse approfondie des 10 meilleurs blogs médicaux mondiaux en 2026, décryptant leur autorité de domaine, conformité E-E-A-T et leçons clés.',
-    snippetAr: 'تحليل سريري شامل لأفضل ١٠ مدونات ومجلات طبية في العالم لعام ٢٠٢٦، مع دراسة معايير E-E-A-T وكيفية تصدر نتائج البحث.',
     content: `### Introduction: The Battle for Health Authority Online
 
 Who controls the global flow of medical information in 2026? With AI search engines like Perplexity, ChatGPT, and Google Search Generative Experience (SGE) summarizing health queries at the top of results pages, traditional blogging is dead. What survived—and thrived—is clinical authority. Search engines and AI models only cite sites with bulletproof E-E-A-T (Experience, Expertise, Authoritativeness, and Trustworthiness). The health landscape is divided between consumer giants, hospital systems, and professional clinical news platforms. Here is the clinical breakdown of the top 10 publications.
@@ -130,54 +125,6 @@ Pour développer un blog médical en 2026, vous devez appliquer ces cinq règles
 3. **Schémas Structurés** : Utilisez les balises JSON-LD \`MedicalWebPage\` ou \`BlogPosting\`.
 4. **Accroches Cliniques Impactantes** : Commencez par des résumés clairs et factuels.
 5. **Accessibilité Multilingue** : Offrez le contenu dans la langue maternelle des utilisateurs (EN/FR/AR).`,
-    contentAr: `### مقدمة: معركة السيطرة على المحتوى الطبي الرقمي
-
-من يسيطر على تدفق المعلومات الطبية عالمياً في عام ٢٠٢٦؟ في عصر محركات البحث المدعومة بالذكاء الاصطناعي مثل Perplexity وGoogle SGE، انتهت حقبة المدونات التقليدية. ما نجا وازدهر هو "السلطة السريرية الموثوقة". محركات البحث ونماذج الذكاء الاصطناعي لا تقتبس إلا من المواقع التي تلتزم بمعايير E-E-A-T (الخبرة، التخصص، المصداقية، والموثوقية). ينقسم المشهد الطبي بين العمالقة الموجهين للمستهلكين، والمؤسسات الطبية الكبرى، ومنصات الأخبار السريرية المتخصصة. إليك التحليل السريري لأفضل ١٠ منصات.
-
-### القسم ١: منصات المعلومات الطبية الموجهة للمستهلكين
-
-1. **Healthline**
-تتصدر كواحدة من أكثر المواقع الطبية زيارة في العالم. يرجع نجاحها إلى **مجلس المراجعة الطبية** الذي يضم أكثر من ١٥٠ طبيباً وأخصائياً. لا يتم نشر أي مقال دون تدقيق ثنائي: يكتب كاتب طبي المقال استناداً للأبحاث المعتمدة، ثم يراجعه طبيب مختص للتأكد من دقته السريرية.
-
-2. **WebMD**
-القوة الضاربة في الحركة المرورية الطبية العالمية. المنصة الأولى للتحقق من الأعراض، والتداخلات الدوائية، والأخبار الطبية العامة. تتم مراجعة محتواها بدقة من قبل شبكة من الأطباء المرخصين والصحفيين الطبيين.
-
-3. **Medical News Today (MNT)**
-تركز بشكل مكثف على أبحاث وتحديثات التجارب السريرية. تبسط نتائج الدراسات الطبية المعقدة للمستهلكين والممارسين. يحتوي كل مقال على روابط معرّف الكائن الرقمي (DOI) للأبحاث الأصلية لتعزيز قوة الأرشفة.
-
-4. **Verywell Health**
-منصة ضخمة مخصصة للأمراض المزمنة، وتوجيه المرضى. تحظى بثقة عالية لأن محتواها يُكتب ويُراجع حصرياً بواسطة أطباء معتمدين. وتستخدم شارة المراجعة الطبية لعرض مؤهلات الطبيب المراجع.
-
-5. **Everyday Health**
-تركز على الربط بين نمط الحياة اليومي وإدارة الأمراض المزمنة، وتسهيل الفهم العام للبروتولولات العلاجية ومراحل تعافي المرضى.
-
-### القسم ٢: المدونات الطبية التابعة للمؤسسات الصحية الكبرى
-
-6. **Cleveland Clinic Health Essentials**
-البوابة التابعة لمستشفيات كليفلاند كلينك، وتعتبر المعيار الذهبي للمدونات الطبية للمستشفيات. تقدم نصائح طبية موثوقة يكتبها أطباؤهم الممارسون مباشرة.
-
-7. **Harvard Health Blog**
-تصدر مباشرة عن كلية الطب بجامعة هارفارد. تترجم الأبحاث الطبية المعقدة إلى نصائح عملية يومية للجمهور. وتستفيد من القوة العالمية لعلامة هارفارد التجارية لتسجيل سلطة نطاق (DA) تقترب من ١٠٠.
-
-8. **Mayo Clinic News Network**
-شبكة إخبارية يومية تغطي أحدث الأبحاث السريرية وتنبيهات الصحة العامة الصادرة مباشرة من باحثي مايو كلينك، وتعتبر مصدراً أساسياً تقتبس منه شبكات الأخبار العالمية.
-
-### القسم ٣: الأخبار المهنية والصناعية السريرية
-
-9. **STAT News**
-المنصة الصحفية الطبية الأولى لعلوم الحياة والتقنية الحيوية والأدوية. تعتبر مصدراً أساسياً لتتبع موافقات هيئة الغذاء والدواء الأمريكية (FDA) والتجارب السريرية وتجارة الأدوية.
-
-10. **KevinMD**
-أسسها الدكتور كيفن فو، وهي المدونة الطبية الأكثر قراءة التي يكتبها الأطباء أنفسهم في العالم. تعرض تجارب واقعية، وتعليقات سريرية، ونقاشات أخلاقية يكتبها الأطباء والممرضون وطلاب الطب مباشرة من خطوط الدفاع الأمامية.
-
-### أفضل الممارسات للناشرين الطبيين: كيف تحقق هذا النجاح؟
-
-لتطوير منصتك الطبية وتصدر نتائج البحث في عام ٢٠٢٦، يجب تطبيق خمس قواعد أساسية:
-١. **المراجعة السريرية الثنائية**: يجب مراجعة وتدقيق كل مقال من قبل طبيب أو صيدلي مؤهل.
-٢. **روابط المصادر الأولية**: أدرج روابط مباشرة لـ PubMed أو معرفات الأبحاث DOI أو الإرشادات الرسمية للهيئات الصحية.
-٣. **البيانات المهيكلة (Schema)**: استخدم أكواد JSON-LD مثل \`MedicalWebPage\` or \`BlogPosting\`.
-٤. **عناوين سريرية جاذبة**: ابدأ مقالك بملخص سريري واضح ومباشر دون حشو.
-٥. **دعم تعدد اللغات والكتابة من اليمين لليسار (RTL)**: تواصل مع المرضى والممارسين بلغاتهم الأم لضمان سهولة الوصول والاستخدام.`,
     author: 'CareCalculus Editorial Team',
     reviewer: 'Dr. Jean-Pierre Dupont, MD',
     category: 'Editorial',
@@ -188,10 +135,8 @@ Pour développer un blog médical en 2026, vous devez appliquer ces cinq règles
     id: 'post-1',
     title: '5 Bedside Pearls for Faster MAP-Guided Resuscitation',
     titleFr: '5 Astuces de Chevet pour une Réanimation Guidée par la PAM',
-    titleAr: '٥ نصائح سريرية لإنعاش أسرع موجّه بضغط الشريان المتوسط',
     snippet: 'Practical, no-nonsense bedside habits that help you reach perfusion targets faster without over-titrating vasopressors.',
     snippetFr: 'Des habitudes de chevet pratiques pour atteindre plus vite les cibles de perfusion sans surdoser les vasopresseurs.',
-    snippetAr: 'عادات عملية بجانب السرير تساعدك على الوصول لأهداف التروية بسرعة دون الإفراط في رافعات الضغط.',
     content: `### Why MAP, not just systolic
 Mean Arterial Pressure reflects organ perfusion far better than a single systolic reading. Anchor your bedside thinking on MAP from the first minute.
 
@@ -214,10 +159,8 @@ Pair these habits with the MAP Calculator to keep your titration tight and your 
     id: 'post-2',
     title: 'What the 2026 Sepsis Bundle Updates Mean for Your Triage',
     titleFr: 'Ce que les Mises à Jour 2026 du Bundle Sepsis Changent pour Votre Triage',
-    titleAr: 'ماذا تعني تحديثات حزمة الإنتان لعام ٢٠٢٦ لفرز مرضاك',
     snippet: 'A plain-language rundown of the refreshed surviving-sepsis guidance and how qSOFA and SIRS now fit together at the door.',
     snippetFr: 'Un résumé clair des nouvelles recommandations sepsis et de la place de qSOFA et SIRS à l’accueil.',
-    snippetAr: 'ملخص مبسّط لأحدث إرشادات الإنتان وكيفية دمج مؤشري qSOFA وSIRS عند الاستقبال.',
     content: `### The short version
 Screen broad, escalate specific. SIRS still catches early inflammation; qSOFA still flags who is about to deteriorate.
 
@@ -238,10 +181,8 @@ Run SIRS at intake, then immediately compute qSOFA on anyone flagged. Both calcu
     id: 'post-3',
     title: 'Stop Guessing Steroid Equivalents: A Conversion Mindset',
     titleFr: 'Arrêtez de Deviner les Équivalences de Corticoïdes : Une Approche Méthodique',
-    titleAr: 'توقف عن تخمين مكافئات الستيرويد: عقلية التحويل الصحيحة',
     snippet: 'A mental model for swapping corticosteroids safely, plus the traps that catch even experienced prescribers.',
     snippetFr: 'Un modèle mental pour changer de corticoïde en sécurité, et les pièges qui surprennent même les experts.',
-    snippetAr: 'نموذج ذهني لتبديل الكورتيكوستيرويدات بأمان، مع الأخطاء التي تخدع حتى الخبراء.',
     content: `### Think in potency, not milligrams
 Doses only mean something relative to potency. Always convert through a common reference (hydrocortisone equivalents) before deciding.
 
@@ -262,10 +203,8 @@ Use the Steroids Equivalence tool to anchor the conversion, then adjust for the 
     id: 'post-4',
     title: 'Calculators at the Bedside: Friend, Not Crutch',
     titleFr: 'Les Calculateurs au Chevet : Un Allié, Pas une Béquille',
-    titleAr: 'الحاسبات بجانب السرير: أداة مساعدة لا عكاز',
     snippet: 'An editorial on keeping clinical judgment in the driver’s seat while letting digital tools handle the arithmetic.',
     snippetFr: 'Un éditorial sur l’importance de garder le jugement clinique aux commandes en déléguant le calcul aux outils.',
-    snippetAr: 'مقال رأي حول إبقاء الحكم السريري في المقدمة مع ترك الحسابات للأدوات الرقمية.',
     content: `### A confession
 Every fast clinician leans on tools. The danger is not using a calculator — it is forgetting to sanity-check what it returns.
 
@@ -286,10 +225,8 @@ Tools should compress the boring arithmetic so your attention stays on the patie
     id: 'post-5',
     title: 'Reading a Tidal Volume Order Like a Lung-Protective Pro',
     titleFr: 'Lire une Prescription de Volume Courant comme un Pro de la Ventilation Protectrice',
-    titleAr: 'قراءة أمر حجم المد التنفسي باحترافية الحماية الرئوية',
     snippet: 'How to translate an ARDSNet tidal volume order into the bedside checks that actually protect the lung.',
     snippetFr: 'Comment traduire une prescription de volume courant ARDSNet en vérifications de chevet protectrices.',
-    snippetAr: 'كيف تترجم أمر حجم المد التنفسي وفق ARDSNet إلى فحوصات سريرية تحمي الرئة فعلاً.',
     content: `### Start from predicted body weight
 Lung-protective volumes scale to predicted body weight, never actual weight. Height and sex drive the math.
 
@@ -310,10 +247,8 @@ The Tidal Volume tool turns height into a target in seconds — then your eyes g
     id: 'post-6',
     title: 'Behind the Build: How We Localize Every Calculator into 3 Languages',
     titleFr: 'Dans les Coulisses : Comment Nous Localisons Chaque Calculateur en 3 Langues',
-    titleAr: 'خلف الكواليس: كيف نترجم كل حاسبة إلى ثلاث لغات',
     snippet: 'A short technology note on the multilingual, RTL-aware design that powers CareCalculus across English, French, and Arabic.',
     snippetFr: 'Une note technique sur la conception multilingue et RTL qui anime CareCalculus en anglais, français et arabe.',
-    snippetAr: 'ملاحظة تقنية موجزة حول التصميم متعدد اللغات الداعم للكتابة من اليمين لليسار في كير كالكولوس.',
     content: `### Why three languages
 Clinical decisions happen in many tongues. Supporting English, French, and Arabic — including right-to-left layout — widens safe access.
 
@@ -338,10 +273,8 @@ const BLOG_SEED: BlogArticle[] = [
     id: mb.id,
     title: mb.title.en,
     titleFr: mb.title.fr,
-    titleAr: mb.title.ar,
     snippet: mb.snippet.en,
     snippetFr: mb.snippet.fr,
-    snippetAr: mb.snippet.ar,
     content: '',
     author: mb.author,
     reviewer: mb.author.includes('Alice') ? 'Dr. Al-Faruqi, MD' : 'Prof. Alice Vance, MD',
@@ -375,17 +308,17 @@ export default function Blog({ lang }: BlogProps) {
   const [bookmarkedIds, setBookmarkedIds] = useState<string[]>([]);
   const [copied, setCopied] = useState(false);
 
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   // Each article has its own URL: /blog-articles/:slug. Selection is driven by
   // the route param so posts are shareable, bookmarkable, and indexable.
   const openPost = (a: BlogArticle) => navigate(langPath(`/blog-articles/${slugify(a.title, a.id)}`));
   const closePost = () => navigate(langPath('/blog-articles'));
 
-  const t = (en: string, fr: string, ar: string) => (lang === 'fr' ? fr : lang === 'ar' ? ar : en);
+  const t = (en: string, fr: string, ar: string) => (lang === 'fr' ? fr : en);
 
-  const localizedTitle = (a: BlogArticle) => (lang === 'fr' ? a.titleFr : lang === 'ar' ? a.titleAr : a.title);
-  const localizedSnippet = (a: BlogArticle) => (lang === 'fr' ? a.snippetFr : lang === 'ar' ? a.snippetAr : a.snippet);
+  const localizedTitle = (a: BlogArticle) => (lang === 'fr' ? a.titleFr : a.title);
+  const localizedSnippet = (a: BlogArticle) => (lang === 'fr' ? a.snippetFr : a.snippet);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });
@@ -418,7 +351,6 @@ export default function Blog({ lang }: BlogProps) {
       result = result.filter(a =>
         a.title.toLowerCase().includes(q) ||
         a.titleFr.toLowerCase().includes(q) ||
-        a.titleAr.toLowerCase().includes(q) ||
         a.author.toLowerCase().includes(q) ||
         a.snippet.toLowerCase().includes(q)
       );
@@ -437,7 +369,6 @@ export default function Blog({ lang }: BlogProps) {
       return generateMasterContent(activePost.id, localizedTitle(activePost), localizedSnippet(activePost), lang);
     }
     if (lang === 'fr' && activePost.contentFr) return activePost.contentFr;
-    if (lang === 'ar' && activePost.contentAr) return activePost.contentAr;
     return activePost.content;
   }, [activePost, lang]);
 

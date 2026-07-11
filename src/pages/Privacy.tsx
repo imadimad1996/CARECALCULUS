@@ -75,47 +75,13 @@ const T = {
       },
     ],
   },
-  ar: {
-    title: 'سياسة الخصوصية',
-    updated: 'آخر تحديث: يونيو 2026',
-    intro: 'صُممت كير كالكولوس مع الخصوصية بوصفها خيارًا افتراضيًا. توضح هذه الصفحة البيانات التي نجمعها (القليل جداً) وكيفية استخدامها.',
-    sections: [
-      {
-        heading: 'لا يتم جمع بيانات شخصية',
-        body: 'لا تجمع كير كالكولوس أي معلومات تعريف شخصية أو تخزنها أو تنقلها. لا نشترط تسجيل حساب. لا يتم إرسال أي بيانات طبية تُدخلها في حاسباتنا إلى أي خادم — جميع العمليات الحسابية تُجرى محليًا في متصفحك.',
-      },
-      {
-        heading: 'التخزين المحلي فقط',
-        body: 'نستخدم localStorage في متصفحك حصريًا لتذكر تفضيل اللغة (carecalculus-lang) وتفضيل وحدة القياس (carecalculus-standard). هذه البيانات لا تغادر جهازك أبدًا.',
-      },
-      {
-        heading: 'لا تتبع ولا تحليلات',
-        body: 'لا تستخدم كير كالكولوس Google Analytics أو Facebook Pixel أو أي نصوص برمجية تتبع تابعة لجهات خارجية. لا نبني ملفات تعريفية للمستخدمين، ولا نتتبع سجل التصفح، ولا نستخدم ملفات تعريف الارتباط الإعلانية.',
-      },
-      {
-        heading: 'خدمات الطرف الثالث',
-        body: 'لا ندمج أدوات تابعة لجهات خارجية تجمع البيانات. تبعيتنا الخارجية الوحيدة هي مكتبة أيقونات Lucide (CSS/SVG، بدون تتبع).',
-      },
-      {
-        heading: 'ملفات تعريف الارتباط',
-        body: 'لا نستخدم أي ملفات تعريف ارتباط. تُخزَّن التفضيلات في localStorage فقط، وهو لا يُرسل مع طلبات HTTP.',
-      },
-      {
-        heading: 'الامتثال للائحة GDPR وقانون CCPA',
-        body: 'بما أننا لا نجمع أي بيانات شخصية، فإن معظم التزامات GDPR وCCPA لا تنطبق. إذا رغبت في مسح تفضيلاتك، يمكنك مسح localStorage من إعدادات متصفحك في أي وقت.',
-      },
-      {
-        heading: 'التغييرات على هذه السياسة',
-        body: 'إذا أدخلنا أي تحليلات أو جمع بيانات في المستقبل، سيتم تحديث هذه السياسة قبل دخول تلك التغييرات حيز التنفيذ.',
-      },
-    ],
-  },
+  
 };
 
 export default function Privacy({ lang }: { lang: LangCode }) {
   const { langPath } = useLang();
   const t = T[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   return (
     <div className="space-y-8 pb-8 max-w-3xl mx-auto" dir={isRtl ? 'rtl' : 'ltr'}>
@@ -150,11 +116,9 @@ export default function Privacy({ lang }: { lang: LangCode }) {
         <p className="text-xs text-gray-500 leading-relaxed">
           {lang === 'fr'
             ? 'Pour toute question sur cette politique, consultez également nos '
-            : lang === 'ar'
-              ? 'لأي أسئلة حول هذه السياسة، راجع أيضًا '
-              : 'For any questions about this policy, also see our '}
+            : 'For any questions about this policy, also see our '}
           <Link to={langPath('/terms')} className="underline text-blue-600 font-semibold hover:text-blue-800">
-            {lang === 'fr' ? 'Conditions d\'utilisation' : lang === 'ar' ? 'شروط الاستخدام' : 'Terms of Use'}
+            {lang === 'fr' ? 'Conditions d\'utilisation' : 'Terms of Use'}
           </Link>.
         </p>
       </div>

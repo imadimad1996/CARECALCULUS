@@ -37,22 +37,6 @@ const translations: Translations = {
     mild: "Léger (1000 - 1499)",
     moderate: "Modéré (500 - 999)",
     severe: "Sévère (< 500)"
-  },
-  ar: {
-    title: "العدد المطلق للعدلات (ANC)",
-    subtitle: "تحديد خطر قلة العدلات أثناء العلاج الكيميائي أو المرض",
-    wbc: "عدد كريات الدم البيضاء (خلية/ميكرولتر)",
-    neutro: "العدلات المجزأة (%)",
-    bands: "الخلايا الشريطية / غير الناضجة (%)",
-    result: "العدد المطلق للعدلات",
-    formula: "ANC = (كريات الدم × (العدلات% + الشريطية%)) / 100",
-    clinicalTitle: "خطر قلة العدلات",
-    clinicalText: "العدد الطبيعي هو 1500-8000. < 1500 يعتبر قلة عدلات. < 500 يعتبر قلة عدلات حادة (خطر عالٍ للعدوى).",
-    references: "معادلة سريرية قياسية.",
-    normal: "طبيعي (≥ 1500)",
-    mild: "خفيف (1000 - 1499)",
-    moderate: "معتدل (500 - 999)",
-    severe: "شديد (< 500)"
   }
 };
 
@@ -62,7 +46,7 @@ export default function AncCalculator({ lang }: { lang: LangCode }) {
   const [bands, setBands] = useState<number | ''>(2);
 
   const currentText = translations[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   const ancValue = useMemo(() => {
     if (wbc === '' || neutro === '' || bands === '') return null;

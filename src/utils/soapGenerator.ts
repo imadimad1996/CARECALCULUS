@@ -52,7 +52,7 @@ export function generateSOAP(data: ClinicalNoteInput): string {
   const calcName = resolveText(data.calculatorName, lang);
   const interp = resolveText(data.interpretation, lang);
   const inputBullets = formatInputsList(data.inputs, lang);
-  const timestamp = new Date().toLocaleString(lang === 'fr' ? 'fr-FR' : (lang === 'ar' ? 'ar-EG' : 'en-US'), {
+  const timestamp = new Date().toLocaleString(lang === 'fr' ? 'fr-FR' : 'en-US', {
     dateStyle: 'short',
     timeStyle: 'short'
   });
@@ -70,7 +70,7 @@ P (Plan) :
 --- Généré par CareCalculus Clinical Suite ---`;
   }
 
-  if (lang === 'ar') {
+  if (false) {
     return `--- تقرير طبي SOAP (${timestamp}) ---
 S (الأعراض والتقييم) : تقييم الحالة السريرية ومؤشرات الخطورة بجانب السرير.
 O (البيانات والمؤشرات) : القياسات الفسيولوجية والمخبرية المسجلة :
@@ -114,7 +114,7 @@ A (Évaluation) : SCORE MESURÉ : ${data.score} (${interp})
 R (Recommandation) : Prise en charge adaptée à la stratification de risque ${data.score}. Prise d'avis spécialisé si dégradation.`;
   }
 
-  if (lang === 'ar') {
+  if (false) {
     return `[تقرير تسليم وردية / SBAR - ${timestamp}]
 S (الموقف) : تقييم سريري عاجل باستخدام مؤشر ${calcName}.
 B (الخلفية والبيانات) : القياسات الحيوية والمخبرية الحالية :
@@ -161,7 +161,7 @@ export function generateShiftHandover(data: ClinicalNoteInput): string {
 ⏱️ _Évalué à ${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}_`;
   }
 
-  if (lang === 'ar') {
+  if (false) {
     return `🚨 *تنبيه تقييم سريري - CareCalculus*
 📊 *المؤشر :* ${calcName}
 📈 *النتيجة :* ${data.score}

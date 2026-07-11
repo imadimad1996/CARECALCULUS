@@ -1,10 +1,10 @@
 import { createContext, useContext } from 'react';
 import { LangCode } from '../types';
 
-export const LANGS: LangCode[] = ['en', 'fr', 'ar'];
+export const LANGS: LangCode[] = ['en', 'fr'];
 
-// English is served bare (no prefix); French and Arabic are prefixed.
-export const PREFIXED_LANGS: LangCode[] = ['fr', 'ar'];
+// English is served bare (no prefix); French is prefixed.
+export const PREFIXED_LANGS: LangCode[] = ['fr'];
 
 import translationsRaw from '../data/translations.json';
 
@@ -18,7 +18,7 @@ export const layoutTranslations = translationsRaw;
  *   /fr                     -> { lang: 'fr', path: '/' }
  */
 export function parsePathname(pathname: string): { lang: LangCode; path: string } {
-  const match = pathname.match(/^\/(fr|ar)(\/.*)?$/);
+  const match = pathname.match(/^\/(fr)(\/.*)?$/);
   if (match) {
     return { lang: match[1] as LangCode, path: match[2] || '/' };
   }

@@ -45,26 +45,6 @@ const translations: Translations = {
     mild: "Insuffisance Légère",
     moderate: "Insuffisance Modérée",
     severe: "Insuffisance Sévère",
-  },
-  ar: {
-    title: "تصفية الكرياتينين (كوككروفت-غولت)",
-    subtitle: "تقدير معدل الترشيح الكببي وتعديل جرعات الأدوية بناءً عليه",
-    age: "العمر (سنوات)",
-    weight: "الوزن (كجم)",
-    creatinine: "كرياتينين المصل",
-    creatinineMg: "مجم/ديسيلتر",
-    gender: "الجنس",
-    male: "ذكر",
-    female: "أنثى",
-    result: "تصفية الكرياتينين المقدرة",
-    formula: " [(140 - العمر) × الوزن] / (72 × الكرياتينين) [× 0.85 للإناث]",
-    clinicalTitle: "التطبيق السريري",
-    clinicalText: "لا تزال هذه المعادلة المعيار المتبع لتعديل جرعات الأدوية الدوائية، خاصة المضادات الحيوية ومضادات التخثر.",
-    references: "المراجع: Cockcroft DW, Gault MH. التنبؤ بالتصفية من كرياتينين المصل.",
-    normal: "وظائف الكلى طبيعية",
-    mild: "قصور كلوي خفيف",
-    moderate: "قصور كلوي متوسط",
-    severe: "قصور كلوي حاد (فشل كلوي)",
   }
 };
 
@@ -75,7 +55,7 @@ export default function CreatinineClearance({ lang }: { lang: LangCode }) {
   const [isFemale, setIsFemale] = useState<boolean>(false);
 
   const currentText = translations[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   const crclValue = useMemo(() => {
     if (age <= 0 || weight <= 0 || creatinine <= 0) return 0;

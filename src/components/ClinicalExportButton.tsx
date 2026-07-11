@@ -63,30 +63,6 @@ const localizations = {
     shareBtn: "Partager",
     shareSuccess: "Lien de résultat copié !",
     shareTemplate: "Je viens de calculer un {result} en utilisant CareCalculus ! Découvrez l'outil clinique gratuit ici : {url}"
-  },
-  ar: {
-    btnText: "طباعة وتصدير التقرير",
-    modalTitle: "منصة التصدير السريري والتقرير الطبي",
-    patientId: "رقم تعريف المريض / رمز الحالة #",
-    patientIdPlc: "مثال: PT-9042-X",
-    clinician: "الطبيب المعالج / التوقيع",
-    clinicianPlc: "مثال: د. الفاروقي، دكتوراه طب",
-    date: "التاريخ والوقت",
-    notes: "التقييم السريري / ملاحظات الحالة الطبية",
-    notesPlc: "أدخل هنا توصيات العلاج، أو الملاحظات التشخيصية، أو تعديل الجرعات الدوائية...",
-    copyBtn: "نسخ ملخص التقدم الطبي",
-    copySuccess: "تم نسخ الملخص السريري بنجاح!",
-    printBtn: "طباعة التقرير الرسمي PDF",
-    previewTitle: "معاينة تقرير المريض الطبي قبل الطباعة EHR",
-    digitalDisch: "التقرير الرقمي المحسوب والموثق طبياً",
-    confidential: "وثيقة طبية سرية للغاية وخاصة",
-    institution: "كير كالكولوس - قسم الاستشارات العلمية",
-    formula: "المعادلة الرياضية المعتمدة",
-    disclaimer: "إخلاء المسؤولية السريرية والطبية",
-    references: "الأبحاث العلمية والمصادر المعتمدة",
-    shareBtn: "مشاركة النتيجة",
-    shareSuccess: "تم نسخ رابط النتيجة!",
-    shareTemplate: "لقد قمت للتو بحساب {result} باستخدام CareCalculus! تحقق من الأداة السريرية المجانية هنا: {url}"
   }
 };
 
@@ -197,12 +173,12 @@ export default function ClinicalExportButton({
       });
     }
   };
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   useEffect(() => {
     if (isOpen) {
       const now = new Date();
-      setCurrentTime(now.toLocaleString(lang === 'fr' ? 'fr-FR' : (lang === 'ar' ? 'ar-EG' : 'en-US'), {
+      setCurrentTime(now.toLocaleString(lang === 'fr' ? 'fr-FR' : 'en-US', {
         dateStyle: 'medium',
         timeStyle: 'short'
       }));

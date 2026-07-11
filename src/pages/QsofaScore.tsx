@@ -61,34 +61,6 @@ const translations: Translations = {
     faqA3: "Le qSOFA est un outil de dépistage rapide au chevet utilisable sans examen biologique. Le score SOFA complet nécessite des analyses de laboratoire (PaO2, bilirubine, créatinine, plaquettes) pour quantifier formellement les défaillances d'organes en soins intensifs.",
     faqQ4: "Le score qSOFA doit-il remplacer les critères SIRS pour le dépistage du sepsis ?",
     faqA4: "Le consensus Sepsis-3 a remplacé le SIRS par le qSOFA pour le dépistage hors réanimation, estimant que le SIRS manquait de spécificité. Cependant, les deux outils restent couramment utilisés selon les directives et les contextes cliniques.",
-  },
-  ar: {
-    title: "مقياس qSOFA",
-    subtitle: "التقييم السريع لفشل الأعضاء المرتبط بالإنتان (Sepsis)",
-    rr22: "معدل التنفس ≥ 22/دقيقة",
-    mentation: "تغير في الحالة العقلية (GCS < 15)",
-    sbp100: "ضغط الدم الانقباضي ≤ 100 مم زئبق",
-    result: "نقاط qSOFA",
-    formula: "نقطة واحدة لكل معيار إيجابي",
-    clinicalTitle: "التدبير السريري",
-    clinicalText: "درجة ≥ 2 تشير إلى ارتفاع خطر النتائج السيئة ويجب تقييم المريض لاحتمال وجود إنتان.",
-    pillarTitle: "إجماع Sepsis-3 وتطور فحص الإنتان",
-    pillarText: [
-      "تم تقديم مقياس qSOFA السريع في عام 2016 كجزء من تعريفات الإجماع الدولي الثالث للإنتان والصدمة الإنتانية (Sepsis-3). قبل ذلك، كانت معايير متلازمة الاستجابة الالتهابية الجهازية (SIRS) تستخدم عالمياً للكشف عن الإنتان. ومع ذلك، جادل فريق عمل Sepsis-3 بأن معايير SIRS تفتقر إلى التحديد، حيث أن العديد من الحالات غير المعدية (مثل التهاب البنكرياس أو الصدمات أو الحروق الشديدة) تؤدي بشكل روتيني إلى استجابة التهابية جهازية قوية دون الإشارة إلى وجود عدوى وشيكة تهدد الحياة.",
-      "تم تصميم مقياس qSOFA خصيصاً كأداة تحذير بجانب السرير للأطباء خارج وحدة العناية المركزة (كما هو الحال في أقسام الطوارئ أو الأجنحة الطبية العامة). إنه ليس تشخيصياً للإنتان؛ بل هو إنذاري. النتيجة 2 أو أكثر تشير إلى احتمال كبير لنتيجة سريرية سيئة (تحديداً، خطر الوفاة في المستشفى بنسبة تقارب 10٪ أو الدخول الوشيك إلى وحدة العناية المركزة). يجب أن يؤدي هذا إلى إجراءات سريرية فورية، بما في ذلك سحب مزارع الدم، وقياس اللاكتات في المصل، والبدء في إعطاء المضادات الحيوية واسعة الطيف.",
-      "في حين أن qSOFA يحسن التحديد مقارنة بـ SIRS، فإنه يضحي بالحساسية. أظهرت بعض الدراسات أن انتظار إصابة المريض بمعيارين من معايير qSOFA قد يؤخر التعرف على الإنتان المبكر مقارنة بـ SIRS. وبالتالي، توصي العديد من بروتوكولات المستشفيات الحديثة وحملة النجاة من الإنتان باستخدام qSOFA بالاقتران مع درجات الإنذار المبكر السريرية الأخرى (مثل MEWS أو NEWS)."
-    ],
-    references: "المراجع: إجماع Sepsis-3.",
-    lowRisk: "خطر منخفض (< 2)",
-    highRisk: "خطر عالٍ للإنتان (≥ 2)",
-    faqQ1: "ما هو مقياس qSOFA السريع؟",
-    faqA1: "مقياس qSOFA (quick SOFA) هو أداة سريرية سريعة تستخدم بجانب سرير المريض لتحديد المرضى المعرضين لنتائج سيئة بسبب خلل وظائف الأعضاء الناتج عن العدوى (الإنتان). يقيس ثلاثة معايير: معدل التنفس ≥ 22/دقيقة، الاضطراب الذهني (GCS < 15)، والضغط الانقباضي ≤ 100 مم زئبق.",
-    faqQ2: "ما هي درجة مقياس qSOFA التي تمثل خطورة عالية؟",
-    faqA2: "تمثل نتيجة 2 أو أكثر من 3 خطورة عالية لنتائج سريرية سيئة، ويجب أن تدفع الطبيب فوراً لفحص المريض تحسباً للإنتان وتفعيل بروتوكولات العلاج والمراقبة، وفقاً لتوصيات Sepsis-3.",
-    faqQ3: "ما الفرق بين qSOFA ومقياس SOFA الكامل؟",
-    faqA3: "مقياس qSOFA هو أداة فحص سريرية سريعة يمكن إجراؤها فوراً بدون فحوصات مخبرية. بينما يتطلب SOFA الكامل فحوصات مخبرية مثل مستويات الكرياتينين، والصفائح الدموية، والبليروبين، وغازات الدم الشرياني لتقييم الأعضاء بالتفصيل في العناية المركزة.",
-    faqQ4: "هل يجب أن يحل qSOFA محل معايير SIRS للالتهاب العام؟",
-    faqA4: "استبدل إجماع Sepsis-3 معايير SIRS بمقياس qSOFA لفرز حالات الإنتان خارج العناية المركزة لكونه أكثر دقة وتحديداً للوفيات. ومع ذلك، لا تزال كلتا الأداتين تستخدمان بشكل متكامل في العديد من الإرشادات الطبية.",
   }
 };
 
@@ -102,7 +74,7 @@ export default function QsofaScore({ lang }: { lang: LangCode }) {
   const [selections, setSelections] = useState<Record<string, boolean>>({});
 
   const currentText = translations[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   const toggleSelection = (key: string) => {
     setSelections(prev => ({ ...prev, [key]: !prev[key] }));

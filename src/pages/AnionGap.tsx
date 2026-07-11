@@ -64,35 +64,6 @@ const translations: Translations = {
     faqA3: "L'albumine est la principale protéine chargée négativement dans le sang. Une baisse d'albumine de 1 g/dL diminue le trou anionique de base de 2,5 mEq/L. Corriger ce biais évite de rater une acidose masquée.",
     faqQ4: "Quelles sont les causes d'un trou anionique élevé ?",
     faqA4: "Un trou anionique élevé traduit une acidose métabolique à trou anionique augmenté (HAGMA). Les causes majeures incluent l'acidose lactique, l'acidocétose (diabétique, alcoolique), l'insuffisance rénale sévère et certaines intoxications (méthanol, éthylène glycol, aspirine).",
-  },
-  ar: {
-    title: "حاسبة الفجوة الأنيونية",
-    subtitle: "حساب الفجوة الأنيونية في المصل وتصحيحها بناءً على تركيز الألبومين",
-    sodium: "الصوديوم (Na+)",
-    chloride: "الكلوريد (Cl-)",
-    bicarbonate: "البيكربونات (HCO3-)",
-    albumin: "الألبومين في الدم",
-    result: "الفجوة الأنيونية المحسوبة",
-    correctedResult: "الفجوة المصححة بالألبومين",
-    normal: "فجوة أنيونية طبيعية",
-    normalSub: "8 - 12 ميكر/لتر",
-    high: "فجوة أنيونية مرتفعة",
-    highSub: "أكثر من 12 (حموضة الدم)",
-    low: "فجوة أنيونية منخفضة",
-    lowSub: "أقل من 8",
-    formula: "الفجوة = الصوديوم - (الكلوريد + البيكربونات)",
-    correctedFormula: "الفجوة المصححة = الفجوة + 2.5 * (4.0 - الألبومين)",
-    clinicalTitle: "التفسير السريري والتطبيقات",
-    clinicalText: "تشير الفجوة الأنيونية المرتفعة إلى تراكم الأحماض غير المقاسة في الجسم (مثل حمض اللاكتيك أو الأجسام الكيتونية). يعد تصحيح الفجوة للألبومين أمرًا بالغ الأهمية لمرضى نقص الألبومين.",
-    references: "المراجع: إيميت ومارينز. الاستخدام السريري للفجوة الأنيونية. مجلة الطب 1977.",
-    faqQ1: "ما هي الفجوة الأنيونية (Anion Gap)؟",
-    faqA1: "الفجوة الأنيونية هي الفرق الحسابي بين الكاتيونات المقيسة (الصوديوم) والأنيونات المقيسة (الكلوريد والبيكربونات). تُستخدم لتحديد نوع وسبب حموضة الدم الاستقلابية.",
-    faqQ2: "ما هي النسبة الطبيعية للفجوة الأنيونية؟",
-    faqA2: "النسبة الطبيعية هي عادة بين 8 إلى 12 مللي مكافئ/لتر (بدون إدراج البوتاسيوم)، وقد تختلف قليلاً حسب المختبر.",
-    faqQ3: "لماذا يجب تصحيح الفجوة الأنيونية وفقاً للألبومين؟",
-    faqA3: "يعتبر الألبومين هو الأنيون الرئيسي غير المقاس في المصل. انخفاض الألبومين بمقدار 1 غرام/ديسيلتر يقلل الفجوة الأنيونية بمقدار 2.5 مللي مكافئ/لتر، لذا فإن إهمال هذا التصحيح قد يخفي حموضة دم خطيرة.",
-    faqQ4: "ما هي أسباب ارتفاع الفجوة الأنيونية وحموضة الدم الاستقلابية؟",
-    faqA4: "تنتج عن تراكم أحماض مثل حمض اللاكتيك (في حالات نقص الأكسجة أو الصدمة)، أو الكيتونات (السكري أو الكحولي)، أو الفشل الكلوي اليوريمي، أو التسمم بالمواد السامة مثل الأسبرين والميثانول.",
   }
 };
 
@@ -104,7 +75,7 @@ export default function AnionGap({ lang }: { lang: LangCode }) {
   const [copied, setCopied] = useState(false);
 
   const currentText = translations[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   const rawAg = useMemo(() => {
     if (sodium <= 0 || chloride <= 0 || bicarbonate <= 0) return 0;

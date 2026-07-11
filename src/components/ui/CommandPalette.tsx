@@ -54,7 +54,7 @@ export default function CommandPalette() {
       <div 
         className="bg-white w-full max-w-[672px] rounded-2xl shadow-2xl overflow-hidden ring-1 ring-black/5 animate-in slide-in-from-top-4 duration-200" 
         onClick={(e) => e.stopPropagation()}
-        dir={lang === 'ar' ? 'rtl' : 'ltr'}
+        dir={'ltr'}
       >
         <div className="flex items-center px-4 py-3 border-b border-gray-100">
           <Search className="w-5 h-5 text-gray-400 mr-3 ml-3" />
@@ -62,7 +62,7 @@ export default function CommandPalette() {
             ref={inputRef}
             type="text"
             className="flex-1 bg-transparent border-none outline-none text-gray-800 placeholder-gray-400 text-lg"
-            placeholder={lang === 'fr' ? 'Rechercher un outil...' : lang === 'ar' ? 'البحث عن أداة...' : 'Search clinical tools...'}
+            placeholder={lang === 'fr' ? 'Rechercher un outil...' : 'Search clinical tools...'}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
@@ -80,23 +80,23 @@ export default function CommandPalette() {
                 <Search className="w-6 h-6 text-gray-400" />
               </div>
               <p className="text-gray-600 font-semibold mb-1">
-                {lang === 'fr' ? 'Aucun résultat trouvé' : lang === 'ar' ? 'لم يتم العثور على نتائج' : 'No results found'}
+                {lang === 'fr' ? 'Aucun résultat trouvé' : 'No results found'}
               </p>
               <p className="text-gray-400 text-sm mb-5">
-                {lang === 'fr' ? 'Vérifiez l\'orthographe ou parcourez notre catalogue.' : lang === 'ar' ? 'تحقق من الإملاء أو تصفح القائمة.' : 'Check your spelling or browse our full catalogue.'}
+                {lang === 'fr' ? 'Vérifiez l\'orthographe ou parcourez notre catalogue.' : 'Check your spelling or browse our full catalogue.'}
               </p>
               <button
                 onClick={() => handleSelect('/')}
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-50 text-blue-700 hover:bg-blue-100 rounded-xl font-medium transition-colors text-sm"
               >
                 <Home className="w-4 h-4" />
-                {lang === 'fr' ? 'Parcourir les Outils' : lang === 'ar' ? 'تصفح الأدوات' : 'Browse All Tools'}
+                {lang === 'fr' ? 'Parcourir les Outils' : 'Browse All Tools'}
               </button>
             </div>
           ) : (
             filteredItems.map((item) => {
               const Icon = item.icon || Calculator;
-              const name = lang === 'fr' ? item.nameFr : lang === 'ar' ? item.nameAr : item.nameEn;
+              const name = lang === 'fr' ? item.nameFr : item.nameEn;
               return (
                 <button
                   key={item.path}
@@ -109,14 +109,14 @@ export default function CommandPalette() {
                   <div className="flex-1 font-medium text-gray-800 group-hover:text-blue-800">
                     {name}
                   </div>
-                  <ChevronRight className={`w-4 h-4 text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity ${lang === 'ar' ? 'rotate-180' : ''}`} />
+                  <ChevronRight className={`w-4 h-4 text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity ${''}`} />
                 </button>
               );
             })
           )}
         </div>
         <div className="bg-gray-50 px-4 py-3 border-t border-gray-100 text-xs text-gray-400 flex justify-between items-center">
-          <span>{lang === 'fr' ? 'Recherche globale' : lang === 'ar' ? 'البحث الشامل' : 'Global Search'}</span>
+          <span>{lang === 'fr' ? 'Recherche globale' : 'Global Search'}</span>
           <span className="font-mono bg-gray-200 text-gray-600 px-1.5 py-0.5 rounded">esc</span>
         </div>
       </div>

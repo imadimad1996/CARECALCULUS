@@ -7,7 +7,7 @@ import { useLang } from '../utils/lang';
 
 export default function PdfSplitter({ lang }: { lang: LangCode }) {
   const { langPath } = useLang();
-  const isRtl = lang === 'ar';
+  const isRtl = false;
   
   const [file, setFile] = useState<File | null>(null);
   const [pageCount, setPageCount] = useState<number>(0);
@@ -25,11 +25,11 @@ export default function PdfSplitter({ lang }: { lang: LangCode }) {
         const pdfDoc = await PDFDocument.load(arrayBuffer);
         setPageCount(pdfDoc.getPageCount());
       } catch (err) {
-        setError(lang === 'fr' ? 'Impossible de lire ce PDF.' : lang === 'ar' ? 'تعذر قراءة ملف PDF.' : 'Failed to read this PDF.');
+        setError(lang === 'fr' ? 'Impossible de lire ce PDF.' : false ? 'تعذر قراءة ملف PDF.' : 'Failed to read this PDF.');
         setFile(null);
       }
     } else {
-      setError(lang === 'fr' ? 'Veuillez sélectionner un fichier PDF valide.' : lang === 'ar' ? 'الرجاء تحديد ملف PDF صالح.' : 'Please select a valid PDF file.');
+      setError(lang === 'fr' ? 'Veuillez sélectionner un fichier PDF valide.' : false ? 'الرجاء تحديد ملف PDF صالح.' : 'Please select a valid PDF file.');
     }
   }, [lang]);
 
@@ -95,21 +95,21 @@ export default function PdfSplitter({ lang }: { lang: LangCode }) {
       URL.revokeObjectURL(url);
     } catch (err) {
       console.error(err);
-      setError(lang === 'fr' ? 'Erreur lors de l\'extraction. Vérifiez la plage de pages.' : lang === 'ar' ? 'خطأ أثناء الاستخراج. تحقق من نطاق الصفحات.' : 'Error during extraction. Check the page range.');
+      setError(lang === 'fr' ? 'Erreur lors de l\'extraction. Vérifiez la plage de pages.' : false ? 'خطأ أثناء الاستخراج. تحقق من نطاق الصفحات.' : 'Error during extraction. Check the page range.');
     } finally {
       setIsProcessing(false);
     }
   };
 
   const texts = {
-    title: lang === 'fr' ? 'Diviser un PDF' : lang === 'ar' ? 'تقسيم ملفات PDF' : 'Split PDF',
-    subtitle: lang === 'fr' ? 'Extrayez des pages spécifiques de vos cours et manuels médicaux.' : lang === 'ar' ? 'استخراج صفحات محددة من الدروس والمراجع الطبية.' : 'Extract specific pages from your medical courses and textbooks.',
-    dropzone: lang === 'fr' ? 'Glissez-déposez un PDF ici, ou cliquez pour sélectionner' : lang === 'ar' ? 'قم بإسقاط ملف PDF هنا، أو انقر للتحديد' : 'Drag & drop a PDF here, or click to select',
-    selected: lang === 'fr' ? 'Fichier sélectionné:' : lang === 'ar' ? 'الملف المحدد:' : 'Selected file:',
-    pages: lang === 'fr' ? 'pages' : lang === 'ar' ? 'صفحة' : 'pages',
-    rangeLabel: lang === 'fr' ? 'Pages à extraire (ex: 1-5, 8, 11-13)' : lang === 'ar' ? 'الصفحات المراد استخراجها (مثال: 1-5, 8, 11-13)' : 'Pages to extract (e.g., 1-5, 8, 11-13)',
-    extractBtn: lang === 'fr' ? 'Extraire le PDF' : lang === 'ar' ? 'استخراج PDF' : 'Extract PDF',
-    processing: lang === 'fr' ? 'Traitement en cours...' : lang === 'ar' ? 'جاري المعالجة...' : 'Processing...',
+    title: lang === 'fr' ? 'Diviser un PDF' : false ? 'تقسيم ملفات PDF' : 'Split PDF',
+    subtitle: lang === 'fr' ? 'Extrayez des pages spécifiques de vos cours et manuels médicaux.' : false ? 'استخراج صفحات محددة من الدروس والمراجع الطبية.' : 'Extract specific pages from your medical courses and textbooks.',
+    dropzone: lang === 'fr' ? 'Glissez-déposez un PDF ici, ou cliquez pour sélectionner' : false ? 'قم بإسقاط ملف PDF هنا، أو انقر للتحديد' : 'Drag & drop a PDF here, or click to select',
+    selected: lang === 'fr' ? 'Fichier sélectionné:' : false ? 'الملف المحدد:' : 'Selected file:',
+    pages: lang === 'fr' ? 'pages' : false ? 'صفحة' : 'pages',
+    rangeLabel: lang === 'fr' ? 'Pages à extraire (ex: 1-5, 8, 11-13)' : false ? 'الصفحات المراد استخراجها (مثال: 1-5, 8, 11-13)' : 'Pages to extract (e.g., 1-5, 8, 11-13)',
+    extractBtn: lang === 'fr' ? 'Extraire le PDF' : false ? 'استخراج PDF' : 'Extract PDF',
+    processing: lang === 'fr' ? 'Traitement en cours...' : false ? 'جاري المعالجة...' : 'Processing...',
   };
 
   return (

@@ -45,7 +45,7 @@ const T = {
 
 export default function CaseStudyViewer({ lang }: { lang: LangCode }) {
   const { langPath } = useLang();
-  const isRtl = lang === 'ar';
+  const isRtl = false;
   const caseData = CASE_STUDIES_DB[0]; // Renders Sepsis study case
   const t = T[lang] || T.en;
 
@@ -61,8 +61,8 @@ export default function CaseStudyViewer({ lang }: { lang: LangCode }) {
 
   const activeStep = caseData.steps[currentStep];
 
-  const stepTitle = lang === 'fr' ? activeStep.titleFr || activeStep.title : lang === 'ar' ? activeStep.titleAr || activeStep.title : activeStep.title;
-  const stepDesc = lang === 'fr' ? activeStep.descriptionFr || activeStep.description : lang === 'ar' ? activeStep.descriptionAr || activeStep.description : activeStep.description;
+  const stepTitle = lang === 'fr' ? activeStep.titleFr || activeStep.title : activeStep.title;
+  const stepDesc = lang === 'fr' ? activeStep.descriptionFr || activeStep.description : activeStep.description;
 
   return (
     <div className="max-w-3xl mx-auto py-6 px-4" dir={isRtl ? 'rtl' : 'ltr'}>
@@ -71,7 +71,7 @@ export default function CaseStudyViewer({ lang }: { lang: LangCode }) {
           {t.clinicalSimulation}
         </span>
         <h1 className="text-3xl font-black text-slate-900 mt-1">
-          {lang === 'fr' ? caseData.titleFr : lang === 'ar' ? caseData.titleAr : caseData.titleEn}
+          {lang === 'fr' ? caseData.titleFr : caseData.titleEn}
         </h1>
       </div>
 
@@ -126,10 +126,10 @@ export default function CaseStudyViewer({ lang }: { lang: LangCode }) {
           <div className="border-t border-gray-100 pt-6 space-y-4">
             <p className="text-xs font-bold text-slate-800 flex items-center gap-1.5">
               <HelpCircle className="w-4 h-4 text-blue-500" />
-              {lang === 'fr' ? activeStep.question.textFr || activeStep.question.text : lang === 'ar' ? activeStep.question.textAr || activeStep.question.text : activeStep.question.text}
+              {lang === 'fr' ? activeStep.question.textFr || activeStep.question.text : activeStep.question.text}
             </p>
             <div className="space-y-2">
-              {(lang === 'fr' ? activeStep.question.optionsFr || activeStep.question.options : lang === 'ar' ? activeStep.question.optionsAr || activeStep.question.options : activeStep.question.options).map((opt, idx) => {
+              {(lang === 'fr' ? activeStep.question.optionsFr || activeStep.question.options : activeStep.question.options).map((opt, idx) => {
                 let btnStyle = "border-gray-200 hover:border-blue-400 bg-gray-50/30";
                 if (isAnswered) {
                   if (idx === activeStep.question!.correctIndex) {
@@ -180,7 +180,7 @@ export default function CaseStudyViewer({ lang }: { lang: LangCode }) {
             ) : (
               <div className="bg-blue-50/50 border border-blue-100/80 p-4 rounded-2xl space-y-2 animate-fade-in text-xs leading-relaxed text-slate-700">
                 <span className="font-bold text-blue-700 uppercase tracking-wide block">{t.clinicalExplanation}</span>
-                <p>{lang === 'fr' ? activeStep.question.rationaleFr || activeStep.question.rationale : lang === 'ar' ? activeStep.question.rationaleAr || activeStep.question.rationale : activeStep.question.rationale}</p>
+                <p>{lang === 'fr' ? activeStep.question.rationaleFr || activeStep.question.rationale : activeStep.question.rationale}</p>
                 <div className="border-t border-blue-100/60 pt-2 mt-2 text-[10px] text-gray-400 font-mono">
                   {t.reference}: Surviving Sepsis Campaign Guidelines 2021 / JAMA.
                 </div>

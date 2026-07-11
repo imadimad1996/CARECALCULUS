@@ -37,22 +37,7 @@ const T = {
     contact: 'Contact',
     contactText: 'Pour des corrections de formules, mises à jour de recommandations ou retours sur l\'accessibilité, utilisez le lien de commentaires de votre navigateur ou contactez-nous via GitHub Issues.',
   },
-  ar: {
-    title: 'عن منصة كير كالكولوس',
-    mission: 'مهمتنا',
-    missionText: 'كير كالكولوس منصة مجانية مفتوحة لدعم القرار السريري، مصممة للممرضين والأطباء الطارئين ومختصي العناية المركزة والصيادلة وطلاب الطب حول العالم. هدفنا توفير حاسبات طبية سريعة ودقيقة ومتعددة اللغات، تعمل في أي بيئة سريرية — بما فيها الوضع غير المتصل بالإنترنت.',
-    what: 'ما نبنيه',
-    whatText: 'نطور أدوات تقييم وحاسبات قائمة على الأدلة تشمل طب الطوارئ والعناية المركزة والطب الباطني وأمراض الكلى والكبد وأمراض القلب وطب الرئة وعلم الأدوية. كل معادلة مستمدة من المبادئ التوجيهية المنشورة والمراجعة علميًا.',
-    sources: 'مصادر معادلاتنا',
-    sourcesText: 'جميع المعادلات السريرية المُطبَّقة على هذه المنصة مستمدة من المبادئ التوجيهية المنشورة والأدبيات الطبية المُحكَّمة، بما فيها:',
-    multilingual: 'متعدد اللغات بالتصميم',
-    multilingualText: 'صُممت كير كالكولوس من الأساس لخدمة الأطباء والممارسين باللغات الإنجليزية والفرنسية والعربية — مغطيةً المعايير السريرية لأمريكا الشمالية وأوروبا ومنطقة الشرق الأوسط وشمال أفريقيا.',
-    disclaimer: 'تنبيه مهم',
-    disclaimerText: 'كير كالكولوس أداة لدعم القرار السريري، وليست بديلاً عن الحكم الطبي المهني. راجع',
-    disclaimerLink: 'إخلاء المسؤولية الطبية',
-    contact: 'التواصل',
-    contactText: 'لتصحيح المعادلات أو تحديث الإرشادات أو ملاحظات الوصول، استخدم رابط الملاحظات في متصفحك أو تواصل معنا عبر GitHub Issues.',
-  },
+  
 };
 
 const SOURCES = ['AHA (American Heart Association)', 'ESC (European Society of Cardiology)', 'NIH (National Institutes of Health)', 'SFAR (Société Française d\'Anesthésie-Réanimation)', 'SRLF (Société de Réanimation de Langue Française)', 'CDC (Centers for Disease Control)', 'HAS (Haute Autorité de Santé)', 'PubMed peer-reviewed literature'];
@@ -60,7 +45,7 @@ const SOURCES = ['AHA (American Heart Association)', 'ESC (European Society of C
 export default function About({ lang }: { lang: LangCode }) {
   const { langPath } = useLang();
   const t = T[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   return (
     <div className="space-y-10 pb-8 max-w-3xl mx-auto" dir={isRtl ? 'rtl' : 'ltr'}>

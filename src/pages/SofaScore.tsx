@@ -120,62 +120,6 @@ const translations: Translations = {
     faqA3: "Une hausse d'au moins 2 points par rapport à la valeur de référence indique un dysfonctionnement aigu d'organe, constituant un dépistage positif de sepsis selon les critères Sepsis-3 et signifiant un risque de mortalité hospitalière de 10% ou plus.",
     faqQ4: "Quelle est la différence entre le score SOFA et le score qSOFA ?",
     faqA4: "Le qSOFA (quick SOFA) est un outil de dépistage rapide au lit du patient ne nécessitant pas de tests de laboratoire. Le score SOFA complet requiert des analyses biologiques (PaO2, bilirubine, créatinine, plaquettes) pour évaluer formellement les défaillances.",
-  },
-  ar: {
-    title: "حاسبة مقياس SOFA للعناية المركزة",
-    subtitle: "تتبع مقياس تقييم فشل الأعضاء المتتابع لتقييم حدة الفشل العضوي في العناية المركزة",
-    resp: "الجهاز التنفسي (نسبة PaO2/FiO2)",
-    resp0: "≥ 400 مم زئبق (0 نقطة)",
-    resp1: "< 400 مم زئبق (1 نقطة)",
-    resp2: "< 300 مم زئبق (2 نقطة)",
-    resp3: "< 200 مم زئبق مع تنفس صناعي (3 نقاط)",
-    resp4: "< 100 مم زئبق مع تنفس صناعي (4 نقاط)",
-    coag: "التخثر وتجلط الدم (الصفائح الدموية)",
-    coag0: "≥ 150 ألف/ميكرولتر (0 نقطة)",
-    coag1: "< 150 ألف/ميكرولتر (1 نقطة)",
-    coag2: "< 100 ألف/ميكرولتر (2 نقطة)",
-    coag3: "< 50 ألف/ميكرولتر (3 نقاط)",
-    coag4: "< 20 ألف/ميكرولتر (4 نقاط)",
-    liver: "الكبد (مستوى البيليروبين)",
-    liver0: "< 1.2 ملغ/ديسيلتر (0 نقطة)",
-    liver1: "1.2 - 1.9 ملغ/ديسيلتر (1 نقطة)",
-    liver2: "2.0 - 5.9 ملغ/ديسيلتر (2 نقطة)",
-    liver3: "6.0 - 11.9 ملغ/ديسيلتر (3 نقاط)",
-    liver4: "≥ 12.0 ملغ/ديسيلتر (4 نقاط)",
-    cardio: "القلب والأوعية الدموية (الضغط والرافعات)",
-    cardio0: "لا يوجد انخفاض في الضغط (0 نقطة)",
-    cardio1: "متوسط الضغط < 70 مم زئبق (1 نقطة)",
-    cardio2: "دوبامين ≤ 5 أو أي دوبوتامين (2 نقطة)",
-    cardio3: "دوبامين > 5، أو إبينفرين/نورإبينفرين ≤ 0.1 (3 نقاط)",
-    cardio4: "دوبامين > 15، أو إبينفرين/نورإبينفرين > 0.1 (4 نقاط)",
-    cns: "الجهاز العصبي المركزي (مقياس غلاسكو للوعي)",
-    cns0: "مقياس غلاسكو 15 (0 نقطة)",
-    cns1: "مقياس غلاسكو 13 - 14 (1 نقطة)",
-    cns2: "مقياس غلاسكو 10 - 12 (2 نقطة)",
-    cns3: "مقياس غلاسكو 6 - 9 (3 نقاط)",
-    cns4: "مقياس غلاسكو أقل من 6 (4 نقاط)",
-    renal: "الكلى (الكرياتينين وحجم البول)",
-    renal0: "الكرياتينين < 1.2 ملغ/ديسيلتر (0 نقطة)",
-    renal1: "الكرياتينين 1.2 - 1.9 ملغ/ديسيلتر (1 نقطة)",
-    renal2: "الكرياتينين 2.0 - 3.4 ملغ/ديسيلتر (2 نقطة)",
-    renal3: "الكرياتينين 3.5 - 4.9 أو البول < 500 مل/يوم (3 نقاط)",
-    renal4: "الكرياتينين ≥ 5.0 أو البول < 200 مل/يوم (4 نقاط)",
-    result: "درجة SOFA المحسوبة",
-    formula: "التنفس + التخثر + الكبد + القلب + الجهاز العصبي + الكلى",
-    clinicalTitle: "قصور وفشل الأعضاء الحاد",
-    clinicalText: "ارتفاع درجة SOFA بمقدار نقطتين أو أكثر عن خط الأساس يشير إلى خلل حاد في وظائف الأعضاء، وهو مؤشر إيجابي للإنتان (تسمم الدم) بموجب معايير Sepsis-3.",
-    references: "المراجع: فينسنت وآخرون. مقياس SOFA. طب العناية المركزة 1996.",
-    lowRisk: "مخاطر وفيات منخفضة (أقل من 10%)",
-    highRisk: "مخاطر وفيات مرتفعة (أكثر من 10% - 20%)",
-    criticalRisk: "فشل أعضاء حرج (نسبة وفيات تصل إلى 50%+)",
-    faqQ1: "ما هو مقياس SOFA؟",
-    faqA1: "مقياس SOFA (Sequential Organ Failure Assessment) هو نظام تقييم سريري يُستخدم في وحدات العناية المركزة لتتبع قصور وظائف 6 أجهزة حيوية في الجسم وتحديد مستوى شدتها.",
-    faqQ2: "كيف يقيس SOFA شدة قصور الأعضاء؟",
-    faqA2: "يتم تقييم كل جهاز من الأجهزة الستة بدرجة من 0 (طبيعي) إلى 4 (فشل شديد)، مما يمنح مجموعًا كليًا يتراوح بين 0 و 24 نقطة. كلما ارتفعت الدرجة، زاد احتمال حدوث مضاعفات أو الوفاة.",
-    faqQ3: "ما هي الأهمية السريرية لتغير درجة SOFA؟",
-    faqA3: "يشير ارتفاع درجة SOFA بمقدار نقطتين أو أكثر عن القياس الأساسي إلى قصور حاد وجديد في وظائف الأعضاء، ويعتبر معياراً كافياً لتشخيص الإنتان الرئوي أو الدموي (Sepsis-3).",
-    faqQ4: "ما هو الفرق بين مقياس SOFA ومقياس qSOFA؟",
-    faqA4: "مقياس qSOFA هو أداة سريرية سريعة ومبسطة تُجرى بجانب المريض دون تحاليل مخبرية. أما مقياس SOFA الكامل فيتطلب تحاليل دم دقيقة (الغازات، الصفائح، الكرياتينين، البيليروبين) لحساب الدرجة النهائية.",
   }
 };
 
@@ -189,7 +133,7 @@ export default function SofaScore({ lang }: { lang: LangCode }) {
   const [copied, setCopied] = useState(false);
 
   const currentText = translations[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   const sofaValue = resp + coag + liver + cardio + cns + renal;
 

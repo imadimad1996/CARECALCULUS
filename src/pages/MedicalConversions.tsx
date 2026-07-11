@@ -58,32 +58,6 @@ const pageTranslations: Record<LangCode, any> = {
     clinicalText: "Les plages de référence sont indicatives et peuvent varier considérablement selon la méthodologie de laboratoire, les variations de population et les conditions spécifiques du patient. Suivez toujours les directives cliniques standard de votre région.",
     formula: "Facteurs de conversion standard IUPAC et unités SI",
     references: "Manuels de laboratoire de l'Organisation mondiale de la santé (OMS) & Recommandations IUPAC-IFCC sur les quantités et unités en chimie clinique."
-  },
-  ar: {
-    pageTitle: "تحويلات الوحدات الطبية",
-    pageSubtitle: "أداة تحويل سريعة للتحاليل البيولوجية",
-    sourceValue: "القيمة المدخلة",
-    calculate: "احسب",
-    inUnit: "بـ {unit}",
-    albuminTitle: "ألبومين / بروتينات",
-    albuminNormal: "القيم الطبيعية: 35–50 g/L | 3.5–5.0 g/dL | 530–756 µmol/L",
-    calciumTitle: "الكالسيوم",
-    calciumNormal: "القيم الطبيعية: 2.2–2.6 mmol/L | 88–104 mg/L | 8.8–10.4 mg/dL | 4.4–5.2 mEq/L",
-    cholesterolTitle: "الكوليسترول (الكلي، HDL، LDL)",
-    cholesterolNormal: "• الكلي: المرغوب < 5.2 mmol/L | < 200 mg/dL | < 2.0 g/L\n• HDL: المرغوب > 1.0 mmol/L (ذكر) / > 1.3 mmol/L (أنثى)\n• LDL: الأمثل < 2.6 mmol/L | < 100 mg/dL | < 1.0 g/L",
-    creatinineTitle: "الكرياتينين",
-    creatinineNormal: "• ذكر: 62–115 µmol/L | 7–13 mg/L | 0.7–1.3 mg/dL\n• أنثى: 44–97 µmol/L | 5–11 mg/L | 0.5–1.1 mg/dL",
-    glucoseTitle: "سكر الدم (الغلوكوز)",
-    glucoseNormal: "• طبيعي (صائماً): 3.9–5.5 mmol/L | 0.70–1.00 g/L | 70–100 mg/dL\n• ما قبل السكري: 5.6–6.9 mmol/L | 1.00–1.25 g/L | 100–125 mg/dL\n• السكري: ≥ 7.0 mmol/L | ≥ 1.26 g/L | ≥ 126 mg/dL",
-    hba1cTitle: "HbA1c (الهيموغلوبين الغليكوزيلاتي)",
-    hba1cNormal: "طبيعي < 42 mmol/mol (< 6%) | ما قبل السكري: 42–47 (6–6.4%) | سكري ≥ 48 mmol/mol (≥ 6.5%)",
-    triglyceridesTitle: "الدهون الثلاثية",
-    triglyceridesNormal: "• طبيعي < 1.7 mmol/L | < 150 mg/dL | < 1.50 g/L\n• حدودي: 1.7–2.3 mmol/L | 150–200 mg/dL | 1.5–2.0 g/L\n• مرتفع: 2.3–5.6 mmol/L | 200–499 mg/dL | 2.0–4.99 g/L\n• مرتفع جداً ≥ 5.6 mmol/L | ≥ 500 mg/dL | ≥ 5.0 g/L",
-    enterValue: "أدخل قيمة للتحويل",
-    clinicalTitle: "السياق السريري",
-    clinicalText: "النطاقات المرجعية استرشادية وقد تختلف بشكل كبير حسب منهجية المختبر، والاختلافات السكانية، وظروف المريض الخاصة. اتبع دائماً التوجيهات السريرية المعتمدة في منطقتك.",
-    formula: "عوامل تحويل الوحدات القياسية المعتمدة من IUPAC والنظام الدولي",
-    references: "أدلة مختبرات منظمة الصحة العالمية (WHO) وتوصيات IUPAC-IFCC بشأن الكميات والوحدات في الكيمياء السريرية."
   }
 };
 
@@ -268,7 +242,7 @@ function ConverterCard({ config, currentText, lang }: { config: ConfigLinear | C
 
 export default function MedicalConversions({ lang }: { lang: LangCode }) {
   const currentText = pageTranslations[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
   const { category } = useParams<{ category: string }>();
   const location = useLocation();
 

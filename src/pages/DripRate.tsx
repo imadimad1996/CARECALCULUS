@@ -30,18 +30,6 @@ const translations: Translations = {
     clinicalText: "Vérifiez le facteur d'égouttement de la tubulure (micro: 60 gtt/mL, macro: 10, 15 ou 20 gtt/mL) pour éviter les erreurs de dosage.",
     references: "Références : Directives standards d'administration IV.",
   },
-  ar: {
-    title: "حاسبة معدل التقطير",
-    subtitle: "حساب معدل التقطير الوريدي بالمعدل المكتسب بناءً على الحجم والوقت ومعامل القطرة",
-    volume: "الحجم الإجمالي (مل)",
-    time: "الوقت (بالدقائق)",
-    dropFactor: "معامل القطرة (قطرة/مل)",
-    result: "معدل التقطير المحسوب",
-    formula: "المعدل (قطرة/دقيقة) = (الحجم (مل) × معامل القطرة) / الوقت (دقائق)",
-    clinicalTitle: "التدخلات التمريضية",
-    clinicalText: "تأكد من اختيار معامل القطرة الصحيح للأنبوب الوريدي (القطرات الدقيقة: 60، الكبيرة: 10، 15، أو 20) لتجنب الأخطاء الدوائية.",
-    references: "المراجع: الإرشادات التمريضية القياسية للإعطاء الوريدي.",
-  }
 };
 
 export default function DripRate({ lang }: { lang: LangCode }) {
@@ -50,7 +38,7 @@ export default function DripRate({ lang }: { lang: LangCode }) {
   const [dropFactor, setDropFactor] = useState<number | ''>('');
 
   const currentText = translations[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   const rateValue = useMemo(() => {
     if (volume === '' || time === '' || dropFactor === '') return 0;
@@ -175,7 +163,7 @@ export default function DripRate({ lang }: { lang: LangCode }) {
              <div className="relative z-10 mt-10">
               <div className={`p-4 rounded-xl border flex justify-between items-center transition-all ${rateValue > 0 ? 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20' : 'bg-gray-800/50 border-gray-700 text-gray-400'}`}>
                 <div className="font-semibold text-sm">
-                  {rateValue > 0 && typeof volume === 'number' && typeof time === 'number' ? `${(volume / (time/60)).toFixed(1)} mL/hr` : (lang === 'fr' ? 'Saisissez les valeurs' : lang === 'ar' ? 'أدخل القيم' : 'Awaiting inputs')}
+                  {rateValue > 0 && typeof volume === 'number' && typeof time === 'number' ? `${(volume / (time/60)).toFixed(1)} mL/hr` : (lang === 'fr' ? 'Saisissez les valeurs' : 'Awaiting inputs')}
                 </div>
               </div>
 

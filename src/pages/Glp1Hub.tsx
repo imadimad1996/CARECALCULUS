@@ -50,24 +50,6 @@ const T: Translations = {
     backBtn: 'Retour à l\'Accueil',
     readMore: 'Lire l\'article',
     startCourse: 'Étudier le module'
-  },
-  ar: {
-    title: 'مركز معلومات أدوية GLP-1 والصحة الاستقلابية',
-    subtitle: 'المرجع السريري الشامل لعلاجات الببتيد الشبيه بالغلوكاجون-1، وإرشادات القلب والأوعية الدموية، والحاسبات الطبية.',
-    calculatorsTitle: 'الحاسبات الاستقلابية',
-    calculatorsDesc: 'أدوات سريرية معتمدة لحساب الجرعات، والسلامة الكلوية، والمؤشرات الجسدية.',
-    articlesTitle: 'الأبحاث والتحليلات الطبية المعتمدة',
-    articlesDesc: 'مقالات حديثة ومراجعات للتجارب السريرية وأوراق الممارسة الطبية.',
-    coursesTitle: 'المناهج الطبية والتعليم المستمر',
-    coursesDesc: 'وحدات تدريبية معتمدة لإدارة الاضطرابات الاستقلابية.',
-    faqTitle: 'الأسئلة السريرية الشائعة',
-    faqDesc: 'إجابات قائمة على الأدلة لأهم الأسئلة السريرية حول مسارات GLP-1.',
-    shareBtn: 'مشاركة المركز',
-    copiedText: 'تم نسخ الرابط!',
-    eeatBadge: 'منصة معتمدة بالكامل E-E-A-T',
-    backBtn: 'الرجوع للرئيسية',
-    readMore: 'اقرأ المقال',
-    startCourse: 'ابدأ الدراسة'
   }
 };
 
@@ -75,56 +57,48 @@ const FAQ_ITEMS = [
   {
     q: {
       en: 'Who qualifies for GLP-1 therapy in 2026?',
-      fr: 'Qui est éligible à la thérapie GLP-1 en 2026 ?',
-      ar: 'من المؤهل للحصول على علاج GLP-1 في عام 2026؟'
+      fr: 'Qui est éligible à la thérapie GLP-1 en 2026 ?'
     },
     a: {
       en: 'According to updated 2026 guidelines, GLP-1 receptor agonists are indicated for patients with type 2 diabetes, adults with obesity (BMI ≥ 30 kg/m²), or overweight adults (BMI ≥ 27 kg/m²) who have at least one weight-related comorbidity (e.g., hypertension, dyslipidemia, cardiovascular disease). Additionally, based on the SELECT trial, select agents are indicated to reduce cardiovascular risk in patients with established cardiovascular disease and obesity without diabetes.',
-      fr: 'Selon les recommandations de 2026, les agonistes des récepteurs GLP-1 sont indiqués pour le diabète de type 2, les adultes obèses (IMC ≥ 30 kg/m²) ou en surpoids (IMC ≥ 27 kg/m²) avec au moins une comorbidité liée au poids (hypertension, dyslipidémie, maladie cardiovasculaire). Suite à l\'essai SELECT, certains agents sont aussi prescrits pour réduire le risque cardiovasculaire en cas de maladie cardiaque établie et d\'obésité sans diabète.',
-      ar: 'وفقاً لإرشادات عام 2026 المحدثة، يُوصى بناهضات مستقبلات GLP-1 لمرضى السكري من النوع الثاني، والبالغين المصابين بالسمنة (مؤشر كتلة الجسم ≥ 30 كجم/م²)، أو البالغين الذين يعانون من زيادة الوزن (مؤشر كتلة الجسم ≥ 27 كجم/م²) ولديهم حالة مرضية واحدة على الأقل مرتبطة بالوزن (مثل ارتفاع ضغط الدم، أو عسر دهون الدم، أو أمراض القلب). بالإضافة إلى ذلك، وبناءً على نتائج تجربة SELECT، يُوصى بها لتقليل مخاطر القلب والأوعية الدموية لدى المصابين بأمراض القلب والسمنة دون السكري.'
+      fr: 'Selon les recommandations de 2026, les agonistes des récepteurs GLP-1 sont indiqués pour le diabète de type 2, les adultes obèses (IMC ≥ 30 kg/m²) ou en surpoids (IMC ≥ 27 kg/m²) avec au moins une comorbidité liée au poids (hypertension, dyslipidémie, maladie cardiovasculaire). Suite à l\'essai SELECT, certains agents sont aussi prescrits pour réduire le risque cardiovasculaire en cas de maladie cardiaque établie et d\'obésité sans diabète.'
     }
   },
   {
     q: {
       en: 'What is the clinical difference between Ozempic and Wegovy?',
-      fr: 'Quelle est la différence clinique entre Ozempic et Wegovy ?',
-      ar: 'ما هو الفرق السريري بين أوزمبيك وويغوفي؟'
+      fr: 'Quelle est la différence clinique entre Ozempic et Wegovy ?'
     },
     a: {
       en: 'Both Ozempic and Wegovy contain the active peptide semaglutide, but they are approved for different primary indications and follow distinct dosing escalation paths. Ozempic is FDA/EMA approved for glycemic control in Type 2 Diabetes (maintenance dose typically 0.5 mg to 2.0 mg weekly). Wegovy is approved specifically for chronic weight management and cardiovascular risk reduction (maintenance dose typically 2.4 mg weekly). Always match the formulation to the patient’s primary diagnostic code.',
-      fr: 'Ozempic et Wegovy contiennent tous deux le peptide actif sémaglutide, mais ils sont approuvés pour des indications différentes et ont des schémas posologiques distincts. Ozempic est approuvé pour le contrôle glycémique du diabète de type 2 (dose d\'entretien de 0,5 à 2,0 mg par semaine). Wegovy est approuvé pour la gestion du poids et la réduction du risque cardiovasculaire (dose d\'entretien de 2,4 mg par semaine).',
-      ar: 'يحتوي كل من أوزمبيك وويغوفي على المادة الفعالة سيماغلوتيد، ولكنهما معتمدان لدواعي استعمال مختلفة ولهما تدرج جرعات مختلف. أوزمبيك معتمد لضبط نسبة السكر في الدم لدى مرضى السكري من النوع الثاني (جرعة الاستمرارية عادة من 0.5 ملغ إلى 2.0 ملغ أسبوعياً). بينما ويغوفي معتمد خصيصاً لإدارة الوزن المزمن وتقليل مخاطر القلب والأوعية الدموية (جرعة الاستمرارية عادة 2.4 ملغ أسبوعياً).'
+      fr: 'Ozempic et Wegovy contiennent tous deux le peptide actif sémaglutide, mais ils sont approuvés pour des indications différentes et ont des schémas posologiques distincts. Ozempic est approuvé pour le contrôle glycémique du diabète de type 2 (dose d\'entretien de 0,5 à 2,0 mg par semaine). Wegovy est approuvé pour la gestion du poids et la réduction du risque cardiovasculaire (dose d\'entretien de 2,4 mg par semaine).'
     }
   },
   {
     q: {
       en: 'Are oral GLP-1 medications as effective as injectables?',
-      fr: 'Les médicaments GLP-1 oraux sont-ils aussi efficaces que les injectables ?',
-      ar: 'هل أدوية GLP-1 الفموية فعالة مثل الحقن؟'
+      fr: 'Les médicaments GLP-1 oraux sont-ils aussi efficaces que les injectables ?'
     },
     a: {
       en: 'Oral semaglutide (Rybelsus) has demonstrated robust efficacy for glycemic control and moderate weight loss when taken correctly on an empty stomach with a small sip of water. In clinical trials, oral semaglutide at higher doses (25 mg and 50 mg) showed weight loss outcomes comparable to intermediate injectable doses. However, compliance is highly dependent on strict adherence to fast administration instructions, making injectables preferred for some clinical profiles.',
-      fr: 'Le sémaglutide oral (Rybelsus) a démontré une efficacité robuste pour le contrôle de la glycémie et une perte de poids modérée lorsqu\'il est pris à jeun avec une gorgée d\'eau. Dans les essais cliniques, des doses plus élevées (25 mg et 50 mg) ont montré des pertes de poids comparables à celles des doses injectables intermédiaires. La compliance dépend fortement du respect rigoureux des consignes de prise.',
-      ar: 'أظهر السيماغلوتيد الفموي (Rybelsus) فعالية قوية لضبط السكر في الدم وخسارة الوزن المعتدلة عند تناوله بشكل صحيح على معدة فارغة مع رشفة صغيرة من الماء. في التجارب السريرية، أظهرت الجرعات العالية (25 ملغ و50 ملغ) نتائج خسارة وزن مماثلة لجرعات الحقن المتوسطة. ومع ذلك، يعتمد الالتزام بشكل كبير على اتباع تعليمات الإدارة الصارمة.'
+      fr: 'Le sémaglutide oral (Rybelsus) a démontré une efficacité robuste pour le contrôle de la glycémie et une perte de poids modérée lorsqu\'il est pris à jeun avec une gorgée d\'eau. Dans les essais cliniques, des doses plus élevées (25 mg et 50 mg) ont montré des pertes de poids comparables à celles des doses injectables intermédiaires. La compliance dépend fortement du respect rigoureux des consignes de prise.'
     }
   },
   {
     q: {
       en: 'How do GLP-1 medications protect against cardiovascular events?',
-      fr: 'Comment les médicaments GLP-1 protègent-ils des événements cardiovasculaires ?',
-      ar: 'كيف تحمي أدوية GLP-1 من أحداث القلب والأوعية الدموية؟'
+      fr: 'Comment les médicaments GLP-1 protègent-ils des événements cardiovasculaires ?'
     },
     a: {
       en: 'The cardiovascular protective mechanism of GLP-1 receptor agonists is multi-factorial, extending beyond glycemic control. Clinical trials (SUSTAIN-6, PIONEER-6, SELECT) indicate that these peptides directly reduce systemic endothelial inflammation, stabilize atherosclerotic plaques, improve myocardial performance, and decrease platelet aggregation. These pathways reduce the incidence of myocardial infarction, stroke, and cardiovascular death in high-risk patient cohorts.',
-      fr: 'Le mécanisme protecteur cardiovasculaire des GLP-1 dépasse le simple contrôle de la glycémie. Les essais cliniques (SUSTAIN-6, PIONEER-6, SELECT) indiquent que ces peptides réduisent l\'inflammation endothéliale systémique, stabilisent les plaques d\'athérome, améliorent la fonction myocardique et diminuent l\'agrégation plaquettaire, réduisant ainsi les infarctus et AVC.',
-      ar: 'آلية حماية القلب والأوعية الدموية لناهضات مستقبلات GLP-1 متعددة العوامل وتتجاوز مجرد ضبط السكر. تشير التجارب السريرية (SUSTAIN-6, SELECT) إلى أن هذه الببتيدات تقلل بشكل مباشر من التهاب بطانة الأوعية الدموية، وتعمل على استقرار لويحات التصلب، وتحسن أداء عضلة القلب، مما يقلل من حدوث النوبات القلبية والسكتات الدماغية.'
+      fr: 'Le mécanisme protecteur cardiovasculaire des GLP-1 dépasse le simple contrôle de la glycémie. Les essais cliniques (SUSTAIN-6, PIONEER-6, SELECT) indiquent que ces peptides réduisent l\'inflammation endothéliale systémique, stabilisent les plaques d\'athérome, améliorent la fonction myocardique et diminuent l\'agrégation plaquettaire, réduisant ainsi les infarctus et AVC.'
     }
   }
 ];
 
 export default function Glp1Hub({ lang }: Glp1HubProps) {
   const tLabels = T[lang] || T.en;
-  const isRtl = lang === 'ar';
+  const isRtl = false;
   const navigate = useNavigate();
   const { langPath } = useLang();
 

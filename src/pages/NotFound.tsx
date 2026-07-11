@@ -21,29 +21,22 @@ const T = {
     calculators: 'Voir les outils',
     popular: 'Outils populaires',
   },
-  ar: {
-    code: '404',
-    title: 'الصفحة غير موجودة',
-    desc: 'هذا المسار السريري غير موجود. انتقل إلى حاسبة نشطة أو تصفح المكتبة.',
-    home: 'الرئيسية',
-    calculators: 'فتح الحاسبات',
-    popular: 'الأدوات الشائعة',
-  },
+  
 };
 
 const QUICK_LINKS = [
-  { path: '/map-calculator', en: 'MAP Calculator', fr: 'Calculateur PAM', ar: 'حساب MAP' },
-  { path: '/glasgow-coma-scale', en: 'GCS Score', fr: 'Score Glasgow', ar: 'مقياس غلاسكو' },
-  { path: '/creatinine-clearance', en: 'Creatinine Clearance', fr: 'Clairance Créatinine', ar: 'تصفية الكرياتينين' },
-  { path: '/qsofa-score', en: 'qSOFA Sepsis', fr: 'qSOFA Sepsis', ar: 'مؤشر qSOFA' },
-  { path: '/meld-score', en: 'MELD Liver', fr: 'Score MELD', ar: 'نقاط MELD' },
-  { path: '/wells-score', en: 'Wells DVT', fr: 'Wells Phlébite', ar: 'مؤشر ويلز' },
+  { path: '/map-calculator', en: 'MAP Calculator', fr: 'Calculateur PAM' },
+  { path: '/glasgow-coma-scale', en: 'GCS Score', fr: 'Score Glasgow' },
+  { path: '/creatinine-clearance', en: 'Creatinine Clearance', fr: 'Clairance Créatinine' },
+  { path: '/qsofa-score', en: 'qSOFA Sepsis', fr: 'qSOFA Sepsis' },
+  { path: '/meld-score', en: 'MELD Liver', fr: 'Score MELD' },
+  { path: '/wells-score', en: 'Wells DVT', fr: 'Wells Phlébite' },
 ];
 
 export default function NotFound({ lang }: { lang: LangCode }) {
   const { langPath } = useLang();
   const t = T[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   return (
     <div className="min-h-[60vh] flex flex-col items-center justify-center py-16 px-4 text-center space-y-8" dir={isRtl ? 'rtl' : 'ltr'}>
@@ -77,7 +70,7 @@ export default function NotFound({ lang }: { lang: LangCode }) {
         <p className="text-[10px] font-mono font-black text-gray-400 uppercase tracking-widest">{t.popular}</p>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
           {QUICK_LINKS.map(link => {
-            const label = lang === 'fr' ? link.fr : lang === 'ar' ? link.ar : link.en;
+            const label = lang === 'fr' ? link.fr : link.en;
             return (
               <Link
                 key={link.path}

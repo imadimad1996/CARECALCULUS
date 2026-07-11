@@ -24,7 +24,7 @@ export default function EmbedGallery({ lang }: { lang: LangCode }) {
     setTimeout(() => setCopiedId(null), 2000);
   };
 
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-12 md:py-20">

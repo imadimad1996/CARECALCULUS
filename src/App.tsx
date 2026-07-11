@@ -46,7 +46,6 @@ function AppLayout() {
     const clean = p.startsWith('/') ? p : `/${p}`;
     if (clean === '/glp-1-hub' || clean === '/hub-glp1' || clean === '/مركز-glp1' || decodeURIComponent(clean) === '/مركز-glp1') {
       if (lang === 'fr') return '/fr/hub-glp1';
-      if (lang === 'ar') return '/ar/مركز-glp1';
       return '/glp-1-hub';
     }
     return buildPath(p, lang);
@@ -63,7 +62,6 @@ function AppLayout() {
     const cleanLogical = logicalPath.startsWith('/') ? logicalPath : `/${logicalPath}`;
     if (cleanLogical === '/glp-1-hub' || cleanLogical === '/hub-glp1' || cleanLogical === '/مركز-glp1' || decodeURIComponent(cleanLogical) === '/مركز-glp1') {
       if (next === 'fr') navigate('/fr/hub-glp1');
-      else if (next === 'ar') navigate('/ar/مركز-glp1');
       else navigate('/glp-1-hub');
       return;
     }
@@ -77,14 +75,13 @@ function AppLayout() {
     if (location.pathname !== '/') return;
     const stored = localStorage.getItem('carecalculus-lang');
     let preferred: LangCode = 'en';
-    if (stored === 'fr' || stored === 'ar' || stored === 'en') {
+    if (stored === 'fr' || stored === 'en') {
       preferred = stored;
     } else {
       const browserLangs = navigator.languages || [navigator.language];
       for (const b of browserLangs) {
         const code = b.toLowerCase().slice(0, 2);
         if (code === 'fr') { preferred = 'fr'; break; }
-        if (code === 'ar') { preferred = 'ar'; break; }
       }
     }
     if (preferred !== 'en') {
@@ -124,7 +121,7 @@ function AppLayout() {
     } catch (e) {}
   };
 
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   useEffect(() => {
     localStorage.setItem('carecalculus-lang', lang);
@@ -232,7 +229,7 @@ function AppLayout() {
       'og:image:width': '1200',
       'og:image:height': '630',
       'og:image:alt': 'CareCalculus — Free multilingual clinical calculators for ICU, ER and hospital clinicians',
-      'og:locale': lang === 'fr' ? 'fr_FR' : (lang === 'ar' ? 'ar_AR' : 'en_US'),
+      'og:locale': lang === 'fr' ? 'fr_FR' : ('en_US'),
     };
     Object.entries(ogTags).forEach(([property, content]) => {
       let ogMeta = document.querySelector(`meta[property="${property}"]`);
@@ -330,11 +327,11 @@ function AppLayout() {
             <span className="text-[10px] font-mono font-black leading-none uppercase tracking-wider text-gray-400">
               {lang === 'fr' 
                 ? 'INDEX DES MOTS-CLÉS POPULAIRES' 
-                : (lang === 'ar' ? 'فهرس البحث الطبي والوصول السريع' : 'TOP CLINICAL KEYWORD INDEX')}
+                : ('TOP CLINICAL KEYWORD INDEX')}
             </span>
           </div>
           <span className="text-[9px] font-mono text-gray-400 font-bold uppercase tracking-widest hidden sm:inline-block">
-            {lang === 'fr' ? '10 Index Principaux' : (lang === 'ar' ? '١٠ مؤشرات بحث سريعة' : '10 Primary Indices')}
+            {lang === 'fr' ? '10 Index Principaux' : ('10 Primary Indices')}
           </span>
         </div>
 
@@ -342,7 +339,7 @@ function AppLayout() {
         <div className="flex items-center gap-2 overflow-x-auto pb-1.5 pt-0.5 scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-transparent">
           {popularTags.map((tag) => {
             const isActive = currentPath === tag.path;
-            const label = lang === 'fr' ? tag.fr : (lang === 'ar' ? tag.ar : tag.en);
+            const label = lang === 'fr' ? tag.fr : (tag.en);
             return (
               <Link
                 key={tag.path}
@@ -370,12 +367,12 @@ function AppLayout() {
       if (geoState.standard === 'US Customary / Imperial') {
         return lang === 'fr' 
           ? 'Présélection d\'unités américaines (FDA, AHA, ACC) active pour ce navigateur.'
-          : (lang === 'ar' ? 'تم تفعيل معايير الوحدات الأمريكية (FDA, AHA, ACC) المعتمدة.' : 'US standard guidelines (FDA, AHA, ACC) presets configured.');
+          : ('US standard guidelines (FDA, AHA, ACC) presets configured.');
       }
       if (lang === 'fr') {
         return 'Recommandations Européenne & Française (HAS, SFMU) et système métrique actif.';
       }
-      if (lang === 'ar') {
+      if (false) {
         return 'المعايير المترية للمختبرات وتوصيات الهيئات الطبية الإقليمية نشطة.';
       }
       return 'International medical criteria & SI Metric protocols standard.';
@@ -399,7 +396,7 @@ function AppLayout() {
                 </span>
               </div>
               <h3 className="text-xs font-black tracking-wider uppercase font-mono mt-1 text-slate-200">
-                {lang === 'fr' ? 'Protocole Régional Détecté' : (lang === 'ar' ? 'معيار البروتوكول الإقليمي النشط' : 'Active Regional Guidelines Standard')}
+                {lang === 'fr' ? 'Protocole Régional Détecté' : ('Active Regional Guidelines Standard')}
               </h3>
               <p className="text-[11px] text-slate-400 mt-1 leading-normal">
                 {getGuidelinesAssociation()}
@@ -428,7 +425,7 @@ function AppLayout() {
               style={{ minHeight: '44px' }}
             >
               <Sparkles className="w-3.5 h-3.5 text-[#CCFBF1]" />
-              <span>{lang === 'fr' ? 'Intervertir' : (lang === 'ar' ? 'تبديل المعيار' : 'Toggle Unit Mode')}</span>
+              <span>{lang === 'fr' ? 'Intervertir' : ('Toggle Unit Mode')}</span>
             </button>
           </div>
         </div>
@@ -445,12 +442,12 @@ function AppLayout() {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="space-y-1 shrink-0">
             <span className="text-[10px] font-mono font-black text-blue-600 uppercase tracking-widest block">
-              {lang === 'fr' ? 'RECHERCHE D’OUTIL DIRECTE' : (lang === 'ar' ? 'البحث السريري الذكي الفوري' : 'RAPID DECISION SUPPORT SEARCH')}
+              {lang === 'fr' ? 'RECHERCHE D’OUTIL DIRECTE' : ('RAPID DECISION SUPPORT SEARCH')}
             </span>
             <h2 className="text-sm font-black text-slate-800 uppercase tracking-tight">
               {lang === 'fr' 
                 ? 'Accès aux Protocoles Cliniques' 
-                : (lang === 'ar' ? 'الباحث عن المعادلات الطبية والتشخيصية' : 'Search Clinical Modules & Tiers')}
+                : ('Search Clinical Modules & Tiers')}
             </h2>
           </div>
 
@@ -459,7 +456,7 @@ function AppLayout() {
             <input
               id="top-page-search-field"
               type="text"
-              placeholder={lang === 'fr' ? 'Saisissez sepsis, GCS, calcul de reins, corticoides...' : (lang === 'ar' ? 'ابحث هنا باسم الحاسبة أو المرض (مثل sepsis، غلاسكو، كبد)...' : 'Type sepsis, GCS, renal clearance, steroids conversion...')}
+              placeholder={lang === 'fr' ? 'Saisissez sepsis, GCS, calcul de reins, corticoides...' : ('Type sepsis, GCS, renal clearance, steroids conversion...')}
               value={topSearch}
               onChange={(e) => setTopSearch(e.target.value)}
               className={`w-full py-2.5 bg-gray-50 focus:bg-white text-gray-900 border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100/40 outline-none rounded-xl text-xs font-bold transition-all placeholder-gray-400 ${
@@ -484,18 +481,18 @@ function AppLayout() {
         {topSearch && (
           <div className="mt-4 pt-4 border-t border-gray-150 space-y-3">
             <span className="text-[10px] font-mono font-bold text-blue-600 block uppercase tracking-wider">
-              {lang === 'fr' ? 'RÉSULTATS DE RECHERCHE CORRESPONDANTS' : (lang === 'ar' ? 'نتائج الفحص والوصول الفوري المكتشفة' : 'MATCHING CLINICAL MODULES FOUND')}
+              {lang === 'fr' ? 'RÉSULTATS DE RECHERCHE CORRESPONDANTS' : ('MATCHING CLINICAL MODULES FOUND')}
             </span>
             {filteredTopResults.length === 0 ? (
               <div className="p-4 text-center bg-gray-50 rounded-xl border border-gray-150 text-xs font-semibold text-gray-500 flex items-center justify-center gap-2">
                 <AlertOctagon className="w-4 h-4 text-gray-400" />
-                <span>{lang === 'fr' ? 'Aucun protocole clinique actif trouvé.' : (lang === 'ar' ? 'لا توجد حاسبة مخصصة تطابق البحث.' : 'No diagnostic calculator or guidelines found matching query.')}</span>
+                <span>{lang === 'fr' ? 'Aucun protocole clinique actif trouvé.' : ('No diagnostic calculator or guidelines found matching query.')}</span>
               </div>
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                 {filteredTopResults.map((item) => {
                   const Icon = item.icon;
-                  const itemTitle = lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn);
+                  const itemTitle = lang === 'fr' ? item.nameFr : (item.nameEn);
                   const isCurMatch = logicalPath === item.path || (logicalPath === '/' && item.path === '/map-calculator');
                   return (
                     <Link
@@ -556,7 +553,7 @@ function AppLayout() {
             <input
               id="top-nav-search"
               type="text"
-              placeholder={lang === 'fr' ? 'Rechercher sepsis, GCS, rein, stéroïdes...' : (lang === 'ar' ? 'ابحث: sepsis، غلاسكو، كبد...' : 'Search: sepsis, GCS, renal, steroids...')}
+              placeholder={lang === 'fr' ? 'Rechercher sepsis, GCS, rein, stéroïdes...' : 'Search: sepsis, GCS, renal, steroids...'}
               value={topSearch}
               onChange={(e) => setTopSearch(e.target.value)}
               className={`w-full py-2 bg-gray-50 focus:bg-white text-gray-900 border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100/60 outline-none rounded-xl text-xs font-semibold transition-all placeholder-gray-400 ${isRtl ? 'pr-9 pl-8 text-right' : 'pl-9 pr-8 text-left'}`}
@@ -598,7 +595,7 @@ function AppLayout() {
               style={{ minHeight: '40px' }}
             >
               <HeartPulse className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">{lang === 'fr' ? 'Connexion' : lang === 'ar' ? 'تسجيل الدخول' : 'Sign In'}</span>
+              <span className="hidden sm:inline">{lang === 'fr' ? 'Connexion' : 'Sign In'}</span>
             </button>
           )}
         </div>
@@ -609,13 +606,13 @@ function AppLayout() {
             {filteredTopResults.length === 0 ? (
               <p className="text-xs text-gray-500 font-semibold flex items-center gap-1.5">
                 <AlertOctagon className="w-3.5 h-3.5 text-gray-400" />
-                {lang === 'fr' ? 'Aucun protocole trouvé.' : (lang === 'ar' ? 'لا توجد نتائج مطابقة.' : 'No matching calculator found.')}
+                {lang === 'fr' ? 'Aucun protocole trouvé.' : ('No matching calculator found.')}
               </p>
             ) : (
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
                 {filteredTopResults.map((item) => {
                   const Icon = item.icon;
-                  const label = lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn);
+                  const label = lang === 'fr' ? item.nameFr : (item.nameEn);
                   return (
                     <Link key={item.path} to={langPath(item.path)} onClick={() => setTopSearch('')}
                       className="flex items-center gap-2 p-2 bg-white rounded-lg border border-gray-200 hover:border-[#0891B2] hover:bg-[#0891B2]/5 transition-all text-xs font-bold text-gray-800"
@@ -634,7 +631,7 @@ function AppLayout() {
         <div className="px-4 py-2.5 flex items-center gap-1.5 overflow-x-auto scrollbar-none">
           {popularTags.map((tag) => {
             const isActive = currentPath === tag.path;
-            const label = lang === 'fr' ? tag.fr : (lang === 'ar' ? tag.ar : tag.en);
+            const label = lang === 'fr' ? tag.fr : (tag.en);
             return (
               <Link key={tag.path} to={langPath(tag.path)}
                 className={`shrink-0 px-3 py-1.5 rounded-full text-[11px] font-bold whitespace-nowrap transition-all border ${
@@ -671,7 +668,7 @@ function AppLayout() {
     const base = CONTENT_ROUTES.find(r => logicalPath === r || logicalPath.startsWith(r + '/'));
     const section = base ? sectionMap[base] : null;
     const SectionIcon = section?.icon;
-    const sectionLabel = section ? (lang === 'fr' ? section.fr : lang === 'ar' ? section.ar : section.en) : '';
+    const sectionLabel = section ? (lang === 'fr' ? section.fr : section.en) : '';
     const isDetail = base && logicalPath !== base;
 
     return (
@@ -690,7 +687,7 @@ function AppLayout() {
               </Link>
               <ChevronRight className="w-3.5 h-3.5 text-gray-300" />
               <span className="text-gray-400 text-xs truncate max-w-[180px]">
-                {lang === 'fr' ? 'Article' : lang === 'ar' ? 'المقال' : 'Article'}
+                {lang === 'fr' ? 'Article' : 'Article'}
               </span>
             </>
           ) : (
@@ -707,7 +704,7 @@ function AppLayout() {
             style={{ minHeight: '36px' }}
           >
             <Sparkles className="w-3.5 h-3.5 text-indigo-500" />
-            {lang === 'fr' ? 'Hub GLP-1' : lang === 'ar' ? 'مركز GLP-1' : 'GLP-1 Hub'}
+            {lang === 'fr' ? 'Hub GLP-1' : 'GLP-1 Hub'}
           </Link>
           <Link
             to={langPath('/map-calculator')}
@@ -715,7 +712,7 @@ function AppLayout() {
             style={{ minHeight: '36px' }}
           >
             <Calculator className="w-3.5 h-3.5" />
-            {lang === 'fr' ? 'Calculateurs' : lang === 'ar' ? 'الحاسبات' : 'Calculators'}
+            {lang === 'fr' ? 'Calculateurs' : 'Calculators'}
           </Link>
         </div>
       </div>
@@ -729,7 +726,6 @@ function AppLayout() {
           <Routes>
             <Route path="/">{embedRoutes(lang)}</Route>
             <Route path="/fr">{embedRoutes('fr')}</Route>
-            <Route path="/ar">{embedRoutes('ar')}</Route>
           </Routes>
         </React.Suspense>
       </LangContext.Provider>
@@ -746,7 +742,7 @@ function AppLayout() {
       
       {/* Accessibility: skip-to-content for keyboard navigation */}
       <a href="#main-content" className="skip-to-content">
-        {lang === 'fr' ? 'Aller au contenu principal' : lang === 'ar' ? 'انتقل إلى المحتوى الرئيسي' : 'Skip to main content'}
+        {lang === 'fr' ? 'Aller au contenu principal' : 'Skip to main content'}
       </a>
 
       {/* Mobile Top Header */}
@@ -837,7 +833,7 @@ function AppLayout() {
             <Search className={`absolute ${isRtl ? 'right-9' : 'left-9'} top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 dark:text-slate-500 pointer-events-none transition-colors group-focus-within:text-teal-500`} />
             <input
               type="text"
-              placeholder={lang === 'fr' ? 'Filtrer les outils...' : (lang === 'ar' ? 'تصفية الحاسبات...' : 'Filter calculators...')}
+              placeholder={lang === 'fr' ? 'Filtrer les outils...' : ('Filter calculators...')}
               value={sidebarSearch}
               onChange={(e) => setSidebarSearch(e.target.value)}
               className={`w-full py-2.5 bg-slate-100/80 dark:bg-slate-800/80 focus:bg-white dark:focus:bg-slate-900 text-slate-900 dark:text-white border border-slate-200/80 dark:border-slate-700 focus:border-teal-500 focus:ring-4 focus:ring-teal-500/10 outline-none rounded-2xl text-xs font-semibold transition-all duration-200 shadow-2xs ${isRtl ? 'pr-10 pl-9 text-right' : 'pl-10 pr-9 text-left'}`}
@@ -871,7 +867,7 @@ function AppLayout() {
               style={{ minHeight: '46px' }}
             >
               <Logo className="w-5 h-5 shrink-0" mode="light" />
-              <span>{lang === 'fr' ? 'Accueil Principal' : lang === 'ar' ? 'لوحة التحكم الرئيسية' : 'Clinical Dashboard'}</span>
+              <span>{lang === 'fr' ? 'Accueil Principal' : 'Clinical Dashboard'}</span>
             </Link>
 
             {/* TIER I COMPONENT */}
@@ -904,7 +900,7 @@ function AppLayout() {
                           style={{ minHeight: '40px' }}
                         >
                           <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-teal-600' : 'text-slate-400'}`} />
-                          <span className="line-clamp-2 leading-snug">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
+                          <span className="line-clamp-2 leading-snug">{lang === 'fr' ? item.nameFr : (item.nameEn)}</span>
                         </Link>
                       );
                     })}
@@ -943,7 +939,7 @@ function AppLayout() {
                           style={{ minHeight: '40px' }}
                         >
                           <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-teal-600' : 'text-slate-400'}`} />
-                          <span className="line-clamp-2 leading-snug">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
+                          <span className="line-clamp-2 leading-snug">{lang === 'fr' ? item.nameFr : (item.nameEn)}</span>
                         </Link>
                       );
                     })}
@@ -982,7 +978,7 @@ function AppLayout() {
                           style={{ minHeight: '40px' }}
                         >
                           <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-teal-600' : 'text-slate-400'}`} />
-                          <span className="line-clamp-2 leading-snug">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
+                          <span className="line-clamp-2 leading-snug">{lang === 'fr' ? item.nameFr : (item.nameEn)}</span>
                         </Link>
                       );
                     })}
@@ -1000,7 +996,7 @@ function AppLayout() {
                 >
                   <span className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-teal-500" />
-                    <span>{lang === 'fr' ? 'RESSOURCES & BIBLIOTHÈQUE' : (lang === 'ar' ? 'المصادر والمكتبة' : 'RESOURCES & LIBRARY')}</span>
+                    <span>{lang === 'fr' ? 'RESSOURCES & BIBLIOTHÈQUE' : ('RESOURCES & LIBRARY')}</span>
                   </span>
                   <ChevronDown className={`w-4 h-4 text-slate-400 group-hover:text-slate-700 dark:group-hover:text-white transition-transform duration-200 ${(sidebarSearch || expandedTiers[4]) ? '' : (isRtl ? 'rotate-90' : '-rotate-90')}`} />
                 </button>
@@ -1016,7 +1012,7 @@ function AppLayout() {
                         <div key={sub.key} className="space-y-1">
                           <div className="px-2 flex items-center gap-2 text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-1">
                             <span className={`w-1.5 h-1.5 rounded-full ${sub.dot}`} />
-                            <span>{lang === 'fr' ? sub.fr : (lang === 'ar' ? sub.ar : sub.en)}</span>
+                            <span>{lang === 'fr' ? sub.fr : (sub.en)}</span>
                           </div>
                           <div className="space-y-1">
                             {groupItems.map((item) => {
@@ -1034,7 +1030,7 @@ function AppLayout() {
                                   style={{ minHeight: '40px' }}
                                 >
                                   <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-teal-600' : 'text-slate-400'}`} />
-                                  <span className="line-clamp-2 leading-snug">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
+                                  <span className="line-clamp-2 leading-snug">{lang === 'fr' ? item.nameFr : (item.nameEn)}</span>
                                 </Link>
                               );
                             })}
@@ -1077,7 +1073,7 @@ function AppLayout() {
                           style={{ minHeight: '40px' }}
                         >
                           <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-teal-600' : 'text-slate-400'}`} />
-                          <span className="line-clamp-2 leading-snug">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
+                          <span className="line-clamp-2 leading-snug">{lang === 'fr' ? item.nameFr : (item.nameEn)}</span>
                         </Link>
                       );
                     })}
@@ -1090,7 +1086,7 @@ function AppLayout() {
             {navItems.filter(i => matchesSearch(i, sidebarSearch)).length === 0 && (
               <div className="py-10 px-4 text-center text-xs text-slate-400 font-semibold space-y-2 select-none bg-slate-50 dark:bg-slate-800/30 rounded-2xl border border-dashed border-slate-200 dark:border-slate-700">
                 <AlertOctagon className="w-6 h-6 text-slate-300 dark:text-slate-600 mx-auto animate-pulse" />
-                <p>{lang === 'fr' ? 'Aucun outil correspond' : (lang === 'ar' ? 'لا توجد أدوات مطابقة' : 'No tools found')}</p>
+                <p>{lang === 'fr' ? 'Aucun outil correspond' : ('No tools found')}</p>
               </div>
             )}
 
@@ -1100,7 +1096,7 @@ function AppLayout() {
                 <div className="px-3 py-2 rounded-xl bg-teal-500/10 dark:bg-teal-500/20 border border-teal-500/20 text-[11px] font-mono leading-none tracking-wider text-teal-700 dark:text-teal-300 font-extrabold uppercase flex items-center justify-between">
                   <span className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse shadow-[0_0_8px_rgba(20,184,166,0.6)]" />
-                    <span>{lang === 'fr' ? 'FMP ACCUEIL COURS' : (lang === 'ar' ? 'دروس كلية الطب والصيدلة' : 'FMP ACADEMIC HUB')}</span>
+                    <span>{lang === 'fr' ? 'FMP ACCUEIL COURS' : ('FMP ACADEMIC HUB')}</span>
                   </span>
                 </div>
                 <div className="space-y-1 mt-1.5">
@@ -1114,7 +1110,7 @@ function AppLayout() {
                     style={{ minHeight: '46px' }}
                   >
                     <GraduationCap className={`w-4 h-4 shrink-0 transition-transform group-hover:scale-110 ${logicalPath === '/fmp-medecine' ? 'text-teal-600 dark:text-teal-400' : 'text-slate-400 dark:text-slate-500'}`} />
-                    <span className="line-clamp-2 leading-snug">{lang === 'fr' ? 'Cours & Livres PDF' : (lang === 'ar' ? 'الدروس والكتب الطبية' : 'Courses & PDF Books')}</span>
+                    <span className="line-clamp-2 leading-snug">{lang === 'fr' ? 'Cours & Livres PDF' : ('Courses & PDF Books')}</span>
                   </Link>
                 </div>
               </div>
@@ -1152,7 +1148,6 @@ function AppLayout() {
                     langPath so redirects stay inside the active language. */}
                 <Route path="/">{moduleRoutes(lang, langPath)}</Route>
                 <Route path="/fr">{moduleRoutes('fr', (p) => buildPath(p, 'fr'))}</Route>
-                <Route path="/ar">{moduleRoutes('ar', (p) => buildPath(p, 'ar'))}</Route>
                 <Route path="*" element={<NotFound lang={lang} />} />
               </Routes>
             </React.Suspense>
@@ -1163,7 +1158,7 @@ function AppLayout() {
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
                   <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 font-mono">
-                    {lang === 'fr' ? 'Calculateurs Connexes Recommandés' : (lang === 'ar' ? 'أدوات حسابية متعلقة بالتشخيص' : 'Suggested Diagnostic Protocols')}
+                    {lang === 'fr' ? 'Calculateurs Connexes Recommandés' : ('Suggested Diagnostic Protocols')}
                   </h3>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -1182,7 +1177,7 @@ function AppLayout() {
                           </div>
                           <div>
                             <span className="text-xs font-bold text-gray-800 block group-hover:text-blue-700 transition-colors">
-                              {lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}
+                              {lang === 'fr' ? item.nameFr : (item.nameEn)}
                             </span>
                             <span className="text-[10px] font-mono text-gray-400 block uppercase font-medium">TIER {item.tier}</span>
                           </div>
@@ -1221,9 +1216,7 @@ function AppLayout() {
                 <p className="text-[11px] text-gray-500 leading-relaxed">
                   {lang === 'fr' 
                     ? 'Toutes les formules de score médical d’urgence et d’équivalences de dosage clinique sont basées sur le consensus professionnel scientifiquement prouvé et publié par les instances d’autorité (AHA, SRLF, ESC, NIH).' 
-                    : (lang === 'ar' 
-                        ? 'تتبع حاسبة كير الطبية الشاملة أعلى معايير الجودة العلمية المعتمدة المستندة للأبحاث الطبية الموثقة والمنشورة في دوريات الطب والعناية المركزة.' 
-                        : 'All emergency index calculators, body mass variables, and drug equivalence metrics are strictly reviewed and clinical protocol aligned according to peer-reviewed guides (AHA, ESC, CDC, SFAR).')}
+                    : ('All emergency index calculators, body mass variables, and drug equivalence metrics are strictly reviewed and clinical protocol aligned according to peer-reviewed guides (AHA, ESC, CDC, SFAR).')}
                 </p>
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="px-2.5 py-0.5 bg-teal-50 rounded-md text-[9px] font-extrabold text-teal-700 border border-teal-100 uppercase tracking-wider">E-E-A-T Certified</span>
@@ -1234,14 +1227,12 @@ function AppLayout() {
               {/* Clinical Sources & Validation */}
               <div className="space-y-4">
                 <h4 className="font-extrabold text-[10px] uppercase tracking-widest text-gray-900 font-mono">
-                  {lang === 'fr' ? 'SOURCES & VALIDATION CLINIQUE' : (lang === 'ar' ? 'المصادر والمراجع العلمية المعتمدة' : 'CLINICAL SOURCES & VALIDATION')}
+                  {lang === 'fr' ? 'SOURCES & VALIDATION CLINIQUE' : ('CLINICAL SOURCES & VALIDATION')}
                 </h4>
                 <p className="text-[11px] text-gray-500 leading-relaxed">
                   {lang === 'fr'
                     ? 'Chaque formule est tirée de la littérature médicale publiée (AHA, ESC, SFAR, HAS, NIH) et documentée avec ses références originales.'
-                    : (lang === 'ar'
-                        ? 'كل معادلة مستندة إلى الأدبيات الطبية المنشورة (AHA، ESC، NIH، SFAR) مع توثيق المرجع الأصلي لكل أداة.'
-                        : 'Every formula is derived from published peer-reviewed literature (AHA, ESC, NIH, SFAR, CDC) with the original study or guideline cited for each tool.')}
+                    : ('Every formula is derived from published peer-reviewed literature (AHA, ESC, NIH, SFAR, CDC) with the original study or guideline cited for each tool.')}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {['AHA', 'ESC', 'NIH', 'SFAR', 'CDC', 'HAS', 'SRLF'].map(org => (
@@ -1250,11 +1241,11 @@ function AppLayout() {
                 </div>
                 <div className="flex flex-wrap gap-2 pt-1">
                   <Link to={langPath('/about')} className="text-[11px] text-blue-600 hover:underline font-semibold">
-                    {lang === 'fr' ? 'À propos de nous' : lang === 'ar' ? 'عن المنصة' : 'About CareCalculus'}
+                    {lang === 'fr' ? 'À propos de nous' : 'About CareCalculus'}
                   </Link>
                   <span className="text-gray-300">·</span>
                   <Link to={langPath('/disclaimer')} className="text-[11px] text-blue-600 hover:underline font-semibold">
-                    {lang === 'fr' ? 'Avertissement médical' : lang === 'ar' ? 'إخلاء المسؤولية' : 'Medical Disclaimer'}
+                    {lang === 'fr' ? 'Avertissement médical' : 'Medical Disclaimer'}
                   </Link>
                 </div>
               </div>
@@ -1262,19 +1253,17 @@ function AppLayout() {
               {/* Internal page links matrix to maximize internal PageRank distribution */}
               <div className="space-y-4">
                 <h4 className="font-extrabold text-[10px] uppercase tracking-widest text-gray-900 font-mono">
-                  {lang === 'fr' ? 'MAILLAGE CLINIQUE STRATÉGIQUE' : (lang === 'ar' ? 'فهرس الربط الداخلي للمحركات' : 'INTERNAL CRAWLER MAP')}
+                  {lang === 'fr' ? 'MAILLAGE CLINIQUE STRATÉGIQUE' : ('INTERNAL CRAWLER MAP')}
                 </h4>
                 <p className="text-[11px] text-gray-500 leading-relaxed">
                   {lang === 'fr' 
                     ? 'Parcourez instantanément nos différents calculateurs pour assurer une prise en charge optimale.' 
-                    : (lang === 'ar' 
-                        ? 'انقر للتنقل السريع بين بروتوكولات الفحص والتقييم السريري لتوفير الوقت.' 
-                        : 'Navigate with zero friction between clinical tools to audit organ parameters and critical thresholds.')}
+                    : ('Navigate with zero friction between clinical tools to audit organ parameters and critical thresholds.')}
                 </p>
                 <div className="grid grid-cols-2 gap-x-2 gap-y-1.5 pt-1 text-[10px] font-mono font-semibold">
                   {navItems.slice(0, 6).map(n => (
                     <Link key={n.path} to={langPath(n.path)} className="text-blue-650 hover:text-blue-800 hover:underline truncate">
-                      ▸ {lang === 'fr' ? n.nameFr : (lang === 'ar' ? n.nameAr : n.nameEn)}
+                      ▸ {lang === 'fr' ? n.nameFr : (n.nameEn)}
                     </Link>
                   ))}
                 </div>
@@ -1288,21 +1277,21 @@ function AppLayout() {
               </span>
               <div className="flex items-center gap-4 flex-wrap justify-center">
                 <Link to={langPath('/about')} className="text-gray-400 hover:text-blue-600 transition-colors text-xs">
-                  {lang === 'fr' ? 'À propos' : lang === 'ar' ? 'عن المنصة' : 'About'}
+                  {lang === 'fr' ? 'À propos' : 'About'}
                 </Link>
                 <Link to={langPath('/disclaimer')} className="text-gray-400 hover:text-blue-600 transition-colors text-xs">
-                  {lang === 'fr' ? 'Avertissement' : lang === 'ar' ? 'إخلاء المسؤولية' : 'Disclaimer'}
+                  {lang === 'fr' ? 'Avertissement' : 'Disclaimer'}
                 </Link>
                 <Link to={langPath('/privacy')} className="text-gray-400 hover:text-blue-600 transition-colors text-xs">
-                  {lang === 'fr' ? 'Confidentialité' : lang === 'ar' ? 'الخصوصية' : 'Privacy'}
+                  {lang === 'fr' ? 'Confidentialité' : 'Privacy'}
                 </Link>
                 <Link to={langPath('/terms')} className="text-gray-400 hover:text-blue-600 transition-colors text-xs">
-                  {lang === 'fr' ? 'Conditions' : lang === 'ar' ? 'الشروط' : 'Terms'}
+                  {lang === 'fr' ? 'Conditions' : 'Terms'}
                 </Link>
                 {/* Adsterra Smartlink (Sponsor) */}
                 <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-600 transition-colors text-xs font-bold flex items-center gap-1">
                   <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-                  {lang === 'fr' ? 'Sponsorisé' : lang === 'ar' ? 'برعاية' : 'Sponsored'}
+                  {lang === 'fr' ? 'Sponsorisé' : 'Sponsored'}
                 </a>
               </div>
             </div>

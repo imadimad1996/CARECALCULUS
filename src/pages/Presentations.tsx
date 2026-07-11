@@ -179,24 +179,6 @@ const translations: Translations = {
     references: "Références: American College of Chest Physicians (ACCP); Société Française de Réanimation de Langue Française (SRLF).",
     noUploads: "Aucune présentation personnalisée. Glissez-déposez n'importe quel fichier .pptx ci-dessus pour l'ajouter."
   },
-  ar: {
-    title: "العروض التقديمية الطبية (PPTX)",
-    subtitle: "رفع ومراجعة شرائح المحاضرات الطبية بصيغة PPTX، وعروض الحالات والمؤتمرات العلمية الحديثة",
-    dragDrop: "اسحب وأفلت عرض المحاضرة الطبي بصيغة .pptx هنا",
-    orBrowse: "أو اختر الملفات من جهاز الكمبيوتر الخاص بك",
-    uploadedBy: "مرفوع بواسطة",
-    slidesCount: "شرائح",
-    preseeded: "دراسات الحالات المعتمدة",
-    myUploads: "ملفاتي المرفوعة",
-    slideNav: "شريحة",
-    previewBtn: "تشغيل شرائح العرض التفاعلي HUD",
-    closeBtn: "إغلاق العرض التقديمي",
-    downloadBtn: "تحميل الملف الأصلي",
-    uploadSuccess: "تم تحليل وأرشفة العرض التقديمي بنجاح في المكتبة الطبية الرقمية!",
-    onlyPptx: "الامتداد المدعوم للملفات هو عروض مايكروسوفت باوربوينت (.pptx) فقط.",
-    references: "المراجع والمعايير المعتمدة: الكلية الأمريكية لأخصائيي الصدر (ACCP)؛ الجمعية الدولية للعناية المركزة (SCCM).",
-    noUploads: "لم يتم رفع أي عروض مخصصة بعد. اسحب وأفلت أي ملف .pptx بالأعلى لإدراجه فوراً."
-  }
 };
 
 function getLocalizedDefaultSubject(s: PresentationSubject, lang: LangCode): PresentationSubject {
@@ -205,13 +187,13 @@ function getLocalizedDefaultSubject(s: PresentationSubject, lang: LangCode): Pre
       ...s,
       title: lang === 'fr' 
         ? 'Performance hémodynamique avancée et objectifs de flux d\'organes' 
-        : lang === 'ar' 
+        : false 
         ? 'الأداء المتقدم للديناميكا الدموية وأهداف تدفق الأعضاء' 
         : 'Advanced Hemodynamic Performance & Organ Flow Targets',
-      category: lang === 'fr' ? 'Soins Intensifs / Cardiologie' : lang === 'ar' ? 'العناية المركزة / طب القلب' : 'Intensive Care / Cardiology',
+      category: lang === 'fr' ? 'Soins Intensifs / Cardiologie' : false ? 'العناية المركزة / طب القلب' : 'Intensive Care / Cardiology',
       description: lang === 'fr'
         ? "Physiopathologie de la pression artérielle moyenne (PAM), décalages d'autorégulation dans l'hypertension chronique et cibles de choc microvasculaire."
-        : lang === 'ar'
+        : false
         ? 'الفيزيولوجيا المرضية لضغط الشريان المتوسط (MAP)، وتغيرات التنظيم الذاتي في ارتفاع ضغط الدم المزمن، وأهداف الصدمة الوعائية الدقيقة.'
         : 'Pathophysiology of Mean Arterial Pressure (MAP), autoregulation shifts in chronic hypertension, and microvascular shock targets.',
       slides: lang === 'fr' ? [
@@ -260,7 +242,7 @@ function getLocalizedDefaultSubject(s: PresentationSubject, lang: LangCode): Pre
           ],
           diagramType: 'default'
         }
-      ] : lang === 'ar' ? [
+      ] : false ? [
         {
           title: 'الاستهداف الديناميكي الدموي: تجاوز حد الـ 65 ملم زئبقي',
           points: [
@@ -314,13 +296,13 @@ function getLocalizedDefaultSubject(s: PresentationSubject, lang: LangCode): Pre
       ...s,
       title: lang === 'fr' 
         ? 'Mécanique pulmonaire : protocole de ventilation à bas volume courant' 
-        : lang === 'ar' 
+        : false 
         ? 'ميكانيكا الرئة: بروتوكول التهوية الميكانيكية بحجم مد وجزر منخفض' 
         : 'Pulmonary Mechanics: Low-Tidal Volume Vent Protocol',
-      category: lang === 'fr' ? 'Pneumologie / Réanimation' : lang === 'ar' ? 'طب الرئة / العناية المركزة' : 'Pulmonology / ICU',
+      category: lang === 'fr' ? 'Pneumologie / Réanimation' : false ? 'طب الرئة / العناية المركزة' : 'Pulmonology / ICU',
       description: lang === 'fr'
         ? "Diapositives cliniques clarifiant le protocole ARDSNet, les calculs du poids corporel idéal (formule de Devine) et la prévention des lésions pulmonaires."
-        : lang === 'ar'
+        : false
         ? 'شرائح سريرية توضح بروتوكول ARDSNet، وحسابات الوزن المثالي للجسم (معادلة ديفين)، والوقاية من إصابات الرئة الناجمة عن التهوية.'
         : 'Clinical slides clarifying the ARDSNet protocol, ideal body weight calculations (Devine formula), and preventing lung injury.',
       slides: lang === 'fr' ? [
@@ -369,7 +351,7 @@ function getLocalizedDefaultSubject(s: PresentationSubject, lang: LangCode): Pre
           ],
           diagramType: 'default'
         }
-      ] : lang === 'ar' ? [
+      ] : false ? [
         {
           title: 'التهوية الوقائية للرئة وميكانيكا متلازمة الضائقة التنفسية (ARDS)',
           points: [
@@ -423,7 +405,7 @@ function getLocalizedDefaultSubject(s: PresentationSubject, lang: LangCode): Pre
 
 export default function Presentations({ lang }: { lang: LangCode }) {
   const t = translations[lang] || translations.en;
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
@@ -471,7 +453,6 @@ export default function Presentations({ lang }: { lang: LangCode }) {
       return (
         slugify(mp.title.en, mp.id) === target ||
         slugify(mp.title.fr, mp.id) === target ||
-        slugify(mp.title.ar, mp.id) === target ||
         mp.id.toLowerCase() === target
       );
     });

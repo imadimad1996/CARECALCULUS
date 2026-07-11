@@ -68,37 +68,6 @@ const translations: Translations = {
     faqA2: "Le dépistage est recommandé à l'admission à l'hôpital ou en EHPAD, puis réévalué périodiquement (ex: hebdomadaire à l'hôpital).",
     faqQ3: "Que faire en cas de haut risque ?",
     faqA3: "Un score de 2 ou plus nécessite une prise en charge nutritionnelle active, généralement avec l'aide d'un(e) diététicien(ne) et une nutrition entérale ou parentérale si nécessaire.",
-  },
-  ar: {
-    title: "أداة MUST لسوء التغذية",
-    subtitle: "أداة الفحص الشاملة لسوء التغذية لتحديد البالغين المعرضين لخطر سوء التغذية.",
-    bmiLabel: "الخطوة 1: مؤشر كتلة الجسم (BMI)",
-    bmi0: "> 20 (0 نقطة)",
-    bmi1: "18.5 - 20 (1 نقطة)",
-    bmi2: "< 18.5 (نقطتان)",
-    weightLabel: "الخطوة 2: فقدان الوزن غير المتعمد (خلال 3-6 أشهر الماضية)",
-    weight0: "< 5% (0 نقطة)",
-    weight1: "5 - 10% (1 نقطة)",
-    weight2: "> 10% (نقطتان)",
-    diseaseLabel: "الخطوة 3: تأثير المرض الحاد",
-    disease0: "لا يوجد (0 نقطة)",
-    disease2: "مرض حاد ولا يوجد تناول طعام لأكثر من 5 أيام (نقطتان)",
-    resultLabel: "مجموع نقاط MUST",
-    risk0: "خطر منخفض",
-    risk1: "خطر متوسط",
-    risk2: "خطر عالي",
-    action0: "رعاية سريرية روتينية. أعد الفحص.",
-    action1: "مراقبة. وثق تناول الطعام لمدة 3 أيام.",
-    action2: "علاج. استشر أخصائي التغذية وحدد خطة.",
-    clinicalTitle: "الآثار السريرية",
-    clinicalText: "أداة MUST تساعد في اكتشاف حالات سوء التغذية في المستشفيات ودور الرعاية لتوجيه التدخل التغذوي المناسب.",
-    references: "المراجع: المجموعة الاستشارية لسوء التغذية (MAG) من BAPEN.",
-    faqQ1: "ما هي أداة MUST؟",
-    faqA1: "هي أداة فحص معتمدة وشاملة تستخدم للكشف عن سوء التغذية أو خطر الإصابة به لدى البالغين.",
-    faqQ2: "متى يجب استخدام الفحص؟",
-    faqA2: "يُوصى باستخدامه عند دخول المستشفى أو دار الرعاية، ويُعاد تقييمه بانتظام.",
-    faqQ3: "ماذا نفعل عند وجود خطر عالي؟",
-    faqA3: "النتيجة 2 أو أكثر تتطلب تدخل اختصاصي تغذية وبدء خطة دعم تغذوي (فموي، أنبوبي، أو وريدي) للوقاية من المضاعفات.",
   }
 };
 
@@ -108,7 +77,7 @@ export default function NutritionMust({ lang }: { lang: LangCode }) {
   const [diseaseScore, setDiseaseScore] = useState<number>(0);
 
   const currentText = translations[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   const totalScore = useMemo(() => {
     return bmiScore + weightLossScore + diseaseScore;

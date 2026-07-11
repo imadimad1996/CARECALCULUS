@@ -34,27 +34,11 @@ const T = {
     footerTitle: "Prêt à standardiser votre aide à la décision clinique ?",
     footerDesc: "Rejoignez les principaux réseaux de santé qui font confiance à CareCalculus pour des calculs médicaux instantanés et sans erreur.",
     ctaDemo: "Demander une démo",
-  },
-  ar: {
-    badge: "حلول المؤسسات للمستشفيات",
-    title: "تمكين فرقك السريرية مع كير كالكولوس للمؤسسات",
-    desc: "قم بدمج الحاسبات السريرية المعتمدة مباشرة في تدفقات عمل السجل الصحي الإلكتروني (EHR) في مستشفاك. تخلص من العبء الذهني، وقلل من الأخطاء الدوائية، ووحد دعم القرار السريري عبر نظامك الصحي بالكامل.",
-    ctaContact: "الاتصال بالمبيعات",
-    ctaDoc: "عرض وثائق واجهة البرمجة (API)",
-    benefit1Title: "التحقق القائم على الأدلة",
-    benefit1Desc: "تتم مراجعة كل حاسبة من قبل ممارسين معتمدين والاستشهاد بها مقابل أحدث الإرشادات السريرية (AHA, ESC, IDSA, ARDSNet).",
-    benefit2Title: "تكامل السجل الصحي (SMART/FHIR)",
-    benefit2Desc: "قم بدمج الأدوات برمجياً داخل أنظمة Epic أو Cerner أو Allscripts باستخدام مكوناتنا المتوافقة مع SMART on FHIR.",
-    benefit3Title: "تحليلات الاستخدام",
-    benefit3Desc: "تتبع الأدوات الأكثر استخداماً من قبل الأطباء لتحديد فرص التدريب وتوحيد بروتوكولات الرعاية الصحية.",
-    footerTitle: "جاهز لتوحيد دعم القرار السريري في منشأتك؟",
-    footerDesc: "انضم إلى الأنظمة الصحية الرائدة التي تثق في كير كالكولوس لإجراء حسابات طبية فورية وخالية من الأخطاء.",
-    ctaDemo: "طلب عرض توضيحي",
   }
 };
 
 export default function ForHospitals({ lang }: { lang: LangCode }) {
-  const isRtl = lang === 'ar';
+  const isRtl = false;
   const t = T[lang] || T.en;
 
   return (

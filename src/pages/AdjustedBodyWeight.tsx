@@ -37,22 +37,6 @@ const translations: Translations = {
     clinicalTitle: "Pertinence Posologique",
     clinicalText: "Les aminosides utilisent le poids ajusté si le poids réel > 120% du poids idéal. Le volume courant s'appuie sur le poids idéal.",
     references: "Références: Devine BJ. Pai MP, et al.",
-  },
-  ar: {
-    title: "الوزن المثالي والمعدّل",
-    subtitle: "تقدير الوزن لحساب جُرعات الأدوية والتهوية الرئوية",
-    height: "الطول (سم)",
-    weight: "الوزن الفعلي (كغ)",
-    sex: "الجنس",
-    male: "ذكر",
-    female: "أنثى",
-    ibwTitle: "الوزن المثالي (IBW)",
-    abwTitle: "الوزن المعدل (ABW)",
-    lbwTitle: "الكتلة اللادهنية (LBW)",
-    formula: "الوزن المثالي (Devine): 50/45.5 + 0.91 × (الطول - 152.4)",
-    clinicalTitle: "أهمية الجرعات",
-    clinicalText: "تُستخدم الأوزان المعدلة لحساب جرعة العديد من الأدوية عندما يتجاوز الوزن الفعلي 120% من الوزن المثالي.",
-    references: "المراجع: معادلة Devine و Janmahasatian.",
   }
 };
 
@@ -62,7 +46,7 @@ export default function AdjustedBodyWeight({ lang }: { lang: LangCode }) {
   const [sex, setSex] = useState<number>(0); 
 
   const currentText = translations[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   const results = useMemo(() => {
     if (height === '' || weight === '' || height <= 0 || weight <= 0) return null;

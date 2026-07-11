@@ -20,7 +20,7 @@ export const ActionableResultPanel: React.FC<ActionableResultProps> = ({
   nextSteps,
   lang = 'en'
 }) => {
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   const styles = {
     low: {
@@ -30,7 +30,7 @@ export const ActionableResultPanel: React.FC<ActionableResultProps> = ({
       icon: <CheckCircle2 className="w-5 h-5 text-emerald-600" />,
       scoreBg: 'bg-emerald-100/50',
       scoreText: 'text-emerald-700',
-      label: { en: 'Low Risk', fr: 'Risque Faible', ar: 'مخاطر منخفضة' }
+      label: { en: 'Low Risk', fr: 'Risque Faible' }
     },
     medium: {
       bg: 'bg-amber-50',
@@ -39,7 +39,7 @@ export const ActionableResultPanel: React.FC<ActionableResultProps> = ({
       icon: <AlertCircle className="w-5 h-5 text-amber-600" />,
       scoreBg: 'bg-amber-100/50',
       scoreText: 'text-amber-700',
-      label: { en: 'Moderate Risk', fr: 'Risque Modéré', ar: 'مخاطر معتدلة' }
+      label: { en: 'Moderate Risk', fr: 'Risque Modéré' }
     },
     high: {
       bg: 'bg-rose-50',
@@ -48,7 +48,7 @@ export const ActionableResultPanel: React.FC<ActionableResultProps> = ({
       icon: <AlertCircle className="w-5 h-5 text-rose-600" />,
       scoreBg: 'bg-rose-100/50',
       scoreText: 'text-rose-700',
-      label: { en: 'High Risk', fr: 'Risque Élevé', ar: 'مخاطر عالية' }
+      label: { en: 'High Risk', fr: 'Risque Élevé' }
     },
     neutral: {
       bg: 'bg-teal-50',
@@ -57,14 +57,14 @@ export const ActionableResultPanel: React.FC<ActionableResultProps> = ({
       icon: <Info className="w-5 h-5 text-teal-600" />,
       scoreBg: 'bg-teal-100/50',
       scoreText: 'text-teal-700',
-      label: { en: 'Result', fr: 'Résultat', ar: 'النتيجة' }
+      label: { en: 'Result', fr: 'Résultat' }
     }
   };
 
   const style = styles[riskLevel];
 
   const t = {
-    nextSteps: { en: 'Management & Next Steps', fr: 'Gestion et Prochaines Étapes', ar: 'الإدارة والخطوات التالية' }
+    nextSteps: { en: 'Management & Next Steps', fr: 'Gestion et Prochaines Étapes' }
   };
 
   return (

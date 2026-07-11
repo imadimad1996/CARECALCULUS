@@ -28,12 +28,12 @@ export const ClinicalContextTabs: React.FC<ClinicalContextTabsProps> = ({ contex
   }, [context]);
 
   const t = {
-    when: { en: 'When to Use', fr: 'Quand utiliser', ar: 'متى تستخدم' },
-    pearls: { en: 'Pearls & Pitfalls', fr: 'Perles et Pièges', ar: 'لآلئ ومزالق' },
-    evidence: { en: 'Evidence', fr: 'Preuves', ar: 'الأدلة' }
+    when: { en: 'When to Use', fr: 'Quand utiliser' },
+    pearls: { en: 'Pearls & Pitfalls', fr: 'Perles et Pièges' },
+    evidence: { en: 'Evidence', fr: 'Preuves' }
   };
 
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   return (
     <div className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm mt-8" dir={isRtl ? 'rtl' : 'ltr'}>

@@ -77,48 +77,13 @@ const T = {
       },
     ],
   },
-  ar: {
-    title: 'إخلاء المسؤولية الطبية',
-    updated: 'آخر تحديث: يونيو 2026',
-    sections: [
-      {
-        icon: 'alert',
-        heading: 'لأغراض المعلومات ودعم القرار فقط',
-        body: 'توفر منصة كير كالكولوس حاسبات سريرية وأدوات تقييم ومحولات طبية بوصفها أدوات دعم قرار حصراً. النتائج التي تنتجها هذه الأدوات مخصصة لمساعدة المختصين الصحيين المؤهلين في تفكيرهم السريري — ولا تُشكّل نصيحة طبية أو تشخيصًا أو توصيات علاج.',
-      },
-      {
-        icon: 'shield',
-        heading: 'لا يُغني عن الحكم المهني',
-        body: 'لا يمكن لأي حاسبة أو خوارزمية تقييم أن تحل محل التقييم السريري الشامل من قِبَل متخصص طبي مؤهل ومرخص. تعتمد نتائج المرضى على تقييم كامل للعلامات والأعراض والتاريخ المرضي ونتائج المختبرات والتصوير والسياق السريري، وهو ما لا يمكن لأي أداة آلية أن تُعيد إنتاجه.',
-      },
-      {
-        icon: 'alert',
-        heading: 'دقة المعادلات وحداثة الإرشادات',
-        body: 'جميع المعادلات المُطبَّقة على كير كالكولوس مستمدة من إرشادات منشورة وقت التطبيق. تُحدَّث الإرشادات الطبية بصفة دورية. يتحمل المستخدمون مسؤولية التحقق من صحة أي معادلة قبل التطبيق السريري.',
-      },
-      {
-        icon: 'shield',
-        heading: 'لا توجد مسؤولية قانونية',
-        body: 'لا تتحمل كير كالكولوس ولا مطوروها أي مسؤولية عن القرارات السريرية المتخذة بناءً على النتائج التي تولدها هذه المنصة. يُعدّ استخدام هذا الموقع قبولًا بالمسؤولية الشخصية والمهنية الكاملة عن كيفية تفسير النتائج وتطبيقها سريريًا.',
-      },
-      {
-        icon: 'alert',
-        heading: 'حالات الطوارئ',
-        body: 'في حالات الطوارئ التي تهدد الحياة، لا تعتمد على أي حاسبة إلكترونية وحدها. اتصل بخدمات الطوارئ فورًا واتبع بروتوكولات الإنعاش المؤسسية.',
-      },
-      {
-        icon: 'shield',
-        heading: 'الفئات السكانية الخاصة',
-        body: 'بعض الحاسبات على هذه المنصة مُتحقق منها للبالغين فقط. قد تختلف القيم المرجعية للأطفال والحوامل وكبار السن اختلافًا كبيرًا. تحقق دائمًا من قابلية التطبيق على فئتك السكانية قبل الاستخدام.',
-      },
-    ],
-  },
+  
 };
 
 export default function Disclaimer({ lang }: { lang: LangCode }) {
   const { langPath } = useLang();
   const t = T[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   return (
     <div className="space-y-8 pb-8 max-w-3xl mx-auto" dir={isRtl ? 'rtl' : 'ltr'}>
@@ -151,11 +116,9 @@ export default function Disclaimer({ lang }: { lang: LangCode }) {
         <p className="text-xs text-gray-500 leading-relaxed">
           {lang === 'fr'
             ? 'En utilisant CareCalculus, vous acceptez les termes de cet avertissement. Pour en savoir plus sur notre plateforme, consultez notre '
-            : lang === 'ar'
-              ? 'باستخدامك لكير كالكولوس فأنت توافق على شروط إخلاء المسؤولية هذا. لمعرفة المزيد عن المنصة، راجع '
-              : 'By using CareCalculus you agree to the terms of this disclaimer. To learn more about our platform, see our '}
+            : 'By using CareCalculus you agree to the terms of this disclaimer. To learn more about our platform, see our '}
           <Link to={langPath('/about')} className="underline text-blue-600 font-semibold hover:text-blue-800">
-            {lang === 'fr' ? 'page À propos' : lang === 'ar' ? 'صفحة عن المنصة' : 'About page'}
+            {lang === 'fr' ? 'page À propos' : 'About page'}
           </Link>.
         </p>
       </div>

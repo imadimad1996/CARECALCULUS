@@ -55,31 +55,6 @@ const translations: Translations = {
     ageRange: "L'âge doit être compris entre 18 et 120 ans.",
     creatinineRange: "La créatininémie doit être comprise entre 0,1 et 20 mg/dL.",
     resetBtn: "Réinitialiser"
-  },
-  ar: {
-    title: "معادلة CKD-EPI لتقدير GFR",
-    subtitle: "تقدير معدل الترشيح الكبيبي (نسخة 2021 الخالية من العرق)",
-    age: "العمر (سنوات)",
-    creatinine: "كرياتينين المصل",
-    creatinineMg: "مجم/ديسيلتر",
-    gender: "الجنس",
-    male: "ذكر",
-    female: "أنثى",
-    result: "GFR المقدر",
-    unit: "مل/دقيقة/1.73م²",
-    formula: "GFR = 142 × min(SCr/κ, 1)^α × max(SCr/κ, 1)^-1.200 × 0.9938^Age",
-    clinicalTitle: "التطبيق السريري",
-    clinicalText: "توصي الجمعية الوطنية للكلى (NKF) والجمعية الأمريكية لأمراض الكلى (ASN) باستخدام معادلة CKD-EPI لعام 2021 لتقدير وظائف الكلى دون استخدام عامل العرق.",
-    references: "المراجع: Inker LA, et al. New Creatinine- and Cystatin C-Based Equations to Estimate GFR without Race. N Engl J Med. 2021.",
-    normal: "G1: طبيعي (≥ 90)",
-    mild: "G2: انخفاض خفيف (60-89)",
-    moderateA: "G3a: خفيف-متوسط (45-59)",
-    moderateB: "G3b: متوسط-شديد (30-44)",
-    severe: "G4: انخفاض شديد (15-29)",
-    failure: "G5: فشل كلوي (< 15)",
-    ageRange: "يجب أن يكون العمر بين 18 و 120 عاماً.",
-    creatinineRange: "يجب أن يكون الكرياتينين بين 0.1 و 20 مجم/ديسيلتر.",
-    resetBtn: "إعادة تعيين"
   }
 };
 
@@ -90,7 +65,7 @@ export default function CkdEpiGfr({ lang }: { lang: LangCode }) {
 
   const currentText = translations[lang];
   const uiText = layoutTranslations[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   const isAgeWarning = age > 0 && (age < 18 || age > 120);
   const isCreatinineWarning = creatinine > 0 && (creatinine < 0.1 || creatinine > 20);

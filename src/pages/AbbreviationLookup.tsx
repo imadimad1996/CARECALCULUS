@@ -6,7 +6,7 @@ import { ABBREVIATIONS_DB } from '../utils/abbreviationDb';
 
 export default function AbbreviationLookup({ lang }: { lang: LangCode }) {
   const { langPath } = useLang();
-  const isRtl = lang === 'ar';
+  const isRtl = false;
   const [search, setSearch] = useState('');
 
   const filtered = ABBREVIATIONS_DB.filter(item => 
@@ -52,7 +52,6 @@ export default function AbbreviationLookup({ lang }: { lang: LangCode }) {
               <div className="text-xs font-semibold space-y-1 text-gray-600">
                 <p><span className="text-gray-400 font-mono">EN:</span> {item.en}</p>
                 <p><span className="text-gray-400 font-mono">FR:</span> {item.fr}</p>
-                <p className="text-right" dir="rtl"><span className="text-gray-400 font-mono">AR:</span> {item.ar}</p>
               </div>
             </div>
           ))

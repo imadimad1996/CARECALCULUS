@@ -3,12 +3,11 @@ import { BookOpen } from 'lucide-react';
 import { LangCode } from '../types';
 
 export default function EvidencePanel({ lang, references }: { lang: LangCode, references?: string[] }) {
-  const isRtl = lang === 'ar';
+  const isRtl = false;
   
   const title = {
     en: 'Evidence & Literature',
-    fr: 'Preuves & Littérature',
-    ar: 'الأدلة والمراجع الطبية'
+    fr: 'Preuves & Littérature'
   };
 
   if (!references || references.length === 0) return null;

@@ -88,46 +88,6 @@ const translations: Translations = {
     faqA3: "Child-Pugh intègre des éléments cliniques subjectifs (ascite, encéphalopathie). Le MELD est un score purement biologique (créatinine, bilirubine, INR, sodium), standardisé pour l'attribution des greffons hépatiques.",
     faqQ4: "Quels critères cliniques sont pris en compte dans le score de Child-Pugh ?",
     faqA4: "Il prend en compte la bilirubine totale, l'albumine sérique, l'INR (ou temps de prothrombine), l'ascite et l'encéphalopathie hépatique.",
-  },
-  ar: {
-    title: "مؤشر تشايلد بيو لقصور الكبد",
-    subtitle: "تصنيف شدة تليف الكبد وتقدير متوسط البقاء على قيد الحياة",
-    bilirubin: "البيليروبين الكلي",
-    bilirubin1: "أقل من 2.0 ملغ/ديسيلتر [أقل من 34 ميكرومول/لتر] (1 نقطة)",
-    bilirubin2: "2.0 - 3.0 ملغ/ديسيلتر [34 - 51 ميكرومول/لتر] (2 نقطة)",
-    bilirubin3: "أكثر من 3.0 ملغ/ديسيلتر [أكثر من 51 ميكرومول/لتر] (3 نقاط)",
-    albumin: "الألبومين السريري",
-    albumin1: "أكبر من 3.5 غ/ديسيلتر (1 نقطة)",
-    albumin2: "2.8 - 3.5 غ/ديسيلتر (2 نقطة)",
-    albumin3: "أقل من 2.8 غ/ديسيلتر (3 نقاط)",
-    inr: "نسبة INR للتخثر",
-    inr1: "أقل من 1.7 (1 نقطة)",
-    inr2: "1.7 - 2.3 (2 نقطة)",
-    inr3: "أكثر من 2.3 (3 نقاط)",
-    ascites: "الاستسقاء (تراكم السوائل في البطن)",
-    ascites1: "لا يوجد استسقاء (1 نقطة)",
-    ascites2: "طفيف / يستجيب لمدرات البول (2 نقطة)",
-    ascites3: "متوسط إلى شديد / مقاوم للعلاج (3 نقاط)",
-    enceph: "الاعتلال الدماغي الكبدي",
-    enceph1: "لا يوجد اعتلال (1 نقطة)",
-    enceph2: "درجة 1 - 2 / طفيف (2 نقطة)",
-    enceph3: "درجة 3 - 4 / غيبوبة (3 نقاط)",
-    result: "درجة تشايلد بيو المحسوبة",
-    formula: "البيليروبين + الألبومين + INR + الاستسقاء + الاعتلال الدماغي",
-    clinicalTitle: "التفسير السريري والإنذار والتحذيرات",
-    clinicalText: "الفئة A (5-6 نقاط) تشير لمرض كبدي معوض (نسبة البقاء لعام: ~100%، لعامين: ~85%). الفئة B (7-9 نقاط) تشير لتثبيط معتدل (البقاء لعام: ~81%، لعامين: ~57%). الفئة C (10-15 نقطة) تشير لفشل كبدي متقدم (البقاء لعام: ~45%، لعامين: ~35%). ملحوظة سريرية: الاستسقاء والاعتلال الدماغي معايير شخصية؛ يجب تقييم الاستسقاء بالأشعة الصوتية أو الاستجابة للمدرات، والاعتلال الدماغي وفق معايير ويست هافن. النزيف الهضمي النشط يرفع درجة الاعتلال مؤقتاً.",
-    references: "Pugh RN, Murray-Lyon IM, Dawson JL, Pietroni MC, Williams R. Transection of the oesophagus for bleeding oesophageal varices. Br J Surg. 1973;60(8):646-649 (PMID: 4515662).",
-    classA: "الفئة A: إنذار كبدي جيد (5-6)",
-    classB: "الفئة B: إنذار كبدي معتدل (7-9)",
-    classC: "الفئة C: إنذار كبدي متقدم (10-15)",
-    faqQ1: "ما هو تصنيف تشايلد بيو؟",
-    faqA1: "تصنيف تشايلد بيو هو أداة تقييم طبي تُستخدم لتحديد مدى تضرر الكبد وتقدير فرصة البقاء على قيد الحياة لدى مرضى تليف الكبد المزمن.",
-    faqQ2: "ما هي درجات تصنيف تشايلد بيو؟",
-    faqA2: "يتم تصنيف المرضى إلى ثلاث فئات: الفئة A (5-6 نقاط، بقاء لعام ~100%، لعامين ~85%)، الفئة B (7-9 نقاط، بقاء لعام ~81%، لعامين ~57%)، والفئة C (10-15 نقطة، بقاء لعام ~45%، لعامين ~35%). توجه هذه النسب أولوية زراعة الكبد وتقييم المخاطر الجراحية.",
-    faqQ3: "كيف يختلف تصنيف تشايلد بيو عن درجة MELD؟",
-    faqA3: "يشتمل تشايلد بيو على معايير سريرية ذاتية التقييم مثل الاستسقاء والاعتلال الدماغي الكبدي. بينما يعتمد مقياس MELD بالكامل على فحوصات معملية موضوعية ومحددة.",
-    faqQ4: "ما هي الفحوصات المعملية المطلوبة لحساب المقياس؟",
-    faqA4: "يتطلب حساب المقياس معرفة ثلاثة فحوصات مخبرية هي: نسبة البيليروبين الكلي، تركيز الألبومين في الدم، ونسبة تجلط الدم INR.",
   }
 };
 
@@ -140,7 +100,7 @@ export default function ChildPughScore({ lang }: { lang: LangCode }) {
   const [copied, setCopied] = useState(false);
 
   const currentText = translations[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   const childPughValue = bilirubin + albumin + inr + ascites + enceph;
 

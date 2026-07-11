@@ -55,31 +55,6 @@ const translations: Translations = {
     moderateB: "G3b: Modéré-Sévère (30-44)",
     severe: "G4: Sévèrement diminué (15-29)",
     failure: "G5: Insuffisance rénale (< 15)",
-  },
-  ar: {
-    title: "معادلة MDRD لتقدير GFR",
-    subtitle: "تقدير معدل الترشيح الكبيبي (GFR) للبالغين",
-    age: "العمر (سنوات)",
-    creatinine: "كرياتينين المصل",
-    creatinineMg: "مجم/ديسيلتر",
-    gender: "الجنس",
-    male: "ذكر",
-    female: "أنثى",
-    race: "العرق",
-    black: "أسود / أفريقي أمريكي",
-    other: "أخرى",
-    result: "GFR المقدر",
-    unit: "مل/دقيقة/1.73م²",
-    formula: "GFR = 175 × (SCr)⁻¹·¹⁵⁴ × (Age)⁻⁰·²⁰³ × [0.742 للإناث] × [1.212 للعرق الأسود]",
-    clinicalTitle: "التطبيق السريري",
-    clinicalText: "تُستخدم معادلة MDRD على نطاق واسع لتقدير وظائف الكلى وتصنيف مراحل مرض الكلى المزمن (CKD).",
-    references: "المراجع: Levey AS, et al. طريقة أكثر دقة لتقدير معدل الترشيح الكبيبي.",
-    normal: "G1: طبيعي (≥ 90)",
-    mild: "G2: انخفاض خفيف (60-89)",
-    moderateA: "G3a: خفيف-متوسط (45-59)",
-    moderateB: "G3b: متوسط-شديد (30-44)",
-    severe: "G4: انخفاض شديد (15-29)",
-    failure: "G5: فشل كلوي (< 15)",
   }
 };
 
@@ -91,7 +66,7 @@ export default function MdrdGfr({ lang }: { lang: LangCode }) {
 
   const currentText = translations[lang];
   const uiText = layoutTranslations[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   const gfrValue = useMemo(() => {
     if (age <= 0 || creatinine <= 0) return 0;

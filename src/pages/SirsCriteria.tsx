@@ -35,21 +35,6 @@ const translations: Translations = {
     references: "Références: Bone RC, et al. Definitions for sepsis and organ failure.",
     positive: "Positif (≥ 2)",
     negative: "Négatif (< 2)"
-  },
-  ar: {
-    title: "معايير SIRS",
-    subtitle: "متلازمة الاستجابة الالتهابية الجهازية",
-    temp: "درجة الحرارة > 38 أو < 36 مئوية",
-    hr: "معدل ضربات القلب > 90/دقيقة",
-    rr: "معدل التنفس > 20/دقيقة أو PaCO2 < 32 مم زئبق",
-    wbc: "كريات الدم البيضاء > 12,000، < 4,000 أو > 10% غير ناضجة",
-    result: "هل تنطبق SIRS؟",
-    formula: "معياران إيجابيان أو أكثر",
-    clinicalTitle: "التفسير السريري",
-    clinicalText: "إذا تحقق معيارين أو أكثر، فالمريض مصاب بـ SIRS. إذا كان مصحوباً باشتباه في عدوى فإنه يحدد الإنتان (بحسب إرشادات Sepsis-2 القديمة).",
-    references: "المراجع: Bone RC, et al.",
-    positive: "إيجابي (≥ 2)",
-    negative: "سلبي (< 2)"
   }
 };
 
@@ -64,7 +49,7 @@ export default function SirsCriteria({ lang }: { lang: LangCode }) {
   const [selections, setSelections] = useState<Record<string, boolean>>({});
 
   const currentText = translations[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   const toggleSelection = (key: string) => {
     setSelections(prev => ({ ...prev, [key]: !prev[key] }));

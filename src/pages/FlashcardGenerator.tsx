@@ -20,17 +20,12 @@ const PRESETS = {
     { front: "Cible de PAM dans le choc septique", back: "≥ 65 mmHg pour maintenir la perfusion des organes vitaux." },
     { front: "Seuil du score GCS pour l'intubation", back: "GCS ≤ 8 (Éviter l'inhalation et protéger les voies aériennes)." },
     { front: "Causes réversibles d'arrêt cardiaque (5 H)", back: "Hypoxie, Hypovolémie, Ions Hydrogène (acidose), Hypo-/Hyperkaliémie, Hypothermie." }
-  ],
-  ar: [
-    { front: "الضغط الشرياني المتوسط المستهدف في الصدمة الإنتانية", back: "أكبر من أو يساوي 65 ملم زئبقي للحفاظ على تروية الأعضاء الحيوية." },
-    { front: "مؤشر مقياس غلاسكو (GCS) لتأمين مسلك الهواء (الأنبوب)", back: "مجموع نقاط غلاسكو أقل من أو يساوي 8 نقاط (GCS ≤ 8)." },
-    { front: "الأسباب القابلة للانعكاس لتوقف القلب (5 H)", back: "نقص الأكسجين، نقص حجم الدم، حموضة الدم (الهيدروجين)، نقص/زيادة البوتاسيوم، انخفاض حرارة الجسم." }
   ]
 };
 
 export default function FlashcardGenerator({ lang }: { lang: LangCode }) {
   const { langPath } = useLang();
-  const isRtl = lang === 'ar';
+  const isRtl = false;
   
   const [deck, setDeck] = useState<Flashcard[]>([]);
   const [inputText, setInputText] = useState('');

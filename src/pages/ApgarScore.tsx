@@ -85,46 +85,6 @@ const translations: Translations = {
     faqA3: "Il est calculé systématiquement à 1 minute de vie (reflète l'adaptation à la naissance) et à 5 minutes (reflète la récupération et l'effet des soins). Si le score à 5 minutes est <7, il est recalculé toutes les 5 minutes.",
     faqQ4: "Un score d'APGAR bas prédit-il des séquelles neurologiques ?",
     faqA4: "Non, pas obligatoirement. Un score bas à 1 minute est fréquent et s'améliore souvent vite. Même à 5 minutes, il indique un besoin de soutien immédiat mais n'est pas un indicateur fiable du développement neurologique à long terme.",
-  },
-  ar: {
-    title: "مقياس أبغار لحديثي الولادة",
-    subtitle: "التقييم السريع للحالة الصحية للطفل حديث الولادة عند الدقيقة 1 و 5",
-    appearance: "المظهر (لون الجلد)",
-    appearance2: "2 - وردي بالكامل",
-    appearance1: "1 - الجسم وردي والأطراف زرقاء",
-    appearance0: "0 - أزرق أو شاحب بالكامل",
-    pulse: "النبض (معدل ضربات القلب)",
-    pulse2: "2 - أكثر من 100 نبضة/دقيقة",
-    pulse1: "1 - أقل من 100 نبضة/دقيقة",
-    pulse0: "0 - لا يوجد نبض",
-    grimace: "التعبير (الاستجابة للمنبهات)",
-    grimace2: "2 - حركة نشطة، سعال، عطس أو بكاء قوي",
-    grimace1: "1 - عبوس أو بكاء ضعيف",
-    grimace0: "0 - لا توجد استجابة",
-    activity: "النشاط (الحركة ومرونة العضلات)",
-    activity2: "2 - حركة نشطة وثني كامل للأطراف",
-    activity1: "1 - انثناء طفيف في الأطراف",
-    activity0: "0 - مرتخي بالكامل / خامل",
-    respiration: "التنفس (مجهود التنفس)",
-    respiration2: "2 - تنفس قوي وبكاء قوي",
-    respiration1: "1 - تنفس بطيء، غير منتظم وبكاء ضعيف",
-    respiration0: "0 - لا يوجد تنفس",
-    result: "نقطة أبغار المحسوبة",
-    formula: "المظهر + النبض + التعبير + النشاط + التنفس",
-    clinicalTitle: "التفسير السريري والإجراءات",
-    clinicalText: "طبيعي (7-10)، تثبيط معتدل (4-6)، تثبيط شديد (0-3). كرر التقييم كل 5 دقائق حتى 20 دقيقة إذا استمرت النتيجة أقل من 7.",
-    references: "المراجع: اقتراح الدكتورة فرجينيا أبغار لطريقة جديدة لتقييم حديثي الولادة (1953).",
-    normal: "حالة طفل طبيعية (7-10)",
-    moderate: "تثبيط معتدل (4-6)",
-    severe: "تثبيط شديد (0-3)",
-    faqQ1: "ما هو مقياس أبغار (APGAR)؟",
-    faqA1: "مقياس أبغار هو نظام تقييم سريع ومباشر للحالة السريرية لحديثي الولادة يُجرى عند الدقيقة الأولى والخامسة بعد الولادة. يقيم خمسة معايير: المظهر (اللون)، النبض، التعبير (الاستجابة)، النشاط (المرونة)، والتنفس.",
-    faqQ2: "ماذا تعني درجة أبغار الطبيعية؟",
-    faqA2: "تعتبر النتيجة من 7 إلى 10 طبيعية وتشير إلى صحة الوليد الجيدة. النتيجة من 4 إلى 6 تشير إلى تثبيط معتدل، بينما النتيجة من 0 إلى 3 تعني تثبيطًا شديدًا يتطلب إنعاشًا طبيًا فوريًا.",
-    faqQ3: "متى يتم حساب مقياس أبغار؟",
-    faqA3: "يُحسب روتينيًا بعد دقيقة واحدة و5 دقائق من الولادة. وإذا كانت نتيجة الدقيقة الخامسة منخفضة (أقل من 7)، فيمكن تكراره كل 5 دقائق حتى الدقيقة 20 لمتابعة استجابة الرضيع للإنعاش.",
-    faqQ4: "هل النتيجة المنخفضة تعني تلفًا طويل الأمد في الدماغ؟",
-    faqA4: "ليس بالضرورة. انخفاض الدرجة عند الدقيقة الأولى شائع وغالبًا ما يتلاشى سريعًا. وحتى عند 5 دقائق، تعكس الدرجة الحاجة للرعاية الفورية ولكنها ليست مؤشراً حتمياً للمشاكل العصبية طويلة الأمد.",
   }
 };
 
@@ -137,7 +97,7 @@ export default function ApgarScore({ lang }: { lang: LangCode }) {
   const [copied, setCopied] = useState(false);
 
   const currentText = translations[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   const apgarValue = appearance + pulse + grimace + activity + respiration;
 

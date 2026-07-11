@@ -72,44 +72,12 @@ const translations = {
     statPdfs: "Manuels PDF",
     statYears: "Niveaux d'Études",
     notAvailable: "Ce document PDF n'est pas chargé directement. Utilisez les liens ci-dessous pour le trouver en ligne.",
-  },
-  ar: {
-    title: "كلية الطب والصيدلة",
-    subtitle: "المكتبة الأكاديمية لمناهج ومحاضرات كلية الطب والصيدلة بالدار البيضاء مرتبة حسب شعبية البحث.",
-    searchPlaceholder: "بحث عن مادة، وصف، أو سنة دراسية...",
-    all: "جميع السنوات",
-    yr1: "السنة الأولى",
-    yr2: "السنة الثانية",
-    yr3: "السنة الثالثة",
-    yr4: "السنة الرابعة",
-    yr5: "السنة الخامسة",
-    allPopularity: "كل المستويات",
-    popVeryHigh: "عالية جداً (≥85%)",
-    popHigh: "عالية (65-84%)",
-    popMedium: "متوسطة (45-64%)",
-    popModerate: "مقبولة (<45%)",
-    popularity: "الشعبية",
-    semester: "الفصل / السنة",
-    pdfAvailable: "ملف PDF متوفر",
-    webSearchRequired: "البحث في الويب",
-    previewTitle: "لوحة الدراسة التفاعلية",
-    noModuleSelected: "اختر مادة لبدء المراجعة",
-    noModuleSelectedDesc: "اختر أي مادة طبية من القائمة الجانبية للاطلاع على المنهج، ومعاينة كتاب الـ PDF الرسمي وتحميله.",
-    downloadPdf: "تحميل ملف PDF",
-    openNewTab: "فتح في علامة تبويب جديدة",
-    googleSearch: "بحث في جوجل",
-    googlePdfSearch: "البحث عن PDF في جوجل",
-    webLinks: "روابط سريرية خارجية",
-    statModules: "المواد المسجلة",
-    statPdfs: "كتب PDF متوفرة",
-    statYears: "السنوات الدراسية",
-    notAvailable: "ملف الـ PDF غير متوفر مباشرة. يمكنك العثور عليه في الويب باستخدام الروابط أدناه.",
   }
 };
 
 export default function FmpMedecine({ lang }: { lang: LangCode }) {
   const t = translations[lang] || translations.en;
-  const isRtl = lang === 'ar';
+  const isRtl = false;
   const { moduleSlug } = useParams<{ moduleSlug?: string }>();
   const navigate = useNavigate();
 

@@ -33,20 +33,6 @@ const translations: Translations = {
     clinicalTitle: "Protocole ARDSNet",
     clinicalText: "Le protocole recommande un volume courant de 6 mL/kg du poids corporel prédit (PBW) avec une pression de plateau < 30 cmH2O pour le SDRA.",
     references: "Références: The Acute Respiratory Distress Syndrome Network.",
-  },
-  ar: {
-    title: "حجم المد والجزر (ARDSNet)",
-    subtitle: "وزن الجسم المثالي وحجم المد والجزر المستهدف",
-    height: "الطول (سم)",
-    sex: "الجنس",
-    male: "ذكر",
-    female: "أنثى",
-    result: "وزن الجسم المتوقع",
-    target: "حجم المد والجزر المستهدف (6 مل/كغ)",
-    formula: "الوزن = 50 + 0.91 × (الطول - 152.4) [للذكور]",
-    clinicalTitle: "بروتوكول ARDSNet",
-    clinicalText: "يوصي البروتوكول باستهداف 6 مل لكل كيلوغرام من وزن الجسم المتوقع لمنع إصابة الرئة المرتبطة بجهاز التنفس في متلازمة الضائقة التنفسية (الضغط < 30).",
-    references: "المراجع: شبكة ARDS.",
   }
 };
 
@@ -55,7 +41,7 @@ export default function TidalVolume({ lang }: { lang: LangCode }) {
   const [sex, setSex] = useState<number>(0); // 0: male, 1: female
 
   const currentText = translations[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   const pbw = useMemo(() => {
     if (height === '' || height <= 0) return null;

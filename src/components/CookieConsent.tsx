@@ -28,18 +28,13 @@ export default function CookieConsent({ lang }: { lang: LangCode }) {
       msg: 'Nous utilisons des cookies pour améliorer votre expérience de navigation clinique et analyser notre trafic. En cliquant sur "Accepter", vous consentez à notre utilisation des cookies.',
       accept: 'Accepter',
       decline: 'Refuser'
-    },
-    ar: {
-      msg: 'نحن نستخدم ملفات تعريف الارتباط لتحسين تجربة التصفح السريرية الخاصة بك وتحليل حركة المرور. بالنقر على "قبول"، فإنك توافق على استخدامنا لملفات تعريف الارتباط.',
-      accept: 'قبول',
-      decline: 'رفض'
     }
   };
 
   const t = text[lang];
 
   return (
-    <div className="fixed bottom-0 inset-x-0 z-[100] bg-slate-900 border-t border-slate-700 shadow-2xl p-4 sm:p-6 text-white text-sm" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+    <div className="fixed bottom-0 inset-x-0 z-[100] bg-slate-900 border-t border-slate-700 shadow-2xl p-4 sm:p-6 text-white text-sm" dir={'ltr'}>
       <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-slate-300 leading-relaxed text-[13px] flex-1">
           {t.msg}

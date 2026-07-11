@@ -187,23 +187,19 @@ export const navItems = [
 export const TIER_HEADERS: Record<number, Record<LangCode, string>> = {
   1: {
     en: 'Emergency & Critical Care',
-    fr: 'Urgences & Soins Critiques',
-    ar: 'الحالات الحرجة والعناية المركزة'
+    fr: 'Urgences & Soins Critiques'
   },
   2: {
     en: 'Metabolic & Cardiorenal',
-    fr: 'Métabolique & Cardiorénal',
-    ar: 'الاستقلاب والقلب والكلية'
+    fr: 'Métabolique & Cardiorénal'
   },
   3: {
     en: 'Therapeutic & Dosing Metrics',
-    fr: 'Métriques, Perfusions & Doses',
-    ar: 'المحاليل والجرعات والقياسات'
+    fr: 'Métriques, Perfusions & Doses'
   },
   5: {
     en: 'Medical Utilities',
-    fr: 'Utilitaires Médicaux',
-    ar: 'الأدوات الطبية'
+    fr: 'Utilitaires Médicaux'
   }
 };
 

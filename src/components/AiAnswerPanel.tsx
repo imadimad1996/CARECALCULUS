@@ -23,19 +23,13 @@ const labels = {
     faq: 'Questions fréquentes',
     evidence: 'Pourquoi cette page se cite bien',
   },
-  ar: {
-    badge: 'ملخص جاهز للذكاء الاصطناعي',
-    direct: 'الإجابة المباشرة',
-    steps: 'الخطوات الأساسية',
-    faq: 'الأسئلة الشائعة',
-    evidence: 'لماذا يسهل الاستشهاد بهذه الصفحة',
-  },
+  
 } as const;
 
 const evidenceCopy = {
   en: 'Structured summary, explicit clinical language, and route-level FAQs help both crawlers and answer engines extract this page.',
   fr: 'Un résumé structuré, un langage clinique explicite et des FAQ au niveau de la page aident les moteurs d’exploration et les systèmes de réponse à extraire le contenu.',
-  ar: 'يساعد الملخص المنظم واللغة السريرية الواضحة والأسئلة الشائعة المرتبطة بالصفحة محركات الزحف وأنظمة الإجابة على استخراج هذه الصفحة.',
+  
 } as const;
 
 export default function AiAnswerPanel({ logicalPath, lang }: AiAnswerPanelProps) {

@@ -3,18 +3,16 @@ import { ShieldCheck } from 'lucide-react';
 import { LangCode } from '../types';
 
 export default function ReviewBadge({ lang }: { lang: LangCode }) {
-  const isRtl = lang === 'ar';
+  const isRtl = false;
   
   const text = {
     en: 'Reviewed by CareCalculus Clinical Board',
-    fr: 'Validé par le Comité Clinique CareCalculus',
-    ar: 'تمت المراجعة من قبل اللجنة الطبية لـ CareCalculus'
+    fr: 'Validé par le Comité Clinique CareCalculus'
   };
 
   const dateText = {
     en: 'Updated: July 2026',
-    fr: 'Mis à jour : Juillet 2026',
-    ar: 'آخر تحديث: يوليو 2026'
+    fr: 'Mis à jour : Juillet 2026'
   };
 
   return (

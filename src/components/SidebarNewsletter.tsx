@@ -21,13 +21,7 @@ const T = {
     cta: 'S\'abonner',
     success: 'Inscrit !',
   },
-  ar: {
-    title: 'الملخص السريري',
-    desc: 'احصل على أدوات العناية المركزة والمحاضرات أسبوعياً.',
-    placeholder: 'بريدك الإلكتروني',
-    cta: 'اشتراك',
-    success: 'تم الاشتراك!',
-  },
+  
 };
 
 export default function SidebarNewsletter({ lang }: SidebarNewsletterProps) {
@@ -36,7 +30,7 @@ export default function SidebarNewsletter({ lang }: SidebarNewsletterProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const t = T[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   useEffect(() => {
     const subscribed = localStorage.getItem('cc-newsletter-subscribed');

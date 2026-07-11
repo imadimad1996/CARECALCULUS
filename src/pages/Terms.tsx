@@ -81,50 +81,13 @@ const T = {
       },
     ],
   },
-  ar: {
-    title: 'شروط الاستخدام',
-    updated: 'آخر تحديث: يونيو 2026',
-    sections: [
-      {
-        heading: 'قبول الشروط',
-        body: 'بالوصول إلى كير كالكولوس أو استخدامها، فإنك توافق على الالتزام بشروط الاستخدام هذه. إذا كنت لا توافق، يرجى عدم استخدام هذه المنصة.',
-      },
-      {
-        heading: 'الاستخدام المسموح به',
-        body: 'تُقدَّم كير كالكولوس مجانًا للاستخدام السريري والتعليمي القانوني وغير التجاري من قِبَل المختصين الصحيين والطلاب. لا يُسمح باستخدام هذه المنصة لتقديم نصائح طبية للعامة أو لاستبدال خدمة سريرية مرخصة.',
-      },
-      {
-        heading: 'لا توجد نصيحة طبية',
-        body: 'لا يُشكّل أي شيء على هذه المنصة نصيحة طبية أو تشخيصًا أو علاجًا. جميع مخرجات الحاسبات مخصصة لدعم القرار السريري فقط. راجع إخلاء المسؤولية الطبية للتفاصيل الكاملة.',
-      },
-      {
-        heading: 'الدقة والتحديثات',
-        body: 'نبذل جهودًا معقولة للحفاظ على دقة المعادلات وتوافقها مع الإرشادات الحالية. لا نضمن أن جميع المحتوى مكتمل أو حديث أو خالٍ من الأخطاء.',
-      },
-      {
-        heading: 'الملكية الفكرية',
-        body: 'اسم كير كالكولوس وتصميمها وقاعدة كودها ملكية خاصة. المعادلات السريرية الأساسية في المجال العام. لا يُسمح بإعادة إنتاج واجهة المستخدم أو الكود أو توزيعها دون إذن كتابي.',
-      },
-      {
-        heading: 'تحديد المسؤولية',
-        body: 'بالقدر الأقصى المسموح به قانونًا، لن تكون كير كالكولوس ومطوروها مسؤولين عن أي أضرار تنشأ عن استخدامك لهذه المنصة.',
-      },
-      {
-        heading: 'التوافر',
-        body: 'لا نضمن التوافر المتواصل. قد يتم تحديث المنصة أو تعديلها أو جعلها غير متاحة مؤقتًا دون إشعار مسبق.',
-      },
-      {
-        heading: 'القانون الحاكم',
-        body: 'تخضع هذه الشروط للقانون الدولي المعمول به. يُحلّ أي نزاع بحسن نية بين الطرفين.',
-      },
-    ],
-  },
+  
 };
 
 export default function Terms({ lang }: { lang: LangCode }) {
   const { langPath } = useLang();
   const t = T[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   return (
     <div className="space-y-8 pb-8 max-w-3xl mx-auto" dir={isRtl ? 'rtl' : 'ltr'}>
@@ -152,15 +115,13 @@ export default function Terms({ lang }: { lang: LangCode }) {
         <p className="text-xs text-gray-500 leading-relaxed">
           {lang === 'fr'
             ? 'Voir aussi notre '
-            : lang === 'ar'
-              ? 'راجع أيضًا '
-              : 'Also see our '}
+            : 'Also see our '}
           <Link to={langPath('/privacy')} className="underline text-blue-600 font-semibold hover:text-blue-800">
-            {lang === 'fr' ? 'Politique de confidentialité' : lang === 'ar' ? 'سياسة الخصوصية' : 'Privacy Policy'}
+            {lang === 'fr' ? 'Politique de confidentialité' : 'Privacy Policy'}
           </Link>
-          {lang === 'fr' ? ' et notre ' : lang === 'ar' ? ' و' : ' and our '}
+          {lang === 'fr' ? ' et notre ' : ' and our '}
           <Link to={langPath('/disclaimer')} className="underline text-blue-600 font-semibold hover:text-blue-800">
-            {lang === 'fr' ? 'Avertissement médical' : lang === 'ar' ? 'إخلاء المسؤولية الطبية' : 'Medical Disclaimer'}
+            {lang === 'fr' ? 'Avertissement médical' : 'Medical Disclaimer'}
           </Link>.
         </p>
       </div>

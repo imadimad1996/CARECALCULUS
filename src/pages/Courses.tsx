@@ -165,26 +165,6 @@ const translations: Translations = {
     quizWrong: "Sélection incorrecte. Relisez attentivement le texte clinique.",
     notesHeader: "Prise de Notes Cliniques"
   },
-  ar: {
-    title: "المحاضرات والمناهج الطبية (PDF)",
-    subtitle: "رفع ومراجعة كتب المناهج الطبية بصيغة PDF، وملخصات المحاضرات العلمية والاختبارات التفاعلية",
-    dragDrop: "اسحب وأفلت ملف المحاضرة الطبي بصيغة .pdf هنا",
-    orBrowse: "أو اختر الملفات من جهاز الكمبيوتر الخاص بك",
-    pagesCount: "صفحات",
-    myCourses: "مناهجي الطبية المخصصة",
-    preseeded: "المحاضرات والمناهج المعتمدة",
-    studyBtn: "بدء وضع الدراسة التفاعلي HUD",
-    closeBtn: "إغلاق نافذة الكتاب",
-    downloadBtn: "تحميل المرجع والأبحاث PDF",
-    uploadSuccess: "تم تحليل وأرشفة منهج الـ PDF بنجاح في المكتبة الطبية الرقمية!",
-    onlyPdf: "الامتداد المدعوم للملفات هو الكتب الطبية الرقمية (.pdf) فقط.",
-    references: "المراجع والمعايير المعتمدة: منظمة الصحة العالمية (WHO)؛ الجمعية الأوروبية لطب العناية المركزة (ESICM).",
-    noUploads: "لم يتم رفع أي مناهج مخصصة بعد. اسحب وأفلت أي ملف .pdf بالأعلى لإدراجه فوراً.",
-    quizHeader: "اختبار التحقق من الفهم السريري",
-    quizSuccess: "إجابة صحيحة بالكامل! معتمدة ضمن المبادئ السريرية.",
-    quizWrong: "إجابة غير صحيحة. يرجى إعادة مراجعة النص في الأعلى.",
-    notesHeader: "دفتر تدوين الملاحظات الطبية"
-  }
 };
 
 function getLocalizedDefaultCourse(c: MedicalCourse, lang: LangCode): MedicalCourse {
@@ -193,12 +173,12 @@ function getLocalizedDefaultCourse(c: MedicalCourse, lang: LangCode): MedicalCou
       ...c,
       title: lang === 'fr' 
         ? 'Néphrologie clinique : Cockcroft-Gault et cinétique de clairance des médicaments' 
-        : lang === 'ar' 
+        : false 
         ? 'أحماض الكلى السريرية: حركية تصفية الأدوية ومعادلة كوككروفت-غولت' 
         : 'Clinical Nephrology: Cockcroft-Gault & Drug Clearance Kinetics',
       summary: lang === 'fr'
         ? "Un didacticiel approfondi sur la clairance de la créatinine, l'estimation du débit de filtration glomérulaire (DFG) et l'ajustement de la posologie des médicaments."
-        : lang === 'ar'
+        : false
         ? 'برنامج تعليمي متعمق حول تصفية الكرياتينين، وتقدير معدل الترشيح الكبيبي (eGFR)، وضبط جرعات الأدوية ذات النطاق العلاجي الضيق.'
         : 'A deep-dive tutorial on creatinine clearance, estimating glomerular filtration rate (eGFR), and adjusting therapeutic index dosages.',
       sections: lang === 'fr' ? [
@@ -214,7 +194,7 @@ function getLocalizedDefaultCourse(c: MedicalCourse, lang: LangCode): MedicalCou
           heading: 'Section 3 : Index thérapeutique et ajustements posologiques',
           text: "Certains antibiotiques puissants (comme la vancomycine ou les aminosides) présentent des fenêtres thérapeutiques étroites. Des concentrations infra-thérapeutiques déclenchent des mutations bactériennes et un échec du traitement, tandis que des niveaux excessifs entraînent une nécrose tubulaire aiguë ou une toxicité vestibulaire. Des mesures régulières de la clairance rénale doivent guider les configurations posologiques quotidiennes."
         }
-      ] : lang === 'ar' ? [
+      ] : false ? [
         {
           heading: 'القسم الأول: الترشيح الكبيبي والتصفية الذاتية',
           text: 'المعيار الفسيولوجي الأساسي لوظائف الكلى هو معدل الترشيح الكبيبي (GFR). القياس المباشر لـ GFR باستخدام مواد خارجية مثل الإينولين غير عملي سريرياً. وبناءً على ذلك، يتم استخدام مؤشرات الترشيح الداخلية - وبشكل أساسي الكرياتينين في الدم. يجب على الأطباء فهم أن مستويات الكرياتينين تعتمد بشكل كبير على العمر والجنس العضلي والكتلة العضلية النشطة.'
@@ -249,7 +229,7 @@ function getLocalizedDefaultCourse(c: MedicalCourse, lang: LangCode): MedicalCou
           ],
           answerIndex: 2
         }
-      ] : lang === 'ar' ? [
+      ] : false ? [
         {
           question: 'لماذا يجب أن تستخدم حسابات كوككروفت-غولت عاملاً تصحيحياً قدره 0.85 للمريضات من الإناث؟',
           options: [
@@ -278,12 +258,12 @@ function getLocalizedDefaultCourse(c: MedicalCourse, lang: LangCode): MedicalCou
       ...c,
       title: lang === 'fr'
         ? 'Voies de sepsis : Étalonnage précoce des cibles qSOFA et SIRS'
-        : lang === 'ar'
+        : false
         ? 'مسارات التسمم الدموي: المعايرة المبكرة لأهداف qSOFA و SIRS'
         : 'Sepsis Pathways: Early Calibration of qSOFA & SIRS Targets',
       summary: lang === 'fr'
         ? "Directives essentielles pour comparer les critères SIRS d'inflammation systémique aux cibles qSOFA de défaillance d'organes en réanimation."
-        : lang === 'ar'
+        : false
         ? 'إرشادات أساسية للمقارنة بين معايير استجابة الالتهاب الجهازية (SIRS) وأهداف فشل الأعضاء السريرية لمؤشر qSOFA.'
         : 'Essential guidelines for comparing micro-inflammatory SIRS criteria against critical care Sepsis-3 qSOFA organ failure targets.',
       sections: lang === 'fr' ? [
@@ -299,7 +279,7 @@ function getLocalizedDefaultCourse(c: MedicalCourse, lang: LangCode): MedicalCou
           heading: 'Section 3 : Protocoles de triage aux urgences',
           text: "Les approches cliniques idéales intègrent les DEUX rubriques de dépistage. Le SIRS reste supérieur pour un dépistage sensible, garantissant que les bactériémies potentielles soient détectées tôt pour une antibiothérapie rapide. Le score qSOFA est ensuite utilisé comme un puissant outil de triage pour indiquer un dysfonctionnement d'organes grave, nécessitant une escalade immédiate vers les soins intensifs."
         }
-      ] : lang === 'ar' ? [
+      ] : false ? [
         {
           heading: 'القسم الأول: التطور الفسيولوجي للتسمم الدموي (Sepsis)',
           text: 'يُعرَّف التسمم الدموي بأنه خلل وظيفي في الأعضاء يهدد الحياة بسبب استجابة الجسم غير المنتظمة للعدوى. تاريخياً، ربط الأطباء التشخيص فقط بوجود متلازمة الاستجابة الالتهابية الجهازية (SIRS). وكان ذلك يشمل مؤشرات مثل الحرارة المرتفعة/المنخفضة، والنبض السريع، ومعدل التنفس، وكرات الدم البيضاء. ومع ذلك، يفتقر SIRS إلى الخصوصية السريرية المطلوبة.'
@@ -324,7 +304,7 @@ function getLocalizedDefaultCourse(c: MedicalCourse, lang: LangCode): MedicalCou
           ],
           answerIndex: 1
         }
-      ] : lang === 'ar' ? [
+      ] : false ? [
         {
           question: 'ما هي المتغيرات السريرية التي يتم تقييمها بواسطة مؤشر qSOFA؟',
           options: [
@@ -343,7 +323,7 @@ function getLocalizedDefaultCourse(c: MedicalCourse, lang: LangCode): MedicalCou
 
 export default function Courses({ lang }: { lang: LangCode }) {
   const t = translations[lang] || translations.en;
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
@@ -391,7 +371,6 @@ export default function Courses({ lang }: { lang: LangCode }) {
       return (
         slugify(mc.title.en, mc.id) === target ||
         slugify(mc.title.fr, mc.id) === target ||
-        slugify(mc.title.ar, mc.id) === target ||
         mc.id.toLowerCase() === target
       );
     });
@@ -879,7 +858,7 @@ export default function Courses({ lang }: { lang: LangCode }) {
                       </span>
                       <span className="px-2 py-0.5 bg-indigo-50 border border-indigo-100 text-indigo-700 font-mono text-[9px] uppercase tracking-wider font-black rounded-md flex items-center gap-0.5 shadow-xs">
                         <Sparkles className="w-2.5 h-2.5 text-indigo-500" />
-                        {lang === 'fr' ? 'Éligible CME' : lang === 'ar' ? 'معتمد للتعليم المستمر' : 'CME Eligible'}
+                        {lang === 'fr' ? 'Éligible CME' : false ? 'معتمد للتعليم المستمر' : 'CME Eligible'}
                       </span>
                       <span className="text-[10px] font-mono text-gray-400 flex items-center gap-1">
                         <Calendar className="w-3.5 h-3.5" />

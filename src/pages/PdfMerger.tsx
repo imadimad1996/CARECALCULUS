@@ -7,7 +7,7 @@ import { useLang } from '../utils/lang';
 
 export default function PdfMerger({ lang }: { lang: LangCode }) {
   const { langPath } = useLang();
-  const isRtl = lang === 'ar';
+  const isRtl = false;
   
   const [files, setFiles] = useState<File[]>([]);
   const [isProcessing, setIsProcessing] = useState(false);
@@ -19,7 +19,7 @@ export default function PdfMerger({ lang }: { lang: LangCode }) {
       setFiles(prev => [...prev, ...validPdfs]);
       setError(null);
     } else {
-      setError(lang === 'fr' ? 'Veuillez sélectionner uniquement des fichiers PDF.' : lang === 'ar' ? 'الرجاء تحديد ملفات PDF فقط.' : 'Please select PDF files only.');
+      setError(lang === 'fr' ? 'Veuillez sélectionner uniquement des fichiers PDF.' : 'Please select PDF files only.');
     }
   }, [lang]);
 
@@ -47,7 +47,7 @@ export default function PdfMerger({ lang }: { lang: LangCode }) {
 
   const handleMerge = async () => {
     if (files.length < 2) {
-      setError(lang === 'fr' ? 'Sélectionnez au moins 2 fichiers.' : lang === 'ar' ? 'حدد ملفين على الأقل.' : 'Select at least 2 files.');
+      setError(lang === 'fr' ? 'Sélectionnez au moins 2 fichiers.' : 'Select at least 2 files.');
       return;
     }
     setIsProcessing(true);
@@ -76,18 +76,18 @@ export default function PdfMerger({ lang }: { lang: LangCode }) {
       URL.revokeObjectURL(url);
     } catch (err) {
       console.error(err);
-      setError(lang === 'fr' ? 'Erreur lors de la fusion. Certains fichiers pourraient être corrompus ou protégés.' : lang === 'ar' ? 'خطأ أثناء الدمج. قد تكون بعض الملفات تالفة أو محمية.' : 'Error during merge. Some files might be corrupted or protected.');
+      setError(lang === 'fr' ? 'Erreur lors de la fusion. Certains fichiers pourraient être corrompus ou protégés.' : 'Error during merge. Some files might be corrupted or protected.');
     } finally {
       setIsProcessing(false);
     }
   };
 
   const texts = {
-    title: lang === 'fr' ? 'Fusionner des PDF' : lang === 'ar' ? 'دمج ملفات PDF' : 'Merge PDF',
-    subtitle: lang === 'fr' ? 'Combinez plusieurs documents médicaux en un seul PDF.' : lang === 'ar' ? 'دمج عدة مستندات طبية في ملف PDF واحد.' : 'Combine multiple medical documents into a single PDF.',
-    dropzone: lang === 'fr' ? 'Glissez-déposez des PDF ici, ou cliquez pour sélectionner' : lang === 'ar' ? 'قم بإسقاط ملفات PDF هنا، أو انقر للتحديد' : 'Drag & drop PDFs here, or click to select',
-    mergeBtn: lang === 'fr' ? 'Fusionner les PDF' : lang === 'ar' ? 'دمج PDF' : 'Merge PDFs',
-    processing: lang === 'fr' ? 'Traitement en cours...' : lang === 'ar' ? 'جاري المعالجة...' : 'Processing...',
+    title: lang === 'fr' ? 'Fusionner des PDF' : 'Merge PDF',
+    subtitle: lang === 'fr' ? 'Combinez plusieurs documents médicaux en un seul PDF.' : 'Combine multiple medical documents into a single PDF.',
+    dropzone: lang === 'fr' ? 'Glissez-déposez des PDF ici, ou cliquez pour sélectionner' : 'Drag & drop PDFs here, or click to select',
+    mergeBtn: lang === 'fr' ? 'Fusionner les PDF' : 'Merge PDFs',
+    processing: lang === 'fr' ? 'Traitement en cours...' : 'Processing...',
   };
 
   return (
@@ -113,7 +113,7 @@ export default function PdfMerger({ lang }: { lang: LangCode }) {
         {files.length > 0 && (
           <div className="space-y-6">
             <h3 className="font-bold text-gray-800 border-b pb-2">
-              {lang === 'fr' ? 'Fichiers à fusionner' : lang === 'ar' ? 'الملفات المراد دمجها' : 'Files to merge'} ({files.length})
+              {lang === 'fr' ? 'Fichiers à fusionner' : 'Files to merge'} ({files.length})
             </h3>
             <div className="space-y-3">
               {files.map((file, index) => (

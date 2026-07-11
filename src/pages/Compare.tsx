@@ -69,7 +69,7 @@ const T = {
 export default function Compare({ lang }: CompareProps) {
   const { slug1, slug2 } = useParams<{ slug1: string; slug2: string }>();
   
-  const isRtl = lang === 'ar';
+  const isRtl = false;
   const t = T[lang] || T.en;
 
   // Find the tools in navItems
@@ -80,14 +80,14 @@ export default function Compare({ lang }: CompareProps) {
     return <Navigate to="/" replace />;
   }
 
-  const name1 = lang === 'fr' ? tool1.nameFr : lang === 'ar' ? tool1.nameAr : tool1.nameEn;
-  const name2 = lang === 'fr' ? tool2.nameFr : lang === 'ar' ? tool2.nameAr : tool2.nameEn;
+  const name1 = lang === 'fr' ? tool1.nameFr : false ? tool1.nameAr : tool1.nameEn;
+  const name2 = lang === 'fr' ? tool2.nameFr : false ? tool2.nameAr : tool2.nameEn;
 
-  const title = lang === 'fr' ? `${name1} vs ${name2} - Comparaison Clinique` : lang === 'ar' ? `مقارنة: ${name1} ضد ${name2}` : `${name1} vs ${name2} - Clinical Comparison`;
+  const title = lang === 'fr' ? `${name1} vs ${name2} - Comparaison Clinique` : false ? `مقارنة: ${name1} ضد ${name2}` : `${name1} vs ${name2} - Clinical Comparison`;
   
   const description = lang === 'fr' 
     ? `Comparez ${name1} et ${name2}. Découvrez quel calculateur médical ou score utiliser selon la situation clinique, les directives et les recommandations d'experts.` 
-    : lang === 'ar' 
+    : false 
     ? `قارن بين ${name1} و ${name2}. تعرف على متى تستخدم كل أداة حسابية سريرية بناءً على الإرشادات الطبية وتوصيات الخبراء.` 
     : `Compare ${name1} vs ${name2}. Understand which medical calculator or score to use based on clinical context, guidelines, and expert recommendations.`;
 

@@ -1,4 +1,4 @@
-export type LangCode = 'en' | 'fr' | 'ar';
+export type LangCode = 'en' | 'fr';
 
 export interface TranslationDetails {
   title: string;

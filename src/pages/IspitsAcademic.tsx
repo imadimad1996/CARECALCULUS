@@ -80,48 +80,12 @@ const translations = {
     statSpecialties: "Spécialités",
     statSemesters: "Semestres",
     notAvailable: "Ce document PDF n'est pas chargé directement. Utilisez les liens ci-dessous pour le trouver en ligne.",
-  },
-  ar: {
-    title: "أكاديمية العلوم التمريضية وتقنيات الصحة ISPITS",
-    subtitle: "المكتبة الأكاديمية لمناهج ومحاضرات المعاهد العليا للمهن التمريضية وتقنيات الصحة بالمغرب.",
-    searchPlaceholder: "بحث عن مادة، وصف، أو فصل دراسي...",
-    allSemesters: "جميع الفصول",
-    allSpecialties: "جميع التخصصات",
-    specialtyLabel: "التخصص",
-    specialty_common: "الجذع المشترك",
-    specialty_nursing: "العلاجات التمريضية",
-    specialty_anesthesia: "التخدير والإنعاش",
-    specialty_midwifery: "قبالة (Sage-Femme)",
-    specialty_health_tech: "تقنيات الصحة",
-    specialty_rehab: "ترويض وتأهيل",
-    allPopularity: "كل المستويات",
-    popVeryHigh: "عالية جداً (≥85%)",
-    popHigh: "عالية (65-84%)",
-    popMedium: "متوسطة (45-64%)",
-    popModerate: "مقبولة (<45%)",
-    popularity: "الشعبية",
-    semester: "الفصل الدراسي",
-    pdfAvailable: "ملف PDF متوفر",
-    webSearchRequired: "البحث في الويب",
-    previewTitle: "لوحة الدراسة التفاعلية",
-    noModuleSelected: "اختر مادة لبدء المراجعة",
-    noModuleSelectedDesc: "اختر أي مادة تمريضية أو تقنية من القائمة الجانبية للاطلاع على المنهج، ومعاينة كتاب الـ PDF وبحث المراجع.",
-    downloadPdf: "تحميل ملف PDF",
-    openNewTab: "فتح في علامة تبويب جديدة",
-    googleSearch: "بحث في جوجل",
-    googlePdfSearch: "البحث عن PDF في جوجل",
-    ispitsNetSearch: "البحث في موقع ISPITS.net",
-    webLinks: "روابط سريرية خارجية",
-    statModules: "المواد المسجلة",
-    statSpecialties: "التخصصات",
-    statSemesters: "الفصول الدراسية",
-    notAvailable: "ملف الـ PDF غير متوفر مباشرة. يمكنك العثور عليه في الويب باستخدام الروابط أدناه.",
   }
 };
 
 export default function IspitsAcademic({ lang }: { lang: LangCode }) {
   const t = translations[lang] || translations.en;
-  const isRtl = lang === 'ar';
+  const isRtl = false;
   const { moduleSlug } = useParams<{ moduleSlug?: string }>();
   const navigate = useNavigate();
 

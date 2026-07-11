@@ -29,16 +29,11 @@ export default function MedicalDisclaimer({ lang }: { lang: LangCode }) {
       title: "À usage éducatif et de référence uniquement",
       body: "CareCalculus est conçu pour aider les professionnels de santé. Ce n'est PAS un substitut au jugement clinique et il ne fournit pas de conseils médicaux. En continuant, vous reconnaissez que toute décision prise sur la base des résultats de cet outil relève de la seule responsabilité du clinicien.",
       accept: "Accepter & Continuer"
-    },
-    ar: {
-      title: "للاستخدام التعليمي والمرجعي فقط",
-      body: "تم تصميم CareCalculus لمساعدة المتخصصين في الرعاية الصحية. ولا يعد بديلاً عن التقييم السريري، ولا يقدم استشارات طبية. بالاستمرار، فإنك تقر بأن أي قرارات تتخذ بناءً على نتائج هذه الأداة هي المسؤولية الكاملة للطبيب المعالج وحده.",
-      accept: "قبول ومتابعة"
     }
   };
 
   const currentText = texts[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   return (
     <div className="fixed bottom-4 right-4 left-4 sm:left-auto sm:max-w-md z-[100] animate-in slide-in-from-bottom duration-500" dir={isRtl ? 'rtl' : 'ltr'}>

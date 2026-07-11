@@ -29,18 +29,6 @@ const translations: Translations = {
     clinicalTitle: "Ajustements Cliniques",
     clinicalText: "Valeurs approximatives. L'équivalence clinique peut différer selon la demi-vie biologique.",
     references: "Équivalences pharmacologiques standards.",
-  },
-  ar: {
-    title: "تحويل الكورتيكوستيرويدات",
-    subtitle: "يحول بين القشرانيات الجهازية",
-    from: "من الدواء",
-    to: "إلى الدواء",
-    dose: "الجرعة الحالية (مغ)",
-    result: "الجرعة المكافئة",
-    formula: "النسبة محسوبة مقارنة بالهيدروكورتيزون (20 مغ)",
-    clinicalTitle: "التعديلات",
-    clinicalText: "القيم تقريبية. قد يختلف التكافؤ السريري بناءً على الحالة ونصف العمر.",
-    references: "التكافؤات الدوائية القياسية.",
   }
 };
 
@@ -61,7 +49,7 @@ export default function SteroidConversion({ lang }: { lang: LangCode }) {
   const [dose, setDose] = useState<number | ''>(50);
 
   const currentText = translations[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   const equivalent = useMemo(() => {
     if (dose === '' || dose <= 0) return null;

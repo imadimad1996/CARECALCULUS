@@ -18,15 +18,5 @@
     "seeAlso": "Voir aussi",
     "faqTitle": "Questions Fréquemment Posées",
     "parameters": "Paramètres"
-  },
-  "ar": {
-    "reviewedBy": "تمت المراجعة من قبل الفريق الطبي السريري لـ CareCalculus",
-    "specialists": "أطباء استشاريين، أخصائيي العناية المركزة وطب الطوارئ",
-    "updated": "تم التحديث 2026",
-    "mathMetric": "المعادلة الرياضية",
-    "evidenceLit": "الأدلة والدراسات العلمية",
-    "seeAlso": "اقرأ أيضاً",
-    "faqTitle": "الأسئلة الشائعة",
-    "parameters": "العوامل"
   }
 }

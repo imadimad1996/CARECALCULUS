@@ -26,8 +26,7 @@ interface BlogPost {
   relevance: string;
   multilingualTitle?: {
     fr: string;
-    ar: string;
-  };
+    };
 }
 
 // 20 High-Quality Curated Seeds
@@ -36,8 +35,7 @@ export const ORIGINAL_CURATED_SEED_POSTS: BlogPost[] = [
     id: 'seed-1',
     title: 'Precision Mean Arterial Pressure (MAP) Targets: Balancing Perfusion & Vasopressor Toxicity',
     multilingualTitle: {
-      fr: 'Cibles de Pression Artérielle Moyenne Équilibrées : Entre Perfusion et Toxicité des Vasopresseurs',
-      ar: 'أهداف ضغط الشريان المتوسط الدقيقة: موازنة تروية الأعضاء مع سمية رافعات الضغط'
+      fr: 'Cibles de Pression Artérielle Moyenne Équilibrées : Entre Perfusion et Toxicité des Vasopresseurs'
     },
     snippet: 'This clinical review analyzes the optimization of MAP targets in septic shock. While a standard target of 65 mmHg is universally accepted, personalized physiologic approaches based on diastolic reserve show reduced acute kidney injury rates.',
     content: `### Clinical Overview and Background
@@ -67,8 +65,7 @@ Clinicians should avoid rigid adherence to generic 65 mmHg targets in population
     id: 'seed-2',
     title: 'Evaluating GCS Fluctuations in Non-Traumatic Coma: Diagnostic Pitfalls & Neuromonitoring',
     multilingualTitle: {
-      fr: 'Fluctuations du Score d’Échelle de Glasgow en Coma Non Transitoire : Pièges et Diagnostics',
-      ar: 'تقلبات معيار غلاسكو للغيبوبة GCS في حالات الغيبوبة غير الرضحية: الأخطاء التشخيصية والمراقبة'
+      fr: 'Fluctuations du Score d’Échelle de Glasgow en Coma Non Transitoire : Pièges et Diagnostics'
     },
     snippet: 'A comprehensive study on Glasgow Coma Scale sensitivity in toxic-metabolic encephalopathies. Analysis reveals motor score stability over eye or verbal subscores during recovery tracking.',
     content: `### Background
@@ -98,8 +95,7 @@ In toxic-metabolic encephalopathies:
     id: 'seed-3',
     title: 'The qSOFA Score Versus SIRS Criteria for Sepsis Screening: A Multi-Center Emergency Cohort Study',
     multilingualTitle: {
-      fr: 'Score qSOFA contre Critères SIRS pour le Dépistage du Sepsis : Étude de Cohorte Recueillie',
-      ar: 'مقارنة مؤشر qSOFA مع معايير SIRS لتحديد تسمم الدم: دراسة سريرية متعددة المراكز في الطوارئ'
+      fr: 'Score qSOFA contre Critères SIRS pour le Dépistage du Sepsis : Étude de Cohorte Recueillie'
     },
     snippet: 'This clinical update compares the predictive value of qSOFA and SIRS. While qSOFA boasts high specificity for in-hospital mortality, SIRS remains highly sensitive for early infectious screening.',
     content: `### Introduction
@@ -145,9 +141,7 @@ const CURATED_SEED_POSTS: BlogPost[] = [
     clinicalImpact: mj.clinicalImpact.en,
     relevance: 'Guideline aligned.',
     multilingualTitle: {
-      fr: mj.title.fr,
-      ar: mj.title.ar
-    }
+      fr: mj.title.fr}
   }))
 ];
 
@@ -193,7 +187,7 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
   }, [searchQuery]);
 
   const postsPerPage = 9;
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   // Each journal article has its own URL: /blog/:slug — shareable & indexable.
   const openPost = (p: { id: string; title: string }) => navigate(langPath(`/blog/${slugify(p.title, p.id)}`));
@@ -256,10 +250,9 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
         blog.title.toLowerCase().includes(query) ||
         blog.snippet.toLowerCase().includes(query) ||
         blog.author.toLowerCase().includes(query) ||
-        (blog.multilingualTitle && (
-          blog.multilingualTitle.fr.toLowerCase().includes(query) ||
-          blog.multilingualTitle.ar.toLowerCase().includes(query)
-        ))
+        (blog.multilingualTitle &&
+          blog.multilingualTitle.fr.toLowerCase().includes(query)
+        )
       );
     }
 
@@ -286,7 +279,7 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
     if (!activePost) return '';
     if (activePost.id.startsWith('mj-')) {
       const mj = MASTER_JOURNALS.find(x => x.id === activePost.id);
-      if (mj) return lang === 'fr' ? mj.snippet.fr : lang === 'ar' ? mj.snippet.ar : mj.snippet.en;
+      if (mj) return lang === 'fr' ? mj.snippet.fr : mj.snippet.en;
     }
     return activePost.snippet;
   }, [activePost, lang]);
@@ -295,7 +288,7 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
     if (!activePost) return '';
     if (activePost.id.startsWith('mj-')) {
       const mj = MASTER_JOURNALS.find(x => x.id === activePost.id);
-      if (mj) return lang === 'fr' ? mj.clinicalImpact.fr : lang === 'ar' ? mj.clinicalImpact.ar : mj.clinicalImpact.en;
+      if (mj) return lang === 'fr' ? mj.clinicalImpact.fr : mj.clinicalImpact.en;
     }
     return activePost.clinicalImpact;
   }, [activePost, lang]);
@@ -306,8 +299,8 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
     if (activePost.id.startsWith('mj-')) {
       const mj = MASTER_JOURNALS.find(x => x.id === activePost.id);
       if (mj) {
-        const titleText = lang === 'fr' ? mj.title.fr : lang === 'ar' ? mj.title.ar : mj.title.en;
-        const snippetText = lang === 'fr' ? mj.snippet.fr : lang === 'ar' ? mj.snippet.ar : mj.snippet.en;
+        const titleText = lang === 'fr' ? mj.title.fr : mj.title.en;
+        const snippetText = lang === 'fr' ? mj.snippet.fr : mj.snippet.en;
         rawContent = generateMasterContent(mj.id, titleText, snippetText, lang);
       }
     } else {
@@ -320,7 +313,7 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
 
   const getLocalizedLabel = (enKey: string, frKey: string, arKey: string) => {
     if (lang === 'fr') return frKey;
-    if (lang === 'ar') return arKey;
+    if (false) return arKey;
     return enKey;
   };
 
@@ -362,7 +355,7 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
   if (activePost) {
     const isBookmarked = bookmarkedIds.includes(activePost.id);
     const postTitle = activePost.multilingualTitle && lang !== 'en'
-      ? (lang === 'fr' ? activePost.multilingualTitle.fr : activePost.multilingualTitle.ar)
+      ? activePost.multilingualTitle.fr
       : activePost.title;
 
     // Filter related articles from same specialty
@@ -708,19 +701,19 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
             <div className="border-t border-dashed border-gray-200 pt-6 mt-8">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <Link to={langPath('/qsofa-score')} className="bg-gray-50 hover:bg-slate-50 p-3 rounded-xl border border-gray-200 text-left cursor-pointer transition block">
-                  <span className="text-[8px] font-mono font-black text-teal-600 block uppercase tracking-widest">{lang === 'fr' ? 'Calculateur Associé' : (lang === 'ar' ? 'حاسبة سريرية' : 'Companion Tool')}</span>
-                  <span className="text-[11px] font-bold text-blue-600 block mt-0.5 hover:underline">{lang === 'fr' ? 'Score qSOFA & SOFA' : (lang === 'ar' ? 'مؤشر قصر وضوح الصدمة qSOFA' : 'qSOFA / SOFA Score Calculator')}</span>
-                  <span className="text-[9px] text-gray-400 block truncate">{lang === 'fr' ? 'Évaluation rapide du sepsis' : (lang === 'ar' ? 'التقييم السريع للإنتان الرئوي والدموي' : 'Bedside clinical sepsis assessment')}</span>
+                  <span className="text-[8px] font-mono font-black text-teal-600 block uppercase tracking-widest">{lang === 'fr' ? 'Calculateur Associé' : 'Companion Tool'}</span>
+                  <span className="text-[11px] font-bold text-blue-600 block mt-0.5 hover:underline">{lang === 'fr' ? 'Score qSOFA & SOFA' : 'qSOFA / SOFA Score Calculator'}</span>
+                  <span className="text-[9px] text-gray-400 block truncate">{lang === 'fr' ? 'Évaluation rapide du sepsis' : 'Bedside clinical sepsis assessment'}</span>
                 </Link>
                 <Link to={langPath('/creatinine-clearance')} className="bg-gray-50 hover:bg-slate-50 p-3 rounded-xl border border-gray-200 text-left cursor-pointer transition block">
-                  <span className="text-[8px] font-mono font-black text-teal-600 block uppercase tracking-widest">{lang === 'fr' ? 'Calculateur Associé' : (lang === 'ar' ? 'حاسبة سريرية' : 'Companion Tool')}</span>
-                  <span className="text-[11px] font-bold text-blue-600 block mt-0.5 hover:underline">{lang === 'fr' ? 'Clairance de la Créatinine' : (lang === 'ar' ? 'تصفية الكرياتينين ومعدل الترشيح' : 'Creatinine Clearance & GFR')}</span>
-                  <span className="text-[9px] text-gray-400 block truncate">{lang === 'fr' ? 'Formules Cockcroft-Gault & GFR' : (lang === 'ar' ? 'حساب وظائف الكلى وجرعات الأدوية' : 'Renal adjustment clearance formulas')}</span>
+                  <span className="text-[8px] font-mono font-black text-teal-600 block uppercase tracking-widest">{lang === 'fr' ? 'Calculateur Associé' : 'Companion Tool'}</span>
+                  <span className="text-[11px] font-bold text-blue-600 block mt-0.5 hover:underline">{lang === 'fr' ? 'Clairance de la Créatinine' : 'Creatinine Clearance & GFR'}</span>
+                  <span className="text-[9px] text-gray-400 block truncate">{lang === 'fr' ? 'Formules Cockcroft-Gault & GFR' : 'Renal adjustment clearance formulas'}</span>
                 </Link>
                 <Link to={langPath('/steroid-conversion')} className="bg-gray-50 hover:bg-slate-50 p-3 rounded-xl border border-gray-200 text-left cursor-pointer transition block">
-                  <span className="text-[8px] font-mono font-black text-teal-600 block uppercase tracking-widest">{lang === 'fr' ? 'Calculateur Associé' : (lang === 'ar' ? 'حاسبة سريرية' : 'Companion Tool')}</span>
-                  <span className="text-[11px] font-bold text-blue-600 block mt-0.5 hover:underline">{lang === 'fr' ? 'Conversion des Corticoïdes' : (lang === 'ar' ? 'تحويل وجرعات الكورتيكوستيرويد' : 'Corticosteroid Equivalence')}</span>
-                  <span className="text-[9px] text-gray-400 block truncate">{lang === 'fr' ? 'Calcul des équivalences de stéroïdes' : (lang === 'ar' ? 'حساب جرعات الكورتيزون المكافئة' : 'Glucocorticoid dosing ratios')}</span>
+                  <span className="text-[8px] font-mono font-black text-teal-600 block uppercase tracking-widest">{lang === 'fr' ? 'Calculateur Associé' : 'Companion Tool'}</span>
+                  <span className="text-[11px] font-bold text-blue-600 block mt-0.5 hover:underline">{lang === 'fr' ? 'Conversion des Corticoïdes' : 'Corticosteroid Equivalence'}</span>
+                  <span className="text-[9px] text-gray-400 block truncate">{lang === 'fr' ? 'Calcul des équivalences de stéroïdes' : 'Glucocorticoid dosing ratios'}</span>
                 </Link>
               </div>
             </div>
@@ -772,7 +765,7 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
                 <div className="space-y-3">
                   {relatedArticles.map((relPost) => {
                     const rTitle = relPost.multilingualTitle && lang !== 'en'
-                      ? (lang === 'fr' ? relPost.multilingualTitle.fr : relPost.multilingualTitle.ar)
+                      ? relPost.multilingualTitle.fr
                       : relPost.title;
 
                     return (
@@ -926,7 +919,7 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
             const isBookmarked = bookmarkedIds.includes(post.id);
             const isCurated = post.id.startsWith('seed-');
             const postTitle = post.multilingualTitle && lang !== 'en'
-              ? (lang === 'fr' ? post.multilingualTitle.fr : post.multilingualTitle.ar)
+              ? post.multilingualTitle.fr
               : post.title;
 
             return (

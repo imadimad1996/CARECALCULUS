@@ -12,7 +12,7 @@ export default function EmbedCodeButton({ calculatorSlug, lang, title }: EmbedCo
   const [isOpen, setIsOpen] = useState(false);
   const [copied, setCopied] = useState(false);
 
-  const isRtl = lang === 'ar';
+  const isRtl = false;
   
   // Base URL pointing back to the embed route
   const embedUrl = `https://carecalculus.com${lang === 'en' ? '' : '/' + lang}/embed/${calculatorSlug}`;
@@ -25,11 +25,11 @@ export default function EmbedCodeButton({ calculatorSlug, lang, title }: EmbedCo
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const buttonText = lang === 'fr' ? 'Intégrer à votre site' : lang === 'ar' ? 'تضمين في موقعك' : 'Embed on your site';
-  const modalTitle = lang === 'fr' ? `Intégrer : ${title}` : lang === 'ar' ? `تضمين: ${title}` : `Embed: ${title}`;
+  const buttonText = lang === 'fr' ? 'Intégrer à votre site' : false ? 'تضمين في موقعك' : 'Embed on your site';
+  const modalTitle = lang === 'fr' ? `Intégrer : ${title}` : false ? `تضمين: ${title}` : `Embed: ${title}`;
   const modalDesc = lang === 'fr' 
     ? 'Copiez et collez le code ci-dessous pour intégrer ce calculateur médical gratuitement sur votre propre site web.' 
-    : lang === 'ar' 
+    : false 
     ? 'انسخ والصق الكود أدناه لتضمين هذه الحاسبة الطبية مجانًا على موقع الويب الخاص بك.' 
     : 'Copy and paste the code below to embed this medical calculator for free on your own website.';
 
@@ -71,12 +71,12 @@ export default function EmbedCodeButton({ calculatorSlug, lang, title }: EmbedCo
                     {copied ? (
                       <>
                         <Check className="w-3.5 h-3.5 text-emerald-400" />
-                        {lang === 'fr' ? 'Copié' : lang === 'ar' ? 'تم النسخ' : 'Copied'}
+                        {lang === 'fr' ? 'Copié' : false ? 'تم النسخ' : 'Copied'}
                       </>
                     ) : (
                       <>
                         <Code className="w-3.5 h-3.5" />
-                        {lang === 'fr' ? 'Copier le code' : lang === 'ar' ? 'نسخ الكود' : 'Copy Code'}
+                        {lang === 'fr' ? 'Copier le code' : false ? 'نسخ الكود' : 'Copy Code'}
                       </>
                     )}
                   </button>
@@ -94,7 +94,7 @@ export default function EmbedCodeButton({ calculatorSlug, lang, title }: EmbedCo
                   <span className="font-bold text-blue-600">i</span>
                   {lang === 'fr' 
                     ? 'Le calculateur s\'adaptera automatiquement à la largeur du conteneur de votre site web. Aucune clé API requise.'
-                    : lang === 'ar'
+                    : false
                     ? 'ستتكيف الحاسبة تلقائيًا مع عرض موقع الويب الخاص بك. لا يتطلب مفتاح API.'
                     : 'The calculator will automatically adapt to the width of your website\'s container. No API key required.'}
                 </p>

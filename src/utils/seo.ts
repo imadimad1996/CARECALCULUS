@@ -51,7 +51,7 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
         keywords: 'calculateurs médicaux, scores cliniques, calculateur réanimation, calculateur urgences, outil dosage, outils médicaux multilingues',
       };
     }
-    if (lang === 'ar') {
+    if (false) {
       return {
         title: 'CareCalculus | حاسبات طبية مجانية بالإنجليزية والفرنسية والعربية',
         desc: 'CareCalculus هي منصة مجانية متعددة اللغات للحاسبات السريرية وأدوات دعم القرار الطبي للعناية المركزة والطوارئ والطب الباطني والصيدلة والتغذية والتعليم الطبي. استخدم أدوات موثوقة مثل MAP وGCS وqSOFA وCURB-65 وCKD-EPI وMELD وBMI وغيرها.',
@@ -73,7 +73,7 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
         keywords: 'nutrition clinique, directives ESPEN, évaluation de la malnutrition, calculateur TDEE, thérapie nutritionnelle médicale',
       };
     }
-    if (lang === 'ar') {
+    if (false) {
       return {
         title: 'مركز التغذية السريرية | CareCalculus',
         desc: 'إرشادات التغذية السريرية ESPEN لعام 2024، أدوات تقييم سوء التغذية (MUST، NRS-2002)، وحاسبات TDEE للعلاج الغذائي الطبي.',
@@ -96,8 +96,8 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
         id: mj.id,
         title: mj.title.en,
         snippet: mj.snippet.en,
-        multilingualTitle: { fr: mj.title.fr, ar: mj.title.ar },
-        multilingualSnippet: { fr: mj.snippet.fr, ar: mj.snippet.ar },
+        multilingualTitle: { fr: mj.title.fr },
+        multilingualSnippet: { fr: mj.snippet.fr },
         category: mj.category,
       }))
     ];
@@ -105,13 +105,9 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
     if (post) {
       const titleText = (lang === 'fr' && post.multilingualTitle?.fr)
         ? post.multilingualTitle.fr
-        : (lang === 'ar' && post.multilingualTitle?.ar)
-        ? post.multilingualTitle.ar
         : post.title;
       const snippetText = (lang === 'fr' && post.multilingualSnippet?.fr)
         ? post.multilingualSnippet.fr
-        : (lang === 'ar' && post.multilingualSnippet?.ar)
-        ? post.multilingualSnippet.ar
         : post.snippet;
       return {
         title: `${titleText} | CareCalculus Scientific Journal`,
@@ -130,17 +126,15 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
         id: mb.id,
         title: mb.title.en,
         titleFr: mb.title.fr,
-        titleAr: mb.title.ar,
         snippet: mb.snippet.en,
         snippetFr: mb.snippet.fr,
-        snippetAr: mb.snippet.ar,
         category: mb.category,
       }))
     ];
     const post = combinedBlogs.find(p => slugify(p.title, p.id) === slug || p.id.toLowerCase() === slug.toLowerCase());
     if (post) {
-      const titleText = lang === 'fr' ? post.titleFr : lang === 'ar' ? post.titleAr : post.title;
-      const snippetText = lang === 'fr' ? post.snippetFr : lang === 'ar' ? post.snippetAr : post.snippet;
+      const titleText = lang === 'fr' ? post.titleFr : post.title;
+      const snippetText = lang === 'fr' ? post.snippetFr : post.snippet;
       return {
         title: `${titleText} | CareCalculus Blog`,
         desc: snippetText,
@@ -168,13 +162,13 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
     if (post) {
       const titleText = typeof post.title === 'string'
         ? post.title
-        : (lang === 'fr' ? post.title.fr : lang === 'ar' ? post.title.ar : post.title.en);
+        : (lang === 'fr' ? post.title.fr : post.title.en);
       const snippetText = typeof post.summary === 'string'
         ? post.summary
-        : (lang === 'fr' ? post.summary.fr : lang === 'ar' ? post.summary.ar : post.summary.en);
+        : (lang === 'fr' ? post.summary.fr : post.summary.en);
       const categoryText = typeof post.category === 'string'
         ? post.category
-        : (lang === 'fr' ? post.category : lang === 'ar' ? post.category : post.category);
+        : (lang === 'fr' ? post.category : post.category);
       return {
         title: `${titleText} | CareCalculus Course`,
         desc: snippetText,
@@ -202,13 +196,13 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
     if (post) {
       const titleText = typeof post.title === 'string'
         ? post.title
-        : (lang === 'fr' ? post.title.fr : lang === 'ar' ? post.title.ar : post.title.en);
+        : (lang === 'fr' ? post.title.fr : post.title.en);
       const snippetText = typeof post.description === 'string'
         ? post.description
-        : (lang === 'fr' ? post.description.fr : lang === 'ar' ? post.description.ar : post.description.en);
+        : (lang === 'fr' ? post.description.fr : post.description.en);
       const categoryText = typeof post.category === 'string'
         ? post.category
-        : (lang === 'fr' ? post.category : lang === 'ar' ? post.category : post.category);
+        : (lang === 'fr' ? post.category : post.category);
       return {
         title: `${titleText} | CareCalculus Presentation`,
         desc: snippetText,
@@ -228,7 +222,7 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
           desc: `${mod.description}. Consultez et téléchargez le cours complet de ${mod.name} (${mod.year}) de la Faculté de Médecine et de Pharmacie de Casablanca.`,
           keywords: `${mod.name.toLowerCase()}, cours médecine FMPC, fmp casablanca, ${mod.year}, PDF médecine maroc`,
         };
-      } else if (lang === 'ar') {
+      } else if (false) {
         return {
           title: `${mod.name} — محاضرات كلية الطب | CareCalculus`,
           desc: `${mod.description}. تصفح وحمل منهج ${mod.name} (${mod.year}) الخاص بكلية الطب والصيدلة بالدار البيضاء.`,
@@ -255,7 +249,7 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
           desc: `${mod.description}. Consultez et téléchargez le cours complet de ${mod.name} (Semestre ${mod.semester}) pour les Instituts Supérieurs des Professions Infirmières et Techniques de Santé (ISPITS).`,
           keywords: `${mod.name.toLowerCase()}, cours infirmiers ispits, ispits maroc, module ${mod.semester}, PDF paramédical maroc`,
         };
-      } else if (lang === 'ar') {
+      } else if (false) {
         return {
           title: `${mod.name} — محاضرات معاهد التمريض ISPITS | CareCalculus`,
           desc: `${mod.description}. تصفح وحمل منهج ${mod.name} (الفصل الدراسي ${mod.semester}) الخاص بمعاهد التمريض وتقنيات الصحة بالمغرب ISPITS.`,
@@ -292,7 +286,7 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
           desc: `Comparez ${nFr1} et ${nFr2}. Découvrez quel calculateur ou score clinique utiliser selon la situation, les directives et les recommandations d'experts.`,
           keywords: `${nFr1.toLowerCase()}, ${nFr2.toLowerCase()}, comparaison clinique, diagnostic`,
         };
-      } else if (lang === 'ar') {
+      } else if (false) {
         return {
           title: `مقارنة: ${nAr1} ضد ${nAr2} | CareCalculus`,
           desc: `قارن بين ${nAr1} و ${nAr2}. تعرف على متى تستخدم كل أداة حسابية سريرية بناءً على الإرشادات الطبية وتوصيات الخبراء.`,
@@ -318,7 +312,7 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
       desc: `Calculateur ${nameFr} gratuit — outil d'aide à la décision clinique utilisé par les médecins, urgentistes et infirmiers. Calcul instantané avec références PubMed, formules validées et support multilingue.`,
       keywords: `${nameFr.toLowerCase().replace(/[^a-zA-Z\s]/g, '')}, calculateur medical, guide, medecine`,
     };
-  } else if (lang === 'ar') {
+  } else if (false) {
     return {
       title: `${nameAr} | CareCalculus`,
       desc: `حاسبة ${nameAr} المجانية — أداة دعم القرار السريري المستخدمة من قبل الأطباء وممرضي العناية المركزة والطوارئ. حساب فوري مع مراجع PubMed وصيغ معتمدة ودعم متعدد اللغات.`,
@@ -841,7 +835,7 @@ export function getBreadcrumbSchema(logicalPath: string, lang: LangCode): any | 
   if (logicalPath === '/' || logicalPath === '/home') return null;
   const meta = getLocalizedMeta(logicalPath, lang);
   const pageName = meta.title.split(' | ')[0];
-  const homeLabel = lang === 'fr' ? 'Accueil' : lang === 'ar' ? 'الرئيسية' : 'Home';
+  const homeLabel = lang === 'fr' ? 'Accueil' : 'Home';
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',

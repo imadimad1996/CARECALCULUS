@@ -33,20 +33,6 @@ const translations: Translations = {
     normal: "Normal (8.8 - 10.4)",
     low: "Hypocalcémie (< 8.8)",
     high: "Hypercalcémie (> 10.4)"
-  },
-  ar: {
-    title: "الكالسيوم المصحح",
-    subtitle: "تصحيح الكالسيوم الكلي بناءً على نقص ألبومين الدم",
-    calcium: "الكالسيوم الكلي المقاس (mg/dL)",
-    albumin: "ألبومين المصل (g/dL)",
-    result: "الكالسيوم المصحح",
-    formula: "الكالسيوم المصحح = الكالسيوم المقاس + 0.8 × (4 - الألبومين)",
-    clinicalTitle: "التطبيق السريري",
-    clinicalText: "المرضى الذين يعانون من انخفاض الألبومين قد يكون الكالسيوم لديهم منخفضًا بشكل خاطئ. تقدر هذه المعادلة الكالسيوم في حال كان الألبومين طبيعياً.",
-    references: "المراجع: Payne RB, et al.",
-    normal: "طبيعي (8.8 - 10.4)",
-    low: "نقص الكالسيوم (< 8.8)",
-    high: "فرط الكالسيوم (> 10.4)"
   }
 };
 
@@ -55,7 +41,7 @@ export default function CorrectedCalcium({ lang }: { lang: LangCode }) {
   const [albumin, setAlbumin] = useState<number>(2.5);
 
   const currentText = translations[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   const correctedCa = useMemo(() => {
     if (calcium <= 0 || albumin <= 0) return 0;

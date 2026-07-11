@@ -96,50 +96,6 @@ const translations: Translations = {
     faqA3: "L'échelle GCS a été développée en 1974 par Graham Teasdale et Bryan Jennett à l'Université de Glasgow, et publiée dans The Lancet. Elle est depuis devenue la référence mondiale d'évaluation après traumatisme crânien.",
     faqQ4: "L'échelle GCS peut-elle être utilisée chez l'enfant ?",
     faqA4: "L'échelle GCS standard est validée pour l'adulte et l'enfant grand. Pour les nourrissons et jeunes enfants, on utilise l'échelle de Glasgow pédiatrique modifiée, adaptant les critères de réponses verbales et motrices à l'âge.",
-  },
-  ar: {
-    title: "مقياس غلاسكو للغيبوبة (GCS)",
-    subtitle: "تقييم مستوى الوعي بعد إصابات الدماغ الرضحية",
-    eye: "استجابة فتح العين",
-    eye4: "4 - تلقائي",
-    eye3: "3 - للصوت",
-    eye2: "2 - للألم",
-    eye1: "1 - لا توجد",
-    verbal: "الاستجابة اللفظية",
-    verbal5: "5 - موجه (طبيعي)",
-    verbal4: "4 - مشوش",
-    verbal3: "3 - كلمات غير مناسبة",
-    verbal2: "2 - أصوات غير مفهومة",
-    verbal1: "1 - لا توجد",
-    motor: "الاستجابة الحركية",
-    motor6: "6 - يطيع الأوامر",
-    motor5: "5 - يحدد مكان الألم",
-    motor4: "4 - ينسحب من الألم",
-    motor3: "3 - انثناء غير طبيعي للألم",
-    motor2: "2 - امتداد غير طبيعي للألم",
-    motor1: "1 - لا توجد",
-    result: "نقطة GCS المحسوبة",
-    formula: "استجابة العين + اللفظية + الحركية",
-    clinicalTitle: "التفسير السريري",
-    clinicalText: "شديد (GCS ≤ 8), متوسط (GCS 9-12), طفيف (GCS ≥ 13). يوصى بالتنبيب عادة لـ GCS ≤ 8.",
-    pillarTitle: "التقييم العصبي، وعتبات التنبيب، والقيود",
-    pillarText: [
-      "يعد مقياس غلاسكو للغيبوبة (GCS) أداة سريرية حيوية للتقييم الموضوعي لمستوى الوعي لدى المرضى الذين يعانون من إصابات حادة في الدماغ. السمة المميزة لـ GCS هي التقييم الثلاثي: فتح العين، الاستجابة اللفظية، والاستجابة الحركية. المكون الحركي ذو أهمية إنذارية خاصة؛ وعلى وجه التحديد، فإن الانتقال من 'الانثناء للألم' (وضعية القشرة) إلى 'الامتداد للألم' (وضعية إزالة المخ) يمثل تدهوراً عصبياً حاداً وانفتاقاً وشيكاً لجذع الدماغ.",
-      "الحد السريري الحرج في GCS هو درجة 8 أو أقل، وكثيرا ما يتم تذكرها من خلال القاعدة 'GCS 8، قم بالتنبيب'. في هذا المستوى من الضعف الشديد، يفقد المرضى ردود الفعل الوقائية لمجرى الهواء (ردود فعل الكمامة والسعال)، مما يزيد بشكل كبير من خطر الالتهاب الرئوي التنفسي ونقص الأكسجة، والذي يمكن أن يؤدي إلى تفاقم إصابة الدماغ الثانوية. لذلك فإن التنبيب السريع (RSI) هو الممارسة القياسية لتأمين مجرى الهواء والسماح بالتهوية الخاضعة للرقابة.",
-      "على الرغم من انتشاره الواسع، فإن مقياس GCS له قيود سريرية ملحوظة. لا يمكن تقييمه بدقة في المرضى المشلولين كيميائياً أو المهدئين أو المنببين. كما أنه يتجاهل تفاعل الحدقة والعجز العصبي البؤري، وهي علامات حاسمة لتشخيص الآفات الكتلية أحادية الجانب مثل الورم الدموي فوق الجافية. غالباً ما تجمع التقييمات العصبية الحديثة بين مقياس GCS ودرجة FOUR أو فحوصات حدقة العين التفصيلية للتغلب على هذه النواقص."
-    ],
-    references: "المراجع: Teasdale G, Jennett B. تقييم الغيبوبة وضعف الوعي.",
-    severe: "إصابة شديدة (≤8)",
-    moderate: "إصابة متوسطة (9-12)",
-    minor: "إصابة طفيفة (13-15)",
-    faqQ1: "ما هو مقياس غلاسكو للغيبوبة (GCS)؟",
-    faqA1: "مقياس غلاسكو للغيبوبة (GCS) هو أداة تقييم عصبي معيارية تُستخدم لقياس مستوى وعي المريض بناءً على ثلاثة استجابات: فتح العين (1-4)، الاستجابة اللفظية (1-5)، والاستجابة الحركية (1-6). يتراوح المجموع من 3 إلى 15.",
-    faqQ2: "ما هي درجة GCS التي تشير إلى إصابة شديدة في الدماغ؟",
-    faqA2: "تشير النتيجة 8 أو أقل إلى إصابة شديدة في الدماغ. النتيجة من 9-12 تشير إلى إصابة متوسطة، ومن 13-15 تشير إلى إصابة طفيفة. ويُنصح عادة بالتنبيب وحماية المجرى التنفسي للمريض عندما تكون النتيجة 8 أو أقل.",
-    faqQ3: "من الذي طور مقياس غلاسكو للغيبوبة؟",
-    faqA3: "تم تطوير مقياس GCS بواسطة جراهام تيسديل وبريان جينيت عام 1974 في جامعة غلاسكو، ونُشر في مجلة ذا لانسيت. ومنذ ذلك الحين أصبح المعيار العالمي لتقييم الوعي بعد إصابات الدماغ.",
-    faqQ4: "هل يمكن استخدام مقياس غلاسكو للأطفال؟",
-    faqA4: "المقياس القياسي مخصص للبالغين والأطفال الأكبر سناً. أما بالنسبة للرضع والأطفال الصغار، فيُفضّل استخدام مقياس غلاسكو المعدل للأطفال (Pediatric GCS) الذي يوائم الاستجابات اللفظية والحركية مع مرحلتهم العمرية.",
   }
 };
 
@@ -149,7 +105,7 @@ export default function GcsCalculator({ lang }: { lang: LangCode }) {
   const [motor, setMotor] = useState<number>(0);
 
   const currentText = translations[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   const isComplete = eye > 0 && verbal > 0 && motor > 0;
   const gcsValue = isComplete ? eye + verbal + motor : 0;
@@ -297,7 +253,7 @@ export default function GcsCalculator({ lang }: { lang: LangCode }) {
               ) : (
                 <div className="p-4 rounded-2xl border flex justify-between items-center transition-all bg-gray-800/50 border-gray-700/80 text-slate-400 backdrop-blur-md">
                   <div className="font-semibold text-sm">
-                    {lang === 'fr' ? 'Sélectionnez les critères pour le résultat' : lang === 'ar' ? 'يرجى تحديد المعايير للنتيجة' : 'Select criteria to calculate'}
+                    {lang === 'fr' ? 'Sélectionnez les critères pour le résultat' : 'Select criteria to calculate'}
                   </div>
                 </div>
               )}

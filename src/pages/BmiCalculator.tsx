@@ -84,42 +84,6 @@ const translations: Translations = {
     weightDiff: "Différence de poids",
     targetExplanation: "Pour atteindre l'IMC cible de {bmi}, le poids doit être de {weight} kg ({diff} kg)"
   },
-  ar: {
-    title: "مؤشر كتلة الجسم (BMI)",
-    subtitle: "حساب القياسات الأنثروبومترية الموضوعية للتقييم الغذائي",
-    height: "الطول (سم)",
-    weight: "الوزن (كجم)",
-    result: "المؤشر المحسوب",
-    formula: "مؤشر كتلة الجسم = الوزن(كجم) / (الطول(متر))²",
-    clinicalTitle: "الآثار السريرية",
-    clinicalText: "يستخدم مؤشر كتلة الجسم كأداة فحص لزيادة الوزن والسمنة. يجب تفسيره بحكم سريري.",
-    pillarTitle: "القيود السريرية والسياق الأنثروبومتري الحديث",
-    pillarText: [
-      "تم تطوير مؤشر كتلة الجسم (BMI) في الأصل في القرن التاسع عشر كمقياس إحصائي على مستوى السكان، وليس كأداة تشخيص سريري فردية. على الرغم من أنه لا يزال المعيار المعترف به عالمياً لتحديد فئات الوزن - نظراً لبساطته وفعاليته من حيث التكلفة - إلا أن فائدته السريرية محدودة بطبيعتها بسبب عدم قدرته على التمييز بين كتلة الجسم الخالية من الدهون والسمنة.",
-      "يتمثل أحد العيوب الفسيولوجية الأساسية لمؤشر كتلة الجسم في فشله في حساب توزيع الدهون في الجسم. تعتبر السمنة الحشوية، بدلاً من الدهون تحت الجلد أو الوزن الإجمالي، المحرك الأساسي لمخاطر القلب والأوعية الدموية، ومقاومة الأنسولين، والالتهاب الجهازي. لذلك، توصي الإرشادات السريرية بشدة بتكملة مؤشر كتلة الجسم بقياسات محيط الخصر لتحسين تقسيم المخاطر.",
-      "علاوة على ذلك، يجب أن يكون تفسير مؤشر كتلة الجسم فردياً للغاية. في الرياضيين، قد يشير ارتفاع مؤشر كتلة الجسم خطأً إلى السمنة بسبب تضخم العضلات الكبير. على العكس من ذلك، في كبار السن، قد يخفي مؤشر كتلة الجسم 'الطبيعي' سمنة ضمور العضلات (نقص حاد في العضلات إلى جانب ارتفاع كتلة الدهون)، والتي تحمل تشخيصاً سريرياً سيئاً. بالإضافة إلى ذلك، فإن الاختلافات العرقية عميقة؛ على سبيل المثال، تظهر الشعوب الآسيوية مخاطر مرتفعة للإصابة بمرض السكري من النوع 2 عند عتبات مؤشر كتلة الجسم أقل بكثير مقارنة بالشعوب القوقازية."
-    ],
-    references: "المراجع: تصنيف منظمة الصحة العالمية (WHO) لمؤشر كتلة الجسم.",
-    categoryUnder: "نقص الوزن",
-    categoryNormal: "طبيعي",
-    categoryOver: "زيادة الوزن",
-    categoryObese: "سمنة",
-    faqQ1: "ما هو مؤشر كتلة الجسم (BMI)؟",
-    faqA1: "مؤشر كتلة الجسم هو قيمة عددية مشتقة من وزن الشخص وطوله: الوزن (كجم) ÷ مربع الطول (متر). ويستخدم كأداة فحص عامة لتصنيف الوزن الزائد والنحافة والسمنة.",
-    faqQ2: "ما هي تصنيفات مؤشر كتلة الجسم المعتمدة من منظمة الصحة العالمية؟",
-    faqA2: "تصنف المنظمة الوزن كالتالي: نقص الوزن (<18.5)، الوزن الطبيعي (18.5-24.9)، زيادة الوزن (25-29.9)، والسمنة (≥30). وتنقسم السمنة إلى الدرجة الأولى (30-34.9)، الثانية (35-39.9)، والثالثة (≥40، السمنة المفرطة).",
-    faqQ3: "ما هي عيوب أو حدود مؤشر كتلة الجسم في الممارسة السريرية؟",
-    faqA3: "لا يفرق مؤشر كتلة الجسم بين كتلة الدهون والعضلات، ولا يعكس توزيع الدهون في الجسم، وقد يعطي تقييماً غير دقيق للرياضيين (عضلات أكثر) أو كبار السن (عضلات أقل). يجب تفسيره دائماً مع محيط الخصر والوضع الصحي العام.",
-    faqQ4: "هل مؤشر كتلة الجسم دقيق لجميع الأعراق؟",
-    faqA4: "تظهر الدراسات أن الشعوب الآسيوية تواجه مخاطر استقلابية وقلبية أعلى عند مستويات مؤشر كتلة جسم أقل. وتوصي منظمة الصحة العالمية بوضع حدود أقل للسمنة لدى البالغين الآسيويين: زيادة الوزن ≥23، والسمنة ≥27.5.",
-    heightRange: "يجب أن يكون الطول بين 50 و 250 سم.",
-    weightRange: "يجب أن يكون الوزن بين 10 و 300 كجم.",
-    resetBtn: "إعادة تعيين الافتراضي",
-    targetBmi: "الهدف (BMI) اختياري",
-    bsa: "مساحة سطح الجسم (BSA)",
-    weightDiff: "فرق الوزن",
-    targetExplanation: "للوصول إلى مؤشر كتلة الجسم المستهدف {bmi}، يجب أن يكون الوزن {weight} كجم ({diff} كجم)"
-  }
 };
 
 export default function BmiCalculator({ lang }: { lang: LangCode }) {
@@ -128,7 +92,7 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
   const [targetBmiStr, setTargetBmiStr] = useState<string>(''); // string for empty input
 
   const currentText = translations[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
   
   const isHeightWarning = height > 0 && (height < 50 || height > 250);
   const isWeightWarning = weight > 0 && (weight < 10 || weight > 300);
@@ -185,20 +149,20 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
   const getNextSteps = (bmi: number) => {
     if (bmi === 0) return [];
     if (bmi < 18.5) return [
-      currentText.categoryUnder + ": " + (lang === 'fr' ? 'Évaluation nutritionnelle recommandée.' : lang === 'ar' ? 'يوصى بالتقييم الغذائي.' : 'Nutritional assessment recommended.'),
-      lang === 'fr' ? 'Dépistage des troubles de l\'alimentation ou de la malnutrition.' : lang === 'ar' ? 'فحص اضطرابات الأكل أو سوء التغذية.' : 'Screen for eating disorders or malnutrition.'
+      currentText.categoryUnder + ": " + (lang === 'fr' ? 'Évaluation nutritionnelle recommandée.' : 'Nutritional assessment recommended.'),
+      lang === 'fr' ? 'Dépistage des troubles de l\'alimentation ou de la malnutrition.' : 'Screen for eating disorders or malnutrition.'
     ];
     if (bmi < 25) return [
-      currentText.categoryNormal + ": " + (lang === 'fr' ? 'Maintenir le mode de vie actuel.' : lang === 'ar' ? 'حافظ على نمط الحياة الحالي.' : 'Maintain current lifestyle.'),
-      lang === 'fr' ? 'Bilan de santé annuel de routine.' : lang === 'ar' ? 'فحص صحي روتيني سنوي.' : 'Routine annual wellness check.'
+      currentText.categoryNormal + ": " + (lang === 'fr' ? 'Maintenir le mode de vie actuel.' : 'Maintain current lifestyle.'),
+      lang === 'fr' ? 'Bilan de santé annuel de routine.' : 'Routine annual wellness check.'
     ];
     if (bmi < 30) return [
-      currentText.categoryOver + ": " + (lang === 'fr' ? 'Conseils sur l\'alimentation et l\'exercice physique.' : lang === 'ar' ? 'تقديم المشورة بشأن النظام الغذائي والتمارين الرياضية.' : 'Diet and exercise counseling.'),
-      lang === 'fr' ? 'Dépistage des comorbidités (diabète, hypertension).' : lang === 'ar' ? 'فحص الأمراض المصاحبة (السكري وارتفاع ضغط الدم).' : 'Screen for comorbidities (diabetes, hypertension).'
+      currentText.categoryOver + ": " + (lang === 'fr' ? 'Conseils sur l\'alimentation et l\'exercice physique.' : 'Diet and exercise counseling.'),
+      lang === 'fr' ? 'Dépistage des comorbidités (diabète, hypertension).' : 'Screen for comorbidities (diabetes, hypertension).'
     ];
     return [
-      currentText.categoryObese + ": " + (lang === 'fr' ? 'Prise en charge médicale intensive du poids.' : lang === 'ar' ? 'إدارة طبية مكثفة للوزن.' : 'Intensive medical weight management.'),
-      lang === 'fr' ? 'Évaluation stricte des risques cardiovasculaires.' : lang === 'ar' ? 'تقييم صارم لمخاطر القلب والأوعية الدموية.' : 'Strict cardiovascular risk assessment.'
+      currentText.categoryObese + ": " + (lang === 'fr' ? 'Prise en charge médicale intensive du poids.' : 'Intensive medical weight management.'),
+      lang === 'fr' ? 'Évaluation stricte des risques cardiovasculaires.' : 'Strict cardiovascular risk assessment.'
     ];
   };
 
@@ -419,7 +383,7 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
               <div className="bg-slate-50 border border-slate-200 rounded-xl p-8 text-center shadow-sm">
                 <Activity className="w-8 h-8 text-slate-300 mx-auto mb-3" />
                 <p className="text-sm font-medium text-slate-500">
-                  {lang === 'fr' ? 'Entrez la taille et le poids pour voir les résultats' : lang === 'ar' ? 'أدخل الطول والوزن لرؤية النتائج' : 'Enter height and weight to see results'}
+                  {lang === 'fr' ? 'Entrez la taille et le poids pour voir les résultats' : 'Enter height and weight to see results'}
                 </p>
               </div>
             )}

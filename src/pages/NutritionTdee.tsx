@@ -62,34 +62,6 @@ const translations: Translations = {
     faqA2: "L'équation de Mifflin-St Jeor est recommandée comme l'équation prédictive la plus précise pour le métabolisme de repos chez les adultes.",
     faqQ3: "Comment appliquer les facteurs de stress ?",
     faqA3: "Les facteurs de stress ajustent le BMR pour tenir compte des demandes métaboliques accrues dues à la maladie ou aux traumatismes.",
-  },
-  ar: {
-    title: "حاسبة TDEE و BMR السريرية",
-    subtitle: "حساب معدل الأيض الأساسي واحتياجات الطاقة اليومية باستخدام معادلة ميفلين-سانت جيور وعوامل الإجهاد السريري.",
-    age: "العمر (سنوات)",
-    gender: "الجنس",
-    male: "ذكر",
-    female: "أنثى",
-    height: "الطول (سم)",
-    weight: "الوزن (كجم)",
-    stressFactor: "عامل النشاط / الإجهاد السريري",
-    factor1: "طريح الفراش / خامل (1.2)",
-    factor2: "نشاط خفيف / جراحة بسيطة (1.3)",
-    factor3: "إجهاد متوسط / عدوى (1.5)",
-    factor4: "إجهاد شديد / صدمة (1.6)",
-    factor5: "حروق كبرى / إنتان (2.0)",
-    resultBmr: "الأيض الأساسي (سعرة/يوم)",
-    resultTdee: "الاحتياج اليومي (سعرة/يوم)",
-    formula: "معادلة ميفلين-سانت جيور × عامل الإجهاد",
-    clinicalTitle: "الآثار السريرية",
-    clinicalText: "يمنع التقدير الدقيق لاحتياجات الطاقة كل من نقص التغذية والإفراط فيها لدى المرضى في المستشفيات.",
-    references: "المراجع: إرشادات أكاديمية التغذية وعلميات التغذية؛ Mifflin MD، وآخرون (1990).",
-    faqQ1: "ما هو معدل الأيض الأساسي (BMR)؟",
-    faqA1: "هو كمية الطاقة التي يستهلكها الجسم أثناء الراحة لأداء وظائفه الأساسية.",
-    faqQ2: "لماذا تُستخدم معادلة ميفلين-سانت جيور؟",
-    faqA2: "يُوصى بها كأدق معادلة تنبؤية لمعدل الأيض في وقت الراحة للبالغين الأصحاء والذين يعانون من السمنة.",
-    faqQ3: "كيف تطبق عوامل الإجهاد؟",
-    faqA3: "تُعدل عوامل الإجهاد من معدل الأيض الأساسي ليأخذ في الاعتبار زيادة الطلب الأيضي بسبب المرض أو الجراحة أو الصدمات.",
   }
 };
 
@@ -101,7 +73,7 @@ export default function NutritionTdee({ lang }: { lang: LangCode }) {
   const [stressFactor, setStressFactor] = useState<number>(1.2);
 
   const currentText = translations[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   const bmrValue = useMemo(() => {
     if (age <= 0 || height <= 0 || weight <= 0) return 0;

@@ -27,7 +27,7 @@ export default function SmartPasteModal({ lang = 'en' }: SmartPasteModalProps) {
   const [isSaved, setIsSaved] = useState(false);
   const [activeLabs, setActiveLabs] = useState<ParsedLabPanel | null>(null);
 
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   useEffect(() => {
     setActiveLabs(getParsedLabs());
@@ -97,19 +97,6 @@ export default function SmartPasteModal({ lang = 'en' }: SmartPasteModalProps) {
       applied: "Données synchronisées !",
       clearBtn: "Effacer les données synchronisées",
       activeNotice: `${activeCount} biomarqueur(s) actuellement synchronisé(s).`,
-    },
-    ar: {
-      btn: "الاستيراد الذكي للتحاليل",
-      modalTitle: "المحلل الشامل للتحاليل الطبية (EHR)",
-      subtitle: "انسخ وألصق نص التحاليل من النظام الطبي لملء جميع الحاسبات تلقائياً في ثوانٍ.",
-      placeholder: "ألصق نص تقرير التحاليل هنا...\nمثال:\nSODIUM 132, POTASSIUM 4.1, CREATININE 1.8, BILIRUBIN 2.9, INR 1.6...",
-      sampleBtn: "تحميل نموذج تحليل تجريبي",
-      extracted: "المؤشرات الحيوية المستخرجة",
-      noLabs: "لم يتم اكتشاف مؤشرات بعد. جرب لصق نص تقرير معملي.",
-      applyBtn: "تطبيق على جميع الحاسبات",
-      applied: "تمت المزامنة بنجاح!",
-      clearBtn: "مسح التحاليل المتزامنة",
-      activeNotice: `يوجد حالياً ${activeCount} مؤشر(ات) متزامنة في تطبيق CareCalculus.`,
     }
   };
 

@@ -37,7 +37,7 @@ async function main() {
   // Add home
   routes.push('/');
 
-  const langs = ['en', 'fr', 'ar'] as const;
+  const langs = ['en', 'fr'] as const;
 
   for (const lang of langs) {
     const langDir = path.join(distOgDir, lang);
@@ -48,12 +48,10 @@ async function main() {
     for (const route of routes) {
       const meta = getLocalizedMeta(route, lang);
       const title = meta.title.split(' | ')[0];
-      const isArabic = lang === 'ar';
+      const isArabic = false;
 
       const subtitle = lang === 'fr' 
         ? 'Calculateur Médical Gratuit' 
-        : lang === 'ar' 
-        ? 'الحاسبة الطبية الشاملة المعتمدة' 
         : 'Multilingual Care Calculators';
 
       const element = (

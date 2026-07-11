@@ -84,14 +84,13 @@ interface Props {
 export default function ClinicalQuestionPage({ lang }: Props) {
   const { questionSlug } = useParams<{ questionSlug: string }>();
   const t = T[lang] || T.en;
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   const entry = questionSlug ? QA_LOOKUP[questionSlug] : undefined;
 
   const calcPath = entry?.calcPath || '';
   const calcName =
     lang === 'fr' ? (nameFrMap[calcPath] || nameEnMap[calcPath] || calcPath)
-    : lang === 'ar' ? (nameArMap[calcPath] || nameEnMap[calcPath] || calcPath)
     : (nameEnMap[calcPath] || calcPath);
 
   const prefix = lang === 'en' ? '' : `/${lang}`;

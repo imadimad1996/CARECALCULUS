@@ -42,23 +42,6 @@ const translations: Translations = {
     references: "Kamath PS, et al. A model to predict survival in patients with end-stage liver disease. Hepatology. 2001;33(2):464-470 (PMID: 11172350). Biggins SW, et al. Gastroenterology. 2008;135(4):1197-1205 (PMID: 18718470).",
     yes: "Oui",
     no: "Non"
-  },
-  ar: {
-    title: "مقياس MELD",
-    subtitle: "نموذج لمرض الكبد في المرحلة النهائية (MELD-Na)",
-    bilirubin: "البيليروبين (mg/dL)",
-    inr: "النسبة المعيارية الدولية (INR)",
-    creatinine: "الكرياتينين (mg/dL)",
-    sodium: "الصوديوم (mEq/L)",
-    dialysis: "غسيل كلى مرتين على الأقل في الأسبوع الماضي",
-    result: "نقاط MELD-Na",
-    formula: "مقياس MELD لتوقع الوفاة خلال 3 أشهر",
-    clinicalTitle: "التفسير السريري والتحذيرات",
-    clinicalText: "يتراوح MELD-Na بين 6 و 40. تشير الدرجات المرتفعة لزيادة شدة القصور الكبدي. ملحوظة سريرية: المرضى الذين يتناولون الوارفارين أو مضادات التخثر يرتفع لديهم INR بشكل مصطنع، مما يرفع نقاط MELD دون أن يعكس تدهوراً حقيقياً في وظائف الكبد.",
-    faqA1: "مقياس MELD (نموذج لمرض الكبد في المرحلة النهائية) هو نظام معتمد لتقدير معدل الوفاة خلال 3 أشهر لمرضى تليف الكبد. يعتبر MELD ≥15 هو الحد الأدنى القياسي للإدراج في قائمة زراعة الكبد. تبلغ نسبة الوفاة 71.3% للدرجات ≥40، و 52.6% للدرجات 30-39، و 19.6% للدرجات 20-29، و 6.0% للدرجات 10-19.",
-    references: "Kamath PS, et al. Hepatology. 2001;33(2):464-470 (PMID: 11172350). Biggins SW, et al. Gastroenterology. 2008;135(4):1197-1205 (PMID: 18718470).",
-    yes: "نعم",
-    no: "لا"
   }
 };
 
@@ -70,7 +53,7 @@ export default function MeldScore({ lang }: { lang: LangCode }) {
   const [dialysis, setDialysis] = useState<boolean>(false);
 
   const currentText = translations[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   const meldScore = useMemo(() => {
     if (bilirubin === '' || inr === '' || creatinine === '' || sodium === '') return null;

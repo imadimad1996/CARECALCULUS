@@ -129,7 +129,7 @@ const LOGICAL_ROUTES = [
   ...specialtySlugs,
 ];
 
-const LANGS: LangCode[] = ['en', 'fr', 'ar'];
+const LANGS: LangCode[] = ['en', 'fr'];
 
 /** Every URL (all langs) we want statically generated. */
 function allUrls(): string[] {
@@ -175,7 +175,7 @@ export async function prerender(data: { url: string }) {
       type: 'meta',
       props: {
         property: 'og:locale',
-        content: lang === 'fr' ? 'fr_FR' : lang === 'ar' ? 'ar_AR' : 'en_US',
+        content: lang === 'fr' ? 'fr_FR' : 'en_US',
       },
     },
 

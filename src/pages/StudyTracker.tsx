@@ -89,43 +89,6 @@ const T = {
         notes: 'Comparaison des formules CKD-EPI et Cockcroft-Gault chez les patients ages.'
       }
     ]
-  },
-  ar: {
-    title: 'متتبع الدراسة السريرية',
-    subtitle: 'سجل جلسات التدريب على الحاسبات الطبية، دراسات الحالة، والقراءات السريرية.',
-    addLog: 'تسجيل جلسة دراسية',
-    totalHours: 'إجمالي وقت الدراسة',
-    hours: 'ساعات',
-    mins: 'دقائق',
-    sessionsCompleted: 'الجلسات المسجلة',
-    practiceType: 'التركيز الأساسي',
-    recentActivity: 'سجل الدراسة الحديث',
-    emptyActivity: 'لم يتم تسجيل أي جلسات دراسية بعد. انقر على "تسجيل جلسة دراسية" للبدء!',
-    subjectLabel: 'الموضوع / العنوان',
-    subjectPlaceholder: 'مثال: إدارة الإنتان ومقياس SOFA',
-    durationLabel: 'المدة (بالدقائق)',
-    typeLabel: 'نوع النشاط',
-    notesLabel: 'النقاط الرئيسية / الملاحظات',
-    notesPlaceholder: 'ما هي اللآلئ السريرية التي تعلمتها؟',
-    saveBtn: 'حفظ الجلسة',
-    cancelBtn: 'إلغاء',
-    deleteConfirm: 'هل أنت متأكد من أنك تريد حذف هذا السجل؟',
-    types: {
-      reading: 'قراءة سريرية',
-      calculator_practice: 'تدريب على الحاسبات',
-      case_study: 'محاكاة دراسة حالة',
-      revision: 'مراجعة عامة'
-    },
-    defaultLogs: [
-      {
-        subject: 'إرشادات الإنتان وتقييم qSOFA',
-        notes: 'مراجعة معايير الإنتان المحدثة والتدريب على تقييم qSOFA على 5 ملفات للمرضى.'
-      },
-      {
-        subject: 'وظائف الكلى وحساب معدل الترشيح الكبيبي',
-        notes: 'مقارنة معادلات CKD-EPI و Cockcroft-Gault لدى كبار السن.'
-      }
-    ]
   }
 };
 

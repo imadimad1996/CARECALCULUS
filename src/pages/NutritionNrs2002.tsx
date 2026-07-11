@@ -68,37 +68,6 @@ const translations: Translations = {
     faqA2: "Un score de 3 ou plus indique un risque nutritionnel nécessitant une intervention diététique rapide.",
     faqQ3: "Pourquoi inclure l'âge ?",
     faqA3: "Les patients de 70 ans et plus sont structurellement plus à risque de morbimortalité liée à la dénutrition (+1 point).",
-  },
-  ar: {
-    title: "حاسبة المخاطر الغذائية NRS-2002",
-    subtitle: "فحص المخاطر الغذائية لتحديد المرضى المنومين في المستشفيات المعرضين للخطر.",
-    ageLabel: "تعديل العمر",
-    age0: "< 70 عاماً (0 نقطة)",
-    age1: "≥ 70 عاماً (+1 نقطة)",
-    nutritionalLabel: "الحالة الغذائية (الضعف)",
-    nut0: "طبيعي (0 نقطة)",
-    nut1: "خفيف: فقدان وزن > 5% في 3 أشهر أو تناول طعام 50-75% (نقطة)",
-    nut2: "متوسط: فقدان وزن > 5% في شهرين أو BMI 18.5-20.5 أو تناول 25-50% (نقطتان)",
-    nut3: "شديد: فقدان وزن > 5% في شهر أو BMI < 18.5 أو تناول 0-25% (3 نقاط)",
-    diseaseLabel: "شدة المرض",
-    dis0: "احتياجات طبيعية (0 نقطة)",
-    dis1: "خفيف: كسر حوض، غسيل كلوي، أورام، سدة رئوية (نقطة)",
-    dis2: "متوسط: جراحة بطن كبرى، سكتة دماغية، التهاب رئوي شديد (نقطتان)",
-    dis3: "شديد: إصابة رأس، عناية مركزة، زرع نخاع (3 نقاط)",
-    resultLabel: "مجموع نقاط NRS-2002",
-    risk0: "خطر غذائي منخفض",
-    risk1: "خطر غذائي عالي",
-    action0: "أقل من 3: إعادة فحص أسبوعية.",
-    action1: "3 أو أكثر: المريض في خطر غذائي. يجب بدء خطة رعاية تغذوية فوراً.",
-    clinicalTitle: "الآثار السريرية",
-    clinicalText: "توصي الجمعية الأوروبية (ESPEN) باستخدام NRS-2002 في المستشفيات لتحديد من يحتاج لدعم غذائي فوري.",
-    references: "المراجع: إرشادات ESPEN لفحص التغذية 2002.",
-    faqQ1: "ما هو NRS-2002؟",
-    faqA1: "أداة صُممت من ESPEN للكشف عن نقص التغذية أو خطر النقص للمنومين.",
-    faqQ2: "ماذا تعني النتيجة؟",
-    faqA2: "النتيجة 3 أو أعلى تعني أن المريض يحتاج لتدخل ودعم غذائي.",
-    faqQ3: "لماذا يضاف العمر؟",
-    faqA3: "كبار السن (70 فما فوق) لديهم خطر أكبر لنتائج سيئة بسبب نقص التغذية، لذا تُضاف لهم نقطة.",
   }
 };
 
@@ -108,7 +77,7 @@ export default function NutritionNrs2002({ lang }: { lang: LangCode }) {
   const [diseaseScore, setDiseaseScore] = useState<number>(0);
 
   const currentText = translations[lang];
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   const totalScore = useMemo(() => {
     return ageScore + nutritionalScore + diseaseScore;

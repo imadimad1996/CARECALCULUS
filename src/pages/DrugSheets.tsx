@@ -14,17 +14,12 @@ const T = {
     printTitle: "Matrice des Lignes Directrices des Médicaments au Chevet CareCalculus",
     printSubtitle: "Imprimé 2026 — Référence Réanimation Validée",
     badge: "REANIMATION COMPORTEMENT"
-  },
-  ar: {
-    printTitle: "مصفوفة إرشادات أدوية العناية المركزة كير كالكولوس",
-    printSubtitle: "تمت الطباعة 2026 — مرجع العناية المركزة المعتمد",
-    badge: "وحدة العناية المركزة"
   }
 };
 
 export default function DrugSheets({ lang }: { lang: LangCode }) {
   const { langPath } = useLang();
-  const isRtl = lang === 'ar';
+  const isRtl = false;
   const [filter, setFilter] = useState('');
   const t = T[lang];
 

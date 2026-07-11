@@ -17,12 +17,12 @@ interface MedicalReviewerCardProps {
 }
 
 export const MedicalReviewerCard: React.FC<MedicalReviewerCardProps> = ({ reviewer, lang = 'en' }) => {
-  const isRtl = lang === 'ar';
+  const isRtl = false;
 
   const t = {
-    reviewedBy: { en: 'Medically Reviewed By', fr: 'Révisé Médicalement Par', ar: 'مراجعة طبية بواسطة' },
-    lastUpdated: { en: 'Last updated:', fr: 'Dernière mise à jour :', ar: 'آخر تحديث:' },
-    viewProfile: { en: 'View Full Profile', fr: 'Voir le Profil Complet', ar: 'عرض الملف الشخصي الكامل' }
+    reviewedBy: { en: 'Medically Reviewed By', fr: 'Révisé Médicalement Par' },
+    lastUpdated: { en: 'Last updated:', fr: 'Dernière mise à jour :' },
+    viewProfile: { en: 'View Full Profile', fr: 'Voir le Profil Complet' }
   };
 
   return (

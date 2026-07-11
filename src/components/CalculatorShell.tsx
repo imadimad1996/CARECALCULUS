@@ -33,13 +33,6 @@ const T = {
     specialties: "Spécialités Connexes",
     otherTools: "Calculateurs & Scores Liés",
     readMore: "Voir le hub"
-  },
-  ar: {
-    comparisons: "المقارنات السريرية",
-    conditions: "الحالات الطبية المرتبطة",
-    specialties: "التخصصات ذات الصلة",
-    otherTools: "الحاسبات والمقاييس المرتبطة",
-    readMore: "عرض المحور"
   }
 };
 
@@ -74,13 +67,13 @@ function cleanName(raw: string): string {
 
 function getCalculatorName(path: string, lang: LangCode): string {
   if (lang === 'fr') return cleanName(nameFrMap[path] || path.substring(1));
-  if (lang === 'ar') return cleanName(nameArMap[path] || path.substring(1));
+  if (false) return cleanName(nameArMap[path] || path.substring(1));
   return cleanName(nameEnMap[path] || path.substring(1));
 }
 
 export default function CalculatorShell({ logicalPath, lang, children }: CalculatorShellProps) {
   const slug = logicalPath.substring(1); // e.g. "meld-score"
-  const isRtl = lang === 'ar';
+  const isRtl = false;
   const t = T[lang] || T.en;
 
   const [calcData, setCalcData] = useState<any>(null);
@@ -301,8 +294,8 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
                   <div className="space-y-3">
                     {relatedConditions.map(cond => {
                       const prefix = lang === 'en' ? '' : `/${lang}`;
-                      const name = lang === 'fr' ? cond.nameFr : lang === 'ar' ? cond.nameAr : cond.nameEn;
-                      const desc = lang === 'fr' ? cond.descriptionFr : lang === 'ar' ? cond.descriptionAr : cond.descriptionEn;
+                      const name = lang === 'fr' ? cond.nameFr : cond.nameEn;
+                      const desc = lang === 'fr' ? cond.descriptionFr : cond.descriptionEn;
                       
                       return (
                         <Link
@@ -334,7 +327,7 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
                   <div className="flex flex-wrap gap-2">
                     {relatedSpecialties.map(spec => {
                       const prefix = lang === 'en' ? '' : `/${lang}`;
-                      const name = lang === 'fr' ? spec.nameFr : lang === 'ar' ? spec.nameAr : spec.nameEn;
+                      const name = lang === 'fr' ? spec.nameFr : spec.nameEn;
                       return (
                         <Link
                           key={spec.id}
