@@ -22,10 +22,20 @@ import SmartPasteModal from './components/SmartPasteModal';
 import { preloadPages, moduleRoutes, embedRoutes, navItems, TIER_HEADERS, LEGAL_ROUTES, CONTENT_ROUTES, ErrorBoundary, NotFound } from './routes';
 import { LangCode } from './types';
 import { UnitSystemProvider, useUnitSystem } from './contexts/UnitSystemContext';
+import { AuthProvider, useAuth } from './contexts/AuthContext';
+import { LoginModal } from './components/auth/LoginModal';
 
 function AppLayout() {
   const location = useLocation();
   const navigate = useNavigate();
+  const { user, logout } = useAuth();
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+
+  useEffect(() => {
+    const handleOpenLogin = () => setIsLoginModalOpen(true);
+    window.addEventListener('open-login', handleOpenLogin);
+    return () => window.removeEventListener('open-login', handleOpenLogin);
+  }, []);
 
   // Language is derived from the URL — the prefix (/fr, /ar) is the single
   // source of truth. `path` is the language-agnostic logical path.
@@ -572,6 +582,25 @@ function AppLayout() {
             <Scale className="w-3.5 h-3.5 text-emerald-400" />
             <span className="hidden sm:inline">{geoState.standard === 'Metric (SI)' ? 'SI' : 'US'}</span>
           </button>
+          {/* Auth Button Desktop */}
+          {user ? (
+            <button
+              onClick={() => logout()}
+              className="shrink-0 flex items-center justify-center w-10 h-10 bg-teal-50 hover:bg-teal-100 text-teal-700 rounded-xl transition-all duration-200 border border-teal-200 focus:outline-none focus:ring-2 focus:ring-teal-500"
+              title="Sign Out"
+            >
+              <span className="text-[10px] font-bold uppercase tracking-wider">{user.email ? user.email.charAt(0) : 'G'}</span>
+            </button>
+          ) : (
+            <button
+              onClick={() => setIsLoginModalOpen(true)}
+              className="shrink-0 flex items-center gap-1.5 px-4 py-2 bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold rounded-xl transition-all duration-200 shadow-md shadow-teal-500/20 active:scale-95 focus:outline-none focus:ring-2 focus:ring-teal-500"
+              style={{ minHeight: '40px' }}
+            >
+              <HeartPulse className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">{lang === 'fr' ? 'Connexion' : lang === 'ar' ? 'تسجيل الدخول' : 'Sign In'}</span>
+            </button>
+          )}
         </div>
 
         {/* Live search results */}
@@ -728,6 +757,25 @@ function AppLayout() {
         </Link>
 
         <div className="flex items-center gap-2">
+          {/* Auth Button Mobile */}
+          {user ? (
+            <button
+              onClick={() => logout()}
+              className="flex items-center justify-center w-10 h-10 bg-teal-50 hover:bg-teal-100 text-teal-700 rounded-xl transition-all duration-200 border border-teal-200 focus:outline-none focus:ring-2 focus:ring-teal-500"
+              title="Sign Out"
+            >
+              <span className="text-xs font-bold uppercase tracking-wider">{user.email ? user.email.charAt(0) : 'G'}</span>
+            </button>
+          ) : (
+            <button
+              onClick={() => setIsLoginModalOpen(true)}
+              className="p-2 text-teal-600 hover:text-teal-800 focus:outline-none focus:ring-2 focus:ring-teal-500/30 rounded-lg animate-fade-in bg-teal-50"
+              aria-label="Sign In"
+              style={{ minWidth: '44px', minHeight: '44px' }}
+            >
+              <HeartPulse className="w-5 h-5" />
+            </button>
+          )}
           <InstallAppButton lang={lang} />
           <button
             onClick={() => window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }))}
@@ -1282,6 +1330,9 @@ function AppLayout() {
 
       {/* Sticky Mobile Footer Ad */}
       <StickyMobileAd />
+      
+      {/* Login Modal */}
+      <LoginModal isOpen={isLoginModalOpen} onClose={() => setIsLoginModalOpen(false)} />
     </div>
    </LangContext.Provider>
   );
@@ -1294,21 +1345,25 @@ export default function App({ url }: { url?: string }) {
   if (url) {
     return (
       <ErrorBoundary>
-        <UnitSystemProvider>
-          <StaticRouter location={url}>
-            <AppLayout />
-          </StaticRouter>
-        </UnitSystemProvider>
+        <AuthProvider>
+          <UnitSystemProvider>
+            <StaticRouter location={url}>
+              <AppLayout />
+            </StaticRouter>
+          </UnitSystemProvider>
+        </AuthProvider>
       </ErrorBoundary>
     );
   }
   return (
     <ErrorBoundary>
-      <UnitSystemProvider>
-        <BrowserRouter>
-          <AppLayout />
-        </BrowserRouter>
-      </UnitSystemProvider>
+      <AuthProvider>
+        <UnitSystemProvider>
+          <BrowserRouter>
+            <AppLayout />
+          </BrowserRouter>
+        </UnitSystemProvider>
+      </AuthProvider>
     </ErrorBoundary>
   );
 }
