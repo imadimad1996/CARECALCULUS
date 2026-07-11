@@ -6,12 +6,12 @@
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
     "favicons": "tsx scripts/generate-favicons.ts",
-    "build": "npm run favicons && vite build && node scripts/postbuild-rtl.mjs",
+    "build": "npm run favicons && npm run sitemap && vite build && node scripts/postbuild-rtl.mjs",
     "og": "tsx scripts/generate-og.tsx",
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit",
-    "sitemap": "node scripts/generate-sitemap.mjs",
+    "sitemap": "tsx scripts/generate-sitemap.ts",
     "deploy": "npm run build && wrangler pages deploy dist --project-name=carecalculus",
     "deploy:ci": "wrangler pages deploy dist --project-name=carecalculus --commit-dirty=true"
   },

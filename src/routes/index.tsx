@@ -63,6 +63,7 @@ const pageLoaders = [
   () => import('../pages/ForHospitals'),
   () => import('../pages/SpecialtyHub'),
   () => import('../pages/NutritionHub'),
+  () => import('../pages/ClinicalQuestionPage'),
 ] as const;
 
 const [
@@ -75,7 +76,8 @@ const [
   FmpMedecine, IspitsAcademic,
   FlashcardGenerator, CaseStudyViewer, DrugSheets, StudyTracker, AbbreviationLookup,
   Compare, NutritionTdee, NutritionMust, NutritionNrs2002, ConditionHub,
-  MdrdGfr, CkdEpiGfr, EmbedGallery, ForHospitals, SpecialtyHub, NutritionHub
+  MdrdGfr, CkdEpiGfr, EmbedGallery, ForHospitals, SpecialtyHub, NutritionHub,
+  ClinicalQuestionPage
 ] = pageLoaders.map((loader) => React.lazy(loader as any)) as any[];
 
 export const HomePage = React.lazy(() => import('../pages/HomePage'));
@@ -283,6 +285,8 @@ export function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="anion-gap" element={wrapCalculator('/anion-gap', <AnionGap lang={lang} />)} />
       <Route path="aa-gradient" element={wrapCalculator('/aa-gradient', <AaGradient lang={lang} />)} />
       <Route path="compare/:slug1-vs-:slug2" element={<Compare lang={lang} />} />
+      {/* Clinical Q&A Pages — the 100x SEO multiplier */}
+      <Route path="q/:questionSlug" element={<ClinicalQuestionPage lang={lang} />} />
     </>
   );
 }
