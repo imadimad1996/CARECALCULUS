@@ -834,7 +834,7 @@ function AppLayout() {
                   className="w-full text-left rtl:text-right px-3 py-2.5 rounded-xl bg-slate-50/80 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800/80 hover:bg-slate-100 dark:hover:bg-slate-800 text-[11px] font-mono font-extrabold tracking-wider text-slate-600 dark:text-slate-300 uppercase transition-all duration-200 flex items-center justify-between group cursor-pointer shadow-2xs"
                 >
                   <span className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse shadow-[0_0_8px_rgba(244,63,94,0.6)]" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-teal-500" />
                     <span>{getLocalizedTierHeader(1)}</span>
                   </span>
                   <ChevronDown className={`w-4 h-4 text-slate-400 group-hover:text-slate-700 dark:group-hover:text-white transition-transform duration-200 ${(sidebarSearch || expandedTiers[1]) ? '' : (isRtl ? 'rotate-90' : '-rotate-90')}`} />
@@ -848,14 +848,14 @@ function AppLayout() {
                         <Link
                           key={item.path}
                           to={langPath(item.path)}
-                          className={`flex items-center gap-3.5 px-4 py-2.5 rounded-2xl text-[13px] font-medium transition-all duration-200 active:scale-[0.98] ${
+                          className={`flex items-center gap-3 px-3 py-2 rounded-lg text-[13px] transition-all duration-150 active:scale-[0.98] ${
                             isActive 
-                              ? 'bg-gradient-to-r from-rose-500/15 via-rose-500/5 to-transparent text-rose-700 dark:text-rose-300 font-bold border-l-4 rtl:border-l-0 rtl:border-r-4 border-rose-500 shadow-xs' 
-                              : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100/70 dark:hover:bg-slate-800/60 hover:text-slate-900 dark:hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 border-l-4 rtl:border-l-0 rtl:border-r-4 border-transparent'
+                              ? 'bg-teal-50 text-teal-800 font-semibold border-l-2 rtl:border-l-0 rtl:border-r-2 border-teal-600' 
+                              : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-normal border-l-2 rtl:border-l-0 rtl:border-r-2 border-transparent'
                           }`}
-                          style={{ minHeight: '46px' }}
+                          style={{ minHeight: '40px' }}
                         >
-                          <Icon className={`w-4 h-4 shrink-0 transition-transform group-hover:scale-110 ${isActive ? 'text-rose-600 dark:text-rose-400' : 'text-slate-400 dark:text-slate-500'}`} />
+                          <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-teal-600' : 'text-slate-400'}`} />
                           <span className="line-clamp-2 leading-snug">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
                         </Link>
                       );
@@ -873,7 +873,7 @@ function AppLayout() {
                   className="w-full text-left rtl:text-right px-3 py-2.5 rounded-xl bg-slate-50/80 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800/80 hover:bg-slate-100 dark:hover:bg-slate-800 text-[11px] font-mono font-extrabold tracking-wider text-slate-600 dark:text-slate-300 uppercase transition-all duration-200 flex items-center justify-between group cursor-pointer shadow-2xs"
                 >
                   <span className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse shadow-[0_0_8px_rgba(6,182,212,0.6)]" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-teal-500" />
                     <span>{getLocalizedTierHeader(2)}</span>
                   </span>
                   <ChevronDown className={`w-4 h-4 text-slate-400 group-hover:text-slate-700 dark:group-hover:text-white transition-transform duration-200 ${(sidebarSearch || expandedTiers[2]) ? '' : (isRtl ? 'rotate-90' : '-rotate-90')}`} />
@@ -887,14 +887,14 @@ function AppLayout() {
                         <Link
                           key={item.path}
                           to={langPath(item.path)}
-                          className={`flex items-center gap-3.5 px-4 py-2.5 rounded-2xl text-[13px] font-medium transition-all duration-200 active:scale-[0.98] ${
+                          className={`flex items-center gap-3 px-3 py-2 rounded-lg text-[13px] transition-all duration-150 active:scale-[0.98] ${
                             isActive 
-                              ? 'bg-gradient-to-r from-cyan-500/15 via-cyan-500/5 to-transparent text-cyan-700 dark:text-cyan-300 font-bold border-l-4 rtl:border-l-0 rtl:border-r-4 border-cyan-500 shadow-xs' 
-                              : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100/70 dark:hover:bg-slate-800/60 hover:text-slate-900 dark:hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 border-l-4 rtl:border-l-0 rtl:border-r-4 border-transparent'
+                              ? 'bg-teal-50 text-teal-800 font-semibold border-l-2 rtl:border-l-0 rtl:border-r-2 border-teal-600' 
+                              : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-normal border-l-2 rtl:border-l-0 rtl:border-r-2 border-transparent'
                           }`}
-                          style={{ minHeight: '46px' }}
+                          style={{ minHeight: '40px' }}
                         >
-                          <Icon className={`w-4 h-4 shrink-0 transition-transform group-hover:scale-110 ${isActive ? 'text-cyan-600 dark:text-cyan-400' : 'text-slate-400 dark:text-slate-500'}`} />
+                          <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-teal-600' : 'text-slate-400'}`} />
                           <span className="line-clamp-2 leading-snug">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
                         </Link>
                       );
@@ -912,7 +912,7 @@ function AppLayout() {
                   className="w-full text-left rtl:text-right px-3 py-2.5 rounded-xl bg-slate-50/80 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800/80 hover:bg-slate-100 dark:hover:bg-slate-800 text-[11px] font-mono font-extrabold tracking-wider text-slate-600 dark:text-slate-300 uppercase transition-all duration-200 flex items-center justify-between group cursor-pointer shadow-2xs"
                 >
                   <span className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.6)]" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-teal-500" />
                     <span>{getLocalizedTierHeader(3)}</span>
                   </span>
                   <ChevronDown className={`w-4 h-4 text-slate-400 group-hover:text-slate-700 dark:group-hover:text-white transition-transform duration-200 ${(sidebarSearch || expandedTiers[3]) ? '' : (isRtl ? 'rotate-90' : '-rotate-90')}`} />
@@ -926,14 +926,14 @@ function AppLayout() {
                         <Link
                           key={item.path}
                           to={langPath(item.path)}
-                          className={`flex items-center gap-3.5 px-4 py-2.5 rounded-2xl text-[13px] font-medium transition-all duration-200 active:scale-[0.98] ${
+                          className={`flex items-center gap-3 px-3 py-2 rounded-lg text-[13px] transition-all duration-150 active:scale-[0.98] ${
                             isActive 
-                              ? 'bg-gradient-to-r from-emerald-500/15 via-emerald-500/5 to-transparent text-emerald-700 dark:text-emerald-300 font-bold border-l-4 rtl:border-l-0 rtl:border-r-4 border-emerald-500 shadow-xs' 
-                              : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100/70 dark:hover:bg-slate-800/60 hover:text-slate-900 dark:hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 border-l-4 rtl:border-l-0 rtl:border-r-4 border-transparent'
+                              ? 'bg-teal-50 text-teal-800 font-semibold border-l-2 rtl:border-l-0 rtl:border-r-2 border-teal-600' 
+                              : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-normal border-l-2 rtl:border-l-0 rtl:border-r-2 border-transparent'
                           }`}
-                          style={{ minHeight: '46px' }}
+                          style={{ minHeight: '40px' }}
                         >
-                          <Icon className={`w-4 h-4 shrink-0 transition-transform group-hover:scale-110 ${isActive ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-400 dark:text-slate-500'}`} />
+                          <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-teal-600' : 'text-slate-400'}`} />
                           <span className="line-clamp-2 leading-snug">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
                         </Link>
                       );
@@ -951,7 +951,7 @@ function AppLayout() {
                   className="w-full text-left rtl:text-right px-3 py-2.5 rounded-xl bg-slate-50/80 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800/80 hover:bg-slate-100 dark:hover:bg-slate-800 text-[11px] font-mono font-extrabold tracking-wider text-slate-600 dark:text-slate-300 uppercase transition-all duration-200 flex items-center justify-between group cursor-pointer shadow-2xs"
                 >
                   <span className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse shadow-[0_0_8px_rgba(99,102,241,0.6)]" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-teal-500" />
                     <span>{lang === 'fr' ? 'RESSOURCES & BIBLIOTHÈQUE' : (lang === 'ar' ? 'المصادر والمكتبة' : 'RESOURCES & LIBRARY')}</span>
                   </span>
                   <ChevronDown className={`w-4 h-4 text-slate-400 group-hover:text-slate-700 dark:group-hover:text-white transition-transform duration-200 ${(sidebarSearch || expandedTiers[4]) ? '' : (isRtl ? 'rotate-90' : '-rotate-90')}`} />
@@ -978,14 +978,14 @@ function AppLayout() {
                                 <Link
                                   key={item.path}
                                   to={langPath(item.path)}
-                                  className={`flex items-center gap-3.5 px-4 py-2.5 rounded-2xl text-[13px] font-medium transition-all duration-200 active:scale-[0.98] ${
+                                  className={`flex items-center gap-3 px-3 py-2 rounded-lg text-[13px] transition-all duration-150 active:scale-[0.98] ${
                                     isActive
-                                      ? 'bg-gradient-to-r from-indigo-500/15 via-indigo-500/5 to-transparent text-indigo-700 dark:text-indigo-300 font-bold border-l-4 rtl:border-l-0 rtl:border-r-4 border-indigo-500 shadow-xs'
-                                      : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100/70 dark:hover:bg-slate-800/60 hover:text-slate-900 dark:hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 border-l-4 rtl:border-l-0 rtl:border-r-4 border-transparent'
+                                      ? 'bg-teal-50 text-teal-800 font-semibold border-l-2 rtl:border-l-0 rtl:border-r-2 border-teal-600'
+                                      : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-normal border-l-2 rtl:border-l-0 rtl:border-r-2 border-transparent'
                                   }`}
-                                  style={{ minHeight: '46px' }}
+                                  style={{ minHeight: '40px' }}
                                 >
-                                  <Icon className={`w-4 h-4 shrink-0 transition-transform group-hover:scale-110 ${isActive ? 'text-indigo-600 dark:text-indigo-400' : 'text-slate-400 dark:text-slate-500'}`} />
+                                  <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-teal-600' : 'text-slate-400'}`} />
                                   <span className="line-clamp-2 leading-snug">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
                                 </Link>
                               );
@@ -1007,7 +1007,7 @@ function AppLayout() {
                   className="w-full text-left rtl:text-right px-3 py-2.5 rounded-xl bg-slate-50/80 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800/80 hover:bg-slate-100 dark:hover:bg-slate-800 text-[11px] font-mono font-extrabold tracking-wider text-slate-600 dark:text-slate-300 uppercase transition-all duration-200 flex items-center justify-between group cursor-pointer shadow-2xs"
                 >
                   <span className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse shadow-[0_0_8px_rgba(245,158,11,0.6)]" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-teal-500" />
                     <span>{getLocalizedTierHeader(5)}</span>
                   </span>
                   <ChevronDown className={`w-4 h-4 text-slate-400 group-hover:text-slate-700 dark:group-hover:text-white transition-transform duration-200 ${(sidebarSearch || expandedTiers[5]) ? '' : (isRtl ? 'rotate-90' : '-rotate-90')}`} />
@@ -1021,14 +1021,14 @@ function AppLayout() {
                         <Link
                           key={item.path}
                           to={langPath(item.path)}
-                          className={`flex items-center gap-3.5 px-4 py-2.5 rounded-2xl text-[13px] font-medium transition-all duration-200 active:scale-[0.98] ${
+                          className={`flex items-center gap-3 px-3 py-2 rounded-lg text-[13px] transition-all duration-150 active:scale-[0.98] ${
                             isActive 
-                              ? 'bg-gradient-to-r from-amber-500/15 via-amber-500/5 to-transparent text-amber-700 dark:text-amber-300 font-bold border-l-4 rtl:border-l-0 rtl:border-r-4 border-amber-500 shadow-xs' 
-                              : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100/70 dark:hover:bg-slate-800/60 hover:text-slate-900 dark:hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 border-l-4 rtl:border-l-0 rtl:border-r-4 border-transparent'
+                              ? 'bg-teal-50 text-teal-800 font-semibold border-l-2 rtl:border-l-0 rtl:border-r-2 border-teal-600' 
+                              : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-normal border-l-2 rtl:border-l-0 rtl:border-r-2 border-transparent'
                           }`}
-                          style={{ minHeight: '46px' }}
+                          style={{ minHeight: '40px' }}
                         >
-                          <Icon className={`w-4 h-4 shrink-0 transition-transform group-hover:scale-110 ${isActive ? 'text-amber-600 dark:text-amber-400' : 'text-slate-400 dark:text-slate-500'}`} />
+                          <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-teal-600' : 'text-slate-400'}`} />
                           <span className="line-clamp-2 leading-snug">{lang === 'fr' ? item.nameFr : (lang === 'ar' ? item.nameAr : item.nameEn)}</span>
                         </Link>
                       );

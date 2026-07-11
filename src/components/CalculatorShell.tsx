@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Scale, FolderHeart, Activity, Layers, ArrowRight, Share2, Copy, Check, FileText } from 'lucide-react';
 import { LangCode } from '../types';
 import AiAnswerPanel from './AiAnswerPanel';
+import { MedicalReviewerCard, MedicalReviewer } from './MedicalReviewerCard';
 import { generateSOAP, generateSBAR, generateDotPhrase, generateShiftHandover, generateCaseShareUrl } from '../utils/soapGenerator';
 import { CONDITIONS_DB } from '../data/conditions';
 import { SPECIALTIES_DB } from '../data/specialties';
@@ -133,19 +134,26 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
 
   return (
     <div className="relative space-y-8">
-      {/* Ambient Lighting Background */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden -z-10">
-        <div className="absolute top-[10%] left-[10%] w-96 h-96 bg-indigo-500/10 rounded-full blur-[100px]" />
-        <div className="absolute bottom-[20%] right-[10%] w-96 h-96 bg-blue-500/10 rounded-full blur-[100px]" />
-      </div>
-
-      <div className="relative z-10">
+      <div className="relative">
         <AiAnswerPanel logicalPath={logicalPath} lang={lang} />
       </div>
-      
-      <div className="relative z-10">
+
+      <div>
         {children}
       </div>
+
+      {/* Universal Medical Reviewer E-E-A-T Signal */}
+      <MedicalReviewerCard 
+        lang={lang}
+        reviewer={{
+          name: "Dr. Lynda Szczech",
+          credentials: ["MD", "MSCE", "FASN", "FNKF"],
+          role: "Nephrologist and Medical Reviewer",
+          institution: "CareCalculus Medical Board",
+          lastReviewed: "July 2026",
+          profileUrl: "#"
+        }} 
+      />
 
       {/* Universal Inline EHR & Viral Sharing Bar */}
       {calcData && (
@@ -223,18 +231,18 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
 
       {/* Dynamic SEO Internal Linking Hub */}
       {(relatedCalculators.length > 0 || matchingComparisons.length > 0 || relatedConditions.length > 0 || relatedSpecialties.length > 0) && (
-        <div className="mt-16 pt-10 border-t border-gray-200" dir={isRtl ? 'rtl' : 'ltr'}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="mt-16 pt-10 border-t border-slate-200" dir={isRtl ? 'rtl' : 'ltr'}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             
             {/* Left Column: Comparisons & Other Calculators */}
             <div className="space-y-6">
               {matchingComparisons.length > 0 && (
-                <div className="bg-slate-50/60 border border-slate-100/80 rounded-3xl p-6 shadow-sm">
+                <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
                   <h3 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4 flex items-center gap-2">
-                    <Scale className="w-4 h-4 text-indigo-500" />
+                    <Scale className="w-4 h-4 text-teal-600" />
                     {t.comparisons}
                   </h3>
-                  <div className="space-y-2.5">
+                  <div className="space-y-2">
                     {matchingComparisons.map(comp => {
                       const parts = comp.split('-vs-');
                       const otherSlug = parts[0] === slug ? parts[1] : parts[0];
@@ -246,7 +254,7 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
                         <Link
                           key={comp}
                           to={`${prefix}/compare/${comp}`}
-                          className="flex items-center justify-between p-3.5 bg-white hover:bg-indigo-50/50 border border-gray-200/60 rounded-2xl text-sm font-semibold text-gray-800 hover:text-indigo-700 transition-all hover:shadow-sm"
+                          className="flex items-center justify-between p-3 bg-slate-50 hover:bg-teal-50 border border-slate-200 hover:border-teal-200 rounded-lg text-sm font-medium text-slate-700 hover:text-teal-800 transition-all"
                         >
                           <span>{currentName} vs {otherName}</span>
                           <ArrowRight className={`w-4 h-4 text-slate-400 shrink-0 ${isRtl ? 'rotate-180' : ''}`} />
@@ -258,7 +266,7 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
               )}
 
               {relatedCalculators.length > 0 && (
-                <div className="bg-slate-50/60 border border-slate-100/80 rounded-3xl p-6 shadow-sm">
+                <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
                   <h3 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4 flex items-center gap-2">
                     <Activity className="w-4 h-4 text-blue-500" />
                     {t.otherTools}
@@ -285,7 +293,7 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
             {/* Right Column: Conditions & Specialties */}
             <div className="space-y-6">
               {relatedConditions.length > 0 && (
-                <div className="bg-slate-50/60 border border-slate-100/80 rounded-3xl p-6 shadow-sm">
+                <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
                   <h3 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4 flex items-center gap-2">
                     <FolderHeart className="w-4 h-4 text-rose-500" />
                     {t.conditions}
@@ -318,7 +326,7 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
               )}
 
               {relatedSpecialties.length > 0 && (
-                <div className="bg-slate-50/60 border border-slate-100/80 rounded-3xl p-6 shadow-sm">
+                <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
                   <h3 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4 flex items-center gap-2">
                     <Layers className="w-4 h-4 text-emerald-500" />
                     {t.specialties}

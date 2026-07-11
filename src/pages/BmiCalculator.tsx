@@ -7,6 +7,8 @@ import EvidencePanel from '../components/EvidencePanel';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 import { layoutTranslations } from '../utils/lang';
 import { trackCalculatorUsage } from '../utils/telemetry';
+import { ActionableResultPanel, RiskLevel } from '../components/ActionableResultPanel';
+import { ClinicalContextTabs } from '../components/ClinicalContextTabs';
 import EmbedCodeButton from '../components/ui/EmbedCodeButton';
 
 const translations: Translations = {
@@ -143,6 +145,34 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
   };
 
   const category = getBmiCategory(bmiValue);
+
+  const getRiskLevel = (bmi: number): RiskLevel => {
+    if (bmi === 0) return 'neutral';
+    if (bmi < 18.5) return 'high';
+    if (bmi < 25) return 'low';
+    if (bmi < 30) return 'medium';
+    return 'high';
+  };
+
+  const getNextSteps = (bmi: number) => {
+    if (bmi === 0) return [];
+    if (bmi < 18.5) return [
+      currentText.categoryUnder + ": " + (lang === 'fr' ? 'Évaluation nutritionnelle recommandée.' : lang === 'ar' ? 'يوصى بالتقييم الغذائي.' : 'Nutritional assessment recommended.'),
+      lang === 'fr' ? 'Dépistage des troubles de l\'alimentation ou de la malnutrition.' : lang === 'ar' ? 'فحص اضطرابات الأكل أو سوء التغذية.' : 'Screen for eating disorders or malnutrition.'
+    ];
+    if (bmi < 25) return [
+      currentText.categoryNormal + ": " + (lang === 'fr' ? 'Maintenir le mode de vie actuel.' : lang === 'ar' ? 'حافظ على نمط الحياة الحالي.' : 'Maintain current lifestyle.'),
+      lang === 'fr' ? 'Bilan de santé annuel de routine.' : lang === 'ar' ? 'فحص صحي روتيني سنوي.' : 'Routine annual wellness check.'
+    ];
+    if (bmi < 30) return [
+      currentText.categoryOver + ": " + (lang === 'fr' ? 'Conseils sur l\'alimentation et l\'exercice physique.' : lang === 'ar' ? 'تقديم المشورة بشأن النظام الغذائي والتمارين الرياضية.' : 'Diet and exercise counseling.'),
+      lang === 'fr' ? 'Dépistage des comorbidités (diabète, hypertension).' : lang === 'ar' ? 'فحص الأمراض المصاحبة (السكري وارتفاع ضغط الدم).' : 'Screen for comorbidities (diabetes, hypertension).'
+    ];
+    return [
+      currentText.categoryObese + ": " + (lang === 'fr' ? 'Prise en charge médicale intensive du poids.' : lang === 'ar' ? 'إدارة طبية مكثفة للوزن.' : 'Intensive medical weight management.'),
+      lang === 'fr' ? 'Évaluation stricte des risques cardiovasculaires.' : lang === 'ar' ? 'تقييم صارم لمخاطر القلب والأوعية الدموية.' : 'Strict cardiovascular risk assessment.'
+    ];
+  };
 
   const bmiValueIsNormal = bmiValue >= 18.5 && bmiValue < 25;
 
@@ -289,53 +319,61 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
                 )}
               </div>
             </div>
+            
+            <ClinicalContextTabs 
+              lang={lang}
+              context={{
+                whenToUse: currentText.clinicalText,
+                pearlsPitfalls: (
+                  <ul className="space-y-2 list-disc pl-4">
+                    {currentText.pillarText.map((p, i) => <li key={i}>{p}</li>)}
+                  </ul>
+                ),
+                evidence: "World Health Organization (WHO) BMI Classification standards, identifying optimal ranges for metabolic health."
+              }}
+            />
           </div>
         </div>
 
         <div className="lg:col-span-5 relative">
-          <div className="sticky bottom-4 lg:top-28 z-20 bg-gray-900 text-white rounded-2xl shadow-2xl overflow-hidden ring-1 ring-white/10 flex flex-col justify-between p-6 lg:p-8 min-h-[200px] lg:min-h-[320px] transition-all">
-            <div className="absolute top-0 right-0 p-20 lg:p-32 bg-gradient-to-bl from-blue-500/20 to-transparent rounded-bl-[100px] pointer-events-none" />
-            
-            <div className="relative z-10">
-              <span className="text-xs font-bold uppercase tracking-wider text-gray-400 block mb-3">
-                {currentText.result}
-              </span>
-              
-              <div className="flex items-baseline gap-2 tabular-nums">
-                <span className="text-7xl font-bold tracking-tighter transition-all duration-300">
-                  {bmiValue > 0 ? bmiValue : '--'}
-                </span>
-                <span className="text-xl font-medium text-gray-400">kg/m²</span>
+          <div className="sticky bottom-4 lg:top-28 z-20">
+            {bmiValue > 0 ? (
+              <ActionableResultPanel
+                lang={lang}
+                title={currentText.result}
+                score={`${bmiValue} kg/m²`}
+                riskLevel={getRiskLevel(bmiValue)}
+                interpretation={category.label}
+                nextSteps={getNextSteps(bmiValue)}
+              />
+            ) : (
+              <div className="bg-slate-50 border border-slate-200 rounded-xl p-8 text-center shadow-sm">
+                <Activity className="w-8 h-8 text-slate-300 mx-auto mb-3" />
+                <p className="text-sm font-medium text-slate-500">
+                  {lang === 'fr' ? 'Entrez la taille et le poids pour voir les résultats' : lang === 'ar' ? 'أدخل الطول والوزن لرؤية النتائج' : 'Enter height and weight to see results'}
+                </p>
               </div>
-            </div>
-
-            <div className="relative z-10 mt-10">
-                {bmiValue > 0 && (
-                  <>
-                    <div className={`p-4 rounded-xl border flex justify-between items-center transition-all ${category.bg} ${category.color}`}>
-                      <div className="font-semibold text-sm">
-                        {category.label}
-                      </div>
-                    </div>
-                    
-                    <ClinicalExportButton
-                      title={currentText.title}
-                      inputs={[
-                        { label: currentText.height, value: `${height} cm` },
-                        { label: currentText.weight, value: `${weight} kg` }
-                      ]}
-                      results={[
-                        { label: currentText.result, value: bmiValue, unit: 'kg/m²' },
-                        { label: 'Category', value: category.label }
-                      ]}
-                      formula={currentText.formula}
-                      disclaimer={currentText.clinicalText}
-                      references={currentText.references}
-                      lang={lang}
-                    />
-                  </>
-                )}
-            </div>
+            )}
+            
+            {bmiValue > 0 && (
+              <div className="mt-4">
+                <ClinicalExportButton
+                  title={currentText.title}
+                  inputs={[
+                    { label: currentText.height, value: `${height} cm` },
+                    { label: currentText.weight, value: `${weight} kg` }
+                  ]}
+                  results={[
+                    { label: currentText.result, value: bmiValue, unit: 'kg/m²' },
+                    { label: 'Category', value: category.label }
+                  ]}
+                  formula={currentText.formula}
+                  disclaimer={currentText.clinicalText}
+                  references={currentText.references}
+                  lang={lang}
+                />
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -382,15 +420,6 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
         </div>
       </div>
       
-      {/* Pillar Content Section */}
-      <div className="mt-12 pt-10 border-t border-gray-100">
-        <h2 className="text-xl font-bold text-gray-900 mb-6">{currentText.pillarTitle}</h2>
-        <div className="space-y-4 text-gray-700 leading-relaxed text-sm">
-          {currentText.pillarText.map((paragraph, idx) => (
-            <p key={idx}>{paragraph}</p>
-          ))}
-        </div>
-      </div>
 
       <div className="mt-12 pt-8 border-t border-gray-100">
         <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">{layoutTranslations[lang].seeAlso}</h2>

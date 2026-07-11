@@ -201,69 +201,62 @@ export default function HomePage({ lang }: HomePageProps) {
   const tierLabels = [tiers.t1, tiers.t2, tiers.t3, tiers.t4];
 
   return (
-    <div className="space-y-12 pb-8" dir={isRtl ? 'rtl' : 'ltr'}>
+    <div className="space-y-16 pb-12" dir={isRtl ? 'rtl' : 'ltr'}>
       <SEO logicalPath="/" lang={lang} />
-      {/* Hero */}
-      <section className="relative bg-slate-900 rounded-2xl overflow-hidden px-6 sm:px-10 py-10 sm:py-14 text-white shadow-md border border-slate-800">
-        <div className="absolute inset-0 pointer-events-none overflow-hidden" />
-        <div className="relative z-10 w-full max-w-[760px] mx-auto flex flex-col items-center text-center">
-          <div className="inline-flex items-center gap-2 mb-4 px-3 py-1 bg-white/5 rounded-full border border-white/10 backdrop-blur-xs">
-            <Logo className="w-4.5 h-4.5" mode="dark" />
-            <span className="text-[10px] font-mono font-extrabold text-emerald-400 uppercase tracking-widest">{hero.badge}</span>
+      {/* Hero — clean white, surgical */}
+      <section className="relative bg-white border-b border-slate-100 px-6 sm:px-10 py-12 sm:py-16 -mx-4 sm:-mx-6 md:mx-0 md:border md:border-slate-200 md:rounded-xl">
+        <div className="relative w-full max-w-[720px] mx-auto flex flex-col items-center text-center">
+          {/* Brand badge */}
+          <div className="inline-flex items-center gap-2 mb-5 px-3 py-1 bg-teal-50 rounded-full border border-teal-200">
+            <Logo className="w-4 h-4" mode="light" />
+            <span className="text-[11px] font-bold text-teal-700 uppercase tracking-widest">{hero.badge}</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight mb-3 text-center">
+
+          <h1 className="text-4xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight mb-4 text-center">
             {hero.title}
           </h1>
-          <p className="text-sm sm:text-base text-cyan-200/90 font-medium mb-3 text-center tracking-wide">{hero.subtitle}</p>
-          <p className="text-xs sm:text-sm text-slate-300/90 leading-relaxed mb-8 w-full max-w-[620px] text-center mx-auto">{hero.desc}</p>
-          
-          {/* Premium Centered Global Search Trigger Card */}
-          <div className="mb-4 w-full max-w-[580px] mx-auto">
+          <p className="text-base text-slate-500 font-normal mb-2 text-center">{hero.subtitle}</p>
+          <p className="text-sm text-slate-400 leading-relaxed mb-10 w-full max-w-[580px] text-center mx-auto">{hero.desc}</p>
+
+          {/* Search trigger */}
+          <div className="mb-5 w-full max-w-[540px] mx-auto">
             <button
               onClick={() => window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }))}
-              className="w-full flex items-center justify-between px-4 sm:px-5 py-4 bg-slate-900/60 hover:bg-slate-900/85 text-slate-300 rounded-2xl border border-white/10 hover:border-cyan-400/40 shadow-lg backdrop-blur-md transition-all duration-300 group active:scale-[0.98] cursor-pointer text-left rtl:text-right"
+              className="w-full flex items-center justify-between px-4 py-3.5 bg-slate-50 hover:bg-slate-100 text-slate-500 rounded-xl border border-slate-200 hover:border-teal-300 shadow-sm transition-all duration-200 group cursor-pointer text-left rtl:text-right"
               style={{ minHeight: '52px' }}
             >
-              <div className="flex items-center gap-3 min-w-0 pr-2 rtl:pr-0 rtl:pl-2">
-                <Search className="w-5 h-5 text-cyan-400 shrink-0 group-hover:scale-110 transition-transform duration-300" />
-                <span className="text-xs sm:text-sm font-medium truncate text-slate-300/80 block">{searchPlaceholder}</span>
+              <div className="flex items-center gap-3 min-w-0">
+                <Search className="w-4 h-4 text-teal-600 shrink-0" />
+                <span className="text-sm font-normal truncate block">{searchPlaceholder}</span>
               </div>
-              <div className="hidden sm:flex items-center gap-1 shrink-0 px-2 py-0.5 rounded-md bg-white/5 text-[10px] font-mono font-bold text-cyan-400 border border-white/5 shadow-2xs group-hover:bg-cyan-500/10 group-hover:border-cyan-400/20 transition-colors">
-                <span>Ctrl</span>
-                <span>+</span>
-                <span>K</span>
+              <div className="hidden sm:flex items-center gap-1 shrink-0 px-2 py-0.5 rounded-md bg-white border border-slate-200 text-[10px] font-mono font-bold text-slate-400">
+                <span>Ctrl</span><span>+</span><span>K</span>
               </div>
             </button>
           </div>
 
-          {/* Quick-links row to reduce search friction */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mb-8 text-[11px] sm:text-xs">
+          {/* Quick-links */}
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-10 text-xs">
             <span className="text-slate-400 font-medium">{popular.label}</span>
             {popular.items.map((item, idx) => (
               <Link
                 key={idx}
                 to={langPath(item.path)}
-                className="px-2.5 py-0.5 bg-white/5 hover:bg-cyan-500/10 text-slate-300 hover:text-cyan-300 rounded-md border border-white/5 hover:border-cyan-500/20 transition-all font-medium cursor-pointer"
+                className="px-2.5 py-1 bg-white text-slate-600 hover:text-teal-700 rounded-lg border border-slate-200 hover:border-teal-200 transition-all font-semibold"
               >
                 {item.name}
               </Link>
             ))}
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-3">
             <SmartPasteModal lang={lang} />
-            <Link
-              to={langPath('/map-calculator')}
-              className="btn-primary text-xs"
-            >
+            <Link to={langPath('/map-calculator')} className="btn-primary text-sm">
               <Calculator className="w-4 h-4" />
               {cta.primary}
               <ChevronRight className="w-4 h-4" />
             </Link>
-            <Link
-              to={langPath('/blog')}
-              className="btn-secondary text-xs !text-white !border-white/20 hover:!bg-white/5"
-            >
+            <Link to={langPath('/blog')} className="btn-secondary text-sm">
               <BookOpen className="w-4 h-4" />
               {cta.secondary}
             </Link>
