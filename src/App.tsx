@@ -18,6 +18,8 @@ import InstallAppButton from './components/ui/InstallAppButton';
 import SidebarNewsletter from './components/SidebarNewsletter';
 import StickyMobileAd from './components/StickyMobileAd';
 import SmartPasteModal from './components/SmartPasteModal';
+import DropdownMenu from './components/DropdownMenu';
+import ContactModal from './components/ContactModal';
 
 import { preloadPages, moduleRoutes, embedRoutes, navItems, TIER_HEADERS, LEGAL_ROUTES, CONTENT_ROUTES, ErrorBoundary, NotFound } from './routes';
 import { LangCode } from './types';
@@ -30,6 +32,7 @@ function AppLayout() {
   const navigate = useNavigate();
   const { user, logout } = useAuth();
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   useEffect(() => {
     const handleOpenLogin = () => setIsLoginModalOpen(true);
@@ -561,7 +564,7 @@ function AppLayout() {
     const currentPath = logicalPath === '/' ? '/map-calculator' : logicalPath;
 
     return (
-      <div className="mb-6 bg-white rounded-2xl border border-gray-200/80 shadow-xs overflow-hidden">
+      <div className="mb-6 bg-white rounded-2xl border border-gray-200/80 shadow-xs relative z-30">
         {/* Search row */}
         <div className="px-4 py-3 flex items-center gap-3 border-b border-gray-100">
           <div className="flex-1 relative">
@@ -595,25 +598,19 @@ function AppLayout() {
             <Scale className="w-3.5 h-3.5 text-emerald-400" />
             <span className="hidden sm:inline">{geoState.standard === 'Metric (SI)' ? 'SI' : 'US'}</span>
           </button>
-          {/* Auth Button Desktop */}
-          {user ? (
-            <button
-              onClick={() => logout()}
-              className="shrink-0 flex items-center justify-center w-10 h-10 bg-teal-50 hover:bg-teal-100 text-teal-700 rounded-xl transition-all duration-200 border border-teal-200 focus:outline-none focus:ring-2 focus:ring-teal-500"
-              title="Sign Out"
-            >
-              <span className="text-[10px] font-bold uppercase tracking-wider">{user.email ? user.email.charAt(0) : 'G'}</span>
-            </button>
-          ) : (
-            <button
-              onClick={() => setIsLoginModalOpen(true)}
-              className="shrink-0 flex items-center gap-1.5 px-4 py-2 bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold rounded-xl transition-all duration-200 shadow-md shadow-teal-500/20 active:scale-95 focus:outline-none focus:ring-2 focus:ring-teal-500"
-              style={{ minHeight: '40px' }}
-            >
-              <HeartPulse className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">{lang === 'fr' ? 'Connexion' : 'Sign In'}</span>
-            </button>
-          )}
+          {/* Dropdown Menu (including Notification Bell, CME, EHR, FAQs, About, Legal, Contact) */}
+          <DropdownMenu
+            user={user}
+            logout={logout}
+            onAuthClick={() => setIsLoginModalOpen(true)}
+            onEhrClick={() => {
+              const event = new CustomEvent('carecalculus:open-smart-paste');
+              window.dispatchEvent(event);
+            }}
+            onContactClick={() => setIsContactModalOpen(true)}
+            langPath={langPath}
+            lang={lang}
+          />
         </div>
 
         {/* Live search results */}
@@ -730,6 +727,19 @@ function AppLayout() {
             <Calculator className="w-3.5 h-3.5" />
             {lang === 'fr' ? 'Calculateurs' : 'Calculators'}
           </Link>
+          {/* Dropdown Menu (including Notification Bell, CME, EHR, FAQs, About, Legal, Contact) */}
+          <DropdownMenu
+            user={user}
+            logout={logout}
+            onAuthClick={() => setIsLoginModalOpen(true)}
+            onEhrClick={() => {
+              const event = new CustomEvent('carecalculus:open-smart-paste');
+              window.dispatchEvent(event);
+            }}
+            onContactClick={() => setIsContactModalOpen(true)}
+            langPath={langPath}
+            lang={lang}
+          />
         </div>
       </div>
     );
@@ -769,25 +779,19 @@ function AppLayout() {
         </Link>
 
         <div className="flex items-center gap-2">
-          {/* Auth Button Mobile */}
-          {user ? (
-            <button
-              onClick={() => logout()}
-              className="flex items-center justify-center w-10 h-10 bg-teal-50 hover:bg-teal-100 text-teal-700 rounded-xl transition-all duration-200 border border-teal-200 focus:outline-none focus:ring-2 focus:ring-teal-500"
-              title="Sign Out"
-            >
-              <span className="text-xs font-bold uppercase tracking-wider">{user.email ? user.email.charAt(0) : 'G'}</span>
-            </button>
-          ) : (
-            <button
-              onClick={() => setIsLoginModalOpen(true)}
-              className="p-2 text-teal-600 hover:text-teal-800 focus:outline-none focus:ring-2 focus:ring-teal-500/30 rounded-lg animate-fade-in bg-teal-50"
-              aria-label="Sign In"
-              style={{ minWidth: '44px', minHeight: '44px' }}
-            >
-              <HeartPulse className="w-5 h-5" />
-            </button>
-          )}
+          {/* Dropdown Menu (including Notification Bell, CME, EHR, FAQs, About, Legal, Contact) */}
+          <DropdownMenu
+            user={user}
+            logout={logout}
+            onAuthClick={() => setIsLoginModalOpen(true)}
+            onEhrClick={() => {
+              const event = new CustomEvent('carecalculus:open-smart-paste');
+              window.dispatchEvent(event);
+            }}
+            onContactClick={() => setIsContactModalOpen(true)}
+            langPath={langPath}
+            lang={lang}
+          />
           <InstallAppButton lang={lang} />
           <button
             onClick={() => window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }))}
@@ -821,7 +825,6 @@ function AppLayout() {
               <Logo className="w-10 h-10 group-hover:scale-105 transition-transform duration-300 shadow-sm" mode="light" />
               <span className="font-extrabold text-2xl tracking-tight text-slate-900 dark:text-white">Care<span className="text-teal-600 dark:text-teal-400 font-black">Calculus</span></span>
             </div>
-            <span className="px-2 py-0.5 rounded-full bg-teal-50 text-teal-700 dark:bg-teal-950/60 dark:text-teal-300 font-mono text-[9px] font-black tracking-widest border border-teal-200/60 dark:border-teal-800/60 uppercase shadow-2xs">PRO</span>
           </Link>
 
           {/* Desktop Language Switcher - Segmented Control */}
@@ -1148,8 +1151,8 @@ function AppLayout() {
             {/* Global Top Leaderboard Ad — only on content pages to protect calculator UX above-the-fold */}
             {isContentPage && <AdUnit format="leaderboard" className="mb-6" />}
 
-            {/* Unified top navigation widget — calculator pages only */}
-            {!isContentPage && !isHomePage && renderUnifiedTopNav()}
+            {/* Unified top navigation widget — home and calculator pages */}
+            {!isContentPage && renderUnifiedTopNav()}
 
             {/* Content-page back-navigation bar */}
             {isContentPage && renderContentPageTopBar()}
@@ -1338,6 +1341,9 @@ function AppLayout() {
       
       {/* Login Modal */}
       <LoginModal isOpen={isLoginModalOpen} onClose={() => setIsLoginModalOpen(false)} />
+      
+      {/* Contact Modal */}
+      <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} lang={lang} />
     </div>
    </LangContext.Provider>
   );

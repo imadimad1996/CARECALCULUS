@@ -34,8 +34,15 @@ export default function SmartPasteModal({ lang = 'en' }: SmartPasteModalProps) {
     const handleUpdate = (e: any) => {
       setActiveLabs(e.detail);
     };
+    const handleOpen = () => {
+      setIsOpen(true);
+    };
     window.addEventListener('carecalculus:labs-updated', handleUpdate);
-    return () => window.removeEventListener('carecalculus:labs-updated', handleUpdate);
+    window.addEventListener('carecalculus:open-smart-paste', handleOpen);
+    return () => {
+      window.removeEventListener('carecalculus:labs-updated', handleUpdate);
+      window.removeEventListener('carecalculus:open-smart-paste', handleOpen);
+    };
   }, []);
 
   useEffect(() => {

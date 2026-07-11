@@ -1,5 +1,5 @@
 # CareCalculus — robots.txt
-# Free multilingual clinical calculators (EN / FR / AR).
+# Free dual-domain clinical calculators (EN / FR).
 # We WELCOME search and AI/answer-engine crawlers: our content is meant to be
 # found, indexed, and cited.
 
@@ -101,5 +101,6 @@ Disallow: /
 User-agent: *
 Allow: /
 
-# Multilingual XML sitemap (EN bare, FR /fr, AR /ar with hreflang alternates)
-Sitemap: https://carecalculus.com/sitemap.xml
+# Dual-domain XML sitemaps (EN on www.carecalculus.com and FR on fr.carecalculus.com)
+Sitemap: https://www.carecalculus.com/sitemap.xml
+Sitemap: https://fr.carecalculus.com/sitemap.xml

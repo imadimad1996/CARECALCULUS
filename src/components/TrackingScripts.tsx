@@ -73,7 +73,7 @@ export default function TrackingScripts() {
       // 2. Microsoft Clarity Setup
       const CLARITY_PROJECT_ID = 'XXXXXXXXXX';
 
-      if (!document.getElementById('clarity-script')) {
+      if (!document.getElementById('clarity-script') && CLARITY_PROJECT_ID !== 'XXXXXXXXXX') {
         const clarityInit = document.createElement('script');
         clarityInit.id = 'clarity-script';
         clarityInit.innerHTML = `
