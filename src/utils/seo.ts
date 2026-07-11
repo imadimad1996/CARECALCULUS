@@ -820,7 +820,7 @@ export function organizationJsonLd() {
       '@type': 'WebSite',
       name: 'CareCalculus',
       url: ORIGIN,
-      inLanguage: ['en', 'fr', 'ar'],
+      inLanguage: ['en', 'fr'],
       potentialAction: {
         '@type': 'SearchAction',
         target: {
@@ -881,11 +881,11 @@ export function buildHead(logicalPath: string, lang: LangCode): HeadModel {
   const url = pageUrl(effectivePath, lang);
   const pathSuffix = effectivePath === '/' ? '' : effectivePath;
 
-  const hreflang: { hreflang: string; href: string }[] = (['en', 'fr', 'ar'] as LangCode[]).map((l) => ({
-    hreflang: l as string,
-    href: `${ORIGIN}${l === 'en' ? '' : '/' + l}${pathSuffix}`,
-  }));
-  hreflang.push({ hreflang: 'x-default', href: `${ORIGIN}${pathSuffix}` });
+  const hreflang: { hreflang: string; href: string }[] = [
+    { hreflang: 'en', href: `${ORIGIN_EN}${pathSuffix}` },
+    { hreflang: 'fr', href: `${ORIGIN_FR}${pathSuffix}` },
+    { hreflang: 'x-default', href: `${ORIGIN_EN}${pathSuffix}` },
+  ];
 
   // Use the single verified OG image (per-page images are not generated yet)
   const dynamicOgImage = OG_IMAGE;

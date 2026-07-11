@@ -827,7 +827,7 @@ function AppLayout() {
           {/* Desktop Language Switcher - Segmented Control */}
           <div className="px-6 mb-6">
             <div className="bg-slate-100/90 dark:bg-slate-800/90 p-1.5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-inner flex gap-1">
-              {(['en', 'fr', 'ar'] as LangCode[]).map((l) => (
+              {(['en', 'fr'] as LangCode[]).map((l) => (
                 <button
                   key={l}
                   onClick={() => setLang(l)}
