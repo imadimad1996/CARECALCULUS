@@ -132,10 +132,20 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
   }, [slug]);
 
   return (
-    <div className="space-y-8">
-      <AiAnswerPanel logicalPath={logicalPath} lang={lang} />
+    <div className="relative space-y-8">
+      {/* Ambient Lighting Background */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden -z-10">
+        <div className="absolute top-[10%] left-[10%] w-96 h-96 bg-indigo-500/10 rounded-full blur-[100px]" />
+        <div className="absolute bottom-[20%] right-[10%] w-96 h-96 bg-blue-500/10 rounded-full blur-[100px]" />
+      </div>
+
+      <div className="relative z-10">
+        <AiAnswerPanel logicalPath={logicalPath} lang={lang} />
+      </div>
       
-      {children}
+      <div className="relative z-10">
+        {children}
+      </div>
 
       {/* Universal Inline EHR & Viral Sharing Bar */}
       {calcData && (

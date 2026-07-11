@@ -6,28 +6,45 @@ export default function TrackingScripts() {
 
   useEffect(() => {
     const loadScripts = () => {
-      // 1. Google Analytics (GA4) Setup
-      const GA_MEASUREMENT_ID = 'G-FE7C4XH4SK'; // Ensure this is your Measurement ID (Data Stream ID)
+      // 1. Google Analytics (GA4) & Google Tag Manager (GTM) Setup
+      const GA_MEASUREMENT_ID = 'G-FE7C4XH4SK'; // GA4 Data Stream ID
+      const GTM_ID = 'GT-NNVX88HV'; // GTM Container ID
       
+      // Setup dataLayer globally
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      (window as any).gtag = gtag; // Make gtag globally available
+      gtag('js', new Date());
+      gtag('config', GA_MEASUREMENT_ID, {
+        page_path: window.location.pathname,
+      });
+
+      // GA4 Script
       if (!document.getElementById('ga-script')) {
         const gaScript = document.createElement('script');
         gaScript.id = 'ga-script';
         gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
         gaScript.async = true;
+        gaScript.onerror = () => console.error('[Analytics] Failed to load GA4 script. Ad blocker or CSP might be active.');
+        gaScript.onload = () => console.log('[Analytics] GA4 script loaded successfully.');
         document.head.appendChild(gaScript);
+      }
 
-        const gaInit = document.createElement('script');
-        gaInit.id = 'ga-init';
-        gaInit.innerHTML = `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          window.gtag = gtag; // Make gtag globally available
-          gtag('js', new Date());
-          gtag('config', '${GA_MEASUREMENT_ID}', {
-            page_path: window.location.pathname,
-          });
+      // GTM Script
+      if (!document.getElementById('gtm-script')) {
+        const gtmInit = document.createElement('script');
+        gtmInit.id = 'gtm-script';
+        gtmInit.innerHTML = `
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;
+          j.addEventListener('error', function() { console.error('[Analytics] Failed to load GTM script. Ad blocker or CSP might be active.'); });
+          j.addEventListener('load', function() { console.log('[Analytics] GTM script loaded successfully.'); });
+          f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','${GTM_ID}');
         `;
-        document.head.appendChild(gaInit);
+        document.head.appendChild(gtmInit);
       }
     };
 

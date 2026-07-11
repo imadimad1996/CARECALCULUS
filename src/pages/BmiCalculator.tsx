@@ -1,6 +1,9 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { Activity, Info, BookOpen, ChevronDown } from 'lucide-react';
+import { Activity, Info, BookOpen, ChevronDown, Heart, AlertCircle } from 'lucide-react';
 import { LangCode, Translations } from '../types';
+import CalculatorShell from '../components/CalculatorShell';
+import ReviewBadge from '../components/ReviewBadge';
+import EvidencePanel from '../components/EvidencePanel';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 import { layoutTranslations } from '../utils/lang';
 import { trackCalculatorUsage } from '../utils/telemetry';
@@ -143,6 +146,48 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
 
   const bmiValueIsNormal = bmiValue >= 18.5 && bmiValue < 25;
 
+  // Inject Localized FAQ and MedicalCalculator Schema
+  useEffect(() => {
+    let schemaScript = document.getElementById('bmi-calculator-schema');
+    if (!schemaScript) {
+      schemaScript = document.createElement('script');
+      schemaScript.setAttribute('id', 'bmi-calculator-schema');
+      schemaScript.setAttribute('type', 'application/ld+json');
+      document.head.appendChild(schemaScript);
+    }
+    schemaScript.textContent = JSON.stringify([
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { q: currentText.faqQ1, a: currentText.faqA1 },
+          { q: currentText.faqQ2, a: currentText.faqA2 },
+          { q: currentText.faqQ3, a: currentText.faqA3 },
+          { q: currentText.faqQ4, a: currentText.faqA4 },
+        ].map(({ q, a }) => ({
+          '@type': 'Question',
+          name: q,
+          acceptedAnswer: { '@type': 'Answer', text: a }
+        }))
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'MedicalWebPage',
+        '@id': window.location.href,
+        name: currentText.title,
+        description: currentText.subtitle,
+        about: {
+          '@type': 'MedicalCalculator',
+          name: 'BMI Calculator'
+        }
+      }
+    ]);
+
+    return () => {
+      if (schemaScript) schemaScript.remove();
+    };
+  }, [lang, currentText]);
+
   return (
     <>
       <div className="max-w-3xl mb-12">
@@ -248,8 +293,8 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
         </div>
 
         <div className="lg:col-span-5 relative">
-          <div className="sticky top-28 bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden ring-1 ring-white/10 flex flex-col justify-between p-8 min-h-[320px]">
-            <div className="absolute top-0 right-0 p-32 bg-gradient-to-bl from-blue-500/20 to-transparent rounded-bl-[100px] pointer-events-none" />
+          <div className="sticky bottom-4 lg:top-28 z-20 bg-gray-900 text-white rounded-2xl shadow-2xl overflow-hidden ring-1 ring-white/10 flex flex-col justify-between p-6 lg:p-8 min-h-[200px] lg:min-h-[320px] transition-all">
+            <div className="absolute top-0 right-0 p-20 lg:p-32 bg-gradient-to-bl from-blue-500/20 to-transparent rounded-bl-[100px] pointer-events-none" />
             
             <div className="relative z-10">
               <span className="text-xs font-bold uppercase tracking-wider text-gray-400 block mb-3">
@@ -385,6 +430,15 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
           ))}
         </div>
       </div>
+      
+      <EvidencePanel 
+        lang={lang} 
+        references={[
+          "Nuttall FQ. Body Mass Index: Obesity, BMI, and Health: A Critical Review. Nutr Today. 2015;50(3):117-128. doi:10.1097/NT.0000000000000092",
+          "WHO Expert Consultation. Appropriate body-mass index for Asian populations and its implications for policy and intervention strategies. Lancet. 2004;363(9403):157-163.",
+          "Romero-Corral A, et al. Accuracy of body mass index in diagnosing obesity in the adult general population. Int J Obes (Lond). 2008;32(6):959-966."
+        ]} 
+      />
     </>
   );
 }
