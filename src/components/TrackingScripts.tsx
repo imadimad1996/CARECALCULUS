@@ -11,9 +11,12 @@ export default function TrackingScripts() {
       const GTM_ID = 'GT-NNVX88HV'; // GTM Container ID
       
       // Setup dataLayer globally
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      (window as any).gtag = gtag; // Make gtag globally available
+      const win = window as any;
+      win.dataLayer = win.dataLayer || [];
+      function gtag(..._args: any[]) {
+        win.dataLayer.push(arguments);
+      }
+      win.gtag = gtag; // Make gtag globally available
       gtag('js', new Date());
       gtag('config', GA_MEASUREMENT_ID, {
         page_path: window.location.pathname,

@@ -42,7 +42,11 @@ const translations: Translations = {
     faqA4: "Asian populations have higher cardiometabolic risk at lower BMI thresholds. WHO and several national guidelines recommend lower obesity cut-offs for Asian adults: overweight ≥23, obese ≥27.5.",
     heightRange: "Height should be between 50 and 250 cm.",
     weightRange: "Weight should be between 10 and 300 kg.",
-    resetBtn: "Reset to Default"
+    resetBtn: "Reset to Default",
+    targetBmi: "Target BMI (Optional)",
+    bsa: "Body Surface Area (BSA)",
+    weightDiff: "Weight Difference",
+    targetExplanation: "To reach target BMI of {bmi}, weight must be {weight} kg ({diff} kg)"
   },
   fr: {
     title: "Indice de Masse Corporelle (IMC)",
@@ -74,7 +78,11 @@ const translations: Translations = {
     faqA4: "Les populations asiatiques présentent un risque cardiométabolique plus élevé à des seuils d'IMC plus bas. L'OMS et plusieurs directives nationales recommandent des seuils d'obésité plus bas pour les adultes asiatiques : surpoids ≥23, obésité ≥27,5.",
     heightRange: "La taille doit être comprise entre 50 et 250 cm.",
     weightRange: "Le poids doit être compris entre 10 et 300 kg.",
-    resetBtn: "Réinitialiser"
+    resetBtn: "Réinitialiser",
+    targetBmi: "IMC Cible (Optionnel)",
+    bsa: "Surface Corporelle (BSA)",
+    weightDiff: "Différence de poids",
+    targetExplanation: "Pour atteindre l'IMC cible de {bmi}, le poids doit être de {weight} kg ({diff} kg)"
   },
   ar: {
     title: "مؤشر كتلة الجسم (BMI)",
@@ -106,13 +114,18 @@ const translations: Translations = {
     faqA4: "تظهر الدراسات أن الشعوب الآسيوية تواجه مخاطر استقلابية وقلبية أعلى عند مستويات مؤشر كتلة جسم أقل. وتوصي منظمة الصحة العالمية بوضع حدود أقل للسمنة لدى البالغين الآسيويين: زيادة الوزن ≥23، والسمنة ≥27.5.",
     heightRange: "يجب أن يكون الطول بين 50 و 250 سم.",
     weightRange: "يجب أن يكون الوزن بين 10 و 300 كجم.",
-    resetBtn: "إعادة تعيين الافتراضي"
+    resetBtn: "إعادة تعيين الافتراضي",
+    targetBmi: "الهدف (BMI) اختياري",
+    bsa: "مساحة سطح الجسم (BSA)",
+    weightDiff: "فرق الوزن",
+    targetExplanation: "للوصول إلى مؤشر كتلة الجسم المستهدف {bmi}، يجب أن يكون الوزن {weight} كجم ({diff} كجم)"
   }
 };
 
 export default function BmiCalculator({ lang }: { lang: LangCode }) {
   const [height, setHeight] = useState<number>(170); // cm
   const [weight, setWeight] = useState<number>(70); // kg
+  const [targetBmiStr, setTargetBmiStr] = useState<string>(''); // string for empty input
 
   const currentText = translations[lang];
   const isRtl = lang === 'ar';
@@ -126,6 +139,21 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
     const computed = weight / (heightInMeters * heightInMeters);
     return parseFloat(computed.toFixed(1));
   }, [height, weight]);
+
+  const bsaValue = useMemo(() => {
+    if (height <= 0 || weight <= 0) return 0;
+    // DuBois formula: BSA = 0.007184 * W^0.425 * H^0.725
+    const computed = 0.007184 * Math.pow(weight, 0.425) * Math.pow(height, 0.725);
+    return parseFloat(computed.toFixed(2));
+  }, [height, weight]);
+
+  const targetWeight = useMemo(() => {
+    if (height <= 0 || !targetBmiStr) return null;
+    const t = parseFloat(targetBmiStr);
+    if (isNaN(t) || t <= 0) return null;
+    const heightInMeters = height / 100;
+    return parseFloat((t * (heightInMeters * heightInMeters)).toFixed(1));
+  }, [height, targetBmiStr]);
 
   useEffect(() => {
     if (bmiValue > 0) {
@@ -208,7 +236,8 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
         description: currentText.subtitle,
         about: {
           '@type': 'MedicalCalculator',
-          name: 'BMI Calculator'
+          name: 'BMI and BSA Calculator',
+          description: 'Calculates Body Mass Index (BMI), Target Weight, and Body Surface Area (BSA).'
         }
       }
     ]);
@@ -238,11 +267,11 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
             <div className="space-y-8">
               <div className="flex justify-between items-center border-b border-gray-100 pb-4">
                 <h3 className="text-sm font-bold text-slate-800 uppercase tracking-wider flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-blue-500" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-teal-600" />
                   {layoutTranslations[lang].parameters}
                 </h3>
                 <button
-                  onClick={() => { setHeight(170); setWeight(70); }}
+                  onClick={() => { setHeight(170); setWeight(70); setTargetBmiStr(''); }}
                   className="px-3 py-1.5 text-xs bg-slate-50 hover:bg-slate-100 text-slate-600 font-bold rounded-xl border border-gray-200 transition-all cursor-pointer active:scale-95 flex items-center gap-1"
                 >
                   {currentText.resetBtn}
@@ -264,7 +293,7 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
                     className={`w-full bg-gray-50/50 px-4 py-4 border rounded-xl focus:outline-none focus:bg-white focus:ring-4 text-3xl tabular-nums font-semibold transition-all placeholder:text-gray-300 ${
                       isHeightWarning 
                         ? 'border-rose-500 focus:ring-rose-550/10 focus:border-rose-500 text-rose-900 bg-rose-50/10' 
-                        : 'border-gray-200 focus:ring-blue-600/10 focus:border-blue-600 text-gray-900'
+                        : 'border-gray-200 focus:ring-teal-600/10 focus:border-teal-600 text-[#0891B2]'
                     }`}
                     min="50"
                     max="250"
@@ -274,7 +303,7 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
                   type="range" min="50" max="250" 
                   value={height}
                   onChange={(e) => setHeight(Number(e.target.value))}
-                  className="w-full mt-4 h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+                  className="w-full mt-4 h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-teal-600"
                 />
                 {isHeightWarning && (
                   <p className="text-xs text-rose-550 font-bold mt-1.5 flex items-center gap-1">
@@ -299,7 +328,7 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
                     className={`w-full bg-gray-50/50 px-4 py-4 border rounded-xl focus:outline-none focus:bg-white focus:ring-4 text-3xl tabular-nums font-semibold transition-all placeholder:text-gray-300 ${
                       isWeightWarning 
                         ? 'border-rose-500 focus:ring-rose-550/10 focus:border-rose-500 text-rose-900 bg-rose-50/10' 
-                        : 'border-gray-200 focus:ring-blue-600/10 focus:border-blue-600 text-gray-900'
+                        : 'border-gray-200 focus:ring-teal-600/10 focus:border-teal-600 text-[#0891B2]'
                     }`}
                     min="10"
                     max="300"
@@ -309,7 +338,7 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
                   type="range" min="10" max="300" 
                   value={weight}
                   onChange={(e) => setWeight(Number(e.target.value))}
-                  className="w-full mt-4 h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+                  className="w-full mt-4 h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-teal-600"
                 />
                 {isWeightWarning && (
                   <p className="text-xs text-rose-550 font-bold mt-1.5 flex items-center gap-1">
@@ -317,6 +346,23 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
                     <span>{currentText.weightRange}</span>
                   </p>
                 )}
+              </div>
+
+              <div className="group pt-4 border-t border-gray-100">
+                <div className="flex justify-between items-baseline mb-2">
+                  <label className="text-sm font-semibold text-gray-700 uppercase tracking-wider">{currentText.targetBmi}</label>
+                </div>
+                <div className="relative flex items-center">
+                  <input
+                    type="number"
+                    value={targetBmiStr}
+                    onChange={(e) => setTargetBmiStr(e.target.value)}
+                    placeholder="e.g. 25"
+                    className="w-full bg-gray-50/50 px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:bg-white focus:ring-4 focus:ring-teal-600/10 focus:border-teal-600 text-[#0891B2] text-3xl tabular-nums font-semibold transition-all placeholder:text-gray-300"
+                    min="10"
+                    max="50"
+                  />
+                </div>
               </div>
             </div>
             
@@ -338,14 +384,37 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
         <div className="lg:col-span-5 relative">
           <div className="sticky bottom-4 lg:top-28 z-20">
             {bmiValue > 0 ? (
-              <ActionableResultPanel
-                lang={lang}
-                title={currentText.result}
-                score={`${bmiValue} kg/m²`}
-                riskLevel={getRiskLevel(bmiValue)}
-                interpretation={category.label}
-                nextSteps={getNextSteps(bmiValue)}
-              />
+              <div className="space-y-4">
+                <ActionableResultPanel
+                  lang={lang}
+                  title={currentText.result}
+                  score={`${bmiValue} kg/m²`}
+                  riskLevel={getRiskLevel(bmiValue)}
+                  interpretation={category.label}
+                  nextSteps={getNextSteps(bmiValue)}
+                />
+
+                <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm font-bold text-gray-500 uppercase">{currentText.bsa}</span>
+                    <span className="text-lg font-black text-[#0891B2]">{bsaValue} m²</span>
+                  </div>
+                  
+                  {targetWeight && targetBmiStr && (
+                    <div className="mt-4 pt-4 border-t border-gray-100">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-sm font-bold text-gray-500 uppercase">{currentText.weightDiff}</span>
+                        <span className="text-lg font-black text-[#16A34A]">
+                          {weight > targetWeight ? '-' : '+'}{Math.abs(weight - targetWeight).toFixed(1)} kg
+                        </span>
+                      </div>
+                      <p className="text-xs text-gray-400">
+                        {currentText.targetExplanation.replace('{bmi}', targetBmiStr).replace('{weight}', targetWeight.toString()).replace('{diff}', Math.abs(weight - targetWeight).toFixed(1))}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              </div>
             ) : (
               <div className="bg-slate-50 border border-slate-200 rounded-xl p-8 text-center shadow-sm">
                 <Activity className="w-8 h-8 text-slate-300 mx-auto mb-3" />
@@ -365,7 +434,9 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
                   ]}
                   results={[
                     { label: currentText.result, value: bmiValue, unit: 'kg/m²' },
-                    { label: 'Category', value: category.label }
+                    { label: 'Category', value: category.label },
+                    { label: currentText.bsa, value: bsaValue, unit: 'm²' },
+                    ...(targetWeight ? [{ label: `Target Weight (BMI ${targetBmiStr})`, value: targetWeight, unit: 'kg' }] : [])
                   ]}
                   formula={currentText.formula}
                   disclaimer={currentText.clinicalText}
@@ -457,6 +528,53 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
               <p className="px-5 pb-4 text-sm text-gray-600 leading-relaxed">{a}</p>
             </details>
           ))}
+        </div>
+      </div>
+      
+      <div className="mt-12 pt-8 border-t border-gray-100">
+        <h2 className="text-xl font-bold text-gray-900 mb-6">WHO BMI Classifications</h2>
+        <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+          <table className="w-full text-sm text-left text-gray-600">
+            <thead className="bg-gray-50 text-gray-700 font-semibold uppercase text-xs">
+              <tr>
+                <th className="px-6 py-4 rounded-tl-xl">Classification</th>
+                <th className="px-6 py-4">BMI Range (kg/m²)</th>
+                <th className="px-6 py-4 rounded-tr-xl">Risk Level</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-200">
+              <tr className="hover:bg-blue-50/50">
+                <td className="px-6 py-4">Underweight</td>
+                <td className="px-6 py-4 font-mono">&lt; 18.5</td>
+                <td className="px-6 py-4 text-amber-600">Increased</td>
+              </tr>
+              <tr className="hover:bg-green-50/50">
+                <td className="px-6 py-4 font-medium text-gray-900">Normal Range</td>
+                <td className="px-6 py-4 font-mono font-bold text-[#0891B2]">18.5 - 24.9</td>
+                <td className="px-6 py-4 text-green-600">Lowest</td>
+              </tr>
+              <tr className="hover:bg-orange-50/50">
+                <td className="px-6 py-4">Overweight</td>
+                <td className="px-6 py-4 font-mono">25.0 - 29.9</td>
+                <td className="px-6 py-4 text-orange-600">Increased</td>
+              </tr>
+              <tr className="hover:bg-rose-50/50">
+                <td className="px-6 py-4">Obese (Class I)</td>
+                <td className="px-6 py-4 font-mono">30.0 - 34.9</td>
+                <td className="px-6 py-4 text-rose-600">High</td>
+              </tr>
+              <tr className="hover:bg-rose-50/50">
+                <td className="px-6 py-4">Obese (Class II)</td>
+                <td className="px-6 py-4 font-mono">35.0 - 39.9</td>
+                <td className="px-6 py-4 text-rose-600">Very High</td>
+              </tr>
+              <tr className="hover:bg-rose-50/50">
+                <td className="px-6 py-4">Obese (Class III)</td>
+                <td className="px-6 py-4 font-mono">≥ 40.0</td>
+                <td className="px-6 py-4 text-rose-700 font-bold">Extremely High</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
       
