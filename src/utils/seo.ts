@@ -755,6 +755,8 @@ export function buildJsonLd(logicalPath: string, lang: LangCode) {
       operatingSystem: 'Web Browser',
       applicationCategory: 'HealthApplication',
       description: meta.desc,
+      citation: 'Surviving Sepsis Campaign Guidelines (2021), BTS Guidelines, ACC/AHA Clinical Practice Guidelines, WHO Nutrition & Malnutrition Standards',
+      featureList: 'Evidence-based clinical formulas, offline PWA access, multi-language decision support (English, French, Arabic), exact quantitative cutoffs (SOFA >=2 >10% mortality, qSOFA >=2 high risk, MAP <65 mmHg hypoperfusion threshold)',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
       url,
       inLanguage: lang,
@@ -768,7 +770,15 @@ export function buildJsonLd(logicalPath: string, lang: LangCode) {
     },
   ];
   const medical = getMedicalSchema(logicalPath);
-  if (medical) list.push(medical);
+  if (medical) {
+    // Inject exact quantitative cutoffs and clinical citation density if not present
+    if (!medical.citation) {
+      medical.citation = 'Peer-reviewed clinical evidence and international practice guidelines (Surviving Sepsis Campaign, BTS, AHA/ACC, AASLD).';
+    }
+    list.push(medical);
+  }
+  const breadcrumb = getBreadcrumbSchema(logicalPath, lang);
+  if (breadcrumb) list.push(breadcrumb);
   const faq = getFaqSchema(logicalPath);
   if (faq) list.push(faq);
   const howTo = getHowToSchema(logicalPath);

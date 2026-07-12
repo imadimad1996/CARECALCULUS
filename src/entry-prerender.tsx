@@ -25,6 +25,8 @@ import { FMP_MODULES } from './utils/fmpModules';
 import { ISPITS_MODULES } from './utils/ispitsModules';
 import { CONDITIONS_DB } from './data/conditions';
 import { SPECIALTIES_DB } from './data/specialties';
+import faqDb from './data/faqDb.json';
+import programmaticData from './data/programmaticEngine.json';
 
 let pagesReady: Promise<void> | null = null;
 
@@ -69,6 +71,38 @@ const ispitsSlugs = ISPITS_MODULES.map(m => `/ispits/${m.slug}`);
 
 const conditionSlugs = CONDITIONS_DB.map(c => `/conditions/${c.id}`);
 const specialtySlugs = SPECIALTIES_DB.map(s => `/specialties/${s.id}`);
+
+function slugifyQuestion(question: string): string {
+  return question
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .trim()
+    .replace(/\s+/g, '-')
+    .slice(0, 80);
+}
+
+const qaSlugs: string[] = [];
+for (const entries of Object.values(faqDb as Record<string, { question: string; answer: string }[]>)) {
+  for (const entry of entries) {
+    const slug = slugifyQuestion(entry.question);
+    if (slug) qaSlugs.push(`/q/${slug}`);
+  }
+}
+
+const programmaticGuideSlugs: string[] = [];
+for (const disease of (programmaticData as any).dataSets.diseases) {
+  for (const calcSlug of disease.relatedCalculators || []) {
+    programmaticGuideSlugs.push(`/clinical-guide/${calcSlug}-in-${disease.slug}`);
+  }
+}
+
+const compareSlugs = [
+  '/compare/map-calculator-vs-glasgow-coma-scale',
+  '/compare/mdrd-gfr-vs-ckd-epi-gfr',
+  '/compare/qsofa-score-vs-sofa-score',
+  '/compare/wells-score-vs-curb65-score',
+  '/compare/bmi-calculator-vs-adjusted-body-weight'
+];
 
 // Logical (language-agnostic) structural routes worth prerendering. These are
 // statically generated so Googlebot + AI crawlers get complete HTML on first
@@ -127,6 +161,9 @@ const LOGICAL_ROUTES = [
   ...ispitsSlugs,
   ...conditionSlugs,
   ...specialtySlugs,
+  ...qaSlugs,
+  ...programmaticGuideSlugs,
+  ...compareSlugs,
 ];
 
 const LANGS: LangCode[] = ['en', 'fr'];

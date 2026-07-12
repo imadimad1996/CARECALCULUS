@@ -5,7 +5,18 @@
     "/ckd-epi-gfr": "CKD-EPI GFR calculator, 2021 race-free GFR equation, estimated glomerular filtration rate NKF ASN",
     "/cha2ds2-vasc": "CHA2DS2-VASc score calculator, atrial fibrillation stroke risk, anticoagulation decision tool, AF stroke prevention, CHADS score online free",
     "/creatinine-clearance": "creatinine clearance calculator, Cockcroft-Gault equation, GFR calculator online, renal function estimation, drug dosing renal adjustment, CKD stage calculator",
-    "/meld-score": "MELD score calculator, liver disease severity, hepatic encephalopathy scoring, liver transplant priority, end-stage liver disease calculator"
+    "/meld-score": "MELD score calculator, liver disease severity, hepatic encephalopathy scoring, liver transplant priority, end-stage liver disease calculator",
+    "/sofa-score": "SOFA score calculator, sequential organ failure assessment, sepsis 3 definition ICU calculator, organ dysfunction mortality prediction",
+    "/qsofa-score": "qSOFA score calculator, quick SOFA sepsis triage, bedside infection mortality risk, ER sepsis screening tool",
+    "/child-pugh-score": "Child Pugh score calculator, cirrhosis class A B C, liver failure surgical mortality risk estimation",
+    "/wells-score": "Wells score calculator for DVT and PE, deep vein thrombosis probability, pulmonary embolism pre-test probability, D-dimer decision algorithm",
+    "/curb65-score": "CURB-65 pneumonia severity score, community acquired pneumonia mortality risk, inpatient vs outpatient pneumonia criteria",
+    "/sirs-criteria": "SIRS criteria calculator, systemic inflammatory response syndrome, sepsis screening guidelines",
+    "/apgar-score": "APGAR score calculator, newborn infant assessment at 1 and 5 minutes, neonatal resuscitation scoring",
+    "/anion-gap": "serum anion gap calculator, metabolic acidosis differential diagnosis, high anion gap acidosis tool",
+    "/aa-gradient": "alveolar arterial gradient calculator, A-a gradient hypoxemia assessment, V/Q mismatch calculation",
+    "/bmi-calculator": "BMI calculator for clinicians, body mass index WHO classification, obesity staging calculation tool",
+    "/glasgow-coma-scale": "Glasgow coma scale GCS calculator, traumatic brain injury severity assessment, neurological coma scale score"
   },
   "nameEnMap": {
     "/map-calculator": "Mean Arterial Pressure (MAP) Calculator",

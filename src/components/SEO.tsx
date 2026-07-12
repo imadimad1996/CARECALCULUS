@@ -32,11 +32,15 @@ export default function SEO({ logicalPath, lang, title, description, keywords }:
       <meta property="og:description" content={finalDesc} />
       <meta property="og:url" content={head.url} />
       <meta property="og:image" content={head.ogImage} />
+      <meta property="og:image:alt" content="CareCalculus — Evidence-Based Clinical Decision Support Suite" />
       
       {/* Twitter */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@CareCalculus" />
       <meta name="twitter:title" content={finalTitle} />
       <meta name="twitter:description" content={finalDesc} />
       <meta name="twitter:image" content={head.ogImage} />
+      <meta name="twitter:image:alt" content="CareCalculus — Evidence-Based Clinical Decision Support Suite" />
 
       {/* hreflang alternates */}
       {head.hreflang.map((alt) => (

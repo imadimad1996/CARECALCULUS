@@ -3,7 +3,8 @@ import { Activity, BookOpen, HeartPulse, Menu, X, LayoutDashboard, Calculator, D
 import { BrowserRouter, Routes, Route, Link, useLocation, Navigate, useNavigate } from 'react-router-dom';
 import { StaticRouter } from 'react-router';
 import { LangContext, parsePathname, buildPath, PREFIXED_LANGS } from './utils/lang';
-import { organizationJsonLd, getLocalizedMeta as seoGetLocalizedMeta, getMedicalSchema, pageUrl as seoPageUrl, getBreadcrumbSchema, buildJsonLd, buildHead } from './utils/seo';
+import { buildHead } from './utils/seo';
+import { Helmet } from 'react-helmet-async';
 import Logo from './components/Logo';
 import AdUnit from './components/AdUnit';
 import SocialShare from './components/SocialShare';
@@ -202,106 +203,11 @@ function AppLayout() {
     document.documentElement.lang = lang;
   }, [isRtl, lang]);
 
-  // Dynamic header meta, automated hreflang injection, canonical and Open Graph (OG) social card SEO configurations
-  useEffect(() => {
-    const head = buildHead(logicalPath, lang);
-    
-    // 1. Dynamic Title
-    document.title = head.title;
+  // Compute head metadata (reactive on path + lang changes)
+  const appHead = buildHead(logicalPath, lang);
+  const isArticlePage = logicalPath.startsWith('/blog/') || logicalPath.startsWith('/blog-articles/');
 
-    // 2. Dynamic Description
-    let descMeta = document.querySelector('meta[name="description"]');
-    if (!descMeta) {
-      descMeta = document.createElement('meta');
-      descMeta.setAttribute('name', 'description');
-      document.head.appendChild(descMeta);
-    }
-    descMeta.setAttribute('content', head.meta.desc);
 
-    // 3. Dynamic Keywords
-    let kwMeta = document.querySelector('meta[name="keywords"]');
-    if (!kwMeta) {
-      kwMeta = document.createElement('meta');
-      kwMeta.setAttribute('name', 'keywords');
-      document.head.appendChild(kwMeta);
-    }
-    kwMeta.setAttribute('content', head.meta.keywords);
-
-    // 4. Dynamic Canonical Link Tag
-    let canonicalLink = document.querySelector('link[rel="canonical"]');
-    if (!canonicalLink) {
-      canonicalLink = document.createElement('link');
-      canonicalLink.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonicalLink);
-    }
-    canonicalLink.setAttribute('href', head.url);
-
-    // 5. Open Graph (OG) Tag Matrix
-    const isArticlePage = logicalPath.startsWith('/blog/') || logicalPath.startsWith('/blog-articles/');
-    const ogTags = {
-      'og:title': head.title,
-      'og:description': head.meta.desc,
-      'og:url': head.url,
-      'og:type': isArticlePage ? 'article' : 'website',
-      'og:site_name': 'CareCalculus Clinical Suite',
-      'og:image': head.ogImage,
-      'og:image:width': '1200',
-      'og:image:height': '630',
-      'og:image:alt': 'CareCalculus — Free multilingual clinical calculators for ICU, ER and hospital clinicians',
-      'og:locale': lang === 'fr' ? 'fr_FR' : ('en_US'),
-    };
-    Object.entries(ogTags).forEach(([property, content]) => {
-      let ogMeta = document.querySelector(`meta[property="${property}"]`);
-      if (!ogMeta) {
-        ogMeta = document.createElement('meta');
-        ogMeta.setAttribute('property', property);
-        document.head.appendChild(ogMeta);
-      }
-      ogMeta.setAttribute('content', content);
-    });
-
-    // 6. Twitter Card Tag Matrix
-    const twitterTags = {
-      'twitter:card': 'summary_large_image',
-      'twitter:title': head.title,
-      'twitter:description': head.meta.desc,
-      'twitter:image': head.ogImage,
-      'twitter:site': '@CareCalculus',
-      'twitter:creator': '@CareCalculus',
-    };
-    Object.entries(twitterTags).forEach(([name, content]) => {
-      let twMeta = document.querySelector(`meta[name="${name}"]`);
-      if (!twMeta) {
-        twMeta = document.createElement('meta');
-        twMeta.setAttribute('name', name);
-        document.head.appendChild(twMeta);
-      }
-      twMeta.setAttribute('content', content);
-    });
-
-    // 7. Dynamic Alternate Hreflang Tags (TECHNICAL SEO STEP 1)
-    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(el => el.remove());
-    head.hreflang.forEach(alt => {
-      const link = document.createElement('link');
-      link.setAttribute('rel', 'alternate');
-      link.setAttribute('hreflang', alt.hreflang);
-      link.setAttribute('href', alt.href);
-      document.head.appendChild(link);
-    });
-
-    // 8. Schema JSON-LD Structured Data Node
-    let schemaScript = document.getElementById('carecalculus-json-ld');
-    if (schemaScript) {
-      schemaScript.remove();
-    }
-    schemaScript = document.createElement('script');
-    schemaScript.setAttribute('id', 'carecalculus-json-ld');
-    schemaScript.setAttribute('type', 'application/ld+json');
-
-    schemaScript.textContent = JSON.stringify(head.jsonLd, null, 2);
-    document.head.appendChild(schemaScript);
-
-  }, [logicalPath, lang]);
 
   // Close sidebar on navigation mobile
   useEffect(() => {
@@ -677,6 +583,7 @@ function AppLayout() {
       '/glp-1-hub':     { en: 'GLP-1 Hub',        fr: 'Hub GLP-1',         ar: 'مركز أدوية GLP-1',  icon: Sparkles },
       '/hub-glp1':      { en: 'GLP-1 Hub',        fr: 'Hub GLP-1',         ar: 'مركز أدوية GLP-1',  icon: Sparkles },
       '/مركز-glp1':     { en: 'GLP-1 Hub',        fr: 'Hub GLP-1',         ar: 'مركز أدوية GLP-1',  icon: Sparkles },
+      '/clinical-guide':{ en: 'Clinical Guides',  fr: 'Guides Cliniques',  ar: 'الأدلة السريرية', icon: BookOpen },
     };
     const base = CONTENT_ROUTES.find(r => logicalPath === r || logicalPath.startsWith(r + '/'));
     const section = base ? sectionMap[base] : null;
@@ -760,6 +667,35 @@ function AppLayout() {
 
   return (
    <LangContext.Provider value={{ lang, langPath }}>
+    {/* Declarative SEO head management via react-helmet-async (replaces imperative document.head mutations) */}
+    <Helmet>
+      <title>{appHead.title}</title>
+      <meta name="description" content={appHead.meta.desc} />
+      <meta name="keywords" content={appHead.meta.keywords} />
+      <link rel="canonical" href={appHead.url} />
+      <meta property="og:title" content={appHead.title} />
+      <meta property="og:description" content={appHead.meta.desc} />
+      <meta property="og:url" content={appHead.url} />
+      <meta property="og:type" content={isArticlePage ? 'article' : 'website'} />
+      <meta property="og:site_name" content="CareCalculus Clinical Suite" />
+      <meta property="og:image" content={appHead.ogImage} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content="CareCalculus — Free multilingual clinical calculators for ICU, ER and hospital clinicians" />
+      <meta property="og:locale" content={lang === 'fr' ? 'fr_FR' : 'en_US'} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={appHead.title} />
+      <meta name="twitter:description" content={appHead.meta.desc} />
+      <meta name="twitter:image" content={appHead.ogImage} />
+      <meta name="twitter:site" content="@CareCalculus" />
+      <meta name="twitter:creator" content="@CareCalculus" />
+      {appHead.hreflang.map(alt => (
+        <link key={alt.hreflang} rel="alternate" hrefLang={alt.hreflang} href={alt.href} />
+      ))}
+      <script type="application/ld+json" id="carecalculus-json-ld">
+        {JSON.stringify(appHead.jsonLd)}
+      </script>
+    </Helmet>
     <TrackingScripts />
     <div className={`min-h-screen bg-[#fafafa] text-[#111] transition-colors duration-300 flex flex-col md:flex-row ${isRtl ? 'font-arabic' : 'font-sans'}`} dir={isRtl ? 'rtl' : 'ltr'}>
       <CommandPalette />

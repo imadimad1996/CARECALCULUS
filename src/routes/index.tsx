@@ -64,6 +64,7 @@ const pageLoaders = [
   () => import('../pages/SpecialtyHub'),
   () => import('../pages/NutritionHub'),
   () => import('../pages/ClinicalQuestionPage'),
+  () => import('../pages/ProgrammaticGuidePage'),
 ] as const;
 
 const [
@@ -77,7 +78,7 @@ const [
   FlashcardGenerator, CaseStudyViewer, DrugSheets, StudyTracker, AbbreviationLookup,
   Compare, NutritionTdee, NutritionMust, NutritionNrs2002, ConditionHub,
   MdrdGfr, CkdEpiGfr, EmbedGallery, ForHospitals, SpecialtyHub, NutritionHub,
-  ClinicalQuestionPage
+  ClinicalQuestionPage, ProgrammaticGuidePage
 ] = pageLoaders.map((loader) => React.lazy(loader as any)) as any[];
 
 export const HomePage = React.lazy(() => import('../pages/HomePage'));
@@ -100,7 +101,7 @@ export async function preloadPages() {
 export const LEGAL_ROUTES = ['/about', '/disclaimer', '/privacy', '/terms', '/embed-gallery', '/for-hospitals'];
 
 // Routes that open in full-width reading mode (no sidebar, no top widgets)
-export const CONTENT_ROUTES = ['/blog', '/blog-articles', '/presentations', '/cours', '/about', '/disclaimer', '/privacy', '/terms', '/glp-1-hub', '/hub-glp1', '/%D9%85%D8%B1%D9%83%D8%B2-glp1', '/مركز-glp1', '/ispits', '/embed-gallery', '/for-hospitals'];
+export const CONTENT_ROUTES = ['/blog', '/blog-articles', '/presentations', '/cours', '/about', '/disclaimer', '/privacy', '/terms', '/glp-1-hub', '/hub-glp1', '/%D9%85%D8%B1%D9%83%D8%B2-glp1', '/مركز-glp1', '/ispits', '/embed-gallery', '/for-hospitals', '/clinical-guide'];
 
 export class ErrorBoundary extends React.Component<any, any> {
   constructor(props: any) {
@@ -283,6 +284,8 @@ export function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="compare/:slug1-vs-:slug2" element={<Compare lang={lang} />} />
       {/* Clinical Q&A Pages — the 100x SEO multiplier */}
       <Route path="q/:questionSlug" element={<ClinicalQuestionPage lang={lang} />} />
+      {/* Programmatic SEO Guides */}
+      <Route path="clinical-guide/:guideSlug" element={<ProgrammaticGuidePage lang={lang} />} />
     </>
   );
 }
