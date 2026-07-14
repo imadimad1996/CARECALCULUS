@@ -15,11 +15,11 @@ export const onRequest: PagesFunction = async (context) => {
 
   // If on French domain (fr.carecalculus.com)
   if (hostname.startsWith('fr.')) {
-    // If user visits fr.carecalculus.com/fr/... explicitly, 301 redirect to fr.carecalculus.com/... to prevent duplicate URLs
+    // Cloudflare Pages canonicalizes the internally rewritten /fr route to
+    // /fr/. Let that canonical route pass through on the French host. Trying
+    // to redirect it back to / creates a / -> /fr/ -> / loop.
     if (url.pathname === '/fr' || url.pathname.startsWith('/fr/')) {
-      const newPath = url.pathname.replace(/^\/fr(\/|$)/, '$1') || '/';
-      const targetUrl = `https://${url.hostname}${newPath === '/' ? '' : newPath}${url.search}`;
-      return Response.redirect(targetUrl, 301);
+      return context.next();
     }
 
     // Check if request is for a static asset or file extension (e.g., .js, .css, .png, .ico, /assets/, etc.)
@@ -31,9 +31,16 @@ export const onRequest: PagesFunction = async (context) => {
       return context.next();
     }
 
-    // For HTML/page requests on fr.carecalculus.com (like / or /bmi-calculator):
-    // Rewrite the internal request path to /fr + url.pathname so Cloudflare Pages retrieves dist/fr/... from static storage
-    const targetPath = url.pathname === '/' ? '/fr' : `/fr${url.pathname}`;
+    // For HTML/page requests on fr.carecalculus.com (like / or /bmi-calculator),
+    // rewrite internally to the prerendered French page.  Pages normalizes
+    // directory URLs to a trailing slash; include that slash in the internal
+    // rewrite so it never becomes a client-visible redirect to /fr/.
+    //
+    // Without it the request looped forever:
+    //   / -> internal /fr -> Pages 308 /fr/ -> middleware 301 / -> ...
+    const targetPath = url.pathname === '/'
+      ? '/fr/'
+      : `/fr${url.pathname.endsWith('/') ? url.pathname : `${url.pathname}/`}`;
     const newRequest = new Request(new URL(targetPath, url.origin).toString(), context.request);
     return context.next(newRequest);
   }
