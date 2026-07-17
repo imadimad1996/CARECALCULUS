@@ -1,7 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import AdUnit from '../components/AdUnit';
-import AdsterraNativeBanner from '../components/AdsterraNativeBanner';
 import { Search, BookOpen, Clock, Tag, ExternalLink, Calendar, Award, User, ChevronRight, Compass, Bookmark, Share2, Sparkles, AlertCircle, FileText, CheckCircle2, RefreshCw, ArrowLeft, ArrowRight, Printer, Plus, Minus, Building2 } from 'lucide-react';
 import { LangCode } from '../types';
 import { slugify, findBySlug } from '../utils/slug';
@@ -529,7 +528,6 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
         </div>
 
         {/* Adsterra Native Banner */}
-        <AdsterraNativeBanner />
 
         {/* Main 2-Column Responsive Reading Layout */}
         <div className={`grid grid-cols-1 lg:grid-cols-4 gap-8 ${isRtl ? 'dir-rtl text-right' : 'text-left'}`}>

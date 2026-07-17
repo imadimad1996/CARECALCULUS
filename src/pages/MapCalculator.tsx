@@ -9,7 +9,6 @@ import { layoutTranslations } from '../utils/lang';
 import MobileResultDock from '../components/ui/MobileResultDock';
 import EmbedCodeButton from '../components/ui/EmbedCodeButton';
 import { JsonLd, generateMedicalCalculatorSchema } from '../components/JsonLd';
-import AdsterraNativeBanner from '../components/AdsterraNativeBanner';
 
 const translations: Translations = {
   en: {
@@ -284,7 +283,6 @@ export default function MapCalculator({ lang }: { lang: LangCode }) {
       </div>
       
       {/* In-Content Native Ad */}
-      <AdsterraNativeBanner refreshDependency={mapValue} />
 
       {/* Pillar Content Section */}
       <div className="mt-8 pt-10 border-t border-gray-100">

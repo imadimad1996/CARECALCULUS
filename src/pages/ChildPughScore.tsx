@@ -6,7 +6,6 @@ import { layoutTranslations } from '../utils/lang';
 import { trackCalculatorUsage } from '../utils/telemetry';
 import EmbedCodeButton from '../components/ui/EmbedCodeButton';
 import { JsonLd, generateMedicalCalculatorSchema } from '../components/JsonLd';
-import AdsterraNativeBanner from '../components/AdsterraNativeBanner';
 
 const translations: Translations = {
   en: {
@@ -366,7 +365,6 @@ export default function ChildPughScore({ lang }: { lang: LangCode }) {
         </div>
       </div>
 
-      <AdsterraNativeBanner refreshDependency={childPughValue} />
 
       {/* Pillar Content Section */}
       <div className="mt-8 pt-10 border-t border-gray-100">

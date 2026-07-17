@@ -8,7 +8,6 @@ import {
 import { LangCode } from '../types';
 import { useLang } from '../utils/lang';
 import Logo from '../components/Logo';
-import AdsterraNativeBanner from '../components/AdsterraNativeBanner';
 import SmartPasteModal from '../components/SmartPasteModal';
 
 interface HomePageProps {
@@ -368,7 +367,6 @@ export default function HomePage({ lang }: HomePageProps) {
       </section>
 
       {/* Adsterra Native Banner */}
-      <AdsterraNativeBanner />
 
       {/* Clinical Trust & Evidence strip */}
       <section className="bg-slate-900 rounded-2xl px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 shadow-md">

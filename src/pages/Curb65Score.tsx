@@ -4,7 +4,6 @@ import { LangCode, Translations } from '../types';
 import { layoutTranslations } from '../utils/lang';
 import { trackCalculatorUsage } from '../utils/telemetry';
 import ClinicalExportButton from '../components/ClinicalExportButton';
-import AdsterraNativeBanner from '../components/AdsterraNativeBanner';
 
 const translations: Translations = {
   en: {
@@ -242,7 +241,6 @@ export default function Curb65Score({ lang }: { lang: LangCode }) {
         </div>
       </div>
 
-      <AdsterraNativeBanner refreshDependency={scoreValue} />
 
       {/* Pillar Content Section */}
       <div className="mt-8 pt-10 border-t border-gray-100">

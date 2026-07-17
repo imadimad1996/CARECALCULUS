@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import AdsterraNativeBanner from './AdsterraNativeBanner';
 
 export type AdFormat = 'leaderboard' | 'in-article' | 'sidebar';
 
@@ -62,16 +61,12 @@ export default function AdUnit({ format, className = '' }: AdUnitProps) {
         {/* Fallback Sponsor Banner (only shown if AdSense fails/blocked) */}
         {adBlocked && (
           <div className="absolute inset-0 flex items-center justify-center bg-white p-4">
-            {format === 'in-article' ? (
-              <AdsterraNativeBanner />
-            ) : (
-              <div className="text-center">
-                <span className="text-xs text-teal-600 font-bold uppercase tracking-wide">CareCalculus Clinical Sponsor</span>
-                <p className="text-[11px] text-gray-500 mt-1 max-w-[220px] mx-auto leading-relaxed">
-                  Access 19+ evidence-based bedside calculators offline and instantly.
-                </p>
-              </div>
-            )}
+            <div className="text-center">
+              <span className="text-xs text-teal-600 font-bold uppercase tracking-wide">CareCalculus Clinical Sponsor</span>
+              <p className="text-[11px] text-gray-500 mt-1 max-w-[220px] mx-auto leading-relaxed">
+                Access 19+ evidence-based bedside calculators offline and instantly.
+              </p>
+            </div>
           </div>
         )}
       </div>

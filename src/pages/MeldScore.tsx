@@ -6,7 +6,6 @@ import { trackCalculatorUsage } from '../utils/telemetry';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 import EmbedCodeButton from '../components/ui/EmbedCodeButton';
 import { JsonLd, generateMedicalCalculatorSchema } from '../components/JsonLd';
-import AdsterraNativeBanner from '../components/AdsterraNativeBanner';
 
 const translations: Translations = {
   en: {
@@ -333,7 +332,6 @@ export default function MeldScore({ lang }: { lang: LangCode }) {
       </div>
 
       {/* In-Content Native Ad */}
-      <AdsterraNativeBanner refreshDependency={meldScore || 0} />
 
       {/* Pillar Content Section */}
       <div className="mt-8 pt-10 border-t border-gray-100">
