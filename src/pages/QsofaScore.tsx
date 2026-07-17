@@ -237,6 +237,39 @@ export default function QsofaScore({ lang }: { lang: LangCode }) {
         </div>
       </div>
 
+      {/* qSOFA Risk Stratification Table */}
+      <div className="mt-8 pt-10 border-t border-gray-100 max-w-3xl">
+        <h2 className="text-xl font-bold text-gray-900 mb-6">
+          {lang === 'fr' ? 'Stratification du Risque et Mortalité' : 'qSOFA Risk Stratification & Outcomes'}
+        </h2>
+        <div className="overflow-x-auto">
+          <table className="w-full text-left rtl:text-right border-collapse text-sm text-gray-600">
+            <thead>
+              <tr className="border-b border-gray-200 bg-gray-50 text-gray-700 font-bold">
+                <th className="p-3">{lang === 'fr' ? 'Score' : 'Score'}</th>
+                <th className="p-3">{lang === 'fr' ? 'Groupe de Risque' : 'Risk Group'}</th>
+                <th className="p-3">{lang === 'fr' ? 'Mortalité Intra-Hospitalière' : 'In-Hospital Mortality'}</th>
+                <th className="p-3">{lang === 'fr' ? 'Recommandations Cliniques' : 'Clinical Recommendations'}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-gray-100">
+                <td className="p-3 font-mono font-bold">0 - 1</td>
+                <td className="p-3 text-emerald-600 font-semibold">{lang === 'fr' ? 'Risque Faible' : 'Low Risk'}</td>
+                <td className="p-3">&lt; 3%</td>
+                <td className="p-3">{lang === 'fr' ? 'Continuer la surveillance clinique standard.' : 'Maintain routine clinical monitoring.'}</td>
+              </tr>
+              <tr className="border-b border-gray-100">
+                <td className="p-3 font-mono font-bold">2 - 3</td>
+                <td className="p-3 text-red-600 font-bold">{lang === 'fr' ? 'Risque Élevé' : 'High Risk'}</td>
+                <td className="p-3">~10%</td>
+                <td className="p-3">{lang === 'fr' ? 'Évaluer le dysfonctionnement d\'organes (score SOFA complet). Envisager le sepsis.' : 'Assess for organ dysfunction (full SOFA). Initiate sepsis management protocols.'}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
       <div className="mt-12 pt-8 border-t border-gray-100">
         <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">{layoutTranslations[lang].seeAlso}</h2>
         <div className="flex flex-wrap gap-2 mb-10">

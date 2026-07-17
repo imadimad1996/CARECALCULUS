@@ -1557,6 +1557,36 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.carecalculus.com/q/what-is-the-must-score</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/q/what-is-the-must-score</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/q/how-is-the-must-score-calculated</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/q/how-is-the-must-score-calculated</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/q/what-does-a-high-must-score-indicate</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/q/what-does-a-high-must-score-indicate</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <url>
     <loc>https://www.carecalculus.com/about</loc>

@@ -192,8 +192,8 @@ export default function HomePage({ lang }: HomePageProps) {
           <h1 className="text-4xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight mb-4 text-center">
             {hero.title}
           </h1>
-          <p className="text-base text-slate-500 font-normal mb-2 text-center">{hero.subtitle}</p>
-          <p className="text-sm text-slate-400 leading-relaxed mb-10 w-full max-w-[580px] text-center mx-auto">{hero.desc}</p>
+          <p className="text-lg text-slate-700 font-medium mb-2 text-center">{hero.subtitle}</p>
+          <p className="text-base text-slate-600 font-normal leading-relaxed mb-10 w-full max-w-[580px] text-center mx-auto">{hero.desc}</p>
 
           {/* Search trigger */}
           <div className="mb-5 w-full max-w-[540px] mx-auto">
@@ -219,7 +219,7 @@ export default function HomePage({ lang }: HomePageProps) {
               <Link
                 key={idx}
                 to={langPath(item.path)}
-                className="px-2.5 py-1 bg-white text-slate-600 hover:text-teal-700 rounded-lg border border-slate-200 hover:border-teal-200 transition-all font-semibold"
+                className="px-3 py-1.5 bg-white text-slate-600 hover:text-teal-700 rounded-lg border border-slate-200 hover:border-teal-200 transition-all font-semibold"
               >
                 {item.name}
               </Link>
@@ -308,7 +308,7 @@ export default function HomePage({ lang }: HomePageProps) {
               </div>
               <div>
                 <div className="text-2xl sm:text-3xl font-black text-slate-800 tracking-tight font-mono leading-none">{s.value}</div>
-                <div className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mt-1.5">{s.label}</div>
+                <div className="text-[11px] font-bold text-slate-600 uppercase tracking-widest mt-1.5">{s.label}</div>
               </div>
             </div>
           );
@@ -334,8 +334,8 @@ export default function HomePage({ lang }: HomePageProps) {
                     <TierIcon className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className={`text-base font-black tracking-tight ${c.text}`}>{tl.label}</h3>
-                    <p className="text-xs text-slate-500 font-medium mt-0.5">{tl.desc}</p>
+                    <h3 className={`text-lg font-black tracking-tight ${c.text}`}>{tl.label}</h3>
+                    <p className="text-xs text-slate-600 font-medium mt-0.5">{tl.desc}</p>
                   </div>
                 </div>
               </div>

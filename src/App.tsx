@@ -482,7 +482,7 @@ function AppLayout() {
               placeholder={lang === 'fr' ? 'Rechercher sepsis, GCS, rein, stéroïdes...' : 'Search: sepsis, GCS, renal, steroids...'}
               value={topSearch}
               onChange={(e) => setTopSearch(e.target.value)}
-              className={`w-full py-2 bg-gray-50 focus:bg-white text-gray-900 border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100/60 outline-none rounded-xl text-xs font-semibold transition-all placeholder-gray-400 ${isRtl ? 'pr-9 pl-8 text-right' : 'pl-9 pr-8 text-left'}`}
+              className={`w-full py-2 bg-gray-50 focus:bg-white text-gray-900 border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100/60 outline-none rounded-xl text-sm font-medium transition-all placeholder-gray-400 ${isRtl ? 'pr-9 pl-8 text-right' : 'pl-9 pr-8 text-left'}`}
               style={{ minHeight: '40px' }}
             />
             {topSearch && (
@@ -554,9 +554,9 @@ function AppLayout() {
             const label = lang === 'fr' ? tag.fr : (tag.en);
             return (
               <Link key={tag.path} to={langPath(tag.path)}
-                className={`shrink-0 px-3 py-1.5 rounded-full text-[11px] font-bold whitespace-nowrap transition-all border ${
+                className={`shrink-0 px-3.5 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all border ${
                   isActive
-                    ? 'bg-[#0891B2] text-white border-[#0891B2] shadow-sm'
+                    ? 'bg-[#0891B2] text-white border-[#0891B2] shadow-md ring-2 ring-[#0891B2]/30'
                     : 'bg-gray-50 text-gray-600 border-gray-200 hover:bg-gray-100 hover:text-gray-900'
                 }`}
                 style={{ minHeight: '32px' }}

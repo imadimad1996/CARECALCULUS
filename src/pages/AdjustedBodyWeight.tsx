@@ -266,6 +266,51 @@ export default function AdjustedBodyWeight({ lang }: { lang: LangCode }) {
           </div>
         </div>
       </div>
+
+      {/* Height to IBW Reference Table */}
+      <div className="mt-16 pt-10 border-t border-gray-200 max-w-3xl">
+        <h2 className="text-xl font-bold text-gray-900 mb-6">
+          {lang === 'fr' ? 'Table de Référence Poids Idéal (IBW)' : 'Height to Ideal Body Weight (IBW) Reference Table'}
+        </h2>
+        <div className="overflow-x-auto">
+          <table className="w-full text-left rtl:text-right border-collapse text-sm text-gray-600">
+            <thead>
+              <tr className="border-b border-gray-200 bg-gray-50 text-gray-700 font-bold">
+                <th className="p-3">{lang === 'fr' ? 'Taille' : 'Height'}</th>
+                <th className="p-3">{lang === 'fr' ? 'IBW Homme' : 'Male IBW'}</th>
+                <th className="p-3">{lang === 'fr' ? 'IBW Femme' : 'Female IBW'}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-gray-100">
+                <td className="p-3 font-mono">152 cm (5\'0")</td>
+                <td className="p-3 font-mono">50.0 kg</td>
+                <td className="p-3 font-mono">45.5 kg</td>
+              </tr>
+              <tr className="border-b border-gray-100">
+                <td className="p-3 font-mono">160 cm (5\'3")</td>
+                <td className="p-3 font-mono">56.9 kg</td>
+                <td className="p-3 font-mono">52.4 kg</td>
+              </tr>
+              <tr className="border-b border-gray-100">
+                <td className="p-3 font-mono">170 cm (5\'7")</td>
+                <td className="p-3 font-mono">66.0 kg</td>
+                <td className="p-3 font-mono">61.5 kg</td>
+              </tr>
+              <tr className="border-b border-gray-100">
+                <td className="p-3 font-mono">180 cm (5\'11")</td>
+                <td className="p-3 font-mono">75.1 kg</td>
+                <td className="p-3 font-mono">70.6 kg</td>
+              </tr>
+              <tr className="border-b border-gray-100">
+                <td className="p-3 font-mono">190 cm (6\'3")</td>
+                <td className="p-3 font-mono">84.2 kg</td>
+                <td className="p-3 font-mono">79.7 kg</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </>
   );
 }

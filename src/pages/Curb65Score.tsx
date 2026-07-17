@@ -254,6 +254,63 @@ export default function Curb65Score({ lang }: { lang: LangCode }) {
         </div>
       </div>
 
+      {/* CURB-65 Risk Stratification & Mortality Table */}
+      <div className="mt-8 pt-10 border-t border-gray-100 max-w-3xl">
+        <h2 className="text-xl font-bold text-gray-900 mb-6">
+          {lang === 'fr' ? 'Stratification du Risque et Mortalité' : 'CURB-65 Risk Stratification & 30-Day Mortality'}
+        </h2>
+        <div className="overflow-x-auto">
+          <table className="w-full text-left rtl:text-right border-collapse text-sm text-gray-600">
+            <thead>
+              <tr className="border-b border-gray-200 bg-gray-50 text-gray-700 font-bold">
+                <th className="p-3">{lang === 'fr' ? 'Score' : 'Score'}</th>
+                <th className="p-3">{lang === 'fr' ? 'Groupe de Risque' : 'Risk Group'}</th>
+                <th className="p-3">{lang === 'fr' ? 'Mortalité à 30 jours' : '30-Day Mortality'}</th>
+                <th className="p-3">{lang === 'fr' ? 'Recommandation' : 'Recommendation'}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-gray-100">
+                <td className="p-3 font-mono font-bold">0</td>
+                <td className="p-3 text-emerald-600 font-semibold">{lang === 'fr' ? 'Faible Risque' : 'Low Risk'}</td>
+                <td className="p-3">0.7%</td>
+                <td className="p-3">{lang === 'fr' ? 'Traitement ambulatoire' : 'Outpatient treatment'}</td>
+              </tr>
+              <tr className="border-b border-gray-100">
+                <td className="p-3 font-mono font-bold">1</td>
+                <td className="p-3 text-emerald-600 font-semibold">{lang === 'fr' ? 'Faible Risque' : 'Low Risk'}</td>
+                <td className="p-3">2.1%</td>
+                <td className="p-3">{lang === 'fr' ? 'Traitement ambulatoire' : 'Outpatient treatment'}</td>
+              </tr>
+              <tr className="border-b border-gray-100">
+                <td className="p-3 font-mono font-bold">2</td>
+                <td className="p-3 text-amber-600 font-semibold">{lang === 'fr' ? 'Risque Modéré' : 'Moderate Risk'}</td>
+                <td className="p-3">9.2%</td>
+                <td className="p-3">{lang === 'fr' ? 'Hospitalisation de courte durée ou ambulatoire supervisé' : 'Consider short-stay inpatient admission'}</td>
+              </tr>
+              <tr className="border-b border-gray-100">
+                <td className="p-3 font-mono font-bold">3</td>
+                <td className="p-3 text-red-600 font-semibold">{lang === 'fr' ? 'Risque Élevé' : 'High Risk'}</td>
+                <td className="p-3">14.5%</td>
+                <td className="p-3">{lang === 'fr' ? 'Admission hospitalière urgente' : 'Urgent inpatient admission'}</td>
+              </tr>
+              <tr className="border-b border-gray-100">
+                <td className="p-3 font-mono font-bold">4</td>
+                <td className="p-3 text-red-600 font-bold">{lang === 'fr' ? 'Risque Élevé' : 'High Risk'}</td>
+                <td className="p-3">40%</td>
+                <td className="p-3">{lang === 'fr' ? 'Admission en soins intensifs (Réanimation)' : 'Assess for ICU admission'}</td>
+              </tr>
+              <tr className="border-b border-gray-100">
+                <td className="p-3 font-mono font-bold">5</td>
+                <td className="p-3 text-red-600 font-bold">{lang === 'fr' ? 'Risque Élevé' : 'High Risk'}</td>
+                <td className="p-3">57%</td>
+                <td className="p-3">{lang === 'fr' ? 'Admission en soins intensifs (Réanimation)' : 'Assess for ICU admission'}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
       <div className="mt-12 pt-8 border-t border-gray-100">
         <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">{layoutTranslations[lang].seeAlso}</h2>
         <div className="flex flex-wrap gap-2 mb-10">

@@ -474,5 +474,19 @@
       "question": "Is the CKD-EPI equation reliable in acute kidney injury (AKI)?",
       "answer": "No. GFR estimation equations like CKD-EPI and MDRD assume a steady-state serum creatinine level. In AKI, creatinine levels fluctuate rapidly, making these equations highly inaccurate. In AKI, urine output and serial creatinine trends should guide management."
     }
+  ],
+  "/nutrition-must": [
+    {
+      "question": "What is the MUST score?",
+      "answer": "The Malnutrition Universal Screening Tool (MUST) is a validated five-step screening tool to identify adults who are malnourished, at risk of malnutrition, or obese."
+    },
+    {
+      "question": "How is the MUST score calculated?",
+      "answer": "The MUST score is calculated by scoring three main criteria: Body Mass Index (BMI) (>20 = 0, 18.5-20 = 1, <18.5 = 2), Unplanned Weight Loss in the past 3-6 months (<5% = 0, 5-10% = 1, >10% = 2), and Acute Disease Effect (acutely ill and no intake for >5 days = 2)."
+    },
+    {
+      "question": "What does a high MUST score indicate?",
+      "answer": "A MUST score of 2 or more indicates a high risk of malnutrition, requiring clinical intervention, a nutritional care plan, and referral to a dietitian."
+    }
   ]
 }

@@ -223,6 +223,61 @@ export default function NutritionMust({ lang }: { lang: LangCode }) {
         </div>
       </div>
 
+      <div className="mt-16 pt-10 border-t border-gray-200 max-w-3xl">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">
+          {lang === 'fr' ? 'Comment calculer le score MUST ?' : 'How to Calculate the MUST Score (Step-by-Step)'}
+        </h2>
+        <div className="prose prose-slate max-w-none text-gray-600 text-sm leading-relaxed space-y-4">
+          <p>
+            {lang === 'fr' 
+              ? "Le Malnutrition Universal Screening Tool (MUST) est un outil de dépistage validé en 5 étapes pour identifier les adultes dénutris, à risque de dénutrition ou obèses."
+              : "The Malnutrition Universal Screening Tool (MUST) is a validated five-step screening tool to identify adults who are malnourished, at risk of malnutrition, or obese."}
+          </p>
+          <ol className="list-decimal list-inside space-y-2">
+            <li>
+              <strong>{lang === 'fr' ? "Étape 1 : Mesurer l'Indice de Masse Corporelle (IMC)" : "Step 1: Measure Body Mass Index (BMI)"}</strong>
+              <p className="pl-5 mt-1">
+                {lang === 'fr' 
+                  ? "Un IMC > 20 vaut 0 point. Un IMC entre 18.5 et 20 vaut 1 point. Un IMC < 18.5 vaut 2 points." 
+                  : "A BMI > 20 kg/m² scores 0. BMI between 18.5 and 20 kg/m² scores 1. BMI < 18.5 kg/m² scores 2."}
+              </p>
+            </li>
+            <li>
+              <strong>{lang === 'fr' ? "Étape 2 : Évaluer la perte de poids involontaire" : "Step 2: Assess Unplanned Weight Loss"}</strong>
+              <p className="pl-5 mt-1">
+                {lang === 'fr' 
+                  ? "Une perte de poids involontaire au cours des 3 à 6 derniers mois : < 5% vaut 0 point ; 5% à 10% vaut 1 point ; > 10% vaut 2 points." 
+                  : "Assess unplanned weight loss over the past 3 to 6 months: < 5% scores 0; 5% to 10% scores 1; > 10% scores 2."}
+              </p>
+            </li>
+            <li>
+              <strong>{lang === 'fr' ? "Étape 3 : Prendre en compte l'effet de la maladie aiguë" : "Step 3: Factor in Acute Disease Effect"}</strong>
+              <p className="pl-5 mt-1">
+                {lang === 'fr' 
+                  ? "Si le patient est gravement malade et n'a pas eu (ou risque de ne pas avoir) d'apport nutritionnel pendant plus de 5 jours, ajoutez 2 points." 
+                  : "If the patient is acutely ill and there has been or is likely to be no nutritional intake for more than 5 days, add 2 points."}
+              </p>
+            </li>
+            <li>
+              <strong>{lang === 'fr' ? "Étape 4 : Additionner les scores" : "Step 4: Sum the Scores"}</strong>
+              <p className="pl-5 mt-1">
+                {lang === 'fr' 
+                  ? "Additionnez les points des étapes 1, 2 et 3 pour obtenir le score global de risque de malnutrition." 
+                  : "Add the scores from Steps 1, 2, and 3 together to obtain the overall risk of malnutrition."}
+              </p>
+            </li>
+            <li>
+              <strong>{lang === 'fr' ? "Étape 5 : Utiliser les directives de prise en charge" : "Step 5: Follow Management Guidelines"}</strong>
+              <p className="pl-5 mt-1">
+                {lang === 'fr' 
+                  ? "Score 0 = Risque faible (dépistage régulier). Score 1 = Risque moyen (observer). Score 2+ = Risque élevé (traiter, orienter vers un diététicien)." 
+                  : "Score 0 = Low Risk (routine care). Score 1 = Medium Risk (observe). Score 2 or more = High Risk (refer to dietitian, initiate treatment)."}
+              </p>
+            </li>
+          </ol>
+        </div>
+      </div>
+
       <div className="mt-16 mb-20 max-w-3xl">
         <h2 className="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
         <div className="space-y-4">

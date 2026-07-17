@@ -345,6 +345,45 @@ export default function GcsCalculator({ lang }: { lang: LangCode }) {
         </div>
       </div>
 
+      {/* GCS Risk Stratification Table */}
+      <div className="mt-8 pt-10 border-t border-gray-100 max-w-3xl">
+        <h2 className="text-xl font-bold text-gray-900 mb-6">
+          {lang === 'fr' ? 'Sévérité du Traumatisme Crânien (GCS)' : 'GCS Injury Severity & Clinical Management'}
+        </h2>
+        <div className="overflow-x-auto">
+          <table className="w-full text-left rtl:text-right border-collapse text-sm text-gray-600">
+            <thead>
+              <tr className="border-b border-gray-200 bg-gray-50 text-gray-700 font-bold">
+                <th className="p-3">{lang === 'fr' ? 'Score GCS' : 'GCS Score'}</th>
+                <th className="p-3">{lang === 'fr' ? 'Sévérité du TC' : 'TBI Severity'}</th>
+                <th className="p-3">{lang === 'fr' ? 'Mortalité / Pronostic' : 'Pronostic / Mortality'}</th>
+                <th className="p-3">{lang === 'fr' ? 'Prise en charge Recommandée' : 'Recommended Action'}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-gray-100">
+                <td className="p-3 font-mono font-bold">13 - 15</td>
+                <td className="p-3 text-emerald-600 font-semibold">{lang === 'fr' ? 'Léger' : 'Mild'}</td>
+                <td className="p-3">&lt; 1%</td>
+                <td className="p-3">{lang === 'fr' ? 'Surveillance clinique, sortie possible si imagerie normale.' : 'Observation, standard neurological checks.'}</td>
+              </tr>
+              <tr className="border-b border-gray-100">
+                <td className="p-3 font-mono font-bold">9 - 12</td>
+                <td className="p-3 text-amber-600 font-semibold">{lang === 'fr' ? 'Modéré' : 'Moderate'}</td>
+                <td className="p-3">~2 - 5%</td>
+                <td className="p-3">{lang === 'fr' ? 'Hospitalisation, TDM cérébral, surveillance neurologique rapprochée.' : 'Admission, CT head scan, close neurological monitoring.'}</td>
+              </tr>
+              <tr className="border-b border-gray-100">
+                <td className="p-3 font-mono font-bold">3 - 8</td>
+                <td className="p-3 text-red-600 font-bold">{lang === 'fr' ? 'Sévérité (Coma)' : 'Severe (Coma)'}</td>
+                <td className="p-3">~30 - 40%</td>
+                <td className="p-3">{lang === 'fr' ? 'Intubation immédiate (ISR), ventilation, soins intensifs.' : 'Secure airway (Intubation), mechanical ventilation, ICU admission.'}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
       <div className="mt-12 pt-8 border-t border-gray-100">
         <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">{layoutTranslations[lang].seeAlso}</h2>
         <div className="flex flex-wrap gap-2 mb-10">
