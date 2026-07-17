@@ -217,6 +217,31 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
                 <Share2 className="w-4 h-4" />
                 <span>WhatsApp Handover</span>
               </button>
+              
+              <button
+                onClick={() => {
+                  const scoreVal = calcData.results?.[0]?.value || '';
+                  const interpVal = calcData.results?.length > 1 
+                    ? calcData.results.map((r: any) => `${r.label}: ${r.value}${r.unit ? ` ${r.unit}` : ''}`).join(' | ') 
+                    : (calcData.results?.[0] ? `${calcData.results[0].label}: ${calcData.results[0].value}${calcData.results[0].unit ? ` ${calcData.results[0].unit}` : ''}` : '');
+                  
+                  const noteInput = {
+                    calculatorName: calcData.title,
+                    score: scoreVal,
+                    interpretation: interpVal,
+                    inputs: calcData.inputs,
+                    lang: calcData.lang
+                  };
+                  const handoverText = generateShiftHandover(noteInput);
+                  const shareUrl = generateCaseShareUrl(window.location.pathname, calcData.inputs);
+                  const fullText = `${handoverText}\n\n🔗 *Live Case Link:* ${shareUrl}`;
+                  window.open(`https://t.me/share/url?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(handoverText)}`, '_blank');
+                }}
+                className="w-full md:w-auto px-4 py-2.5 rounded-xl bg-[#229ED9] hover:bg-[#1E8BC2] text-white font-bold text-xs transition shadow-md flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <Share2 className="w-4 h-4" />
+                <span>Telegram</span>
+              </button>
             </div>
           </div>
         </div>

@@ -21,6 +21,7 @@ import StickyMobileAd from './components/StickyMobileAd';
 import SmartPasteModal from './components/SmartPasteModal';
 import DropdownMenu from './components/DropdownMenu';
 import ContactModal from './components/ContactModal';
+import ViralPopup from './components/ViralPopup';
 
 import { preloadPages, moduleRoutes, embedRoutes, navItems, TIER_HEADERS, LEGAL_ROUTES, CONTENT_ROUTES, ErrorBoundary, NotFound } from './routes';
 import { LangCode } from './types';
@@ -1280,6 +1281,9 @@ function AppLayout() {
       
       {/* Contact Modal */}
       <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} lang={lang} />
+      
+      {/* Viral Share Popup for Hyper Growth */}
+      <ViralPopup />
     </div>
    </LangContext.Provider>
   );

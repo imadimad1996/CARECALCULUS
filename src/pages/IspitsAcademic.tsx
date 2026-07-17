@@ -5,6 +5,7 @@ import { ISPITS_MODULES, ISPITS_MODULE_BY_SLUG, IspitsModule } from '../utils/is
 import { LangCode } from '../types';
 import { buildJsonLd } from '../utils/seo';
 import pdfTranscriptsData from '../data/pdf-transcripts.json';
+import GamificationLock from '../components/GamificationLock';
 
 const pdfTranscripts = pdfTranscriptsData as Record<string, { text: string; numpages: number }>;
 
@@ -465,12 +466,14 @@ export default function IspitsAcademic({ lang }: { lang: LangCode }) {
                 )}
                 {selectedModule.pdf_file || (selectedModule.pdf_parts && selectedModule.pdf_parts[activePartIndex]) ? (
                   <div className="flex-1 bg-white border border-gray-200 rounded-xl overflow-hidden shadow-xs relative min-h-[420px]">
-                    <iframe
-                      id="ispits-pdf-frame"
-                      src={`/pdf/ispits/${encodeURIComponent(selectedModule.pdf_file || selectedModule.pdf_parts![activePartIndex])}#toolbar=0&navpanes=0`}
-                      className="w-full h-full border-0 absolute inset-0"
-                      title={selectedModule.name}
-                    />
+                    <GamificationLock id={`ispits_${selectedModule.pdf_file || selectedModule.pdf_parts![activePartIndex]}`}>
+                      <iframe
+                        id="ispits-pdf-frame"
+                        src={`/pdf/ispits/${encodeURIComponent(selectedModule.pdf_file || selectedModule.pdf_parts![activePartIndex])}#toolbar=0&navpanes=0`}
+                        className="w-full h-full border-0 absolute inset-0"
+                        title={selectedModule.name}
+                      />
+                    </GamificationLock>
                   </div>
                 ) : (
                   <div className="flex-1 bg-white border border-gray-200 rounded-xl p-8 text-center flex flex-col justify-center items-center gap-4">

@@ -1,0 +1,14 @@
+[
+  {
+    "type": "Short",
+    "text": "CareCalculus: The open-source, lightning-fast alternative to legacy medical calculators."
+  },
+  {
+    "type": "Medium",
+    "text": "CareCalculus is an open-source medical calculator platform offering ultra-fast risk scores, drug conversions, and EHR SmartPhrase exports with an award-winning glassmorphic design."
+  },
+  {
+    "type": "Long",
+    "text": "CareCalculus is the modern alternative to MDCalc. Built by clinicians for clinicians, it provides an open-source, offline-first PWA experience for calculating medical risk scores (like SOFA, CHA2DS2-VASc) and drug dosages. It features built-in programmatic clinical guides and one-click EHR SmartPhrase exports to streamline shift handovers in the ER or ICU."
+  }
+]
