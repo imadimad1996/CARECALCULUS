@@ -183,6 +183,18 @@ function AppLayout() {
   const [sidebarSearch, setSidebarSearch] = useState('');
   const [topSearch, setTopSearch] = useState('');
 
+  // Lock body scroll when mobile sidebar is open
+  useEffect(() => {
+    if (isSidebarOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isSidebarOpen]);
+
   const [expandedTiers, setExpandedTiers] = useState<Record<number, boolean>>(() => {
     try {
       const stored = localStorage.getItem('carecalculus-expanded-tiers');
@@ -531,7 +543,7 @@ function AppLayout() {
     return (
       <div className="mb-6 bg-white rounded-2xl border border-gray-200/80 shadow-xs relative z-30">
         {/* Search row */}
-        <div className="px-4 py-3 flex items-center gap-3 border-b border-gray-100">
+        <div className="px-4 py-3 flex items-center gap-2 md:gap-3 border-b border-gray-100 overflow-x-auto scrollbar-none">
           <div className="flex-1 relative">
             <Search className={`absolute ${isRtl ? 'right-3' : 'left-3'} top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none`} />
             <input
@@ -756,7 +768,7 @@ function AppLayout() {
       </script>
     </Helmet>
     <TrackingScripts />
-    <div className={`min-h-screen bg-[#fafafa] text-[#111] transition-colors duration-300 flex flex-col md:flex-row ${isRtl ? 'font-arabic' : 'font-sans'}`} dir={isRtl ? 'rtl' : 'ltr'}>
+    <div className={`min-h-screen bg-[#fafafa] text-[#111] transition-colors duration-300 flex flex-col md:flex-row w-full overflow-x-hidden ${isRtl ? 'font-arabic' : 'font-sans'}`} dir={isRtl ? 'rtl' : 'ltr'}>
       <CommandPalette />
       {/* Reading progress indicator for content pages */}
       {isContentPage && <ReadingProgress />}
@@ -1123,8 +1135,8 @@ function AppLayout() {
       </aside>}
 
       {/* Main Content Area */}
-      <main id="main-content" className="flex-1 min-w-0 bg-[#fafafa]">
-        <div className={`mx-auto px-4 sm:px-6 py-6 md:py-10 relative flex flex-col justify-between min-h-screen ${isContentPage ? 'max-w-6xl' : 'max-w-5xl'}`}>
+      <main id="main-content" className="flex-1 min-w-0 bg-[#fafafa] w-full overflow-x-hidden">
+        <div className={`mx-auto px-4 sm:px-6 py-6 md:py-10 relative flex flex-col justify-between min-h-screen w-full ${isContentPage ? 'max-w-6xl' : 'max-w-5xl'}`}>
           <div>
 
             {/* Global Top Leaderboard Ad — only on content pages to protect calculator UX above-the-fold */}

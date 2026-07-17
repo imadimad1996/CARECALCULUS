@@ -66,7 +66,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
-      <div className="relative w-full max-w-md p-6 bg-white rounded-2xl shadow-xl dark:bg-slate-800">
+      <div className="relative w-full max-w-md p-6 bg-white rounded-2xl shadow-xl dark:bg-slate-800 max-h-[90vh] overflow-y-auto">
         <button
           onClick={onClose}
           className="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"

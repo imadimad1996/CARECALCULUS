@@ -40,7 +40,7 @@ export default function ViralPopup() {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 backdrop-blur-sm p-4">
-      <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full overflow-hidden animate-in fade-in zoom-in duration-300">
+      <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full overflow-y-auto max-h-[90vh] animate-in fade-in zoom-in duration-300">
         <div className="bg-gradient-to-r from-teal-500 to-emerald-500 p-6 text-white text-center relative">
           <button 
             onClick={handleDismiss}
