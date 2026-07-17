@@ -6,6 +6,7 @@ import { layoutTranslations } from '../utils/lang';
 import { trackCalculatorUsage } from '../utils/telemetry';
 import EmbedCodeButton from '../components/ui/EmbedCodeButton';
 import { JsonLd, generateMedicalRiskScoreSchema } from '../components/JsonLd';
+import ClinicalContextPanel from '../components/ClinicalContextPanel';
 
 const translations: Translations = {
   en: {
@@ -420,6 +421,25 @@ export default function SofaScore({ lang }: { lang: LangCode }) {
         </div>
       </div>
 
+      {/* MDCalc-Killer Deep Content Panel */}
+      <ClinicalContextPanel 
+        lang={lang}
+        pearls={[
+          "The SOFA score is designed to describe the degree of organ dysfunction over time, rather than to predict mortality, though higher scores correlate strongly with higher mortality.",
+          "Calculate the SOFA score at admission and every 24 hours thereafter.",
+          "Use the worst value recorded in the past 24 hours for each parameter."
+        ]}
+        pitfalls={[
+          "Using SOFA to triage patients for ICU admission. It is a descriptive tool, not a triage tool.",
+          "Failing to account for the patient's baseline organ function (e.g., chronic renal failure).",
+          "Assuming a declining score means the patient is 'cured'; it only means organ failure is resolving."
+        ]}
+        evidence="The SOFA score was created in 1994 by the European Society of Intensive Care Medicine (ESICM) to objectively describe the degree of organ dysfunction/failure over time. It evaluates 6 organ systems (respiratory, cardiovascular, hepatic, coagulation, renal, and neurological) with a score from 0 (normal) to 4 (most abnormal) for each. The Sepsis-3 definitions (2016) use an acute increase in the SOFA score of ≥ 2 points to define sepsis."
+        references={[
+          "Vincent JL, Moreno R, Takala J, et al. The SOFA (Sepsis-related Organ Failure Assessment) score to describe organ dysfunction/failure. Intensive Care Med. 1996;22(7):707-710. <a href='https://pubmed.ncbi.nlm.nih.gov/8861123/' target='_blank' class='text-cyan-600 hover:underline'>PMID: 8861123</a>",
+          "Singer M, Deutschman CS, Seymour CW, et al. The Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3). JAMA. 2016;315(8):801-810. <a href='https://pubmed.ncbi.nlm.nih.gov/26903338/' target='_blank' class='text-cyan-600 hover:underline'>PMID: 26903338</a>"
+        ]}
+      />
 
       {/* Pillar Content Section */}
       <div className="mt-8 pt-10 border-t border-gray-100">

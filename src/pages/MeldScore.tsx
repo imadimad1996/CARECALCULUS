@@ -6,6 +6,7 @@ import { trackCalculatorUsage } from '../utils/telemetry';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 import EmbedCodeButton from '../components/ui/EmbedCodeButton';
 import { JsonLd, generateMedicalCalculatorSchema } from '../components/JsonLd';
+import ClinicalContextPanel from '../components/ClinicalContextPanel';
 
 const translations: Translations = {
   en: {
@@ -332,6 +333,26 @@ export default function MeldScore({ lang }: { lang: LangCode }) {
       </div>
 
       {/* In-Content Native Ad */}
+
+      {/* MDCalc-Killer Deep Content Panel */}
+      <ClinicalContextPanel 
+        lang={lang}
+        pearls={[
+          "MELD Score heavily relies on objective laboratory parameters, reducing the subjectivity found in the Child-Pugh score (e.g., ascites and encephalopathy assessment).",
+          "MELD exceptions exist for certain conditions like hepatocellular carcinoma (HCC), hepatopulmonary syndrome, and familial amyloid polyneuropathy, where standard MELD underestimates mortality.",
+          "Since 2016, Serum Sodium has been officially incorporated into the OPTN/UNOS MELD calculation (MELD-Na) to better predict 90-day mortality."
+        ]}
+        pitfalls={[
+          "Failing to cap the maximum creatinine at 4.0 mg/dL (or ignoring the 4.0 mg/dL cap for patients on dialysis > 2 times in the past week).",
+          "Using MELD to predict post-operative mortality for non-hepatic surgeries, where its predictive power is debated compared to other surgical risk tools.",
+          "Using INR values that have not been properly standardized across different hospital laboratories."
+        ]}
+        evidence="The MELD (Model for End-Stage Liver Disease) score was originally developed in 2000 to predict 3-month mortality in patients undergoing Transjugular Intrahepatic Portosystemic Shunt (TIPS) procedures. In 2002, UNOS adopted MELD for prioritizing patients awaiting liver transplantation. MELD is calculated using logarithmic transformations of serum bilirubin, creatinine, and INR."
+        references={[
+          "Kamath PS, Wiesner RH, Malinchoc M, et al. A model to predict survival in patients with end-stage liver disease. Hepatology. 2001;33(2):464-470. <a href='https://pubmed.ncbi.nlm.nih.gov/11172350/' target='_blank' class='text-cyan-600 hover:underline'>PMID: 11172350</a>",
+          "Wiesner R, Edwards E, Freeman R, et al. Model for end-stage liver disease (MELD) and allocation of donor livers. Gastroenterology. 2003;124(1):91-96. <a href='https://pubmed.ncbi.nlm.nih.gov/12512033/' target='_blank' class='text-cyan-600 hover:underline'>PMID: 12512033</a>"
+        ]}
+      />
 
       {/* Pillar Content Section */}
       <div className="mt-8 pt-10 border-t border-gray-100">

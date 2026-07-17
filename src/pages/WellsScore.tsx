@@ -6,6 +6,7 @@ import { trackCalculatorUsage } from '../utils/telemetry';
 import { layoutTranslations } from '../utils/lang';
 import EmbedCodeButton from '../components/ui/EmbedCodeButton';
 import { JsonLd } from '../components/JsonLd';
+import ClinicalContextPanel from '../components/ClinicalContextPanel';
 
 const translations: Translations = {
   en: {
@@ -410,6 +411,26 @@ export default function WellsScore({ lang }: { lang: LangCode }) {
       </div>
 
       {/* In-Content Native Ad */}
+
+      {/* MDCalc-Killer Deep Content Panel */}
+      <ClinicalContextPanel 
+        lang={lang}
+        pearls={[
+          "The Wells criteria should ONLY be applied after history and physical exam suggest DVT is a possibility.",
+          "Do not use in patients with suspected upper extremity DVT.",
+          "The 'Alternative diagnosis at least as likely' criterion is highly subjective but carries the most weight (-2 points)."
+        ]}
+        pitfalls={[
+          "Applying the score to pregnant patients (invalidated population).",
+          "Using the score in patients already on anticoagulation therapy.",
+          "Failing to measure the calf exactly 10 cm below the tibial tuberosity."
+        ]}
+        evidence="The Wells criteria was originally developed in 1997 and refined in 2003 to safely rule out DVT when combined with a negative D-dimer. The scoring system assigns points based on clinical features (e.g., active cancer +1, entire leg swollen +1). A score of < 2 indicates 'DVT unlikely' (prevalence ~5%), while a score ≥ 2 indicates 'DVT likely' (prevalence ~28%)."
+        references={[
+          "Wells PS, Anderson DR, Rodger M, et al. Evaluation of D-dimer in the diagnosis of suspected deep-vein thrombosis. N Engl J Med. 2003;349(13):1227-1235. <a href='https://pubmed.ncbi.nlm.nih.gov/14507948/' target='_blank' class='text-cyan-600 hover:underline'>PMID: 14507948</a>",
+          "Tovey C, Wyatt S. Diagnosis, investigation, and management of deep vein thrombosis. BMJ. 2003;326(7399):1180-1184."
+        ]}
+      />
 
       {/* Pillar Content Section */}
       <div className="mt-8 pt-10 border-t border-gray-100">

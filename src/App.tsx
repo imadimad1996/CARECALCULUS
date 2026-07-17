@@ -1266,16 +1266,22 @@ function AppLayout() {
                   ))}
                 </div>
               </div>
-
             </div>
 
             <div className="pt-6 border-t border-gray-200 flex flex-col md:flex-row items-center justify-between gap-4">
-              <span className="text-gray-400">
-                © 2026 CareCalculus — Free multilingual clinical decision support.
-              </span>
+              <div className="flex flex-col gap-1">
+                <span className="text-gray-400 font-medium">
+                  © 2026 CareCalculus — Free multilingual clinical decision support.
+                </span>
+                <span className="text-gray-400 text-[10px]">
+                  {lang === 'fr' 
+                    ? 'Outils basés sur les preuves (EBM). Non destiné à remplacer le jugement clinique.' 
+                    : 'Evidence-Based Medicine (EBM) tools. Not a substitute for clinical judgment.'}
+                </span>
+              </div>
               <div className="flex items-center gap-4 flex-wrap justify-center">
                 <Link to={langPath('/about')} className="text-gray-400 hover:text-blue-600 transition-colors text-xs">
-                  {lang === 'fr' ? 'À propos' : 'About'}
+                  {lang === 'fr' ? 'À propos / Équipe' : 'About / Team'}
                 </Link>
                 <Link to={langPath('/disclaimer')} className="text-gray-400 hover:text-blue-600 transition-colors text-xs">
                   {lang === 'fr' ? 'Avertissement' : 'Disclaimer'}
@@ -1286,11 +1292,6 @@ function AppLayout() {
                 <Link to={langPath('/terms')} className="text-gray-400 hover:text-blue-600 transition-colors text-xs">
                   {lang === 'fr' ? 'Conditions' : 'Terms'}
                 </Link>
-                {/* Adsterra Smartlink (Sponsor) */}
-                <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-600 transition-colors text-xs font-bold flex items-center gap-1">
-                  <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-                  {lang === 'fr' ? 'Sponsorisé' : 'Sponsored'}
-                </a>
               </div>
             </div>
           </footer>
