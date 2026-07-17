@@ -17,21 +17,7 @@ export default function TrackingScripts() {
         win.dataLayer.push(arguments);
       }
       win.gtag = gtag; // Make gtag globally available
-      gtag('js', new Date());
-      gtag('config', GA_MEASUREMENT_ID, {
-        page_path: window.location.pathname,
-      });
-
-      // GA4 Script
-      if (!document.getElementById('ga-script')) {
-        const gaScript = document.createElement('script');
-        gaScript.id = 'ga-script';
-        gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-        gaScript.async = true;
-        gaScript.onerror = () => console.error('[Analytics] Failed to load GA4 script. Ad blocker or CSP might be active.');
-        gaScript.onload = () => console.log('[Analytics] GA4 script loaded successfully.');
-        document.head.appendChild(gaScript);
-      }
+      // Removed direct gtag('config') and GA4 script insertion to prevent duplicate tracking with GTM
 
       // GTM Script
       if (!document.getElementById('gtm-script')) {
@@ -60,9 +46,9 @@ export default function TrackingScripts() {
 
   // Automatically track page views when the route changes
   useEffect(() => {
-    if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
-      const GA_MEASUREMENT_ID = 'G-FE7C4XH4SK'; // Ensure this matches your ID above
-      (window as any).gtag('config', GA_MEASUREMENT_ID, {
+    if (typeof window !== 'undefined' && (window as any).dataLayer) {
+      (window as any).dataLayer.push({
+        event: 'virtual_page_view',
         page_path: location.pathname + location.search,
       });
     }

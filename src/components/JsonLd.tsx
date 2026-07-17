@@ -38,3 +38,23 @@ export function generateMedicalCalculatorSchema(name: string, description: strin
     "description": description
   };
 }
+
+// Helper function to generate MedicalRiskScore schema
+export function generateMedicalRiskScoreSchema(name: string, description: string, url: string, scoringSystem: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": ["MedicalWebPage", "MedicalRiskScore"],
+    "name": name,
+    "description": description,
+    "url": url,
+    "identifyingExam": {
+      "@type": "MedicalObservationalStudy",
+      "name": scoringSystem
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CareCalculus",
+      "url": "https://carecalculus.com"
+    }
+  };
+}

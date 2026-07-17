@@ -5,7 +5,7 @@ import ClinicalExportButton from '../components/ClinicalExportButton';
 import { layoutTranslations } from '../utils/lang';
 import { trackCalculatorUsage } from '../utils/telemetry';
 import EmbedCodeButton from '../components/ui/EmbedCodeButton';
-import { JsonLd, generateMedicalCalculatorSchema } from '../components/JsonLd';
+import { JsonLd, generateMedicalRiskScoreSchema } from '../components/JsonLd';
 import AdsterraNativeBanner from '../components/AdsterraNativeBanner';
 
 const translations: Translations = {
@@ -172,7 +172,12 @@ export default function SofaScore({ lang }: { lang: LangCode }) {
 
   return (
     <>
-      <JsonLd data={generateMedicalCalculatorSchema(currentText.title, currentText.subtitle)} />
+      <JsonLd data={generateMedicalRiskScoreSchema(
+        currentText.title, 
+        currentText.subtitle, 
+        typeof window !== 'undefined' ? window.location.href : 'https://carecalculus.com/sofa-score', 
+        "Sequential Organ Failure Assessment"
+      )} />
       
       {/* Ambient 2026 Page Lighting */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-blue-500/10 via-indigo-500/5 to-purple-500/10 blur-3xl -z-10 pointer-events-none rounded-full" />
