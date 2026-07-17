@@ -29,63 +29,7 @@ import { UnitSystemProvider, useUnitSystem } from './contexts/UnitSystemContext'
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { LoginModal } from './components/auth/LoginModal';
 
-// Compact globe icon language picker — appears as a subtle icon in the sidebar
-function LangMenu({ lang, setLang }: { lang: LangCode; setLang: (l: LangCode) => void }) {
-  const [open, setOpen] = React.useState(false);
-  const ref = React.useRef<HTMLDivElement>(null);
-  React.useEffect(() => {
-    if (!open) return;
-    const handler = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
-    };
-    document.addEventListener('mousedown', handler);
-    return () => document.removeEventListener('mousedown', handler);
-  }, [open]);
-  return (
-    <div ref={ref} className="px-6 mb-4 flex justify-end relative">
-      <button
-        onClick={() => setOpen(o => !o)}
-        aria-label="Switch language"
-        title={lang === 'fr' ? 'Changer de langue' : 'Switch language'}
-        className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl text-slate-400 hover:text-teal-600 hover:bg-teal-50/60 dark:hover:bg-teal-900/20 dark:hover:text-teal-400 transition-all duration-200 group"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 flex-shrink-0 transition-transform duration-300 group-hover:rotate-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-          <circle cx="12" cy="12" r="10" />
-          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-          <path d="M2 12h20" />
-        </svg>
-        <span className="text-[10px] font-black uppercase tracking-wider leading-none">{lang}</span>
-        <svg xmlns="http://www.w3.org/2000/svg" className={`w-3 h-3 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
 
-      {open && (
-        <div className="absolute right-6 top-full mt-1.5 z-50 bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/60 rounded-2xl shadow-xl shadow-slate-900/10 overflow-hidden min-w-[130px]">
-          {(['en', 'fr'] as LangCode[]).map((l) => (
-            <button
-              key={l}
-              onClick={() => { setOpen(false); setLang(l); }}
-              className={`w-full flex items-center gap-2.5 px-4 py-2.5 text-xs font-bold uppercase tracking-wider transition-colors duration-150 ${
-                lang === l
-                  ? 'bg-teal-50 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400'
-                  : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700/60 hover:text-slate-900 dark:hover:text-white'
-              }`}
-            >
-              <span className="text-base">{l === 'en' ? '🇬🇧' : '🇫🇷'}</span>
-              <span>{l === 'en' ? 'English' : 'Français'}</span>
-              {lang === l && (
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 ml-auto text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-              )}
-            </button>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-}
 
 function AppLayout() {
   const location = useLocation();
@@ -591,6 +535,7 @@ function AppLayout() {
             onContactClick={() => setIsContactModalOpen(true)}
             langPath={langPath}
             lang={lang}
+            setLang={setLang}
           />
         </div>
 
@@ -721,6 +666,7 @@ function AppLayout() {
             onContactClick={() => setIsContactModalOpen(true)}
             langPath={langPath}
             lang={lang}
+            setLang={setLang}
           />
         </div>
       </div>
@@ -802,6 +748,7 @@ function AppLayout() {
             onContactClick={() => setIsContactModalOpen(true)}
             langPath={langPath}
             lang={lang}
+            setLang={setLang}
           />
           <InstallAppButton lang={lang} />
           <button
@@ -837,9 +784,6 @@ function AppLayout() {
               <span className="font-extrabold text-2xl tracking-tight text-slate-900 dark:text-white">Care<span className="text-teal-600 dark:text-teal-400 font-black">Calculus</span></span>
             </div>
           </Link>
-
-          {/* Compact Globe Language Icon */}
-          <LangMenu lang={lang} setLang={setLang} />
 
 
           {/* Sidebar Search Bar */}

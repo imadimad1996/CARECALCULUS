@@ -23,6 +23,7 @@ interface DropdownMenuProps {
   onContactClick: () => void;
   langPath: (path: string) => string;
   lang?: LangCode;
+  setLang?: (l: LangCode) => void;
 }
 
 export default function DropdownMenu({
@@ -32,7 +33,8 @@ export default function DropdownMenu({
   onEhrClick,
   onContactClick,
   langPath,
-  lang = 'en'
+  lang = 'en',
+  setLang
 }: DropdownMenuProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isBellOpen, setIsBellOpen] = useState(false);
@@ -77,6 +79,9 @@ export default function DropdownMenu({
       contact: "Contact Us",
       alertsTitle: "Clinical Notifications",
       noAlerts: "No new clinical alerts at this time.",
+      language: "Change Language",
+      english: "English",
+      french: "French",
     },
     fr: {
       login: "Connexion / Inscription",
@@ -89,6 +94,9 @@ export default function DropdownMenu({
       contact: "Contactez-nous",
       alertsTitle: "Notifications Cliniques",
       noAlerts: "Aucune nouvelle alerte clinique pour le moment.",
+      language: "Changer de langue",
+      english: "Anglais",
+      french: "Français",
     }
   };
 
@@ -232,6 +240,45 @@ export default function DropdownMenu({
               <Info className="w-4 h-4 shrink-0 text-slate-400" />
               <span>{dict.about}</span>
             </Link>
+
+            <div className="border-t border-slate-100 dark:border-slate-800 my-1.5" />
+
+            {/* Language Selector */}
+            {setLang && (
+              <div className="px-4 py-2">
+                <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">
+                  {dict.language}
+                </div>
+                <div className="flex bg-slate-100 dark:bg-slate-800 rounded-lg p-1">
+                  <button
+                    onClick={() => {
+                      setLang('en');
+                      setIsMenuOpen(false);
+                    }}
+                    className={`flex-1 text-[11px] font-bold py-1.5 rounded-md transition-all ${
+                      lang === 'en'
+                        ? 'bg-white dark:bg-slate-700 text-teal-600 shadow-sm'
+                        : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'
+                    }`}
+                  >
+                    🇬🇧 {dict.english}
+                  </button>
+                  <button
+                    onClick={() => {
+                      setLang('fr');
+                      setIsMenuOpen(false);
+                    }}
+                    className={`flex-1 text-[11px] font-bold py-1.5 rounded-md transition-all ${
+                      lang === 'fr'
+                        ? 'bg-white dark:bg-slate-700 text-teal-600 shadow-sm'
+                        : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'
+                    }`}
+                  >
+                    🇫🇷 {dict.french}
+                  </button>
+                </div>
+              </div>
+            )}
 
             <div className="border-t border-slate-100 dark:border-slate-800 my-1.5" />
 
