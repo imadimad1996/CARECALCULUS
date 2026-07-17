@@ -65,6 +65,10 @@ const pageLoaders = [
   () => import('../pages/NutritionHub'),
   () => import('../pages/ClinicalQuestionPage'),
   () => import('../pages/ProgrammaticGuidePage'),
+  () => import('../pages/ParklandFormula'),
+  () => import('../pages/FenaCalculator'),
+  () => import('../pages/WintersFormula'),
+  () => import('../pages/HasBledScore'),
 ] as const;
 
 const [
@@ -78,7 +82,8 @@ const [
   FlashcardGenerator, CaseStudyViewer, DrugSheets, StudyTracker, AbbreviationLookup,
   Compare, NutritionTdee, NutritionMust, NutritionNrs2002, ConditionHub,
   MdrdGfr, CkdEpiGfr, EmbedGallery, ForHospitals, SpecialtyHub, NutritionHub,
-  ClinicalQuestionPage, ProgrammaticGuidePage
+  ClinicalQuestionPage, ProgrammaticGuidePage,
+  ParklandFormula, FenaCalculator, WintersFormula, HasBledScore
 ] = pageLoaders.map((loader) => React.lazy(loader as any)) as any[];
 
 export const HomePage = React.lazy(() => import('../pages/HomePage'));
@@ -132,6 +137,10 @@ export class ErrorBoundary extends React.Component<any, any> {
 export const navItems = [
   // Tier 1: Emergency & Critical Care
   { path: '/map-calculator', nameEn: 'MAP Calculator', nameFr: 'Calculateur PAM', nameAr: 'حساب الضغط المتوسط MAP', icon: Activity, tier: 1 },
+  { path: '/parkland-formula', nameEn: 'Parkland Burn Fluid', nameFr: 'Formule de Parkland Brûlure', nameAr: 'معادلة باركلاند للحروق', icon: Droplet, tier: 1 },
+  { path: '/fena', nameEn: 'FENa Sodium Excretion', nameFr: 'FENa Excrétion Sodium', nameAr: 'حساب FENa للكلى', icon: TestTube, tier: 1 },
+  { path: '/winters-formula', nameEn: 'Winters Formula Acidosis', nameFr: 'Formule de Winters Acidose', nameAr: 'معادلة وينترز للحموضة', icon: Wind, tier: 1 },
+  { path: '/has-bled', nameEn: 'HAS-BLED Bleeding Risk', nameFr: 'Score HAS-BLED Risque Hémorragique', nameAr: 'مقياس HAS-BLED للنزيف', icon: HeartPulse, tier: 1 },
   { path: '/glasgow-coma-scale', nameEn: 'GCS Calculator', nameFr: 'Échelle de Glasgow', nameAr: 'معيار غلاسكو للغيبوبة GCS', icon: Brain, tier: 1 },
   { path: '/qsofa-score', nameEn: 'qSOFA Score Sepsis', nameFr: 'Score qSOFA Sepsis', nameAr: 'مؤشر qSOFA لتسمم الدم', icon: AlertTriangle, tier: 1 },
   { path: '/sirs-criteria', nameEn: 'SIRS Criteria Sepsis', nameFr: 'Critères SIRS Sepsis', nameAr: 'معايير SIRS للالتهاب العام', icon: AlertTriangle, tier: 1 },
@@ -227,6 +236,10 @@ export function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="mdrd-gfr" element={wrapCalculator('/mdrd-gfr', <MdrdGfr lang={lang} />)} />
       <Route path="ckd-epi-gfr" element={wrapCalculator('/ckd-epi-gfr', <CkdEpiGfr lang={lang} />)} />
       <Route path="wells-score" element={wrapCalculator('/wells-score', <WellsScore lang={lang} />)} />
+      <Route path="parkland-formula" element={wrapCalculator('/parkland-formula', <ParklandFormula lang={lang} />)} />
+      <Route path="fena" element={wrapCalculator('/fena', <FenaCalculator lang={lang} />)} />
+      <Route path="winters-formula" element={wrapCalculator('/winters-formula', <WintersFormula lang={lang} />)} />
+      <Route path="has-bled" element={wrapCalculator('/has-bled', <HasBledScore lang={lang} />)} />
       <Route path="medical-conversions" element={wrapCalculator('/medical-conversions', <MedicalConversions lang={lang} />)} />
       <Route path="medical-conversions/:category" element={wrapCalculator('/medical-conversions', <MedicalConversions lang={lang} />)} />
       <Route path="corrected-calcium" element={wrapCalculator('/corrected-calcium', <CorrectedCalcium lang={lang} />)} />
