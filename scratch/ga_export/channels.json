@@ -1,0 +1,114 @@
+{
+  "report_name": "channels",
+  "start_date": "2026-07-01",
+  "end_date": "yesterday",
+  "dimension_headers": [
+    "sessionDefaultChannelGroup"
+  ],
+  "metric_headers": [
+    "sessions",
+    "activeUsers",
+    "screenPageViews",
+    "bounceRate",
+    "conversions"
+  ],
+  "row_count": 8,
+  "data": [
+    {
+      "dimensions": {
+        "sessionDefaultChannelGroup": "Direct"
+      },
+      "metrics": {
+        "sessions": 125,
+        "activeUsers": 69,
+        "screenPageViews": 432,
+        "bounceRate": 0.512,
+        "conversions": 0
+      }
+    },
+    {
+      "dimensions": {
+        "sessionDefaultChannelGroup": "Organic Social"
+      },
+      "metrics": {
+        "sessions": 81,
+        "activeUsers": 56,
+        "screenPageViews": 266,
+        "bounceRate": 0.5802469135802469,
+        "conversions": 0
+      }
+    },
+    {
+      "dimensions": {
+        "sessionDefaultChannelGroup": "Organic Search"
+      },
+      "metrics": {
+        "sessions": 29,
+        "activeUsers": 24,
+        "screenPageViews": 117,
+        "bounceRate": 0.3103448275862069,
+        "conversions": 0
+      }
+    },
+    {
+      "dimensions": {
+        "sessionDefaultChannelGroup": "Referral"
+      },
+      "metrics": {
+        "sessions": 16,
+        "activeUsers": 1,
+        "screenPageViews": 60,
+        "bounceRate": 0.5,
+        "conversions": 0
+      }
+    },
+    {
+      "dimensions": {
+        "sessionDefaultChannelGroup": "Unassigned"
+      },
+      "metrics": {
+        "sessions": 13,
+        "activeUsers": 10,
+        "screenPageViews": 26,
+        "bounceRate": 1.0,
+        "conversions": 0
+      }
+    },
+    {
+      "dimensions": {
+        "sessionDefaultChannelGroup": "Paid Search"
+      },
+      "metrics": {
+        "sessions": 4,
+        "activeUsers": 4,
+        "screenPageViews": 4,
+        "bounceRate": 1.0,
+        "conversions": 0
+      }
+    },
+    {
+      "dimensions": {
+        "sessionDefaultChannelGroup": "AI Assistant"
+      },
+      "metrics": {
+        "sessions": 2,
+        "activeUsers": 2,
+        "screenPageViews": 3,
+        "bounceRate": 0.5,
+        "conversions": 0
+      }
+    },
+    {
+      "dimensions": {
+        "sessionDefaultChannelGroup": "Cross-network"
+      },
+      "metrics": {
+        "sessions": 2,
+        "activeUsers": 2,
+        "screenPageViews": 2,
+        "bounceRate": 1.0,
+        "conversions": 0
+      }
+    }
+  ]
+}

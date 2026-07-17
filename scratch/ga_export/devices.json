@@ -1,0 +1,46 @@
+{
+  "report_name": "devices",
+  "start_date": "2026-07-01",
+  "end_date": "yesterday",
+  "dimension_headers": [
+    "deviceCategory"
+  ],
+  "metric_headers": [
+    "sessions",
+    "activeUsers",
+    "screenPageViews"
+  ],
+  "row_count": 3,
+  "data": [
+    {
+      "dimensions": {
+        "deviceCategory": "desktop"
+      },
+      "metrics": {
+        "sessions": 169,
+        "activeUsers": 83,
+        "screenPageViews": 722
+      }
+    },
+    {
+      "dimensions": {
+        "deviceCategory": "mobile"
+      },
+      "metrics": {
+        "sessions": 96,
+        "activeUsers": 72,
+        "screenPageViews": 186
+      }
+    },
+    {
+      "dimensions": {
+        "deviceCategory": "tablet"
+      },
+      "metrics": {
+        "sessions": 2,
+        "activeUsers": 2,
+        "screenPageViews": 2
+      }
+    }
+  ]
+}

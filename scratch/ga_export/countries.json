@@ -1,0 +1,136 @@
+{
+  "report_name": "countries",
+  "start_date": "2026-07-01",
+  "end_date": "yesterday",
+  "dimension_headers": [
+    "country"
+  ],
+  "metric_headers": [
+    "sessions",
+    "activeUsers",
+    "screenPageViews"
+  ],
+  "row_count": 12,
+  "data": [
+    {
+      "dimensions": {
+        "country": "Morocco"
+      },
+      "metrics": {
+        "sessions": 122,
+        "activeUsers": 24,
+        "screenPageViews": 719
+      }
+    },
+    {
+      "dimensions": {
+        "country": "United States"
+      },
+      "metrics": {
+        "sessions": 112,
+        "activeUsers": 104,
+        "screenPageViews": 158
+      }
+    },
+    {
+      "dimensions": {
+        "country": "(not set)"
+      },
+      "metrics": {
+        "sessions": 9,
+        "activeUsers": 9,
+        "screenPageViews": 9
+      }
+    },
+    {
+      "dimensions": {
+        "country": "Netherlands"
+      },
+      "metrics": {
+        "sessions": 6,
+        "activeUsers": 6,
+        "screenPageViews": 6
+      }
+    },
+    {
+      "dimensions": {
+        "country": "India"
+      },
+      "metrics": {
+        "sessions": 5,
+        "activeUsers": 4,
+        "screenPageViews": 7
+      }
+    },
+    {
+      "dimensions": {
+        "country": "China"
+      },
+      "metrics": {
+        "sessions": 3,
+        "activeUsers": 3,
+        "screenPageViews": 3
+      }
+    },
+    {
+      "dimensions": {
+        "country": "Ireland"
+      },
+      "metrics": {
+        "sessions": 2,
+        "activeUsers": 2,
+        "screenPageViews": 2
+      }
+    },
+    {
+      "dimensions": {
+        "country": "Bangladesh"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1,
+        "screenPageViews": 1
+      }
+    },
+    {
+      "dimensions": {
+        "country": "Germany"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1,
+        "screenPageViews": 2
+      }
+    },
+    {
+      "dimensions": {
+        "country": "Mexico"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1,
+        "screenPageViews": 1
+      }
+    },
+    {
+      "dimensions": {
+        "country": "Spain"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1,
+        "screenPageViews": 1
+      }
+    },
+    {
+      "dimensions": {
+        "country": "Sweden"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1,
+        "screenPageViews": 1
+      }
+    }
+  ]
+}
