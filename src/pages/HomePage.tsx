@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Activity, Brain, Stethoscope, Wind, TestTube, AlertOctagon, HeartPulse,
@@ -67,72 +67,55 @@ const T = {
   },
 };
 
-const TIER_HIGHLIGHTS = [
-  {
-    tier: 1,
-    icon: AlertTriangle,
-    color: 'red',
-    path: '/map-calculator',
-    items: [
-      { icon: Activity, en: 'MAP Calculator', fr: 'Calculateur PAM',  path: '/map-calculator' },
-      { icon: Brain, en: 'GCS Score', fr: 'Échelle Glasgow',  path: '/glasgow-coma-scale' },
-      { icon: AlertTriangle, en: 'qSOFA Sepsis', fr: 'qSOFA Sepsis',  path: '/qsofa-score' },
-      { icon: Stethoscope, en: 'CURB-65', fr: 'CURB-65',  path: '/curb65-score' },
-      { icon: Wind, en: 'P/F Ratio', fr: 'Rapport P/F',  path: '/pf-ratio' },
-    ],
-  },
-  {
-    tier: 2,
-    icon: TestTube,
-    color: 'blue',
-    path: '/creatinine-clearance',
-    items: [
-      { icon: TestTube, en: 'Creatinine Clearance', fr: 'Clairance Créatinine',  path: '/creatinine-clearance' },
-      { icon: Activity, en: 'MELD Score', fr: 'Score MELD',  path: '/meld-score' },
-      { icon: AlertOctagon, en: 'Wells Score', fr: 'Score de Wells',  path: '/wells-score' },
-      { icon: HeartPulse, en: 'CHA₂DS₂-VASc', fr: 'CHA₂DS₂-VASc',  path: '/cha2ds2-vasc' },
-      { icon: Activity, en: 'Nutrition TDEE', fr: 'Nutrition TDEE',  path: '/nutrition-tdee' },
-      { icon: Activity, en: 'MUST Score', fr: 'Score MUST',  path: '/nutrition-must' },
-    ],
-  },
-  {
-    tier: 3,
-    icon: Droplet,
-    color: 'emerald',
-    path: '/drip-rate-calculator',
-    items: [
-      { icon: Droplet, en: 'IV Drip Rate', fr: 'Débit Perfusion',  path: '/drip-rate-calculator' },
-      { icon: ArrowRightLeft, en: 'Steroid Conversion', fr: 'Équivalences Stéroïdes',  path: '/steroid-conversion' },
-      { icon: LayoutDashboard, en: 'IBW & ABW', fr: 'Poids Idéal',  path: '/adjusted-body-weight' },
-      { icon: ArrowRightLeft, en: 'Unit Conversions', fr: 'Conversions d\'Unités',  path: '/medical-conversions' },
-    ],
-  },
-  {
-    tier: 4,
-    icon: BookOpen,
-    color: 'purple',
-    path: '/blog',
-    items: [
-      { icon: BookOpen, en: 'Medical Journals', fr: 'Journaux Médicaux',  path: '/blog' },
-      { icon: Newspaper, en: 'Blog Articles', fr: 'Articles de Blog',  path: '/blog-articles' },
-      { icon: MonitorPlay, en: 'Presentations', fr: 'Présentations',  path: '/presentations' },
-      { icon: GraduationCap, en: 'Courses (PDF)', fr: 'Cours (PDF)',  path: '/cours' },
-    ],
-  },
+const SPECIALTIES = [
+  { id: 'all', en: 'All Categories', fr: 'Toutes catégories' },
+  { id: 'emergency', en: 'Emergency & Critical Care', fr: 'Urgences & Soins Intensifs' },
+  { id: 'cardiology', en: 'Cardiology', fr: 'Cardiologie' },
+  { id: 'pulmonology', en: 'Pulmonology', fr: 'Pneumologie' },
+  { id: 'nephrology', en: 'Nephrology', fr: 'Néphrologie' },
+  { id: 'gastro', en: 'Gastroenterology', fr: 'Gastro-entérologie' },
+  { id: 'neuro', en: 'Neurology', fr: 'Neurologie' },
+  { id: 'nutrition', en: 'Nutrition', fr: 'Nutrition' },
+  { id: 'pharmaco', en: 'Pharmacology', fr: 'Pharmacologie' },
 ];
 
-const colorMap: Record<string, { bg: string; border: string; text: string; badge: string; dot: string }> = {
-  red:     { bg: 'bg-red-50/70',     border: 'border-red-100',    text: 'text-red-700',    badge: 'bg-red-100 text-red-700',    dot: 'bg-red-500' },
-  blue:    { bg: 'bg-[#0891B2]/5',   border: 'border-[#0891B2]/20',text: 'text-[#0891B2]', badge: 'bg-[#0891B2]/10 text-[#0891B2]', dot: 'bg-[#0891B2]' },
-  emerald: { bg: 'bg-emerald-50/70', border: 'border-emerald-100',text: 'text-emerald-700',badge: 'bg-emerald-100 text-emerald-700', dot: 'bg-emerald-500' },
-  purple:  { bg: 'bg-purple-50/70',  border: 'border-purple-100', text: 'text-purple-700', badge: 'bg-purple-100 text-purple-700', dot: 'bg-purple-500' },
-};
+const FEATURED_CALCULATORS = [
+  { id: 'map', icon: Activity, en: 'MAP Calculator', fr: 'Calculateur PAM', path: '/map-calculator', specialties: ['cardiology', 'emergency'] },
+  { id: 'gcs', icon: Brain, en: 'GCS Score', fr: 'Échelle Glasgow', path: '/glasgow-coma-scale', specialties: ['neuro', 'emergency'] },
+  { id: 'qsofa', icon: AlertTriangle, en: 'qSOFA Sepsis', fr: 'qSOFA Sepsis', path: '/qsofa-score', specialties: ['emergency'] },
+  { id: 'curb65', icon: Stethoscope, en: 'CURB-65', fr: 'CURB-65', path: '/curb65-score', specialties: ['pulmonology', 'emergency'] },
+  { id: 'pf', icon: Wind, en: 'P/F Ratio', fr: 'Rapport P/F', path: '/pf-ratio', specialties: ['pulmonology', 'emergency'] },
+  { id: 'creat', icon: TestTube, en: 'Creatinine Clearance', fr: 'Clairance Créatinine', path: '/creatinine-clearance', specialties: ['nephrology'] },
+  { id: 'meld', icon: Activity, en: 'MELD Score', fr: 'Score MELD', path: '/meld-score', specialties: ['gastro'] },
+  { id: 'wells', icon: AlertOctagon, en: 'Wells Score', fr: 'Score de Wells', path: '/wells-score', specialties: ['pulmonology', 'cardiology'] },
+  { id: 'cha2', icon: HeartPulse, en: 'CHA₂DS₂-VASc', fr: 'CHA₂DS₂-VASc', path: '/cha2ds2-vasc', specialties: ['cardiology'] },
+  { id: 'tdee', icon: Activity, en: 'Nutrition TDEE', fr: 'Nutrition TDEE', path: '/nutrition-tdee', specialties: ['nutrition'] },
+  { id: 'must', icon: Activity, en: 'MUST Score', fr: 'Score MUST', path: '/nutrition-must', specialties: ['nutrition'] },
+  { id: 'iv', icon: Droplet, en: 'IV Drip Rate', fr: 'Débit Perfusion', path: '/drip-rate-calculator', specialties: ['pharmaco', 'emergency'] },
+  { id: 'steroid', icon: ArrowRightLeft, en: 'Steroid Conversion', fr: 'Équivalences Stéroïdes', path: '/steroid-conversion', specialties: ['pharmaco'] },
+  { id: 'ibw', icon: LayoutDashboard, en: 'IBW & ABW', fr: 'Poids Idéal', path: '/adjusted-body-weight', specialties: ['nutrition', 'pharmaco'] },
+  { id: 'unit', icon: ArrowRightLeft, en: 'Unit Conversions', fr: 'Conversions d\'Unités', path: '/medical-conversions', specialties: ['pharmaco'] },
+];
+
+const LEARNING_RESOURCES = [
+  { id: 'journals', icon: BookOpen, en: 'Medical Journals', fr: 'Journaux Médicaux', path: '/blog' },
+  { id: 'articles', icon: Newspaper, en: 'Blog Articles', fr: 'Articles de Blog', path: '/blog-articles' },
+  { id: 'presentations', icon: MonitorPlay, en: 'Presentations', fr: 'Présentations', path: '/presentations' },
+  { id: 'courses', icon: GraduationCap, en: 'Courses (PDF)', fr: 'Cours (PDF)', path: '/cours' },
+];
+
 
 import SEO from '../components/SEO';
 
 export default function HomePage({ lang }: HomePageProps) {
   const { langPath } = useLang();
   const isRtl = false;
+
+  const [activeSpecialty, setActiveSpecialty] = useState('all');
+
+  const filteredCalculators = FEATURED_CALCULATORS.filter(calc =>
+    activeSpecialty === 'all' || calc.specialties.includes(activeSpecialty)
+  );
 
   const hero = T.hero[lang];
   const cta = T.cta[lang];
@@ -326,56 +309,75 @@ export default function HomePage({ lang }: HomePageProps) {
         })}
       </section>
 
-      {/* Tier cards (Bento Grid) */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {TIER_HIGHLIGHTS.map((tier, idx) => {
-          const c = {
-            red:     { border: 'border-red-100',    text: 'text-red-700',    badge: 'bg-red-50 text-red-700' },
-            blue:    { border: 'border-cyan-100',   text: 'text-cyan-700',   badge: 'bg-cyan-50 text-cyan-700' },
-            emerald: { border: 'border-emerald-100',text: 'text-emerald-700',badge: 'bg-emerald-50 text-emerald-700' },
-            purple:  { border: 'border-purple-100', text: 'text-purple-700', badge: 'bg-purple-50 text-purple-700' },
-          }[tier.color];
-          const tl = tierLabels[idx];
-          const TierIcon = tier.icon;
-          return (
-            <div key={tier.tier} className={`bg-white border ${c.border} rounded-2xl p-6 sm:p-7 space-y-5 shadow-sm transition-all hover:shadow-md cursor-default`}>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className={`p-2.5 rounded-2xl ${c.badge} shadow-2xs`}>
-                    <TierIcon className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 className={`text-lg font-black tracking-tight ${c.text}`}>{tl.label}</h3>
-                    <p className="text-xs text-slate-600 font-medium mt-0.5">{tl.desc}</p>
-                  </div>
-                </div>
-              </div>
+      {/* Specialty Filter Bar */}
+      <section className="w-full relative">
+        <div className="flex overflow-x-auto pb-4 pt-2 hide-scrollbar -mx-6 px-6 sm:mx-0 sm:px-0 gap-2 snap-x">
+          {SPECIALTIES.map((spec) => {
+            const isActive = activeSpecialty === spec.id;
+            const label = lang === 'fr' ? spec.fr : spec.en;
+            return (
+              <button
+                key={spec.id}
+                onClick={() => setActiveSpecialty(spec.id)}
+                className={`snap-start shrink-0 px-4 py-2 rounded-full text-xs font-bold transition-all duration-300 border ${
+                  isActive 
+                    ? 'bg-teal-600 text-white border-teal-600 shadow-[0_4px_12px_rgba(13,148,136,0.3)]' 
+                    : 'bg-white text-slate-600 border-slate-200 hover:border-teal-300 hover:bg-slate-50'
+                }`}
+              >
+                {label}
+              </button>
+            );
+          })}
+        </div>
+      </section>
 
-              <div className="space-y-2">
-                {tier.items.map((item) => {
-                  const ItemIcon = item.icon;
-                  const label = lang === 'fr' ? item.fr : item.en;
-                  return (
-                    <Link
-                      key={item.path}
-                      to={langPath(item.path)}
-                      className="flex items-center justify-between p-3 bg-white/90 hover:bg-white rounded-xl border border-slate-200/50 hover:border-cyan-500/20 hover:shadow-xs transition-all duration-300 group cursor-pointer active:scale-[0.99]"
-                      style={{ minHeight: '44px' }}
-                    >
-                      <div className="flex items-center gap-3 min-w-0">
-                        <div className="p-1.5 rounded-lg bg-slate-55/40 text-slate-500 group-hover:bg-cyan-500/10 group-hover:text-cyan-600 transition-colors">
-                          <ItemIcon className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover:scale-105" />
-                        </div>
-                        <span className="text-xs font-bold text-slate-700 group-hover:text-cyan-700 transition-colors truncate">{label}</span>
-                      </div>
-                      <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-cyan-600 group-hover:translate-x-0.5 transition-all" />
-                    </Link>
-                  );
-                })}
+      {/* Filtered Grid */}
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {filteredCalculators.map((calc) => {
+          const CalcIcon = calc.icon;
+          const label = lang === 'fr' ? calc.fr : calc.en;
+          return (
+            <Link
+              key={calc.id}
+              to={langPath(calc.path)}
+              className="flex items-center justify-between p-4 bg-white rounded-2xl border border-slate-200 hover:border-teal-500 hover:shadow-md transition-all duration-300 group active:scale-[0.99]"
+            >
+              <div className="flex items-center gap-4 min-w-0">
+                <div className="p-2.5 rounded-xl bg-slate-50 text-slate-500 group-hover:bg-teal-50 group-hover:text-teal-600 transition-colors">
+                  <CalcIcon className="w-5 h-5 shrink-0 transition-transform duration-300 group-hover:scale-110" />
+                </div>
+                <span className="text-sm font-black text-slate-800 group-hover:text-teal-700 transition-colors truncate">{label}</span>
               </div>
-            </div>
+              <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-teal-600 group-hover:translate-x-0.5 transition-all" />
+            </Link>
           );
         })}
+      </section>
+
+      {/* Learning Resources */}
+      <section className="mt-8 pt-8 border-t border-slate-200/60">
+        <h3 className="text-sm font-black text-slate-900 uppercase tracking-widest mb-6">
+          {lang === 'fr' ? 'Ressources Pédagogiques' : 'Learning Resources'}
+        </h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {LEARNING_RESOURCES.map((res) => {
+            const ResIcon = res.icon;
+            const label = lang === 'fr' ? res.fr : res.en;
+            return (
+              <Link
+                key={res.id}
+                to={langPath(res.path)}
+                className="flex items-center gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200 hover:border-purple-300 hover:bg-white hover:shadow-sm transition-all duration-300 group"
+              >
+                <div className="p-2 rounded-lg bg-white text-slate-500 border border-slate-200 group-hover:border-purple-200 group-hover:text-purple-600 group-hover:bg-purple-50 transition-colors">
+                  <ResIcon className="w-4 h-4 shrink-0" />
+                </div>
+                <span className="text-xs font-bold text-slate-700 group-hover:text-purple-700 transition-colors truncate">{label}</span>
+              </Link>
+            );
+          })}
+        </div>
       </section>
 
       {/* Adsterra Native Banner */}
