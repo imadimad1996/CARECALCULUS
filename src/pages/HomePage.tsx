@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {
   Activity, Brain, Stethoscope, Wind, TestTube, AlertOctagon, HeartPulse,
   Droplet, ArrowRightLeft, LayoutDashboard, BookOpen, MonitorPlay, GraduationCap,
-  Newspaper, Calculator, ChevronRight, ShieldCheck, Globe, Sparkles, AlertTriangle, Search, Award,
+  Newspaper, Calculator, ChevronRight, ShieldCheck, Globe, Sparkles, AlertTriangle, Search, Award, ArrowRight
 } from 'lucide-react';
 import { LangCode } from '../types';
 import { useLang } from '../utils/lang';
@@ -353,6 +353,31 @@ export default function HomePage({ lang }: HomePageProps) {
             </Link>
           );
         })}
+      </section>
+
+      {/* Clinical Library Banner */}
+      <section className="bg-gradient-to-r from-teal-50 to-cyan-50 border border-teal-100 rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xs">
+        <div className="space-y-2">
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-teal-100 text-teal-800 rounded-full text-[10px] font-bold uppercase tracking-wider">
+            <Sparkles className="w-3 h-3" />
+            {lang === 'fr' ? 'Base de Données Élargie' : 'Extended Reference'}
+          </div>
+          <h3 className="text-xl font-extrabold text-slate-900 leading-tight">
+            {lang === 'fr' ? 'Rechercher parmi plus de 750 outils cliniques' : 'Search 750+ Extended Clinical Tools'}
+          </h3>
+          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xl font-medium">
+            {lang === 'fr' 
+              ? 'Accédez à notre bibliothèque médicale complète d\'équations, de critères diagnostiques, d\'arbres décisionnels et de convertisseurs.' 
+              : 'Access our comprehensive reference library of clinical equations, diagnostic criteria sets, decision trees, and unit converters.'}
+          </p>
+        </div>
+        <Link
+          to={langPath('/clinical-library')}
+          className="inline-flex items-center gap-2 px-5 py-3 bg-teal-600 hover:bg-teal-700 text-white font-bold text-sm rounded-xl transition shadow-sm whitespace-nowrap active:scale-95"
+        >
+          {lang === 'fr' ? 'Explorer la Bibliothèque' : 'Explore Clinical Library'}
+          <ArrowRight className="w-4 h-4" />
+        </Link>
       </section>
 
       {/* Learning Resources */}
