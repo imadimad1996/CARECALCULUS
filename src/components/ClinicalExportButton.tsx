@@ -6,12 +6,13 @@ import { useMemo } from 'react';
 import { generateSOAP, generateSBAR, generateDotPhrase, generateShiftHandover, generateCaseShareUrl } from '../utils/soapGenerator';
 
 export interface ClinicalExportButtonProps {
-  title: string;
+  title?: string;
+  calculatorName?: string;
   inputs: Array<{ label: string; value: string | number }>;
   results: Array<{ label: string; value: string | number; unit?: string }>;
   formula?: string;
-  disclaimer: string;
-  references: string;
+  disclaimer?: string;
+  references?: string;
   lang: LangCode;
 }
 
@@ -67,14 +68,18 @@ const localizations = {
 };
 
 export default function ClinicalExportButton({
-  title,
+  title: propTitle,
+  calculatorName,
   inputs,
   results,
   formula,
-  disclaimer,
-  references,
+  disclaimer: propDisclaimer,
+  references: propReferences,
   lang
 }: ClinicalExportButtonProps) {
+  const title = propTitle || calculatorName || '';
+  const disclaimer = propDisclaimer || (lang === 'fr' ? "Ceci est un outil d'aide à la décision. Il ne remplace pas le jugement clinique." : "This tool is for decision support only and does not replace clinical judgment.");
+  const references = propReferences || '';
   const [isOpen, setIsOpen] = useState(false);
   const [patientId, setPatientId] = useState("");
   const [clinician, setClinician] = useState("");
