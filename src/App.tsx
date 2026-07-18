@@ -17,7 +17,9 @@ import TrackingScripts from './components/TrackingScripts';
 import EmbedLayout from './components/EmbedLayout';
 import InstallAppButton from './components/ui/InstallAppButton';
 import SidebarNewsletter from './components/SidebarNewsletter';
-import StickyMobileAd from './components/StickyMobileAd';
+import MobileBottomNav from './components/MobileBottomNav';
+
+
 import SmartPasteModal from './components/SmartPasteModal';
 import DropdownMenu from './components/DropdownMenu';
 import ContactModal from './components/ContactModal';
@@ -190,14 +192,30 @@ function AppLayout() {
       'burn': ['parkland', 'brulure', 'حرق', 'الحروق'],
       'brulure': ['parkland', 'burn', 'حرق', 'الحروق'],
       'ventilation': ['tidal', 'ards', 'lung', 'تنفس'],
-      'coma': ['gcs', 'glasgow', 'غيبوبة', 'وعي'],
-      'stroke': ['cha2ds2-vasc', 'af', 'stroke', 'has-bled', 'سكتة', 'جلطة', 'دماغ'],
+      'coma': ['gcs', 'glasgow', 'nihss', 'غيبوبة', 'وعي'],
+      'stroke': ['cha2ds2-vasc', 'af', 'stroke', 'has-bled', 'nihss', 'سكتة', 'جلطة', 'دماغ'],
+      'pain': ['opioid', 'mme', 'morphine', 'ألم', 'heart', 'chest', 'صدر'],
+      'fluids': ['fluids', 'maintenance', 'iv', '4-2-1', 'hydration', 'سوائل'],
+      'maintenance': ['fluids', 'iv', '4-2-1', 'hydration'],
+      'alcohol': ['ciwa', 'withdrawal', 'osmolal', 'toxic', 'methanol', 'كحول', 'سموم'],
+      'gap': ['anion', 'osmolal', 'فجوة'],
+      'chest': ['heart', 'pain', 'acs', 'perc', 'geneva', 'grace', 'صدر'],
+      'acs': ['timi', 'heart', 'heparin', 'nstemi', 'stemi', 'grace', 'ذبحة'],
+      'embolism': ['perc', 'geneva', 'wells', 'pe', 'رئة'],
+      'pe': ['perc', 'geneva', 'wells', 'embolism'],
       'bleed': ['has-bled', 'bleeding', 'نزيف'],
       'clot': ['wells', 'dvt', 'pe', 'thrombosis', 'has-bled', 'جلطة'],
       'weight': ['adjusted', 'body', 'steroids', 'ibw', 'abw', 'وزن', 'الوزن'],
       'steroid': ['steroid', 'cortico', 'conversion', 'كيرتيزون', 'ستيرويد', 'جرعات'],
-      'orl': ['orl', 'laryngeal', 'larynx', 'cancer', 'staging', 'tnm', 'حنجرة', 'سرطان'],
+      'cancer': ['orl', 'laryngeal', 'larynx', 'staging', 'tnm', 'سرطان'],
+      'bicarb': ['bicarb', 'bicarbonate', 'hco3', 'deficit', 'acidosis', 'بيكربونات', 'حموضة'],
+      'anemia': ['retic', 'reticulocyte', 'rpi', 'anemia', 'bone', 'marrow', 'شبكية', 'فقر', 'دم'],
       'laryngeal': ['orl', 'laryngeal', 'larynx', 'cancer', 'staging', 'tnm', 'حنجرة', 'سرطان'],
+      'sevrage': ['ciwa-ar', 'alcohol', 'withdrawal', 'ciwa', 'alcool', 'كحول', 'انسحاب'],
+      'sodium': ['sodium-correction', 'free-water-deficit', 'hyponatremia', 'hypernatremia', 'na', 'saline', 'صوديوم'],
+      'water': ['free-water-deficit', 'deficit', 'eau', 'ماء'],
+      'hypernatremia': ['free-water-deficit', 'water', 'deficit', 'sodium', 'na'],
+      'hyponatremia': ['sodium-correction', 'sodium', 'correction', 'na', 'saline'],
     };
 
     for (const [key, paths] of Object.entries(synonyms)) {
@@ -1083,8 +1101,8 @@ function AppLayout() {
       </aside>}
 
       {/* Main Content Area */}
-      <main id="main-content" className="flex-1 min-w-0 bg-[#fafafa] w-full overflow-x-hidden">
-        <div className={`mx-auto px-4 sm:px-6 py-6 md:py-10 relative flex flex-col justify-between min-h-screen w-full ${isContentPage ? 'max-w-6xl' : 'max-w-5xl'}`}>
+      <main id="main-content" className="flex-1 min-w-0 bg-[#fafafa] w-full overflow-x-hidden mb-16 md:mb-0">
+        <div className={`mx-auto px-4 sm:px-6 pt-6 pb-24 md:py-10 relative flex flex-col justify-between min-h-screen w-full ${isContentPage ? 'max-w-6xl' : 'max-w-5xl'}`}>
           <div>
 
             {/* Global Top Leaderboard Ad — only on content pages to protect calculator UX above-the-fold */}
@@ -1276,9 +1294,15 @@ function AppLayout() {
         />
       )}
 
-      {/* Sticky Mobile Footer Ad */}
-      <StickyMobileAd />
-      
+      {/* Mobile Bottom Navigation Bar */}
+      <MobileBottomNav 
+        lang={lang} 
+        langPath={langPath} 
+        onSearchClick={() => window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }))}
+        onMenuClick={() => setIsSidebarOpen(true)}
+      />
+
+
       {/* Login Modal */}
       <LoginModal isOpen={isLoginModalOpen} onClose={() => setIsLoginModalOpen(false)} />
       

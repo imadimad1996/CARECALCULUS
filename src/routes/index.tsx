@@ -69,6 +69,21 @@ const pageLoaders = [
   () => import('../pages/FenaCalculator'),
   () => import('../pages/WintersFormula'),
   () => import('../pages/HasBledScore'),
+  () => import('../pages/CiwaArScore'),
+  () => import('../pages/FreeWaterDeficit'),
+  () => import('../pages/SodiumCorrection'),
+  () => import('../pages/HeparinDosing'),
+  () => import('../pages/OpioidConversion'),
+  () => import('../pages/MaintenanceFluids'),
+  () => import('../pages/OsmolalGap'),
+  () => import('../pages/TimiScore'),
+  () => import('../pages/HeartScore'),
+  () => import('../pages/PercRule'),
+  () => import('../pages/GenevaScore'),
+  () => import('../pages/NihssScore'),
+  () => import('../pages/GraceScore'),
+  () => import('../pages/BicarbDeficit'),
+  () => import('../pages/ReticIndex'),
 ] as const;
 
 const [
@@ -83,7 +98,12 @@ const [
   Compare, NutritionTdee, NutritionMust, NutritionNrs2002, ConditionHub,
   MdrdGfr, CkdEpiGfr, EmbedGallery, ForHospitals, SpecialtyHub, NutritionHub,
   ClinicalQuestionPage, ProgrammaticGuidePage,
-  ParklandFormula, FenaCalculator, WintersFormula, HasBledScore
+  ParklandFormula, FenaCalculator, WintersFormula, HasBledScore,
+  CiwaArScore, FreeWaterDeficit, SodiumCorrection,
+  HeparinDosing, OpioidConversion, MaintenanceFluids,
+  OsmolalGap, TimiScore, HeartScore,
+  PercRule, GenevaScore, NihssScore,
+  GraceScore, BicarbDeficit, ReticIndex
 ] = pageLoaders.map((loader) => React.lazy(loader as any)) as any[];
 
 export const HomePage = React.lazy(() => import('../pages/HomePage'));
@@ -149,6 +169,13 @@ export const navItems = [
   { path: '/tidal-volume', nameEn: 'Tidal Volume ARDS', nameFr: 'Volume Courant (Tidal)', nameAr: 'حجم الهواء التنفسي المتوقع', icon: Wind, tier: 1 },
   { path: '/apgar-score', nameEn: 'APGAR Score', nameFr: 'Score d’APGAR', nameAr: 'مقياس أبغار للوليد APGAR', icon: Activity, tier: 1 },
   { path: '/sofa-score', nameEn: 'SOFA Score ICU', nameFr: 'Score SOFA Réanimation', nameAr: 'مقياس SOFA للفشل العضوي', icon: AlertOctagon, tier: 1 },
+  { path: '/ciwa-ar', nameEn: 'CIWA-Ar Alcohol Score', nameFr: 'Score CIWA-Ar Alcool', nameAr: 'مقياس CIWA-Ar لانسحاب الكحول', icon: Activity, tier: 1 },
+  { path: '/timi-score', nameEn: 'TIMI Score NSTEMI', nameFr: 'Score TIMI NSTEMI', nameAr: 'نقاط TIMI لنقص التروية', icon: HeartPulse, tier: 1 },
+  { path: '/heart-score', nameEn: 'HEART Score Chest Pain', nameFr: 'Score HEART Douleur Thoracique', nameAr: 'مقياس HEART لألم الصدر', icon: HeartPulse, tier: 1 },
+  { path: '/grace-score', nameEn: 'GRACE ACS Score', nameFr: 'Score GRACE SCA', nameAr: 'مقياس GRACE لمتلازمة الشريان التاجي', icon: HeartPulse, tier: 1 },
+  { path: '/perc-rule', nameEn: 'PERC Rule for PE', nameFr: 'Score PERC Embolie Pulmonaire', nameAr: 'قاعدة PERC لاستبعاد الجلطة الرئوية', icon: Wind, tier: 1 },
+  { path: '/geneva-score', nameEn: 'Geneva Score PE', nameFr: 'Score de Genève EP', nameAr: 'مقياس جنيف للجلطة الرئوية', icon: Wind, tier: 1 },
+  { path: '/nihss-score', nameEn: 'NIHSS Stroke Scale', nameFr: 'Score NIHSS AVC', nameAr: 'مقياس السكتة الدماغية NIHSS', icon: Brain, tier: 1 },
 
   // Tier 2: Organ Function & Internal Medicine
   { path: '/creatinine-clearance', nameEn: 'Creatinine Clearance', nameFr: 'Clairance Créatinine', nameAr: 'تصفية الكرياتينين وكفاءة الكلى', icon: TestTube, tier: 2 },
@@ -159,9 +186,13 @@ export const navItems = [
   { path: '/cha2ds2-vasc', nameEn: 'CHA2DS2-VASc stroke', nameFr: 'Score CHA2DS2-VASc FA', nameAr: 'معيار سكتة الرجفان الأذيني', icon: HeartPulse, tier: 2 },
   { path: '/corrected-calcium', nameEn: 'Corrected Calcium', nameFr: 'Calcium Corrigé Albumin', nameAr: 'الكالسيوم المصحح بالألبومين', icon: TestTube, tier: 2 },
   { path: '/anc-calculator', nameEn: 'ANC Calculator', nameFr: 'Calculateur NAN Neutro', nameAr: 'حساب خلايا الدم المتعادلة ANC', icon: TestTube, tier: 2 },
+  { path: '/retic-index', nameEn: 'Reticulocyte Index', nameFr: 'Indice Réticulocytaire', nameAr: 'مؤشر الخلايا الشبكية', icon: Droplet, tier: 2 },
   { path: '/child-pugh-score', nameEn: 'Child-Pugh Score', nameFr: 'Score de Child-Pugh', nameAr: 'تصنيف تشايلد بيو للكبد', icon: Activity, tier: 2 },
   { path: '/anion-gap', nameEn: 'Anion Gap', nameFr: 'Trou Anionique', nameAr: 'الفجوة الأنيونية للدم', icon: TestTube, tier: 2 },
+  { path: '/osmolal-gap', nameEn: 'Osmolal Gap', nameFr: 'Trou Osmolaire', nameAr: 'الفجوة الأسموزية للدم', icon: TestTube, tier: 2 },
   { path: '/aa-gradient', nameEn: 'A-a Gradient', nameFr: 'Gradient Alvéolo-Artériel', nameAr: 'فرق الأكسجين A-a Gradient', icon: Wind, tier: 2 },
+  { path: '/free-water-deficit', nameEn: 'Free Water Deficit', nameFr: 'Déficit en Eau Libre', nameAr: 'نقص الماء الحر في فرط الصوديوم', icon: Droplet, tier: 2 },
+  { path: '/sodium-correction', nameEn: 'Sodium Correction Rate', nameFr: 'Correction de Sodium', nameAr: 'معدل تصحيح الصوديوم', icon: Activity, tier: 2 },
   { path: '/nutrition-tdee', nameEn: 'TDEE & BMR Nutrition', nameFr: 'TDEE & Métabolisme de Base', nameAr: 'احتياجات الطاقة والسعرات', icon: Activity, tier: 2 },
   { path: '/nutrition-must', nameEn: 'MUST Malnutrition Score', nameFr: 'Score MUST Dénutrition', nameAr: 'أداة MUST لسوء التغذية', icon: Activity, tier: 2 },
   { path: '/nutrition-nrs2002', nameEn: 'NRS-2002 Nutrition Risk', nameFr: 'NRS-2002 Risque Nutritionnel', nameAr: 'أداة NRS-2002 للمخاطر الغذائية', icon: AlertOctagon, tier: 2 },
@@ -171,8 +202,12 @@ export const navItems = [
   { path: '/steroid-conversion', nameEn: 'Steroids Equivalence', nameFr: 'Équivalence Corticoïdes', nameAr: 'تحويل جرعات الكورتيزون والستيرويد', icon: ArrowRightLeft, tier: 3 },
   { path: '/adjusted-body-weight', nameEn: 'IBW & ABW Weight', nameFr: 'Poids Idéal & Ajusté', nameAr: 'حساب الوزن المثالي والمعدل', icon: LayoutDashboard, tier: 3 },
   { path: '/medical-conversions', nameEn: 'Unit Conversions', nameFr: 'Conversions d’Unités', nameAr: 'تحويل الوحدات المخبرية والطبية', icon: ArrowRightLeft, tier: 3 },
+  { path: '/bicarb-deficit', nameEn: 'Bicarbonate Deficit', nameFr: 'Déficit en Bicarbonate', nameAr: 'نقص البيكربونات', icon: Droplet, tier: 3 },
   { path: '/bmi-calculator', nameEn: 'BMI Calculator', nameFr: 'Calculateur IMC', nameAr: 'مؤشر كتلة وزن الجسم BMI', icon: LayoutDashboard, tier: 3 },
   { path: '/phq9-score', nameEn: 'PHQ-9 Depression', nameFr: 'Score PHQ-9 Dépression', nameAr: 'مقياس PHQ-9 لتشخيص الاكتئاب', icon: Brain, tier: 3 },
+  { path: '/heparin-dosing', nameEn: 'Heparin Dosing', nameFr: 'Dosage Héparine', nameAr: 'جرعة الهيبارين', icon: Activity, tier: 3 },
+  { path: '/opioid-conversion', nameEn: 'Opioid Conversion', nameFr: 'Conversion Opioïdes', nameAr: 'تحويل مسكنات الألم', icon: ArrowRightLeft, tier: 3 },
+  { path: '/maintenance-fluids', nameEn: 'Maintenance IV Fluids', nameFr: 'Fluides d’Entretien IV', nameAr: 'السوائل الوريدية اليومية', icon: Droplet, tier: 3 },
   
   // Tier 4 — Resources & Library
   { path: '/glp-1-hub', nameEn: 'GLP-1 Hub', nameFr: 'Hub GLP-1', nameAr: 'مركز أدوية GLP-1', icon: Sparkles, tier: 4, group: 'reading' as const },
@@ -237,9 +272,24 @@ export function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="ckd-epi-gfr" element={wrapCalculator('/ckd-epi-gfr', <CkdEpiGfr lang={lang} />)} />
       <Route path="wells-score" element={wrapCalculator('/wells-score', <WellsScore lang={lang} />)} />
       <Route path="parkland-formula" element={wrapCalculator('/parkland-formula', <ParklandFormula lang={lang} />)} />
+      <Route path="heparin-dosing" element={wrapCalculator('/heparin-dosing', <HeparinDosing lang={lang} />)} />
+      <Route path="opioid-conversion" element={wrapCalculator('/opioid-conversion', <OpioidConversion lang={lang} />)} />
+      <Route path="maintenance-fluids" element={wrapCalculator('/maintenance-fluids', <MaintenanceFluids lang={lang} />)} />
+      <Route path="osmolal-gap" element={wrapCalculator('/osmolal-gap', <OsmolalGap lang={lang} />)} />
+      <Route path="timi-score" element={wrapCalculator('/timi-score', <TimiScore lang={lang} />)} />
+      <Route path="heart-score" element={wrapCalculator('/heart-score', <HeartScore lang={lang} />)} />
+      <Route path="perc-rule" element={wrapCalculator('/perc-rule', <PercRule lang={lang} />)} />
+      <Route path="geneva-score" element={wrapCalculator('/geneva-score', <GenevaScore lang={lang} />)} />
+      <Route path="nihss-score" element={wrapCalculator('/nihss-score', <NihssScore lang={lang} />)} />
+      <Route path="grace-score" element={wrapCalculator('/grace-score', <GraceScore lang={lang} />)} />
+      <Route path="bicarb-deficit" element={wrapCalculator('/bicarb-deficit', <BicarbDeficit lang={lang} />)} />
+      <Route path="retic-index" element={wrapCalculator('/retic-index', <ReticIndex lang={lang} />)} />
       <Route path="fena" element={wrapCalculator('/fena', <FenaCalculator lang={lang} />)} />
       <Route path="winters-formula" element={wrapCalculator('/winters-formula', <WintersFormula lang={lang} />)} />
       <Route path="has-bled" element={wrapCalculator('/has-bled', <HasBledScore lang={lang} />)} />
+      <Route path="ciwa-ar" element={wrapCalculator('/ciwa-ar', <CiwaArScore lang={lang} />)} />
+      <Route path="free-water-deficit" element={wrapCalculator('/free-water-deficit', <FreeWaterDeficit lang={lang} />)} />
+      <Route path="sodium-correction" element={wrapCalculator('/sodium-correction', <SodiumCorrection lang={lang} />)} />
       <Route path="medical-conversions" element={wrapCalculator('/medical-conversions', <MedicalConversions lang={lang} />)} />
       <Route path="medical-conversions/:category" element={wrapCalculator('/medical-conversions', <MedicalConversions lang={lang} />)} />
       <Route path="corrected-calcium" element={wrapCalculator('/corrected-calcium', <CorrectedCalcium lang={lang} />)} />

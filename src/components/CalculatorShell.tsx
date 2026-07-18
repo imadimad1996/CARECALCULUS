@@ -148,6 +148,25 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
         }} 
       />
 
+      {/* Mobile Sticky Result Bar */}
+      {calcData && calcData.results && calcData.results.length > 0 && (
+        <div className="md:hidden fixed bottom-16 left-0 right-0 bg-white border-t border-slate-200 shadow-[0_-8px_24px_rgba(0,0,0,0.08)] z-30 px-4 py-3 pb-safe animate-in slide-in-from-bottom-4 flex items-center justify-between">
+          <div className="flex flex-col">
+            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{calcData.results[0].label}</span>
+            <div className="flex items-baseline gap-1">
+              <span className="text-xl font-extrabold text-teal-700">{calcData.results[0].value}</span>
+              {calcData.results[0].unit && <span className="text-xs font-semibold text-teal-600/80">{calcData.results[0].unit}</span>}
+            </div>
+          </div>
+          {calcData.results.length > 1 && (
+            <div className="flex flex-col items-end text-right">
+              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{calcData.results[1].label}</span>
+              <span className="text-sm font-bold text-slate-700 truncate max-w-[140px]">{calcData.results[1].value}</span>
+            </div>
+          )}
+        </div>
+      )}
+
       {/* Universal Inline EHR & Viral Sharing Bar */}
       {calcData && (
         <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 border border-indigo-500/30 rounded-3xl p-6 shadow-xl text-white my-8" dir={isRtl ? 'rtl' : 'ltr'}>
