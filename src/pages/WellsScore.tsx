@@ -221,7 +221,7 @@ export default function WellsScore({ lang }: { lang: LangCode }) {
         {/* GEO Definition Block with Glassmorphic Accent */}
         <div className="backdrop-blur-md bg-cyan-50/70 border border-cyan-200/60 shadow-sm rounded-2xl p-5 mt-6 mb-2 transition-all hover:shadow-md">
           <div className="flex items-center gap-2 mb-2">
-            <span className="w-2 h-2 rounded-full bg-cyan-600 animate-pulse" />
+            
             <h2 className="text-xs font-bold text-cyan-900 uppercase tracking-widest">
               {lang === 'fr' ? 'Définition Clinique' : 'Clinical Definition'}
             </h2>
@@ -297,7 +297,7 @@ export default function WellsScore({ lang }: { lang: LangCode }) {
                   {currentText.result}
                 </span>
                 <span className="flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full bg-white/10 text-slate-300 backdrop-blur-md">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                  
                   Live Score
                 </span>
               </div>
@@ -313,7 +313,7 @@ export default function WellsScore({ lang }: { lang: LangCode }) {
             <div className="relative z-10 mt-10 space-y-4">
               <div className={`p-4 rounded-2xl border backdrop-blur-md flex justify-between items-center transition-all shadow-lg ${category.bg} ${category.color}`}>
                 <div className="flex items-center gap-3">
-                  <span className="w-2.5 h-2.5 rounded-full bg-current animate-pulse" />
+                  
                   <span className="font-bold text-sm tracking-wide">
                     {category.label}
                   </span>

@@ -287,7 +287,7 @@ function AppLayout() {
         <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/5 rounded-full blur-xl pointer-events-none" />
         <div className="flex items-center justify-between gap-2 mb-2.5">
           <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
+            
             <span className="text-[10px] font-mono font-black leading-none uppercase tracking-wider text-gray-400">
               {lang === 'fr' 
                 ? 'INDEX DES MOTS-CLÉS POPULAIRES' 
@@ -354,7 +354,7 @@ function AppLayout() {
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                
                 <span className="text-[9px] font-mono font-bold text-[#22D3EE] uppercase tracking-widest leading-none">
                   CareCalculus GEO-Intelligence Node
                 </span>
@@ -857,7 +857,7 @@ function AppLayout() {
                   className="w-full text-left rtl:text-right px-3.5 py-2.5 rounded-xl bg-slate-100/60 dark:bg-slate-800/30 border border-slate-200/50 dark:border-slate-800/80 hover:bg-slate-200/40 dark:hover:bg-slate-800 text-[11.5px] font-mono font-black tracking-wider text-slate-700 dark:text-slate-200 uppercase transition-all duration-200 flex items-center justify-between group cursor-pointer shadow-3xs hover:-translate-y-0.5 active:scale-[0.99]"
                 >
                   <span className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-teal-500 shadow-[0_0_6px_rgba(20,184,166,0.5)]" />
+                    
                     <span>{getLocalizedTierHeader(1)}</span>
                   </span>
                   <ChevronDown className={`w-4 h-4 text-slate-400 group-hover:text-slate-700 dark:group-hover:text-white transition-transform duration-200 ${(sidebarSearch || expandedTiers[1]) ? '' : (isRtl ? 'rotate-90' : '-rotate-90')}`} />
@@ -896,7 +896,7 @@ function AppLayout() {
                   className="w-full text-left rtl:text-right px-3.5 py-2.5 rounded-xl bg-slate-100/60 dark:bg-slate-800/30 border border-slate-200/50 dark:border-slate-800/80 hover:bg-slate-200/40 dark:hover:bg-slate-800 text-[11.5px] font-mono font-black tracking-wider text-slate-700 dark:text-slate-200 uppercase transition-all duration-200 flex items-center justify-between group cursor-pointer shadow-3xs hover:-translate-y-0.5 active:scale-[0.99]"
                 >
                   <span className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-teal-500 shadow-[0_0_6px_rgba(20,184,166,0.5)]" />
+                    
                     <span>{getLocalizedTierHeader(2)}</span>
                   </span>
                   <ChevronDown className={`w-4 h-4 text-slate-400 group-hover:text-slate-700 dark:group-hover:text-white transition-transform duration-200 ${(sidebarSearch || expandedTiers[2]) ? '' : (isRtl ? 'rotate-90' : '-rotate-90')}`} />
@@ -935,7 +935,7 @@ function AppLayout() {
                   className="w-full text-left rtl:text-right px-3.5 py-2.5 rounded-xl bg-slate-100/60 dark:bg-slate-800/30 border border-slate-200/50 dark:border-slate-800/80 hover:bg-slate-200/40 dark:hover:bg-slate-800 text-[11.5px] font-mono font-black tracking-wider text-slate-700 dark:text-slate-200 uppercase transition-all duration-200 flex items-center justify-between group cursor-pointer shadow-3xs hover:-translate-y-0.5 active:scale-[0.99]"
                 >
                   <span className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-teal-500 shadow-[0_0_6px_rgba(20,184,166,0.5)]" />
+                    
                     <span>{getLocalizedTierHeader(3)}</span>
                   </span>
                   <ChevronDown className={`w-4 h-4 text-slate-400 group-hover:text-slate-700 dark:group-hover:text-white transition-transform duration-200 ${(sidebarSearch || expandedTiers[3]) ? '' : (isRtl ? 'rotate-90' : '-rotate-90')}`} />
@@ -974,7 +974,7 @@ function AppLayout() {
                   className="w-full text-left rtl:text-right px-3.5 py-2.5 rounded-xl bg-slate-100/60 dark:bg-slate-800/30 border border-slate-200/50 dark:border-slate-800/80 hover:bg-slate-200/40 dark:hover:bg-slate-800 text-[11.5px] font-mono font-black tracking-wider text-slate-700 dark:text-slate-200 uppercase transition-all duration-200 flex items-center justify-between group cursor-pointer shadow-3xs hover:-translate-y-0.5 active:scale-[0.99]"
                 >
                   <span className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-teal-500 shadow-[0_0_6px_rgba(20,184,166,0.5)]" />
+                    
                     <span>{lang === 'fr' ? 'RESSOURCES & BIBLIOTHÈQUE' : ('RESOURCES & LIBRARY')}</span>
                   </span>
                   <ChevronDown className={`w-4 h-4 text-slate-400 group-hover:text-slate-700 dark:group-hover:text-white transition-transform duration-200 ${(sidebarSearch || expandedTiers[4]) ? '' : (isRtl ? 'rotate-90' : '-rotate-90')}`} />
@@ -1030,7 +1030,7 @@ function AppLayout() {
                   className="w-full text-left rtl:text-right px-3.5 py-2.5 rounded-xl bg-slate-100/60 dark:bg-slate-800/30 border border-slate-200/50 dark:border-slate-800/80 hover:bg-slate-200/40 dark:hover:bg-slate-800 text-[11.5px] font-mono font-black tracking-wider text-slate-700 dark:text-slate-200 uppercase transition-all duration-200 flex items-center justify-between group cursor-pointer shadow-3xs hover:-translate-y-0.5 active:scale-[0.99]"
                 >
                   <span className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-teal-500 shadow-[0_0_6px_rgba(20,184,166,0.5)]" />
+                    
                     <span>{getLocalizedTierHeader(5)}</span>
                   </span>
                   <ChevronDown className={`w-4 h-4 text-slate-400 group-hover:text-slate-700 dark:group-hover:text-white transition-transform duration-200 ${(sidebarSearch || expandedTiers[5]) ? '' : (isRtl ? 'rotate-90' : '-rotate-90')}`} />
@@ -1074,7 +1074,7 @@ function AppLayout() {
               <div className="space-y-1.5 pt-4 border-t border-slate-200/80 dark:border-slate-800">
                 <div className="px-3 py-2 rounded-xl bg-teal-500/10 dark:bg-teal-500/20 border border-teal-500/20 text-[11px] font-mono leading-none tracking-wider text-teal-700 dark:text-teal-300 font-extrabold uppercase flex items-center justify-between">
                   <span className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse shadow-[0_0_8px_rgba(20,184,166,0.6)]" />
+                    
                     <span>{lang === 'fr' ? 'FMP ACCUEIL COURS' : ('FMP ACADEMIC HUB')}</span>
                   </span>
                 </div>
@@ -1135,7 +1135,7 @@ function AppLayout() {
             {true && (
               <div className="mt-12 p-6 bg-white rounded-2xl border border-gray-200/80 shadow-xs space-y-4">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+                  
                   <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 font-mono">
                     {lang === 'fr' ? 'Calculateurs Connexes Recommandés' : ('Suggested Diagnostic Protocols')}
                   </h3>
