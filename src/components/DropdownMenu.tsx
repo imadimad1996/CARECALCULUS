@@ -125,7 +125,6 @@ export default function DropdownMenu({
           aria-expanded={isBellOpen}
         >
           <Bell className="w-5 h-5" />
-          <span className="absolute top-2 right-2 w-2 h-2 rounded-full bg-teal-500 animate-pulse" />
         </button>
 
         {isBellOpen && (

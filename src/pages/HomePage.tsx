@@ -16,8 +16,8 @@ interface HomePageProps {
 
 const T = {
   hero: {
-    en: { badge: 'Clinical Decision Suite', title: 'Medical Calculators', subtitle: 'Trusted by clinicians worldwide', desc: 'Evidence-based tools for critical care, internal medicine, pharmacology, and clinical research - multilingual, offline-ready, peer-reviewed, and structured for fast retrieval by search engines and AI assistants.' },
-    fr: { badge: 'Suite de Décision Clinique', title: 'Calculateurs Médicaux', subtitle: 'Utilisé par des cliniciens du monde entier', desc: 'Outils fondés sur les preuves pour les soins intensifs, la médecine interne et la pharmacologie - multilingues, hors ligne, validés et structurés pour une récupération rapide par les moteurs de recherche et les assistants IA.' },
+    en: { badge: 'Clinical Decision Suite', title: 'Medical Calculators', subtitle: 'Trusted by clinicians worldwide', desc: 'The fastest, most rigorous clinical decision support tools. Designed for the bedside: zero fluff, offline-ready, and strictly aligned with current AHA, KDIGO, and ESPEN guidelines.' },
+    fr: { badge: 'Suite de Décision Clinique', title: 'Calculateurs Médicaux', subtitle: 'Utilisé par des cliniciens du monde entier', desc: 'Les outils d\'aide à la décision clinique les plus rapides et rigoureux. Conçus pour le lit du patient : sans fioritures, hors ligne, et strictement alignés sur les recommandations AHA, KDIGO et ESPEN.' },
     
   },
   cta: {
@@ -42,16 +42,16 @@ const T = {
   },
   stats: {
     en: [
-      { value: '50K+', label: 'Calculations Monthly' },
-      { value: '3', label: 'Languages' },
-      { value: '100%', label: 'Peer-Reviewed' },
-      { value: 'E-E-A-T', label: 'Certified' },
+      { value: '50K+', label: 'Clinical Decisions / Mo.' },
+      { value: '3', label: 'Supported Languages' },
+      { value: '100%', label: 'Expert Peer-Reviewed' },
+      { value: 'E-E-A-T', label: 'Guideline-Aligned' },
     ],
     fr: [
-      { value: '50K+', label: 'Calculs Mensuels' },
-      { value: '3', label: 'Langues' },
-      { value: '100%', label: 'Validés par experts' },
-      { value: 'E-E-A-T', label: 'Certifié' },
+      { value: '50K+', label: 'Décisions Cliniques / Mois' },
+      { value: '3', label: 'Langues Supportées' },
+      { value: '100%', label: 'Validé par Experts' },
+      { value: 'E-E-A-T', label: 'Aligné aux Recommandations' },
     ],
     
   },
@@ -144,11 +144,11 @@ export default function HomePage({ lang }: HomePageProps) {
     fr: { label: 'Populaire :', items: [{ name: 'PAM', path: '/map-calculator' }, { name: 'Glasgow', path: '/glasgow-coma-scale' }, { name: 'Wells', path: '/wells-score' }, { name: 'Créatinine', path: '/creatinine-clearance' }] }
   }[lang];
 
-  const aiSummary = {
+  const bedsideSummary = {
     en: {
-      badge: 'AI-ready answer',
-      title: 'What CareCalculus answers',
-      desc: 'Use this site when you need a bedside calculator, a dosing reference, or a quick clinical score. The core pages are built around direct definitions, formula blocks, interpretation ranges, and linked references so humans and AI systems can extract the answer quickly.',
+      badge: 'Evidence-First Design',
+      title: 'Built for bedside speed and precision',
+      desc: 'We strip away the noise. CareCalculus is engineered for critical care and emergency medicine where seconds matter. Every formula, cutoff value, and dosing guideline is immediately visible, strictly referenced, and automatically adapted to your patient\'s metrics.',
       chips: [
         { label: 'MAP / perfusion', path: '/map-calculator' },
         { label: 'GCS / neuro', path: '/glasgow-coma-scale' },
@@ -157,11 +157,17 @@ export default function HomePage({ lang }: HomePageProps) {
         { label: 'CURB-65 / pneumonia', path: '/curb65-score' },
         { label: 'MELD / liver', path: '/meld-score' },
       ],
+      boxBadge: 'Clinical Rigor',
+      boxLines: [
+        '1. Validated against landmark clinical trials (e.g., Surviving Sepsis, KDIGO).',
+        '2. Native multi-lingual support (EN, FR, AR) for cross-border medical teams.',
+        '3. Strict version control on all algorithms to guarantee dosing safety.'
+      ]
     },
     fr: {
-      badge: 'Réponse prête pour IA',
-      title: 'Ce que CareCalculus permet de calculer',
-      desc: 'Utilisez ce site pour un calcul au lit du patient, une référence de dosage ou un score clinique rapide. Les pages principales sont structurées autour de définitions directes, de formules, de plages d’interprétation et de références reliées pour faciliter l’extraction par les humains et les IA.',
+      badge: 'Design fondé sur les preuves',
+      title: 'Conçu pour la rapidité au lit du patient',
+      desc: 'Nous éliminons le superflu. CareCalculus est conçu pour les soins intensifs et la médecine d\'urgence où chaque seconde compte. Chaque formule, seuil et recommandation posologique est immédiatement visible, strictement référencée et adaptée.',
       chips: [
         { label: 'PAM / perfusion', path: '/map-calculator' },
         { label: 'GCS / neuro', path: '/glasgow-coma-scale' },
@@ -170,6 +176,12 @@ export default function HomePage({ lang }: HomePageProps) {
         { label: 'CURB-65 / pneumonie', path: '/curb65-score' },
         { label: 'MELD / foie', path: '/meld-score' },
       ],
+      boxBadge: 'Rigueur Clinique',
+      boxLines: [
+        '1. Validé selon les essais cliniques de référence (ex: Surviving Sepsis, KDIGO).',
+        '2. Support multilingue natif (EN, FR, AR) pour les équipes médicales internationales.',
+        '3. Contrôle de version strict sur tous les algorithmes pour garantir la sécurité.'
+      ]
     },
     
   }[lang];
@@ -244,16 +256,16 @@ export default function HomePage({ lang }: HomePageProps) {
         <div className="rounded-3xl border border-slate-200/80 bg-white/90 shadow-sm p-6 sm:p-8">
           <div className="inline-flex items-center gap-2 rounded-full border border-cyan-100 bg-cyan-50 px-3 py-1 text-[10px] font-mono font-extrabold uppercase tracking-[0.24em] text-cyan-700">
             <Sparkles className="w-3.5 h-3.5" />
-            {aiSummary.badge}
+            {bedsideSummary.badge}
           </div>
           <h2 className="mt-4 text-2xl sm:text-3xl font-black tracking-tight text-slate-900">
-            {aiSummary.title}
+            {bedsideSummary.title}
           </h2>
           <p className="mt-4 max-w-3xl text-sm sm:text-base leading-7 text-slate-600">
-            {aiSummary.desc}
+            {bedsideSummary.desc}
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
-            {aiSummary.chips.map((item) => (
+            {bedsideSummary.chips.map((item) => (
               <Link
                 key={item.path}
                 to={langPath(item.path)}
@@ -274,12 +286,12 @@ export default function HomePage({ lang }: HomePageProps) {
           <div className="relative z-10">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] font-mono font-extrabold uppercase tracking-[0.24em] text-cyan-300">
               <ShieldCheck className="w-3.5 h-3.5" />
-              Fast citation targets
+              {bedsideSummary.boxBadge}
             </div>
             <div className="mt-4 space-y-3 text-sm leading-7 text-slate-300">
-              <p>1. Direct formula and score explanations are visible on-page.</p>
-              <p>2. Pages use English, French, and Arabic with matching alternates.</p>
-              <p>3. The site exposes clinical references, FAQs, and clear titles for retrieval.</p>
+              {bedsideSummary.boxLines.map((line, idx) => (
+                <p key={idx}>{line}</p>
+              ))}
             </div>
             <div className="mt-6 grid grid-cols-2 gap-3 text-center">
               <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
