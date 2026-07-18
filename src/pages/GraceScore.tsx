@@ -11,6 +11,7 @@ const translations: Translations = {
   en: {
     title: "GRACE Score (ACS Risk)",
     subtitle: "Estimates admission-to-6-month mortality for patients with Acute Coronary Syndrome",
+    clinicalDefinition: "The GRACE (Global Registry of Acute Coronary Events) score is a validated clinical risk stratification tool used to estimate the 6-month admission-to-mortality risk in patients presenting with acute coronary syndrome (ACS), including STEMI, NSTEMI, and unstable angina. It integrates physiological continuous variables—such as age, heart rate, systolic blood pressure, and creatinine—with Killip class and biomarker elevation to objectively guide early invasive strategies.",
     ageLabel: "Age (years)",
     hrLabel: "Heart Rate (bpm)",
     sbpLabel: "Systolic BP (mmHg)",
@@ -31,20 +32,22 @@ const translations: Translations = {
     riskTitle: "In-Hospital Mortality Risk",
     clinicalTitle: "Clinical Context",
     pearls: [
-      "The GRACE score is more accurate than the TIMI score because it uses continuous variables (age, HR, BP, Cr) rather than simple cutoffs.",
-      "A high GRACE score (> 140) strongly suggests the need for an early invasive strategy (angiography within 24 hours).",
-      "Killip class is a powerful predictor of mortality in ACS."
+      "In emergency and ICU settings, a GRACE score > 140 dictates an early invasive strategy (coronary angiography < 24 hours) per AHA/ACC guidelines.",
+      "The GRACE score is demonstrably more accurate than the TIMI score because it utilizes continuous physiological variables (age, HR, BP, Cr) rather than blunt dichotomous cutoffs.",
+      "Killip class independently drives mortality risk; a patient in cardiogenic shock (Killip IV) automatically accumulates massive risk points, overriding minor variables."
     ],
     pitfalls: [
-      "Do NOT use this for patients presenting with non-cardiac chest pain; it is validated for patients with suspected or confirmed ACS.",
-      "Creatinine must be in mg/dL for this specific nomogram."
+      "Contraindicated for undifferentiated chest pain. The GRACE score is exclusively validated for patients with suspected or electrocardiographically confirmed Acute Coronary Syndrome (ACS).",
+      "Renal function caveats: The nomogram specifically requires serum creatinine in mg/dL. Ensure proper conversion if your laboratory reports in µmol/L (1 mg/dL = 88.4 µmol/L).",
+      "Do not recalculate dynamically to assess recovery; it is designed for risk stratification at the time of initial admission."
     ],
-    evidence: "Risk Strata for In-Hospital Mortality: Low (< 109 pts: < 1%), Intermediate (109-140 pts: 1-3%), High (> 140 pts: > 3%).",
+    evidence: "<b>Risk Strata for In-Hospital Mortality:</b><br/>• Low Risk (< 109 pts): < 1% mortality.<br/>• Intermediate Risk (109-140 pts): 1-3% mortality.<br/>• High Risk (> 140 pts): > 3% mortality.<br/><br/><i>Validated in over 100,000 patients across global registries, GRACE remains the gold standard for ACS mortality prediction.</i>",
     references: "Granger CB, et al. Predictors of hospital mortality in the global registry of acute coronary events. Arch Intern Med. 2003;163(19):2345-53."
   },
   fr: {
     title: "Score de GRACE (SCA)",
     subtitle: "Estime la mortalité intra-hospitalière à 6 mois pour les Syndromes Coronariens Aigus",
+    clinicalDefinition: "Le score GRACE (Global Registry of Acute Coronary Events) est un outil clinique validé de stratification du risque, utilisé pour estimer la mortalité à 6 mois chez les patients présentant un syndrome coronarien aigu (SCA). Il intègre des variables physiologiques continues (âge, fréquence cardiaque, pression artérielle, créatinine) à la classe de Killip et à l'élévation des biomarqueurs pour guider de manière objective les stratégies invasives précoces.",
     ageLabel: "Âge (ans)",
     hrLabel: "Fréq. Cardiaque (bpm)",
     sbpLabel: "PA Systolique (mmHg)",
@@ -65,15 +68,15 @@ const translations: Translations = {
     riskTitle: "Risque de mortalité intra-hospitalière",
     clinicalTitle: "Contexte Clinique",
     pearls: [
-      "Le score GRACE est plus précis que le TIMI car il utilise des variables continues (âge, FC, PA, Créatinine).",
-      "Un score GRACE élevé (> 140) indique fortement la nécessité d'une stratégie invasive précoce (coronarographie < 24h).",
-      "La classe de Killip est un puissant prédicteur de mortalité dans le SCA."
+      "Un score GRACE > 140 impose une stratégie invasive précoce (coronarographie < 24h) selon les recommandations de l'ESC et de l'AHA.",
+      "Le score GRACE est nettement plus précis que le score TIMI car il exploite des variables physiologiques continues au lieu de simples seuils arbitraires.",
+      "La classe de Killip est un moteur majeur du risque ; un choc cardiogénique augmente drastiquement la mortalité."
     ],
     pitfalls: [
-      "NE PAS utiliser ce score pour des douleurs thoraciques non cardiaques ; il est validé pour les SCA suspectés ou confirmés.",
-      "La créatinine doit être en mg/dL."
+      "Contre-indiqué pour les douleurs thoraciques non différenciées. Ce score est exclusivement validé pour le Syndrome Coronarien Aigu (SCA) suspecté ou confirmé.",
+      "Attention à la fonction rénale : ce nomogramme exige une créatinine en mg/dL. Convertissez si votre laboratoire utilise des µmol/L (1 mg/dL = 88.4 µmol/L)."
     ],
-    evidence: "Risque de mortalité intra-hospitalière : Faible (< 109 pts : < 1%), Intermédiaire (109-140 pts : 1-3%), Fort (> 140 pts : > 3%).",
+    evidence: "<b>Stratification du risque de mortalité intra-hospitalière :</b><br/>• Risque Faible (< 109 pts) : < 1%.<br/>• Risque Intermédiaire (109-140 pts) : 1-3%.<br/>• Risque Élevé (> 140 pts) : > 3%.<br/><br/><i>Validé sur plus de 100 000 patients, le score GRACE est le standard de référence pour le pronostic du SCA.</i>",
     references: "Granger CB, et al. Predictors of hospital mortality in the global registry of acute coronary events. Arch Intern Med. 2003;163(19):2345-53."
   }
 };
@@ -181,13 +184,13 @@ export default function GraceScore({ lang }: { lang: LangCode }) {
             "@id": `https://carecalculus.com/${lang === 'en' ? '' : lang + '/'}grace-score`,
             "url": `https://carecalculus.com/${lang === 'en' ? '' : lang + '/'}grace-score`,
             "name": currentText.title as string,
-            "description": currentText.subtitle as string,
+            "description": (currentText.clinicalDefinition || currentText.subtitle) as string,
             "inLanguage": lang
           },
           {
             "@type": "MedicalCalculator",
             "name": currentText.title as string,
-            "description": currentText.subtitle as string,
+            "description": (currentText.clinicalDefinition || currentText.subtitle) as string,
             "url": `https://carecalculus.com/${lang === 'en' ? '' : lang + '/'}grace-score`,
             "relevantSpecialty": {
               "@type": "MedicalSpecialty",
@@ -210,7 +213,12 @@ export default function GraceScore({ lang }: { lang: LangCode }) {
         <p className="text-slate-600 text-base md:text-lg max-w-2xl leading-relaxed">
           {currentText.subtitle as string}
         </p>
-        <div className="mt-4 flex gap-3">
+        {currentText.clinicalDefinition && (
+          <p className="mt-4 text-sm text-slate-500 leading-relaxed max-w-3xl border-l-2 border-teal-500 pl-4">
+            {currentText.clinicalDefinition as string}
+          </p>
+        )}
+        <div className="mt-6 flex gap-3">
           <EmbedCodeButton calculatorSlug="grace-score" lang={lang} title={currentText.title as string} />
         </div>
       </div>

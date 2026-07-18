@@ -11,6 +11,7 @@ const translations: Translations = {
   en: {
     title: "NIH Stroke Scale (NIHSS)",
     subtitle: "Quantifies the impairment caused by a stroke",
+    clinicalDefinition: "The NIH Stroke Scale (NIHSS) is a systematic, 15-item quantitative tool used to evaluate neurological deficits in acute stroke patients. It objectively measures the severity of stroke, assists in determining appropriate treatment strategies such as intravenous thrombolysis (tPA) or mechanical thrombectomy, and acts as a strong predictor of both short- and long-term patient outcomes.",
     categories: [
       {
         id: '1a', title: '1a. Level of Consciousness',
@@ -156,21 +157,22 @@ const translations: Translations = {
     },
     clinicalTitle: "Clinical Context",
     pearls: [
-      "The NIHSS is the standard for quantifying stroke severity and guiding thrombolytic therapy (tPA).",
-      "Always assess items in the strict order presented. Do not go back to change scores.",
-      "Score what the patient actually does, not what you think they can do.",
+      "The NIHSS is the global gold standard for quantifying stroke severity and determining eligibility for thrombolytic therapy (tPA) or mechanical thrombectomy.",
+      "Always assess items in the exact order presented (1a to 11). Do not dynamically recalculate or go back to change scores based on later findings.",
+      "Score strictly what the patient actually does, not what you clinically assume they can do. Avoid coaching.",
       "For aphasic patients, you must still score the items strictly as directed, even if they cannot follow commands."
     ],
     pitfalls: [
-      "The NIHSS is heavily weighted toward anterior circulation strokes. It can score 0 for severe posterior circulation strokes (e.g., cerebellar infarct, Wallenberg syndrome).",
-      "Don't confuse dysarthria (motor speech issue, item 10) with aphasia (language processing issue, item 9)."
+      "Massive posterior circulation blindspot: The NIHSS is heavily weighted toward anterior circulation (MCA/ACA) strokes. A patient with a devastating brainstem or cerebellar stroke (e.g., Wallenberg syndrome) may deceptively score a 0.",
+      "Do not confuse dysarthria (a motor articulation deficit, item 10) with aphasia (a cognitive language processing deficit, item 9)."
     ],
-    evidence: "Scores < 5 generally indicate a minor stroke. Scores > 15 are predictive of a severe stroke with higher risk of hemorrhagic transformation if thrombolytics are used.",
+    evidence: "<b>Severity Stratification:</b><br/>• 0: No stroke symptoms<br/>• 1-4: Minor stroke<br/>• 5-15: Moderate stroke<br/>• 16-20: Moderate to severe stroke<br/>• 21-42: Severe stroke<br/><br/><i>A baseline NIHSS > 15 is highly predictive of severe outcomes and poses an exponentially higher risk of hemorrhagic transformation if IV alteplase (tPA) is administered.</i>",
     references: "Brott T, Adams HP Jr, Olinger CP, et al. Measurements of acute cerebral infarction: a clinical examination scale. Stroke. 1989;20(7):864-70."
   },
   fr: {
     title: "Score NIHSS (AVC)",
     subtitle: "Quantifie la sévérité du déficit neurologique lors d'un AVC",
+    clinicalDefinition: "Le score NIHSS (National Institutes of Health Stroke Scale) est un outil quantitatif systématique en 15 points utilisé pour évaluer les déficits neurologiques chez les patients atteints d'AVC aigu. Il mesure objectivement la sévérité de l'AVC, aide à déterminer les stratégies de traitement appropriées telles que la thrombolyse intraveineuse ou la thrombectomie mécanique, et constitue un puissant indicateur pronostique.",
     categories: [
       {
         id: '1a', title: '1a. Niveau de Conscience',
@@ -316,15 +318,16 @@ const translations: Translations = {
     },
     clinicalTitle: "Contexte Clinique",
     pearls: [
-      "Le NIHSS est le standard pour quantifier la sévérité d'un AVC et guider la thrombolyse.",
-      "Évaluez toujours les items dans l'ordre strict. Ne revenez pas en arrière pour modifier un score.",
-      "Notez ce que le patient fait réellement, pas ce que vous pensez qu'il peut faire."
+      "Le NIHSS est le standard mondial pour quantifier la sévérité d'un AVC et déterminer l'éligibilité à la thrombolyse (rt-PA) ou à la thrombectomie mécanique.",
+      "Évaluez toujours les items dans l'ordre strict (1a à 11). Ne revenez pas en arrière pour modifier un score basé sur des découvertes ultérieures.",
+      "Notez ce que le patient fait réellement, pas ce que vous supposez qu'il peut faire cliniquement.",
+      "Pour les patients aphasiques, vous devez quand même évaluer tous les items strictement comme indiqué."
     ],
     pitfalls: [
-      "Le NIHSS est biaisé vers les AVC de la circulation antérieure. Un infarctus sévère du cervelet peut avoir un score de 0.",
-      "Ne pas confondre dysarthrie (trouble moteur, item 10) et aphasie (trouble du langage, item 9)."
+      "Angle mort majeur de la circulation postérieure : Le NIHSS est fortement pondéré pour la circulation antérieure (ACM/ACA). Un AVC dévastateur du tronc cérébral ou du cervelet (ex: syndrome de Wallenberg) peut obtenir un score trompeur de 0.",
+      "Ne pas confondre la dysarthrie (déficit de l'articulation motrice, item 10) et l'aphasie (déficit cognitif du traitement du langage, item 9)."
     ],
-    evidence: "Scores < 5 indiquent un AVC mineur. Scores > 15 prédisent un AVC sévère avec un risque plus élevé de transformation hémorragique post-thrombolyse.",
+    evidence: "<b>Stratification de la Sévérité :</b><br/>• 0 : Aucun symptôme d'AVC<br/>• 1-4 : AVC mineur<br/>• 5-15 : AVC modéré<br/>• 16-20 : AVC modéré à sévère<br/>• 21-42 : AVC sévère<br/><br/><i>Un NIHSS initial > 15 est fortement prédictif de résultats sévères et pose un risque exponentiellement plus élevé de transformation hémorragique si l'altéplase IV est administrée.</i>",
     references: "Brott T, Adams HP Jr, Olinger CP, et al. Measurements of acute cerebral infarction: a clinical examination scale. Stroke. 1989;20(7):864-70."
   }
 };
@@ -390,13 +393,13 @@ export default function NihssScore({ lang }: { lang: LangCode }) {
             "@id": `https://carecalculus.com/${lang === 'en' ? '' : lang + '/'}nihss-score`,
             "url": `https://carecalculus.com/${lang === 'en' ? '' : lang + '/'}nihss-score`,
             "name": currentText.title as string,
-            "description": currentText.subtitle as string,
+            "description": (currentText.clinicalDefinition || currentText.subtitle) as string,
             "inLanguage": lang
           },
           {
             "@type": "MedicalCalculator",
             "name": currentText.title as string,
-            "description": currentText.subtitle as string,
+            "description": (currentText.clinicalDefinition || currentText.subtitle) as string,
             "url": `https://carecalculus.com/${lang === 'en' ? '' : lang + '/'}nihss-score`,
             "relevantSpecialty": {
               "@type": "MedicalSpecialty",
@@ -419,7 +422,12 @@ export default function NihssScore({ lang }: { lang: LangCode }) {
         <p className="text-slate-600 text-base md:text-lg max-w-2xl leading-relaxed">
           {currentText.subtitle as string}
         </p>
-        <div className="mt-4 flex gap-3">
+        {currentText.clinicalDefinition && (
+          <p className="mt-4 text-sm text-slate-500 leading-relaxed max-w-3xl border-l-2 border-purple-500 pl-4">
+            {currentText.clinicalDefinition as string}
+          </p>
+        )}
+        <div className="mt-6 flex gap-3">
           <EmbedCodeButton calculatorSlug="nihss-score" lang={lang} title={currentText.title as string} />
         </div>
       </div>

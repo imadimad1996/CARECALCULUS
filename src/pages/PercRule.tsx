@@ -11,6 +11,7 @@ const translations: Translations = {
   en: {
     title: "PERC Rule for Pulmonary Embolism",
     subtitle: "Rule out PE in low-risk patients without a D-Dimer",
+    clinicalDefinition: "The Pulmonary Embolism Rule-out Criteria (PERC) is an 8-item clinical decision rule designed to safely rule out pulmonary embolism (PE) in patients where the clinician's pre-test probability is very low (<15%). If all eight criteria are negative, the probability of a PE falls below the testing threshold (typically <2%), allowing clinicians to safely avoid further diagnostic testing—such as D-dimer assays or CT pulmonary angiography (CTPA)—and their associated risks of false positives, contrast nephropathy, and radiation exposure.",
     criteria: [
       "Age ≥ 50 years",
       "Heart rate ≥ 100 bpm",
@@ -28,19 +29,22 @@ const translations: Translations = {
     actionPositive: "Cannot rule out PE. Proceed with D-dimer or imaging.",
     clinicalTitle: "Clinical Context",
     pearls: [
-      "The PERC rule should ONLY be applied to patients who have a LOW clinical pre-test probability for PE (e.g., Wells Score < 2).",
-      "If the patient is low-risk AND PERC negative, the risk of PE is < 2%, safely avoiding the need for D-dimer and radiation exposure from CTPA."
+      "The PERC rule must ONLY be applied to patients who have already been deemed to have a LOW clinical pre-test probability for PE (e.g., clinician gestalt < 15%, or a Wells Score < 2).",
+      "If the patient is low-risk AND PERC negative, the risk of PE drops below 2%. At this threshold, the risks of testing (false-positive D-dimer leading to CTPA, contrast allergy, radiation) outweigh the risk of missing a PE.",
+      "Remember the 'Age ≥ 50' criterion is an absolute cutoff. A 50-year-old patient automatically fails PERC and requires a D-dimer if PE is suspected."
     ],
     pitfalls: [
-      "Do NOT use the PERC rule if the clinician's pre-test gestalt is moderate or high risk for PE. It will falsely reassure.",
-      "A 'PERC Positive' result does NOT mean the patient has a PE; it simply means they require further testing (D-dimer)."
+      "Gestalt override: Do NOT use the PERC rule if your clinical gestalt dictates a moderate or high risk for PE. It will falsely reassure you.",
+      "A 'PERC Positive' result (≥ 1 criteria met) does NOT mean the patient has a PE. It simply means they fail the rule-out criteria and require further testing (typically a D-dimer or age-adjusted D-dimer).",
+      "Do not use in pregnant patients. The PERC rule is not validated in pregnancy."
     ],
-    evidence: "8-item clinical decision rule designed to identify patients at such low risk for pulmonary embolism that no further testing is required.",
+    evidence: "<b>Validation:</b><br/>Validated in multiple prospective trials (including the PROPPER trial).<br/>• PERC negative (0 criteria) + low clinical gestalt: PE rate is < 1.8%.<br/>• The rule reduces unnecessary D-dimer testing by approximately 20% in emergency department settings.",
     references: "Kline JA, et al. Clinical criteria to prevent unnecessary diagnostic testing in emergency department patients with suspected pulmonary embolism. J Thromb Haemost. 2004;2(8):1247-55."
   },
   fr: {
     title: "Score PERC (Embolie Pulmonaire)",
     subtitle: "Exclure l'EP chez les patients à faible risque sans D-Dimères",
+    clinicalDefinition: "La règle PERC (Pulmonary Embolism Rule-out Criteria) est un outil clinique en 8 points conçu pour exclure l'embolie pulmonaire (EP) chez les patients dont la probabilité pré-test est très faible (<15%). Si les huit critères sont négatifs, la probabilité d'EP tombe sous le seuil de test (<2%), permettant aux cliniciens d'éviter en toute sécurité des examens supplémentaires (D-dimères ou angioscanner thoracique) ainsi que les risques associés tels que les faux positifs ou l'exposition aux radiations.",
     criteria: [
       "Âge ≥ 50 ans",
       "Fréquence cardiaque ≥ 100 bpm",
@@ -58,14 +62,16 @@ const translations: Translations = {
     actionPositive: "Impossible d'exclure l'EP. Procéder aux D-dimères.",
     clinicalTitle: "Contexte Clinique",
     pearls: [
-      "Le score PERC doit être appliqué UNIQUEMENT aux patients ayant une FAIBLE probabilité clinique pré-test pour l'EP (ex: Score de Wells < 2).",
-      "Si le patient est à faible risque ET PERC négatif, le risque d'EP est < 2%, évitant les D-dimères et le scanner."
+      "Le score PERC doit être appliqué UNIQUEMENT aux patients ayant une FAIBLE probabilité clinique pré-test pour l'EP (ex: gestalt clinique < 15%, ou Score de Wells < 2).",
+      "Si le patient est à faible risque ET PERC négatif, le risque d'EP est inférieur à 2%. À ce stade, les risques des examens (D-dimères faux positifs menant au scanner, radiations) l'emportent sur le risque de manquer une EP.",
+      "Le critère 'Âge ≥ 50 ans' est absolu. Un patient de 50 ans échoue automatiquement au PERC et nécessite des D-dimères si l'EP est suspectée."
     ],
     pitfalls: [
-      "NE PAS utiliser le PERC si la probabilité clinique pré-test est modérée ou élevée.",
-      "Un PERC positif ne signifie pas une EP, mais que des tests supplémentaires sont requis."
+      "Interférence du Gestalt : NE PAS utiliser le PERC si votre jugement clinique dicte un risque modéré ou élevé d'EP. Il vous rassurera à tort.",
+      "Un résultat 'PERC Positif' (≥ 1 critère) ne signifie PAS que le patient fait une EP. Cela signifie simplement qu'il nécessite des tests supplémentaires (généralement des D-dimères).",
+      "Ne pas utiliser chez les patientes enceintes. La règle PERC n'est pas validée pour la grossesse."
     ],
-    evidence: "Règle de décision clinique en 8 points pour éviter les examens inutiles chez les patients suspects d'EP à très faible risque.",
+    evidence: "<b>Validation :</b><br/>Validé dans plusieurs essais prospectifs (dont l'essai PROPPER).<br/>• PERC négatif (0 critère) + faible probabilité pré-test : Taux d'EP < 1.8%.<br/>• La règle réduit d'environ 20% les prescriptions inutiles de D-dimères aux urgences.",
     references: "Kline JA, et al. Clinical criteria to prevent unnecessary diagnostic testing in emergency department patients with suspected pulmonary embolism. J Thromb Haemost. 2004;2(8):1247-55."
   }
 };
@@ -101,13 +107,13 @@ export default function PercRule({ lang }: { lang: LangCode }) {
             "@id": `https://carecalculus.com/${lang === 'en' ? '' : lang + '/'}perc-rule`,
             "url": `https://carecalculus.com/${lang === 'en' ? '' : lang + '/'}perc-rule`,
             "name": currentText.title as string,
-            "description": currentText.subtitle as string,
+            "description": (currentText.clinicalDefinition || currentText.subtitle) as string,
             "inLanguage": lang
           },
           {
             "@type": "MedicalCalculator",
             "name": currentText.title as string,
-            "description": currentText.subtitle as string,
+            "description": (currentText.clinicalDefinition || currentText.subtitle) as string,
             "url": `https://carecalculus.com/${lang === 'en' ? '' : lang + '/'}perc-rule`,
             "relevantSpecialty": {
               "@type": "MedicalSpecialty",
@@ -130,7 +136,12 @@ export default function PercRule({ lang }: { lang: LangCode }) {
         <p className="text-slate-600 text-base md:text-lg max-w-2xl leading-relaxed">
           {currentText.subtitle as string}
         </p>
-        <div className="mt-4 flex gap-3">
+        {currentText.clinicalDefinition && (
+          <p className="mt-4 text-sm text-slate-500 leading-relaxed max-w-3xl border-l-2 border-sky-500 pl-4">
+            {currentText.clinicalDefinition as string}
+          </p>
+        )}
+        <div className="mt-6 flex gap-3">
           <EmbedCodeButton calculatorSlug="perc-rule" lang={lang} title={currentText.title as string} />
         </div>
       </div>
