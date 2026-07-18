@@ -30,6 +30,9 @@ const OG_IMAGE = 'https://carecalculus.com/og-image.png';
 import seoMaps from '../data/seoMaps.json';
 import medicalSchemasRaw from '../data/medicalSchemas.json';
 import faqDbRaw from '../data/faqDb.json';
+import programmaticDataRaw from '../data/programmaticEngine.json';
+
+const programmaticData: any = programmaticDataRaw;
 
 const medicalSchemaDb: Record<string, any> = medicalSchemasRaw;
 const faqSchemaDb: Record<string, { question: string; answer: string }[]> = faqDbRaw;
@@ -45,6 +48,114 @@ export interface RouteMeta {
 }
 
 export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
+  // Clinical Reference Library Pages
+  if (path === '/clinical-library') {
+    if (lang === 'fr') {
+      return {
+        title: 'Bibliothèque Clinique de Référence | CareCalculus',
+        desc: 'Base de données complète d\'aide à la décision clinique. Accédez à tous nos calculateurs, scores, critères de diagnostic et convertisseurs médicaux.',
+        keywords: 'bibliothèque clinique, calculateurs médicaux, scores cliniques, critères de diagnostic, convertisseurs médicaux',
+      };
+    }
+    return {
+      title: 'Clinical Reference Library & Database Explorer | CareCalculus',
+      desc: 'Comprehensive clinical decision support explorer. Access all equations, diagnostic criteria, decision trees, and medical converters.',
+      keywords: 'clinical reference library, medical database explorer, clinical equations, diagnostic criteria, medical converters',
+    };
+  }
+
+  if (path.startsWith('/clinical-library/')) {
+    const subView = path.replace('/clinical-library/', '');
+    const titles: Record<string, { en: string; fr: string; descEn: string; descFr: string }> = {
+      equations: {
+        en: 'Clinical Equations & Formulas',
+        fr: 'Équations & Formules Cliniques',
+        descEn: 'Browse medical formulas and physiological calculations including GFR, Creatinine Clearance, and MAP.',
+        descFr: 'Parcourez les formules médicales et calculs physiologiques incluant le DFG, la clairance de la créatinine et la PAM.',
+      },
+      criteria: {
+        en: 'Diagnostic Criteria & Scoring Systems',
+        fr: 'Critères de Diagnostic & Scores Cliniques',
+        descEn: 'Explore clinical scoring systems and diagnostic criteria sets including Wells DVT, CURB-65, and qSOFA.',
+        descFr: 'Explorez les systèmes de score clinique et critères diagnostiques incluant le score de Wells, CURB-65 et qSOFA.',
+      },
+      decision: {
+        en: 'Clinical Decision Trees & Algorithms',
+        fr: 'Arbres de Décision & Algorithmes Cliniques',
+        descEn: 'Access multi-step clinical decision algorithms for critical care and emergency diagnostics.',
+        descFr: 'Accédez aux algorithmes décisionnels multi-étapes en soins intensifs et médecine d\'urgence.',
+      },
+      convert: {
+        en: 'Medical Unit Converters',
+        fr: 'Tables de Conversion Médicale',
+        descEn: 'Convert between conventional and SI biochemical units, steroid dosages, and clinical parameters.',
+        descFr: 'Convertissez entre unités biochimiques conventionnelles et SI, dosages de corticoïdes et paramètres cliniques.',
+      },
+      specialties: {
+        en: 'Medical Specialties Directory',
+        fr: 'Annuaire des Spécialités Médicales',
+        descEn: 'Browse clinical decision support calculators filtered by medical specialties.',
+        descFr: 'Parcourez les outils d\'aide à la décision clinique classés par spécialités médicales.',
+      },
+    };
+    const entry = titles[subView];
+    if (entry) {
+      if (lang === 'fr') {
+        return {
+          title: `${entry.fr} | CareCalculus`,
+          desc: entry.descFr,
+          keywords: `${entry.fr.toLowerCase()}, carecalculus, bibliothèque clinique`,
+        };
+      }
+      return {
+        title: `${entry.en} | CareCalculus`,
+        desc: entry.descEn,
+        keywords: `${entry.en.toLowerCase()}, carecalculus, clinical reference`,
+      };
+    }
+  }
+
+  // Clinical Guides Page & Sub-guides
+  if (path === '/clinical-guide') {
+    if (lang === 'fr') {
+      return {
+        title: 'Guides de Décision Clinique et Protocoles | CareCalculus',
+        desc: 'Découvrez nos guides de protocoles cliniques transversaux reliant des calculateurs de premier plan à des états pathologiques spécifiques.',
+        keywords: 'guides cliniques, protocoles medicaux, sepsis, sdra, soins intensifs',
+      };
+    }
+    return {
+      title: 'Clinical Intersection Guides & Management Protocols | CareCalculus',
+      desc: 'Explore clinical protocols linking leading calculators with specific disease states (Sepsis, ARDS, Cirrhosis, Renal Injury).',
+      keywords: 'clinical guides, medical protocols, sepsis protocol, ards guidelines',
+    };
+  }
+
+  if (path.startsWith('/clinical-guide/')) {
+    const guideSlug = path.replace('/clinical-guide/', '');
+    const parts = guideSlug.split('-in-');
+    const calcSlug = parts[0] || '';
+    const diseaseSlug = parts[1] || '';
+    const calcInfo = programmaticData.dataSets.calculators.find((c: any) => c.slug === calcSlug);
+    const diseaseInfo = programmaticData.dataSets.diseases.find((d: any) => d.slug === diseaseSlug);
+    if (calcInfo && diseaseInfo) {
+      const calcTitle = lang === 'fr' ? (nameFrMap[`/${calcSlug}`] || calcInfo.name) : (nameEnMap[`/${calcSlug}`] || calcInfo.name);
+      const diseaseTitle = diseaseInfo.name;
+      if (lang === 'fr') {
+        return {
+          title: `${calcTitle} dans ${diseaseTitle} : Guide & Objectifs | CareCalculus`,
+          desc: `Guide clinique fondé sur des preuves pour l'utilisation de ${calcTitle} dans la prise en charge de ${diseaseTitle}. Seuils quantitatifs, réanimation et intégration DSE.`,
+          keywords: `${calcTitle.toLowerCase()}, ${diseaseTitle.toLowerCase()}, guide clinique, protocoles`,
+        };
+      }
+      return {
+        title: `${calcTitle} in ${diseaseTitle}: Clinical Targets & Management Guide | CareCalculus`,
+        desc: `Evidence-based clinical guide on utilizing the ${calcTitle} in ${diseaseTitle} management. Quantitative targets, physiological interaction, and EHR integration.`,
+        keywords: `${calcTitle.toLowerCase()}, ${diseaseTitle.toLowerCase()}, clinical guide, protocol`,
+      };
+    }
+  }
+
   if (path === '/' || path === '/home') {
     if (lang === 'fr') {
       return {
