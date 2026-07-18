@@ -95,6 +95,7 @@ const pageLoaders = [
   () => import('../pages/DrugInteractions'),
   () => import('../pages/MedicalStatistics'),
   () => import('../pages/FavoritesPage'),
+  () => import('../pages/ClinicalLibrary'),
 ] as const;
 
 const [
@@ -116,7 +117,7 @@ const [
   PercRule, GenevaScore, NihssScore,
   GraceScore, BicarbDeficit, ReticIndex,
   PhenytoinCorrection, AscvdRisk, VancomycinDosing, AminoglycosideDosing,
-  PesiScore, BovaScore, ApacheIIScore, SapsIIScore, DrugInteractions, MedicalStatistics, FavoritesPage
+  PesiScore, BovaScore, ApacheIIScore, SapsIIScore, DrugInteractions, MedicalStatistics, FavoritesPage, ClinicalLibrary
 ] = pageLoaders.map((loader) => React.lazy(loader as any)) as any[];
 
 export const HomePage = React.lazy(() => import('../pages/HomePage'));
@@ -139,7 +140,7 @@ export async function preloadPages() {
 export const LEGAL_ROUTES = ['/about', '/disclaimer', '/privacy', '/terms', '/embed-gallery', '/for-hospitals'];
 
 // Routes that open in full-width reading mode (no sidebar, no top widgets)
-export const CONTENT_ROUTES = ['/blog', '/blog-articles', '/presentations', '/cours', '/about', '/disclaimer', '/privacy', '/terms', '/glp-1-hub', '/hub-glp1', '/%D9%85%D8%B1%D9%83%D8%B2-glp1', '/مركز-glp1', '/ispits', '/embed-gallery', '/for-hospitals', '/clinical-guide'];
+export const CONTENT_ROUTES = ['/blog', '/blog-articles', '/presentations', '/cours', '/about', '/disclaimer', '/privacy', '/terms', '/glp-1-hub', '/hub-glp1', '/%D9%85%D8%B1%D9%83%D8%B2-glp1', '/مركز-glp1', '/ispits', '/embed-gallery', '/for-hospitals', '/clinical-guide', '/clinical-library'];
 
 export class ErrorBoundary extends React.Component<any, any> {
   constructor(props: any) {
@@ -379,9 +380,13 @@ export function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="anion-gap" element={wrapCalculator('/anion-gap', <AnionGap lang={lang} />)} />
       <Route path="aa-gradient" element={wrapCalculator('/aa-gradient', <AaGradient lang={lang} />)} />
       <Route path="compare/:slug1-vs-:slug2" element={<Compare lang={lang} />} />
+      <Route path="clinical-library" element={<ClinicalLibrary lang={lang} />} />
+      <Route path="clinical-library/:view" element={<ClinicalLibrary lang={lang} />} />
+      <Route path="clinical-library/:view/:subId" element={<ClinicalLibrary lang={lang} />} />
       {/* Clinical Q&A Pages — the 100x SEO multiplier */}
       <Route path="q/:questionSlug" element={<ClinicalQuestionPage lang={lang} />} />
       {/* Programmatic SEO Guides */}
+      <Route path="clinical-guide" element={<ProgrammaticGuidePage lang={lang} />} />
       <Route path="clinical-guide/:guideSlug" element={<ProgrammaticGuidePage lang={lang} />} />
     </>
   );

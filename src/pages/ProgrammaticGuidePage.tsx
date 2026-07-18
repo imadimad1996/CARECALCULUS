@@ -18,6 +18,87 @@ export default function ProgrammaticGuidePage({ lang }: Props) {
   const { guideSlug } = useParams<{ guideSlug: string }>();
   const isFr = lang === 'fr';
 
+  if (!guideSlug) {
+    const pageTitle = isFr 
+      ? 'Guides de Décision Clinique et Protocoles | CareCalculus' 
+      : 'Clinical Intersection Guides & Management Protocols | CareCalculus';
+    const metaDesc = isFr
+      ? 'Découvrez nos guides de protocoles cliniques transversaux reliant des calculateurs de premier plan à des états pathologiques spécifiques.'
+      : 'Explore clinical protocols linking leading calculators with specific disease states (Sepsis, ARDS, Cirrhosis, Renal Injury, etc.).';
+      
+    return (
+      <div className="min-h-screen bg-slate-50 py-10 px-4 sm:px-6 lg:px-8 pb-32">
+        <Helmet>
+          <title>{pageTitle}</title>
+          <meta name="description" content={metaDesc} />
+        </Helmet>
+        
+        <div className="max-w-4xl mx-auto space-y-8">
+          <div className="bg-gradient-to-br from-slate-900 to-cyan-950 text-white rounded-3xl p-8 sm:p-10 border border-slate-800 shadow-md">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-cyan-500/20 text-cyan-300 border border-cyan-400/30 rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
+              <Sparkles className="w-3.5 h-3.5" />
+              {isFr ? 'Index des Protocoles' : 'Clinical Index'}
+            </span>
+            <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-2">
+              {isFr ? 'Guides Cliniques' : 'Clinical Guides'}
+            </h1>
+            <p className="text-slate-300 text-sm sm:text-base max-w-xl leading-relaxed">
+              {isFr 
+                ? 'Consultez les guides de décision reliant nos calculateurs phares à des contextes pathologiques précis pour optimiser les choix thérapeutiques.' 
+                : 'Browse medical guides linking our primary calculation tools directly with specific physiological conditions to streamline bedside workflows.'}
+            </p>
+          </div>
+
+          <div className="space-y-6">
+            {programmaticData.dataSets.diseases.map((disease) => {
+              // Get related calculators
+              const relatedCalculators = disease.relatedCalculators.map(cSlug => 
+                programmaticData.dataSets.calculators.find(c => c.slug === cSlug)
+              ).filter(Boolean);
+
+              return (
+                <div key={disease.slug} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs space-y-4">
+                  <div className="flex items-center gap-2 border-b border-slate-100 pb-3">
+                    <div className="p-2 bg-cyan-50 text-cyan-700 rounded-xl">
+                      <Stethoscope className="w-5 h-5" />
+                    </div>
+                    <h2 className="text-lg font-bold text-slate-900">{disease.name}</h2>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {relatedCalculators.map((calc) => {
+                      if (!calc) return null;
+                      const guideLink = `/clinical-guide/${calc.slug}-in-${disease.slug}`;
+                      const calcTitle = isFr ? (nameFrMap[`/${calc.slug}`] || calc.name) : (nameEnMap[`/${calc.slug}`] || calc.name);
+                      
+                      return (
+                        <Link 
+                          key={calc.slug}
+                          to={isFr ? `/fr${guideLink}` : guideLink}
+                          className="p-4 rounded-xl border border-slate-100 hover:border-cyan-500 hover:bg-cyan-50/20 transition flex items-center justify-between group"
+                        >
+                          <div className="min-w-0 pr-2">
+                            <span className="text-sm font-bold text-slate-800 group-hover:text-cyan-700 transition block truncate">
+                              {calcTitle}
+                            </span>
+                            <span className="text-[10px] text-slate-400 block mt-0.5">
+                              {isFr ? 'Protocole clinique' : 'Clinical targets & guide'}
+                            </span>
+                          </div>
+                          <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-cyan-600 transition shrink-0" />
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   // Parse guideSlug e.g. "map-calculator-in-sepsis" -> calcSlug="map-calculator", diseaseSlug="sepsis"
   const parts = guideSlug ? guideSlug.split('-in-') : [];
   const calcSlug = parts[0] || '';

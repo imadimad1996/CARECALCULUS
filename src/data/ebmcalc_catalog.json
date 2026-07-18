@@ -1,0 +1,4362 @@
+{
+  "equations": [
+    {
+      "name": "INTRO",
+      "href": "/index.htm",
+      "url": "https://ebmcalc.com//index.htm"
+    },
+    {
+      "name": "EQUATIONS",
+      "href": "/eq-idx.htm",
+      "url": "https://ebmcalc.com//eq-idx.htm"
+    },
+    {
+      "name": "CRITERIA",
+      "href": "/cc-idx.htm",
+      "url": "https://ebmcalc.com//cc-idx.htm"
+    },
+    {
+      "name": "DECISION",
+      "href": "/tree-idx.htm",
+      "url": "https://ebmcalc.com//tree-idx.htm"
+    },
+    {
+      "name": "CONVERT",
+      "href": "/qc-idx.htm",
+      "url": "https://ebmcalc.com//qc-idx.htm"
+    },
+    {
+      "name": "SPECIALTIES",
+      "href": "/specialty-idx.htm",
+      "url": "https://ebmcalc.com//specialty-idx.htm"
+    },
+    {
+      "name": "HCC",
+      "href": "/hcc.htm",
+      "url": "https://ebmcalc.com//hcc.htm"
+    },
+    {
+      "name": "REFS",
+      "href": "/ref.htm",
+      "url": "https://ebmcalc.com//ref.htm"
+    },
+    {
+      "name": "SEARCH",
+      "href": "/search.htm",
+      "url": "https://ebmcalc.com//search.htm"
+    },
+    {
+      "name": "NEW",
+      "href": "/WhatsNew.htm",
+      "url": "https://ebmcalc.com//WhatsNew.htm"
+    },
+    {
+      "name": "FHIR APP",
+      "href": "/FHIRapp.htm",
+      "url": "https://ebmcalc.com//FHIRapp.htm"
+    },
+    {
+      "name": "API",
+      "href": "/API.htm",
+      "url": "https://ebmcalc.com//API.htm"
+    },
+    {
+      "name": "POLICIES",
+      "href": "/policies.htm",
+      "url": "https://ebmcalc.com//policies.htm"
+    },
+    {
+      "name": "A-a Gradient",
+      "href": "AAGradient.htm",
+      "url": "https://ebmcalc.com/AAGradient.htm"
+    },
+    {
+      "name": "a/A Ratio",
+      "href": "AARatio.htm",
+      "url": "https://ebmcalc.com/AARatio.htm"
+    },
+    {
+      "name": "AaPO2 Correction for FIO2",
+      "href": "AaPO2Correction.htm",
+      "url": "https://ebmcalc.com/AaPO2Correction.htm"
+    },
+    {
+      "name": "Absolute Eosinophil Count",
+      "href": "AbsEoCount.htm",
+      "url": "https://ebmcalc.com/AbsEoCount.htm"
+    },
+    {
+      "name": "Absolute Lymphocyte Count",
+      "href": "AbsLymphocyteCnt.htm",
+      "url": "https://ebmcalc.com/AbsLymphocyteCnt.htm"
+    },
+    {
+      "name": "Absolute Neutrophil Count",
+      "href": "AbsNeutrophileCnt.htm",
+      "url": "https://ebmcalc.com/AbsNeutrophileCnt.htm"
+    },
+    {
+      "name": "Absolute Phagocyte Count",
+      "href": "APC.htm",
+      "url": "https://ebmcalc.com/APC.htm"
+    },
+    {
+      "name": "Absolute Reticulocyte Count",
+      "href": "AbsReticCnt.htm",
+      "url": "https://ebmcalc.com/AbsReticCnt.htm"
+    },
+    {
+      "name": "Acute Heart Failure Prediction Based on NT-proBNP and Clinical Features",
+      "href": "CHF_BNP.htm",
+      "url": "https://ebmcalc.com/CHF_BNP.htm"
+    },
+    {
+      "name": "Adjusted Cerebrospinal Fluid White Blood Cell Count in the Presence of Red Blood Cells",
+      "href": "CSF_WBC.htm",
+      "url": "https://ebmcalc.com/CSF_WBC.htm"
+    },
+    {
+      "name": "Albumin-bilirubin (ALBI) grade estimate of survival of adults with hepatocellular carcinoma (conventional and SI units)",
+      "href": "ALBI.htm",
+      "url": "https://ebmcalc.com/ALBI.htm"
+    },
+    {
+      "name": "Allowable Blood Loss",
+      "href": "AllowableBloodLoss.htm",
+      "url": "https://ebmcalc.com/AllowableBloodLoss.htm"
+    },
+    {
+      "name": "Aminoglycoside Clearance Estimate",
+      "href": "AminoGlycCl.htm",
+      "url": "https://ebmcalc.com/AminoGlycCl.htm"
+    },
+    {
+      "name": "Anion Gap Delta Delta Gradient Multicalc",
+      "href": "AnionGapDeltaGradient.htm",
+      "url": "https://ebmcalc.com/AnionGapDeltaGradient.htm"
+    },
+    {
+      "name": "Anion Gap Delta Delta Ratio Multicalc",
+      "href": "AnionGapDeltaRatio.htm",
+      "url": "https://ebmcalc.com/AnionGapDeltaRatio.htm"
+    },
+    {
+      "name": "Anion Gap in Hypoalbumin States",
+      "href": "AnionGapHypoAlb.htm",
+      "url": "https://ebmcalc.com/AnionGapHypoAlb.htm"
+    },
+    {
+      "name": "Anion Gap",
+      "href": "AnionGap.htm",
+      "url": "https://ebmcalc.com/AnionGap.htm"
+    },
+    {
+      "name": "Aris birth weight-for-gestational age percentiles, singletons, 22 to 42 weeks gestation",
+      "href": "ArisBirthWeightForGA.htm",
+      "url": "https://ebmcalc.com/ArisBirthWeightForGA.htm"
+    },
+    {
+      "name": "Ascites Albumin Gradient",
+      "href": "AscitesAlbGradient.htm",
+      "url": "https://ebmcalc.com/AscitesAlbGradient.htm"
+    },
+    {
+      "name": "Basal Energy Expenditure (Harris-Benedict estimation)",
+      "href": "HarrisBenedict.htm",
+      "url": "https://ebmcalc.com/HarrisBenedict.htm"
+    },
+    {
+      "name": "Basal metabolic rate (BMR) using Schofield equations in children and adolescents",
+      "href": "BMR_Schofield.htm",
+      "url": "https://ebmcalc.com/BMR_Schofield.htm"
+    },
+    {
+      "name": "Base Excess Determination",
+      "href": "BaseExcess.htm",
+      "url": "https://ebmcalc.com/BaseExcess.htm"
+    },
+    {
+      "name": "Bayesian Statistics I MultiCalc",
+      "href": "BayesianAnalysis_1.htm",
+      "url": "https://ebmcalc.com/BayesianAnalysis_1.htm"
+    },
+    {
+      "name": "Bayesian Statistics II MultiCalc",
+      "href": "BayesianAnalysis_2.htm",
+      "url": "https://ebmcalc.com/BayesianAnalysis_2.htm"
+    },
+    {
+      "name": "Benefit Increase / Number Needed to Treat Multicalc",
+      "href": "BenefitIncrease.htm",
+      "url": "https://ebmcalc.com/BenefitIncrease.htm"
+    },
+    {
+      "name": "Bicarbonate Deficit",
+      "href": "BicarbDef.htm",
+      "url": "https://ebmcalc.com/BicarbDef.htm"
+    },
+    {
+      "name": "Blood Ethanol Concentration Estimation",
+      "href": "BloodEthanolConc.htm",
+      "url": "https://ebmcalc.com/BloodEthanolConc.htm"
+    },
+    {
+      "name": "Blood pressure percentiles, 0 to 17 years (2017 standard)",
+      "href": "BloodPressurePercent2017.htm",
+      "url": "https://ebmcalc.com/BloodPressurePercent2017.htm"
+    },
+    {
+      "name": "Body mass index (BMI) percentiles and Z-scores, females 2 to 20 years (CDC)",
+      "href": "BodyMassIndexGirls.htm",
+      "url": "https://ebmcalc.com/BodyMassIndexGirls.htm"
+    },
+    {
+      "name": "Body mass index (BMI) percentiles and Z-scores, males 2 to 20 years (CDC)",
+      "href": "BodyMassIndexBoys.htm",
+      "url": "https://ebmcalc.com/BodyMassIndexBoys.htm"
+    },
+    {
+      "name": "Body Mass Index for Adults (BMI Quetelet's Index)",
+      "href": "BodyMassIndex.htm",
+      "url": "https://ebmcalc.com/BodyMassIndex.htm"
+    },
+    {
+      "name": "Body Mass Index for Adults (BMI Quetelet's Index, Metric)",
+      "href": "BodyMassIndexMetric.htm",
+      "url": "https://ebmcalc.com/BodyMassIndexMetric.htm"
+    },
+    {
+      "name": "Body Surface Area (BSA, Du Bois Method)",
+      "href": "BodySurfaceArea.htm",
+      "url": "https://ebmcalc.com/BodySurfaceArea.htm"
+    },
+    {
+      "name": "Body Surface Area (BSA, Gehan and George Method)",
+      "href": "BodySurfaceAreaGG.htm",
+      "url": "https://ebmcalc.com/BodySurfaceAreaGG.htm"
+    },
+    {
+      "name": "Body Surface Area (BSA, Mosteller, square root method)",
+      "href": "BodySurfaceArea_SR.htm",
+      "url": "https://ebmcalc.com/BodySurfaceArea_SR.htm"
+    },
+    {
+      "name": "Body Surface Area Based Dosing",
+      "href": "BSABasedDosing.htm",
+      "url": "https://ebmcalc.com/BSABasedDosing.htm"
+    },
+    {
+      "name": "Burn Injury Fluid Resuscitation (Brooke estimate)",
+      "href": "BurnInjuryFluidBrooke.htm",
+      "url": "https://ebmcalc.com/BurnInjuryFluidBrooke.htm"
+    },
+    {
+      "name": "Burn Injury Fluid Resuscitation (Demling dextran estimate)",
+      "href": "BurnInjuryFluidDextran.htm",
+      "url": "https://ebmcalc.com/BurnInjuryFluidDextran.htm"
+    },
+    {
+      "name": "Burn Injury Fluid Resuscitation (Evans estimate)",
+      "href": "BurnInjuryFluidEvans.htm",
+      "url": "https://ebmcalc.com/BurnInjuryFluidEvans.htm"
+    },
+    {
+      "name": "Burn Injury Fluid Resuscitation (Modified Brooke crystalloid estimate)",
+      "href": "BurnInjuryFluidModifiedBrooke.htm",
+      "url": "https://ebmcalc.com/BurnInjuryFluidModifiedBrooke.htm"
+    },
+    {
+      "name": "Burn Injury Fluid Resuscitation, Adult (Parkland crystalloid estimate)",
+      "href": "BurnInjuryFluidParkland.htm",
+      "url": "https://ebmcalc.com/BurnInjuryFluidParkland.htm"
+    },
+    {
+      "name": "Calcium Correction in Hypoalbuminemia (SI units)",
+      "href": "CalciumAlbumin_SI.htm",
+      "url": "https://ebmcalc.com/CalciumAlbumin_SI.htm"
+    },
+    {
+      "name": "Calcium Correction in Hypoalbuminemia",
+      "href": "CalciumAlbumin.htm",
+      "url": "https://ebmcalc.com/CalciumAlbumin.htm"
+    },
+    {
+      "name": "Calorie Requirements for Weight Maintenance and Weight Loss in Adult Females (Patient information)",
+      "href": "CalorieCount_F.htm",
+      "url": "https://ebmcalc.com/CalorieCount_F.htm"
+    },
+    {
+      "name": "Calorie Requirements for Weight Maintenance and Weight Loss in Adult Males (Patient information)",
+      "href": "CalorieCount_M.htm",
+      "url": "https://ebmcalc.com/CalorieCount_M.htm"
+    },
+    {
+      "name": "Carbon Dioxide Production",
+      "href": "CO2Prod.htm",
+      "url": "https://ebmcalc.com/CO2Prod.htm"
+    },
+    {
+      "name": "Cardiac Output MultiCalc",
+      "href": "CardiacOutput_MC.htm",
+      "url": "https://ebmcalc.com/CardiacOutput_MC.htm"
+    },
+    {
+      "name": "Cardiac Output Using Oxygen Saturation Data Only",
+      "href": "CardiacOutputSimplified.htm",
+      "url": "https://ebmcalc.com/CardiacOutputSimplified.htm"
+    },
+    {
+      "name": "Cardiac Output",
+      "href": "CardiacOutput.htm",
+      "url": "https://ebmcalc.com/CardiacOutput.htm"
+    },
+    {
+      "name": "Cardiac Power Output: CPO",
+      "href": "CPO.htm",
+      "url": "https://ebmcalc.com/CPO.htm"
+    },
+    {
+      "name": "CDC height-for-age percentiles for females, 2 to 20 years",
+      "href": "CDCHeightForAgeGirls.htm",
+      "url": "https://ebmcalc.com/CDCHeightForAgeGirls.htm"
+    },
+    {
+      "name": "CDC height-for-age percentiles for males, 2 to 20 years",
+      "href": "CDCHeightForAgeBoys.htm",
+      "url": "https://ebmcalc.com/CDCHeightForAgeBoys.htm"
+    },
+    {
+      "name": "CDC infant growth percentiles, 0 to 36 months",
+      "href": "CDCInfantGrowth.htm",
+      "url": "https://ebmcalc.com/CDCInfantGrowth.htm"
+    },
+    {
+      "name": "CDC infant head circumference-for-age percentiles, 0 to 36 months",
+      "href": "CDCInfantHeadCircForAge.htm",
+      "url": "https://ebmcalc.com/CDCInfantHeadCircForAge.htm"
+    },
+    {
+      "name": "CDC infant length-for-age percentiles, 0 to 36 months",
+      "href": "CDCInfantLengthForAge.htm",
+      "url": "https://ebmcalc.com/CDCInfantLengthForAge.htm"
+    },
+    {
+      "name": "CDC infant weight-for-age percentiles, 0 to 36 months",
+      "href": "CDCInfantWeightForAge.htm",
+      "url": "https://ebmcalc.com/CDCInfantWeightForAge.htm"
+    },
+    {
+      "name": "CDC infant weight-for-length percentiles, 0 to 36 months",
+      "href": "CDCInfantWeightForLength.htm",
+      "url": "https://ebmcalc.com/CDCInfantWeightForLength.htm"
+    },
+    {
+      "name": "CDC weight-for-age percentiles for females, 2 to 20 years",
+      "href": "CDCWeightForAgeGirls.htm",
+      "url": "https://ebmcalc.com/CDCWeightForAgeGirls.htm"
+    },
+    {
+      "name": "CDC weight-for-age percentiles for males, 2 to 20 years",
+      "href": "CDCWeightForAgeBoys.htm",
+      "url": "https://ebmcalc.com/CDCWeightForAgeBoys.htm"
+    },
+    {
+      "name": "CDC weight-for-height percentiles for females, 77 to 121 cm",
+      "href": "CDCWeightForHeightGirls.htm",
+      "url": "https://ebmcalc.com/CDCWeightForHeightGirls.htm"
+    },
+    {
+      "name": "CDC weight-for-height percentiles for males, 77 to 121 cm",
+      "href": "CDCWeightForHeightBoys.htm",
+      "url": "https://ebmcalc.com/CDCWeightForHeightBoys.htm"
+    },
+    {
+      "name": "Chi Square Analysis",
+      "href": "ChiSquare.htm",
+      "url": "https://ebmcalc.com/ChiSquare.htm"
+    },
+    {
+      "name": "Closing Capacity to Total Lung Volume Capacity",
+      "href": "ClosingCapTLCRatio.htm",
+      "url": "https://ebmcalc.com/ClosingCapTLCRatio.htm"
+    },
+    {
+      "name": "Closing Capacity",
+      "href": "ClosingCapacity.htm",
+      "url": "https://ebmcalc.com/ClosingCapacity.htm"
+    },
+    {
+      "name": "Closing Volume to Vital Capacity Ratio",
+      "href": "ClosingVolVCRatio.htm",
+      "url": "https://ebmcalc.com/ClosingVolVCRatio.htm"
+    },
+    {
+      "name": "Confidence Interval of a Binomial Proportion",
+      "href": "ConfIntervalBinomial.htm",
+      "url": "https://ebmcalc.com/ConfIntervalBinomial.htm"
+    },
+    {
+      "name": "Confidence Interval of a Difference Between Proportions",
+      "href": "ConfIntervalDiffProp.htm",
+      "url": "https://ebmcalc.com/ConfIntervalDiffProp.htm"
+    },
+    {
+      "name": "Confidence Interval of a Ratio of Proportions",
+      "href": "ConfIntervalRatioProp.htm",
+      "url": "https://ebmcalc.com/ConfIntervalRatioProp.htm"
+    },
+    {
+      "name": "Confidence Interval of a Ratio of Ratios",
+      "href": "ConfIntervalRatioRatios.htm",
+      "url": "https://ebmcalc.com/ConfIntervalRatioRatios.htm"
+    },
+    {
+      "name": "Confidence Interval of a Survey",
+      "href": "ConfidenceInterval.htm",
+      "url": "https://ebmcalc.com/ConfidenceInterval.htm"
+    },
+    {
+      "name": "COPE Statistic Adding Cost to Number Needed to Treat",
+      "href": "COPE.htm",
+      "url": "https://ebmcalc.com/COPE.htm"
+    },
+    {
+      "name": "Corrected/Adjusted Age of Preterm Infants",
+      "href": "CorrectedPretermAge.htm",
+      "url": "https://ebmcalc.com/CorrectedPretermAge.htm"
+    },
+    {
+      "name": "Cost of Smoking",
+      "href": "CigCost.htm",
+      "url": "https://ebmcalc.com/CigCost.htm"
+    },
+    {
+      "name": "Creatinine Clearance (measured)",
+      "href": "CreatinineCl.htm",
+      "url": "https://ebmcalc.com/CreatinineCl.htm"
+    },
+    {
+      "name": "Creatinine Clearance (measured, SI units)",
+      "href": "CreatinineCl_SI.htm",
+      "url": "https://ebmcalc.com/CreatinineCl_SI.htm"
+    },
+    {
+      "name": "Creatinine Clearance by Mass",
+      "href": "CreatinineClMass.htm",
+      "url": "https://ebmcalc.com/CreatinineClMass.htm"
+    },
+    {
+      "name": "Creatinine Clearance Estimate by Cockcroft-Gault Equation (SI units)",
+      "href": "CreatinineCl_CG_SI.htm",
+      "url": "https://ebmcalc.com/CreatinineCl_CG_SI.htm"
+    },
+    {
+      "name": "Creatinine Clearance Estimate by Cockcroft-Gault Equation with Ideal Body Weight",
+      "href": "CreatinineCl_CG_AdjBW.htm",
+      "url": "https://ebmcalc.com/CreatinineCl_CG_AdjBW.htm"
+    },
+    {
+      "name": "Creatinine Clearance Estimate by Cockcroft-Gault Equation",
+      "href": "CreatinineCl_CG.htm",
+      "url": "https://ebmcalc.com/CreatinineCl_CG.htm"
+    },
+    {
+      "name": "Creatinine Clearance Estimate by Jelliffe Formula",
+      "href": "CreatinineCl_Jelliffe.htm",
+      "url": "https://ebmcalc.com/CreatinineCl_Jelliffe.htm"
+    },
+    {
+      "name": "Creatinine Clearance Estimate by Sanaka Formula (for older subjects with low muscle mass)",
+      "href": "CreatinineCl_Sanaka.htm",
+      "url": "https://ebmcalc.com/CreatinineCl_Sanaka.htm"
+    },
+    {
+      "name": "Creatinine Kinetics MultiCalc",
+      "href": "CreatinineKinetics_MC.htm",
+      "url": "https://ebmcalc.com/CreatinineKinetics_MC.htm"
+    },
+    {
+      "name": "CSF IgG Index",
+      "href": "CSFIgG.htm",
+      "url": "https://ebmcalc.com/CSFIgG.htm"
+    },
+    {
+      "name": "CSF Protein Concentration Correction in Blood Contaminated CSF",
+      "href": "CSFProtein.htm",
+      "url": "https://ebmcalc.com/CSFProtein.htm"
+    },
+    {
+      "name": "Diffusing capacity for carbon monoxide (DLCO) corrected for anemia",
+      "href": "DLCO_Anemia.htm",
+      "url": "https://ebmcalc.com/DLCO_Anemia.htm"
+    },
+    {
+      "name": "Diffusing capacity for carbon monoxide (DLCO) correction of predicted value for anemia (SI units)",
+      "href": "DLCO_Anemia_SI.htm",
+      "url": "https://ebmcalc.com/DLCO_Anemia_SI.htm"
+    },
+    {
+      "name": "Digitalis Body Load",
+      "href": "DigoxinLoad.htm",
+      "url": "https://ebmcalc.com/DigoxinLoad.htm"
+    },
+    {
+      "name": "Dose Adjustment for Body Surface Area",
+      "href": "DoseAdjustmentForBSA.htm",
+      "url": "https://ebmcalc.com/DoseAdjustmentForBSA.htm"
+    },
+    {
+      "name": "Dose Driven IV-Drip Rate Calculator",
+      "href": "DoseDrivenDripRate.htm",
+      "url": "https://ebmcalc.com/DoseDrivenDripRate.htm"
+    },
+    {
+      "name": "Dynamic International Prognostic Scoring System-Plus (DIPSS-Plus) for Primary Myelofibrosis (PMF) in Adults and Adolescents",
+      "href": "DIPSS.htm",
+      "url": "https://ebmcalc.com/DIPSS.htm"
+    },
+    {
+      "name": "Endotracheal tube size for children (Age 1 to 8 years)",
+      "href": "PediatricETTubeSize.htm",
+      "url": "https://ebmcalc.com/PediatricETTubeSize.htm"
+    },
+    {
+      "name": "Energy Loss Index and the Severity of Asymptomatic Aortic Stenosis",
+      "href": "ELI.htm",
+      "url": "https://ebmcalc.com/ELI.htm"
+    },
+    {
+      "name": "England Fraser Index for Differentiating Beta-thalassemia Trait from Iron-deficiency",
+      "href": "EnglandFraser.htm",
+      "url": "https://ebmcalc.com/EnglandFraser.htm"
+    },
+    {
+      "name": "Epidural Formulation Compounding Calculator",
+      "href": "EpiduralCompounding.htm",
+      "url": "https://ebmcalc.com/EpiduralCompounding.htm"
+    },
+    {
+      "name": "Estimated Blood Volume",
+      "href": "EstimatedBloodVolume.htm",
+      "url": "https://ebmcalc.com/EstimatedBloodVolume.htm"
+    },
+    {
+      "name": "Estimated Date of Delivery (EDD) by LMP and Ultrasound",
+      "href": "EstimatedDateDelivery.htm",
+      "url": "https://ebmcalc.com/EstimatedDateDelivery.htm"
+    },
+    {
+      "name": "Estimated Delivery Date (Patient information)",
+      "href": "EstimatedDateDeliveryPatient.htm",
+      "url": "https://ebmcalc.com/EstimatedDateDeliveryPatient.htm"
+    },
+    {
+      "name": "Estimated energy requirement (EER) for females, birth to 18 years (revised 2023)",
+      "href": "EER_Females_2023.htm",
+      "url": "https://ebmcalc.com/EER_Females_2023.htm"
+    },
+    {
+      "name": "Estimated energy requirement (EER) for males, birth to 18 years (revised 2023)",
+      "href": "EER_Males_2023.htm",
+      "url": "https://ebmcalc.com/EER_Males_2023.htm"
+    },
+    {
+      "name": "EUTOS long-term survival (ELTS) score in adults with chronic myeloid leukemia (conventional and SI units)",
+      "href": "ELTS.htm",
+      "url": "https://ebmcalc.com/ELTS.htm"
+    },
+    {
+      "name": "False Negative Rate from Sensitivity and Prevalence",
+      "href": "FalseNegativeRateSSP.htm",
+      "url": "https://ebmcalc.com/FalseNegativeRateSSP.htm"
+    },
+    {
+      "name": "False Negative Ratio from Sensitivity and Prevalence",
+      "href": "FalseNegativeRatioSP.htm",
+      "url": "https://ebmcalc.com/FalseNegativeRatioSP.htm"
+    },
+    {
+      "name": "False Positive Rate from Specificity and Prevalence",
+      "href": "FalsePositiveRateSSP.htm",
+      "url": "https://ebmcalc.com/FalsePositiveRateSSP.htm"
+    },
+    {
+      "name": "False Positive Ratio from Specificity and Prevalence",
+      "href": "FalsePositiveRatioSP.htm",
+      "url": "https://ebmcalc.com/FalsePositiveRatioSP.htm"
+    },
+    {
+      "name": "Fat Free Mass, a Measure of Lean Body Weight",
+      "href": "FFM.htm",
+      "url": "https://ebmcalc.com/FFM.htm"
+    },
+    {
+      "name": "Fenton weight-for-gestational age percentiles, 22 to 50 weeks gestation (2007, not sex-specific)",
+      "href": "FentonWeightForGestationalAge.htm",
+      "url": "https://ebmcalc.com/FentonWeightForGestationalAge.htm"
+    },
+    {
+      "name": "Fractional Excretion of Amylase (Amylase to creatinine clearance ratio)",
+      "href": "FractExcAmylase.htm",
+      "url": "https://ebmcalc.com/FractExcAmylase.htm"
+    },
+    {
+      "name": "Fractional Excretion of Calcium (FECa)",
+      "href": "FractExcCalcium.htm",
+      "url": "https://ebmcalc.com/FractExcCalcium.htm"
+    },
+    {
+      "name": "Fractional Excretion of Magnesium (SI units)",
+      "href": "FractExcMg_SI.htm",
+      "url": "https://ebmcalc.com/FractExcMg_SI.htm"
+    },
+    {
+      "name": "Fractional Excretion of Magnesium",
+      "href": "FractExcMg.htm",
+      "url": "https://ebmcalc.com/FractExcMg.htm"
+    },
+    {
+      "name": "Fractional excretion of phosphate (FePO4)",
+      "href": "FractExcPhos.htm",
+      "url": "https://ebmcalc.com/FractExcPhos.htm"
+    },
+    {
+      "name": "Fractional Excretion of Sodium (FENa)",
+      "href": "FractExcSodium.htm",
+      "url": "https://ebmcalc.com/FractExcSodium.htm"
+    },
+    {
+      "name": "Fractional Excretion of Sodium (FENa, SI units)",
+      "href": "FractExcSodium_SI.htm",
+      "url": "https://ebmcalc.com/FractExcSodium_SI.htm"
+    },
+    {
+      "name": "Fractional Excretion of Urate",
+      "href": "FractExcUrate.htm",
+      "url": "https://ebmcalc.com/FractExcUrate.htm"
+    },
+    {
+      "name": "Fractional Excretion of Urea (FEUrea)",
+      "href": "FractExcUrea.htm",
+      "url": "https://ebmcalc.com/FractExcUrea.htm"
+    },
+    {
+      "name": "Friedewald Equation for Low Density Lipoprotein (LDL-C)",
+      "href": "Friedewald.htm",
+      "url": "https://ebmcalc.com/Friedewald.htm"
+    },
+    {
+      "name": "Friedewald Equation for Low Density Lipoprotein (LDL-C, SI units)",
+      "href": "Friedewald_SI.htm",
+      "url": "https://ebmcalc.com/Friedewald_SI.htm"
+    },
+    {
+      "name": "Functional Residual Capacity",
+      "href": "FunctResCap.htm",
+      "url": "https://ebmcalc.com/FunctResCap.htm"
+    },
+    {
+      "name": "Gestational Age from Estimated Date of Delivery (EDD)",
+      "href": "GestationalAgeFromEDD.htm",
+      "url": "https://ebmcalc.com/GestationalAgeFromEDD.htm"
+    },
+    {
+      "name": "Glomerular Filtration Rate Estimation (eGFR) by AASK Equation",
+      "href": "GFR_AASK.htm",
+      "url": "https://ebmcalc.com/GFR_AASK.htm"
+    },
+    {
+      "name": "Glomerular Filtration Rate Estimation (eGFR) by CKD-EPI Equation (2009)",
+      "href": "GFR_CKD_EPI.htm",
+      "url": "https://ebmcalc.com/GFR_CKD_EPI.htm"
+    },
+    {
+      "name": "Glomerular Filtration Rate Estimation (eGFR) by CKD-EPI Equation with Creatinine and Cystatin C, without Race (2021)",
+      "href": "GFR_CKD_EPI_with_Cystatin_2021.htm",
+      "url": "https://ebmcalc.com/GFR_CKD_EPI_with_Cystatin_2021.htm"
+    },
+    {
+      "name": "Glomerular Filtration Rate Estimation (eGFR) by CKD-EPI Equation with Creatinine, without Race (2021)",
+      "href": "GFR_CKD_EPI_2021.htm",
+      "url": "https://ebmcalc.com/GFR_CKD_EPI_2021.htm"
+    },
+    {
+      "name": "Glomerular Filtration Rate Estimation (eGFR) by CKD-EPI Equation with Cystatin C, without Race (2012)",
+      "href": "GFR_CKD_EPI_by_Cystatin_2012.htm",
+      "url": "https://ebmcalc.com/GFR_CKD_EPI_by_Cystatin_2012.htm"
+    },
+    {
+      "name": "Glomerular Filtration Rate Estimation (eGFR) by CKiD U25 Equations with Creatinine and/or Cystatin C in Children and Adults ≤25 Years Old (2021)",
+      "href": "GFR_CKiD_21.htm",
+      "url": "https://ebmcalc.com/GFR_CKiD_21.htm"
+    },
+    {
+      "name": "Glomerular Filtration Rate Estimation (eGFR) by Quadratic Equation",
+      "href": "GFREstimateQuad.htm",
+      "url": "https://ebmcalc.com/GFREstimateQuad.htm"
+    },
+    {
+      "name": "Glomerular Filtration Rate Estimation (eGFR) by Schwartz Formula",
+      "href": "GFR_Schwartz.htm",
+      "url": "https://ebmcalc.com/GFR_Schwartz.htm"
+    },
+    {
+      "name": "Glomerular Filtration Rate Estimation (eGFR) by the Abbreviated MDRD Study Equation (SI units)",
+      "href": "GFR_MDRD_Abbrev_SI.htm",
+      "url": "https://ebmcalc.com/GFR_MDRD_Abbrev_SI.htm"
+    },
+    {
+      "name": "Glomerular Filtration Rate Estimation (eGFR) by the Abbreviated MDRD Study Equation",
+      "href": "GFR_MDRD_Abbrev.htm",
+      "url": "https://ebmcalc.com/GFR_MDRD_Abbrev.htm"
+    },
+    {
+      "name": "Glomerular Filtration Rate Estimation (eGFR) by the IDMS-Traceable MDRD Study Equation",
+      "href": "GFR_IDMS.htm",
+      "url": "https://ebmcalc.com/GFR_IDMS.htm"
+    },
+    {
+      "name": "Glomerular Filtration Rate Estimation (eGFR) by the MDRD Equation (SI units)",
+      "href": "GFR_MDRD_Full_SI.htm",
+      "url": "https://ebmcalc.com/GFR_MDRD_Full_SI.htm"
+    },
+    {
+      "name": "Glomerular Filtration Rate Estimation (eGFR) by the MDRD Equation",
+      "href": "GFR_MDRD_Full.htm",
+      "url": "https://ebmcalc.com/GFR_MDRD_Full.htm"
+    },
+    {
+      "name": "Glomerular Filtration Rate Estimation (eGFR) by Updated Schwartz Formula",
+      "href": "GFR_Schwartz_Bedside.htm",
+      "url": "https://ebmcalc.com/GFR_Schwartz_Bedside.htm"
+    },
+    {
+      "name": "Glucose Management Indicator (GMI)",
+      "href": "GMI.htm",
+      "url": "https://ebmcalc.com/GMI.htm"
+    },
+    {
+      "name": "Glycemic Assessment: A1C to Average Glucose Conversions",
+      "href": "GlycemicAssessment.htm",
+      "url": "https://ebmcalc.com/GlycemicAssessment.htm"
+    },
+    {
+      "name": "Gorlin Formula for Valve Area",
+      "href": "GorlinValveArea.htm",
+      "url": "https://ebmcalc.com/GorlinValveArea.htm"
+    },
+    {
+      "name": "Gravity Flow Rate Calculator",
+      "href": "GttsConvert.htm",
+      "url": "https://ebmcalc.com/GttsConvert.htm"
+    },
+    {
+      "name": "Green King Index for Differentiating Beta-thalassemia Trait from Iron-deficiency",
+      "href": "GreenKing.htm",
+      "url": "https://ebmcalc.com/GreenKing.htm"
+    },
+    {
+      "name": "Height Potential: A Child's Target Height Based on Midparental Height",
+      "href": "HeightPotential.htm",
+      "url": "https://ebmcalc.com/HeightPotential.htm"
+    },
+    {
+      "name": "Henderson-Hasselbach Equation",
+      "href": "HendersonHasselbach.htm",
+      "url": "https://ebmcalc.com/HendersonHasselbach.htm"
+    },
+    {
+      "name": "Hepatitis C Fibrosis Prediction Score",
+      "href": "HepatitisCFibrosisScore.htm",
+      "url": "https://ebmcalc.com/HepatitisCFibrosisScore.htm"
+    },
+    {
+      "name": "HOMA Formula: Homeostasis Model Assessment of Insulin Resistance",
+      "href": "HOMA.htm",
+      "url": "https://ebmcalc.com/HOMA.htm"
+    },
+    {
+      "name": "Housestaff Activity Index",
+      "href": "HousestaffActivityIndex.htm",
+      "url": "https://ebmcalc.com/HousestaffActivityIndex.htm"
+    },
+    {
+      "name": "Hyponatremia Correction Infusate Rate",
+      "href": "HyponatremiaCorrection.htm",
+      "url": "https://ebmcalc.com/HyponatremiaCorrection.htm"
+    },
+    {
+      "name": "Ideal body weight (method of Devine) and adjusted body weight for adults",
+      "href": "IBW_Devine.htm",
+      "url": "https://ebmcalc.com/IBW_Devine.htm"
+    },
+    {
+      "name": "Ideal Body Weight Percentage",
+      "href": "IdealBodyWgt_P.htm",
+      "url": "https://ebmcalc.com/IdealBodyWgt_P.htm"
+    },
+    {
+      "name": "Ideal Body Weight",
+      "href": "IdealBodyWgt.htm",
+      "url": "https://ebmcalc.com/IdealBodyWgt.htm"
+    },
+    {
+      "name": "In-Flight PaO2 Estimation (using PFT's)",
+      "href": "InFlightPaO2PFTs.htm",
+      "url": "https://ebmcalc.com/InFlightPaO2PFTs.htm"
+    },
+    {
+      "name": "In-Flight PaO2 Estimation",
+      "href": "InFlightPaO2.htm",
+      "url": "https://ebmcalc.com/InFlightPaO2.htm"
+    },
+    {
+      "name": "Injury Severity Score (ISS)",
+      "href": "ISS.htm",
+      "url": "https://ebmcalc.com/ISS.htm"
+    },
+    {
+      "name": "Inspiratory Capacity",
+      "href": "InspiratoryCap.htm",
+      "url": "https://ebmcalc.com/InspiratoryCap.htm"
+    },
+    {
+      "name": "International Normalized Ratio of Prothrombin Time (INR)",
+      "href": "InternatNormRatio.htm",
+      "url": "https://ebmcalc.com/InternatNormRatio.htm"
+    },
+    {
+      "name": "IV Drip Maintenance Rate Calculator",
+      "href": "IVDripRate.htm",
+      "url": "https://ebmcalc.com/IVDripRate.htm"
+    },
+    {
+      "name": "Kappa Measurement of Inter-observer Agreement MultiCalc",
+      "href": "Kappa_MC.htm",
+      "url": "https://ebmcalc.com/Kappa_MC.htm"
+    },
+    {
+      "name": "Kappa Measurement of Inter-observer Agreement: Bennett's Kappa",
+      "href": "Kappa_Bennett.htm",
+      "url": "https://ebmcalc.com/Kappa_Bennett.htm"
+    },
+    {
+      "name": "Kappa Measurement of Inter-observer Agreement: Cohen's Kappa",
+      "href": "Kappa_Cohen.htm",
+      "url": "https://ebmcalc.com/Kappa_Cohen.htm"
+    },
+    {
+      "name": "Kappa Measurement of Inter-observer Agreement: Scott's Kappa",
+      "href": "Kappa_Scott.htm",
+      "url": "https://ebmcalc.com/Kappa_Scott.htm"
+    },
+    {
+      "name": "Kt/V Dialysis Dose Barth Formula",
+      "href": "Kt_V_Barth.htm",
+      "url": "https://ebmcalc.com/Kt_V_Barth.htm"
+    },
+    {
+      "name": "Kt/V Dialysis Dose Basile Formula",
+      "href": "Kt_V_Basile.htm",
+      "url": "https://ebmcalc.com/Kt_V_Basile.htm"
+    },
+    {
+      "name": "Kt/V Dialysis Dose Daugirdas Formula",
+      "href": "Kt_V_Daugirdas.htm",
+      "url": "https://ebmcalc.com/Kt_V_Daugirdas.htm"
+    },
+    {
+      "name": "Kt/V Dialysis Dose Formulae MultiCalc",
+      "href": "Kt_V_Formulae_Multi.htm",
+      "url": "https://ebmcalc.com/Kt_V_Formulae_Multi.htm"
+    },
+    {
+      "name": "Kt/V Dialysis Dose Jindal Formula",
+      "href": "Kt_V_Jindal.htm",
+      "url": "https://ebmcalc.com/Kt_V_Jindal.htm"
+    },
+    {
+      "name": "Kt/V Dialysis Dose Kerr Formula",
+      "href": "Kt_V_Kerr.htm",
+      "url": "https://ebmcalc.com/Kt_V_Kerr.htm"
+    },
+    {
+      "name": "Kt/V Dialysis Dose Keshaviah Formula",
+      "href": "Kt_V_Keshaviah.htm",
+      "url": "https://ebmcalc.com/Kt_V_Keshaviah.htm"
+    },
+    {
+      "name": "Kt/V Dialysis Dose Lowrie Formula",
+      "href": "Kt_V_Lowrie.htm",
+      "url": "https://ebmcalc.com/Kt_V_Lowrie.htm"
+    },
+    {
+      "name": "Lactate-Albumin Ratio (LAR) in Severe Pancreatitis with Acute Kidney Injury",
+      "href": "LAR.htm",
+      "url": "https://ebmcalc.com/LAR.htm"
+    },
+    {
+      "name": "Lean Body Weight (Female)",
+      "href": "LeanBodyWgtF.htm",
+      "url": "https://ebmcalc.com/LeanBodyWgtF.htm"
+    },
+    {
+      "name": "Lean Body Weight (Male)",
+      "href": "LeanBodyWgtM.htm",
+      "url": "https://ebmcalc.com/LeanBodyWgtM.htm"
+    },
+    {
+      "name": "Lean Body Weight Based on Creatinine Production",
+      "href": "LeanBodyWgtCreat.htm",
+      "url": "https://ebmcalc.com/LeanBodyWgtCreat.htm"
+    },
+    {
+      "name": "Likelihood Ratio MultiCalc",
+      "href": "Likelihood.htm",
+      "url": "https://ebmcalc.com/Likelihood.htm"
+    },
+    {
+      "name": "Likelihood Ratio of Negative from Raw Data",
+      "href": "LikelihoodRNData.htm",
+      "url": "https://ebmcalc.com/LikelihoodRNData.htm"
+    },
+    {
+      "name": "Likelihood Ratio of Positive from Raw Data",
+      "href": "LikelihoodRPData.htm",
+      "url": "https://ebmcalc.com/LikelihoodRPData.htm"
+    },
+    {
+      "name": "Lipoprotein Insulin Resistance Index (LPIR Index)",
+      "href": "LPIR.htm",
+      "url": "https://ebmcalc.com/LPIR.htm"
+    },
+    {
+      "name": "Lung Age Estimation for Smoking Cessation Counseling",
+      "href": "LungAge.htm",
+      "url": "https://ebmcalc.com/LungAge.htm"
+    },
+    {
+      "name": "Lung Volume Multicalc",
+      "href": "LungVolumes.htm",
+      "url": "https://ebmcalc.com/LungVolumes.htm"
+    },
+    {
+      "name": "Maintenance fluid calculation for children based on daily fluid requirements",
+      "href": "MaintenanceFluidChildren.htm",
+      "url": "https://ebmcalc.com/MaintenanceFluidChildren.htm"
+    },
+    {
+      "name": "Maintenance Fluid Calculation for Children Based on Hourly Fluid Requirements",
+      "href": "MaintenanceFluidChildrenHourly.htm",
+      "url": "https://ebmcalc.com/MaintenanceFluidChildrenHourly.htm"
+    },
+    {
+      "name": "Mantle Cell Lymphoma International Prognostic Index (MIPI)",
+      "href": "MIPI.htm",
+      "url": "https://ebmcalc.com/MIPI.htm"
+    },
+    {
+      "name": "Martin Equation for Low Density Lipoprotein (LDL-C)",
+      "href": "MartinLDL.htm",
+      "url": "https://ebmcalc.com/MartinLDL.htm"
+    },
+    {
+      "name": "Mean Arterial Pressure (MAP) in Adults and Children (conventional or SI units)",
+      "href": "MeanArterialPressure.htm",
+      "url": "https://ebmcalc.com/MeanArterialPressure.htm"
+    },
+    {
+      "name": "Mean Corpuscular Hemoglobin Concentration",
+      "href": "MeanCorpHbConc.htm",
+      "url": "https://ebmcalc.com/MeanCorpHbConc.htm"
+    },
+    {
+      "name": "Mean Corpuscular Hemoglobin",
+      "href": "MeanCorpHb.htm",
+      "url": "https://ebmcalc.com/MeanCorpHb.htm"
+    },
+    {
+      "name": "Mean Corpuscular Volume",
+      "href": "MeanCorpVol.htm",
+      "url": "https://ebmcalc.com/MeanCorpVol.htm"
+    },
+    {
+      "name": "Mean Vascular Pressure (systemic or pulmonary)",
+      "href": "MeanVascPres.htm",
+      "url": "https://ebmcalc.com/MeanVascPres.htm"
+    },
+    {
+      "name": "MELD 3.0 Score EXCLUDING Serum Albumin",
+      "href": "MELD3xAlb.htm",
+      "url": "https://ebmcalc.com/MELD3xAlb.htm"
+    },
+    {
+      "name": "MELD 3.0 Score Including Serum Albumin",
+      "href": "MELD3.htm",
+      "url": "https://ebmcalc.com/MELD3.htm"
+    },
+    {
+      "name": "MELD/MELDNa scores (2016)(SI units)",
+      "href": "MELDNa_SI2016.htm",
+      "url": "https://ebmcalc.com/MELDNa_SI2016.htm"
+    },
+    {
+      "name": "MELD/MELDNa scores (2016)",
+      "href": "MELDNa2016.htm",
+      "url": "https://ebmcalc.com/MELDNa2016.htm"
+    },
+    {
+      "name": "Mifflin-St Jeor Resting Energy Expenditure (REE)",
+      "href": "MifflinStJeor.htm",
+      "url": "https://ebmcalc.com/MifflinStJeor.htm"
+    },
+    {
+      "name": "Model for Endstage Liver Disease (MELD) score in adults (not for liver transplantation listing purposes) (conventional units)",
+      "href": "MELD.htm",
+      "url": "https://ebmcalc.com/MELD.htm"
+    },
+    {
+      "name": "Model for Endstage Liver Disease (MELD) score in adults (not for liver transplantation listing purposes) (SI units)",
+      "href": "MELD_SI.htm",
+      "url": "https://ebmcalc.com/MELD_SI.htm"
+    },
+    {
+      "name": "Moser Discriminant Function for X-ALD",
+      "href": "MoserDiscriminant.htm",
+      "url": "https://ebmcalc.com/MoserDiscriminant.htm"
+    },
+    {
+      "name": "Nasal Cannula Oxygen Fractional Inspired O2(FiO2) Estimate",
+      "href": "NasalO2FIO2.htm",
+      "url": "https://ebmcalc.com/NasalO2FIO2.htm"
+    },
+    {
+      "name": "Negative Predictive Value from Raw Data",
+      "href": "NegPredValueData.htm",
+      "url": "https://ebmcalc.com/NegPredValueData.htm"
+    },
+    {
+      "name": "Negative Predictive Value of a Test",
+      "href": "NegPredVal.htm",
+      "url": "https://ebmcalc.com/NegPredVal.htm"
+    },
+    {
+      "name": "NIH Chronic Prostatitis Symptom Index",
+      "href": "NIHProstatitis.htm",
+      "url": "https://ebmcalc.com/NIHProstatitis.htm"
+    },
+    {
+      "name": "Normal Range for Body Weight",
+      "href": "NormalBodyWgt.htm",
+      "url": "https://ebmcalc.com/NormalBodyWgt.htm"
+    },
+    {
+      "name": "Number Needed to Harm (NNH) from Odds Ratio (OR) and Patient Expected Event Rate (PEER)",
+      "href": "NumberNeededToHarm.htm",
+      "url": "https://ebmcalc.com/NumberNeededToHarm.htm"
+    },
+    {
+      "name": "Number Needed to Treat (NNT) from Odds Ratio (OR) and Patient Expected Event Rate (PEER)",
+      "href": "NumberNeededToTreat.htm",
+      "url": "https://ebmcalc.com/NumberNeededToTreat.htm"
+    },
+    {
+      "name": "Odds from Probability",
+      "href": "OddsProb.htm",
+      "url": "https://ebmcalc.com/OddsProb.htm"
+    },
+    {
+      "name": "Odds Ratio and Relative Risk",
+      "href": "OddsRatio.htm",
+      "url": "https://ebmcalc.com/OddsRatio.htm"
+    },
+    {
+      "name": "Olsen infant BMI-for-gestational-age percentiles, 24 to 41 weeks gestation",
+      "href": "OlsenInfantBMIForGestationalAge.htm",
+      "url": "https://ebmcalc.com/OlsenInfantBMIForGestationalAge.htm"
+    },
+    {
+      "name": "Olsen infant head circumference-for-gestational-age percentiles, 23 to 41 weeks gestation",
+      "href": "OlsenInfantHeadCircForGestationalAge.htm",
+      "url": "https://ebmcalc.com/OlsenInfantHeadCircForGestationalAge.htm"
+    },
+    {
+      "name": "Olsen infant length-for-gestational-age percentiles, 23 to 41 weeks gestation",
+      "href": "OlsenInfantLengthForGestationalAge.htm",
+      "url": "https://ebmcalc.com/OlsenInfantLengthForGestationalAge.htm"
+    },
+    {
+      "name": "Olsen infant weight-for-gestational-age percentiles, 23 to 41 weeks gestation",
+      "href": "OlsenInfantWeightForGestationalAge.htm",
+      "url": "https://ebmcalc.com/OlsenInfantWeightForGestationalAge.htm"
+    },
+    {
+      "name": "Osmolal Gap Calculator (SI units)",
+      "href": "OsmolalGap_SI.htm",
+      "url": "https://ebmcalc.com/OsmolalGap_SI.htm"
+    },
+    {
+      "name": "Osmolal Gap Calculator",
+      "href": "OsmolalGap.htm",
+      "url": "https://ebmcalc.com/OsmolalGap.htm"
+    },
+    {
+      "name": "Osmolality Estimator (serum)",
+      "href": "Osmolality.htm",
+      "url": "https://ebmcalc.com/Osmolality.htm"
+    },
+    {
+      "name": "Osmolar Clearance",
+      "href": "OsmolalClearance.htm",
+      "url": "https://ebmcalc.com/OsmolalClearance.htm"
+    },
+    {
+      "name": "Overall Accuracy of a Test from Raw Data",
+      "href": "OverallAccData.htm",
+      "url": "https://ebmcalc.com/OverallAccData.htm"
+    },
+    {
+      "name": "Overall Accuracy of a Test from Sensitivity, Specificity and Prevalence",
+      "href": "OverallAccSS.htm",
+      "url": "https://ebmcalc.com/OverallAccSS.htm"
+    },
+    {
+      "name": "Oxygen Consumption",
+      "href": "O2Consumption.htm",
+      "url": "https://ebmcalc.com/O2Consumption.htm"
+    },
+    {
+      "name": "Oxygen Content of Arterial Blood",
+      "href": "OxygenContentArterial.htm",
+      "url": "https://ebmcalc.com/OxygenContentArterial.htm"
+    },
+    {
+      "name": "Oxygen Content of Venous Blood",
+      "href": "OxygenContentVenous.htm",
+      "url": "https://ebmcalc.com/OxygenContentVenous.htm"
+    },
+    {
+      "name": "Oxygen Saturation Estimate from PO2",
+      "href": "O2SatFromPO2.htm",
+      "url": "https://ebmcalc.com/O2SatFromPO2.htm"
+    },
+    {
+      "name": "Oxygenation index in neonates, children, and adults",
+      "href": "OxygenIndex.htm",
+      "url": "https://ebmcalc.com/OxygenIndex.htm"
+    },
+    {
+      "name": "PaO2 / FIO2 Ratio (for MODS Calculation)",
+      "href": "PaO2_FIO2Ratio.htm",
+      "url": "https://ebmcalc.com/PaO2_FIO2Ratio.htm"
+    },
+    {
+      "name": "PaO2 Correction for FIO2",
+      "href": "PaO2Correction.htm",
+      "url": "https://ebmcalc.com/PaO2Correction.htm"
+    },
+    {
+      "name": "PASI Psoriasis Area and Severity Index",
+      "href": "PASI.htm",
+      "url": "https://ebmcalc.com/PASI.htm"
+    },
+    {
+      "name": "Peak Expiratory Flow Prediction in adults",
+      "href": "PeakExpFlow.htm",
+      "url": "https://ebmcalc.com/PeakExpFlow.htm"
+    },
+    {
+      "name": "Peak expiratory flow prediction in females (18 to 85 years)",
+      "href": "PeakExpFlowHankinsonFemale.htm",
+      "url": "https://ebmcalc.com/PeakExpFlowHankinsonFemale.htm"
+    },
+    {
+      "name": "Peak expiratory flow prediction in females (5 to <18 years)",
+      "href": "PEF_Girls.htm",
+      "url": "https://ebmcalc.com/PEF_Girls.htm"
+    },
+    {
+      "name": "Peak expiratory flow prediction in males (18 to 85 years)",
+      "href": "PeakExpFlowHankinsonMale.htm",
+      "url": "https://ebmcalc.com/PeakExpFlowHankinsonMale.htm"
+    },
+    {
+      "name": "Peak expiratory flow prediction in males, 5 to <18 years",
+      "href": "PEF_Boys.htm",
+      "url": "https://ebmcalc.com/PEF_Boys.htm"
+    },
+    {
+      "name": "Peak Expiratory Flow Variability in Asthma",
+      "href": "PeakExpFlowVariability.htm",
+      "url": "https://ebmcalc.com/PeakExpFlowVariability.htm"
+    },
+    {
+      "name": "PELD Score for End-Stage Liver Disease in patients less than 12 years old (original)",
+      "href": "PELD.htm",
+      "url": "https://ebmcalc.com/PELD.htm"
+    },
+    {
+      "name": "PELD-Cr Score for End-stage Liver Disease in patients less than 12 years old (2023 update)",
+      "href": "PELDCr.htm",
+      "url": "https://ebmcalc.com/PELDCr.htm"
+    },
+    {
+      "name": "Penn State Equations for Resting Energy Expenditure in Critically Ill Patients",
+      "href": "PennStateEq.htm",
+      "url": "https://ebmcalc.com/PennStateEq.htm"
+    },
+    {
+      "name": "PFT Adjusted Predicted Values for Adult Females MultiCalc",
+      "href": "PulmonaryPredictF_A.htm",
+      "url": "https://ebmcalc.com/PulmonaryPredictF_A.htm"
+    },
+    {
+      "name": "PFT Adjusted Predicted Values for Adult Males MultiCalc",
+      "href": "PulmonaryPredictM_A.htm",
+      "url": "https://ebmcalc.com/PulmonaryPredictM_A.htm"
+    },
+    {
+      "name": "PFT predicted values by 2022 race-neutral GLI equations, ages 3 to 95",
+      "href": "PFT_GLI_22.htm",
+      "url": "https://ebmcalc.com/PFT_GLI_22.htm"
+    },
+    {
+      "name": "PFT Predicted Values for Adult Females MultiCalc",
+      "href": "PulmonaryPredictF.htm",
+      "url": "https://ebmcalc.com/PulmonaryPredictF.htm"
+    },
+    {
+      "name": "PFT Predicted Values for Adult Males MultiCalc",
+      "href": "PulmonaryPredictM.htm",
+      "url": "https://ebmcalc.com/PulmonaryPredictM.htm"
+    },
+    {
+      "name": "PFT Predicted Values for Pediatric Females MultiCalc",
+      "href": "PulmonaryPredictG.htm",
+      "url": "https://ebmcalc.com/PulmonaryPredictG.htm"
+    },
+    {
+      "name": "PFT Predicted Values for Pediatric Males MultiCalc",
+      "href": "PulmonaryPredictB.htm",
+      "url": "https://ebmcalc.com/PulmonaryPredictB.htm"
+    },
+    {
+      "name": "Phenytoin Free (Unbound) Drug Level (Adjusted for Hypoalbuminemia, Dasgupta, 1991)",
+      "href": "PhenytoinFree.htm",
+      "url": "https://ebmcalc.com/PhenytoinFree.htm"
+    },
+    {
+      "name": "Phenytoin Total Drug Level (Adjusted for Hypoalbuminemia and Renal Function)",
+      "href": "PhenytoinAlb.htm",
+      "url": "https://ebmcalc.com/PhenytoinAlb.htm"
+    },
+    {
+      "name": "Pneumothorax Degree of Collapse",
+      "href": "PneumoThorax.htm",
+      "url": "https://ebmcalc.com/PneumoThorax.htm"
+    },
+    {
+      "name": "Positive Predictive Value from Raw Data",
+      "href": "PosPredValueData.htm",
+      "url": "https://ebmcalc.com/PosPredValueData.htm"
+    },
+    {
+      "name": "Positive Predictive Value of a Test",
+      "href": "PosPredValue.htm",
+      "url": "https://ebmcalc.com/PosPredValue.htm"
+    },
+    {
+      "name": "Post Test Odds from Pre Test Odds and Likelihood Ratio MultiCalc",
+      "href": "PostTestOdds.htm",
+      "url": "https://ebmcalc.com/PostTestOdds.htm"
+    },
+    {
+      "name": "Post Test Odds of a Negative from Raw Data",
+      "href": "PostTestOddsNegData.htm",
+      "url": "https://ebmcalc.com/PostTestOddsNegData.htm"
+    },
+    {
+      "name": "Post Test Odds of a Negative Result from Sensitivity Specificity and Prevalence",
+      "href": "PostTestOddsNegSS.htm",
+      "url": "https://ebmcalc.com/PostTestOddsNegSS.htm"
+    },
+    {
+      "name": "Post Test Odds of a Positive from Raw Data",
+      "href": "PostTestOddsPosData.htm",
+      "url": "https://ebmcalc.com/PostTestOddsPosData.htm"
+    },
+    {
+      "name": "Post Test Odds of a Positive Result from Sensitivity Specificity and Prevalence",
+      "href": "PostTestOddsPosSS.htm",
+      "url": "https://ebmcalc.com/PostTestOddsPosSS.htm"
+    },
+    {
+      "name": "Post Test Probability from Pre Test Probability, Sensitivity and Specificity",
+      "href": "PostTestProb.htm",
+      "url": "https://ebmcalc.com/PostTestProb.htm"
+    },
+    {
+      "name": "Post-Test Probability from Likelihood Ratios and Multiple Test Results",
+      "href": "PostTestProbMulti.htm",
+      "url": "https://ebmcalc.com/PostTestProbMulti.htm"
+    },
+    {
+      "name": "Post-Test Probability from Sensitivity and Specificity of Multiple Test Results",
+      "href": "PostTestProbMultiSS.htm",
+      "url": "https://ebmcalc.com/PostTestProbMultiSS.htm"
+    },
+    {
+      "name": "Pre Test Odds from Prevalence",
+      "href": "PreTestOddsP.htm",
+      "url": "https://ebmcalc.com/PreTestOddsP.htm"
+    },
+    {
+      "name": "Pre Test Odds from Raw Data",
+      "href": "PreTestOddsData.htm",
+      "url": "https://ebmcalc.com/PreTestOddsData.htm"
+    },
+    {
+      "name": "Predicted body weight and tidal volume in adults",
+      "href": "PredictedBWTV.htm",
+      "url": "https://ebmcalc.com/PredictedBWTV.htm"
+    },
+    {
+      "name": "Predicted postoperative DLCO following lung resection surgery (anatomic method) in adults",
+      "href": "PostOpDLCOAnatomicMeth.htm",
+      "url": "https://ebmcalc.com/PostOpDLCOAnatomicMeth.htm"
+    },
+    {
+      "name": "Predicted postoperative DLCO following lung resection surgery (diffusion method) in adults",
+      "href": "PostOpDLCODiffusionMeth.htm",
+      "url": "https://ebmcalc.com/PostOpDLCODiffusionMeth.htm"
+    },
+    {
+      "name": "Predicted postoperative FEV1 following lung resection surgery (anatomic method)",
+      "href": "PostOpFEV1AnatomicMeth.htm",
+      "url": "https://ebmcalc.com/PostOpFEV1AnatomicMeth.htm"
+    },
+    {
+      "name": "Predicted postoperative FEV1 following lung resection surgery (perfusion method)",
+      "href": "PostOpFEV1PerfMeth.htm",
+      "url": "https://ebmcalc.com/PostOpFEV1PerfMeth.htm"
+    },
+    {
+      "name": "Predicted total lung capacity (pTLC) in adults",
+      "href": "PTLC.htm",
+      "url": "https://ebmcalc.com/PTLC.htm"
+    },
+    {
+      "name": "Pregnancy Gestation by LMP and Ultrasound Biometry",
+      "href": "GestationDate.htm",
+      "url": "https://ebmcalc.com/GestationDate.htm"
+    },
+    {
+      "name": "Pressure Adjusted Heart Rate (For MODS calculation)",
+      "href": "PressureAdjHR.htm",
+      "url": "https://ebmcalc.com/PressureAdjHR.htm"
+    },
+    {
+      "name": "Prevalence of a Finding or Disease from Test Data",
+      "href": "PrevalenceTest.htm",
+      "url": "https://ebmcalc.com/PrevalenceTest.htm"
+    },
+    {
+      "name": "Probability from Odds",
+      "href": "ProbOdds.htm",
+      "url": "https://ebmcalc.com/ProbOdds.htm"
+    },
+    {
+      "name": "Probability of heart failure with preserved ejection fraction (H2FPEF score) in adults with dyspnea",
+      "href": "H2FPEF_Score.htm",
+      "url": "https://ebmcalc.com/H2FPEF_Score.htm"
+    },
+    {
+      "name": "Protein Bound Calcium",
+      "href": "ProteinBoundCalcium.htm",
+      "url": "https://ebmcalc.com/ProteinBoundCalcium.htm"
+    },
+    {
+      "name": "Protein Catabolic Rate (normalized PCR)",
+      "href": "ProteinCatabolicRateN.htm",
+      "url": "https://ebmcalc.com/ProteinCatabolicRateN.htm"
+    },
+    {
+      "name": "Protein Catabolic Rate",
+      "href": "ProteinCatabolicRate.htm",
+      "url": "https://ebmcalc.com/ProteinCatabolicRate.htm"
+    },
+    {
+      "name": "Pulmonary Artery Pulsatility Index: PAPi",
+      "href": "PAPi.htm",
+      "url": "https://ebmcalc.com/PAPi.htm"
+    },
+    {
+      "name": "Pulmonary Vascular Resistance",
+      "href": "PulmVascResist.htm",
+      "url": "https://ebmcalc.com/PulmVascResist.htm"
+    },
+    {
+      "name": "Pulse Pressure Variation (percentage)",
+      "href": "PulsePressureVar.htm",
+      "url": "https://ebmcalc.com/PulsePressureVar.htm"
+    },
+    {
+      "name": "QT Interval Correction (EKG, Bazett Equation)",
+      "href": "QTIntervalCorrection.htm",
+      "url": "https://ebmcalc.com/QTIntervalCorrection.htm"
+    },
+    {
+      "name": "QT Interval Correction (EKG, Multi-Equation)",
+      "href": "QTIntervalCorrectionMulti.htm",
+      "url": "https://ebmcalc.com/QTIntervalCorrectionMulti.htm"
+    },
+    {
+      "name": "QUICKI Formula for Insulin Resistance",
+      "href": "QUICKI.htm",
+      "url": "https://ebmcalc.com/QUICKI.htm"
+    },
+    {
+      "name": "Renal Failure Index",
+      "href": "RenalFailureIndex.htm",
+      "url": "https://ebmcalc.com/RenalFailureIndex.htm"
+    },
+    {
+      "name": "Residual Renal Function in Hemodialysis Patients (Kru)",
+      "href": "ResidualRenalFunction.htm",
+      "url": "https://ebmcalc.com/ResidualRenalFunction.htm"
+    },
+    {
+      "name": "Residual Volume to Total Lung Capacity Ratio",
+      "href": "ResidualVolTLCRatio.htm",
+      "url": "https://ebmcalc.com/ResidualVolTLCRatio.htm"
+    },
+    {
+      "name": "Respiratory Quotient",
+      "href": "RespQuotient.htm",
+      "url": "https://ebmcalc.com/RespQuotient.htm"
+    },
+    {
+      "name": "Reticulocyte Production Index",
+      "href": "ReticProdIndex.htm",
+      "url": "https://ebmcalc.com/ReticProdIndex.htm"
+    },
+    {
+      "name": "Right to Left Shunt Fraction Qs/Qt",
+      "href": "Qs_Qt.htm",
+      "url": "https://ebmcalc.com/Qs_Qt.htm"
+    },
+    {
+      "name": "Right Ventricular Systolic Pressure (RVSP) in Tricuspid Regurgitation",
+      "href": "RVSP.htm",
+      "url": "https://ebmcalc.com/RVSP.htm"
+    },
+    {
+      "name": "Risk Increase / Number Needed to Harm Multicalc",
+      "href": "RiskIncrease.htm",
+      "url": "https://ebmcalc.com/RiskIncrease.htm"
+    },
+    {
+      "name": "Risk Reduction / Number Needed to Treat Multicalc",
+      "href": "RiskReduc_MC.htm",
+      "url": "https://ebmcalc.com/RiskReduc_MC.htm"
+    },
+    {
+      "name": "ROX Index (Respiratory rate--oxygenation)",
+      "href": "ROX.htm",
+      "url": "https://ebmcalc.com/ROX.htm"
+    },
+    {
+      "name": "SALT Score for the Severity of Alopecia Areata",
+      "href": "SALT_Score.htm",
+      "url": "https://ebmcalc.com/SALT_Score.htm"
+    },
+    {
+      "name": "Sampson Equation for Low Density Lipoprotein (LDL-C)",
+      "href": "SampsonLDL.htm",
+      "url": "https://ebmcalc.com/SampsonLDL.htm"
+    },
+    {
+      "name": "Sensitivity of a Test",
+      "href": "Sensitivity.htm",
+      "url": "https://ebmcalc.com/Sensitivity.htm"
+    },
+    {
+      "name": "Serum Sodium Concentration Change Considering Infused and Excreted Cations",
+      "href": "SerumSodiumConcChange.htm",
+      "url": "https://ebmcalc.com/SerumSodiumConcChange.htm"
+    },
+    {
+      "name": "Sodium Change in Hyperproteinemia",
+      "href": "SodiumProtein.htm",
+      "url": "https://ebmcalc.com/SodiumProtein.htm"
+    },
+    {
+      "name": "Sodium Change in Hypertriglyceridemia",
+      "href": "SodiumLipids.htm",
+      "url": "https://ebmcalc.com/SodiumLipids.htm"
+    },
+    {
+      "name": "Sodium Concentration Correction for Hyperglycemia (Emmett 2013)(conventional or SI units)",
+      "href": "SodiumHyperglycemiaEmmett.htm",
+      "url": "https://ebmcalc.com/SodiumHyperglycemiaEmmett.htm"
+    },
+    {
+      "name": "Sodium Correction in Hyperglycemia (Hillier 1999)",
+      "href": "SodiumHyperglycemiaHillier.htm",
+      "url": "https://ebmcalc.com/SodiumHyperglycemiaHillier.htm"
+    },
+    {
+      "name": "Sodium Correction in Hyperglycemia (Katz 1973)",
+      "href": "SodiumHyperglycemiaKatz.htm",
+      "url": "https://ebmcalc.com/SodiumHyperglycemiaKatz.htm"
+    },
+    {
+      "name": "Sodium Deficit in Hyponatremia",
+      "href": "SodiumDeficit.htm",
+      "url": "https://ebmcalc.com/SodiumDeficit.htm"
+    },
+    {
+      "name": "Specificity of a Test",
+      "href": "Specificity.htm",
+      "url": "https://ebmcalc.com/Specificity.htm"
+    },
+    {
+      "name": "Stool Osmolal Gap",
+      "href": "StoolsOsmolality.htm",
+      "url": "https://ebmcalc.com/StoolsOsmolality.htm"
+    },
+    {
+      "name": "Survey Sample Size with Population Correction",
+      "href": "SurveySampleSizeFinite.htm",
+      "url": "https://ebmcalc.com/SurveySampleSizeFinite.htm"
+    },
+    {
+      "name": "Survey Sample Size",
+      "href": "SurveySampleSize.htm",
+      "url": "https://ebmcalc.com/SurveySampleSize.htm"
+    },
+    {
+      "name": "Systemic Vascular Resistance",
+      "href": "SystemicVascRes.htm",
+      "url": "https://ebmcalc.com/SystemicVascRes.htm"
+    },
+    {
+      "name": "Systolic Pressure Variation (percentage)",
+      "href": "SystolicPressureVar.htm",
+      "url": "https://ebmcalc.com/SystolicPressureVar.htm"
+    },
+    {
+      "name": "Time Averaged Concentration of Urea in Hemodialysis",
+      "href": "TimeAveragedConcUrea.htm",
+      "url": "https://ebmcalc.com/TimeAveragedConcUrea.htm"
+    },
+    {
+      "name": "TIPS Risk predictor / Survival predictor (Transjugular Intrahepatic Portosystemic Shunt)",
+      "href": "TipsRisk.htm",
+      "url": "https://ebmcalc.com/TipsRisk.htm"
+    },
+    {
+      "name": "Total Body Water (BIA formula)",
+      "href": "TBW_BEI.htm",
+      "url": "https://ebmcalc.com/TBW_BEI.htm"
+    },
+    {
+      "name": "Total Body Water Estimation Based on Weight Alone",
+      "href": "TBW_58.htm",
+      "url": "https://ebmcalc.com/TBW_58.htm"
+    },
+    {
+      "name": "Total Body Water in Adult Females (Humes-Weyer formula)",
+      "href": "TBW_W_Humes.htm",
+      "url": "https://ebmcalc.com/TBW_W_Humes.htm"
+    },
+    {
+      "name": "Total Body Water in Adult Females (Johansson formula)",
+      "href": "TBW_W_Johansson.htm",
+      "url": "https://ebmcalc.com/TBW_W_Johansson.htm"
+    },
+    {
+      "name": "Total Body Water in Adult Females (Lee formula)",
+      "href": "TBW_W_Lee.htm",
+      "url": "https://ebmcalc.com/TBW_W_Lee.htm"
+    },
+    {
+      "name": "Total Body Water in Adult Females (Watson formula)",
+      "href": "TBW_W_Watson.htm",
+      "url": "https://ebmcalc.com/TBW_W_Watson.htm"
+    },
+    {
+      "name": "Total Body Water in Adult Males (Humes-Weyer formula)",
+      "href": "TBW_M_Humes.htm",
+      "url": "https://ebmcalc.com/TBW_M_Humes.htm"
+    },
+    {
+      "name": "Total Body Water in Adult Males (Johansson formula)",
+      "href": "TBW_M_Johansson.htm",
+      "url": "https://ebmcalc.com/TBW_M_Johansson.htm"
+    },
+    {
+      "name": "Total Body Water in Adult Males (Lee formula)",
+      "href": "TBW_M_Lee.htm",
+      "url": "https://ebmcalc.com/TBW_M_Lee.htm"
+    },
+    {
+      "name": "Total Body Water in Adult Males (Watson formula)",
+      "href": "TBW_M_Watson.htm",
+      "url": "https://ebmcalc.com/TBW_M_Watson.htm"
+    },
+    {
+      "name": "Total Daily Energy Requirement Estimate",
+      "href": "TotalDailyEnergyReq.htm",
+      "url": "https://ebmcalc.com/TotalDailyEnergyReq.htm"
+    },
+    {
+      "name": "Total Lung Capacity",
+      "href": "TotalLungCap.htm",
+      "url": "https://ebmcalc.com/TotalLungCap.htm"
+    },
+    {
+      "name": "Transferrin Receptor-Ferritin Index for Diagnosis of Iron deficiency Anemia",
+      "href": "TransferrinReceptorIndex.htm",
+      "url": "https://ebmcalc.com/TransferrinReceptorIndex.htm"
+    },
+    {
+      "name": "Transferrin Saturation",
+      "href": "Transferrin.htm",
+      "url": "https://ebmcalc.com/Transferrin.htm"
+    },
+    {
+      "name": "Transtubular Potassium Gradient at CCD",
+      "href": "TranstubularKGrad.htm",
+      "url": "https://ebmcalc.com/TranstubularKGrad.htm"
+    },
+    {
+      "name": "True Negative Ratio from Specificity and Prevalence",
+      "href": "TrueNegativeRatioSP.htm",
+      "url": "https://ebmcalc.com/TrueNegativeRatioSP.htm"
+    },
+    {
+      "name": "True Positive Ratio from Sensitivity and Prevalence",
+      "href": "TruePositiveRatioSP.htm",
+      "url": "https://ebmcalc.com/TruePositiveRatioSP.htm"
+    },
+    {
+      "name": "Urea Reduction Percentage in Hemodialysis (PRU)",
+      "href": "UreaReducPercent.htm",
+      "url": "https://ebmcalc.com/UreaReducPercent.htm"
+    },
+    {
+      "name": "Urea Reduction Ratio in Hemodialysis (URR)",
+      "href": "UreaReductRatio.htm",
+      "url": "https://ebmcalc.com/UreaReductRatio.htm"
+    },
+    {
+      "name": "Urinary Protein Excretion Estimation",
+      "href": "UrinaryProteinExcretion.htm",
+      "url": "https://ebmcalc.com/UrinaryProteinExcretion.htm"
+    },
+    {
+      "name": "Urine anion gap",
+      "href": "UrineAnionGap.htm",
+      "url": "https://ebmcalc.com/UrineAnionGap.htm"
+    },
+    {
+      "name": "Urine osmolal gap (UOG) (SI units)",
+      "href": "UOG_SI.htm",
+      "url": "https://ebmcalc.com/UOG_SI.htm"
+    },
+    {
+      "name": "Urine osmolal gap (UOG)",
+      "href": "UOG.htm",
+      "url": "https://ebmcalc.com/UOG.htm"
+    },
+    {
+      "name": "Ventilation Index",
+      "href": "VentIndex.htm",
+      "url": "https://ebmcalc.com/VentIndex.htm"
+    },
+    {
+      "name": "Very Low Density Lipoprotein (VLDL)",
+      "href": "VeryLowDensityLipoprotein.htm",
+      "url": "https://ebmcalc.com/VeryLowDensityLipoprotein.htm"
+    },
+    {
+      "name": "Vital Capacity",
+      "href": "VitalCapacity.htm",
+      "url": "https://ebmcalc.com/VitalCapacity.htm"
+    },
+    {
+      "name": "Volume of Distribution of Urea",
+      "href": "VolumeDistUrea.htm",
+      "url": "https://ebmcalc.com/VolumeDistUrea.htm"
+    },
+    {
+      "name": "Waist to Hip Ratio",
+      "href": "WaistToHipRatio.htm",
+      "url": "https://ebmcalc.com/WaistToHipRatio.htm"
+    },
+    {
+      "name": "Water Deficit in Hypernatremia",
+      "href": "WaterDeficit.htm",
+      "url": "https://ebmcalc.com/WaterDeficit.htm"
+    },
+    {
+      "name": "Weight Based Divided Dose Calculator",
+      "href": "WeightBasedDivDose.htm",
+      "url": "https://ebmcalc.com/WeightBasedDivDose.htm"
+    },
+    {
+      "name": "Weight Based Dosage Calculator",
+      "href": "WeightBasedDose.htm",
+      "url": "https://ebmcalc.com/WeightBasedDose.htm"
+    },
+    {
+      "name": "Weight Loss Indices Following Bariatric Surgery in Adults",
+      "href": "WeightLossIndices.htm",
+      "url": "https://ebmcalc.com/WeightLossIndices.htm"
+    },
+    {
+      "name": "WHO assessment of malnutrition in females, 0 to 24 months",
+      "href": "WHOInfantGrowthGirls.htm",
+      "url": "https://ebmcalc.com/WHOInfantGrowthGirls.htm"
+    },
+    {
+      "name": "WHO assessment of malnutrition in females, 2 to 5 years",
+      "href": "WHOGrowthGirls.htm",
+      "url": "https://ebmcalc.com/WHOGrowthGirls.htm"
+    },
+    {
+      "name": "WHO assessment of malnutrition in males, 0 to 24 months",
+      "href": "WHOInfantGrowthBoys.htm",
+      "url": "https://ebmcalc.com/WHOInfantGrowthBoys.htm"
+    },
+    {
+      "name": "WHO assessment of malnutrition in males, 2 to 5 years",
+      "href": "WHOGrowthBoys.htm",
+      "url": "https://ebmcalc.com/WHOGrowthBoys.htm"
+    },
+    {
+      "name": "WHO infant growth percentiles, 0 to 24 months",
+      "href": "WHOInfantGrowth.htm",
+      "url": "https://ebmcalc.com/WHOInfantGrowth.htm"
+    },
+    {
+      "name": "WHO infant head circumference-for-age percentiles, 0 to 24 months",
+      "href": "WHOInfantHeadCircForAge.htm",
+      "url": "https://ebmcalc.com/WHOInfantHeadCircForAge.htm"
+    },
+    {
+      "name": "WHO infant length-for-age percentiles, 0 to 24 months",
+      "href": "WHOInfantLengthForAge.htm",
+      "url": "https://ebmcalc.com/WHOInfantLengthForAge.htm"
+    },
+    {
+      "name": "WHO infant weight-for-age percentiles, 0 to 24 months",
+      "href": "WHOInfantWeightForAge.htm",
+      "url": "https://ebmcalc.com/WHOInfantWeightForAge.htm"
+    },
+    {
+      "name": "WHO infant weight-for-length percentiles, 0 to 24 months",
+      "href": "WHOInfantWeightForLength.htm",
+      "url": "https://ebmcalc.com/WHOInfantWeightForLength.htm"
+    },
+    {
+      "name": "Winters' Formula for Expected PCO2",
+      "href": "WinterFormula.htm",
+      "url": "https://ebmcalc.com/WinterFormula.htm"
+    },
+    {
+      "name": "Z-Score to Percentile Estimation by Cumulative Density Function",
+      "href": "ZScoreToPercentileCDF.htm",
+      "url": "https://ebmcalc.com/ZScoreToPercentileCDF.htm"
+    },
+    {
+      "name": "Z-Score to Percentile Estimation by Inverse Logit Function for Logistic Regression",
+      "href": "ZScoreToPercentile.htm",
+      "url": "https://ebmcalc.com/ZScoreToPercentile.htm"
+    }
+  ],
+  "criteria": [
+    {
+      "name": "INTRO",
+      "href": "/index.htm",
+      "url": "https://ebmcalc.com//index.htm"
+    },
+    {
+      "name": "EQUATIONS",
+      "href": "/eq-idx.htm",
+      "url": "https://ebmcalc.com//eq-idx.htm"
+    },
+    {
+      "name": "CRITERIA",
+      "href": "/cc-idx.htm",
+      "url": "https://ebmcalc.com//cc-idx.htm"
+    },
+    {
+      "name": "DECISION",
+      "href": "/tree-idx.htm",
+      "url": "https://ebmcalc.com//tree-idx.htm"
+    },
+    {
+      "name": "CONVERT",
+      "href": "/qc-idx.htm",
+      "url": "https://ebmcalc.com//qc-idx.htm"
+    },
+    {
+      "name": "SPECIALTIES",
+      "href": "/specialty-idx.htm",
+      "url": "https://ebmcalc.com//specialty-idx.htm"
+    },
+    {
+      "name": "HCC",
+      "href": "/hcc.htm",
+      "url": "https://ebmcalc.com//hcc.htm"
+    },
+    {
+      "name": "REFS",
+      "href": "/ref.htm",
+      "url": "https://ebmcalc.com//ref.htm"
+    },
+    {
+      "name": "SEARCH",
+      "href": "/search.htm",
+      "url": "https://ebmcalc.com//search.htm"
+    },
+    {
+      "name": "NEW",
+      "href": "/WhatsNew.htm",
+      "url": "https://ebmcalc.com//WhatsNew.htm"
+    },
+    {
+      "name": "FHIR APP",
+      "href": "/FHIRapp.htm",
+      "url": "https://ebmcalc.com//FHIRapp.htm"
+    },
+    {
+      "name": "API",
+      "href": "/API.htm",
+      "url": "https://ebmcalc.com//API.htm"
+    },
+    {
+      "name": "POLICIES",
+      "href": "/policies.htm",
+      "url": "https://ebmcalc.com//policies.htm"
+    },
+    {
+      "name": "ABC Score for Prediction of 30-Day Mortality in Acute GI Bleeding",
+      "href": "ABC.htm",
+      "url": "https://ebmcalc.com/ABC.htm"
+    },
+    {
+      "name": "ABCD Rule Predicting Stroke Within 7 Days of a TIA",
+      "href": "ABCD.htm",
+      "url": "https://ebmcalc.com/ABCD.htm"
+    },
+    {
+      "name": "ABCD2 Score to Predict Stroke Risk after TIA",
+      "href": "ABCD2.htm",
+      "url": "https://ebmcalc.com/ABCD2.htm"
+    },
+    {
+      "name": "Acetaminophen (Paracetamol) Toxicity Assessment (Revised 2023)",
+      "href": "AcetaminophenTox2023.htm",
+      "url": "https://ebmcalc.com/AcetaminophenTox2023.htm"
+    },
+    {
+      "name": "ACR/EULAR Rheumatoid Arthritis Diagnostic Criteria (2010)",
+      "href": "ACR_EULAR.htm",
+      "url": "https://ebmcalc.com/ACR_EULAR.htm"
+    },
+    {
+      "name": "Activity Score for Nursing Home Patients",
+      "href": "ActivityScore.htm",
+      "url": "https://ebmcalc.com/ActivityScore.htm"
+    },
+    {
+      "name": "ADO Index Mortality Prediction in COPD",
+      "href": "ADO.htm",
+      "url": "https://ebmcalc.com/ADO.htm"
+    },
+    {
+      "name": "Alcohol Consumption Screening AUDIT Questionnaire",
+      "href": "AlcoholScreen.htm",
+      "url": "https://ebmcalc.com/AlcoholScreen.htm"
+    },
+    {
+      "name": "Alcoholic Liver Disease: Criteria for One Year Mortality Prognosis",
+      "href": "AlcLiverDxSeverity.htm",
+      "url": "https://ebmcalc.com/AlcLiverDxSeverity.htm"
+    },
+    {
+      "name": "Alvarado Score for Acute Appendicitis",
+      "href": "AlvaradoScore.htm",
+      "url": "https://ebmcalc.com/AlvaradoScore.htm"
+    },
+    {
+      "name": "Androgen Deficiency in Aging Males (ADAM) Screener",
+      "href": "AndrogenDef.htm",
+      "url": "https://ebmcalc.com/AndrogenDef.htm"
+    },
+    {
+      "name": "APACHE II Scoring System by Diagnosis",
+      "href": "ApacheScoreDx.htm",
+      "url": "https://ebmcalc.com/ApacheScoreDx.htm"
+    },
+    {
+      "name": "APACHE II Scoring System",
+      "href": "ApacheScore.htm",
+      "url": "https://ebmcalc.com/ApacheScore.htm"
+    },
+    {
+      "name": "Apgar Score",
+      "href": "ApgarScore.htm",
+      "url": "https://ebmcalc.com/ApgarScore.htm"
+    },
+    {
+      "name": "APRI and Cirrhosis Probability in Hepatitis C",
+      "href": "APRI.htm",
+      "url": "https://ebmcalc.com/APRI.htm"
+    },
+    {
+      "name": "ARISCAT (Canet) preoperative pulmonary risk index in adults",
+      "href": "ARISCAT.htm",
+      "url": "https://ebmcalc.com/ARISCAT.htm"
+    },
+    {
+      "name": "ATRIA Score for Prediction of Major Hemorrhage in Atrial Fibrillation Treated with Warfarin",
+      "href": "ATRIAScore.htm",
+      "url": "https://ebmcalc.com/ATRIAScore.htm"
+    },
+    {
+      "name": "Atrial Fibrillation and Arterial Thromboembolism Risk",
+      "href": "AtrialFibThromboEmbolism.htm",
+      "url": "https://ebmcalc.com/AtrialFibThromboEmbolism.htm"
+    },
+    {
+      "name": "Atrial Fibrillation Five Year Risk of Stroke or Death",
+      "href": "AtrialFib5yearStrokeDeathRisk.htm",
+      "url": "https://ebmcalc.com/AtrialFib5yearStrokeDeathRisk.htm"
+    },
+    {
+      "name": "Atrial Fibrillation Five-Year Risk of Stroke",
+      "href": "AtrialFib5yearStrokeRisk.htm",
+      "url": "https://ebmcalc.com/AtrialFib5yearStrokeRisk.htm"
+    },
+    {
+      "name": "Autoimmune Hepatitis Diagnostic Criteria",
+      "href": "AutoImmuneHepatitis.htm",
+      "url": "https://ebmcalc.com/AutoImmuneHepatitis.htm"
+    },
+    {
+      "name": "Bacterial Meningitis Score for Children",
+      "href": "BacterialMeningitis.htm",
+      "url": "https://ebmcalc.com/BacterialMeningitis.htm"
+    },
+    {
+      "name": "BAP-65 prediction of in-hospital mortality and need for mechanical ventilation in COPD",
+      "href": "BAP65.htm",
+      "url": "https://ebmcalc.com/BAP65.htm"
+    },
+    {
+      "name": "Bath Ankylosing Spondylitis Disease Activity Index (BASDAI) in Adults",
+      "href": "BASDAI.htm",
+      "url": "https://ebmcalc.com/BASDAI.htm"
+    },
+    {
+      "name": "Bedside Index of Severity in Acute Pancreatitis (BISAP) Score",
+      "href": "BISAPScore.htm",
+      "url": "https://ebmcalc.com/BISAPScore.htm"
+    },
+    {
+      "name": "Behcet's Syndrome International Study Group Criteria",
+      "href": "BehcetsInternational.htm",
+      "url": "https://ebmcalc.com/BehcetsInternational.htm"
+    },
+    {
+      "name": "Behcet's Syndrome Iran Criteria Arithmetic Method",
+      "href": "BehcetsIran.htm",
+      "url": "https://ebmcalc.com/BehcetsIran.htm"
+    },
+    {
+      "name": "Behcet's Syndrome Japanese Ministry of Health and Welfare Criteria",
+      "href": "BehcetsJapan.htm",
+      "url": "https://ebmcalc.com/BehcetsJapan.htm"
+    },
+    {
+      "name": "Bishop Score for Elective Induction",
+      "href": "BishopScore.htm",
+      "url": "https://ebmcalc.com/BishopScore.htm"
+    },
+    {
+      "name": "Bleeding Risk (any bleeding complication) on Warfarin Therapy",
+      "href": "BleedingRiskOnWarfarinAny.htm",
+      "url": "https://ebmcalc.com/BleedingRiskOnWarfarinAny.htm"
+    },
+    {
+      "name": "Bleeding Risk (major complication) on Warfarin Therapy",
+      "href": "BleedingRiskOnWarfarin.htm",
+      "url": "https://ebmcalc.com/BleedingRiskOnWarfarin.htm"
+    },
+    {
+      "name": "Bleeding Risk Index for Warfarin Therapy",
+      "href": "BleedingRiskIndexWarfarin.htm",
+      "url": "https://ebmcalc.com/BleedingRiskIndexWarfarin.htm"
+    },
+    {
+      "name": "BLISS Score Predicting COPD Admissions",
+      "href": "BLISS.htm",
+      "url": "https://ebmcalc.com/BLISS.htm"
+    },
+    {
+      "name": "BODE Index for COPD survival prediction in adults",
+      "href": "BODE.htm",
+      "url": "https://ebmcalc.com/BODE.htm"
+    },
+    {
+      "name": "Bonacini Discriminant Score and Cirrhosis Probability in Hepatitis C",
+      "href": "CDS_Bonacini.htm",
+      "url": "https://ebmcalc.com/CDS_Bonacini.htm"
+    },
+    {
+      "name": "Bowel Obstruction Diagnosis: Utility of X-ray",
+      "href": "BowelObstructXrayUse.htm",
+      "url": "https://ebmcalc.com/BowelObstructXrayUse.htm"
+    },
+    {
+      "name": "Breast Cancer Recurrence Risk After Mastectomy (simple)",
+      "href": "BreastCaRecur.htm",
+      "url": "https://ebmcalc.com/BreastCaRecur.htm"
+    },
+    {
+      "name": "Breast cancer risk assessment by Gail Model (2018)",
+      "href": "Gail2018.htm",
+      "url": "https://ebmcalc.com/Gail2018.htm"
+    },
+    {
+      "name": "Breast cancer risk assessment incorporating breast density (BCSC 2015)",
+      "href": "BCSC.htm",
+      "url": "https://ebmcalc.com/BCSC.htm"
+    },
+    {
+      "name": "CADence: Risk-factor-weighted clinical likelihood of obstructive coronary artery disease",
+      "href": "CADence.htm",
+      "url": "https://ebmcalc.com/CADence.htm"
+    },
+    {
+      "name": "CAGE Criteria for Potential Excessive Alcohol Use",
+      "href": "CAGE.htm",
+      "url": "https://ebmcalc.com/CAGE.htm"
+    },
+    {
+      "name": "Canadian Head CT Rule for Minor Head Injury",
+      "href": "CanadianHeadCTRule.htm",
+      "url": "https://ebmcalc.com/CanadianHeadCTRule.htm"
+    },
+    {
+      "name": "Cancer and Aging Research Group-Breast Cancer (CARG-BC) score for older adults",
+      "href": "CARG_BC.htm",
+      "url": "https://ebmcalc.com/CARG_BC.htm"
+    },
+    {
+      "name": "Caprini DVT Risk Score",
+      "href": "Caprini.htm",
+      "url": "https://ebmcalc.com/Caprini.htm"
+    },
+    {
+      "name": "Cardiac Risk Index in Noncardiac Surgery (Detsky et. al.)",
+      "href": "CardiacRisk_D.htm",
+      "url": "https://ebmcalc.com/CardiacRisk_D.htm"
+    },
+    {
+      "name": "Cardiac Risk Index in Noncardiac Surgery (Goldman, et. al.)",
+      "href": "CardiacRisk_G.htm",
+      "url": "https://ebmcalc.com/CardiacRisk_G.htm"
+    },
+    {
+      "name": "Cardiovascular Risk Assessment (10-year, ACC/AHA PCE: Pooled Cohort Equations)",
+      "href": "ACCAHA2013.htm",
+      "url": "https://ebmcalc.com/ACCAHA2013.htm"
+    },
+    {
+      "name": "Cardiovascular Risk Assessment (10-year, ACC/AHA PCE: Pooled Cohort Equations) and Optimization",
+      "href": "ACCAHA2013_opti.htm",
+      "url": "https://ebmcalc.com/ACCAHA2013_opti.htm"
+    },
+    {
+      "name": "Cardiovascular Risk Assessment (10-year, MESA 2015, with or without CAC score)",
+      "href": "MESA.htm",
+      "url": "https://ebmcalc.com/MESA.htm"
+    },
+    {
+      "name": "Cardiovascular Risk Assessment (10-year, MESA 2015, with or without CAC score) and Optimization",
+      "href": "MESA_opti.htm",
+      "url": "https://ebmcalc.com/MESA_opti.htm"
+    },
+    {
+      "name": "Cardiovascular Risk Assessment (10-year, PROCAM Score, Munster Heart Study SI units)",
+      "href": "PROCAM_SI.htm",
+      "url": "https://ebmcalc.com/PROCAM_SI.htm"
+    },
+    {
+      "name": "Cardiovascular Risk Assessment (10-year, PROCAM Score, Munster Heart Study)",
+      "href": "PROCAM.htm",
+      "url": "https://ebmcalc.com/PROCAM.htm"
+    },
+    {
+      "name": "Cardiovascular Risk Assessment (10-year, Revised Pooled Cohort Equations 2018)",
+      "href": "CVRiskRevised2018.htm",
+      "url": "https://ebmcalc.com/CVRiskRevised2018.htm"
+    },
+    {
+      "name": "Cardiovascular Risk Assessment in Adult Females (10-year risk, Framingham 2008)",
+      "href": "Framingham08_F.htm",
+      "url": "https://ebmcalc.com/Framingham08_F.htm"
+    },
+    {
+      "name": "Cardiovascular Risk Assessment in Adult Females (10-year, Reynolds Risk Score 2007)",
+      "href": "ReynoldsScore_F.htm",
+      "url": "https://ebmcalc.com/ReynoldsScore_F.htm"
+    },
+    {
+      "name": "Cardiovascular Risk Assessment in Adult Males (10-year risk, Framingham 2008)",
+      "href": "Framingham08_M.htm",
+      "url": "https://ebmcalc.com/Framingham08_M.htm"
+    },
+    {
+      "name": "Cardiovascular Risk Assessment in Adult Males (10-year, Reynolds Risk Score 2008)",
+      "href": "ReynoldsScore_M.htm",
+      "url": "https://ebmcalc.com/ReynoldsScore_M.htm"
+    },
+    {
+      "name": "Cardiovascular risk assessment in adults (10 and 30-year, AHA PREVENT™ 2026)",
+      "href": "AHA_Prev.htm",
+      "url": "https://ebmcalc.com/AHA_Prev.htm"
+    },
+    {
+      "name": "Cardiovascular Risk Assessment in Type I Diabetes (5-year)",
+      "href": "CVDinDM1.htm",
+      "url": "https://ebmcalc.com/CVDinDM1.htm"
+    },
+    {
+      "name": "Center for International Blood and Marrow Transplant Research (CIBMTR) Chronic Graft-Versus-Host-Disease (GVHD) Risk Score",
+      "href": "CIBMTR.htm",
+      "url": "https://ebmcalc.com/CIBMTR.htm"
+    },
+    {
+      "name": "Centor Strep Pharyngitis Criteria With McIsaac Modification",
+      "href": "SoreThroatCriteria.htm",
+      "url": "https://ebmcalc.com/SoreThroatCriteria.htm"
+    },
+    {
+      "name": "Cervical Spine Injury Prediction in Blunt Trauma",
+      "href": "CxSpineBluntTrauma.htm",
+      "url": "https://ebmcalc.com/CxSpineBluntTrauma.htm"
+    },
+    {
+      "name": "CHADS-VASc Score for Stroke Risk in Atrial Fibrillation (CHA[2]DS[2]-VASc)",
+      "href": "AtrialFibCHADSVASc.htm",
+      "url": "https://ebmcalc.com/AtrialFibCHADSVASc.htm"
+    },
+    {
+      "name": "CHADS2 Score for Stroke Risk in Atrial Fibrillation (CHADS[2])",
+      "href": "AtrialFibCHADS2.htm",
+      "url": "https://ebmcalc.com/AtrialFibCHADS2.htm"
+    },
+    {
+      "name": "Chest Pain Risk Assessment in Patients with Normal Troponin and No ST-T Changes",
+      "href": "ChestPainRisk.htm",
+      "url": "https://ebmcalc.com/ChestPainRisk.htm"
+    },
+    {
+      "name": "Chest Pain Score",
+      "href": "ChestPainScore.htm",
+      "url": "https://ebmcalc.com/ChestPainScore.htm"
+    },
+    {
+      "name": "Child Pugh Classification for Severity of Liver Disease (SI units)",
+      "href": "ChildTurPuScore_SI.htm",
+      "url": "https://ebmcalc.com/ChildTurPuScore_SI.htm"
+    },
+    {
+      "name": "Child Pugh Classification for Severity of Liver Disease",
+      "href": "ChildTurPuScore.htm",
+      "url": "https://ebmcalc.com/ChildTurPuScore.htm"
+    },
+    {
+      "name": "Chronic Fatigue Syndrome Diagnostic Criteria",
+      "href": "ChronicFatigueSyn.htm",
+      "url": "https://ebmcalc.com/ChronicFatigueSyn.htm"
+    },
+    {
+      "name": "Chronic Kidney Disease 10 Year Risk Score",
+      "href": "CKD_Risk.htm",
+      "url": "https://ebmcalc.com/CKD_Risk.htm"
+    },
+    {
+      "name": "Chronic Kidney Disease: 5-Year Mortality Risk in Older Adults",
+      "href": "CKDMortalityRisk.htm",
+      "url": "https://ebmcalc.com/CKDMortalityRisk.htm"
+    },
+    {
+      "name": "CIP (Critical Illness Prediction) Score",
+      "href": "CIP.htm",
+      "url": "https://ebmcalc.com/CIP.htm"
+    },
+    {
+      "name": "Cirrhosis Probability in Hepatitis C MultiCalc",
+      "href": "CirrhosisProbability_MC.htm",
+      "url": "https://ebmcalc.com/CirrhosisProbability_MC.htm"
+    },
+    {
+      "name": "CIWA-Ar Clinical Institute Withdrawal Assessment for Alcohol scale",
+      "href": "CIWA.htm",
+      "url": "https://ebmcalc.com/CIWA.htm"
+    },
+    {
+      "name": "CLIF-SOFA score for adults with acute-on-chronic liver disease",
+      "href": "CLIF_SOFA.htm",
+      "url": "https://ebmcalc.com/CLIF_SOFA.htm"
+    },
+    {
+      "name": "Clinical criteria for exudative pleural effusion in adults (Light's criteria with continuous likelihood ratios)",
+      "href": "LightCriteriaContLR.htm",
+      "url": "https://ebmcalc.com/LightCriteriaContLR.htm"
+    },
+    {
+      "name": "Clinical criteria for exudative pleural effusion in adults (pleural fluid only-3 criteria with continuous likelihood ratios)",
+      "href": "PFO3ContLR.htm",
+      "url": "https://ebmcalc.com/PFO3ContLR.htm"
+    },
+    {
+      "name": "Clinical criteria for exudative pleural effusion in adults (pleural fluid only-3 criteria)",
+      "href": "PFO3.htm",
+      "url": "https://ebmcalc.com/PFO3.htm"
+    },
+    {
+      "name": "Clinical Diagnostic Rule for Initial Gout Flare",
+      "href": "GoutDx.htm",
+      "url": "https://ebmcalc.com/GoutDx.htm"
+    },
+    {
+      "name": "Clinical Grading to Predict Malignant Hyperthermia",
+      "href": "MalignantHyperthermia.htm",
+      "url": "https://ebmcalc.com/MalignantHyperthermia.htm"
+    },
+    {
+      "name": "Clinical Opioid Withdrawal Scale (COWS) for adults and adolescents",
+      "href": "COWS.htm",
+      "url": "https://ebmcalc.com/COWS.htm"
+    },
+    {
+      "name": "Clinical Pulmonary Infection Score (CPIS)",
+      "href": "CPIS.htm",
+      "url": "https://ebmcalc.com/CPIS.htm"
+    },
+    {
+      "name": "Clock Drawing Task (Cognitive Impairment Screening)",
+      "href": "ClockDrawing.htm",
+      "url": "https://ebmcalc.com/ClockDrawing.htm"
+    },
+    {
+      "name": "Clostridium Difficile Disease (CDD) Severity (Hines VA Score)",
+      "href": "CdiffVA.htm",
+      "url": "https://ebmcalc.com/CdiffVA.htm"
+    },
+    {
+      "name": "Clostridium Difficile Severity Score (UPMC 2008)",
+      "href": "CdiffUPMC08.htm",
+      "url": "https://ebmcalc.com/CdiffUPMC08.htm"
+    },
+    {
+      "name": "CNS-IPI (International Prognostic Index for 2-year risk of CNS relapse in DLBCL treated with R-CHOP) in adults",
+      "href": "CNS_IPI.htm",
+      "url": "https://ebmcalc.com/CNS_IPI.htm"
+    },
+    {
+      "name": "Cognitive Impairment Screening with 6 Questions",
+      "href": "CognitiveImpairment6.htm",
+      "url": "https://ebmcalc.com/CognitiveImpairment6.htm"
+    },
+    {
+      "name": "Community-acquired pneumonia severity index (PSI) for adults",
+      "href": "CommunityAcqPneumonia.htm",
+      "url": "https://ebmcalc.com/CommunityAcqPneumonia.htm"
+    },
+    {
+      "name": "Conjunctivitis Agent Prediction (bacterial or other)",
+      "href": "ConjunctAgent.htm",
+      "url": "https://ebmcalc.com/ConjunctAgent.htm"
+    },
+    {
+      "name": "COPD Assessment Test (CAT)",
+      "href": "CAT.htm",
+      "url": "https://ebmcalc.com/CAT.htm"
+    },
+    {
+      "name": "COVID-19 ABC2-SPH Score",
+      "href": "COVID_ABC2SPH.htm",
+      "url": "https://ebmcalc.com/COVID_ABC2SPH.htm"
+    },
+    {
+      "name": "COVID-19 AID Score",
+      "href": "COVID_AID.htm",
+      "url": "https://ebmcalc.com/COVID_AID.htm"
+    },
+    {
+      "name": "COVID-19 and the Prognostic Nutrition Index (PNI)",
+      "href": "COVID_PNI.htm",
+      "url": "https://ebmcalc.com/COVID_PNI.htm"
+    },
+    {
+      "name": "COVID-19 and the Systemic Immune-Inflammation Index (SII)",
+      "href": "COVID_SII.htm",
+      "url": "https://ebmcalc.com/COVID_SII.htm"
+    },
+    {
+      "name": "COVID-19 CALL Score",
+      "href": "COVID_CALL.htm",
+      "url": "https://ebmcalc.com/COVID_CALL.htm"
+    },
+    {
+      "name": "COVID-19 CHOD Score for Estimating Risk of Inpatient Pulmonary Embolism",
+      "href": "CHOD.htm",
+      "url": "https://ebmcalc.com/CHOD.htm"
+    },
+    {
+      "name": "COVID-19 Critical Illness Predictor (Liang 5/12/2020)",
+      "href": "COVID19_Liang.htm",
+      "url": "https://ebmcalc.com/COVID19_Liang.htm"
+    },
+    {
+      "name": "COVID-19 Criticality Prediction (Yan 3/3/2020)",
+      "href": "COVID19_Yan.htm",
+      "url": "https://ebmcalc.com/COVID19_Yan.htm"
+    },
+    {
+      "name": "COVID-19 FAPIC Score for Vaccine Induced Thrombotic Thrombocytopenia Syndrome",
+      "href": "COVID_FAPIC_Score.htm",
+      "url": "https://ebmcalc.com/COVID_FAPIC_Score.htm"
+    },
+    {
+      "name": "COVID-19 Inflammation Score for Disease Severity",
+      "href": "COVID_Inflammation.htm",
+      "url": "https://ebmcalc.com/COVID_Inflammation.htm"
+    },
+    {
+      "name": "COVID-19 ISARIC C4 Score",
+      "href": "COVID19_C4.htm",
+      "url": "https://ebmcalc.com/COVID19_C4.htm"
+    },
+    {
+      "name": "COVID-19 Kuwait Progression Score",
+      "href": "COVID_Kuwait.htm",
+      "url": "https://ebmcalc.com/COVID_Kuwait.htm"
+    },
+    {
+      "name": "COVID-19 MMCD Score to Predict Need for Dialysis",
+      "href": "COVID_MMCD.htm",
+      "url": "https://ebmcalc.com/COVID_MMCD.htm"
+    },
+    {
+      "name": "COVID-19 Mortality Risk Estimation (Zhou 3/11/2020)",
+      "href": "COVID19_Zhou.htm",
+      "url": "https://ebmcalc.com/COVID19_Zhou.htm"
+    },
+    {
+      "name": "COVID-19 Obesity and Diabetes Score",
+      "href": "COVID_Obesity_Diabetes.htm",
+      "url": "https://ebmcalc.com/COVID_Obesity_Diabetes.htm"
+    },
+    {
+      "name": "COVID-19 PAWNN Score",
+      "href": "COVID_PAWNN.htm",
+      "url": "https://ebmcalc.com/COVID_PAWNN.htm"
+    },
+    {
+      "name": "COVID-19 PRIORITY Score",
+      "href": "COVID_PRIORITY.htm",
+      "url": "https://ebmcalc.com/COVID_PRIORITY.htm"
+    },
+    {
+      "name": "COVID-19 Quick Severity Index (qCSI)",
+      "href": "COVID_QSI.htm",
+      "url": "https://ebmcalc.com/COVID_QSI.htm"
+    },
+    {
+      "name": "COVID-19 RISE UP Score for Emergency Department Patients 65 Years Old and Older",
+      "href": "COVID_RISE_UP.htm",
+      "url": "https://ebmcalc.com/COVID_RISE_UP.htm"
+    },
+    {
+      "name": "COVID-19 SCOPE Score to Predict Severe Respiratory Failure",
+      "href": "COVID19_SCOPE_Score.htm",
+      "url": "https://ebmcalc.com/COVID19_SCOPE_Score.htm"
+    },
+    {
+      "name": "COVID-19 SEIMC Score",
+      "href": "COVID_SEIMC.htm",
+      "url": "https://ebmcalc.com/COVID_SEIMC.htm"
+    },
+    {
+      "name": "COVID-19 Severity by M-CHA(2)DS(2)-VASc Score",
+      "href": "COVID_19_MCHADSVASC.htm",
+      "url": "https://ebmcalc.com/COVID_19_MCHADSVASC.htm"
+    },
+    {
+      "name": "COVID-19 Severity by Shock Index and Modified Shock Index",
+      "href": "COVID_SI_MSI.htm",
+      "url": "https://ebmcalc.com/COVID_SI_MSI.htm"
+    },
+    {
+      "name": "COVID-19 Simplified HOSPITAL Score for Readmission Risk",
+      "href": "COVID_HOSPITAL.htm",
+      "url": "https://ebmcalc.com/COVID_HOSPITAL.htm"
+    },
+    {
+      "name": "COVID-19 SOARS Score",
+      "href": "COVID_SOARS.htm",
+      "url": "https://ebmcalc.com/COVID_SOARS.htm"
+    },
+    {
+      "name": "COVID-19 Symptom-Based C19 Rule for Diagnosis",
+      "href": "COVID_C19.htm",
+      "url": "https://ebmcalc.com/COVID_C19.htm"
+    },
+    {
+      "name": "Crohn's Disease Activity Index (CDAI) in adults",
+      "href": "CDAI.htm",
+      "url": "https://ebmcalc.com/CDAI.htm"
+    },
+    {
+      "name": "CURB Pneumonia Severity Score",
+      "href": "CURB.htm",
+      "url": "https://ebmcalc.com/CURB.htm"
+    },
+    {
+      "name": "CURB-65 Pneumonia Severity Score",
+      "href": "CURB65.htm",
+      "url": "https://ebmcalc.com/CURB65.htm"
+    },
+    {
+      "name": "Diabetes Risk Score (Type 2)",
+      "href": "DiabetesRiskScore.htm",
+      "url": "https://ebmcalc.com/DiabetesRiskScore.htm"
+    },
+    {
+      "name": "Diabetes Risk Self Assessment",
+      "href": "DMSelfAssess.htm",
+      "url": "https://ebmcalc.com/DMSelfAssess.htm"
+    },
+    {
+      "name": "DIC Score",
+      "href": "DICScore.htm",
+      "url": "https://ebmcalc.com/DICScore.htm"
+    },
+    {
+      "name": "DVT Probability: Ambulatory Score System (Constans, 2003 paper)",
+      "href": "DVTScoreAmbulatory.htm",
+      "url": "https://ebmcalc.com/DVTScoreAmbulatory.htm"
+    },
+    {
+      "name": "DVT Probability: Kahn Score System",
+      "href": "DVTScoreKahn.htm",
+      "url": "https://ebmcalc.com/DVTScoreKahn.htm"
+    },
+    {
+      "name": "DVT Probability: Primary Care Rule Including D-dimer",
+      "href": "DVTPrimaryCare.htm",
+      "url": "https://ebmcalc.com/DVTPrimaryCare.htm"
+    },
+    {
+      "name": "DVT Probability: St. Andre Score System",
+      "href": "DVTScoreStAndre.htm",
+      "url": "https://ebmcalc.com/DVTScoreStAndre.htm"
+    },
+    {
+      "name": "DVT Probability: Wells Score System",
+      "href": "DVTScoreWells.htm",
+      "url": "https://ebmcalc.com/DVTScoreWells.htm"
+    },
+    {
+      "name": "Eckardt symptom score for achalasia",
+      "href": "EckardtSymptomScore.htm",
+      "url": "https://ebmcalc.com/EckardtSymptomScore.htm"
+    },
+    {
+      "name": "ECOG Performance Status",
+      "href": "ECOG.htm",
+      "url": "https://ebmcalc.com/ECOG.htm"
+    },
+    {
+      "name": "Edinburgh Postnatal Depression Scale (EPDS)",
+      "href": "EdinburghPostnatalDepression.htm",
+      "url": "https://ebmcalc.com/EdinburghPostnatalDepression.htm"
+    },
+    {
+      "name": "Ehlers-Danlos Syndrome IV (vascular type) Diagnostic Criteria",
+      "href": "EhlersDS_4.htm",
+      "url": "https://ebmcalc.com/EhlersDS_4.htm"
+    },
+    {
+      "name": "ELBW Infant Prognosis Prediction",
+      "href": "ELBWInfantOutcome.htm",
+      "url": "https://ebmcalc.com/ELBWInfantOutcome.htm"
+    },
+    {
+      "name": "Embolic Risk (ER) French Score in Infective Endocarditis",
+      "href": "ER_French.htm",
+      "url": "https://ebmcalc.com/ER_French.htm"
+    },
+    {
+      "name": "Epworth Sleepiness Scale (ESS)",
+      "href": "EpworthSleepScale.htm",
+      "url": "https://ebmcalc.com/EpworthSleepScale.htm"
+    },
+    {
+      "name": "Esophageal Varices: Prediction from Platelet Count to Spleen Diameter Ratio",
+      "href": "EsophVaricesRisk.htm",
+      "url": "https://ebmcalc.com/EsophVaricesRisk.htm"
+    },
+    {
+      "name": "EuroSCORE for Cardiac Surgery Risk Assessment (1999 additive version)",
+      "href": "EuroSCOREAdd.htm",
+      "url": "https://ebmcalc.com/EuroSCOREAdd.htm"
+    },
+    {
+      "name": "Fall Risk in Elderly Hospitalized Patients",
+      "href": "FallRisk.htm",
+      "url": "https://ebmcalc.com/FallRisk.htm"
+    },
+    {
+      "name": "Fear Avoidance Beliefs Questionnaire (FABQ) about Physical Activity",
+      "href": "FearAvoidActivity.htm",
+      "url": "https://ebmcalc.com/FearAvoidActivity.htm"
+    },
+    {
+      "name": "Fear Avoidance Beliefs Questionnaire (FABQ) about Work",
+      "href": "FearAvoidWork.htm",
+      "url": "https://ebmcalc.com/FearAvoidWork.htm"
+    },
+    {
+      "name": "FIB-4 and Cirrhosis Probability in Hepatitis C",
+      "href": "FIB4.htm",
+      "url": "https://ebmcalc.com/FIB4.htm"
+    },
+    {
+      "name": "FIB-4 as a Marker of Fibrosis in Nonalcoholic Fatty Liver Disease (NAFLD)",
+      "href": "FIB4_NAFLD.htm",
+      "url": "https://ebmcalc.com/FIB4_NAFLD.htm"
+    },
+    {
+      "name": "FIB-4 Index, an Indirect Marker for Liver Fibrosis in Adults (2026 update)",
+      "href": "FIB4_MultiDx.htm",
+      "url": "https://ebmcalc.com/FIB4_MultiDx.htm"
+    },
+    {
+      "name": "Fracture Index WITH known Bone Mineral Density (BMD)",
+      "href": "FractureIndexBMD.htm",
+      "url": "https://ebmcalc.com/FractureIndexBMD.htm"
+    },
+    {
+      "name": "Fracture Index WITHOUT known Bone Mineral Density (BMD)",
+      "href": "FractureIndexNoBMD.htm",
+      "url": "https://ebmcalc.com/FractureIndexNoBMD.htm"
+    },
+    {
+      "name": "GAD-7 Generalized Anxiety Disorder Scale",
+      "href": "GAD7.htm",
+      "url": "https://ebmcalc.com/GAD7.htm"
+    },
+    {
+      "name": "Genetically Inspired International Prognostic Scoring System (GIPSS) for Primary Myelofibrosis in Adults",
+      "href": "GIPSS.htm",
+      "url": "https://ebmcalc.com/GIPSS.htm"
+    },
+    {
+      "name": "Geneva Risk Score for Venous Thromboembolism in Hospitalized Medical Patients",
+      "href": "GenevaScore.htm",
+      "url": "https://ebmcalc.com/GenevaScore.htm"
+    },
+    {
+      "name": "Geriatric Depression 1 Item Screener",
+      "href": "GeriatricDepression1.htm",
+      "url": "https://ebmcalc.com/GeriatricDepression1.htm"
+    },
+    {
+      "name": "Geriatric Depression 4 Item Scale",
+      "href": "GeriatricDepression4.htm",
+      "url": "https://ebmcalc.com/GeriatricDepression4.htm"
+    },
+    {
+      "name": "Geriatric Depression Scale (15-item GDS)",
+      "href": "GeriatricDepression.htm",
+      "url": "https://ebmcalc.com/GeriatricDepression.htm"
+    },
+    {
+      "name": "Geriatric Depression Scale (30-item GDS)",
+      "href": "GeriatricDepression30.htm",
+      "url": "https://ebmcalc.com/GeriatricDepression30.htm"
+    },
+    {
+      "name": "Geriatric-Sensitive Perioperative Cardiac Risk Index (GSCRI)",
+      "href": "GSCRI.htm",
+      "url": "https://ebmcalc.com/GSCRI.htm"
+    },
+    {
+      "name": "Glasgow Alcoholic Hepatitis Score",
+      "href": "GlasgowAlcoholicHepatitis.htm",
+      "url": "https://ebmcalc.com/GlasgowAlcoholicHepatitis.htm"
+    },
+    {
+      "name": "Glasgow Blatchford Score for Gastrointestinal Bleeding",
+      "href": "BlatchfordScore.htm",
+      "url": "https://ebmcalc.com/BlatchfordScore.htm"
+    },
+    {
+      "name": "Glasgow Coma Scale in Adults",
+      "href": "GlasgowComaScale.htm",
+      "url": "https://ebmcalc.com/GlasgowComaScale.htm"
+    },
+    {
+      "name": "Good Outcomes Following Attempted Resuscitation (GO-FAR) score",
+      "href": "GOFAR.htm",
+      "url": "https://ebmcalc.com/GOFAR.htm"
+    },
+    {
+      "name": "GRACE 2.0 Score for Acute Coronary Syndrome Prognosis (non-linear model 2014)",
+      "href": "GRACE2Score.htm",
+      "url": "https://ebmcalc.com/GRACE2Score.htm"
+    },
+    {
+      "name": "GRACE Score for Acute Coronary Syndrome Prognosis (2004)",
+      "href": "GRACEScore.htm",
+      "url": "https://ebmcalc.com/GRACEScore.htm"
+    },
+    {
+      "name": "GRACE Score for Acute Coronary Syndrome Prognosis (linear model 2003)",
+      "href": "GRACE_Granger.htm",
+      "url": "https://ebmcalc.com/GRACE_Granger.htm"
+    },
+    {
+      "name": "GUCI and Cirrhosis Probability in Hepatitis C",
+      "href": "GUCI.htm",
+      "url": "https://ebmcalc.com/GUCI.htm"
+    },
+    {
+      "name": "Gupta Perioperative Cardiac Risk Prediction",
+      "href": "GuptaCardiacRisk.htm",
+      "url": "https://ebmcalc.com/GuptaCardiacRisk.htm"
+    },
+    {
+      "name": "Gupta postoperative pneumonia risk in adults",
+      "href": "GuptaPostOpPneumonia.htm",
+      "url": "https://ebmcalc.com/GuptaPostOpPneumonia.htm"
+    },
+    {
+      "name": "Gupta postoperative respiratory failure risk in adults",
+      "href": "GuptaRespFailureIndex.htm",
+      "url": "https://ebmcalc.com/GuptaRespFailureIndex.htm"
+    },
+    {
+      "name": "Gurd's Diagnostic Criteria for Fat Embolism Syndrome",
+      "href": "GurdCriteriaFatEmboli.htm",
+      "url": "https://ebmcalc.com/GurdCriteriaFatEmboli.htm"
+    },
+    {
+      "name": "Harvey-Bradshaw Index of Crohn's Disease Activity",
+      "href": "HarveyBradshaw.htm",
+      "url": "https://ebmcalc.com/HarveyBradshaw.htm"
+    },
+    {
+      "name": "HAS-BLED Bleeding Risk Score",
+      "href": "HASBLED.htm",
+      "url": "https://ebmcalc.com/HASBLED.htm"
+    },
+    {
+      "name": "Heart Failure Diagnosis",
+      "href": "HFDx.htm",
+      "url": "https://ebmcalc.com/HFDx.htm"
+    },
+    {
+      "name": "HEART Score",
+      "href": "HeartScore.htm",
+      "url": "https://ebmcalc.com/HeartScore.htm"
+    },
+    {
+      "name": "Heaviness of Smoking",
+      "href": "SmokingHeaviness.htm",
+      "url": "https://ebmcalc.com/SmokingHeaviness.htm"
+    },
+    {
+      "name": "Heparin Induced Thrombocytopenia 4 Ts Score",
+      "href": "HIT.htm",
+      "url": "https://ebmcalc.com/HIT.htm"
+    },
+    {
+      "name": "Hepatitis C Cirrhosis Probability",
+      "href": "HepatitisCCirrhosisRisk.htm",
+      "url": "https://ebmcalc.com/HepatitisCCirrhosisRisk.htm"
+    },
+    {
+      "name": "Hepatitis Discriminant Function for Corticosteroid Therapy in Alcoholic Hepatitis",
+      "href": "HepatitisCriteria.htm",
+      "url": "https://ebmcalc.com/HepatitisCriteria.htm"
+    },
+    {
+      "name": "HINTS of Stroke in Acute Vertigo Syndrome",
+      "href": "HINTS.htm",
+      "url": "https://ebmcalc.com/HINTS.htm"
+    },
+    {
+      "name": "Hospital-Acquired Venous Thromboembolism Risk (HA-VTE) Prediction",
+      "href": "HAVTE.htm",
+      "url": "https://ebmcalc.com/HAVTE.htm"
+    },
+    {
+      "name": "Hypersensitivity Pneumonitis Prediction",
+      "href": "HyperSensPneumonitis.htm",
+      "url": "https://ebmcalc.com/HyperSensPneumonitis.htm"
+    },
+    {
+      "name": "ICE Score: Immune Effector Cell-Associated Encephalopathy",
+      "href": "ICE_Score.htm",
+      "url": "https://ebmcalc.com/ICE_Score.htm"
+    },
+    {
+      "name": "INTERCHEST Score for Chest Pain Risk Assessment",
+      "href": "INTERCHEST.htm",
+      "url": "https://ebmcalc.com/INTERCHEST.htm"
+    },
+    {
+      "name": "International Early Warning System (IEWS)",
+      "href": "IEWS.htm",
+      "url": "https://ebmcalc.com/IEWS.htm"
+    },
+    {
+      "name": "International IgA Nephropathy Risk Prediction in Adults",
+      "href": "IgANephropathy.htm",
+      "url": "https://ebmcalc.com/IgANephropathy.htm"
+    },
+    {
+      "name": "International Prognostic Index for Non-Hodgkin Lymphoma",
+      "href": "IPINHL.htm",
+      "url": "https://ebmcalc.com/IPINHL.htm"
+    },
+    {
+      "name": "International Prognostic Score in Hodgkin Lymphoma (1998)",
+      "href": "IPS.htm",
+      "url": "https://ebmcalc.com/IPS.htm"
+    },
+    {
+      "name": "International Prognostic Score in Hodgkin Lymphoma (2012 update)",
+      "href": "IPS2012.htm",
+      "url": "https://ebmcalc.com/IPS2012.htm"
+    },
+    {
+      "name": "International Prostatism Symptom Score (IPSS)",
+      "href": "IPSS.htm",
+      "url": "https://ebmcalc.com/IPSS.htm"
+    },
+    {
+      "name": "Intracerebral Hemorrhage Score",
+      "href": "ICH.htm",
+      "url": "https://ebmcalc.com/ICH.htm"
+    },
+    {
+      "name": "Intracranial Bleeding Risk from Thrombolytic Therapy of MI",
+      "href": "IntracranialBleedingRiskThrombolytics.htm",
+      "url": "https://ebmcalc.com/IntracranialBleedingRiskThrombolytics.htm"
+    },
+    {
+      "name": "Irritable Bowel Syndrome Diagnostic Criteria (Manning Criteria)",
+      "href": "IrrBowelSyndrome.htm",
+      "url": "https://ebmcalc.com/IrrBowelSyndrome.htm"
+    },
+    {
+      "name": "Ishak Grading of Chronic Hepatitis",
+      "href": "IshakGrade.htm",
+      "url": "https://ebmcalc.com/IshakGrade.htm"
+    },
+    {
+      "name": "Jones Criteria for Diagnosis of Rheumatic Fever",
+      "href": "JonesCriteria.htm",
+      "url": "https://ebmcalc.com/JonesCriteria.htm"
+    },
+    {
+      "name": "Kawasaki Disease Diagnostic Criteria",
+      "href": "KawasakiDx.htm",
+      "url": "https://ebmcalc.com/KawasakiDx.htm"
+    },
+    {
+      "name": "Kawasaki Disease Kobayashi Score",
+      "href": "KawasakiKobayashi.htm",
+      "url": "https://ebmcalc.com/KawasakiKobayashi.htm"
+    },
+    {
+      "name": "Khorana Score for Estimating Venous Thromboembolism Risk in Adults with Cancer",
+      "href": "KhoranaScore.htm",
+      "url": "https://ebmcalc.com/KhoranaScore.htm"
+    },
+    {
+      "name": "Kidney Failure Risk Equation (KFRE) (4-variable)",
+      "href": "KidneyFailureRisk4.htm",
+      "url": "https://ebmcalc.com/KidneyFailureRisk4.htm"
+    },
+    {
+      "name": "Kidney Failure Risk Equation (KFRE) (8-variable)",
+      "href": "KidneyFailureRisk.htm",
+      "url": "https://ebmcalc.com/KidneyFailureRisk.htm"
+    },
+    {
+      "name": "LACE Score Predicting Readmission or Post Hospitalization Death",
+      "href": "LACE.htm",
+      "url": "https://ebmcalc.com/LACE.htm"
+    },
+    {
+      "name": "Left Atrial Thrombus Resolution in Mitral Stenosis Patients on Anticoagulation (for up to 34 months)",
+      "href": "LeftAtrialThrombusResolution.htm",
+      "url": "https://ebmcalc.com/LeftAtrialThrombusResolution.htm"
+    },
+    {
+      "name": "Light's Criteria for Exudative Pleural Effusion",
+      "href": "LightCriteria.htm",
+      "url": "https://ebmcalc.com/LightCriteria.htm"
+    },
+    {
+      "name": "Lille Model for Prognosis of Alcoholic Hepatitis",
+      "href": "LilleModel.htm",
+      "url": "https://ebmcalc.com/LilleModel.htm"
+    },
+    {
+      "name": "Lok Index and Cirrhosis Probability in Hepatitis C",
+      "href": "LokIndex.htm",
+      "url": "https://ebmcalc.com/LokIndex.htm"
+    },
+    {
+      "name": "Long QT Syndrome Risk of Life Threatening Arrhythmic Event (LAE)",
+      "href": "LQTS_Risk.htm",
+      "url": "https://ebmcalc.com/LQTS_Risk.htm"
+    },
+    {
+      "name": "Low anterior resection syndrome (LARS) score",
+      "href": "LARS.htm",
+      "url": "https://ebmcalc.com/LARS.htm"
+    },
+    {
+      "name": "Lower GI Bleeding and Risk of Severe Bleeding",
+      "href": "LowerGIBleeding.htm",
+      "url": "https://ebmcalc.com/LowerGIBleeding.htm"
+    },
+    {
+      "name": "Lung Cancer One Year Risk Estimation (for smokers 50-75 years old)",
+      "href": "LungCancerRisk.htm",
+      "url": "https://ebmcalc.com/LungCancerRisk.htm"
+    },
+    {
+      "name": "Lung Cancer Risk Estimation in Current and Past Smokers (6-year)",
+      "href": "LungCancerScreening.htm",
+      "url": "https://ebmcalc.com/LungCancerScreening.htm"
+    },
+    {
+      "name": "M.I. Criteria for Likelihood in Chest Pain with LBBB",
+      "href": "MICriteriaLBBB.htm",
+      "url": "https://ebmcalc.com/MICriteriaLBBB.htm"
+    },
+    {
+      "name": "MAF-5 metabolic dysfunction–associated fibrosis 5 score",
+      "href": "MAF5.htm",
+      "url": "https://ebmcalc.com/MAF5.htm"
+    },
+    {
+      "name": "MAGGIC Score Predicting Heart Failure Survival",
+      "href": "MAGGIC.htm",
+      "url": "https://ebmcalc.com/MAGGIC.htm"
+    },
+    {
+      "name": "Mangled Extremity Severity Score (MESS score)",
+      "href": "MESS.htm",
+      "url": "https://ebmcalc.com/MESS.htm"
+    },
+    {
+      "name": "Mayo Chronic Myelomonocytic Leukemia (CMML) Prognostic Model in Adults (conventional and SI units)",
+      "href": "CMML_Prognosis.htm",
+      "url": "https://ebmcalc.com/CMML_Prognosis.htm"
+    },
+    {
+      "name": "Mayo Score for Assessing Ulcerative Colitis Activity",
+      "href": "MayoScore.htm",
+      "url": "https://ebmcalc.com/MayoScore.htm"
+    },
+    {
+      "name": "MDACC Myelodysplastic Syndrome Prognostic Model",
+      "href": "MDACC.htm",
+      "url": "https://ebmcalc.com/MDACC.htm"
+    },
+    {
+      "name": "MEDS Score: Mortality in ER Sepsis",
+      "href": "MedsScore.htm",
+      "url": "https://ebmcalc.com/MedsScore.htm"
+    },
+    {
+      "name": "Metabolic Syndrome Criteria (AACE 2003)",
+      "href": "MetabolicSynAACE.htm",
+      "url": "https://ebmcalc.com/MetabolicSynAACE.htm"
+    },
+    {
+      "name": "Metabolic Syndrome Criteria (AHA/NHLBI 2005)",
+      "href": "MetabolicSynAHA.htm",
+      "url": "https://ebmcalc.com/MetabolicSynAHA.htm"
+    },
+    {
+      "name": "Metabolic Syndrome Criteria (ATP III)",
+      "href": "ATP3_Metabolic.htm",
+      "url": "https://ebmcalc.com/ATP3_Metabolic.htm"
+    },
+    {
+      "name": "Metabolic Syndrome Criteria (EGIR)",
+      "href": "MetabolicSynEGIR.htm",
+      "url": "https://ebmcalc.com/MetabolicSynEGIR.htm"
+    },
+    {
+      "name": "Metabolic Syndrome Criteria (IDF 2005)",
+      "href": "MetabolicSynIDF.htm",
+      "url": "https://ebmcalc.com/MetabolicSynIDF.htm"
+    },
+    {
+      "name": "Metabolic Syndrome Criteria (WHO 1998)",
+      "href": "MetabolicSynWHO.htm",
+      "url": "https://ebmcalc.com/MetabolicSynWHO.htm"
+    },
+    {
+      "name": "Migraine Screener",
+      "href": "MigraineScreen.htm",
+      "url": "https://ebmcalc.com/MigraineScreen.htm"
+    },
+    {
+      "name": "Migraine With Aura Diagnostic Criteria",
+      "href": "MigraineAura.htm",
+      "url": "https://ebmcalc.com/MigraineAura.htm"
+    },
+    {
+      "name": "Migraine Without Aura Diagnostic Criteria",
+      "href": "MigraineNoAura.htm",
+      "url": "https://ebmcalc.com/MigraineNoAura.htm"
+    },
+    {
+      "name": "Milan Criteria in Liver Transplantation for Hepatocellular Carcinoma",
+      "href": "Milan.htm",
+      "url": "https://ebmcalc.com/Milan.htm"
+    },
+    {
+      "name": "MMRC: Modified Medical Research Council Scale for Dyspnea",
+      "href": "MMRC.htm",
+      "url": "https://ebmcalc.com/MMRC.htm"
+    },
+    {
+      "name": "Modified Fisher Scale for Subarachnoid Hemorrhage",
+      "href": "MFS.htm",
+      "url": "https://ebmcalc.com/MFS.htm"
+    },
+    {
+      "name": "Modified Wells score for deep vein thrombosis (DVT)",
+      "href": "DVTScoreWellsModified.htm",
+      "url": "https://ebmcalc.com/DVTScoreWellsModified.htm"
+    },
+    {
+      "name": "Mortality After Hospitalization in Older Adults (SI units)",
+      "href": "MortalityAfterHospitalSI.htm",
+      "url": "https://ebmcalc.com/MortalityAfterHospitalSI.htm"
+    },
+    {
+      "name": "Mortality After Hospitalization in Older Adults",
+      "href": "MortalityAfterHospital.htm",
+      "url": "https://ebmcalc.com/MortalityAfterHospital.htm"
+    },
+    {
+      "name": "Mortality Probability Admission Model (MPM0-III) for critical illness in adults",
+      "href": "MPMO.htm",
+      "url": "https://ebmcalc.com/MPMO.htm"
+    },
+    {
+      "name": "Mortality risk in postoperative adult patients with cirrhosis",
+      "href": "MELD9.htm",
+      "url": "https://ebmcalc.com/MELD9.htm"
+    },
+    {
+      "name": "MuLBSTA Score to Predict Mortality in Viral Pneumonia",
+      "href": "MuLBSTA_Score.htm",
+      "url": "https://ebmcalc.com/MuLBSTA_Score.htm"
+    },
+    {
+      "name": "Multinational Association for Supportive Care in Cancer (MASCC) risk index for patients with neutropenic fever",
+      "href": "MASCC.htm",
+      "url": "https://ebmcalc.com/MASCC.htm"
+    },
+    {
+      "name": "Multiple Myeloma Diagnostic Criteria",
+      "href": "MultipleMyeloma.htm",
+      "url": "https://ebmcalc.com/MultipleMyeloma.htm"
+    },
+    {
+      "name": "Multiple Organ Dysfunction Score (MODS)",
+      "href": "MODS.htm",
+      "url": "https://ebmcalc.com/MODS.htm"
+    },
+    {
+      "name": "Mutation and Karyotype-Enhanced International Prognostic Scoring System for Primary Myelofibrosis in adults 70 and younger (MIPSS70+ version 2.0)",
+      "href": "MIPSS70.htm",
+      "url": "https://ebmcalc.com/MIPSS70.htm"
+    },
+    {
+      "name": "Mycoplasma Pneumoniae Prediction in Children with Pneumonia",
+      "href": "MycoplasmaPneumoniaPrediction.htm",
+      "url": "https://ebmcalc.com/MycoplasmaPneumoniaPrediction.htm"
+    },
+    {
+      "name": "Myelodysplastic Syndrome International Prognostic Scoring System",
+      "href": "MyeloDysplasia.htm",
+      "url": "https://ebmcalc.com/MyeloDysplasia.htm"
+    },
+    {
+      "name": "NAFLD Fibrosis Score",
+      "href": "NAFLD.htm",
+      "url": "https://ebmcalc.com/NAFLD.htm"
+    },
+    {
+      "name": "National Early Warning Score 2 (NEWS2)",
+      "href": "NEWS.htm",
+      "url": "https://ebmcalc.com/NEWS.htm"
+    },
+    {
+      "name": "Neonatal Early-Onset Sepsis Risk Prediction (2017)",
+      "href": "NeonatalSepsis.htm",
+      "url": "https://ebmcalc.com/NeonatalSepsis.htm"
+    },
+    {
+      "name": "Neonatal Early-Onset Sepsis Risk Prediction (2024 update)",
+      "href": "NeonatalSepsis2024.htm",
+      "url": "https://ebmcalc.com/NeonatalSepsis2024.htm"
+    },
+    {
+      "name": "Neurofibromatosis Type 1 Diagnostic Criteria",
+      "href": "Neurofibromatosis1.htm",
+      "url": "https://ebmcalc.com/Neurofibromatosis1.htm"
+    },
+    {
+      "name": "Neurofibromatosis Type 2 Diagnostic Criteria (1987 NIH)",
+      "href": "Neurofibromatosis2_1987NIH.htm",
+      "url": "https://ebmcalc.com/Neurofibromatosis2_1987NIH.htm"
+    },
+    {
+      "name": "Neurofibromatosis Type 2 Diagnostic Criteria (1991 NIH)",
+      "href": "Neurofibromatosis2.htm",
+      "url": "https://ebmcalc.com/Neurofibromatosis2.htm"
+    },
+    {
+      "name": "Neuropathic Pain Scale (NPS)",
+      "href": "NPS.htm",
+      "url": "https://ebmcalc.com/NPS.htm"
+    },
+    {
+      "name": "Neutrophil to Lymphocyte Ratio and Risk of Stroke in Atrial Fibrillation",
+      "href": "NLR.htm",
+      "url": "https://ebmcalc.com/NLR.htm"
+    },
+    {
+      "name": "New Orleans Head CT Criteria",
+      "href": "NewOrleansCT.htm",
+      "url": "https://ebmcalc.com/NewOrleansCT.htm"
+    },
+    {
+      "name": "Newborn hyperbilirubinemia assessment for infants born at 35 weeks or more gestation (2022 update)",
+      "href": "NewbornHyperbili2022.htm",
+      "url": "https://ebmcalc.com/NewbornHyperbili2022.htm"
+    },
+    {
+      "name": "NIH Stroke Score",
+      "href": "NIHStrokeScore.htm",
+      "url": "https://ebmcalc.com/NIHStrokeScore.htm"
+    },
+    {
+      "name": "Non Q Wave Myocardial Infarction Prediction",
+      "href": "NonQMI.htm",
+      "url": "https://ebmcalc.com/NonQMI.htm"
+    },
+    {
+      "name": "Nonbiliary Cirrhosis Prognostic Criteria for One Year Survival",
+      "href": "NonBiliaryLiverDx.htm",
+      "url": "https://ebmcalc.com/NonBiliaryLiverDx.htm"
+    },
+    {
+      "name": "Norton Scale to Stratify Risk of Pressure Sores",
+      "href": "Norton.htm",
+      "url": "https://ebmcalc.com/Norton.htm"
+    },
+    {
+      "name": "Omeprazole Therapeutic Gain (over placebo) in Dyspepsia",
+      "href": "OmeprazoleTheraputicGain.htm",
+      "url": "https://ebmcalc.com/OmeprazoleTheraputicGain.htm"
+    },
+    {
+      "name": "Omeprazole Therapeutic Index in Dyspepsia",
+      "href": "OmeprazoleTheraputicIndex.htm",
+      "url": "https://ebmcalc.com/OmeprazoleTheraputicIndex.htm"
+    },
+    {
+      "name": "ORBIT Bleeding Risk Score in Atrial Fibrillation",
+      "href": "ORBIT.htm",
+      "url": "https://ebmcalc.com/ORBIT.htm"
+    },
+    {
+      "name": "Osteoporosis Risk Assessment by Composite Linear Estimate (ORACLE score)",
+      "href": "OsteoporosisORACLE.htm",
+      "url": "https://ebmcalc.com/OsteoporosisORACLE.htm"
+    },
+    {
+      "name": "Osteoporosis Risk Assessment Instrument (ORAI)",
+      "href": "OsteoporosisRisk.htm",
+      "url": "https://ebmcalc.com/OsteoporosisRisk.htm"
+    },
+    {
+      "name": "Osteoporosis Risk SCORE (Simple Calculated Osteoporosis Risk Estimation)",
+      "href": "OsteoporosisRiskSCORE.htm",
+      "url": "https://ebmcalc.com/OsteoporosisRiskSCORE.htm"
+    },
+    {
+      "name": "Osteoporosis Self Assessment Tool for Adult Females",
+      "href": "OsteoporosisST_W.htm",
+      "url": "https://ebmcalc.com/OsteoporosisST_W.htm"
+    },
+    {
+      "name": "Osteoporosis Self Assessment Tool for Adult Males",
+      "href": "OsteoporosisST_M.htm",
+      "url": "https://ebmcalc.com/OsteoporosisST_M.htm"
+    },
+    {
+      "name": "Ottawa Ankle Rule for the Use of X-Ray in Ankle Injury",
+      "href": "OttawaAnkle.htm",
+      "url": "https://ebmcalc.com/OttawaAnkle.htm"
+    },
+    {
+      "name": "Ottawa Foot Rule for the Use of X-Ray in Foot Injury",
+      "href": "OttawaFoot.htm",
+      "url": "https://ebmcalc.com/OttawaFoot.htm"
+    },
+    {
+      "name": "Ottawa Heart Failure Risk Scale",
+      "href": "OttawaHeartFailure.htm",
+      "url": "https://ebmcalc.com/OttawaHeartFailure.htm"
+    },
+    {
+      "name": "Ottawa Knee Rule for use of X Ray in Knee Injury",
+      "href": "OttawaKnee.htm",
+      "url": "https://ebmcalc.com/OttawaKnee.htm"
+    },
+    {
+      "name": "Ottawa Subarachnoid Hemorrhage (SAH) Rule",
+      "href": "OttawaSAH.htm",
+      "url": "https://ebmcalc.com/OttawaSAH.htm"
+    },
+    {
+      "name": "Pacer Need After Heart Valve Surgery",
+      "href": "PacerNeedCVS.htm",
+      "url": "https://ebmcalc.com/PacerNeedCVS.htm"
+    },
+    {
+      "name": "Padua Score for Assessing Venous Thromboembolism Risk in Hospitalized Patients",
+      "href": "PaduaVTERisk.htm",
+      "url": "https://ebmcalc.com/PaduaVTERisk.htm"
+    },
+    {
+      "name": "PAGE-B score for hepatocellular carcinoma risk in adults with chronic hepatitis B",
+      "href": "PAGEB.htm",
+      "url": "https://ebmcalc.com/PAGEB.htm"
+    },
+    {
+      "name": "Palliative Prognostic Score in Terminal Illness",
+      "href": "PalliativeProg.htm",
+      "url": "https://ebmcalc.com/PalliativeProg.htm"
+    },
+    {
+      "name": "Pancreatitis Prognosis Criteria When Disease Due To Gallstones",
+      "href": "Pancreatitis_Gallstone.htm",
+      "url": "https://ebmcalc.com/Pancreatitis_Gallstone.htm"
+    },
+    {
+      "name": "Pancreatitis Prognosis Criteria",
+      "href": "Pancreatitis.htm",
+      "url": "https://ebmcalc.com/Pancreatitis.htm"
+    },
+    {
+      "name": "Panic Disorder Screener",
+      "href": "PanicDisorderScreen.htm",
+      "url": "https://ebmcalc.com/PanicDisorderScreen.htm"
+    },
+    {
+      "name": "PEACH Score: Estimating Perioperative Mortality in Adult Congenital Heart Disease Surgery",
+      "href": "PEACH.htm",
+      "url": "https://ebmcalc.com/PEACH.htm"
+    },
+    {
+      "name": "Pediatric Ulcerative Colitis Activity Index (PUCAI)",
+      "href": "PediatricUCactivity.htm",
+      "url": "https://ebmcalc.com/PediatricUCactivity.htm"
+    },
+    {
+      "name": "PERC Rule for the Assessment of Possible Pulmonary Embolism",
+      "href": "PERC.htm",
+      "url": "https://ebmcalc.com/PERC.htm"
+    },
+    {
+      "name": "Perceived stress score (PSS-10)",
+      "href": "PSS10.htm",
+      "url": "https://ebmcalc.com/PSS10.htm"
+    },
+    {
+      "name": "Percutaneous Coronary Intervention (PCI) Risk Estimates",
+      "href": "PCI_Risks.htm",
+      "url": "https://ebmcalc.com/PCI_Risks.htm"
+    },
+    {
+      "name": "PHASES Score for 5-Year Risk of Intracranial Aneurysm Rupture",
+      "href": "PHASESscore.htm",
+      "url": "https://ebmcalc.com/PHASESscore.htm"
+    },
+    {
+      "name": "PHQ-2 Depression (any) Screening by a Two Item Questionnaire",
+      "href": "DepressionScreening2Any.htm",
+      "url": "https://ebmcalc.com/DepressionScreening2Any.htm"
+    },
+    {
+      "name": "PHQ-2 Depression (major) Screening by a Two Item Questionnaire",
+      "href": "DepressionScreening2.htm",
+      "url": "https://ebmcalc.com/DepressionScreening2.htm"
+    },
+    {
+      "name": "PLASMIC Score for Estimating the Likelihood of Severe ADAMTS13 Deficiency in Adults with Suspected TTP",
+      "href": "PLASMIC.htm",
+      "url": "https://ebmcalc.com/PLASMIC.htm"
+    },
+    {
+      "name": "PLEASE Score for Risk of Hepatocellular Carcinoma in Chronic Liver Disease",
+      "href": "PLEASE_Score.htm",
+      "url": "https://ebmcalc.com/PLEASE_Score.htm"
+    },
+    {
+      "name": "Pneumonia Mortality in Nursing Home Patients by Logistic Regression",
+      "href": "PneumoniaMortalityNH_LR.htm",
+      "url": "https://ebmcalc.com/PneumoniaMortalityNH_LR.htm"
+    },
+    {
+      "name": "Pneumonia Mortality Prediction in Nursing Home Patients (SI Units)",
+      "href": "PneumoniaMortalityNH_SI.htm",
+      "url": "https://ebmcalc.com/PneumoniaMortalityNH_SI.htm"
+    },
+    {
+      "name": "Pneumonia Mortality Prediction in Nursing Home Patients",
+      "href": "PneumoniaMortalityNH.htm",
+      "url": "https://ebmcalc.com/PneumoniaMortalityNH.htm"
+    },
+    {
+      "name": "Pneumonia Mortality Predictor In the Elderly",
+      "href": "PneumoniaMortalityPred.htm",
+      "url": "https://ebmcalc.com/PneumoniaMortalityPred.htm"
+    },
+    {
+      "name": "Pneumonia Probability in Nursing Home Patients",
+      "href": "PneumoniaProbabilityNH.htm",
+      "url": "https://ebmcalc.com/PneumoniaProbabilityNH.htm"
+    },
+    {
+      "name": "Pneumonia Risk in Post Operative Period of Non-Cardiac Surgery",
+      "href": "PneumoniaRiskPostOp.htm",
+      "url": "https://ebmcalc.com/PneumoniaRiskPostOp.htm"
+    },
+    {
+      "name": "Polycythemia Vera Diagnostic Criteria",
+      "href": "PolycythemiaVera.htm",
+      "url": "https://ebmcalc.com/PolycythemiaVera.htm"
+    },
+    {
+      "name": "POSSUM Score for Orthopedic Procedure Prognosis",
+      "href": "POSSUMScore.htm",
+      "url": "https://ebmcalc.com/POSSUMScore.htm"
+    },
+    {
+      "name": "PROSPECT Score Predicting Physical and Mental Problems After Critical Illness",
+      "href": "PROSPECT.htm",
+      "url": "https://ebmcalc.com/PROSPECT.htm"
+    },
+    {
+      "name": "PTCA Complication Prediction Score (death, MI, urgent bypass)",
+      "href": "PTCACompPred.htm",
+      "url": "https://ebmcalc.com/PTCACompPred.htm"
+    },
+    {
+      "name": "PTCA Mortality Prediction",
+      "href": "PTCAMortPred.htm",
+      "url": "https://ebmcalc.com/PTCAMortPred.htm"
+    },
+    {
+      "name": "Pulmonary Embolism Risk by Pisa Study (with chest x-ray)",
+      "href": "PulmonaryEmbRiskPisaCXR.htm",
+      "url": "https://ebmcalc.com/PulmonaryEmbRiskPisaCXR.htm"
+    },
+    {
+      "name": "Pulmonary Embolism Risk by Pisa Study (without chest x-ray)",
+      "href": "PulmonaryEmbRiskPisa.htm",
+      "url": "https://ebmcalc.com/PulmonaryEmbRiskPisa.htm"
+    },
+    {
+      "name": "Pulmonary Embolism Severity Index (PESI)",
+      "href": "PESI.htm",
+      "url": "https://ebmcalc.com/PESI.htm"
+    },
+    {
+      "name": "Pulmonary Embolism Wells Score",
+      "href": "PulmonaryEmbRisk.htm",
+      "url": "https://ebmcalc.com/PulmonaryEmbRisk.htm"
+    },
+    {
+      "name": "Pulmonary Fibrosis Survival Prediction (CRP Score for abbreviated model)",
+      "href": "PulmonaryFibrosisSurvivalAbbrev.htm",
+      "url": "https://ebmcalc.com/PulmonaryFibrosisSurvivalAbbrev.htm"
+    },
+    {
+      "name": "Pulmonary Fibrosis Survival Prediction (CRP score for complete model)",
+      "href": "PulmonaryFibrosisSurvival.htm",
+      "url": "https://ebmcalc.com/PulmonaryFibrosisSurvival.htm"
+    },
+    {
+      "name": "Renal Artery Stenosis Prediction Rule",
+      "href": "RenalArteryStenosis.htm",
+      "url": "https://ebmcalc.com/RenalArteryStenosis.htm"
+    },
+    {
+      "name": "RESP Score for ECMO Survival Prediction",
+      "href": "RESP.htm",
+      "url": "https://ebmcalc.com/RESP.htm"
+    },
+    {
+      "name": "Respiratory Failure Risk in Adult Males During Post Operative Period of Non-Cardiac Surgery",
+      "href": "RespiFailureRiskPostOp.htm",
+      "url": "https://ebmcalc.com/RespiFailureRiskPostOp.htm"
+    },
+    {
+      "name": "REVEAL PAH Score and Estimated One-Year Survival for Adult Patients with Pulmonary Arterial Hypertension",
+      "href": "REVEAL.htm",
+      "url": "https://ebmcalc.com/REVEAL.htm"
+    },
+    {
+      "name": "Revised Cardiac Risk Index for all Surgeries (Lee)",
+      "href": "CardiacRiskIndexAllLee.htm",
+      "url": "https://ebmcalc.com/CardiacRiskIndexAllLee.htm"
+    },
+    {
+      "name": "Revised Cardiac Risk Index for Non-AAA Vascular Surgery (Lee)",
+      "href": "CardiacRiskIndexVascLee.htm",
+      "url": "https://ebmcalc.com/CardiacRiskIndexVascLee.htm"
+    },
+    {
+      "name": "Revised Cardiac Risk Index for Orthopedic Surgery (Lee)",
+      "href": "CardiacRiskIndexOrthoLee.htm",
+      "url": "https://ebmcalc.com/CardiacRiskIndexOrthoLee.htm"
+    },
+    {
+      "name": "Revised Geneva Score for Estimation of the Clinical Probability of Pulmonary Embolism in Adults",
+      "href": "RevisedGenevaScore.htm",
+      "url": "https://ebmcalc.com/RevisedGenevaScore.htm"
+    },
+    {
+      "name": "Revised International Prognostic Scoring System (IPSS-R) in Primary Myelodysplastic Syndrome in Adults",
+      "href": "MyeloDysplasiaRevised.htm",
+      "url": "https://ebmcalc.com/MyeloDysplasiaRevised.htm"
+    },
+    {
+      "name": "Rheumatoid arthritis Clinical Disease Activity Index (CDAI)",
+      "href": "RheumatoidArthritisCDAI.htm",
+      "url": "https://ebmcalc.com/RheumatoidArthritisCDAI.htm"
+    },
+    {
+      "name": "Rheumatoid Arthritis Criteria (1987 revision, American Rheumatism Association)",
+      "href": "RheumatoidArthritis.htm",
+      "url": "https://ebmcalc.com/RheumatoidArthritis.htm"
+    },
+    {
+      "name": "Rheumatoid arthritis Disease Activity Score with C-reactive protein (DAS28-CRP)",
+      "href": "RheumatoidArthritisDAS28_CRP.htm",
+      "url": "https://ebmcalc.com/RheumatoidArthritisDAS28_CRP.htm"
+    },
+    {
+      "name": "Rheumatoid arthritis Disease Activity Score with Erythrocyte Sedimentation Rate (DAS28-ESR)",
+      "href": "RheumatoidArthritisDAS28_ESR.htm",
+      "url": "https://ebmcalc.com/RheumatoidArthritisDAS28_ESR.htm"
+    },
+    {
+      "name": "Rheumatoid arthritis Simplified Disease Activity Index (SDAI)",
+      "href": "RheumatoidArthritisSDAI.htm",
+      "url": "https://ebmcalc.com/RheumatoidArthritisSDAI.htm"
+    },
+    {
+      "name": "Rib Score Predicting Complications from Rib Fractures",
+      "href": "RibScore.htm",
+      "url": "https://ebmcalc.com/RibScore.htm"
+    },
+    {
+      "name": "Risk of Acquiring Diabetes Mellitus (7.5-year)",
+      "href": "DiabetesRiskPrediction.htm",
+      "url": "https://ebmcalc.com/DiabetesRiskPrediction.htm"
+    },
+    {
+      "name": "Risk of Acquiring Diabetes Mellitus (7.5-year) and Optimization",
+      "href": "DiabetesRiskPrediction_opti.htm",
+      "url": "https://ebmcalc.com/DiabetesRiskPrediction_opti.htm"
+    },
+    {
+      "name": "Risk of Paradoxical Embolism (RoPE) Score in Adults",
+      "href": "RoPE.htm",
+      "url": "https://ebmcalc.com/RoPE.htm"
+    },
+    {
+      "name": "Rockall Score for Upper Gastrointestinal Bleeding",
+      "href": "RockallScore.htm",
+      "url": "https://ebmcalc.com/RockallScore.htm"
+    },
+    {
+      "name": "Roland-Morris Disability Score",
+      "href": "RolandMorris.htm",
+      "url": "https://ebmcalc.com/RolandMorris.htm"
+    },
+    {
+      "name": "Romhilt-Estes Criteria for Left Ventricular Hypertrophy",
+      "href": "RomhiltEstes.htm",
+      "url": "https://ebmcalc.com/RomhiltEstes.htm"
+    },
+    {
+      "name": "ROSE Score: Risk Stratification of Syncope in the Emergency Department",
+      "href": "ROSE_Score.htm",
+      "url": "https://ebmcalc.com/ROSE_Score.htm"
+    },
+    {
+      "name": "Rotator Cuff Tear Diagnosis",
+      "href": "RotatorCuffInjuryDx.htm",
+      "url": "https://ebmcalc.com/RotatorCuffInjuryDx.htm"
+    },
+    {
+      "name": "SAPS II: Simplified Acute Physiology Score II",
+      "href": "SAPS2.htm",
+      "url": "https://ebmcalc.com/SAPS2.htm"
+    },
+    {
+      "name": "SARS Prognosis Predictor (basic parameters)",
+      "href": "SARSProg.htm",
+      "url": "https://ebmcalc.com/SARSProg.htm"
+    },
+    {
+      "name": "SARS Prognosis Predictor (with lab and x-ray parameters)",
+      "href": "SARSProgComp.htm",
+      "url": "https://ebmcalc.com/SARSProgComp.htm"
+    },
+    {
+      "name": "SAVE Score: Survival After Veno-Arterial ECMO",
+      "href": "SAVE.htm",
+      "url": "https://ebmcalc.com/SAVE.htm"
+    },
+    {
+      "name": "SCOFF Screening Questionnaire for Eating Disorders",
+      "href": "SCOFF.htm",
+      "url": "https://ebmcalc.com/SCOFF.htm"
+    },
+    {
+      "name": "SCORTEN Prediction of Mortality in Toxic Epidermal Necrolysis",
+      "href": "SCORTEN.htm",
+      "url": "https://ebmcalc.com/SCORTEN.htm"
+    },
+    {
+      "name": "Septic Arthritis Prediction in Pediatric Hip Pain Syndrome",
+      "href": "SepticArthritis.htm",
+      "url": "https://ebmcalc.com/SepticArthritis.htm"
+    },
+    {
+      "name": "Sequential Organ Failure Assessment (Modified): mSOFA Score",
+      "href": "MSOFA.htm",
+      "url": "https://ebmcalc.com/MSOFA.htm"
+    },
+    {
+      "name": "Sequential Organ Failure Assessment (Quick): qSOFA Score",
+      "href": "QSOFA.htm",
+      "url": "https://ebmcalc.com/QSOFA.htm"
+    },
+    {
+      "name": "Sequential Organ Failure Assessment: SOFA Score",
+      "href": "SOFA.htm",
+      "url": "https://ebmcalc.com/SOFA.htm"
+    },
+    {
+      "name": "Sequential Organ Failure Assessment: SOFA-2 Score",
+      "href": "SOFA2.htm",
+      "url": "https://ebmcalc.com/SOFA2.htm"
+    },
+    {
+      "name": "Simplified Pulmonary Embolism Severity Index (sPESI)",
+      "href": "SPESI.htm",
+      "url": "https://ebmcalc.com/SPESI.htm"
+    },
+    {
+      "name": "SIRS Criteria: Systemic Inflammatory Response Syndrome",
+      "href": "SIRS.htm",
+      "url": "https://ebmcalc.com/SIRS.htm"
+    },
+    {
+      "name": "Sleep Apnea Syndrome (SAS) Prediction by Pulmonary Function Testing of Snorers",
+      "href": "SnoringOSA.htm",
+      "url": "https://ebmcalc.com/SnoringOSA.htm"
+    },
+    {
+      "name": "Sleep problems questionnaire",
+      "href": "SleepProblems.htm",
+      "url": "https://ebmcalc.com/SleepProblems.htm"
+    },
+    {
+      "name": "SLICC Criteria for the Diagnosis of Systemic Lupus Erythematosus",
+      "href": "SLICC.htm",
+      "url": "https://ebmcalc.com/SLICC.htm"
+    },
+    {
+      "name": "Smallpox Risk Assessment (CDC 2025)",
+      "href": "SmallPox.htm",
+      "url": "https://ebmcalc.com/SmallPox.htm"
+    },
+    {
+      "name": "SMART COP Score for Pneumonia Severity",
+      "href": "SMARTCOP.htm",
+      "url": "https://ebmcalc.com/SMARTCOP.htm"
+    },
+    {
+      "name": "SMRT CO Score for Pneumonia Severity",
+      "href": "SMRTCO.htm",
+      "url": "https://ebmcalc.com/SMRTCO.htm"
+    },
+    {
+      "name": "Sokal Score for Chronic Myeloid Leukemia",
+      "href": "Sokal.htm",
+      "url": "https://ebmcalc.com/Sokal.htm"
+    },
+    {
+      "name": "Solitary Pulmonary Nodule Malignancy Risk (Brock abbreviated model)",
+      "href": "SolitaryPulmNod_ParsBrock.htm",
+      "url": "https://ebmcalc.com/SolitaryPulmNod_ParsBrock.htm"
+    },
+    {
+      "name": "Solitary Pulmonary Nodule Malignancy Risk (Brock University)",
+      "href": "SolitaryPulmNod_Brock.htm",
+      "url": "https://ebmcalc.com/SolitaryPulmNod_Brock.htm"
+    },
+    {
+      "name": "Solitary Pulmonary Nodule Malignancy Risk (Cummings prediction model: Bayesian approach)",
+      "href": "SolitaryPulmNod_Cummings.htm",
+      "url": "https://ebmcalc.com/SolitaryPulmNod_Cummings.htm"
+    },
+    {
+      "name": "Solitary Pulmonary Nodule Malignancy Risk (Mayo Clinic model)",
+      "href": "SolitaryPulmNod.htm",
+      "url": "https://ebmcalc.com/SolitaryPulmNod.htm"
+    },
+    {
+      "name": "Solitary Pulmonary Nodule Malignancy Risk (Veterans Affairs model)",
+      "href": "SolitaryPulmNod_VA.htm",
+      "url": "https://ebmcalc.com/SolitaryPulmNod_VA.htm"
+    },
+    {
+      "name": "Spinal Manipulation Success Prediction for Low Back Pain",
+      "href": "SpinalManipSuccess.htm",
+      "url": "https://ebmcalc.com/SpinalManipSuccess.htm"
+    },
+    {
+      "name": "Splenic Marginal Zone Lymphoma Study Group (SMZLSG) Prognostic Index in Adults",
+      "href": "SMZLSG_Index.htm",
+      "url": "https://ebmcalc.com/SMZLSG_Index.htm"
+    },
+    {
+      "name": "STOP-Bang Enhanced Screening Questionnaire for Obstructive Sleep Apnea (OSA)",
+      "href": "STOP_Bang.htm",
+      "url": "https://ebmcalc.com/STOP_Bang.htm"
+    },
+    {
+      "name": "Stress Test Outcome Risk Factors",
+      "href": "StressTestPrediction.htm",
+      "url": "https://ebmcalc.com/StressTestPrediction.htm"
+    },
+    {
+      "name": "Stroke Recovery Prediction",
+      "href": "StrokeRecoveryPrediction.htm",
+      "url": "https://ebmcalc.com/StrokeRecoveryPrediction.htm"
+    },
+    {
+      "name": "Stroke Risk in Diabetes Type 2 UKPDS 60",
+      "href": "StrokeRiskDiabetes.htm",
+      "url": "https://ebmcalc.com/StrokeRiskDiabetes.htm"
+    },
+    {
+      "name": "Stroke Risk in Female Patients 55-84 Years Old (Framingham data)",
+      "href": "StrokeRiskFraminghamF.htm",
+      "url": "https://ebmcalc.com/StrokeRiskFraminghamF.htm"
+    },
+    {
+      "name": "Stroke Risk in Male Patients 55-84 Years Old (Framingham data)",
+      "href": "StrokeRiskFraminghamM.htm",
+      "url": "https://ebmcalc.com/StrokeRiskFraminghamM.htm"
+    },
+    {
+      "name": "Sudden Cardiac Death Prediction in Hypertrophic Cardiomyopathy (HCM-SCD)",
+      "href": "SCDinHCM.htm",
+      "url": "https://ebmcalc.com/SCDinHCM.htm"
+    },
+    {
+      "name": "Surgical Apgar score (SAS) in adults undergoing general surgery procedures",
+      "href": "SurgicalApgar.htm",
+      "url": "https://ebmcalc.com/SurgicalApgar.htm"
+    },
+    {
+      "name": "Syncope Risk Prediction",
+      "href": "SyncopeRiskPrediction.htm",
+      "url": "https://ebmcalc.com/SyncopeRiskPrediction.htm"
+    },
+    {
+      "name": "Systemic Lupus Erythematosus American Rheumatism Association 11 Criteria (1997 update)",
+      "href": "SystemicLupusCriteria.htm",
+      "url": "https://ebmcalc.com/SystemicLupusCriteria.htm"
+    },
+    {
+      "name": "Systolic Murmur Significance Probability",
+      "href": "SystolicMurmur.htm",
+      "url": "https://ebmcalc.com/SystolicMurmur.htm"
+    },
+    {
+      "name": "T-MACS Troponin-Only Manchester Acute Coronary Syndrome Prediction",
+      "href": "TMACS.htm",
+      "url": "https://ebmcalc.com/TMACS.htm"
+    },
+    {
+      "name": "Thrombolysis in Myocardial Infarction (TIMI) Score for ST Elevation Acute Myocardial Infarction",
+      "href": "TIMI_STEMI.htm",
+      "url": "https://ebmcalc.com/TIMI_STEMI.htm"
+    },
+    {
+      "name": "Thrombolysis in Myocardial Infarction (TIMI) Score for Unstable Angina Non ST Elevation Myocardial Infarction",
+      "href": "TIMI_UA_NSTEMI.htm",
+      "url": "https://ebmcalc.com/TIMI_UA_NSTEMI.htm"
+    },
+    {
+      "name": "Thrombolysis in Myocardial Infarction Risk Index (TRI) in Non ST Elevation Myocardial Infarction",
+      "href": "TIMIRiskIndexNSTEMI.htm",
+      "url": "https://ebmcalc.com/TIMIRiskIndexNSTEMI.htm"
+    },
+    {
+      "name": "Thyroid Imaging Reporting and Data System (TI-RADS) with Guidance on FNA of Thyroid Nodules in Adults",
+      "href": "TIRADS.htm",
+      "url": "https://ebmcalc.com/TIRADS.htm"
+    },
+    {
+      "name": "TIA Prognosis: Risk of Stroke by 90 Days After Presentation",
+      "href": "TIAPrognosis.htm",
+      "url": "https://ebmcalc.com/TIAPrognosis.htm"
+    },
+    {
+      "name": "Trial of labor after cesarean (TOLAC) for use at entry to prenatal care (2021 equation without race)",
+      "href": "TOLAC_XRE.htm",
+      "url": "https://ebmcalc.com/TOLAC_XRE.htm"
+    },
+    {
+      "name": "Tuberculosis Risk Prediction",
+      "href": "TuberculosisRisk.htm",
+      "url": "https://ebmcalc.com/TuberculosisRisk.htm"
+    },
+    {
+      "name": "UCLA Integrated Staging System (UISS) prognostic model for adults with renal cell carcinoma treated with nephrectomy",
+      "href": "UISS.htm",
+      "url": "https://ebmcalc.com/UISS.htm"
+    },
+    {
+      "name": "Unstable Angina and Tirofiban Benefit Prediction",
+      "href": "UnstableAnginaTirofibanBenefit.htm",
+      "url": "https://ebmcalc.com/UnstableAnginaTirofibanBenefit.htm"
+    },
+    {
+      "name": "Unstable Angina Outcome Prediction",
+      "href": "UnstableAnginaOutcome.htm",
+      "url": "https://ebmcalc.com/UnstableAnginaOutcome.htm"
+    },
+    {
+      "name": "Unstable Angina Risk Stratification (Piombo)",
+      "href": "UnstableAnginaStratPiomba.htm",
+      "url": "https://ebmcalc.com/UnstableAnginaStratPiomba.htm"
+    },
+    {
+      "name": "Unstable Angina Risk Stratification (Solomon)",
+      "href": "UnstableAnginaStratSolomon.htm",
+      "url": "https://ebmcalc.com/UnstableAnginaStratSolomon.htm"
+    },
+    {
+      "name": "Venous Leg Ulcer Healing Prediction",
+      "href": "VenousLegUlcerHealing.htm",
+      "url": "https://ebmcalc.com/VenousLegUlcerHealing.htm"
+    },
+    {
+      "name": "Venous Segmental Disease Score for Obstruction",
+      "href": "VSDSObstruction.htm",
+      "url": "https://ebmcalc.com/VSDSObstruction.htm"
+    },
+    {
+      "name": "Venous Segmental Disease Score for Reflux",
+      "href": "VSDSReflux.htm",
+      "url": "https://ebmcalc.com/VSDSReflux.htm"
+    },
+    {
+      "name": "Veterans Affairs Frailty Index (VA-FI)",
+      "href": "VAFI.htm",
+      "url": "https://ebmcalc.com/VAFI.htm"
+    },
+    {
+      "name": "Villalta Score for Severity of Post-thrombotic Syndrome",
+      "href": "VillaltaScore.htm",
+      "url": "https://ebmcalc.com/VillaltaScore.htm"
+    },
+    {
+      "name": "VTE-BLEED score for risk of bleeding among adults receiving long-term anticoagulation",
+      "href": "VTEBLEED.htm",
+      "url": "https://ebmcalc.com/VTEBLEED.htm"
+    },
+    {
+      "name": "Westley croup severity score (appropriate for use in children ≤6 years of age)",
+      "href": "WestleyCroupScore.htm",
+      "url": "https://ebmcalc.com/WestleyCroupScore.htm"
+    },
+    {
+      "name": "Wilson Score for Prediction of Difficult Intubation",
+      "href": "WilsonScore.htm",
+      "url": "https://ebmcalc.com/WilsonScore.htm"
+    }
+  ],
+  "decision": [
+    {
+      "name": "INTRO",
+      "href": "/index.htm",
+      "url": "https://ebmcalc.com//index.htm"
+    },
+    {
+      "name": "EQUATIONS",
+      "href": "/eq-idx.htm",
+      "url": "https://ebmcalc.com//eq-idx.htm"
+    },
+    {
+      "name": "CRITERIA",
+      "href": "/cc-idx.htm",
+      "url": "https://ebmcalc.com//cc-idx.htm"
+    },
+    {
+      "name": "DECISION",
+      "href": "/tree-idx.htm",
+      "url": "https://ebmcalc.com//tree-idx.htm"
+    },
+    {
+      "name": "CONVERT",
+      "href": "/qc-idx.htm",
+      "url": "https://ebmcalc.com//qc-idx.htm"
+    },
+    {
+      "name": "SPECIALTIES",
+      "href": "/specialty-idx.htm",
+      "url": "https://ebmcalc.com//specialty-idx.htm"
+    },
+    {
+      "name": "HCC",
+      "href": "/hcc.htm",
+      "url": "https://ebmcalc.com//hcc.htm"
+    },
+    {
+      "name": "REFS",
+      "href": "/ref.htm",
+      "url": "https://ebmcalc.com//ref.htm"
+    },
+    {
+      "name": "SEARCH",
+      "href": "/search.htm",
+      "url": "https://ebmcalc.com//search.htm"
+    },
+    {
+      "name": "NEW",
+      "href": "/WhatsNew.htm",
+      "url": "https://ebmcalc.com//WhatsNew.htm"
+    },
+    {
+      "name": "FHIR APP",
+      "href": "/FHIRapp.htm",
+      "url": "https://ebmcalc.com//FHIRapp.htm"
+    },
+    {
+      "name": "API",
+      "href": "/API.htm",
+      "url": "https://ebmcalc.com//API.htm"
+    },
+    {
+      "name": "POLICIES",
+      "href": "/policies.htm",
+      "url": "https://ebmcalc.com//policies.htm"
+    },
+    {
+      "name": "Anthrax Screening for Exposed Patients TreeCalc",
+      "href": "AnthraxScreening.htm",
+      "url": "https://ebmcalc.com/AnthraxScreening.htm"
+    },
+    {
+      "name": "Aortic Stenosis and Valve Replacement Prediction TreeCalc",
+      "href": "AorticStenosisSurgery.htm",
+      "url": "https://ebmcalc.com/AorticStenosisSurgery.htm"
+    },
+    {
+      "name": "Arterial Blood Gas Interpretation TreeCalc",
+      "href": "ArterialBloodGas.htm",
+      "url": "https://ebmcalc.com/ArterialBloodGas.htm"
+    },
+    {
+      "name": "Asthma Hospitalization One Year Risk TreeCalc",
+      "href": "AsthmaHospRisk.htm",
+      "url": "https://ebmcalc.com/AsthmaHospRisk.htm"
+    },
+    {
+      "name": "Barrett Esophagus Progression Risk TreeCalc",
+      "href": "BarrettProgRisk.htm",
+      "url": "https://ebmcalc.com/BarrettProgRisk.htm"
+    },
+    {
+      "name": "Benign Positional Vertigo Decision TreeCalc",
+      "href": "BenignPosVert.htm",
+      "url": "https://ebmcalc.com/BenignPosVert.htm"
+    },
+    {
+      "name": "Carpal Tunnel Syndrome Bivariate Decision TreeCalc",
+      "href": "CarpalTunnelBivar.htm",
+      "url": "https://ebmcalc.com/CarpalTunnelBivar.htm"
+    },
+    {
+      "name": "Carpal Tunnel Syndrome Multivariate Decision TreeCalc",
+      "href": "CarpalTunnelMultivar.htm",
+      "url": "https://ebmcalc.com/CarpalTunnelMultivar.htm"
+    },
+    {
+      "name": "Cesarean Section Delivery Probability Among Nulliparous Patients TreeCalc",
+      "href": "CesareanSectionNullIp.htm",
+      "url": "https://ebmcalc.com/CesareanSectionNullIp.htm"
+    },
+    {
+      "name": "Cesarean Section Delivery Probability Among Parous Patients TreeCalc",
+      "href": "CesareanSectionParous.htm",
+      "url": "https://ebmcalc.com/CesareanSectionParous.htm"
+    },
+    {
+      "name": "Diabetes Screening TreeCalc",
+      "href": "DiabetesScreen.htm",
+      "url": "https://ebmcalc.com/DiabetesScreen.htm"
+    },
+    {
+      "name": "Diabetes Type Predictor TreeCalc",
+      "href": "DiabetesTypePredictor.htm",
+      "url": "https://ebmcalc.com/DiabetesTypePredictor.htm"
+    },
+    {
+      "name": "Ectopic Pregnancy Risk Estimation TreeCalc",
+      "href": "EctopicPregRisk.htm",
+      "url": "https://ebmcalc.com/EctopicPregRisk.htm"
+    },
+    {
+      "name": "Heart Failure Clinical Prediction Rule",
+      "href": "HeartFailure.htm",
+      "url": "https://ebmcalc.com/HeartFailure.htm"
+    },
+    {
+      "name": "Hepatitis C Outcome TreeCalc",
+      "href": "HepatitisCOutcome.htm",
+      "url": "https://ebmcalc.com/HepatitisCOutcome.htm"
+    },
+    {
+      "name": "Inferior Wall Myocardial Infarction Diagnosis TreeCalc",
+      "href": "InferiorMI.htm",
+      "url": "https://ebmcalc.com/InferiorMI.htm"
+    },
+    {
+      "name": "Karnofsky Performance Status Score",
+      "href": "KarnofskyPerformanceStatus.htm",
+      "url": "https://ebmcalc.com/KarnofskyPerformanceStatus.htm"
+    },
+    {
+      "name": "Left Ventricular Capture Loss in Resynchronization Biventricular Pacing TreeCalc",
+      "href": "LeftVentCapLoss.htm",
+      "url": "https://ebmcalc.com/LeftVentCapLoss.htm"
+    },
+    {
+      "name": "Low Back Pain Evaluation TreeCalc",
+      "href": "LowBackPainEval.htm",
+      "url": "https://ebmcalc.com/LowBackPainEval.htm"
+    },
+    {
+      "name": "M.I. Prediction Decision TreeCalc",
+      "href": "MIPredictor.htm",
+      "url": "https://ebmcalc.com/MIPredictor.htm"
+    },
+    {
+      "name": "Mini-Cog Evaluation of Cognitive Impairment",
+      "href": "MiniCog.htm",
+      "url": "https://ebmcalc.com/MiniCog.htm"
+    },
+    {
+      "name": "Mycoplasma Pneumoniae Prediction TreeCalc",
+      "href": "MycoplasmaPneumoniaPredictionTC.htm",
+      "url": "https://ebmcalc.com/MycoplasmaPneumoniaPredictionTC.htm"
+    },
+    {
+      "name": "NASH Fibrosis Risk (Nonalcoholic Steatohepatitis) TreeCalc",
+      "href": "NASHFibrosisRisk.htm",
+      "url": "https://ebmcalc.com/NASHFibrosisRisk.htm"
+    },
+    {
+      "name": "PECARN Head Trauma Head CT Decision Tree",
+      "href": "PECARN_Head_Trauma.htm",
+      "url": "https://ebmcalc.com/PECARN_Head_Trauma.htm"
+    },
+    {
+      "name": "Perioperative Cardiac Evaluation TreeCalc",
+      "href": "Perioperative.htm",
+      "url": "https://ebmcalc.com/Perioperative.htm"
+    },
+    {
+      "name": "Pittsburgh Knee Rule for X-Ray Evaluation of Knee Injury TreeCalc",
+      "href": "PittsburghKnee.htm",
+      "url": "https://ebmcalc.com/PittsburghKnee.htm"
+    },
+    {
+      "name": "Progressive Multifocal Leukoencephalopathy (PML) Risk in patients Treated with Natalizumab",
+      "href": "PMLRisk.htm",
+      "url": "https://ebmcalc.com/PMLRisk.htm"
+    },
+    {
+      "name": "Rabies Post Exposure Prophylaxis (PEP) TreeCalc",
+      "href": "RabiesPEP.htm",
+      "url": "https://ebmcalc.com/RabiesPEP.htm"
+    },
+    {
+      "name": "San Francisco Syncope Rule TreeCalc",
+      "href": "SanFranSyncope.htm",
+      "url": "https://ebmcalc.com/SanFranSyncope.htm"
+    },
+    {
+      "name": "SARS (Severe Acute Respiratory Distress Syndrome) CDC Case Definition (4/20/2003) TreeCalc",
+      "href": "SARS.htm",
+      "url": "https://ebmcalc.com/SARS.htm"
+    },
+    {
+      "name": "Smoking Cessation and Intervention TreeCalc",
+      "href": "SmokingCessation.htm",
+      "url": "https://ebmcalc.com/SmokingCessation.htm"
+    },
+    {
+      "name": "Stage III Pressure Ulcer TreeCalc",
+      "href": "Stage3Ulcer.htm",
+      "url": "https://ebmcalc.com/Stage3Ulcer.htm"
+    },
+    {
+      "name": "Stage IV Pressure Ulcer TreeCalc",
+      "href": "Stage4Ulcer.htm",
+      "url": "https://ebmcalc.com/Stage4Ulcer.htm"
+    },
+    {
+      "name": "Thyroid Disease Screening for Females More Than 50 Years Old TreeCalc",
+      "href": "ThyroidDiseaseScr.htm",
+      "url": "https://ebmcalc.com/ThyroidDiseaseScr.htm"
+    }
+  ],
+  "convert": [
+    {
+      "name": "INTRO",
+      "href": "/index.htm",
+      "url": "https://ebmcalc.com//index.htm"
+    },
+    {
+      "name": "EQUATIONS",
+      "href": "/eq-idx.htm",
+      "url": "https://ebmcalc.com//eq-idx.htm"
+    },
+    {
+      "name": "CRITERIA",
+      "href": "/cc-idx.htm",
+      "url": "https://ebmcalc.com//cc-idx.htm"
+    },
+    {
+      "name": "DECISION",
+      "href": "/tree-idx.htm",
+      "url": "https://ebmcalc.com//tree-idx.htm"
+    },
+    {
+      "name": "CONVERT",
+      "href": "/qc-idx.htm",
+      "url": "https://ebmcalc.com//qc-idx.htm"
+    },
+    {
+      "name": "SPECIALTIES",
+      "href": "/specialty-idx.htm",
+      "url": "https://ebmcalc.com//specialty-idx.htm"
+    },
+    {
+      "name": "HCC",
+      "href": "/hcc.htm",
+      "url": "https://ebmcalc.com//hcc.htm"
+    },
+    {
+      "name": "REFS",
+      "href": "/ref.htm",
+      "url": "https://ebmcalc.com//ref.htm"
+    },
+    {
+      "name": "SEARCH",
+      "href": "/search.htm",
+      "url": "https://ebmcalc.com//search.htm"
+    },
+    {
+      "name": "NEW",
+      "href": "/WhatsNew.htm",
+      "url": "https://ebmcalc.com//WhatsNew.htm"
+    },
+    {
+      "name": "FHIR APP",
+      "href": "/FHIRapp.htm",
+      "url": "https://ebmcalc.com//FHIRapp.htm"
+    },
+    {
+      "name": "API",
+      "href": "/API.htm",
+      "url": "https://ebmcalc.com//API.htm"
+    },
+    {
+      "name": "POLICIES",
+      "href": "/policies.htm",
+      "url": "https://ebmcalc.com//policies.htm"
+    },
+    {
+      "name": "Conventional unit to SI unit conversions: Chemistry and endocrine tests",
+      "href": "SI_Chem_US.htm",
+      "url": "https://ebmcalc.com/SI_Chem_US.htm"
+    },
+    {
+      "name": "Conventional unit to SI unit conversions: Immunology test values",
+      "href": "SI_Immuno_US.htm",
+      "url": "https://ebmcalc.com/SI_Immuno_US.htm"
+    },
+    {
+      "name": "Energy Unit Conversions",
+      "href": "Energy.htm",
+      "url": "https://ebmcalc.com/Energy.htm"
+    },
+    {
+      "name": "Flow Unit Conversions",
+      "href": "Flow.htm",
+      "url": "https://ebmcalc.com/Flow.htm"
+    },
+    {
+      "name": "Length Unit Conversions",
+      "href": "Length.htm",
+      "url": "https://ebmcalc.com/Length.htm"
+    },
+    {
+      "name": "Oxygen Delivery Units Conversions",
+      "href": "Oxygen.htm",
+      "url": "https://ebmcalc.com/Oxygen.htm"
+    },
+    {
+      "name": "SI unit to conventional unit conversions: Chemistry and endocrine tests",
+      "href": "SI_Chem_SI.htm",
+      "url": "https://ebmcalc.com/SI_Chem_SI.htm"
+    },
+    {
+      "name": "SI unit to conventional unit conversions: Immunology test values",
+      "href": "SI_Immuno_SI.htm",
+      "url": "https://ebmcalc.com/SI_Immuno_SI.htm"
+    },
+    {
+      "name": "Standard Drink Equivalents",
+      "href": "StandardDrinkEq.htm",
+      "url": "https://ebmcalc.com/StandardDrinkEq.htm"
+    },
+    {
+      "name": "Temperature Unit Conversions",
+      "href": "Temperature.htm",
+      "url": "https://ebmcalc.com/Temperature.htm"
+    },
+    {
+      "name": "Time Unit Conversions",
+      "href": "Time.htm",
+      "url": "https://ebmcalc.com/Time.htm"
+    },
+    {
+      "name": "Volume Unit Conversions",
+      "href": "Volume.htm",
+      "url": "https://ebmcalc.com/Volume.htm"
+    },
+    {
+      "name": "Weight Unit Conversions",
+      "href": "Weight.htm",
+      "url": "https://ebmcalc.com/Weight.htm"
+    }
+  ],
+  "specialties": [
+    {
+      "name": "INTRO",
+      "href": "/index.htm",
+      "url": "https://ebmcalc.com//index.htm"
+    },
+    {
+      "name": "EQUATIONS",
+      "href": "/eq-idx.htm",
+      "url": "https://ebmcalc.com//eq-idx.htm"
+    },
+    {
+      "name": "CRITERIA",
+      "href": "/cc-idx.htm",
+      "url": "https://ebmcalc.com//cc-idx.htm"
+    },
+    {
+      "name": "DECISION",
+      "href": "/tree-idx.htm",
+      "url": "https://ebmcalc.com//tree-idx.htm"
+    },
+    {
+      "name": "CONVERT",
+      "href": "/qc-idx.htm",
+      "url": "https://ebmcalc.com//qc-idx.htm"
+    },
+    {
+      "name": "SPECIALTIES",
+      "href": "/specialty-idx.htm",
+      "url": "https://ebmcalc.com//specialty-idx.htm"
+    },
+    {
+      "name": "HCC",
+      "href": "/hcc.htm",
+      "url": "https://ebmcalc.com//hcc.htm"
+    },
+    {
+      "name": "REFS",
+      "href": "/ref.htm",
+      "url": "https://ebmcalc.com//ref.htm"
+    },
+    {
+      "name": "SEARCH",
+      "href": "/search.htm",
+      "url": "https://ebmcalc.com//search.htm"
+    },
+    {
+      "name": "NEW",
+      "href": "/WhatsNew.htm",
+      "url": "https://ebmcalc.com//WhatsNew.htm"
+    },
+    {
+      "name": "FHIR APP",
+      "href": "/FHIRapp.htm",
+      "url": "https://ebmcalc.com//FHIRapp.htm"
+    },
+    {
+      "name": "API",
+      "href": "/API.htm",
+      "url": "https://ebmcalc.com//API.htm"
+    },
+    {
+      "name": "POLICIES",
+      "href": "/policies.htm",
+      "url": "https://ebmcalc.com//policies.htm"
+    },
+    {
+      "name": "Anesthesiology",
+      "href": "anesth-idx.htm",
+      "url": "https://ebmcalc.com/anesth-idx.htm"
+    },
+    {
+      "name": "Anthropometrics",
+      "href": "anthropo-idx.htm",
+      "url": "https://ebmcalc.com/anthropo-idx.htm"
+    },
+    {
+      "name": "Cardiology",
+      "href": "cardio-idx.htm",
+      "url": "https://ebmcalc.com/cardio-idx.htm"
+    },
+    {
+      "name": "Clinical Optimization Tools",
+      "href": "optimization-idx.htm",
+      "url": "https://ebmcalc.com/optimization-idx.htm"
+    },
+    {
+      "name": "Critical Care",
+      "href": "critical-idx.htm",
+      "url": "https://ebmcalc.com/critical-idx.htm"
+    },
+    {
+      "name": "Dermatology",
+      "href": "dermatology-idx.htm",
+      "url": "https://ebmcalc.com/dermatology-idx.htm"
+    },
+    {
+      "name": "Emergency Medicine",
+      "href": "emergency-idx.htm",
+      "url": "https://ebmcalc.com/emergency-idx.htm"
+    },
+    {
+      "name": "Endocrinology",
+      "href": "endocrin-idx.htm",
+      "url": "https://ebmcalc.com/endocrin-idx.htm"
+    },
+    {
+      "name": "Epidemiology",
+      "href": "epidem-idx.htm",
+      "url": "https://ebmcalc.com/epidem-idx.htm"
+    },
+    {
+      "name": "Gastroenterology",
+      "href": "gastro-idx.htm",
+      "url": "https://ebmcalc.com/gastro-idx.htm"
+    },
+    {
+      "name": "Geriatrics",
+      "href": "geriat-idx.htm",
+      "url": "https://ebmcalc.com/geriat-idx.htm"
+    },
+    {
+      "name": "Hematology",
+      "href": "hemato-idx.htm",
+      "url": "https://ebmcalc.com/hemato-idx.htm"
+    },
+    {
+      "name": "Infectious Disease",
+      "href": "infect-idx.htm",
+      "url": "https://ebmcalc.com/infect-idx.htm"
+    },
+    {
+      "name": "International Health",
+      "href": "internat-idx.htm",
+      "url": "https://ebmcalc.com/internat-idx.htm"
+    },
+    {
+      "name": "Medical Education",
+      "href": "meded-idx.htm",
+      "url": "https://ebmcalc.com/meded-idx.htm"
+    },
+    {
+      "name": "Medical Statistics",
+      "href": "statist-idx.htm",
+      "url": "https://ebmcalc.com/statist-idx.htm"
+    },
+    {
+      "name": "Neonatology",
+      "href": "neonat-idx.htm",
+      "url": "https://ebmcalc.com/neonat-idx.htm"
+    },
+    {
+      "name": "Nephrology",
+      "href": "renal-idx.htm",
+      "url": "https://ebmcalc.com/renal-idx.htm"
+    },
+    {
+      "name": "Neurology",
+      "href": "neuro-idx.htm",
+      "url": "https://ebmcalc.com/neuro-idx.htm"
+    },
+    {
+      "name": "Nursing",
+      "href": "nurse-idx.htm",
+      "url": "https://ebmcalc.com/nurse-idx.htm"
+    },
+    {
+      "name": "Nutrition",
+      "href": "nutrit-idx.htm",
+      "url": "https://ebmcalc.com/nutrit-idx.htm"
+    },
+    {
+      "name": "Obstetrics and Gynecology",
+      "href": "women-idx.htm",
+      "url": "https://ebmcalc.com/women-idx.htm"
+    },
+    {
+      "name": "Oncology",
+      "href": "onco-idx.htm",
+      "url": "https://ebmcalc.com/onco-idx.htm"
+    },
+    {
+      "name": "Orthopedics",
+      "href": "ortho-idx.htm",
+      "url": "https://ebmcalc.com/ortho-idx.htm"
+    },
+    {
+      "name": "Pain Management",
+      "href": "painmgt-idx.htm",
+      "url": "https://ebmcalc.com/painmgt-idx.htm"
+    },
+    {
+      "name": "Patient Use",
+      "href": "patientuse-idx.htm",
+      "url": "https://ebmcalc.com/patientuse-idx.htm"
+    },
+    {
+      "name": "Pediatrics",
+      "href": "pediat-idx.htm",
+      "url": "https://ebmcalc.com/pediat-idx.htm"
+    },
+    {
+      "name": "Pharmacology",
+      "href": "pharma-idx.htm",
+      "url": "https://ebmcalc.com/pharma-idx.htm"
+    },
+    {
+      "name": "Physical Medicine & Rehabilitation",
+      "href": "PMR-idx.htm",
+      "url": "https://ebmcalc.com/PMR-idx.htm"
+    },
+    {
+      "name": "Population Medicine Spreadsheet Tools",
+      "href": "spreadsheet-idx.htm",
+      "url": "https://ebmcalc.com/spreadsheet-idx.htm"
+    },
+    {
+      "name": "Psychiatry",
+      "href": "psych-idx.htm",
+      "url": "https://ebmcalc.com/psych-idx.htm"
+    },
+    {
+      "name": "Pulmonology",
+      "href": "pulm-idx.htm",
+      "url": "https://ebmcalc.com/pulm-idx.htm"
+    },
+    {
+      "name": "Rheumatology",
+      "href": "rheumatology-idx.htm",
+      "url": "https://ebmcalc.com/rheumatology-idx.htm"
+    },
+    {
+      "name": "SI Units Friendly",
+      "href": "sifriendly-idx.htm",
+      "url": "https://ebmcalc.com/sifriendly-idx.htm"
+    },
+    {
+      "name": "Smoking Cessation",
+      "href": "smoke-idx.htm",
+      "url": "https://ebmcalc.com/smoke-idx.htm"
+    },
+    {
+      "name": "Surgery",
+      "href": "surgery-idx.htm",
+      "url": "https://ebmcalc.com/surgery-idx.htm"
+    },
+    {
+      "name": "Workers' Compensation",
+      "href": "worker-idx.htm",
+      "url": "https://ebmcalc.com/worker-idx.htm"
+    }
+  ]
+}

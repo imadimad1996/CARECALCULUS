@@ -512,6 +512,10 @@ function AppLayout() {
               <FileText className="w-4 h-4" />
               {lang === 'fr' ? 'Guides Cliniques' : 'Clinical Guides'}
             </Link>
+            <Link to={langPath('/clinical-library')} className="shrink-0 px-4 py-2 bg-slate-50 text-slate-600 hover:bg-slate-100 font-bold rounded-xl text-sm transition-colors flex items-center gap-2">
+              <Calculator className="w-4 h-4" />
+              {lang === 'fr' ? 'Bibliothèque Clinique' : 'Clinical Library'}
+            </Link>
           </div>
 
           <div className="flex items-center gap-2 shrink-0 lg:border-l lg:border-gray-100 lg:pl-3 ml-auto">
@@ -561,6 +565,7 @@ function AppLayout() {
       '/hub-glp1':      { en: 'GLP-1 Hub',        fr: 'Hub GLP-1',         ar: 'مركز أدوية GLP-1',  icon: Sparkles },
       '/مركز-glp1':     { en: 'GLP-1 Hub',        fr: 'Hub GLP-1',         ar: 'مركز أدوية GLP-1',  icon: Sparkles },
       '/clinical-guide':{ en: 'Clinical Guides',  fr: 'Guides Cliniques',  ar: 'الأدلة السريرية', icon: BookOpen },
+      '/clinical-library':{ en: 'Clinical Library',  fr: 'Bibliothèque Clinique',  ar: 'المكتبة السريرية', icon: Calculator },
     };
     const base = CONTENT_ROUTES.find(r => logicalPath === r || logicalPath.startsWith(r + '/'));
     const section = base ? sectionMap[base] : null;
