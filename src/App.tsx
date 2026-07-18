@@ -507,9 +507,9 @@ function AppLayout() {
     const currentPath = logicalPath === '/' ? '/map-calculator' : logicalPath;
 
     return (
-      <div className="mb-6 bg-white rounded-2xl border border-gray-200/80 shadow-xs relative z-30">
+      <div className="mb-6 bg-white rounded-2xl border border-gray-200/80 shadow-xs relative z-50">
         {/* Search row */}
-        <div className="px-4 py-3 flex items-center gap-2 md:gap-3 border-b border-gray-100 overflow-x-auto scrollbar-none">
+        <div className="px-4 py-3 flex items-center gap-2 md:gap-3 border-b border-gray-100 overflow-visible">
           <div className="flex-1 relative">
             <Search className={`absolute ${isRtl ? 'right-3' : 'left-3'} top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none`} />
             <input
