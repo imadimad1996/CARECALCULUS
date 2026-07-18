@@ -11,7 +11,8 @@ import {
   Scale, 
   Mail, 
   LogOut, 
-  LogIn 
+  LogIn,
+  Star
 } from 'lucide-react';
 import { LangCode } from '../types';
 
@@ -82,6 +83,7 @@ export default function DropdownMenu({
       language: "Change Language",
       english: "English",
       french: "French",
+      favorites: "My Favorites",
     },
     fr: {
       login: "Connexion / Inscription",
@@ -97,6 +99,7 @@ export default function DropdownMenu({
       language: "Changer de langue",
       english: "Anglais",
       french: "Français",
+      favorites: "Mes Favoris",
     }
   };
 
@@ -198,6 +201,16 @@ export default function DropdownMenu({
             )}
 
             <div className="border-t border-slate-100 dark:border-slate-800 my-1.5" />
+
+            {/* Favorites */}
+            <Link
+              to={langPath('/favorites')}
+              onClick={() => setIsMenuOpen(false)}
+              className="px-4 py-2.5 text-left text-xs font-semibold text-amber-600 dark:text-amber-500 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-amber-700 flex items-center gap-3 transition"
+            >
+              <Star className="w-4 h-4 shrink-0 fill-current" />
+              <span>{dict.favorites}</span>
+            </Link>
 
             {/* CME Packages */}
             <Link

@@ -28,6 +28,7 @@ This report highlights deterministic SEO, Monetization, and UX metrics extracted
 
 ### Page 3: [https://clincalc.com/blog](https://clincalc.com/blog)
 
+
 **SEO Flags:**
 - 🚩 Multiple (10) <h1> tags found.
 - 🚩 Missing meta description.

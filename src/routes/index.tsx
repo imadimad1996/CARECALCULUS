@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import { LangCode } from '../types';
 import EmbedLayout from '../components/EmbedLayout';
 import CalculatorShell from '../components/CalculatorShell';
-import { Activity, BookOpen, HeartPulse, Menu, X, LayoutDashboard, Calculator, Droplet, Brain, TestTube, AlertOctagon, ArrowRightLeft, AlertTriangle, Stethoscope, Wind, FileText, ShieldCheck, Sparkles, ChevronRight, Search, Globe, Scale, MonitorPlay, GraduationCap, Newspaper, Scissors, Layers, Award } from 'lucide-react';
+import { Activity, BookOpen, HeartPulse, Menu, X, LayoutDashboard, Calculator, Droplet, Brain, TestTube, AlertOctagon, ArrowRightLeft, AlertTriangle, Stethoscope, Wind, FileText, ShieldCheck, Sparkles, ChevronRight, Search, Globe, Scale, MonitorPlay, GraduationCap, Newspaper, Scissors, Layers, Award, Pill } from 'lucide-react';
 
 // Page import factories kept in one list so they can be (a) wrapped in
 // React.lazy for client-side code-splitting and (b) eagerly awaited during
@@ -84,6 +84,17 @@ const pageLoaders = [
   () => import('../pages/GraceScore'),
   () => import('../pages/BicarbDeficit'),
   () => import('../pages/ReticIndex'),
+  () => import('../pages/PhenytoinCorrection'),
+  () => import('../pages/AscvdRisk'),
+  () => import('../pages/VancomycinDosing'),
+  () => import('../pages/AminoglycosideDosing'),
+  () => import('../pages/PesiScore'),
+  () => import('../pages/BovaScore'),
+  () => import('../pages/ApacheIIScore'),
+  () => import('../pages/SapsIIScore'),
+  () => import('../pages/DrugInteractions'),
+  () => import('../pages/MedicalStatistics'),
+  () => import('../pages/FavoritesPage'),
 ] as const;
 
 const [
@@ -103,7 +114,9 @@ const [
   HeparinDosing, OpioidConversion, MaintenanceFluids,
   OsmolalGap, TimiScore, HeartScore,
   PercRule, GenevaScore, NihssScore,
-  GraceScore, BicarbDeficit, ReticIndex
+  GraceScore, BicarbDeficit, ReticIndex,
+  PhenytoinCorrection, AscvdRisk, VancomycinDosing, AminoglycosideDosing,
+  PesiScore, BovaScore, ApacheIIScore, SapsIIScore, DrugInteractions, MedicalStatistics, FavoritesPage
 ] = pageLoaders.map((loader) => React.lazy(loader as any)) as any[];
 
 export const HomePage = React.lazy(() => import('../pages/HomePage'));
@@ -175,6 +188,10 @@ export const navItems = [
   { path: '/grace-score', nameEn: 'GRACE ACS Score', nameFr: 'Score GRACE SCA', nameAr: 'مقياس GRACE لمتلازمة الشريان التاجي', icon: HeartPulse, tier: 1 },
   { path: '/perc-rule', nameEn: 'PERC Rule for PE', nameFr: 'Score PERC Embolie Pulmonaire', nameAr: 'قاعدة PERC لاستبعاد الجلطة الرئوية', icon: Wind, tier: 1 },
   { path: '/geneva-score', nameEn: 'Geneva Score PE', nameFr: 'Score de Genève EP', nameAr: 'مقياس جنيف للجلطة الرئوية', icon: Wind, tier: 1 },
+  { path: '/pesi-score', nameEn: 'PESI Score PE', nameFr: 'Score PESI EP', nameAr: 'مقياس PESI للجلطة الرئوية', icon: Wind, tier: 1 },
+  { path: '/bova-score', nameEn: 'Bova Score PE', nameFr: 'Score Bova EP', nameAr: 'مقياس بوفا للجلطة الرئوية', icon: HeartPulse, tier: 1 },
+  { path: '/apache-ii-score', nameEn: 'APACHE II', nameFr: 'Score APACHE II', nameAr: 'مقياس أباتشي للرعاية المركزة', icon: Activity, tier: 1 },
+  { path: '/saps-ii-score', nameEn: 'SAPS II', nameFr: 'Score SAPS II', nameAr: 'مقياس SAPS II', icon: Activity, tier: 1 },
   { path: '/nihss-score', nameEn: 'NIHSS Stroke Scale', nameFr: 'Score NIHSS AVC', nameAr: 'مقياس السكتة الدماغية NIHSS', icon: Brain, tier: 1 },
 
   // Tier 2: Organ Function & Internal Medicine
@@ -186,6 +203,7 @@ export const navItems = [
   { path: '/cha2ds2-vasc', nameEn: 'CHA2DS2-VASc stroke', nameFr: 'Score CHA2DS2-VASc FA', nameAr: 'معيار سكتة الرجفان الأذيني', icon: HeartPulse, tier: 2 },
   { path: '/corrected-calcium', nameEn: 'Corrected Calcium', nameFr: 'Calcium Corrigé Albumin', nameAr: 'الكالسيوم المصحح بالألبومين', icon: TestTube, tier: 2 },
   { path: '/anc-calculator', nameEn: 'ANC Calculator', nameFr: 'Calculateur NAN Neutro', nameAr: 'حساب خلايا الدم المتعادلة ANC', icon: TestTube, tier: 2 },
+  { path: '/ascvd-risk', nameEn: 'ASCVD Risk', nameFr: 'Risque ASCVD', nameAr: 'خطر أمراض القلب', icon: HeartPulse, tier: 2 },
   { path: '/retic-index', nameEn: 'Reticulocyte Index', nameFr: 'Indice Réticulocytaire', nameAr: 'مؤشر الخلايا الشبكية', icon: Droplet, tier: 2 },
   { path: '/child-pugh-score', nameEn: 'Child-Pugh Score', nameFr: 'Score de Child-Pugh', nameAr: 'تصنيف تشايلد بيو للكبد', icon: Activity, tier: 2 },
   { path: '/anion-gap', nameEn: 'Anion Gap', nameFr: 'Trou Anionique', nameAr: 'الفجوة الأنيونية للدم', icon: TestTube, tier: 2 },
@@ -206,10 +224,15 @@ export const navItems = [
   { path: '/bmi-calculator', nameEn: 'BMI Calculator', nameFr: 'Calculateur IMC', nameAr: 'مؤشر كتلة وزن الجسم BMI', icon: LayoutDashboard, tier: 3 },
   { path: '/phq9-score', nameEn: 'PHQ-9 Depression', nameFr: 'Score PHQ-9 Dépression', nameAr: 'مقياس PHQ-9 لتشخيص الاكتئاب', icon: Brain, tier: 3 },
   { path: '/heparin-dosing', nameEn: 'Heparin Dosing', nameFr: 'Dosage Héparine', nameAr: 'جرعة الهيبارين', icon: Activity, tier: 3 },
+  { path: '/vancomycin-dosing', nameEn: 'Vancomycin Dosing', nameFr: 'Dosage Vancomycine', nameAr: 'جرعة الفانكومايسين', icon: Pill, tier: 3 },
+  { path: '/aminoglycoside-dosing', nameEn: 'Aminoglycoside Dosing', nameFr: 'Dosage Aminosides', nameAr: 'جرعة الأمينوغليكوزيد', icon: Pill, tier: 3 },
   { path: '/opioid-conversion', nameEn: 'Opioid Conversion', nameFr: 'Conversion Opioïdes', nameAr: 'تحويل مسكنات الألم', icon: ArrowRightLeft, tier: 3 },
   { path: '/maintenance-fluids', nameEn: 'Maintenance IV Fluids', nameFr: 'Fluides d’Entretien IV', nameAr: 'السوائل الوريدية اليومية', icon: Droplet, tier: 3 },
+  { path: '/phenytoin-correction', nameEn: 'Phenytoin Correction', nameFr: 'Correction Phénytoïne', nameAr: 'تصحيح الفينيتوين', icon: Pill, tier: 3 },
   
   // Tier 4 — Resources & Library
+  { path: '/drug-interactions', nameEn: 'Drug Interactions', nameFr: 'Interactions Médicamenteuses', nameAr: 'تداخلات الأدوية', icon: ShieldCheck, tier: 0 },
+  { path: '/medical-statistics', nameEn: 'Medical Statistics', nameFr: 'Statistiques Médicales', nameAr: 'الإحصاء الطبي', icon: Layers, tier: 0 },
   { path: '/glp-1-hub', nameEn: 'GLP-1 Hub', nameFr: 'Hub GLP-1', nameAr: 'مركز أدوية GLP-1', icon: Sparkles, tier: 4, group: 'reading' as const },
   { path: '/blog', nameEn: 'Medical Journals', nameFr: 'Journaux Médicaux', nameAr: 'المجلات الطبية', icon: BookOpen, tier: 4, group: 'reading' as const },
   { path: '/blog-articles', nameEn: 'Blog', nameFr: 'Blog', nameAr: 'المدونة', icon: Newspaper, tier: 4, group: 'reading' as const },
@@ -263,6 +286,7 @@ export function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
     <>
       <Route index element={<HomePage lang={lang} />} />
       <Route path="home" element={<HomePage lang={lang} />} />
+      <Route path="favorites" element={<FavoritesPage lang={lang} />} />
       <Route path="map-calculator" element={wrapCalculator('/map-calculator', <MapCalculator lang={lang} />)} />
       <Route path="bmi-calculator" element={wrapCalculator('/bmi-calculator', <BmiCalculator lang={lang} />)} />
       <Route path="glasgow-coma-scale" element={wrapCalculator('/glasgow-coma-scale', <GcsCalculator lang={lang} />)} />
@@ -304,6 +328,16 @@ export function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="anc-calculator" element={wrapCalculator('/anc-calculator', <AncCalculator lang={lang} />)} />
       <Route path="adjusted-body-weight" element={wrapCalculator('/adjusted-body-weight', <AdjustedBodyWeight lang={lang} />)} />
       <Route path="steroid-conversion" element={wrapCalculator('/steroid-conversion', <SteroidConversion lang={lang} />)} />
+      <Route path="phenytoin-correction" element={wrapCalculator('/phenytoin-correction', <PhenytoinCorrection lang={lang} />)} />
+      <Route path="ascvd-risk" element={wrapCalculator('/ascvd-risk', <AscvdRisk lang={lang} />)} />
+      <Route path="vancomycin-dosing" element={wrapCalculator('/vancomycin-dosing', <VancomycinDosing lang={lang} />)} />
+      <Route path="aminoglycoside-dosing" element={wrapCalculator('/aminoglycoside-dosing', <AminoglycosideDosing lang={lang} />)} />
+      <Route path="pesi-score" element={wrapCalculator('/pesi-score', <PesiScore lang={lang} />)} />
+      <Route path="bova-score" element={wrapCalculator('/bova-score', <BovaScore lang={lang} />)} />
+      <Route path="apache-ii-score" element={wrapCalculator('/apache-ii-score', <ApacheIIScore lang={lang} />)} />
+      <Route path="saps-ii-score" element={wrapCalculator('/saps-ii-score', <SapsIIScore lang={lang} />)} />
+      <Route path="drug-interactions" element={wrapCalculator('/drug-interactions', <DrugInteractions lang={lang} />)} />
+      <Route path="medical-statistics" element={wrapCalculator('/medical-statistics', <MedicalStatistics lang={lang} />)} />
       <Route path="pdf-splitter" element={<PdfSplitter lang={lang} />} />
       <Route path="pdf-merger" element={<PdfMerger lang={lang} />} />
       <Route path="blog" element={<MedicalBlog lang={lang} />} />

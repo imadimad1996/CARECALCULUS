@@ -16,11 +16,13 @@ import CommandPalette from './components/ui/CommandPalette';
 import TrackingScripts from './components/TrackingScripts';
 import EmbedLayout from './components/EmbedLayout';
 import InstallAppButton from './components/ui/InstallAppButton';
+import InstallAppPrompt from './components/InstallAppPrompt';
 import SidebarNewsletter from './components/SidebarNewsletter';
 import MobileBottomNav from './components/MobileBottomNav';
 
 
 import SmartPasteModal from './components/SmartPasteModal';
+import FavoriteButton from './components/FavoriteButton';
 import DropdownMenu from './components/DropdownMenu';
 import ContactModal from './components/ContactModal';
 import ViralPopup from './components/ViralPopup';
@@ -531,6 +533,8 @@ function AppLayout() {
           <InstallAppButton lang={lang} />
           {/* Smart Paste EHR Button */}
           <SmartPasteModal lang={lang} />
+          {/* Favorite Button */}
+          <FavoriteButton lang={lang} />
           {/* GEO unit toggle chip */}
           <button
             onClick={toggleGeoStandard}
@@ -1311,6 +1315,9 @@ function AppLayout() {
       
       {/* Viral Share Popup for Hyper Growth */}
       <ViralPopup />
+      
+      {/* PWA Install Prompt */}
+      <InstallAppPrompt />
     </div>
    </LangContext.Provider>
   );
