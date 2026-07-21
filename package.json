@@ -15,6 +15,7 @@
     "sitemap": "tsx scripts/generate-sitemap.ts",
     "deploy": "npm run build && wrangler pages deploy dist --project-name=carecalculus",
     "deploy:ci": "wrangler pages deploy dist --project-name=carecalculus --commit-dirty=true",
+    "ping": "tsx scripts/ping-search-engines.ts",
     "ping-sitemap": "curl -s \"https://www.google.com/ping?sitemap=https://carecalculus.com/sitemap.xml\" && curl -s \"https://www.bing.com/ping?sitemap=https://carecalculus.com/sitemap.xml\""
   },
   "dependencies": {
