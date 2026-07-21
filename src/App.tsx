@@ -680,7 +680,7 @@ function AppLayout() {
       </script>
     </Helmet>
     <TrackingScripts />
-    <div className={`min-h-screen bg-[#fafafa] text-[#111] transition-colors duration-300 flex flex-col md:flex-row w-full overflow-x-hidden ${isRtl ? 'font-arabic' : 'font-sans'}`} dir={isRtl ? 'rtl' : 'ltr'}>
+    <div className={`min-h-screen bg-[#fafafa] text-[#111] transition-colors duration-300 flex flex-col md:flex-row w-full overflow-x-clip ${isRtl ? 'font-arabic' : 'font-sans'}`} dir={isRtl ? 'rtl' : 'ltr'}>
       <CommandPalette />
       {/* Reading progress indicator for content pages */}
       {isContentPage && <ReadingProgress />}
@@ -1044,7 +1044,7 @@ function AppLayout() {
       </aside>}
 
       {/* Main Content Area */}
-      <main id="main-content" className="flex-1 min-w-0 bg-[#fafafa] w-full overflow-x-hidden mb-16 md:mb-0">
+      <main id="main-content" className="flex-1 min-w-0 bg-[#fafafa] w-full overflow-x-clip mb-16 md:mb-0">
         <div className={`mx-auto px-4 sm:px-6 pt-6 pb-24 md:py-10 relative flex flex-col justify-between min-h-screen w-full ${isContentPage ? 'max-w-6xl' : 'max-w-5xl'}`}>
           <div>
 
