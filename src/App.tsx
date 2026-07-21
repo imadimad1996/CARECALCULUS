@@ -20,6 +20,7 @@ import InstallAppPrompt from './components/InstallAppPrompt';
 import SidebarNewsletter from './components/SidebarNewsletter';
 import MobileBottomNav from './components/MobileBottomNav';
 import { ShiftStorageDrawer } from './components/ShiftStorageDrawer';
+import { LeadMagnetModal } from './components/LeadMagnetModal';
 
 
 import SmartPasteModal from './components/SmartPasteModal';
@@ -1270,6 +1271,9 @@ function AppLayout() {
 
       {/* Shift Storage Patient Queue Drawer */}
       <ShiftStorageDrawer isOpen={isShiftDrawerOpen} onClose={() => setIsShiftDrawerOpen(false)} />
+
+      {/* Lead Magnet PDF Capture Engine */}
+      <LeadMagnetModal lang={lang} />
     </div>
    </LangContext.Provider>
   );
