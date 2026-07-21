@@ -2,9 +2,9 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter var", "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Inter var", "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Inter var", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-arabic: "Cairo", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
