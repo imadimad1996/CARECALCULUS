@@ -44,8 +44,11 @@ function AppLayout() {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isShiftDrawerOpen, setIsShiftDrawerOpen] = useState(false);
+  const [isPro, setIsPro] = useState(false);
 
   useEffect(() => {
+    setIsPro(localStorage.getItem('carecalculus_pro_status') === 'active');
+    
     const handleOpenLogin = () => setIsLoginModalOpen(true);
     window.addEventListener('open-login', handleOpenLogin);
     return () => window.removeEventListener('open-login', handleOpenLogin);
@@ -542,6 +545,15 @@ function AppLayout() {
               <Scale className="w-3.5 h-3.5 text-emerald-400" />
               <span className="hidden sm:inline">{geoState.standard === 'Metric (SI)' ? 'SI' : 'US'}</span>
             </button>
+            {!isPro && (
+              <Link
+                to={langPath('/pricing')}
+                className="shrink-0 flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-slate-950 text-[11px] font-black uppercase tracking-wider rounded-xl transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer"
+              >
+                <Sparkles className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">{lang === 'fr' ? 'Pass Pro' : 'Upgrade'}</span>
+              </Link>
+            )}
             <DropdownMenu
               user={user}
               logout={logout}

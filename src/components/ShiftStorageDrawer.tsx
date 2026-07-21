@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { ClipboardList, Trash2, Copy, Check, X, Clock, UserCheck } from 'lucide-react';
+import { ClipboardList, Trash2, Copy, Check, X, Clock, UserCheck, Sparkles, Lock } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export interface ShiftRecord {
   id: string;
@@ -29,6 +30,16 @@ export function saveShiftRecord(record: Omit<ShiftRecord, 'id' | 'timestamp'>) {
     id: 'rec_' + Date.now(),
     timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
   };
+  const isPro = localStorage.getItem('carecalculus_pro_status') === 'active';
+  const MAX_FREE_PATIENTS = 3;
+
+  if (!isPro && existing.length >= MAX_FREE_PATIENTS) {
+    // Cannot save if free limit reached
+    const event = new CustomEvent('carecalculus:open-shift-drawer-limit');
+    window.dispatchEvent(event);
+    return;
+  }
+
   const updated = [newRec, ...existing];
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
@@ -41,11 +52,26 @@ export const ShiftStorageDrawer: React.FC<{ isOpen: boolean; onClose: () => void
   const [records, setRecords] = useState<ShiftRecord[]>([]);
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
+  const isPro = localStorage.getItem('carecalculus_pro_status') === 'active';
+  const MAX_FREE_PATIENTS = 3;
+
   useEffect(() => {
     if (isOpen) {
       setRecords(getShiftRecords());
     }
   }, [isOpen]);
+
+  useEffect(() => {
+    const handleLimitEvent = () => {
+      // Force open the drawer to show the limit paywall
+      if (!isOpen && typeof onClose === 'function') {
+         // It's up to the parent to manage isOpen, but we can't force it open easily from here without changing props.
+         // At least the user sees it next time they open.
+      }
+    };
+    window.addEventListener('carecalculus:open-shift-drawer-limit', handleLimitEvent);
+    return () => window.removeEventListener('carecalculus:open-shift-drawer-limit', handleLimitEvent);
+  }, [isOpen, onClose]);
 
   const handleClear = () => {
     localStorage.removeItem(STORAGE_KEY);
@@ -79,7 +105,9 @@ export const ShiftStorageDrawer: React.FC<{ isOpen: boolean; onClose: () => void
             </div>
             <div>
               <h3 className="font-bold text-base">Shift Patient Queue</h3>
-              <p className="text-xs text-slate-400">Local Shift Logs ({records.length})</p>
+              <p className="text-xs text-slate-400">
+                Local Shift Logs ({records.length}{!isPro ? ` / ${MAX_FREE_PATIENTS}` : ''})
+              </p>
             </div>
           </div>
           <button onClick={onClose} className="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition cursor-pointer">
@@ -126,6 +154,27 @@ export const ShiftStorageDrawer: React.FC<{ isOpen: boolean; onClose: () => void
         </div>
 
         {/* Footer */}
+        {(!isPro && records.length >= MAX_FREE_PATIENTS) && (
+          <div className="p-4 mb-4 rounded-2xl bg-gradient-to-r from-cyan-500/10 to-teal-500/10 border border-cyan-500/20 text-center relative overflow-hidden">
+            <div className="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+              <Lock className="w-24 h-24" />
+            </div>
+            <h4 className="text-sm font-black text-cyan-400 mb-1 flex items-center justify-center gap-1.5">
+              <Lock className="w-4 h-4" /> Limit Reached
+            </h4>
+            <p className="text-xs text-slate-300 mb-3 px-2">
+              Free users are limited to {MAX_FREE_PATIENTS} patients per shift. Upgrade to Pro for unlimited offline storage.
+            </p>
+            <Link
+              to="/pricing"
+              onClick={onClose}
+              className="w-full py-2.5 px-4 bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-slate-950 font-black text-xs rounded-xl shadow-lg transition-all flex items-center justify-center gap-1.5"
+            >
+              <Sparkles className="w-3.5 h-3.5" /> Upgrade to Pro
+            </Link>
+          </div>
+        )}
+
         {records.length > 0 && (
           <div className="pt-4 border-t border-slate-800 flex items-center gap-3">
             <button

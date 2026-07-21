@@ -1,6 +1,6 @@
 import React, { useMemo, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Scale, FolderHeart, Activity, Layers, ArrowRight, Share2, Copy, Check, FileText } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Scale, FolderHeart, Activity, Layers, ArrowRight, Share2, Copy, Check, FileText, Lock } from 'lucide-react';
 import { LangCode } from '../types';
 import AiAnswerPanel from './AiAnswerPanel';
 import { MedicalReviewerCard, MedicalReviewer } from './MedicalReviewerCard';
@@ -75,11 +75,15 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
   const slug = logicalPath.substring(1); // e.g. "meld-score"
   const isRtl = false;
   const t = T[lang] || T.en;
+  const navigate = useNavigate();
 
   const [calcData, setCalcData] = useState<any>(null);
   const [copiedType, setCopiedType] = useState<string | null>(null);
+  const [isPro, setIsPro] = useState(false);
 
   useEffect(() => {
+    setIsPro(localStorage.getItem('carecalculus_pro_status') === 'active');
+    
     const handleData = (e: any) => {
       setCalcData(e.detail);
     };
@@ -183,6 +187,10 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
                 <button
                   key={type}
                   onClick={() => {
+                    if (!isPro) {
+                      navigate(lang === 'en' ? '/pricing' : `/${lang}/pricing`);
+                      return;
+                    }
                     const scoreVal = calcData.results?.[0]?.value || '';
                     const interpVal = calcData.results?.length > 1 
                       ? calcData.results.map((r: any) => `${r.label}: ${r.value}${r.unit ? ` ${r.unit}` : ''}`).join(' | ') 
@@ -206,9 +214,16 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
                       setTimeout(() => setCopiedType(null), 2500);
                     });
                   }}
-                  className="flex-1 md:flex-initial px-3.5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 active:bg-white/30 text-white font-mono text-xs font-bold transition border border-white/15 flex items-center justify-center gap-1.5 cursor-pointer shadow-sm"
+                  className={`flex-1 md:flex-initial px-3.5 py-2.5 rounded-xl ${!isPro ? 'bg-indigo-900/40 text-indigo-300 hover:bg-indigo-800/40' : 'bg-white/10 hover:bg-white/20 active:bg-white/30 text-white'} font-mono text-xs font-bold transition border border-white/15 flex items-center justify-center gap-1.5 cursor-pointer shadow-sm relative`}
                 >
-                  {copiedType === type ? <span className="text-emerald-400 flex items-center gap-1"><Check className="w-3.5 h-3.5" /> Copied!</span> : <span>Copy {type === 'soap' ? 'SOAP' : type === 'sbar' ? 'SBAR' : 'DotPhrase'}</span>}
+                  {copiedType === type ? (
+                    <span className="text-emerald-400 flex items-center gap-1"><Check className="w-3.5 h-3.5" /> Copied!</span>
+                  ) : (
+                    <>
+                      <span>Copy {type === 'soap' ? 'SOAP' : type === 'sbar' ? 'SBAR' : 'DotPhrase'}</span>
+                      {!isPro && <Lock className="w-3 h-3 text-cyan-400" />}
+                    </>
+                  )}
                 </button>
               ))}
 
