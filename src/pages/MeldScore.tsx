@@ -7,6 +7,8 @@ import ClinicalExportButton from '../components/ClinicalExportButton';
 import EmbedCodeButton from '../components/ui/EmbedCodeButton';
 import { JsonLd, generateMedicalCalculatorSchema } from '../components/JsonLd';
 import ClinicalContextPanel from '../components/ClinicalContextPanel';
+import { MedicalReviewerCard } from '../components/MedicalReviewerCard';
+import { REVIEWER_HEPATOLOGY } from '../data/reviewers';
 
 const translations: Translations = {
   en: {
@@ -404,6 +406,9 @@ export default function MeldScore({ lang }: { lang: LangCode }) {
           ))}
         </div>
       </div>
+
+      {/* E-E-A-T Trust Signal — Physician Reviewer Card */}
+      <MedicalReviewerCard reviewer={REVIEWER_HEPATOLOGY} lang={lang} />
     </>
   );
 }

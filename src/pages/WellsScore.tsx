@@ -10,6 +10,8 @@ import ClinicalContextPanel from '../components/ClinicalContextPanel';
 import { RiskGauge } from '../components/RiskGauge';
 import { PubMedPopover } from '../components/PubMedPopover';
 import { ClinicalDecisionTree } from '../components/ClinicalDecisionTree';
+import { MedicalReviewerCard } from '../components/MedicalReviewerCard';
+import { REVIEWER_WELLS } from '../data/reviewers';
 
 const translations: Translations = {
   en: {
@@ -542,6 +544,9 @@ export default function WellsScore({ lang }: { lang: LangCode }) {
           ))}
         </div>
       </div>
+
+      {/* E-E-A-T Trust Signal — Physician Reviewer Card */}
+      <MedicalReviewerCard reviewer={REVIEWER_WELLS} lang={lang} />
     </>
   );
 }

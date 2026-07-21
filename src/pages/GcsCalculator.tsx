@@ -6,6 +6,8 @@ import { layoutTranslations } from '../utils/lang';
 import { trackCalculatorUsage } from '../utils/telemetry';
 import EmbedCodeButton from '../components/ui/EmbedCodeButton';
 import { JsonLd, generateMedicalCalculatorSchema } from '../components/JsonLd';
+import { MedicalReviewerCard } from '../components/MedicalReviewerCard';
+import { REVIEWER_NEUROLOGY } from '../data/reviewers';
 
 const translations: Translations = {
   en: {
@@ -420,6 +422,9 @@ export default function GcsCalculator({ lang }: { lang: LangCode }) {
           ))}
         </div>
       </div>
+
+      {/* E-E-A-T Trust Signal — Physician Reviewer Card */}
+      <MedicalReviewerCard reviewer={REVIEWER_NEUROLOGY} lang={lang} />
     </>
   );
 }

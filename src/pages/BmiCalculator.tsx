@@ -8,6 +8,8 @@ import ClinicalExportButton from '../components/ClinicalExportButton';
 import { layoutTranslations } from '../utils/lang';
 import { trackCalculatorUsage } from '../utils/telemetry';
 import { ActionableResultPanel, RiskLevel } from '../components/ActionableResultPanel';
+import { MedicalReviewerCard } from '../components/MedicalReviewerCard';
+import { REVIEWER_EMERGENCY } from '../data/reviewers';
 import { ClinicalContextTabs } from '../components/ClinicalContextTabs';
 import EmbedCodeButton from '../components/ui/EmbedCodeButton';
 
@@ -550,6 +552,9 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
           "Romero-Corral A, et al. Accuracy of body mass index in diagnosing obesity in the adult general population. Int J Obes (Lond). 2008;32(6):959-966."
         ]} 
       />
+
+      {/* E-E-A-T Trust Signal — Physician Reviewer Card */}
+      <MedicalReviewerCard reviewer={REVIEWER_EMERGENCY} lang={lang} />
     </>
   );
 }

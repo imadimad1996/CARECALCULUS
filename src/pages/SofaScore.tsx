@@ -7,6 +7,8 @@ import { trackCalculatorUsage } from '../utils/telemetry';
 import EmbedCodeButton from '../components/ui/EmbedCodeButton';
 import { JsonLd, generateMedicalRiskScoreSchema } from '../components/JsonLd';
 import ClinicalContextPanel from '../components/ClinicalContextPanel';
+import { MedicalReviewerCard } from '../components/MedicalReviewerCard';
+import { REVIEWER_INTENSIVIST } from '../data/reviewers';
 
 const translations: Translations = {
   en: {
@@ -489,6 +491,9 @@ export default function SofaScore({ lang }: { lang: LangCode }) {
           ))}
         </div>
       </div>
+
+      {/* E-E-A-T Trust Signal — Physician Reviewer Card */}
+      <MedicalReviewerCard reviewer={REVIEWER_INTENSIVIST} lang={lang} />
     </>
   );
 }

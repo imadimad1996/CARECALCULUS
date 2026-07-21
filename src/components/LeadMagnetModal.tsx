@@ -26,21 +26,27 @@ export const LeadMagnetModal: React.FC<LeadMagnetModalProps> = ({ lang }) => {
     }
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || !email.includes('@')) return;
 
-    // Save lead locally
     try {
-      const existing = JSON.parse(localStorage.getItem('carecalculus_leads') || '[]');
-      existing.push({ email, timestamp: new Date().toISOString(), lang });
-      localStorage.setItem('carecalculus_leads', JSON.stringify(existing));
+      // POST to Cloudflare Pages Function backend
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, lang }),
+      });
+
+      if (!res.ok) throw new Error('Failed to subscribe');
+
       localStorage.setItem(LOCAL_KEY, 'true');
+      setIsSubmitted(true);
     } catch (e) {
       console.error('Lead save error', e);
+      // Fallback: still let them download the guide even if network fails
+      setIsSubmitted(true);
     }
-
-    setIsSubmitted(true);
   };
 
   const handleDownloadPdf = () => {

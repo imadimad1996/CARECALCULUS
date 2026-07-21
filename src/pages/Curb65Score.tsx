@@ -4,6 +4,8 @@ import { LangCode, Translations } from '../types';
 import { layoutTranslations } from '../utils/lang';
 import { trackCalculatorUsage } from '../utils/telemetry';
 import ClinicalExportButton from '../components/ClinicalExportButton';
+import { MedicalReviewerCard } from '../components/MedicalReviewerCard';
+import { REVIEWER_PULMONOLOGY } from '../data/reviewers';
 
 const translations: Translations = {
   en: {
@@ -347,6 +349,9 @@ export default function Curb65Score({ lang }: { lang: LangCode }) {
           ))}
         </div>
       </div>
+
+      {/* E-E-A-T Trust Signal — Physician Reviewer Card */}
+      <MedicalReviewerCard reviewer={REVIEWER_PULMONOLOGY} lang={lang} />
     </>
   );
 }

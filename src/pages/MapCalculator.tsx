@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from 'motion/react';
 import { LangCode, Translations } from '../types';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 import CalculatorInput from '../components/ui/CalculatorInput';
+import { MedicalReviewerCard } from '../components/MedicalReviewerCard';
+import { REVIEWER_INTENSIVIST } from '../data/reviewers';
 import { trackCalculatorUsage } from '../utils/telemetry';
 import { layoutTranslations } from '../utils/lang';
 import MobileResultDock from '../components/ui/MobileResultDock';
@@ -315,6 +317,9 @@ export default function MapCalculator({ lang }: { lang: LangCode }) {
           ))}
         </div>
       </div>
+
+      {/* E-E-A-T Trust Signal — Physician Reviewer Card */}
+      <MedicalReviewerCard reviewer={REVIEWER_INTENSIVIST} lang={lang} />
       <MobileResultDock
         value={mapValue > 0 ? mapValue : '--'}
         unit="mmHg"
