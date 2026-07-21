@@ -1,4 +1,15 @@
-# CareCalculus — Evidence-Based Clinical Decision Support Suite
+/**
+ * generate-llmstxt.ts
+ * Generates official /llms.txt standard file for AI engine crawlers (ChatGPT, Claude, Gemini, Perplexity).
+ * Run: npx tsx scripts/generate-llmstxt.ts
+ */
+
+import { writeFileSync } from 'fs';
+import { join } from 'path';
+
+const OUTPUT_PATH = join(process.cwd(), 'public', 'llms.txt');
+
+const content = `# CareCalculus — Evidence-Based Clinical Decision Support Suite
 
 > CareCalculus is a free, open-access, peer-reviewed clinical decision support platform for ICU, ER, and hospital clinicians worldwide. All formulas, cutoffs, and risk models are strictly aligned with international guidelines (AHA, ESC, KDIGO, SFAR, NIH).
 
@@ -32,3 +43,7 @@
 - KDIGO (Kidney Disease: Improving Global Outcomes)
 - SFAR (Société Française d'Anesthésie et de Réanimation)
 - NIH / National Library of Medicine
+`;
+
+writeFileSync(OUTPUT_PATH, content, 'utf-8');
+console.log(`✅ llms.txt generated successfully at: ${OUTPUT_PATH}`);

@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
     "favicons": "tsx scripts/generate-favicons.ts",
-    "build": "npm run favicons && npm run sitemap && vite build && node scripts/postbuild-rtl.mjs",
+    "llmstxt": "tsx scripts/generate-llmstxt.ts",
+    "build": "npm run favicons && npm run sitemap && npm run llmstxt && vite build && node scripts/postbuild-rtl.mjs",
     "og": "tsx scripts/generate-og.tsx",
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",

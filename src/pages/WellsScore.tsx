@@ -288,8 +288,8 @@ export default function WellsScore({ lang }: { lang: LangCode }) {
         </div>
 
         <div className="lg:col-span-5 relative">
-          <div className="sticky top-28 backdrop-blur-2xl bg-gradient-to-b from-slate-900 via-gray-900 to-slate-950 text-white rounded-3xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden ring-1 ring-white/15 flex flex-col justify-between p-8 min-h-[360px] transition-all duration-300">
-            <div className="absolute top-0 right-0 p-36 bg-gradient-to-bl from-cyan-500/30 via-teal-500/10 to-transparent rounded-bl-[120px] pointer-events-none animate-pulse" />
+          <div className={`sticky top-28 backdrop-blur-2xl bg-gradient-to-b from-slate-900 via-gray-900 to-slate-950 text-white rounded-3xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col justify-between p-8 min-h-[360px] transition-all duration-300 ${scoreValue >= 2 ? 'ring-2 ring-red-500/60 shadow-[0_25px_60px_-15px_rgba(220,38,38,0.35)]' : 'ring-1 ring-white/15'}`}>
+            <div className={`absolute top-0 right-0 p-36 bg-gradient-to-bl ${scoreValue >= 2 ? 'from-red-500/40 via-rose-500/20' : 'from-cyan-500/30 via-teal-500/10'} to-transparent rounded-bl-[120px] pointer-events-none animate-pulse`} />
             
             <div className="relative z-10">
               <div className="flex items-center justify-between mb-3">
