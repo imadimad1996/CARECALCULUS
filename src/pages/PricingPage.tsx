@@ -10,7 +10,7 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
   const isFr = lang === 'fr';
 
   const proPrice = billingCycle === 'annual' ? '79.00' : '9.99';
-  const proSubtext = billingCycle === 'annual' ? '$6.58 / mo billed annually' : '$9.99 / mo billed monthly';
+  const proSubtext = billingCycle === 'annual' ? '$79.00 One-Time Payment for 1 Year Access' : '$9.99 One-Time Payment for 1 Month Access';
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-12 md:py-20 text-slate-900 dark:text-slate-100">
@@ -38,7 +38,7 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
                 : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'
             }`}
           >
-            {isFr ? 'Mensuel' : 'Monthly Billing'}
+            {isFr ? 'Pass 1 Mois' : '1-Month Pass'}
           </button>
           <button
             onClick={() => setBillingCycle('annual')}
@@ -48,7 +48,7 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
                 : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'
             }`}
           >
-            <span>{isFr ? 'Annuel (Économisez 34%)' : 'Annual (Save 34%)'}</span>
+            <span>{isFr ? 'Pass 1 An (Économisez 34%)' : '1-Year Pass (Save 34%)'}</span>
             <span className="bg-amber-400 text-slate-950 text-[10px] font-black px-1.5 py-0.5 rounded uppercase">PROMO</span>
           </button>
         </div>
@@ -108,7 +108,7 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
 
             <div className="mb-6">
               <span className="text-4xl font-black text-white">${billingCycle === 'annual' ? '79' : '9.99'}</span>
-              <span className="text-xs text-slate-400"> / {billingCycle === 'annual' ? (isFr ? 'an' : 'year') : (isFr ? 'mois' : 'month')}</span>
+              <span className="text-xs text-slate-400"> / {isFr ? 'paiement unique' : 'one-time'}</span>
               <span className="block text-[11px] text-cyan-400 mt-1 font-mono">{proSubtext}</span>
             </div>
 

@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { ShieldCheck, CheckCircle2, X, CreditCard, Sparkles } from 'lucide-react';
+import React, { useState } from 'react';
+import { ShieldCheck, CheckCircle2, X, Sparkles } from 'lucide-react';
+import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
 
 export interface PayPalButtonModalProps {
   isOpen: boolean;
@@ -18,68 +19,33 @@ export const PayPalButtonModal: React.FC<PayPalButtonModalProps> = ({
   price = '9.99',
   currency = 'USD',
 }) => {
-  const [isLoaded, setIsLoaded] = useState(false);
   const [paymentSuccess, setPaymentSuccess] = useState(false);
 
-  useEffect(() => {
-    if (!isOpen) return;
-
-    // Load PayPal JS SDK dynamically if not already loaded
-    if ((window as any).paypal) {
-      setIsLoaded(true);
-      return;
-    }
-
-    const script = document.createElement('script');
-    script.src = `https://www.paypal.com/sdk/js?client-id=${PAYPAL_CLIENT_ID}&currency=${currency}`;
-    script.async = true;
-    script.onload = () => setIsLoaded(true);
-    document.body.appendChild(script);
-
-    return () => {
-      // Cleanup script on unmount if needed
-    };
-  }, [isOpen, currency]);
-
-  useEffect(() => {
-    if (isLoaded && isOpen && (window as any).paypal) {
-      const container = document.getElementById('paypal-button-container');
-      if (container) {
-        container.innerHTML = ''; // Clear existing
-        (window as any).paypal.Buttons({
-          createOrder: (_data: any, actions: any) => {
-            return actions.order.create({
-              purchase_units: [
-                {
-                  description: planName,
-                  amount: {
-                    currency_code: currency,
-                    value: price,
-                  },
-                },
-              ],
-            });
-          },
-          onApprove: async (_data: any, actions: any) => {
-            const details = await actions.order.capture();
-            console.log('PayPal Payment Captured:', details);
-            setPaymentSuccess(true);
-          },
-          onError: (err: any) => {
-            console.error('PayPal Checkout Error:', err);
-          },
-        }).render('#paypal-button-container');
-      }
-    }
-  }, [isLoaded, isOpen, planName, price, currency]);
-
   if (!isOpen) return null;
+
+  const handleApprove = (data: any, actions: any) => {
+    return actions.order.capture().then((details: any) => {
+      console.log('PayPal Payment Captured:', details);
+      // Persist pro status across reloads
+      localStorage.setItem('carecalculus_pro_status', 'active');
+      setPaymentSuccess(true);
+    });
+  };
+
+  const handleClose = () => {
+    // If they were successful, let's refresh the page so the app picks up the PRO status globally
+    if (paymentSuccess) {
+      window.location.reload();
+    } else {
+      onClose();
+    }
+  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-md animate-in fade-in duration-200">
       <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 max-w-lg w-full text-white shadow-2xl relative">
         <button
-          onClick={onClose}
+          onClick={handleClose}
           className="absolute top-4 right-4 p-2 text-slate-400 hover:text-white rounded-xl hover:bg-slate-800 transition cursor-pointer"
         >
           <X className="w-5 h-5" />
@@ -95,7 +61,7 @@ export const PayPalButtonModal: React.FC<PayPalButtonModalProps> = ({
               Your CareCalculus Pro Clinician Pass is now active. Thank you for supporting evidence-based open clinical software!
             </p>
             <button
-              onClick={onClose}
+              onClick={handleClose}
               className="py-3 px-6 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl transition shadow-lg cursor-pointer"
             >
               Continue to Workbench
@@ -117,11 +83,10 @@ export const PayPalButtonModal: React.FC<PayPalButtonModalProps> = ({
             <div className="p-4 bg-slate-800/60 rounded-2xl border border-slate-700/60 flex items-center justify-between">
               <div>
                 <span className="font-bold text-sm text-slate-100 block">{planName}</span>
-                <span className="text-xs text-slate-400">Monthly auto-renewal • Cancel anytime</span>
+                <span className="text-xs text-slate-400">One-Time Payment • Non-Renewing Pass</span>
               </div>
               <div className="text-right">
                 <span className="text-2xl font-black text-amber-400">${price}</span>
-                <span className="text-xs text-slate-400 block">/mo</span>
               </div>
             </div>
 
@@ -142,14 +107,30 @@ export const PayPalButtonModal: React.FC<PayPalButtonModalProps> = ({
             </div>
 
             {/* PayPal Container */}
-            <div className="pt-2">
-              {!isLoaded ? (
-                <div className="py-6 text-center text-xs text-slate-400 animate-pulse flex items-center justify-center gap-2">
-                  <CreditCard className="w-4 h-4" />
-                  <span>Loading Secure PayPal Checkout...</span>
-                </div>
-              ) : null}
-              <div id="paypal-button-container" className="min-h-[120px]" />
+            <div className="pt-2 min-h-[150px]">
+              <PayPalScriptProvider options={{ clientId: PAYPAL_CLIENT_ID, currency: currency, intent: "capture" }}>
+                <PayPalButtons
+                  style={{ layout: "vertical", shape: "rect", label: "pay" }}
+                  createOrder={(data, actions) => {
+                    return actions.order.create({
+                      intent: "CAPTURE",
+                      purchase_units: [
+                        {
+                          description: planName,
+                          amount: {
+                            currency_code: currency,
+                            value: price,
+                          },
+                        },
+                      ],
+                    });
+                  }}
+                  onApprove={handleApprove}
+                  onError={(err) => {
+                    console.error("PayPal Checkout Error:", err);
+                  }}
+                />
+              </PayPalScriptProvider>
             </div>
 
             <div className="flex items-center justify-center gap-1.5 text-[11px] text-slate-400 pt-2 border-t border-slate-800">
