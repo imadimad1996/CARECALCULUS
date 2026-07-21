@@ -96,6 +96,7 @@ const pageLoaders = [
   () => import('../pages/MedicalStatistics'),
   () => import('../pages/FavoritesPage'),
   () => import('../pages/ClinicalLibrary'),
+  () => import('../pages/PricingPage'),
 ] as const;
 
 const [
@@ -117,7 +118,7 @@ const [
   PercRule, GenevaScore, NihssScore,
   GraceScore, BicarbDeficit, ReticIndex,
   PhenytoinCorrection, AscvdRisk, VancomycinDosing, AminoglycosideDosing,
-  PesiScore, BovaScore, ApacheIIScore, SapsIIScore, DrugInteractions, MedicalStatistics, FavoritesPage, ClinicalLibrary
+  PesiScore, BovaScore, ApacheIIScore, SapsIIScore, DrugInteractions, MedicalStatistics, FavoritesPage, ClinicalLibrary, PricingPage
 ] = pageLoaders.map((loader) => React.lazy(loader as any)) as any[];
 
 export const HomePage = React.lazy(() => import('../pages/HomePage'));
@@ -372,6 +373,8 @@ export function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="disclaimer" element={<Disclaimer lang={lang} />} />
       <Route path="privacy" element={<Privacy lang={lang} />} />
       <Route path="terms" element={<Terms lang={lang} />} />
+      <Route path="pricing" element={<PricingPage lang={lang} />} />
+      <Route path="tarifs" element={<PricingPage lang={lang} />} />
       <Route path="embed-gallery" element={<EmbedGallery lang={lang} />} />
       <Route path="for-hospitals" element={<ForHospitals lang={lang} />} />
       <Route path="apgar-score" element={wrapCalculator('/apgar-score', <ApgarScore lang={lang} />)} />

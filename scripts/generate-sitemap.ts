@@ -61,7 +61,7 @@ const comparisonPages = [
   '/compare/creatinine-clearance-vs-mdrd-gfr',
 ];
 
-const staticPages = ['/about', '/disclaimer', '/privacy', '/terms', '/glp-1-hub', '/nutrition-hub'];
+const staticPages = ['/about', '/disclaimer', '/privacy', '/terms', '/glp-1-hub', '/nutrition-hub', '/pricing', '/embed-gallery'];
 
 const libraryPages = [
   '/clinical-library',
