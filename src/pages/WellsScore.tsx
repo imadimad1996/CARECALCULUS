@@ -8,6 +8,8 @@ import EmbedCodeButton from '../components/ui/EmbedCodeButton';
 import { JsonLd } from '../components/JsonLd';
 import ClinicalContextPanel from '../components/ClinicalContextPanel';
 import { RiskGauge } from '../components/RiskGauge';
+import { PubMedPopover } from '../components/PubMedPopover';
+import { ClinicalDecisionTree } from '../components/ClinicalDecisionTree';
 
 const translations: Translations = {
   en: {
@@ -130,6 +132,7 @@ const itemsList = [
 export default function WellsScore({ lang }: { lang: LangCode }) {
   const [selections, setSelections] = useState<Record<string, boolean>>({});
   const [riskModel, setRiskModel] = useState<'2-tier' | '3-tier'>('3-tier');
+  const [viewMode, setViewMode] = useState<'calc' | 'tree'>('calc');
 
   const currentText = translations[lang];
   const isRtl = false;
@@ -231,8 +234,76 @@ export default function WellsScore({ lang }: { lang: LangCode }) {
             {currentText.faqA1}
           </p>
         </div>
+        {/* Mode Switcher: Calculator vs Interactive Decision Flowchart */}
+        <div className="flex bg-slate-200/80 dark:bg-slate-800 p-1.5 rounded-2xl mb-8 w-full sm:w-fit border border-slate-300/60 dark:border-slate-700">
+          <button
+            type="button"
+            onClick={() => setViewMode('calc')}
+            className={`flex-1 sm:flex-initial px-5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+              viewMode === 'calc' ? 'bg-white text-slate-900 shadow-md font-extrabold' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
+            }`}
+          >
+            {lang === 'fr' ? '🧮 Mode Calculateur' : '🧮 Calculator Mode'}
+          </button>
+          <button
+            type="button"
+            onClick={() => setViewMode('tree')}
+            className={`flex-1 sm:flex-initial px-5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+              viewMode === 'tree' ? 'bg-cyan-600 text-white shadow-md font-extrabold' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
+            }`}
+          >
+            {lang === 'fr' ? '🌿 Arbre Décisionnel' : '🌿 Decision Flowchart'}
+          </button>
+        </div>
       </div>
 
+      {viewMode === 'tree' ? (
+        <ClinicalDecisionTree
+          title="Wells PE & DVT Diagnostic Decision Tree"
+          subtitle="Interactive step-by-step diagnostic triage algorithm based on Wells pretest probability"
+          nodes={{
+            node1: {
+              id: 'node1',
+              question: 'Are clinical symptoms or physical signs of DVT present (leg swelling, deep vein tenderness)?',
+              options: [
+                { label: 'Yes (+3 pts)', nextNodeId: 'node2' },
+                { label: 'No (0 pts)', nextNodeId: 'node2' }
+              ]
+            },
+            node2: {
+              id: 'node2',
+              question: 'Is an alternative diagnosis LESS likely than Pulmonary Embolism / DVT?',
+              options: [
+                { label: 'Yes (+3 pts)', nextNodeId: 'node3' },
+                { label: 'No (0 pts)', nextNodeId: 'node3' }
+              ]
+            },
+            node3: {
+              id: 'node3',
+              question: 'Select patient clinical factors: Heart rate > 100 bpm, recent surgery/bedridden, or prior DVT/PE (+1.5 pts each)',
+              options: [
+                {
+                  label: 'High Pretest Probability (> 6 points)',
+                  outcome: {
+                    title: 'High Risk (PE / DVT Likely)',
+                    description: 'Immediate Diagnostic CT Pulmonary Angiography (CTPA) or Compression Ultrasonography indicated. Consider empiric therapeutic anticoagulation while awaiting imaging if no contraindications exist.',
+                    level: 'high'
+                  }
+                },
+                {
+                  label: 'Low / Moderate Probability (≤ 4 points)',
+                  outcome: {
+                    title: 'Low / Moderate Risk (PE / DVT Unlikely)',
+                    description: 'Order High-Sensitivity D-Dimer Assay. If D-Dimer < 500 ng/mL (or age-adjusted cutoff), DVT/PE is safely ruled out without radiation exposure.',
+                    level: 'low'
+                  }
+                }
+              ]
+            }
+          }}
+          initialNodeId="node1"
+        />
+      ) : (
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         <div className="lg:col-span-7 space-y-6">
           <div className="backdrop-blur-xl bg-white/90 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] ring-1 ring-gray-950/5 p-6 md:p-8 space-y-6 transition-all">
@@ -349,6 +420,7 @@ export default function WellsScore({ lang }: { lang: LangCode }) {
           </div>
         </div>
       </div>
+      )}
 
       <div className="mt-16 pt-10 border-t border-gray-200">
         <div className="flex items-center gap-3 mb-8 text-xs text-gray-400">
