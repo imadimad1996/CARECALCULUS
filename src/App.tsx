@@ -1,5 +1,5 @@
 import React, { useState, useEffect, ErrorInfo, ReactNode } from 'react';
-import { Activity, BookOpen, HeartPulse, Menu, X, LayoutDashboard, Calculator, Droplet, Brain, TestTube, AlertOctagon, ArrowRightLeft, AlertTriangle, Stethoscope, Wind, FileText, ShieldCheck, Sparkles, ChevronRight, ChevronDown, Search, Globe, Scale, MonitorPlay, GraduationCap, Newspaper, Scissors, Layers, Award } from 'lucide-react';
+import { Activity, BookOpen, HeartPulse, Menu, X, LayoutDashboard, Calculator, Droplet, Brain, TestTube, AlertOctagon, ArrowRightLeft, AlertTriangle, Stethoscope, Wind, FileText, ShieldCheck, Sparkles, ChevronRight, ChevronDown, Search, Globe, Scale, MonitorPlay, GraduationCap, Newspaper, Scissors, Layers, Award, ClipboardList } from 'lucide-react';
 import { BrowserRouter, Routes, Route, Link, useLocation, Navigate, useNavigate } from 'react-router-dom';
 import { StaticRouter } from 'react-router';
 import { LangContext, parsePathname, buildPath, PREFIXED_LANGS } from './utils/lang';
@@ -19,6 +19,7 @@ import InstallAppButton from './components/ui/InstallAppButton';
 import InstallAppPrompt from './components/InstallAppPrompt';
 import SidebarNewsletter from './components/SidebarNewsletter';
 import MobileBottomNav from './components/MobileBottomNav';
+import { ShiftStorageDrawer } from './components/ShiftStorageDrawer';
 
 
 import SmartPasteModal from './components/SmartPasteModal';
@@ -41,6 +42,7 @@ function AppLayout() {
   const { user, logout } = useAuth();
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [isShiftDrawerOpen, setIsShiftDrawerOpen] = useState(false);
 
   useEffect(() => {
     const handleOpenLogin = () => setIsLoginModalOpen(true);
@@ -522,6 +524,14 @@ function AppLayout() {
             <InstallAppButton lang={lang} />
             <SmartPasteModal lang={lang} />
             <FavoriteButton lang={lang} />
+            <button
+              onClick={() => setIsShiftDrawerOpen(true)}
+              className="shrink-0 flex items-center gap-1.5 px-3 py-2 bg-emerald-600/10 hover:bg-emerald-600/20 text-emerald-600 dark:text-emerald-400 text-xs font-bold rounded-xl transition border border-emerald-500/20 cursor-pointer"
+              title="Shift Patient Queue"
+            >
+              <ClipboardList className="w-4 h-4" />
+              <span className="hidden sm:inline">Shift Queue</span>
+            </button>
             <button
               onClick={toggleGeoStandard}
               className="shrink-0 flex items-center gap-1.5 px-3 py-2 bg-slate-800 hover:bg-slate-700 text-white text-[10px] font-mono font-bold rounded-xl transition border border-slate-700 active:scale-95"
@@ -1257,6 +1267,9 @@ function AppLayout() {
       
       {/* PWA Install Prompt */}
       <InstallAppPrompt />
+
+      {/* Shift Storage Patient Queue Drawer */}
+      <ShiftStorageDrawer isOpen={isShiftDrawerOpen} onClose={() => setIsShiftDrawerOpen(false)} />
     </div>
    </LangContext.Provider>
   );

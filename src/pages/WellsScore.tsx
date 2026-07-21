@@ -7,6 +7,7 @@ import { layoutTranslations } from '../utils/lang';
 import EmbedCodeButton from '../components/ui/EmbedCodeButton';
 import { JsonLd } from '../components/JsonLd';
 import ClinicalContextPanel from '../components/ClinicalContextPanel';
+import { RiskGauge } from '../components/RiskGauge';
 
 const translations: Translations = {
   en: {
@@ -307,6 +308,14 @@ export default function WellsScore({ lang }: { lang: LangCode }) {
                   {scoreValue}
                 </span>
                 <span className="text-2xl font-bold text-slate-500">Points</span>
+              </div>
+
+              <div className="my-4">
+                <RiskGauge
+                  percentage={scoreValue >= 2 ? 65 : scoreValue === 1 ? 28 : 5}
+                  label={category.label}
+                  riskLevel={scoreValue >= 2 ? 'high' : scoreValue === 1 ? 'moderate' : 'low'}
+                />
               </div>
             </div>
 

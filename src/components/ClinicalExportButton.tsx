@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { LangCode } from '../types';
 import { useMemo } from 'react';
 import { generateSOAP, generateSBAR, generateDotPhrase, generateShiftHandover, generateCaseShareUrl } from '../utils/soapGenerator';
+import { saveShiftRecord } from './ShiftStorageDrawer';
 
 export interface ClinicalExportButtonProps {
   title?: string;
@@ -123,6 +124,13 @@ export default function ClinicalExportButton({
     const textToCopy = getFormattedNote();
     navigator.clipboard.writeText(textToCopy).then(() => {
       setCopied(true);
+      saveShiftRecord({
+        patientId: patientId || 'PT-' + Math.floor(1000 + Math.random() * 9000),
+        calculatorName: title || 'Clinical Score',
+        score: results[0] ? String(results[0].value) : 'Calculated',
+        riskLevel: results[1] ? String(results[1].value) : 'Evaluated',
+        formattedNote: textToCopy
+      });
       setTimeout(() => setCopied(false), 3000);
     });
   };
