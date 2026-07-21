@@ -1,6 +1,6 @@
 {
   "report_name": "countries",
-  "start_date": "2026-07-01",
+  "start_date": "2026-07-07",
   "end_date": "yesterday",
   "dimension_headers": [
     "country"
@@ -10,16 +10,16 @@
     "activeUsers",
     "screenPageViews"
   ],
-  "row_count": 12,
+  "row_count": 11,
   "data": [
     {
       "dimensions": {
         "country": "Morocco"
       },
       "metrics": {
-        "sessions": 122,
-        "activeUsers": 24,
-        "screenPageViews": 719
+        "sessions": 45,
+        "activeUsers": 11,
+        "screenPageViews": 276
       }
     },
     {
@@ -27,29 +27,19 @@
         "country": "United States"
       },
       "metrics": {
-        "sessions": 112,
-        "activeUsers": 104,
-        "screenPageViews": 158
+        "sessions": 29,
+        "activeUsers": 25,
+        "screenPageViews": 39
       }
     },
     {
       "dimensions": {
-        "country": "(not set)"
-      },
-      "metrics": {
-        "sessions": 9,
-        "activeUsers": 9,
-        "screenPageViews": 9
-      }
-    },
-    {
-      "dimensions": {
-        "country": "Netherlands"
+        "country": "France"
       },
       "metrics": {
         "sessions": 6,
         "activeUsers": 6,
-        "screenPageViews": 6
+        "screenPageViews": 11
       }
     },
     {
@@ -57,49 +47,59 @@
         "country": "India"
       },
       "metrics": {
-        "sessions": 5,
-        "activeUsers": 4,
-        "screenPageViews": 7
-      }
-    },
-    {
-      "dimensions": {
-        "country": "China"
-      },
-      "metrics": {
         "sessions": 3,
-        "activeUsers": 3,
+        "activeUsers": 2,
         "screenPageViews": 3
       }
     },
     {
       "dimensions": {
-        "country": "Ireland"
+        "country": "Sweden"
+      },
+      "metrics": {
+        "sessions": 3,
+        "activeUsers": 2,
+        "screenPageViews": 4
+      }
+    },
+    {
+      "dimensions": {
+        "country": "Ethiopia"
       },
       "metrics": {
         "sessions": 2,
-        "activeUsers": 2,
+        "activeUsers": 1,
         "screenPageViews": 2
       }
     },
     {
       "dimensions": {
-        "country": "Bangladesh"
+        "country": "Syria"
+      },
+      "metrics": {
+        "sessions": 2,
+        "activeUsers": 1,
+        "screenPageViews": 2
+      }
+    },
+    {
+      "dimensions": {
+        "country": "Vietnam"
+      },
+      "metrics": {
+        "sessions": 2,
+        "activeUsers": 1,
+        "screenPageViews": 2
+      }
+    },
+    {
+      "dimensions": {
+        "country": "Brazil"
       },
       "metrics": {
         "sessions": 1,
         "activeUsers": 1,
         "screenPageViews": 1
-      }
-    },
-    {
-      "dimensions": {
-        "country": "Germany"
-      },
-      "metrics": {
-        "sessions": 1,
-        "activeUsers": 1,
-        "screenPageViews": 2
       }
     },
     {
@@ -109,22 +109,12 @@
       "metrics": {
         "sessions": 1,
         "activeUsers": 1,
-        "screenPageViews": 1
+        "screenPageViews": 2
       }
     },
     {
       "dimensions": {
-        "country": "Spain"
-      },
-      "metrics": {
-        "sessions": 1,
-        "activeUsers": 1,
-        "screenPageViews": 1
-      }
-    },
-    {
-      "dimensions": {
-        "country": "Sweden"
+        "country": "United Kingdom"
       },
       "metrics": {
         "sessions": 1,

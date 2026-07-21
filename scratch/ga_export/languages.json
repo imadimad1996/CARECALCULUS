@@ -1,0 +1,42 @@
+{
+  "report_name": "languages",
+  "start_date": "2026-07-07",
+  "end_date": "yesterday",
+  "dimension_headers": [
+    "language"
+  ],
+  "metric_headers": [
+    "sessions",
+    "activeUsers"
+  ],
+  "row_count": 3,
+  "data": [
+    {
+      "dimensions": {
+        "language": "English"
+      },
+      "metrics": {
+        "sessions": 89,
+        "activeUsers": 47
+      }
+    },
+    {
+      "dimensions": {
+        "language": "French"
+      },
+      "metrics": {
+        "sessions": 9,
+        "activeUsers": 6
+      }
+    },
+    {
+      "dimensions": {
+        "language": "Arabic"
+      },
+      "metrics": {
+        "sessions": 3,
+        "activeUsers": 2
+      }
+    }
+  ]
+}

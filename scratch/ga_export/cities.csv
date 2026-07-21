@@ -1,0 +1,31 @@
+country,city,sessions,activeUsers
+Morocco,Kenitra,28,7
+Morocco,Tangier,12,5
+United States,Fort Worth,5,5
+France,Lille,4,4
+Morocco,Casablanca,4,4
+United States,(not set),4,2
+Sweden,Lulea,3,2
+United States,Ashburn,3,2
+United States,Boardman,3,3
+United States,Columbus,3,2
+Ethiopia,Addis Ababa,2,1
+India,Amritsar,2,1
+Morocco,Marrakesh,2,1
+Syria,Damascus,2,1
+United States,Council Bluffs,2,2
+United States,Glenview,2,2
+Vietnam,Hanoi,2,1
+Brazil,Alta Floresta,1,1
+France,(not set),1,1
+France,Chars,1,1
+India,(not set),1,1
+Mexico,Chihuahua,1,1
+United Kingdom,London,1,1
+United States,Beaumont,1,1
+United States,Forest City,1,1
+United States,New York,1,1
+United States,Prineville,1,1
+United States,San Jose,1,1
+United States,Springfield,1,1
+United States,Wentzville,1,1

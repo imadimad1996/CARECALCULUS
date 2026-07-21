@@ -1,6 +1,6 @@
 {
   "report_name": "daily_overview",
-  "start_date": "2026-07-01",
+  "start_date": "2026-07-07",
   "end_date": "yesterday",
   "dimension_headers": [
     "date"
@@ -14,103 +14,19 @@
     "eventCount",
     "conversions"
   ],
-  "row_count": 16,
+  "row_count": 13,
   "data": [
-    {
-      "dimensions": {
-        "date": "20260701"
-      },
-      "metrics": {
-        "sessions": 11,
-        "activeUsers": 8,
-        "screenPageViews": 44,
-        "bounceRate": 0.36363636363636365,
-        "averageSessionDuration": 781.5582063636364,
-        "eventCount": 94,
-        "conversions": 0
-      }
-    },
-    {
-      "dimensions": {
-        "date": "20260702"
-      },
-      "metrics": {
-        "sessions": 25,
-        "activeUsers": 18,
-        "screenPageViews": 135,
-        "bounceRate": 0.36,
-        "averageSessionDuration": 711.2037034399999,
-        "eventCount": 251,
-        "conversions": 0
-      }
-    },
-    {
-      "dimensions": {
-        "date": "20260703"
-      },
-      "metrics": {
-        "sessions": 43,
-        "activeUsers": 33,
-        "screenPageViews": 111,
-        "bounceRate": 0.5581395348837209,
-        "averageSessionDuration": 164.0943261395349,
-        "eventCount": 235,
-        "conversions": 0
-      }
-    },
-    {
-      "dimensions": {
-        "date": "20260704"
-      },
-      "metrics": {
-        "sessions": 22,
-        "activeUsers": 18,
-        "screenPageViews": 36,
-        "bounceRate": 0.6818181818181818,
-        "averageSessionDuration": 153.263714,
-        "eventCount": 94,
-        "conversions": 0
-      }
-    },
-    {
-      "dimensions": {
-        "date": "20260705"
-      },
-      "metrics": {
-        "sessions": 14,
-        "activeUsers": 10,
-        "screenPageViews": 62,
-        "bounceRate": 0.42857142857142855,
-        "averageSessionDuration": 157.38546507142857,
-        "eventCount": 182,
-        "conversions": 0
-      }
-    },
-    {
-      "dimensions": {
-        "date": "20260706"
-      },
-      "metrics": {
-        "sessions": 10,
-        "activeUsers": 10,
-        "screenPageViews": 30,
-        "bounceRate": 0.4,
-        "averageSessionDuration": 213.01408069999997,
-        "eventCount": 68,
-        "conversions": 0
-      }
-    },
     {
       "dimensions": {
         "date": "20260707"
       },
       "metrics": {
-        "sessions": 10,
-        "activeUsers": 8,
-        "screenPageViews": 92,
-        "bounceRate": 0.4,
-        "averageSessionDuration": 982.8902840000001,
-        "eventCount": 131,
+        "sessions": 3,
+        "activeUsers": 3,
+        "screenPageViews": 9,
+        "bounceRate": 0.3333333333333333,
+        "averageSessionDuration": 33.017440666666666,
+        "eventCount": 22,
         "conversions": 0
       }
     },
@@ -119,12 +35,12 @@
         "date": "20260708"
       },
       "metrics": {
-        "sessions": 37,
-        "activeUsers": 28,
-        "screenPageViews": 154,
-        "bounceRate": 0.4864864864864865,
-        "averageSessionDuration": 287.3268598378379,
-        "eventCount": 272,
+        "sessions": 1,
+        "activeUsers": 1,
+        "screenPageViews": 1,
+        "bounceRate": 1.0,
+        "averageSessionDuration": 5.962548,
+        "eventCount": 4,
         "conversions": 0
       }
     },
@@ -133,26 +49,12 @@
         "date": "20260709"
       },
       "metrics": {
-        "sessions": 10,
-        "activeUsers": 7,
-        "screenPageViews": 18,
-        "bounceRate": 0.4,
-        "averageSessionDuration": 50.922385799999994,
-        "eventCount": 43,
-        "conversions": 0
-      }
-    },
-    {
-      "dimensions": {
-        "date": "20260710"
-      },
-      "metrics": {
-        "sessions": 7,
-        "activeUsers": 6,
-        "screenPageViews": 8,
-        "bounceRate": 0.7142857142857143,
-        "averageSessionDuration": 185.2101587142857,
-        "eventCount": 27,
+        "sessions": 4,
+        "activeUsers": 4,
+        "screenPageViews": 4,
+        "bounceRate": 0.75,
+        "averageSessionDuration": 7.09920775,
+        "eventCount": 15,
         "conversions": 0
       }
     },
@@ -161,12 +63,12 @@
         "date": "20260711"
       },
       "metrics": {
-        "sessions": 12,
-        "activeUsers": 10,
-        "screenPageViews": 80,
-        "bounceRate": 0.4166666666666667,
-        "averageSessionDuration": 743.87628725,
-        "eventCount": 143,
+        "sessions": 8,
+        "activeUsers": 5,
+        "screenPageViews": 31,
+        "bounceRate": 0.125,
+        "averageSessionDuration": 323.43946562499997,
+        "eventCount": 83,
         "conversions": 0
       }
     },
@@ -175,12 +77,12 @@
         "date": "20260712"
       },
       "metrics": {
-        "sessions": 19,
-        "activeUsers": 15,
-        "screenPageViews": 44,
-        "bounceRate": 0.42105263157894735,
-        "averageSessionDuration": 150.57820063157897,
-        "eventCount": 97,
+        "sessions": 14,
+        "activeUsers": 8,
+        "screenPageViews": 151,
+        "bounceRate": 0.42857142857142855,
+        "averageSessionDuration": 1283.881772642857,
+        "eventCount": 293,
         "conversions": 0
       }
     },
@@ -189,12 +91,12 @@
         "date": "20260713"
       },
       "metrics": {
-        "sessions": 7,
-        "activeUsers": 1,
-        "screenPageViews": 6,
-        "bounceRate": 0.8571428571428571,
-        "averageSessionDuration": 10520.166886857143,
-        "eventCount": 15,
+        "sessions": 4,
+        "activeUsers": 4,
+        "screenPageViews": 10,
+        "bounceRate": 0.25,
+        "averageSessionDuration": 58.552375000000005,
+        "eventCount": 34,
         "conversions": 0
       }
     },
@@ -203,12 +105,12 @@
         "date": "20260714"
       },
       "metrics": {
-        "sessions": 12,
-        "activeUsers": 9,
-        "screenPageViews": 17,
-        "bounceRate": 0.5833333333333334,
-        "averageSessionDuration": 70.31318725000001,
-        "eventCount": 49,
+        "sessions": 8,
+        "activeUsers": 4,
+        "screenPageViews": 12,
+        "bounceRate": 0.375,
+        "averageSessionDuration": 183.87268125,
+        "eventCount": 35,
         "conversions": 0
       }
     },
@@ -217,12 +119,12 @@
         "date": "20260715"
       },
       "metrics": {
-        "sessions": 7,
-        "activeUsers": 4,
-        "screenPageViews": 23,
-        "bounceRate": 0.42857142857142855,
-        "averageSessionDuration": 409.492437,
-        "eventCount": 39,
+        "sessions": 9,
+        "activeUsers": 7,
+        "screenPageViews": 16,
+        "bounceRate": 0.6666666666666666,
+        "averageSessionDuration": 11.823024333333333,
+        "eventCount": 47,
         "conversions": 0
       }
     },
@@ -231,12 +133,68 @@
         "date": "20260716"
       },
       "metrics": {
-        "sessions": 19,
-        "activeUsers": 15,
-        "screenPageViews": 50,
+        "sessions": 1,
+        "activeUsers": 1,
+        "screenPageViews": 1,
         "bounceRate": 1.0,
-        "averageSessionDuration": 497.1613133157894,
-        "eventCount": 136,
+        "averageSessionDuration": 0.0,
+        "eventCount": 3,
+        "conversions": 0
+      }
+    },
+    {
+      "dimensions": {
+        "date": "20260717"
+      },
+      "metrics": {
+        "sessions": 16,
+        "activeUsers": 9,
+        "screenPageViews": 39,
+        "bounceRate": 0.4375,
+        "averageSessionDuration": 173.0223575,
+        "eventCount": 112,
+        "conversions": 0
+      }
+    },
+    {
+      "dimensions": {
+        "date": "20260718"
+      },
+      "metrics": {
+        "sessions": 23,
+        "activeUsers": 12,
+        "screenPageViews": 65,
+        "bounceRate": 0.5217391304347826,
+        "averageSessionDuration": 352.4374071304348,
+        "eventCount": 179,
+        "conversions": 0
+      }
+    },
+    {
+      "dimensions": {
+        "date": "20260719"
+      },
+      "metrics": {
+        "sessions": 2,
+        "activeUsers": 2,
+        "screenPageViews": 2,
+        "bounceRate": 1.0,
+        "averageSessionDuration": 0.0,
+        "eventCount": 6,
+        "conversions": 0
+      }
+    },
+    {
+      "dimensions": {
+        "date": "20260720"
+      },
+      "metrics": {
+        "sessions": 2,
+        "activeUsers": 2,
+        "screenPageViews": 2,
+        "bounceRate": 1.0,
+        "averageSessionDuration": 0.0,
+        "eventCount": 6,
         "conversions": 0
       }
     }

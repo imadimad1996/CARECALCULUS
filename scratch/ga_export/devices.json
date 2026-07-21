@@ -1,6 +1,6 @@
 {
   "report_name": "devices",
-  "start_date": "2026-07-01",
+  "start_date": "2026-07-07",
   "end_date": "yesterday",
   "dimension_headers": [
     "deviceCategory"
@@ -10,16 +10,16 @@
     "activeUsers",
     "screenPageViews"
   ],
-  "row_count": 3,
+  "row_count": 2,
   "data": [
     {
       "dimensions": {
         "deviceCategory": "desktop"
       },
       "metrics": {
-        "sessions": 169,
-        "activeUsers": 83,
-        "screenPageViews": 722
+        "sessions": 82,
+        "activeUsers": 41,
+        "screenPageViews": 325
       }
     },
     {
@@ -27,19 +27,9 @@
         "deviceCategory": "mobile"
       },
       "metrics": {
-        "sessions": 96,
-        "activeUsers": 72,
-        "screenPageViews": 186
-      }
-    },
-    {
-      "dimensions": {
-        "deviceCategory": "tablet"
-      },
-      "metrics": {
-        "sessions": 2,
-        "activeUsers": 2,
-        "screenPageViews": 2
+        "sessions": 13,
+        "activeUsers": 11,
+        "screenPageViews": 18
       }
     }
   ]

@@ -1,0 +1,316 @@
+{
+  "report_name": "cities",
+  "start_date": "2026-07-07",
+  "end_date": "yesterday",
+  "dimension_headers": [
+    "country",
+    "city"
+  ],
+  "metric_headers": [
+    "sessions",
+    "activeUsers"
+  ],
+  "row_count": 30,
+  "data": [
+    {
+      "dimensions": {
+        "country": "Morocco",
+        "city": "Kenitra"
+      },
+      "metrics": {
+        "sessions": 28,
+        "activeUsers": 7
+      }
+    },
+    {
+      "dimensions": {
+        "country": "Morocco",
+        "city": "Tangier"
+      },
+      "metrics": {
+        "sessions": 12,
+        "activeUsers": 5
+      }
+    },
+    {
+      "dimensions": {
+        "country": "United States",
+        "city": "Fort Worth"
+      },
+      "metrics": {
+        "sessions": 5,
+        "activeUsers": 5
+      }
+    },
+    {
+      "dimensions": {
+        "country": "France",
+        "city": "Lille"
+      },
+      "metrics": {
+        "sessions": 4,
+        "activeUsers": 4
+      }
+    },
+    {
+      "dimensions": {
+        "country": "Morocco",
+        "city": "Casablanca"
+      },
+      "metrics": {
+        "sessions": 4,
+        "activeUsers": 4
+      }
+    },
+    {
+      "dimensions": {
+        "country": "United States",
+        "city": "(not set)"
+      },
+      "metrics": {
+        "sessions": 4,
+        "activeUsers": 2
+      }
+    },
+    {
+      "dimensions": {
+        "country": "Sweden",
+        "city": "Lulea"
+      },
+      "metrics": {
+        "sessions": 3,
+        "activeUsers": 2
+      }
+    },
+    {
+      "dimensions": {
+        "country": "United States",
+        "city": "Ashburn"
+      },
+      "metrics": {
+        "sessions": 3,
+        "activeUsers": 2
+      }
+    },
+    {
+      "dimensions": {
+        "country": "United States",
+        "city": "Boardman"
+      },
+      "metrics": {
+        "sessions": 3,
+        "activeUsers": 3
+      }
+    },
+    {
+      "dimensions": {
+        "country": "United States",
+        "city": "Columbus"
+      },
+      "metrics": {
+        "sessions": 3,
+        "activeUsers": 2
+      }
+    },
+    {
+      "dimensions": {
+        "country": "Ethiopia",
+        "city": "Addis Ababa"
+      },
+      "metrics": {
+        "sessions": 2,
+        "activeUsers": 1
+      }
+    },
+    {
+      "dimensions": {
+        "country": "India",
+        "city": "Amritsar"
+      },
+      "metrics": {
+        "sessions": 2,
+        "activeUsers": 1
+      }
+    },
+    {
+      "dimensions": {
+        "country": "Morocco",
+        "city": "Marrakesh"
+      },
+      "metrics": {
+        "sessions": 2,
+        "activeUsers": 1
+      }
+    },
+    {
+      "dimensions": {
+        "country": "Syria",
+        "city": "Damascus"
+      },
+      "metrics": {
+        "sessions": 2,
+        "activeUsers": 1
+      }
+    },
+    {
+      "dimensions": {
+        "country": "United States",
+        "city": "Council Bluffs"
+      },
+      "metrics": {
+        "sessions": 2,
+        "activeUsers": 2
+      }
+    },
+    {
+      "dimensions": {
+        "country": "United States",
+        "city": "Glenview"
+      },
+      "metrics": {
+        "sessions": 2,
+        "activeUsers": 2
+      }
+    },
+    {
+      "dimensions": {
+        "country": "Vietnam",
+        "city": "Hanoi"
+      },
+      "metrics": {
+        "sessions": 2,
+        "activeUsers": 1
+      }
+    },
+    {
+      "dimensions": {
+        "country": "Brazil",
+        "city": "Alta Floresta"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1
+      }
+    },
+    {
+      "dimensions": {
+        "country": "France",
+        "city": "(not set)"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1
+      }
+    },
+    {
+      "dimensions": {
+        "country": "France",
+        "city": "Chars"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1
+      }
+    },
+    {
+      "dimensions": {
+        "country": "India",
+        "city": "(not set)"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1
+      }
+    },
+    {
+      "dimensions": {
+        "country": "Mexico",
+        "city": "Chihuahua"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1
+      }
+    },
+    {
+      "dimensions": {
+        "country": "United Kingdom",
+        "city": "London"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1
+      }
+    },
+    {
+      "dimensions": {
+        "country": "United States",
+        "city": "Beaumont"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1
+      }
+    },
+    {
+      "dimensions": {
+        "country": "United States",
+        "city": "Forest City"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1
+      }
+    },
+    {
+      "dimensions": {
+        "country": "United States",
+        "city": "New York"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1
+      }
+    },
+    {
+      "dimensions": {
+        "country": "United States",
+        "city": "Prineville"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1
+      }
+    },
+    {
+      "dimensions": {
+        "country": "United States",
+        "city": "San Jose"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1
+      }
+    },
+    {
+      "dimensions": {
+        "country": "United States",
+        "city": "Springfield"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1
+      }
+    },
+    {
+      "dimensions": {
+        "country": "United States",
+        "city": "Wentzville"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1
+      }
+    }
+  ]
+}

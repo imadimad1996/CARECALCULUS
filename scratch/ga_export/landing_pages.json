@@ -1,0 +1,378 @@
+{
+  "report_name": "landing_pages",
+  "start_date": "2026-07-07",
+  "end_date": "yesterday",
+  "dimension_headers": [
+    "landingPagePlusQueryString"
+  ],
+  "metric_headers": [
+    "sessions",
+    "activeUsers",
+    "screenPageViews",
+    "bounceRate",
+    "averageSessionDuration"
+  ],
+  "row_count": 30,
+  "data": [
+    {
+      "dimensions": {
+        "landingPagePlusQueryString": "/"
+      },
+      "metrics": {
+        "sessions": 47,
+        "activeUsers": 29,
+        "screenPageViews": 132,
+        "bounceRate": 0.425531914893617,
+        "averageSessionDuration": 179.383623
+      }
+    },
+    {
+      "dimensions": {
+        "landingPagePlusQueryString": "/fr"
+      },
+      "metrics": {
+        "sessions": 13,
+        "activeUsers": 5,
+        "screenPageViews": 36,
+        "bounceRate": 0.3076923076923077,
+        "averageSessionDuration": 372.45920653846156
+      }
+    },
+    {
+      "dimensions": {
+        "landingPagePlusQueryString": "(not set)"
+      },
+      "metrics": {
+        "sessions": 4,
+        "activeUsers": 3,
+        "screenPageViews": 0,
+        "bounceRate": 1.0,
+        "averageSessionDuration": 0.0
+      }
+    },
+    {
+      "dimensions": {
+        "landingPagePlusQueryString": "/?fbclid=IwZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAEe2ckq5QqzUJYDZtefjK6dFe0K5CMHvzFOOTFerPYfv2zOhVCJftDxRA5u7RY_aem_BWtCNWhSoDOY8Aabt08HgQ"
+      },
+      "metrics": {
+        "sessions": 2,
+        "activeUsers": 1,
+        "screenPageViews": 2,
+        "bounceRate": 0.5,
+        "averageSessionDuration": 20.0856
+      }
+    },
+    {
+      "dimensions": {
+        "landingPagePlusQueryString": "/adjusted-body-weight/"
+      },
+      "metrics": {
+        "sessions": 2,
+        "activeUsers": 1,
+        "screenPageViews": 2,
+        "bounceRate": 1.0,
+        "averageSessionDuration": 1.4591335
+      }
+    },
+    {
+      "dimensions": {
+        "landingPagePlusQueryString": "/anc-calculator/"
+      },
+      "metrics": {
+        "sessions": 2,
+        "activeUsers": 2,
+        "screenPageViews": 3,
+        "bounceRate": 1.0,
+        "averageSessionDuration": 3.1099415
+      }
+    },
+    {
+      "dimensions": {
+        "landingPagePlusQueryString": "/nutrition-must/"
+      },
+      "metrics": {
+        "sessions": 2,
+        "activeUsers": 1,
+        "screenPageViews": 2,
+        "bounceRate": 1.0,
+        "averageSessionDuration": 0.0
+      }
+    },
+    {
+      "dimensions": {
+        "landingPagePlusQueryString": "/pf-ratio/"
+      },
+      "metrics": {
+        "sessions": 2,
+        "activeUsers": 2,
+        "screenPageViews": 4,
+        "bounceRate": 0.5,
+        "averageSessionDuration": 67.5305155
+      }
+    },
+    {
+      "dimensions": {
+        "landingPagePlusQueryString": "/qsofa-score/"
+      },
+      "metrics": {
+        "sessions": 2,
+        "activeUsers": 1,
+        "screenPageViews": 2,
+        "bounceRate": 0.5,
+        "averageSessionDuration": 14.2037255
+      }
+    },
+    {
+      "dimensions": {
+        "landingPagePlusQueryString": "/wells-score"
+      },
+      "metrics": {
+        "sessions": 2,
+        "activeUsers": 1,
+        "screenPageViews": 97,
+        "bounceRate": 0.0,
+        "averageSessionDuration": 6249.548018
+      }
+    },
+    {
+      "dimensions": {
+        "landingPagePlusQueryString": "/?fbclid=IwZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAEe-VSLdjel5lKC8rWMRVTh7Yk32tz63nBgmKwlfICmtmenXoPv8IopTAyDMmM_aem_REu4Dbhvuqn7pFDwg_gIfw"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1,
+        "screenPageViews": 1,
+        "bounceRate": 1.0,
+        "averageSessionDuration": 0.0
+      }
+    },
+    {
+      "dimensions": {
+        "landingPagePlusQueryString": "/?fbclid=IwZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAEe-VSLdjel5lKC8rWMRVTh7Yk32tz63nBgmKwlfICmtmenXoPv8IopTAyDMmM_aem_REu4Dbhvuqn7pFDwg_gIfw?fbclid=IwZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAEe-VSLdjel5lKC8rWMRVTh7Yk32tz63nBgmKwlfICmtmenXoPv8IopTAyDMmM_aem_REu4Dbhvuqn7pFDwg_gIfw"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1,
+        "screenPageViews": 1,
+        "bounceRate": 1.0,
+        "averageSessionDuration": 5.741417
+      }
+    },
+    {
+      "dimensions": {
+        "landingPagePlusQueryString": "/?fbclid=IwZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAEe1d5Qq4T9sNUQAohK83P9eUJTaWGMb8ShKCBEV3v0ggXu3nkx_Ais3QukxQ4_aem_LcVhGJYbIOmYGdGWZKvwAQ"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1,
+        "screenPageViews": 1,
+        "bounceRate": 1.0,
+        "averageSessionDuration": 5.962548
+      }
+    },
+    {
+      "dimensions": {
+        "landingPagePlusQueryString": "/?fbclid=IwZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAEe2OkLvPSjwJNRYvBmfkjyWLtCdQdUTmg7Y5LWc4x0B8BwLpm1nvyrg-CJvyw_aem_a_Xsg_CatkrtUEo4okchSw"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1,
+        "screenPageViews": 2,
+        "bounceRate": 0.0,
+        "averageSessionDuration": 40.222789
+      }
+    },
+    {
+      "dimensions": {
+        "landingPagePlusQueryString": "/?fbclid=IwZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAEe87yNTxD0V_aSzcW0EO8Un0uongOywrSdqKtpuz9L1yJ0wEzc3AYZMp1NIMI_aem_h6SsjlH_4xkmLyzhe0DgqQ"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1,
+        "screenPageViews": 1,
+        "bounceRate": 1.0,
+        "averageSessionDuration": 0.0
+      }
+    },
+    {
+      "dimensions": {
+        "landingPagePlusQueryString": "/?fbclid=IwZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAEeGNTYVg9ugrOUfMP-4zNL2-pxC42Cyd2a7bMSUVSEMdRCdU81IhG2FPbo8b4_aem_H56Gzl9HxXlh8Gftke7gzw"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1,
+        "screenPageViews": 1,
+        "bounceRate": 1.0,
+        "averageSessionDuration": 5.850507
+      }
+    },
+    {
+      "dimensions": {
+        "landingPagePlusQueryString": "/?fbclid=IwZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAEeYHFPra8IZWnxQFA9VNO8FsUxjmamXAfgy2MttWJnZIQ3yVQJE2rDkzMLbrQ_aem_T0Hv38xxQWFSXiDthyBccQ"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1,
+        "screenPageViews": 2,
+        "bounceRate": 0.0,
+        "averageSessionDuration": 43.154781
+      }
+    },
+    {
+      "dimensions": {
+        "landingPagePlusQueryString": "/?fbclid=IwZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAEeYQxH_8nAic_MqbS0Nh0mLWBjfW_jBrJ1t_JOxcGVi1l3f0HWKrDUDMiaNME_aem_5tlLx86WnwLYWQljyttKpw"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1,
+        "screenPageViews": 1,
+        "bounceRate": 1.0,
+        "averageSessionDuration": 0.0
+      }
+    },
+    {
+      "dimensions": {
+        "landingPagePlusQueryString": "/?fbclid=IwZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAEepNcNG02kERJt8ILKY8p72JrkKuICJh44t4fYXamvMKktuDCZpJkvlDlNJVo_aem_XgwDiiqbcF_lfKGanPFrLA"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1,
+        "screenPageViews": 1,
+        "bounceRate": 1.0,
+        "averageSessionDuration": 5.581277
+      }
+    },
+    {
+      "dimensions": {
+        "landingPagePlusQueryString": "/?fbclid=IwZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAEergSEmFh5SYpuOuNYFSNv8RRgHFk8_nEpVIdgAF2DQ8rdx98EAnkf0dVwEdE_aem_YdNVqYhzoCmlQMaCLmQk6A"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1,
+        "screenPageViews": 1,
+        "bounceRate": 1.0,
+        "averageSessionDuration": 0.0
+      }
+    },
+    {
+      "dimensions": {
+        "landingPagePlusQueryString": "/?fbclid=IwZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAEergSEmFh5SYpuOuNYFSNv8RRgHFk8_nEpVIdgAF2DQ8rdx98EAnkf0dVwEdE_aem_YdNVqYhzoCmlQMaCLmQk6A?fbclid=IwZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAEergSEmFh5SYpuOuNYFSNv8RRgHFk8_nEpVIdgAF2DQ8rdx98EAnkf0dVwEdE_aem_YdNVqYhzoCmlQMaCLmQk6A"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1,
+        "screenPageViews": 1,
+        "bounceRate": 1.0,
+        "averageSessionDuration": 5.193405
+      }
+    },
+    {
+      "dimensions": {
+        "landingPagePlusQueryString": "/about/"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1,
+        "screenPageViews": 3,
+        "bounceRate": 0.0,
+        "averageSessionDuration": 30.554108
+      }
+    },
+    {
+      "dimensions": {
+        "landingPagePlusQueryString": "/blog-articles/top-10-global-medical-blogs-in-2026-e-e-a-t-authority-and-editorial-best-practic/"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1,
+        "screenPageViews": 1,
+        "bounceRate": 1.0,
+        "averageSessionDuration": 0.0
+      }
+    },
+    {
+      "dimensions": {
+        "landingPagePlusQueryString": "/clinical-library"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1,
+        "screenPageViews": 3,
+        "bounceRate": 0.0,
+        "averageSessionDuration": 201.365715
+      }
+    },
+    {
+      "dimensions": {
+        "landingPagePlusQueryString": "/curb65-score/"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1,
+        "screenPageViews": 2,
+        "bounceRate": 0.0,
+        "averageSessionDuration": 27.17219
+      }
+    },
+    {
+      "dimensions": {
+        "landingPagePlusQueryString": "/fmp-medecine/bacteriologie-virologie-immunologie/"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1,
+        "screenPageViews": 1,
+        "bounceRate": 1.0,
+        "averageSessionDuration": 0.0
+      }
+    },
+    {
+      "dimensions": {
+        "landingPagePlusQueryString": "/fr/grace-score"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1,
+        "screenPageViews": 29,
+        "bounceRate": 0.0,
+        "averageSessionDuration": 5142.07356
+      }
+    },
+    {
+      "dimensions": {
+        "landingPagePlusQueryString": "/interview/"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1,
+        "screenPageViews": 2,
+        "bounceRate": 0.0,
+        "averageSessionDuration": 362.435003
+      }
+    },
+    {
+      "dimensions": {
+        "landingPagePlusQueryString": "/map-calculator/"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1,
+        "screenPageViews": 4,
+        "bounceRate": 0.0,
+        "averageSessionDuration": 156.914923
+      }
+    },
+    {
+      "dimensions": {
+        "landingPagePlusQueryString": "/sirs-criteria"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1,
+        "screenPageViews": 5,
+        "bounceRate": 0.0,
+        "averageSessionDuration": 1364.192439
+      }
+    }
+  ]
+}

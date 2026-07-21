@@ -1,0 +1,127 @@
+{
+  "report_name": "browsers",
+  "start_date": "2026-07-07",
+  "end_date": "yesterday",
+  "dimension_headers": [
+    "operatingSystem",
+    "browser"
+  ],
+  "metric_headers": [
+    "sessions",
+    "activeUsers",
+    "screenPageViews"
+  ],
+  "row_count": 10,
+  "data": [
+    {
+      "dimensions": {
+        "operatingSystem": "Windows",
+        "browser": "Chrome"
+      },
+      "metrics": {
+        "sessions": 56,
+        "activeUsers": 21,
+        "screenPageViews": 279
+      }
+    },
+    {
+      "dimensions": {
+        "operatingSystem": "Linux",
+        "browser": "Chrome"
+      },
+      "metrics": {
+        "sessions": 13,
+        "activeUsers": 8,
+        "screenPageViews": 22
+      }
+    },
+    {
+      "dimensions": {
+        "operatingSystem": "Android",
+        "browser": "Chrome"
+      },
+      "metrics": {
+        "sessions": 6,
+        "activeUsers": 5,
+        "screenPageViews": 11
+      }
+    },
+    {
+      "dimensions": {
+        "operatingSystem": "Linux",
+        "browser": "Firefox"
+      },
+      "metrics": {
+        "sessions": 5,
+        "activeUsers": 5,
+        "screenPageViews": 6
+      }
+    },
+    {
+      "dimensions": {
+        "operatingSystem": "iOS",
+        "browser": "Safari"
+      },
+      "metrics": {
+        "sessions": 5,
+        "activeUsers": 4,
+        "screenPageViews": 5
+      }
+    },
+    {
+      "dimensions": {
+        "operatingSystem": "Windows",
+        "browser": "Edge"
+      },
+      "metrics": {
+        "sessions": 3,
+        "activeUsers": 3,
+        "screenPageViews": 10
+      }
+    },
+    {
+      "dimensions": {
+        "operatingSystem": "Linux",
+        "browser": "Samsung Internet"
+      },
+      "metrics": {
+        "sessions": 2,
+        "activeUsers": 1,
+        "screenPageViews": 2
+      }
+    },
+    {
+      "dimensions": {
+        "operatingSystem": "Windows",
+        "browser": "Firefox"
+      },
+      "metrics": {
+        "sessions": 2,
+        "activeUsers": 2,
+        "screenPageViews": 4
+      }
+    },
+    {
+      "dimensions": {
+        "operatingSystem": "iOS",
+        "browser": "Chrome"
+      },
+      "metrics": {
+        "sessions": 2,
+        "activeUsers": 2,
+        "screenPageViews": 2
+      }
+    },
+    {
+      "dimensions": {
+        "operatingSystem": "Macintosh",
+        "browser": "Chrome"
+      },
+      "metrics": {
+        "sessions": 1,
+        "activeUsers": 1,
+        "screenPageViews": 2
+      }
+    }
+  ]
+}

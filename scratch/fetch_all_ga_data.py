@@ -61,9 +61,9 @@ class GADataExporter:
                     print(f"Found earliest traffic on: {parsed_date} ({sessions} sessions)")
                     return parsed_date
         except Exception as e:
-            print(f"Warning: Failed to auto-detect earliest traffic date ({e}). Defaulting to 2025-08-27.", file=sys.stderr)
+            print(f"Warning: Failed to auto-detect earliest traffic date ({e}). Defaulting to 2026-07-07.", file=sys.stderr)
         
-        return "2025-08-27"
+        return "2026-07-07"
 
     def run_paginated_report(
         self,
@@ -121,7 +121,7 @@ class GADataExporter:
             for row in response.rows:
                 row_data = {
                     "dimensions": {dimension_headers[i]: val.value for i, val in enumerate(row.dimension_values)},
-                    "metrics": {metric_headers[i]: float(val.value) if "." in val.value or metric_headers[i] in ["bounceRate", "averageSessionDuration"] else int(val.value) for i, val in enumerate(row.metric_values)}
+                    "metrics": {metric_headers[i]: float(val.value) if "." in val.value or metric_headers[i] in ["bounceRate", "averageSessionDuration", "engagementRate"] else int(val.value) for i, val in enumerate(row.metric_values)}
                 }
                 all_rows.append(row_data)
                 
@@ -183,14 +183,21 @@ def generate_summary_markdown(output_dir: str, start_date: str, end_date: str, s
     
     daily_rows = summaries.get("daily", [])
     channel_rows = summaries.get("channels", [])
+    source_medium_rows = summaries.get("source_medium", [])
     device_rows = summaries.get("devices", [])
     country_rows = summaries.get("countries", [])
+    city_rows = summaries.get("cities", [])
     page_rows = summaries.get("pages", [])
+    landing_rows = summaries.get("landing_pages", [])
+    event_rows = summaries.get("events", [])
+    browser_rows = summaries.get("browsers", [])
+    lang_rows = summaries.get("languages", [])
+    user_type_rows = summaries.get("user_types", [])
     
     # Calculate overall aggregates
     total_sessions = sum(r["metrics"]["sessions"] for r in daily_rows)
     total_pageviews = sum(r["metrics"]["screenPageViews"] for r in daily_rows)
-    total_users = sum(r["metrics"]["activeUsers"] for r in daily_rows) # Note: users don't sum cleanly but sessions do
+    total_events = sum(r["metrics"]["eventCount"] for r in daily_rows)
     
     # Average bounce rate and session duration weighted by sessions
     weighted_bounce_sum = sum(r["metrics"]["bounceRate"] * r["metrics"]["sessions"] for r in daily_rows)
@@ -199,36 +206,50 @@ def generate_summary_markdown(output_dir: str, start_date: str, end_date: str, s
     overall_bounce_rate = (weighted_bounce_sum / total_sessions) if total_sessions > 0 else 0
     overall_duration = (weighted_duration_sum / total_sessions) if total_sessions > 0 else 0
     
-    content = f"""# Google Analytics Data Export Summary
+    content = f"""# Google Analytics Data Export Summary (CareCalculus)
 
+**GA4 Property ID:** `544473056`
 **Export Date Range:** `{start_date}` to `{end_date}`
 **Total Days:** {len(daily_rows)} days
 
 ## Overall Performance Metrics
 * **Total Sessions:** {total_sessions:,}
 * **Total Page Views:** {total_pageviews:,}
+* **Total Tracked Events:** {total_events:,}
 * **Average Bounce Rate:** {overall_bounce_rate:.2f}%
-* **Average Session Duration:** {overall_duration:.1f} seconds
+* **Average Session Duration:** {overall_duration:.1f} seconds ({overall_duration/60:.2f} mins)
 
 ---
 
-## 1. Top Default Channel Groupings
-| Channel Grouping | Sessions | Active Users | Page Views | Bounce Rate |
-| :--- | :--- | :--- | :--- | :--- |
+## 1. Custom Events Tracked
+| Event Name | Event Count | Active Users |
+| :--- | :--- | :--- |
 """
-    for r in sorted(channel_rows, key=lambda x: x["metrics"]["sessions"], reverse=True)[:10]:
+    for r in sorted(event_rows, key=lambda x: x["metrics"]["eventCount"], reverse=True):
         dims = r["dimensions"]
         mets = r["metrics"]
-        content += f"| {dims.get('sessionDefaultChannelGroup', 'Unknown')} | {mets.get('sessions', 0):,} | {mets.get('activeUsers', 0):,} | {mets.get('screenPageViews', 0):,} | {mets.get('bounceRate', 0):.2f}% |\n"
+        content += f"| `{dims.get('eventName', 'Unknown')}` | {mets.get('eventCount', 0):,} | {mets.get('activeUsers', 0):,} |\n"
 
     content += """
 ---
 
-## 2. Top 10 Pages by Views
+## 2. Traffic Source & Medium
+| Source / Medium | Sessions | Active Users | Page Views | Bounce Rate |
+| :--- | :--- | :--- | :--- | :--- |
+"""
+    for r in sorted(source_medium_rows, key=lambda x: x["metrics"]["sessions"], reverse=True):
+        dims = r["dimensions"]
+        mets = r["metrics"]
+        content += f"| {dims.get('sessionSourceMedium', 'Unknown')} | {mets.get('sessions', 0):,} | {mets.get('activeUsers', 0):,} | {mets.get('screenPageViews', 0):,} | {mets.get('bounceRate', 0):.2f}% |\n"
+
+    content += """
+---
+
+## 3. All Pages (Ranked by Views)
 | Page Path | Sessions | Active Users | Page Views | Avg Duration (s) |
 | :--- | :--- | :--- | :--- | :--- |
 """
-    for r in sorted(page_rows, key=lambda x: x["metrics"]["screenPageViews"], reverse=True)[:10]:
+    for r in sorted(page_rows, key=lambda x: x["metrics"]["screenPageViews"], reverse=True):
         dims = r["dimensions"]
         mets = r["metrics"]
         content += f"| `{dims.get('pagePath', 'Unknown')}` | {mets.get('sessions', 0):,} | {mets.get('activeUsers', 0):,} | {mets.get('screenPageViews', 0):,} | {mets.get('averageSessionDuration', 0):.1f} |\n"
@@ -236,26 +257,62 @@ def generate_summary_markdown(output_dir: str, start_date: str, end_date: str, s
     content += """
 ---
 
-## 3. Devices Breakdown
-| Device Category | Sessions | Active Users | Page Views |
-| :--- | :--- | :--- | :--- |
+## 4. Landing Pages (Entry Points)
+| Landing Page | Sessions | Active Users | Page Views | Bounce Rate |
+| :--- | :--- | :--- | :--- | :--- |
 """
-    for r in sorted(device_rows, key=lambda x: x["metrics"]["sessions"], reverse=True):
+    for r in sorted(landing_rows, key=lambda x: x["metrics"]["sessions"], reverse=True):
         dims = r["dimensions"]
         mets = r["metrics"]
-        content += f"| {dims.get('deviceCategory', 'Unknown')} | {mets.get('sessions', 0):,} | {mets.get('activeUsers', 0):,} | {mets.get('screenPageViews', 0):,} |\n"
+        content += f"| `{dims.get('landingPagePlusQueryString', 'Unknown')}` | {mets.get('sessions', 0):,} | {mets.get('activeUsers', 0):,} | {mets.get('screenPageViews', 0):,} | {mets.get('bounceRate', 0):.2f}% |\n"
 
     content += """
 ---
 
-## 4. Top Countries
-| Country | Sessions | Active Users | Page Views |
-| :--- | :--- | :--- | :--- |
+## 5. User Type (New vs Returning)
+| User Type | Sessions | Active Users |
+| :--- | :--- | :--- |
 """
-    for r in sorted(country_rows, key=lambda x: x["metrics"]["sessions"], reverse=True)[:10]:
+    for r in sorted(user_type_rows, key=lambda x: x["metrics"]["sessions"], reverse=True):
         dims = r["dimensions"]
         mets = r["metrics"]
-        content += f"| {dims.get('country', 'Unknown')} | {mets.get('sessions', 0):,} | {mets.get('activeUsers', 0):,} | {mets.get('screenPageViews', 0):,} |\n"
+        content += f"| {dims.get('newVsReturning', 'Unknown')} | {mets.get('sessions', 0):,} | {mets.get('activeUsers', 0):,} |\n"
+
+    content += """
+---
+
+## 6. Devices & Browsers
+| Device / OS / Browser | Sessions | Active Users | Page Views |
+| :--- | :--- | :--- | :--- |
+"""
+    for r in sorted(browser_rows, key=lambda x: x["metrics"]["sessions"], reverse=True):
+        dims = r["dimensions"]
+        mets = r["metrics"]
+        content += f"| {dims.get('operatingSystem', 'Unknown')} ({dims.get('browser', 'Unknown')}) | {mets.get('sessions', 0):,} | {mets.get('activeUsers', 0):,} | {mets.get('screenPageViews', 0):,} |\n"
+
+    content += """
+---
+
+## 7. Languages
+| Language | Sessions | Active Users |
+| :--- | :--- | :--- |
+"""
+    for r in sorted(lang_rows, key=lambda x: x["metrics"]["sessions"], reverse=True):
+        dims = r["dimensions"]
+        mets = r["metrics"]
+        content += f"| {dims.get('language', 'Unknown')} | {mets.get('sessions', 0):,} | {mets.get('activeUsers', 0):,} |\n"
+
+    content += """
+---
+
+## 8. Cities & Locations
+| Country | City | Sessions | Active Users |
+| :--- | :--- | :--- | :--- |
+"""
+    for r in sorted(city_rows, key=lambda x: x["metrics"]["sessions"], reverse=True)[:15]:
+        dims = r["dimensions"]
+        mets = r["metrics"]
+        content += f"| {dims.get('country', 'Unknown')} | {dims.get('city', 'Unknown')} | {mets.get('sessions', 0):,} | {mets.get('activeUsers', 0):,} |\n"
 
     content += f"""
 ---
@@ -263,10 +320,14 @@ def generate_summary_markdown(output_dir: str, start_date: str, end_date: str, s
 ## Export Files
 The full, raw data has been successfully fetched and saved to the following paths in your workspace:
 * **Daily Time Series:** [daily_overview.csv](file:///{output_dir.replace('\\', '/')}/daily_overview.csv) / [daily_overview.json](file:///{output_dir.replace('\\', '/')}/daily_overview.json)
-* **Pages Data:** [pages.csv](file:///{output_dir.replace('\\', '/')}/pages.csv) / [pages.json](file:///{output_dir.replace('\\', '/')}/pages.json)
-* **Traffic Channels:** [channels.csv](file:///{output_dir.replace('\\', '/')}/channels.csv) / [channels.json](file:///{output_dir.replace('\\', '/')}/channels.json)
-* **Devices Breakdown:** [devices.csv](file:///{output_dir.replace('\\', '/')}/devices.csv) / [devices.json](file:///{output_dir.replace('\\', '/')}/devices.json)
-* **Countries Breakdown:** [countries.csv](file:///{output_dir.replace('\\', '/')}/countries.csv) / [countries.json](file:///{output_dir.replace('\\', '/')}/countries.json)
+* **Events:** [events.csv](file:///{output_dir.replace('\\', '/')}/events.csv) / [events.json](file:///{output_dir.replace('\\', '/')}/events.json)
+* **Source & Medium:** [source_medium.csv](file:///{output_dir.replace('\\', '/')}/source_medium.csv) / [source_medium.json](file:///{output_dir.replace('\\', '/')}/source_medium.json)
+* **Pages Data (All):** [pages.csv](file:///{output_dir.replace('\\', '/')}/pages.csv) / [pages.json](file:///{output_dir.replace('\\', '/')}/pages.json)
+* **Landing Pages:** [landing_pages.csv](file:///{output_dir.replace('\\', '/')}/landing_pages.csv) / [landing_pages.json](file:///{output_dir.replace('\\', '/')}/landing_pages.json)
+* **Devices & Browsers:** [browsers.csv](file:///{output_dir.replace('\\', '/')}/browsers.csv) / [browsers.json](file:///{output_dir.replace('\\', '/')}/browsers.json)
+* **Countries & Cities:** [cities.csv](file:///{output_dir.replace('\\', '/')}/cities.csv) / [cities.json](file:///{output_dir.replace('\\', '/')}/cities.json)
+* **User Types:** [user_types.csv](file:///{output_dir.replace('\\', '/')}/user_types.csv) / [user_types.json](file:///{output_dir.replace('\\', '/')}/user_types.json)
+* **Languages:** [languages.csv](file:///{output_dir.replace('\\', '/')}/languages.csv) / [languages.json](file:///{output_dir.replace('\\', '/')}/languages.json)
 """
     with open(summary_path, "w", encoding="utf-8") as f:
         f.write(content)
@@ -274,11 +335,11 @@ The full, raw data has been successfully fetched and saved to the following path
 
 
 def main():
-    property_id = "543908774"
+    property_id = "544473056"
     credentials_path = "c:\\Users\\DeLL\\CivicFlare\\service-account-key.json"
     output_dir = "c:\\Users\\DeLL\\CARECALCULUS\\scratch\\ga_export"
 
-    print("Starting Google Analytics Exporter...")
+    print("Starting Comprehensive Google Analytics Exporter for CareCalculus...")
     try:
         exporter = GADataExporter(property_id, credentials_path, output_dir)
         
@@ -306,8 +367,18 @@ def main():
             metrics=["sessions", "activeUsers", "screenPageViews", "bounceRate", "conversions"],
             sort_by="-sessions"
         )
+
+        # 3. Source / Medium
+        source_medium_rows = exporter.export_report(
+            name="source_medium",
+            start_date=start_date,
+            end_date=end_date,
+            dimensions=["sessionSourceMedium"],
+            metrics=["sessions", "activeUsers", "screenPageViews", "bounceRate", "conversions"],
+            sort_by="-sessions"
+        )
         
-        # 3. Pages
+        # 4. Pages (All)
         page_rows = exporter.export_report(
             name="pages",
             start_date=start_date,
@@ -316,8 +387,28 @@ def main():
             metrics=["sessions", "activeUsers", "screenPageViews", "averageSessionDuration"],
             sort_by="-screenPageViews"
         )
+
+        # 5. Landing Pages
+        landing_rows = exporter.export_report(
+            name="landing_pages",
+            start_date=start_date,
+            end_date=end_date,
+            dimensions=["landingPagePlusQueryString"],
+            metrics=["sessions", "activeUsers", "screenPageViews", "bounceRate", "averageSessionDuration"],
+            sort_by="-sessions"
+        )
         
-        # 4. Devices
+        # 6. Events
+        event_rows = exporter.export_report(
+            name="events",
+            start_date=start_date,
+            end_date=end_date,
+            dimensions=["eventName"],
+            metrics=["eventCount", "activeUsers"],
+            sort_by="-eventCount"
+        )
+
+        # 7. Devices & Categories
         device_rows = exporter.export_report(
             name="devices",
             start_date=start_date,
@@ -326,8 +417,18 @@ def main():
             metrics=["sessions", "activeUsers", "screenPageViews"],
             sort_by="-sessions"
         )
+
+        # 8. OS and Browsers
+        browser_rows = exporter.export_report(
+            name="browsers",
+            start_date=start_date,
+            end_date=end_date,
+            dimensions=["operatingSystem", "browser"],
+            metrics=["sessions", "activeUsers", "screenPageViews"],
+            sort_by="-sessions"
+        )
         
-        # 5. Countries
+        # 9. Countries
         country_rows = exporter.export_report(
             name="countries",
             start_date=start_date,
@@ -336,17 +437,54 @@ def main():
             metrics=["sessions", "activeUsers", "screenPageViews"],
             sort_by="-sessions"
         )
+
+        # 10. Cities
+        city_rows = exporter.export_report(
+            name="cities",
+            start_date=start_date,
+            end_date=end_date,
+            dimensions=["country", "city"],
+            metrics=["sessions", "activeUsers"],
+            sort_by="-sessions"
+        )
+
+        # 11. Languages
+        lang_rows = exporter.export_report(
+            name="languages",
+            start_date=start_date,
+            end_date=end_date,
+            dimensions=["language"],
+            metrics=["sessions", "activeUsers"],
+            sort_by="-sessions"
+        )
+
+        # 12. User Types
+        user_type_rows = exporter.export_report(
+            name="user_types",
+            start_date=start_date,
+            end_date=end_date,
+            dimensions=["newVsReturning"],
+            metrics=["sessions", "activeUsers"],
+            sort_by="-sessions"
+        )
         
         # Generate summary MD
         summaries = {
             "daily": daily_rows,
             "channels": channel_rows,
+            "source_medium": source_medium_rows,
             "pages": page_rows,
+            "landing_pages": landing_rows,
+            "events": event_rows,
             "devices": device_rows,
-            "countries": country_rows
+            "browsers": browser_rows,
+            "countries": country_rows,
+            "cities": city_rows,
+            "languages": lang_rows,
+            "user_types": user_type_rows
         }
         generate_summary_markdown(output_dir, start_date, (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d"), summaries)
-        print("\nAll Google Analytics data successfully fetched and exported!")
+        print("\nExhaustive Google Analytics data successfully fetched and exported!")
         
     except Exception as e:
         print(f"Error running data export: {e}", file=sys.stderr)

@@ -1,0 +1,78 @@
+{
+  "report_name": "events",
+  "start_date": "2026-07-07",
+  "end_date": "yesterday",
+  "dimension_headers": [
+    "eventName"
+  ],
+  "metric_headers": [
+    "eventCount",
+    "activeUsers"
+  ],
+  "row_count": 7,
+  "data": [
+    {
+      "dimensions": {
+        "eventName": "page_view"
+      },
+      "metrics": {
+        "eventCount": 343,
+        "activeUsers": 51
+      }
+    },
+    {
+      "dimensions": {
+        "eventName": "user_engagement"
+      },
+      "metrics": {
+        "eventCount": 220,
+        "activeUsers": 23
+      }
+    },
+    {
+      "dimensions": {
+        "eventName": "session_start"
+      },
+      "metrics": {
+        "eventCount": 118,
+        "activeUsers": 51
+      }
+    },
+    {
+      "dimensions": {
+        "eventName": "first_visit"
+      },
+      "metrics": {
+        "eventCount": 81,
+        "activeUsers": 51
+      }
+    },
+    {
+      "dimensions": {
+        "eventName": "calculator_used"
+      },
+      "metrics": {
+        "eventCount": 49,
+        "activeUsers": 9
+      }
+    },
+    {
+      "dimensions": {
+        "eventName": "scroll"
+      },
+      "metrics": {
+        "eventCount": 25,
+        "activeUsers": 13
+      }
+    },
+    {
+      "dimensions": {
+        "eventName": "form_start"
+      },
+      "metrics": {
+        "eventCount": 3,
+        "activeUsers": 3
+      }
+    }
+  ]
+}

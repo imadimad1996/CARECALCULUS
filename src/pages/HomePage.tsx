@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Activity, Brain, Stethoscope, Wind, TestTube, AlertOctagon, HeartPulse,
@@ -106,12 +106,26 @@ const LEARNING_RESOURCES = [
 
 
 import SEO from '../components/SEO';
+import CommandPalette from '../components/CommandPalette';
+import { JsonLd } from '../components/JsonLd';
 
 export default function HomePage({ lang }: HomePageProps) {
   const { langPath } = useLang();
   const isRtl = false;
 
   const [activeSpecialty, setActiveSpecialty] = useState('all');
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        setIsSearchOpen(prev => !prev);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   const filteredCalculators = FEATURED_CALCULATORS.filter(calc =>
     activeSpecialty === 'all' || calc.specialties.includes(activeSpecialty)
@@ -174,6 +188,27 @@ export default function HomePage({ lang }: HomePageProps) {
   return (
     <div className="space-y-16 pb-12" dir={isRtl ? 'rtl' : 'ltr'}>
       <SEO logicalPath="/" lang={lang} />
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "MedicalWebPage",
+        "name": "CareCalculus — Evidence-Based Clinical Decision Support Suite",
+        "description": hero.desc,
+        "url": "https://carecalculus.com",
+        "about": {
+          "@type": "MedicalSpecialty",
+          "name": "Emergency Medicine, Critical Care, Cardiology, Nephrology"
+        },
+        "hasPart": FEATURED_CALCULATORS.map(c => ({
+          "@type": "SoftwareApplication",
+          "name": c.en,
+          "applicationCategory": "HealthApplication",
+          "operatingSystem": "All",
+          "url": `https://carecalculus.com${c.path}`
+        }))
+      }} />
+
+      <CommandPalette isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} lang={lang} />
+
       {/* Hero — clean white, surgical */}
       <section className="relative bg-white border-b border-slate-100 px-6 sm:px-10 py-12 sm:py-16 -mx-4 sm:-mx-6 md:mx-0 md:border md:border-slate-200 md:rounded-xl">
         <div className="relative w-full max-w-[720px] mx-auto flex flex-col items-center text-center">
@@ -192,7 +227,7 @@ export default function HomePage({ lang }: HomePageProps) {
           {/* Search trigger */}
           <div className="mb-5 w-full max-w-[540px] mx-auto">
             <button
-              onClick={() => window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }))}
+              onClick={() => setIsSearchOpen(true)}
               className="w-full flex items-center justify-between px-4 py-3.5 bg-slate-50 hover:bg-slate-100 text-slate-500 rounded-xl border border-slate-200 hover:border-teal-300 shadow-sm transition-all duration-200 group cursor-pointer text-left rtl:text-right"
               style={{ minHeight: '52px' }}
             >

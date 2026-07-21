@@ -1,0 +1,11 @@
+operatingSystem,browser,sessions,activeUsers,screenPageViews
+Windows,Chrome,56,21,279
+Linux,Chrome,13,8,22
+Android,Chrome,6,5,11
+Linux,Firefox,5,5,6
+iOS,Safari,5,4,5
+Windows,Edge,3,3,10
+Linux,Samsung Internet,2,1,2
+Windows,Firefox,2,2,4
+iOS,Chrome,2,2,2
+Macintosh,Chrome,1,1,2

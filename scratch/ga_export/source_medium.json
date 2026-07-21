@@ -1,9 +1,9 @@
 {
-  "report_name": "channels",
+  "report_name": "source_medium",
   "start_date": "2026-07-07",
   "end_date": "yesterday",
   "dimension_headers": [
-    "sessionDefaultChannelGroup"
+    "sessionSourceMedium"
   ],
   "metric_headers": [
     "sessions",
@@ -16,7 +16,7 @@
   "data": [
     {
       "dimensions": {
-        "sessionDefaultChannelGroup": "Direct"
+        "sessionSourceMedium": "(direct) / (none)"
       },
       "metrics": {
         "sessions": 76,
@@ -28,7 +28,7 @@
     },
     {
       "dimensions": {
-        "sessionDefaultChannelGroup": "Organic Social"
+        "sessionSourceMedium": "facebook.com / referral"
       },
       "metrics": {
         "sessions": 11,
@@ -40,7 +40,7 @@
     },
     {
       "dimensions": {
-        "sessionDefaultChannelGroup": "Organic Search"
+        "sessionSourceMedium": "google / organic"
       },
       "metrics": {
         "sessions": 6,

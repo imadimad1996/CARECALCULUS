@@ -1,0 +1,42 @@
+{
+  "report_name": "user_types",
+  "start_date": "2026-07-07",
+  "end_date": "yesterday",
+  "dimension_headers": [
+    "newVsReturning"
+  ],
+  "metric_headers": [
+    "sessions",
+    "activeUsers"
+  ],
+  "row_count": 3,
+  "data": [
+    {
+      "dimensions": {
+        "newVsReturning": "new"
+      },
+      "metrics": {
+        "sessions": 61,
+        "activeUsers": 51
+      }
+    },
+    {
+      "dimensions": {
+        "newVsReturning": "returning"
+      },
+      "metrics": {
+        "sessions": 31,
+        "activeUsers": 6
+      }
+    },
+    {
+      "dimensions": {
+        "newVsReturning": "(not set)"
+      },
+      "metrics": {
+        "sessions": 2,
+        "activeUsers": 0
+      }
+    }
+  ]
+}
