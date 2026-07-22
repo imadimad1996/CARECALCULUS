@@ -99,6 +99,29 @@ const pageLoaders = [
   () => import('../pages/PricingPage'),
 ] as const;
 
+const safeLazy = (loader: () => Promise<any>) => {
+  return React.lazy(async () => {
+    try {
+      return await loader();
+    } catch (error: any) {
+      const isChunkError =
+        error?.message?.includes('Failed to fetch dynamically imported module') ||
+        error?.message?.includes('Loading chunk') ||
+        error?.name === 'TypeError';
+
+      const hasReloaded = sessionStorage.getItem('cc_chunk_reload');
+
+      if (isChunkError && !hasReloaded) {
+        sessionStorage.setItem('cc_chunk_reload', 'true');
+        window.location.reload();
+        return new Promise(() => {});
+      }
+
+      throw error;
+    }
+  });
+};
+
 const [
   MapCalculator, BmiCalculator, GcsCalculator, DripRate, CreatinineClearance,
   WellsScore, MedicalConversions, CorrectedCalcium, QsofaScore, Curb65Score,
@@ -119,10 +142,10 @@ const [
   GraceScore, BicarbDeficit, ReticIndex,
   PhenytoinCorrection, AscvdRisk, VancomycinDosing, AminoglycosideDosing,
   PesiScore, BovaScore, ApacheIIScore, SapsIIScore, DrugInteractions, MedicalStatistics, FavoritesPage, ClinicalLibrary, PricingPage
-] = pageLoaders.map((loader) => React.lazy(loader as any)) as any[];
+] = pageLoaders.map((loader) => safeLazy(loader as any)) as any[];
 
-export const HomePage = React.lazy(() => import('../pages/HomePage'));
-export const NotFound = React.lazy(() => import('../pages/NotFound'));
+export const HomePage = safeLazy(() => import('../pages/HomePage'));
+export const NotFound = safeLazy(() => import('../pages/NotFound'));
 
 /**
  * Eagerly resolve every page chunk. Called once before prerendering so that
@@ -153,6 +176,13 @@ export class ErrorBoundary extends React.Component<any, any> {
   }
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     console.error("Uncaught error:", error, errorInfo);
+    if (error?.message?.includes('Failed to fetch dynamically imported module') || error?.message?.includes('Loading chunk')) {
+      const hasReloaded = sessionStorage.getItem('cc_chunk_reload');
+      if (!hasReloaded) {
+        sessionStorage.setItem('cc_chunk_reload', 'true');
+        window.location.reload();
+      }
+    }
   }
   render() {
     if (this.state.hasError) {

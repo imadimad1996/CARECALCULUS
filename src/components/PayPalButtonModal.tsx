@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ShieldCheck, CheckCircle2, X, Sparkles } from 'lucide-react';
 import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
+import { activateProPass } from '../utils/pro';
 
 export interface PayPalButtonModalProps {
   isOpen: boolean;
@@ -8,6 +9,7 @@ export interface PayPalButtonModalProps {
   planName?: string;
   price?: string;
   currency?: string;
+  planType?: 'monthly' | 'annual';
 }
 
 const PAYPAL_CLIENT_ID = 'AU0VCz5JZ_ky8LIOb7XrdFVJa3AcwJLQNo2330Ks_BteUsQOOfqvZmYsQ4QDk6aIokjpF_qDKFsK8yJp';
@@ -18,16 +20,36 @@ export const PayPalButtonModal: React.FC<PayPalButtonModalProps> = ({
   planName = 'CareCalculus Pro Clinician Membership',
   price = '9.99',
   currency = 'USD',
+  planType = 'monthly',
 }) => {
   const [paymentSuccess, setPaymentSuccess] = useState(false);
 
   if (!isOpen) return null;
 
   const handleApprove = (data: any, actions: any) => {
-    return actions.order.capture().then((details: any) => {
+    return actions.order.capture().then(async (details: any) => {
       console.log('PayPal Payment Captured:', details);
-      // Persist pro status across reloads
-      localStorage.setItem('carecalculus_pro_status', 'active');
+      
+      // 1. Activate client entitlement with duration
+      activateProPass(planType);
+      
+      // 2. Notify backend worker API
+      try {
+        await fetch('/api/paypal-verify', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            orderId: details.id,
+            payerEmail: details.payer?.email_address,
+            amount: price,
+            planType,
+            status: details.status
+          })
+        });
+      } catch (err) {
+        console.warn('Backend PayPal verification warning:', err);
+      }
+
       setPaymentSuccess(true);
     });
   };

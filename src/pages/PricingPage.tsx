@@ -313,9 +313,10 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
       <PayPalButtonModal
         isOpen={isPayPalModalOpen}
         onClose={() => setIsPayPalModalOpen(false)}
-        planName="CareCalculus Pro Pass"
+        planName={billingCycle === 'annual' ? "CareCalculus Pro 1-Year Pass" : "CareCalculus Pro 1-Month Pass"}
         price={proPrice}
         currency="USD"
+        planType={billingCycle}
       />
     </div>
   );

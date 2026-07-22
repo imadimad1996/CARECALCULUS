@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { isProActive } from '../utils/pro';
 
 export default function TrackingScripts() {
   const location = useLocation();
@@ -72,10 +73,10 @@ export default function TrackingScripts() {
         document.head.appendChild(clarityInit);
       }
 
-      // 3. Google AdSense Setup
+      // 3. Google AdSense Setup (Suppressed for Pro subscribers)
       const ADSENSE_PUBLISHER_ID: string = 'ca-pub-7102695194621911';
 
-      if (!document.getElementById('adsense-script') && ADSENSE_PUBLISHER_ID !== 'ca-pub-XXXXXXXXXXXXXXXX') {
+      if (!isProActive() && !document.getElementById('adsense-script') && ADSENSE_PUBLISHER_ID !== 'ca-pub-XXXXXXXXXXXXXXXX') {
         const adsenseScript = document.createElement('script');
         adsenseScript.id = 'adsense-script';
         adsenseScript.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_PUBLISHER_ID}`;
