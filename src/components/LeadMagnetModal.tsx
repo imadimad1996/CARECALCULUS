@@ -50,42 +50,15 @@ export const LeadMagnetModal: React.FC<LeadMagnetModalProps> = ({ lang }) => {
   };
 
   const handleDownloadPdf = () => {
-    // Generate simple text-based clinical guide blob download
-    const content = `=====================================================
-CARECALCULUS — 2026 ICU & EMERGENCY MEDICAL POCKET GUIDE
-=====================================================
-
-1. SEPSIS-3 & qSOFA BEDSIDE PROTOCOL:
-   - qSOFA >= 2 (RR >= 22, Altered Mental State, SBP <= 100 mmHg) -> High risk
-   - Measure Serum Lactate immediately
-   - Obtain blood cultures prior to antibiotics
-   - Administer 30 mL/kg crystalloid fluid bolus for hypotension or lactate >= 4 mmol/L
-
-2. WELLS DVT & PE PRETEST PROBABILITY:
-   - Score >= 2 (DVT Likely) -> Order Compression US / CTPA
-   - Score < 2 (DVT Unlikely) -> High-sensitivity D-dimer rule out
-
-3. MAP (MEAN ARTERIAL PRESSURE) TARGETS:
-   - MAP = (2*DBP + SBP) / 3
-   - Target MAP >= 65 mmHg in septic shock (Norepinephrine 1st line)
-
-4. ARDS BERLIN DEFINITION P/F RATIO:
-   - Mild ARDS: 200 < PaO2/FiO2 <= 300 mmHg (with PEEP >= 5)
-   - Moderate ARDS: 100 < PaO2/FiO2 <= 200 mmHg
-   - Severe ARDS: PaO2/FiO2 <= 100 mmHg (Protective ventilation 6 mL/kg PBW)
-
------------------------------------------------------
-CareCalculus Open-Access Clinical Suite (https://carecalculus.com)
-`;
-    const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
+    // Download real 10/10 multi-page clinical PDF guide
+    const pdfUrl = '/assets/docs/CareCalculus_2026_ICU_ER_Pocket_Guide.pdf';
     const a = document.createElement('a');
-    a.href = url;
-    a.download = 'CareCalculus_ICU_Pocket_Guide_2026.txt';
+    a.href = pdfUrl;
+    a.download = 'CareCalculus_2026_ICU_ER_Pocket_Guide.pdf';
+    a.target = '_blank';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
-    URL.revokeObjectURL(url);
   };
 
   if (!isOpen) return null;
@@ -118,7 +91,7 @@ CareCalculus Open-Access Clinical Suite (https://carecalculus.com)
               className="w-full py-3.5 px-4 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs rounded-xl transition shadow-lg flex items-center justify-center gap-2 cursor-pointer"
             >
               <Download className="w-4 h-4" />
-              <span>{isFr ? 'Télécharger le Guide (PDF/TXT)' : 'Download Pocket Guide'}</span>
+              <span>{isFr ? 'Télécharger le Guide Officiel (PDF 2026)' : 'Download Official Guide (2026 PDF)'}</span>
             </button>
           </div>
         ) : (

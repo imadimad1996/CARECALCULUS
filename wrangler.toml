@@ -1,3 +1,7 @@
 name = "carecalculus"
 compatibility_date = "2025-06-12"
 pages_build_output_dir = "dist"
+
+[[kv_namespaces]]
+binding = "LEADS"
+id = "6f66e0653f1944fb93bca603a8e00b8f"

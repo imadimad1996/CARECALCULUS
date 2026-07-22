@@ -21,6 +21,7 @@ import SidebarNewsletter from './components/SidebarNewsletter';
 import MobileBottomNav from './components/MobileBottomNav';
 import { ShiftStorageDrawer } from './components/ShiftStorageDrawer';
 import { LeadMagnetModal } from './components/LeadMagnetModal';
+import { SpecialtiesModal } from './components/SpecialtiesModal';
 
 
 import SmartPasteModal from './components/SmartPasteModal';
@@ -44,6 +45,7 @@ function AppLayout() {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isShiftDrawerOpen, setIsShiftDrawerOpen] = useState(false);
+  const [isSpecialtiesModalOpen, setIsSpecialtiesModalOpen] = useState(false);
   const [isPro, setIsPro] = useState(false);
 
   useEffect(() => {
@@ -506,10 +508,13 @@ function AppLayout() {
         <div className="px-4 py-3 flex flex-wrap lg:flex-nowrap items-center gap-2 md:gap-3 overflow-visible">
           
           <div className="flex-1 flex items-center gap-2 overflow-x-auto scrollbar-none pb-1 lg:pb-0">
-            <Link to={langPath('/')} className="shrink-0 px-4 py-2 bg-teal-50 text-teal-700 hover:bg-teal-100 font-bold rounded-xl text-sm transition-colors flex items-center gap-2">
+            <button 
+              onClick={() => setIsSpecialtiesModalOpen(true)}
+              className="shrink-0 px-4 py-2 bg-teal-50 text-teal-700 hover:bg-teal-100 font-bold rounded-xl text-sm transition-colors flex items-center gap-2 cursor-pointer"
+            >
               <Layers className="w-4 h-4" />
               {lang === 'fr' ? 'Spécialités' : 'Specialties'}
-            </Link>
+            </button>
             <Link to={langPath('/blog')} className="shrink-0 px-4 py-2 bg-slate-50 text-slate-600 hover:bg-slate-100 font-bold rounded-xl text-sm transition-colors flex items-center gap-2">
               <BookOpen className="w-4 h-4" />
               {lang === 'fr' ? 'Journaux Médicaux' : 'Medical Journals'}
@@ -1286,6 +1291,9 @@ function AppLayout() {
 
       {/* Lead Magnet PDF Capture Engine */}
       <LeadMagnetModal lang={lang} />
+
+      {/* Medical Specialties Directory Modal */}
+      <SpecialtiesModal isOpen={isSpecialtiesModalOpen} onClose={() => setIsSpecialtiesModalOpen(false)} lang={lang} langPath={langPath} />
     </div>
    </LangContext.Provider>
   );

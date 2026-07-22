@@ -57,7 +57,11 @@ export default function NewsletterCapture({ lang }: NewsletterCaptureProps) {
     }
   }, []);
 
-  const handleDismiss = () => {
+  const handleDismiss = (e?: React.MouseEvent) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
     setVisible(false);
     localStorage.setItem('cc-newsletter-dismissed', Date.now().toString());
   };
@@ -119,12 +123,13 @@ export default function NewsletterCapture({ lang }: NewsletterCaptureProps) {
 
           {/* Close button */}
           <button
+            type="button"
             onClick={handleDismiss}
-            className={`absolute top-3 ${isRtl ? 'left-3' : 'right-3'} p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition`}
+            className={`absolute top-3 ${isRtl ? 'left-3' : 'right-3'} z-30 p-2 text-slate-400 hover:text-white rounded-xl bg-slate-800/80 hover:bg-slate-700 transition-all cursor-pointer flex items-center justify-center`}
             aria-label="Close newsletter prompt"
-            style={{ minWidth: '32px', minHeight: '32px' }}
+            style={{ minWidth: '44px', minHeight: '44px' }}
           >
-            <X className="w-4 h-4" />
+            <X className="w-5 h-5" />
           </button>
 
           {submitted ? (

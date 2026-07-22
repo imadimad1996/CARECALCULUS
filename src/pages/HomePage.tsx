@@ -9,6 +9,7 @@ import { LangCode } from '../types';
 import { useLang } from '../utils/lang';
 import Logo from '../components/Logo';
 import SmartPasteModal from '../components/SmartPasteModal';
+import { SynapseEngine } from '../components/SynapseEngine';
 
 interface HomePageProps {
   lang: LangCode;
@@ -108,13 +109,23 @@ const LEARNING_RESOURCES = [
 import SEO from '../components/SEO';
 import CommandPalette from '../components/CommandPalette';
 import { JsonLd } from '../components/JsonLd';
+import { Link, useSearchParams } from 'react-router-dom';
 
 export default function HomePage({ lang }: HomePageProps) {
   const { langPath } = useLang();
   const isRtl = false;
 
-  const [activeSpecialty, setActiveSpecialty] = useState('all');
+  const [searchParams] = useSearchParams();
+  const initialCategory = searchParams.get('category') || searchParams.get('specialty') || 'all';
+  const [activeSpecialty, setActiveSpecialty] = useState(initialCategory);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  useEffect(() => {
+    const categoryParam = searchParams.get('category') || searchParams.get('specialty');
+    if (categoryParam) {
+      setActiveSpecialty(categoryParam);
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -343,6 +354,9 @@ export default function HomePage({ lang }: HomePageProps) {
           );
         })}
       </section>
+
+      {/* 2026 Next-Gen Specialty & Journal Synapse Engine */}
+      <SynapseEngine lang={lang} langPath={langPath} />
 
       {/* Specialty Filter Bar */}
       <section className="w-full relative">

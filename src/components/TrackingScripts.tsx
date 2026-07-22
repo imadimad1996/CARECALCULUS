@@ -73,7 +73,7 @@ export default function TrackingScripts() {
       }
 
       // 3. Google AdSense Setup
-      const ADSENSE_PUBLISHER_ID = 'ca-pub-7102695194621911';
+      const ADSENSE_PUBLISHER_ID: string = 'ca-pub-7102695194621911';
 
       if (!document.getElementById('adsense-script') && ADSENSE_PUBLISHER_ID !== 'ca-pub-XXXXXXXXXXXXXXXX') {
         const adsenseScript = document.createElement('script');
