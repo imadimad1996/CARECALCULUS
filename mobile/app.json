@@ -1,0 +1,57 @@
+{
+  "expo": {
+    "name": "CareCalculus Medical Calculators",
+    "slug": "carecalculus",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0f172a"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.carecalculus.app",
+      "infoPlist": {
+        "UIBackgroundModes": ["remote-notification"]
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0d9488"
+      },
+      "package": "com.carecalculus.app",
+      "versionCode": 1,
+      "permissions": [
+        "VIBRATE",
+        "RECEIVE_BOOT_COMPLETED",
+        "NOTIFICATIONS"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#0d9488"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "carecalculus-mobile-app"
+      }
+    }
+  }
+}
