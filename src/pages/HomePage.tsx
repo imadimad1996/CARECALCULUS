@@ -109,7 +109,6 @@ const LEARNING_RESOURCES = [
 import SEO from '../components/SEO';
 import CommandPalette from '../components/CommandPalette';
 import { JsonLd } from '../components/JsonLd';
-import { useSearchParams } from 'react-router-dom';
 
 export default function HomePage({ lang }: HomePageProps) {
   const { langPath } = useLang();

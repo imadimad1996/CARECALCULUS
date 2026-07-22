@@ -1,0 +1,21 @@
+# Cloudflare Pages Edge Cache Control Headers
+
+/*
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# Fingerprinted JS/CSS Assets (Immutable Caching)
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Root & Entry Files (Never Cache Stale Bundles)
+/index.html
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/sw.js
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/manifest.json
+  Cache-Control: no-cache, no-store, must-revalidate
