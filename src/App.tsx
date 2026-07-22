@@ -504,61 +504,57 @@ function AppLayout() {
   // Unified top navigation: Principal buttons replacing the double search bar
   const renderUnifiedTopNav = () => {
     return (
-      <div className="mb-6 bg-white rounded-2xl border border-gray-200/80 shadow-xs relative z-50">
-        <div className="px-4 py-3 flex flex-wrap lg:flex-nowrap items-center gap-2 md:gap-3 overflow-visible">
+      <div className="mb-6 bg-white dark:bg-slate-900/90 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-xs relative z-50">
+        <div className="px-4 py-2.5 flex items-center justify-between gap-3">
           
-          <div className="flex-1 flex items-center gap-2 overflow-x-auto scrollbar-none pb-1 lg:pb-0">
+          {/* Left: Primary Specialties Selector */}
+          <div className="flex items-center gap-2">
             <button 
               onClick={() => setIsSpecialtiesModalOpen(true)}
-              className="shrink-0 px-4 py-2 bg-teal-50 text-teal-700 hover:bg-teal-100 font-bold rounded-xl text-sm transition-colors flex items-center gap-2 cursor-pointer"
+              className="shrink-0 px-3.5 py-2 bg-teal-50 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300 hover:bg-teal-100 dark:hover:bg-teal-900/50 font-bold rounded-xl text-xs sm:text-sm transition-all flex items-center gap-2 border border-teal-200/50 dark:border-teal-800/50 cursor-pointer shadow-2xs hover:scale-[1.02] active:scale-95"
             >
-              <Layers className="w-4 h-4" />
-              {lang === 'fr' ? 'Spécialités' : 'Specialties'}
+              <Layers className="w-4 h-4 text-teal-600 dark:text-teal-400" />
+              <span>{lang === 'fr' ? 'Parcourir les Spécialités' : 'Browse Specialties'}</span>
             </button>
-            <Link to={langPath('/blog')} className="shrink-0 px-4 py-2 bg-slate-50 text-slate-600 hover:bg-slate-100 font-bold rounded-xl text-sm transition-colors flex items-center gap-2">
-              <BookOpen className="w-4 h-4" />
-              {lang === 'fr' ? 'Journaux Médicaux' : 'Medical Journals'}
-            </Link>
-            <Link to={langPath('/clinical-guide')} className="shrink-0 px-4 py-2 bg-slate-50 text-slate-600 hover:bg-slate-100 font-bold rounded-xl text-sm transition-colors flex items-center gap-2">
-              <FileText className="w-4 h-4" />
-              {lang === 'fr' ? 'Guides Cliniques' : 'Clinical Guides'}
-            </Link>
-            <Link to={langPath('/clinical-library')} className="shrink-0 px-4 py-2 bg-slate-50 text-slate-600 hover:bg-slate-100 font-bold rounded-xl text-sm transition-colors flex items-center gap-2">
-              <Calculator className="w-4 h-4" />
-              {lang === 'fr' ? 'Bibliothèque Clinique' : 'Clinical Library'}
-            </Link>
           </div>
 
-          <div className="flex items-center gap-2 shrink-0 lg:border-l lg:border-gray-100 lg:pl-3 ml-auto">
-            <InstallAppButton lang={lang} />
+          {/* Right: Consolidated Bedside Tools & Tier 1 Actions */}
+          <div className="flex items-center gap-2 shrink-0">
+            {/* Tier 2 Consolidated Bedside Tools */}
             <SmartPasteModal lang={lang} />
             <FavoriteButton lang={lang} />
             <button
               onClick={() => setIsShiftDrawerOpen(true)}
-              className="shrink-0 flex items-center gap-1.5 px-3 py-2 bg-emerald-600/10 hover:bg-emerald-600/20 text-emerald-600 dark:text-emerald-400 text-xs font-bold rounded-xl transition border border-emerald-500/20 cursor-pointer"
+              className="shrink-0 flex items-center gap-1.5 px-3 py-2 bg-emerald-50 hover:bg-emerald-100 dark:bg-emerald-950/40 dark:hover:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 text-xs font-bold rounded-xl transition border border-emerald-200 dark:border-emerald-800/60 cursor-pointer shadow-2xs hover:scale-[1.02] active:scale-95"
               title="Shift Patient Queue"
             >
-              <ClipboardList className="w-4 h-4" />
+              <ClipboardList className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
               <span className="hidden sm:inline">Shift Queue</span>
             </button>
+
+            {/* Tier 1 Critical Unit Standard Toggle */}
             <button
               onClick={toggleGeoStandard}
-              className="shrink-0 flex items-center gap-1.5 px-3 py-2 bg-slate-800 hover:bg-slate-700 text-white text-[10px] font-mono font-bold rounded-xl transition border border-slate-700 active:scale-95"
-              style={{ minHeight: '40px' }}
+              className="shrink-0 flex items-center gap-1.5 px-3 py-2 bg-slate-900 hover:bg-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700 text-white text-[11px] font-mono font-bold rounded-xl transition border border-slate-700 shadow-2xs active:scale-95 cursor-pointer"
+              style={{ minHeight: '38px' }}
               title="Toggle unit standard"
             >
               <Scale className="w-3.5 h-3.5 text-emerald-400" />
-              <span className="hidden sm:inline">{geoState.standard === 'Metric (SI)' ? 'SI' : 'US'}</span>
+              <span className="font-extrabold">{geoState.standard === 'Metric (SI)' ? 'SI' : 'US'}</span>
             </button>
+
+            {/* Tier 1 Primary Monetization CTA */}
             {!isPro && (
               <Link
                 to={langPath('/pricing')}
-                className="shrink-0 flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-slate-950 text-[11px] font-black uppercase tracking-wider rounded-xl transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer"
+                className="shrink-0 flex items-center gap-1.5 px-3.5 py-2 bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-slate-950 text-[11px] font-black uppercase tracking-wider rounded-xl transition-all shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-95 cursor-pointer"
               >
                 <Sparkles className="w-3.5 h-3.5" />
                 <span className="hidden sm:inline">{lang === 'fr' ? 'Pass Pro' : 'Upgrade'}</span>
               </Link>
             )}
+
+            {/* Tier 1 Account & Notification Dropdown Menu */}
             <DropdownMenu
               user={user}
               logout={logout}
