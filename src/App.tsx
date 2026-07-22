@@ -768,23 +768,23 @@ function AppLayout() {
 
         <div className="h-full flex flex-col pt-5 md:pt-8 pb-4 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-200 dark:scrollbar-thumb-slate-700 scrollbar-track-transparent">
           
-          <div className="px-6 mb-6 hidden md:flex items-center justify-between">
-            <Link to={langPath('/')} className="flex items-center gap-2.5 group hover:opacity-95 transition-all duration-200">
-              <Logo className="w-10 h-10 group-hover:scale-105 transition-transform duration-300 shadow-sm" mode="light" />
-              <span className="font-extrabold text-2xl tracking-tight text-slate-900 dark:text-white">Care<span className="text-teal-600 dark:text-teal-400 font-black">Calculus</span></span>
+          <div className="px-5 mb-5 hidden md:flex items-center justify-between gap-2 min-w-0">
+            <Link to={langPath('/')} className="flex items-center gap-2 group hover:opacity-95 transition-all duration-200 min-w-0 shrink">
+              <Logo className="w-8 h-8 group-hover:scale-105 transition-transform duration-300 shadow-xs shrink-0" mode="light" />
+              <span className="font-extrabold text-xl tracking-tight text-slate-900 dark:text-white truncate">Care<span className="text-teal-600 dark:text-teal-400 font-black">Calculus</span></span>
             </Link>
 
             {/* Globe Language Toggle Button */}
-            <div className="relative group/lang">
+            <div className="relative group/lang shrink-0">
               <button
                 type="button"
-                className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 transition-all flex items-center gap-1.5 cursor-pointer border border-slate-200 dark:border-slate-700 shadow-2xs"
+                className="px-2 py-1 rounded-xl bg-slate-100/90 hover:bg-slate-200/90 dark:bg-slate-800/90 dark:hover:bg-slate-700/90 text-slate-700 dark:text-slate-200 transition-all flex items-center gap-1 cursor-pointer border border-slate-200 dark:border-slate-700/80 shadow-2xs hover:scale-[1.02] active:scale-95"
                 aria-label="Change Language"
                 title={lang === 'fr' ? 'Changer de langue' : 'Change Language'}
               >
-                <Globe className="w-4 h-4 text-teal-600 dark:text-teal-400" />
-                <span className="text-xs font-black uppercase font-mono">{lang.toUpperCase()}</span>
-                <ChevronDown className="w-3 h-3 text-slate-400" />
+                <Globe className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400 shrink-0" />
+                <span className="text-[11px] font-black uppercase font-mono tracking-wide">{lang.toUpperCase()}</span>
+                <ChevronDown className="w-3 h-3 text-slate-400 shrink-0" />
               </button>
 
               {/* Dropdown Options */}
