@@ -18,7 +18,9 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.carecalculus.app",
       "infoPlist": {
-        "UIBackgroundModes": ["remote-notification"]
+        "UIBackgroundModes": [
+          "remote-notification"
+        ]
       }
     },
     "android": {
@@ -50,7 +52,10 @@
     ],
     "extra": {
       "eas": {
-        "projectId": "carecalculus-mobile-app"
+        "projectId": "ab2b7d76-a34c-4e5e-aa0c-99dcf3ce81f3"
+      },
+      "router": {
+        "origin": false
       }
     }
   }
