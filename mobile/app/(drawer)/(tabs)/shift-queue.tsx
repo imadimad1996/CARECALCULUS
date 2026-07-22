@@ -7,6 +7,8 @@ import { Header } from '../../../src/components/Header';
 import { useQueueStore } from '../../../src/store/useQueueStore';
 import { Users, Trash2, Copy, PlusCircle, Clock, BedDouble } from 'lucide-react-native';
 
+import { AdBanner } from '../../../src/components/AdBanner';
+
 export default function ShiftQueueScreen() {
   const router = useRouter();
   const { records, removeRecord, clearAll } = useQueueStore();
@@ -134,6 +136,7 @@ export default function ShiftQueueScreen() {
 
         <View className="h-10" />
       </ScrollView>
+      <AdBanner />
     </View>
   );
 }

@@ -4,6 +4,7 @@ import { useRouter } from 'expo-router';
 import { useAppStore } from '../src/store/useAppStore';
 import { PRO_PACKAGES, purchaseProPackage } from '../src/services/purchases';
 import { ShieldCheck, Check, Sparkles, X, Lock, Zap } from 'lucide-react-native';
+import { AdBanner } from '../src/components/AdBanner';
 
 export default function PricingScreen() {
   const router = useRouter();
@@ -126,6 +127,7 @@ export default function PricingScreen() {
           Subscriptions will auto-renew unless cancelled at least 24-hours before the end of the current period in your Google Play Store settings.
         </Text>
       </ScrollView>
+      <AdBanner />
     </View>
   );
 }

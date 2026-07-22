@@ -5,6 +5,8 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useQueueStore } from '../src/store/useQueueStore';
 import '../global.css';
+import mobileAds from 'react-native-google-mobile-ads';
+import * as TrackingTransparency from 'expo-tracking-transparency';
 
 const queryClient = new QueryClient();
 
@@ -13,6 +15,18 @@ export default function RootLayout() {
 
   useEffect(() => {
     loadQueue();
+
+    (async () => {
+      const { status } = await TrackingTransparency.requestTrackingPermissionsAsync();
+      if (status === 'granted') {
+        console.log('Tracking permissions granted.');
+      }
+      mobileAds()
+        .initialize()
+        .then(adapterStatuses => {
+          console.log('AdMob Initialized!', adapterStatuses);
+        });
+    })();
   }, []);
 
   return (

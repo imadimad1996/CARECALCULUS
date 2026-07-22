@@ -6,6 +6,8 @@ import { CalculatorCard } from '../../../src/components/CalculatorCard';
 import { CLINICAL_CALCULATORS_CATALOG } from '../../../src/core/calculators';
 import { Zap, ShieldAlert, Sparkles, WifiOff, FileText } from 'lucide-react-native';
 
+import { AdBanner } from '../../../src/components/AdBanner';
+
 export default function HomeScreen() {
   const router = useRouter();
   const emergencyTools = CLINICAL_CALCULATORS_CATALOG.filter((c) => c.isEmergency);
@@ -80,6 +82,7 @@ export default function HomeScreen() {
 
         <View className="h-10" />
       </ScrollView>
+      <AdBanner />
     </View>
   );
 }

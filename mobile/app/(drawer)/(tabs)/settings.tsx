@@ -5,6 +5,8 @@ import { Header } from '../../../src/components/Header';
 import { useAppStore } from '../../../src/store/useAppStore';
 import { ShieldCheck, RefreshCw, Smartphone, Database, Lock, Info, ExternalLink } from 'lucide-react-native';
 
+import { AdBanner } from '../../../src/components/AdBanner';
+
 export default function SettingsScreen() {
   const router = useRouter();
   const { unitSystem, toggleUnitSystem, isPro, setProStatus } = useAppStore();
@@ -127,6 +129,7 @@ export default function SettingsScreen() {
 
         <View className="h-10" />
       </ScrollView>
+      <AdBanner />
     </View>
   );
 }
