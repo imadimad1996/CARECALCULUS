@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import {
   Activity, Brain, Stethoscope, Wind, TestTube, AlertOctagon, HeartPulse,
   Droplet, ArrowRightLeft, LayoutDashboard, BookOpen, MonitorPlay, GraduationCap,
@@ -109,7 +109,7 @@ const LEARNING_RESOURCES = [
 import SEO from '../components/SEO';
 import CommandPalette from '../components/CommandPalette';
 import { JsonLd } from '../components/JsonLd';
-import { Link, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 
 export default function HomePage({ lang }: HomePageProps) {
   const { langPath } = useLang();
