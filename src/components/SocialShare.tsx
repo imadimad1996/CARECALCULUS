@@ -31,9 +31,15 @@ export default function SocialShare({ title, shareText, lang, compact = false }:
 
   const pageUrl = typeof window !== 'undefined' ? window.location.href : 'https://carecalculus.com';
   const text = shareText || title;
+
+  // Formatted clinical message for WhatsApp Groups
+  const whatsappText = lang === 'fr'
+    ? `🏥 *CareCalculus | Décision Clinique & Calculateur Médical*\n📌 ${text}\n\n👉 Consulter l'outil sur CareCalculus :\n${pageUrl}`
+    : `🏥 *CareCalculus | Peer-Reviewed Clinical Decision Support*\n📌 ${text}\n\n👉 Open Tool on CareCalculus :\n${pageUrl}`;
+
   const encodedText = encodeURIComponent(`${text}\n${pageUrl}`);
+  const encodedWhatsapp = encodeURIComponent(whatsappText);
   const encodedUrl = encodeURIComponent(pageUrl);
-  const encodedTitle = encodeURIComponent(title);
 
   const handleCopy = async () => {
     try {
@@ -56,7 +62,7 @@ export default function SocialShare({ title, shareText, lang, compact = false }:
   const buttons = [
     {
       label: 'WhatsApp',
-      href: `https://wa.me/?text=${encodedText}`,
+      href: `https://wa.me/?text=${encodedWhatsapp}`,
       bg: 'bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#25D366]',
       border: 'border-[#25D366]/20',
       icon: <MessageCircle className="w-4 h-4" />,
