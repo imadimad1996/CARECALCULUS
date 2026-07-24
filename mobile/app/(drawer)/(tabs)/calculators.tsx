@@ -6,8 +6,11 @@ import { CalculatorCard } from '../../../src/components/CalculatorCard';
 import { CLINICAL_CALCULATORS_CATALOG } from '../../../src/core/calculators';
 import { Search, Filter, X } from 'lucide-react-native';
 
+import { useAppStore } from '../../../src/store/useAppStore';
+
 const SPECIALTIES = [
   'All',
+  'Favorites',
   'ICU/CCU',
   'Cardiology',
   'Nephrology',
@@ -16,16 +19,22 @@ const SPECIALTIES = [
   'Emergency',
   'Neurology',
   'Endocrinology',
+  'Pharmacology',
 ];
 
 export default function CalculatorsScreen() {
   const router = useRouter();
+  const isFavorite = useAppStore((state) => state.isFavorite);
   const [search, setSearch] = useState('');
   const [activeCategory, setActiveCategory] = useState('All');
 
   const filteredCatalog = CLINICAL_CALCULATORS_CATALOG.filter((calc) => {
     const matchesCategory =
-      activeCategory === 'All' || calc.category === activeCategory;
+      activeCategory === 'All'
+        ? true
+        : activeCategory === 'Favorites'
+        ? isFavorite(calc.id)
+        : calc.category === activeCategory;
     const matchesSearch =
       calc.title.toLowerCase().includes(search.toLowerCase()) ||
       calc.abbreviation.toLowerCase().includes(search.toLowerCase()) ||

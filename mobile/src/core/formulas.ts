@@ -396,3 +396,230 @@ export function calculateSodiumCorrection(input: SodiumCorrectionInput): SodiumC
 
   return { correctedNaStandard, correctedNaKatz, interpretation, severity };
 }
+
+// 11. PaO2 / FiO2 Ratio (P/F Ratio for ARDS)
+export interface PFRatioInput {
+  pao2: number; // mmHg
+  fio2Percent: number; // e.g. 21 to 100%
+}
+export interface PFRatioResult {
+  pfRatio: number;
+  ardsCategory: string;
+  interpretation: string;
+  severity: 'normal' | 'warning' | 'emergency';
+}
+export function calculatePFRatio(input: PFRatioInput): PFRatioResult {
+  const fio2Fraction = Math.max(0.21, Math.min(1.0, input.fio2Percent / 100));
+  const pfRatio = Math.round(input.pao2 / fio2Fraction);
+
+  let ardsCategory = 'Normal Oxygenation (P/F > 300 mmHg)';
+  let interpretation = 'Normal arterial oxygenation ratio.';
+  let severity: 'normal' | 'warning' | 'emergency' = 'normal';
+
+  if (pfRatio <= 100) {
+    ardsCategory = 'Severe ARDS (P/F <= 100 mmHg)';
+    interpretation = 'Severe ARDS (Berlin Definition). High mortality risk. Prone positioning and lung-protective ventilation (6 mL/kg PBW, high PEEP) indicated.';
+    severity = 'emergency';
+  } else if (pfRatio <= 200) {
+    ardsCategory = 'Moderate ARDS (100 < P/F <= 200 mmHg)';
+    interpretation = 'Moderate ARDS. Optimize PEEP and fluid management.';
+    severity = 'emergency';
+  } else if (pfRatio <= 300) {
+    ardsCategory = 'Mild ARDS (200 < P/F <= 300 mmHg)';
+    interpretation = 'Mild ARDS. Monitor closely for respiratory fatigue.';
+    severity = 'warning';
+  }
+
+  return { pfRatio, ardsCategory, interpretation, severity };
+}
+
+// 12. Cockcroft-Gault Creatinine Clearance (CrCl)
+export interface CockcroftGaultInput {
+  age: number;
+  weightKg: number;
+  scrMgDl: number;
+  sex: 'male' | 'female';
+}
+export interface CockcroftGaultResult {
+  crcl: number;
+  interpretation: string;
+  severity: 'normal' | 'warning' | 'emergency';
+}
+export function calculateCockcroftGault(input: CockcroftGaultInput): CockcroftGaultResult {
+  if (input.scrMgDl <= 0) {
+    return { crcl: 0, interpretation: 'Invalid serum creatinine input', severity: 'normal' };
+  }
+  const factor = input.sex === 'female' ? 0.85 : 1.0;
+  const crcl = Math.round((((140 - input.age) * input.weightKg) / (72 * input.scrMgDl)) * factor);
+
+  let interpretation = 'Normal estimated renal clearance (CrCl >= 90 mL/min)';
+  let severity: 'normal' | 'warning' | 'emergency' = 'normal';
+
+  if (crcl < 15) {
+    interpretation = 'Severe Renal Impairment / Failure (CrCl < 15 mL/min). Renal replacement therapy / extreme drug dose reduction.';
+    severity = 'emergency';
+  } else if (crcl < 30) {
+    interpretation = 'Severe Renal Impairment (CrCl 15-29 mL/min). Dose adjustment mandatory for renally excreted drugs.';
+    severity = 'emergency';
+  } else if (crcl < 60) {
+    interpretation = 'Moderate Renal Impairment (CrCl 30-59 mL/min). Review nephrotoxic agents and dosage adjustments.';
+    severity = 'warning';
+  }
+
+  return { crcl, interpretation, severity };
+}
+
+// 13. HAS-BLED Score for Major Bleeding Risk
+export interface HASBLEDInput {
+  hypertension: boolean; // SBP > 160 (1 pt)
+  abnormalRenal: boolean; // Dialysis, Cr > 2.26, transplant (1 pt)
+  abnormalLiver: boolean; // Cirrhosis, Bili > 2x, AST/ALT > 3x (1 pt)
+  strokeHistory: boolean; // (1 pt)
+  bleedingHistory: boolean; // Anemia, severe hemorrhage (1 pt)
+  labileInr: boolean; // Unstable INRs or <60% time in therapeutic range (1 pt)
+  elderlyAge: boolean; // Age > 65 (1 pt)
+  drugsConcomitant: boolean; // Antiplatelets, NSAIDs (1 pt)
+  alcoholExcess: boolean; // >= 8 drinks/week (1 pt)
+}
+export interface HASBLEDResult {
+  score: number;
+  annualBleedingRisk: string;
+  recommendation: string;
+  severity: 'normal' | 'warning' | 'emergency';
+}
+export function calculateHASBLED(input: HASBLEDInput): HASBLEDResult {
+  let score = 0;
+  if (input.hypertension) score++;
+  if (input.abnormalRenal) score++;
+  if (input.abnormalLiver) score++;
+  if (input.strokeHistory) score++;
+  if (input.bleedingHistory) score++;
+  if (input.labileInr) score++;
+  if (input.elderlyAge) score++;
+  if (input.drugsConcomitant) score++;
+  if (input.alcoholExcess) score++;
+
+  const risks: { [key: number]: string } = {
+    0: '1.13%',
+    1: '1.02%',
+    2: '1.88%',
+    3: '3.74%',
+    4: '8.70%',
+    5: '12.50%',
+  };
+  const annualBleedingRisk = risks[Math.min(5, score)] || '> 12.5%';
+
+  let recommendation = 'Low bleeding risk. Standard anticoagulation monitoring.';
+  let severity: 'normal' | 'warning' | 'emergency' = 'normal';
+
+  if (score >= 3) {
+    recommendation = 'High bleeding risk (HAS-BLED >= 3). Caution & regular review indicated; address correctable risk factors.';
+    severity = 'emergency';
+  } else if (score === 2) {
+    recommendation = 'Moderate bleeding risk. Monitor closely.';
+    severity = 'warning';
+  }
+
+  return { score, annualBleedingRisk, recommendation, severity };
+}
+
+// 14. HEART Score for Major Adverse Cardiac Events (MACE)
+export interface HEARTScoreInput {
+  history: 0 | 1 | 2; // Slightly suspicious (0), Moderately (1), Highly (2)
+  ecg: 0 | 1 | 2; // Normal (0), Nonspecific repol (1), ST depression (2)
+  age: 0 | 1 | 2; // < 45 (0), 45-64 (1), >= 65 (2)
+  riskFactors: 0 | 1 | 2; // No risk (0), 1-2 risk factors (1), >= 3 or CAD (2)
+  troponin: 0 | 1 | 2; // <= normal limit (0), 1-3x limit (1), > 3x limit (2)
+}
+export interface HEARTScoreResult {
+  score: number;
+  maceRisk: string;
+  recommendation: string;
+  severity: 'normal' | 'warning' | 'emergency';
+}
+export function calculateHEARTScore(input: HEARTScoreInput): HEARTScoreResult {
+  const score = input.history + input.ecg + input.age + input.riskFactors + input.troponin;
+  let maceRisk = '0.9 - 1.7%';
+  let recommendation = 'Low risk. Early discharge or outpatient workup reasonable.';
+  let severity: 'normal' | 'warning' | 'emergency' = 'normal';
+
+  if (score >= 7) {
+    maceRisk = '50 - 65%';
+    recommendation = 'High risk. Invasive measures / early coronary angiography strongly recommended.';
+    severity = 'emergency';
+  } else if (score >= 4) {
+    maceRisk = '12 - 16.6%';
+    recommendation = 'Moderate risk. Admit for observation, serial troponins, and non-invasive testing.';
+    severity = 'warning';
+  }
+
+  return { score, maceRisk, recommendation, severity };
+}
+
+// 15. NIH Stroke Scale Quick Assessment (NIHSS)
+export interface NIHSSInput {
+  loc: number; // 0-3
+  locQuestions: number; // 0-2
+  locCommands: number; // 0-2
+  bestGaze: number; // 0-2
+  visual: number; // 0-3
+  facialPalsy: number; // 0-3
+  motorArmLeft: number; // 0-4
+  motorArmRight: number; // 0-4
+  motorLegLeft: number; // 0-4
+  motorLegRight: number; // 0-4
+  limbAtaxia: number; // 0-2
+  sensory: number; // 0-2
+  bestLanguage: number; // 0-3
+  dysarthria: number; // 0-2
+  extinction: number; // 0-2
+}
+export interface NIHSSResult {
+  score: number;
+  strokeSeverity: string;
+  interpretation: string;
+  severity: 'normal' | 'warning' | 'emergency';
+}
+export function calculateNIHSS(input: NIHSSInput): NIHSSResult {
+  const score =
+    input.loc +
+    input.locQuestions +
+    input.locCommands +
+    input.bestGaze +
+    input.visual +
+    input.facialPalsy +
+    input.motorArmLeft +
+    input.motorArmRight +
+    input.motorLegLeft +
+    input.motorLegRight +
+    input.limbAtaxia +
+    input.sensory +
+    input.bestLanguage +
+    input.dysarthria +
+    input.extinction;
+
+  let strokeSeverity = 'No Stroke Symptoms (0)';
+  let interpretation = 'Normal neurological exam.';
+  let severity: 'normal' | 'warning' | 'emergency' = 'normal';
+
+  if (score >= 21) {
+    strokeSeverity = 'Severe Stroke (21 - 42)';
+    interpretation = 'Severe acute ischemic stroke. Emergency stroke team activation & EVT evaluation.';
+    severity = 'emergency';
+  } else if (score >= 16) {
+    strokeSeverity = 'Moderate-to-Severe Stroke (16 - 20)';
+    interpretation = 'Moderate to severe stroke. High risk for hemorrhagic transformation.';
+    severity = 'emergency';
+  } else if (score >= 5) {
+    strokeSeverity = 'Moderate Stroke (5 - 15)';
+    interpretation = 'Moderate stroke. Evaluate for thrombolysis (tPA/TNK) and endovascular thrombectomy.';
+    severity = 'warning';
+  } else if (score >= 1) {
+    strokeSeverity = 'Minor Stroke (1 - 4)';
+    interpretation = 'Minor stroke symptoms.';
+    severity = 'normal';
+  }
+
+  return { score, strokeSeverity, interpretation, severity };
+}
+
