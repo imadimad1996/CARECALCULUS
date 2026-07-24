@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Printer, Copy, Check, FileText, X, User, Calendar, FileDown, Lock, Share2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { LangCode } from '../types';
-import { useMemo } from 'react';
 import { generateSOAP, generateSBAR, generateDotPhrase, generateShiftHandover, generateCaseShareUrl } from '../utils/soapGenerator';
 import { saveShiftRecord } from './ShiftStorageDrawer';
 import { trackEhrExport } from '../utils/telemetry';
+import PremiumGate from './PremiumGate';
 
 export interface ClinicalExportButtonProps {
   title?: string;
@@ -515,67 +515,112 @@ ${divider}`;
                   />
                 </div>
 
-                {/* EHR Note Format Tabs */}
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">EHR SmartPhrase / Progress Note Format</span>
+                  {/* EHR Note Format Tabs */}
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">EHR SmartPhrase / Progress Note Format</span>
+                    </div>
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                      {(['soap', 'sbar', 'dotphrase', 'ascii'] as const).map((type) => {
+                        const isGated = type === 'sbar' || type === 'dotphrase';
+                        return (
+                          <button
+                            key={type}
+                            onClick={() => setNoteTab(type)}
+                            className={`py-2 px-3 rounded-xl text-xs font-bold font-mono uppercase transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
+                              noteTab === type
+                                ? 'bg-blue-600 text-white shadow-sm'
+                                : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+                            }`}
+                          >
+                            {type === 'soap' ? 'SOAP Note' : type === 'sbar' ? 'SBAR Handover' : type === 'dotphrase' ? 'EPIC DotPhrase' : 'Full Report'}
+                            {isGated && <Lock className={`w-3 h-3 ${noteTab === type ? 'text-white/80' : 'text-cyan-600'}`} />}
+                          </button>
+                        );
+                      })}
+                    </div>
+                    
+                    {(noteTab === 'sbar' || noteTab === 'dotphrase') ? (
+                      <PremiumGate featureName={noteTab === 'sbar' ? 'SBAR Handover' : 'Epic/Cerner DotPhrase'} lang={lang}>
+                        <div className="space-y-3">
+                          {/* Live Preview Box */}
+                          <div className="p-4 rounded-xl bg-slate-950 text-emerald-400 font-mono text-xs overflow-x-auto whitespace-pre-wrap border border-slate-800 shadow-inner max-h-60 select-all">
+                            {getFormattedNote()}
+                          </div>
+
+                          {/* Action Buttons */}
+                          <div className="flex flex-col sm:flex-row items-center gap-3 pt-2 border-t border-slate-200 dark:border-slate-800">
+                            <button
+                              onClick={handleCopyNote}
+                              className="w-full sm:flex-1 py-3 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl transition shadow-sm flex items-center justify-center gap-2 cursor-pointer"
+                            >
+                              {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                              <span>{copied ? t.copySuccess : t.copyBtn}</span>
+                            </button>
+
+                            <button
+                              onClick={handlePrint}
+                              className="w-full sm:flex-1 py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl transition shadow-sm flex items-center justify-center gap-2 cursor-pointer"
+                            >
+                              <Printer className="w-4 h-4" />
+                              <span>{t.printBtn}</span>
+                            </button>
+
+                            <button
+                              onClick={handleWhatsAppShare}
+                              className="w-full sm:w-auto py-3 px-5 bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-xs rounded-xl transition shadow-sm flex items-center justify-center gap-2 cursor-pointer"
+                              title="Share Shift Handover to WhatsApp"
+                            >
+                              <Share2 className="w-4 h-4" />
+                              <span>WhatsApp</span>
+                            </button>
+                          </div>
+                        </div>
+                      </PremiumGate>
+                    ) : (
+                      <div className="space-y-3">
+                        {/* Live Preview Box */}
+                        <div className="p-4 rounded-xl bg-slate-950 text-emerald-400 font-mono text-xs overflow-x-auto whitespace-pre-wrap border border-slate-800 shadow-inner max-h-60 select-all">
+                          {getFormattedNote()}
+                        </div>
+
+                        {/* Action Buttons */}
+                        <div className="flex flex-col sm:flex-row items-center gap-3 pt-2 border-t border-slate-200 dark:border-slate-800">
+                          <button
+                            onClick={handleCopyNote}
+                            className="w-full sm:flex-1 py-3 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl transition shadow-sm flex items-center justify-center gap-2 cursor-pointer"
+                          >
+                            {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                            <span>{copied ? t.copySuccess : t.copyBtn}</span>
+                          </button>
+
+                          <button
+                            onClick={handlePrint}
+                            className="w-full sm:flex-1 py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl transition shadow-sm flex items-center justify-center gap-2 cursor-pointer"
+                          >
+                            <Printer className="w-4 h-4" />
+                            <span>{t.printBtn}</span>
+                          </button>
+
+                          <button
+                            onClick={handleWhatsAppShare}
+                            className="w-full sm:w-auto py-3 px-5 bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-xs rounded-xl transition shadow-sm flex items-center justify-center gap-2 cursor-pointer"
+                            title="Share Shift Handover to WhatsApp"
+                          >
+                            <Share2 className="w-4 h-4" />
+                            <span>WhatsApp</span>
+                          </button>
+                        </div>
+                      </div>
+                    )}
                   </div>
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                    {(['soap', 'sbar', 'dotphrase', 'ascii'] as const).map((type) => (
-                      <button
-                        key={type}
-                        onClick={() => setNoteTab(type)}
-                        className={`py-2 px-3 rounded-xl text-xs font-bold font-mono uppercase transition-all cursor-pointer ${
-                          noteTab === type
-                            ? 'bg-blue-600 text-white shadow-sm'
-                            : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
-                        }`}
-                      >
-                        {type === 'soap' ? 'SOAP Note' : type === 'sbar' ? 'SBAR Handover' : type === 'dotphrase' ? 'EPIC DotPhrase' : 'Full Report'}
-                      </button>
-                    ))}
-                  </div>
-                  
-                  {/* Live Preview Box */}
-                  <div className="p-4 rounded-xl bg-slate-950 text-emerald-400 font-mono text-xs overflow-x-auto whitespace-pre-wrap border border-slate-800 shadow-inner max-h-60 select-all">
-                    {getFormattedNote()}
-                  </div>
+
                 </div>
 
-                {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row items-center gap-3 pt-2 border-t border-slate-200 dark:border-slate-800">
-                  <button
-                    onClick={handleCopyNote}
-                    className="w-full sm:flex-1 py-3 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl transition shadow-sm flex items-center justify-center gap-2 cursor-pointer"
-                  >
-                    {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-                    <span>{copied ? t.copySuccess : t.copyBtn}</span>
-                  </button>
-
-                  <button
-                    onClick={handlePrint}
-                    className="w-full sm:flex-1 py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl transition shadow-sm flex items-center justify-center gap-2 cursor-pointer"
-                  >
-                    <Printer className="w-4 h-4" />
-                    <span>{t.printBtn}</span>
-                  </button>
-
-                  <button
-                    onClick={handleWhatsAppShare}
-                    className="w-full sm:w-auto py-3 px-5 bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-xs rounded-xl transition shadow-sm flex items-center justify-center gap-2 cursor-pointer"
-                    title="Share Shift Handover to WhatsApp"
-                  >
-                    <Share2 className="w-4 h-4" />
-                    <span>WhatsApp</span>
-                  </button>
-                </div>
-
-              </div>
-
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
-    </>
-  );
-}
+              </motion.div>
+            </div>
+          )}
+        </AnimatePresence>
+      </>
+    );
+  }

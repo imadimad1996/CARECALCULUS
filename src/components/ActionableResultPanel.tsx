@@ -1,7 +1,11 @@
 import React from 'react';
-import { AlertCircle, CheckCircle2, Info, ArrowRight } from 'lucide-react';
+import { AlertCircle, CheckCircle2, Info, ArrowRight, Zap } from 'lucide-react';
+import { isProActive } from '../utils/pro';
+import NewsletterCapture from './NewsletterCapture';
 
 export type RiskLevel = 'low' | 'medium' | 'high' | 'neutral';
+
+import { LangCode } from '../types';
 
 export interface ActionableResultProps {
   score: string | number;
@@ -9,7 +13,7 @@ export interface ActionableResultProps {
   riskLevel: RiskLevel;
   interpretation: string;
   nextSteps?: string[];
-  lang?: 'en' | 'fr' | 'ar';
+  lang?: LangCode;
 }
 
 export const ActionableResultPanel: React.FC<ActionableResultProps> = ({
@@ -112,6 +116,31 @@ export const ActionableResultPanel: React.FC<ActionableResultProps> = ({
                 </li>
               ))}
             </ul>
+          </div>
+        )}
+
+        {/* Inline PRO Upsell & Lead Capture for Free Users */}
+        {!isProActive() && (
+          <div className="mt-6 pt-5 border-t border-black/5 flex flex-col gap-4">
+            <button
+              onClick={() => { window.location.href = '/pricing'; }}
+              className="w-full text-left p-4 rounded-xl bg-cyan-900/10 border border-cyan-500/30 hover:bg-cyan-900/20 hover:border-cyan-500/50 transition-all group flex items-center justify-between cursor-pointer"
+            >
+              <div className="flex items-center gap-3">
+                <div className="p-2 bg-cyan-500/20 text-cyan-700 rounded-lg group-hover:scale-110 transition-transform">
+                  <Zap className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold text-slate-800">⚡ Save this result to Epic instantly</h4>
+                  <p className="text-xs text-slate-600 mt-0.5">Copy perfect DotPhrases with CareCalculus PRO.</p>
+                </div>
+              </div>
+              <ArrowRight className="w-5 h-5 text-cyan-600 group-hover:translate-x-1 transition-transform" />
+            </button>
+            
+            <div className="mt-2">
+              <NewsletterCapture lang={lang} />
+            </div>
           </div>
         )}
       </div>
