@@ -158,7 +158,7 @@ export const InlineCheckout: React.FC<InlineCheckoutProps> = ({
           </div>
 
           {/* Inline PayPal & Card Buttons */}
-          <div className="pt-2 min-h-[160px] bg-slate-900/90 rounded-2xl">
+          <div className="mt-6 p-4 min-h-[160px] bg-white rounded-2xl border border-slate-200 shadow-inner">
             <PayPalScriptProvider options={{ clientId: PAYPAL_CLIENT_ID, currency: currency, intent: "capture" }}>
               <PayPalButtons
                 style={{ 
