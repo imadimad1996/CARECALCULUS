@@ -10,7 +10,7 @@ export const SPECIALTIES_DB = [
     descriptionEn: 'Critical care scoring systems, vasopressor dosing, and respiratory mechanics calculators for ICU clinicians.',
     descriptionFr: 'Systèmes de score de soins critiques, dosage des vasopresseurs et calculateurs de mécanique respiratoire pour les cliniciens en réanimation.',
     descriptionAr: 'أنظمة تسجيل العناية الحرجة، وحساب جرعات الأدوية الرافعة للضغط، وآليات التنفس لأطباء العناية المركزة.',
-    calculators: ['map-calculator', 'glasgow-coma-scale', 'sofa-score', 'pf-ratio', 'drip-rate-calculator', 'tidal-volume', 'anion-gap']
+    calculators: ['map-calculator', 'glasgow-coma-scale', 'sofa-score', 'apache-ii-score', 'saps-ii-score', 'pf-ratio', 'drip-rate-calculator', 'tidal-volume', 'anion-gap']
   },
   {
     id: 'emergency-medicine',
@@ -43,7 +43,7 @@ export const SPECIALTIES_DB = [
     descriptionEn: 'Renal function calculators, glomerular filtration rate (GFR) estimators, and acid-base analysis tools.',
     descriptionFr: 'Calculateurs de la fonction rénale, estimateurs du DFG et outils d\'analyse acido-basique.',
     descriptionAr: 'حاسبات وظائف الكلى، ومقدرات معدل الترشيح الكبيبي (GFR)، وأدوات تحليل الحمض والقاعدة.',
-    calculators: ['creatinine-clearance', 'mdrd-gfr', 'ckd-epi-gfr', 'anion-gap']
+    calculators: ['creatinine-clearance', 'mdrd-gfr', 'ckd-epi-gfr', 'vancomycin-dosing', 'aminoglycoside-dosing', 'fena-calculator', 'anion-gap']
   },
   {
     id: 'cardiology',
@@ -54,7 +54,7 @@ export const SPECIALTIES_DB = [
     descriptionEn: 'Cardiovascular risk assessment, anticoagulation scoring, and hemodynamic calculators for cardiology.',
     descriptionFr: 'Évaluation du risque cardiovasculaire, scores d\'anticoagulation et calculateurs hémodynamiques pour la cardiologie.',
     descriptionAr: 'تقييم مخاطر أمراض القلب والأوعية الدموية، وتسجيل مضادات التخثر، وحاسبات الدورة الدموية.',
-    calculators: ['cha2ds2-vasc', 'map-calculator']
+    calculators: ['cha2ds2-vasc', 'map-calculator', 'heart-score', 'timi-score', 'ascvd-risk']
   },
   {
     id: 'pulmonology',
@@ -65,7 +65,7 @@ export const SPECIALTIES_DB = [
     descriptionEn: 'Respiratory function calculators, pneumonia severity scores, and oxygenation indices.',
     descriptionFr: 'Calculateurs de la fonction respiratoire, scores de sévérité de la pneumonie et indices d\'oxygénation.',
     descriptionAr: 'حاسبات وظائف الجهاز التنفسي، ودرجات شدة الالتهاب الرئوي، ومؤشرات الأكسجة.',
-    calculators: ['curb65-score', 'pf-ratio', 'aa-gradient', 'tidal-volume']
+    calculators: ['curb65-score', 'pf-ratio', 'aa-gradient', 'tidal-volume', 'perc-rule', 'pesi-score', 'bova-score']
   },
   {
     id: 'neurology',
@@ -76,7 +76,7 @@ export const SPECIALTIES_DB = [
     descriptionEn: 'Neurological assessment scales, coma scoring, and stroke risk stratification tools.',
     descriptionFr: 'Échelles d\'évaluation neurologique, scores de coma et outils de stratification du risque d\'AVC.',
     descriptionAr: 'مقاييس التقييم العصبي، وتسجيل الغيبوبة، وأدوات تقييم مخاطر السكتة الدماغية.',
-    calculators: ['glasgow-coma-scale', 'cha2ds2-vasc']
+    calculators: ['glasgow-coma-scale', 'cha2ds2-vasc', 'nihss-score', 'opioid-conversion']
   },
   {
     id: 'pediatrics',
@@ -87,7 +87,7 @@ export const SPECIALTIES_DB = [
     descriptionEn: 'Neonatal assessment scores, pediatric maintenance fluids, and weight-based dosing calculators.',
     descriptionFr: 'Scores d\'évaluation néonatale, fluides d\'entretien pédiatriques et calculateurs de dosage basés sur le poids.',
     descriptionAr: 'درجات التقييم لحديثي الولادة، وسوائل الصيانة للأطفال، وحاسبات الجرعات بناءً على الوزن.',
-    calculators: ['apgar-score']
+    calculators: ['apgar-score', 'centor-score']
   },
   {
     id: 'obgyn',
@@ -98,7 +98,7 @@ export const SPECIALTIES_DB = [
     descriptionEn: 'Pregnancy dating, fetal assessment scores, and maternal risk calculators.',
     descriptionFr: 'Datation de la grossesse, scores d\'évaluation fœtale et calculateurs de risque maternel.',
     descriptionAr: 'حساب تاريخ الحمل، ودرجات تقييم الجنين، وحاسبات المخاطر للأم.',
-    calculators: []
+    calculators: ['bishop-score']
   },
   {
     id: 'endocrinology',

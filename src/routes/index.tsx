@@ -97,6 +97,8 @@ const pageLoaders = [
   () => import('../pages/FavoritesPage'),
   () => import('../pages/ClinicalLibrary'),
   () => import('../pages/PricingPage'),
+  () => import('../pages/BishopScore'),
+  () => import('../pages/CentorScore'),
 ] as const;
 
 const safeLazy = (loader: () => Promise<any>) => {
@@ -141,7 +143,8 @@ const [
   PercRule, GenevaScore, NihssScore,
   GraceScore, BicarbDeficit, ReticIndex,
   PhenytoinCorrection, AscvdRisk, VancomycinDosing, AminoglycosideDosing,
-  PesiScore, BovaScore, ApacheIIScore, SapsIIScore, DrugInteractions, MedicalStatistics, FavoritesPage, ClinicalLibrary, PricingPage
+  PesiScore, BovaScore, ApacheIIScore, SapsIIScore, DrugInteractions, MedicalStatistics, FavoritesPage, ClinicalLibrary, PricingPage,
+  BishopScore, CentorScore
 ] = pageLoaders.map((loader) => safeLazy(loader as any)) as any[];
 
 export const HomePage = safeLazy(() => import('../pages/HomePage'));
@@ -246,6 +249,8 @@ export const navItems = [
   { path: '/nutrition-tdee', nameEn: 'TDEE & BMR Nutrition', nameFr: 'TDEE & Métabolisme de Base', nameAr: 'احتياجات الطاقة والسعرات', icon: Activity, tier: 2 },
   { path: '/nutrition-must', nameEn: 'MUST Malnutrition Score', nameFr: 'Score MUST Dénutrition', nameAr: 'أداة MUST لسوء التغذية', icon: Activity, tier: 2 },
   { path: '/nutrition-nrs2002', nameEn: 'NRS-2002 Nutrition Risk', nameFr: 'NRS-2002 Risque Nutritionnel', nameAr: 'أداة NRS-2002 للمخاطر الغذائية', icon: AlertOctagon, tier: 2 },
+  { path: '/bishop-score', nameEn: 'Bishop Score', nameFr: 'Score de Bishop', nameAr: 'مقياس بيشوب للولادة', icon: Activity, tier: 2 },
+  { path: '/centor-score', nameEn: 'Centor Score', nameFr: 'Score de MacIsaac', nameAr: 'مقياس سينتور لالتهاب الحلق', icon: Activity, tier: 2 },
 
   // Tier 3: Infusions, Metrics & Pharmacology
   { path: '/drip-rate-calculator', nameEn: 'IV Drip Rate Tool', nameFr: 'Calcul Débit Perfusion', nameAr: 'سرعة تنقيط المحلول الوريدي', icon: Droplet, tier: 3 },
@@ -421,6 +426,8 @@ export function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       {/* Programmatic SEO Guides */}
       <Route path="clinical-guide" element={<ProgrammaticGuidePage lang={lang} />} />
       <Route path="clinical-guide/:guideSlug" element={<ProgrammaticGuidePage lang={lang} />} />
+      <Route path="bishop-score" element={wrapCalculator('/bishop-score', <BishopScore lang={lang} />)} />
+      <Route path="centor-score" element={wrapCalculator('/centor-score', <CentorScore lang={lang} />)} />
     </>
   );
 }
