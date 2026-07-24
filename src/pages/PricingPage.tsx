@@ -1,15 +1,22 @@
 import React, { useState } from 'react';
-import { Check, ShieldCheck, Zap, Sparkles, Building2, User, ArrowRight, X, HelpCircle } from 'lucide-react';
+import { Check, ShieldCheck, Zap, Sparkles, Building2, User, ArrowRight, X, HelpCircle, CreditCard, Lock } from 'lucide-react';
 import { LangCode } from '../types';
-import { PayPalButtonModal } from '../components/PayPalButtonModal';
+import { InlineCheckout } from '../components/InlineCheckout';
 
 export default function PricingPage({ lang }: { lang: LangCode }) {
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'annual'>('annual');
-  const [isPayPalModalOpen, setIsPayPalModalOpen] = useState(false);
+  const [showCheckout, setShowCheckout] = useState(true);
 
   const isFr = lang === 'fr';
-
   const proPrice = billingCycle === 'annual' ? '79.00' : '9.99';
+
+  const handleSelectPro = () => {
+    setShowCheckout(true);
+    const checkoutEl = document.getElementById('inline-checkout-section');
+    if (checkoutEl) {
+      checkoutEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  };
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-12 md:py-20 text-slate-900 dark:text-slate-100 font-sans">
@@ -59,7 +66,7 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
       </div>
 
       {/* Pricing Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch mb-20">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch mb-12">
         
         {/* Tier 1: Free Pass */}
         <div className="animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100 bg-white dark:bg-slate-900/50 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
@@ -114,9 +121,9 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
               <span className="text-xs font-bold uppercase tracking-widest">{isFr ? 'Pass Clinicien Pro' : 'Pro Clinician Pass'}</span>
             </div>
             <h3 className="text-2xl font-black mb-2">{isFr ? 'Pro Clinicien' : 'Pro Pass'}</h3>
-            <p className="text-sm text-slate-400 mb-6 min-h-[40px]">{isFr ? 'Pour les médecins de garde, réanimateurs et urgentistes.' : 'For ER & ICU attendings, fellows, and hospitalists.'}</p>
+            <p className="text-sm text-slate-400 mb-4 min-h-[40px]">{isFr ? 'Pour les médecins de garde, réanimateurs et urgentistes.' : 'For ER & ICU attendings, fellows, and hospitalists.'}</p>
 
-            <div className="mb-8">
+            <div className="mb-6">
               <div className="flex items-end gap-1">
                 <span className="text-5xl font-black tracking-tighter text-white">${proPrice}</span>
                 <span className="text-sm text-slate-400 font-medium pb-2">/ {isFr ? 'paiement unique' : 'one-time'}</span>
@@ -124,6 +131,38 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
               <span className="inline-block mt-2 px-2.5 py-1 bg-cyan-500/10 text-cyan-400 text-xs font-bold rounded-md">
                 {billingCycle === 'annual' ? (isFr ? 'Accès complet 1 an' : '1-Year Full Access') : (isFr ? 'Accès complet 1 mois' : '1-Month Full Access')}
               </span>
+            </div>
+
+            {/* Prominent Card Payment Badges */}
+            <div className="mb-6 bg-slate-800/80 p-3 rounded-2xl border border-slate-700/80">
+              <div className="flex items-center justify-between text-xs text-slate-300 font-semibold mb-2">
+                <span className="flex items-center gap-1.5">
+                  <CreditCard className="w-4 h-4 text-cyan-400" />
+                  {isFr ? 'Payer par Carte Bancaire' : 'Pay with Credit/Debit Card'}
+                </span>
+                <span className="text-[10px] text-emerald-400 font-bold uppercase tracking-wider bg-emerald-500/10 px-2 py-0.5 rounded">
+                  {isFr ? 'Sans Compte PayPal' : 'No Account Needed'}
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="bg-white text-blue-900 font-black text-[10px] px-2 py-0.5 rounded italic tracking-tighter shadow-sm border border-slate-200">
+                  VISA
+                </span>
+                <span className="bg-slate-900 text-amber-500 font-black text-[9px] px-1.5 py-0.5 rounded tracking-tighter border border-slate-700 flex items-center gap-0.5">
+                  <span className="w-1.5 h-1.5 bg-red-500 rounded-full inline-block"></span>
+                  <span className="w-1.5 h-1.5 bg-amber-400 rounded-full -ml-1 inline-block opacity-80"></span>
+                  <span className="ml-0.5">MC</span>
+                </span>
+                <span className="bg-sky-600 text-white font-bold text-[8px] px-1.5 py-0.5 rounded tracking-tight">
+                  AMEX
+                </span>
+                <span className="bg-emerald-700 text-white font-extrabold text-[8px] px-1.5 py-0.5 rounded">
+                  CB
+                </span>
+                <span className="text-[10px] text-slate-400 font-medium ml-auto">
+                  + PayPal
+                </span>
+              </div>
             </div>
 
             <ul className="space-y-4 text-sm text-slate-200 mb-8 font-medium">
@@ -147,10 +186,10 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
           </div>
 
           <button
-            onClick={() => setIsPayPalModalOpen(true)}
+            onClick={handleSelectPro}
             className="w-full py-4 px-4 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-extrabold rounded-xl transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_25px_rgba(6,182,212,0.5)] flex items-center justify-center gap-2 cursor-pointer"
           >
-            <span>{isFr ? 'Obtenir le Pass Pro' : 'Get Pro Pass'}</span>
+            <span>{isFr ? 'Payer par Carte / PayPal' : 'Pay by Card or PayPal'}</span>
             <ArrowRight className="w-5 h-5" />
           </button>
         </div>
@@ -197,6 +236,19 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
         </div>
       </div>
 
+      {/* Embedded Inline Card & PayPal Checkout Container */}
+      {showCheckout && (
+        <div className="animate-in fade-in slide-in-from-bottom-6 duration-500">
+          <InlineCheckout
+            lang={lang}
+            planName={billingCycle === 'annual' ? "CareCalculus Pro 1-Year Pass" : "CareCalculus Pro 1-Month Pass"}
+            price={proPrice}
+            currency="USD"
+            planType={billingCycle}
+          />
+        </div>
+      )}
+
       {/* Trust & Guarantees */}
       <div className="animate-in fade-in duration-700 delay-500 flex flex-col sm:flex-row items-center justify-center gap-8 py-10 border-y border-slate-200 dark:border-slate-800 mb-20">
         <div className="flex items-center gap-3">
@@ -204,7 +256,7 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
             <ShieldCheck className="w-6 h-6" />
           </div>
           <span className="font-semibold text-sm text-slate-700 dark:text-slate-300">
-            {isFr ? 'Paiement Sécurisé SSL 256-bit par PayPal' : '256-Bit SSL Encrypted PayPal Processing'}
+            {isFr ? 'Paiement Sécurisé Carte Bancaire & PayPal SSL 256-bit' : '256-Bit SSL Encrypted Card & PayPal Processing'}
           </span>
         </div>
         <div className="flex items-center gap-3">
@@ -261,7 +313,7 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
         </div>
       </div>
 
-      {/* FAQ Grid Redesign */}
+      {/* FAQ Grid */}
       <div className="max-w-4xl mx-auto animate-in fade-in slide-in-from-bottom-8 duration-700 delay-[700ms]">
         <h3 className="text-2xl font-black mb-8 text-center">{isFr ? 'Questions Fréquentes' : 'Frequently Asked Questions'}</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
@@ -279,10 +331,10 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
           <div className="p-6 rounded-3xl bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/60 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
             <div className="flex gap-3 mb-2">
               <HelpCircle className="w-5 h-5 text-cyan-500 shrink-0 mt-0.5" />
-              <h4 className="font-bold text-base text-slate-900 dark:text-slate-100">{isFr ? 'Comment fonctionne le paiement PayPal ?' : 'How does the PayPal payment work?'}</h4>
+              <h4 className="font-bold text-base text-slate-900 dark:text-slate-100">{isFr ? 'Puis-je payer par Carte Bancaire sans compte PayPal ?' : 'Can I pay with a Card without a PayPal account?'}</h4>
             </div>
             <p className="text-slate-600 dark:text-slate-400 ml-8 leading-relaxed">
-              {isFr ? 'Le paiement est un paiement unique géré par l\'API officielle de PayPal. Vous pouvez utiliser un compte PayPal ou une carte bancaire.' : 'It is a secure, one-time payment processed via the official PayPal API. You can pay with your PayPal account or a debit/credit card.'}
+              {isFr ? 'Absolument. Vous n\'avez pas besoin de créer ni d\'avoir un compte PayPal. Vous pouvez saisir directement votre numéro de carte (Visa, Mastercard, Amex, CB) via l\'option Carte Bancaire sécurisée.' : 'Yes! You do not need a PayPal account. You can enter your debit/credit card details directly (Visa, Mastercard, Amex) using the inline card payment option.'}
             </p>
           </div>
 
@@ -308,16 +360,6 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
 
         </div>
       </div>
-
-      {/* PayPal Modal */}
-      <PayPalButtonModal
-        isOpen={isPayPalModalOpen}
-        onClose={() => setIsPayPalModalOpen(false)}
-        planName={billingCycle === 'annual' ? "CareCalculus Pro 1-Year Pass" : "CareCalculus Pro 1-Month Pass"}
-        price={proPrice}
-        currency="USD"
-        planType={billingCycle}
-      />
     </div>
   );
 }
