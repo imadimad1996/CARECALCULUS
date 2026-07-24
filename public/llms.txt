@@ -2,26 +2,77 @@
 
 > CareCalculus is a free, open-access, peer-reviewed clinical decision support platform for ICU, ER, and hospital clinicians worldwide. All formulas, cutoffs, and risk models are strictly aligned with international guidelines (AHA, ESC, KDIGO, SFAR, NIH).
 
-## Core Clinical Calculators & Scoring Tools
+## Core Clinical Calculators & Scoring Tools (English)
 
-- [Wells' Criteria for DVT](https://carecalculus.com/wells-score): Pretest probability prediction rule for deep vein thrombosis (DVT) and diagnostic compression US guidance.
-- [GRACE ACS Risk Score](https://carecalculus.com/grace-score): Estimates admission-to-6-month mortality in Acute Coronary Syndrome (STEMI/NSTEMI).
-- [SOFA Score](https://carecalculus.com/sofa-score): Sequential Organ Failure Assessment for ICU sepsis organ dysfunction tracking.
-- [qSOFA Score](https://carecalculus.com/qsofa-score): Quick Sepsis Organ Failure Assessment bedside screening tool.
-- [CURB-65 Pneumonia Score](https://carecalculus.com/curb65-score): Community-acquired pneumonia mortality risk and inpatient vs. ICU admission guidance.
-- [Mean Arterial Pressure (MAP)](https://carecalculus.com/map-calculator): Organ perfusion pressure calculator for shock and vasopressor titration.
-- [P/F Ratio (PaO2/FiO2)](https://carecalculus.com/pf-ratio): Berlin Definition ARDS severity classification.
-- [Creatinine Clearance (Cockcroft-Gault)](https://carecalculus.com/creatinine-clearance): Renal dosing and GFR estimation.
-- [CKD-EPI GFR Equation](https://carecalculus.com/ckd-epi-gfr): 2021 race-free chronic kidney disease GFR estimator.
-- [Glasgow Coma Scale (GCS)](https://carecalculus.com/glasgow-coma-scale): Traumatic brain injury and consciousness assessment.
-- [MELD & MELD-Na Score](https://carecalculus.com/meld-score): End-stage liver disease 90-day mortality prediction for liver transplant allocation.
-- [CHA2DS2-VASc Score](https://carecalculus.com/cha2ds2-vasc): Stroke risk stratification and anticoagulation in non-valvular atrial fibrillation.
-- [Absolute Neutrophil Count (ANC)](https://carecalculus.com/anc-calculator): Neutropenia severity and oncology fever management.
-- [Adjusted Body Weight (ABW & IBW)](https://carecalculus.com/adjusted-body-weight): Ideal & adjusted body weight for narrow therapeutic index drug dosing.
+- [MAP Calculator — Mean Arterial Pressure](https://carecalculus.com/map-calculator)
+- [Body Mass Index (BMI) Calculator](https://carecalculus.com/bmi-calculator)
+- [Glasgow Coma Scale (GCS) Calculator](https://carecalculus.com/glasgow-coma-scale)
+- [MDRD GFR Calculator](https://carecalculus.com/mdrd-gfr)
+- [CKD-EPI GFR Calculator](https://carecalculus.com/ckd-epi-gfr)
+- [IV Drip Rate Calculator](https://carecalculus.com/drip-rate-calculator)
+- [Creatinine Clearance Calculator (Cockcroft-Gault)](https://carecalculus.com/creatinine-clearance)
+- [Wells Score for DVT/PE Calculator](https://carecalculus.com/wells-score)
+- [Medical Unit Conversions Converter](https://carecalculus.com/medical-conversions)
+- [Corrected Calcium Calculator](https://carecalculus.com/corrected-calcium)
+- [qSOFA Score — Sepsis Screening Tool](https://carecalculus.com/qsofa-score)
+- [CURB-65 Pneumonia Severity Calculator](https://carecalculus.com/curb65-score)
+- [CHA2DS2-VASc Stroke Risk Calculator](https://carecalculus.com/cha2ds2-vasc)
+- [PHQ-9 Depression Screener](https://carecalculus.com/phq9-score)
+- [MELD Score End-Stage Liver Disease](https://carecalculus.com/meld-score)
+- [SIRS Criteria Sepsis Calculator](https://carecalculus.com/sirs-criteria)
+- [P/F Ratio Lung Injury Calculator](https://carecalculus.com/pf-ratio)
+- [Tidal Volume ARDS Calculator](https://carecalculus.com/tidal-volume)
+- [Absolute Neutrophil Count (ANC) Calculator](https://carecalculus.com/anc-calculator)
+- [Adjusted Body Weight (ABW) Calculator](https://carecalculus.com/adjusted-body-weight)
+- [Corticosteroids Equivalent Dosage Converter](https://carecalculus.com/steroid-conversion)
+- [TDEE & BMR Nutrition Calculator (Mifflin & Harris-Benedict)](https://carecalculus.com/nutrition-tdee)
+- [MUST Score Malnutrition Screening Tool](https://carecalculus.com/nutrition-must)
+- [NRS-2002 Nutritional Risk Screening Calculator](https://carecalculus.com/nutrition-nrs2002)
+- [GLP-1 & Metabolic Health Resource Hub](https://carecalculus.com/مركز-glp1)
+- [GLP-1 & Metabolic Health Resource Hub](https://carecalculus.com/%D9%85%D8%B1%D9%83%D8%B2-glp1)
+- [APGAR Score Calculator](https://carecalculus.com/apgar-score)
+- [SOFA Score ICU Calculator](https://carecalculus.com/sofa-score)
+- [Child-Pugh Score Calculator](https://carecalculus.com/child-pugh-score)
+- [Anion Gap Calculator](https://carecalculus.com/anion-gap)
+- [Alveolar-Arterial (A-a) Gradient Calculator](https://carecalculus.com/aa-gradient)
+
+## Calculateurs Cliniques (Français)
+
+- [Calculateur PAM - Pression Arterielle Moyenne](https://fr.carecalculus.com/map-calculator)
+- [Calculateur IMC - Indice de Masse Corporelle](https://fr.carecalculus.com/bmi-calculator)
+- [Echelle de Glasgow - Calculateur Score GCS](https://fr.carecalculus.com/glasgow-coma-scale)
+- [Calculateur DFG MDRD](https://fr.carecalculus.com/mdrd-gfr)
+- [Calculateur DFG CKD-EPI (2021)](https://fr.carecalculus.com/ckd-epi-gfr)
+- [Calcul Debit Perfusion et Gouttes par Minute](https://fr.carecalculus.com/drip-rate-calculator)
+- [Clairance de la Creatinine (Cockcroft-Gault)](https://fr.carecalculus.com/creatinine-clearance)
+- [Score de Wells pour Phlebite et Embolie](https://fr.carecalculus.com/wells-score)
+- [Conversions d'Unites Medicales (Glycemie, etc)](https://fr.carecalculus.com/medical-conversions)
+- [Calcul Calcium Corrige par Albuminemie](https://fr.carecalculus.com/corrected-calcium)
+- [Score qSOFA Depistage Sepsis Rapide](https://fr.carecalculus.com/qsofa-score)
+- [Score CURB-65 Severite de la Pneumonie](https://fr.carecalculus.com/curb65-score)
+- [Score CHA2DS2-VASc Evaluation Risque FA](https://fr.carecalculus.com/cha2ds2-vasc)
+- [Score PHQ-9 Evaluation de la Depression](https://fr.carecalculus.com/phq9-score)
+- [Score MELD Pronostic Insuffisance Hepatique](https://fr.carecalculus.com/meld-score)
+- [Criteres SIRS Syndrome Reponse Inflammatoire](https://fr.carecalculus.com/sirs-criteria)
+- [Rapport PaO2/FiO2 (Rapport P/F)](https://fr.carecalculus.com/pf-ratio)
+- [Calcul du Volume Courant (Tidal)](https://fr.carecalculus.com/tidal-volume)
+- [Nombre Absolu de Neutrophiles (NAN)](https://fr.carecalculus.com/anc-calculator)
+- [Calcul Poids Ideal et Poids Ajuste](https://fr.carecalculus.com/adjusted-body-weight)
+- [Conversion de Corticoides Equivalents](https://fr.carecalculus.com/steroid-conversion)
+- [Calculateur TDEE & BMR (Mifflin & Harris-Benedict)](https://fr.carecalculus.com/nutrition-tdee)
+- [Score MUST (Outil de Dépistage de la Dénutrition)](https://fr.carecalculus.com/nutrition-must)
+- [Calculateur NRS-2002 (Risque Nutritionnel)](https://fr.carecalculus.com/nutrition-nrs2002)
+- [Centre d'Intelligence GLP-1 & Métabolique](https://fr.carecalculus.com/مركز-glp1)
+- [Centre d'Intelligence GLP-1 & Métabolique](https://fr.carecalculus.com/%D9%85%D8%B1%D9%83%D8%B2-glp1)
+- [Calculateur Score APGAR (Nouveau-né)](https://fr.carecalculus.com/apgar-score)
+- [Calculateur Score SOFA (Réanimation)](https://fr.carecalculus.com/sofa-score)
+- [Calculateur Score Child-Pugh (Cirrhose)](https://fr.carecalculus.com/child-pugh-score)
+- [Calculateur Trou Anionique (Acidose)](https://fr.carecalculus.com/anion-gap)
+- [Calculateur Gradient Alvéolo-Artériel (A-a)](https://fr.carecalculus.com/aa-gradient)
 
 ## Academic & Multilingual Libraries
 
-- [French Clinical Hub (/fr)](https://carecalculus.com/fr): Full suite localized in French (SFAR, HAS guideline aligned).
+- [French Clinical Hub (/fr)](https://fr.carecalculus.com): Full suite localized in French (SFAR, HAS guideline aligned).
 - [FMP Médecine Casablanca (/fmp-medecine)](https://carecalculus.com/fmp-medecine): Academic medical student module library.
 - [ISPITS Paramedical Academy (/ispits)](https://carecalculus.com/ispits): Nursing & ICU anesthesia academic curriculum library.
 - [Clinical Guidelines Library](https://carecalculus.com/clinical-library): Comprehensive evidence-based clinical guides and Q&A references.

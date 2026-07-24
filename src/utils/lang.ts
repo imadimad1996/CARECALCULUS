@@ -21,15 +21,18 @@ export function getDomainLang(): LangCode | null {
  * Supports both /fr/ prefix routing (for local dev / fallback) and fr. domain routing.
  */
 export function parsePathname(pathname: string): { lang: LangCode; path: string } {
-  const match = pathname.match(/^\/(fr)(\/.*)?$/);
+  // Canonicalize: strip trailing slash (except for exactly "/")
+  const cleanPath = pathname.length > 1 && pathname.endsWith('/') ? pathname.slice(0, -1) : pathname;
+  
+  const match = cleanPath.match(/^\/(fr)(\/.*)?$/);
   if (match) {
     return { lang: match[1] as LangCode, path: match[2] || '/' };
   }
   const domainLang = getDomainLang();
   if (domainLang === 'fr') {
-    return { lang: 'fr', path: pathname || '/' };
+    return { lang: 'fr', path: cleanPath || '/' };
   }
-  return { lang: 'en', path: pathname || '/' };
+  return { lang: 'en', path: cleanPath || '/' };
 }
 
 /**

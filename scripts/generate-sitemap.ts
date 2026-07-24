@@ -9,6 +9,8 @@
 
 import { writeFileSync, readFileSync } from 'fs';
 import { join } from 'path';
+import { MASTER_BLOGS, MASTER_JOURNALS } from '../src/utils/masterListContent';
+import { slugify } from '../src/utils/slug';
 
 const BASE_URL = 'https://carecalculus.com';
 const OUTPUT_PATH = join(process.cwd(), 'public', 'sitemap.xml');
@@ -89,17 +91,23 @@ for (const [, entries] of Object.entries(faqDb) as [string, {question: string}[]
   }
 }
 
+const blogPages = [
+  ...MASTER_BLOGS.map(b => `/blog-articles/${slugify(b.title.en, b.id)}`),
+  ...MASTER_JOURNALS.map(j => `/blog/${slugify(j.title.en, j.id)}`)
+];
+
 const domains = ['https://www.carecalculus.com', 'https://fr.carecalculus.com'] as const;
 
-function buildUrls(paths: string[], priority: string, changefreq: string): string {
+function buildUrls(paths: string[], priority: string, changefreq: string, frPriority?: string): string {
   const urls: string[] = [];
   for (const path of paths) {
     for (const domain of domains) {
+      const p = domain.includes('fr.') && frPriority ? frPriority : priority;
       urls.push(`
   <url>
     <loc>${domain}${path}</loc>
     <changefreq>${changefreq}</changefreq>
-    <priority>${priority}</priority>
+    <priority>${p}</priority>
   </url>`);
     }
   }
@@ -120,14 +128,15 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-${buildUrls(calculatorPages, '0.9', 'monthly')}
-${buildUrls(conditionPages, '0.8', 'monthly')}
-${buildUrls(specialtyPages, '0.8', 'monthly')}
-${buildUrls(comparisonPages, '0.7', 'monthly')}
-${buildUrls(libraryPages, '0.8', 'weekly')}
-${buildUrls(programmaticGuidePages, '0.8', 'weekly')}
-${buildUrls(qaSlugs, '0.7', 'weekly')}
-${buildUrls(staticPages, '0.5', 'monthly')}
+${buildUrls(calculatorPages, '1.0', 'weekly', '0.8')}
+${buildUrls(conditionPages, '0.8', 'monthly', '0.8')}
+${buildUrls(specialtyPages, '0.8', 'monthly', '0.8')}
+${buildUrls(comparisonPages, '0.7', 'monthly', '0.7')}
+${buildUrls(libraryPages, '0.8', 'weekly', '0.8')}
+${buildUrls(programmaticGuidePages, '0.8', 'weekly', '0.8')}
+${buildUrls(qaSlugs, '0.7', 'weekly', '0.7')}
+${buildUrls(blogPages, '0.6', 'monthly', '0.6')}
+${buildUrls(staticPages, '0.5', 'monthly', '0.5')}
 </urlset>`;
 
 writeFileSync(OUTPUT_PATH, sitemap, 'utf-8');

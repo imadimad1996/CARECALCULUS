@@ -422,7 +422,7 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
   if (lang === 'fr') {
     return {
       title: `${nameFr} | CareCalculus`,
-      desc: `Calculateur ${nameFr} gratuit — outil d'aide à la décision clinique utilisé par les médecins, urgentistes et infirmiers. Calcul instantané avec références PubMed, formules validées et support multilingue.`,
+      desc: `Calculateur ${nameFr} gratuit — outil d'aide à la décision clinique utilisé par les médecins de réanimation, urgentistes et infirmiers. Gratuit, sans inscription.`,
       keywords: `${nameFr.toLowerCase().replace(/[^a-zA-Z\s]/g, '')}, calculateur medical, guide, medecine`,
     };
   } else if (false) {
@@ -437,7 +437,7 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
 
   return {
     title: `${nameEn} | CareCalculus`,
-    desc: `Free ${nameEn} — evidence-based clinical decision support tool used by ICU doctors, ER physicians, and nurses worldwide. Instant calculation with PubMed references, validated formulas, and multilingual support.`,
+    desc: `Free ${nameEn} — evidence-based clinical decision support tool used by ICU, ER physicians, and nurses. Free, no login required. Instant clinical calculation.`,
     keywords: customKeywords || `${nameEn.toLowerCase().replace(/[^a-zA-Z\s]/g, '')}, clinical calculator, medical metrics, care calculus`,
   };
 }
@@ -861,11 +861,20 @@ export function buildJsonLd(logicalPath: string, lang: LangCode) {
   const list: any[] = [
     {
       '@context': 'https://schema.org',
-      '@type': 'SoftwareApplication',
+      '@type': ['SoftwareApplication', 'MedicalWebPage'],
       name: meta.title,
       operatingSystem: 'Web Browser',
       applicationCategory: 'HealthApplication',
       description: meta.desc,
+      medicalAudience: {
+        '@type': 'MedicalAudience',
+        audienceType: 'Clinicians, Nurses, ICU Doctors, Medical Students'
+      },
+      lastReviewed: new Date().toISOString().split('T')[0],
+      about: {
+        '@type': 'MedicalCondition',
+        name: meta.title.split(' | ')[0]
+      },
       citation: 'Surviving Sepsis Campaign Guidelines (2021), BTS Guidelines, ACC/AHA Clinical Practice Guidelines, WHO Nutrition & Malnutrition Standards',
       featureList: 'Evidence-based clinical formulas, offline PWA access, multi-language decision support (English, French, Arabic), exact quantitative cutoffs (SOFA >=2 >10% mortality, qSOFA >=2 high risk, MAP <65 mmHg hypoperfusion threshold)',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },

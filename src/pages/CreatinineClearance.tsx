@@ -4,6 +4,7 @@ import { LangCode, Translations } from '../types';
 import { layoutTranslations } from '../utils/lang';
 import { trackCalculatorUsage } from '../utils/telemetry';
 import ClinicalExportButton from '../components/ClinicalExportButton';
+import CalculatorShell from '../components/CalculatorShell';
 
 const translations: Translations = {
   en: {
@@ -84,7 +85,7 @@ export default function CreatinineClearance({ lang }: { lang: LangCode }) {
   const stage = getStage(crclValue);
 
   return (
-    <>
+    <CalculatorShell logicalPath="/creatinine-clearance" lang={lang}>
       <div className="max-w-3xl mb-12">
         <h1 className={`text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-3 ${isRtl ? 'leading-normal' : ''}`}>
           {currentText.title}
@@ -257,6 +258,6 @@ export default function CreatinineClearance({ lang }: { lang: LangCode }) {
           </div>
         </div>
       </div>
-    </>
+    </CalculatorShell>
   );
 }
