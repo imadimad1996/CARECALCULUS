@@ -86,15 +86,15 @@ export const InlineCheckout: React.FC<InlineCheckoutProps> = ({
         <div className="space-y-6">
           {/* Header Banner */}
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
-            <div className="flex items-center gap-3">
-              <div className="p-3 bg-cyan-500/20 text-cyan-400 rounded-2xl border border-cyan-500/30">
+            <div className="flex items-start md:items-center gap-3">
+              <div className="p-3 bg-cyan-500/20 text-cyan-400 rounded-2xl border border-cyan-500/30 shrink-0 mt-1 md:mt-0">
                 <CreditCard className="w-6 h-6" />
               </div>
-              <div>
-                <h3 className="font-extrabold text-xl md:text-2xl text-white flex items-center gap-2">
-                  <span>{isFr ? 'Paiement Direct par Carte ou PayPal' : 'Direct Card & PayPal Checkout'}</span>
+              <div className="flex flex-col">
+                <h3 className="font-extrabold text-lg md:text-2xl text-white leading-tight mb-1">
+                  {isFr ? 'Paiement Direct par Carte ou PayPal' : 'Direct Card & PayPal Checkout'}
                 </h3>
-                <p className="text-xs md:text-sm text-slate-400">
+                <p className="text-xs md:text-sm text-slate-400 leading-relaxed">
                   {isFr ? 'Paiement unique sécurisé sans abonnement récurrent' : 'One-time secure pass • Non-renewing checkout'}
                 </p>
               </div>
