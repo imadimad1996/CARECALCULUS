@@ -1,3 +1,5 @@
+import type { PagesFunction } from '@cloudflare/workers-types';
+
 export const onRequest: PagesFunction = async (context) => {
   const url = new URL(context.request.url);
   const hostname = url.hostname.toLowerCase();
@@ -10,7 +12,12 @@ export const onRequest: PagesFunction = async (context) => {
       const targetUrl = `https://fr.carecalculus.com${newPath === '/' ? '' : newPath}${url.search}`;
       return Response.redirect(targetUrl, 301);
     }
-    return context.next();
+    const response = await context.next();
+    if (response.status === 404) {
+      const fallbackUrl = new URL('/', context.request.url);
+      return context.env.ASSETS.fetch(new Request(fallbackUrl.toString(), context.request as any) as any) as any;
+    }
+    return response;
   }
 
   // If on French domain (fr.carecalculus.com)
@@ -19,7 +26,12 @@ export const onRequest: PagesFunction = async (context) => {
     // /fr/. Let that canonical route pass through on the French host. Trying
     // to redirect it back to / creates a / -> /fr/ -> / loop.
     if (url.pathname === '/fr' || url.pathname.startsWith('/fr/')) {
-      return context.next();
+      const response = await context.next();
+      if (response.status === 404) {
+        const fallbackUrl = new URL('/', context.request.url);
+        return context.env.ASSETS.fetch(new Request(fallbackUrl.toString(), context.request as any) as any) as any;
+      }
+      return response;
     }
 
     // Check if request is for a static asset or file extension (e.g., .js, .css, .png, .ico, /assets/, etc.)
@@ -41,9 +53,21 @@ export const onRequest: PagesFunction = async (context) => {
     const targetPath = url.pathname === '/'
       ? '/fr/'
       : `/fr${url.pathname.endsWith('/') ? url.pathname : `${url.pathname}/`}`;
-    const newRequest = new Request(new URL(targetPath, url.origin).toString(), context.request);
-    return context.next(newRequest);
+    const newRequest = new Request(new URL(targetPath, url.origin).toString(), context.request as any) as any;
+    const response = await context.next(newRequest);
+    
+    // If the prerendered French path doesn't exist, fallback to SPA index
+    if (response.status === 404) {
+      const fallbackUrl = new URL('/', context.request.url);
+      return context.env.ASSETS.fetch(new Request(fallbackUrl.toString(), context.request as any) as any) as any;
+    }
+    return response;
   }
 
-  return context.next();
+  const finalResponse = await context.next();
+  if (finalResponse.status === 404) {
+    const fallbackUrl = new URL('/', context.request.url);
+    return context.env.ASSETS.fetch(new Request(fallbackUrl.toString(), context.request as any) as any) as any;
+  }
+  return finalResponse;
 };

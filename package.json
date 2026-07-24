@@ -37,6 +37,7 @@
     "vite": "^6.2.3"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260702.1",
     "@fontsource/cairo": "^5.2.7",
     "@fontsource/inter": "^5.2.8",
     "@resvg/resvg-js": "^2.6.2",
