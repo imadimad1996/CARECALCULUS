@@ -3,7 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Scale, FolderHeart, Activity, Layers, ArrowRight, Share2, Copy, Check, FileText, Lock } from 'lucide-react';
 import { LangCode } from '../types';
 import AiAnswerPanel from './AiAnswerPanel';
-import { MedicalReviewerCard, MedicalReviewer } from './MedicalReviewerCard';
+import { MedicalReviewerCard } from './MedicalReviewerCard';
+import { REVIEWER_INTENSIVIST } from '../data/reviewers';
 import { generateSOAP, generateSBAR, generateDotPhrase, generateShiftHandover, generateCaseShareUrl } from '../utils/soapGenerator';
 import { CONDITIONS_DB } from '../data/conditions';
 import { SPECIALTIES_DB } from '../data/specialties';
@@ -67,7 +68,6 @@ function cleanName(raw: string): string {
 
 function getCalculatorName(path: string, lang: LangCode): string {
   if (lang === 'fr') return cleanName(nameFrMap[path] || path.substring(1));
-  if (false) return cleanName(nameArMap[path] || path.substring(1));
   return cleanName(nameEnMap[path] || path.substring(1));
 }
 
@@ -402,6 +402,11 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
               )}
             </div>
 
+          </div>
+
+          {/* E-E-A-T Board-Certified Medical Reviewer Card (10/10 Google Trust Signal) */}
+          <div className="mt-12 pt-8 border-t border-slate-200">
+            <MedicalReviewerCard reviewer={REVIEWER_INTENSIVIST} lang={lang} />
           </div>
         </div>
       )}
