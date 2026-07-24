@@ -101,11 +101,11 @@ export const InlineCheckout: React.FC<InlineCheckoutProps> = ({
             </div>
 
             {/* Accepted Card Badges */}
-            <div className="flex items-center gap-2 bg-slate-800/80 px-4 py-2 rounded-2xl border border-slate-700/80 self-start md:self-auto">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mr-1">
+            <div className="flex flex-wrap items-center gap-2 bg-slate-800/80 px-4 py-2 rounded-2xl border border-slate-700/80 self-start md:self-auto mt-2 md:mt-0">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mr-1 shrink-0">
                 {isFr ? 'Cartes acceptées:' : 'Accepted Cards:'}
               </span>
-              <div className="flex items-center gap-1.5">
+              <div className="flex flex-wrap items-center gap-1.5">
                 {/* Visa Badge */}
                 <span className="bg-white text-blue-900 font-black text-[11px] px-2 py-0.5 rounded italic tracking-tighter shadow-sm border border-slate-200">
                   VISA

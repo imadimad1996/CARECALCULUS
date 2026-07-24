@@ -124,9 +124,9 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
             <p className="text-sm text-slate-400 mb-4 min-h-[40px]">{isFr ? 'Pour les médecins de garde, réanimateurs et urgentistes.' : 'For ER & ICU attendings, fellows, and hospitalists.'}</p>
 
             <div className="mb-6">
-              <div className="flex items-end gap-1">
-                <span className="text-5xl font-black tracking-tighter text-white">${proPrice}</span>
-                <span className="text-sm text-slate-400 font-medium pb-2">/ {isFr ? 'paiement unique' : 'one-time'}</span>
+              <div className="flex flex-wrap items-end gap-1">
+                <span className="text-4xl md:text-5xl font-black tracking-tighter text-white">${proPrice}</span>
+                <span className="text-sm text-slate-400 font-medium pb-2 whitespace-nowrap">/ {isFr ? 'paiement unique' : 'one-time'}</span>
               </div>
               <span className="inline-block mt-2 px-2.5 py-1 bg-cyan-500/10 text-cyan-400 text-xs font-bold rounded-md">
                 {billingCycle === 'annual' ? (isFr ? 'Accès complet 1 an' : '1-Year Full Access') : (isFr ? 'Accès complet 1 mois' : '1-Month Full Access')}
@@ -134,17 +134,17 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
             </div>
 
             {/* Prominent Card Payment Badges */}
-            <div className="mb-6 bg-slate-800/80 p-3 rounded-2xl border border-slate-700/80">
-              <div className="flex items-center justify-between text-xs text-slate-300 font-semibold mb-2">
-                <span className="flex items-center gap-1.5">
-                  <CreditCard className="w-4 h-4 text-cyan-400" />
-                  {isFr ? 'Payer par Carte Bancaire' : 'Pay with Credit/Debit Card'}
+            <div className="mb-6 bg-slate-800/80 p-3 rounded-2xl border border-slate-700/80 flex flex-col gap-2">
+              <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-slate-300 font-semibold">
+                <span className="flex items-center gap-1.5 whitespace-nowrap">
+                  <CreditCard className="w-4 h-4 text-cyan-400 shrink-0" />
+                  {isFr ? 'Carte ou PayPal' : 'Card or PayPal'}
                 </span>
-                <span className="text-[10px] text-emerald-400 font-bold uppercase tracking-wider bg-emerald-500/10 px-2 py-0.5 rounded">
-                  {isFr ? 'Sans Compte PayPal' : 'No Account Needed'}
+                <span className="text-[10px] text-emerald-400 font-bold uppercase tracking-wider bg-emerald-500/10 px-2 py-0.5 rounded shrink-0">
+                  {isFr ? 'Sans Compte' : 'No Account Needed'}
                 </span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <span className="bg-white text-blue-900 font-black text-[10px] px-2 py-0.5 rounded italic tracking-tighter shadow-sm border border-slate-200">
                   VISA
                 </span>
