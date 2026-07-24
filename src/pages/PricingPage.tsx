@@ -228,7 +228,7 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
           </div>
 
           <a
-            href="mailto:contact@carecalculus.com?subject=Hospital%20Department%20License"
+            href="mailto:imadazizimad@gmail.com?subject=Hospital%20Department%20License"
             className="w-full py-4 px-4 bg-purple-50 dark:bg-purple-900/30 hover:bg-purple-100 dark:hover:bg-purple-900/50 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800/50 font-bold rounded-xl transition-all text-center block cursor-pointer"
           >
             {isFr ? 'Contacter l\'Équipe' : 'Contact Sales'}
