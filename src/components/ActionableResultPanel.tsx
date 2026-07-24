@@ -65,7 +65,7 @@ export const ActionableResultPanel: React.FC<ActionableResultProps> = ({
     }
   };
 
-  const style = styles[riskLevel];
+  const style = styles[riskLevel] || styles.neutral;
 
   const t = {
     nextSteps: { en: 'Management & Next Steps', fr: 'Gestion et Prochaines Étapes' }
