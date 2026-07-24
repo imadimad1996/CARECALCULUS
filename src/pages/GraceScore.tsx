@@ -6,6 +6,7 @@ import { trackCalculatorUsage } from '../utils/telemetry';
 import EmbedCodeButton from '../components/ui/EmbedCodeButton';
 import { JsonLd } from '../components/JsonLd';
 import ClinicalContextPanel from '../components/ClinicalContextPanel';
+import { useUnitSystem } from '../contexts/UnitSystemContext';
 
 const translations: Translations = {
   en: {
@@ -16,6 +17,7 @@ const translations: Translations = {
     hrLabel: "Heart Rate (bpm)",
     sbpLabel: "Systolic BP (mmHg)",
     crLabel: "Creatinine (mg/dL)",
+    crLabelSI: "Creatinine (µmol/L)",
     killipLabel: "Killip Class",
     killipOptions: [
       { v: 0, l: 'I (No heart failure)' },
@@ -52,6 +54,7 @@ const translations: Translations = {
     hrLabel: "Fréq. Cardiaque (bpm)",
     sbpLabel: "PA Systolique (mmHg)",
     crLabel: "Créatinine (mg/dL)",
+    crLabelSI: "Créatinine (µmol/L)",
     killipLabel: "Classe de Killip",
     killipOptions: [
       { v: 0, l: 'I (Pas d\'insuffisance cardiaque)' },
@@ -95,6 +98,9 @@ export default function GraceScore({ lang }: { lang: LangCode }) {
 
   const currentText = translations[lang] || translations.en;
   
+  const { standard } = useUnitSystem();
+  const isSI = standard === 'Metric (SI)';
+
   const toggleCheck = (id: string) => {
     setChecks(prev => ({ ...prev, [id]: !prev[id] }));
   };
@@ -102,7 +108,7 @@ export default function GraceScore({ lang }: { lang: LangCode }) {
   const a = parseFloat(age) || 0;
   const h = parseFloat(hr) || 0;
   const s = parseFloat(sbp) || 0;
-  const c = parseFloat(cr) || 0;
+  const c = isSI ? (parseFloat(cr) || 0) / 88.4 : (parseFloat(cr) || 0);
 
   const score = useMemo(() => {
     if (!a || !h || !s || !c) return null;
@@ -242,8 +248,8 @@ export default function GraceScore({ lang }: { lang: LangCode }) {
                   <input type="number" value={sbp} onChange={(e) => setSbp(e.target.value)} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-rose-500 font-mono text-lg" placeholder="120" />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-slate-700 mb-1">{currentText.crLabel as string}</label>
-                  <input type="number" step="0.1" value={cr} onChange={(e) => setCr(e.target.value)} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-rose-500 font-mono text-lg" placeholder="1.0" />
+                  <label className="block text-sm font-bold text-slate-700 mb-1">{isSI ? currentText.crLabelSI as string : currentText.crLabel as string}</label>
+                  <input type="number" step={isSI ? "1" : "0.1"} value={cr} onChange={(e) => setCr(e.target.value)} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-rose-500 font-mono text-lg" placeholder={isSI ? "88" : "1.0"} />
                 </div>
               </div>
 
@@ -327,7 +333,7 @@ export default function GraceScore({ lang }: { lang: LangCode }) {
                     { label: "Age", value: age },
                     { label: "HR", value: hr },
                     { label: "SBP", value: sbp },
-                    { label: "Creatinine", value: cr },
+                    { label: "Creatinine", value: `${cr} ${isSI ? 'µmol/L' : 'mg/dL'}` },
                     { label: "Killip Class", value: (currentText.killipOptions as any[])[killip].l },
                     ...(currentText.checks as any[]).map((c: any) => ({
                       label: c.label, value: checks[c.id] ? 'Yes' : 'No'

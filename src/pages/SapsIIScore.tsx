@@ -3,6 +3,7 @@ import CalculatorShell from '../components/CalculatorShell';
 import { Activity } from 'lucide-react';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 import { LangCode } from '../types';
+import { useUnitSystem } from '../contexts/UnitSystemContext';
 
 export default function SapsIIScore({ lang }: { lang: LangCode }) {
   const [age, setAge] = useState<string>('0');
@@ -33,11 +34,13 @@ export default function SapsIIScore({ lang }: { lang: LangCode }) {
       pao2: 'PaO2/FiO2 (if vented)',
       uo: 'Urine Output (L/24h)',
       bun: 'BUN (mg/dL)',
+      bunSI: 'Urea (mmol/L)',
       wbc: 'WBC (x10³/µL)',
       k: 'Potassium',
       na: 'Sodium',
       hco3: 'Bicarbonate (mEq/L)',
       bili: 'Bilirubin (mg/dL)',
+      biliSI: 'Bilirubin (µmol/L)',
       chronic: 'Chronic Diseases',
       admType: 'Type of Admission',
       resultLabel: 'SAPS II Score',
@@ -54,11 +57,13 @@ export default function SapsIIScore({ lang }: { lang: LangCode }) {
       pao2: 'PaO2/FiO2 (si ventilé)',
       uo: 'Diurèse (L/24h)',
       bun: 'Urée (mg/dL)',
+      bunSI: 'Urée (mmol/L)',
       wbc: 'Globules Blancs',
       k: 'Potassium',
       na: 'Sodium',
       hco3: 'Bicarbonates',
-      bili: 'Bilirubine',
+      bili: 'Bilirubine (mg/dL)',
+      biliSI: 'Bilirubine (µmol/L)',
       chronic: 'Maladies chroniques',
       admType: 'Type d\'admission',
       resultLabel: 'Score SAPS II',
@@ -67,6 +72,9 @@ export default function SapsIIScore({ lang }: { lang: LangCode }) {
   };
 
   const dict = t[lang as keyof typeof t] || t.en;
+
+  const { standard } = useUnitSystem();
+  const isSI = standard === 'Metric (SI)';
 
   const calculate = () => {
     return (
@@ -168,11 +176,11 @@ export default function SapsIIScore({ lang }: { lang: LangCode }) {
           </div>
 
           <div>
-            <label className="block text-sm font-bold text-slate-700 mb-2">{dict.bun}</label>
+            <label className="block text-sm font-bold text-slate-700 mb-2">{isSI ? dict.bunSI : dict.bun}</label>
             <select value={bun} onChange={(e) => setBun(e.target.value)} className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl">
-              <option value="0">&lt; 28 (0)</option>
-              <option value="6">28-83 (6)</option>
-              <option value="10">≥ 84 (10)</option>
+              <option value="0">{isSI ? '< 10.0 (0)' : '< 28 (0)'}</option>
+              <option value="6">{isSI ? '10.0-29.6 (6)' : '28-83 (6)'}</option>
+              <option value="10">{isSI ? '≥ 30.0 (10)' : '≥ 84 (10)'}</option>
             </select>
           </div>
 
@@ -213,11 +221,11 @@ export default function SapsIIScore({ lang }: { lang: LangCode }) {
           </div>
 
           <div>
-            <label className="block text-sm font-bold text-slate-700 mb-2">{dict.bili}</label>
+            <label className="block text-sm font-bold text-slate-700 mb-2">{isSI ? dict.biliSI : dict.bili}</label>
             <select value={bili} onChange={(e) => setBili(e.target.value)} className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl">
-              <option value="0">&lt; 4.0 (0)</option>
-              <option value="4">4.0-5.9 (4)</option>
-              <option value="9">≥ 6.0 (9)</option>
+              <option value="0">{isSI ? '< 68.4 (0)' : '< 4.0 (0)'}</option>
+              <option value="4">{isSI ? '68.4-100.9 (4)' : '4.0-5.9 (4)'}</option>
+              <option value="9">{isSI ? '≥ 102.6 (9)' : '≥ 6.0 (9)'}</option>
             </select>
           </div>
 

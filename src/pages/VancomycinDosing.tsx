@@ -3,6 +3,7 @@ import CalculatorShell from '../components/CalculatorShell';
 import { Pill } from 'lucide-react';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 import { LangCode } from '../types';
+import { useUnitSystem } from '../contexts/UnitSystemContext';
 
 export default function VancomycinDosing({ lang }: { lang: LangCode }) {
   const [age, setAge] = useState<number | ''>('');
@@ -23,6 +24,7 @@ export default function VancomycinDosing({ lang }: { lang: LangCode }) {
       weight: 'Actual Body Weight (kg)',
       height: 'Height (cm)',
       scr: 'Serum Creatinine (mg/dL)',
+      scrSI: 'Serum Creatinine (µmol/L)',
       indication: 'Indication / Target',
       severe: 'Severe Infection (Target Trough 15-20 mcg/mL)',
       moderate: 'Mild/Moderate Infection (Target 10-15 mcg/mL)',
@@ -42,6 +44,7 @@ export default function VancomycinDosing({ lang }: { lang: LangCode }) {
       weight: 'Poids Actuel (kg)',
       height: 'Taille (cm)',
       scr: 'Créatinine Sérique (mg/dL)',
+      scrSI: 'Créatinine Sérique (µmol/L)',
       indication: 'Indication / Cible',
       severe: 'Infection Sévère (Cible résiduelle 15-20 mcg/mL)',
       moderate: 'Infection Modérée (Cible 10-15 mcg/mL)',
@@ -55,12 +58,15 @@ export default function VancomycinDosing({ lang }: { lang: LangCode }) {
 
   const dict = t[lang as keyof typeof t] || t.en;
 
+  const { standard } = useUnitSystem();
+  const isSI = standard === 'Metric (SI)';
+
   const calculate = () => {
     if (age === '' || weight === '' || height === '' || scr === '') return null;
     const a = Number(age);
     const w = Number(weight);
     const h = Number(height);
-    const c = Number(scr);
+    const c = isSI ? Number(scr) / 88.4 : Number(scr);
 
     if (a < 18 || w < 20 || h < 100 || c <= 0) return null;
 
@@ -145,8 +151,8 @@ export default function VancomycinDosing({ lang }: { lang: LangCode }) {
           </div>
 
           <div>
-            <label className="block text-sm font-bold text-slate-700 mb-2">{dict.scr}</label>
-            <input type="number" value={scr} onChange={(e) => setScr(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 rounded-2xl text-lg font-semibold transition" placeholder="e.g. 1.0" />
+            <label className="block text-sm font-bold text-slate-700 mb-2">{isSI ? dict.scrSI : dict.scr}</label>
+            <input type="number" step={isSI ? "1" : "0.1"} value={scr} onChange={(e) => setScr(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 rounded-2xl text-lg font-semibold transition" placeholder={isSI ? "e.g. 88" : "e.g. 1.0"} />
           </div>
 
           <div className="md:col-span-2">
@@ -196,7 +202,7 @@ export default function VancomycinDosing({ lang }: { lang: LangCode }) {
                   { label: "Sex", value: sex },
                   { label: "Weight", value: weight + " kg" },
                   { label: "Height", value: height + " cm" },
-                  { label: "Serum Creatinine", value: scr + " mg/dL" },
+                  { label: "Serum Creatinine", value: `${scr} ${isSI ? 'µmol/L' : 'mg/dL'}` },
                   { label: "Indication / Target", value: indication }
                 ]}
                 results={[

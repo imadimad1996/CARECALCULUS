@@ -4,6 +4,7 @@ import { LangCode, Translations } from '../types';
 import { layoutTranslations } from '../utils/lang';
 import { trackCalculatorUsage } from '../utils/telemetry';
 import ClinicalExportButton from '../components/ClinicalExportButton';
+import { useUnitSystem } from '../contexts/UnitSystemContext';
 
 const translations: Translations = {
   en: {
@@ -12,6 +13,7 @@ const translations: Translations = {
     age: "Age (Years)",
     creatinine: "Serum Creatinine",
     creatinineMg: "mg/dL",
+    creatinineUmol: "µmol/L",
     gender: "Gender",
     male: "Male",
     female: "Female",
@@ -37,6 +39,7 @@ const translations: Translations = {
     age: "Âge (Années)",
     creatinine: "Créatininémie",
     creatinineMg: "mg/dL",
+    creatinineUmol: "µmol/L",
     gender: "Sexe",
     male: "Homme",
     female: "Femme",
@@ -59,6 +62,9 @@ const translations: Translations = {
 };
 
 export default function MdrdGfr({ lang }: { lang: LangCode }) {
+  const { standard } = useUnitSystem();
+  const isSI = standard === 'Metric (SI)';
+
   const [age, setAge] = useState<number>(65);
   const [creatinine, setCreatinine] = useState<number>(1.2);
   const [isFemale, setIsFemale] = useState<boolean>(false);
@@ -70,7 +76,8 @@ export default function MdrdGfr({ lang }: { lang: LangCode }) {
 
   const gfrValue = useMemo(() => {
     if (age <= 0 || creatinine <= 0) return 0;
-    let computed = 175 * Math.pow(creatinine, -1.154) * Math.pow(age, -0.203);
+    const crMg = isSI ? creatinine / 88.4 : creatinine;
+    let computed = 175 * Math.pow(crMg, -1.154) * Math.pow(age, -0.203);
     if (isFemale) computed = computed * 0.742;
     if (isBlack) computed = computed * 1.212;
     return parseFloat(computed.toFixed(1));
@@ -191,14 +198,14 @@ export default function MdrdGfr({ lang }: { lang: LangCode }) {
               <div>
                 <div className="flex justify-between items-end mb-2">
                   <label className="block text-xs font-bold text-slate-600 uppercase tracking-wider">
-                    {currentText.creatinine} ({currentText.creatinineMg})
+                    {currentText.creatinine} ({isSI ? currentText.creatinineUmol : currentText.creatinineMg})
                   </label>
                 </div>
                 <input
                   type="number"
-                  min="0.1"
-                  max="20"
-                  step="0.1"
+                  min={isSI ? "10" : "0.1"}
+                  max={isSI ? "2000" : "20"}
+                  step={isSI ? "1" : "0.1"}
                   value={creatinine || ''}
                   onChange={(e) => setCreatinine(Number(e.target.value))}
                   className="w-full bg-slate-50 border border-slate-200 text-slate-900 text-lg rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block p-3.5 transition-colors"

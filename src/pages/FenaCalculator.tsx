@@ -6,6 +6,7 @@ import { trackCalculatorUsage } from '../utils/telemetry';
 import EmbedCodeButton from '../components/ui/EmbedCodeButton';
 import { JsonLd } from '../components/JsonLd';
 import ClinicalContextPanel from '../components/ClinicalContextPanel';
+import { useUnitSystem } from '../contexts/UnitSystemContext';
 
 const translations: Translations = {
   en: {
@@ -66,7 +67,10 @@ export default function FenaCalculator({ lang }: { lang: LangCode }) {
   const [serumCr, setSerumCr] = useState<string>('1.8');
   const [urineCr, setUrineCr] = useState<string>('40');
   const [onDiuretics, setOnDiuretics] = useState<boolean>(false);
-  const [crUnit, setCrUnit] = useState<'mg/dL' | 'µmol/L'>('mg/dL');
+  
+  const { standard, setStandard } = useUnitSystem();
+  const isSI = standard === 'Metric (SI)';
+  const crUnit = isSI ? 'µmol/L' : 'mg/dL';
 
   const currentText = translations[lang] || translations.en;
 
@@ -217,7 +221,7 @@ export default function FenaCalculator({ lang }: { lang: LangCode }) {
                 <button
                   key={unit}
                   type="button"
-                  onClick={() => setCrUnit(unit)}
+                  onClick={() => setStandard(unit === 'mg/dL' ? 'US Customary / Imperial' : 'Metric (SI)')}
                   className={`px-3 py-1 rounded-lg text-xs font-bold transition ${crUnit === unit ? 'bg-teal-600 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
                 >
                   {unit}

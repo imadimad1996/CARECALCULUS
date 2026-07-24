@@ -3,6 +3,7 @@ import CalculatorShell from '../components/CalculatorShell';
 import { HeartPulse } from 'lucide-react';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 import { LangCode } from '../types';
+import { useUnitSystem } from '../contexts/UnitSystemContext';
 
 export default function AscvdRisk({ lang }: { lang: LangCode }) {
   const [age, setAge] = useState<number | ''>('');
@@ -28,7 +29,9 @@ export default function AscvdRisk({ lang }: { lang: LangCode }) {
       aa: 'African American',
       other: 'Other',
       tc: 'Total Cholesterol (130-320 mg/dL)',
+      tcSI: 'Total Cholesterol (3.4-8.3 mmol/L)',
       hdl: 'HDL Cholesterol (20-100 mg/dL)',
+      hdlSI: 'HDL Cholesterol (0.5-2.6 mmol/L)',
       sbp: 'Systolic Blood Pressure (90-200 mmHg)',
       treatedHtn: 'Receiving Treatment for High Blood Pressure?',
       diabetes: 'Diabetes History?',
@@ -49,7 +52,9 @@ export default function AscvdRisk({ lang }: { lang: LangCode }) {
       aa: 'Afro-Américain',
       other: 'Autre',
       tc: 'Cholestérol Total (130-320 mg/dL)',
+      tcSI: 'Cholestérol Total (3.4-8.3 mmol/L)',
       hdl: 'Cholestérol HDL (20-100 mg/dL)',
+      hdlSI: 'Cholestérol HDL (0.5-2.6 mmol/L)',
       sbp: 'Pression Artérielle Systolique (90-200 mmHg)',
       treatedHtn: 'Traitement pour l\'hypertension ?',
       diabetes: 'Antécédents de diabète ?',
@@ -61,13 +66,16 @@ export default function AscvdRisk({ lang }: { lang: LangCode }) {
   };
 
   const dict = t[lang as keyof typeof t] || t.en;
+  
+  const { standard } = useUnitSystem();
+  const isSI = standard === 'Metric (SI)';
 
   // Uses ACC/AHA 2013 Pooled Cohort Equations
   const calculateRisk = () => {
     if (age === '' || tc === '' || hdl === '' || sbp === '') return null;
     const a = Number(age);
-    const tC = Number(tc);
-    const h = Number(hdl);
+    const tC = isSI ? Number(tc) * 38.67 : Number(tc);
+    const h = isSI ? Number(hdl) * 38.67 : Number(hdl);
     const s = Number(sbp);
     
     if (a < 40 || a > 79) return null;
@@ -131,13 +139,13 @@ export default function AscvdRisk({ lang }: { lang: LangCode }) {
           </div>
 
           <div>
-            <label className="block text-sm font-bold text-slate-700 mb-2">{dict.tc}</label>
-            <input type="number" value={tc} onChange={(e) => setTc(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-rose-500 focus:ring-4 focus:ring-rose-500/10 rounded-2xl text-lg font-semibold transition" placeholder="e.g. 180" />
+            <label className="block text-sm font-bold text-slate-700 mb-2">{isSI ? dict.tcSI : dict.tc}</label>
+            <input type="number" step={isSI ? "0.1" : "1"} value={tc} onChange={(e) => setTc(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-rose-500 focus:ring-4 focus:ring-rose-500/10 rounded-2xl text-lg font-semibold transition" placeholder={isSI ? "e.g. 5.0" : "e.g. 180"} />
           </div>
 
           <div>
-            <label className="block text-sm font-bold text-slate-700 mb-2">{dict.hdl}</label>
-            <input type="number" value={hdl} onChange={(e) => setHdl(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-rose-500 focus:ring-4 focus:ring-rose-500/10 rounded-2xl text-lg font-semibold transition" placeholder="e.g. 50" />
+            <label className="block text-sm font-bold text-slate-700 mb-2">{isSI ? dict.hdlSI : dict.hdl}</label>
+            <input type="number" step={isSI ? "0.1" : "1"} value={hdl} onChange={(e) => setHdl(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-rose-500 focus:ring-4 focus:ring-rose-500/10 rounded-2xl text-lg font-semibold transition" placeholder={isSI ? "e.g. 1.2" : "e.g. 50"} />
           </div>
 
           <div className="md:col-span-2 grid grid-cols-2 gap-4">
@@ -198,9 +206,9 @@ export default function AscvdRisk({ lang }: { lang: LangCode }) {
                   { label: "Age", value: age },
                   { label: "Sex", value: gender },
                   { label: "Race", value: race },
-                  { label: "Systolic BP", value: sbp + " mmHg" },
-                  { label: "Total Cholesterol", value: tc + " mg/dL" },
-                  { label: "HDL Cholesterol", value: hdl + " mg/dL" },
+                  { label: "Total Cholesterol", value: `${tc} ${isSI ? 'mmol/L' : 'mg/dL'}` },
+                  { label: "HDL Cholesterol", value: `${hdl} ${isSI ? 'mmol/L' : 'mg/dL'}` },
+                  { label: "Systolic BP", value: `${sbp} mmHg` },
                   { label: "Smoker", value: smoker ? 'Yes' : 'No' },
                   { label: "Diabetes", value: diabetes ? 'Yes' : 'No' },
                   { label: "HTN Treated", value: treatedHtn ? 'Yes' : 'No' }

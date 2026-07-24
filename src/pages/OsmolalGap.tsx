@@ -6,6 +6,7 @@ import { trackCalculatorUsage } from '../utils/telemetry';
 import EmbedCodeButton from '../components/ui/EmbedCodeButton';
 import { JsonLd } from '../components/JsonLd';
 import ClinicalContextPanel from '../components/ClinicalContextPanel';
+import { useUnitSystem } from '../contexts/UnitSystemContext';
 
 const translations: Translations = {
   en: {
@@ -14,8 +15,11 @@ const translations: Translations = {
     measuredLabel: "Measured Osmolality (mOsm/kg)",
     naLabel: "Sodium (mEq/L)",
     bunLabel: "BUN (mg/dL)",
+    bunLabelSI: "Urea (mmol/L)",
     glcLabel: "Glucose (mg/dL)",
+    glcLabelSI: "Glucose (mmol/L)",
     etohLabel: "Ethanol (mg/dL) - Optional",
+    etohLabelSI: "Ethanol (mmol/L) - Optional",
     resultTitle: "Osmolal Gap",
     calculatedLabel: "Calculated Osmolality",
     gapLabel: "Osmolal Gap",
@@ -40,8 +44,11 @@ const translations: Translations = {
     measuredLabel: "Osmolalité Mesurée (mOsm/kg)",
     naLabel: "Sodium (mEq/L)",
     bunLabel: "Urée (mg/dL)",
+    bunLabelSI: "Urée (mmol/L)",
     glcLabel: "Glucose (mg/dL)",
+    glcLabelSI: "Glucose (mmol/L)",
     etohLabel: "Éthanol (mg/dL) - Optionnel",
+    etohLabelSI: "Éthanol (mmol/L) - Optionnel",
     resultTitle: "Trou Osmolaire",
     calculatedLabel: "Osmolalité Calculée",
     gapLabel: "Trou Osmolaire",
@@ -69,6 +76,9 @@ export default function OsmolalGap({ lang }: { lang: LangCode }) {
   const [glc, setGlc] = useState<string>('90');
   const [etoh, setEtoh] = useState<string>('0');
 
+  const { standard } = useUnitSystem();
+  const isSI = standard === 'Metric (SI)';
+
   const currentText = translations[lang] || translations.en;
   
   const m = parseFloat(measured) || 0;
@@ -80,8 +90,12 @@ export default function OsmolalGap({ lang }: { lang: LangCode }) {
   const result = useMemo(() => {
     if (m <= 0 || n <= 0) return null;
     
-    // Calculated = 2*Na + BUN/2.8 + Glc/18 + EtOH/4.6
-    const calculated = (2 * n) + (b / 2.8) + (g / 18) + (e / 4.6);
+    // In US units: Calculated = 2*Na + BUN/2.8 + Glc/18 + EtOH/4.6
+    // In SI units: The divisors are the exact conversion factors from mg/dL to mmol/L!
+    // So if inputs are in mmol/L, it simply becomes 2*Na + Urea + Glc + EtOH.
+    const calculated = isSI 
+      ? (2 * n) + b + g + e
+      : (2 * n) + (b / 2.8) + (g / 18) + (e / 4.6);
     const gap = m - calculated;
     
     return {
@@ -157,15 +171,15 @@ export default function OsmolalGap({ lang }: { lang: LangCode }) {
                   <input type="number" value={na} onChange={(e) => setNa(e.target.value)} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-lime-500 font-mono text-lg" placeholder="140" />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-slate-700 mb-1">{currentText.bunLabel as string}</label>
-                  <input type="number" value={bun} onChange={(e) => setBun(e.target.value)} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-lime-500 font-mono text-lg" placeholder="14" />
+                  <label className="block text-sm font-bold text-slate-700 mb-1">{isSI ? currentText.bunLabelSI as string : currentText.bunLabel as string}</label>
+                  <input type="number" value={bun} onChange={(e) => setBun(e.target.value)} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-lime-500 font-mono text-lg" placeholder={isSI ? "5.0" : "14"} />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-slate-700 mb-1">{currentText.glcLabel as string}</label>
-                  <input type="number" value={glc} onChange={(e) => setGlc(e.target.value)} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-lime-500 font-mono text-lg" placeholder="90" />
+                  <label className="block text-sm font-bold text-slate-700 mb-1">{isSI ? currentText.glcLabelSI as string : currentText.glcLabel as string}</label>
+                  <input type="number" value={glc} onChange={(e) => setGlc(e.target.value)} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-lime-500 font-mono text-lg" placeholder={isSI ? "5.0" : "90"} />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-slate-700 mb-1">{currentText.etohLabel as string}</label>
+                  <label className="block text-sm font-bold text-slate-700 mb-1">{isSI ? currentText.etohLabelSI as string : currentText.etohLabel as string}</label>
                   <input type="number" value={etoh} onChange={(e) => setEtoh(e.target.value)} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-lime-500 font-mono text-lg" placeholder="0" />
                 </div>
               </div>

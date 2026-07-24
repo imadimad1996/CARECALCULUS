@@ -4,50 +4,68 @@ import { LangCode, Translations } from '../types';
 import { layoutTranslations } from '../utils/lang';
 import { trackCalculatorUsage } from '../utils/telemetry';
 import ClinicalExportButton from '../components/ClinicalExportButton';
+import { useUnitSystem } from '../contexts/UnitSystemContext';
 
 const translations: Translations = {
   en: {
     title: "Corrected Calcium",
     subtitle: "Corrects total calcium for hypoalbuminemia",
     calcium: "Measured Total Calcium (mg/dL)",
+    calciumSI: "Measured Total Calcium (mmol/L)",
     albumin: "Serum Albumin (g/dL)",
+    albuminSI: "Serum Albumin (g/L)",
     result: "Corrected Calcium",
     formula: "Corrected Ca = Measured Ca + 0.8 × (4 - Albumin)",
     clinicalTitle: "Clinical Application",
     clinicalText: "Patients with low albumin may have falsely low total calcium. This formula estimates what the calcium would be if albumin were normal.",
     references: "References: Payne RB, et al. Interpretation of serum calcium in patients with abnormal serum proteins.",
-    normal: "Normal (8.8 - 10.4)",
-    low: "Hypocalcemia (< 8.8)",
-    high: "Hypercalcemia (> 10.4)"
+    normal: "Normal (8.8 - 10.4 mg/dL)",
+    normalSI: "Normal (2.2 - 2.6 mmol/L)",
+    low: "Hypocalcemia (< 8.8 mg/dL)",
+    lowSI: "Hypocalcemia (< 2.2 mmol/L)",
+    high: "Hypercalcemia (> 10.4 mg/dL)",
+    highSI: "Hypercalcemia (> 2.6 mmol/L)"
   },
   fr: {
     title: "Calcium Corrigé",
     subtitle: "Corrige la calcémie totale en fonction de l'hypoalbuminémie",
     calcium: "Calcium Total Mesuré (mg/dL)",
+    calciumSI: "Calcium Total Mesuré (mmol/L)",
     albumin: "Albumine Sérique (g/dL)",
+    albuminSI: "Albumine Sérique (g/L)",
     result: "Calcium Corrigé",
     formula: "Ca Corrigé = Ca mesuré + 0.8 × (4 - Albumine)",
     clinicalTitle: "Application Clinique",
     clinicalText: "Les patients ayant une faible albuminémie peuvent avoir une calcémie totale faussement basse. Cette formule estime la calcémie si l'albumine était normale.",
     references: "Références: Payne RB, et al. Interpretation of serum calcium in patients with abnormal serum proteins.",
-    normal: "Normal (8.8 - 10.4)",
-    low: "Hypocalcémie (< 8.8)",
-    high: "Hypercalcémie (> 10.4)"
+    normal: "Normal (8.8 - 10.4 mg/dL)",
+    normalSI: "Normal (2.2 - 2.6 mmol/L)",
+    low: "Hypocalcémie (< 8.8 mg/dL)",
+    lowSI: "Hypocalcémie (< 2.2 mmol/L)",
+    high: "Hypercalcémie (> 10.4 mg/dL)",
+    highSI: "Hypercalcémie (> 2.6 mmol/L)"
   }
 };
 
 export default function CorrectedCalcium({ lang }: { lang: LangCode }) {
+  const { standard } = useUnitSystem();
+  const isSI = standard === 'Metric (SI)';
+
   const [calcium, setCalcium] = useState<number>(8.0);
   const [albumin, setAlbumin] = useState<number>(2.5);
 
-  const currentText = translations[lang];
+  const currentText = translations[lang] || translations.en;
   const isRtl = false;
 
   const correctedCa = useMemo(() => {
     if (calcium <= 0 || albumin <= 0) return 0;
-    const computed = calcium + 0.8 * (4.0 - albumin);
-    return parseFloat(computed.toFixed(1));
-  }, [calcium, albumin]);
+    
+    const caMgDl = isSI ? calcium * 4 : calcium;
+    const albGDl = isSI ? albumin / 10 : albumin;
+    
+    const computed = caMgDl + 0.8 * (4.0 - albGDl);
+    return isSI ? parseFloat((computed / 4).toFixed(2)) : parseFloat(computed.toFixed(1));
+  }, [calcium, albumin, isSI]);
 
   useEffect(() => {
     if (correctedCa > 0) {
@@ -60,9 +78,13 @@ export default function CorrectedCalcium({ lang }: { lang: LangCode }) {
 
   const getCategory = (val: number) => {
     if (val === 0) return { label: '', color: '' };
-    if (val < 8.8) return { label: currentText.low, color: 'text-amber-500', bg: 'bg-amber-500/10 border-amber-500/20' };
-    if (val > 10.4) return { label: currentText.high, color: 'text-red-500', bg: 'bg-red-500/10 border-red-500/20' };
-    return { label: currentText.normal, color: 'text-emerald-500', bg: 'bg-emerald-500/10 border-emerald-500/20' };
+    
+    const lowThresh = isSI ? 2.2 : 8.8;
+    const highThresh = isSI ? 2.6 : 10.4;
+    
+    if (val < lowThresh) return { label: isSI ? currentText.lowSI as string : currentText.low as string, color: 'text-amber-500', bg: 'bg-amber-500/10 border-amber-500/20' };
+    if (val > highThresh) return { label: isSI ? currentText.highSI as string : currentText.high as string, color: 'text-red-500', bg: 'bg-red-500/10 border-red-500/20' };
+    return { label: isSI ? currentText.normalSI as string : currentText.normal as string, color: 'text-emerald-500', bg: 'bg-emerald-500/10 border-emerald-500/20' };
   };
 
   const category = getCategory(correctedCa);
@@ -84,7 +106,7 @@ export default function CorrectedCalcium({ lang }: { lang: LangCode }) {
             <div className="space-y-8">
               <div className="group">
                 <div className="flex justify-between items-baseline mb-2">
-                  <label className="text-sm font-semibold text-gray-700 uppercase tracking-wider">{currentText.calcium}</label>
+                  <label className="text-sm font-semibold text-gray-700 uppercase tracking-wider">{isSI ? currentText.calciumSI as string : currentText.calcium as string}</label>
                 </div>
                 <div className="relative flex items-center">
                   <input
@@ -99,7 +121,7 @@ export default function CorrectedCalcium({ lang }: { lang: LangCode }) {
 
               <div className="group">
                 <div className="flex justify-between items-baseline mb-2">
-                  <label className="text-sm font-semibold text-gray-700 uppercase tracking-wider">{currentText.albumin}</label>
+                  <label className="text-sm font-semibold text-gray-700 uppercase tracking-wider">{isSI ? currentText.albuminSI as string : currentText.albumin as string}</label>
                 </div>
                 <div className="relative flex items-center">
                   <input
@@ -128,7 +150,7 @@ export default function CorrectedCalcium({ lang }: { lang: LangCode }) {
                 <span className="text-7xl font-bold tracking-tighter transition-all duration-300">
                   {correctedCa > 0 ? correctedCa : '--'}
                 </span>
-                <span className="text-xl font-medium text-gray-400">mg/dL</span>
+                <span className="text-xl font-medium text-gray-400">{isSI ? 'mmol/L' : 'mg/dL'}</span>
               </div>
             </div>
 
@@ -141,18 +163,18 @@ export default function CorrectedCalcium({ lang }: { lang: LangCode }) {
                        </div>
                      </div>
                      <ClinicalExportButton
-                       title={currentText.title}
+                       title={currentText.title as string}
                        inputs={[
-                         { label: currentText.calcium, value: `${calcium} mg/dL` },
-                         { label: currentText.albumin, value: `${albumin} g/dL` }
+                         { label: isSI ? currentText.calciumSI as string : currentText.calcium as string, value: `${calcium} ${isSI ? 'mmol/L' : 'mg/dL'}` },
+                         { label: isSI ? currentText.albuminSI as string : currentText.albumin as string, value: `${albumin} ${isSI ? 'g/L' : 'g/dL'}` }
                        ]}
                        results={[
-                         { label: currentText.result, value: correctedCa, unit: 'mg/dL' },
-                         { label: 'Evaluation Status', value: category.label }
+                         { label: currentText.result as string, value: correctedCa, unit: isSI ? 'mmol/L' : 'mg/dL' },
+                         { label: 'Evaluation Status', value: category.label as string }
                        ]}
-                       formula={currentText.formula}
-                       disclaimer={currentText.clinicalText}
-                       references={currentText.references}
+                       formula={currentText.formula as string}
+                       disclaimer={currentText.clinicalText as string}
+                       references={currentText.references as string}
                        lang={lang}
                      />
                    </>
