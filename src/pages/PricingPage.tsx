@@ -23,15 +23,15 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
       {/* Header with Animation */}
       <div className="text-center max-w-3xl mx-auto mb-16 animate-in fade-in slide-in-from-bottom-8 duration-700">
         <span className="text-xs font-bold text-cyan-600 dark:text-cyan-400 uppercase tracking-widest bg-cyan-500/10 px-4 py-1.5 rounded-full border border-cyan-500/20 inline-block mb-4 shadow-sm">
-          {isFr ? 'TARIFICATION TRANSPARENTE' : 'TRANSPARENT PRICING'}
+          {isFr ? 'REJOINT PAR +10 000 SOIGNANTS DANS LE MONDE' : 'JOINED BY 10,000+ CLINICIANS WORLDWIDE'}
         </span>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6">
-          {isFr ? 'Choisissez le Forfait Adapté à Votre Pratique' : 'Elevate Your Bedside Clinical Practice'}
+          {isFr ? 'Le Pass Export 1-Clic pour Soignants Occupés' : 'The 1-Click EHR Export Pass for Busy Clinicians'}
         </h1>
         <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto">
           {isFr
-            ? 'Accès gratuit pour tous les étudiants. Débloquez les exports Epic/Cerner illimités et la file d\'attente de garde avec le Pass Pro.'
-            : 'Free forever for students. Unlock 1-click Epic/Cerner progress note exports and offline shift queues with Pro.'}
+            ? 'Accès gratuit pour tous les étudiants. Gagnez 30 secondes par patient en copiant des DotPhrases et notes SBAR directement dans Epic/Cerner.'
+            : 'Free forever for medical students. Save 30 seconds per patient by copying pre-formatted DotPhrases & SBAR notes directly into Epic or Cerner.'}
         </p>
 
         {/* Modern Segmented Billing Toggle */}

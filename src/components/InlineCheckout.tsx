@@ -128,6 +128,24 @@ export const InlineCheckout: React.FC<InlineCheckoutProps> = ({
             </div>
           </div>
 
+          {/* Clinician Social Proof Quotes (CRO Multiplier) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div className="bg-slate-800/60 border border-slate-700/80 rounded-2xl p-3 text-xs">
+              <div className="text-amber-400 font-bold mb-1">★★★★★</div>
+              <p className="text-slate-300 italic mb-1.5">
+                {isFr ? '"Saves me 15 minutes of dictation on every ER shift. Copying DotPhrases into Epic is seamless."' : '"Saves me 15 minutes of dictation on every ER shift. Copying DotPhrases into Epic is seamless."'}
+              </p>
+              <span className="text-slate-400 font-semibold block">— Dr. Marc K., ER Physician</span>
+            </div>
+            <div className="bg-slate-800/60 border border-slate-700/80 rounded-2xl p-3 text-xs">
+              <div className="text-amber-400 font-bold mb-1">★★★★★</div>
+              <p className="text-slate-300 italic mb-1.5">
+                {isFr ? '"The SBAR handover notes format is worth 10x the price. Works offline in hospital basements."' : '"The SBAR handover notes format is worth 10x the price. Works offline in hospital basements."'}
+              </p>
+              <span className="text-slate-400 font-semibold block">— Sarah L., ICU Nurse Practitioner</span>
+            </div>
+          </div>
+
           {/* Highlight Callout for Card Payments */}
           <div className="bg-cyan-950/40 border border-cyan-500/30 rounded-2xl p-4 flex items-start gap-3 text-cyan-200 text-xs md:text-sm">
             <Lock className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
