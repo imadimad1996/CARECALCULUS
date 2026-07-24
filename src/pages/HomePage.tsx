@@ -22,9 +22,8 @@ const T = {
     
   },
   cta: {
-    en: { primary: 'Open Calculators', secondary: 'Browse Library' },
-    fr: { primary: 'Accéder aux outils', secondary: 'Parcourir la bibliothèque' },
-    
+    en: { primary: 'Quick Calculate', secondary: 'Browse Library' },
+    fr: { primary: 'Calcul Rapide', secondary: 'Parcourir la bibliothèque' },
   },
   tiers: {
     en: {
@@ -267,11 +266,11 @@ export default function HomePage({ lang }: HomePageProps) {
 
           <div className="flex flex-wrap items-center justify-center gap-3">
             <SmartPasteModal lang={lang} />
-            <Link to={langPath('/map-calculator')} className="btn-primary text-sm">
+            <button onClick={() => setIsSearchOpen(true)} className="btn-primary text-sm cursor-pointer">
               <Calculator className="w-4 h-4" />
               {cta.primary}
               <ChevronRight className="w-4 h-4" />
-            </Link>
+            </button>
             <Link to={langPath('/blog')} className="btn-secondary text-sm">
               <BookOpen className="w-4 h-4" />
               {cta.secondary}

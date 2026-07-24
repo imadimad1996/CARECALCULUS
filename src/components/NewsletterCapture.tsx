@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Mail, X, Sparkles, CheckCircle } from 'lucide-react';
 import { LangCode } from '../types';
+import { trackNewsletterSignup } from '../utils/telemetry';
 
 /**
  * Elegant newsletter capture component.
@@ -99,6 +100,7 @@ export default function NewsletterCapture({ lang }: NewsletterCaptureProps) {
 
       localStorage.setItem('cc-newsletter-subscribed', email);
       setSubmitted(true);
+      trackNewsletterSignup('floating_bar');
       setTimeout(() => setVisible(false), 3000);
     } catch (err) {
       setErrorMsg('Failed to subscribe. Please try again.');

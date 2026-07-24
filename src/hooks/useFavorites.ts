@@ -12,6 +12,24 @@ export function useFavorites() {
     } catch (e) {
       console.error('Error loading favorites', e);
     }
+
+    const handleStorage = (e: StorageEvent) => {
+      if (e.key === 'carecalculus-favorites' && e.newValue) {
+        setFavorites(JSON.parse(e.newValue));
+      }
+    };
+
+    const handleCustomEvent = (e: any) => {
+      setFavorites(e.detail);
+    };
+
+    window.addEventListener('storage', handleStorage);
+    window.addEventListener('favorites-updated', handleCustomEvent);
+    
+    return () => {
+      window.removeEventListener('storage', handleStorage);
+      window.removeEventListener('favorites-updated', handleCustomEvent);
+    };
   }, []);
 
   const toggleFavorite = (path: string) => {
@@ -19,6 +37,7 @@ export function useFavorites() {
       const next = prev.includes(path) ? prev.filter(p => p !== path) : [...prev, path];
       try {
         localStorage.setItem('carecalculus-favorites', JSON.stringify(next));
+        window.dispatchEvent(new CustomEvent('favorites-updated', { detail: next }));
       } catch (e) {
         console.error('Error saving favorites', e);
       }

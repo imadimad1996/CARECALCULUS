@@ -5,6 +5,7 @@ import { LangCode } from '../types';
 import { useMemo } from 'react';
 import { generateSOAP, generateSBAR, generateDotPhrase, generateShiftHandover, generateCaseShareUrl } from '../utils/soapGenerator';
 import { saveShiftRecord } from './ShiftStorageDrawer';
+import { trackEhrExport } from '../utils/telemetry';
 
 export interface ClinicalExportButtonProps {
   title?: string;
@@ -124,6 +125,7 @@ export default function ClinicalExportButton({
     const textToCopy = getFormattedNote();
     navigator.clipboard.writeText(textToCopy).then(() => {
       setCopied(true);
+      trackEhrExport(calculatorName || title || 'unknown', noteTab);
       saveShiftRecord({
         patientId: patientId || 'PT-' + Math.floor(1000 + Math.random() * 9000),
         calculatorName: title || 'Clinical Score',
@@ -260,7 +262,7 @@ ${divider}`;
   };
 
   const handlePrint = () => {
-
+    trackEhrExport(calculatorName || title || 'unknown', 'print');
     // Inject printing container inside HTML DOM dynamically
     let printContainer = document.getElementById("clinical-print-area");
     if (!printContainer) {
