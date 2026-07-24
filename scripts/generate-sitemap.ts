@@ -101,15 +101,31 @@ const domains = ['https://www.carecalculus.com', 'https://fr.carecalculus.com'] 
 function buildUrls(paths: string[], priority: string, changefreq: string, frPriority?: string): string {
   const urls: string[] = [];
   for (const path of paths) {
-    for (const domain of domains) {
-      const p = domain.includes('fr.') && frPriority ? frPriority : priority;
-      urls.push(`
+    const enUrl = `https://www.carecalculus.com${path}`;
+    const frUrl = `https://fr.carecalculus.com${path}`;
+    
+    // EN Entry
+    urls.push(`
   <url>
-    <loc>${domain}${path}</loc>
+    <loc>${enUrl}</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}" />
+    <xhtml:link rel="alternate" hreflang="fr" href="${frUrl}" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="${enUrl}" />
     <changefreq>${changefreq}</changefreq>
-    <priority>${p}</priority>
+    <priority>${priority}</priority>
   </url>`);
-    }
+
+    // FR Entry
+    const pFr = frPriority || priority;
+    urls.push(`
+  <url>
+    <loc>${frUrl}</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}" />
+    <xhtml:link rel="alternate" hreflang="fr" href="${frUrl}" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="${enUrl}" />
+    <changefreq>${changefreq}</changefreq>
+    <priority>${pFr}</priority>
+  </url>`);
   }
   return urls.join('');
 }
@@ -120,11 +136,17 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
   <!-- Homepage -->
   <url>
     <loc>https://www.carecalculus.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://fr.carecalculus.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>

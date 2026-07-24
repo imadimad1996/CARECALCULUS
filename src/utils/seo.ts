@@ -41,6 +41,25 @@ const nameFrMap: Record<string, string> = seoMaps.nameFrMap;
 const nameArMap: Record<string, string> = seoMaps.nameArMap;
 const keywordsEnMap: Record<string, string> = (seoMaps as any).keywordsEnMap || {};
 
+function slugifyQuestion(question: string): string {
+  return question
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .trim()
+    .replace(/\s+/g, '-')
+    .slice(0, 80);
+}
+
+export const qaLookup: Record<string, { question: string; answer: string; calcPath: string }> = {};
+for (const [calcPath, entries] of Object.entries(faqSchemaDb)) {
+  for (const entry of entries) {
+    const slug = slugifyQuestion(entry.question);
+    if (slug) {
+      qaLookup[slug] = { ...entry, calcPath };
+    }
+  }
+}
+
 export interface RouteMeta {
   title: string;
   desc: string;
@@ -412,6 +431,19 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
           keywords: `${nEn1.toLowerCase()}, ${nEn2.toLowerCase()}, clinical comparison, medical score comparison`,
         };
       }
+    }
+  }
+
+  // 8. Q&A Clinical Pages (/q/:slug)
+  if (path.startsWith('/q/')) {
+    const qSlug = path.replace(/^\/q\//, '');
+    const entry = qaLookup[qSlug];
+    if (entry) {
+      return {
+        title: `${entry.question} | CareCalculus`,
+        desc: entry.answer.slice(0, 160),
+        keywords: `${entry.question.toLowerCase().replace(/[^a-z0-9\s]/g, '')}, clinical qa, medical guidance, carecalculus`,
+      };
     }
   }
 
@@ -787,6 +819,15 @@ export function getFaqSchema(path: string) {
         { question: `Où télécharger le cours ${mod.name} d'études infirmières au Maroc ?`, answer: `Vous pouvez consulter et télécharger gratuitement les modules et cours d'infirmiers en format PDF directement sur CareCalculus.` },
         { question: `Quelles sont les spécialités concernées par le module ${mod.name} ?`, answer: `Ce module s'adresse aux étudiants des spécialités : ${mod.specialty} (Semestre ${mod.semester}) en ISPITS.` }
       ];
+    }
+  }
+
+  if (!faqs && path.startsWith('/q/')) {
+    const qSlug = path.replace(/^\/q\//, '');
+    const entry = qaLookup[qSlug];
+    if (entry) {
+      const related = (faqSchemaDb[entry.calcPath] || []).filter(e => e.question !== entry.question);
+      faqs = [entry, ...related];
     }
   }
 
