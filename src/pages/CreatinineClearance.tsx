@@ -5,6 +5,7 @@ import { layoutTranslations } from '../utils/lang';
 import { trackCalculatorUsage } from '../utils/telemetry';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 import CalculatorShell from '../components/CalculatorShell';
+import { useUnitSystem } from '../contexts/UnitSystemContext';
 
 const translations: Translations = {
   en: {
@@ -14,6 +15,7 @@ const translations: Translations = {
     weight: "Weight (kg)",
     creatinine: "Serum Creatinine",
     creatinineMg: "mg/dL",
+    creatinineUmol: "µmol/L",
     gender: "Gender",
     male: "Male",
     female: "Female",
@@ -34,6 +36,7 @@ const translations: Translations = {
     weight: "Poids (kg)",
     creatinine: "Créatininémie",
     creatinineMg: "mg/dL",
+    creatinineUmol: "µmol/L",
     gender: "Sexe",
     male: "Homme",
     female: "Femme",
@@ -50,6 +53,9 @@ const translations: Translations = {
 };
 
 export default function CreatinineClearance({ lang }: { lang: LangCode }) {
+  const { standard } = useUnitSystem();
+  const isSI = standard === 'Metric (SI)';
+
   const [age, setAge] = useState<number>(65);
   const [weight, setWeight] = useState<number>(70);
   const [creatinine, setCreatinine] = useState<number>(1.2);
@@ -60,7 +66,8 @@ export default function CreatinineClearance({ lang }: { lang: LangCode }) {
 
   const crclValue = useMemo(() => {
     if (age <= 0 || weight <= 0 || creatinine <= 0) return 0;
-    let computed = ((140 - age) * weight) / (72 * creatinine);
+    const crMg = isSI ? creatinine / 88.4 : creatinine;
+    let computed = ((140 - age) * weight) / (72 * crMg);
     if (isFemale) computed = computed * 0.85;
     return parseFloat(computed.toFixed(1));
   }, [age, weight, creatinine, isFemale]);
@@ -151,16 +158,16 @@ export default function CreatinineClearance({ lang }: { lang: LangCode }) {
               <div className="group">
                 <div className="flex justify-between items-baseline mb-2">
                   <label className="text-sm font-semibold text-gray-700 uppercase tracking-wider">{currentText.creatinine}</label>
-                  <span className="text-xs font-medium text-gray-400 tabular-nums">{currentText.creatinineMg}</span>
+                  <span className="text-xs font-medium text-gray-400 tabular-nums">{isSI ? currentText.creatinineUmol : currentText.creatinineMg}</span>
                 </div>
                 <input
                   type="number"
-                  step="0.1"
+                  step={isSI ? "1" : "0.1"}
                   value={creatinine === 0 ? '' : creatinine}
                   onChange={(e) => setCreatinine(Number(e.target.value))}
                   className="w-full bg-gray-50/50 px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600 text-3xl tabular-nums font-semibold text-gray-900 transition-all placeholder:text-gray-300"
-                  min="0.1"
-                  max="15"
+                  min={isSI ? "9" : "0.1"}
+                  max={isSI ? "1326" : "15"}
                 />
               </div>
 

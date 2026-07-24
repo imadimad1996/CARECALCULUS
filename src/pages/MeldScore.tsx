@@ -9,15 +9,22 @@ import { JsonLd, generateMedicalCalculatorSchema } from '../components/JsonLd';
 import ClinicalContextPanel from '../components/ClinicalContextPanel';
 import { MedicalReviewerCard } from '../components/MedicalReviewerCard';
 import { REVIEWER_HEPATOLOGY } from '../data/reviewers';
+import { useUnitSystem } from '../contexts/UnitSystemContext';
 
 const translations: Translations = {
   en: {
     title: "MELD Score",
     subtitle: "Model for End-Stage Liver Disease (MELD-Na)",
-    bilirubin: "Bilirubin (mg/dL)",
+    bilirubin: "Bilirubin",
     inr: "INR",
-    creatinine: "Creatinine (mg/dL)",
-    sodium: "Sodium (mEq/L)",
+    creatinine: "Creatinine",
+    sodium: "Sodium",
+    bilirubinMg: "mg/dL",
+    bilirubinUmol: "µmol/L",
+    creatinineMg: "mg/dL",
+    creatinineUmol: "µmol/L",
+    sodiumUS: "mEq/L",
+    sodiumSi: "mmol/L",
     dialysis: "Dialysis at least twice in last week",
     result: "MELD-Na Score",
     formula: "MELD Score predicting 3-month mortality",
@@ -45,10 +52,16 @@ const translations: Translations = {
   fr: {
     title: "Score MELD",
     subtitle: "Évaluation de l'insuffisance hépatique terminale (MELD-Na)",
-    bilirubin: "Bilirubine (mg/dL)",
+    bilirubin: "Bilirubine",
     inr: "INR",
-    creatinine: "Créatinine (mg/dL)",
-    sodium: "Sodium (mEq/L)",
+    creatinine: "Créatinine",
+    sodium: "Sodium",
+    bilirubinMg: "mg/dL",
+    bilirubinUmol: "µmol/L",
+    creatinineMg: "mg/dL",
+    creatinineUmol: "µmol/L",
+    sodiumUS: "mEq/L",
+    sodiumSi: "mmol/L",
     dialysis: "Dialyse au moins 2 fois la semaine passée",
     result: "Score MELD-Na",
     formula: "Score MELD prédisant la mortalité à 3 mois",
@@ -76,6 +89,9 @@ const translations: Translations = {
 };
 
 export default function MeldScore({ lang }: { lang: LangCode }) {
+  const { standard } = useUnitSystem();
+  const isSI = standard === 'Metric (SI)';
+
   const [bilirubin, setBilirubin] = useState<number | ''>(1.2);
   const [inr, setInr] = useState<number | ''>(1.1);
   const [creatinine, setCreatinine] = useState<number | ''>(1.0);
@@ -88,10 +104,14 @@ export default function MeldScore({ lang }: { lang: LangCode }) {
   const meldScore = useMemo(() => {
     if (bilirubin === '' || inr === '' || creatinine === '' || sodium === '') return null;
     
+    // Convert SI to US logic
+    const biliMg = isSI ? Number(bilirubin) / 17.1 : Number(bilirubin);
+    const crMg = isSI ? Number(creatinine) / 88.4 : Number(creatinine);
+
     // Bounds
-    let b = Math.max(1, bilirubin);
-    let c = Math.max(1, creatinine);
-    let i = Math.max(1, inr);
+    let b = Math.max(1, biliMg);
+    let c = Math.max(1, crMg);
+    let i = Math.max(1, Number(inr));
     
     if (dialysis) {
       c = 4.0;
@@ -162,11 +182,11 @@ export default function MeldScore({ lang }: { lang: LangCode }) {
             <div className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="group">
-                  <label className="text-xs font-bold text-gray-500 uppercase tracking-wider block mb-2">{currentText.bilirubin}</label>
+                  <label className="text-xs font-bold text-gray-500 uppercase tracking-wider block mb-2">{currentText.bilirubin} ({isSI ? currentText.bilirubinUmol : currentText.bilirubinMg})</label>
                   <input
                     type="number"
-                    step="0.1"
-                    min="0.1"
+                    step={isSI ? "1" : "0.1"}
+                    min={isSI ? "17" : "0.1"}
                     value={bilirubin}
                     onChange={(e) => setBilirubin(e.target.value === '' ? '' : Number(e.target.value))}
                     className="w-full bg-white px-4 py-3 border border-gray-200/80 rounded-2xl focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600 text-xl font-bold text-gray-900 transition-all font-mono shadow-sm hover:border-gray-300"
@@ -184,21 +204,23 @@ export default function MeldScore({ lang }: { lang: LangCode }) {
                   />
                 </div>
                 <div className="group">
-                  <label className="text-xs font-bold text-gray-500 uppercase tracking-wider block mb-2">{currentText.creatinine}</label>
+                  <label className="text-xs font-bold text-gray-500 uppercase tracking-wider block mb-2">{currentText.creatinine} ({isSI ? currentText.creatinineUmol : currentText.creatinineMg})</label>
                   <input
                     type="number"
-                    step="0.1"
-                    min="0.1"
+                    step={isSI ? "1" : "0.1"}
+                    min={isSI ? "9" : "0.1"}
                     value={creatinine}
                     onChange={(e) => setCreatinine(e.target.value === '' ? '' : Number(e.target.value))}
                     className="w-full bg-white px-4 py-3 border border-gray-200/80 rounded-2xl focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600 text-xl font-bold text-gray-900 transition-all font-mono shadow-sm hover:border-gray-300"
                   />
                 </div>
                 <div className="group">
-                  <label className="text-xs font-bold text-gray-500 uppercase tracking-wider block mb-2">{currentText.sodium}</label>
+                  <label className="text-xs font-bold text-gray-500 uppercase tracking-wider block mb-2">{currentText.sodium} ({isSI ? currentText.sodiumSi : currentText.sodiumUS})</label>
                   <input
                     type="number"
                     step="1"
+                    min="125"
+                    max="140"
                     value={sodium}
                     onChange={(e) => setSodium(e.target.value === '' ? '' : Number(e.target.value))}
                     className="w-full bg-white px-4 py-3 border border-gray-200/80 rounded-2xl focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600 text-xl font-bold text-gray-900 transition-all font-mono shadow-sm hover:border-gray-300"

@@ -4,6 +4,7 @@ import { LangCode, Translations } from '../types';
 import { layoutTranslations } from '../utils/lang';
 import { trackCalculatorUsage } from '../utils/telemetry';
 import ClinicalExportButton from '../components/ClinicalExportButton';
+import { useUnitSystem } from '../contexts/UnitSystemContext';
 
 const translations: Translations = {
   en: {
@@ -12,6 +13,7 @@ const translations: Translations = {
     age: "Age (Years)",
     creatinine: "Serum Creatinine",
     creatinineMg: "mg/dL",
+    creatinineUmol: "µmol/L",
     gender: "Gender",
     male: "Male",
     female: "Female",
@@ -28,7 +30,7 @@ const translations: Translations = {
     severe: "G4: Severely Decreased (15-29)",
     failure: "G5: Kidney Failure (< 15)",
     ageRange: "Age should be between 18 and 120 years.",
-    creatinineRange: "Creatinine should be between 0.1 and 20 mg/dL.",
+    creatinineRange: "Creatinine out of expected range.",
     resetBtn: "Reset"
   },
   fr: {
@@ -37,6 +39,7 @@ const translations: Translations = {
     age: "Âge (Années)",
     creatinine: "Créatininémie",
     creatinineMg: "mg/dL",
+    creatinineUmol: "µmol/L",
     gender: "Sexe",
     male: "Homme",
     female: "Femme",
@@ -53,12 +56,17 @@ const translations: Translations = {
     severe: "G4: Sévèrement diminué (15-29)",
     failure: "G5: Insuffisance rénale (< 15)",
     ageRange: "L'âge doit être compris entre 18 et 120 ans.",
-    creatinineRange: "La créatininémie doit être comprise entre 0,1 et 20 mg/dL.",
+    creatinineRange: "La créatininémie est hors limites.",
     resetBtn: "Réinitialiser"
   }
 };
 
 export default function CkdEpiGfr({ lang }: { lang: LangCode }) {
+  const { standard } = useUnitSystem();
+  const isSI = standard === 'Metric (SI)';
+
+  // If we wanted to adjust defaults dynamically based on unit toggle, we could do it here,
+  // but keeping simple states is robust enough. We'll interpret them based on isSI.
   const [age, setAge] = useState<number>(65);
   const [creatinine, setCreatinine] = useState<number>(1.2);
   const [isFemale, setIsFemale] = useState<boolean>(false);
@@ -68,16 +76,21 @@ export default function CkdEpiGfr({ lang }: { lang: LangCode }) {
   const isRtl = false;
 
   const isAgeWarning = age > 0 && (age < 18 || age > 120);
-  const isCreatinineWarning = creatinine > 0 && (creatinine < 0.1 || creatinine > 20);
+  const isCreatinineWarning = isSI
+    ? (creatinine > 0 && (creatinine < 9 || creatinine > 1768)) // SI limits
+    : (creatinine > 0 && (creatinine < 0.1 || creatinine > 20)); // US limits
 
   const gfrValue = useMemo(() => {
     if (age <= 0 || creatinine <= 0) return 0;
     
     // 2021 CKD-EPI Creatinine Equation without Race
+    // Convert to mg/dL if SI
+    const crMg = isSI ? creatinine / 88.4 : creatinine;
+    
     const kappa = isFemale ? 0.7 : 0.9;
     const alpha = isFemale ? -0.241 : -0.302;
     
-    const scrOverKappa = creatinine / kappa;
+    const scrOverKappa = crMg / kappa;
     const minTerm = Math.pow(Math.min(scrOverKappa, 1), alpha);
     const maxTerm = Math.pow(Math.max(scrOverKappa, 1), -1.200);
     const ageTerm = Math.pow(0.9938, age);
@@ -196,14 +209,14 @@ export default function CkdEpiGfr({ lang }: { lang: LangCode }) {
               <div>
                 <div className="flex justify-between items-end mb-2">
                   <label className="block text-xs font-bold text-slate-600 uppercase tracking-wider">
-                    {currentText.creatinine} ({currentText.creatinineMg})
+                    {currentText.creatinine} ({isSI ? currentText.creatinineUmol : currentText.creatinineMg})
                   </label>
                 </div>
                 <input
                   type="number"
-                  min="0.1"
-                  max="20"
-                  step="0.1"
+                  min={isSI ? "9" : "0.1"}
+                  max={isSI ? "1768" : "20"}
+                  step={isSI ? "1" : "0.1"}
                   value={creatinine || ''}
                   onChange={(e) => setCreatinine(Number(e.target.value))}
                   className={`w-full bg-slate-50 border text-lg rounded-xl focus:ring-2 block p-3.5 transition-colors ${
