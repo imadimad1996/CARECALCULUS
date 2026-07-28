@@ -2,7 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { Activity, Info, BookOpen } from 'lucide-react';
 import { LangCode, Translations } from '../types';
 import { layoutTranslations } from '../utils/lang';
-import { trackCalculatorUsage } from '../utils/telemetry';
+import { trackCalculatorUsage, trackCalculatorResult } from '../utils/telemetry';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 import CalculatorShell from '../components/CalculatorShell';
 import { useUnitSystem } from '../contexts/UnitSystemContext';
@@ -76,6 +76,10 @@ export default function CreatinineClearance({ lang }: { lang: LangCode }) {
     if (crclValue > 0) {
       const timer = setTimeout(() => {
         trackCalculatorUsage('creatinine-clearance', lang, crclValue);
+        trackCalculatorResult('creatinine-clearance', crclValue, `${crclValue} mL/min`, lang);
+        if (typeof window !== 'undefined') {
+          window.dispatchEvent(new CustomEvent('cc-calculator-result', { detail: { calculator: 'creatinine-clearance', score: crclValue } }));
+        }
       }, 1500);
       return () => clearTimeout(timer);
     }

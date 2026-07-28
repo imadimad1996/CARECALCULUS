@@ -56,6 +56,17 @@ export default function NewsletterCapture({ lang }: NewsletterCaptureProps) {
       const timer = setTimeout(() => setVisible(true), 8000);
       return () => clearTimeout(timer);
     }
+
+    // Trigger on calculator completion event nudge
+    const handleShowNewsletter = () => {
+      setVisible(true);
+    };
+    window.addEventListener('cc-show-newsletter', handleShowNewsletter);
+    window.addEventListener('cc-calculator-result', handleShowNewsletter);
+    return () => {
+      window.removeEventListener('cc-show-newsletter', handleShowNewsletter);
+      window.removeEventListener('cc-calculator-result', handleShowNewsletter);
+    };
   }, []);
 
   const handleDismiss = (e?: React.MouseEvent) => {

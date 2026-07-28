@@ -3,7 +3,7 @@ import { Activity, Info, BookOpen, ChevronDown, Check, Copy } from 'lucide-react
 import { LangCode, Translations } from '../types';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 import { layoutTranslations } from '../utils/lang';
-import { trackCalculatorUsage } from '../utils/telemetry';
+import { trackCalculatorUsage, trackCalculatorResult } from '../utils/telemetry';
 import EmbedCodeButton from '../components/ui/EmbedCodeButton';
 import { JsonLd, generateMedicalRiskScoreSchema } from '../components/JsonLd';
 import ClinicalContextPanel from '../components/ClinicalContextPanel';
@@ -154,9 +154,16 @@ export default function SofaScore({ lang }: { lang: LangCode }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       trackCalculatorUsage('sofa-score', lang, sofaValue);
+      trackCalculatorResult('sofa-score', sofaValue, category.label, lang);
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(new CustomEvent('cc-calculator-result', { detail: { calculator: 'sofa-score', score: sofaValue } }));
+      }
     }, 1500);
     return () => clearTimeout(timer);
   }, [sofaValue, lang]);
+
+
+
 
   const getSofaCategory = (val: number) => {
     if (val <= 6) return { label: currentText.lowRisk, color: 'text-emerald-400', bg: 'bg-emerald-500/10 border-emerald-500/20' };

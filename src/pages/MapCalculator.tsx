@@ -6,7 +6,7 @@ import ClinicalExportButton from '../components/ClinicalExportButton';
 import CalculatorInput from '../components/ui/CalculatorInput';
 import { MedicalReviewerCard } from '../components/MedicalReviewerCard';
 import { REVIEWER_INTENSIVIST } from '../data/reviewers';
-import { trackCalculatorUsage } from '../utils/telemetry';
+import { trackCalculatorUsage, trackCalculatorResult } from '../utils/telemetry';
 import { layoutTranslations } from '../utils/lang';
 import MobileResultDock from '../components/ui/MobileResultDock';
 import EmbedCodeButton from '../components/ui/EmbedCodeButton';
@@ -93,10 +93,14 @@ export default function MapCalculator({ lang }: { lang: LangCode }) {
     if (mapValue > 0) {
       const timer = setTimeout(() => {
         trackCalculatorUsage('map-calculator', lang, mapValue);
+        trackCalculatorResult('map-calculator', mapValue, mapValueIsNormal ? 'Normal Perfusion' : 'Low Perfusion Risk', lang);
+        if (typeof window !== 'undefined') {
+          window.dispatchEvent(new CustomEvent('cc-calculator-result', { detail: { calculator: 'map-calculator', score: mapValue } }));
+        }
       }, 1500);
       return () => clearTimeout(timer);
     }
-  }, [mapValue, lang]);
+  }, [mapValue, lang, mapValueIsNormal]);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(`MAP: ${mapValue} mmHg (${mapValue >= 65 ? currentText.normal : currentText.low})`);

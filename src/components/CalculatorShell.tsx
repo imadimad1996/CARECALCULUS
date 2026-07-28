@@ -129,6 +129,21 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
     });
   }, [slug]);
 
+  // After a calculation result is rendered, nudge newsletter capture
+  useEffect(() => {
+    const handler = () => {
+      const shown = localStorage.getItem('cc-newsletter-shown-post-calc');
+      const subscribed = localStorage.getItem('cc-newsletter-subscribed');
+      const dismissed = localStorage.getItem('cc-newsletter-dismissed');
+      if (!shown && !subscribed && !dismissed) {
+        localStorage.setItem('cc-newsletter-shown-post-calc', '1');
+        window.dispatchEvent(new CustomEvent('cc-show-newsletter'));
+      }
+    };
+    window.addEventListener('cc-calculator-result', handler);
+    return () => window.removeEventListener('cc-calculator-result', handler);
+  }, []);
+
   return (
     <div className="relative space-y-8">
       <div className="relative">

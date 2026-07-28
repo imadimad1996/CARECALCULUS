@@ -1,9 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { isProActive } from '../utils/pro';
 
 export default function TrackingScripts() {
   const location = useLocation();
+  const lastTrackedPath = useRef<string | null>(null);
 
   useEffect(() => {
     const loadScripts = () => {
@@ -47,13 +48,20 @@ export default function TrackingScripts() {
 
   // Automatically track page views when the route changes
   useEffect(() => {
-    if (typeof window !== 'undefined' && (window as any).dataLayer) {
+    const currentPath = location.pathname + location.search;
+    if (
+      typeof window !== 'undefined' &&
+      (window as any).dataLayer &&
+      lastTrackedPath.current !== currentPath
+    ) {
+      lastTrackedPath.current = currentPath;
       (window as any).dataLayer.push({
         event: 'virtual_page_view',
-        page_path: location.pathname + location.search,
+        page_path: currentPath,
       });
     }
   }, [location]);
+
 
   useEffect(() => {
     const loadSecondaryScripts = () => {

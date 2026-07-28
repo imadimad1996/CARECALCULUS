@@ -42,3 +42,37 @@ export function trackNewsletterSignup(source: string) {
     });
   }
 }
+
+export function trackCalculatorResult(calculatorId: string, score: number | string, interpretation: string, lang: string) {
+  console.info(`[Telemetry] Calculator Result: ${calculatorId} | Score: ${score} | Lang: ${lang}`);
+  if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+    (window as any).gtag('event', 'calculator_result', {
+      event_category: 'calculator',
+      calculator_name: calculatorId,
+      result_score: String(score),
+      result_interpretation: interpretation,
+      language: lang,
+    });
+  }
+}
+
+export function trackPricingPageView(source: string) {
+  if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+    (window as any).gtag('event', 'view_item', {
+      event_category: 'monetization',
+      event_label: 'pricing_page',
+      source,
+    });
+  }
+}
+
+export function trackSearchConsoleClick(keyword: string, page: string) {
+  if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+    (window as any).gtag('event', 'search_click', {
+      event_category: 'seo',
+      keyword,
+      page,
+    });
+  }
+}
+
