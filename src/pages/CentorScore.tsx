@@ -1,3 +1,4 @@
+import { JsonLd } from '../components/JsonLd';
 import React, { useState, useMemo, useEffect } from 'react';
 import { Activity, Info, BookOpen, ChevronDown, Check, Copy } from 'lucide-react';
 import { LangCode, Translations } from '../types';
@@ -109,6 +110,7 @@ export default function CentorScore({ lang }: { lang: LangCode }) {
 
   const YesNoToggle = ({ value, onChange, label }: { value: number, onChange: (v: number) => void, label: string }) => (
     <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+      <JsonLd path="/centor-score" title="Clinical Decision Support — CareCalculus" description="Evidence-based medical decision support calculator." type="SoftwareApplication" />
       <h3 className="text-lg font-semibold text-gray-900 mb-4">{label}</h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <button

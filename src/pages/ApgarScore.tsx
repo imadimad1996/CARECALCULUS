@@ -1,3 +1,4 @@
+import { JsonLd } from '../components/JsonLd';
 import React, { useState, useMemo, useEffect } from 'react';
 import { Activity, Info, BookOpen, ChevronDown, Check, Copy } from 'lucide-react';
 import { LangCode, Translations } from '../types';
@@ -125,6 +126,7 @@ export default function ApgarScore({ lang }: { lang: LangCode }) {
   return (
     <>
       <div className="max-w-3xl mb-12">
+      <JsonLd path="/apgar-score" title="Clinical Decision Support — CareCalculus" description="Evidence-based medical decision support calculator." type="SoftwareApplication" />
         <h1 className={`text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-3 ${isRtl ? 'leading-normal' : ''}`}>
           {currentText.title}
         </h1>

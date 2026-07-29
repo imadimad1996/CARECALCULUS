@@ -1,3 +1,4 @@
+import { JsonLd } from '../components/JsonLd';
 import React, { useState } from 'react';
 import CalculatorShell from '../components/CalculatorShell';
 import { Pill } from 'lucide-react';
@@ -32,6 +33,7 @@ export default function AminoglycosideDosing({ lang }: { lang: LangCode }) {
       dose: 'Initial Dose',
       interval: 'Frequency',
       crclLabel: 'Estimated CrCl',
+      clinicalText: "Therapeutic drug monitoring and clinical decision support protocol.",
       warning: 'Note: Contraindicated in CrCl < 20, ascites, burns >20%, or pregnancy. TDM required.'
     },
     fr: {
@@ -117,6 +119,7 @@ export default function AminoglycosideDosing({ lang }: { lang: LangCode }) {
 
   return (
     <CalculatorShell logicalPath="/aminoglycoside-dosing" lang={lang}>
+      <JsonLd path="/aminoglycoside-dosing" title="Clinical Decision Support — CareCalculus" description="Evidence-based medical decision support calculator." type="SoftwareApplication" />
       <div className="max-w-3xl relative">
         <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3 mb-3">
           <Pill className="w-8 h-8 text-fuchsia-500" />

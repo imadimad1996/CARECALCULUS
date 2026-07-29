@@ -1,3 +1,4 @@
+import { JsonLd } from '../components/JsonLd';
 import React, { useState } from 'react';
 import CalculatorShell from '../components/CalculatorShell';
 import { Pill } from 'lucide-react';
@@ -32,6 +33,7 @@ export default function VancomycinDosing({ lang }: { lang: LangCode }) {
       loadingDose: 'Loading Dose',
       maintDose: 'Maintenance Dose',
       crclLabel: 'Estimated CrCl',
+      clinicalText: "Therapeutic drug monitoring and clinical decision support protocol.",
       warning: 'Note: This provides empiric dosing. Therapeutic drug monitoring (trough or AUC/MIC) is required after starting therapy.'
     },
     fr: {
@@ -117,6 +119,7 @@ export default function VancomycinDosing({ lang }: { lang: LangCode }) {
 
   return (
     <CalculatorShell logicalPath="/vancomycin-dosing" lang={lang}>
+      <JsonLd path="/vancomycin-dosing" title="Clinical Decision Support — CareCalculus" description="Evidence-based medical decision support calculator." type="SoftwareApplication" />
       <div className="max-w-3xl relative">
         <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3 mb-3">
           <Pill className="w-8 h-8 text-indigo-500" />

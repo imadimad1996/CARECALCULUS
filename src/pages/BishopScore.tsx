@@ -1,3 +1,4 @@
+import { JsonLd } from '../components/JsonLd';
 import React, { useState, useMemo, useEffect } from 'react';
 import { Activity, Info, BookOpen, ChevronDown, Check, Copy } from 'lucide-react';
 import { LangCode, Translations } from '../types';
@@ -132,6 +133,7 @@ export default function BishopScore({ lang }: { lang: LangCode }) {
   return (
     <div className={`max-w-4xl mx-auto ${isRtl ? 'rtl' : 'ltr'}`}>
       <div className="mb-8">
+      <JsonLd path="/bishop-score" title="Clinical Decision Support — CareCalculus" description="Evidence-based medical decision support calculator." type="SoftwareApplication" />
         <h1 className="text-3xl font-bold text-gray-900 mb-2">{currentText.title}</h1>
         <p className="text-gray-600">{currentText.subtitle}</p>
       </div>

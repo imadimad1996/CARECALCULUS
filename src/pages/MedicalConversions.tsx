@@ -1,3 +1,4 @@
+import { JsonLd } from '../components/JsonLd';
 import React, { useState, useMemo, useEffect } from 'react';
 import { useParams, Link, useLocation } from 'react-router-dom';
 import { Info, ArrowRightLeft, Activity, BookOpen, ChevronRight } from 'lucide-react';
@@ -161,6 +162,7 @@ function ConverterCard({ config, currentText, lang }: { config: ConfigLinear | C
 
   return (
     <div className="bg-white rounded-2xl shadow-[0_2px_10px_-3px_rgba(6,81,237,0.1)] ring-1 ring-blue-900/5 p-6 md:p-8 flex flex-col md:flex-row gap-8">
+      <JsonLd path="/medical-conversions" title="Clinical Decision Support — CareCalculus" description="Evidence-based medical decision support calculator." type="SoftwareApplication" />
       <div className="flex-1 space-y-6 md:border-r border-gray-100 md:pr-8">
         <div>
           <h2 className="text-xl font-bold text-gray-900 mb-1">{currentText[config.nameKey]}</h2>

@@ -1,3 +1,4 @@
+import { JsonLd } from '../components/JsonLd';
 import React, { useState } from 'react';
 import CalculatorShell from '../components/CalculatorShell';
 import { HeartPulse } from 'lucide-react';
@@ -118,6 +119,7 @@ export default function AscvdRisk({ lang }: { lang: LangCode }) {
 
   return (
     <CalculatorShell logicalPath="/ascvd-risk" lang={lang}>
+      <JsonLd path="/ascvd-risk" title="Clinical Decision Support — CareCalculus" description="Evidence-based medical decision support calculator." type="SoftwareApplication" />
       <div className="max-w-3xl relative">
         <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3 mb-3">
           <HeartPulse className="w-8 h-8 text-rose-500" />

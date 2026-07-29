@@ -1,14 +1,27 @@
 import React from 'react';
 
 interface JsonLdProps {
-  data: Record<string, any>;
+  data?: Record<string, any>;
+  path?: string;
+  title?: string;
+  description?: string;
+  type?: string;
 }
 
-export function JsonLd({ data }: JsonLdProps) {
+export function JsonLd({ data, path, title, description, type }: JsonLdProps) {
+  const jsonLdData = data || {
+    "@context": "https://schema.org",
+    "@type": type || "SoftwareApplication",
+    "name": title || "CareCalculus Medical Tool",
+    "description": description || "Evidence-based medical decision support tool.",
+    "url": path ? `https://carecalculus.com${path}` : "https://carecalculus.com",
+    "publisher": generateMedicalOrganizationSchema()
+  };
+
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
     />
   );
 }

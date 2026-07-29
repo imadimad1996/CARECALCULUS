@@ -1,3 +1,4 @@
+import { JsonLd } from '../components/JsonLd';
 import React, { useState } from 'react';
 import CalculatorShell from '../components/CalculatorShell';
 import { Activity } from 'lucide-react';
@@ -106,6 +107,7 @@ export default function ApacheIIScore({ lang }: { lang: LangCode }) {
 
   return (
     <CalculatorShell logicalPath="/apache-ii-score" lang={lang}>
+      <JsonLd path="/apache-ii-score" title="Clinical Decision Support — CareCalculus" description="Evidence-based medical decision support calculator." type="SoftwareApplication" />
       <div className="max-w-4xl relative">
         <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3 mb-3">
           <Activity className="w-8 h-8 text-rose-500" />

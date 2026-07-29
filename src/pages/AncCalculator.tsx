@@ -1,3 +1,4 @@
+import { JsonLd } from '../components/JsonLd';
 import React, { useState, useMemo, useEffect } from 'react';
 import { Activity, Info, BookOpen } from 'lucide-react';
 import { LangCode, Translations } from '../types';
@@ -74,6 +75,7 @@ export default function AncCalculator({ lang }: { lang: LangCode }) {
 
   return (
     <CalculatorShell logicalPath="/anc-calculator" lang={lang}>
+      <JsonLd path="/anc-calculator" title="Clinical Decision Support — CareCalculus" description="Evidence-based medical decision support calculator." type="SoftwareApplication" />
       <div className="max-w-3xl mb-12">
         <h1 className={`text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-3 ${isRtl ? 'leading-normal' : ''}`}>
           {currentText.title}

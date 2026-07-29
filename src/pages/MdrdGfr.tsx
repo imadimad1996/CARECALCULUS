@@ -1,3 +1,4 @@
+import { JsonLd } from '../components/JsonLd';
 import React, { useState, useMemo, useEffect } from 'react';
 import { Activity, Info, BookOpen } from 'lucide-react';
 import { LangCode, Translations } from '../types';
@@ -107,6 +108,7 @@ export default function MdrdGfr({ lang }: { lang: LangCode }) {
   return (
     <div className={`max-w-4xl mx-auto space-y-6 lg:space-y-8 ${isRtl ? 'rtl' : 'ltr'}`}>
       <div className="flex items-center space-x-4 mb-6">
+      <JsonLd path="/mdrd-gfr" title="Clinical Decision Support — CareCalculus" description="Evidence-based medical decision support calculator." type="SoftwareApplication" />
         <div className={`p-3 bg-blue-100 text-blue-600 rounded-xl ${isRtl ? 'ml-4' : 'mr-4'}`}>
           <Activity className="w-6 h-6 sm:w-8 sm:h-8" />
         </div>
