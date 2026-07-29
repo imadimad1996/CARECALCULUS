@@ -114,7 +114,7 @@ export default function OpioidConversion({ lang }: { lang: LangCode }) {
 
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-purple-500/5 via-fuchsia-500/5 to-pink-500/5 blur-3xl -z-10 pointer-events-none rounded-full" />
 
-      <div className="max-w-3xl mb-12 relative">
+      <div className="w-full max-w-full max-w-3xl mb-12 relative">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-100/50 border border-purple-200 text-purple-800 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
           <Pill className="w-3.5 h-3.5" />
           <span>Pain Management / Palliative Care</span>
@@ -142,7 +142,7 @@ export default function OpioidConversion({ lang }: { lang: LangCode }) {
                 <select
                   value={drug}
                   onChange={(e) => setDrug(e.target.value)}
-                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all font-medium text-slate-700"
+                  className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all font-medium text-slate-700"
                 >
                   {opioidFactors.map(o => (
                     <option key={o.id} value={o.id}>{o.name}</option>
@@ -158,7 +158,7 @@ export default function OpioidConversion({ lang }: { lang: LangCode }) {
                   type="number"
                   value={dose}
                   onChange={(e) => setDose(e.target.value)}
-                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all font-mono text-lg"
+                  className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all font-mono text-lg"
                   placeholder="30"
                 />
               </div>

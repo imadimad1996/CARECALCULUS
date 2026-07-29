@@ -86,7 +86,7 @@ export default function FourTsHitScore({ lang }: { lang: LangCode }) {
   const ehrSummary = `4Ts HIT Score: ${score}/8 (${risk.text}) [T1:${t1}, T2:${t2}, T3:${t3}, T4:${t4}]`;
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8 pb-12">
+    <div className="w-full max-w-full max-w-4xl mx-auto space-y-8 pb-12">
       <SEO logicalPath="/four-ts-hit-score" lang={lang} />
       <JsonLd data={{
         "@context": "https://schema.org",

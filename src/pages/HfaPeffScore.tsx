@@ -77,7 +77,7 @@ export default function HfaPeffScore({ lang }: { lang: LangCode }) {
   const ehrSummary = `HFA-PEFF Score: ${score}/6 (${interpretation.text})`;
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8 pb-12">
+    <div className="w-full max-w-full max-w-4xl mx-auto space-y-8 pb-12">
       <SEO logicalPath="/hfa-peff-score" lang={lang} />
       <JsonLd data={{
         "@context": "https://schema.org",

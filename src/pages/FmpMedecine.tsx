@@ -523,7 +523,7 @@ export default function FmpMedecine({ lang }: { lang: LangCode }) {
                       href={`https://www.google.com/search?q=${encodeURIComponent(selectedModule.name + " médecine cours FMP filetype:pdf")}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3 py-1.5 bg-gray-50 border border-gray-200 text-gray-600 hover:bg-gray-100 hover:text-slate-800 rounded-lg text-[10px] font-bold tracking-tight flex items-center gap-1 transition"
+                      className="px-4 py-2.5 min-h-[44px] bg-gray-50 border border-gray-200 text-gray-600 hover:bg-gray-100 hover:text-slate-800 rounded-lg text-[10px] font-bold tracking-tight flex items-center gap-1 transition"
                     >
                       <ExternalLink className="w-3 h-3" />
                       {t.googlePdfSearch}
@@ -533,7 +533,7 @@ export default function FmpMedecine({ lang }: { lang: LangCode }) {
                       href={`https://www.google.com/search?q=${encodeURIComponent(selectedModule.name + " médecine")}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3 py-1.5 bg-gray-50 border border-gray-200 text-gray-600 hover:bg-gray-100 hover:text-slate-800 rounded-lg text-[10px] font-bold tracking-tight flex items-center gap-1 transition"
+                      className="px-4 py-2.5 min-h-[44px] bg-gray-50 border border-gray-200 text-gray-600 hover:bg-gray-100 hover:text-slate-800 rounded-lg text-[10px] font-bold tracking-tight flex items-center gap-1 transition"
                     >
                       <ExternalLink className="w-3 h-3" />
                       {t.googleSearch}
@@ -656,7 +656,7 @@ export default function FmpMedecine({ lang }: { lang: LangCode }) {
                     href={`https://www.google.com/search?q=${encodeURIComponent(selectedModule.name + " médecine cours FMP filetype:pdf")}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 bg-gray-50 border border-gray-200 text-gray-600 hover:bg-gray-100 hover:text-slate-800 rounded-lg text-xs font-bold tracking-tight flex items-center justify-between transition"
+                    className="p-3 min-h-[44px] min-w-[44px] bg-gray-50 border border-gray-200 text-gray-600 hover:bg-gray-100 hover:text-slate-800 rounded-lg text-xs font-bold tracking-tight flex items-center justify-between transition"
                   >
                     <span>{t.googlePdfSearch}</span>
                     <ExternalLink className="w-3.5 h-3.5 text-gray-400" />
@@ -665,7 +665,7 @@ export default function FmpMedecine({ lang }: { lang: LangCode }) {
                     href={`https://www.google.com/search?q=${encodeURIComponent(selectedModule.name + " médecine")}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 bg-gray-50 border border-gray-200 text-gray-600 hover:bg-gray-100 hover:text-slate-800 rounded-lg text-xs font-bold tracking-tight flex items-center justify-between transition"
+                    className="p-3 min-h-[44px] min-w-[44px] bg-gray-50 border border-gray-200 text-gray-600 hover:bg-gray-100 hover:text-slate-800 rounded-lg text-xs font-bold tracking-tight flex items-center justify-between transition"
                   >
                     <span>{t.googleSearch}</span>
                     <ExternalLink className="w-3.5 h-3.5 text-gray-400" />

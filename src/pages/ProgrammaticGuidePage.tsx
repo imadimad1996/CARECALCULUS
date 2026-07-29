@@ -33,7 +33,7 @@ export default function ProgrammaticGuidePage({ lang }: Props) {
           <meta name="description" content={metaDesc} />
         </Helmet>
         
-        <div className="max-w-4xl mx-auto space-y-8">
+        <div className="w-full max-w-full max-w-4xl mx-auto space-y-8">
           <div className="bg-gradient-to-br from-slate-900 to-cyan-950 text-white rounded-3xl p-8 sm:p-10 border border-slate-800 shadow-md">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-cyan-500/20 text-cyan-300 border border-cyan-400/30 rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
               <Sparkles className="w-3.5 h-3.5" />
@@ -110,7 +110,7 @@ export default function ProgrammaticGuidePage({ lang }: Props) {
   if (!calcInfo || !diseaseInfo) {
     return (
       <div className="min-h-screen bg-slate-50 py-16 px-4 text-center">
-        <div className="max-w-md mx-auto bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+        <div className="w-full max-w-full max-w-md mx-auto bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
           <AlertTriangle className="w-12 h-12 text-amber-500 mx-auto mb-4" />
           <h1 className="text-xl font-bold text-slate-900 mb-2">
             {isFr ? 'Guide Clinique Introuvable' : 'Clinical Guide Not Found'}
@@ -211,7 +211,7 @@ export default function ProgrammaticGuidePage({ lang }: Props) {
         <script type="application/ld+json">{JSON.stringify(schemaJsonLd)}</script>
       </Helmet>
 
-      <div className="max-w-4xl mx-auto">
+      <div className="w-full max-w-full max-w-4xl mx-auto">
         {/* Navigation Breadcrumb */}
         <nav className="flex items-center gap-2 text-xs text-slate-500 mb-6 font-medium">
           <Link to={isFr ? '/fr/home' : '/home'} className="hover:text-cyan-600 transition">

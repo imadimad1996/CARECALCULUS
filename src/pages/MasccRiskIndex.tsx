@@ -82,7 +82,7 @@ export default function MasccRiskIndex({ lang }: { lang: LangCode }) {
   const ehrSummary = `MASCC Febrile Neutropenia Score: ${score}/26 (${score >= 21 ? 'Low Risk' : 'High Risk'})`;
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8 pb-12">
+    <div className="w-full max-w-full max-w-4xl mx-auto space-y-8 pb-12">
       <SEO logicalPath="/mascc-risk-index" lang={lang} />
       <JsonLd data={{
         "@context": "https://schema.org",

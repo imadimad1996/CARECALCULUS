@@ -120,7 +120,7 @@ export default function AscvdRisk({ lang }: { lang: LangCode }) {
   return (
     <CalculatorShell logicalPath="/ascvd-risk" lang={lang}>
       <JsonLd path="/ascvd-risk" title="Clinical Decision Support — CareCalculus" description="Evidence-based medical decision support calculator." type="SoftwareApplication" />
-      <div className="max-w-3xl relative">
+      <div className="w-full max-w-full max-w-3xl relative">
         <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3 mb-3">
           <HeartPulse className="w-8 h-8 text-rose-500" />
           {dict.title}
@@ -132,22 +132,22 @@ export default function AscvdRisk({ lang }: { lang: LangCode }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white p-6 rounded-3xl border border-slate-200 shadow-sm">
           <div>
             <label className="block text-sm font-bold text-slate-700 mb-2">{dict.age}</label>
-            <input type="number" value={age} onChange={(e) => setAge(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-rose-500 focus:ring-4 focus:ring-rose-500/10 rounded-2xl text-lg font-semibold transition" placeholder="e.g. 55" />
+            <input type="number" value={age} onChange={(e) => setAge(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 focus:border-rose-500 focus:ring-4 focus:ring-rose-500/10 rounded-2xl text-lg font-semibold transition" placeholder="e.g. 55" />
           </div>
 
           <div>
             <label className="block text-sm font-bold text-slate-700 mb-2">{dict.sbp}</label>
-            <input type="number" value={sbp} onChange={(e) => setSbp(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-rose-500 focus:ring-4 focus:ring-rose-500/10 rounded-2xl text-lg font-semibold transition" placeholder="e.g. 120" />
+            <input type="number" value={sbp} onChange={(e) => setSbp(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 focus:border-rose-500 focus:ring-4 focus:ring-rose-500/10 rounded-2xl text-lg font-semibold transition" placeholder="e.g. 120" />
           </div>
 
           <div>
             <label className="block text-sm font-bold text-slate-700 mb-2">{isSI ? dict.tcSI : dict.tc}</label>
-            <input type="number" step={isSI ? "0.1" : "1"} value={tc} onChange={(e) => setTc(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-rose-500 focus:ring-4 focus:ring-rose-500/10 rounded-2xl text-lg font-semibold transition" placeholder={isSI ? "e.g. 5.0" : "e.g. 180"} />
+            <input type="number" step={isSI ? "0.1" : "1"} value={tc} onChange={(e) => setTc(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 focus:border-rose-500 focus:ring-4 focus:ring-rose-500/10 rounded-2xl text-lg font-semibold transition" placeholder={isSI ? "e.g. 5.0" : "e.g. 180"} />
           </div>
 
           <div>
             <label className="block text-sm font-bold text-slate-700 mb-2">{isSI ? dict.hdlSI : dict.hdl}</label>
-            <input type="number" step={isSI ? "0.1" : "1"} value={hdl} onChange={(e) => setHdl(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-rose-500 focus:ring-4 focus:ring-rose-500/10 rounded-2xl text-lg font-semibold transition" placeholder={isSI ? "e.g. 1.2" : "e.g. 50"} />
+            <input type="number" step={isSI ? "0.1" : "1"} value={hdl} onChange={(e) => setHdl(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 focus:border-rose-500 focus:ring-4 focus:ring-rose-500/10 rounded-2xl text-lg font-semibold transition" placeholder={isSI ? "e.g. 1.2" : "e.g. 50"} />
           </div>
 
           <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">

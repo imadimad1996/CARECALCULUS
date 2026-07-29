@@ -267,7 +267,7 @@ export default function MedicalConversions({ lang }: { lang: LangCode }) {
 
   return (
     <>
-      <div className="max-w-3xl mb-8">
+      <div className="w-full max-w-full max-w-3xl mb-8">
         <div className="flex items-center text-sm font-medium text-blue-600 mb-4 space-x-2">
           <Link to="/medical-conversions" className="hover:underline">All Conversions</Link>
           {category && (

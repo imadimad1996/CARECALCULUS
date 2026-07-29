@@ -53,7 +53,7 @@ export default function PhenytoinCorrection({ lang }: { lang: LangCode }) {
   return (
     <CalculatorShell logicalPath="/phenytoin-correction" lang={lang}>
       <JsonLd path="/phenytoin-correction" title="Clinical Decision Support — CareCalculus" description="Evidence-based medical decision support calculator." type="SoftwareApplication" />
-      <div className="max-w-3xl relative">
+      <div className="w-full max-w-full max-w-3xl relative">
         <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3 mb-3">
           <Pill className="w-8 h-8 text-[#0891B2]" />
           {dict.title}
@@ -69,7 +69,7 @@ export default function PhenytoinCorrection({ lang }: { lang: LangCode }) {
               type="number"
               value={measuredPhenytoin}
               onChange={(e) => setMeasuredPhenytoin(e.target.value === '' ? '' : Number(e.target.value))}
-              className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#0891B2] focus:ring-4 focus:ring-[#0891B2]/10 rounded-2xl text-lg font-semibold transition"
+              className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 focus:border-[#0891B2] focus:ring-4 focus:ring-[#0891B2]/10 rounded-2xl text-lg font-semibold transition"
               placeholder="e.g. 8"
             />
           </div>
@@ -80,7 +80,7 @@ export default function PhenytoinCorrection({ lang }: { lang: LangCode }) {
               type="number"
               value={albumin}
               onChange={(e) => setAlbumin(e.target.value === '' ? '' : Number(e.target.value))}
-              className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#0891B2] focus:ring-4 focus:ring-[#0891B2]/10 rounded-2xl text-lg font-semibold transition"
+              className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 focus:border-[#0891B2] focus:ring-4 focus:ring-[#0891B2]/10 rounded-2xl text-lg font-semibold transition"
               placeholder="e.g. 2.5"
             />
           </div>

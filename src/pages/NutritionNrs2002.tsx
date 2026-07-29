@@ -100,7 +100,7 @@ export default function NutritionNrs2002({ lang }: { lang: LangCode }) {
 
   return (
     <>
-      <div className="max-w-3xl mb-12">
+      <div className="w-full max-w-full max-w-3xl mb-12">
       <JsonLd path="/nutrition-nrs2002" title="Clinical Decision Support — CareCalculus" description="Evidence-based medical decision support calculator." type="SoftwareApplication" />
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <h1 className={`text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-3 ${isRtl ? 'leading-normal' : ''}`}>
@@ -206,7 +206,7 @@ export default function NutritionNrs2002({ lang }: { lang: LangCode }) {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="flex items-start gap-4">
-            <div className="p-2.5 bg-blue-50 text-blue-600 rounded-lg shrink-0">
+            <div className="p-3 min-h-[44px] min-w-[44px].5 bg-blue-50 text-blue-600 rounded-lg shrink-0">
               <Info className="w-5 h-5" />
             </div>
             <div>
@@ -215,7 +215,7 @@ export default function NutritionNrs2002({ lang }: { lang: LangCode }) {
             </div>
           </div>
           <div className="flex items-start gap-4">
-            <div className="p-2.5 bg-emerald-50 text-emerald-600 rounded-lg shrink-0">
+            <div className="p-3 min-h-[44px] min-w-[44px].5 bg-emerald-50 text-emerald-600 rounded-lg shrink-0">
               <BookOpen className="w-5 h-5" />
             </div>
             <div>

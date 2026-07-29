@@ -24,7 +24,7 @@ export function SpecialtiesModal({ isOpen, onClose, lang, langPath }: Specialtie
         {/* Modal Header */}
         <div className="flex items-center justify-between p-6 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50">
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-xl bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400">
+            <div className="p-3 min-h-[44px] min-w-[44px].5 rounded-xl bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400">
               <Layers className="w-5 h-5" />
             </div>
             <div>
@@ -44,7 +44,7 @@ export function SpecialtiesModal({ isOpen, onClose, lang, langPath }: Specialtie
 
           <button
             onClick={onClose}
-            className="p-2 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+            className="p-3 min-h-[44px] min-w-[44px] rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
@@ -70,7 +70,7 @@ export function SpecialtiesModal({ isOpen, onClose, lang, langPath }: Specialtie
                   <div>
                     <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center gap-2.5">
-                        <div className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-teal-600 dark:text-teal-400 group-hover:bg-teal-500 group-hover:text-white transition-colors">
+                        <div className="p-3 min-h-[44px] min-w-[44px] rounded-xl bg-slate-100 dark:bg-slate-800 text-teal-600 dark:text-teal-400 group-hover:bg-teal-500 group-hover:text-white transition-colors">
                           <Icon className="w-5 h-5" />
                         </div>
                         <h3 className="text-base font-black text-slate-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
@@ -125,7 +125,7 @@ export function SpecialtiesModal({ isOpen, onClose, lang, langPath }: Specialtie
           </span>
           <button
             onClick={onClose}
-            className="px-4 py-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold rounded-xl hover:opacity-90 transition-opacity cursor-pointer"
+            className="px-4 py-3 min-h-[44px] bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold rounded-xl hover:opacity-90 transition-opacity cursor-pointer"
           >
             {lang === 'fr' ? 'Fermer' : 'Close'}
           </button>

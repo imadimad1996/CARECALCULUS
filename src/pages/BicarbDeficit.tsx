@@ -109,7 +109,7 @@ export default function BicarbDeficit({ lang }: { lang: LangCode }) {
 
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-cyan-500/5 via-teal-500/5 to-emerald-500/5 blur-3xl -z-10 pointer-events-none rounded-full" />
 
-      <div className="max-w-3xl mb-12 relative">
+      <div className="w-full max-w-full max-w-3xl mb-12 relative">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-100/50 border border-cyan-200 text-cyan-800 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
           <Droplet className="w-3.5 h-3.5" />
           <span>Critical Care / Nephrology</span>
@@ -131,15 +131,15 @@ export default function BicarbDeficit({ lang }: { lang: LangCode }) {
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-1">{currentText.weightLabel as string}</label>
-                <input type="number" value={weight} onChange={(e) => setWeight(e.target.value)} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-cyan-500 font-mono text-lg" placeholder="70" />
+                <input type="number" value={weight} onChange={(e) => setWeight(e.target.value)} className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-cyan-500 font-mono text-lg" placeholder="70" />
               </div>
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-1">{currentText.measuredLabel as string}</label>
-                <input type="number" value={measured} onChange={(e) => setMeasured(e.target.value)} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-cyan-500 font-mono text-lg" placeholder="12" />
+                <input type="number" value={measured} onChange={(e) => setMeasured(e.target.value)} className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-cyan-500 font-mono text-lg" placeholder="12" />
               </div>
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-1">{currentText.desiredLabel as string}</label>
-                <input type="number" value={desired} onChange={(e) => setDesired(e.target.value)} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-cyan-500 font-mono text-lg" placeholder="24" />
+                <input type="number" value={desired} onChange={(e) => setDesired(e.target.value)} className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-cyan-500 font-mono text-lg" placeholder="24" />
               </div>
             </div>
           </div>

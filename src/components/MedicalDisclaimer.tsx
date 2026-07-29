@@ -39,7 +39,7 @@ export default function MedicalDisclaimer({ lang }: { lang: LangCode }) {
     <div className="fixed bottom-4 right-4 left-4 sm:left-auto sm:max-w-md z-[100] animate-in slide-in-from-bottom duration-500" dir={isRtl ? 'rtl' : 'ltr'}>
       <div className="bg-white border border-slate-200 text-slate-800 rounded-2xl p-5 shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto">
         <div className="flex items-start gap-3">
-          <div className="p-2 bg-blue-50 border border-blue-100 text-blue-600 rounded-xl shrink-0 mt-0.5">
+          <div className="p-3 min-h-[44px] min-w-[44px] bg-blue-50 border border-blue-100 text-blue-600 rounded-xl shrink-0 mt-0.5">
             <BookOpen className="w-5 h-5" />
           </div>
           <div className="space-y-1">

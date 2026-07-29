@@ -119,7 +119,7 @@ export default function Compare({ lang }: CompareProps) {
         lang={lang}
       />
       
-      <div className="max-w-4xl mx-auto space-y-8" dir={isRtl ? 'rtl' : 'ltr'}>
+      <div className="w-full max-w-full max-w-4xl mx-auto space-y-8" dir={isRtl ? 'rtl' : 'ltr'}>
         {/* Header Section */}
         <div className="text-center space-y-4 mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-bold uppercase tracking-wider mb-2">

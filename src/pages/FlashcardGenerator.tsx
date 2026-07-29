@@ -96,7 +96,7 @@ export default function FlashcardGenerator({ lang }: { lang: LangCode }) {
   const activeCards = deck;
 
   return (
-    <div className="max-w-3xl mx-auto py-6 px-4" dir={isRtl ? 'rtl' : 'ltr'}>
+    <div className="w-full max-w-full max-w-3xl mx-auto py-6 px-4" dir={isRtl ? 'rtl' : 'ltr'}>
       <div className="mb-8 text-center sm:text-left">
         <span className="text-[10px] font-mono font-black text-blue-600 uppercase tracking-widest">
           {lang === 'fr' ? 'APPRENTISSAGE MÉDICAL ACTIF' : isRtl ? 'أدوات المذاكرة والبطاقات التعليمية' : 'ACTIVE CLINICAL RETRIEVAL'}
@@ -214,7 +214,7 @@ export default function FlashcardGenerator({ lang }: { lang: LangCode }) {
           </span>
           <button 
             onClick={addCustomCard}
-            className="px-4 py-2 bg-blue-650 hover:bg-blue-700 text-white text-xs font-bold rounded-xl transition"
+            className="px-4 py-3 min-h-[44px] bg-blue-650 hover:bg-blue-700 text-white text-xs font-bold rounded-xl transition"
           >
             {lang === 'fr' ? 'Ajouter' : isRtl ? 'إضافة بطاقة' : 'Add Card'}
           </button>

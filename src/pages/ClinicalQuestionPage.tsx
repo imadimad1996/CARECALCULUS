@@ -146,7 +146,7 @@ export default function ClinicalQuestionPage({ lang }: Props) {
   }
 
   return (
-    <div className="max-w-3xl mx-auto" dir={isRtl ? 'rtl' : 'ltr'}>
+    <div className="w-full max-w-full max-w-3xl mx-auto" dir={isRtl ? 'rtl' : 'ltr'}>
       {/* Breadcrumb back link */}
       <div className="mb-6">
         <Link

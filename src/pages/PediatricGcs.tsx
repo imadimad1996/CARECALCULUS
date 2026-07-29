@@ -121,7 +121,7 @@ export default function PediatricGcs({ lang }: { lang: LangCode }) {
   const ehrSummary = `pGCS (${ageGroup === 'infant' ? 'Infant' : 'Child'}): E${eye} V${verbal} M${motor} = Total ${score}/15 (${interpretation.text})`;
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8 pb-12">
+    <div className="w-full max-w-full max-w-4xl mx-auto space-y-8 pb-12">
       <SEO logicalPath="/pediatric-gcs" lang={lang} />
       <JsonLd data={{
         "@context": "https://schema.org",

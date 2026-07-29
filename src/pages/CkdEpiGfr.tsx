@@ -152,7 +152,7 @@ export default function CkdEpiGfr({ lang }: { lang: LangCode }) {
               </h3>
               <button
                 onClick={() => { setAge(65); setCreatinine(1.2); setIsFemale(false); }}
-                className="px-3 py-1.5 text-xs bg-slate-50 hover:bg-slate-105 text-slate-600 font-bold rounded-xl border border-gray-205 transition-all cursor-pointer active:scale-95"
+                className="px-4 py-2.5 min-h-[44px] text-xs bg-slate-50 hover:bg-slate-105 text-slate-600 font-bold rounded-xl border border-gray-205 transition-all cursor-pointer active:scale-95"
               >
                 {currentText.resetBtn}
               </button>

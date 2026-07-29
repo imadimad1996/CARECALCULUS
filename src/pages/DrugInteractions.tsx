@@ -65,7 +65,7 @@ export default function DrugInteractions({ lang }: { lang: LangCode }) {
 
   return (
     <CalculatorShell logicalPath="/drug-interactions" lang={lang}>
-      <div className="max-w-3xl relative">
+      <div className="w-full max-w-full max-w-3xl relative">
         <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3 mb-3">
           <ShieldCheck className="w-8 h-8 text-emerald-500" />
           {dict.title}
@@ -82,7 +82,7 @@ export default function DrugInteractions({ lang }: { lang: LangCode }) {
                 type="text" 
                 value={drug1} 
                 onChange={(e) => {setDrug1(e.target.value); setSearched(false);}} 
-                className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 rounded-2xl text-lg font-semibold transition" 
+                className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 rounded-2xl text-lg font-semibold transition" 
                 placeholder="e.g. Warfarin" 
               />
             </div>
@@ -92,7 +92,7 @@ export default function DrugInteractions({ lang }: { lang: LangCode }) {
                 type="text" 
                 value={drug2} 
                 onChange={(e) => {setDrug2(e.target.value); setSearched(false);}} 
-                className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 rounded-2xl text-lg font-semibold transition" 
+                className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 rounded-2xl text-lg font-semibold transition" 
                 placeholder="e.g. Bactrim" 
               />
             </div>

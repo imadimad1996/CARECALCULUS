@@ -205,7 +205,7 @@ export default function DropdownMenu({
             <Link
               to={langPath('/favorites')}
               onClick={() => setIsMenuOpen(false)}
-              className="px-4 py-2.5 text-left text-xs font-semibold text-amber-600 dark:text-amber-500 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-amber-700 flex items-center gap-3 transition"
+              className="px-4 py-3 min-h-[44px].5 text-left text-xs font-semibold text-amber-600 dark:text-amber-500 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-amber-700 flex items-center gap-3 transition"
             >
               <Star className="w-4 h-4 shrink-0 fill-current" />
               <span>{dict.favorites}</span>
@@ -215,7 +215,7 @@ export default function DropdownMenu({
             <Link
               to={langPath('/courses')}
               onClick={() => setIsMenuOpen(false)}
-              className="px-4 py-2.5 text-left text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-950 dark:hover:text-white flex items-center gap-3 transition"
+              className="px-4 py-3 min-h-[44px].5 text-left text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-950 dark:hover:text-white flex items-center gap-3 transition"
             >
               <BookOpen className="w-4 h-4 shrink-0 text-slate-400" />
               <span>{dict.cme}</span>
@@ -225,7 +225,7 @@ export default function DropdownMenu({
             <Link
               to={langPath('/for-hospitals')}
               onClick={() => setIsMenuOpen(false)}
-              className="px-4 py-2.5 text-left text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-950 dark:hover:text-white flex items-center gap-3 transition"
+              className="px-4 py-3 min-h-[44px].5 text-left text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-950 dark:hover:text-white flex items-center gap-3 transition"
             >
               <Cpu className="w-4 h-4 shrink-0 text-slate-400" />
               <span>{dict.ehr}</span>
@@ -247,7 +247,7 @@ export default function DropdownMenu({
             <Link
               to={langPath('/about')}
               onClick={() => setIsMenuOpen(false)}
-              className="px-4 py-2.5 text-left text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-950 dark:hover:text-white flex items-center gap-3 transition"
+              className="px-4 py-3 min-h-[44px].5 text-left text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-950 dark:hover:text-white flex items-center gap-3 transition"
             >
               <Info className="w-4 h-4 shrink-0 text-slate-400" />
               <span>{dict.about}</span>
@@ -257,7 +257,7 @@ export default function DropdownMenu({
 
             {/* Language Selector */}
             {setLang && (
-              <div className="px-4 py-2">
+              <div className="px-4 py-3 min-h-[44px]">
                 <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">
                   {dict.language}
                 </div>
@@ -298,7 +298,7 @@ export default function DropdownMenu({
             <Link
               to={langPath('/disclaimer')}
               onClick={() => setIsMenuOpen(false)}
-              className="px-4 py-2.5 text-left text-[11px] font-medium text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 flex items-center gap-3 transition"
+              className="px-4 py-3 min-h-[44px].5 text-left text-[11px] font-medium text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 flex items-center gap-3 transition"
             >
               <Scale className="w-4 h-4 shrink-0 text-slate-400" />
               <span>{dict.legal}</span>

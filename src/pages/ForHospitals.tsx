@@ -42,7 +42,7 @@ export default function ForHospitals({ lang }: { lang: LangCode }) {
   const t = T[lang] || T.en;
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12 md:py-20" dir={isRtl ? 'rtl' : 'ltr'}>
+    <div className="w-full max-w-full max-w-6xl mx-auto px-4 py-12 md:py-20" dir={isRtl ? 'rtl' : 'ltr'}>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 text-blue-700 font-semibold text-sm mb-6">

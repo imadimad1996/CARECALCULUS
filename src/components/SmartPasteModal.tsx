@@ -146,7 +146,7 @@ export default function SmartPasteModal({ lang = 'en' }: SmartPasteModalProps) {
             {/* Header */}
             <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800 bg-gradient-to-r from-emerald-500/5 via-teal-500/5 to-transparent">
               <div className="flex items-center gap-3">
-                <div className="p-2 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+                <div className="p-3 min-h-[44px] min-w-[44px] rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
                   <ClipboardPaste className="w-5 h-5" />
                 </div>
                 <div>
@@ -224,67 +224,67 @@ export default function SmartPasteModal({ lang = 'en' }: SmartPasteModalProps) {
                 {biomarkerCount > 0 ? (
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
                     {parsed.sodium !== undefined && (
-                      <div className="p-2.5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 flex flex-col">
+                      <div className="p-3 min-h-[44px] min-w-[44px].5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 flex flex-col">
                         <span className="text-[10px] font-semibold uppercase text-gray-500 dark:text-gray-400">Sodium (Na)</span>
                         <span className="text-sm font-bold text-gray-900 dark:text-white font-mono">{parsed.sodium} <span className="text-[10px] font-normal text-gray-500">mEq/L</span></span>
                       </div>
                     )}
                     {parsed.potassium !== undefined && (
-                      <div className="p-2.5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 flex flex-col">
+                      <div className="p-3 min-h-[44px] min-w-[44px].5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 flex flex-col">
                         <span className="text-[10px] font-semibold uppercase text-gray-500 dark:text-gray-400">Potassium (K)</span>
                         <span className="text-sm font-bold text-gray-900 dark:text-white font-mono">{parsed.potassium} <span className="text-[10px] font-normal text-gray-500">mEq/L</span></span>
                       </div>
                     )}
                     {parsed.creatinine !== undefined && (
-                      <div className="p-2.5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 flex flex-col">
+                      <div className="p-3 min-h-[44px] min-w-[44px].5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 flex flex-col">
                         <span className="text-[10px] font-semibold uppercase text-gray-500 dark:text-gray-400">Creatinine (Cr)</span>
                         <span className="text-sm font-bold text-gray-900 dark:text-white font-mono">{parsed.creatinine} <span className="text-[10px] font-normal text-gray-500">mg/dL</span></span>
                       </div>
                     )}
                     {parsed.bilirubin !== undefined && (
-                      <div className="p-2.5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 flex flex-col">
+                      <div className="p-3 min-h-[44px] min-w-[44px].5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 flex flex-col">
                         <span className="text-[10px] font-semibold uppercase text-gray-500 dark:text-gray-400">Total Bili</span>
                         <span className="text-sm font-bold text-gray-900 dark:text-white font-mono">{parsed.bilirubin} <span className="text-[10px] font-normal text-gray-500">mg/dL</span></span>
                       </div>
                     )}
                     {parsed.inr !== undefined && (
-                      <div className="p-2.5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 flex flex-col">
+                      <div className="p-3 min-h-[44px] min-w-[44px].5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 flex flex-col">
                         <span className="text-[10px] font-semibold uppercase text-gray-500 dark:text-gray-400">INR</span>
                         <span className="text-sm font-bold text-gray-900 dark:text-white font-mono">{parsed.inr}</span>
                       </div>
                     )}
                     {parsed.albumin !== undefined && (
-                      <div className="p-2.5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 flex flex-col">
+                      <div className="p-3 min-h-[44px] min-w-[44px].5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 flex flex-col">
                         <span className="text-[10px] font-semibold uppercase text-gray-500 dark:text-gray-400">Albumin</span>
                         <span className="text-sm font-bold text-gray-900 dark:text-white font-mono">{parsed.albumin} <span className="text-[10px] font-normal text-gray-500">g/dL</span></span>
                       </div>
                     )}
                     {parsed.glucose !== undefined && (
-                      <div className="p-2.5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 flex flex-col">
+                      <div className="p-3 min-h-[44px] min-w-[44px].5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 flex flex-col">
                         <span className="text-[10px] font-semibold uppercase text-gray-500 dark:text-gray-400">Glucose</span>
                         <span className="text-sm font-bold text-gray-900 dark:text-white font-mono">{parsed.glucose} <span className="text-[10px] font-normal text-gray-500">mg/dL</span></span>
                       </div>
                     )}
                     {parsed.wbc !== undefined && (
-                      <div className="p-2.5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 flex flex-col">
+                      <div className="p-3 min-h-[44px] min-w-[44px].5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 flex flex-col">
                         <span className="text-[10px] font-semibold uppercase text-gray-500 dark:text-gray-400">WBC</span>
                         <span className="text-sm font-bold text-gray-900 dark:text-white font-mono">{parsed.wbc} <span className="text-[10px] font-normal text-gray-500">x10³/µL</span></span>
                       </div>
                     )}
                     {parsed.platelets !== undefined && (
-                      <div className="p-2.5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 flex flex-col">
+                      <div className="p-3 min-h-[44px] min-w-[44px].5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 flex flex-col">
                         <span className="text-[10px] font-semibold uppercase text-gray-500 dark:text-gray-400">Platelets</span>
                         <span className="text-sm font-bold text-gray-900 dark:text-white font-mono">{parsed.platelets} <span className="text-[10px] font-normal text-gray-500">x10³/µL</span></span>
                       </div>
                     )}
                     {parsed.bun !== undefined && (
-                      <div className="p-2.5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 flex flex-col">
+                      <div className="p-3 min-h-[44px] min-w-[44px].5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 flex flex-col">
                         <span className="text-[10px] font-semibold uppercase text-gray-500 dark:text-gray-400">BUN</span>
                         <span className="text-sm font-bold text-gray-900 dark:text-white font-mono">{parsed.bun} <span className="text-[10px] font-normal text-gray-500">mg/dL</span></span>
                       </div>
                     )}
                     {parsed.hemoglobin !== undefined && (
-                      <div className="p-2.5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 flex flex-col">
+                      <div className="p-3 min-h-[44px] min-w-[44px].5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 flex flex-col">
                         <span className="text-[10px] font-semibold uppercase text-gray-500 dark:text-gray-400">Hemoglobin</span>
                         <span className="text-sm font-bold text-gray-900 dark:text-white font-mono">{parsed.hemoglobin} <span className="text-[10px] font-normal text-gray-500">g/dL</span></span>
                       </div>
@@ -303,7 +303,7 @@ export default function SmartPasteModal({ lang = 'en' }: SmartPasteModalProps) {
             <div className="flex items-center justify-end gap-3 px-6 py-4 border-t border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/80">
               <button
                 onClick={() => setIsOpen(false)}
-                className="px-4 py-2 rounded-xl text-xs font-semibold text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
+                className="px-4 py-3 min-h-[44px] rounded-xl text-xs font-semibold text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
               >
                 {isRtl ? 'إغلاق' : 'Close'}
               </button>

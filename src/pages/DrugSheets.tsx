@@ -26,7 +26,7 @@ export default function DrugSheets({ lang }: { lang: LangCode }) {
   const filtered = DRUG_SHEETS_DB.filter(d => d.name.toLowerCase().includes(filter.toLowerCase()));
 
   return (
-    <div className="max-w-4xl mx-auto py-6 px-4" dir={isRtl ? 'rtl' : 'ltr'}>
+    <div className="w-full max-w-full max-w-4xl mx-auto py-6 px-4" dir={isRtl ? 'rtl' : 'ltr'}>
       <div className="mb-8 flex flex-col sm:flex-row justify-between sm:items-end gap-4 print:hidden">
         <div>
           <span className="text-[10px] font-mono font-black text-red-600 uppercase tracking-widest">

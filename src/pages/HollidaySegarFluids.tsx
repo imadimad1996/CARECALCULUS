@@ -76,7 +76,7 @@ export default function HollidaySegarFluids({ lang }: { lang: LangCode }) {
   const ehrSummary = `Pediatric Fluid Maintenance (Holliday-Segar): Wt ${weight}kg -> Hourly: ${hourly} mL/hr | 24h Total: ${daily} mL/day | Na+: ${naMin}-${naMax} mEq/day | K+: ${kMin}-${kMax} mEq/day`;
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8 pb-12">
+    <div className="w-full max-w-full max-w-4xl mx-auto space-y-8 pb-12">
       <SEO logicalPath="/holliday-segar-fluids" lang={lang} />
       <JsonLd data={{
         "@context": "https://schema.org",
@@ -97,7 +97,7 @@ export default function HollidaySegarFluids({ lang }: { lang: LangCode }) {
         </div>
 
         {/* Input */}
-        <div className="max-w-xs mb-8">
+        <div className="w-full max-w-full max-w-xs mb-8">
           <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">{t.weightLabel}</label>
           <input
             type="number"

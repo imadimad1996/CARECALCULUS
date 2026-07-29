@@ -82,7 +82,7 @@ export default function PediatricDosage({ lang }: { lang: LangCode }) {
   const ehrSummary = `Pediatric Dose: Wt ${weight}kg, Ht ${height}cm (BSA ${bsa}m2) -> Dose: ${singleMg}mg per dose (${volumeMl > 0 ? volumeMl + 'mL' : 'mg'}) q${24/freq}h | Total Daily: ${totalDailyMg}mg/day`;
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8 pb-12">
+    <div className="w-full max-w-full max-w-4xl mx-auto space-y-8 pb-12">
       <SEO logicalPath="/pediatric-dosage" lang={lang} />
       <JsonLd data={{
         "@context": "https://schema.org",

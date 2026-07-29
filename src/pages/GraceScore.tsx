@@ -208,7 +208,7 @@ export default function GraceScore({ lang }: { lang: LangCode }) {
 
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-rose-500/5 via-red-500/5 to-orange-500/5 blur-3xl -z-10 pointer-events-none rounded-full" />
 
-      <div className="max-w-3xl mb-12 relative">
+      <div className="w-full max-w-full max-w-3xl mb-12 relative">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-rose-100/50 border border-rose-200 text-rose-800 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
           <HeartPulse className="w-3.5 h-3.5" />
           <span>Cardiology / Emergency</span>
@@ -237,19 +237,19 @@ export default function GraceScore({ lang }: { lang: LangCode }) {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-bold text-slate-700 mb-1">{currentText.ageLabel as string}</label>
-                  <input type="number" value={age} onChange={(e) => setAge(e.target.value)} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-rose-500 font-mono text-lg" placeholder="65" />
+                  <input type="number" value={age} onChange={(e) => setAge(e.target.value)} className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-rose-500 font-mono text-lg" placeholder="65" />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-slate-700 mb-1">{currentText.hrLabel as string}</label>
-                  <input type="number" value={hr} onChange={(e) => setHr(e.target.value)} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-rose-500 font-mono text-lg" placeholder="85" />
+                  <input type="number" value={hr} onChange={(e) => setHr(e.target.value)} className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-rose-500 font-mono text-lg" placeholder="85" />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-slate-700 mb-1">{currentText.sbpLabel as string}</label>
-                  <input type="number" value={sbp} onChange={(e) => setSbp(e.target.value)} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-rose-500 font-mono text-lg" placeholder="120" />
+                  <input type="number" value={sbp} onChange={(e) => setSbp(e.target.value)} className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-rose-500 font-mono text-lg" placeholder="120" />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-slate-700 mb-1">{isSI ? currentText.crLabelSI as string : currentText.crLabel as string}</label>
-                  <input type="number" step={isSI ? "1" : "0.1"} value={cr} onChange={(e) => setCr(e.target.value)} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-rose-500 font-mono text-lg" placeholder={isSI ? "88" : "1.0"} />
+                  <input type="number" step={isSI ? "1" : "0.1"} value={cr} onChange={(e) => setCr(e.target.value)} className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-rose-500 font-mono text-lg" placeholder={isSI ? "88" : "1.0"} />
                 </div>
               </div>
 

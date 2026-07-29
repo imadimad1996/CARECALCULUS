@@ -95,7 +95,7 @@ export default function SapsIIScore({ lang }: { lang: LangCode }) {
   return (
     <CalculatorShell logicalPath="/saps-ii-score" lang={lang}>
       <JsonLd path="/saps-ii-score" title="Clinical Decision Support — CareCalculus" description="Evidence-based medical decision support calculator." type="SoftwareApplication" />
-      <div className="max-w-4xl relative">
+      <div className="w-full max-w-full max-w-4xl relative">
         <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3 mb-3">
           <Activity className="w-8 h-8 text-fuchsia-500" />
           {dict.title}

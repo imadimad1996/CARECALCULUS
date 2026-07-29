@@ -271,7 +271,7 @@ export default function HomePage({ lang }: HomePageProps) {
               <Link
                 key={idx}
                 to={langPath(item.path)}
-                className="px-3 py-1.5 bg-white text-slate-600 hover:text-teal-700 rounded-lg border border-slate-200 hover:border-teal-200 transition-all font-semibold"
+                className="px-4 py-2.5 min-h-[44px] bg-white text-slate-600 hover:text-teal-700 rounded-lg border border-slate-200 hover:border-teal-200 transition-all font-semibold"
               >
                 {item.name}
               </Link>
@@ -352,7 +352,7 @@ export default function HomePage({ lang }: HomePageProps) {
           return (
             <div key={i} className="bg-white/80 border border-slate-200/60 rounded-2xl p-5 flex flex-col items-center justify-between text-center shadow-xs transition-all duration-300 hover:shadow-sm hover:border-cyan-500/20 group relative overflow-hidden">
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500/50 to-emerald-500/50 opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="p-2.5 rounded-xl bg-slate-55/30 text-cyan-600 mb-2.5 group-hover:scale-105 transition-transform duration-300">
+              <div className="p-3 min-h-[44px] min-w-[44px].5 rounded-xl bg-slate-55/30 text-cyan-600 mb-2.5 group-hover:scale-105 transition-transform duration-300">
                 <StatIcon className="w-5 h-5" />
               </div>
               <div>
@@ -402,7 +402,7 @@ export default function HomePage({ lang }: HomePageProps) {
               className="flex items-center justify-between p-4 bg-white rounded-2xl border border-slate-200 hover:border-teal-400 hover:shadow-[0_8px_30px_rgb(13,148,136,0.1)] hover:-translate-y-0.5 hover:ring-4 hover:ring-teal-50 transition-all duration-300 group active:scale-[0.98]"
             >
               <div className="flex items-center gap-4 min-w-0">
-                <div className="p-2.5 rounded-xl bg-slate-50 text-slate-500 group-hover:bg-teal-500 group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-md">
+                <div className="p-3 min-h-[44px] min-w-[44px].5 rounded-xl bg-slate-50 text-slate-500 group-hover:bg-teal-500 group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-md">
                   <CalcIcon className="w-5 h-5 shrink-0 transition-transform duration-300 group-hover:scale-110" />
                 </div>
                 <span className="text-sm font-black text-slate-800 group-hover:text-teal-900 transition-colors truncate">{label}</span>
@@ -430,7 +430,7 @@ export default function HomePage({ lang }: HomePageProps) {
                 to={langPath(res.path)}
                 className="flex items-center gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200 hover:border-purple-300 hover:bg-white hover:shadow-sm transition-all duration-300 group"
               >
-                <div className="p-2 rounded-lg bg-white text-slate-500 border border-slate-200 group-hover:border-purple-200 group-hover:text-purple-600 group-hover:bg-purple-50 transition-colors">
+                <div className="p-3 min-h-[44px] min-w-[44px] rounded-lg bg-white text-slate-500 border border-slate-200 group-hover:border-purple-200 group-hover:text-purple-600 group-hover:bg-purple-50 transition-colors">
                   <ResIcon className="w-4 h-4 shrink-0" />
                 </div>
                 <span className="text-xs font-bold text-slate-700 group-hover:text-purple-700 transition-colors truncate">{label}</span>
@@ -444,7 +444,7 @@ export default function HomePage({ lang }: HomePageProps) {
 
       {/* Clinical Trust & Evidence strip */}
       <section className="bg-slate-900 rounded-2xl px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 shadow-md">
-        <div className="p-2.5 rounded-xl bg-[#0891B2]/20 border border-[#0891B2]/30 shrink-0">
+        <div className="p-3 min-h-[44px] min-w-[44px].5 rounded-xl bg-[#0891B2]/20 border border-[#0891B2]/30 shrink-0">
           <ShieldCheck className="w-5 h-5 text-[#22D3EE]" />
         </div>
         <p className="text-xs text-slate-300 leading-relaxed flex-1 font-medium">{T.trust[lang]}</p>

@@ -217,7 +217,7 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
 
   return (
     <>
-      <div className="max-w-3xl mb-12">
+      <div className="w-full max-w-full max-w-3xl mb-12">
       <JsonLd path="/bmi-calculator" title="Clinical Decision Support — CareCalculus" description="Evidence-based medical decision support calculator." type="SoftwareApplication" />
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <h1 className={`text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-3 ${isRtl ? 'leading-normal' : ''}`}>
@@ -241,7 +241,7 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
                 </h3>
                 <button
                   onClick={() => { setHeight(170); setWeight(70); setTargetBmiStr(''); }}
-                  className="px-3 py-1.5 text-xs bg-slate-50 hover:bg-slate-100 text-slate-600 font-bold rounded-xl border border-gray-200 transition-all cursor-pointer active:scale-95 flex items-center gap-1"
+                  className="px-4 py-2.5 min-h-[44px] text-xs bg-slate-50 hover:bg-slate-100 text-slate-600 font-bold rounded-xl border border-gray-200 transition-all cursor-pointer active:scale-95 flex items-center gap-1"
                 >
                   {currentText.resetBtn}
                 </button>
@@ -428,7 +428,7 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="flex items-start gap-4">
-            <div className="p-2.5 bg-blue-50 text-blue-600 rounded-lg shrink-0">
+            <div className="p-3 min-h-[44px] min-w-[44px].5 bg-blue-50 text-blue-600 rounded-lg shrink-0">
               <Info className="w-5 h-5" />
             </div>
             <div>
@@ -437,7 +437,7 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
             </div>
           </div>
           <div className="flex items-start gap-4">
-            <div className="p-2.5 bg-purple-50 text-purple-600 rounded-lg shrink-0">
+            <div className="p-3 min-h-[44px] min-w-[44px].5 bg-purple-50 text-purple-600 rounded-lg shrink-0">
               <Activity className="w-5 h-5" />
             </div>
             <div className="w-full">
@@ -448,7 +448,7 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
             </div>
           </div>
           <div className="flex items-start gap-4">
-            <div className="p-2.5 bg-emerald-50 text-emerald-600 rounded-lg shrink-0">
+            <div className="p-3 min-h-[44px] min-w-[44px].5 bg-emerald-50 text-emerald-600 rounded-lg shrink-0">
               <BookOpen className="w-5 h-5" />
             </div>
             <div>

@@ -475,7 +475,7 @@ ${divider}`;
               {/* Header */}
               <div className="p-5 border-b border-slate-800 flex justify-between items-center bg-slate-950/40 shrink-0">
                 <div className="flex items-center gap-3">
-                  <div className="p-2 bg-blue-500/10 border border-blue-550/20 text-blue-400 rounded-lg">
+                  <div className="p-3 min-h-[44px] min-w-[44px] bg-blue-500/10 border border-blue-550/20 text-blue-400 rounded-lg">
                     <FileText className="w-5 h-5 animate-pulse" />
                   </div>
                   <div>

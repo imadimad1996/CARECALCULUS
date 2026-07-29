@@ -68,7 +68,7 @@ export default function EditorialBoard({ lang }: { lang: LangCode }) {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto space-y-12 pb-16" dir={isRtl ? 'rtl' : 'ltr'}>
+    <div className="w-full max-w-full max-w-4xl mx-auto space-y-12 pb-16" dir={isRtl ? 'rtl' : 'ltr'}>
       {/* Header */}
       <div className="text-center space-y-4 max-w-2xl mx-auto pt-8">
         <div className="inline-flex items-center gap-2 px-3 py-1 bg-teal-50 text-teal-700 rounded-full border border-teal-200 text-xs font-bold uppercase tracking-widest">

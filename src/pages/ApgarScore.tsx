@@ -125,7 +125,7 @@ export default function ApgarScore({ lang }: { lang: LangCode }) {
 
   return (
     <>
-      <div className="max-w-3xl mb-12">
+      <div className="w-full max-w-full max-w-3xl mb-12">
       <JsonLd path="/apgar-score" title="Clinical Decision Support — CareCalculus" description="Evidence-based medical decision support calculator." type="SoftwareApplication" />
         <h1 className={`text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-3 ${isRtl ? 'leading-normal' : ''}`}>
           {currentText.title}
@@ -291,7 +291,7 @@ export default function ApgarScore({ lang }: { lang: LangCode }) {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="flex items-start gap-4">
-            <div className="p-2.5 bg-blue-50 text-blue-600 rounded-lg shrink-0">
+            <div className="p-3 min-h-[44px] min-w-[44px].5 bg-blue-50 text-blue-600 rounded-lg shrink-0">
               <Info className="w-5 h-5" />
             </div>
             <div>
@@ -300,7 +300,7 @@ export default function ApgarScore({ lang }: { lang: LangCode }) {
             </div>
           </div>
           <div className="flex items-start gap-4">
-            <div className="p-2.5 bg-purple-50 text-purple-600 rounded-lg shrink-0">
+            <div className="p-3 min-h-[44px] min-w-[44px].5 bg-purple-50 text-purple-600 rounded-lg shrink-0">
               <Activity className="w-5 h-5" />
             </div>
             <div className="w-full">
@@ -311,7 +311,7 @@ export default function ApgarScore({ lang }: { lang: LangCode }) {
             </div>
           </div>
           <div className="flex items-start gap-4">
-            <div className="p-2.5 bg-emerald-50 text-emerald-600 rounded-lg shrink-0">
+            <div className="p-3 min-h-[44px] min-w-[44px].5 bg-emerald-50 text-emerald-600 rounded-lg shrink-0">
               <BookOpen className="w-5 h-5" />
             </div>
             <div>

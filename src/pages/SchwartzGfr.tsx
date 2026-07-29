@@ -76,7 +76,7 @@ export default function SchwartzGfr({ lang }: { lang: LangCode }) {
   const ehrSummary = `Pediatric eGFR (Bedside Schwartz): Ht ${height}cm, SCr ${scr}${unit} -> eGFR: ${egfr} mL/min/1.73m2 (${category.text})`;
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8 pb-12">
+    <div className="w-full max-w-full max-w-4xl mx-auto space-y-8 pb-12">
       <SEO logicalPath="/schwartz-pediatric-gfr" lang={lang} />
       <JsonLd data={{
         "@context": "https://schema.org",

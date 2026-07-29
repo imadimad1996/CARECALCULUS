@@ -108,7 +108,7 @@ export default function NutritionHub({ lang }: NutritionHubProps) {
         logicalPath="/nutrition-hub"
       />
 
-      <div className="max-w-7xl mx-auto px-4 py-8 sm:py-12">
+      <div className="w-full max-w-full max-w-7xl mx-auto px-4 py-8 sm:py-12">
         {/* Header Section */}
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-600 to-teal-800 text-white mb-12 shadow-xl border border-emerald-500/20">
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>

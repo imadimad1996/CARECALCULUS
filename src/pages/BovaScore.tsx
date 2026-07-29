@@ -64,7 +64,7 @@ export default function BovaScore({ lang }: { lang: LangCode }) {
   return (
     <CalculatorShell logicalPath="/bova-score" lang={lang}>
       <JsonLd path="/bova-score" title="Clinical Decision Support — CareCalculus" description="Evidence-based medical decision support calculator." type="SoftwareApplication" />
-      <div className="max-w-3xl relative">
+      <div className="w-full max-w-full max-w-3xl relative">
         <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3 mb-3">
           <HeartPulse className="w-8 h-8 text-rose-500" />
           {dict.title}

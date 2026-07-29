@@ -128,7 +128,7 @@ export default function NewsletterCapture({ lang }: NewsletterCaptureProps) {
       className={`fixed bottom-0 left-0 right-0 z-50 px-4 pb-4 pointer-events-none`}
       dir={isRtl ? 'rtl' : 'ltr'}
     >
-      <div className="max-w-2xl mx-auto pointer-events-auto">
+      <div className="w-full max-w-full max-w-2xl mx-auto pointer-events-auto">
         <div className="bg-slate-900 text-white rounded-2xl shadow-2xl border border-slate-800 p-5 sm:p-6 relative overflow-hidden">
           {/* Decorative glow */}
           <div className="absolute top-0 right-0 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />

@@ -143,7 +143,7 @@ export default function WintersFormula({ lang }: { lang: LangCode }) {
 
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-cyan-500/5 via-blue-500/5 to-purple-500/5 blur-3xl -z-10 pointer-events-none rounded-full" />
 
-      <div className="max-w-3xl mb-12 relative">
+      <div className="w-full max-w-full max-w-3xl mb-12 relative">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-gray-900 via-gray-800 to-cyan-950 bg-clip-text text-transparent mb-3">
             {currentText.title}
@@ -168,7 +168,7 @@ export default function WintersFormula({ lang }: { lang: LangCode }) {
                   type="number"
                   value={hco3}
                   onChange={(e) => setHco3(e.target.value)}
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 focus:bg-white focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100 outline-none rounded-2xl text-base font-semibold text-gray-900 transition-all"
+                  className="w-full px-4 py-3.5 min-h-[48px] bg-gray-50 border border-gray-200 focus:bg-white focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100 outline-none rounded-2xl text-base font-semibold text-gray-900 transition-all"
                   placeholder="e.g. 18"
                 />
               </div>
@@ -181,7 +181,7 @@ export default function WintersFormula({ lang }: { lang: LangCode }) {
                   type="number"
                   value={pco2}
                   onChange={(e) => setPco2(e.target.value)}
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 focus:bg-white focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100 outline-none rounded-2xl text-base font-semibold text-gray-900 transition-all"
+                  className="w-full px-4 py-3.5 min-h-[48px] bg-gray-50 border border-gray-200 focus:bg-white focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100 outline-none rounded-2xl text-base font-semibold text-gray-900 transition-all"
                   placeholder="e.g. 35"
                 />
               </div>

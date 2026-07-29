@@ -121,7 +121,7 @@ export default function CiwaArScore({ lang }: { lang: LangCode }) {
 
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-purple-500/5 via-fuchsia-500/5 to-indigo-500/5 blur-3xl -z-10 pointer-events-none rounded-full" />
 
-      <div className="max-w-3xl mb-12 relative">
+      <div className="w-full max-w-full max-w-3xl mb-12 relative">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-100/50 border border-purple-200 text-purple-800 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
           <Activity className="w-3.5 h-3.5" />
           <span>Psychiatry / Emergency</span>

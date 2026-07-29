@@ -121,7 +121,7 @@ export default function FraminghamRiskScore({ lang }: { lang: LangCode }) {
   const ehrSummary = `Framingham 10-Yr CVD Risk: ${age}y ${isMale ? 'Male' : 'Female'}, Chol ${chol}, HDL ${hdl}, SBP ${sbp} -> ${riskPercent}% (${category.text})`;
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8 pb-12">
+    <div className="w-full max-w-full max-w-4xl mx-auto space-y-8 pb-12">
       <SEO logicalPath="/framingham-risk-score" lang={lang} />
       <JsonLd data={{
         "@context": "https://schema.org",

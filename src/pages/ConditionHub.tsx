@@ -36,7 +36,7 @@ export default function ConditionHub({ lang }: { lang: LangCode }) {
 
   if (!condition) {
     return (
-      <div className="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8" dir={isRtl ? 'rtl' : 'ltr'}>
+      <div className="w-full max-w-full max-w-4xl mx-auto p-4 sm:p-6 lg:p-8" dir={isRtl ? 'rtl' : 'ltr'}>
         <div className="bg-red-50 text-red-700 p-6 rounded-xl flex items-center gap-4">
           <AlertCircle className="w-8 h-8 text-red-500" />
           <div>

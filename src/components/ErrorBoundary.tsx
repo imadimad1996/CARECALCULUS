@@ -28,7 +28,7 @@ export class GlobalErrorBoundary extends React.Component<any, any> {
     if (this.state.hasError) {
       return (
         <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
-          <div className="max-w-md w-full bg-white rounded-3xl p-8 border border-slate-200 shadow-xl text-center">
+          <div className="w-full max-w-full max-w-md w-full bg-white rounded-3xl p-8 border border-slate-200 shadow-xl text-center">
             <div className="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center mx-auto mb-6">
               <AlertOctagon className="w-8 h-8 text-red-500" />
             </div>

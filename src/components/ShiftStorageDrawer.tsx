@@ -100,7 +100,7 @@ export const ShiftStorageDrawer: React.FC<{ isOpen: boolean; onClose: () => void
         {/* Header */}
         <div className="flex items-center justify-between pb-4 border-b border-slate-800">
           <div className="flex items-center gap-2.5">
-            <div className="p-2 bg-emerald-500/10 text-emerald-400 rounded-xl border border-emerald-500/20">
+            <div className="p-3 min-h-[44px] min-w-[44px] bg-emerald-500/10 text-emerald-400 rounded-xl border border-emerald-500/20">
               <ClipboardList className="w-5 h-5" />
             </div>
             <div>
@@ -110,7 +110,7 @@ export const ShiftStorageDrawer: React.FC<{ isOpen: boolean; onClose: () => void
               </p>
             </div>
           </div>
-          <button onClick={onClose} className="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition cursor-pointer">
+          <button onClick={onClose} className="p-3 min-h-[44px] min-w-[44px] text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition cursor-pointer">
             <X className="w-5 h-5" />
           </button>
         </div>

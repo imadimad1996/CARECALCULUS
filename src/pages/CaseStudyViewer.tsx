@@ -65,7 +65,7 @@ export default function CaseStudyViewer({ lang }: { lang: LangCode }) {
   const stepDesc = lang === 'fr' ? activeStep.descriptionFr || activeStep.description : activeStep.description;
 
   return (
-    <div className="max-w-3xl mx-auto py-6 px-4" dir={isRtl ? 'rtl' : 'ltr'}>
+    <div className="w-full max-w-full max-w-3xl mx-auto py-6 px-4" dir={isRtl ? 'rtl' : 'ltr'}>
       <div className="mb-8 text-center sm:text-left">
         <span className="text-[10px] font-mono font-black text-teal-600 uppercase tracking-widest">
           {t.clinicalSimulation}

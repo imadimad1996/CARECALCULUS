@@ -19,7 +19,7 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12 md:py-20 text-slate-900 dark:text-slate-100 font-sans">
+    <div className="w-full max-w-full max-w-6xl mx-auto px-4 py-12 md:py-20 text-slate-900 dark:text-slate-100 font-sans">
       {/* Header with Animation */}
       <div className="text-center max-w-3xl mx-auto mb-16 animate-in fade-in slide-in-from-bottom-8 duration-700">
         <span className="text-xs font-bold text-cyan-600 dark:text-cyan-400 uppercase tracking-widest bg-cyan-500/10 px-4 py-1.5 rounded-full border border-cyan-500/20 inline-block mb-4 shadow-sm">
@@ -72,7 +72,7 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
         <div className="animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100 bg-white dark:bg-slate-900/50 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
           <div>
             <div className="flex items-center gap-2 text-slate-500 mb-6">
-              <div className="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg">
+              <div className="p-3 min-h-[44px] min-w-[44px] bg-slate-100 dark:bg-slate-800 rounded-lg">
                 <User className="w-5 h-5" />
               </div>
               <span className="text-xs font-bold uppercase tracking-widest">{isFr ? 'Forfait Étudiant' : 'Free Bedside Pass'}</span>
@@ -115,7 +115,7 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
 
           <div>
             <div className="flex items-center gap-2 text-cyan-400 mb-6">
-              <div className="p-2 bg-cyan-500/10 rounded-lg">
+              <div className="p-3 min-h-[44px] min-w-[44px] bg-cyan-500/10 rounded-lg">
                 <Sparkles className="w-5 h-5" />
               </div>
               <span className="text-xs font-bold uppercase tracking-widest">{isFr ? 'Pass Clinicien Pro' : 'Pro Clinician Pass'}</span>
@@ -198,7 +198,7 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
         <div className="animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300 bg-white dark:bg-slate-900/50 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
           <div>
             <div className="flex items-center gap-2 text-purple-600 dark:text-purple-400 mb-6">
-              <div className="p-2 bg-purple-500/10 rounded-lg">
+              <div className="p-3 min-h-[44px] min-w-[44px] bg-purple-500/10 rounded-lg">
                 <Building2 className="w-5 h-5" />
               </div>
               <span className="text-xs font-bold uppercase tracking-widest">{isFr ? 'Licence Hospitalière' : 'Hospital Department'}</span>
@@ -252,7 +252,7 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
       {/* Trust & Guarantees */}
       <div className="animate-in fade-in duration-700 delay-500 flex flex-col sm:flex-row items-center justify-center gap-8 py-10 border-y border-slate-200 dark:border-slate-800 mb-20">
         <div className="flex items-center gap-3">
-          <div className="p-2.5 bg-emerald-500/10 rounded-full text-emerald-500">
+          <div className="p-3 min-h-[44px] min-w-[44px].5 bg-emerald-500/10 rounded-full text-emerald-500">
             <ShieldCheck className="w-6 h-6" />
           </div>
           <span className="font-semibold text-sm text-slate-700 dark:text-slate-300">
@@ -260,7 +260,7 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
           </span>
         </div>
         <div className="flex items-center gap-3">
-          <div className="p-2.5 bg-amber-500/10 rounded-full text-amber-500">
+          <div className="p-3 min-h-[44px] min-w-[44px].5 bg-amber-500/10 rounded-full text-amber-500">
             <Zap className="w-6 h-6" />
           </div>
           <span className="font-semibold text-sm text-slate-700 dark:text-slate-300">
@@ -270,7 +270,7 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
       </div>
 
       {/* Feature Comparison Table */}
-      <div className="max-w-4xl mx-auto mb-20 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-[600ms]">
+      <div className="w-full max-w-full max-w-4xl mx-auto mb-20 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-[600ms]">
         <h3 className="text-2xl font-black mb-8 text-center">{isFr ? 'Comparaison Détaillée des Fonctionnalités' : 'Detailed Feature Comparison'}</h3>
         
         <div className="overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
@@ -314,7 +314,7 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
       </div>
 
       {/* FAQ Grid */}
-      <div className="max-w-4xl mx-auto animate-in fade-in slide-in-from-bottom-8 duration-700 delay-[700ms]">
+      <div className="w-full max-w-full max-w-4xl mx-auto animate-in fade-in slide-in-from-bottom-8 duration-700 delay-[700ms]">
         <h3 className="text-2xl font-black mb-8 text-center">{isFr ? 'Questions Fréquentes' : 'Frequently Asked Questions'}</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
           

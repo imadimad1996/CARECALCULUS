@@ -48,7 +48,7 @@ export default function AiAnswerPanel({ logicalPath, lang }: AiAnswerPanelProps)
           <div className="absolute -bottom-24 -left-8 h-56 w-56 rounded-full bg-emerald-400/10 blur-3xl" />
         </div>
         <div className="relative z-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-2xl space-y-2">
+          <div className="w-full max-w-full max-w-2xl space-y-2">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] font-mono font-extrabold uppercase tracking-[0.24em] text-cyan-300">
               <Sparkles className="h-3.5 w-3.5" />
               {text.badge}

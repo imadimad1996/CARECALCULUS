@@ -54,7 +54,7 @@ export default function GestationalAgeCrl({ lang }: { lang: LangCode }) {
   const ehrSummary = `Ultrasound CRL Dating: CRL ${crlMm}mm -> Estimated GA: ${weeks}w + ${days}d (Accuracy +/-3-5d)`;
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8 pb-12">
+    <div className="w-full max-w-full max-w-4xl mx-auto space-y-8 pb-12">
       <SEO logicalPath="/gestational-age-crl" lang={lang} />
       <JsonLd data={{
         "@context": "https://schema.org",
@@ -75,7 +75,7 @@ export default function GestationalAgeCrl({ lang }: { lang: LangCode }) {
         </div>
 
         {/* Input */}
-        <div className="max-w-xs mb-8">
+        <div className="w-full max-w-full max-w-xs mb-8">
           <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">{t.crlLabel}</label>
           <input
             type="number"

@@ -90,7 +90,7 @@ export default function NaegeleEddCalculator({ lang }: { lang: LangCode }) {
   const ehrSummary = `OB/GYN Naegele EDD: LMP ${lmpDate} (Cycle ${cycleDays}d) -> EDD: ${eddFormatted} | Current GA: ${weeks}w + ${remDays}d (${trimester})`;
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8 pb-12">
+    <div className="w-full max-w-full max-w-4xl mx-auto space-y-8 pb-12">
       <SEO logicalPath="/naegele-edd-calculator" lang={lang} />
       <JsonLd data={{
         "@context": "https://schema.org",

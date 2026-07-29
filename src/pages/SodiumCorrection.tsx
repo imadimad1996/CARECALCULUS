@@ -156,7 +156,7 @@ export default function SodiumCorrection({ lang }: { lang: LangCode }) {
 
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-amber-500/5 via-orange-500/5 to-red-500/5 blur-3xl -z-10 pointer-events-none rounded-full" />
 
-      <div className="max-w-3xl mb-12 relative">
+      <div className="w-full max-w-full max-w-3xl mb-12 relative">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-100/50 border border-orange-200 text-orange-800 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
           <Activity className="w-3.5 h-3.5" />
           <span>Nephrology</span>
@@ -207,7 +207,7 @@ export default function SodiumCorrection({ lang }: { lang: LangCode }) {
                     type="number"
                     value={weight}
                     onChange={(e) => setWeight(e.target.value)}
-                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all font-mono text-lg"
+                    className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all font-mono text-lg"
                     placeholder="70"
                   />
                 </div>
@@ -220,7 +220,7 @@ export default function SodiumCorrection({ lang }: { lang: LangCode }) {
                     type="number"
                     value={na}
                     onChange={(e) => setNa(e.target.value)}
-                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all font-mono text-lg"
+                    className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all font-mono text-lg"
                     placeholder="118"
                   />
                 </div>
@@ -256,7 +256,7 @@ export default function SodiumCorrection({ lang }: { lang: LangCode }) {
                   step="0.1"
                   value={fluidVol}
                   onChange={(e) => setFluidVol(e.target.value)}
-                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all font-mono text-lg"
+                  className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all font-mono text-lg"
                   placeholder="1.0"
                 />
               </div>

@@ -51,7 +51,7 @@ export default function CookieConsent() {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-[100] p-4 sm:p-6 pointer-events-none">
-      <div className="max-w-4xl mx-auto bg-white/95 backdrop-blur-xl border border-slate-200/80 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] p-5 sm:p-6 pointer-events-auto flex flex-col sm:flex-row items-start sm:items-center gap-6">
+      <div className="w-full max-w-full max-w-4xl mx-auto bg-white/95 backdrop-blur-xl border border-slate-200/80 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] p-5 sm:p-6 pointer-events-auto flex flex-col sm:flex-row items-start sm:items-center gap-6">
         
         <div className="flex-1 flex gap-4">
           <div className="hidden sm:flex shrink-0 p-3 bg-teal-50 text-teal-600 rounded-xl h-fit">
@@ -83,7 +83,7 @@ export default function CookieConsent() {
           </button>
           <button 
             onClick={() => setIsVisible(false)}
-            className="p-2.5 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-xl transition-colors ml-1 cursor-pointer"
+            className="p-3 min-h-[44px] min-w-[44px].5 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-xl transition-colors ml-1 cursor-pointer"
             aria-label="Close"
           >
             <X className="w-4 h-4" />

@@ -531,7 +531,7 @@ export default function IspitsAcademic({ lang }: { lang: LangCode }) {
                       href={`https://www.google.com/search?q=${encodeURIComponent("ISPITS " + selectedModule.name + " cours filetype:pdf")}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3 py-1.5 bg-gray-50 border border-gray-200 text-gray-600 hover:bg-gray-100 hover:text-slate-800 rounded-lg text-[10px] font-bold tracking-tight flex items-center gap-1 transition"
+                      className="px-4 py-2.5 min-h-[44px] bg-gray-50 border border-gray-200 text-gray-600 hover:bg-gray-100 hover:text-slate-800 rounded-lg text-[10px] font-bold tracking-tight flex items-center gap-1 transition"
                     >
                       <ExternalLink className="w-3 h-3" />
                       {t.googlePdfSearch}
@@ -541,7 +541,7 @@ export default function IspitsAcademic({ lang }: { lang: LangCode }) {
                       href={`https://www.google.com/search?q=${encodeURIComponent("ISPITS " + selectedModule.name + " " + (lang === 'fr' ? 'cours' : 'modules'))}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3 py-1.5 bg-gray-50 border border-gray-200 text-gray-600 hover:bg-gray-100 hover:text-slate-800 rounded-lg text-[10px] font-bold tracking-tight flex items-center gap-1 transition"
+                      className="px-4 py-2.5 min-h-[44px] bg-gray-50 border border-gray-200 text-gray-600 hover:bg-gray-100 hover:text-slate-800 rounded-lg text-[10px] font-bold tracking-tight flex items-center gap-1 transition"
                     >
                       <ExternalLink className="w-3 h-3" />
                       {t.googleSearch}
@@ -551,7 +551,7 @@ export default function IspitsAcademic({ lang }: { lang: LangCode }) {
                       href={`https://www.google.com/search?q=${encodeURIComponent("site:ispits.net " + selectedModule.name)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3 py-1.5 bg-sky-50 border border-sky-100 text-sky-700 hover:bg-sky-100 rounded-lg text-[10px] font-bold tracking-tight flex items-center gap-1 transition"
+                      className="px-4 py-2.5 min-h-[44px] bg-sky-50 border border-sky-100 text-sky-700 hover:bg-sky-100 rounded-lg text-[10px] font-bold tracking-tight flex items-center gap-1 transition"
                     >
                       <ExternalLink className="w-3 h-3" />
                       {t.ispitsNetSearch}
@@ -572,7 +572,7 @@ export default function IspitsAcademic({ lang }: { lang: LangCode }) {
                       href={`/pdf/ispits/${encodeURIComponent(selectedModule.pdf_file || selectedModule.pdf_parts![activePartIndex])}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs font-bold rounded-lg transition-all flex items-center gap-1.5 font-mono uppercase border border-gray-300"
+                      className="px-4 py-3 min-h-[44px] bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs font-bold rounded-lg transition-all flex items-center gap-1.5 font-mono uppercase border border-gray-300"
                       style={{ minHeight: '38px' }}
                     >
                       <ExternalLink className="w-3.5 h-3.5" />
@@ -582,7 +582,7 @@ export default function IspitsAcademic({ lang }: { lang: LangCode }) {
                     <a
                       href={`/pdf/ispits/${encodeURIComponent(selectedModule.pdf_file || selectedModule.pdf_parts![activePartIndex])}`}
                       download={selectedModule.pdf_file || selectedModule.pdf_parts![activePartIndex]}
-                      className="px-4 py-2 bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold rounded-lg transition-all flex items-center gap-1.5 font-mono uppercase shadow-md active:scale-95 cursor-pointer"
+                      className="px-4 py-3 min-h-[44px] bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold rounded-lg transition-all flex items-center gap-1.5 font-mono uppercase shadow-md active:scale-95 cursor-pointer"
                       style={{ minHeight: '38px' }}
                     >
                       <Download className="w-3.5 h-3.5" />
@@ -677,7 +677,7 @@ export default function IspitsAcademic({ lang }: { lang: LangCode }) {
                     href={`https://www.google.com/search?q=${encodeURIComponent("ISPITS " + selectedModule.name + " cours filetype:pdf")}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 bg-gray-50 border border-gray-200 text-gray-600 hover:bg-gray-100 hover:text-slate-800 rounded-lg text-xs font-bold tracking-tight flex items-center justify-between transition"
+                    className="p-3 min-h-[44px] min-w-[44px] bg-gray-50 border border-gray-200 text-gray-600 hover:bg-gray-100 hover:text-slate-800 rounded-lg text-xs font-bold tracking-tight flex items-center justify-between transition"
                   >
                     <span>{t.googlePdfSearch}</span>
                     <ExternalLink className="w-3.5 h-3.5 text-gray-400" />
@@ -686,7 +686,7 @@ export default function IspitsAcademic({ lang }: { lang: LangCode }) {
                     href={`https://www.google.com/search?q=${encodeURIComponent("ISPITS " + selectedModule.name + " cours")}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 bg-gray-50 border border-gray-200 text-gray-600 hover:bg-gray-100 hover:text-slate-800 rounded-lg text-xs font-bold tracking-tight flex items-center justify-between transition"
+                    className="p-3 min-h-[44px] min-w-[44px] bg-gray-50 border border-gray-200 text-gray-600 hover:bg-gray-100 hover:text-slate-800 rounded-lg text-xs font-bold tracking-tight flex items-center justify-between transition"
                   >
                     <span>{t.googleSearch}</span>
                     <ExternalLink className="w-3.5 h-3.5 text-gray-400" />
@@ -695,7 +695,7 @@ export default function IspitsAcademic({ lang }: { lang: LangCode }) {
                     href={`https://www.google.com/search?q=${encodeURIComponent("site:ispits.net " + selectedModule.name)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 bg-gray-50 border border-gray-200 text-gray-600 hover:bg-gray-100 hover:text-slate-800 rounded-lg text-xs font-bold tracking-tight flex items-center justify-between transition"
+                    className="p-3 min-h-[44px] min-w-[44px] bg-gray-50 border border-gray-200 text-gray-600 hover:bg-gray-100 hover:text-slate-800 rounded-lg text-xs font-bold tracking-tight flex items-center justify-between transition"
                   >
                     <span>{t.ispitsNetSearch}</span>
                     <ExternalLink className="w-3.5 h-3.5 text-gray-400" />

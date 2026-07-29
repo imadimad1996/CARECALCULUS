@@ -71,7 +71,7 @@ export default function SteroidConversion({ lang }: { lang: LangCode }) {
 
   return (
     <>
-      <div className="max-w-3xl mb-12">
+      <div className="w-full max-w-full max-w-3xl mb-12">
       <JsonLd path="/steroid-conversion" title="Clinical Decision Support — CareCalculus" description="Evidence-based medical decision support calculator." type="SoftwareApplication" />
         <h1 className={`text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-3 ${isRtl ? 'leading-normal' : ''}`}>
           {currentText.title}

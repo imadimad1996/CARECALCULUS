@@ -141,7 +141,7 @@ export default function OsmolalGap({ lang }: { lang: LangCode }) {
 
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-lime-500/5 via-green-500/5 to-emerald-500/5 blur-3xl -z-10 pointer-events-none rounded-full" />
 
-      <div className="max-w-3xl mb-12 relative">
+      <div className="w-full max-w-full max-w-3xl mb-12 relative">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-lime-100/50 border border-lime-200 text-lime-800 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
           <TestTube className="w-3.5 h-3.5" />
           <span>Toxicology / Critical Care</span>
@@ -163,24 +163,24 @@ export default function OsmolalGap({ lang }: { lang: LangCode }) {
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-1">{currentText.measuredLabel as string}</label>
-                <input type="number" value={measured} onChange={(e) => setMeasured(e.target.value)} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-lime-500 font-mono text-lg" placeholder="290" />
+                <input type="number" value={measured} onChange={(e) => setMeasured(e.target.value)} className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-lime-500 font-mono text-lg" placeholder="290" />
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-bold text-slate-700 mb-1">{currentText.naLabel as string}</label>
-                  <input type="number" value={na} onChange={(e) => setNa(e.target.value)} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-lime-500 font-mono text-lg" placeholder="140" />
+                  <input type="number" value={na} onChange={(e) => setNa(e.target.value)} className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-lime-500 font-mono text-lg" placeholder="140" />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-slate-700 mb-1">{isSI ? currentText.bunLabelSI as string : currentText.bunLabel as string}</label>
-                  <input type="number" value={bun} onChange={(e) => setBun(e.target.value)} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-lime-500 font-mono text-lg" placeholder={isSI ? "5.0" : "14"} />
+                  <input type="number" value={bun} onChange={(e) => setBun(e.target.value)} className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-lime-500 font-mono text-lg" placeholder={isSI ? "5.0" : "14"} />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-slate-700 mb-1">{isSI ? currentText.glcLabelSI as string : currentText.glcLabel as string}</label>
-                  <input type="number" value={glc} onChange={(e) => setGlc(e.target.value)} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-lime-500 font-mono text-lg" placeholder={isSI ? "5.0" : "90"} />
+                  <input type="number" value={glc} onChange={(e) => setGlc(e.target.value)} className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-lime-500 font-mono text-lg" placeholder={isSI ? "5.0" : "90"} />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-slate-700 mb-1">{isSI ? currentText.etohLabelSI as string : currentText.etohLabel as string}</label>
-                  <input type="number" value={etoh} onChange={(e) => setEtoh(e.target.value)} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-lime-500 font-mono text-lg" placeholder="0" />
+                  <input type="number" value={etoh} onChange={(e) => setEtoh(e.target.value)} className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-lime-500 font-mono text-lg" placeholder="0" />
                 </div>
               </div>
             </div>

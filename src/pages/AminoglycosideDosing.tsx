@@ -120,7 +120,7 @@ export default function AminoglycosideDosing({ lang }: { lang: LangCode }) {
   return (
     <CalculatorShell logicalPath="/aminoglycoside-dosing" lang={lang}>
       <JsonLd path="/aminoglycoside-dosing" title="Clinical Decision Support — CareCalculus" description="Evidence-based medical decision support calculator." type="SoftwareApplication" />
-      <div className="max-w-3xl relative">
+      <div className="w-full max-w-full max-w-3xl relative">
         <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3 mb-3">
           <Pill className="w-8 h-8 text-fuchsia-500" />
           {dict.title}
@@ -140,7 +140,7 @@ export default function AminoglycosideDosing({ lang }: { lang: LangCode }) {
 
           <div>
             <label className="block text-sm font-bold text-slate-700 mb-2">{dict.age}</label>
-            <input type="number" value={age} onChange={(e) => setAge(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-fuchsia-500 focus:ring-4 focus:ring-fuchsia-500/10 rounded-2xl text-lg font-semibold transition" placeholder="e.g. 45" />
+            <input type="number" value={age} onChange={(e) => setAge(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 focus:border-fuchsia-500 focus:ring-4 focus:ring-fuchsia-500/10 rounded-2xl text-lg font-semibold transition" placeholder="e.g. 45" />
           </div>
 
           <div>
@@ -153,17 +153,17 @@ export default function AminoglycosideDosing({ lang }: { lang: LangCode }) {
 
           <div>
             <label className="block text-sm font-bold text-slate-700 mb-2">{dict.weight}</label>
-            <input type="number" value={weight} onChange={(e) => setWeight(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-fuchsia-500 focus:ring-4 focus:ring-fuchsia-500/10 rounded-2xl text-lg font-semibold transition" placeholder="e.g. 70" />
+            <input type="number" value={weight} onChange={(e) => setWeight(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 focus:border-fuchsia-500 focus:ring-4 focus:ring-fuchsia-500/10 rounded-2xl text-lg font-semibold transition" placeholder="e.g. 70" />
           </div>
 
           <div>
             <label className="block text-sm font-bold text-slate-700 mb-2">{dict.height}</label>
-            <input type="number" value={height} onChange={(e) => setHeight(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-fuchsia-500 focus:ring-4 focus:ring-fuchsia-500/10 rounded-2xl text-lg font-semibold transition" placeholder="e.g. 175" />
+            <input type="number" value={height} onChange={(e) => setHeight(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 focus:border-fuchsia-500 focus:ring-4 focus:ring-fuchsia-500/10 rounded-2xl text-lg font-semibold transition" placeholder="e.g. 175" />
           </div>
 
           <div>
             <label className="block text-sm font-bold text-slate-700 mb-2">{isSI ? dict.scrSI : dict.scr}</label>
-            <input type="number" step={isSI ? "1" : "0.1"} value={scr} onChange={(e) => setScr(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-fuchsia-500 focus:ring-4 focus:ring-fuchsia-500/10 rounded-2xl text-lg font-semibold transition" placeholder={isSI ? "e.g. 88" : "e.g. 1.0"} />
+            <input type="number" step={isSI ? "1" : "0.1"} value={scr} onChange={(e) => setScr(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 focus:border-fuchsia-500 focus:ring-4 focus:ring-fuchsia-500/10 rounded-2xl text-lg font-semibold transition" placeholder={isSI ? "e.g. 88" : "e.g. 1.0"} />
           </div>
         </div>
 

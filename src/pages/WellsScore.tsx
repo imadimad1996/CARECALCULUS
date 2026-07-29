@@ -221,7 +221,7 @@ export default function WellsScore({ lang }: { lang: LangCode }) {
       {/* Ambient 2026 Page Lighting */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-cyan-500/10 via-teal-500/5 to-purple-500/10 blur-3xl -z-10 pointer-events-none rounded-full" />
 
-      <div className="max-w-3xl mb-12 relative">
+      <div className="w-full max-w-full max-w-3xl mb-12 relative">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <h1 className={`text-4xl md:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-gray-900 via-gray-800 to-cyan-950 bg-clip-text text-transparent mb-3 ${isRtl ? 'leading-normal' : ''}`}>
             {currentText.title}
@@ -444,7 +444,7 @@ export default function WellsScore({ lang }: { lang: LangCode }) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Dynamic Management Pathway */}
           <div className="flex items-start gap-4 md:col-span-3 bg-cyan-50/40 border border-cyan-100 rounded-2xl p-5 shadow-sm">
-            <div className="p-2.5 bg-cyan-50 text-cyan-600 rounded-lg shrink-0">
+            <div className="p-3 min-h-[44px] min-w-[44px].5 bg-cyan-50 text-cyan-600 rounded-lg shrink-0">
               <Info className="w-5 h-5" />
             </div>
             <div>
@@ -455,7 +455,7 @@ export default function WellsScore({ lang }: { lang: LangCode }) {
 
           {/* Formula */}
           <div className="flex items-start gap-4">
-            <div className="p-2.5 bg-purple-50 text-purple-600 rounded-lg shrink-0">
+            <div className="p-3 min-h-[44px] min-w-[44px].5 bg-purple-50 text-purple-600 rounded-lg shrink-0">
               <Activity className="w-5 h-5" />
             </div>
             <div className="w-full">
@@ -468,7 +468,7 @@ export default function WellsScore({ lang }: { lang: LangCode }) {
 
           {/* Evidence */}
           <div className="flex items-start gap-4">
-            <div className="p-2.5 bg-emerald-50 text-emerald-600 rounded-lg shrink-0">
+            <div className="p-3 min-h-[44px] min-w-[44px].5 bg-emerald-50 text-emerald-600 rounded-lg shrink-0">
               <BookOpen className="w-5 h-5" />
             </div>
             <div>
@@ -488,7 +488,7 @@ export default function WellsScore({ lang }: { lang: LangCode }) {
 
           {/* Critical Actions */}
           <div className="flex items-start gap-4">
-            <div className="p-2.5 bg-red-50 text-red-600 rounded-lg shrink-0">
+            <div className="p-3 min-h-[44px] min-w-[44px].5 bg-red-50 text-red-600 rounded-lg shrink-0">
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
               </svg>

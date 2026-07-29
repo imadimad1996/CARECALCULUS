@@ -98,7 +98,7 @@ export default function PesiScore({ lang }: { lang: LangCode }) {
   return (
     <CalculatorShell logicalPath="/pesi-score" lang={lang}>
       <JsonLd path="/pesi-score" title="Clinical Decision Support — CareCalculus" description="Evidence-based medical decision support calculator." type="SoftwareApplication" />
-      <div className="max-w-3xl relative">
+      <div className="w-full max-w-full max-w-3xl relative">
         <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3 mb-3">
           <Wind className="w-8 h-8 text-sky-500" />
           {dict.title}
@@ -110,7 +110,7 @@ export default function PesiScore({ lang }: { lang: LangCode }) {
         <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4">
           <div>
             <label className="block text-sm font-bold text-slate-700 mb-2">{dict.age}</label>
-            <input type="number" value={age} onChange={(e) => setAge(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10 rounded-2xl text-lg font-semibold transition" placeholder="e.g. 65" />
+            <input type="number" value={age} onChange={(e) => setAge(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10 rounded-2xl text-lg font-semibold transition" placeholder="e.g. 65" />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4">

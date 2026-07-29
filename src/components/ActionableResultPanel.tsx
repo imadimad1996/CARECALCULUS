@@ -128,7 +128,7 @@ export const ActionableResultPanel: React.FC<ActionableResultProps> = ({
               className="w-full text-left p-4 rounded-xl bg-gradient-to-r from-cyan-900/10 to-blue-900/10 border border-cyan-500/30 hover:bg-gradient-to-r hover:from-cyan-900/20 hover:to-blue-900/20 hover:border-cyan-500/50 transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] shadow-sm hover:shadow-md group flex items-center justify-between cursor-pointer"
             >
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-cyan-500/20 text-cyan-700 rounded-lg group-hover:scale-110 transition-transform">
+                <div className="p-3 min-h-[44px] min-w-[44px] bg-cyan-500/20 text-cyan-700 rounded-lg group-hover:scale-110 transition-transform">
                   <Zap className="w-5 h-5" />
                 </div>
                 <div>

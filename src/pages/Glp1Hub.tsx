@@ -180,7 +180,7 @@ export default function Glp1Hub({ lang }: Glp1HubProps) {
               <ArrowLeft className={`w-3.5 h-3.5 ${isRtl ? 'rotate-180' : ''}`} />
               <span>{tLabels.backBtn}</span>
             </Link>
-            <span className="px-3 py-1.5 bg-teal-500/10 border border-teal-500/25 text-teal-300 font-mono text-[10px] font-black uppercase rounded-lg tracking-widest">
+            <span className="px-4 py-2.5 min-h-[44px] bg-teal-500/10 border border-teal-500/25 text-teal-300 font-mono text-[10px] font-black uppercase rounded-lg tracking-widest">
               <Sparkles className="w-3.5 h-3.5 inline mr-1" />
               {tLabels.eeatBadge}
             </span>
@@ -237,7 +237,7 @@ export default function Glp1Hub({ lang }: Glp1HubProps) {
               style={{ minHeight: '64px' }}
             >
               <div className="flex items-center gap-3">
-                <div className="p-2.5 bg-emerald-50 rounded-xl text-emerald-600">
+                <div className="p-3 min-h-[44px] min-w-[44px].5 bg-emerald-50 rounded-xl text-emerald-600">
                   <Activity className="w-5 h-5" />
                 </div>
                 <div>
@@ -254,7 +254,7 @@ export default function Glp1Hub({ lang }: Glp1HubProps) {
               style={{ minHeight: '64px' }}
             >
               <div className="flex items-center gap-3">
-                <div className="p-2.5 bg-blue-50 rounded-xl text-blue-600">
+                <div className="p-3 min-h-[44px] min-w-[44px].5 bg-blue-50 rounded-xl text-blue-600">
                   <HeartPulse className="w-5 h-5" />
                 </div>
                 <div>
@@ -271,7 +271,7 @@ export default function Glp1Hub({ lang }: Glp1HubProps) {
               style={{ minHeight: '64px' }}
             >
               <div className="flex items-center gap-3">
-                <div className="p-2.5 bg-indigo-50 rounded-xl text-indigo-600">
+                <div className="p-3 min-h-[44px] min-w-[44px].5 bg-indigo-50 rounded-xl text-indigo-600">
                   <HeartPulse className="w-5 h-5" />
                 </div>
                 <div>

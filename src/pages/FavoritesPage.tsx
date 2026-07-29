@@ -12,7 +12,7 @@ export default function FavoritesPage({ lang }: { lang: LangCode }) {
   const favoriteItems = navItems.filter(item => favorites.includes(item.path));
 
   return (
-    <div className="max-w-4xl mx-auto py-8 px-4">
+    <div className="w-full max-w-full max-w-4xl mx-auto py-8 px-4">
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8">
         <div className="p-4 bg-amber-50 text-amber-500 rounded-2xl border border-amber-100 shadow-sm">
           <Star className="w-8 h-8 fill-current" />

@@ -16,7 +16,7 @@ export default function AbbreviationLookup({ lang }: { lang: LangCode }) {
   );
 
   return (
-    <div className="max-w-3xl mx-auto py-6 px-4" dir={isRtl ? 'rtl' : 'ltr'}>
+    <div className="w-full max-w-full max-w-3xl mx-auto py-6 px-4" dir={isRtl ? 'rtl' : 'ltr'}>
       <div className="mb-8 text-center sm:text-left">
         <span className="text-[10px] font-mono font-black text-blue-600 uppercase tracking-widest">
           {lang === 'fr' ? 'INDEX CLINIQUE EXPRESS' : isRtl ? 'القاموس الطبي للمصطلحات والاختصارات' : 'CLINICAL REFERENCE DICTIONARY'}

@@ -173,7 +173,7 @@ export const StudyTracker: React.FC<StudyTrackerProps> = ({ lang = 'en' }) => {
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-12 px-4 sm:px-6 lg:px-8" dir={isRtl ? 'rtl' : 'ltr'}>
-      <div className="max-w-7xl mx-auto space-y-8">
+      <div className="w-full max-w-full max-w-7xl mx-auto space-y-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
@@ -285,7 +285,7 @@ export const StudyTracker: React.FC<StudyTrackerProps> = ({ lang = 'en' }) => {
                     </div>
                     <button
                       onClick={() => handleDelete(log.id)}
-                      className="p-2 text-slate-400 hover:text-red-600 dark:hover:text-red-400 transition-colors rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20"
+                      className="p-3 min-h-[44px] min-w-[44px] text-slate-400 hover:text-red-600 dark:hover:text-red-400 transition-colors rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20"
                     >
                       <Trash2 className="w-4 h-4" />
                     </button>
@@ -368,7 +368,7 @@ export const StudyTracker: React.FC<StudyTrackerProps> = ({ lang = 'en' }) => {
                 <button
                   type="button"
                   onClick={() => setShowModal(false)}
-                  className="px-4 py-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-medium"
+                  className="px-4 py-3 min-h-[44px] text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-medium"
                 >
                   {t.cancelBtn}
                 </button>

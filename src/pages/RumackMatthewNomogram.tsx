@@ -66,7 +66,7 @@ export default function RumackMatthewNomogram({ lang }: { lang: LangCode }) {
   const ehrSummary = `Rumack-Matthew Paracetamol Toxicity: ${hours}h post-ingestion, APAP level ${conc} ${unit} (${concMcg} mcg/mL vs threshold ${thresholdMcg} mcg/mL) -> ${isAboveLine ? 'ABOVE TREATMENT LINE - INITIATE NAC' : 'Below treatment line'}`;
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8 pb-12">
+    <div className="w-full max-w-full max-w-4xl mx-auto space-y-8 pb-12">
       <SEO logicalPath="/rumack-matthew-nomogram" lang={lang} />
       <JsonLd data={{
         "@context": "https://schema.org",
