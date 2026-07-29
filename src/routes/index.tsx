@@ -31,10 +31,6 @@ const pageLoaders = [
   () => import('../pages/SteroidConversion'),
   () => import('../pages/MedicalBlog'),
   () => import('../pages/Blog'),
-  () => import('../pages/PdfSplitter'),
-  () => import('../pages/PdfMerger'),
-  () => import('../pages/Presentations'),
-  () => import('../pages/Courses'),
   () => import('../pages/About'),
   () => import('../pages/Disclaimer'),
   () => import('../pages/Privacy'),
@@ -273,8 +269,6 @@ export const navItems = [
   { path: '/glp-1-hub', nameEn: 'GLP-1 Hub', nameFr: 'Hub GLP-1', nameAr: 'مركز أدوية GLP-1', icon: Sparkles, tier: 4, group: 'reading' as const },
   { path: '/blog', nameEn: 'Medical Journals', nameFr: 'Journaux Médicaux', nameAr: 'المجلات الطبية', icon: BookOpen, tier: 4, group: 'reading' as const },
   { path: '/blog-articles', nameEn: 'Blog', nameFr: 'Blog', nameAr: 'المدونة', icon: Newspaper, tier: 4, group: 'reading' as const },
-  { path: '/presentations', nameEn: 'Presentations', nameFr: 'Présentations', nameAr: 'العروض التقديمية', icon: MonitorPlay, tier: 4, group: 'learning' as const },
-  { path: '/cours', nameEn: 'Courses (PDF)', nameFr: 'Cours (PDF)', nameAr: 'المحاضرات والدروس', icon: GraduationCap, tier: 4, group: 'learning' as const },
   { path: '/fmp-medecine', nameEn: 'Faculty of Medicine', nameFr: 'Faculté de Médecine', nameAr: 'كلية الطب والصيدلة', icon: GraduationCap, tier: 4, group: 'learning' as const },
   { path: '/ispits', nameEn: 'ISPITS Paramedical', nameFr: 'ISPITS Paramédical', nameAr: 'مناهج معاهد التمريض (ISPITS)', icon: GraduationCap, tier: 4, group: 'learning' as const },
   { path: '/study-tracker', nameEn: 'Study Progress Tracker', nameFr: 'Suivi d\'Études', nameAr: 'متابع التقدم الدراسي', icon: Award, tier: 4, group: 'learning' as const },
@@ -283,10 +277,6 @@ export const navItems = [
   { path: '/drug-sheets', nameEn: 'ICU Drug Reference', nameFr: 'Fiches Médicaments', nameAr: 'جرعات أدوية العناية', icon: Droplet, tier: 4, group: 'learning' as const },
   { path: '/abbreviation-lookup', nameEn: 'Medical Abbreviations', nameFr: 'Abréviations Médicales', nameAr: 'قاموس الاختصارات الطبية', icon: FileText, tier: 4, group: 'learning' as const },
   { path: '/nutrition-hub', nameEn: 'Nutrition Hub', nameFr: 'Hub Nutrition', nameAr: 'تغذية', icon: BookOpen, tier: 4, group: 'reading' as const },
-
-  // Tier 5 — Utilities
-  { path: '/pdf-splitter', nameEn: 'PDF Splitter', nameFr: 'Découpeur PDF', nameAr: 'تقسيم ملفات PDF', icon: Scissors, tier: 5 },
-  { path: '/pdf-merger', nameEn: 'PDF Merger', nameFr: 'Fusionneur PDF', nameAr: 'دمج ملفات PDF', icon: Layers, tier: 5 },
 ];
 
 export const TIER_HEADERS: Record<number, Record<LangCode, string>> = {
@@ -301,10 +291,6 @@ export const TIER_HEADERS: Record<number, Record<LangCode, string>> = {
   3: {
     en: 'Therapeutic & Dosing Metrics',
     fr: 'Métriques, Perfusions & Doses'
-  },
-  5: {
-    en: 'Medical Utilities',
-    fr: 'Utilitaires Médicaux'
   }
 };
 
@@ -375,16 +361,10 @@ export function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="saps-ii-score" element={wrapCalculator('/saps-ii-score', <SapsIIScore lang={lang} />)} />
       <Route path="drug-interactions" element={wrapCalculator('/drug-interactions', <DrugInteractions lang={lang} />)} />
       <Route path="medical-statistics" element={wrapCalculator('/medical-statistics', <MedicalStatistics lang={lang} />)} />
-      <Route path="pdf-splitter" element={<PdfSplitter lang={lang} />} />
-      <Route path="pdf-merger" element={<PdfMerger lang={lang} />} />
       <Route path="blog" element={<MedicalBlog lang={lang} />} />
       <Route path="blog/:slug" element={<MedicalBlog lang={lang} />} />
       <Route path="blog-articles" element={<Blog lang={lang} />} />
       <Route path="blog-articles/:slug" element={<Blog lang={lang} />} />
-      <Route path="presentations" element={<Presentations lang={lang} />} />
-      <Route path="presentations/:slug" element={<Presentations lang={lang} />} />
-      <Route path="cours" element={<Courses lang={lang} />} />
-      <Route path="cours/:slug" element={<Courses lang={lang} />} />
       <Route path="fmp-medecine" element={<FmpMedecine lang={lang} />} />
       <Route path="fmp-medecine/:moduleSlug" element={<FmpMedecine lang={lang} />} />
       <Route path="ispits" element={<IspitsAcademic lang={lang} />} />

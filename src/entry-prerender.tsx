@@ -19,8 +19,6 @@ import { slugify } from './utils/slug';
 import { MASTER_JOURNALS, MASTER_BLOGS, MASTER_COURSES, MASTER_PRESENTATIONS } from './utils/masterListContent';
 import { ORIGINAL_CURATED_SEED_POSTS } from './pages/MedicalBlog';
 import { ORIGINAL_BLOG_SEED } from './pages/Blog';
-import { DEFAULT_COURSES } from './pages/Courses';
-import { DEFAULT_SUBJECTS } from './pages/Presentations';
 import { FMP_MODULES } from './utils/fmpModules';
 import { ISPITS_MODULES } from './utils/ispitsModules';
 import { CONDITIONS_DB } from './data/conditions';
@@ -56,15 +54,6 @@ const blogSlugs = [
   ...MASTER_BLOGS.map(mb => ({ id: mb.id, title: mb.title.en }))
 ].map(p => `/blog-articles/${slugify(p.title, p.id)}`);
 
-const courseSlugs = [
-  ...DEFAULT_COURSES,
-  ...MASTER_COURSES.map(mc => ({ id: mc.id, title: mc.title.en }))
-].map(p => `/cours/${slugify(p.title, p.id)}`);
-
-const presentationSlugs = [
-  ...DEFAULT_SUBJECTS,
-  ...MASTER_PRESENTATIONS.map(mp => ({ id: mp.id, title: mp.title.en }))
-].map(p => `/presentations/${slugify(p.title, p.id)}`);
 
 const fmpSlugs = FMP_MODULES.map(m => `/fmp-medecine/${m.slug}`);
 const ispitsSlugs = ISPITS_MODULES.map(m => `/ispits/${m.slug}`);
@@ -162,8 +151,6 @@ const LOGICAL_ROUTES = [
   '/clinical-library/specialties',
   ...journalSlugs,
   ...blogSlugs,
-  ...courseSlugs,
-  ...presentationSlugs,
   ...fmpSlugs,
   ...ispitsSlugs,
   ...conditionSlugs,

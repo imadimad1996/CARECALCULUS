@@ -97,6 +97,8 @@ export default function AaGradient({ lang }: { lang: LangCode }) {
     return parseFloat(computed.toFixed(1));
   }, [pAlveolar, pao2]);
 
+  const gradientIsElevated = aaGradientValue > expectedGradient;
+
   const category = useMemo(() => {
     if (aaGradientValue <= 0) return { label: '', color: '', bg: '', sub: '' };
     if (gradientIsElevated) {

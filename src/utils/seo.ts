@@ -15,8 +15,6 @@ import { slugify } from './slug';
 import { MASTER_BLOGS, MASTER_JOURNALS, MASTER_COURSES, MASTER_PRESENTATIONS } from './masterListContent';
 import { ORIGINAL_CURATED_SEED_POSTS } from '../pages/MedicalBlog';
 import { ORIGINAL_BLOG_SEED } from '../pages/Blog';
-import { DEFAULT_COURSES } from '../pages/Courses';
-import { DEFAULT_SUBJECTS } from '../pages/Presentations';
 import { FMP_MODULES, FMP_MODULE_BY_SLUG } from './fmpModules';
 import { ISPITS_MODULES, ISPITS_MODULE_BY_SLUG } from './ispitsModules';
 
@@ -276,73 +274,6 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
     }
   }
 
-  // 3. Courses (/cours/:slug)
-  if (path.startsWith('/cours/')) {
-    const slug = path.replace(/^\/cours\//, '');
-    const combinedCourses = [
-      ...DEFAULT_COURSES,
-      ...MASTER_COURSES.map(mc => ({
-        id: mc.id,
-        title: mc.title,
-        summary: mc.summary,
-        category: mc.category,
-      }))
-    ];
-    const post = combinedCourses.find(p => {
-      const titleEn = typeof p.title === 'string' ? p.title : p.title.en;
-      return slugify(titleEn, p.id) === slug || p.id.toLowerCase() === slug.toLowerCase();
-    });
-    if (post) {
-      const titleText = typeof post.title === 'string'
-        ? post.title
-        : (lang === 'fr' ? post.title.fr : post.title.en);
-      const snippetText = typeof post.summary === 'string'
-        ? post.summary
-        : (lang === 'fr' ? post.summary.fr : post.summary.en);
-      const categoryText = typeof post.category === 'string'
-        ? post.category
-        : (lang === 'fr' ? post.category : post.category);
-      return {
-        title: `${titleText} | CareCalculus Course`,
-        desc: snippetText,
-        keywords: `${categoryText.toLowerCase()}, medical syllabus, pdf tutorial, clinical course`
-      };
-    }
-  }
-
-  // 4. Presentations (/presentations/:slug)
-  if (path.startsWith('/presentations/')) {
-    const slug = path.replace(/^\/presentations\//, '');
-    const combinedDecks = [
-      ...DEFAULT_SUBJECTS,
-      ...MASTER_PRESENTATIONS.map(mp => ({
-        id: mp.id,
-        title: mp.title,
-        description: mp.description,
-        category: mp.category,
-      }))
-    ];
-    const post = combinedDecks.find(p => {
-      const titleEn = typeof p.title === 'string' ? p.title : p.title.en;
-      return slugify(titleEn, p.id) === slug || p.id.toLowerCase() === slug.toLowerCase();
-    });
-    if (post) {
-      const titleText = typeof post.title === 'string'
-        ? post.title
-        : (lang === 'fr' ? post.title.fr : post.title.en);
-      const snippetText = typeof post.description === 'string'
-        ? post.description
-        : (lang === 'fr' ? post.description.fr : post.description.en);
-      const categoryText = typeof post.category === 'string'
-        ? post.category
-        : (lang === 'fr' ? post.category : post.category);
-      return {
-        title: `${titleText} | CareCalculus Presentation`,
-        desc: snippetText,
-        keywords: `${categoryText.toLowerCase()}, pptx deck, slides, medical study guide`
-      };
-    }
-  }
 
   // 5. FMPC Modules (/fmp-medecine/:slug)
   if (path.startsWith('/fmp-medecine/')) {
