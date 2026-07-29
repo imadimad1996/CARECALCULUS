@@ -14,11 +14,17 @@ export class GlobalErrorBoundary extends React.Component<any, any> {
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     console.error("Uncaught error:", error, errorInfo);
     
-    // Chunk load error recovery - typical in SPAs
-    if (error?.message?.includes('Failed to fetch dynamically imported module') || error?.message?.includes('Loading chunk')) {
-      const hasReloaded = sessionStorage.getItem('cc_chunk_reload');
-      if (!hasReloaded) {
-        sessionStorage.setItem('cc_chunk_reload', 'true');
+    const errStr = error?.toString() || error?.message || '';
+    if (
+      errStr.includes('Failed to fetch dynamically imported module') || 
+      errStr.includes('Loading chunk') ||
+      errStr.includes('MIME type') ||
+      errStr.includes('Importing a module script failed')
+    ) {
+      const lastReload = Number(sessionStorage.getItem('cc_chunk_reload_time') || 0);
+      const now = Date.now();
+      if (now - lastReload > 10000) {
+        sessionStorage.setItem('cc_chunk_reload_time', String(now));
         window.location.reload();
       }
     }

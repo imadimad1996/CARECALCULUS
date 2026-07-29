@@ -13,7 +13,9 @@ export const onRequest: PagesFunction = async (context) => {
       return Response.redirect(targetUrl, 301);
     }
     const response = await context.next();
-    if (response.status === 404) {
+    // Do NOT return HTML fallback for missing JS/CSS/image static assets
+    const isStaticAsset = url.pathname.startsWith('/assets/') || url.pathname.match(/\.(js|css|ico|png|jpg|jpeg|svg|webp|woff|woff2|ttf|eot|json|map|txt|xml)$/i);
+    if (response.status === 404 && !isStaticAsset) {
       const fallbackUrl = new URL('/', context.request.url);
       return context.env.ASSETS.fetch(new Request(fallbackUrl.toString(), context.request as any) as any) as any;
     }
