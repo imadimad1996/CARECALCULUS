@@ -384,15 +384,15 @@ export default function HomePage({ lang }: HomePageProps) {
             <Link
               key={calc.id}
               to={langPath(calc.path)}
-              className="flex items-center justify-between p-4 bg-white rounded-2xl border border-slate-200 hover:border-teal-500 hover:shadow-md transition-all duration-300 group active:scale-[0.99]"
+              className="flex items-center justify-between p-4 bg-white rounded-2xl border border-slate-200 hover:border-teal-400 hover:shadow-[0_8px_30px_rgb(13,148,136,0.1)] hover:-translate-y-0.5 hover:ring-4 hover:ring-teal-50 transition-all duration-300 group active:scale-[0.98]"
             >
               <div className="flex items-center gap-4 min-w-0">
-                <div className="p-2.5 rounded-xl bg-slate-50 text-slate-500 group-hover:bg-teal-50 group-hover:text-teal-600 transition-colors">
+                <div className="p-2.5 rounded-xl bg-slate-50 text-slate-500 group-hover:bg-teal-500 group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-md">
                   <CalcIcon className="w-5 h-5 shrink-0 transition-transform duration-300 group-hover:scale-110" />
                 </div>
-                <span className="text-sm font-black text-slate-800 group-hover:text-teal-700 transition-colors truncate">{label}</span>
+                <span className="text-sm font-black text-slate-800 group-hover:text-teal-900 transition-colors truncate">{label}</span>
               </div>
-              <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-teal-600 group-hover:translate-x-0.5 transition-all" />
+              <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-teal-500 group-hover:translate-x-1 transition-all duration-300" />
             </Link>
           );
         })}
