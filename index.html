@@ -9,7 +9,8 @@
       (function() {
         window.addEventListener('error', function(e) {
           var msg = (e && e.message) ? e.message : '';
-          if (msg.indexOf('MIME type') !== -1 || msg.indexOf('dynamically imported module') !== -1 || msg.indexOf('Importing a module script failed') !== -1) {
+          var isAssetError = e.target && (e.target.tagName === 'SCRIPT' || e.target.tagName === 'LINK');
+          if (isAssetError || msg.indexOf('MIME type') !== -1 || msg.indexOf('dynamically imported module') !== -1 || msg.indexOf('Importing a module script failed') !== -1) {
             var lastFix = Number(sessionStorage.getItem('cc_sw_flush_time') || 0);
             if (Date.now() - lastFix > 5000) {
               sessionStorage.setItem('cc_sw_flush_time', String(Date.now()));
