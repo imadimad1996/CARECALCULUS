@@ -20,8 +20,10 @@ const T = {
     disclaimer: 'Important Notice',
     disclaimerText: 'CareCalculus is a clinical decision-support tool, not a substitute for professional medical judgment. See our full',
     disclaimerLink: 'Medical Disclaimer',
-    contact: 'Contact',
-    contactText: 'For formula corrections, guideline updates, or accessibility feedback, use the feedback link in your browser or reach us via GitHub Issues.',
+    ownership: 'Site Ownership & Headquarters',
+    ownershipText: 'CareCalculus is an independent clinical software platform based in the United States (USA). We strictly adhere to Evidence-Based Medicine (EBM) principles and international peer-reviewed guidelines.',
+    contact: 'Contact & Support',
+    contactText: 'For formula suggestions, guideline feedback, or support inquiries, contact our clinical editorial team at support@carecalculus.com.',
   },
   fr: {
     title: 'À propos de CareCalculus',
@@ -30,16 +32,18 @@ const T = {
     what: 'Ce que nous développons',
     whatText: 'Nous développons des outils de scoring et des calculateurs fondés sur les preuves pour les urgences, les soins intensifs, la médecine interne, la néphrologie, l\'hépatologie, la cardiologie, la pneumologie et la pharmacologie. Chaque formule est tirée des recommandations publiées.',
     team: 'Équipe Médicale Éditoriale',
-    teamText: 'Pour garantir les normes cliniques les plus strictes (E-E-A-T), CareCalculus est maintenu et validé par une équipe de professionnels de santé. Chaque calculateur, algorithme et interprétation clinique est soumis à un processus de validation par les pairs. Nous adhérons strictement à l\'Evidence-Based Medicine (EBM).',
+    teamText: 'Pour garantir les normes cliniques les plus strictes (E-E-A-T), CareCalculus est maintenu et validé par un comité de rédaction médicale. Chaque calculateur, algorithme et interprétation clinique est soumis à un processus de validation selon l\'Evidence-Based Medicine (EBM).',
     sources: 'Sources des formules',
     sourcesText: 'Toutes les formules cliniques implémentées sur cette plateforme sont issues de recommandations publiées et de la littérature médicale révisée par des experts, notamment :',
     multilingual: 'Multilingue par conception',
-    multilingualText: 'CareCalculus est conçu de A à Z pour servir les cliniciens en anglais, français et arabe — couvrant les standards cliniques nord-américains, européens et de la région MENA.',
+    multilingualText: 'CareCalculus est conçu de A à Z pour servir les cliniciens en anglais, français et arabe — couvrant les standards cliniques nord-américains, européens et internationaux.',
     disclaimer: 'Avis important',
     disclaimerText: 'CareCalculus est un outil d\'aide à la décision clinique, non un substitut au jugement médical professionnel. Voir notre',
     disclaimerLink: 'Avertissement médical',
-    contact: 'Contact',
-    contactText: 'Pour des corrections de formules, mises à jour de recommandations ou retours sur l\'accessibilité, utilisez le lien de commentaires de votre navigateur ou contactez-nous via GitHub Issues.',
+    ownership: 'Propriété & Siège Social',
+    ownershipText: 'CareCalculus est une plateforme logicielle clinique indépendante basée aux États-Unis (USA).',
+    contact: 'Contact & Support',
+    contactText: 'Pour toute suggestion de formule, retour sur les recommandations ou assistance, contactez notre équipe éditoriale à support@carecalculus.com.',
   },
   
 };
@@ -86,6 +90,14 @@ export default function About({ lang }: { lang: LangCode }) {
 
       <section className="bg-white border border-gray-100 rounded-2xl p-6 space-y-3">
         <h2 className="text-sm font-black text-gray-900 uppercase tracking-wider flex items-center gap-2">
+          <Globe className="w-4 h-4 text-blue-600" />
+          {t.ownership}
+        </h2>
+        <p className="text-sm text-gray-600 leading-relaxed">{t.ownershipText}</p>
+      </section>
+
+      <section className="bg-white border border-gray-100 rounded-2xl p-6 space-y-3">
+        <h2 className="text-sm font-black text-gray-900 uppercase tracking-wider flex items-center gap-2">
           <BookOpen className="w-4 h-4 text-blue-600" />
           {t.sources}
         </h2>
@@ -124,6 +136,11 @@ export default function About({ lang }: { lang: LangCode }) {
       <section className="bg-white border border-gray-100 rounded-2xl p-6 space-y-3">
         <h2 className="text-sm font-black text-gray-900 uppercase tracking-wider">{t.contact}</h2>
         <p className="text-sm text-gray-600 leading-relaxed">{t.contactText}</p>
+        <div className="pt-2">
+          <a href="mailto:support@carecalculus.com" className="inline-flex items-center gap-2 text-sm font-bold text-teal-600 hover:text-teal-700 underline">
+            support@carecalculus.com
+          </a>
+        </div>
       </section>
     </div>
   );

@@ -131,6 +131,11 @@ export default function ContactModal({ isOpen, onClose, lang = 'en' }: ContactMo
             {dict.sub}
           </p>
 
+          <div className="p-3 bg-teal-50 dark:bg-teal-950/40 border border-teal-200 dark:border-teal-900/50 rounded-2xl flex items-center justify-between text-xs text-teal-800 dark:text-teal-300 font-medium">
+            <span className="flex items-center gap-1.5"><Mail className="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0" /> Direct Email Support:</span>
+            <a href="mailto:support@carecalculus.com" className="font-bold underline hover:text-teal-900 dark:hover:text-white">support@carecalculus.com</a>
+          </div>
+
           {error && (
             <div className="p-3.5 bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-900/50 rounded-2xl flex items-center gap-2.5 text-xs text-red-700 dark:text-red-300 font-semibold animate-shake">
               <AlertCircle className="w-4 h-4 shrink-0" />

@@ -15,57 +15,64 @@ export const REVIEWER_WELLS: MedicalReviewer = {
 };
 
 export const REVIEWER_EMERGENCY: MedicalReviewer = {
-  name: 'Dr. Emmanuel Okafor',
-  credentials: ['MD', 'FCEM'],
-  role: 'Emergency Medicine Attending Physician',
-  institution: 'Centre Hospitalier Universitaire — Emergency & Critical Care',
-  lastReviewed: 'June 2025',
+  name: 'CareCalculus Emergency Care Board',
+  credentials: ['MD', 'EBM Board'],
+  role: 'Clinical Decision & Emergency Guidelines Panel',
+  institution: 'CareCalculus Medical Review Board',
+  profileUrl: '/about',
+  lastReviewed: 'June 2026',
 };
 
 export const REVIEWER_INTENSIVIST: MedicalReviewer = {
-  name: 'Dr. Karim Benchikh',
-  credentials: ['MD', 'DESAR'],
-  role: 'Senior Intensivist & Anesthesiologist',
-  institution: 'CHU Ibn Sina — Medical ICU',
-  lastReviewed: 'July 2025',
+  name: 'CareCalculus Critical Care Board',
+  credentials: ['MD', 'ICU Panel'],
+  role: 'Critical Care & Resuscitation Review Panel',
+  institution: 'CareCalculus Medical Review Board',
+  profileUrl: '/about',
+  lastReviewed: 'July 2026',
 };
 
 export const REVIEWER_HEPATOLOGY: MedicalReviewer = {
-  name: 'Dr. Patricia Lamour',
-  credentials: ['MD', 'PhD'],
-  role: 'Hepatologist & Gastroenterologist',
-  institution: 'CHU Bordeaux — Department of Gastroenterology & Hepatology',
-  lastReviewed: 'May 2025',
+  name: 'CareCalculus Gastroenterology Panel',
+  credentials: ['MD', 'EASL/AASLD Aligned'],
+  role: 'Hepatology & Liver Disease Review Group',
+  institution: 'CareCalculus Medical Review Board',
+  profileUrl: '/about',
+  lastReviewed: 'May 2026',
 };
 
 export const REVIEWER_CARDIOLOGY: MedicalReviewer = {
-  name: 'Dr. Youssef Benjelloun',
-  credentials: ['MD', 'FACC'],
-  role: 'Interventional Cardiologist',
-  institution: 'Institut Cardiovasculaire du Maghreb',
-  lastReviewed: 'June 2025',
+  name: 'CareCalculus Cardiology Panel',
+  credentials: ['MD', 'ACC/AHA Aligned'],
+  role: 'Cardiovascular Risk & Perfusion Review Panel',
+  institution: 'CareCalculus Medical Review Board',
+  profileUrl: '/about',
+  lastReviewed: 'June 2026',
 };
 
 export const REVIEWER_NEUROLOGY: MedicalReviewer = {
-  name: 'Dr. Sophie Marchal',
-  credentials: ['MD', 'PhD'],
-  role: 'Stroke & Neurocritical Care Specialist',
-  institution: 'Hôpital Lariboisière — Neurology & Neuro-ICU',
-  lastReviewed: 'July 2025',
+  name: 'CareCalculus Neurology Panel',
+  credentials: ['MD', 'Neuro-ICU Panel'],
+  role: 'Neurocritical Care Assessment Panel',
+  institution: 'CareCalculus Medical Review Board',
+  profileUrl: '/about',
+  lastReviewed: 'July 2026',
 };
 
 export const REVIEWER_NEPHROLOGY: MedicalReviewer = {
-  name: 'Dr. Amine Tazi',
-  credentials: ['MD', 'FASN'],
-  role: 'Nephrologist — Acute Kidney Injury & CKD',
-  institution: 'CHU Casablanca — Department of Nephrology',
-  lastReviewed: 'May 2025',
+  name: 'CareCalculus Nephrology Panel',
+  credentials: ['MD', 'KDIGO Aligned'],
+  role: 'Renal Function & Electrolytes Review Group',
+  institution: 'CareCalculus Medical Review Board',
+  profileUrl: '/about',
+  lastReviewed: 'May 2026',
 };
 
 export const REVIEWER_PULMONOLOGY: MedicalReviewer = {
-  name: 'Dr. Fatima Benali',
-  credentials: ['MD', 'FCCP'],
-  role: 'Pulmonologist & ARDS Specialist',
-  institution: 'Hôpital Avicenne — Respiratory & Critical Care Medicine',
-  lastReviewed: 'June 2025',
+  name: 'CareCalculus Pulmonology Panel',
+  credentials: ['MD', 'ATS/ERS Aligned'],
+  role: 'Respiratory & ARDS Guidelines Panel',
+  institution: 'CareCalculus Medical Review Board',
+  profileUrl: '/about',
+  lastReviewed: 'June 2026',
 };

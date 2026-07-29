@@ -19,63 +19,46 @@ const T = {
         body: 'We use your browser\'s localStorage exclusively to remember your language preference (carecalculus-lang) and unit standard preference (carecalculus-standard). This data never leaves your device and is not shared with any third party.',
       },
       {
-        heading: 'No Tracking or Analytics',
-        body: 'CareCalculus does not use Google Analytics, Facebook Pixel, or any third-party tracking scripts. We do not build user profiles, track browsing history, or use advertising cookies.',
+        heading: 'Advertising & Third-Party Cookies (Google AdSense)',
+        body: 'CareCalculus uses Google AdSense to serve advertisements on our site. Google and its partner advertising networks may use cookies, web beacons, and similar technologies to collect information and serve ads based on your prior visits to our website or other websites. You may opt out of personalized advertising by visiting Google Ad Settings (https://www.google.com/settings/ads) or www.aboutads.info.',
       },
       {
-        heading: 'Third-Party Services',
-        body: 'We do not embed third-party widgets that collect data. Our only external dependency is the Lucide icon library (CSS/SVG, no tracking). The site is hosted as static files and served via a CDN.',
+        heading: 'No Medical Data Collection',
+        body: 'CareCalculus does not collect, store, or transmit any medical data or clinical notes entered into our calculators. All calculations and clinical tools operate strictly locally inside your web browser for complete patient privacy.',
       },
       {
-        heading: 'Cookies',
-        body: 'We do not use any cookies. Preferences are stored in localStorage only, which is not transmitted with HTTP requests.',
+        heading: 'Local Storage Only',
+        body: 'We use your browser\'s localStorage exclusively to remember your language preference (carecalculus-lang) and unit standard preference (carecalculus-standard). This data never leaves your device.',
       },
       {
         heading: 'GDPR & CCPA Compliance',
-        body: 'Because we collect no personal data, the vast majority of GDPR and CCPA obligations do not apply. There is no data to access, correct, export, or delete. If you wish to clear your language/unit preferences, you can clear localStorage in your browser settings at any time.',
-      },
-      {
-        heading: 'Changes to This Policy',
-        body: 'If we introduce any analytics or data collection in the future, this policy will be updated before those changes take effect and a notice will appear on the site.',
+        body: 'Because we collect no personal health data, patient privacy is preserved by design. If you wish to manage advertising preferences or clear stored language/unit preferences, you may adjust your browser settings or opt out of personalized ads at any time.',
       },
     ],
   },
   fr: {
     title: 'Politique de confidentialité',
-    updated: 'Dernière mise à jour : juin 2026',
-    intro: 'CareCalculus est conçu avec la confidentialité par défaut. Cette page explique quelles données nous collectons (très peu) et comment nous les utilisons.',
+    updated: 'Dernière mise à jour : juillet 2026',
+    intro: 'CareCalculus est conçu avec la confidentialité par défaut. Cette page explique quelles données nous collectons et comment les annonces sont gérées.',
     sections: [
       {
-        heading: 'Aucune donnée personnelle collectée',
-        body: 'CareCalculus ne collecte, ne stocke ni ne transmet aucune information personnelle identifiable (IPI). Nous n\'exigeons pas d\'inscription. Aucune donnée médicale saisie dans nos calculateurs n\'est envoyée à un serveur — tous les calculs sont effectués localement dans votre navigateur.',
+        heading: 'Publicité & Cookies Tiers (Google AdSense)',
+        body: 'CareCalculus utilise Google AdSense pour diffuser des annonces. Google et ses réseaux partenaires peuvent utiliser des cookies et des balises web pour collecter des informations et diffuser des annonces basées sur vos visites antérieures. Vous pouvez désactiver la publicité personnalisée dans les paramètres des annonces Google (https://www.google.com/settings/ads).',
+      },
+      {
+        heading: 'Aucune collecte de données médicales',
+        body: 'CareCalculus ne collecte, ne stocke ni ne transmet aucune donnée médicale ou note clinique saisie dans nos outils. Tous les calculs sont effectués strictement localement dans votre navigateur pour une confidentialité totale des patients.',
       },
       {
         heading: 'Stockage local uniquement',
-        body: 'Nous utilisons uniquement le localStorage de votre navigateur pour mémoriser votre préférence de langue (carecalculus-lang) et votre préférence d\'unité (carecalculus-standard). Ces données ne quittent jamais votre appareil.',
-      },
-      {
-        heading: 'Aucun suivi ni analyse',
-        body: 'CareCalculus n\'utilise pas Google Analytics, Facebook Pixel ni aucun script de suivi tiers. Nous ne construisons pas de profils d\'utilisateurs, ne suivons pas l\'historique de navigation et n\'utilisons pas de cookies publicitaires.',
-      },
-      {
-        heading: 'Services tiers',
-        body: 'Nous n\'intégrons pas de widgets tiers qui collectent des données. Notre seule dépendance externe est la bibliothèque d\'icônes Lucide (CSS/SVG, sans suivi).',
-      },
-      {
-        heading: 'Cookies',
-        body: 'Nous n\'utilisons aucun cookie. Les préférences sont stockées uniquement dans le localStorage, qui n\'est pas transmis avec les requêtes HTTP.',
+        body: 'Nous utilisons le localStorage de votre navigateur uniquement pour mémoriser vos préférences de langue (carecalculus-lang) et d\'unités (carecalculus-standard). Ces données ne quittent jamais votre appareil.',
       },
       {
         heading: 'Conformité RGPD & CCPA',
-        body: 'Comme nous ne collectons aucune donnée personnelle, la grande majorité des obligations RGPD et CCPA ne s\'appliquent pas. Si vous souhaitez effacer vos préférences, vous pouvez vider le localStorage dans les paramètres de votre navigateur.',
-      },
-      {
-        heading: 'Modifications de cette politique',
-        body: 'Si nous introduisons des analyses ou une collecte de données à l\'avenir, cette politique sera mise à jour avant l\'entrée en vigueur de ces changements.',
+        body: 'Parce que nous ne collectons aucune donnée de santé personnelle, la confidentialité est préservée par conception. Vous pouvez gérer vos préférences publicitaires ou effacer le localStorage à tout moment via les paramètres de votre navigateur.',
       },
     ],
   },
-  
 };
 
 export default function Privacy({ lang }: { lang: LangCode }) {

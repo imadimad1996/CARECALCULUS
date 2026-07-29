@@ -80,7 +80,7 @@ export const MASTER_BLOGS: MasterBlog[] = [
     category: 'Clinical Tips',
     readTime: 4,
     date: '2026-06-12',
-    author: 'Prof. Alice Vance, MD, Ph.D.'
+    author: 'CareCalculus Editorial Team'
   },
   {
     id: 'mb-2',
@@ -95,7 +95,7 @@ export const MASTER_BLOGS: MasterBlog[] = [
     category: 'Clinical Tips',
     readTime: 5,
     date: '2026-06-10',
-    author: 'Dr. Jean-Pierre Dupont, MD'
+    author: 'CareCalculus Editorial Team'
   },
   {
     id: 'mb-3',
@@ -110,7 +110,7 @@ export const MASTER_BLOGS: MasterBlog[] = [
     category: 'News & Updates',
     readTime: 5,
     date: '2026-06-08',
-    author: 'Dr. Al-Faruqi, MD'
+    author: 'CareCalculus Editorial Team'
   },
   {
     id: 'mb-4',
@@ -125,7 +125,7 @@ export const MASTER_BLOGS: MasterBlog[] = [
     category: 'Practice',
     readTime: 4,
     date: '2026-06-06',
-    author: 'Prof. Alice Vance, MD, Ph.D.'
+    author: 'CareCalculus Editorial Team'
   },
   {
     id: 'mb-5',
@@ -320,7 +320,7 @@ export const MASTER_BLOGS: MasterBlog[] = [
     category: 'Clinical Tips',
     readTime: 3,
     date: '2026-05-11',
-    author: 'Dr. Marcus Thorne, Ph.D.'
+    author: 'CareCalculus Editorial Team'
   },
   {
     id: 'mb-18',
@@ -335,7 +335,7 @@ export const MASTER_BLOGS: MasterBlog[] = [
     category: 'Clinical Tips',
     readTime: 4,
     date: '2026-05-09',
-    author: 'Prof. Alice Vance, MD, Ph.D.'
+    author: 'CareCalculus Editorial Team'
   },
   {
     id: 'mb-19',
@@ -530,7 +530,7 @@ export const MASTER_BLOGS: MasterBlog[] = [
     category: 'Clinical Tips',
     readTime: 5,
     date: '2026-06-14',
-    author: 'Dr. Jean-Pierre Dupont, MD'
+    author: 'CareCalculus Editorial Team'
   },
   {
     id: 'mb-32',
@@ -545,7 +545,7 @@ export const MASTER_BLOGS: MasterBlog[] = [
     category: 'Clinical Tips',
     readTime: 6,
     date: '2026-06-13',
-    author: 'Dr. Marcus Thorne, Ph.D.'
+    author: 'CareCalculus Editorial Team'
   },
   {
     id: 'mb-33',
@@ -575,7 +575,7 @@ export const MASTER_BLOGS: MasterBlog[] = [
     category: 'Clinical Tips',
     readTime: 5,
     date: '2026-06-09',
-    author: 'Prof. Alice Vance, MD, Ph.D.'
+    author: 'CareCalculus Editorial Team'
   },
   {
     id: 'mb-35',
@@ -605,7 +605,7 @@ export const MASTER_BLOGS: MasterBlog[] = [
     category: 'Clinical Tips',
     readTime: 5,
     date: '2026-06-25',
-    author: 'Dr. Jean-Pierre Dupont, MD'
+    author: 'CareCalculus Editorial Team'
   }
 ];
 
@@ -626,7 +626,7 @@ export const MASTER_JOURNALS: MasterJournal[] = [
     date: '2024-05-15',
     author: 'ESPEN Working Group',
     reviewer: 'Clinical Nutrition Journal',
-    doi: '10.1016/j.clnu.2024.04.008',
+    doi: '',
     citationCount: 45,
     clinicalImpact: {
       en: 'Provides essential protocols to optimize quality of life and nutritional status in dementia patients.',
@@ -648,7 +648,7 @@ export const MASTER_JOURNALS: MasterJournal[] = [
     date: '2024-08-20',
     author: 'Alice Sabatino et al.',
     reviewer: 'Clinical Nutrition Journal',
-    doi: '10.1016/j.clnu.2024.08.002',
+    doi: '',
     citationCount: 112,
     clinicalImpact: {
       en: 'Standardizes nutritional interventions tailored to patients undergoing KRT and conservative kidney management.',
@@ -670,7 +670,7 @@ export const MASTER_JOURNALS: MasterJournal[] = [
     date: '2024-02-10',
     author: 'ESPEN Guidelines Committee',
     reviewer: 'Clinical Nutrition Journal',
-    doi: '10.1016/j.clnu.2023.12.024',
+    doi: '',
     citationCount: 89,
     clinicalImpact: {
       en: 'Updates the timing of enteral feeding and management of exocrine pancreatic insufficiency.',
@@ -692,7 +692,7 @@ export const MASTER_JOURNALS: MasterJournal[] = [
     date: '2026-06-11',
     author: 'Prof. Alice Vance, MD, Ph.D.',
     reviewer: 'Dr. Jean-Pierre Dupont, MD',
-    doi: '10.1002/obs.2026.11',
+    doi: '',
     citationCount: 88,
     clinicalImpact: {
       en: 'GLP-1 receptor agonists showed a mean weight reduction of 14.9% over 52 weeks and a 20% reduction in major adverse cardiovascular events (MACE).',
@@ -714,7 +714,7 @@ export const MASTER_JOURNALS: MasterJournal[] = [
     date: '2026-06-07',
     author: 'Dr. Marcus Thorne, Ph.D.',
     reviewer: 'Prof. Alice Vance, MD',
-    doi: '10.1016/ai.cds.2026.04',
+    doi: '',
     citationCount: 65,
     clinicalImpact: {
       en: 'Generative clinical drafting tools reduced physician administrative burden by 2.1 hours per shift while clinical decision validation frameworks mitigated diagnostic error rates by 12%.',
@@ -736,7 +736,7 @@ export const MASTER_JOURNALS: MasterJournal[] = [
     date: '2026-06-03',
     author: 'CareCalculus Engineering',
     reviewer: 'Dr. Marcus Thorne, Ph.D.',
-    doi: '10.1002/mrmi.2026.12',
+    doi: '',
     citationCount: 104,
     clinicalImpact: {
       en: 'CNN algorithms achieved 96.2% sensitivity for intracranial hemorrhage detection on emergency head CT scans.',
@@ -758,7 +758,7 @@ export const MASTER_JOURNALS: MasterJournal[] = [
     date: '2026-05-28',
     author: 'Dr. Rachel Goldstein, MD',
     reviewer: 'Dr. Jean-Pierre Dupont, MD',
-    doi: '10.1016/j.dhealth.2026.02',
+    doi: '',
     citationCount: 41,
     clinicalImpact: {
       en: 'Active app reminders improved medication compliance in hypertensive cohorts by 22.4%.',
@@ -780,7 +780,7 @@ export const MASTER_JOURNALS: MasterJournal[] = [
     date: '2026-05-24',
     author: 'Prof. Alice Vance, MD, Ph.D.',
     reviewer: 'Dr. Al-Faruqi, MD',
-    doi: '10.1002/jnut.2026.05',
+    doi: '',
     citationCount: 33,
     clinicalImpact: {
       en: 'Tailored meal interventions achieved a mean HbA1c reduction of 0.8% in poorly controlled type 2 diabetes.',
@@ -802,7 +802,7 @@ export const MASTER_JOURNALS: MasterJournal[] = [
     date: '2026-05-20',
     author: 'Dr. Marcus Thorne, Ph.D.',
     reviewer: 'Dr. Al-Faruqi, MD',
-    doi: '10.1016/j.jcard.2026.03',
+    doi: '',
     citationCount: 57,
     clinicalImpact: {
       en: 'Continuous glucose monitor deployment reduced severe hypoglycemic events by 40.8% in type 1 diabetics.',
@@ -824,7 +824,7 @@ export const MASTER_JOURNALS: MasterJournal[] = [
     date: '2026-05-16',
     author: 'Prof. Alice Vance, MD, Ph.D.',
     reviewer: 'Dr. Jean-Pierre Dupont, MD',
-    doi: '10.1002/onc.2026.08',
+    doi: '',
     citationCount: 79,
     clinicalImpact: {
       en: 'Genomically matched targeted therapy improved progression-free survival by 3.8 months in refractory carcinomas.',
@@ -846,7 +846,7 @@ export const MASTER_JOURNALS: MasterJournal[] = [
     date: '2026-05-12',
     author: 'Dr. Al-Faruqi, MD',
     reviewer: 'Dr. Jean-Pierre Dupont, MD',
-    doi: '10.1016/j.stroke.2026.02',
+    doi: '',
     citationCount: 92,
     clinicalImpact: {
       en: 'Thrombectomy extension to 24 hours in selected anterior circulation strokes improved functional independence.',
@@ -868,7 +868,7 @@ export const MASTER_JOURNALS: MasterJournal[] = [
     date: '2026-05-08',
     author: 'Prof. Alice Vance, MD, Ph.D.',
     reviewer: 'Dr. Al-Faruqi, MD',
-    doi: '10.1002/diab.2026.04',
+    doi: '',
     citationCount: 46,
     clinicalImpact: {
       en: 'Weekly insulin icodec demonstrated equivalent glycemic control and non-inferiority compared to daily glargine.',
@@ -890,7 +890,7 @@ export const MASTER_JOURNALS: MasterJournal[] = [
     date: '2026-05-04',
     author: 'Dr. Jean-Pierre Dupont, MD',
     reviewer: 'Dr. Al-Faruqi, MD',
-    doi: '10.1016/j.hyper.2026.01',
+    doi: '',
     citationCount: 51,
     clinicalImpact: {
       en: 'Each 1000mg decrease in daily sodium intake correlated with a 3.4 mmHg drop in systolic arterial pressure.',
@@ -912,7 +912,7 @@ export const MASTER_JOURNALS: MasterJournal[] = [
     date: '2026-04-30',
     author: 'Dr. Rachel Goldstein, MD',
     reviewer: 'Prof. Alice Vance, MD',
-    doi: '10.1002/gbi.2026.03',
+    doi: '',
     citationCount: 61,
     clinicalImpact: {
       en: 'Fecal microbiota transplants resolved recurrent C. difficile infections in 89.2% of refractory cohorts.',
@@ -934,7 +934,7 @@ export const MASTER_JOURNALS: MasterJournal[] = [
     date: '2026-04-26',
     author: 'CareCalculus Engineering',
     reviewer: 'Dr. Jean-Pierre Dupont, MD',
-    doi: '10.1016/j.hcres.2026.01',
+    doi: '',
     citationCount: 38,
     clinicalImpact: {
       en: 'Integrated home monitoring reduced chronic obstructive pulmonary disease ER visits by 35.6%.',
@@ -956,7 +956,7 @@ export const MASTER_JOURNALS: MasterJournal[] = [
     date: '2026-04-22',
     author: 'Dr. Marcus Thorne, Ph.D.',
     reviewer: 'CareCalculus Engineering',
-    doi: '10.1002/genai.2026.01',
+    doi: '',
     citationCount: 49,
     clinicalImpact: {
       en: 'AI-assisted clinical charting reduced administrative documentation time by 2.1 hours per physician-shift.',
@@ -978,7 +978,7 @@ export const MASTER_JOURNALS: MasterJournal[] = [
     date: '2026-04-18',
     author: 'Dr. Jean-Pierre Dupont, MD',
     reviewer: 'Dr. Marcus Thorne, Ph.D.',
-    doi: '10.1016/j.ethics.2026.01',
+    doi: '',
     citationCount: 42,
     clinicalImpact: {
       en: 'Bias mitigation algorithms decreased clinical prediction inequalities in ethnic cohort risk screening.',
@@ -1000,7 +1000,7 @@ export const MASTER_JOURNALS: MasterJournal[] = [
     date: '2026-04-14',
     author: 'CareCalculus Engineering',
     reviewer: 'Dr. Rachel Goldstein, MD',
-    doi: '10.1002/hinf.2026.02',
+    doi: '',
     citationCount: 71,
     clinicalImpact: {
       en: 'Multi-center registry analysis identified rare drug-drug adverse interactions 14 months faster than normal reporting.',
@@ -1022,7 +1022,7 @@ export const MASTER_JOURNALS: MasterJournal[] = [
     date: '2026-04-10',
     author: 'Prof. Alice Vance, MD, Ph.D.',
     reviewer: 'Dr. Marcus Thorne, Ph.D.',
-    doi: '10.1016/j.canbio.2026.02',
+    doi: '',
     citationCount: 83,
     clinicalImpact: {
       en: 'AI models identified 4 novel peptide targets for glioblastoma peptide-vaccine customization.',
@@ -1044,7 +1044,7 @@ export const MASTER_JOURNALS: MasterJournal[] = [
     date: '2026-04-06',
     author: 'Dr. Rachel Goldstein, MD',
     reviewer: 'Dr. Jean-Pierre Dupont, MD',
-    doi: '10.1002/tele.2026.01',
+    doi: '',
     citationCount: 50,
     clinicalImpact: {
       en: 'Longitudinal outpatient stability in telemedicine groups was non-inferior to traditional clinic visits.',
@@ -1066,7 +1066,7 @@ export const MASTER_JOURNALS: MasterJournal[] = [
     date: '2026-04-02',
     author: 'Prof. Alice Vance, MD, Ph.D.',
     reviewer: 'Dr. Marcus Thorne, Ph.D.',
-    doi: '10.1016/j.long.2026.01',
+    doi: '',
     citationCount: 66,
     clinicalImpact: {
       en: 'NAD+ precursor supplementation improved metabolic insulin sensitivity markers in geriatric cohorts by 15.6% while concurrent GLP-1 therapy preserved cardiovascular reserves.',
@@ -1088,7 +1088,7 @@ export const MASTER_JOURNALS: MasterJournal[] = [
     date: '2026-03-29',
     author: 'Dr. Marcus Thorne, Ph.D.',
     reviewer: 'Dr. Al-Faruqi, MD',
-    doi: '10.1002/sleep.2026.03',
+    doi: '',
     citationCount: 44,
     clinicalImpact: {
       en: 'Treating obstructive sleep apnea with CPAP reduced mean 24-hour ambulatory systolic pressures by 4.2 mmHg.',
@@ -1110,7 +1110,7 @@ export const MASTER_JOURNALS: MasterJournal[] = [
     date: '2026-03-25',
     author: 'Dr. Rachel Goldstein, MD',
     reviewer: 'Prof. Alice Vance, MD',
-    doi: '10.1016/j.nutprev.2026.01',
+    doi: '',
     citationCount: 52,
     clinicalImpact: {
       en: 'Strict adherence to Mediterranean-style dietary scores correlated with a 24% reduction in cardiovascular death.',

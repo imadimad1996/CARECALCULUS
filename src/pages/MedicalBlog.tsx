@@ -50,12 +50,12 @@ The global perfusion of key organs (brain, kidneys, heart) relies on perfusion p
 
 ### Conclusions and Clinical Impact
 Clinicians should avoid rigid adherence to generic 65 mmHg targets in populations with chronic vascular remodeling. Periodic assessments of urine output, skin perfusion (Mottling score), and serial lactate clearance are mandatory to evaluate if the current perfusion pressure is physiologically adequate.`,
-    author: 'Prof. Alice Vance, MD, Ph.D. (Stanford Health)',
-    reviewer: 'Dr. Jean-Pierre Dupont, MD (Paris-Sud)',
+    author: 'CareCalculus Editorial Team',
+    reviewer: 'CareCalculus Critical Care Panel',
     category: 'Critical Care',
     readTime: '6 min read',
     date: '2026-05-18',
-    doi: '10.1016/j.jacc.2026.04.012',
+    doi: '',
     citationCount: 42,
     clinicalImpact: 'Personalized MAP targets reduce renal replacement therapy needs in hypertensive cohorts by 18.4%.',
     relevance: 'Directly linked to MAP Calculator.'
@@ -80,12 +80,12 @@ In toxic-metabolic encephalopathies:
 * Avoid assigning GCS scores based on flaccidity resulting from neuromuscular blockade or excessive sedation.
 * Serial tracking of the GCS components independently (E, V, M) offers significantly higher clinical resolution than reporting a monolithic total number.
 * For GCS ≤ 8, securing the airway is strongly recommended, but drug-induced reversible toxidromes (e.g., opioid toxidrome responding to naloxone) warrant brief observation if respiratory parameters permit.`,
-    author: 'Dr. Marcus Thorne, Ph.D. (Vanderbilt Neurology)',
-    reviewer: 'Prof. Alice Vance, MD (Stanford)',
+    author: 'CareCalculus Editorial Team',
+    reviewer: 'CareCalculus Neurology Panel',
     category: 'Neurology',
     readTime: '8 min read',
     date: '2026-04-22',
-    doi: '10.1212/wnl.00000000000213',
+    doi: '',
     citationCount: 29,
     clinicalImpact: 'Serial tracking reduces premature intubations in drug overdose scenarios by 14.5%.',
     relevance: 'Directly linked to GCS Calculator.'
@@ -111,12 +111,12 @@ Rapid identification of sepsis in the Emergency Department (ED) remains a diagno
 
 ### Algorithmic Triage Strategy
 Effective healthcare environments should utilize **SIRS** to ensure early evaluation of systemic inflammation, and then execute **qSOFA** calculations immediately to triage patients with validated high risk of clinical deterioration.`,
-    author: 'Dr. Jean-Pierre Dupont, MD (Paris-Sud)',
-    reviewer: 'Dr. Al-Faruqi, MD (Casablanca Cardiology)',
+    author: 'CareCalculus Editorial Team',
+    reviewer: 'CareCalculus Emergency Care Board',
     category: 'Critical Care',
     readTime: '5 min read',
     date: '2026-03-10',
-    doi: '10.1164/rccm.202511-0987OC',
+    doi: '',
     citationCount: 68,
     clinicalImpact: 'Algorithmic dual screening decreased time-to-antibiotics in occult sepsis by 43 minutes.',
     relevance: 'Directly linked to qSOFA and SIRS Criteria.'
@@ -223,9 +223,9 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
   };
 
   // Copy Citation link
-  const copyCitation = (id: string, doi: string, e: React.MouseEvent) => {
+  const copyCitation = (id: string, e: React.MouseEvent) => {
     e.stopPropagation();
-    navigator.clipboard.writeText(`https://doi.org/${doi}`);
+    navigator.clipboard.writeText(window.location.href);
     setCopiedId(id);
     setTimeout(() => setCopiedId(null), 2500);
   };
@@ -461,7 +461,7 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
               </button>
 
               <button
-                onClick={(e) => copyCitation(activePost.id, activePost.doi, e)}
+                onClick={(e) => copyCitation(activePost.id, e)}
                 className="px-3 py-2 bg-white hover:bg-gray-50 border border-gray-200 text-slate-600 hover:text-slate-900 rounded-xl text-xs font-bold transition flex items-center gap-1.5"
                 style={{ minHeight: '38px' }}
               >
@@ -680,12 +680,14 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
 
             {/* DOI Index, Citations, print and date */}
             <div className="pt-6 border-t border-gray-150 flex flex-wrap items-center justify-between gap-4 text-xs">
-              <div className="flex items-center gap-3">
-                <span className="text-gray-400 font-mono text-[9px] uppercase tracking-widest font-black">MEDLINE INDEX:</span>
-                <span className="font-mono text-gray-500 font-bold bg-gray-50 px-2 py-1 rounded-md border border-gray-200">
-                  doi:{activePost.doi}
-                </span>
-              </div>
+              {activePost.doi && (
+                <div className="flex items-center gap-3">
+                  <span className="text-gray-400 font-mono text-[9px] uppercase tracking-widest font-black">MEDLINE INDEX:</span>
+                  <span className="font-mono text-gray-500 font-bold bg-gray-50 px-2 py-1 rounded-md border border-gray-200">
+                    doi:{activePost.doi}
+                  </span>
+                </div>
+              )}
               <div className="flex items-center gap-2">
                 <span className="font-mono text-[10px] text-blue-600 bg-blue-50 px-2 py-0.5 rounded-md font-bold">
                   {activePost.citationCount} Citations
@@ -776,7 +778,7 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
                         <h5 className="text-[11px] font-extrabold text-slate-800 group-hover:text-blue-600 leading-snug line-clamp-2">
                           {rTitle}
                         </h5>
-                        <span className="text-[9px] font-mono text-gray-400 block">{relPost.readTime} • {relPost.doi}</span>
+                        <span className="text-[9px] font-mono text-gray-400 block">{relPost.readTime}{relPost.doi ? ` • ${relPost.doi}` : ''}</span>
                       </div>
                     );
                   })}
@@ -993,7 +995,7 @@ export default function MedicalBlog({ lang }: MedicalBlogProps) {
                     </button>
                     <button
                       id={`share-btn-${post.id}`}
-                      onClick={(e) => copyCitation(post.id, post.doi, e)}
+                      onClick={(e) => copyCitation(post.id, e)}
                       className="p-2 bg-white text-gray-400 hover:text-gray-700 hover:bg-gray-100 border border-gray-200 rounded-lg transition"
                       style={{ minWidth: '34px', minHeight: '34px' }}
                       title="Copy doi link"

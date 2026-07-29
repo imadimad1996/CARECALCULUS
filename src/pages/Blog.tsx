@@ -126,7 +126,7 @@ Pour développer un blog médical en 2026, vous devez appliquer ces cinq règles
 4. **Accroches Cliniques Impactantes** : Commencez par des résumés clairs et factuels.
 5. **Accessibilité Multilingue** : Offrez le contenu dans la langue maternelle des utilisateurs (EN/FR/AR).`,
     author: 'CareCalculus Editorial Team',
-    reviewer: 'Dr. Jean-Pierre Dupont, MD',
+    reviewer: 'CareCalculus Medical Review Board',
     category: 'Editorial',
     readTime: 6,
     date: '2026-06-23'
