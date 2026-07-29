@@ -35,6 +35,8 @@ import { LangCode } from './types';
 import { UnitSystemProvider, useUnitSystem } from './contexts/UnitSystemContext';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { LoginModal } from './components/auth/LoginModal';
+import { ThemeProvider } from './components/ThemeProvider';
+import { GlobalErrorBoundary } from './components/ErrorBoundary';
 
 
 
@@ -1285,7 +1287,7 @@ function AppLayout() {
       <NewsletterCapture lang={lang} />
 
       {/* GDPR Cookie Consent banner */}
-      <CookieConsent lang={lang} />
+      <CookieConsent />
 
       {/* Mandatory Medical Disclaimer modal */}
       <MedicalDisclaimer lang={lang} />
@@ -1327,6 +1329,9 @@ function AppLayout() {
 
       {/* Medical Specialties Directory Modal */}
       <SpecialtiesModal isOpen={isSpecialtiesModalOpen} onClose={() => setIsSpecialtiesModalOpen(false)} lang={lang} langPath={langPath} />
+      
+      {/* AdSense & GDPR Cookie Consent */}
+      <CookieConsent />
     </div>
    </LangContext.Provider>
   );
@@ -1338,27 +1343,31 @@ export default function App({ url }: { url?: string }) {
   // BrowserRouter so client-side navigation works normally.
   if (url) {
     return (
-      <ErrorBoundary>
-        <AuthProvider>
-          <UnitSystemProvider>
-            <StaticRouter location={url}>
-              <AppLayout />
-            </StaticRouter>
-          </UnitSystemProvider>
-        </AuthProvider>
-      </ErrorBoundary>
+      <GlobalErrorBoundary>
+        <ThemeProvider>
+          <AuthProvider>
+            <UnitSystemProvider>
+              <StaticRouter location={url}>
+                <AppLayout />
+              </StaticRouter>
+            </UnitSystemProvider>
+          </AuthProvider>
+        </ThemeProvider>
+      </GlobalErrorBoundary>
     );
   }
   return (
-    <ErrorBoundary>
-      <AuthProvider>
-        <UnitSystemProvider>
-          <BrowserRouter>
-            <AppLayout />
-          </BrowserRouter>
-        </UnitSystemProvider>
-      </AuthProvider>
-    </ErrorBoundary>
+    <GlobalErrorBoundary>
+      <ThemeProvider>
+        <AuthProvider>
+          <UnitSystemProvider>
+            <BrowserRouter>
+              <AppLayout />
+            </BrowserRouter>
+          </UnitSystemProvider>
+        </AuthProvider>
+      </ThemeProvider>
+    </GlobalErrorBoundary>
   );
 }
 

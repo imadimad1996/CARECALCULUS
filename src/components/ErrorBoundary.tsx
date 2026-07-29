@@ -1,0 +1,59 @@
+import React, { ErrorInfo } from 'react';
+import { AlertOctagon, RotateCcw } from 'lucide-react';
+
+export class GlobalErrorBoundary extends React.Component<any, any> {
+  constructor(props: any) {
+    super(props);
+    this.state = { hasError: false, error: null };
+  }
+
+  static getDerivedStateFromError(error: Error) {
+    return { hasError: true, error };
+  }
+
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    console.error("Uncaught error:", error, errorInfo);
+    
+    // Chunk load error recovery - typical in SPAs
+    if (error?.message?.includes('Failed to fetch dynamically imported module') || error?.message?.includes('Loading chunk')) {
+      const hasReloaded = sessionStorage.getItem('cc_chunk_reload');
+      if (!hasReloaded) {
+        sessionStorage.setItem('cc_chunk_reload', 'true');
+        window.location.reload();
+      }
+    }
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
+          <div className="max-w-md w-full bg-white rounded-3xl p-8 border border-slate-200 shadow-xl text-center">
+            <div className="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <AlertOctagon className="w-8 h-8 text-red-500" />
+            </div>
+            <h1 className="text-2xl font-black text-slate-900 mb-3">Application Error</h1>
+            <p className="text-sm text-slate-500 mb-8 leading-relaxed">
+              CareCalculus encountered an unexpected clinical application error. Our engineers have been notified. Please refresh the page to restore the session.
+            </p>
+            <button
+              onClick={() => window.location.reload()}
+              className="w-full bg-slate-900 hover:bg-slate-800 text-white rounded-xl py-3.5 font-bold text-sm flex items-center justify-center gap-2 transition-all active:scale-[0.98]"
+            >
+              <RotateCcw className="w-4 h-4" />
+              Reload Application
+            </button>
+            
+            {process.env.NODE_ENV === 'development' && (
+              <div className="mt-8 text-left bg-slate-900 rounded-xl p-4 overflow-auto max-h-48 text-xs font-mono text-emerald-400">
+                <div className="font-bold text-rose-400 mb-2">{this.state.error?.toString()}</div>
+                {this.state.error?.stack}
+              </div>
+            )}
+          </div>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}

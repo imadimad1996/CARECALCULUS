@@ -94,6 +94,7 @@ const pageLoaders = [
   () => import('../pages/PricingPage'),
   () => import('../pages/BishopScore'),
   () => import('../pages/CentorScore'),
+  () => import('../pages/EditorialBoard'),
 ] as const;
 
 const safeLazy = (loader: () => Promise<any>) => {
@@ -139,7 +140,7 @@ const [
   GraceScore, BicarbDeficit, ReticIndex,
   PhenytoinCorrection, AscvdRisk, VancomycinDosing, AminoglycosideDosing,
   PesiScore, BovaScore, ApacheIIScore, SapsIIScore, DrugInteractions, MedicalStatistics, FavoritesPage, PricingPage,
-  BishopScore, CentorScore
+  BishopScore, CentorScore, EditorialBoard
 ] = pageLoaders.map((loader) => safeLazy(loader as any)) as any[];
 
 export const HomePage = safeLazy(() => import('../pages/HomePage'));
@@ -162,7 +163,7 @@ export async function preloadPages() {
 export const LEGAL_ROUTES = ['/about', '/disclaimer', '/privacy', '/terms', '/embed-gallery', '/for-hospitals'];
 
 // Routes that open in full-width reading mode (no sidebar, no top widgets)
-export const CONTENT_ROUTES = ['/presentations', '/cours', '/about', '/disclaimer', '/privacy', '/terms', '/glp-1-hub', '/hub-glp1', '/%D9%85%D8%B1%D9%83%D8%B2-glp1', '/مركز-glp1', '/ispits', '/embed-gallery', '/for-hospitals', '/clinical-guide'];
+export const CONTENT_ROUTES = ['/presentations', '/cours', '/about', '/editorial-board', '/comite-editorial', '/disclaimer', '/privacy', '/terms', '/glp-1-hub', '/hub-glp1', '/%D9%85%D8%B1%D9%83%D8%B2-glp1', '/مركز-glp1', '/ispits', '/embed-gallery', '/for-hospitals', '/clinical-guide'];
 
 export class ErrorBoundary extends React.Component<any, any> {
   constructor(props: any) {
@@ -378,6 +379,8 @@ export function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="study-tracker" element={<StudyTracker lang={lang} />} />
       <Route path="abbreviation-lookup" element={<AbbreviationLookup lang={lang} />} />
       <Route path="about" element={<About lang={lang} />} />
+      <Route path="editorial-board" element={<EditorialBoard lang={lang} />} />
+      <Route path="comite-editorial" element={<EditorialBoard lang={lang} />} />
       <Route path="conditions/:conditionSlug" element={<ConditionHub lang={lang} />} />
       <Route path="specialties/:specialtySlug" element={<SpecialtyHub lang={lang} />} />
       <Route path="disclaimer" element={<Disclaimer lang={lang} />} />

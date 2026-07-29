@@ -163,7 +163,7 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
           role: "Nephrologist and Medical Reviewer",
           institution: "CareCalculus Medical Board",
           lastReviewed: "July 2026",
-          profileUrl: "#"
+          profileUrl: lang === 'en' ? "/editorial-board" : `/${lang}/editorial-board`
         }} 
       />
 

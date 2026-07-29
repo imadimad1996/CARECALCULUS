@@ -1,5 +1,6 @@
 import React from 'react';
 import { UserCheck, ShieldCheck, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export interface MedicalReviewer {
   name: string;
@@ -81,15 +82,25 @@ export const MedicalReviewerCard: React.FC<MedicalReviewerCardProps> = ({ review
             </div>
             
             {reviewer.profileUrl && (
-              <a 
-                href={reviewer.profileUrl} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-xs font-bold text-teal-600 hover:text-teal-700 flex items-center gap-1 transition-colors"
-              >
-                {t.viewProfile[lang]}
-                <ExternalLink className="w-3 h-3" />
-              </a>
+              reviewer.profileUrl.startsWith('/') ? (
+                <Link 
+                  to={reviewer.profileUrl} 
+                  className="text-xs font-bold text-teal-600 hover:text-teal-700 flex items-center gap-1 transition-colors"
+                >
+                  {t.viewProfile[lang]}
+                  <ExternalLink className="w-3 h-3" />
+                </Link>
+              ) : (
+                <a 
+                  href={reviewer.profileUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-xs font-bold text-teal-600 hover:text-teal-700 flex items-center gap-1 transition-colors"
+                >
+                  {t.viewProfile[lang]}
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              )
             )}
           </div>
         </div>

@@ -851,7 +851,7 @@ export function organizationJsonLd() {
   return [
     {
       '@context': 'https://schema.org',
-      '@type': 'Organization',
+      '@type': ['MedicalOrganization', 'Organization'],
       name: 'CareCalculus',
       url: ORIGIN,
       logo: `${ORIGIN}/icon.svg`,

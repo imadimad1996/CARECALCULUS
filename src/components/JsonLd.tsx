@@ -13,6 +13,27 @@ export function JsonLd({ data }: JsonLdProps) {
   );
 }
 
+// Helper function to generate MedicalOrganization schema
+export function generateMedicalOrganizationSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": ["MedicalOrganization", "Organization"],
+    "name": "CareCalculus",
+    "url": "https://carecalculus.com",
+    "logo": "https://carecalculus.com/logo.png",
+    "sameAs": [
+      "https://twitter.com/carecalculus",
+      "https://linkedin.com/company/carecalculus"
+    ],
+    "medicalSpecialty": [
+      "https://schema.org/Emergency",
+      "https://schema.org/Cardiovascular",
+      "https://schema.org/InternalMedicine"
+    ],
+    "knowsAbout": ["Medical algorithms", "Clinical decision support", "Medical calculators"]
+  };
+}
+
 // Helper function to generate MedicalWebPage schema
 export function generateMedicalWebPageSchema(title: string, description: string, url: string) {
   return {
@@ -21,11 +42,7 @@ export function generateMedicalWebPageSchema(title: string, description: string,
     "name": title,
     "description": description,
     "url": url,
-    "publisher": {
-      "@type": "Organization",
-      "name": "CareCalculus",
-      "url": "https://carecalculus.com"
-    }
+    "publisher": generateMedicalOrganizationSchema()
   };
 }
 
@@ -51,10 +68,6 @@ export function generateMedicalRiskScoreSchema(name: string, description: string
       "@type": "MedicalObservationalStudy",
       "name": scoringSystem
     },
-    "publisher": {
-      "@type": "Organization",
-      "name": "CareCalculus",
-      "url": "https://carecalculus.com"
-    }
+    "publisher": generateMedicalOrganizationSchema()
   };
 }

@@ -10,7 +10,7 @@ const T = {
     title: 'Page Not Found',
     desc: 'This clinical route doesn\'t exist. Navigate to an active calculator or browse the library.',
     home: 'Go Home',
-    calculators: 'Open Calculators',
+    calculators: 'Search Tools',
     popular: 'Popular tools',
   },
   fr: {
@@ -18,7 +18,7 @@ const T = {
     title: 'Page introuvable',
     desc: 'Cette route clinique n\'existe pas. Naviguez vers un calculateur actif ou parcourez la bibliothèque.',
     home: 'Accueil',
-    calculators: 'Voir les outils',
+    calculators: 'Chercher des Outils',
     popular: 'Outils populaires',
   },
   
@@ -39,31 +39,38 @@ export default function NotFound({ lang }: { lang: LangCode }) {
   const isRtl = false;
 
   return (
-    <div className="min-h-[60vh] flex flex-col items-center justify-center py-16 px-4 text-center space-y-8" dir={isRtl ? 'rtl' : 'ltr'}>
-      <div className="space-y-3">
-        <div className="flex items-center justify-center gap-2 mb-4">
-          <AlertOctagon className="w-10 h-10 text-red-400" />
+    <div className="min-h-[70vh] flex flex-col items-center justify-center py-16 px-4 text-center space-y-10 relative overflow-hidden" dir={isRtl ? 'rtl' : 'ltr'}>
+      {/* Premium glow effect */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-teal-500/10 rounded-full blur-[100px] pointer-events-none" />
+      
+      <div className="space-y-4 relative z-10">
+        <div className="flex items-center justify-center gap-2 mb-6">
+          <div className="w-20 h-20 bg-red-50 rounded-2xl flex items-center justify-center shadow-inner border border-red-100">
+            <AlertOctagon className="w-10 h-10 text-red-500" />
+          </div>
         </div>
-        <div className="text-8xl font-black text-gray-100 leading-none select-none">{t.code}</div>
-        <h1 className="text-2xl font-black text-gray-900 tracking-tight">{t.title}</h1>
-        <p className="text-sm text-gray-500 max-w-md mx-auto leading-relaxed">{t.desc}</p>
+        <div className="text-[120px] font-black text-transparent bg-clip-text bg-gradient-to-br from-slate-200 to-slate-400 leading-none select-none tracking-tighter">
+          {t.code}
+        </div>
+        <h1 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">{t.title}</h1>
+        <p className="text-base text-slate-500 max-w-md mx-auto leading-relaxed">{t.desc}</p>
       </div>
 
-      <div className="flex flex-wrap gap-3 justify-center">
+      <div className="flex flex-col sm:flex-row gap-4 justify-center w-full max-w-md mx-auto">
         <Link
           to={langPath('/')}
-          className="inline-flex items-center gap-2 px-5 py-2.5 bg-gray-900 text-white font-bold rounded-xl text-sm hover:bg-gray-700 transition-all"
+          className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-slate-900 text-white font-bold rounded-xl text-sm hover:bg-slate-800 transition-all hover:shadow-lg active:scale-95"
         >
-          <HeartPulse className="w-4 h-4" />
+          <HeartPulse className="w-5 h-5" />
           {t.home}
         </Link>
-        <Link
-          to={langPath('/map-calculator')}
-          className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 text-white font-bold rounded-xl text-sm hover:bg-blue-500 transition-all"
+        <button
+          onClick={() => window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }))}
+          className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-slate-700 font-bold rounded-xl text-sm hover:bg-slate-50 border border-slate-200 transition-all hover:shadow-lg active:scale-95"
         >
-          <Calculator className="w-4 h-4" />
+          <Calculator className="w-5 h-5 text-teal-600" />
           {t.calculators}
-        </Link>
+        </button>
       </div>
 
       <div className="w-full max-w-lg space-y-3">
