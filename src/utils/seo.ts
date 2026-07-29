@@ -40,6 +40,7 @@ export const nameEnMap: Record<string, string> = seoMaps.nameEnMap;
 const nameFrMap: Record<string, string> = seoMaps.nameFrMap;
 const nameArMap: Record<string, string> = seoMaps.nameArMap;
 const keywordsEnMap: Record<string, string> = (seoMaps as any).keywordsEnMap || {};
+const keywordsFrMap: Record<string, string> = (seoMaps as any).keywordsFrMap || {};
 
 function slugifyQuestion(question: string): string {
   return question
@@ -455,7 +456,7 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
     return {
       title: `${nameFr} | CareCalculus`,
       desc: `Calculateur ${nameFr} gratuit — outil d'aide à la décision clinique utilisé par les médecins de réanimation, urgentistes et infirmiers. Gratuit, sans inscription.`,
-      keywords: `${nameFr.toLowerCase().replace(/[^a-zA-Z\s]/g, '')}, calculateur medical, guide, medecine`,
+      keywords: keywordsFrMap[path] || `${nameFr.toLowerCase().replace(/[^a-zA-Z\s]/g, '')}, calculateur medical, guide, medecine`,
     };
   } else if (false) {
     return {

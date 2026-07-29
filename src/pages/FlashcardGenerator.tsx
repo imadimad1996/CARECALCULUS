@@ -114,7 +114,7 @@ export default function FlashcardGenerator({ lang }: { lang: LangCode }) {
           {/* Card Frame */}
           <div 
             onClick={() => setIsFlipped(!isFlipped)}
-            className="w-full min-h-[220px] bg-white rounded-3xl border border-gray-200/80 shadow-xs hover:shadow-md cursor-pointer relative flex flex-col justify-between p-8 transition-all duration-300 transform select-none"
+            className="w-full min-h-[220px] bg-white rounded-3xl border border-gray-200/80 shadow-xs hover:shadow-md cursor-pointer relative flex flex-col justify-between p-5 lg:p-8 transition-all duration-300 transform select-none"
             style={{ perspective: '1000px' }}
           >
             <div className="flex items-center justify-between text-xs text-gray-400 font-mono font-bold">

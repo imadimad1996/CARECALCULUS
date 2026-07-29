@@ -4,7 +4,7 @@ import { LangCode, Translations } from '../types';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 import CalculatorInput from '../components/ui/CalculatorInput';
 import { layoutTranslations } from '../utils/lang';
-import { trackCalculatorUsage } from '../utils/telemetry';
+import { trackCalculatorUsage, trackCalculatorResult } from '../utils/telemetry';
 
 const translations: Translations = {
   en: {
@@ -90,15 +90,6 @@ export default function AnionGap({ lang }: { lang: LangCode }) {
     return parseFloat(computed.toFixed(1));
   }, [rawAg, albumin]);
 
-  useEffect(() => {
-    if (rawAg > 0) {
-      const timer = setTimeout(() => {
-        trackCalculatorUsage('anion-gap', lang, rawAg);
-      }, 1500);
-      return () => clearTimeout(timer);
-    }
-  }, [rawAg, lang]);
-
   const getAgCategory = (val: number) => {
     if (val > 12) return { label: currentText.high, color: 'text-red-400', bg: 'bg-red-500/10 border-red-500/20', sub: currentText.highSub };
     if (val < 8) return { label: currentText.low, color: 'text-amber-400', bg: 'bg-amber-500/10 border-amber-500/20', sub: currentText.lowSub };
@@ -106,6 +97,16 @@ export default function AnionGap({ lang }: { lang: LangCode }) {
   };
 
   const category = getAgCategory(correctedAg > 0 ? correctedAg : rawAg);
+
+  useEffect(() => {
+    if (rawAg > 0) {
+      const timer = setTimeout(() => {
+        trackCalculatorUsage('anion-gap', lang, rawAg);
+        trackCalculatorResult('anion-gap', rawAg, category.label, lang);
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
+  }, [rawAg, lang, category.label]);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(`Anion Gap: ${rawAg} mEq/L (Corrected for Albumin: ${correctedAg} mEq/L, Interpretation: ${category.label})`);
@@ -173,7 +174,7 @@ export default function AnionGap({ lang }: { lang: LangCode }) {
         </div>
 
         <div className="lg:col-span-5 relative">
-          <div className="sticky top-28 bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden ring-1 ring-white/10 flex flex-col justify-between p-8 min-h-[320px]">
+          <div className="sticky bottom-4 z-40 lg:top-28 lg:bottom-auto bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden ring-1 ring-white/10 flex flex-col justify-between p-5 lg:p-8 lg:min-h-[320px]">
             <div className="absolute top-0 right-0 p-32 bg-gradient-to-bl from-blue-500/20 to-transparent rounded-bl-[100px] pointer-events-none" />
             
             <div className="relative z-10 flex items-start justify-between">

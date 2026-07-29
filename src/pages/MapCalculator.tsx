@@ -43,7 +43,7 @@ const translations: Translations = {
     faqA4: "Systolic BP is the peak pressure during ventricular contraction. MAP accounts for the entire cardiac cycle and better reflects tissue perfusion because diastole occupies approximately 2/3 of the cycle.",
   },
   fr: {
-    title: "Pression Artérielle Moyenne",
+    title: "Calcul MAP Tension Artérielle Moyenne (PAM)",
     subtitle: "Calculez la pression de perfusion globale en milieu critique",
     systolic: "Pression Artérielle Systolique",
     diastolic: "Pression Artérielle Diastolique",
@@ -161,7 +161,7 @@ export default function MapCalculator({ lang }: { lang: LangCode }) {
         </div>
 
         <div className="lg:col-span-5 relative">
-          <div className="sticky top-28 bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden ring-1 ring-white/10 flex flex-col justify-between p-8 min-h-[320px]">
+          <div className="sticky bottom-4 z-40 lg:top-28 lg:bottom-auto bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden ring-1 ring-white/10 flex flex-col justify-between p-5 lg:p-8 lg:min-h-[320px]">
             <div className="absolute top-0 right-0 p-32 bg-gradient-to-bl from-blue-500/20 to-transparent rounded-bl-[100px] pointer-events-none" />
             
             <div className="relative z-10 flex items-start justify-between">

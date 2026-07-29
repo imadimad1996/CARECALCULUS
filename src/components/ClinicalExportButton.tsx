@@ -6,6 +6,7 @@ import { generateSOAP, generateSBAR, generateDotPhrase, generateShiftHandover, g
 import { saveShiftRecord } from './ShiftStorageDrawer';
 import { trackEhrExport } from '../utils/telemetry';
 import PremiumGate from './PremiumGate';
+import { isProActive } from '../utils/pro';
 
 export interface ClinicalExportButtonProps {
   title?: string;
@@ -90,6 +91,12 @@ export default function ClinicalExportButton({
   const [copied, setCopied] = useState(false);
   const [shareCopied, setShareCopied] = useState(false);
   const [noteTab, setNoteTab] = useState<'soap' | 'sbar' | 'dotphrase' | 'ascii'>('soap');
+  const [copyCount, setCopyCount] = useState(0);
+  const [showUpgradeGate, setShowUpgradeGate] = useState(false);
+
+  useEffect(() => {
+    setCopyCount(parseInt(localStorage.getItem('ehr_copy_count') || '0', 10));
+  }, []);
 
   const inputsRecord = useMemo(() => {
     const rec: Record<string, any> = {};
@@ -122,9 +129,17 @@ export default function ClinicalExportButton({
   };
 
   const handleCopyNote = () => {
+    if (copyCount >= 3 && !isProActive()) {
+      setShowUpgradeGate(true);
+      return;
+    }
     const textToCopy = getFormattedNote();
     navigator.clipboard.writeText(textToCopy).then(() => {
       setCopied(true);
+      const newCount = copyCount + 1;
+      setCopyCount(newCount);
+      localStorage.setItem('ehr_copy_count', String(newCount));
+      
       trackEhrExport(calculatorName || title || 'unknown', noteTab);
       saveShiftRecord({
         patientId: patientId || 'PT-' + Math.floor(1000 + Math.random() * 9000),
@@ -577,6 +592,16 @@ ${divider}`;
                           </div>
                         </div>
                       </PremiumGate>
+                    ) : showUpgradeGate ? (
+                      <div className="space-y-3">
+                        <PremiumGate featureName="Unlimited EHR Exports" lang={lang} />
+                        <button
+                          onClick={() => setShowUpgradeGate(false)}
+                          className="w-full py-3 px-4 bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold text-xs rounded-xl transition"
+                        >
+                          Cancel
+                        </button>
+                      </div>
                     ) : (
                       <div className="space-y-3">
                         {/* Live Preview Box */}

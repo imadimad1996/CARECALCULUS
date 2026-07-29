@@ -18,6 +18,14 @@
     "/bmi-calculator": "BMI calculator for clinicians, body mass index WHO classification, obesity staging calculation tool",
     "/glasgow-coma-scale": "Glasgow coma scale GCS calculator, traumatic brain injury severity assessment, neurological coma scale score"
   },
+  "keywordsFrMap": {
+    "/sofa-score": "score sofa calcul, évaluation défaillance d'organes, calcul score sofa en ligne, sepsis",
+    "/map-calculator": "calcul map tension artérielle, pression artérielle moyenne formule, calcul pam",
+    "/wells-score": "score wells embolie, score de wells thrombose veineuse profonde, probabilité clinique tvp",
+    "/curb65-score": "score curb 65 pneumonie, évaluation gravité pneumonie, curb-65 calcul",
+    "/creatinine-clearance": "calcul créatinine clearance, clairance créatinine cockcroft gault, dfg calcul",
+    "/qsofa-score": "score qsofa sepsis, quick sofa calcul, dépistage sepsis urgences"
+  },
   "nameEnMap": {
     "/map-calculator": "MAP Calculator — Mean Arterial Pressure",
     "/bmi-calculator": "Body Mass Index (BMI) Calculator",

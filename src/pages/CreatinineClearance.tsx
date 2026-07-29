@@ -28,9 +28,15 @@ const translations: Translations = {
     mild: "Mild Impairment",
     moderate: "Moderate Impairment",
     severe: "Severe Impairment (Renal Failure)",
+    pillarTitle: "Clinical Validation and Pathophysiology of Cockcroft-Gault",
+    pillarText: [
+      "The Cockcroft-Gault equation, developed in 1976, is historically one of the first formulas to estimate creatinine clearance (and by extension, glomerular filtration rate) using serum creatinine, age, sex, and patient weight. While it has been largely superseded by more modern equations (like MDRD and CKD-EPI) for screening and diagnosing chronic kidney disease, it remains a cornerstone in clinical pharmacokinetics.",
+      "Clinically, the vast majority of dosing recommendations for renally cleared medications (especially antibiotics like vancomycin, aminoglycosides, and direct oral anticoagulants or DOACs) were validated in clinical trials using the Cockcroft-Gault formula. Using a different equation (such as CKD-EPI) for these specific drugs can lead to overdosing (toxicity risk) or underdosing (therapeutic failure), particularly in the elderly or those with extreme body weights.",
+      "However, it is crucial to understand its limitations: the equation often overestimates GFR in obese patients (since adipose tissue does not produce creatinine) and underestimates it in malnourished or amputated patients. In these situations, using ideal or adjusted body weight is often recommended to refine the calculation."
+    ]
   },
   fr: {
-    title: "Clairance de la Créatinine (Cockcroft-Gault)",
+    title: "Calcul Créatinine Clearance (Formule de Cockcroft-Gault)",
     subtitle: "Estimer le débit de filtration glomérulaire pour ajuster les posologies",
     age: "Âge (Années)",
     weight: "Poids (kg)",
@@ -49,6 +55,12 @@ const translations: Translations = {
     mild: "Insuffisance Légère",
     moderate: "Insuffisance Modérée",
     severe: "Insuffisance Sévère",
+    pillarTitle: "Validation Clinique et Physiopathologie de Cockcroft-Gault",
+    pillarText: [
+      "La formule de Cockcroft-Gault, développée en 1976, est historiquement l'une des premières équations permettant d'estimer la clairance de la créatinine (et par extension le débit de filtration glomérulaire, DFG) à partir de la créatininémie, de l'âge, du sexe et du poids du patient. Bien qu'elle ait été progressivement remplacée par des équations plus modernes (comme MDRD et CKD-EPI) pour le dépistage et le diagnostic de l'insuffisance rénale chronique, elle conserve une place prépondérante et incontournable en pharmacocinétique clinique.",
+      "Sur le plan clinique, la majorité des recommandations d'adaptation posologique des médicaments à élimination rénale (en particulier les antibiotiques comme la vancomycine, les aminosides, et les anticoagulants oraux directs ou AOD) ont été validées lors des essais cliniques en utilisant la formule de Cockcroft-Gault. Utiliser une autre formule (comme CKD-EPI) pour ces médicaments spécifiques peut conduire à des surdosages (risque toxique) ou à des sous-dosages (échec thérapeutique), particulièrement chez les sujets âgés ou de poids extrême.",
+      "Il est cependant crucial d'en connaître les limites : l'équation surestime souvent le DFG chez les patients obèses (car la masse grasse ne produit pas de créatinine) et le sous-estime chez les patients dénutris ou amputés. Dans ces situations, l'utilisation du poids corporel idéal ou ajusté est souvent recommandée pour affiner le calcul."
+    ]
   }
 };
 
@@ -180,7 +192,7 @@ export default function CreatinineClearance({ lang }: { lang: LangCode }) {
         </div>
 
         <div className="lg:col-span-5 relative">
-          <div className="sticky top-28 bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden ring-1 ring-white/10 flex flex-col justify-between p-8 min-h-[320px]">
+          <div className="sticky bottom-4 z-40 lg:top-28 lg:bottom-auto bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden ring-1 ring-white/10 flex flex-col justify-between p-5 lg:p-8 lg:min-h-[320px]">
             <div className="absolute top-0 right-0 p-32 bg-gradient-to-bl from-blue-500/20 to-transparent rounded-bl-[100px] pointer-events-none" />
             
             <div className="relative z-10">
@@ -269,6 +281,15 @@ export default function CreatinineClearance({ lang }: { lang: LangCode }) {
           </div>
         </div>
       </div>
+      
+      {currentText.pillarTitle && currentText.pillarText && (
+        <div className="mt-12 bg-white rounded-2xl shadow-sm border p-6">
+          <h2 className="text-xl font-bold text-gray-900 mb-6">{currentText.pillarTitle}</h2>
+          {currentText.pillarText.map((paragraph, idx) => (
+            <p key={idx} className="text-gray-700 leading-relaxed mb-4">{paragraph}</p>
+          ))}
+        </div>
+      )}
     </CalculatorShell>
   );
 }

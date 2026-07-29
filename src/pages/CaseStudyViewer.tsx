@@ -97,7 +97,7 @@ export default function CaseStudyViewer({ lang }: { lang: LangCode }) {
 
         {/* Vitals HUD */}
         {activeStep.vitals && (
-          <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 bg-gray-50 p-4 rounded-2xl border border-gray-150">
+          <div className="grid grid-cols-1 sm:grid-cols-2 sm:grid-cols-5 gap-3 bg-gray-50 p-4 rounded-2xl border border-gray-150">
             <div className="text-center">
               <span className="text-[9px] font-mono text-gray-400 font-bold uppercase block">{t.heartRate}</span>
               <span className="text-sm font-black text-red-500">{activeStep.vitals.hr} bpm</span>

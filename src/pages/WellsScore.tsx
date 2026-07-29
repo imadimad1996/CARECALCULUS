@@ -2,7 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { Activity, Info, BookOpen } from 'lucide-react';
 import { LangCode, Translations } from '../types';
 import ClinicalExportButton from '../components/ClinicalExportButton';
-import { trackCalculatorUsage } from '../utils/telemetry';
+import { trackCalculatorUsage, trackCalculatorResult } from '../utils/telemetry';
 import { layoutTranslations } from '../utils/lang';
 import EmbedCodeButton from '../components/ui/EmbedCodeButton';
 import { JsonLd } from '../components/JsonLd';
@@ -15,7 +15,7 @@ import { REVIEWER_WELLS } from '../data/reviewers';
 
 const translations: Translations = {
   en: {
-    title: "Wells' Criteria for DVT",
+    title: "Wells Score Calculator for DVT and PE",
     subtitle: "Determine the pretest probability of deep vein thrombosis",
     cancer: "Active cancer (treatment within 6 months or palliative)",
     paralysis: "Paralysis, paresis, or recent cast of lower extremities",
@@ -37,12 +37,13 @@ const translations: Translations = {
       "The Wells' Criteria for Deep Vein Thrombosis (DVT) is the gold-standard pretest probability clinical prediction rule used to risk-stratify patients presenting with suspected lower extremity DVT. Developed by Dr. Philip S. Wells, the score safely guides diagnostic imaging and laboratory testing, dramatically reducing unnecessary compression ultrasonography.",
       "In the dichotomous two-tier model, patients are stratified into 'DVT Unlikely' (Score < 2) and 'DVT Likely' (Score ≥ 2). For patients in the unlikely category, a high-sensitivity D-dimer assay is recommended; a negative D-dimer safely rules out DVT without the need for ultrasound. Conversely, for patients in the likely category, mandatory proximal lower extremity venous ultrasound is indicated regardless of D-dimer results.",
       "In the tricotomous three-tier model, risk is stratified into Low Risk (Score ≤ 0), Moderate Risk (Score 1-2), and High Risk (Score ≥ 3). Low and moderate risk categories guide clinicians to perform a D-dimer test (high-sensitivity required for moderate risk). High risk patients should skip D-dimer testing and proceed directly to compression ultrasound. If a proximal US is negative in a high-risk patient, repeat imaging in one week is recommended.",
-      "Clinicians must exercise careful judgment when evaluating the 'Alternative diagnosis' criterion (-2 points). This requires clinical experience to assess whether conditions such as cellulitis, Baker's cyst, muscle tear, or superficial thrombophlebitis are as likely or more likely than DVT."
+      "Clinicians must exercise careful judgment when evaluating the 'Alternative diagnosis' criterion (-2 points). This requires clinical experience to assess whether conditions such as cellulitis, Baker's cyst, muscle tear, or superficial thrombophlebitis are as likely or more likely than DVT.",
+      "If pulmonary embolism is also suspected, consider evaluating the patient using the <a href='/geneva-score' class='text-cyan-600 hover:underline font-semibold'>Geneva Score</a>. For patients with acute respiratory distress, the <a href='/pf-ratio' class='text-cyan-600 hover:underline font-semibold'>PaO2/FiO2 Ratio</a> can help assess oxygenation severity."
     ],
-    faqQ1: "What is the Wells Score for DVT?",
-    faqA1: "The Wells Score for DVT is a validated clinical prediction rule that calculates the pretest probability of deep vein thrombosis based on 10 clinical history and physical exam criteria.",
-    faqQ2: "What score indicates a likely DVT?",
-    faqA2: "A Wells Score of 2 or higher indicates that DVT is likely, warranting diagnostic venous compression ultrasound. A score under 2 indicates DVT is unlikely, where a negative D-dimer safely rules out thrombosis.",
+    faqQ1: "Can Wells Score predict DVT?",
+    faqA1: "Yes, the Wells Score for DVT is a validated clinical prediction rule that calculates the pretest probability of deep vein thrombosis based on 10 clinical history and physical exam criteria.",
+    faqQ2: "What is the difference between Wells Score for DVT and PE?",
+    faqA2: "The Wells Score for DVT is used when you suspect a clot in the leg (Deep Vein Thrombosis). The Wells Score for PE is a completely different set of criteria used when you suspect a clot in the lungs (Pulmonary Embolism). Both use the Wells name but evaluate different clinical signs.",
     faqQ3: "Can the Wells Score be used in pregnant patients?",
     faqA3: "No. The standard Wells Criteria are not validated for pregnant or postpartum patients. Specialized algorithms such as the LEFt clinical prediction rule should be utilized during pregnancy.",
     references: "References: Wells PS, et al. Evaluation of DVT: Value of assessment of pretest probability. NEJM 2003;349:1227-1235.",
@@ -66,7 +67,7 @@ const translations: Translations = {
     criticalActionsText: "1. Evaluate for concurrent pulmonary embolism (PE) symptoms (e.g., chest pain, dyspnea) using the Wells' PE or PERC scores. 2. Assess bleeding risk using the RIETE score prior to initiating anticoagulation."
   },
   fr: {
-    title: "Score de Wells pour l'at TVP",
+    title: "Score Wells Embolie Pulmonaire et Thrombose Veineuse",
     subtitle: "Déterminer la probabilité pré-test de thrombose veineuse profonde",
     cancer: "Cancer actif (traitement dans les 6 mois ou palliatif)",
     paralysis: "Paralysie, parésie ou plâtre récent des membres inférieurs",
@@ -149,15 +150,6 @@ export default function WellsScore({ lang }: { lang: LangCode }) {
     }, 0);
   }, [selections]);
 
-  useEffect(() => {
-    if (scoreValue !== 0) {
-      const timer = setTimeout(() => {
-        trackCalculatorUsage('wells-score', lang, scoreValue);
-      }, 1500);
-      return () => clearTimeout(timer);
-    }
-  }, [scoreValue, lang]);
-
   const category = useMemo(() => {
     if (riskModel === '2-tier') {
       return scoreValue >= 2 
@@ -173,6 +165,16 @@ export default function WellsScore({ lang }: { lang: LangCode }) {
       }
     }
   }, [riskModel, scoreValue, currentText]);
+
+  useEffect(() => {
+    if (scoreValue !== 0) {
+      const timer = setTimeout(() => {
+        trackCalculatorUsage('wells-score', lang, scoreValue);
+        trackCalculatorResult('wells-score', scoreValue, category.label, lang);
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
+  }, [scoreValue, lang, category.label]);
 
   return (
     <>
@@ -206,6 +208,12 @@ export default function WellsScore({ lang }: { lang: LangCode }) {
               "@type": "MedicalSpecialty",
               "name": "Emergency Medicine"
             }
+          },
+          {
+            "@type": "MedicalRiskScore",
+            "name": currentText.title,
+            "description": currentText.subtitle,
+            "url": `https://carecalculus.com/${lang === 'en' ? '' : lang + '/'}wells-score`
           }
         ]
       }} />
@@ -362,7 +370,7 @@ export default function WellsScore({ lang }: { lang: LangCode }) {
         </div>
 
         <div className="lg:col-span-5 relative">
-          <div className={`sticky top-28 backdrop-blur-2xl bg-gradient-to-b from-slate-900 via-gray-900 to-slate-950 text-white rounded-3xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col justify-between p-8 min-h-[360px] transition-all duration-300 ${scoreValue >= 2 ? 'ring-2 ring-red-500/60 shadow-[0_25px_60px_-15px_rgba(220,38,38,0.35)]' : 'ring-1 ring-white/15'}`}>
+          <div className={`sticky bottom-4 z-40 lg:top-28 lg:bottom-auto backdrop-blur-2xl bg-gradient-to-b from-slate-900 via-gray-900 to-slate-950 text-white rounded-3xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col justify-between p-5 lg:p-8 lg:min-h-[360px] transition-all duration-300 ${scoreValue >= 2 ? 'ring-2 ring-red-500/60 shadow-[0_25px_60px_-15px_rgba(220,38,38,0.35)]' : 'ring-1 ring-white/15'}`}>
             <div className={`absolute top-0 right-0 p-36 bg-gradient-to-bl ${scoreValue >= 2 ? 'from-red-500/40 via-rose-500/20' : 'from-cyan-500/30 via-teal-500/10'} to-transparent rounded-bl-[120px] pointer-events-none animate-pulse`} />
             
             <div className="relative z-10">
@@ -520,7 +528,7 @@ export default function WellsScore({ lang }: { lang: LangCode }) {
         <h2 className="text-xl font-bold text-gray-900 mb-6">{currentText.pillarTitle}</h2>
         <div className="space-y-4 text-gray-700 leading-relaxed text-sm">
           {currentText.pillarText?.map((paragraph: string, idx: number) => (
-            <p key={idx}>{paragraph}</p>
+            <p key={idx} dangerouslySetInnerHTML={{ __html: paragraph }} />
           ))}
         </div>
       </div>

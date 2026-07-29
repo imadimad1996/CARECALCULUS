@@ -205,7 +205,7 @@ export default function ParklandFormula({ lang }: { lang: LangCode }) {
                   </span>
                 </div>
 
-                <div className="pt-4 border-t border-slate-800 grid grid-cols-2 gap-4">
+                <div className="pt-4 border-t border-slate-800 grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <span className="block text-[10px] text-slate-400 uppercase tracking-wider font-semibold mb-1">
                       {currentText.first8Hrs}

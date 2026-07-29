@@ -2,7 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { Activity, Info, BookOpen, ChevronDown } from 'lucide-react';
 import { LangCode, Translations } from '../types';
 import { layoutTranslations } from '../utils/lang';
-import { trackCalculatorUsage } from '../utils/telemetry';
+import { trackCalculatorUsage, trackCalculatorResult } from '../utils/telemetry';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 import { MedicalReviewerCard } from '../components/MedicalReviewerCard';
 import { REVIEWER_EMERGENCY } from '../data/reviewers';
@@ -37,7 +37,7 @@ const translations: Translations = {
     faqA4: "The Sepsis-3 consensus replaced SIRS with qSOFA for out-of-ICU sepsis screening, arguing SIRS lacked specificity. Both tools remain in use across different guidelines and settings.",
   },
   fr: {
-    title: "Score qSOFA",
+    title: "Score qSOFA Sepsis (Dépistage Rapide)",
     subtitle: "Évaluation rapide de la défaillance d'organe liée au sepsis",
     rr22: "Fréquence respiratoire ≥ 22/min",
     mentation: "Altération de l'état mental (GCS < 15)",
@@ -88,18 +88,19 @@ export default function QsofaScore({ lang }: { lang: LangCode }) {
     }, 0);
   }, [selections]);
 
+  const category = scoreValue >= 2 
+    ? { label: currentText.highRisk, bg: 'bg-red-500/10 border-red-500/20', color: 'text-red-500' }
+    : { label: currentText.lowRisk, bg: 'bg-emerald-500/10 border-emerald-500/20', color: 'text-emerald-500' };
+
   useEffect(() => {
     if (scoreValue > 0) {
       const timer = setTimeout(() => {
         trackCalculatorUsage('qsofa-score', lang, scoreValue);
+        trackCalculatorResult('qsofa-score', scoreValue, category.label, lang);
       }, 1500);
       return () => clearTimeout(timer);
     }
-  }, [scoreValue, lang]);
-
-  const category = scoreValue >= 2 
-    ? { label: currentText.highRisk, bg: 'bg-red-500/10 border-red-500/20', color: 'text-red-500' }
-    : { label: currentText.lowRisk, bg: 'bg-emerald-500/10 border-emerald-500/20', color: 'text-emerald-500' };
+  }, [scoreValue, lang, category.label]);
 
   return (
     <>
@@ -143,7 +144,7 @@ export default function QsofaScore({ lang }: { lang: LangCode }) {
         </div>
 
         <div className="lg:col-span-5 relative">
-          <div className="sticky top-28 bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden ring-1 ring-white/10 flex flex-col justify-between p-8 min-h-[320px]">
+          <div className="sticky bottom-4 z-40 lg:top-28 lg:bottom-auto bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden ring-1 ring-white/10 flex flex-col justify-between p-5 lg:p-8 lg:min-h-[320px]">
             <div className="absolute top-0 right-0 p-32 bg-gradient-to-bl from-red-500/10 to-transparent rounded-bl-[100px] pointer-events-none" />
             
             <div className="relative z-10">

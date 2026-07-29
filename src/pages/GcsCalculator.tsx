@@ -3,7 +3,7 @@ import { Activity, Info, BookOpen, ChevronDown } from 'lucide-react';
 import { LangCode, Translations } from '../types';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 import { layoutTranslations } from '../utils/lang';
-import { trackCalculatorUsage } from '../utils/telemetry';
+import { trackCalculatorUsage, trackCalculatorResult } from '../utils/telemetry';
 import EmbedCodeButton from '../components/ui/EmbedCodeButton';
 import { JsonLd, generateMedicalCalculatorSchema } from '../components/JsonLd';
 import { MedicalReviewerCard } from '../components/MedicalReviewerCard';
@@ -111,16 +111,6 @@ export default function GcsCalculator({ lang }: { lang: LangCode }) {
   const isComplete = eye > 0 && verbal > 0 && motor > 0;
   const gcsValue = isComplete ? eye + verbal + motor : 0;
 
-  useEffect(() => {
-    if (isComplete) {
-      const timer = setTimeout(() => {
-        trackCalculatorUsage('glasgow-coma-scale', lang, gcsValue);
-      }, 1500);
-      return () => clearTimeout(timer);
-    }
-  }, [isComplete, gcsValue, lang]);
-
-
   const getGcsCategory = (val: number) => {
     if (val <= 8) return { label: currentText.severe, color: 'text-red-400', bg: 'bg-red-500/10 border-red-500/20' };
     if (val <= 12) return { label: currentText.moderate, color: 'text-amber-400', bg: 'bg-amber-500/10 border-amber-500/20' };
@@ -128,6 +118,16 @@ export default function GcsCalculator({ lang }: { lang: LangCode }) {
   };
 
   const category = getGcsCategory(gcsValue);
+
+  useEffect(() => {
+    if (isComplete) {
+      const timer = setTimeout(() => {
+        trackCalculatorUsage('glasgow-coma-scale', lang, gcsValue);
+        trackCalculatorResult('glasgow-coma-scale', gcsValue, category.label, lang);
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
+  }, [isComplete, gcsValue, lang, category.label]);
 
   return (
     <>
@@ -219,7 +219,7 @@ export default function GcsCalculator({ lang }: { lang: LangCode }) {
         </div>
 
         <div className="lg:col-span-5 relative">
-          <div className="sticky top-28 backdrop-blur-2xl bg-gradient-to-b from-slate-900 via-gray-900 to-slate-950 text-white rounded-3xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden ring-1 ring-white/15 flex flex-col justify-between p-8 min-h-[360px] transition-all duration-300">
+          <div className="sticky bottom-4 z-40 lg:top-28 lg:bottom-auto backdrop-blur-2xl bg-gradient-to-b from-slate-900 via-gray-900 to-slate-950 text-white rounded-3xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden ring-1 ring-white/15 flex flex-col justify-between p-5 lg:p-8 lg:min-h-[360px] transition-all duration-300">
             <div className="absolute top-0 right-0 p-36 bg-gradient-to-bl from-blue-500/30 via-indigo-500/10 to-transparent rounded-bl-[120px] pointer-events-none animate-pulse" />
             
             <div className="relative z-10">

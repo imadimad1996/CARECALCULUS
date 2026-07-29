@@ -68,7 +68,7 @@ export default function NotFound({ lang }: { lang: LangCode }) {
 
       <div className="w-full max-w-lg space-y-3">
         <p className="text-[10px] font-mono font-black text-gray-400 uppercase tracking-widest">{t.popular}</p>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 sm:grid-cols-3 gap-2">
           {QUICK_LINKS.map(link => {
             const label = lang === 'fr' ? link.fr : link.en;
             return (

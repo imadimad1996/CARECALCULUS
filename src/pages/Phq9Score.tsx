@@ -118,7 +118,7 @@ export default function Phq9Score({ lang }: { lang: LangCode }) {
             {questions.map((q, idx) => (
               <div key={idx} className="space-y-3 pb-6 border-b border-gray-100 last:border-0 last:pb-0">
                 <p className="text-sm font-medium text-gray-800">{currentText[q]}</p>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2">
                   {options.map((opt, optIdx) => (
                     <button
                       key={optIdx}
@@ -136,7 +136,7 @@ export default function Phq9Score({ lang }: { lang: LangCode }) {
         </div>
 
         <div className="lg:col-span-4 relative">
-          <div className="sticky top-28 bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden ring-1 ring-white/10 flex flex-col justify-between p-8 min-h-[320px]">
+          <div className="sticky bottom-4 z-40 lg:top-28 lg:bottom-auto bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden ring-1 ring-white/10 flex flex-col justify-between p-5 lg:p-8 lg:min-h-[320px]">
             <div className="absolute top-0 right-0 p-32 bg-gradient-to-bl from-blue-500/20 to-transparent rounded-bl-[100px] pointer-events-none" />
             
             <div className="relative z-10">

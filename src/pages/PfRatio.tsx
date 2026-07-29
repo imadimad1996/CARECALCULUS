@@ -2,7 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { Activity, Info, BookOpen } from 'lucide-react';
 import { LangCode, Translations } from '../types';
 import { layoutTranslations } from '../utils/lang';
-import { trackCalculatorUsage } from '../utils/telemetry';
+import { trackCalculatorUsage, trackCalculatorResult } from '../utils/telemetry';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 
 const translations: Translations = {
@@ -51,15 +51,6 @@ export default function PfRatio({ lang }: { lang: LangCode }) {
     return Math.round(pao2 / decimalFio2);
   }, [pao2, fio2]);
 
-  useEffect(() => {
-    if (pfRatio !== null && pfRatio > 0) {
-      const timer = setTimeout(() => {
-        trackCalculatorUsage('oxygenation-ratio', lang, pfRatio);
-      }, 1500);
-      return () => clearTimeout(timer);
-    }
-  }, [pfRatio, lang]);
-
   const getCategory = (val: number) => {
     if (val >= 300) return { label: currentText.normal, color: 'text-emerald-500', bg: 'bg-emerald-500/10 border-emerald-500/20' };
     if (val > 200) return { label: currentText.mild, color: 'text-amber-500', bg: 'bg-amber-500/10 border-amber-500/20' };
@@ -68,6 +59,18 @@ export default function PfRatio({ lang }: { lang: LangCode }) {
   };
 
   const category = pfRatio !== null ? getCategory(pfRatio) : null;
+
+  useEffect(() => {
+    if (pfRatio !== null && pfRatio > 0) {
+      const timer = setTimeout(() => {
+        trackCalculatorUsage('oxygenation-ratio', lang, pfRatio);
+        if (category) {
+          trackCalculatorResult('oxygenation-ratio', pfRatio, category.label, lang);
+        }
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
+  }, [pfRatio, lang, category]);
 
   return (
     <>
@@ -112,7 +115,7 @@ export default function PfRatio({ lang }: { lang: LangCode }) {
         </div>
 
         <div className="lg:col-span-5 relative">
-          <div className="sticky top-28 bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden ring-1 ring-white/10 flex flex-col justify-between p-8 min-h-[320px]">
+          <div className="sticky bottom-4 z-40 lg:top-28 lg:bottom-auto bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden ring-1 ring-white/10 flex flex-col justify-between p-5 lg:p-8 lg:min-h-[320px]">
             <div className="absolute top-0 right-0 p-32 bg-gradient-to-bl from-blue-500/20 to-transparent rounded-bl-[100px] pointer-events-none" />
             
             <div className="relative z-10">

@@ -6,16 +6,27 @@ export default function InstallAppPrompt() {
   const [showPrompt, setShowPrompt] = useState(false);
 
   useEffect(() => {
+    // Only show to returning users (visit_count > 1) and if not dismissed
+    const visits = parseInt(localStorage.getItem('visit_count') || '1', 10);
+    const hasDismissed = localStorage.getItem('pwa_prompt_dismissed') === 'true';
+
     const handler = (e: any) => {
-      // Prevent Chrome 67 and earlier from automatically showing the prompt
       e.preventDefault();
-      // Stash the event so it can be triggered later
       setDeferredPrompt(e);
-      // Show the prompt
-      setShowPrompt(true);
+      if (visits > 1 && !hasDismissed) {
+        setShowPrompt(true);
+      }
     };
 
     window.addEventListener('beforeinstallprompt', handler);
+
+    // Fallback for iOS returning users
+    const isIos = /ipad|iphone|ipod/i.test(navigator.userAgent.toLowerCase());
+    const isStandalone = ('standalone' in navigator) && ((navigator as any).standalone === true);
+    
+    if (isIos && !isStandalone && visits > 1 && !hasDismissed) {
+      setShowPrompt(true);
+    }
 
     return () => {
       window.removeEventListener('beforeinstallprompt', handler);
@@ -23,12 +34,23 @@ export default function InstallAppPrompt() {
   }, []);
 
   const handleInstallClick = async () => {
-    if (!deferredPrompt) return;
+    if (deferredPrompt) {
+      setShowPrompt(false);
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      console.log(`User response to the install prompt: ${outcome}`);
+      setDeferredPrompt(null);
+    } else {
+      const isFr = localStorage.getItem('carecalculus-lang') === 'fr';
+      alert(isFr 
+        ? "Pour installer, appuyez sur l'icône de partage puis sur 'Sur l'écran d'accueil'." 
+        : "To install, tap the Share icon and select 'Add to Home Screen'.");
+    }
+  };
+
+  const handleDismiss = () => {
     setShowPrompt(false);
-    deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-    console.log(`User response to the install prompt: ${outcome}`);
-    setDeferredPrompt(null);
+    localStorage.setItem('pwa_prompt_dismissed', 'true');
   };
 
   if (!showPrompt) return null;
@@ -36,7 +58,7 @@ export default function InstallAppPrompt() {
   return (
     <div className="fixed bottom-4 left-4 right-4 md:left-auto md:right-8 md:w-80 bg-white shadow-2xl rounded-2xl border border-slate-200 p-4 z-50 animate-in slide-in-from-bottom-4">
       <button 
-        onClick={() => setShowPrompt(false)}
+        onClick={handleDismiss}
         className="absolute top-2 right-2 text-slate-400 hover:text-slate-600 transition"
       >
         <X className="w-5 h-5" />

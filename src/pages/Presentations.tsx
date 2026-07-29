@@ -692,7 +692,7 @@ export default function Presentations({ lang }: { lang: LangCode }) {
               {/* Main Slideshow screen */}
               <div className="flex-1 p-6 md:p-10 flex flex-col lg:flex-row gap-6 overflow-y-auto">
                 {/* Visual Slide Frame */}
-                <div className="flex-1 bg-slate-950 border border-slate-800 rounded-xl p-6 md:p-8 flex flex-col justify-between shadow-inner min-h-[360px] relative overflow-hidden group">
+                <div className="flex-1 bg-slate-950 border border-slate-800 rounded-xl p-6 md:p-8 flex flex-col justify-between shadow-inner lg:min-h-[360px] relative overflow-hidden group">
                   
                   {/* Watermark / Tech background visual grids */}
                   <div className="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:16px_16px] opacity-20 pointer-events-none" />

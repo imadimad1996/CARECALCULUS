@@ -457,7 +457,7 @@ export default function FmpMedecine({ lang }: { lang: LangCode }) {
                   </div>
                 )}
                 {selectedModule.pdf_file || (selectedModule.pdf_parts && selectedModule.pdf_parts[activePartIndex]) ? (
-                  <div className="flex-1 bg-white border border-gray-200 rounded-xl overflow-hidden shadow-xs relative min-h-[420px]">
+                  <div className="flex-1 bg-white border border-gray-200 rounded-xl overflow-hidden shadow-xs relative lg:min-h-[420px]">
                     <GamificationLock id={`fmp_${selectedModule.pdf_file || selectedModule.pdf_parts![activePartIndex]}`}>
                       <iframe
                         id="fmp-pdf-frame"

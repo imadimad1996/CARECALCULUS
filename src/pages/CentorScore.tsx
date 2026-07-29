@@ -110,7 +110,7 @@ export default function CentorScore({ lang }: { lang: LangCode }) {
   const YesNoToggle = ({ value, onChange, label }: { value: number, onChange: (v: number) => void, label: string }) => (
     <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
       <h3 className="text-lg font-semibold text-gray-900 mb-4">{label}</h3>
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <button
           onClick={() => onChange(1)}
           className={`p-3 rounded-xl border text-sm font-medium transition-all ${

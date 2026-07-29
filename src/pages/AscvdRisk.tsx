@@ -148,7 +148,7 @@ export default function AscvdRisk({ lang }: { lang: LangCode }) {
             <input type="number" step={isSI ? "0.1" : "1"} value={hdl} onChange={(e) => setHdl(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-rose-500 focus:ring-4 focus:ring-rose-500/10 rounded-2xl text-lg font-semibold transition" placeholder={isSI ? "e.g. 1.2" : "e.g. 50"} />
           </div>
 
-          <div className="md:col-span-2 grid grid-cols-2 gap-4">
+          <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-bold text-slate-700 mb-2">{dict.gender}</label>
               <div className="flex bg-slate-100 rounded-xl p-1">

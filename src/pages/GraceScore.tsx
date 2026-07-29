@@ -234,7 +234,7 @@ export default function GraceScore({ lang }: { lang: LangCode }) {
           <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-200">
             <div className="space-y-6">
               
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-bold text-slate-700 mb-1">{currentText.ageLabel as string}</label>
                   <input type="number" value={age} onChange={(e) => setAge(e.target.value)} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-rose-500 font-mono text-lg" placeholder="65" />

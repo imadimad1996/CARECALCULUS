@@ -4,7 +4,7 @@ import { LangCode, Translations } from '../types';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 import CalculatorInput from '../components/ui/CalculatorInput';
 import { layoutTranslations } from '../utils/lang';
-import { trackCalculatorUsage } from '../utils/telemetry';
+import { trackCalculatorUsage, trackCalculatorResult } from '../utils/telemetry';
 
 const translations: Translations = {
   en: {
@@ -97,17 +97,6 @@ export default function AaGradient({ lang }: { lang: LangCode }) {
     return parseFloat(computed.toFixed(1));
   }, [pAlveolar, pao2]);
 
-  useEffect(() => {
-    if (aaGradientValue > 0) {
-      const timer = setTimeout(() => {
-        trackCalculatorUsage('aa-gradient', lang, aaGradientValue);
-      }, 1500);
-      return () => clearTimeout(timer);
-    }
-  }, [aaGradientValue, lang]);
-
-  const gradientIsElevated = aaGradientValue > expectedGradient;
-
   const category = useMemo(() => {
     if (aaGradientValue <= 0) return { label: '', color: '', bg: '', sub: '' };
     if (gradientIsElevated) {
@@ -125,6 +114,16 @@ export default function AaGradient({ lang }: { lang: LangCode }) {
       sub: currentText.normalSub
     };
   }, [aaGradientValue, gradientIsElevated, currentText]);
+
+  useEffect(() => {
+    if (aaGradientValue > 0) {
+      const timer = setTimeout(() => {
+        trackCalculatorUsage('aa-gradient', lang, aaGradientValue);
+        trackCalculatorResult('aa-gradient', aaGradientValue, category.label, lang);
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
+  }, [aaGradientValue, lang, category.label]);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(`A-a Gradient: ${aaGradientValue} mmHg (Expected Normal: ${expectedGradient} mmHg, Status: ${category.label})`);
@@ -201,7 +200,7 @@ export default function AaGradient({ lang }: { lang: LangCode }) {
         </div>
 
         <div className="lg:col-span-5 relative">
-          <div className="sticky top-28 bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden ring-1 ring-white/10 flex flex-col justify-between p-8 min-h-[320px]">
+          <div className="sticky bottom-4 z-40 lg:top-28 lg:bottom-auto bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden ring-1 ring-white/10 flex flex-col justify-between p-5 lg:p-8 lg:min-h-[320px]">
             <div className="absolute top-0 right-0 p-32 bg-gradient-to-bl from-blue-500/20 to-transparent rounded-bl-[100px] pointer-events-none" />
             
             <div className="relative z-10 flex items-start justify-between">

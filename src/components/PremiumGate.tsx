@@ -28,21 +28,21 @@ export default function PremiumGate({ featureName, lang, children }: PremiumGate
   const content = {
     en: {
       badge: 'CARECALCULUS PRO',
-      title: 'Save 30 Seconds Per Patient on EHR Charting',
-      description: `${featureName} is reserved for CareCalculus Pro members. Copy perfectly formatted DotPhrases and SBAR notes directly into Epic or Cerner.`,
-      upgrade: 'Unlock 1-Click Epic Exports ($9.99)',
+      title: 'Support CareCalculus & Unlock Pro',
+      description: `Buy me a coffee to support the project and unlock ${featureName}. Copy perfectly formatted DotPhrases and SBAR notes directly into Epic or Cerner.`,
+      upgrade: 'Unlock Pro (One-Time $9.99)',
       features: ['1-Click Epic/Cerner Formatted Export', 'Unlimited Local Shift Patient Queue', 'Full Offline PWA (Works in basements)', '100% Ad-Free Experience'],
       hipaa: '100% HIPAA Compliant — All data stays local in browser',
       guarantee: '1-Time Payment • Non-Renewing Pass'
     },
     fr: {
       badge: 'CARECALCULUS PRO',
-      title: 'Gagnez 30 Secondes par Patient sur Votre Dossier Médical',
-      description: `${featureName} est réservé aux membres CareCalculus Pro. Copiez des DotPhrases et notes SBAR directement dans votre logiciel médical.`,
-      upgrade: 'Débloquer les Exports 1-Clic (9.99$)',
-      features: ['Export formaté en 1-clic pour Epic/Cerner', 'File d\'attente locale illimitée', 'Mode Hors-ligne intégral PWA', 'Expérience 100% sans publicité'],
+      title: 'Soutenez CareCalculus & Débloquez Pro',
+      description: `Offrez-moi un café pour soutenir le projet et débloquer ${featureName}. Copiez des notes parfaitement formatées directement dans votre logiciel.`,
+      upgrade: 'Débloquer Pro (Paiement Unique 9.99$)',
+      features: ['Export formaté en 1-clic', 'File d\'attente locale illimitée', 'Mode Hors-ligne intégral PWA', 'Expérience 100% sans publicité'],
       hipaa: '100% Conforme HIPAA — Calculs effectués localement',
-      guarantee: 'Paiement Unique • Sans Renouvellement Automatique'
+      guarantee: 'Paiement Unique • Sans Renouvellement'
     }
   };
 

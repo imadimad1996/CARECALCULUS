@@ -141,7 +141,7 @@ export default function BishopScore({ lang }: { lang: LangCode }) {
           {/* Dilation */}
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">{currentText.dilation}</h3>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
                 { val: 0, label: currentText.dilation0 },
                 { val: 1, label: currentText.dilation1 },
@@ -166,7 +166,7 @@ export default function BishopScore({ lang }: { lang: LangCode }) {
           {/* Effacement */}
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">{currentText.effacement}</h3>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
                 { val: 0, label: currentText.effacement0 },
                 { val: 1, label: currentText.effacement1 },
@@ -191,7 +191,7 @@ export default function BishopScore({ lang }: { lang: LangCode }) {
           {/* Station */}
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">{currentText.station}</h3>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
                 { val: 0, label: currentText.station0 },
                 { val: 1, label: currentText.station1 },

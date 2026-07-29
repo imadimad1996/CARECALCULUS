@@ -6,7 +6,7 @@ import ReviewBadge from '../components/ReviewBadge';
 import EvidencePanel from '../components/EvidencePanel';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 import { layoutTranslations } from '../utils/lang';
-import { trackCalculatorUsage } from '../utils/telemetry';
+import { trackCalculatorUsage, trackCalculatorResult } from '../utils/telemetry';
 import { ActionableResultPanel, RiskLevel } from '../components/ActionableResultPanel';
 import { MedicalReviewerCard } from '../components/MedicalReviewerCard';
 import { REVIEWER_EMERGENCY } from '../data/reviewers';
@@ -121,15 +121,6 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
     return parseFloat((t * (heightInMeters * heightInMeters)).toFixed(1));
   }, [height, targetBmiStr]);
 
-  useEffect(() => {
-    if (bmiValue > 0) {
-      const timer = setTimeout(() => {
-        trackCalculatorUsage('bmi-calculator', lang, bmiValue);
-      }, 1500);
-      return () => clearTimeout(timer);
-    }
-  }, [bmiValue, lang]);
-
   const getBmiCategory = (bmi: number) => {
     if (bmi === 0) return { label: '', color: '' };
     if (bmi < 18.5) return { label: currentText.categoryUnder, color: 'text-blue-400', bg: 'bg-blue-500/10 border-blue-500/20' };
@@ -139,6 +130,16 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
   };
 
   const category = getBmiCategory(bmiValue);
+
+  useEffect(() => {
+    if (bmiValue > 0) {
+      const timer = setTimeout(() => {
+        trackCalculatorUsage('bmi-calculator', lang, bmiValue);
+        trackCalculatorResult('bmi-calculator', bmiValue, category.label, lang);
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
+  }, [bmiValue, lang, category.label]);
 
   const getRiskLevel = (bmi: number): RiskLevel => {
     if (bmi === 0) return 'neutral';

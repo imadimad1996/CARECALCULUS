@@ -34,7 +34,7 @@
 - [GLP-1 & Metabolic Health Resource Hub](https://carecalculus.com/مركز-glp1)
 - [GLP-1 & Metabolic Health Resource Hub](https://carecalculus.com/%D9%85%D8%B1%D9%83%D8%B2-glp1)
 - [APGAR Score Calculator](https://carecalculus.com/apgar-score)
-- [SOFA Score ICU Calculator](https://carecalculus.com/sofa-score)
+- [SOFA Score Calculator — Sequential Organ Failure Assessment](https://carecalculus.com/sofa-score)
 - [Child-Pugh Score Calculator](https://carecalculus.com/child-pugh-score)
 - [Anion Gap Calculator](https://carecalculus.com/anion-gap)
 - [Alveolar-Arterial (A-a) Gradient Calculator](https://carecalculus.com/aa-gradient)

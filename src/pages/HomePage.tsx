@@ -320,7 +320,7 @@ export default function HomePage({ lang }: HomePageProps) {
                 <p key={idx}>{line}</p>
               ))}
             </div>
-            <div className="mt-6 grid grid-cols-2 gap-3 text-center">
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-center">
               <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
                 <div className="text-2xl font-black tracking-tight text-white">19+</div>
                 <div className="mt-1 text-[10px] font-mono font-semibold uppercase tracking-[0.2em] text-slate-400">calculators</div>
@@ -335,7 +335,7 @@ export default function HomePage({ lang }: HomePageProps) {
       </section>
 
       {/* Stats row */}
-      <section className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <section className="grid grid-cols-1 sm:grid-cols-2 sm:grid-cols-4 gap-4">
         {stats.map((s, i) => {
           const StatIcon = [Calculator, Globe, ShieldCheck, Award][i];
           return (

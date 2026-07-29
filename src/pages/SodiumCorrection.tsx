@@ -181,7 +181,7 @@ export default function SodiumCorrection({ lang }: { lang: LangCode }) {
                 <label className="block text-sm font-bold text-slate-700">
                   {currentText.sexLabel as string}
                 </label>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 sm:grid-cols-3 gap-2">
                   {(Object.keys(tbwFactors) as Array<keyof typeof tbwFactors>).map((type) => (
                     <button
                       key={type}

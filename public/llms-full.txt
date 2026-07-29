@@ -34,7 +34,7 @@
 - [GLP-1 & Metabolic Health Resource Hub](https://carecalculus.com/مركز-glp1)
 - [GLP-1 & Metabolic Health Resource Hub](https://carecalculus.com/%D9%85%D8%B1%D9%83%D8%B2-glp1)
 - [APGAR Score Calculator](https://carecalculus.com/apgar-score)
-- [SOFA Score ICU Calculator](https://carecalculus.com/sofa-score)
+- [SOFA Score Calculator — Sequential Organ Failure Assessment](https://carecalculus.com/sofa-score)
 - [Child-Pugh Score Calculator](https://carecalculus.com/child-pugh-score)
 - [Anion Gap Calculator](https://carecalculus.com/anion-gap)
 - [Alveolar-Arterial (A-a) Gradient Calculator](https://carecalculus.com/aa-gradient)
@@ -471,4 +471,70 @@ The MUST score is calculated by scoring three main criteria: Body Mass Index (BM
 
 #### Q: What does a high MUST score indicate?
 A MUST score of 2 or more indicates a high risk of malnutrition, requiring clinical intervention, a nutritional care plan, and referral to a dietitian.
+
+### /FR/SOFA-SCORE CLINICAL Q&A
+
+#### Q: Qu'est-ce que le score SOFA ?
+Le score SOFA (Sequential Organ Failure Assessment) évalue le dysfonctionnement de 6 systèmes d'organes pour suivre l'évolution clinique et déterminer le pronostic des patients en réanimation.
+
+#### Q: Quand utiliser le score SOFA ?
+Il est utilisé principalement en unité de soins intensifs (réanimation) pour le diagnostic de sepsis (critères Sepsis-3) lorsqu'il y a une augmentation aiguë du score de 2 points ou plus.
+
+#### Q: Le score SOFA permet-il de prédire la mortalité ?
+Bien que conçu pour décrire la défaillance d'organes, un score SOFA élevé (ou qui augmente dans les 48 premières heures) est fortement corrélé à un risque de mortalité accru.
+
+### /FR/MAP-CALCULATOR CLINICAL Q&A
+
+#### Q: Qu'est-ce que la PAM (Pression Artérielle Moyenne) ?
+La pression artérielle moyenne (PAM) est la pression moyenne dans les artères durant un cycle cardiaque. Elle reflète la pression de perfusion des organes vitaux.
+
+#### Q: Quelle est la valeur normale de la PAM ?
+Une PAM supérieure ou égale à 65 mmHg est généralement considérée comme suffisante pour assurer une bonne perfusion tissulaire, notamment dans le cadre de la prise en charge d'un choc septique.
+
+#### Q: Comment est calculée la PAM ?
+La PAM est estimée par la formule : PAM = Pression Diastolique + 1/3 × (Pression Systolique - Pression Diastolique).
+
+### /FR/WELLS-SCORE CLINICAL Q&A
+
+#### Q: À quoi sert le score de Wells pour l'embolie pulmonaire ?
+Le score de Wells permet de stratifier le risque clinique (probabilité pré-test) d'une embolie pulmonaire (EP) ou d'une thrombose veineuse profonde (TVP) avant de réaliser des examens d'imagerie.
+
+#### Q: Comment interpréter le score de Wells ?
+Un score élevé suggère une probabilité clinique forte d'EP ou de TVP, justifiant une imagerie directe (ex: angioscanner). Un score faible oriente vers un dosage des D-dimères pour exclure le diagnostic.
+
+#### Q: Quels sont les critères principaux du score de Wells ?
+Il inclut des critères tels que les signes cliniques de TVP, une fréquence cardiaque > 100/min, un antécédent d'EP/TVP, l'hémoptysie, ou un cancer actif.
+
+### /FR/CURB65-SCORE CLINICAL Q&A
+
+#### Q: Qu'est-ce que le score CURB-65 ?
+Le score CURB-65 évalue la sévérité d'une pneumonie aiguë communautaire et aide à décider du lieu de prise en charge du patient (ambulatoire, hospitalisation, ou réanimation).
+
+#### Q: Que signifient les lettres CURB-65 ?
+Elles correspondent à Confusion, Urée > 7 mmol/L (BUN), fréquence Respiratoire ≥ 30/min, pression artérielle Basse (Blood pressure), et âge ≥ 65 ans.
+
+#### Q: Quand doit-on hospitaliser un patient selon le CURB-65 ?
+Un score de 0 ou 1 permet un traitement ambulatoire. Un score de 2 nécessite souvent une hospitalisation courte. Un score ≥ 3 indique une pneumonie sévère nécessitant une hospitalisation urgente.
+
+### /FR/QSOFA-SCORE CLINICAL Q&A
+
+#### Q: Qu'est-ce que le score qSOFA ?
+Le quick SOFA (qSOFA) est un outil clinique rapide pour identifier les patients infectés à haut risque de mauvais pronostic en dehors des unités de soins intensifs.
+
+#### Q: Quels sont les trois critères du qSOFA ?
+Le qSOFA évalue la fréquence respiratoire (≥ 22/min), l'altération de l'état mental (Glasgow < 15), et la pression artérielle systolique (≤ 100 mmHg).
+
+#### Q: Un qSOFA positif confirme-t-il le sepsis ?
+Non, un qSOFA ≥ 2 points suggère un risque élevé de décès ou de séjour prolongé en réanimation, mais ne définit pas formellement le sepsis (qui nécessite le score SOFA complet).
+
+### /FR/CREATININE-CLEARANCE CLINICAL Q&A
+
+#### Q: Pourquoi calculer la clairance de la créatinine ?
+Elle permet d'estimer le débit de filtration glomérulaire (DFG) pour évaluer la fonction rénale et adapter la posologie des médicaments à élimination rénale.
+
+#### Q: Quand utilise-t-on la formule de Cockcroft-Gault ?
+Bien que d'autres formules (CKD-EPI, MDRD) soient préférées pour diagnostiquer l'insuffisance rénale chronique, Cockcroft-Gault reste le standard recommandé par l'industrie pharmaceutique pour l'adaptation posologique des médicaments.
+
+#### Q: Quelles sont les limites de la formule de Cockcroft-Gault ?
+Elle est moins précise chez les patients très âgés, obèses ou dénutris, car elle dépend fortement du poids corporel et de la masse musculaire.
 

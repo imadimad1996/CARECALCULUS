@@ -157,7 +157,7 @@ export default function AdjustedBodyWeight({ lang }: { lang: LangCode }) {
         </div>
 
         <div className="lg:col-span-6 space-y-6">
-            <div className="bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden ring-1 ring-white/10 p-8 min-h-[320px] relative">
+            <div className="bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden ring-1 ring-white/10 p-8 lg:min-h-[320px] relative">
                <div className="absolute top-0 right-0 p-32 bg-gradient-to-bl from-blue-500/20 to-transparent rounded-bl-[100px] pointer-events-none" />
                 
                <div className="relative z-10 flex flex-col gap-6">

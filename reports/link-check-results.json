@@ -1,0 +1,3847 @@
+{
+  "generatedAt": "2026-07-28T23:27:31.127Z",
+  "baseUrl": "https://www.carecalculus.com",
+  "mode": "production",
+  "totalChecked": 513,
+  "passing": 513,
+  "broken": 0,
+  "slow": 0,
+  "brokenUrls": [],
+  "slowUrls": [],
+  "allResults": [
+    {
+      "url": "https://fr.carecalculus.com/",
+      "status": 200,
+      "ms": 374,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/aa-gradient",
+      "status": 200,
+      "ms": 262,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/about",
+      "status": 200,
+      "ms": 279,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/adjusted-body-weight",
+      "status": 200,
+      "ms": 255,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/anc-calculator",
+      "status": 200,
+      "ms": 343,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/anion-gap",
+      "status": 200,
+      "ms": 277,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/apgar-score",
+      "status": 200,
+      "ms": 268,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/ai-and-health-equity-in-low-resource-settings-balancing-innovation-and-access-in",
+      "status": 200,
+      "ms": 256,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/ai-in-clinical-practice-2026-what-physicians-are-actually-using-and-whats-still",
+      "status": 200,
+      "ms": 288,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/cancer-screening-recommendations-for-adults",
+      "status": 200,
+      "ms": 248,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/diabetes-prevention-strategies-backed-by-science",
+      "status": 200,
+      "ms": 291,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/digital-health-trends-shaping-the-future",
+      "status": 200,
+      "ms": 248,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/early-warning-signs-of-stroke-everyone-should-know",
+      "status": 200,
+      "ms": 239,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/exercise-prescription-as-medicine-evidence-based-physical-therapy-in-metabolic-m",
+      "status": 200,
+      "ms": 289,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/food-as-medicine-scientific-evidence-for-better-outcomes",
+      "status": 200,
+      "ms": 256,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/glp-1-and-kidney-health-what-the-evidence-shows",
+      "status": 200,
+      "ms": 248,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/glp-1-drugs-and-cardiovascular-risk-what-the-sustain-6-and-select-trials-tell-us",
+      "status": 200,
+      "ms": 281,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/glp-1-hormones-and-weight-why-metabolic-health-in-women-requires-a-different-app",
+      "status": 200,
+      "ms": 242,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/glp-1-medications-in-2026-how-they-work-who-qualifies-and-what-the-evidence-actu",
+      "status": 200,
+      "ms": 277,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/how-artificial-intelligence-assists-medical-diagnosis",
+      "status": 200,
+      "ms": 286,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/how-bedside-calculators-impact-real-patient-outcomes-a-case-study-review",
+      "status": 200,
+      "ms": 122,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/hypertension-new-guidelines-for-patients-and-clinicians",
+      "status": 200,
+      "ms": 59,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/iron-deficiency-anemia-diagnosis-and-management",
+      "status": 200,
+      "ms": 121,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/medical-imaging-ai-opportunities-and-challenges",
+      "status": 200,
+      "ms": 126,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/mental-health-and-physical-health-connections",
+      "status": 200,
+      "ms": 62,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/nutrition-myths-debunked-by-science",
+      "status": 200,
+      "ms": 75,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/obesity-and-metabolic-syndrome-explained",
+      "status": 200,
+      "ms": 131,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/oral-glp-1-medications-navigating-the-transition-from-injectable-to-oral-therapi",
+      "status": 200,
+      "ms": 130,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/ozempic-vs-wegovy-a-clinicians-side-by-side-comparison-of-dosing-outcomes-and-pa",
+      "status": 200,
+      "ms": 126,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/precision-medicine-explained",
+      "status": 200,
+      "ms": 77,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/sleep-optimization-for-better-health",
+      "status": 200,
+      "ms": 75,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/telemedicine-best-practices",
+      "status": 200,
+      "ms": 60,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/the-2026-longevity-playbook-evidence-based-habits-biomarkers-and-therapies-that",
+      "status": 200,
+      "ms": 131,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/the-future-of-remote-patient-monitoring",
+      "status": 200,
+      "ms": 131,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/the-glp-1-muscle-crisis-what-to-eat-when-you-forget-to-eat",
+      "status": 200,
+      "ms": 132,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/the-gut-brain-axis-in-2026-how-microbiome-health-influences-neurological-and-met",
+      "status": 200,
+      "ms": 109,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/top-causes-of-stroke-in-young-adults",
+      "status": 200,
+      "ms": 67,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/understanding-hpv-and-cancer-prevention",
+      "status": 200,
+      "ms": 69,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/understanding-long-covid-latest-research-updates",
+      "status": 200,
+      "ms": 106,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/understanding-prediabetes-before-it-becomes-diabetes",
+      "status": 200,
+      "ms": 208,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/vitamin-d-deficiency-symptoms-and-treatment",
+      "status": 200,
+      "ms": 64,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/wearable-health-devices-benefits-and-limitations",
+      "status": 200,
+      "ms": 59,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog-articles/your-gut-microbiome-is-running-your-health-the-brain-immunity-and-metabolic-conn",
+      "status": 200,
+      "ms": 98,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog/advances-in-stroke-prevention-and-management",
+      "status": 200,
+      "ms": 101,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog/cancer-biomarker-discovery-using-ai",
+      "status": 200,
+      "ms": 98,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog/clinical-applications-of-generative-ai-in-healthcare",
+      "status": 200,
+      "ms": 89,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog/clinical-impact-of-telemedicine-after-covid-19",
+      "status": 200,
+      "ms": 93,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog/clinical-nutrition-in-acute-and-chronic-kidney-disease-practical-espen-guideline",
+      "status": 200,
+      "ms": 90,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog/digital-health-technologies-and-patient-outcomes",
+      "status": 200,
+      "ms": 103,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog/espen-guideline-on-nutrition-and-hydration-in-dementia-2024-update",
+      "status": 200,
+      "ms": 98,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog/espen-practical-guideline-clinical-nutrition-in-acute-and-chronic-pancreatitis-2",
+      "status": 200,
+      "ms": 88,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog/ethical-challenges-of-artificial-intelligence-in-medicine",
+      "status": 200,
+      "ms": 85,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog/food-as-medicine-interventions-current-evidence",
+      "status": 200,
+      "ms": 71,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog/glp-1-receptor-agonists-in-obesity-and-cardiometabolic-disease-a-systematic-revi",
+      "status": 200,
+      "ms": 85,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog/health-informatics-and-big-data-analytics",
+      "status": 200,
+      "ms": 99,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog/large-language-models-and-clinical-decision-support-current-capabilities-validat",
+      "status": 200,
+      "ms": 97,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog/longitudinal-analysis-of-hypertension-risk-factors",
+      "status": 200,
+      "ms": 97,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog/machine-learning-applications-in-medical-imaging",
+      "status": 200,
+      "ms": 82,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog/nutrition-and-chronic-disease-prevention",
+      "status": 200,
+      "ms": 73,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog/pharmacological-and-lifestyle-interventions-for-healthspan-extension-a-review-of",
+      "status": 200,
+      "ms": 87,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog/precision-medicine-in-oncology-current-status",
+      "status": 200,
+      "ms": 83,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog/recent-developments-in-diabetes-research",
+      "status": 200,
+      "ms": 56,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog/remote-monitoring-and-healthcare-resource-utilization",
+      "status": 200,
+      "ms": 80,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog/sleep-and-cardiometabolic-disease-a-review",
+      "status": 200,
+      "ms": 63,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog/the-role-of-gut-microbiota-in-chronic-disease",
+      "status": 200,
+      "ms": 84,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/blog/wearable-devices-for-chronic-disease-monitoring",
+      "status": 200,
+      "ms": 60,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/bmi-calculator",
+      "status": 200,
+      "ms": 83,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/cha2ds2-vasc",
+      "status": 200,
+      "ms": 71,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/child-pugh-score",
+      "status": 200,
+      "ms": 72,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/ckd-epi-gfr",
+      "status": 200,
+      "ms": 73,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/clinical-guide",
+      "status": 200,
+      "ms": 69,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/clinical-guide/cha2ds2-vasc-in-afib",
+      "status": 200,
+      "ms": 59,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/clinical-guide/child-pugh-score-in-cirrhosis",
+      "status": 200,
+      "ms": 92,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/clinical-guide/ckd-epi-gfr-in-acute-kidney-injury",
+      "status": 200,
+      "ms": 75,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/clinical-guide/creatinine-clearance-in-acute-kidney-injury",
+      "status": 200,
+      "ms": 80,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/clinical-guide/curb65-score-in-pneumonia",
+      "status": 200,
+      "ms": 92,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/clinical-guide/gcs-calculator-in-tbi",
+      "status": 200,
+      "ms": 76,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/clinical-guide/map-calculator-in-sepsis",
+      "status": 200,
+      "ms": 66,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/clinical-guide/meld-score-in-cirrhosis",
+      "status": 200,
+      "ms": 76,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/clinical-guide/pf-ratio-in-ards",
+      "status": 200,
+      "ms": 87,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/clinical-guide/qsofa-score-in-multi-organ-failure",
+      "status": 200,
+      "ms": 68,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/clinical-guide/qsofa-score-in-sepsis",
+      "status": 200,
+      "ms": 65,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/clinical-guide/sirs-criteria-in-sepsis",
+      "status": 200,
+      "ms": 71,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/clinical-guide/sofa-score-in-acute-kidney-injury",
+      "status": 200,
+      "ms": 65,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/clinical-guide/sofa-score-in-multi-organ-failure",
+      "status": 200,
+      "ms": 71,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/clinical-guide/sofa-score-in-sepsis",
+      "status": 200,
+      "ms": 74,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/clinical-guide/tidal-volume-in-ards",
+      "status": 200,
+      "ms": 67,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/clinical-guide/wells-score-in-dvt",
+      "status": 200,
+      "ms": 87,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/clinical-guide/wells-score-in-pulmonary-embolism",
+      "status": 200,
+      "ms": 66,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/clinical-library",
+      "status": 200,
+      "ms": 88,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/clinical-library/convert",
+      "status": 200,
+      "ms": 85,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/clinical-library/criteria",
+      "status": 200,
+      "ms": 67,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/clinical-library/decision",
+      "status": 200,
+      "ms": 74,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/clinical-library/equations",
+      "status": 200,
+      "ms": 58,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/clinical-library/specialties",
+      "status": 200,
+      "ms": 59,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/compare/bmi-calculator-vs-adjusted-body-weight",
+      "status": 200,
+      "ms": 69,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/compare/creatinine-clearance-vs-mdrd-gfr",
+      "status": 200,
+      "ms": 86,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/compare/curb65-score-vs-qsofa-score",
+      "status": 200,
+      "ms": 87,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/compare/glasgow-coma-scale-vs-qsofa-score",
+      "status": 200,
+      "ms": 176,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/compare/map-calculator-vs-qsofa-score",
+      "status": 200,
+      "ms": 194,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/compare/mdrd-gfr-vs-ckd-epi-gfr",
+      "status": 200,
+      "ms": 73,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/compare/meld-score-vs-child-pugh-score",
+      "status": 200,
+      "ms": 72,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/compare/qsofa-score-vs-sirs-criteria",
+      "status": 200,
+      "ms": 63,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/compare/qsofa-score-vs-sofa-score",
+      "status": 200,
+      "ms": 63,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/conditions/atrial-fibrillation",
+      "status": 200,
+      "ms": 103,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/conditions/liver-disease",
+      "status": 200,
+      "ms": 69,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/conditions/renal-failure",
+      "status": 200,
+      "ms": 72,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/conditions/respiratory-failure",
+      "status": 200,
+      "ms": 101,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/conditions/sepsis",
+      "status": 200,
+      "ms": 106,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/corrected-calcium",
+      "status": 200,
+      "ms": 99,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/creatinine-clearance",
+      "status": 200,
+      "ms": 86,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/curb65-score",
+      "status": 200,
+      "ms": 89,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/disclaimer",
+      "status": 200,
+      "ms": 63,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/drip-rate-calculator",
+      "status": 200,
+      "ms": 69,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/embed-gallery",
+      "status": 200,
+      "ms": 104,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/glasgow-coma-scale",
+      "status": 200,
+      "ms": 103,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/glp-1-hub",
+      "status": 200,
+      "ms": 85,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/map-calculator",
+      "status": 200,
+      "ms": 63,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/mdrd-gfr",
+      "status": 200,
+      "ms": 83,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/medical-conversions",
+      "status": 200,
+      "ms": 88,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/meld-score",
+      "status": 200,
+      "ms": 60,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/nutrition-hub",
+      "status": 200,
+      "ms": 76,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/nutrition-must",
+      "status": 200,
+      "ms": 62,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/nutrition-nrs2002",
+      "status": 200,
+      "ms": 62,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/nutrition-tdee",
+      "status": 200,
+      "ms": 95,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/pf-ratio",
+      "status": 200,
+      "ms": 73,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/phq9-score",
+      "status": 200,
+      "ms": 98,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/pricing",
+      "status": 200,
+      "ms": 74,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/privacy",
+      "status": 200,
+      "ms": 61,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/are-the-ispits-courses-free-to-download",
+      "status": 200,
+      "ms": 93,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/at-what-cha2ds2-vasc-score-is-anticoagulation-recommended",
+      "status": 200,
+      "ms": 78,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/can-gcs-be-used-in-children",
+      "status": 200,
+      "ms": 69,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/can-the-sofa-score-predict-mortality-in-the-icu",
+      "status": 200,
+      "ms": 72,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/how-do-you-calculate-iv-drip-rate",
+      "status": 200,
+      "ms": 96,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/how-do-you-convert-between-corticosteroids",
+      "status": 200,
+      "ms": 73,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/how-do-you-convert-creatinine-from-mgdl-to-umoll",
+      "status": 200,
+      "ms": 75,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/how-do-you-convert-glucose-from-mgdl-to-mmoll",
+      "status": 200,
+      "ms": 94,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/how-do-you-interpret-a-wells-dvt-score-of-2-or-higher",
+      "status": 200,
+      "ms": 73,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/how-does-female-sex-impact-the-cha2ds2-vasc-score-calculation",
+      "status": 200,
+      "ms": 96,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/how-does-the-child-pugh-score-differ-from-the-meld-score",
+      "status": 200,
+      "ms": 94,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/how-does-the-pf-ratio-classify-ards",
+      "status": 200,
+      "ms": 60,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/how-does-the-sofa-score-define-organ-dysfunction-severity",
+      "status": 200,
+      "ms": 55,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/how-is-anc-calculated",
+      "status": 200,
+      "ms": 73,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/how-is-ideal-body-weight-calculated",
+      "status": 200,
+      "ms": 73,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/how-is-meld-score-calculated",
+      "status": 200,
+      "ms": 104,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/how-is-the-expected-normal-a-a-gradient-calculated",
+      "status": 200,
+      "ms": 83,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/how-is-the-must-score-calculated",
+      "status": 200,
+      "ms": 102,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/how-is-the-phq-9-scored",
+      "status": 200,
+      "ms": 78,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/how-often-is-the-meld-score-recalculated-for-transplant-patients",
+      "status": 200,
+      "ms": 93,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/how-often-should-malnutrition-risk-be-assessed",
+      "status": 200,
+      "ms": 93,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/is-bmi-accurate-for-all-ethnicities",
+      "status": 200,
+      "ms": 78,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/is-sirs-still-used-to-diagnose-sepsis",
+      "status": 200,
+      "ms": 79,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/is-the-ckd-epi-equation-reliable-in-acute-kidney-injury-aki",
+      "status": 200,
+      "ms": 72,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/should-a-d-dimer-test-be-done-before-calculating-wells-score",
+      "status": 200,
+      "ms": 95,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/should-qsofa-replace-sirs-criteria-for-sepsis-screening",
+      "status": 200,
+      "ms": 94,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-anc-level-indicates-neutropenia",
+      "status": 200,
+      "ms": 80,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-are-common-side-effects-of-glp-1-agonists",
+      "status": 200,
+      "ms": 100,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-are-glp-1-receptor-agonists",
+      "status": 200,
+      "ms": 95,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-are-the-anatomical-subsites-of-the-larynx",
+      "status": 200,
+      "ms": 70,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-are-the-child-pugh-classification-classes",
+      "status": 200,
+      "ms": 90,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-are-the-limitations-of-bmi-in-clinical-practice",
+      "status": 200,
+      "ms": 96,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-are-the-primary-indications-for-glp-1-ras",
+      "status": 200,
+      "ms": 74,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-are-the-sirs-criteria",
+      "status": 200,
+      "ms": 80,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-are-the-six-organ-systems-assessed-by-the-sofa-score",
+      "status": 200,
+      "ms": 90,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-are-the-who-bmi-classification-categories",
+      "status": 200,
+      "ms": 68,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-causes-a-high-anion-gap-metabolic-acidosis-hagma",
+      "status": 200,
+      "ms": 96,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-causes-an-elevated-a-a-gradient",
+      "status": 200,
+      "ms": 96,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-cha2ds2-vasc-score-requires-anticoagulation",
+      "status": 200,
+      "ms": 66,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-creatinine-clearance-is-considered-normal",
+      "status": 200,
+      "ms": 89,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-curb-65-score-requires-hospitalization",
+      "status": 200,
+      "ms": 88,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-do-the-phq-9-score-ranges-mean",
+      "status": 200,
+      "ms": 72,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-does-a-ckd-epi-gfr-score-of-45-indicate",
+      "status": 200,
+      "ms": 72,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-does-a-high-must-score-indicate",
+      "status": 200,
+      "ms": 98,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-does-a-normal-apgar-score-mean",
+      "status": 200,
+      "ms": 96,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-does-curb-65-stand-for",
+      "status": 200,
+      "ms": 72,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-does-the-cha2ds2-vasc-score-estimate",
+      "status": 200,
+      "ms": 91,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-formula-is-used-to-calculate-predicted-body-weight",
+      "status": 200,
+      "ms": 96,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-gcs-score-indicates-a-severe-brain-injury",
+      "status": 200,
+      "ms": 75,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-a-normal-iv-drip-rate",
+      "status": 200,
+      "ms": 74,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-a-normal-pf-ratio",
+      "status": 200,
+      "ms": 167,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-a-normal-serum-anion-gap",
+      "status": 200,
+      "ms": 79,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-body-mass-index-bmi",
+      "status": 200,
+      "ms": 62,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-cha2ds2-vasc-score",
+      "status": 200,
+      "ms": 77,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-creatinine-clearance",
+      "status": 200,
+      "ms": 63,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-laryngeal-cancer-staging-based-on",
+      "status": 200,
+      "ms": 100,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-mean-arterial-pressure-map",
+      "status": 200,
+      "ms": 92,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-the-absolute-neutrophil-count-anc",
+      "status": 200,
+      "ms": 93,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-the-alveolar-arterial-a-a-oxygen-gradient",
+      "status": 200,
+      "ms": 70,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-the-apgar-score",
+      "status": 200,
+      "ms": 86,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-the-child-pugh-score",
+      "status": 200,
+      "ms": 76,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-the-clinical-significance-of-a-2-point-increase-in-the-sofa-score",
+      "status": 200,
+      "ms": 64,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-the-clinical-significance-of-a-change-in-sofa-score",
+      "status": 200,
+      "ms": 78,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-the-cockcroft-gault-formula",
+      "status": 200,
+      "ms": 64,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-the-corrected-calcium-formula",
+      "status": 200,
+      "ms": 88,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-the-difference-between-curb-65-and-psi-pneumonia-severity-index",
+      "status": 200,
+      "ms": 79,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-the-difference-between-map-and-systolic-blood-pressure",
+      "status": 200,
+      "ms": 77,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-the-difference-between-mdrd-gfr-and-ckd-epi-gfr",
+      "status": 200,
+      "ms": 95,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-the-difference-between-qsofa-and-sofa",
+      "status": 200,
+      "ms": 83,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-the-difference-between-sirs-and-sepsis",
+      "status": 200,
+      "ms": 64,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-the-difference-between-wells-criteria-for-dvt-and-pe",
+      "status": 200,
+      "ms": 80,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-the-formula-for-adjusted-body-weight",
+      "status": 200,
+      "ms": 68,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-the-formula-for-corrected-calcium",
+      "status": 200,
+      "ms": 59,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-the-glasgow-coma-scale-gcs",
+      "status": 200,
+      "ms": 72,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-the-ispits-paramedical-academy",
+      "status": 200,
+      "ms": 72,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-the-meld-score",
+      "status": 200,
+      "ms": 84,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-the-must-score",
+      "status": 200,
+      "ms": 95,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-the-pf-ratio",
+      "status": 200,
+      "ms": 65,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-the-phq-9",
+      "status": 200,
+      "ms": 66,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-the-qsofa-score",
+      "status": 200,
+      "ms": 80,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-the-recommended-total-daily-energy-expenditure-tdee-for-icu-patients",
+      "status": 200,
+      "ms": 82,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-the-serum-anion-gap",
+      "status": 200,
+      "ms": 86,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-the-significance-of-the-t4-stage-in-laryngeal-cancer",
+      "status": 200,
+      "ms": 53,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-the-sofa-score",
+      "status": 200,
+      "ms": 73,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-the-source-study-for-curb-65",
+      "status": 200,
+      "ms": 85,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-the-standard-protective-tidal-volume-target-in-ards",
+      "status": 200,
+      "ms": 79,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-is-the-wells-score-used-for",
+      "status": 200,
+      "ms": 69,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-map-value-indicates-adequate-organ-perfusion",
+      "status": 200,
+      "ms": 64,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-meld-score-indicates-the-need-for-a-liver-transplant",
+      "status": 200,
+      "ms": 87,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-meld-score-qualifies-for-liver-transplant",
+      "status": 200,
+      "ms": 85,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-parameters-are-used-to-calculate-the-meld-score",
+      "status": 200,
+      "ms": 90,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-qsofa-score-is-considered-high-risk",
+      "status": 200,
+      "ms": 62,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/what-wells-score-indicates-high-risk-for-dvt",
+      "status": 200,
+      "ms": 59,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/when-is-adjusted-body-weight-ajbw-used",
+      "status": 200,
+      "ms": 98,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/when-is-the-apgar-score-calculated",
+      "status": 200,
+      "ms": 87,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/when-should-i-use-the-map-calculator",
+      "status": 200,
+      "ms": 75,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/when-should-ionized-calcium-be-measured-instead-of-using-corrected-calcium",
+      "status": 200,
+      "ms": 74,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/who-can-use-the-ispits-modules-on-carecalculus",
+      "status": 200,
+      "ms": 91,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/who-developed-the-glasgow-coma-scale",
+      "status": 200,
+      "ms": 85,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/why-do-we-correct-calcium-for-albumin",
+      "status": 200,
+      "ms": 78,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/why-does-the-mdrd-equation-include-age-and-sex",
+      "status": 200,
+      "ms": 83,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/why-is-clinical-nutrition-screening-important-in-hospitals",
+      "status": 200,
+      "ms": 78,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/why-is-medical-unit-conversion-necessary",
+      "status": 200,
+      "ms": 63,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/why-is-steroid-conversion-important",
+      "status": 200,
+      "ms": 93,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/why-must-serum-calcium-be-corrected-for-albumin-levels",
+      "status": 200,
+      "ms": 94,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/q/why-should-tidal-volume-be-calculated-based-on-predicted-body-weight-pbw",
+      "status": 200,
+      "ms": 76,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/qsofa-score",
+      "status": 200,
+      "ms": 86,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/sirs-criteria",
+      "status": 200,
+      "ms": 63,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/sofa-score",
+      "status": 200,
+      "ms": 62,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/specialties/cardiology",
+      "status": 200,
+      "ms": 85,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/specialties/emergency-medicine",
+      "status": 200,
+      "ms": 78,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/specialties/intensive-care",
+      "status": 200,
+      "ms": 67,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/specialties/internal-medicine",
+      "status": 200,
+      "ms": 58,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/specialties/nephrology",
+      "status": 200,
+      "ms": 61,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/specialties/neurology",
+      "status": 200,
+      "ms": 59,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/specialties/pulmonology",
+      "status": 200,
+      "ms": 71,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/steroid-conversion",
+      "status": 200,
+      "ms": 71,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/terms",
+      "status": 200,
+      "ms": 70,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/tidal-volume",
+      "status": 200,
+      "ms": 65,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://fr.carecalculus.com/wells-score",
+      "status": 200,
+      "ms": 63,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://www.carecalculus.com/",
+      "status": 200,
+      "ms": 179,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://www.carecalculus.com/aa-gradient",
+      "status": 200,
+      "ms": 336,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/aa-gradient/"
+    },
+    {
+      "url": "https://www.carecalculus.com/about",
+      "status": 200,
+      "ms": 238,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/about/"
+    },
+    {
+      "url": "https://www.carecalculus.com/adjusted-body-weight",
+      "status": 200,
+      "ms": 225,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/adjusted-body-weight/"
+    },
+    {
+      "url": "https://www.carecalculus.com/anc-calculator",
+      "status": 200,
+      "ms": 266,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/anc-calculator/"
+    },
+    {
+      "url": "https://www.carecalculus.com/anion-gap",
+      "status": 200,
+      "ms": 220,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/anion-gap/"
+    },
+    {
+      "url": "https://www.carecalculus.com/apgar-score",
+      "status": 200,
+      "ms": 237,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/apgar-score/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog",
+      "status": 200,
+      "ms": 263,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles",
+      "status": 200,
+      "ms": 228,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/ai-and-health-equity-in-low-resource-settings-balancing-innovation-and-access-in",
+      "status": 200,
+      "ms": 340,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/ai-and-health-equity-in-low-resource-settings-balancing-innovation-and-access-in/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/ai-in-clinical-practice-2026-what-physicians-are-actually-using-and-whats-still",
+      "status": 200,
+      "ms": 229,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/ai-in-clinical-practice-2026-what-physicians-are-actually-using-and-whats-still/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/cancer-screening-recommendations-for-adults",
+      "status": 200,
+      "ms": 109,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/cancer-screening-recommendations-for-adults/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/diabetes-prevention-strategies-backed-by-science",
+      "status": 200,
+      "ms": 112,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/diabetes-prevention-strategies-backed-by-science/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/digital-health-trends-shaping-the-future",
+      "status": 200,
+      "ms": 123,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/digital-health-trends-shaping-the-future/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/early-warning-signs-of-stroke-everyone-should-know",
+      "status": 200,
+      "ms": 223,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/early-warning-signs-of-stroke-everyone-should-know/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/exercise-prescription-as-medicine-evidence-based-physical-therapy-in-metabolic-m",
+      "status": 200,
+      "ms": 118,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/exercise-prescription-as-medicine-evidence-based-physical-therapy-in-metabolic-m/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/food-as-medicine-scientific-evidence-for-better-outcomes",
+      "status": 200,
+      "ms": 113,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/food-as-medicine-scientific-evidence-for-better-outcomes/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/glp-1-and-kidney-health-what-the-evidence-shows",
+      "status": 200,
+      "ms": 211,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/glp-1-and-kidney-health-what-the-evidence-shows/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/glp-1-drugs-and-cardiovascular-risk-what-the-sustain-6-and-select-trials-tell-us",
+      "status": 200,
+      "ms": 123,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/glp-1-drugs-and-cardiovascular-risk-what-the-sustain-6-and-select-trials-tell-us/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/glp-1-hormones-and-weight-why-metabolic-health-in-women-requires-a-different-app",
+      "status": 200,
+      "ms": 111,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/glp-1-hormones-and-weight-why-metabolic-health-in-women-requires-a-different-app/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/glp-1-medications-in-2026-how-they-work-who-qualifies-and-what-the-evidence-actu",
+      "status": 200,
+      "ms": 115,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/glp-1-medications-in-2026-how-they-work-who-qualifies-and-what-the-evidence-actu/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/how-artificial-intelligence-assists-medical-diagnosis",
+      "status": 200,
+      "ms": 117,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/how-artificial-intelligence-assists-medical-diagnosis/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/how-bedside-calculators-impact-real-patient-outcomes-a-case-study-review",
+      "status": 200,
+      "ms": 120,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/how-bedside-calculators-impact-real-patient-outcomes-a-case-study-review/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/hypertension-new-guidelines-for-patients-and-clinicians",
+      "status": 200,
+      "ms": 209,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/hypertension-new-guidelines-for-patients-and-clinicians/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/iron-deficiency-anemia-diagnosis-and-management",
+      "status": 200,
+      "ms": 223,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/iron-deficiency-anemia-diagnosis-and-management/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/medical-imaging-ai-opportunities-and-challenges",
+      "status": 200,
+      "ms": 237,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/medical-imaging-ai-opportunities-and-challenges/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/mental-health-and-physical-health-connections",
+      "status": 200,
+      "ms": 252,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/mental-health-and-physical-health-connections/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/nutrition-myths-debunked-by-science",
+      "status": 200,
+      "ms": 251,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/nutrition-myths-debunked-by-science/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/obesity-and-metabolic-syndrome-explained",
+      "status": 200,
+      "ms": 219,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/obesity-and-metabolic-syndrome-explained/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/oral-glp-1-medications-navigating-the-transition-from-injectable-to-oral-therapi",
+      "status": 200,
+      "ms": 232,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/oral-glp-1-medications-navigating-the-transition-from-injectable-to-oral-therapi/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/ozempic-vs-wegovy-a-clinicians-side-by-side-comparison-of-dosing-outcomes-and-pa",
+      "status": 200,
+      "ms": 221,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/ozempic-vs-wegovy-a-clinicians-side-by-side-comparison-of-dosing-outcomes-and-pa/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/precision-medicine-explained",
+      "status": 200,
+      "ms": 127,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/precision-medicine-explained/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/sleep-optimization-for-better-health",
+      "status": 200,
+      "ms": 115,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/sleep-optimization-for-better-health/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/telemedicine-best-practices",
+      "status": 200,
+      "ms": 121,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/telemedicine-best-practices/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/the-2026-longevity-playbook-evidence-based-habits-biomarkers-and-therapies-that",
+      "status": 200,
+      "ms": 101,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/the-2026-longevity-playbook-evidence-based-habits-biomarkers-and-therapies-that/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/the-future-of-remote-patient-monitoring",
+      "status": 200,
+      "ms": 119,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/the-future-of-remote-patient-monitoring/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/the-glp-1-muscle-crisis-what-to-eat-when-you-forget-to-eat",
+      "status": 200,
+      "ms": 112,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/the-glp-1-muscle-crisis-what-to-eat-when-you-forget-to-eat/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/the-gut-brain-axis-in-2026-how-microbiome-health-influences-neurological-and-met",
+      "status": 200,
+      "ms": 110,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/the-gut-brain-axis-in-2026-how-microbiome-health-influences-neurological-and-met/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/top-causes-of-stroke-in-young-adults",
+      "status": 200,
+      "ms": 100,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/top-causes-of-stroke-in-young-adults/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/understanding-hpv-and-cancer-prevention",
+      "status": 200,
+      "ms": 112,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/understanding-hpv-and-cancer-prevention/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/understanding-long-covid-latest-research-updates",
+      "status": 200,
+      "ms": 202,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/understanding-long-covid-latest-research-updates/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/understanding-prediabetes-before-it-becomes-diabetes",
+      "status": 200,
+      "ms": 112,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/understanding-prediabetes-before-it-becomes-diabetes/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/vitamin-d-deficiency-symptoms-and-treatment",
+      "status": 200,
+      "ms": 119,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/vitamin-d-deficiency-symptoms-and-treatment/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/wearable-health-devices-benefits-and-limitations",
+      "status": 200,
+      "ms": 121,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/wearable-health-devices-benefits-and-limitations/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog-articles/your-gut-microbiome-is-running-your-health-the-brain-immunity-and-metabolic-conn",
+      "status": 200,
+      "ms": 204,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog-articles/your-gut-microbiome-is-running-your-health-the-brain-immunity-and-metabolic-conn/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog/advances-in-stroke-prevention-and-management",
+      "status": 200,
+      "ms": 200,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog/advances-in-stroke-prevention-and-management/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog/cancer-biomarker-discovery-using-ai",
+      "status": 200,
+      "ms": 121,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog/cancer-biomarker-discovery-using-ai/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog/clinical-applications-of-generative-ai-in-healthcare",
+      "status": 200,
+      "ms": 121,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog/clinical-applications-of-generative-ai-in-healthcare/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog/clinical-impact-of-telemedicine-after-covid-19",
+      "status": 200,
+      "ms": 124,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog/clinical-impact-of-telemedicine-after-covid-19/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog/clinical-nutrition-in-acute-and-chronic-kidney-disease-practical-espen-guideline",
+      "status": 200,
+      "ms": 198,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog/clinical-nutrition-in-acute-and-chronic-kidney-disease-practical-espen-guideline/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog/digital-health-technologies-and-patient-outcomes",
+      "status": 200,
+      "ms": 123,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog/digital-health-technologies-and-patient-outcomes/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog/espen-guideline-on-nutrition-and-hydration-in-dementia-2024-update",
+      "status": 200,
+      "ms": 119,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog/espen-guideline-on-nutrition-and-hydration-in-dementia-2024-update/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog/espen-practical-guideline-clinical-nutrition-in-acute-and-chronic-pancreatitis-2",
+      "status": 200,
+      "ms": 123,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog/espen-practical-guideline-clinical-nutrition-in-acute-and-chronic-pancreatitis-2/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog/ethical-challenges-of-artificial-intelligence-in-medicine",
+      "status": 200,
+      "ms": 120,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog/ethical-challenges-of-artificial-intelligence-in-medicine/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog/food-as-medicine-interventions-current-evidence",
+      "status": 200,
+      "ms": 125,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog/food-as-medicine-interventions-current-evidence/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog/glp-1-receptor-agonists-in-obesity-and-cardiometabolic-disease-a-systematic-revi",
+      "status": 200,
+      "ms": 118,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog/glp-1-receptor-agonists-in-obesity-and-cardiometabolic-disease-a-systematic-revi/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog/health-informatics-and-big-data-analytics",
+      "status": 200,
+      "ms": 124,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog/health-informatics-and-big-data-analytics/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog/large-language-models-and-clinical-decision-support-current-capabilities-validat",
+      "status": 200,
+      "ms": 109,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog/large-language-models-and-clinical-decision-support-current-capabilities-validat/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog/longitudinal-analysis-of-hypertension-risk-factors",
+      "status": 200,
+      "ms": 117,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog/longitudinal-analysis-of-hypertension-risk-factors/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog/machine-learning-applications-in-medical-imaging",
+      "status": 200,
+      "ms": 100,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog/machine-learning-applications-in-medical-imaging/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog/nutrition-and-chronic-disease-prevention",
+      "status": 200,
+      "ms": 118,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog/nutrition-and-chronic-disease-prevention/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog/pharmacological-and-lifestyle-interventions-for-healthspan-extension-a-review-of",
+      "status": 200,
+      "ms": 106,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog/pharmacological-and-lifestyle-interventions-for-healthspan-extension-a-review-of/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog/precision-medicine-in-oncology-current-status",
+      "status": 200,
+      "ms": 107,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog/precision-medicine-in-oncology-current-status/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog/recent-developments-in-diabetes-research",
+      "status": 200,
+      "ms": 108,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog/recent-developments-in-diabetes-research/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog/remote-monitoring-and-healthcare-resource-utilization",
+      "status": 200,
+      "ms": 113,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog/remote-monitoring-and-healthcare-resource-utilization/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog/sleep-and-cardiometabolic-disease-a-review",
+      "status": 200,
+      "ms": 114,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog/sleep-and-cardiometabolic-disease-a-review/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog/the-role-of-gut-microbiota-in-chronic-disease",
+      "status": 200,
+      "ms": 120,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog/the-role-of-gut-microbiota-in-chronic-disease/"
+    },
+    {
+      "url": "https://www.carecalculus.com/blog/wearable-devices-for-chronic-disease-monitoring",
+      "status": 200,
+      "ms": 122,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/blog/wearable-devices-for-chronic-disease-monitoring/"
+    },
+    {
+      "url": "https://www.carecalculus.com/bmi-calculator",
+      "status": 200,
+      "ms": 120,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/bmi-calculator/"
+    },
+    {
+      "url": "https://www.carecalculus.com/cha2ds2-vasc",
+      "status": 200,
+      "ms": 120,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/cha2ds2-vasc/"
+    },
+    {
+      "url": "https://www.carecalculus.com/child-pugh-score",
+      "status": 200,
+      "ms": 120,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/child-pugh-score/"
+    },
+    {
+      "url": "https://www.carecalculus.com/ckd-epi-gfr",
+      "status": 200,
+      "ms": 61,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://www.carecalculus.com/clinical-guide",
+      "status": 200,
+      "ms": 102,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/clinical-guide/"
+    },
+    {
+      "url": "https://www.carecalculus.com/clinical-guide/cha2ds2-vasc-in-afib",
+      "status": 200,
+      "ms": 97,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/clinical-guide/cha2ds2-vasc-in-afib/"
+    },
+    {
+      "url": "https://www.carecalculus.com/clinical-guide/child-pugh-score-in-cirrhosis",
+      "status": 200,
+      "ms": 117,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/clinical-guide/child-pugh-score-in-cirrhosis/"
+    },
+    {
+      "url": "https://www.carecalculus.com/clinical-guide/ckd-epi-gfr-in-acute-kidney-injury",
+      "status": 200,
+      "ms": 122,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/clinical-guide/ckd-epi-gfr-in-acute-kidney-injury/"
+    },
+    {
+      "url": "https://www.carecalculus.com/clinical-guide/creatinine-clearance-in-acute-kidney-injury",
+      "status": 200,
+      "ms": 111,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/clinical-guide/creatinine-clearance-in-acute-kidney-injury/"
+    },
+    {
+      "url": "https://www.carecalculus.com/clinical-guide/curb65-score-in-pneumonia",
+      "status": 200,
+      "ms": 102,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/clinical-guide/curb65-score-in-pneumonia/"
+    },
+    {
+      "url": "https://www.carecalculus.com/clinical-guide/gcs-calculator-in-tbi",
+      "status": 200,
+      "ms": 104,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/clinical-guide/gcs-calculator-in-tbi/"
+    },
+    {
+      "url": "https://www.carecalculus.com/clinical-guide/map-calculator-in-sepsis",
+      "status": 200,
+      "ms": 120,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/clinical-guide/map-calculator-in-sepsis/"
+    },
+    {
+      "url": "https://www.carecalculus.com/clinical-guide/meld-score-in-cirrhosis",
+      "status": 200,
+      "ms": 111,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/clinical-guide/meld-score-in-cirrhosis/"
+    },
+    {
+      "url": "https://www.carecalculus.com/clinical-guide/pf-ratio-in-ards",
+      "status": 200,
+      "ms": 116,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/clinical-guide/pf-ratio-in-ards/"
+    },
+    {
+      "url": "https://www.carecalculus.com/clinical-guide/qsofa-score-in-multi-organ-failure",
+      "status": 200,
+      "ms": 116,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/clinical-guide/qsofa-score-in-multi-organ-failure/"
+    },
+    {
+      "url": "https://www.carecalculus.com/clinical-guide/qsofa-score-in-sepsis",
+      "status": 200,
+      "ms": 114,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/clinical-guide/qsofa-score-in-sepsis/"
+    },
+    {
+      "url": "https://www.carecalculus.com/clinical-guide/sirs-criteria-in-sepsis",
+      "status": 200,
+      "ms": 126,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/clinical-guide/sirs-criteria-in-sepsis/"
+    },
+    {
+      "url": "https://www.carecalculus.com/clinical-guide/sofa-score-in-acute-kidney-injury",
+      "status": 200,
+      "ms": 126,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/clinical-guide/sofa-score-in-acute-kidney-injury/"
+    },
+    {
+      "url": "https://www.carecalculus.com/clinical-guide/sofa-score-in-multi-organ-failure",
+      "status": 200,
+      "ms": 120,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/clinical-guide/sofa-score-in-multi-organ-failure/"
+    },
+    {
+      "url": "https://www.carecalculus.com/clinical-guide/sofa-score-in-sepsis",
+      "status": 200,
+      "ms": 107,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/clinical-guide/sofa-score-in-sepsis/"
+    },
+    {
+      "url": "https://www.carecalculus.com/clinical-guide/tidal-volume-in-ards",
+      "status": 200,
+      "ms": 125,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/clinical-guide/tidal-volume-in-ards/"
+    },
+    {
+      "url": "https://www.carecalculus.com/clinical-guide/wells-score-in-dvt",
+      "status": 200,
+      "ms": 104,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/clinical-guide/wells-score-in-dvt/"
+    },
+    {
+      "url": "https://www.carecalculus.com/clinical-guide/wells-score-in-pulmonary-embolism",
+      "status": 200,
+      "ms": 117,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/clinical-guide/wells-score-in-pulmonary-embolism/"
+    },
+    {
+      "url": "https://www.carecalculus.com/clinical-library",
+      "status": 200,
+      "ms": 136,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/clinical-library/"
+    },
+    {
+      "url": "https://www.carecalculus.com/clinical-library/convert",
+      "status": 200,
+      "ms": 143,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/clinical-library/convert/"
+    },
+    {
+      "url": "https://www.carecalculus.com/clinical-library/criteria",
+      "status": 200,
+      "ms": 152,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/clinical-library/criteria/"
+    },
+    {
+      "url": "https://www.carecalculus.com/clinical-library/decision",
+      "status": 200,
+      "ms": 131,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/clinical-library/decision/"
+    },
+    {
+      "url": "https://www.carecalculus.com/clinical-library/equations",
+      "status": 200,
+      "ms": 128,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/clinical-library/equations/"
+    },
+    {
+      "url": "https://www.carecalculus.com/clinical-library/specialties",
+      "status": 200,
+      "ms": 128,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/clinical-library/specialties/"
+    },
+    {
+      "url": "https://www.carecalculus.com/compare/bmi-calculator-vs-adjusted-body-weight",
+      "status": 200,
+      "ms": 130,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/compare/bmi-calculator-vs-adjusted-body-weight/"
+    },
+    {
+      "url": "https://www.carecalculus.com/compare/creatinine-clearance-vs-mdrd-gfr",
+      "status": 200,
+      "ms": 68,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://www.carecalculus.com/compare/curb65-score-vs-qsofa-score",
+      "status": 200,
+      "ms": 62,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://www.carecalculus.com/compare/glasgow-coma-scale-vs-qsofa-score",
+      "status": 200,
+      "ms": 70,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://www.carecalculus.com/compare/map-calculator-vs-qsofa-score",
+      "status": 200,
+      "ms": 65,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://www.carecalculus.com/compare/mdrd-gfr-vs-ckd-epi-gfr",
+      "status": 200,
+      "ms": 140,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/compare/mdrd-gfr-vs-ckd-epi-gfr/"
+    },
+    {
+      "url": "https://www.carecalculus.com/compare/meld-score-vs-child-pugh-score",
+      "status": 200,
+      "ms": 77,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://www.carecalculus.com/compare/qsofa-score-vs-sirs-criteria",
+      "status": 200,
+      "ms": 80,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://www.carecalculus.com/compare/qsofa-score-vs-sofa-score",
+      "status": 200,
+      "ms": 134,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/compare/qsofa-score-vs-sofa-score/"
+    },
+    {
+      "url": "https://www.carecalculus.com/compare/sofa-score-vs-sirs-criteria",
+      "status": 200,
+      "ms": 70,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://www.carecalculus.com/conditions/atrial-fibrillation",
+      "status": 200,
+      "ms": 131,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/conditions/atrial-fibrillation/"
+    },
+    {
+      "url": "https://www.carecalculus.com/conditions/liver-disease",
+      "status": 200,
+      "ms": 139,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/conditions/liver-disease/"
+    },
+    {
+      "url": "https://www.carecalculus.com/conditions/renal-failure",
+      "status": 200,
+      "ms": 148,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/conditions/renal-failure/"
+    },
+    {
+      "url": "https://www.carecalculus.com/conditions/respiratory-failure",
+      "status": 200,
+      "ms": 140,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/conditions/respiratory-failure/"
+    },
+    {
+      "url": "https://www.carecalculus.com/conditions/sepsis",
+      "status": 200,
+      "ms": 146,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/conditions/sepsis/"
+    },
+    {
+      "url": "https://www.carecalculus.com/corrected-calcium",
+      "status": 200,
+      "ms": 145,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/corrected-calcium/"
+    },
+    {
+      "url": "https://www.carecalculus.com/cours",
+      "status": 200,
+      "ms": 129,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/cours/"
+    },
+    {
+      "url": "https://www.carecalculus.com/creatinine-clearance",
+      "status": 200,
+      "ms": 118,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/creatinine-clearance/"
+    },
+    {
+      "url": "https://www.carecalculus.com/curb65-score",
+      "status": 200,
+      "ms": 123,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/curb65-score/"
+    },
+    {
+      "url": "https://www.carecalculus.com/disclaimer",
+      "status": 200,
+      "ms": 110,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/disclaimer/"
+    },
+    {
+      "url": "https://www.carecalculus.com/drip-rate-calculator",
+      "status": 200,
+      "ms": 111,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/drip-rate-calculator/"
+    },
+    {
+      "url": "https://www.carecalculus.com/embed-gallery",
+      "status": 200,
+      "ms": 63,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://www.carecalculus.com/favicon.ico",
+      "status": 200,
+      "ms": 52,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://www.carecalculus.com/fmp-medecine",
+      "status": 200,
+      "ms": 128,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/fmp-medecine/"
+    },
+    {
+      "url": "https://www.carecalculus.com/for-hospitals",
+      "status": 200,
+      "ms": 84,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://www.carecalculus.com/glasgow-coma-scale",
+      "status": 200,
+      "ms": 137,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/glasgow-coma-scale/"
+    },
+    {
+      "url": "https://www.carecalculus.com/glp-1-hub",
+      "status": 200,
+      "ms": 159,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/glp-1-hub/"
+    },
+    {
+      "url": "https://www.carecalculus.com/icon.svg",
+      "status": 200,
+      "ms": 54,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://www.carecalculus.com/ispits",
+      "status": 200,
+      "ms": 158,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/ispits/"
+    },
+    {
+      "url": "https://www.carecalculus.com/llms-full.txt",
+      "status": 200,
+      "ms": 70,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://www.carecalculus.com/llms.txt",
+      "status": 200,
+      "ms": 81,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://www.carecalculus.com/map-calculator",
+      "status": 200,
+      "ms": 143,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/map-calculator/"
+    },
+    {
+      "url": "https://www.carecalculus.com/mdrd-gfr",
+      "status": 200,
+      "ms": 82,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://www.carecalculus.com/medical-conversions",
+      "status": 200,
+      "ms": 149,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/medical-conversions/"
+    },
+    {
+      "url": "https://www.carecalculus.com/meld-score",
+      "status": 200,
+      "ms": 115,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/meld-score/"
+    },
+    {
+      "url": "https://www.carecalculus.com/nutrition-hub",
+      "status": 200,
+      "ms": 84,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://www.carecalculus.com/nutrition-must",
+      "status": 200,
+      "ms": 181,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/nutrition-must/"
+    },
+    {
+      "url": "https://www.carecalculus.com/nutrition-nrs2002",
+      "status": 200,
+      "ms": 114,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/nutrition-nrs2002/"
+    },
+    {
+      "url": "https://www.carecalculus.com/nutrition-tdee",
+      "status": 200,
+      "ms": 235,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/nutrition-tdee/"
+    },
+    {
+      "url": "https://www.carecalculus.com/og-image.png",
+      "status": 200,
+      "ms": 56,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://www.carecalculus.com/pf-ratio",
+      "status": 200,
+      "ms": 234,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/pf-ratio/"
+    },
+    {
+      "url": "https://www.carecalculus.com/phq9-score",
+      "status": 200,
+      "ms": 215,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/phq9-score/"
+    },
+    {
+      "url": "https://www.carecalculus.com/presentations",
+      "status": 200,
+      "ms": 236,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/presentations/"
+    },
+    {
+      "url": "https://www.carecalculus.com/pricing",
+      "status": 200,
+      "ms": 83,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://www.carecalculus.com/privacy",
+      "status": 200,
+      "ms": 165,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/privacy/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/are-the-ispits-courses-free-to-download",
+      "status": 200,
+      "ms": 187,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/are-the-ispits-courses-free-to-download/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/at-what-cha2ds2-vasc-score-is-anticoagulation-recommended",
+      "status": 200,
+      "ms": 246,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/at-what-cha2ds2-vasc-score-is-anticoagulation-recommended/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/can-gcs-be-used-in-children",
+      "status": 200,
+      "ms": 188,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/can-gcs-be-used-in-children/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/can-the-sofa-score-predict-mortality-in-the-icu",
+      "status": 200,
+      "ms": 168,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/can-the-sofa-score-predict-mortality-in-the-icu/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/how-do-you-calculate-iv-drip-rate",
+      "status": 200,
+      "ms": 187,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/how-do-you-calculate-iv-drip-rate/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/how-do-you-convert-between-corticosteroids",
+      "status": 200,
+      "ms": 232,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/how-do-you-convert-between-corticosteroids/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/how-do-you-convert-creatinine-from-mgdl-to-umoll",
+      "status": 200,
+      "ms": 201,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/how-do-you-convert-creatinine-from-mgdl-to-umoll/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/how-do-you-convert-glucose-from-mgdl-to-mmoll",
+      "status": 200,
+      "ms": 141,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/how-do-you-convert-glucose-from-mgdl-to-mmoll/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/how-do-you-interpret-a-wells-dvt-score-of-2-or-higher",
+      "status": 200,
+      "ms": 184,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/how-do-you-interpret-a-wells-dvt-score-of-2-or-higher/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/how-does-female-sex-impact-the-cha2ds2-vasc-score-calculation",
+      "status": 200,
+      "ms": 139,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/how-does-female-sex-impact-the-cha2ds2-vasc-score-calculation/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/how-does-the-child-pugh-score-differ-from-the-meld-score",
+      "status": 200,
+      "ms": 120,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/how-does-the-child-pugh-score-differ-from-the-meld-score/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/how-does-the-pf-ratio-classify-ards",
+      "status": 200,
+      "ms": 138,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/how-does-the-pf-ratio-classify-ards/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/how-does-the-sofa-score-define-organ-dysfunction-severity",
+      "status": 200,
+      "ms": 118,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/how-does-the-sofa-score-define-organ-dysfunction-severity/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/how-is-anc-calculated",
+      "status": 200,
+      "ms": 140,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/how-is-anc-calculated/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/how-is-ideal-body-weight-calculated",
+      "status": 200,
+      "ms": 121,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/how-is-ideal-body-weight-calculated/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/how-is-meld-score-calculated",
+      "status": 200,
+      "ms": 106,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/how-is-meld-score-calculated/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/how-is-the-expected-normal-a-a-gradient-calculated",
+      "status": 200,
+      "ms": 120,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/how-is-the-expected-normal-a-a-gradient-calculated/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/how-is-the-must-score-calculated",
+      "status": 200,
+      "ms": 116,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/how-is-the-must-score-calculated/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/how-is-the-phq-9-scored",
+      "status": 200,
+      "ms": 116,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/how-is-the-phq-9-scored/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/how-often-is-the-meld-score-recalculated-for-transplant-patients",
+      "status": 200,
+      "ms": 128,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/how-often-is-the-meld-score-recalculated-for-transplant-patients/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/how-often-should-malnutrition-risk-be-assessed",
+      "status": 200,
+      "ms": 118,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/how-often-should-malnutrition-risk-be-assessed/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/is-bmi-accurate-for-all-ethnicities",
+      "status": 200,
+      "ms": 132,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/is-bmi-accurate-for-all-ethnicities/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/is-sirs-still-used-to-diagnose-sepsis",
+      "status": 200,
+      "ms": 126,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/is-sirs-still-used-to-diagnose-sepsis/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/is-the-ckd-epi-equation-reliable-in-acute-kidney-injury-aki",
+      "status": 200,
+      "ms": 137,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/is-the-ckd-epi-equation-reliable-in-acute-kidney-injury-aki/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/should-a-d-dimer-test-be-done-before-calculating-wells-score",
+      "status": 200,
+      "ms": 134,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/should-a-d-dimer-test-be-done-before-calculating-wells-score/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/should-qsofa-replace-sirs-criteria-for-sepsis-screening",
+      "status": 200,
+      "ms": 128,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/should-qsofa-replace-sirs-criteria-for-sepsis-screening/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-anc-level-indicates-neutropenia",
+      "status": 200,
+      "ms": 119,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-anc-level-indicates-neutropenia/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-are-common-side-effects-of-glp-1-agonists",
+      "status": 200,
+      "ms": 120,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-are-common-side-effects-of-glp-1-agonists/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-are-glp-1-receptor-agonists",
+      "status": 200,
+      "ms": 136,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-are-glp-1-receptor-agonists/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-are-the-anatomical-subsites-of-the-larynx",
+      "status": 200,
+      "ms": 98,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-are-the-anatomical-subsites-of-the-larynx/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-are-the-child-pugh-classification-classes",
+      "status": 200,
+      "ms": 98,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-are-the-child-pugh-classification-classes/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-are-the-limitations-of-bmi-in-clinical-practice",
+      "status": 200,
+      "ms": 117,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-are-the-limitations-of-bmi-in-clinical-practice/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-are-the-primary-indications-for-glp-1-ras",
+      "status": 200,
+      "ms": 115,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-are-the-primary-indications-for-glp-1-ras/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-are-the-sirs-criteria",
+      "status": 200,
+      "ms": 124,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-are-the-sirs-criteria/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-are-the-six-organ-systems-assessed-by-the-sofa-score",
+      "status": 200,
+      "ms": 98,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-are-the-six-organ-systems-assessed-by-the-sofa-score/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-are-the-who-bmi-classification-categories",
+      "status": 200,
+      "ms": 111,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-are-the-who-bmi-classification-categories/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-causes-a-high-anion-gap-metabolic-acidosis-hagma",
+      "status": 200,
+      "ms": 124,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-causes-a-high-anion-gap-metabolic-acidosis-hagma/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-causes-an-elevated-a-a-gradient",
+      "status": 200,
+      "ms": 113,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-causes-an-elevated-a-a-gradient/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-cha2ds2-vasc-score-requires-anticoagulation",
+      "status": 200,
+      "ms": 129,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-cha2ds2-vasc-score-requires-anticoagulation/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-creatinine-clearance-is-considered-normal",
+      "status": 200,
+      "ms": 118,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-creatinine-clearance-is-considered-normal/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-curb-65-score-requires-hospitalization",
+      "status": 200,
+      "ms": 140,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-curb-65-score-requires-hospitalization/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-do-the-phq-9-score-ranges-mean",
+      "status": 200,
+      "ms": 132,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-do-the-phq-9-score-ranges-mean/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-does-a-ckd-epi-gfr-score-of-45-indicate",
+      "status": 200,
+      "ms": 122,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-does-a-ckd-epi-gfr-score-of-45-indicate/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-does-a-high-must-score-indicate",
+      "status": 200,
+      "ms": 130,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-does-a-high-must-score-indicate/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-does-a-normal-apgar-score-mean",
+      "status": 200,
+      "ms": 128,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-does-a-normal-apgar-score-mean/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-does-curb-65-stand-for",
+      "status": 200,
+      "ms": 111,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-does-curb-65-stand-for/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-does-the-cha2ds2-vasc-score-estimate",
+      "status": 200,
+      "ms": 123,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-does-the-cha2ds2-vasc-score-estimate/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-formula-is-used-to-calculate-predicted-body-weight",
+      "status": 200,
+      "ms": 128,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-formula-is-used-to-calculate-predicted-body-weight/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-gcs-score-indicates-a-severe-brain-injury",
+      "status": 200,
+      "ms": 127,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-gcs-score-indicates-a-severe-brain-injury/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-a-normal-iv-drip-rate",
+      "status": 200,
+      "ms": 131,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-a-normal-iv-drip-rate/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-a-normal-pf-ratio",
+      "status": 200,
+      "ms": 110,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-a-normal-pf-ratio/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-a-normal-serum-anion-gap",
+      "status": 200,
+      "ms": 115,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-a-normal-serum-anion-gap/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-body-mass-index-bmi",
+      "status": 200,
+      "ms": 107,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-body-mass-index-bmi/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-cha2ds2-vasc-score",
+      "status": 200,
+      "ms": 131,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-cha2ds2-vasc-score/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-creatinine-clearance",
+      "status": 200,
+      "ms": 100,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-creatinine-clearance/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-laryngeal-cancer-staging-based-on",
+      "status": 200,
+      "ms": 136,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-laryngeal-cancer-staging-based-on/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-mean-arterial-pressure-map",
+      "status": 200,
+      "ms": 115,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-mean-arterial-pressure-map/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-the-absolute-neutrophil-count-anc",
+      "status": 200,
+      "ms": 123,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-the-absolute-neutrophil-count-anc/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-the-alveolar-arterial-a-a-oxygen-gradient",
+      "status": 200,
+      "ms": 122,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-the-alveolar-arterial-a-a-oxygen-gradient/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-the-apgar-score",
+      "status": 200,
+      "ms": 128,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-the-apgar-score/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-the-child-pugh-score",
+      "status": 200,
+      "ms": 122,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-the-child-pugh-score/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-the-clinical-significance-of-a-2-point-increase-in-the-sofa-score",
+      "status": 200,
+      "ms": 130,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-the-clinical-significance-of-a-2-point-increase-in-the-sofa-score/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-the-clinical-significance-of-a-change-in-sofa-score",
+      "status": 200,
+      "ms": 114,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-the-clinical-significance-of-a-change-in-sofa-score/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-the-cockcroft-gault-formula",
+      "status": 200,
+      "ms": 135,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-the-cockcroft-gault-formula/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-the-corrected-calcium-formula",
+      "status": 200,
+      "ms": 136,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-the-corrected-calcium-formula/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-the-difference-between-curb-65-and-psi-pneumonia-severity-index",
+      "status": 200,
+      "ms": 127,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-the-difference-between-curb-65-and-psi-pneumonia-severity-index/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-the-difference-between-map-and-systolic-blood-pressure",
+      "status": 200,
+      "ms": 129,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-the-difference-between-map-and-systolic-blood-pressure/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-the-difference-between-mdrd-gfr-and-ckd-epi-gfr",
+      "status": 200,
+      "ms": 128,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-the-difference-between-mdrd-gfr-and-ckd-epi-gfr/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-the-difference-between-qsofa-and-sofa",
+      "status": 200,
+      "ms": 128,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-the-difference-between-qsofa-and-sofa/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-the-difference-between-sirs-and-sepsis",
+      "status": 200,
+      "ms": 110,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-the-difference-between-sirs-and-sepsis/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-the-difference-between-wells-criteria-for-dvt-and-pe",
+      "status": 200,
+      "ms": 110,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-the-difference-between-wells-criteria-for-dvt-and-pe/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-the-formula-for-adjusted-body-weight",
+      "status": 200,
+      "ms": 104,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-the-formula-for-adjusted-body-weight/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-the-formula-for-corrected-calcium",
+      "status": 200,
+      "ms": 138,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-the-formula-for-corrected-calcium/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-the-glasgow-coma-scale-gcs",
+      "status": 200,
+      "ms": 106,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-the-glasgow-coma-scale-gcs/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-the-ispits-paramedical-academy",
+      "status": 200,
+      "ms": 113,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-the-ispits-paramedical-academy/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-the-meld-score",
+      "status": 200,
+      "ms": 104,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-the-meld-score/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-the-must-score",
+      "status": 200,
+      "ms": 98,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-the-must-score/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-the-pf-ratio",
+      "status": 200,
+      "ms": 116,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-the-pf-ratio/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-the-phq-9",
+      "status": 200,
+      "ms": 108,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-the-phq-9/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-the-qsofa-score",
+      "status": 200,
+      "ms": 102,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-the-qsofa-score/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-the-recommended-total-daily-energy-expenditure-tdee-for-icu-patients",
+      "status": 200,
+      "ms": 108,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-the-recommended-total-daily-energy-expenditure-tdee-for-icu-patients/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-the-serum-anion-gap",
+      "status": 200,
+      "ms": 137,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-the-serum-anion-gap/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-the-significance-of-the-t4-stage-in-laryngeal-cancer",
+      "status": 200,
+      "ms": 123,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-the-significance-of-the-t4-stage-in-laryngeal-cancer/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-the-sofa-score",
+      "status": 200,
+      "ms": 124,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-the-sofa-score/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-the-source-study-for-curb-65",
+      "status": 200,
+      "ms": 111,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-the-source-study-for-curb-65/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-the-standard-protective-tidal-volume-target-in-ards",
+      "status": 200,
+      "ms": 135,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-the-standard-protective-tidal-volume-target-in-ards/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-is-the-wells-score-used-for",
+      "status": 200,
+      "ms": 102,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-is-the-wells-score-used-for/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-map-value-indicates-adequate-organ-perfusion",
+      "status": 200,
+      "ms": 103,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-map-value-indicates-adequate-organ-perfusion/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-meld-score-indicates-the-need-for-a-liver-transplant",
+      "status": 200,
+      "ms": 114,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-meld-score-indicates-the-need-for-a-liver-transplant/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-meld-score-qualifies-for-liver-transplant",
+      "status": 200,
+      "ms": 121,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-meld-score-qualifies-for-liver-transplant/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-parameters-are-used-to-calculate-the-meld-score",
+      "status": 200,
+      "ms": 119,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-parameters-are-used-to-calculate-the-meld-score/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-qsofa-score-is-considered-high-risk",
+      "status": 200,
+      "ms": 103,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-qsofa-score-is-considered-high-risk/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/what-wells-score-indicates-high-risk-for-dvt",
+      "status": 200,
+      "ms": 101,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/what-wells-score-indicates-high-risk-for-dvt/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/when-is-adjusted-body-weight-ajbw-used",
+      "status": 200,
+      "ms": 106,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/when-is-adjusted-body-weight-ajbw-used/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/when-is-the-apgar-score-calculated",
+      "status": 200,
+      "ms": 101,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/when-is-the-apgar-score-calculated/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/when-should-i-use-the-map-calculator",
+      "status": 200,
+      "ms": 100,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/when-should-i-use-the-map-calculator/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/when-should-ionized-calcium-be-measured-instead-of-using-corrected-calcium",
+      "status": 200,
+      "ms": 100,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/when-should-ionized-calcium-be-measured-instead-of-using-corrected-calcium/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/who-can-use-the-ispits-modules-on-carecalculus",
+      "status": 200,
+      "ms": 109,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/who-can-use-the-ispits-modules-on-carecalculus/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/who-developed-the-glasgow-coma-scale",
+      "status": 200,
+      "ms": 99,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/who-developed-the-glasgow-coma-scale/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/why-do-we-correct-calcium-for-albumin",
+      "status": 200,
+      "ms": 106,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/why-do-we-correct-calcium-for-albumin/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/why-does-the-mdrd-equation-include-age-and-sex",
+      "status": 200,
+      "ms": 120,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/why-does-the-mdrd-equation-include-age-and-sex/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/why-is-clinical-nutrition-screening-important-in-hospitals",
+      "status": 200,
+      "ms": 108,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/why-is-clinical-nutrition-screening-important-in-hospitals/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/why-is-medical-unit-conversion-necessary",
+      "status": 200,
+      "ms": 109,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/why-is-medical-unit-conversion-necessary/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/why-is-steroid-conversion-important",
+      "status": 200,
+      "ms": 102,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/why-is-steroid-conversion-important/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/why-must-serum-calcium-be-corrected-for-albumin-levels",
+      "status": 200,
+      "ms": 111,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/why-must-serum-calcium-be-corrected-for-albumin-levels/"
+    },
+    {
+      "url": "https://www.carecalculus.com/q/why-should-tidal-volume-be-calculated-based-on-predicted-body-weight-pbw",
+      "status": 200,
+      "ms": 116,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/q/why-should-tidal-volume-be-calculated-based-on-predicted-body-weight-pbw/"
+    },
+    {
+      "url": "https://www.carecalculus.com/qsofa-score",
+      "status": 200,
+      "ms": 114,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/qsofa-score/"
+    },
+    {
+      "url": "https://www.carecalculus.com/robots.txt",
+      "status": 200,
+      "ms": 46,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://www.carecalculus.com/sirs-criteria",
+      "status": 200,
+      "ms": 119,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/sirs-criteria/"
+    },
+    {
+      "url": "https://www.carecalculus.com/sitemap.xml",
+      "status": 200,
+      "ms": 85,
+      "ok": true,
+      "slow": false
+    },
+    {
+      "url": "https://www.carecalculus.com/sofa-score",
+      "status": 200,
+      "ms": 143,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/sofa-score/"
+    },
+    {
+      "url": "https://www.carecalculus.com/specialties/cardiology",
+      "status": 200,
+      "ms": 132,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/specialties/cardiology/"
+    },
+    {
+      "url": "https://www.carecalculus.com/specialties/emergency-medicine",
+      "status": 200,
+      "ms": 116,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/specialties/emergency-medicine/"
+    },
+    {
+      "url": "https://www.carecalculus.com/specialties/intensive-care",
+      "status": 200,
+      "ms": 130,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/specialties/intensive-care/"
+    },
+    {
+      "url": "https://www.carecalculus.com/specialties/internal-medicine",
+      "status": 200,
+      "ms": 141,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/specialties/internal-medicine/"
+    },
+    {
+      "url": "https://www.carecalculus.com/specialties/nephrology",
+      "status": 200,
+      "ms": 113,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/specialties/nephrology/"
+    },
+    {
+      "url": "https://www.carecalculus.com/specialties/neurology",
+      "status": 200,
+      "ms": 121,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/specialties/neurology/"
+    },
+    {
+      "url": "https://www.carecalculus.com/specialties/pulmonology",
+      "status": 200,
+      "ms": 120,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/specialties/pulmonology/"
+    },
+    {
+      "url": "https://www.carecalculus.com/steroid-conversion",
+      "status": 200,
+      "ms": 116,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/steroid-conversion/"
+    },
+    {
+      "url": "https://www.carecalculus.com/terms",
+      "status": 200,
+      "ms": 137,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/terms/"
+    },
+    {
+      "url": "https://www.carecalculus.com/tidal-volume",
+      "status": 200,
+      "ms": 133,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/tidal-volume/"
+    },
+    {
+      "url": "https://www.carecalculus.com/wells-score",
+      "status": 200,
+      "ms": 117,
+      "ok": true,
+      "slow": false,
+      "redirectTo": "https://www.carecalculus.com/wells-score/"
+    }
+  ]
+}

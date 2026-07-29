@@ -165,7 +165,7 @@ export default function OsmolalGap({ lang }: { lang: LangCode }) {
                 <label className="block text-sm font-bold text-slate-700 mb-1">{currentText.measuredLabel as string}</label>
                 <input type="number" value={measured} onChange={(e) => setMeasured(e.target.value)} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-lime-500 font-mono text-lg" placeholder="290" />
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-bold text-slate-700 mb-1">{currentText.naLabel as string}</label>
                   <input type="number" value={na} onChange={(e) => setNa(e.target.value)} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-lime-500 font-mono text-lg" placeholder="140" />

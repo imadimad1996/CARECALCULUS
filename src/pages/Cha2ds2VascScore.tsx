@@ -2,7 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { Activity, Info, BookOpen } from 'lucide-react';
 import { LangCode, Translations } from '../types';
 import { layoutTranslations } from '../utils/lang';
-import { trackCalculatorUsage } from '../utils/telemetry';
+import { trackCalculatorUsage, trackCalculatorResult } from '../utils/telemetry';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 import EmbedCodeButton from '../components/ui/EmbedCodeButton';
 import { JsonLd, generateMedicalCalculatorSchema } from '../components/JsonLd';
@@ -110,21 +110,22 @@ export default function Cha2ds2VascScore({ lang }: { lang: LangCode }) {
     return score;
   }, [age, sex, chf, htn, stroke, vascular, diabetes]);
 
-  useEffect(() => {
-    if (scoreValue > 0) {
-      const timer = setTimeout(() => {
-        trackCalculatorUsage('cha2ds2-vasc', lang, scoreValue);
-      }, 1500);
-      return () => clearTimeout(timer);
-    }
-  }, [scoreValue, lang]);
-
   const category = useMemo(() => {
     if (scoreValue >= 2) return { label: currentText.high, bg: 'bg-red-500/10 border-red-500/20', color: 'text-red-500' };
     if (scoreValue === 1 && sex === 0) return { label: currentText.moderate, bg: 'bg-amber-500/10 border-amber-500/20', color: 'text-amber-500' };
     if (scoreValue === 1 && sex === 1) return { label: currentText.low, bg: 'bg-emerald-500/10 border-emerald-500/20', color: 'text-emerald-500' };
     return { label: currentText.low, bg: 'bg-emerald-500/10 border-emerald-500/20', color: 'text-emerald-500' };
   }, [scoreValue, sex, currentText]);
+
+  useEffect(() => {
+    if (scoreValue > 0) {
+      const timer = setTimeout(() => {
+        trackCalculatorUsage('cha2ds2-vasc', lang, scoreValue);
+        trackCalculatorResult('cha2ds2-vasc', scoreValue, category.label, lang);
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
+  }, [scoreValue, lang, category.label]);
 
   return (
     <>
@@ -240,7 +241,7 @@ export default function Cha2ds2VascScore({ lang }: { lang: LangCode }) {
         </div>
 
         <div className="lg:col-span-5 relative">
-          <div className="sticky top-28 backdrop-blur-2xl bg-gradient-to-b from-slate-900 via-gray-900 to-slate-950 text-white rounded-3xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden ring-1 ring-white/15 flex flex-col justify-between p-8 min-h-[360px] transition-all duration-300">
+          <div className="sticky bottom-4 z-40 lg:top-28 lg:bottom-auto backdrop-blur-2xl bg-gradient-to-b from-slate-900 via-gray-900 to-slate-950 text-white rounded-3xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden ring-1 ring-white/15 flex flex-col justify-between p-5 lg:p-8 lg:min-h-[360px] transition-all duration-300">
             <div className="absolute top-0 right-0 p-36 bg-gradient-to-bl from-blue-500/30 via-indigo-500/10 to-transparent rounded-bl-[120px] pointer-events-none animate-pulse" />
             
             <div className="relative z-10">

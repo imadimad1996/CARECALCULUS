@@ -2,7 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { Activity, Info, BookOpen, ChevronDown } from 'lucide-react';
 import { LangCode, Translations } from '../types';
 import { layoutTranslations } from '../utils/lang';
-import { trackCalculatorUsage } from '../utils/telemetry';
+import { trackCalculatorUsage, trackCalculatorResult } from '../utils/telemetry';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 import { MedicalReviewerCard } from '../components/MedicalReviewerCard';
 import { REVIEWER_PULMONOLOGY } from '../data/reviewers';
@@ -40,7 +40,7 @@ const translations: Translations = {
     ],
   },
   fr: {
-    title: "Score CURB-65",
+    title: "Score CURB 65 Pneumonie (Évaluation de la Sévérité)",
     subtitle: "Évaluation de la sévérité de la pneumonie",
     confusion: "Confusion (Nouvelle désorientation)",
     urea: "Urée > 7 mmol/L (BUN > 19 mg/dL)",
@@ -96,15 +96,6 @@ export default function Curb65Score({ lang }: { lang: LangCode }) {
     }, 0);
   }, [selections]);
 
-  useEffect(() => {
-    if (scoreValue > 0) {
-      const timer = setTimeout(() => {
-        trackCalculatorUsage('curb65-score', lang, scoreValue);
-      }, 1500);
-      return () => clearTimeout(timer);
-    }
-  }, [scoreValue, lang]);
-
   const getCategory = (val: number) => {
     if (val <= 1) return { label: currentText.low, color: 'text-emerald-500', bg: 'bg-emerald-500/10 border-emerald-500/20' };
     if (val === 2) return { label: currentText.inter, color: 'text-amber-500', bg: 'bg-amber-500/10 border-amber-500/20' };
@@ -112,6 +103,16 @@ export default function Curb65Score({ lang }: { lang: LangCode }) {
   };
 
   const category = getCategory(scoreValue);
+
+  useEffect(() => {
+    if (scoreValue > 0) {
+      const timer = setTimeout(() => {
+        trackCalculatorUsage('curb65-score', lang, scoreValue);
+        trackCalculatorResult('curb65-score', scoreValue, category.label, lang);
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
+  }, [scoreValue, lang, category.label]);
 
   return (
     <>
@@ -155,7 +156,7 @@ export default function Curb65Score({ lang }: { lang: LangCode }) {
         </div>
 
         <div className="lg:col-span-5 relative">
-          <div className="sticky top-28 bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden ring-1 ring-white/10 flex flex-col justify-between p-8 min-h-[320px]">
+          <div className="sticky bottom-4 z-40 lg:top-28 lg:bottom-auto bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden ring-1 ring-white/10 flex flex-col justify-between p-5 lg:p-8 lg:min-h-[320px]">
             <div className="absolute top-0 right-0 p-32 bg-gradient-to-bl from-blue-500/20 to-transparent rounded-bl-[100px] pointer-events-none" />
             
             <div className="relative z-10">

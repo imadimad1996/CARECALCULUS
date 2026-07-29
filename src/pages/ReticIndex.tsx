@@ -147,7 +147,7 @@ export default function ReticIndex({ lang }: { lang: LangCode }) {
                 <label className="block text-sm font-bold text-slate-700 mb-1">{currentText.reticLabel as string}</label>
                 <input type="number" step="0.1" value={retic} onChange={(e) => setRetic(e.target.value)} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-red-500 font-mono text-lg" placeholder="5.0" />
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-bold text-slate-700 mb-1">{currentText.hctLabel as string}</label>
                   <input type="number" step="0.1" value={hct} onChange={(e) => setHct(e.target.value)} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-red-500 font-mono text-lg" placeholder="25" />
