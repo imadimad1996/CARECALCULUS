@@ -38,6 +38,7 @@
 - [Child-Pugh Score Calculator](https://carecalculus.com/child-pugh-score)
 - [Anion Gap Calculator](https://carecalculus.com/anion-gap)
 - [Alveolar-Arterial (A-a) Gradient Calculator](https://carecalculus.com/aa-gradient)
+- [HEART Score for Chest Pain](https://carecalculus.com/heart-score)
 
 ## Calculateurs Cliniques (Français)
 
@@ -72,6 +73,7 @@
 - [Calculateur Score Child-Pugh (Cirrhose)](https://fr.carecalculus.com/child-pugh-score)
 - [Calculateur Trou Anionique (Acidose)](https://fr.carecalculus.com/anion-gap)
 - [Calculateur Gradient Alvéolo-Artériel (A-a)](https://fr.carecalculus.com/aa-gradient)
+- [Calculateur Score HEART (Douleur Thoracique)](https://fr.carecalculus.com/heart-score)
 
 ## Academic & Multilingual Libraries
 

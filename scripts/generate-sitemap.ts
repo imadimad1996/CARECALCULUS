@@ -9,7 +9,7 @@
 
 import { writeFileSync, readFileSync } from 'fs';
 import { join } from 'path';
-import { MASTER_BLOGS, MASTER_JOURNALS } from '../src/utils/masterListContent';
+
 import { slugify } from '../src/utils/slug';
 
 const BASE_URL = 'https://carecalculus.com';
@@ -65,15 +65,6 @@ const comparisonPages = [
 
 const staticPages = ['/about', '/disclaimer', '/privacy', '/terms', '/glp-1-hub', '/nutrition-hub', '/pricing', '/embed-gallery'];
 
-const libraryPages = [
-  '/clinical-library',
-  '/clinical-library/equations',
-  '/clinical-library/criteria',
-  '/clinical-library/decision',
-  '/clinical-library/convert',
-  '/clinical-library/specialties',
-  '/clinical-guide',
-];
 
 const programmaticGuidePages: string[] = [];
 for (const disease of programmaticData.dataSets.diseases) {
@@ -91,10 +82,6 @@ for (const [, entries] of Object.entries(faqDb) as [string, {question: string}[]
   }
 }
 
-const blogPages = [
-  ...MASTER_BLOGS.map(b => `/blog-articles/${slugify(b.title.en, b.id)}`),
-  ...MASTER_JOURNALS.map(j => `/blog/${slugify(j.title.en, j.id)}`)
-];
 
 const domains = ['https://www.carecalculus.com', 'https://fr.carecalculus.com'] as const;
 
@@ -154,10 +141,8 @@ ${buildUrls(calculatorPages, '1.0', 'weekly', '0.8')}
 ${buildUrls(conditionPages, '0.8', 'monthly', '0.8')}
 ${buildUrls(specialtyPages, '0.8', 'monthly', '0.8')}
 ${buildUrls(comparisonPages, '0.7', 'monthly', '0.7')}
-${buildUrls(libraryPages, '0.8', 'weekly', '0.8')}
 ${buildUrls(programmaticGuidePages, '0.8', 'weekly', '0.8')}
 ${buildUrls(qaSlugs, '0.7', 'weekly', '0.7')}
-${buildUrls(blogPages, '0.6', 'monthly', '0.6')}
 ${buildUrls(staticPages, '0.5', 'monthly', '0.5')}
 </urlset>`;
 
@@ -169,7 +154,6 @@ const totalUrls = (
   conditionPages.length * 2 +
   specialtyPages.length * 2 +
   comparisonPages.length * 2 +
-  libraryPages.length * 2 +
   programmaticGuidePages.length * 2 +
   qaSlugs.length * 2 +
   staticPages.length * 2
@@ -180,8 +164,7 @@ console.log(`📊 Total URLs indexed: ${totalUrls}`);
 console.log(`  - Calculator pages: ${calculatorPages.length * 2}`);
 console.log(`  - Condition pages: ${conditionPages.length * 2}`);
 console.log(`  - Specialty pages: ${specialtyPages.length * 2}`);
-console.log(`  - Comparison pages: ${comparisonPages.length * 2}`);
-console.log(`  - Clinical Library Index & Sub-catalogs: ${libraryPages.length * 2}`);
-console.log(`  - Clinical Guides: ${programmaticGuidePages.length * 2}`);
+  console.log(`  - Comparison pages: ${comparisonPages.length * 2}`);
+  console.log(`  - Clinical Guides: ${programmaticGuidePages.length * 2}`);
 console.log(`  - Clinical Q&A pages: ${qaSlugs.length * 2} (THE 100x MULTIPLIER)`);
 console.log(`  - Static pages: ${staticPages.length * 2}`);

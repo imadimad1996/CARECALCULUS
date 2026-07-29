@@ -16,9 +16,7 @@ import { parsePathname } from './utils/lang';
 import { buildHead } from './utils/seo';
 import { LangCode } from './types';
 import { slugify } from './utils/slug';
-import { MASTER_JOURNALS, MASTER_BLOGS, MASTER_COURSES, MASTER_PRESENTATIONS } from './utils/masterListContent';
-import { ORIGINAL_CURATED_SEED_POSTS } from './pages/MedicalBlog';
-import { ORIGINAL_BLOG_SEED } from './pages/Blog';
+
 import { FMP_MODULES } from './utils/fmpModules';
 import { ISPITS_MODULES } from './utils/ispitsModules';
 import { CONDITIONS_DB } from './data/conditions';
@@ -44,15 +42,6 @@ async function renderResolved(url: string): Promise<string> {
   return html;
 }
 
-const journalSlugs = [
-  ...ORIGINAL_CURATED_SEED_POSTS,
-  ...MASTER_JOURNALS.map(mj => ({ id: mj.id, title: mj.title.en }))
-].map(p => `/blog/${slugify(p.title, p.id)}`);
-
-const blogSlugs = [
-  ...ORIGINAL_BLOG_SEED,
-  ...MASTER_BLOGS.map(mb => ({ id: mb.id, title: mb.title.en }))
-].map(p => `/blog-articles/${slugify(p.title, p.id)}`);
 
 
 const fmpSlugs = FMP_MODULES.map(m => `/fmp-medecine/${m.slug}`);
@@ -123,8 +112,7 @@ const LOGICAL_ROUTES = [
   '/child-pugh-score',
   '/anion-gap',
   '/aa-gradient',
-  '/blog',
-  '/blog-articles',
+
   '/presentations',
   '/cours',
   '/fmp-medecine',
@@ -143,14 +131,7 @@ const LOGICAL_ROUTES = [
   '/privacy',
   '/terms',
   '/clinical-guide',
-  '/clinical-library',
-  '/clinical-library/equations',
-  '/clinical-library/criteria',
-  '/clinical-library/decision',
-  '/clinical-library/convert',
-  '/clinical-library/specialties',
-  ...journalSlugs,
-  ...blogSlugs,
+
   ...fmpSlugs,
   ...ispitsSlugs,
   ...conditionSlugs,

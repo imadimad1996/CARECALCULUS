@@ -12,9 +12,7 @@
 
 import { LangCode } from '../types';
 import { slugify } from './slug';
-import { MASTER_BLOGS, MASTER_JOURNALS, MASTER_COURSES, MASTER_PRESENTATIONS } from './masterListContent';
-import { ORIGINAL_CURATED_SEED_POSTS } from '../pages/MedicalBlog';
-import { ORIGINAL_BLOG_SEED } from '../pages/Blog';
+
 import { FMP_MODULES, FMP_MODULE_BY_SLUG } from './fmpModules';
 import { ISPITS_MODULES, ISPITS_MODULE_BY_SLUG } from './ispitsModules';
 
@@ -218,61 +216,6 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
     };
   }
 
-  // 1. Journal Articles (/blog/:slug)
-  if (path.startsWith('/blog/')) {
-    const slug = path.replace(/^\/blog\//, '');
-    const combinedJournals = [
-      ...ORIGINAL_CURATED_SEED_POSTS,
-      ...MASTER_JOURNALS.map(mj => ({
-        id: mj.id,
-        title: mj.title.en,
-        snippet: mj.snippet.en,
-        multilingualTitle: { fr: mj.title.fr },
-        multilingualSnippet: { fr: mj.snippet.fr },
-        category: mj.category,
-      }))
-    ];
-    const post = combinedJournals.find(p => slugify(p.title, p.id) === slug || p.id.toLowerCase() === slug.toLowerCase()) as any;
-    if (post) {
-      const titleText = (lang === 'fr' && post.multilingualTitle?.fr)
-        ? post.multilingualTitle.fr
-        : post.title;
-      const snippetText = (lang === 'fr' && post.multilingualSnippet?.fr)
-        ? post.multilingualSnippet.fr
-        : post.snippet;
-      return {
-        title: `${titleText} | CareCalculus Scientific Journal`,
-        desc: snippetText,
-        keywords: `${post.category.toLowerCase()}, peer-reviewed medical study, pubmed clinical, clinical evidence`
-      };
-    }
-  }
-
-  // 2. Blog Articles (/blog-articles/:slug)
-  if (path.startsWith('/blog-articles/')) {
-    const slug = path.replace(/^\/blog-articles\//, '');
-    const combinedBlogs = [
-      ...ORIGINAL_BLOG_SEED,
-      ...MASTER_BLOGS.map(mb => ({
-        id: mb.id,
-        title: mb.title.en,
-        titleFr: mb.title.fr,
-        snippet: mb.snippet.en,
-        snippetFr: mb.snippet.fr,
-        category: mb.category,
-      }))
-    ];
-    const post = combinedBlogs.find(p => slugify(p.title, p.id) === slug || p.id.toLowerCase() === slug.toLowerCase());
-    if (post) {
-      const titleText = lang === 'fr' ? post.titleFr : post.title;
-      const snippetText = lang === 'fr' ? post.snippetFr : post.snippet;
-      return {
-        title: `${titleText} | CareCalculus Blog`,
-        desc: snippetText,
-        keywords: `${post.category.toLowerCase()}, clinical tips, medical blog, health advice`
-      };
-    }
-  }
 
 
   // 5. FMPC Modules (/fmp-medecine/:slug)

@@ -5,7 +5,7 @@ import {
 } from 'lucide-react';
 import { LangCode, Translations } from '../types';
 import { useLang } from '../utils/lang';
-import { MASTER_BLOGS, MASTER_JOURNALS, t } from '../utils/masterListContent';
+
 import { slugify } from '../utils/slug';
 import SEO from '../components/SEO';
 import { HelpCircle, TrendingUp, AlertCircle } from 'lucide-react';
@@ -78,22 +78,6 @@ export default function NutritionHub({ lang }: NutritionHubProps) {
   const { langPath } = useLang();
   const [copied, setCopied] = useState(false);
 
-  // Filter relevant content dynamically from master lists
-  const nutritionBlogs = useMemo(() => {
-    return MASTER_BLOGS.filter(b => 
-      b.title.en.toLowerCase().includes('nutrition') || 
-      b.title.en.toLowerCase().includes('diet') || 
-      b.title.en.toLowerCase().includes('metabolic') ||
-      b.title.en.toLowerCase().includes('weight')
-    );
-  }, []);
-
-  const nutritionJournals = useMemo(() => {
-    return MASTER_JOURNALS.filter(j => 
-      j.title.en.toLowerCase().includes('nutrition') || 
-      j.title.en.toLowerCase().includes('diet')
-    );
-  }, []);
 
   const handleShare = async () => {
     try {
@@ -261,95 +245,7 @@ export default function NutritionHub({ lang }: NutritionHubProps) {
           </div>
         </section>
 
-        {/* Blogs & Journals Section */}
-        <section className="mb-16">
-          <div className="flex items-center mb-8">
-            <div className="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center mr-4 shadow-sm border border-blue-200">
-              <BookOpen className="w-6 h-6 text-blue-600" />
-            </div>
-            <div>
-              <h2 className="text-2xl font-bold text-slate-900">{tLabels.articlesTitle}</h2>
-              <p className="text-slate-500 mt-1">{tLabels.articlesDesc}</p>
-            </div>
-          </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* Our own Journals mapping */}
-            {nutritionJournals.length > 0 && nutritionJournals.map(journal => (
-              <Link 
-                key={journal.id} 
-                to={langPath(`/blog/${slugify(journal.title.en, journal.id)}`)}
-                className="group bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-lg hover:border-blue-300 transition-all flex flex-col justify-between"
-              >
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center">
-                    <span className="px-2 py-0.5 bg-blue-50 border border-blue-100 text-blue-700 font-mono text-[10px] font-black uppercase rounded-md">
-                      {journal.category || 'Clinical Review'}
-                    </span>
-                    <span className="text-[10px] font-mono text-gray-400 font-bold">{journal.date}</span>
-                  </div>
-                  <h3 className="text-lg font-bold text-slate-900 leading-snug group-hover:text-blue-700 transition-colors">
-                    {t(journal.title, lang)}
-                  </h3>
-                  <p className="text-sm text-slate-600 line-clamp-3">
-                    {t(journal.snippet, lang)}
-                  </p>
-                </div>
-                <div className="flex justify-between items-center mt-6 pt-4 border-t border-gray-100">
-                  <span className="flex items-center gap-1 font-mono text-gray-400 font-bold text-[11px]">
-                    <Clock className="w-4 h-4" />
-                    {journal.readTime}
-                  </span>
-                  <div className="flex items-center text-blue-600 font-medium text-sm group-hover:translate-x-1 transition-transform">
-                    {tLabels.readMore} <ChevronRight className="w-4 h-4 ml-1" />
-                  </div>
-                </div>
-              </Link>
-            ))}
-
-            {/* Our own Blogs mapping */}
-            {nutritionBlogs.length > 0 && nutritionBlogs.map(blog => (
-              <Link 
-                key={blog.id} 
-                to={langPath(`/blog-articles/${slugify(blog.title.en, blog.id)}`)}
-                className="group bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-lg hover:border-blue-300 transition-all flex flex-col justify-between"
-              >
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center">
-                    <span className="px-2 py-0.5 bg-blue-50 border border-blue-100 text-blue-700 font-mono text-[10px] font-black uppercase rounded-md">
-                      {blog.category || 'Medical Blog'}
-                    </span>
-                    <span className="text-[10px] font-mono text-gray-400 font-bold">{blog.date}</span>
-                  </div>
-                  <h3 className="text-lg font-bold text-slate-900 leading-snug group-hover:text-blue-700 transition-colors">
-                    {t(blog.title, lang)}
-                  </h3>
-                  <p className="text-sm text-slate-600 line-clamp-3">
-                    {t(blog.snippet, lang)}
-                  </p>
-                </div>
-                <div className="flex justify-between items-center mt-6 pt-4 border-t border-gray-100">
-                  <span className="flex items-center gap-1 font-mono text-gray-400 font-bold text-[11px]">
-                    <Clock className="w-4 h-4" />
-                    {blog.readTime} min
-                  </span>
-                  <div className="flex items-center text-blue-600 font-medium text-sm group-hover:translate-x-1 transition-transform">
-                    {tLabels.readMore} <ChevronRight className="w-4 h-4 ml-1" />
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-          
-          {nutritionJournals.length === 0 && nutritionBlogs.length === 0 && (
-            <div className="bg-white p-8 rounded-2xl text-center border border-slate-200 shadow-sm">
-              <BookOpen className="w-12 h-12 text-slate-300 mx-auto mb-4" />
-              <h3 className="text-lg font-medium text-slate-900">More Content Coming Soon</h3>
-              <p className="text-slate-500 mt-2 max-w-md mx-auto">We are constantly updating our database with new peer-reviewed clinical nutrition articles.</p>
-            </div>
-          )}
-        </section>
-        
         {/* GEO FAQ Section */}
         {faqs.length > 0 && (
           <section className="mb-16">

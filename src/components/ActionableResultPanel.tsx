@@ -72,14 +72,15 @@ export const ActionableResultPanel: React.FC<ActionableResultProps> = ({
   };
 
   return (
-    <div className={`mt-6 rounded-xl border ${style.border} ${style.bg} overflow-hidden shadow-sm animate-in fade-in slide-in-from-bottom-2 duration-300`} dir={isRtl ? 'rtl' : 'ltr'}>
+    <div className={`relative mt-6 rounded-2xl border ${style.border} ${style.bg} overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] transition-all duration-300 animate-in fade-in slide-in-from-bottom-2`} dir={isRtl ? 'rtl' : 'ltr'}>
       <div className="p-5 sm:p-6">
         
         {/* Header Row */}
         <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
           
           {/* Big Score Box */}
-          <div className={`shrink-0 flex flex-col items-center justify-center p-4 rounded-xl ${style.scoreBg} border border-white/50 min-w-[120px]`}>
+          <div className={`relative overflow-hidden shrink-0 flex flex-col items-center justify-center p-4 rounded-xl ${style.scoreBg} border border-white/50 min-w-[120px] ring-1 ring-black/5`}>
+            <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-50 mix-blend-overlay"></div>
             <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-1 opacity-80">
               {title || style.label[lang]}
             </span>
@@ -124,7 +125,7 @@ export const ActionableResultPanel: React.FC<ActionableResultProps> = ({
           <div className="mt-6 pt-5 border-t border-black/5 flex flex-col gap-4">
             <button
               onClick={() => { window.location.href = '/pricing'; }}
-              className="w-full text-left p-4 rounded-xl bg-cyan-900/10 border border-cyan-500/30 hover:bg-cyan-900/20 hover:border-cyan-500/50 transition-all group flex items-center justify-between cursor-pointer"
+              className="w-full text-left p-4 rounded-xl bg-gradient-to-r from-cyan-900/10 to-blue-900/10 border border-cyan-500/30 hover:bg-gradient-to-r hover:from-cyan-900/20 hover:to-blue-900/20 hover:border-cyan-500/50 transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] shadow-sm hover:shadow-md group flex items-center justify-between cursor-pointer"
             >
               <div className="flex items-center gap-3">
                 <div className="p-2 bg-cyan-500/20 text-cyan-700 rounded-lg group-hover:scale-110 transition-transform">

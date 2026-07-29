@@ -16,7 +16,8 @@
     "/anion-gap": "serum anion gap calculator, metabolic acidosis differential diagnosis, high anion gap acidosis tool",
     "/aa-gradient": "alveolar arterial gradient calculator, A-a gradient hypoxemia assessment, V/Q mismatch calculation",
     "/bmi-calculator": "BMI calculator for clinicians, body mass index WHO classification, obesity staging calculation tool",
-    "/glasgow-coma-scale": "Glasgow coma scale GCS calculator, traumatic brain injury severity assessment, neurological coma scale score"
+    "/glasgow-coma-scale": "Glasgow coma scale GCS calculator, traumatic brain injury severity assessment, neurological coma scale score",
+    "/heart-score": "HEART score calculator, chest pain risk stratification, MACE prediction, emergency troponin ECG age risk"
   },
   "keywordsFrMap": {
     "/sofa-score": "score sofa calcul, évaluation défaillance d'organes, calcul score sofa en ligne, sepsis",
@@ -82,6 +83,7 @@
     "/child-pugh-score": "Child-Pugh Score Calculator",
     "/anion-gap": "Anion Gap Calculator",
     "/aa-gradient": "Alveolar-Arterial (A-a) Gradient Calculator",
+    "/heart-score": "HEART Score for Chest Pain",
     "/fmp-medecine": "FMPC Medicine Modules & PDF Handbooks",
     "/ispits": "ISPITS Paramedical Academy Course Library & PDFs"
   },
@@ -134,6 +136,7 @@
     "/child-pugh-score": "Calculateur Score Child-Pugh (Cirrhose)",
     "/anion-gap": "Calculateur Trou Anionique (Acidose)",
     "/aa-gradient": "Calculateur Gradient Alvéolo-Artériel (A-a)",
+    "/heart-score": "Calculateur Score HEART (Douleur Thoracique)",
     "/fmp-medecine": "Modules Médecine FMPC & Livres PDF",
     "/ispits": "Académie Paramédicale ISPITS — Cours & Modules PDF"
   },
@@ -186,6 +189,7 @@
     "/child-pugh-score": "مؤشر تشايلد بيو لشدة تليف الكبد (Child-Pugh)",
     "/anion-gap": "حساب الفجوة الأنيونية وحموضة الدم (Anion Gap)",
     "/aa-gradient": "حساب الفرق الألوفي-الشرياني للأكسجين (A-a Gradient)",
+    "/heart-score": "حساب مقياس HEART لألم الصدر",
     "/fmp-medecine": "حقيبة محاضرات كلية الطب والصيدلة (FMPC)",
     "/ispits": "أكاديمية العلوم التمريضية وتقنيات الصحة ISPITS"
   }

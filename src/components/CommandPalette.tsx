@@ -20,6 +20,7 @@ interface SearchItem {
 const SEARCH_ITEMS: SearchItem[] = [
   // Calculators & Scores
   { id: 'wells', title: { en: "Wells' Criteria for DVT", fr: "Score de Wells pour TVP" }, category: { en: "Emergency & Critical Care", fr: "Urgences & Soins Intensifs" }, path: "/wells-score", keywords: ["dvt", "thrombosis", "wells", "tvp", "embolism"] },
+  { id: 'heart', title: { en: "HEART Score for Chest Pain", fr: "Score HEART Douleur Thoracique" }, category: { en: "Emergency & Critical Care", fr: "Urgences & Soins Intensifs" }, path: "/heart-score", keywords: ["heart", "chest pain", "acs", "mace", "douleur thoracique", "stemi", "nstemi", "troponin"] },
   { id: 'grace', title: { en: "GRACE Score for ACS Risk", fr: "Score de GRACE (SCA)" }, category: { en: "Cardiology", fr: "Cardiologie" }, path: "/grace-score", keywords: ["grace", "acs", "stemi", "nstemi", "mortality", "coronary", "sca"] },
   { id: 'sofa', title: { en: "SOFA Score (Sepsis)", fr: "Score SOFA (Sepsis)" }, category: { en: "Emergency & Critical Care", fr: "Urgences & Soins Intensifs" }, path: "/sofa-score", keywords: ["sofa", "sepsis", "organ failure", "icu", "rea"] },
   { id: 'qsofa', title: { en: "qSOFA Score (Quick Sepsis)", fr: "Score qSOFA Sepsis Rapid" }, category: { en: "Emergency & Critical Care", fr: "Urgences & Soins Intensifs" }, path: "/qsofa-score", keywords: ["qsofa", "sepsis", "quick sofa", "emergency"] },

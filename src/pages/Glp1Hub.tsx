@@ -7,7 +7,7 @@ import {
 } from 'lucide-react';
 import { LangCode, Translations } from '../types';
 import { useLang } from '../utils/lang';
-import { MASTER_BLOGS, MASTER_JOURNALS, MASTER_COURSES, t } from '../utils/masterListContent';
+
 import { slugify } from '../utils/slug';
 
 interface Glp1HubProps {
@@ -105,29 +105,7 @@ export default function Glp1Hub({ lang }: Glp1HubProps) {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const [copied, setCopied] = useState(false);
 
-  // Filter relevant content dynamically from master lists
-  const glp1Blogs = useMemo(() => {
-    return MASTER_BLOGS.filter(b => 
-      b.title.en.toLowerCase().includes('glp-1') || 
-      b.title.en.toLowerCase().includes('ozempic') || 
-      b.title.en.toLowerCase().includes('wegovy') ||
-      b.id === 'mb-24'
-    );
-  }, []);
 
-  const glp1Journals = useMemo(() => {
-    return MASTER_JOURNALS.filter(j => 
-      j.title.en.toLowerCase().includes('glp-1') || 
-      j.title.en.toLowerCase().includes('longevity')
-    );
-  }, []);
-
-  const glp1Courses = useMemo(() => {
-    return MASTER_COURSES.filter(c => 
-      c.title.en.toLowerCase().includes('diabetes') ||
-      c.title.en.toLowerCase().includes('metabolic')
-    );
-  }, []);
 
   // Sync SEO Title & Metatags & Inject FAQ schema
   useEffect(() => {
@@ -317,131 +295,7 @@ export default function Glp1Hub({ lang }: Glp1HubProps) {
           </div>
         </div>
 
-        {/* Center & Right Column: Articles and Courses (Clustered Content) */}
-        <div className="space-y-6 lg:col-span-2">
-          <div className="border-b border-gray-100 pb-3 flex justify-between items-center">
-            <div>
-              <h2 className="text-sm font-black text-slate-900 uppercase tracking-tight flex items-center gap-2">
-                <BookOpen className="w-5 h-5 text-indigo-600" />
-                <span>{tLabels.articlesTitle}</span>
-              </h2>
-              <p className="text-[11px] text-gray-500 mt-1">{tLabels.articlesDesc}</p>
-            </div>
-          </div>
 
-          {/* Grid of Clustered Blogs & Journals */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            
-            {/* Blogs */}
-            {glp1Blogs.map(blog => (
-              <Link
-                key={blog.id}
-                to={langPath(`/blog-articles/${slugify(blog.title.en, blog.id)}`)}
-                className="bg-white p-5 rounded-2xl border border-gray-200/80 hover:border-indigo-400 hover:shadow-xs transition flex flex-col justify-between group"
-              >
-                <div className="space-y-2.5">
-                  <div className="flex justify-between items-center">
-                    <span className="px-2 py-0.5 bg-blue-50 border border-blue-100 text-blue-700 font-mono text-[8px] font-black uppercase rounded-md">
-                      {blog.category}
-                    </span>
-                    <span className="text-[10px] font-mono text-gray-400 font-bold">{blog.date}</span>
-                  </div>
-                  <h3 className="text-xs font-black text-slate-800 leading-snug group-hover:text-indigo-600 transition-colors uppercase">
-                    {t(blog.title, lang)}
-                  </h3>
-                  <p className="text-[10px] text-gray-400 leading-relaxed font-medium line-clamp-3">
-                    {t(blog.snippet, lang)}
-                  </p>
-                </div>
-                <div className="flex justify-between items-center mt-4 pt-3 border-t border-gray-100 text-[10px]">
-                  <span className="flex items-center gap-1 font-mono text-gray-400 font-bold">
-                    <Clock className="w-3.5 h-3.5" />
-                    {blog.readTime} min
-                  </span>
-                  <span className="font-bold text-indigo-600 group-hover:underline flex items-center gap-0.5">
-                    {tLabels.readMore}
-                    <ArrowUpRight className="w-3 h-3" />
-                  </span>
-                </div>
-              </Link>
-            ))}
-
-            {/* Journals */}
-            {glp1Journals.map(journal => (
-              <Link
-                key={journal.id}
-                to={langPath(`/blog/${slugify(journal.title.en, journal.id)}`)}
-                className="bg-white p-5 rounded-2xl border border-gray-200/80 hover:border-indigo-400 hover:shadow-xs transition flex flex-col justify-between group"
-              >
-                <div className="space-y-2.5">
-                  <div className="flex justify-between items-center">
-                    <span className="px-2 py-0.5 bg-indigo-50 border border-indigo-100 text-indigo-700 font-mono text-[8px] font-black uppercase rounded-md">
-                      {journal.category}
-                    </span>
-                    <span className="text-[10px] font-mono text-gray-400 font-bold">{journal.date}</span>
-                  </div>
-                  <h3 className="text-xs font-black text-slate-800 leading-snug group-hover:text-indigo-600 transition-colors uppercase">
-                    {t(journal.title, lang)}
-                  </h3>
-                  <p className="text-[10px] text-gray-400 leading-relaxed font-medium line-clamp-3">
-                    {t(journal.snippet, lang)}
-                  </p>
-                </div>
-                <div className="flex justify-between items-center mt-4 pt-3 border-t border-gray-100 text-[10px]">
-                  <span className="flex items-center gap-1 font-mono text-gray-400 font-bold">
-                    <Clock className="w-3.5 h-3.5" />
-                    {journal.readTime}
-                  </span>
-                  <span className="font-bold text-indigo-600 group-hover:underline flex items-center gap-0.5">
-                    {tLabels.readMore}
-                    <ArrowUpRight className="w-3 h-3" />
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
-
-          {/* Courses Integration */}
-          <div className="pt-2">
-            <div className="border-b border-gray-100 pb-3">
-              <h2 className="text-sm font-black text-slate-900 uppercase tracking-tight flex items-center gap-2">
-                <GraduationCap className="w-5 h-5 text-indigo-600" />
-                <span>{tLabels.coursesTitle}</span>
-              </h2>
-              <p className="text-[11px] text-gray-500 mt-1">{tLabels.coursesDesc}</p>
-            </div>
-
-            <div className="mt-4 space-y-3">
-              {glp1Courses.map(course => (
-                <Link
-                  key={course.id}
-                  to={langPath(`/cours/${slugify(course.title.en, course.id)}`)}
-                  className="bg-white p-4 rounded-xl border border-gray-200 hover:border-indigo-400 hover:shadow-xs transition flex flex-col sm:flex-row gap-4 justify-between items-start group"
-                  style={{ minHeight: '60px' }}
-                >
-                  <div className="space-y-1.5 flex-1">
-                    <span className="px-2 py-0.5 bg-gray-100 text-gray-500 font-mono text-[8px] uppercase tracking-wider font-extrabold rounded-md">
-                      {course.category}
-                    </span>
-                    <h3 className="text-xs font-black text-slate-800 leading-snug group-hover:text-indigo-600 transition-colors uppercase">
-                      {t(course.title, lang)}
-                    </h3>
-                    <p className="text-[10px] text-gray-400 leading-relaxed font-medium line-clamp-2">
-                      {t(course.summary, lang)}
-                    </p>
-                  </div>
-                  <div className="flex sm:flex-col gap-2 shrink-0 items-end justify-between w-full sm:w-auto mt-2 sm:mt-0 pt-3 sm:pt-0 border-t sm:border-0 border-gray-100 text-[10px]">
-                    <span className="font-mono text-gray-400 font-bold">{course.pages} pages</span>
-                    <span className="px-2.5 py-1.5 rounded-lg bg-indigo-50 text-indigo-650 hover:bg-indigo-600 hover:text-white font-mono text-[9px] font-black uppercase transition-all tracking-wider">
-                      {tLabels.startCourse}
-                    </span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-        </div>
 
       </div>
 
