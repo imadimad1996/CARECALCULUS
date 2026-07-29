@@ -7,8 +7,13 @@ import App from './App.tsx';
 import './index.css';
 import './utils/firebase';
 
-// Register the PWA service worker for retention/install loops
-registerSW({ immediate: true });
+// Register the PWA service worker with auto-refresh on new deployments
+registerSW({
+  immediate: true,
+  onNeedRefresh() {
+    window.location.reload();
+  },
+});
 
 const rootEl = document.getElementById('root')!;
 const app = (

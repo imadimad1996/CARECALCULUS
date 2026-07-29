@@ -4,6 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
+    <!-- Immediate PWA & Stale Asset Error Recovery Script -->
+    <script>
+      (function() {
+        window.addEventListener('error', function(e) {
+          var msg = (e && e.message) ? e.message : '';
+          if (msg.indexOf('MIME type') !== -1 || msg.indexOf('dynamically imported module') !== -1 || msg.indexOf('Importing a module script failed') !== -1) {
+            var lastFix = Number(sessionStorage.getItem('cc_sw_flush_time') || 0);
+            if (Date.now() - lastFix > 5000) {
+              sessionStorage.setItem('cc_sw_flush_time', String(Date.now()));
+              if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistrations().then(function(regs) {
+                  for (var r of regs) r.unregister();
+                });
+              }
+              if ('caches' in window) {
+                caches.keys().then(function(keys) {
+                  for (var k of keys) caches.delete(k);
+                });
+              }
+              window.location.reload();
+            }
+          }
+        }, true);
+      })();
+    </script>
+
     <!-- Preconnect: eliminate DNS/TLS latency for critical third-party origins -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
