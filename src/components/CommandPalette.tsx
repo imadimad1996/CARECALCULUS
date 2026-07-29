@@ -35,10 +35,8 @@ const SEARCH_ITEMS: SearchItem[] = [
   { id: 'sirs', title: { en: "SIRS Criteria", fr: "Critères du SIRS" }, category: { en: "Emergency & Critical Care", fr: "Urgences & Soins Intensifs" }, path: "/sirs-criteria", keywords: ["sirs", "inflammation", "sepsis", "fever"] },
 
   // Reference & Educational Hubs
-  { id: 'library', title: { en: "Clinical Guidelines Library", fr: "Bibliothèque de Recommandations" }, category: { en: "Resources", fr: "Ressources" }, path: "/clinical-library", keywords: ["guidelines", "library", "recommandations", "protocols"] },
   { id: 'fmp', title: { en: "FMP Médecine Maroc", fr: "FMP Médecine Maroc (Cours & Fiches)" }, category: { en: "Academic Hub", fr: "Espace Académique" }, path: "/fmp-medecine", keywords: ["fmp", "maroc", "faculte", "medecine", "casablanca", "rabat"] },
   { id: 'ispits', title: { en: "ISPITS Infirmier & Réanimation", fr: "ISPITS Soins & Réanimation" }, category: { en: "Academic Hub", fr: "Espace Académique" }, path: "/ispits", keywords: ["ispits", "infirmier", "reanimation", "maroc", "soins"] },
-  { id: 'blog', title: { en: "Medical Insights & Evidence Blog", fr: "Blog Médical & Mises à Jour" }, category: { en: "Resources", fr: "Ressources" }, path: "/medical-blog", keywords: ["blog", "articles", "evidence", "news", "updates"] },
   { id: 'fr-hub', title: { en: "Espace Médical Francophone (/fr)", fr: "Espace Médical Francophone (/fr)" }, category: { en: "Localization", fr: "Localisation" }, path: "/fr", keywords: ["french", "francophone", "frances", "maroc", "sfar"] }
 ];
 

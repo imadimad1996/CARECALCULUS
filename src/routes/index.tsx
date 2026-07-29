@@ -29,8 +29,7 @@ const pageLoaders = [
   () => import('../pages/AncCalculator'),
   () => import('../pages/AdjustedBodyWeight'),
   () => import('../pages/SteroidConversion'),
-  () => import('../pages/MedicalBlog'),
-  () => import('../pages/Blog'),
+
   () => import('../pages/About'),
   () => import('../pages/Disclaimer'),
   () => import('../pages/Privacy'),
@@ -91,7 +90,7 @@ const pageLoaders = [
   () => import('../pages/DrugInteractions'),
   () => import('../pages/MedicalStatistics'),
   () => import('../pages/FavoritesPage'),
-  () => import('../pages/ClinicalLibrary'),
+
   () => import('../pages/PricingPage'),
   () => import('../pages/BishopScore'),
   () => import('../pages/CentorScore'),
@@ -124,7 +123,7 @@ const [
   MapCalculator, BmiCalculator, GcsCalculator, DripRate, CreatinineClearance,
   WellsScore, MedicalConversions, CorrectedCalcium, QsofaScore, Curb65Score,
   Cha2ds2VascScore, Phq9Score, MeldScore, SirsCriteria, PfRatio, TidalVolume,
-  AncCalculator, AdjustedBodyWeight, SteroidConversion, MedicalBlog, Blog,
+  AncCalculator, AdjustedBodyWeight, SteroidConversion,
   PdfSplitter, PdfMerger, Presentations, Courses, About, Disclaimer, Privacy, Terms,
   Glp1Hub, ApgarScore, SofaScore, ChildPughScore, AnionGap, AaGradient,
   FmpMedecine, IspitsAcademic,
@@ -139,7 +138,7 @@ const [
   PercRule, GenevaScore, NihssScore,
   GraceScore, BicarbDeficit, ReticIndex,
   PhenytoinCorrection, AscvdRisk, VancomycinDosing, AminoglycosideDosing,
-  PesiScore, BovaScore, ApacheIIScore, SapsIIScore, DrugInteractions, MedicalStatistics, FavoritesPage, ClinicalLibrary, PricingPage,
+  PesiScore, BovaScore, ApacheIIScore, SapsIIScore, DrugInteractions, MedicalStatistics, FavoritesPage, PricingPage,
   BishopScore, CentorScore
 ] = pageLoaders.map((loader) => safeLazy(loader as any)) as any[];
 
@@ -163,7 +162,7 @@ export async function preloadPages() {
 export const LEGAL_ROUTES = ['/about', '/disclaimer', '/privacy', '/terms', '/embed-gallery', '/for-hospitals'];
 
 // Routes that open in full-width reading mode (no sidebar, no top widgets)
-export const CONTENT_ROUTES = ['/blog', '/blog-articles', '/presentations', '/cours', '/about', '/disclaimer', '/privacy', '/terms', '/glp-1-hub', '/hub-glp1', '/%D9%85%D8%B1%D9%83%D8%B2-glp1', '/مركز-glp1', '/ispits', '/embed-gallery', '/for-hospitals', '/clinical-guide', '/clinical-library'];
+export const CONTENT_ROUTES = ['/presentations', '/cours', '/about', '/disclaimer', '/privacy', '/terms', '/glp-1-hub', '/hub-glp1', '/%D9%85%D8%B1%D9%83%D8%B2-glp1', '/مركز-glp1', '/ispits', '/embed-gallery', '/for-hospitals', '/clinical-guide'];
 
 export class ErrorBoundary extends React.Component<any, any> {
   constructor(props: any) {
@@ -267,8 +266,7 @@ export const navItems = [
   { path: '/drug-interactions', nameEn: 'Drug Interactions', nameFr: 'Interactions Médicamenteuses', nameAr: 'تداخلات الأدوية', icon: ShieldCheck, tier: 0 },
   { path: '/medical-statistics', nameEn: 'Medical Statistics', nameFr: 'Statistiques Médicales', nameAr: 'الإحصاء الطبي', icon: Layers, tier: 0 },
   { path: '/glp-1-hub', nameEn: 'GLP-1 Hub', nameFr: 'Hub GLP-1', nameAr: 'مركز أدوية GLP-1', icon: Sparkles, tier: 4, group: 'reading' as const },
-  { path: '/blog', nameEn: 'Medical Journals', nameFr: 'Journaux Médicaux', nameAr: 'المجلات الطبية', icon: BookOpen, tier: 4, group: 'reading' as const },
-  { path: '/blog-articles', nameEn: 'Blog', nameFr: 'Blog', nameAr: 'المدونة', icon: Newspaper, tier: 4, group: 'reading' as const },
+
   { path: '/fmp-medecine', nameEn: 'Faculty of Medicine', nameFr: 'Faculté de Médecine', nameAr: 'كلية الطب والصيدلة', icon: GraduationCap, tier: 4, group: 'learning' as const },
   { path: '/ispits', nameEn: 'ISPITS Paramedical', nameFr: 'ISPITS Paramédical', nameAr: 'مناهج معاهد التمريض (ISPITS)', icon: GraduationCap, tier: 4, group: 'learning' as const },
   { path: '/study-tracker', nameEn: 'Study Progress Tracker', nameFr: 'Suivi d\'Études', nameAr: 'متابع التقدم الدراسي', icon: Award, tier: 4, group: 'learning' as const },
@@ -361,10 +359,7 @@ export function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="saps-ii-score" element={wrapCalculator('/saps-ii-score', <SapsIIScore lang={lang} />)} />
       <Route path="drug-interactions" element={wrapCalculator('/drug-interactions', <DrugInteractions lang={lang} />)} />
       <Route path="medical-statistics" element={wrapCalculator('/medical-statistics', <MedicalStatistics lang={lang} />)} />
-      <Route path="blog" element={<MedicalBlog lang={lang} />} />
-      <Route path="blog/:slug" element={<MedicalBlog lang={lang} />} />
-      <Route path="blog-articles" element={<Blog lang={lang} />} />
-      <Route path="blog-articles/:slug" element={<Blog lang={lang} />} />
+
       <Route path="fmp-medecine" element={<FmpMedecine lang={lang} />} />
       <Route path="fmp-medecine/:moduleSlug" element={<FmpMedecine lang={lang} />} />
       <Route path="ispits" element={<IspitsAcademic lang={lang} />} />
@@ -398,9 +393,7 @@ export function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="anion-gap" element={wrapCalculator('/anion-gap', <AnionGap lang={lang} />)} />
       <Route path="aa-gradient" element={wrapCalculator('/aa-gradient', <AaGradient lang={lang} />)} />
       <Route path="compare/:slug1-vs-:slug2" element={<Compare lang={lang} />} />
-      <Route path="clinical-library" element={<ClinicalLibrary lang={lang} />} />
-      <Route path="clinical-library/:view" element={<ClinicalLibrary lang={lang} />} />
-      <Route path="clinical-library/:view/:subId" element={<ClinicalLibrary lang={lang} />} />
+
       {/* Clinical Q&A Pages — the 100x SEO multiplier */}
       <Route path="q/:questionSlug" element={<ClinicalQuestionPage lang={lang} />} />
       {/* Programmatic SEO Guides */}

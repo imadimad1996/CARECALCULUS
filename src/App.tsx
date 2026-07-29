@@ -252,7 +252,7 @@ function AppLayout() {
 
   // Compute head metadata (reactive on path + lang changes)
   const appHead = buildHead(logicalPath, lang);
-  const isArticlePage = logicalPath.startsWith('/blog/') || logicalPath.startsWith('/blog-articles/');
+  const isArticlePage = false;
 
 
 
@@ -577,8 +577,7 @@ function AppLayout() {
   // Breadcrumb + back link for content/reading pages
   const renderContentPageTopBar = () => {
     const sectionMap: Record<string, { en: string; fr: string; ar: string; icon: any }> = {
-      '/blog':          { en: 'Medical Journals', fr: 'Journaux Médicaux', ar: 'المجلات الطبية', icon: BookOpen },
-      '/blog-articles': { en: 'Blog Articles',    fr: 'Articles de Blog',  ar: 'مقالات المدونة', icon: Newspaper },
+
       '/presentations': { en: 'Presentations',    fr: 'Présentations',     ar: 'العروض التقديمية', icon: MonitorPlay },
       '/cours':         { en: 'Courses (PDF)',     fr: 'Cours (PDF)',       ar: 'المحاضرات والدروس', icon: GraduationCap },
       '/about':         { en: 'About',            fr: 'À propos',          ar: 'عن المنصة', icon: ShieldCheck },
@@ -589,7 +588,7 @@ function AppLayout() {
       '/hub-glp1':      { en: 'GLP-1 Hub',        fr: 'Hub GLP-1',         ar: 'مركز أدوية GLP-1',  icon: Sparkles },
       '/مركز-glp1':     { en: 'GLP-1 Hub',        fr: 'Hub GLP-1',         ar: 'مركز أدوية GLP-1',  icon: Sparkles },
       '/clinical-guide':{ en: 'Clinical Guides',  fr: 'Guides Cliniques',  ar: 'الأدلة السريرية', icon: BookOpen },
-      '/clinical-library':{ en: 'Clinical Library',  fr: 'Bibliothèque Clinique',  ar: 'المكتبة السريرية', icon: Calculator },
+
     };
     const base = CONTENT_ROUTES.find(r => logicalPath === r || logicalPath.startsWith(r + '/'));
     const section = base ? sectionMap[base] : null;
