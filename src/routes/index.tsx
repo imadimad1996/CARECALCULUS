@@ -95,6 +95,17 @@ const pageLoaders = [
   () => import('../pages/BishopScore'),
   () => import('../pages/CentorScore'),
   () => import('../pages/EditorialBoard'),
+  () => import('../pages/PediatricGcs'),
+  () => import('../pages/HollidaySegarFluids'),
+  () => import('../pages/PediatricDosage'),
+  () => import('../pages/NaegeleEddCalculator'),
+  () => import('../pages/GestationalAgeCrl'),
+  () => import('../pages/FourTsHitScore'),
+  () => import('../pages/MasccRiskIndex'),
+  () => import('../pages/RumackMatthewNomogram'),
+  () => import('../pages/FraminghamRiskScore'),
+  () => import('../pages/HfaPeffScore'),
+  () => import('../pages/SchwartzGfr'),
 ] as const;
 
 const safeLazy = (loader: () => Promise<any>) => {
@@ -140,7 +151,9 @@ const [
   GraceScore, BicarbDeficit, ReticIndex,
   PhenytoinCorrection, AscvdRisk, VancomycinDosing, AminoglycosideDosing,
   PesiScore, BovaScore, ApacheIIScore, SapsIIScore, DrugInteractions, MedicalStatistics, FavoritesPage, PricingPage,
-  BishopScore, CentorScore, EditorialBoard
+  BishopScore, CentorScore, EditorialBoard,
+  PediatricGcs, HollidaySegarFluids, PediatricDosage, NaegeleEddCalculator, GestationalAgeCrl,
+  FourTsHitScore, MasccRiskIndex, RumackMatthewNomogram, FraminghamRiskScore, HfaPeffScore, SchwartzGfr
 ] = pageLoaders.map((loader) => safeLazy(loader as any)) as any[];
 
 export const HomePage = safeLazy(() => import('../pages/HomePage'));
@@ -247,6 +260,17 @@ export const navItems = [
   { path: '/nutrition-nrs2002', nameEn: 'NRS-2002 Nutrition Risk', nameFr: 'NRS-2002 Risque Nutritionnel', nameAr: 'أداة NRS-2002 للمخاطر الغذائية', icon: AlertOctagon, tier: 2 },
   { path: '/bishop-score', nameEn: 'Bishop Score', nameFr: 'Score de Bishop', nameAr: 'مقياس بيشوب للولادة', icon: Activity, tier: 2 },
   { path: '/centor-score', nameEn: 'Centor Score', nameFr: 'Score de MacIsaac', nameAr: 'مقياس سينتور لالتهاب الحلق', icon: Activity, tier: 2 },
+  { path: '/pediatric-gcs', nameEn: 'Pediatric GCS', nameFr: 'Glasgow Pédiatrique', nameAr: 'غلاسكو للأطفال', icon: Brain, tier: 1 },
+  { path: '/holliday-segar-fluids', nameEn: 'Holliday-Segar Fluids', nameFr: 'Fluides Holliday-Segar', nameAr: 'سوائل الأطفال', icon: Droplet, tier: 1 },
+  { path: '/pediatric-dosage', nameEn: 'Pediatric Dosage', nameFr: 'Dosage Pédiatrique', nameAr: 'جرعات الأطفال', icon: Pill, tier: 1 },
+  { path: '/naegele-edd-calculator', nameEn: 'Naegele EDD Calculator', nameFr: 'Calculateur DPA Naegele', nameAr: 'حساب موعد الولادة', icon: HeartPulse, tier: 2 },
+  { path: '/gestational-age-crl', nameEn: 'Gestational Age CRL', nameFr: 'Âge Gestationnel LCC', nameAr: 'عمر الحمل بالسونار', icon: Activity, tier: 2 },
+  { path: '/four-ts-hit-score', nameEn: '4Ts HIT Score', nameFr: 'Score 4T TIH', nameAr: 'مقياس 4T للجلطات', icon: AlertOctagon, tier: 2 },
+  { path: '/mascc-risk-index', nameEn: 'MASCC Risk Index', nameFr: 'Score MASCC Neutropénie', nameAr: 'مقياس ماسك للسرطان', icon: ShieldCheck, tier: 2 },
+  { path: '/rumack-matthew-nomogram', nameEn: 'Rumack-Matthew Nomogram', nameFr: 'Nomogramme Rumack-Matthew', nameAr: 'تسمم الباراسيتامول', icon: AlertTriangle, tier: 1 },
+  { path: '/framingham-risk-score', nameEn: 'Framingham Risk Score', nameFr: 'Score de Framingham', nameAr: 'مقياس فرامينغهام للقلب', icon: HeartPulse, tier: 2 },
+  { path: '/hfa-peff-score', nameEn: 'HFA-PEFF Score', nameFr: 'Score HFA-PEFF ICFEP', nameAr: 'مقياس قصور القلب HFA-PEFF', icon: HeartPulse, tier: 2 },
+  { path: '/schwartz-pediatric-gfr', nameEn: 'Schwartz Pediatric GFR', nameFr: 'DFG Pédiatrique Schwartz', nameAr: 'وظائف كلى الأطفال', icon: TestTube, tier: 2 },
 
   // Tier 3: Infusions, Metrics & Pharmacology
   { path: '/drip-rate-calculator', nameEn: 'IV Drip Rate Tool', nameFr: 'Calcul Débit Perfusion', nameAr: 'سرعة تنقيط المحلول الوريدي', icon: Droplet, tier: 3 },
@@ -404,6 +428,17 @@ export function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="clinical-guide/:guideSlug" element={<ProgrammaticGuidePage lang={lang} />} />
       <Route path="bishop-score" element={wrapCalculator('/bishop-score', <BishopScore lang={lang} />)} />
       <Route path="centor-score" element={wrapCalculator('/centor-score', <CentorScore lang={lang} />)} />
+      <Route path="pediatric-gcs" element={wrapCalculator('/pediatric-gcs', <PediatricGcs lang={lang} />)} />
+      <Route path="holliday-segar-fluids" element={wrapCalculator('/holliday-segar-fluids', <HollidaySegarFluids lang={lang} />)} />
+      <Route path="pediatric-dosage" element={wrapCalculator('/pediatric-dosage', <PediatricDosage lang={lang} />)} />
+      <Route path="naegele-edd-calculator" element={wrapCalculator('/naegele-edd-calculator', <NaegeleEddCalculator lang={lang} />)} />
+      <Route path="gestational-age-crl" element={wrapCalculator('/gestational-age-crl', <GestationalAgeCrl lang={lang} />)} />
+      <Route path="four-ts-hit-score" element={wrapCalculator('/four-ts-hit-score', <FourTsHitScore lang={lang} />)} />
+      <Route path="mascc-risk-index" element={wrapCalculator('/mascc-risk-index', <MasccRiskIndex lang={lang} />)} />
+      <Route path="rumack-matthew-nomogram" element={wrapCalculator('/rumack-matthew-nomogram', <RumackMatthewNomogram lang={lang} />)} />
+      <Route path="framingham-risk-score" element={wrapCalculator('/framingham-risk-score', <FraminghamRiskScore lang={lang} />)} />
+      <Route path="hfa-peff-score" element={wrapCalculator('/hfa-peff-score', <HfaPeffScore lang={lang} />)} />
+      <Route path="schwartz-pediatric-gfr" element={wrapCalculator('/schwartz-pediatric-gfr', <SchwartzGfr lang={lang} />)} />
     </>
   );
 }

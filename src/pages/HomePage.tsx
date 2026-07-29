@@ -3,7 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import {
   Activity, Brain, Stethoscope, Wind, TestTube, AlertOctagon, HeartPulse,
   Droplet, ArrowRightLeft, LayoutDashboard, BookOpen, MonitorPlay, GraduationCap,
-  Newspaper, Calculator, ChevronRight, ShieldCheck, Globe, Sparkles, AlertTriangle, Search, Award, ArrowRight
+  Newspaper, Calculator, ChevronRight, ShieldCheck, Globe, Sparkles, AlertTriangle, Search, Award, ArrowRight, Pill
 } from 'lucide-react';
 import { LangCode } from '../types';
 import { useLang } from '../utils/lang';
@@ -71,6 +71,10 @@ const SPECIALTIES = [
   { id: 'all', en: 'All Categories', fr: 'Toutes catégories' },
   { id: 'emergency', en: 'Emergency & Critical Care', fr: 'Urgences & Soins Intensifs' },
   { id: 'cardiology', en: 'Cardiology', fr: 'Cardiologie' },
+  { id: 'pediatrics', en: 'Pediatrics', fr: 'Pédiatrie' },
+  { id: 'obgyn', en: 'Obstetrics & Gyn', fr: 'Obstétrique & Gynéco' },
+  { id: 'hematology', en: 'Hematology & Oncology', fr: 'Hématologie & Oncologie' },
+  { id: 'toxicology', en: 'Toxicology', fr: 'Toxicologie' },
   { id: 'pulmonology', en: 'Pulmonology', fr: 'Pneumologie' },
   { id: 'nephrology', en: 'Nephrology', fr: 'Néphrologie' },
   { id: 'gastro', en: 'Gastroenterology', fr: 'Gastro-entérologie' },
@@ -83,6 +87,17 @@ const FEATURED_CALCULATORS = [
   { id: 'map', icon: Activity, en: 'MAP Calculator', fr: 'Calculateur PAM', path: '/map-calculator', specialties: ['cardiology', 'emergency'] },
   { id: 'gcs', icon: Brain, en: 'GCS Score', fr: 'Échelle Glasgow', path: '/glasgow-coma-scale', specialties: ['neuro', 'emergency'] },
   { id: 'qsofa', icon: AlertTriangle, en: 'qSOFA Sepsis', fr: 'qSOFA Sepsis', path: '/qsofa-score', specialties: ['emergency'] },
+  { id: 'pgcs', icon: Brain, en: 'Pediatric GCS', fr: 'Glasgow Pédiatrique', path: '/pediatric-gcs', specialties: ['pediatrics', 'emergency'] },
+  { id: 'holliday', icon: Droplet, en: 'Holliday-Segar Fluids', fr: 'Fluides Holliday-Segar', path: '/holliday-segar-fluids', specialties: ['pediatrics'] },
+  { id: 'peds-dose', icon: Pill, en: 'Pediatric Dosage', fr: 'Dosage Pédiatrique', path: '/pediatric-dosage', specialties: ['pediatrics', 'pharmaco'] },
+  { id: 'edd', icon: HeartPulse, en: 'Naegele EDD', fr: 'Calculateur DPA Naegele', path: '/naegele-edd-calculator', specialties: ['obgyn'] },
+  { id: 'crl', icon: Activity, en: 'Gestational Age CRL', fr: 'Âge Gestationnel LCC', path: '/gestational-age-crl', specialties: ['obgyn'] },
+  { id: 'fourts', icon: AlertOctagon, en: '4Ts HIT Score', fr: 'Score 4T TIH', path: '/four-ts-hit-score', specialties: ['hematology', 'emergency'] },
+  { id: 'mascc', icon: ShieldCheck, en: 'MASCC Risk Index', fr: 'Score MASCC Neutropénie', path: '/mascc-risk-index', specialties: ['hematology'] },
+  { id: 'rumack', icon: AlertTriangle, en: 'Rumack-Matthew Nomogram', fr: 'Nomogramme Rumack-Matthew', path: '/rumack-matthew-nomogram', specialties: ['toxicology', 'emergency'] },
+  { id: 'framingham', icon: HeartPulse, en: 'Framingham Risk', fr: 'Score de Framingham', path: '/framingham-risk-score', specialties: ['cardiology'] },
+  { id: 'hfapeff', icon: HeartPulse, en: 'HFA-PEFF Score', fr: 'Score HFA-PEFF ICFEP', path: '/hfa-peff-score', specialties: ['cardiology'] },
+  { id: 'schwartz', icon: TestTube, en: 'Schwartz Pediatric GFR', fr: 'DFG Pédiatrique Schwartz', path: '/schwartz-pediatric-gfr', specialties: ['nephrology', 'pediatrics'] },
   { id: 'curb65', icon: Stethoscope, en: 'CURB-65', fr: 'CURB-65', path: '/curb65-score', specialties: ['pulmonology', 'emergency'] },
   { id: 'pf', icon: Wind, en: 'P/F Ratio', fr: 'Rapport P/F', path: '/pf-ratio', specialties: ['pulmonology', 'emergency'] },
   { id: 'creat', icon: TestTube, en: 'Creatinine Clearance', fr: 'Clairance Créatinine', path: '/creatinine-clearance', specialties: ['nephrology'] },
