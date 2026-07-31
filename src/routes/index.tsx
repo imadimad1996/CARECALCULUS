@@ -136,7 +136,7 @@ const [
   WellsScore, MedicalConversions, CorrectedCalcium, QsofaScore, Curb65Score,
   Cha2ds2VascScore, Phq9Score, MeldScore, SirsCriteria, PfRatio, TidalVolume,
   AncCalculator, AdjustedBodyWeight, SteroidConversion,
-  PdfSplitter, PdfMerger, Presentations, Courses, About, Disclaimer, Privacy, Terms,
+  About, Disclaimer, Privacy, Terms,
   Glp1Hub, ApgarScore, SofaScore, ChildPughScore, AnionGap, AaGradient,
   FmpMedecine, IspitsAcademic,
   FlashcardGenerator, CaseStudyViewer, DrugSheets, StudyTracker, AbbreviationLookup,
