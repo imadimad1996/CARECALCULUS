@@ -6,9 +6,10 @@ import { InlineCheckout } from '../components/InlineCheckout';
 
 export default function PricingPage({ lang }: { lang: LangCode }) {
   const [showCheckout, setShowCheckout] = useState(true);
+  const [billingCycle, setBillingCycle] = useState<'annual' | 'lifetime'>('lifetime');
 
   const isFr = lang === 'fr';
-  const proPrice = '19.99';
+  const proPrice = billingCycle === 'lifetime' ? '69.99' : '19.99';
 
   const handleSelectPro = () => {
     setShowCheckout(true);
@@ -34,6 +35,27 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
             : 'Free forever for medical students. Save 30 seconds per patient by copying pre-formatted DotPhrases & SBAR notes directly into Epic or Cerner.'}
         </p>
 
+      </div>
+
+      {/* Billing Cycle Toggle */}
+      <div className="flex justify-center mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100">
+        <div className="bg-slate-200/50 dark:bg-slate-800/50 p-1.5 rounded-full inline-flex items-center relative shadow-inner">
+          <button
+            onClick={() => setBillingCycle('annual')}
+            className={`relative w-40 py-2.5 text-sm font-bold rounded-full transition-all duration-300 ${billingCycle === 'annual' ? 'bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm' : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'}`}
+          >
+            {isFr ? 'Annuel (19,99$)' : 'Annual ($19.99)'}
+          </button>
+          <button
+            onClick={() => setBillingCycle('lifetime')}
+            className={`relative w-40 py-2.5 text-sm font-bold rounded-full transition-all duration-300 flex items-center justify-center gap-2 ${billingCycle === 'lifetime' ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-md shadow-cyan-500/25' : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'}`}
+          >
+            {isFr ? 'À Vie' : 'Lifetime'}
+            <span className={`absolute -top-3 -right-2 bg-gradient-to-r from-amber-400 to-orange-500 text-white text-[9px] font-black uppercase px-2 py-0.5 rounded-full shadow-sm ${billingCycle === 'annual' ? 'animate-bounce' : ''}`}>
+              {isFr ? 'PLUS RENTABLE' : 'BEST VALUE'}
+            </span>
+          </button>
+        </div>
       </div>
 
       {/* Pricing Grid */}
@@ -97,10 +119,10 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
             <div className="mb-6">
               <div className="flex flex-wrap items-end gap-1">
                 <span className="text-4xl md:text-5xl font-black tracking-tighter text-white">${proPrice}</span>
-                <span className="text-sm text-slate-400 font-medium pb-2 whitespace-nowrap">/ {isFr ? 'paiement unique' : 'year'}</span>
+                <span className="text-sm text-slate-400 font-medium pb-2 whitespace-nowrap">/ {isFr ? 'paiement unique' : (billingCycle === 'lifetime' ? 'forever' : 'year')}</span>
               </div>
               <span className="inline-block mt-2 px-2.5 py-1 bg-cyan-500/10 text-cyan-400 text-xs font-bold rounded-md">
-                {isFr ? 'Accès complet 1 an' : '1-Year Full Access'}
+                {billingCycle === 'lifetime' ? (isFr ? 'Accès à Vie illimité' : 'Lifetime Unlimited Access') : (isFr ? 'Accès complet 1 an' : '1-Year Full Access')}
               </span>
             </div>
 
@@ -212,10 +234,10 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
         <div className="animate-in fade-in slide-in-from-bottom-6 duration-500">
           <InlineCheckout
             lang={lang}
-            planName="CareCalculus Pro 1-Year Pass"
+            planName={billingCycle === 'lifetime' ? "CareCalculus Pro Lifetime Pass" : "CareCalculus Pro 1-Year Pass"}
             price={proPrice}
             currency="USD"
-            planType="annual"
+            planType={billingCycle}
           />
         </div>
       )}

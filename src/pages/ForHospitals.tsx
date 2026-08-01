@@ -198,9 +198,15 @@ export default function ForHospitals({ lang }: { lang: LangCode }) {
                       <ChevronRight className="w-5 h-5" />
                     </button>
                     
-                    <div className="flex items-center justify-center gap-2 mt-4 text-xs text-slate-500">
-                      <Lock className="w-3 h-3" />
-                      We respect your privacy. No spam.
+                    <div className="flex flex-col items-center justify-center gap-1.5 mt-4">
+                      <div className="flex items-center gap-2 text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full border border-slate-200 dark:border-slate-700">
+                        <CheckCircle2 className="w-3 h-3 text-emerald-500" />
+                        {lang === 'fr' ? 'Bons de Commande, Virements & ACH acceptés' : 'Purchase Orders, Wire Transfers & ACH Accepted'}
+                      </div>
+                      <div className="flex items-center justify-center gap-1.5 text-xs text-slate-500 mt-2">
+                        <Lock className="w-3 h-3" />
+                        We respect your privacy. No spam.
+                      </div>
                     </div>
                   </form>
                 </>

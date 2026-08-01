@@ -9,7 +9,7 @@ export interface InlineCheckoutProps {
   planName?: string;
   price?: string;
   currency?: string;
-  planType?: 'monthly' | 'annual';
+  planType?: 'monthly' | 'annual' | 'lifetime';
   onSuccess?: () => void;
 }
 
@@ -182,7 +182,9 @@ export const InlineCheckout: React.FC<InlineCheckoutProps> = ({
             <div>
               <span className="font-bold text-base text-slate-100 block">{planName}</span>
               <span className="text-xs text-slate-400">
-                {planType === 'annual' 
+                {planType === 'lifetime'
+                  ? (isFr ? 'Pass à Vie • Accès complet illimité' : 'Lifetime Pass • Full Unlimited Access')
+                  : planType === 'annual' 
                   ? (isFr ? 'Pass 1 An • Accès complet illimité' : '1-Year Pass • Full Unlimited Access') 
                   : (isFr ? 'Pass 1 Mois • Accès complet illimité' : '1-Month Pass • Full Unlimited Access')}
               </span>
