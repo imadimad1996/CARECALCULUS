@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Check, ShieldCheck, Zap, Sparkles, Building2, User, ArrowRight, X, HelpCircle, CreditCard, Lock } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { LangCode } from '../types';
 import { InlineCheckout } from '../components/InlineCheckout';
 
 export default function PricingPage({ lang }: { lang: LangCode }) {
-  const [billingCycle, setBillingCycle] = useState<'monthly' | 'annual'>('annual');
   const [showCheckout, setShowCheckout] = useState(true);
 
   const isFr = lang === 'fr';
-  const proPrice = billingCycle === 'annual' ? '79.00' : '9.99';
+  const proPrice = '19.99';
 
   const handleSelectPro = () => {
     setShowCheckout(true);
@@ -34,35 +34,6 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
             : 'Free forever for medical students. Save 30 seconds per patient by copying pre-formatted DotPhrases & SBAR notes directly into Epic or Cerner.'}
         </p>
 
-        {/* Modern Segmented Billing Toggle */}
-        <div className="mt-10 inline-flex items-center p-1.5 bg-slate-100 dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700 shadow-inner relative">
-          {/* Animated Background Pill */}
-          <div
-            className={`absolute top-1.5 bottom-1.5 w-[calc(50%-6px)] bg-white dark:bg-slate-900 rounded-full shadow-md transition-all duration-300 ease-out`}
-            style={{ left: billingCycle === 'monthly' ? '6px' : 'calc(50%)' }}
-          ></div>
-          
-          <button
-            onClick={() => setBillingCycle('monthly')}
-            className={`relative z-10 px-6 py-2.5 rounded-full text-sm font-bold transition-colors cursor-pointer w-40 ${
-              billingCycle === 'monthly' ? 'text-slate-900 dark:text-white' : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'
-            }`}
-          >
-            {isFr ? 'Pass 1 Mois' : '1-Month Pass'}
-          </button>
-          
-          <button
-            onClick={() => setBillingCycle('annual')}
-            className={`relative z-10 px-6 py-2.5 rounded-full text-sm font-bold transition-colors flex items-center justify-center gap-2 cursor-pointer w-48 ${
-              billingCycle === 'annual' ? 'text-slate-900 dark:text-white' : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'
-            }`}
-          >
-            <span>{isFr ? 'Pass 1 An' : '1-Year Pass'}</span>
-            <span className="bg-amber-400 text-amber-950 text-[10px] font-black px-1.5 py-0.5 rounded shadow-sm">
-              {isFr ? '-34%' : 'SAVE 34%'}
-            </span>
-          </button>
-        </div>
       </div>
 
       {/* Pricing Grid */}
@@ -126,10 +97,10 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
             <div className="mb-6">
               <div className="flex flex-wrap items-end gap-1">
                 <span className="text-4xl md:text-5xl font-black tracking-tighter text-white">${proPrice}</span>
-                <span className="text-sm text-slate-400 font-medium pb-2 whitespace-nowrap">/ {isFr ? 'paiement unique' : 'one-time'}</span>
+                <span className="text-sm text-slate-400 font-medium pb-2 whitespace-nowrap">/ {isFr ? 'paiement unique' : 'year'}</span>
               </div>
               <span className="inline-block mt-2 px-2.5 py-1 bg-cyan-500/10 text-cyan-400 text-xs font-bold rounded-md">
-                {billingCycle === 'annual' ? (isFr ? 'Accès complet 1 an' : '1-Year Full Access') : (isFr ? 'Accès complet 1 mois' : '1-Month Full Access')}
+                {isFr ? 'Accès complet 1 an' : '1-Year Full Access'}
               </span>
             </div>
 
@@ -227,12 +198,12 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
             </ul>
           </div>
 
-          <a
-            href="mailto:imadazizimad@gmail.com?subject=Hospital%20Department%20License"
+          <Link
+            to={`/${isFr ? 'fr' : 'en'}/for-hospitals`}
             className="w-full py-4 px-4 bg-purple-50 dark:bg-purple-900/30 hover:bg-purple-100 dark:hover:bg-purple-900/50 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800/50 font-bold rounded-xl transition-all text-center block cursor-pointer"
           >
-            {isFr ? 'Contacter l\'Équipe' : 'Contact Sales'}
-          </a>
+            {isFr ? 'Demander une Démo' : 'Request Demo'}
+          </Link>
         </div>
       </div>
 
@@ -241,10 +212,10 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
         <div className="animate-in fade-in slide-in-from-bottom-6 duration-500">
           <InlineCheckout
             lang={lang}
-            planName={billingCycle === 'annual' ? "CareCalculus Pro 1-Year Pass" : "CareCalculus Pro 1-Month Pass"}
+            planName="CareCalculus Pro 1-Year Pass"
             price={proPrice}
             currency="USD"
-            planType={billingCycle}
+            planType="annual"
           />
         </div>
       )}

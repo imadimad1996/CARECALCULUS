@@ -1,13 +1,21 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { BookOpen, Download, GraduationCap, Search, ExternalLink, FileText, Flame, Layers } from 'lucide-react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { FMP_MODULES, FMP_MODULE_BY_SLUG, FmpModule } from '../utils/fmpModules';
 import { LangCode } from '../types';
 import { buildJsonLd } from '../utils/seo';
-import pdfTranscriptsData from '../data/pdf-transcripts.json';
 import GamificationLock from '../components/GamificationLock';
 
-const pdfTranscripts = pdfTranscriptsData as Record<string, { text: string; numpages: number }>;
+// pdf-transcripts.json is 1.5MB — lazy-load it only when actually needed to
+// keep the main JS bundle lean and Lighthouse Performance score high.
+type PdfTranscriptDb = Record<string, { text: string; numpages: number }>;
+let _pdfTranscriptsCache: PdfTranscriptDb | null = null;
+async function loadPdfTranscripts(): Promise<PdfTranscriptDb> {
+  if (_pdfTranscriptsCache) return _pdfTranscriptsCache;
+  const mod = await import('../data/pdf-transcripts.json');
+  _pdfTranscriptsCache = mod.default as PdfTranscriptDb;
+  return _pdfTranscriptsCache;
+}
 
 const translations = {
   en: {
@@ -95,6 +103,16 @@ export default function FmpMedecine({ lang }: { lang: LangCode }) {
 
   // Mobile detail view overlay toggle
   const [isMobileDetailOpen, setIsMobileDetailOpen] = useState(false);
+
+  // Lazy-loaded pdf transcript database — only loaded when a PDF module is selected
+  const [pdfTranscripts, setPdfTranscripts] = useState<PdfTranscriptDb | null>(null);
+  const transcriptLoadStarted = useRef(false);
+  useEffect(() => {
+    if (selectedModule && (selectedModule.pdf_file || selectedModule.pdf_parts?.length) && !transcriptLoadStarted.current) {
+      transcriptLoadStarted.current = true;
+      loadPdfTranscripts().then(setPdfTranscripts);
+    }
+  }, [selectedModule]);
 
   // Sync selected module when the URL slug changes (e.g. browser back/forward)
   useEffect(() => {

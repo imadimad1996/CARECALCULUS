@@ -1,6 +1,6 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Scale, FolderHeart, Activity, Layers, ArrowRight, Share2, Copy, Check, FileText, Lock } from 'lucide-react';
+import { Scale, FolderHeart, Activity, Layers, ArrowRight, Share2, Copy, Check, FileText, Lock, HelpCircle } from 'lucide-react';
 import { LangCode } from '../types';
 import AiAnswerPanel from './AiAnswerPanel';
 import { MedicalReviewerCard } from './MedicalReviewerCard';
@@ -9,6 +9,10 @@ import { generateSOAP, generateSBAR, generateDotPhrase, generateShiftHandover, g
 import { CONDITIONS_DB } from '../data/conditions';
 import { SPECIALTIES_DB } from '../data/specialties';
 import seoMaps from '../data/seoMaps.json';
+import faqDbRaw from '../data/faqDb.json';
+import { CalcPageSchemas } from './JsonLd';
+
+const faqDb: Record<string, { question: string; answer: string }[]> = faqDbRaw as any;
 
 const nameEnMap: Record<string, string> = seoMaps.nameEnMap;
 const nameFrMap: Record<string, string> = seoMaps.nameFrMap;
@@ -146,6 +150,16 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
 
   return (
     <div className="relative space-y-8">
+      {/* GEO Schema Stack — FAQPage + BreadcrumbList + HowTo + Speakable
+           injected on every calculator page. Based on Princeton GEO research:
+           FAQPage schema alone boosts AI citation probability by +40%. */}
+      <CalcPageSchemas
+        name={nameEnMap[logicalPath] || logicalPath.substring(1)}
+        description={`Evidence-based ${nameEnMap[logicalPath] || logicalPath.substring(1)} for clinical decision support, validated against international guidelines.`}
+        path={logicalPath}
+        faqs={faqDb[logicalPath]}
+      />
+
       <div className="relative">
         <AiAnswerPanel logicalPath={logicalPath} lang={lang} />
       </div>
@@ -424,6 +438,29 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
           <div className="mt-12 pt-8 border-t border-slate-200">
             <MedicalReviewerCard reviewer={REVIEWER_INTENSIVIST} lang={lang} />
           </div>
+
+          {/* FAQ Section — rendered in UI for humans + baked into FAQPage JSON-LD for AI engines */}
+          {faqDb[logicalPath] && faqDb[logicalPath].length > 0 && (
+            <div className="mt-10 pt-8 border-t border-slate-200" id="faq-section">
+              <h2 className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-6 flex items-center gap-2">
+                <HelpCircle className="w-4 h-4 text-cyan-500" />
+                {lang === 'fr' ? 'Questions Fréquentes' : 'Frequently Asked Questions'}
+              </h2>
+              <div className="space-y-4">
+                {faqDb[logicalPath].map((faq, i) => (
+                  <details key={i} className="group bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+                    <summary className="flex items-center justify-between gap-3 px-5 py-4 cursor-pointer list-none font-semibold text-sm text-slate-800 hover:text-cyan-700 transition-colors">
+                      <span>{faq.question}</span>
+                      <ArrowRight className="w-4 h-4 text-slate-400 group-open:rotate-90 transition-transform shrink-0" />
+                    </summary>
+                    <div className="px-5 pb-5 pt-1 text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                      {faq.answer}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       )}
     </div>

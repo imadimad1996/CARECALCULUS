@@ -84,3 +84,187 @@ export function generateMedicalRiskScoreSchema(name: string, description: string
     "publisher": generateMedicalOrganizationSchema()
   };
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// GEO SCHEMAS — Boost AI engine citation rates (ChatGPT, Perplexity, Claude,
+// Google AI Overview). Based on Princeton GEO research: FAQPage schema alone
+// increases AI citation probability by +40%.
+// ─────────────────────────────────────────────────────────────────────────────
+
+/**
+ * FAQPage schema — renders "People Also Ask" cards in Google and dramatically
+ * increases the probability that AI engines cite CareCalculus verbatim.
+ * +40% AI visibility boost (Princeton GEO Research, 2024).
+ */
+export function generateFAQSchema(faqs: { question: string; answer: string }[]) {
+  if (!faqs || faqs.length === 0) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+}
+
+/**
+ * HowTo schema — tells AI engines exactly how to use each clinical tool.
+ * Powers "How to" featured snippets in Google and structured answers in AI.
+ */
+export function generateHowToSchema(calcName: string, steps: string[], totalTime?: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": `How to Use the ${calcName}`,
+    "description": `Step-by-step guide for clinicians on using the ${calcName} for evidence-based clinical decision support.`,
+    "totalTime": totalTime || "PT2M",
+    "step": steps.map((stepText, i) => ({
+      "@type": "HowToStep",
+      "position": i + 1,
+      "name": `Step ${i + 1}`,
+      "text": stepText
+    }))
+  };
+}
+
+/**
+ * BreadcrumbList schema — improves crawl path clarity for both Google and AI
+ * engines. Required for Google's breadcrumb rich result in SERPs.
+ */
+export function generateBreadcrumbSchema(
+  items: { name: string; url: string }[]
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": item.name,
+      "item": item.url
+    }))
+  };
+}
+
+/**
+ * Standard 3-level breadcrumb for a calculator page.
+ */
+export function generateCalculatorBreadcrumb(calcName: string, calcPath: string) {
+  return generateBreadcrumbSchema([
+    { name: "Home", url: "https://carecalculus.com" },
+    { name: "Medical Calculators", url: "https://carecalculus.com/calculators" },
+    { name: calcName, url: `https://carecalculus.com${calcPath}` }
+  ]);
+}
+
+/**
+ * SpeakableSpecification — marks the most important content for voice assistants
+ * (Google Assistant, Siri). Increasingly used by AI engines to locate
+ * authoritative answer blocks.
+ */
+export function generateSpeakableSchema(cssSelectors: string[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": cssSelectors
+    }
+  };
+}
+
+/**
+ * MedicalStudy schema — wraps clinical evidence citations to signal
+ * authoritative, peer-reviewed sourcing to both Google E-E-A-T algorithms
+ * and AI citation engines.
+ */
+export function generateMedicalStudySchema(
+  studyTitle: string,
+  doi: string,
+  journal: string,
+  year: number,
+  finding: string
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "MedicalStudy",
+    "name": studyTitle,
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "DOI",
+      "value": doi
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": journal
+    },
+    "datePublished": String(year),
+    "description": finding
+  };
+}
+
+/**
+ * Composite schema block for a full calculator page — bundles MedicalWebPage +
+ * FAQPage + BreadcrumbList + SpeakableSpecification into one render.
+ * Use this as the single call from CalculatorShell for maximum GEO coverage.
+ */
+export interface CalcPageSchemaOptions {
+  name: string;
+  description: string;
+  path: string;
+  faqs?: { question: string; answer: string }[];
+  howToSteps?: string[];
+  scoringSystem?: string;
+}
+
+export function CalcPageSchemas({ name, description, path, faqs, howToSteps, scoringSystem }: CalcPageSchemaOptions) {
+  const url = `https://carecalculus.com${path}`;
+  const schemas: Record<string, any>[] = [];
+
+  // Core medical page schema
+  schemas.push(
+    scoringSystem
+      ? generateMedicalRiskScoreSchema(name, description, url, scoringSystem)
+      : generateMedicalWebPageSchema(name, description, url)
+  );
+
+  // Breadcrumb (always)
+  schemas.push(generateCalculatorBreadcrumb(name, path));
+
+  // FAQ schema — highest GEO impact (+40% citation probability)
+  if (faqs && faqs.length > 0) {
+    const faqSchema = generateFAQSchema(faqs);
+    if (faqSchema) schemas.push(faqSchema);
+  }
+
+  // HowTo schema
+  if (howToSteps && howToSteps.length > 0) {
+    schemas.push(generateHowToSchema(name, howToSteps));
+  }
+
+  // Speakable — mark key content for voice/AI extraction
+  schemas.push(generateSpeakableSchema([
+    "#clinical-definition",
+    "#calculator-result",
+    "#score-interpretation",
+    "h1",
+    ".clinical-pearl"
+  ]));
+
+  return (
+    <>
+      {schemas.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
+    </>
+  );
+}

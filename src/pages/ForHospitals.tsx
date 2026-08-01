@@ -1,116 +1,209 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { LangCode } from '../types';
-import { Building2, ShieldCheck, Activity, Code2, ArrowRight } from 'lucide-react';
+import { Building2, ShieldCheck, Activity, Code2, ArrowRight, CheckCircle2, ChevronRight, Lock } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const T = {
   en: {
-    badge: "Enterprise Solutions",
-    title: "Empower your clinical teams with CareCalculus Enterprise",
-    desc: "Embed validated clinical calculators directly into your hospital's Electronic Health Record (EHR) workflows. Eliminate cognitive load, reduce medication errors, and standardize clinical decision support across your entire health system.",
-    ctaContact: "Contact Sales",
-    ctaDoc: "View API Documentation",
-    benefit1Title: "Evidence-Based Validation",
-    benefit1Desc: "Every calculator is peer-reviewed and cited against the latest clinical guidelines (AHA, ESC, IDSA, ARDSNet).",
-    benefit2Title: "EHR Integration (SMART/FHIR)",
-    benefit2Desc: "Embed widgets natively within Epic, Cerner, or Allscripts using our SMART on FHIR compliant components.",
-    benefit3Title: "Usage Analytics",
-    benefit3Desc: "Track which tools your clinicians use most to identify training opportunities and standardize care protocols.",
-    footerTitle: "Ready to standardize your clinical decision support?",
-    footerDesc: "Join leading health systems that trust CareCalculus for error-free, instantaneous medical calculations.",
-    ctaDemo: "Request a Demo",
+    seoTitle: "Enterprise Clinical Decision Support | CareCalculus for Hospitals",
+    seoDesc: "Embed validated clinical calculators directly into your hospital's EHR workflows. Reduce medication errors and standardize decision support.",
+    badge: "CareCalculus Enterprise",
+    title: "Standardize Clinical Decisions Across Your Health System",
+    desc: "Integrate peer-reviewed calculators natively into Epic and Cerner. Eliminate cognitive overload and reduce medication errors with our SMART on FHIR solutions.",
+    formTitle: "Request a Demo",
+    formSub: "See how CareCalculus integrates with your EHR.",
+    firstName: "First Name",
+    lastName: "Last Name",
+    workEmail: "Work Email",
+    hospitalName: "Hospital / Health System",
+    ehrSystem: "Primary EHR System",
+    role: "Your Role",
+    submit: "Schedule Demo",
+    trust: "Trusted by clinical innovators at:",
+    benefit1Title: "EHR Native Integration",
+    benefit1Desc: "Seamlessly embed inside Epic, Cerner, or Allscripts without disrupting clinical workflows.",
+    benefit2Title: "Evidence-Based Protocols",
+    benefit2Desc: "Ensure every clinician uses calculators validated against the latest AHA, ESC, and IDSA guidelines.",
+    benefit3Title: "Analytics & Governance",
+    benefit3Desc: "Track usage analytics, identify training gaps, and maintain central control over clinical tools."
   },
   fr: {
-    badge: "Solutions Entreprise",
-    title: "Optimisez vos équipes cliniques avec CareCalculus Enterprise",
-    desc: "Intégrez des calculateurs cliniques validés directement dans les flux de travail du dossier patient informatisé (DPI) de votre hôpital. Éliminez la charge cognitive, réduisez les erreurs de médication et standardisez l'aide à la décision clinique dans tout votre réseau de santé.",
-    ctaContact: "Contacter le service commercial",
-    ctaDoc: "Voir la documentation de l'API",
-    benefit1Title: "Validation basée sur les preuves",
-    benefit1Desc: "Chaque calculateur est révisé par des pairs et cité conformément aux dernières directives cliniques (AHA, ESC, IDSA, ARDSNet).",
-    benefit2Title: "Intégration DPI (SMART/FHIR)",
-    benefit2Desc: "Intégrez les widgets nativement dans Epic, Cerner ou Allscripts à l'aide de nos composants compatibles SMART on FHIR.",
-    benefit3Title: "Analyses d'utilisation",
-    benefit3Desc: "Suivez les outils les plus utilisés par vos cliniciens pour identifier les opportunités de formation et standardiser les protocoles de soins.",
-    footerTitle: "Prêt à standardiser votre aide à la décision clinique ?",
-    footerDesc: "Rejoignez les principaux réseaux de santé qui font confiance à CareCalculus pour des calculs médicaux instantanés et sans erreur.",
-    ctaDemo: "Demander une démo",
+    seoTitle: "Aide à la Décision Clinique pour Hôpitaux | CareCalculus Enterprise",
+    seoDesc: "Intégrez des calculateurs validés dans votre DPI (Epic, Cerner). Réduisez les erreurs médicamenteuses et standardisez l'aide à la décision.",
+    badge: "CareCalculus Enterprise",
+    title: "Standardisez les Décisions Cliniques dans Votre Hôpital",
+    desc: "Intégrez des calculateurs validés nativement dans Epic et Cerner. Éliminez la surcharge cognitive et réduisez les erreurs médicamenteuses.",
+    formTitle: "Demander une Démo",
+    formSub: "Découvrez l'intégration de CareCalculus dans votre DPI.",
+    firstName: "Prénom",
+    lastName: "Nom",
+    workEmail: "Email Professionnel",
+    hospitalName: "Hôpital / Établissement",
+    ehrSystem: "Système DPI (EHR)",
+    role: "Votre Fonction",
+    submit: "Planifier la Démo",
+    trust: "Approuvé par les cliniciens innovants de :",
+    benefit1Title: "Intégration DPI Native",
+    benefit1Desc: "Intégration transparente dans Epic, Cerner ou Allscripts sans perturber les flux de travail.",
+    benefit2Title: "Protocoles Validés",
+    benefit2Desc: "Assurez-vous que chaque clinicien utilise des calculateurs validés selon les dernières directives.",
+    benefit3Title: "Analyses & Gouvernance",
+    benefit3Desc: "Suivez l'utilisation, identifiez les besoins en formation et maintenez le contrôle sur les outils cliniques."
   }
 };
 
 export default function ForHospitals({ lang }: { lang: LangCode }) {
+  const [submitted, setSubmitted] = useState(false);
   const isRtl = false;
   const t = T[lang] || T.en;
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
   return (
-    <div className="w-full max-w-full max-w-6xl mx-auto px-4 py-12 md:py-20" dir={isRtl ? 'rtl' : 'ltr'}>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
-        <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 text-blue-700 font-semibold text-sm mb-6">
-            <Building2 className="w-4 h-4" />
-            {t.badge}
-          </div>
-          <h1 className={`text-4xl md:text-6xl font-display font-bold text-slate-900 leading-tight mb-6 ${isRtl ? 'leading-normal' : ''}`}>
-            {t.title}
-          </h1>
-          <p className="text-xl text-slate-600 leading-relaxed mb-8">
-            {t.desc}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <button className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
-              {t.ctaContact} <ArrowRight className={`w-5 h-5 ${isRtl ? 'rotate-180' : ''}`} />
-            </button>
-            <button className="px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 rounded-xl font-bold transition-colors">
-              {t.ctaDoc}
-            </button>
-          </div>
-        </div>
-        <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-tr from-blue-100 to-indigo-50 rounded-3xl transform rotate-3 scale-105" />
-          <img 
-            src="https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
-            alt="Clinical Team using EHR" 
-            className="rounded-3xl relative z-10 shadow-2xl border border-white/50"
-          />
-        </div>
-      </div>
+    <div className={`w-full bg-slate-50 dark:bg-slate-950 font-sans ${isRtl ? 'rtl' : 'ltr'}`}>
+      <SEO 
+        logicalPath="/for-hospitals" 
+        lang={lang} 
+        title={t.seoTitle}
+        description={t.seoDesc}
+      />
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
-        <div className="p-8 bg-white rounded-3xl border border-slate-200 shadow-sm">
-          <div className="w-14 h-14 bg-teal-50 text-teal-600 rounded-2xl flex items-center justify-center mb-6">
-            <ShieldCheck className="w-8 h-8" />
-          </div>
-          <h3 className="text-xl font-bold text-slate-900 mb-3">{t.benefit1Title}</h3>
-          <p className="text-slate-600">{t.benefit1Desc}</p>
-        </div>
-        <div className="p-8 bg-white rounded-3xl border border-slate-200 shadow-sm">
-          <div className="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
-            <Code2 className="w-8 h-8" />
-          </div>
-          <h3 className="text-xl font-bold text-slate-900 mb-3">{t.benefit2Title}</h3>
-          <p className="text-slate-600">{t.benefit2Desc}</p>
-        </div>
-        <div className="p-8 bg-white rounded-3xl border border-slate-200 shadow-sm">
-          <div className="w-14 h-14 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center mb-6">
-            <Activity className="w-8 h-8" />
-          </div>
-          <h3 className="text-xl font-bold text-slate-900 mb-3">{t.benefit3Title}</h3>
-          <p className="text-slate-600">{t.benefit3Desc}</p>
-        </div>
-      </div>
+      {/* Hero Section */}
+      <div className="w-full max-w-full max-w-7xl mx-auto px-4 py-16 md:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          
+          {/* Left Column: Copy */}
+          <div className="animate-in fade-in slide-in-from-bottom-8 duration-700">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 font-bold text-sm mb-8 border border-blue-200 dark:border-blue-800/50">
+              <Building2 className="w-4 h-4" />
+              {t.badge}
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white leading-[1.1] mb-6 tracking-tight">
+              {t.title}
+            </h1>
+            
+            <p className="text-xl text-slate-600 dark:text-slate-400 leading-relaxed mb-10">
+              {t.desc}
+            </p>
 
-      <div className="bg-slate-900 rounded-3xl p-12 text-center text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 -mt-16 -mr-16 w-64 h-64 bg-blue-500 rounded-full blur-3xl opacity-20" />
-        <div className="absolute bottom-0 left-0 -mb-16 -ml-16 w-64 h-64 bg-teal-500 rounded-full blur-3xl opacity-20" />
-        
-        <h2 className="text-3xl md:text-4xl font-display font-bold mb-6 relative z-10">{t.footerTitle}</h2>
-        <p className="text-slate-300 max-w-2xl mx-auto mb-8 relative z-10 text-lg">
-          {t.footerDesc}
-        </p>
-        <button className="px-8 py-4 bg-blue-500 hover:bg-blue-400 text-white rounded-xl font-bold transition-colors relative z-10">
-          {t.ctaDemo}
-        </button>
+            <div className="space-y-6 mb-12">
+              {[
+                t.benefit1Title,
+                t.benefit2Title,
+                t.benefit3Title
+              ].map((benefit, i) => (
+                <div key={i} className="flex items-center gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+                  </div>
+                  <span className="text-lg font-semibold text-slate-800 dark:text-slate-200">{benefit}</span>
+                </div>
+              ))}
+            </div>
+
+            <div>
+              <p className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-6">{t.trust}</p>
+              <div className="flex flex-wrap gap-8 opacity-60 grayscale hover:grayscale-0 transition-all">
+                {/* Mock Hospital Logos */}
+                <div className="flex items-center gap-2 font-black text-xl text-slate-800 dark:text-white">
+                  <Activity className="w-6 h-6 text-blue-600" /> MercyHealth
+                </div>
+                <div className="flex items-center gap-2 font-black text-xl text-slate-800 dark:text-white">
+                  <ShieldCheck className="w-6 h-6 text-emerald-600" /> General
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: B2B Form */}
+          <div className="relative animate-in fade-in slide-in-from-bottom-12 duration-700 delay-150">
+            {/* Background decorative blob */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-cyan-400 rounded-[2rem] transform rotate-3 scale-[1.02] opacity-20 blur-xl"></div>
+            
+            <div className="relative bg-white dark:bg-slate-900 rounded-[2rem] p-8 md:p-10 shadow-2xl border border-slate-200 dark:border-slate-800">
+              
+              {submitted ? (
+                <div className="text-center py-16">
+                  <div className="w-20 h-20 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle2 className="w-10 h-10" />
+                  </div>
+                  <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Request Received</h3>
+                  <p className="text-slate-600 dark:text-slate-400">
+                    Our enterprise team will contact you shortly to schedule your personalized demo.
+                  </p>
+                </div>
+              ) : (
+                <>
+                  <div className="mb-8">
+                    <h2 className="text-2xl font-black text-slate-900 dark:text-white mb-2">{t.formTitle}</h2>
+                    <p className="text-slate-500 dark:text-slate-400">{t.formSub}</p>
+                  </div>
+                  
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div className="grid grid-cols-2 gap-5">
+                      <div>
+                        <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-1.5">{t.firstName}</label>
+                        <input required type="text" className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:text-white" />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-1.5">{t.lastName}</label>
+                        <input required type="text" className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:text-white" />
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-1.5">{t.workEmail}</label>
+                      <input required type="email" placeholder="name@hospital.org" className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:text-white" />
+                    </div>
+                    
+                    <div>
+                      <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-1.5">{t.hospitalName}</label>
+                      <input required type="text" className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:text-white" />
+                    </div>
+                    
+                    <div className="grid grid-cols-2 gap-5">
+                      <div>
+                        <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-1.5">{t.ehrSystem}</label>
+                        <select className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:text-white">
+                          <option>Epic</option>
+                          <option>Cerner</option>
+                          <option>Allscripts</option>
+                          <option>Meditech</option>
+                          <option>Other</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-1.5">{t.role}</label>
+                        <select className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:text-white">
+                          <option>CMIO / CNIO</option>
+                          <option>IT Leadership</option>
+                          <option>Clinical Director</option>
+                          <option>Physician</option>
+                          <option>Other</option>
+                        </select>
+                      </div>
+                    </div>
+                    
+                    <button type="submit" className="w-full py-4 mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-colors flex items-center justify-center gap-2 shadow-lg shadow-blue-500/25">
+                      <span>{t.submit}</span>
+                      <ChevronRight className="w-5 h-5" />
+                    </button>
+                    
+                    <div className="flex items-center justify-center gap-2 mt-4 text-xs text-slate-500">
+                      <Lock className="w-3 h-3" />
+                      We respect your privacy. No spam.
+                    </div>
+                  </form>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
 }
-

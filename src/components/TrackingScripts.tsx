@@ -65,10 +65,10 @@ export default function TrackingScripts() {
 
   useEffect(() => {
     const loadSecondaryScripts = () => {
-      // 2. Microsoft Clarity Setup
-      const CLARITY_PROJECT_ID = 'XXXXXXXXXX';
+      // 2. Microsoft Clarity — heatmaps + session recordings
+      const CLARITY_PROJECT_ID = 'xvmk1929os';
 
-      if (!document.getElementById('clarity-script') && CLARITY_PROJECT_ID !== 'XXXXXXXXXX') {
+      if (!document.getElementById('clarity-script')) {
         const clarityInit = document.createElement('script');
         clarityInit.id = 'clarity-script';
         clarityInit.innerHTML = `

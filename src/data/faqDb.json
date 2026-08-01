@@ -572,5 +572,235 @@
       "question": "Quelles sont les limites de la formule de Cockcroft-Gault ?",
       "answer": "Elle est moins précise chez les patients très âgés, obèses ou dénutris, car elle dépend fortement du poids corporel et de la masse musculaire."
     }
+  ],
+  "/sofa-score": [
+    {
+      "question": "What is the SOFA Score?",
+      "answer": "The Sequential Organ Failure Assessment (SOFA) score quantifies the degree of organ dysfunction in critically ill patients across 6 organ systems: respiratory (PaO2/FiO2), coagulation (platelets), liver (bilirubin), cardiovascular (MAP/vasopressors), central nervous system (GCS), and renal (creatinine). It is the cornerstone of the Sepsis-3 consensus definition published in JAMA 2016."
+    },
+    {
+      "question": "What SOFA score indicates sepsis?",
+      "answer": "According to the Sepsis-3 definition (Singer et al., JAMA 2016), sepsis is defined as a SOFA score increase of ≥ 2 points from baseline in a patient with suspected infection. This threshold corresponds to an estimated in-hospital mortality of approximately 10%."
+    },
+    {
+      "question": "What is the maximum SOFA score?",
+      "answer": "The maximum SOFA score is 24 points (4 points per organ system × 6 systems). Higher scores correlate with worse outcomes: a SOFA score > 11 is associated with approximately 95% ICU mortality in most validation studies."
+    },
+    {
+      "question": "How does SOFA differ from qSOFA?",
+      "answer": "qSOFA (quick SOFA) is a 3-item bedside screening tool (altered mentation, RR ≥ 22/min, SBP ≤ 100 mmHg) for identifying high-risk infected patients outside the ICU. Full SOFA requires 6 lab values and is used in the ICU to formally assess and track organ dysfunction severity."
+    },
+    {
+      "question": "Can SOFA score predict ICU mortality?",
+      "answer": "Yes. A mean SOFA score > 11 corresponds to a predicted mortality >95%. The delta-SOFA (change in SOFA over 48–72 hours) is a stronger predictor of outcome than a single static score — a worsening SOFA predicts mortality independently of the initial score."
+    }
+  ],
+  "/wells-score": [
+    {
+      "question": "What is the Wells Score used for?",
+      "answer": "The Wells Score is a validated clinical prediction tool that estimates the pre-test probability of Deep Vein Thrombosis (DVT) and Pulmonary Embolism (PE). It was developed by Philip Wells, MD, and validated in multiple prospective studies. A score ≥ 2 for DVT or ≥ 5 for PE indicates high probability requiring urgent imaging or anticoagulation consideration."
+    },
+    {
+      "question": "What score on the Wells criteria means high probability of PE?",
+      "answer": "Using the three-tier model: a score < 2 indicates low probability (PE prevalence ~3.4%), 2–6 indicates moderate probability (~27.8%), and > 6 indicates high probability (~78.4%). ESC 2019 and ACEP guidelines recommend CTPA for high-probability patients and D-dimer testing for low/moderate probability."
+    },
+    {
+      "question": "Can I use the Wells Score without D-dimer?",
+      "answer": "In low-probability patients (Wells Score < 2), a negative high-sensitivity D-dimer test safely excludes PE without imaging, with a negative predictive value > 99%. However, in high-probability patients, CTPA should be performed directly regardless of D-dimer result."
+    },
+    {
+      "question": "What are the Wells Score criteria for DVT?",
+      "answer": "The 9 Wells DVT criteria include: active cancer (+1), paralysis/paresis/plaster immobilization of lower limb (+1), bedridden > 3 days or major surgery within 12 weeks (+1), localized tenderness along deep venous system (+1), entire leg swollen (+1), calf swelling > 3 cm (+1), pitting edema (+1), collateral superficial veins (+1), and alternative diagnosis as likely or more likely (-2). Score ≥ 2 = high probability."
+    }
+  ],
+  "/apache-ii-score": [
+    {
+      "question": "What is the APACHE II Score?",
+      "answer": "APACHE II (Acute Physiology and Chronic Health Evaluation II) is a severity-of-illness scoring system developed by Knaus et al. (1985). It uses 12 acute physiological variables, age, and chronic health status to predict ICU mortality. Scores range from 0 to 71, with higher scores correlating with greater mortality risk."
+    },
+    {
+      "question": "What APACHE II score indicates high mortality risk?",
+      "answer": "An APACHE II score > 25 is associated with a predicted hospital mortality of approximately 55%. Scores > 35 carry a predicted mortality of approximately 73–85%. The score is most useful when calculated within the first 24 hours of ICU admission."
+    },
+    {
+      "question": "How does APACHE II differ from SOFA score?",
+      "answer": "APACHE II is primarily a static severity-of-illness predictor calculated once at ICU admission to predict overall mortality. SOFA is a dynamic organ dysfunction tracker updated daily to guide clinical management. APACHE II better predicts admission-day mortality; SOFA better tracks trajectory and day-to-day organ failure progression."
+    }
+  ],
+  "/heart-score": [
+    {
+      "question": "What is the HEART Score?",
+      "answer": "The HEART Score (History, ECG, Age, Risk factors, Troponin) is a validated clinical decision tool for stratifying risk of major adverse cardiac events (MACE) in patients presenting to the emergency department with chest pain. A score ≤ 3 identifies low-risk patients safe for early discharge."
+    },
+    {
+      "question": "What HEART score is considered low risk?",
+      "answer": "A HEART score of 0–3 is considered low risk, associated with a 30-day MACE rate of approximately 1.7–2%. This threshold supports safe early discharge without further invasive testing. Scores of 4–6 indicate intermediate risk (~12% MACE), and scores ≥ 7 indicate high risk (~65% MACE) requiring urgent intervention."
+    },
+    {
+      "question": "Is the HEART Score superior to TIMI for chest pain?",
+      "answer": "Multiple prospective validation studies demonstrate that the HEART Score outperforms TIMI, GRACE, and PURSUIT scores for identifying low-risk chest pain patients in the ED setting. The HEART score was specifically designed for ED triage, whereas TIMI was designed for ACS prognosis in already-diagnosed patients."
+    },
+    {
+      "question": "How do troponin levels affect the HEART Score?",
+      "answer": "Troponin is the most heavily weighted HEART component: normal troponin = 0 points; 1–3× upper limit of normal = 1 point; > 3× upper limit = 2 points. A single high-sensitivity troponin at 0 hours plus HEART score ≤ 3 is used in the HEART Pathway to safely discharge low-risk patients."
+    }
+  ],
+  "/nihss-score": [
+    {
+      "question": "What is the NIH Stroke Scale (NIHSS)?",
+      "answer": "The National Institutes of Health Stroke Scale (NIHSS) is a standardized neurological assessment tool with 15 items evaluating consciousness, vision, motor and sensory function, speech, and neglect in stroke patients. Total scores range from 0 (no deficit) to 42 (maximum deficit). It was developed in 1989 and remains the gold standard for acute stroke severity assessment."
+    },
+    {
+      "question": "What NIHSS score qualifies for IV thrombolysis (tPA)?",
+      "answer": "IV alteplase (tPA) is generally considered for patients with NIHSS ≥ 4 (clinically significant deficit) presenting within 4.5 hours of stroke symptom onset, per AHA/ASA 2023 guidelines. Isolated minor deficits with NIHSS < 4 may not require tPA unless they are disabling. Very high NIHSS (> 25) may indicate large territory infarction where hemorrhagic transformation risk must be weighed."
+    },
+    {
+      "question": "What NIHSS score indicates a severe stroke?",
+      "answer": "NIHSS severity classification: 0 = no stroke; 1–4 = minor stroke; 5–15 = moderate stroke; 16–20 = moderate-severe stroke; 21–42 = severe stroke. Patients with NIHSS > 20 have approximately 50% risk of severe disability or death and should be evaluated urgently for large vessel occlusion and mechanical thrombectomy candidacy."
+    }
+  ],
+  "/has-bled-score": [
+    {
+      "question": "What is the HAS-BLED Score?",
+      "answer": "The HAS-BLED score estimates 1-year risk of major bleeding in patients with atrial fibrillation (AF) who are on anticoagulation. It evaluates: Hypertension, Abnormal renal/liver function, Stroke history, Bleeding history or predisposition, Labile INR, Elderly (age > 65), and Drugs/alcohol use."
+    },
+    {
+      "question": "What HAS-BLED score indicates high bleeding risk?",
+      "answer": "A HAS-BLED score ≥ 3 indicates high risk for major bleeding (~3.74 bleeds per 100 patient-years). ESC 2020 AF guidelines recommend using HAS-BLED to identify and address modifiable bleeding risk factors, not to withhold anticoagulation — since the net clinical benefit of anticoagulation remains positive in most patients with CHA₂DS₂-VASc ≥ 2."
+    },
+    {
+      "question": "Should I withhold anticoagulation if HAS-BLED is high?",
+      "answer": "Generally no. ESC and AHA guidelines state that a high HAS-BLED score should prompt correction of reversible risk factors (uncontrolled hypertension, NSAIDs, excessive alcohol), not automatic anticoagulation cessation. The stroke prevention benefit of anticoagulation in high-CHA₂DS₂-VASc patients typically outweighs the bleeding risk."
+    }
+  ],
+  "/cha2ds2-vasc": [
+    {
+      "question": "What does CHA₂DS₂-VASc stand for?",
+      "answer": "CHA₂DS₂-VASc stands for: Congestive heart failure (1 pt), Hypertension (1 pt), Age ≥ 75 (2 pts), Diabetes (1 pt), Stroke/TIA history (2 pts), Vascular disease (1 pt), Age 65–74 (1 pt), and female Sex category (1 pt). Maximum score is 9 points."
+    },
+    {
+      "question": "At what CHA₂DS₂-VASc score should I start anticoagulation?",
+      "answer": "Per ESC 2020 and AHA/ACC 2023 guidelines: anticoagulation (DOAC preferred over warfarin) is recommended for CHA₂DS₂-VASc ≥ 2 in men and ≥ 3 in women. Score of 1 in men or 2 in women may warrant consideration based on individual risk-benefit assessment. Score 0 in men or 1 in women (female sex only): anticoagulation is not routinely recommended."
+    },
+    {
+      "question": "Why is female sex counted differently in CHA₂DS₂-VASc?",
+      "answer": "Female sex alone is not an independent risk factor for stroke in AF. The 1-point allocation for female sex only modifies the risk assessment when other risk factors are present. Therefore, a score of 1 (female sex only) is not sufficient indication for anticoagulation — only when combined with at least one other risk factor (score ≥ 2 in women) is anticoagulation indicated."
+    }
+  ],
+  "/meld-score": [
+    {
+      "question": "What is the MELD Score?",
+      "answer": "The Model for End-Stage Liver Disease (MELD) score predicts 90-day mortality in patients with chronic liver disease and cirrhosis. It uses bilirubin, creatinine, and INR to generate a score from 6 to 40. The MELD score is used by UNOS/OPTN to prioritize liver transplant allocation in the United States."
+    },
+    {
+      "question": "What MELD score qualifies for liver transplant listing?",
+      "answer": "A MELD score ≥ 15 is generally the threshold at which the survival benefit of liver transplantation exceeds the risk of the procedure, according to UNOS guidelines. Patients with MELD < 15 have better outcomes without transplantation. Patients with MELD > 25 have approximately 50–60% 3-month mortality without transplantation."
+    },
+    {
+      "question": "What is MELD-Na and how does it differ from MELD?",
+      "answer": "MELD-Na incorporates serum sodium (hyponatremia) into the original MELD calculation. Hyponatremia is a marker of severe portal hypertension and significantly worsens prognosis independently. MELD-Na became the standard for US transplant prioritization in 2016 and better predicts 90-day waitlist mortality than original MELD."
+    }
+  ],
+  "/child-pugh-score": [
+    {
+      "question": "What is the Child-Pugh Score?",
+      "answer": "The Child-Pugh score (also known as Child-Turcotte-Pugh, CTP) classifies the severity of cirrhosis using 5 parameters: bilirubin, albumin, INR/prothrombin time, ascites, and hepatic encephalopathy. Scores 5–6 = Class A (compensated); 7–9 = Class B (significant dysfunction); 10–15 = Class C (decompensated). Developed in 1964, it remains widely used for surgical risk stratification."
+    },
+    {
+      "question": "What is the difference between Child-Pugh and MELD score?",
+      "answer": "Child-Pugh is primarily used for surgical risk stratification in cirrhosis and incorporates subjective parameters (ascites, encephalopathy grading). MELD uses objective lab values only (bilirubin, creatinine, INR) and is the validated standard for liver transplant prioritization. MELD is generally preferred for prognostication; Child-Pugh remains useful for surgical planning and pharmacokinetic dosing adjustments."
+    },
+    {
+      "question": "What is the survival of Child-Pugh Class C cirrhosis?",
+      "answer": "Child-Pugh Class C cirrhosis carries a 1-year survival of approximately 35–45% and 2-year survival of 15–35% without transplantation. Class A cirrhosis has 1-year survival > 85% and 5-year survival of approximately 75%. These estimates assume no acute decompensation events such as variceal bleeding or spontaneous bacterial peritonitis."
+    }
+  ],
+  "/anion-gap": [
+    {
+      "question": "What is the Anion Gap?",
+      "answer": "The anion gap (AG) is the difference between measured serum cations and anions: AG = Na⁺ − (Cl⁻ + HCO₃⁻). The normal reference range is 8–12 mEq/L (some labs 3–11 mEq/L depending on albumin correction). An elevated anion gap (> 12 mEq/L) indicates the presence of unmeasured anions such as lactate, ketones, or toxic metabolites."
+    },
+    {
+      "question": "What conditions cause a high anion gap metabolic acidosis?",
+      "answer": "The MUDPILES mnemonic covers the main causes: Methanol, Uremia, Diabetic ketoacidosis (DKA), Propylene glycol/Paraldehyde, Isoniazid/Iron, Lactic acidosis, Ethylene glycol, Salicylates. Lactic acidosis and DKA are the most common causes in the ICU. A gap > 20 mEq/L is usually pathological and warrants urgent investigation."
+    },
+    {
+      "question": "How do I correct the anion gap for low albumin?",
+      "answer": "Albumin contributes significantly to the anion gap. The corrected AG formula is: Corrected AG = Measured AG + 2.5 × (4 − measured albumin in g/dL). For every 1 g/dL decrease in albumin below 4 g/dL, the expected anion gap decreases by approximately 2.5 mEq/L. Hypoalbuminemia is extremely common in ICU patients and can mask a true high anion gap."
+    }
+  ],
+  "/creatinine-clearance": [
+    {
+      "question": "What is the Cockcroft-Gault equation?",
+      "answer": "The Cockcroft-Gault (CG) equation estimates creatinine clearance (CrCl) as a surrogate for glomerular filtration rate: CrCl (mL/min) = [(140 − age) × weight (kg)] / [72 × serum creatinine (mg/dL)] × 0.85 (if female). It was derived from 249 patients in 1976 and remains the FDA and EMA standard for drug dose adjustment in renal impairment."
+    },
+    {
+      "question": "When should I use Cockcroft-Gault vs CKD-EPI?",
+      "answer": "Use Cockcroft-Gault for pharmacokinetic drug dosing (it is required by FDA labeling for renal dose adjustment). Use CKD-EPI for diagnosing and staging chronic kidney disease (CKD) — it is more accurate than Cockcroft-Gault across a wide range of GFR values and is the KDIGO-recommended equation for CKD classification."
+    },
+    {
+      "question": "What creatinine clearance requires dose adjustment for vancomycin?",
+      "answer": "Vancomycin dosing should be adjusted when CrCl < 50 mL/min. Below this threshold, the dosing interval is extended (q24h or q48h instead of q12h) and serum trough or AUC monitoring is required. Patients with CrCl < 10 mL/min typically require weight-based loading doses with AUC-guided subsequent dosing per ASHP/SIDP 2020 consensus guidelines."
+    }
+  ],
+  "/ckd-epi-gfr": [
+    {
+      "question": "What is the CKD-EPI equation?",
+      "answer": "The Chronic Kidney Disease Epidemiology Collaboration (CKD-EPI) equation estimates glomerular filtration rate (eGFR) using serum creatinine, age, and sex. The 2021 race-free CKD-EPI equation (recommended by KDIGO and ASN) removed race coefficients that previously overestimated GFR in Black patients, addressing a documented health equity concern."
+    },
+    {
+      "question": "What eGFR indicates stage 3 CKD?",
+      "answer": "KDIGO 2022 CKD staging by eGFR: G1 ≥ 90 mL/min/1.73m² (normal/high), G2 60–89 (mildly decreased), G3a 45–59 (mild-moderate decrease), G3b 30–44 (moderate-severe decrease), G4 15–29 (severely decreased), G5 < 15 or dialysis (kidney failure). Stage G3a/b combined is referred to as Stage 3 CKD."
+    }
+  ],
+  "/curb65-score": [
+    {
+      "question": "What is the CURB-65 Score?",
+      "answer": "CURB-65 is a validated clinical prediction rule for community-acquired pneumonia (CAP) severity, developed by the British Thoracic Society (BTS). It scores 5 variables: Confusion (new onset), Blood Urea Nitrogen > 19 mg/dL (7 mmol/L), Respiratory rate ≥ 30/min, Blood pressure (SBP < 90 or DBP ≤ 60 mmHg), and age ≥ 65 years."
+    },
+    {
+      "question": "What CURB-65 score requires ICU admission?",
+      "answer": "Per BTS guidelines: CURB-65 score 0–1 = low severity, outpatient treatment appropriate (~1.5% 30-day mortality). Score 2 = moderate severity, consider short hospital admission or close outpatient follow-up (~9.2% 30-day mortality). Score 3–5 = severe CAP, hospital admission required; score ≥ 4–5 indicates possible ICU care (~22–57% 30-day mortality)."
+    }
+  ],
+  "/sirs-criteria": [
+    {
+      "question": "What are the SIRS criteria for sepsis?",
+      "answer": "Systemic Inflammatory Response Syndrome (SIRS) requires ≥ 2 of the following: Temperature > 38°C or < 36°C; Heart rate > 90 bpm; Respiratory rate > 20/min or PaCO₂ < 32 mmHg; WBC > 12,000 or < 4,000 cells/μL or > 10% bands. SIRS + suspected/confirmed infection = Sepsis (pre-Sepsis-3 definition)."
+    },
+    {
+      "question": "Is SIRS still used after the Sepsis-3 definition?",
+      "answer": "The Sepsis-3 consensus (2016) replaced SIRS-based sepsis definition with the SOFA-based definition (organ dysfunction). However, SIRS remains clinically useful as a non-specific alert for physiological stress responses and may trigger infection workup. SIRS criteria are still used in many hospital protocols, sepsis bundles, and pediatric sepsis definitions."
+    }
+  ],
+  "/pf-ratio": [
+    {
+      "question": "What is the PF Ratio (P/F Ratio)?",
+      "answer": "The P/F ratio (PaO₂/FiO₂ ratio, or Horowitz index) is the ratio of arterial oxygen partial pressure to the inspired oxygen fraction. It quantifies the degree of hypoxemia and is the cornerstone of the Berlin Definition of ARDS (2012), where P/F < 300 on PEEP ≥ 5 cmH₂O defines ARDS."
+    },
+    {
+      "question": "What P/F ratio indicates ARDS?",
+      "answer": "Berlin Definition ARDS classification: Mild ARDS: P/F ratio 201–300 mmHg (on PEEP ≥ 5 cmH₂O) — associated with ~27% mortality. Moderate ARDS: P/F ratio 101–200 mmHg — ~32% mortality. Severe ARDS: P/F ratio ≤ 100 mmHg — ~45% mortality. All categories require bilateral opacities on chest imaging not explained by fluid overload or cardiac failure."
+    }
+  ],
+  "/aa-gradient": [
+    {
+      "question": "What is the Alveolar-Arterial (A-a) gradient?",
+      "answer": "The A-a gradient measures the difference between alveolar oxygen partial pressure (PAO₂) and arterial oxygen partial pressure (PaO₂). It detects abnormal oxygen transfer in the lungs. Normal A-a gradient: approximately 2.5 + 0.21 × age (in years) mmHg (on room air). An elevated A-a gradient suggests V/Q mismatch, diffusion defect, or intrapulmonary shunting."
+    },
+    {
+      "question": "What does a normal A-a gradient with hypoxemia indicate?",
+      "answer": "A normal A-a gradient in the setting of hypoxemia indicates hypoxemia due to hypoventilation (low alveolar oxygen from reduced respiratory effort) — not a lung pathology. Causes include opioid overdose, respiratory muscle weakness, or high-altitude breathing. The lung itself is functioning normally; the problem is insufficient ventilation."
+    }
+  ],
+  "/tidal-volume": [
+    {
+      "question": "What tidal volume should I use for ARDS ventilation?",
+      "answer": "The ARDSNet ARMA trial (NEJM 2000) established that lung-protective ventilation with tidal volumes of 6 mL/kg of predicted body weight (PBW) reduces mortality by 22% compared to 12 mL/kg PBW in patients with ARDS. This 6 mL/kg PBW target, combined with plateau pressure ≤ 30 cmH₂O, is the global standard of care per ATS, ESICM, and SCCM."
+    },
+    {
+      "question": "What is predicted body weight (PBW) and why does it matter?",
+      "answer": "PBW is calculated from sex and height — not actual body weight. For males: PBW = 50 + 2.3 × (height in inches − 60). For females: PBW = 45.5 + 2.3 × (height in inches − 60). Using actual body weight in obese patients would result in dangerously high tidal volumes and ventilator-induced lung injury (VILI). Lung volume correlates with height, not body mass."
+    }
   ]
 }

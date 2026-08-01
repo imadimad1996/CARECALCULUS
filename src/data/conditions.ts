@@ -1,16 +1,27 @@
-import { Activity, AlertTriangle, Wind, TestTube, HeartPulse, Brain } from 'lucide-react';
+import { Activity, AlertTriangle, Wind, TestTube, HeartPulse, Brain, Droplet } from 'lucide-react';
 
 export const CONDITIONS_DB = [
   {
-    id: 'sepsis',
+    id: 'sepsis-and-infection',
     nameEn: 'Sepsis & Infection',
     nameFr: 'Sepsis & Infection',
     nameAr: 'تسمم الدم والعدوى',
     icon: AlertTriangle,
     descriptionEn: 'Clinical decision tools for early detection, risk stratification, and management of sepsis and systemic inflammatory response syndrome.',
     descriptionFr: 'Outils de décision clinique pour la détection précoce, la stratification du risque et la prise en charge du sepsis et du SIRS.',
-    descriptionAr: 'أدوات القرار السريري للكشف المبكر، وتقييم المخاطر، وإدارة تسمم الدم ومتلازمة الاستجابة الالتهابية.',
-    calculators: ['qsofa-score', 'sirs-criteria', 'sofa-score', 'map-calculator', 'curb65-score']
+    descriptionAr: 'أدوات القرار السريري للكشف المبكر، وتقييم المخاطر، وإدارة تسمم الدم.',
+    calculators: ['qsofa-score', 'sirs-criteria', 'sofa-score', 'map-calculator']
+  },
+  {
+    id: 'pneumonia',
+    nameEn: 'Pneumonia',
+    nameFr: 'Pneumonie',
+    nameAr: 'التهاب رئوي',
+    icon: Wind,
+    descriptionEn: 'Risk stratification and severity scoring for community-acquired and hospital-acquired pneumonia.',
+    descriptionFr: 'Stratification du risque et score de sévérité pour les pneumonies.',
+    descriptionAr: 'تقييم مخاطر وشدة الالتهاب الرئوي.',
+    calculators: ['curb65-score']
   },
   {
     id: 'liver-disease',
@@ -18,10 +29,10 @@ export const CONDITIONS_DB = [
     nameFr: 'Maladie du Foie & Cirrhose',
     nameAr: 'أمراض الكبد والتليف',
     icon: Activity,
-    descriptionEn: 'Prognostic scoring systems and severity calculators for end-stage liver disease, cirrhosis, and hepatic encephalopathy.',
-    descriptionFr: 'Systèmes de score pronostique et calculateurs de sévérité pour l\'insuffisance hépatique terminale et la cirrhose.',
-    descriptionAr: 'أنظمة تسجيل وتقييم شدة أمراض الكبد في المرحلة النهائية وتليف الكبد.',
-    calculators: ['meld-score', 'child-pugh-score', 'corrected-calcium']
+    descriptionEn: 'Prognostic scoring systems and severity calculators for end-stage liver disease and cirrhosis.',
+    descriptionFr: 'Systèmes de score pronostique et calculateurs de sévérité pour l\'insuffisance hépatique.',
+    descriptionAr: 'أنظمة تسجيل وتقييم شدة أمراض الكبد.',
+    calculators: ['meld-score', 'child-pugh-score']
   },
   {
     id: 'atrial-fibrillation',
@@ -29,31 +40,273 @@ export const CONDITIONS_DB = [
     nameFr: 'Fibrillation Atriale',
     nameAr: 'الرجفان الأذيني',
     icon: HeartPulse,
-    descriptionEn: 'Stroke and bleeding risk stratification tools for patients with non-valvular atrial fibrillation to guide anticoagulation therapy.',
-    descriptionFr: 'Outils de stratification du risque d\'AVC et de saignement pour guider le traitement anticoagulant dans la FA.',
-    descriptionAr: 'أدوات تقييم مخاطر السكتة الدماغية والنزيف لتوجيه العلاج المضاد للتخثر.',
-    calculators: ['cha2ds2-vasc', 'wells-score']
+    descriptionEn: 'Stroke and bleeding risk stratification tools for patients with non-valvular atrial fibrillation.',
+    descriptionFr: 'Outils de stratification du risque d\'AVC et de saignement dans la FA.',
+    descriptionAr: 'أدوات تقييم مخاطر السكتة الدماغية والنزيف.',
+    calculators: ['cha2ds2-vasc', 'has-bled-score']
   },
   {
     id: 'respiratory-failure',
     nameEn: 'Respiratory Failure & ARDS',
     nameFr: 'Insuffisance Respiratoire & SDRA',
-    nameAr: 'الفشل التنفسي ومتلازمة الضائقة',
+    nameAr: 'الفشل التنفسي',
     icon: Wind,
-    descriptionEn: 'Calculators for oxygenation indices, lung-protective ventilation, and acute respiratory distress syndrome (ARDS) severity.',
-    descriptionFr: 'Calculateurs d\'indices d\'oxygénation, ventilation protectrice et sévérité du SDRA.',
-    descriptionAr: 'حاسبات مؤشرات الأكسجة والتنفس الصناعي وتقييم شدة متلازمة الضائقة التنفسية.',
+    descriptionEn: 'Calculators for oxygenation indices, lung-protective ventilation, and ARDS severity.',
+    descriptionFr: 'Calculateurs d\'indices d\'oxygénation et de sévérité du SDRA.',
+    descriptionAr: 'حاسبات مؤشرات الأكسجة وتقييم شدة متلازمة الضائقة التنفسية.',
     calculators: ['pf-ratio', 'aa-gradient', 'tidal-volume']
+  },
+  {
+    id: 'pulmonary-embolism',
+    nameEn: 'Pulmonary Embolism',
+    nameFr: 'Embolie Pulmonaire',
+    nameAr: 'الانسداد الرئوي',
+    icon: Wind,
+    descriptionEn: 'Pre-test probability and prognostic rules for pulmonary embolism diagnosis and management.',
+    descriptionFr: 'Probabilité pré-test et règles pronostiques pour l\'embolie pulmonaire.',
+    descriptionAr: 'أدوات تقييم احتمالية وتكهن الانسداد الرئوي.',
+    calculators: ['wells-score', 'perc-rule', 'geneva-score', 'pesi-score', 'bova-score']
+  },
+  {
+    id: 'acute-coronary-syndrome',
+    nameEn: 'Acute Coronary Syndrome',
+    nameFr: 'Syndrome Coronarien Aigu',
+    nameAr: 'متلازمة الشريان التاجي الحادة',
+    icon: HeartPulse,
+    descriptionEn: 'Risk stratification and decision tools for chest pain, NSTEMI, and STEMI.',
+    descriptionFr: 'Outils de stratification du risque pour la douleur thoracique, NSTEMI et STEMI.',
+    descriptionAr: 'أدوات تقييم المخاطر لألم الصدر واحتشاء عضلة القلب.',
+    calculators: ['timi-score', 'heart-score', 'grace-score']
+  },
+  {
+    id: 'heart-failure',
+    nameEn: 'Heart Failure',
+    nameFr: 'Insuffisance Cardiaque',
+    nameAr: 'قصور القلب',
+    icon: HeartPulse,
+    descriptionEn: 'Diagnostic algorithms and risk assessment for preserved and reduced ejection fraction heart failure.',
+    descriptionFr: 'Algorithmes diagnostiques pour l\'insuffisance cardiaque.',
+    descriptionAr: 'خوارزميات تشخيص وتقييم قصور القلب.',
+    calculators: ['hfa-peff-score']
+  },
+  {
+    id: 'cardiovascular-risk',
+    nameEn: 'Cardiovascular Risk',
+    nameFr: 'Risque Cardiovasculaire',
+    nameAr: 'مخاطر القلب والأوعية الدموية',
+    icon: HeartPulse,
+    descriptionEn: '10-year risk assessment tools for primary prevention of atherosclerotic cardiovascular disease.',
+    descriptionFr: 'Outils d\'évaluation du risque à 10 ans pour la prévention primaire.',
+    descriptionAr: 'أدوات تقييم المخاطر لمدة 10 سنوات للوقاية الأولية.',
+    calculators: ['ascvd-risk', 'framingham-risk-score']
   },
   {
     id: 'renal-failure',
     nameEn: 'Renal Failure & CKD',
     nameFr: 'Insuffisance Rénale & MRC',
-    nameAr: 'الفشل الكلوي وأمراض الكلى',
+    nameAr: 'الفشل الكلوي',
     icon: TestTube,
-    descriptionEn: 'Tools for estimating glomerular filtration rate (GFR), creatinine clearance, and metabolic acidosis assessment.',
-    descriptionFr: 'Outils d\'estimation du DFG, de la clairance de la créatinine et d\'évaluation de l\'acidose métabolique.',
-    descriptionAr: 'أدوات تقدير معدل الترشيح الكبيبي وتصفية الكرياتينين وتقييم الحماض الأيضي.',
-    calculators: ['creatinine-clearance', 'anion-gap', 'anc-calculator']
+    descriptionEn: 'Tools for estimating GFR, creatinine clearance, and staging chronic kidney disease.',
+    descriptionFr: 'Outils d\'estimation du DFG et stadification de la maladie rénale chronique.',
+    descriptionAr: 'أدوات تقدير معدل الترشيح الكبيبي وتصنيف أمراض الكلى.',
+    calculators: ['creatinine-clearance', 'mdrd-gfr', 'ckd-epi-gfr', 'fena-calculator']
+  },
+  {
+    id: 'acid-base-disorders',
+    nameEn: 'Acid-Base Disorders',
+    nameFr: 'Troubles Acido-Basiques',
+    nameAr: 'اضطرابات الحمض والقاعدة',
+    icon: TestTube,
+    descriptionEn: 'Evaluation of metabolic and respiratory acidosis/alkalosis, including expected compensations.',
+    descriptionFr: 'Évaluation des acidoses et alcaloses métaboliques et respiratoires.',
+    descriptionAr: 'تقييم الحماض والقلاء الأيضي والتنفسي.',
+    calculators: ['winters-formula', 'anion-gap', 'osmolal-gap', 'bicarb-deficit']
+  },
+  {
+    id: 'electrolyte-imbalances',
+    nameEn: 'Electrolyte Imbalances',
+    nameFr: 'Troubles Électrolytiques',
+    nameAr: 'اختلالات الشوارد',
+    icon: TestTube,
+    descriptionEn: 'Correction formulas for hyponatremia, hypernatremia, and calcium abnormalities.',
+    descriptionFr: 'Formules de correction pour les anomalies du sodium et du calcium.',
+    descriptionAr: 'معادلات تصحيح لنقص وفرط الصوديوم والكالسيوم.',
+    calculators: ['corrected-calcium', 'sodium-correction', 'free-water-deficit']
+  },
+  {
+    id: 'stroke-and-tia',
+    nameEn: 'Stroke & TIA',
+    nameFr: 'AVC & AIT',
+    nameAr: 'السكتة الدماغية',
+    icon: Brain,
+    descriptionEn: 'Severity scales and risk stratification for ischemic stroke, TIA, and mechanical thrombectomy criteria.',
+    descriptionFr: 'Échelles de sévérité et stratification du risque pour les AVC ischémiques.',
+    descriptionAr: 'مقاييس الشدة وتقييم المخاطر للسكتة الإقفارية.',
+    calculators: ['nihss-score']
+  },
+  {
+    id: 'altered-mental-status',
+    nameEn: 'Altered Mental Status & Coma',
+    nameFr: 'Altération de la Conscience & Coma',
+    nameAr: 'تغير الحالة العقلية والغيبوبة',
+    icon: Brain,
+    descriptionEn: 'Standardized consciousness assessments for trauma, toxicologic, and neurologic emergencies.',
+    descriptionFr: 'Évaluations standardisées de la conscience pour les urgences.',
+    descriptionAr: 'تقييمات الوعي الموحدة لحالات الطوارئ.',
+    calculators: ['gcs-calculator', 'pediatric-gcs']
+  },
+  {
+    id: 'burns-and-trauma',
+    nameEn: 'Burns & Major Trauma',
+    nameFr: 'Brûlures & Traumatismes',
+    nameAr: 'الحروق والإصابات',
+    icon: Droplet,
+    descriptionEn: 'Fluid resuscitation protocols and scoring systems for severe burns and polytrauma.',
+    descriptionFr: 'Protocoles de réanimation hydrique pour les brûlures graves.',
+    descriptionAr: 'بروتوكولات إنعاش السوائل للحروق الشديدة.',
+    calculators: ['parkland-formula']
+  },
+  {
+    id: 'critical-illness',
+    nameEn: 'Critical Illness & ICU Prognosis',
+    nameFr: 'Réanimation & Pronostic',
+    nameAr: 'العناية المركزة',
+    icon: Activity,
+    descriptionEn: 'Severity of illness scores for predicting ICU mortality and evaluating multi-organ failure.',
+    descriptionFr: 'Scores de sévérité pour prédire la mortalité en réanimation.',
+    descriptionAr: 'درجات شدة المرض للتنبؤ بوفيات العناية المركزة.',
+    calculators: ['apache-ii-score', 'saps-ii-score']
+  },
+  {
+    id: 'pharmacokinetics',
+    nameEn: 'Clinical Pharmacokinetics',
+    nameFr: 'Pharmacocinétique Clinique',
+    nameAr: 'الحرائك الدوائية السريرية',
+    icon: TestTube,
+    descriptionEn: 'Dosing calculators for narrow therapeutic index drugs and organ dysfunction adjustments.',
+    descriptionFr: 'Calculateurs de dosage pour les médicaments à marge thérapeutique étroite.',
+    descriptionAr: 'حاسبات الجرعات للأدوية ذات المؤشر العلاجي الضيق.',
+    calculators: ['vancomycin-dosing', 'aminoglycoside-dosing', 'phenytoin-correction']
+  },
+  {
+    id: 'pain-management',
+    nameEn: 'Pain Management & Palliative',
+    nameFr: 'Gestion de la Douleur',
+    nameAr: 'إدارة الألم',
+    icon: Activity,
+    descriptionEn: 'Equianalgesic conversions for opioids and morphine milligram equivalents (MME).',
+    descriptionFr: 'Conversions équianalgésiques pour les opioïdes.',
+    descriptionAr: 'تحويلات المسكنات المكافئة للأفيونيات.',
+    calculators: ['opioid-conversion']
+  },
+  {
+    id: 'toxicology',
+    nameEn: 'Toxicology & Overdose',
+    nameFr: 'Toxicologie & Surdosage',
+    nameAr: 'علم السموم والجرعات الزائدة',
+    icon: AlertTriangle,
+    descriptionEn: 'Nomograms and scores for acetaminophen toxicity, alcohol withdrawal, and toxic alcohol ingestions.',
+    descriptionFr: 'Nomogrammes et scores pour la toxicité et le sevrage.',
+    descriptionAr: 'مخططات ودرجات لسمية الأسيتامينوفين وانسحاب الكحول.',
+    calculators: ['rumack-matthew-nomogram', 'ciwa-ar-score']
+  },
+  {
+    id: 'fluid-management',
+    nameEn: 'Fluid Management',
+    nameFr: 'Gestion des Solutés',
+    nameAr: 'إدارة السوائل',
+    icon: Droplet,
+    descriptionEn: 'Calculations for maintenance IV fluids, deficit replacement, and infusion drip rates.',
+    descriptionFr: 'Calculs pour l\'entretien des fluides IV et les débits de perfusion.',
+    descriptionAr: 'حسابات صيانة سوائل الوريد ومعدلات التسريب.',
+    calculators: ['maintenance-fluids', 'holliday-segar-fluids', 'drip-rate']
+  },
+  {
+    id: 'hematology',
+    nameEn: 'Hematology & Anemia',
+    nameFr: 'Hématologie & Anémie',
+    nameAr: 'أمراض الدم وفقر الدم',
+    icon: Activity,
+    descriptionEn: 'Assessments for bone marrow response, bleeding risk, and drug-induced thrombocytopenia.',
+    descriptionFr: 'Évaluations de la réponse médullaire et du risque de saignement.',
+    descriptionAr: 'تقييم استجابة نخاع العظم ومخاطر النزيف.',
+    calculators: ['retic-index', 'four-ts-hit-score']
+  },
+  {
+    id: 'oncology',
+    nameEn: 'Oncology & Neutropenia',
+    nameFr: 'Oncologie & Neutropénie',
+    nameAr: 'طب الأورام ونقص العدلات',
+    icon: Activity,
+    descriptionEn: 'Risk indexes for febrile neutropenia and absolute neutrophil count calculations.',
+    descriptionFr: 'Index de risque pour la neutropénie fébrile.',
+    descriptionAr: 'مؤشرات الخطر لقلة العدلات الحموية.',
+    calculators: ['mascc-risk-index', 'anc-calculator']
+  },
+  {
+    id: 'obstetrics',
+    nameEn: 'Obstetrics & Pregnancy',
+    nameFr: 'Obstétrique & Grossesse',
+    nameAr: 'التوليد والحمل',
+    icon: Activity,
+    descriptionEn: 'Dating ultrasound tools, estimated delivery dates, and labor induction scoring.',
+    descriptionFr: 'Outils de datation échographique et score de déclenchement.',
+    descriptionAr: 'أدوات الموجات فوق الصوتية وتواريخ الولادة المتوقعة.',
+    calculators: ['naegele-edd-calculator', 'gestational-age-crl', 'bishop-score']
+  },
+  {
+    id: 'pediatrics',
+    nameEn: 'Pediatrics',
+    nameFr: 'Pédiatrie',
+    nameAr: 'طب الأطفال',
+    icon: Activity,
+    descriptionEn: 'Weight-based dosing, fluid management, and pediatric-specific clinical scoring.',
+    descriptionFr: 'Dosage basé sur le poids et scores cliniques pédiatriques.',
+    descriptionAr: 'الجرعات على أساس الوزن والدرجات السريرية للأطفال.',
+    calculators: ['pediatric-dosage', 'pediatric-gcs', 'holliday-segar-fluids', 'schwartz-gfr']
+  },
+  {
+    id: 'nutrition',
+    nameEn: 'Clinical Nutrition',
+    nameFr: 'Nutrition Clinique',
+    nameAr: 'التغذية السريرية',
+    icon: Activity,
+    descriptionEn: 'Energy expenditure estimation, ideal body weight, and malnutrition screening tools.',
+    descriptionFr: 'Estimation de la dépense énergétique et outils de dépistage de la dénutrition.',
+    descriptionAr: 'تقدير إنفاق الطاقة وأدوات فحص سوء التغذية.',
+    calculators: ['bmi-calculator', 'adjusted-body-weight', 'nutrition-tdee', 'nutrition-must', 'nutrition-nrs2002']
+  },
+  {
+    id: 'endocrinology',
+    nameEn: 'Endocrinology',
+    nameFr: 'Endocrinologie',
+    nameAr: 'طب الغدد الصماء',
+    icon: Activity,
+    descriptionEn: 'Tools for steroid conversions and metabolic evaluations.',
+    descriptionFr: 'Outils de conversion des stéroïdes et évaluations métaboliques.',
+    descriptionAr: 'أدوات تحويل الستيرويد والتقييمات الأيضية.',
+    calculators: ['steroid-conversion']
+  },
+  {
+    id: 'pharyngitis',
+    nameEn: 'Pharyngitis & ENT',
+    nameFr: 'Pharyngite & ORL',
+    nameAr: 'التهاب البلعوم والأنف والأذن والحنجرة',
+    icon: Activity,
+    descriptionEn: 'Clinical decision rules for group A streptococcal pharyngitis and antibiotic necessity.',
+    descriptionFr: 'Règles de décision pour la pharyngite à streptocoque du groupe A.',
+    descriptionAr: 'قواعد القرار السريري لالتهاب البلعوم العقدي.',
+    calculators: ['centor-score']
+  },
+  {
+    id: 'psychiatry',
+    nameEn: 'Psychiatry & Mental Health',
+    nameFr: 'Psychiatrie & Santé Mentale',
+    nameAr: 'الطب النفسي',
+    icon: Brain,
+    descriptionEn: 'Standardized screening questionnaires for depression severity and monitoring.',
+    descriptionFr: 'Questionnaires de dépistage pour la sévérité de la dépression.',
+    descriptionAr: 'استبيانات الفحص لشدة الاكتئاب.',
+    calculators: ['phq9-score']
   }
 ];
