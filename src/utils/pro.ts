@@ -20,9 +20,9 @@ export function isProActive(): boolean {
   }
 }
 
-export function activateProPass(planType: 'monthly' | 'annual' = 'monthly') {
+export function activateProPass(planType: 'monthly' | 'annual' | 'lifetime' = 'monthly') {
   if (typeof window === 'undefined') return;
-  const durationDays = planType === 'annual' ? 365 : 30;
+  const durationDays = planType === 'lifetime' ? 36500 : (planType === 'annual' ? 365 : 30);
   const expiresAt = Date.now() + durationDays * 24 * 60 * 60 * 1000;
   localStorage.setItem('carecalculus_pro_status', 'active');
   localStorage.setItem('carecalculus_pro_expires', expiresAt.toString());
