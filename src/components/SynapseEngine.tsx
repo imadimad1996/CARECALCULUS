@@ -119,10 +119,10 @@ export function SynapseEngine({ lang, langPath }: SynapseEngineProps) {
   };
 
   return (
-    <section className="relative rounded-3xl border border-slate-200/80 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 p-6 sm:p-8 text-white shadow-xl overflow-hidden">
+    <section className="relative rounded-3xl border border-slate-800/80 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 p-6 sm:p-8 text-white shadow-2xl overflow-hidden ring-1 ring-white/10">
       {/* Ambient background lighting */}
-      <div className="absolute top-0 right-0 h-96 w-96 rounded-full bg-teal-500/10 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 h-96 w-96 rounded-full bg-cyan-500/10 blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 h-[400px] w-[400px] rounded-full bg-teal-500/15 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 h-[400px] w-[400px] rounded-full bg-cyan-500/15 blur-3xl pointer-events-none" />
 
       {/* Section Header */}
       <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">

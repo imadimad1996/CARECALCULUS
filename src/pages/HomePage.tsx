@@ -233,13 +233,17 @@ export default function HomePage({ lang }: HomePageProps) {
 
       <CommandPalette isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} lang={lang} />
 
-      {/* Hero — clean white, surgical */}
-      <section className="relative bg-white border-b border-slate-100 px-6 sm:px-10 py-12 sm:py-16 -mx-4 sm:-mx-6 md:mx-0 md:border md:border-slate-200 md:rounded-xl">
-        <div className="relative w-full max-w-[720px] mx-auto flex flex-col items-center text-center">
+      {/* Hero — 2026 Ambient Glassmorphic Clinical Workbench */}
+      <section className="relative bg-gradient-to-b from-teal-50/40 via-white to-white border-b border-slate-100 px-6 sm:px-10 py-12 sm:py-16 -mx-4 sm:-mx-6 md:mx-0 md:border md:border-slate-200/80 md:rounded-3xl shadow-sm overflow-hidden">
+        {/* Ambient lighting accents */}
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-teal-400/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="relative z-10 w-full max-w-[720px] mx-auto flex flex-col items-center text-center">
           {/* Brand badge */}
-          <div className="inline-flex items-center gap-2 mb-5 px-3 py-1 bg-teal-50 rounded-full border border-teal-200">
+          <div className="inline-flex items-center gap-2 mb-5 px-3.5 py-1.5 bg-teal-500/10 backdrop-blur-md rounded-full border border-teal-500/20 shadow-xs">
             <Logo className="w-4 h-4" mode="light" />
-            <span className="text-[11px] font-bold text-teal-700 uppercase tracking-widest">{hero.badge}</span>
+            <span className="text-[11px] font-mono font-bold text-teal-700 dark:text-teal-800 uppercase tracking-widest">{hero.badge}</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight mb-4 text-center">
@@ -248,18 +252,18 @@ export default function HomePage({ lang }: HomePageProps) {
           <p className="text-lg text-slate-700 font-medium mb-2 text-center">{hero.subtitle}</p>
           <p className="text-base text-slate-600 font-normal leading-relaxed mb-10 w-full max-w-[580px] text-center mx-auto">{hero.desc}</p>
 
-          {/* Search trigger */}
+          {/* Search trigger — Glassmorphic */}
           <div className="mb-5 w-full max-w-[540px] mx-auto">
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="w-full flex items-center justify-between px-4 py-3.5 bg-slate-50 hover:bg-slate-100 text-slate-500 rounded-xl border border-slate-200 hover:border-teal-300 shadow-sm transition-all duration-200 group cursor-pointer text-left rtl:text-right"
-              style={{ minHeight: '52px' }}
+              className="w-full flex items-center justify-between px-5 py-4 bg-white/80 backdrop-blur-md hover:bg-white text-slate-500 rounded-2xl border border-slate-200 hover:border-teal-400 shadow-md hover:shadow-lg transition-all duration-300 group cursor-pointer text-left rtl:text-right"
+              style={{ minHeight: '56px' }}
             >
-              <div className="flex items-center gap-3 min-w-0">
-                <Search className="w-4 h-4 text-teal-600 shrink-0" />
-                <span className="text-sm font-normal truncate block">{searchPlaceholder}</span>
+              <div className="flex items-center gap-3.5 min-w-0">
+                <Search className="w-4 h-4 text-teal-600 shrink-0 group-hover:scale-110 transition-transform" />
+                <span className="text-sm font-medium truncate block text-slate-600 group-hover:text-slate-900">{searchPlaceholder}</span>
               </div>
-              <div className="hidden sm:flex items-center gap-1 shrink-0 px-2 py-0.5 rounded-md bg-white border border-slate-200 text-[10px] font-mono font-bold text-slate-400">
+              <div className="hidden sm:flex items-center gap-1 shrink-0 px-2.5 py-1 rounded-lg bg-slate-100 border border-slate-200 text-[10px] font-mono font-bold text-slate-500 shadow-xs">
                 <span>Ctrl</span><span>+</span><span>K</span>
               </div>
             </button>
@@ -272,7 +276,7 @@ export default function HomePage({ lang }: HomePageProps) {
               <Link
                 key={idx}
                 to={langPath(item.path)}
-                className="px-4 py-2.5 min-h-[44px] bg-white text-slate-600 hover:text-teal-700 rounded-lg border border-slate-200 hover:border-teal-200 transition-all font-semibold"
+                className="px-4 py-2.5 min-h-[44px] bg-white text-slate-700 hover:text-teal-700 hover:bg-teal-50/50 rounded-xl border border-slate-200 hover:border-teal-300 transition-all duration-200 font-bold shadow-2xs hover:shadow-xs"
               >
                 {item.name}
               </Link>
@@ -281,7 +285,7 @@ export default function HomePage({ lang }: HomePageProps) {
 
           <div className="flex flex-wrap items-center justify-center gap-3">
             <SmartPasteModal lang={lang} />
-            <button onClick={() => setIsSearchOpen(true)} className="btn-primary text-sm cursor-pointer">
+            <button onClick={() => setIsSearchOpen(true)} className="btn-primary text-sm cursor-pointer shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all">
               <Calculator className="w-4 h-4" />
               {cta.primary}
               <ChevronRight className="w-4 h-4" />
@@ -396,24 +400,38 @@ export default function HomePage({ lang }: HomePageProps) {
         </div>
       </section>
 
-      {/* Filtered Grid */}
+      {/* Filtered Grid — Elevated 2026 Tactile Cards */}
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {filteredCalculators.map((calc) => {
           const CalcIcon = calc.icon;
           const label = lang === 'fr' ? calc.fr : calc.en;
+          const mainCategory = calc.specialties[0] || 'general';
           return (
             <Link
               key={calc.id}
               to={langPath(calc.path)}
-              className="flex items-center justify-between p-4 bg-white rounded-2xl border border-slate-200 hover:border-teal-400 hover:shadow-[0_8px_30px_rgb(13,148,136,0.1)] hover:-translate-y-0.5 hover:ring-4 hover:ring-teal-50 transition-all duration-300 group active:scale-[0.98]"
+              className="relative flex items-center justify-between p-4.5 bg-white rounded-2xl border border-slate-200/90 hover:border-teal-400 hover:shadow-[0_12px_35px_rgba(13,148,136,0.12)] hover:-translate-y-1 hover:ring-4 hover:ring-teal-500/10 transition-all duration-300 group active:scale-[0.98] overflow-hidden"
             >
+              {/* Subtle top border accent on hover */}
+              <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-teal-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
               <div className="flex items-center gap-4 min-w-0">
-                <div className="p-3 min-h-[44px] min-w-[44px].5 rounded-xl bg-slate-50 text-slate-500 group-hover:bg-teal-500 group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-md">
-                  <CalcIcon className="w-5 h-5 shrink-0 transition-transform duration-300 group-hover:scale-110" />
+                <div className="p-3 min-h-[44px] min-w-[44px] rounded-xl bg-slate-50 border border-slate-100 text-slate-600 group-hover:bg-gradient-to-br group-hover:from-teal-500 group-hover:to-cyan-600 group-hover:text-white group-hover:border-transparent transition-all duration-300 shadow-2xs group-hover:shadow-md shrink-0">
+                  <CalcIcon className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
                 </div>
-                <span className="text-sm font-black text-slate-800 group-hover:text-teal-900 transition-colors truncate">{label}</span>
+                <div className="min-w-0">
+                  <span className="text-sm font-black text-slate-800 group-hover:text-teal-950 transition-colors truncate block leading-snug">
+                    {label}
+                  </span>
+                  <span className="text-[10px] font-mono font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider mt-0.5 block truncate">
+                    {mainCategory}
+                  </span>
+                </div>
               </div>
-              <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-teal-500 group-hover:translate-x-1 transition-all duration-300" />
+
+              <div className="flex items-center gap-1 text-slate-300 group-hover:text-teal-500 group-hover:translate-x-1 transition-all duration-300 shrink-0 ml-2">
+                <ChevronRight className="w-4 h-4" />
+              </div>
             </Link>
           );
         })}
