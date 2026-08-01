@@ -147,7 +147,7 @@ export default function ProgrammaticGuidePage({ lang }: Props) {
   // Answer-first block (40-60 words for AI Overviews / Perplexity citations)
   const answerFirstText = isFr
     ? `Dans le cadre de ${diseaseTitle}, le score ${calcTitle} constitue un repère hémodynamique et pronostique majeur. Selon les recommandations cliniques internationales, la surveillance et l'ajustement précoce via ce calculateur réduisent significativement la mortalité et optimisent la prise en charge en soins intensifs ou aux urgences.`
-    : `In the management of ${diseaseTitle}, the ${calcTitle} serves as a foundational prognostic and hemodynamic benchmark. According to international clinical practice guidelines, serial monitoring and rapid optimization guided by this tool significantly reduce morbidity and mortality across emergency, ICU, and inpatient environments.`;
+    : `The ${calcTitle} provides a quantitative, evidence-based risk stratification framework for ${diseaseTitle}. Serial assessment guides timely escalation, guides selection of vasoactive agents, informs organ support decisions, and reduces reliance on subjective clinical gestalt in high-acuity environments.`;
 
   const schemaJsonLd = [
     {
@@ -257,7 +257,7 @@ export default function ProgrammaticGuidePage({ lang }: Props) {
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                 {isFr
                   ? `L'évaluation systématique permet d'ajuster en temps réel la thérapeutique, de guider le remplissage vasculaire, la titration des drogues vasoactives et l'orientation en unité de soins intensifs.`
-                  : `Systematic scoring enables precise titration of resuscitative fluids, vasoactive support, and timely disposition decision-making between general wards, step-down units, and intensive care.`}
+                  : `Serial ${calcTitle} assessment drives concrete management decisions: vasoactive titration, fluid responsiveness testing, ICU vs. step-down triage, and timing of specialist escalation.`}
               </p>
             </div>
             <div>

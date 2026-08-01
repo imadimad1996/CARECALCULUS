@@ -513,95 +513,84 @@ function AppLayout() {
         {/* Ambient Top Accent Light Line */}
         <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-teal-500/60 to-transparent opacity-80 pointer-events-none" />
 
-        <div className="px-3.5 py-2 flex flex-wrap items-center gap-2">
-          
-          {/* Main Navigation & Tool Buttons */}
-          <div className="flex items-center flex-wrap gap-2">
-            <button 
-              onClick={() => setIsSpecialtiesModalOpen(true)}
-              className="h-10 px-3.5 bg-slate-100/90 hover:bg-slate-200/90 dark:bg-slate-800/80 dark:hover:bg-slate-700/80 text-slate-800 dark:text-slate-200 font-bold rounded-xl text-xs transition-all flex items-center gap-2 border border-slate-200/80 dark:border-slate-700/80 cursor-pointer shadow-2xs hover:scale-[1.02] active:scale-95 whitespace-nowrap"
-            >
-              <Layers className="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0" />
-              <span>{lang === 'fr' ? 'Spécialités' : 'Browse Specialties'}</span>
-            </button>
+        <div className="px-3.5 py-2 flex items-center gap-2 flex-wrap">
+          <button 
+            onClick={() => setIsSpecialtiesModalOpen(true)}
+            className="h-10 px-3.5 bg-slate-100/90 hover:bg-slate-200/90 dark:bg-slate-800/80 dark:hover:bg-slate-700/80 text-slate-800 dark:text-slate-200 font-bold rounded-xl text-xs transition-all flex items-center gap-2 border border-slate-200/80 dark:border-slate-700/80 cursor-pointer shadow-2xs hover:scale-[1.02] active:scale-95 whitespace-nowrap"
+          >
+            <Layers className="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0" />
+            <span>{lang === 'fr' ? 'Spécialités' : 'Browse Specialties'}</span>
+          </button>
 
-            <SmartPasteModal lang={lang} />
+          <SmartPasteModal lang={lang} />
 
-            <button
-              onClick={() => setIsShiftDrawerOpen(true)}
-              className="h-10 px-3.5 bg-slate-100/90 hover:bg-slate-200/90 dark:bg-slate-800/80 dark:hover:bg-slate-700/80 text-slate-800 dark:text-slate-200 text-xs font-bold rounded-xl transition border border-slate-200/80 dark:border-slate-700/80 cursor-pointer shadow-2xs hover:scale-[1.02] active:scale-95 whitespace-nowrap flex items-center gap-1.5"
-              title="Shift Patient Queue"
-            >
-              <ClipboardList className="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0" />
-              <span className="hidden sm:inline">Shift Queue</span>
-            </button>
+          <button
+            onClick={() => setIsShiftDrawerOpen(true)}
+            className="h-10 px-3.5 bg-slate-100/90 hover:bg-slate-200/90 dark:bg-slate-800/80 dark:hover:bg-slate-700/80 text-slate-800 dark:text-slate-200 text-xs font-bold rounded-xl transition border border-slate-200/80 dark:border-slate-700/80 cursor-pointer shadow-2xs hover:scale-[1.02] active:scale-95 whitespace-nowrap flex items-center gap-1.5"
+            title="Shift Patient Queue"
+          >
+            <ClipboardList className="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0" />
+            <span className="hidden sm:inline">Shift Queue</span>
+          </button>
 
-            {/* Critical Unit Standard Toggle */}
-            <button
-              onClick={toggleGeoStandard}
-              className="w-10 h-10 bg-slate-100/90 hover:bg-slate-200/90 dark:bg-slate-800/80 dark:hover:bg-slate-700/80 text-slate-700 dark:text-slate-300 text-xs font-mono font-bold rounded-xl transition border border-slate-200/80 dark:border-slate-700/80 shadow-2xs active:scale-95 cursor-pointer whitespace-nowrap flex items-center justify-center shrink-0"
-              title={`Active Unit Standard: ${geoState.standard} — Click to toggle`}
-            >
-              <span className="font-extrabold text-[11px] text-teal-600 dark:text-teal-400">{geoState.standard === 'Metric (SI)' ? 'SI' : 'US'}</span>
-            </button>
+          <button
+            onClick={toggleGeoStandard}
+            className="w-10 h-10 bg-slate-100/90 hover:bg-slate-200/90 dark:bg-slate-800/80 dark:hover:bg-slate-700/80 text-slate-700 dark:text-slate-300 text-xs font-mono font-bold rounded-xl transition border border-slate-200/80 dark:border-slate-700/80 shadow-2xs active:scale-95 cursor-pointer flex items-center justify-center shrink-0"
+            title={`Active Unit Standard: ${geoState.standard} — Click to toggle`}
+          >
+            <span className="font-extrabold text-[11px] text-teal-600 dark:text-teal-400">{geoState.standard === 'Metric (SI)' ? 'SI' : 'US'}</span>
+          </button>
 
-            {/* Dark Mode Toggle */}
-            {(() => {
-              const isDarkMode = theme === 'dark' || (theme === 'system' && typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches);
-              return (
-                <button
-                  onClick={() => setTheme(isDarkMode ? 'light' : 'dark')}
-                  className="w-10 h-10 bg-slate-100/90 hover:bg-slate-200/90 dark:bg-slate-800/80 dark:hover:bg-slate-700/80 border border-slate-200/80 dark:border-slate-700/80 text-slate-700 dark:text-slate-300 rounded-xl transition shadow-2xs active:scale-95 cursor-pointer flex items-center justify-center shrink-0"
-                  title={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-                  aria-label="Toggle Dark Mode"
-                >
-                  {isDarkMode ? <Sun className="w-4 h-4 text-amber-400 shrink-0" /> : <Moon className="w-4 h-4 text-slate-500 shrink-0" />}
-                </button>
-              );
-            })()}
-
-            <FavoriteButton lang={lang} />
-          </div>
-
-          {/* Right Action / Account CTA Group */}
-          <div className="ml-auto flex items-center gap-2 shrink-0">
-            {/* Offline Badge */}
-            {!isOnline && (
-              <div className="h-10 px-3 bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-400 text-[11px] font-bold rounded-xl border border-rose-200 dark:border-rose-800/50 shadow-2xs whitespace-nowrap flex items-center gap-1.5">
-                <div className="relative flex h-2.5 w-2.5 shrink-0">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-rose-500"></span>
-                </div>
-                <span className="hidden sm:inline">Offline Mode</span>
-              </div>
-            )}
-
-            {/* Primary Monetization CTA */}
-            {!isPro && (
-              <Link
-                to={langPath('/pricing')}
-                className="h-10 px-3.5 bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white text-[11px] font-black uppercase tracking-wider rounded-xl transition-all shadow-[0_0_12px_rgba(20,184,166,0.3)] hover:shadow-[0_0_18px_rgba(20,184,166,0.5)] hover:scale-[1.02] active:scale-95 cursor-pointer whitespace-nowrap flex items-center gap-1.5"
+          {/* Dark Mode Toggle */}
+          {(() => {
+            const isDarkMode = theme === 'dark' || (theme === 'system' && typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            return (
+              <button
+                onClick={() => setTheme(isDarkMode ? 'light' : 'dark')}
+                className="w-10 h-10 bg-slate-100/90 hover:bg-slate-200/90 dark:bg-slate-800/80 dark:hover:bg-slate-700/80 border border-slate-200/80 dark:border-slate-700/80 text-slate-700 dark:text-slate-300 rounded-xl transition shadow-2xs active:scale-95 cursor-pointer flex items-center justify-center shrink-0"
+                title={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+                aria-label="Toggle Dark Mode"
               >
-                <Sparkles className="w-3.5 h-3.5 shrink-0" />
-                <span className="hidden sm:inline">{lang === 'fr' ? 'Débloquer Pro' : 'Upgrade to Pro'}</span>
-              </Link>
-            )}
+                {isDarkMode ? <Sun className="w-4 h-4 text-amber-400 shrink-0" /> : <Moon className="w-4 h-4 text-slate-500 shrink-0" />}
+              </button>
+            );
+          })()}
 
-            {/* Account & System Menu */}
-            <DropdownMenu
-              user={user}
-              logout={logout}
-              onAuthClick={() => setIsLoginModalOpen(true)}
-              onEhrClick={() => {
-                const event = new CustomEvent('carecalculus:open-smart-paste');
-                window.dispatchEvent(event);
-              }}
-              onContactClick={() => setIsContactModalOpen(true)}
-              langPath={langPath}
-              lang={lang}
-              setLang={setLang}
-            />
-          </div>
+          <FavoriteButton lang={lang} />
+
+          {!isOnline && (
+            <div className="h-10 px-3 bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-400 text-[11px] font-bold rounded-xl border border-rose-200 dark:border-rose-800/50 shadow-2xs whitespace-nowrap flex items-center gap-1.5">
+              <div className="relative flex h-2.5 w-2.5 shrink-0">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-rose-500"></span>
+              </div>
+              <span className="hidden sm:inline">Offline Mode</span>
+            </div>
+          )}
+
+          {!isPro && (
+            <Link
+              to={langPath('/pricing')}
+              className="h-10 px-3.5 bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white text-[11px] font-black uppercase tracking-wider rounded-xl transition-all shadow-[0_0_12px_rgba(20,184,166,0.3)] hover:shadow-[0_0_18px_rgba(20,184,166,0.5)] hover:scale-[1.02] active:scale-95 cursor-pointer whitespace-nowrap flex items-center gap-1.5"
+            >
+              <Sparkles className="w-3.5 h-3.5 shrink-0" />
+              <span className="hidden sm:inline">{lang === 'fr' ? 'Débloquer Pro' : 'Upgrade to Pro'}</span>
+            </Link>
+          )}
+
+          <DropdownMenu
+            user={user}
+            logout={logout}
+            onAuthClick={() => setIsLoginModalOpen(true)}
+            onEhrClick={() => {
+              const event = new CustomEvent('carecalculus:open-smart-paste');
+              window.dispatchEvent(event);
+            }}
+            onContactClick={() => setIsContactModalOpen(true)}
+            langPath={langPath}
+            lang={lang}
+            setLang={setLang}
+          />
         </div>
       </div>
     );

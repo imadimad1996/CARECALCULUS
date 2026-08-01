@@ -15,64 +15,64 @@ export const REVIEWER_WELLS: MedicalReviewer = {
 };
 
 export const REVIEWER_EMERGENCY: MedicalReviewer = {
-  name: 'CareCalculus Emergency Care Board',
-  credentials: ['MD', 'EBM Board'],
-  role: 'Clinical Decision & Emergency Guidelines Panel',
-  institution: 'CareCalculus Medical Review Board',
+  name: 'CareCalculus Medical Editorial Team',
+  credentials: ['Editorial Review'],
+  role: 'Internal Editorial Review — Emergency',
+  institution: 'CareCalculus Content Team',
   profileUrl: '/about',
-  lastReviewed: 'June 2026',
+  lastReviewed: 'August 2024',
 };
 
 export const REVIEWER_INTENSIVIST: MedicalReviewer = {
-  name: 'CareCalculus Critical Care Board',
-  credentials: ['MD', 'ICU Panel'],
-  role: 'Critical Care & Resuscitation Review Panel',
-  institution: 'CareCalculus Medical Review Board',
+  name: 'CareCalculus Medical Editorial Team',
+  credentials: ['Editorial Review'],
+  role: 'Internal Editorial Review — Critical Care',
+  institution: 'CareCalculus Content Team',
   profileUrl: '/about',
-  lastReviewed: 'July 2026',
+  lastReviewed: 'August 2024',
 };
 
 export const REVIEWER_HEPATOLOGY: MedicalReviewer = {
-  name: 'CareCalculus Gastroenterology Panel',
-  credentials: ['MD', 'EASL/AASLD Aligned'],
-  role: 'Hepatology & Liver Disease Review Group',
-  institution: 'CareCalculus Medical Review Board',
+  name: 'CareCalculus Medical Editorial Team',
+  credentials: ['Editorial Review'],
+  role: 'Internal Editorial Review — Hepatology',
+  institution: 'CareCalculus Content Team',
   profileUrl: '/about',
-  lastReviewed: 'May 2026',
+  lastReviewed: 'August 2024',
 };
 
 export const REVIEWER_CARDIOLOGY: MedicalReviewer = {
-  name: 'CareCalculus Cardiology Panel',
-  credentials: ['MD', 'ACC/AHA Aligned'],
-  role: 'Cardiovascular Risk & Perfusion Review Panel',
-  institution: 'CareCalculus Medical Review Board',
+  name: 'CareCalculus Medical Editorial Team',
+  credentials: ['Editorial Review'],
+  role: 'Internal Editorial Review — Cardiology',
+  institution: 'CareCalculus Content Team',
   profileUrl: '/about',
-  lastReviewed: 'June 2026',
+  lastReviewed: 'August 2024',
 };
 
 export const REVIEWER_NEUROLOGY: MedicalReviewer = {
-  name: 'CareCalculus Neurology Panel',
-  credentials: ['MD', 'Neuro-ICU Panel'],
-  role: 'Neurocritical Care Assessment Panel',
-  institution: 'CareCalculus Medical Review Board',
+  name: 'CareCalculus Medical Editorial Team',
+  credentials: ['Editorial Review'],
+  role: 'Internal Editorial Review — Neurology',
+  institution: 'CareCalculus Content Team',
   profileUrl: '/about',
-  lastReviewed: 'July 2026',
+  lastReviewed: 'August 2024',
 };
 
 export const REVIEWER_NEPHROLOGY: MedicalReviewer = {
-  name: 'CareCalculus Nephrology Panel',
-  credentials: ['MD', 'KDIGO Aligned'],
-  role: 'Renal Function & Electrolytes Review Group',
-  institution: 'CareCalculus Medical Review Board',
+  name: 'CareCalculus Medical Editorial Team',
+  credentials: ['Editorial Review'],
+  role: 'Internal Editorial Review — Nephrology',
+  institution: 'CareCalculus Content Team',
   profileUrl: '/about',
-  lastReviewed: 'May 2026',
+  lastReviewed: 'August 2024',
 };
 
 export const REVIEWER_PULMONOLOGY: MedicalReviewer = {
-  name: 'CareCalculus Pulmonology Panel',
-  credentials: ['MD', 'ATS/ERS Aligned'],
-  role: 'Respiratory & ARDS Guidelines Panel',
-  institution: 'CareCalculus Medical Review Board',
+  name: 'CareCalculus Medical Editorial Team',
+  credentials: ['Editorial Review'],
+  role: 'Internal Editorial Review — Pulmonology',
+  institution: 'CareCalculus Content Team',
   profileUrl: '/about',
-  lastReviewed: 'June 2026',
+  lastReviewed: 'August 2024',
 };
