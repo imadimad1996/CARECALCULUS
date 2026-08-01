@@ -59,6 +59,11 @@ export default function ForHospitals({ lang }: { lang: LangCode }) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const formData = new FormData(e.target as HTMLFormElement);
+    const leadObj = Object.fromEntries(formData.entries());
+    const existing = JSON.parse(localStorage.getItem('b2b_demo_leads') || '[]');
+    existing.push({ ...leadObj, timestamp: new Date().toISOString() });
+    localStorage.setItem('b2b_demo_leads', JSON.stringify(existing));
     setSubmitted(true);
   };
 
@@ -147,28 +152,28 @@ export default function ForHospitals({ lang }: { lang: LangCode }) {
                     <div className="grid grid-cols-2 gap-5">
                       <div>
                         <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-1.5">{t.firstName}</label>
-                        <input required type="text" className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:text-white" />
+                        <input required name="firstName" type="text" className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:text-white" />
                       </div>
                       <div>
                         <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-1.5">{t.lastName}</label>
-                        <input required type="text" className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:text-white" />
+                        <input required name="lastName" type="text" className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:text-white" />
                       </div>
                     </div>
                     
                     <div>
                       <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-1.5">{t.workEmail}</label>
-                      <input required type="email" placeholder="name@hospital.org" className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:text-white" />
+                      <input required name="workEmail" type="email" placeholder="name@hospital.org" className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:text-white" />
                     </div>
                     
                     <div>
                       <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-1.5">{t.hospitalName}</label>
-                      <input required type="text" className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:text-white" />
+                      <input required name="hospitalName" type="text" className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:text-white" />
                     </div>
                     
                     <div className="grid grid-cols-2 gap-5">
                       <div>
                         <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-1.5">{t.ehrSystem}</label>
-                        <select className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:text-white">
+                        <select name="ehrSystem" className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:text-white">
                           <option>Epic</option>
                           <option>Cerner</option>
                           <option>Allscripts</option>
@@ -178,7 +183,7 @@ export default function ForHospitals({ lang }: { lang: LangCode }) {
                       </div>
                       <div>
                         <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-1.5">{t.role}</label>
-                        <select className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:text-white">
+                        <select name="role" className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:text-white">
                           <option>CMIO / CNIO</option>
                           <option>IT Leadership</option>
                           <option>Clinical Director</option>

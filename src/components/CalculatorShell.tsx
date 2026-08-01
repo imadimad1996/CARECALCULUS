@@ -164,7 +164,7 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
         <AiAnswerPanel logicalPath={logicalPath} lang={lang} />
       </div>
 
-      <div>
+      <div aria-live="polite">
         {children}
       </div>
 
