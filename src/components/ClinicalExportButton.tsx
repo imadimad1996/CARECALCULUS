@@ -416,11 +416,11 @@ ${divider}`;
         {/* Tactical action button placed cleanly inside results card */}
         <button
           onClick={handleOpen}
-          className="flex-1 py-3 px-4 rounded-xl flex items-center justify-center gap-2.5 bg-white/10 hover:bg-white/20 active:bg-white/35 text-white text-xs font-bold font-mono uppercase tracking-wider transition-all duration-300 border border-white/20 hover:border-white/40 shadow-sm relative overflow-hidden group cursor-pointer"
+          className="flex-1 py-3 px-4 rounded-xl flex items-center justify-center gap-2.5 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white text-xs font-bold font-mono uppercase tracking-wider transition-all duration-300 shadow-sm relative overflow-hidden group cursor-pointer"
           style={{ minHeight: '44px' }}
           id={`btn-open-export-${title.split(' ')[0].toLowerCase()}`}
         >
-          <Printer className="w-4 h-4 text-blue-300 group-hover:text-white transition-colors animate-pulse" />
+          <Printer className="w-4 h-4 text-blue-200 group-hover:text-white transition-colors animate-pulse" />
           <span>{t.btnText}</span>
           <FileDown className="w-3.5 h-3.5 opacity-55 absolute right-4 group-hover:translate-y-0.5 transition-transform" />
         </button>
@@ -430,8 +430,8 @@ ${divider}`;
           onClick={handleShare}
           className={`flex-1 py-3 px-4 rounded-xl flex items-center justify-center gap-2.5 text-xs font-bold font-mono uppercase tracking-wider transition-all duration-300 border shadow-sm relative overflow-hidden group cursor-pointer ${
             shareCopied
-              ? 'bg-emerald-600/80 border-emerald-500 text-emerald-100'
-              : 'bg-white/10 hover:bg-white/20 active:bg-white/35 text-white border-white/20 hover:border-white/40'
+              ? 'bg-emerald-600 border-emerald-500 text-white'
+              : 'bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 active:bg-slate-100 dark:active:bg-slate-600 text-slate-700 dark:text-slate-200 border-slate-200 dark:border-slate-700'
           }`}
           style={{ minHeight: '44px' }}
           id={`btn-share-result-${title.split(' ')[0].toLowerCase()}`}
@@ -443,7 +443,7 @@ ${divider}`;
             </>
           ) : (
             <>
-              <Share2 className="w-4 h-4 text-blue-300 group-hover:text-white transition-colors" />
+              <Share2 className="w-4 h-4 text-slate-400 dark:text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
               <span>{t.shareBtn}</span>
             </>
           )}
