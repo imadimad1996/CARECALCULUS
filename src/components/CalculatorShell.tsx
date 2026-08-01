@@ -1,6 +1,6 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Scale, FolderHeart, Activity, Layers, ArrowRight, Share2, Copy, Check, FileText, Lock, HelpCircle } from 'lucide-react';
+import { Scale, FolderHeart, Activity, Layers, ArrowRight, Share2, Copy, Check, FileText, Lock, HelpCircle, BookOpen } from 'lucide-react';
 import { LangCode } from '../types';
 import AiAnswerPanel from './AiAnswerPanel';
 import { MedicalReviewerCard } from './MedicalReviewerCard';
@@ -11,6 +11,8 @@ import { SPECIALTIES_DB } from '../data/specialties';
 import seoMaps from '../data/seoMaps.json';
 import faqDbRaw from '../data/faqDb.json';
 import { CalcPageSchemas } from './JsonLd';
+import { motion } from 'motion/react';
+import { citationsDb } from '../data/citationsDb';
 
 const faqDb: Record<string, { question: string; answer: string }[]> = faqDbRaw as any;
 
@@ -165,8 +167,45 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
       </div>
 
       <div aria-live="polite">
-        {children}
+        <motion.div 
+          initial={{ opacity: 0, y: 10 }} 
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, ease: 'easeOut' }}
+        >
+          {children}
+        </motion.div>
       </div>
+
+      {/* Clinical Evidence & PubMed Citations */}
+      {citationsDb[logicalPath] && citationsDb[logicalPath].length > 0 && (
+        <div className="mt-8 pt-8 border-t border-slate-200">
+          <h2 className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-4 flex items-center gap-2">
+            <BookOpen className="w-4 h-4 text-emerald-600" />
+            {lang === 'fr' ? 'Preuves Cliniques & Références' : 'Clinical Evidence & References'}
+          </h2>
+          <div className="space-y-4">
+            {citationsDb[logicalPath].map((cite, i) => (
+              <div key={i} className="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-xs">
+                <div className="p-2 min-h-[36px] min-w-[36px] bg-emerald-50 text-emerald-600 rounded-lg shrink-0 flex items-center justify-center">
+                  <FileText className="w-4 h-4" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900 text-sm mb-1">{cite.title}</h3>
+                  <p className="text-gray-500 text-xs leading-relaxed italic">{cite.authors} {cite.journal} {cite.year}</p>
+                  <a 
+                    href={`https://pubmed.ncbi.nlm.nih.gov/${cite.pmid}/`} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-[11px] font-bold text-blue-600 hover:text-blue-800 hover:underline mt-1.5 inline-flex items-center gap-1"
+                  >
+                    PubMed ID: {cite.pmid} <ArrowRight className="w-3 h-3" />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Universal Medical Reviewer E-E-A-T Signal */}
       <MedicalReviewerCard 

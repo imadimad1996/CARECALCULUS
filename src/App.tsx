@@ -1,5 +1,5 @@
 import React, { useState, useEffect, ErrorInfo, ReactNode } from 'react';
-import { Activity, BookOpen, HeartPulse, Menu, X, LayoutDashboard, Calculator, Droplet, Brain, TestTube, AlertOctagon, ArrowRightLeft, AlertTriangle, Stethoscope, Wind, FileText, ShieldCheck, Sparkles, ChevronRight, ChevronDown, Search, Globe, Scale, MonitorPlay, GraduationCap, Newspaper, Scissors, Layers, Award, ClipboardList } from 'lucide-react';
+import { Activity, BookOpen, HeartPulse, Menu, X, LayoutDashboard, Calculator, Droplet, Brain, TestTube, AlertOctagon, ArrowRightLeft, AlertTriangle, Stethoscope, Wind, FileText, ShieldCheck, Sparkles, ChevronRight, ChevronDown, Search, Globe, Scale, MonitorPlay, GraduationCap, Newspaper, Scissors, Layers, Award, ClipboardList, Moon, Sun, WifiOff, Wifi } from 'lucide-react';
 import { BrowserRouter, Routes, Route, Link, useLocation, Navigate, useNavigate } from 'react-router-dom';
 import { StaticRouter } from 'react-router';
 import { LangContext, parsePathname, buildPath, PREFIXED_LANGS } from './utils/lang';
@@ -35,8 +35,9 @@ import { LangCode } from './types';
 import { UnitSystemProvider, useUnitSystem } from './contexts/UnitSystemContext';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { LoginModal } from './components/auth/LoginModal';
-import { ThemeProvider } from './components/ThemeProvider';
+import { ThemeProvider, useTheme } from './components/ThemeProvider';
 import { GlobalErrorBoundary } from './components/ErrorBoundary';
+import { useOnlineStatus } from './hooks/useOnlineStatus';
 
 
 
@@ -49,6 +50,8 @@ function AppLayout() {
   const [isShiftDrawerOpen, setIsShiftDrawerOpen] = useState(false);
   const [isSpecialtiesModalOpen, setIsSpecialtiesModalOpen] = useState(false);
   const [isPro, setIsPro] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const isOnline = useOnlineStatus();
 
   useEffect(() => {
     setIsPro(localStorage.getItem('carecalculus_pro_status') === 'active');
@@ -543,6 +546,27 @@ function AppLayout() {
             >
               <Scale className="w-3.5 h-3.5 text-emerald-400" />
               <span className="font-extrabold">{geoState.standard === 'Metric (SI)' ? 'SI' : 'US'}</span>
+            </button>
+
+            {/* Offline Badge */}
+            {!isOnline && (
+              <div className="shrink-0 flex items-center gap-1.5 px-3 py-2 bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-400 text-[11px] font-bold rounded-xl border border-rose-200 dark:border-rose-800/50 shadow-2xs">
+                <div className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-rose-500"></span>
+                </div>
+                <span className="hidden sm:inline">Offline Mode</span>
+              </div>
+            )}
+
+            {/* Dark Mode Toggle */}
+            <button
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="shrink-0 flex items-center justify-center p-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-xl transition border border-slate-200 dark:border-slate-700 shadow-2xs active:scale-95 cursor-pointer"
+              style={{ minHeight: '38px', minWidth: '38px' }}
+              title="Toggle Dark Mode"
+            >
+              {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-slate-500" />}
             </button>
 
             {/* B2B Hospital CTA */}
