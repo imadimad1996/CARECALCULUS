@@ -17,8 +17,6 @@ import { buildHead } from './utils/seo';
 import { LangCode } from './types';
 import { slugify } from './utils/slug';
 
-import { FMP_MODULES } from './utils/fmpModules';
-import { ISPITS_MODULES } from './utils/ispitsModules';
 import { CONDITIONS_DB } from './data/conditions';
 import { SPECIALTIES_DB } from './data/specialties';
 import faqDb from './data/faqDb.json';
@@ -42,10 +40,6 @@ async function renderResolved(url: string): Promise<string> {
   return html;
 }
 
-
-
-const fmpSlugs = FMP_MODULES.map(m => `/fmp-medecine/${m.slug}`);
-const ispitsSlugs = ISPITS_MODULES.map(m => `/ispits/${m.slug}`);
 
 const conditionSlugs = CONDITIONS_DB.map(c => `/conditions/${c.id}`);
 const specialtySlugs = SPECIALTIES_DB.map(s => `/specialties/${s.id}`);
@@ -113,27 +107,23 @@ const LOGICAL_ROUTES = [
   '/anion-gap',
   '/aa-gradient',
 
-  '/presentations',
-  '/cours',
-  '/fmp-medecine',
-  '/ispits',
   '/nutrition-tdee',
   '/nutrition-must',
   '/nutrition-nrs2002',
   '/glp-1-hub',
   '/flashcard-generator',
   '/case-study-viewer',
-  '/drug-sheets',
   '/study-tracker',
+  '/drug-sheets',
   '/abbreviation-lookup',
   '/about',
   '/disclaimer',
   '/privacy',
   '/terms',
+  '/pricing',
+  '/for-hospitals',
   '/clinical-guide',
 
-  ...fmpSlugs,
-  ...ispitsSlugs,
   ...conditionSlugs,
   ...specialtySlugs,
   ...qaSlugs,

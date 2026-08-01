@@ -40,12 +40,10 @@ const pageLoaders = [
   () => import('../pages/ChildPughScore'),
   () => import('../pages/AnionGap'),
   () => import('../pages/AaGradient'),
-  () => import('../pages/FmpMedecine'),
-  () => import('../pages/IspitsAcademic'),
   () => import('../pages/FlashcardGenerator'),
   () => import('../pages/CaseStudyViewer'),
-  () => import('../pages/DrugSheets'),
   () => import('../pages/StudyTracker'),
+  () => import('../pages/DrugSheets'),
   () => import('../pages/AbbreviationLookup'),
   () => import('../pages/Compare'),
   () => import('../pages/NutritionTdee'),
@@ -90,8 +88,8 @@ const pageLoaders = [
   () => import('../pages/DrugInteractions'),
   () => import('../pages/MedicalStatistics'),
   () => import('../pages/FavoritesPage'),
-
   () => import('../pages/PricingPage'),
+
   () => import('../pages/BishopScore'),
   () => import('../pages/CentorScore'),
   () => import('../pages/EditorialBoard'),
@@ -138,8 +136,7 @@ const [
   AncCalculator, AdjustedBodyWeight, SteroidConversion,
   About, Disclaimer, Privacy, Terms,
   Glp1Hub, ApgarScore, SofaScore, ChildPughScore, AnionGap, AaGradient,
-  FmpMedecine, IspitsAcademic,
-  FlashcardGenerator, CaseStudyViewer, DrugSheets, StudyTracker, AbbreviationLookup,
+  FlashcardGenerator, CaseStudyViewer, StudyTracker, DrugSheets, AbbreviationLookup,
   Compare, NutritionTdee, NutritionMust, NutritionNrs2002, ConditionHub,
   MdrdGfr, CkdEpiGfr, EmbedGallery, ForHospitals, SpecialtyHub, NutritionHub,
   ClinicalQuestionPage, ProgrammaticGuidePage,
@@ -176,7 +173,7 @@ export async function preloadPages() {
 export const LEGAL_ROUTES = ['/about', '/disclaimer', '/privacy', '/terms', '/embed-gallery', '/for-hospitals'];
 
 // Routes that open in full-width reading mode (no sidebar, no top widgets)
-export const CONTENT_ROUTES = ['/presentations', '/cours', '/about', '/editorial-board', '/comite-editorial', '/disclaimer', '/privacy', '/terms', '/glp-1-hub', '/hub-glp1', '/%D9%85%D8%B1%D9%83%D8%B2-glp1', '/مركز-glp1', '/ispits', '/embed-gallery', '/for-hospitals', '/clinical-guide'];
+export const CONTENT_ROUTES = ['/about', '/editorial-board', '/comite-editorial', '/disclaimer', '/privacy', '/terms', '/glp-1-hub', '/hub-glp1', '/%D9%85%D8%B1%D9%83%D8%B2-glp1', '/مركز-glp1', '/embed-gallery', '/for-hospitals', '/clinical-guide'];
 
 export class ErrorBoundary extends React.Component<any, any> {
   constructor(props: any) {
@@ -292,8 +289,6 @@ export const navItems = [
   { path: '/medical-statistics', nameEn: 'Medical Statistics', nameFr: 'Statistiques Médicales', nameAr: 'الإحصاء الطبي', icon: Layers, tier: 0 },
   { path: '/glp-1-hub', nameEn: 'GLP-1 Hub', nameFr: 'Hub GLP-1', nameAr: 'مركز أدوية GLP-1', icon: Sparkles, tier: 4, group: 'reading' as const },
 
-  { path: '/fmp-medecine', nameEn: 'Faculty of Medicine', nameFr: 'Faculté de Médecine', nameAr: 'كلية الطب والصيدلة', icon: GraduationCap, tier: 4, group: 'learning' as const },
-  { path: '/ispits', nameEn: 'ISPITS Paramedical', nameFr: 'ISPITS Paramédical', nameAr: 'مناهج معاهد التمريض (ISPITS)', icon: GraduationCap, tier: 4, group: 'learning' as const },
   { path: '/study-tracker', nameEn: 'Study Progress Tracker', nameFr: 'Suivi d\'Études', nameAr: 'متابع التقدم الدراسي', icon: Award, tier: 4, group: 'learning' as const },
   { path: '/flashcard-generator', nameEn: 'Medical Flashcards', nameFr: 'Flashcards Médicales', nameAr: 'البطاقات التعليمية الطبية', icon: Layers, tier: 4, group: 'learning' as const },
   { path: '/case-study-viewer', nameEn: 'Clinical Case Studies', nameFr: 'Cas Cliniques', nameAr: 'الحالات السريرية التفاعلية', icon: Stethoscope, tier: 4, group: 'learning' as const },
@@ -385,10 +380,6 @@ export function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="drug-interactions" element={wrapCalculator('/drug-interactions', <DrugInteractions lang={lang} />)} />
       <Route path="medical-statistics" element={wrapCalculator('/medical-statistics', <MedicalStatistics lang={lang} />)} />
 
-      <Route path="fmp-medecine" element={<FmpMedecine lang={lang} />} />
-      <Route path="fmp-medecine/:moduleSlug" element={<FmpMedecine lang={lang} />} />
-      <Route path="ispits" element={<IspitsAcademic lang={lang} />} />
-      <Route path="ispits/:moduleSlug" element={<IspitsAcademic lang={lang} />} />
       <Route path="nutrition-tdee" element={wrapCalculator('/nutrition-tdee', <NutritionTdee lang={lang} />)} />
       <Route path="nutrition-must" element={wrapCalculator('/nutrition-must', <NutritionMust lang={lang} />)} />
       <Route path="nutrition-nrs2002" element={wrapCalculator('/nutrition-nrs2002', <NutritionNrs2002 lang={lang} />)} />

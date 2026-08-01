@@ -13,9 +13,6 @@
 import { LangCode } from '../types';
 import { slugify } from './slug';
 
-import { FMP_MODULES, FMP_MODULE_BY_SLUG } from './fmpModules';
-import { ISPITS_MODULES, ISPITS_MODULE_BY_SLUG } from './ispitsModules';
-
 export const ORIGIN_EN = 'https://www.carecalculus.com';
 export const ORIGIN_FR = 'https://fr.carecalculus.com';
 export const ORIGIN = ORIGIN_EN;
@@ -218,59 +215,6 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
 
 
 
-  // 5. FMPC Modules (/fmp-medecine/:slug)
-  if (path.startsWith('/fmp-medecine/')) {
-    const slug = path.replace(/^\/fmp-medecine\//, '');
-    const mod = FMP_MODULE_BY_SLUG[slug];
-    if (mod) {
-      if (lang === 'fr') {
-        return {
-          title: `${mod.name} — Cours FMPC PDF | CareCalculus`,
-          desc: `${mod.description}. Consultez et téléchargez le cours complet de ${mod.name} (${mod.year}) de la Faculté de Médecine et de Pharmacie de Casablanca.`,
-          keywords: `${mod.name.toLowerCase()}, cours médecine FMPC, fmp casablanca, ${mod.year}, PDF médecine maroc`,
-        };
-      } else if (false) {
-        return {
-          title: `${mod.name} — محاضرات كلية الطب | CareCalculus`,
-          desc: `${mod.description}. تصفح وحمل منهج ${mod.name} (${mod.year}) الخاص بكلية الطب والصيدلة بالدار البيضاء.`,
-          keywords: `${mod.name.toLowerCase()}, محاضرات طبية, كلية الطب بالدار البيضاء, الدار البيضاء, ${mod.year}, PDF`,
-        };
-      } else {
-        return {
-          title: `${mod.name} — FMPC Medical Course | CareCalculus`,
-          desc: `${mod.description}. Review and download the official ${mod.name} module (${mod.year}) from the Faculty of Medicine & Pharmacy of Casablanca.`,
-          keywords: `${mod.name.toLowerCase()}, fmpc casablanca, medical modules, ${mod.year}, medicine pdf`,
-        };
-      }
-    }
-  }
-
-  // 6. ISPITS Modules (/ispits/:slug)
-  if (path.startsWith('/ispits/')) {
-    const slug = path.replace(/^\/ispits\//, '');
-    const mod = ISPITS_MODULE_BY_SLUG[slug];
-    if (mod) {
-      if (lang === 'fr') {
-        return {
-          title: `${mod.name} — Cours ISPITS PDF | CareCalculus`,
-          desc: `${mod.description}. Consultez et téléchargez le cours complet de ${mod.name} (Semestre ${mod.semester}) pour les Instituts Supérieurs des Professions Infirmières et Techniques de Santé (ISPITS).`,
-          keywords: `${mod.name.toLowerCase()}, cours infirmiers ispits, ispits maroc, module ${mod.semester}, PDF paramédical maroc`,
-        };
-      } else if (false) {
-        return {
-          title: `${mod.name} — محاضرات معاهد التمريض ISPITS | CareCalculus`,
-          desc: `${mod.description}. تصفح وحمل منهج ${mod.name} (الفصل الدراسي ${mod.semester}) الخاص بمعاهد التمريض وتقنيات الصحة بالمغرب ISPITS.`,
-          keywords: `${mod.name.toLowerCase()}, محاضرات التمريض, معاهد التمريض وتقنيات الصحة, ISPITS, الفصل ${mod.semester}, PDF`,
-        };
-      } else {
-        return {
-          title: `${mod.name} — ISPITS Nursing Module | CareCalculus`,
-          desc: `${mod.description}. Review and download the official ${mod.name} course (Semester ${mod.semester}) from the Higher Institute of Nursing Professions and Health Techniques (ISPITS) Morocco.`,
-          keywords: `${mod.name.toLowerCase()}, ispits nursing, health technology modules, semester ${mod.semester}, paramedic pdf`,
-        };
-      }
-    }
-  }
 
   // 7. Comparisons (/compare/:slug1-vs-:slug2)
   if (path.startsWith('/compare/')) {
@@ -351,57 +295,7 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
 
 
 export function getMedicalSchema(path: string) {
-  if (path.startsWith('/fmp-medecine/')) {
-    const slug = path.replace(/^\/fmp-medecine\//, '');
-    const mod = FMP_MODULE_BY_SLUG[slug];
-    if (mod) {
-      return {
-        '@context': 'https://schema.org',
-        '@type': 'Course',
-        name: mod.name,
-        description: mod.description,
-        provider: {
-          '@type': 'CollegeOrUniversity',
-          name: 'Faculté de Médecine et de Pharmacie de Casablanca',
-          sameAs: 'https://fmpc.um5.ac.ma/'
-        },
-        educationalLevel: mod.year,
-        inLanguage: 'fr',
-        url: `${ORIGIN}/fmp-medecine/${slug}`,
-        hasCourseInstance: {
-          '@type': 'CourseInstance',
-          courseMode: 'online',
-          offers: { '@type': 'Offer', price: '0', priceCurrency: 'MAD' }
-        }
-      };
-    }
-  }
 
-  if (path.startsWith('/ispits/')) {
-    const slug = path.replace(/^\/ispits\//, '');
-    const mod = ISPITS_MODULE_BY_SLUG[slug];
-    if (mod) {
-      return {
-        '@context': 'https://schema.org',
-        '@type': 'Course',
-        name: mod.name,
-        description: mod.description,
-        provider: {
-          '@type': 'CollegeOrUniversity',
-          name: 'Institut Supérieur des Professions Infirmières et Techniques de Santé',
-          sameAs: 'http://ispits.sante.gov.ma/'
-        },
-        educationalLevel: `Semester ${mod.semester}`,
-        inLanguage: 'fr',
-        url: `${ORIGIN}/ispits/${slug}`,
-        hasCourseInstance: {
-          '@type': 'CourseInstance',
-          courseMode: 'online',
-          offers: { '@type': 'Offer', price: '0', priceCurrency: 'MAD' }
-        }
-      };
-    }
-  }
 
   const node = medicalSchemaDb[path];
   return node
@@ -673,29 +567,6 @@ const howToSchemaDb: Record<string, { name: string; description: string; steps: 
 export function getFaqSchema(path: string) {
   let faqs = faqSchemaDb[path];
 
-  if (!faqs && path.startsWith('/fmp-medecine/')) {
-    const slug = path.replace(/^\/fmp-medecine\//, '');
-    const mod = FMP_MODULE_BY_SLUG[slug];
-    if (mod && mod.rank <= 10) {
-      faqs = [
-        { question: `Qu'est-ce que le module ${mod.name} à la FMPC ?`, answer: `C'est un module officiel de la Faculté de Médecine et de Pharmacie de Casablanca enseigné en ${mod.year}. Il aborde principalement : ${mod.description}.` },
-        { question: `Où trouver les cours PDF de ${mod.name} de médecine Casablanca ?`, answer: `Vous pouvez consulter et télécharger gratuitement le support complet en PDF du module ${mod.name} directement sur cette page de la bibliothèque CareCalculus.` },
-        { question: `A quelle année d'étude correspond ce cours ?`, answer: `Ce module fait partie du programme officiel de la FMPC pour l'année : ${mod.year}.` }
-      ];
-    }
-  }
-
-  if (!faqs && path.startsWith('/ispits/')) {
-    const slug = path.replace(/^\/ispits\//, '');
-    const mod = ISPITS_MODULE_BY_SLUG[slug];
-    if (mod) {
-      faqs = [
-        { question: `Qu'est-ce que le cours ${mod.name} en ISPITS ?`, answer: `C'est un cours officiel du programme des Instituts Supérieurs des Professions Infirmières et Techniques de Santé (ISPITS Maroc), enseigné au cours du semestre ${mod.semester}.` },
-        { question: `Où télécharger le cours ${mod.name} d'études infirmières au Maroc ?`, answer: `Vous pouvez consulter et télécharger gratuitement les modules et cours d'infirmiers en format PDF directement sur CareCalculus.` },
-        { question: `Quelles sont les spécialités concernées par le module ${mod.name} ?`, answer: `Ce module s'adresse aux étudiants des spécialités : ${mod.specialty} (Semestre ${mod.semester}) en ISPITS.` }
-      ];
-    }
-  }
 
   if (!faqs && path.startsWith('/q/')) {
     const qSlug = path.replace(/^\/q\//, '');
