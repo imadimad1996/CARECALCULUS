@@ -509,49 +509,49 @@ function AppLayout() {
   // Unified top navigation: Principal buttons replacing the double search bar
   const renderUnifiedTopNav = () => {
     return (
-      <div className="mb-6 bg-white dark:bg-slate-900/90 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-xs relative z-50">
-        <div className="px-4 py-2.5 flex items-center justify-between gap-3">
+      <div className="mb-6 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-xs relative z-30 overflow-x-auto hide-scrollbar">
+        <div className="px-3.5 py-2 flex items-center justify-between gap-3 min-w-[640px] sm:min-w-0">
           
-          {/* Left: Primary Specialties Selector */}
-          <div className="flex items-center gap-2">
+          {/* Left Cluster: Core Navigation & Smart Tool */}
+          <div className="flex items-center gap-2 shrink-0">
             <button 
               onClick={() => setIsSpecialtiesModalOpen(true)}
-              className="shrink-0 px-3.5 py-2 bg-teal-50 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300 hover:bg-teal-100 dark:hover:bg-teal-900/50 font-bold rounded-xl text-xs sm:text-sm transition-all flex items-center gap-2 border border-teal-200/50 dark:border-teal-800/50 cursor-pointer shadow-2xs hover:scale-[1.02] active:scale-95"
+              className="shrink-0 px-3 py-2 bg-teal-50 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300 hover:bg-teal-100 dark:hover:bg-teal-900/50 font-bold rounded-xl text-xs sm:text-sm transition-all flex items-center gap-2 border border-teal-200/50 dark:border-teal-800/50 cursor-pointer shadow-2xs hover:scale-[1.02] active:scale-95 whitespace-nowrap"
             >
-              <Layers className="w-4 h-4 text-teal-600 dark:text-teal-400" />
-              <span>{lang === 'fr' ? 'Parcourir les Spécialités' : 'Browse Specialties'}</span>
+              <Layers className="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0" />
+              <span>{lang === 'fr' ? 'Spécialités' : 'Browse Specialties'}</span>
             </button>
+
+            <SmartPasteModal lang={lang} />
           </div>
 
-          {/* Right: Consolidated Bedside Tools & Tier 1 Actions */}
+          {/* Right Cluster: Bedside Actions & Primary CTA */}
           <div className="flex items-center gap-2 shrink-0">
-            {/* Tier 2 Consolidated Bedside Tools */}
-            <SmartPasteModal lang={lang} />
             <FavoriteButton lang={lang} />
             <button
               onClick={() => setIsShiftDrawerOpen(true)}
-              className="shrink-0 flex items-center gap-1.5 px-3 py-2 bg-emerald-50 hover:bg-emerald-100 dark:bg-emerald-950/40 dark:hover:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 text-xs font-bold rounded-xl transition border border-emerald-200 dark:border-emerald-800/60 cursor-pointer shadow-2xs hover:scale-[1.02] active:scale-95"
+              className="shrink-0 flex items-center gap-1.5 px-3 py-2 bg-emerald-50 hover:bg-emerald-100 dark:bg-emerald-950/40 dark:hover:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 text-xs font-bold rounded-xl transition border border-emerald-200 dark:border-emerald-800/60 cursor-pointer shadow-2xs hover:scale-[1.02] active:scale-95 whitespace-nowrap"
               title="Shift Patient Queue"
             >
-              <ClipboardList className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+              <ClipboardList className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
               <span className="hidden sm:inline">Shift Queue</span>
             </button>
 
-            {/* Tier 1 Critical Unit Standard Toggle */}
+            {/* Critical Unit Standard Toggle */}
             <button
               onClick={toggleGeoStandard}
-              className="shrink-0 flex items-center gap-1.5 px-3 py-2 bg-slate-900 hover:bg-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700 text-white text-[11px] font-mono font-bold rounded-xl transition border border-slate-700 shadow-2xs active:scale-95 cursor-pointer"
+              className="shrink-0 flex items-center gap-1.5 px-3 py-2 bg-slate-900 hover:bg-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700 text-white text-[11px] font-mono font-bold rounded-xl transition border border-slate-700 shadow-2xs active:scale-95 cursor-pointer whitespace-nowrap"
               style={{ minHeight: '38px' }}
               title="Toggle unit standard"
             >
-              <Scale className="w-3.5 h-3.5 text-emerald-400" />
+              <Scale className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
               <span className="font-extrabold">{geoState.standard === 'Metric (SI)' ? 'SI' : 'US'}</span>
             </button>
 
             {/* Offline Badge */}
             {!isOnline && (
-              <div className="shrink-0 flex items-center gap-1.5 px-3 py-2 bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-400 text-[11px] font-bold rounded-xl border border-rose-200 dark:border-rose-800/50 shadow-2xs">
-                <div className="relative flex h-3 w-3">
+              <div className="shrink-0 flex items-center gap-1.5 px-3 py-2 bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-400 text-[11px] font-bold rounded-xl border border-rose-200 dark:border-rose-800/50 shadow-2xs whitespace-nowrap">
+                <div className="relative flex h-3 w-3 shrink-0">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-3 w-3 bg-rose-500"></span>
                 </div>
@@ -566,29 +566,21 @@ function AppLayout() {
               style={{ minHeight: '38px', minWidth: '38px' }}
               title="Toggle Dark Mode"
             >
-              {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-slate-500" />}
+              {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400 shrink-0" /> : <Moon className="w-4 h-4 text-slate-500 shrink-0" />}
             </button>
 
-            {/* B2B Hospital CTA */}
-            <Link
-              to={langPath('/for-hospitals')}
-              className="shrink-0 hidden md:flex items-center gap-1.5 px-3.5 py-2 bg-purple-50 hover:bg-purple-100 dark:bg-purple-900/30 dark:hover:bg-purple-900/50 text-purple-700 dark:text-purple-300 text-[11px] font-black uppercase tracking-wider rounded-xl transition-all border border-purple-200 dark:border-purple-800/50 shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-95 cursor-pointer"
-            >
-              <span className="hidden sm:inline">{lang === 'fr' ? 'Pour Hôpitaux' : 'For Hospitals'}</span>
-            </Link>
-
-            {/* Tier 1 Primary Monetization CTA */}
+            {/* Primary Monetization CTA */}
             {!isPro && (
               <Link
                 to={langPath('/pricing')}
-                className="shrink-0 flex items-center gap-1.5 px-3.5 py-2 bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-slate-950 text-[11px] font-black uppercase tracking-wider rounded-xl transition-all shadow-[0_0_15px_rgba(6,182,212,0.4)] hover:shadow-[0_0_20px_rgba(6,182,212,0.6)] hover:scale-[1.02] active:scale-95 cursor-pointer"
+                className="shrink-0 flex items-center gap-1.5 px-3.5 py-2 bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-slate-950 text-[11px] font-black uppercase tracking-wider rounded-xl transition-all shadow-[0_0_15px_rgba(6,182,212,0.4)] hover:shadow-[0_0_20px_rgba(6,182,212,0.6)] hover:scale-[1.02] active:scale-95 cursor-pointer whitespace-nowrap"
               >
-                <Sparkles className="w-3.5 h-3.5" />
+                <Sparkles className="w-3.5 h-3.5 shrink-0" />
                 <span className="hidden sm:inline">{lang === 'fr' ? 'Débloquer Pro' : 'Upgrade to Pro'}</span>
               </Link>
             )}
 
-            {/* Tier 1 Account & Notification Dropdown Menu */}
+            {/* Account & System Menu */}
             <DropdownMenu
               user={user}
               logout={logout}

@@ -112,16 +112,16 @@ export default function SmartPasteModal({ lang = 'en' }: SmartPasteModalProps) {
   return (
     <>
       {/* Trigger Button */}
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 shrink-0">
         <button
           onClick={() => setIsOpen(true)}
-          className="group relative inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-emerald-500/10 via-teal-500/10 to-cyan-500/10 hover:from-emerald-500/20 hover:to-cyan-500/20 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-xs font-semibold shadow-sm hover:shadow-md transition-all duration-200"
+          className="group relative inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-gradient-to-r from-emerald-500/10 via-teal-500/10 to-cyan-500/10 hover:from-emerald-500/20 hover:to-cyan-500/20 border border-emerald-500/30 text-emerald-700 dark:text-emerald-300 text-xs font-bold shadow-2xs hover:shadow-sm transition-all duration-200 shrink-0 whitespace-nowrap cursor-pointer active:scale-95"
           title="Auto-populate calculators from EHR lab reports"
         >
-          <Sparkles className="w-3.5 h-3.5 text-emerald-500 animate-pulse" />
+          <Sparkles className="w-3.5 h-3.5 text-emerald-500 animate-pulse shrink-0" />
           <span>{t.btn}</span>
           {activeCount > 0 && (
-            <span className="flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500 text-[10px] font-bold text-white">
+            <span className="flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500 text-[10px] font-bold text-white shrink-0">
               {activeCount}
             </span>
           )}
