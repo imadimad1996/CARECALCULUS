@@ -7,3 +7,7 @@ coverage/
 .env*
 !.env.example
 .wrangler/
+
+# Environment secrets
+.env
+scripts/hospital_email_crawler/.env

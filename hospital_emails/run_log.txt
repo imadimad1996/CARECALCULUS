@@ -1,0 +1,477 @@
+2026-08-01 23:32:14,226 [INFO] =================================================================
+2026-08-01 23:32:14,226 [INFO] CareCalculus Hospital Email Harvester
+2026-08-01 23:32:14,226 [INFO] Hospitals: 54 | Max concurrent: 4
+2026-08-01 23:32:14,226 [INFO] =================================================================
+2026-08-01 23:32:16,571 [INFO] 
+📦 Batch 1/14
+2026-08-01 23:32:16,751 [INFO] 🏥 Mayo Clinic (USA)
+2026-08-01 23:32:16,918 [INFO] 🏥 Cleveland Clinic (USA)
+2026-08-01 23:32:17,007 [INFO] 🏥 Johns Hopkins Hospital (USA)
+2026-08-01 23:32:17,086 [INFO] 🏥 Massachusetts General Hospital (USA)
+2026-08-01 23:32:19,578 [INFO]   📧 0 emails on main page
+2026-08-01 23:32:20,860 [INFO]   📧 0 emails on main page
+2026-08-01 23:32:29,737 [INFO]   📧 0 emails on main page
+2026-08-01 23:32:34,725 [INFO]   📧 0 emails on main page
+2026-08-01 23:32:40,742 [INFO] ⏳ Sleeping 2.9s…
+2026-08-01 23:32:43,682 [INFO] 
+📦 Batch 2/14
+2026-08-01 23:32:43,713 [INFO] 🏥 UCSF Medical Center (USA)
+2026-08-01 23:32:43,822 [INFO] 🏥 NewYork-Presbyterian (USA)
+2026-08-01 23:32:43,878 [INFO] 🏥 Cedars-Sinai (USA)
+2026-08-01 23:32:43,920 [INFO] 🏥 UPMC (USA)
+2026-08-01 23:32:46,789 [WARNING]   ❌ Blocked by anti-bot protection: Structural: minimal_text, no_content_elements, script_heavy_shell (23292 bytes, 0 chars visible)
+2026-08-01 23:32:48,314 [INFO]   📧 0 emails on main page
+2026-08-01 23:32:49,649 [INFO]   📧 0 emails on main page
+2026-08-01 23:32:52,125 [INFO]   📧 0 emails on main page
+2026-08-01 23:33:03,882 [INFO] ⏳ Sleeping 2.2s…
+2026-08-01 23:33:06,128 [INFO] 
+📦 Batch 3/14
+2026-08-01 23:33:06,266 [INFO] 🏥 Duke University Hospital (USA)
+2026-08-01 23:33:06,466 [INFO] 🏥 Northwestern Memorial Hospital (USA)
+2026-08-01 23:33:06,515 [INFO] 🏥 Brigham and Women's Hospital (USA)
+2026-08-01 23:33:06,545 [INFO] 🏥 Stanford Health Care (USA)
+2026-08-01 23:33:09,947 [INFO]   📧 0 emails on main page
+2026-08-01 23:33:10,707 [INFO]   📧 0 emails on main page
+2026-08-01 23:33:14,144 [WARNING]   ❌ Blocked by anti-bot protection: HTTP 403 with HTML content (44921 bytes)
+2026-08-01 23:33:33,799 [INFO]   📧 0 emails on main page
+2026-08-01 23:34:14,366 [INFO] ⏳ Sleeping 3.0s…
+2026-08-01 23:34:17,339 [INFO] 
+📦 Batch 4/14
+2026-08-01 23:34:17,403 [INFO] 🏥 Houston Methodist Hospital (USA)
+2026-08-01 23:34:17,499 [INFO] 🏥 Penn Medicine (USA)
+2026-08-01 23:34:17,551 [INFO] 🏥 Vanderbilt University Medical (USA)
+2026-08-01 23:34:17,584 [INFO] 🏥 OHSU Hospital (USA)
+2026-08-01 23:34:21,452 [INFO]   📧 0 emails on main page
+2026-08-01 23:34:22,108 [INFO]   📧 0 emails on main page
+2026-08-01 23:34:22,618 [INFO]   📧 0 emails on main page
+2026-08-01 23:34:23,064 [INFO]   📧 0 emails on main page
+2026-08-01 23:34:27,322 [INFO] ⏳ Sleeping 1.5s…
+2026-08-01 23:34:28,865 [INFO] 
+📦 Batch 5/14
+2026-08-01 23:34:28,934 [INFO] 🏥 Rush University Medical (USA)
+2026-08-01 23:34:29,044 [INFO] 🏥 Emory Healthcare (USA)
+2026-08-01 23:34:29,092 [INFO] 🏥 Yale New Haven Hospital (USA)
+2026-08-01 23:34:29,125 [INFO] 🏥 UC San Diego Health (USA)
+2026-08-01 23:34:32,577 [INFO]   📧 0 emails on main page
+2026-08-01 23:34:33,143 [WARNING]   ❌ Blocked by anti-bot protection: Cloudflare JS challenge
+2026-08-01 23:34:38,644 [INFO]   📧 0 emails on main page
+2026-08-01 23:34:39,750 [INFO]   📧 0 emails on main page
+2026-08-01 23:34:46,862 [INFO] ⏳ Sleeping 2.3s…
+2026-08-01 23:34:49,188 [INFO] 
+📦 Batch 6/14
+2026-08-01 23:34:49,256 [INFO] 🏥 Indiana University Health (USA)
+2026-08-01 23:34:49,356 [INFO] 🏥 UCHealth Colorado (USA)
+2026-08-01 23:34:49,401 [INFO] 🏥 Ochsner Health Louisiana (USA)
+2026-08-01 23:34:49,440 [INFO] 🏥 Wake Forest Baptist Health (USA)
+2026-08-01 23:34:50,774 [WARNING]   ❌ Blocked by anti-bot protection: Cloudflare JS challenge
+2026-08-01 23:34:53,460 [INFO]   📧 0 emails on main page
+2026-08-01 23:34:54,842 [INFO]   📧 0 emails on main page
+2026-08-01 23:35:00,621 [INFO]   📧 0 emails on main page
+2026-08-01 23:55:30,033 [INFO] =================================================================
+2026-08-01 23:55:30,034 [INFO] CareCalculus Hospital Email Harvester
+2026-08-01 23:55:30,034 [INFO] Hospitals: 54 | Max concurrent: 3
+2026-08-01 23:55:30,034 [INFO] =================================================================
+2026-08-01 23:55:31,217 [INFO] 
+📦 Batch 1/18
+2026-08-01 23:55:31,351 [INFO] 🏥 Mayo Clinic (USA)
+2026-08-01 23:55:31,513 [INFO] 🏥 Cleveland Clinic (USA)
+2026-08-01 23:55:31,608 [INFO] 🏥 Johns Hopkins Hospital (USA)
+2026-08-01 23:55:33,856 [INFO]   📧 0 emails on main page
+2026-08-01 23:55:36,586 [INFO]   📧 0 emails on main page
+2026-08-01 23:55:37,558 [INFO]   📧 0 emails on main page
+2026-08-01 23:55:47,758 [INFO] ⏳ Sleeping 1.3s…
+2026-08-01 23:55:49,052 [INFO] 
+📦 Batch 2/18
+2026-08-01 23:55:49,111 [INFO] 🏥 Massachusetts General Hospital (USA)
+2026-08-01 23:55:49,202 [INFO] 🏥 UCSF Medical Center (USA)
+2026-08-01 23:55:49,254 [INFO] 🏥 NewYork-Presbyterian (USA)
+2026-08-01 23:55:51,244 [WARNING]   ❌ Blocked by anti-bot protection: Structural: minimal_text, no_content_elements, script_heavy_shell (11620 bytes, 0 chars visible)
+2026-08-01 23:55:53,203 [INFO]   📧 0 emails on main page
+2026-08-01 23:55:53,526 [INFO]   📧 0 emails on main page
+2026-08-01 23:55:59,469 [INFO] ⏳ Sleeping 1.8s…
+2026-08-01 23:56:01,313 [INFO] 
+📦 Batch 3/18
+2026-08-01 23:56:01,362 [INFO] 🏥 Cedars-Sinai (USA)
+2026-08-01 23:56:01,459 [INFO] 🏥 UPMC (USA)
+2026-08-01 23:56:01,504 [INFO] 🏥 Duke University Hospital (USA)
+2026-08-01 23:56:05,080 [WARNING]   ❌ Blocked by anti-bot protection: HTTP 403 with HTML content (44899 bytes)
+2026-08-01 23:56:06,926 [INFO]   📧 0 emails on main page
+2026-08-01 23:56:09,150 [INFO]   📧 0 emails on main page
+2026-08-01 23:56:20,606 [INFO] ⏳ Sleeping 2.3s…
+2026-08-01 23:56:22,919 [INFO] 
+📦 Batch 4/18
+2026-08-01 23:56:22,992 [INFO] 🏥 Northwestern Memorial Hospital (USA)
+2026-08-01 23:56:23,084 [INFO] 🏥 Brigham and Women's Hospital (USA)
+2026-08-01 23:56:23,125 [INFO] 🏥 Stanford Health Care (USA)
+2026-08-01 23:56:26,477 [INFO]   📧 0 emails on main page
+2026-08-01 23:56:27,200 [INFO]   📧 0 emails on main page
+2026-08-01 23:56:41,966 [INFO]   📧 0 emails on main page
+2026-08-01 23:56:48,152 [INFO] ⏳ Sleeping 1.2s…
+2026-08-01 23:56:49,379 [INFO] 
+📦 Batch 5/18
+2026-08-01 23:56:49,425 [INFO] 🏥 Houston Methodist Hospital (USA)
+2026-08-01 23:56:49,514 [INFO] 🏥 Penn Medicine (USA)
+2026-08-01 23:56:49,560 [INFO] 🏥 Vanderbilt University Medical (USA)
+2026-08-01 23:56:53,267 [INFO]   📧 0 emails on main page
+2026-08-01 23:56:54,183 [INFO]   📧 0 emails on main page
+2026-08-01 23:56:56,752 [INFO]   📧 0 emails on main page
+2026-08-01 23:56:58,795 [INFO] ⏳ Sleeping 1.7s…
+2026-08-01 23:57:00,497 [INFO] 
+📦 Batch 6/18
+2026-08-01 23:57:00,539 [INFO] 🏥 OHSU Hospital (USA)
+2026-08-01 23:57:00,647 [INFO] 🏥 Rush University Medical (USA)
+2026-08-01 23:57:00,709 [INFO] 🏥 Emory Healthcare (USA)
+2026-08-01 23:57:04,212 [INFO]   📧 0 emails on main page
+2026-08-01 23:57:04,404 [INFO]   📧 0 emails on main page
+2026-08-01 23:57:04,636 [INFO]   📧 0 emails on main page
+2026-08-01 23:57:10,913 [INFO] ⏳ Sleeping 1.4s…
+2026-08-01 23:57:12,306 [INFO] 
+📦 Batch 7/18
+2026-08-01 23:57:12,378 [INFO] 🏥 Yale New Haven Hospital (USA)
+2026-08-01 23:57:12,471 [INFO] 🏥 UC San Diego Health (USA)
+2026-08-01 23:57:12,518 [INFO] 🏥 Indiana University Health (USA)
+2026-08-01 23:57:13,807 [WARNING]   ❌ Blocked by anti-bot protection: Cloudflare JS challenge
+2026-08-01 23:57:15,476 [INFO]   📧 0 emails on main page
+2026-08-01 23:57:23,640 [INFO]   📧 0 emails on main page
+2026-08-01 23:57:28,694 [INFO] ⏳ Sleeping 2.2s…
+2026-08-01 23:57:30,944 [INFO] 
+📦 Batch 8/18
+2026-08-01 23:57:30,994 [INFO] 🏥 UCHealth Colorado (USA)
+2026-08-01 23:57:31,088 [INFO] 🏥 Ochsner Health Louisiana (USA)
+2026-08-01 23:57:31,129 [INFO] 🏥 Wake Forest Baptist Health (USA)
+2026-08-01 23:57:32,462 [WARNING]   ❌ Blocked by anti-bot protection: Cloudflare JS challenge
+2026-08-01 23:57:34,546 [INFO]   📧 0 emails on main page
+2026-08-01 23:57:35,617 [INFO]   📧 0 emails on main page
+2026-08-01 23:58:34,560 [WARNING]   ⏱ Sub-pages timed out for Ochsner Health Louisiana, skipping
+2026-08-01 23:58:34,563 [INFO] ⏳ Sleeping 1.5s…
+2026-08-01 23:58:36,071 [INFO] 
+📦 Batch 9/18
+2026-08-01 23:58:36,109 [INFO] 🏥 Baylor Scott & White Health (USA)
+2026-08-01 23:58:36,208 [INFO] 🏥 University Health Network (Canada)
+2026-08-01 23:58:36,258 [INFO] 🏥 McGill University Health Centre (Canada)
+2026-08-01 23:58:40,397 [INFO]   📧 0 emails on main page
+2026-08-01 23:58:44,050 [INFO]   📧 0 emails on main page
+2026-08-01 23:58:48,640 [INFO]   📧 0 emails on main page
+2026-08-01 23:58:54,153 [INFO] ⏳ Sleeping 1.7s…
+2026-08-01 23:58:55,833 [INFO] 
+📦 Batch 10/18
+2026-08-01 23:58:55,882 [INFO] 🏥 Vancouver Coastal Health (Canada)
+2026-08-01 23:58:55,975 [INFO] 🏥 Ottawa Hospital (Canada)
+2026-08-01 23:58:56,031 [INFO] 🏥 Sunnybrook Health Sciences (Canada)
+2026-08-01 23:58:59,088 [WARNING]   ❌ Blocked by anti-bot protection: Structural: minimal_text, no_content_elements, script_heavy_shell (20019 bytes, 0 chars visible)
+2026-08-01 23:58:59,920 [INFO]   📧 0 emails on main page
+2026-08-01 23:59:04,264 [INFO]   📧 0 emails on main page
+2026-08-01 23:59:04,264 [INFO] ⏳ Sleeping 1.8s…
+2026-08-01 23:59:06,063 [INFO] 
+📦 Batch 11/18
+2026-08-01 23:59:06,123 [INFO] 🏥 Alberta Health Services (Canada)
+2026-08-01 23:59:06,216 [INFO] 🏥 QEII Health Sciences Centre (Canada)
+2026-08-01 23:59:06,266 [INFO] 🏥 Kingston Health Sciences (Canada)
+2026-08-01 23:59:13,011 [WARNING]   ❌ Blocked by anti-bot protection: Structural: minimal_text, no_content_elements, script_heavy_shell (25303 bytes, 0 chars visible)
+2026-08-01 23:59:14,198 [INFO]   📧 0 emails on main page
+2026-08-01 23:59:19,121 [WARNING]   ❌ Blocked by anti-bot protection: Access Denied on short page (HTTP 403, 42910 bytes)
+2026-08-01 23:59:20,059 [INFO] ⏳ Sleeping 2.3s…
+2026-08-01 23:59:22,333 [INFO] 
+📦 Batch 12/18
+2026-08-01 23:59:22,402 [INFO] 🏥 Hamilton Health Sciences (Canada)
+2026-08-01 23:59:22,497 [INFO] 🏥 London Health Sciences (Canada)
+2026-08-01 23:59:22,574 [INFO] 🏥 Winnipeg Health Sciences (Canada)
+2026-08-01 23:59:25,023 [INFO]   📧 0 emails on main page
+2026-08-01 23:59:28,694 [INFO]   📧 0 emails on main page
+2026-08-01 23:59:31,439 [INFO]   📧 0 emails on main page
+2026-08-01 23:59:36,658 [INFO] ⏳ Sleeping 2.3s…
+2026-08-01 23:59:39,001 [INFO] 
+📦 Batch 13/18
+2026-08-01 23:59:39,068 [INFO] 🏥 CIUSSS de l'Est-de-l'Île-de-Montréal (Canada)
+2026-08-01 23:59:39,167 [INFO] 🏥 Royal London Hospital (UK)
+2026-08-01 23:59:39,218 [INFO] 🏥 Guy's and St Thomas' NHS (UK)
+2026-08-01 23:59:40,732 [INFO]   📧 0 emails on main page
+2026-08-01 23:59:41,171 [INFO]   📧 0 emails on main page
+2026-08-02 00:00:39,070 [WARNING]   ⏱ Hard timeout for CIUSSS de l'Est-de-l'Île-de-Montréal — skipping
+2026-08-02 00:00:39,072 [INFO] ⏳ Sleeping 1.9s…
+2026-08-02 00:00:40,972 [INFO] 
+📦 Batch 14/18
+2026-08-02 00:00:41,020 [INFO] 🏥 King's College Hospital (UK)
+2026-08-02 00:00:41,122 [INFO] 🏥 Imperial College Healthcare NHS (UK)
+2026-08-02 00:00:41,258 [INFO] 🏥 Manchester NHS Foundation Trust (UK)
+2026-08-02 00:00:43,862 [INFO]   📧 1 emails on main page
+2026-08-02 00:00:46,340 [INFO]   📧 0 emails on main page
+2026-08-02 00:00:46,488 [INFO]     ↳  → 1 emails
+2026-08-02 00:00:46,642 [INFO]   📧 0 emails on main page
+2026-08-02 00:00:55,166 [INFO] ⏳ Sleeping 1.5s…
+2026-08-02 00:00:56,638 [INFO] 
+📦 Batch 15/18
+2026-08-02 00:00:56,704 [INFO] 🏥 Leeds Teaching Hospitals NHS (UK)
+2026-08-02 00:00:56,802 [INFO] 🏥 Oxford University Hospitals NHS (UK)
+2026-08-02 00:00:56,848 [INFO] 🏥 Cambridge University Hospitals (UK)
+2026-08-02 00:00:58,290 [WARNING]   ❌ Blocked by anti-bot protection: Cloudflare JS challenge
+2026-08-02 00:00:58,894 [INFO]   📧 0 emails on main page
+2026-08-02 00:01:00,870 [INFO]   📧 0 emails on main page
+2026-08-02 00:01:04,739 [INFO] ⏳ Sleeping 1.1s…
+2026-08-02 00:01:05,812 [INFO] 
+📦 Batch 16/18
+2026-08-02 00:01:05,878 [INFO] 🏥 Newcastle Hospitals NHS (UK)
+2026-08-02 00:01:05,967 [INFO] 🏥 University College London NHS (UK)
+2026-08-02 00:01:06,016 [INFO] 🏥 Sheffield Teaching Hospitals (UK)
+2026-08-02 00:01:07,652 [INFO]   📧 0 emails on main page
+2026-08-02 00:01:07,973 [INFO]   📧 0 emails on main page
+2026-08-02 00:01:10,437 [INFO]   📧 0 emails on main page
+2026-08-02 00:01:12,113 [INFO] ⏳ Sleeping 1.9s…
+2026-08-02 00:01:14,064 [INFO] 
+📦 Batch 17/18
+2026-08-02 00:01:14,101 [INFO] 🏥 Bristol University NHS Trust (UK)
+2026-08-02 00:01:14,195 [INFO] 🏥 Royal Free London NHS (UK)
+2026-08-02 00:01:14,240 [INFO] 🏥 Nottingham University Hospitals (UK)
+2026-08-02 00:01:15,642 [INFO]   📧 0 emails on main page
+2026-08-02 00:01:15,796 [WARNING]   ❌ Blocked by anti-bot protection: Cloudflare JS challenge
+2026-08-02 00:01:16,137 [INFO]   📧 0 emails on main page
+2026-08-02 00:01:21,006 [INFO] ⏳ Sleeping 1.3s…
+2026-08-02 00:01:22,343 [INFO] 
+📦 Batch 18/18
+2026-08-02 00:01:22,387 [INFO] 🏥 Liverpool University Hospitals (UK)
+2026-08-02 00:01:22,504 [INFO] 🏥 University Hospitals Birmingham (UK)
+2026-08-02 00:01:22,574 [INFO] 🏥 Southampton University NHS (UK)
+2026-08-02 00:01:24,197 [INFO]   📧 0 emails on main page
+2026-08-02 00:01:25,210 [INFO]   📧 0 emails on main page
+2026-08-02 00:01:26,146 [INFO]   📧 0 emails on main page
+2026-08-02 00:01:31,181 [INFO] ⏳ Sleeping 1.4s…
+2026-08-02 00:01:33,181 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-02 00:01:33,674 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-02 00:01:33,675 [INFO] 
+=================================================================
+2026-08-02 00:01:33,675 [INFO] 🎯 DONE — 1 unique leads harvested
+2026-08-02 00:01:33,675 [INFO]    UK: 1 emails
+2026-08-02 00:01:33,675 [INFO] 
+⭐ High-value leads (score ≥ 20): 0
+2026-08-02 00:01:33,675 [INFO] =================================================================
+2026-08-02 00:01:33,676 [INFO] 
+📂 Output folder: C:\Users\DeLL\CARECALCULUS\hospital_emails
+2026-08-02 00:03:42,952 [INFO] =================================================================
+2026-08-02 00:03:42,952 [INFO] CareCalculus Hospital Email Harvester
+2026-08-02 00:03:42,953 [INFO] Hospitals: 54 | Max concurrent: 3
+2026-08-02 00:03:42,953 [INFO] =================================================================
+2026-08-02 00:03:44,104 [INFO] 
+📦 Batch 1/18
+2026-08-02 00:03:44,218 [INFO] 🏥 Mayo Clinic (USA)
+2026-08-02 00:03:44,403 [INFO] 🏥 Cleveland Clinic (USA)
+2026-08-02 00:03:44,525 [INFO] 🏥 Johns Hopkins Hospital (USA)
+2026-08-02 00:03:48,027 [INFO]   📧 0 emails on main page
+2026-08-02 00:03:48,955 [INFO]   📧 0 emails on main page
+2026-08-02 00:03:56,252 [INFO]     ↳ media-and-public-relations-contacts → 3 emails
+2026-08-02 00:03:56,671 [INFO]     ↳ contact-media-relations?beat=Johns+Hopkins+All+Children%E2%80%99s+Hospital&page=1 → 18 emails
+2026-08-02 00:03:59,455 [INFO]   📧 0 emails on main page
+2026-08-02 00:04:03,899 [INFO]     ↳ patient-experience → 2 emails
+2026-08-02 00:04:05,173 [INFO] ⏳ Sleeping 2.1s…
+2026-08-02 00:04:07,231 [INFO] 
+📦 Batch 2/18
+2026-08-02 00:04:07,270 [INFO] 🏥 Massachusetts General Hospital (USA)
+2026-08-02 00:04:07,381 [INFO] 🏥 UCSF Medical Center (USA)
+2026-08-02 00:04:07,426 [INFO] 🏥 NewYork-Presbyterian (USA)
+2026-08-02 00:04:10,019 [INFO]   📧 0 emails on main page
+2026-08-02 00:04:10,837 [INFO]   📧 0 emails on main page
+2026-08-02 00:04:13,102 [INFO]   📧 4 emails on main page
+2026-08-02 00:04:19,232 [INFO]     ↳ directory → 1 emails
+2026-08-02 00:04:19,661 [INFO] ⏳ Sleeping 2.3s…
+2026-08-02 00:04:21,970 [INFO] 
+📦 Batch 3/18
+2026-08-02 00:04:22,025 [INFO] 🏥 Cedars-Sinai (USA)
+2026-08-02 00:04:22,189 [INFO] 🏥 UPMC (USA)
+2026-08-02 00:04:22,244 [INFO] 🏥 Duke University Hospital (USA)
+2026-08-02 00:04:26,488 [WARNING]   ❌ Blocked by anti-bot protection: HTTP 403 with HTML content (44921 bytes)
+2026-08-02 00:04:27,788 [INFO]   📧 0 emails on main page
+2026-08-02 00:04:29,516 [INFO]   📧 0 emails on main page
+2026-08-02 00:05:47,062 [INFO]     ↳ community-commitment → 1 emails
+2026-08-02 00:05:47,533 [INFO]     ↳ supply-chain → 1 emails
+2026-08-02 00:05:48,414 [INFO] ⏳ Sleeping 1.8s…
+2026-08-02 00:05:50,207 [INFO] 
+📦 Batch 4/18
+2026-08-02 00:05:50,272 [INFO] 🏥 Northwestern Memorial Hospital (USA)
+2026-08-02 00:05:50,373 [INFO] 🏥 Brigham and Women's Hospital (USA)
+2026-08-02 00:05:50,419 [INFO] 🏥 Stanford Health Care (USA)
+2026-08-02 00:06:16,794 [INFO]   📧 1 emails on main page
+2026-08-02 00:06:17,578 [INFO]   📧 0 emails on main page
+2026-08-02 00:06:20,718 [INFO]   📧 0 emails on main page
+2026-08-02 00:06:53,404 [INFO]     ↳ contact.html → 1 emails
+2026-08-02 00:07:15,884 [INFO]     ↳ annual-report.html → 1 emails
+2026-08-02 00:07:38,065 [INFO]     ↳ legal-disclaimer.html → 1 emails
+2026-08-02 00:08:00,340 [INFO]     ↳ community-partnerships.html → 1 emails
+2026-08-02 00:08:21,981 [INFO]     ↳ 300-pasteur-renewal-program.html → 2 emails
+2026-08-02 00:08:43,619 [INFO]     ↳ guided-search.html → 1 emails
+2026-08-02 00:08:43,620 [WARNING]   ⏱ Sub-pages timed out for Northwestern Memorial Hospital, skipping
+2026-08-02 00:08:43,622 [INFO] ⏳ Sleeping 1.4s…
+2026-08-02 00:08:45,049 [INFO] 
+📦 Batch 5/18
+2026-08-02 00:08:45,087 [INFO] 🏥 Houston Methodist Hospital (USA)
+2026-08-02 00:08:45,179 [INFO] 🏥 Penn Medicine (USA)
+2026-08-02 00:08:45,227 [INFO] 🏥 Vanderbilt University Medical (USA)
+2026-08-02 00:08:49,457 [INFO]   📧 0 emails on main page
+2026-08-02 00:08:49,739 [INFO]   📧 0 emails on main page
+2026-08-02 00:08:50,327 [INFO]   📧 0 emails on main page
+2026-08-02 00:08:55,782 [INFO]     ↳  → 2 emails
+2026-08-02 00:08:56,006 [INFO] ⏳ Sleeping 2.0s…
+2026-08-02 00:08:58,013 [INFO] 
+📦 Batch 6/18
+2026-08-02 00:08:58,065 [INFO] 🏥 OHSU Hospital (USA)
+2026-08-02 00:08:58,159 [INFO] 🏥 Rush University Medical (USA)
+2026-08-02 00:08:58,210 [INFO] 🏥 Emory Healthcare (USA)
+2026-08-02 00:09:02,294 [INFO]   📧 0 emails on main page
+2026-08-02 00:09:02,558 [INFO]   📧 1 emails on main page
+2026-08-02 00:09:04,331 [INFO]   📧 0 emails on main page
+2026-08-02 00:09:08,847 [INFO]     ↳ media-contacts → 6 emails
+2026-08-02 00:09:09,055 [INFO]     ↳ contact → 2 emails
+2026-08-02 00:09:09,094 [INFO]     ↳ make-a-gift → 1 emails
+2026-08-02 00:09:09,171 [INFO]     ↳  → 2 emails
+2026-08-02 00:09:09,172 [INFO] ⏳ Sleeping 2.2s…
+2026-08-02 00:09:11,354 [INFO] 
+📦 Batch 7/18
+2026-08-02 00:09:11,404 [INFO] 🏥 Yale New Haven Hospital (USA)
+2026-08-02 00:09:11,498 [INFO] 🏥 UC San Diego Health (USA)
+2026-08-02 00:09:11,565 [INFO] 🏥 Indiana University Health (USA)
+2026-08-02 00:09:12,921 [WARNING]   ❌ Blocked by anti-bot protection: Cloudflare JS challenge
+2026-08-02 00:09:15,521 [INFO]   📧 0 emails on main page
+2026-08-02 00:09:21,368 [INFO]   📧 0 emails on main page
+2026-08-02 00:09:32,111 [INFO]     ↳ volunteering → 1 emails
+2026-08-02 00:09:32,951 [INFO] ⏳ Sleeping 1.4s…
+2026-08-02 00:09:34,376 [INFO] 
+📦 Batch 8/18
+2026-08-02 00:09:34,439 [INFO] 🏥 UCHealth Colorado (USA)
+2026-08-02 00:09:34,543 [INFO] 🏥 Ochsner Health Louisiana (USA)
+2026-08-02 00:09:34,595 [INFO] 🏥 Wake Forest Baptist Health (USA)
+2026-08-02 00:09:35,949 [WARNING]   ❌ Blocked by anti-bot protection: Cloudflare JS challenge
+2026-08-02 00:09:38,151 [INFO]   📧 0 emails on main page
+2026-08-02 00:09:42,138 [INFO]   📧 1 emails on main page
+2026-08-02 00:09:46,695 [INFO]     ↳ contact-us → 1 emails
+2026-08-02 00:10:38,167 [WARNING]   ⏱ Sub-pages timed out for Ochsner Health Louisiana, skipping
+2026-08-02 00:10:38,169 [INFO] ⏳ Sleeping 2.2s…
+2026-08-02 00:10:40,345 [INFO] 
+📦 Batch 9/18
+2026-08-02 00:10:40,376 [INFO] 🏥 Baylor Scott & White Health (USA)
+2026-08-02 00:10:40,473 [INFO] 🏥 University Health Network (Canada)
+2026-08-02 00:10:40,530 [INFO] 🏥 McGill University Health Centre (Canada)
+2026-08-02 00:10:44,228 [INFO]   📧 0 emails on main page
+2026-08-02 00:10:45,718 [INFO]   📧 0 emails on main page
+2026-08-02 00:10:49,838 [INFO]   📧 0 emails on main page
+2026-08-02 00:11:01,963 [INFO]     ↳ patient-relations → 1 emails
+2026-08-02 00:11:02,269 [INFO] ⏳ Sleeping 2.3s…
+2026-08-02 00:11:04,583 [INFO] 
+📦 Batch 10/18
+2026-08-02 00:11:04,648 [INFO] 🏥 Vancouver Coastal Health (Canada)
+2026-08-02 00:11:04,740 [INFO] 🏥 Ottawa Hospital (Canada)
+2026-08-02 00:11:04,789 [INFO] 🏥 Sunnybrook Health Sciences (Canada)
+2026-08-02 00:11:09,683 [INFO]   📧 0 emails on main page
+2026-08-02 00:11:10,735 [INFO]   📧 0 emails on main page
+2026-08-02 00:11:10,899 [INFO]   📧 0 emails on main page
+2026-08-02 00:11:10,900 [INFO] ⏳ Sleeping 1.8s…
+2026-08-02 00:11:12,723 [INFO] 
+📦 Batch 11/18
+2026-08-02 00:11:12,790 [INFO] 🏥 Alberta Health Services (Canada)
+2026-08-02 00:11:12,876 [INFO] 🏥 QEII Health Sciences Centre (Canada)
+2026-08-02 00:11:12,933 [INFO] 🏥 Kingston Health Sciences (Canada)
+2026-08-02 00:11:17,417 [WARNING]   ❌ Blocked by anti-bot protection: Structural: minimal_text, no_content_elements, script_heavy_shell (25313 bytes, 0 chars visible)
+2026-08-02 00:11:19,316 [INFO]   📧 0 emails on main page
+2026-08-02 00:11:19,432 [WARNING]   ❌ Blocked by anti-bot protection: Access Denied on short page (HTTP 403, 42912 bytes)
+2026-08-02 00:11:25,949 [INFO]     ↳ Page210.aspx → 2 emails
+2026-08-02 00:11:26,394 [INFO]     ↳ Page12639.aspx → 1 emails
+2026-08-02 00:11:27,217 [INFO]     ↳ Page121.aspx → 2 emails
+2026-08-02 00:11:27,612 [INFO]     ↳ websitefeedback.aspx?src=%2FNotFound.aspx → 1 emails
+2026-08-02 00:11:27,613 [INFO] ⏳ Sleeping 2.4s…
+2026-08-02 00:11:30,029 [INFO] 
+📦 Batch 12/18
+2026-08-02 00:11:30,094 [INFO] 🏥 Hamilton Health Sciences (Canada)
+2026-08-02 00:11:30,196 [INFO] 🏥 London Health Sciences (Canada)
+2026-08-02 00:11:30,241 [INFO] 🏥 Winnipeg Health Sciences (Canada)
+2026-08-02 00:11:32,814 [INFO]   📧 0 emails on main page
+2026-08-02 00:11:36,154 [INFO]   📧 0 emails on main page
+2026-08-02 00:11:39,988 [INFO]   📧 1 emails on main page
+2026-08-02 00:11:41,020 [INFO]     ↳  → 2 emails
+2026-08-02 00:11:41,191 [INFO]     ↳  → 1 emails
+2026-08-02 00:11:45,704 [INFO]     ↳  → 1 emails
+2026-08-02 00:11:45,947 [INFO]     ↳  → 1 emails
+2026-08-02 00:11:45,947 [INFO] ⏳ Sleeping 1.1s…
+2026-08-02 00:11:47,012 [INFO] 
+📦 Batch 13/18
+2026-08-02 00:11:47,070 [INFO] 🏥 CIUSSS de l'Est-de-l'Île-de-Montréal (Canada)
+2026-08-02 00:11:47,175 [INFO] 🏥 Royal London Hospital (UK)
+2026-08-02 00:11:47,230 [INFO] 🏥 Guy's and St Thomas' NHS (UK)
+2026-08-02 00:11:48,666 [INFO]   📧 0 emails on main page
+2026-08-02 00:11:52,172 [INFO]   📧 0 emails on main page
+2026-08-02 00:11:53,489 [INFO]   📧 0 emails on main page
+2026-08-02 00:11:53,490 [INFO] ⏳ Sleeping 1.5s…
+2026-08-02 00:11:55,011 [INFO] 
+📦 Batch 14/18
+2026-08-02 00:11:55,069 [INFO] 🏥 King's College Hospital (UK)
+2026-08-02 00:11:55,172 [INFO] 🏥 Imperial College Healthcare NHS (UK)
+2026-08-02 00:11:55,273 [INFO] 🏥 Manchester NHS Foundation Trust (UK)
+2026-08-02 00:11:58,404 [INFO]   📧 5 emails on main page
+2026-08-02 00:11:59,370 [INFO]   📧 2 emails on main page
+2026-08-02 00:12:00,225 [WARNING]   ❌ Blocked by anti-bot protection: Structural: no <body> tag (13630 bytes)
+2026-08-02 00:12:02,642 [INFO]     ↳  → 5 emails
+2026-08-02 00:12:04,013 [INFO]     ↳ foi → 1 emails
+2026-08-02 00:12:04,095 [INFO]     ↳ about-us → 1 emails
+2026-08-02 00:12:04,134 [INFO]     ↳ how-we-use-social-media → 2 emails
+2026-08-02 00:12:04,535 [INFO]     ↳ contact-and-find-us → 2 emails
+2026-08-02 00:12:04,551 [INFO]     ↳ press-office → 2 emails
+2026-08-02 00:12:04,552 [INFO] ⏳ Sleeping 1.9s…
+2026-08-02 00:12:06,488 [INFO] 
+📦 Batch 15/18
+2026-08-02 00:12:06,543 [INFO] 🏥 Leeds Teaching Hospitals NHS (UK)
+2026-08-02 00:12:06,662 [INFO] 🏥 Oxford University Hospitals NHS (UK)
+2026-08-02 00:12:06,732 [INFO] 🏥 Cambridge University Hospitals (UK)
+2026-08-02 00:12:08,694 [WARNING]   ❌ Blocked by anti-bot protection: Cloudflare JS challenge
+2026-08-02 00:12:10,226 [INFO]   📧 0 emails on main page
+2026-08-02 00:12:12,257 [INFO]   📧 0 emails on main page
+2026-08-02 00:12:18,235 [INFO]     ↳  → 1 emails
+2026-08-02 00:12:20,383 [INFO]     ↳  → 1 emails
+2026-08-02 00:12:21,109 [INFO]     ↳  → 1 emails
+2026-08-02 00:12:21,110 [INFO] ⏳ Sleeping 1.9s…
+2026-08-02 00:12:23,010 [INFO] 
+📦 Batch 16/18
+2026-08-02 00:12:23,058 [INFO] 🏥 Newcastle Hospitals NHS (UK)
+2026-08-02 00:12:23,157 [INFO] 🏥 University College London NHS (UK)
+2026-08-02 00:12:23,203 [INFO] 🏥 Sheffield Teaching Hospitals (UK)
+2026-08-02 00:12:25,446 [INFO]   📧 0 emails on main page
+2026-08-02 00:12:26,044 [INFO]   📧 1 emails on main page
+2026-08-02 00:12:26,293 [INFO]   📧 0 emails on main page
+2026-08-02 00:12:34,755 [INFO]     ↳ become-member → 3 emails
+2026-08-02 00:12:35,156 [INFO] ⏳ Sleeping 1.2s…
+2026-08-02 00:12:36,390 [INFO] 
+📦 Batch 17/18
+2026-08-02 00:12:36,440 [INFO] 🏥 Bristol University NHS Trust (UK)
+2026-08-02 00:12:36,530 [INFO] 🏥 Royal Free London NHS (UK)
+2026-08-02 00:12:36,574 [INFO] 🏥 Nottingham University Hospitals (UK)
+2026-08-02 00:12:37,935 [WARNING]   ❌ Blocked by anti-bot protection: Cloudflare JS challenge
+2026-08-02 00:12:38,497 [INFO]   📧 10 emails on main page
+2026-08-02 00:12:39,047 [INFO]   📧 0 emails on main page
+2026-08-02 00:12:42,569 [INFO]     ↳  → 10 emails
+2026-08-02 00:12:42,641 [INFO] ⏳ Sleeping 1.9s…
+2026-08-02 00:12:44,585 [INFO] 
+📦 Batch 18/18
+2026-08-02 00:12:44,644 [INFO] 🏥 Liverpool University Hospitals (UK)
+2026-08-02 00:12:44,737 [INFO] 🏥 University Hospitals Birmingham (UK)
+2026-08-02 00:12:44,774 [INFO] 🏥 Southampton University NHS (UK)
+2026-08-02 00:12:46,988 [INFO]   📧 2 emails on main page
+2026-08-02 00:12:47,126 [INFO]   📧 0 emails on main page
+2026-08-02 00:12:49,797 [INFO]   📧 0 emails on main page
+2026-08-02 00:12:50,383 [INFO]     ↳ getting-help → 16 emails
+2026-08-02 00:12:55,935 [INFO] ⏳ Sleeping 1.4s…
+2026-08-02 00:12:57,830 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-02 00:12:58,363 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-02 00:12:58,363 [INFO] 
+=================================================================
+2026-08-02 00:12:58,363 [INFO] 🎯 DONE — 97 unique leads harvested
+2026-08-02 00:12:58,363 [INFO]    Canada: 10 emails
+2026-08-02 00:12:58,363 [INFO]    UK: 42 emails
+2026-08-02 00:12:58,363 [INFO]    USA: 45 emails
+2026-08-02 00:12:58,364 [INFO] 
+⭐ High-value leads (score ≥ 20): 8
+2026-08-02 00:12:58,364 [INFO]    [ 25] donations@hamiltonhealth.ca                   Hamilton Health Sciences (Canada)
+2026-08-02 00:12:58,364 [INFO]    [ 25] pressoffice@uhbw.nhs.uk                       Bristol University NHS Trust (UK)
+2026-08-02 00:12:58,364 [INFO]    [ 25] imperial.press.office@nhs.net                 Imperial College Healthcare NHS (UK)
+2026-08-02 00:12:58,364 [INFO]    [ 20] ahs.corp@ahs.ca                               Alberta Health Services (Canada)
+2026-08-02 00:12:58,364 [INFO]    [ 20] hhsnews@hhsc.ca                               Hamilton Health Sciences (Canada)
+2026-08-02 00:12:58,364 [INFO]    [ 20] digitalcommunications@mft.nhs.uk              Manchester NHS Foundation Trust (UK)
+2026-08-02 00:12:58,364 [INFO]    [ 20] patientsupportservices@uhs.nhs.uk             Southampton University NHS (UK)
+2026-08-02 00:12:58,364 [INFO]    [ 20] webadmin@emoryhealthcare.org                  Emory Healthcare (USA)
+2026-08-02 00:12:58,364 [INFO] =================================================================
+2026-08-02 00:12:58,365 [INFO] 
+📂 Output folder: C:\Users\DeLL\CARECALCULUS\hospital_emails
