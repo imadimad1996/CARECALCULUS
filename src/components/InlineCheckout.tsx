@@ -18,9 +18,9 @@ const PAYPAL_CLIENT_ID = 'AU0VCz5JZ_ky8LIOb7XrdFVJa3AcwJLQNo2330Ks_BteUsQOOfqvZm
 export const InlineCheckout: React.FC<InlineCheckoutProps> = ({
   lang,
   planName = 'CareCalculus Pro Clinician Membership',
-  price = '9.99',
+  price = '19.99',
   currency = 'USD',
-  planType = 'monthly',
+  planType = 'annual',
   onSuccess,
 }) => {
   const [paymentSuccess, setPaymentSuccess] = useState(false);
