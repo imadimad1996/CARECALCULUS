@@ -28,15 +28,15 @@ const T = {
   },
   tiers: {
     en: {
-      t1: { label: 'Emergency & Critical Care', desc: '7 validated ICU & emergency scoring tools' },
-      t2: { label: 'Metabolic & Cardiorenal', desc: '6 organ function & cardiorenal calculators' },
-      t3: { label: 'Therapeutic & Dosing', desc: '6 pharmacology & body metric tools' },
+      t1: { label: 'Emergency & Critical Care', desc: '30+ validated ICU & emergency scoring tools' },
+      t2: { label: 'Metabolic & Cardiorenal', desc: '25+ organ function & cardiorenal calculators' },
+      t3: { label: 'Therapeutic & Dosing', desc: '30+ pharmacology & body metric tools' },
       t4: { label: 'Learning Resources', desc: 'Journals, Blogs, Presentations & Courses' },
     },
     fr: {
-      t1: { label: 'Urgences & Soins Intensifs', desc: '7 outils de scoring validés pour réanimation' },
-      t2: { label: 'Métabolique & Cardiorénal', desc: '6 calculateurs organes & cardiorenal' },
-      t3: { label: 'Thérapeutique & Dosages', desc: '6 outils de pharmacologie & métriques corporels' },
+      t1: { label: 'Urgences & Soins Intensifs', desc: '30+ outils de scoring validés pour réanimation' },
+      t2: { label: 'Métabolique & Cardiorénal', desc: '25+ calculateurs organes & cardiorenal' },
+      t3: { label: 'Thérapeutique & Dosages', desc: '30+ outils de pharmacologie & métriques corporels' },
       t4: { label: 'Ressources Pédagogiques', desc: 'Journaux, Blog, Présentations & Cours' },
     },
     
@@ -44,13 +44,13 @@ const T = {
   stats: {
     en: [
       { value: '50K+', label: 'Clinical Decisions / Mo.' },
-      { value: '3', label: 'Supported Languages' },
+      { value: '2', label: 'Supported Languages' },
       { value: '100%', label: 'Expert Peer-Reviewed' },
       { value: 'E-E-A-T', label: 'Guideline-Aligned' },
     ],
     fr: [
       { value: '50K+', label: 'Décisions Cliniques / Mois' },
-      { value: '3', label: 'Langues Supportées' },
+      { value: '2', label: 'Langues Supportées' },
       { value: '100%', label: 'Validé par Experts' },
       { value: 'E-E-A-T', label: 'Aligné aux Recommandations' },
     ],
@@ -181,7 +181,7 @@ export default function HomePage({ lang }: HomePageProps) {
       boxBadge: 'Clinical Rigor',
       boxLines: [
         '1. Validated against landmark clinical trials (e.g., Surviving Sepsis, KDIGO).',
-        '2. Native multi-lingual support (EN, FR, AR) for cross-border medical teams.',
+        '2. Native multi-lingual support (EN, FR) for cross-border medical teams.',
         '3. Strict version control on all algorithms to guarantee dosing safety.'
       ]
     },
@@ -200,7 +200,7 @@ export default function HomePage({ lang }: HomePageProps) {
       boxBadge: 'Rigueur Clinique',
       boxLines: [
         '1. Validé selon les essais cliniques de référence (ex: Surviving Sepsis, KDIGO).',
-        '2. Support multilingue natif (EN, FR, AR) pour les équipes médicales internationales.',
+        '2. Support multilingue natif (EN, FR) pour les équipes médicales internationales.',
         '3. Contrôle de version strict sur tous les algorithmes pour garantir la sécurité.'
       ]
     },
@@ -343,11 +343,11 @@ export default function HomePage({ lang }: HomePageProps) {
             </div>
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-center">
               <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
-                <div className="text-2xl font-black tracking-tight text-white">19+</div>
+                <div className="text-2xl font-black tracking-tight text-white">88+</div>
                 <div className="mt-1 text-[10px] font-mono font-semibold uppercase tracking-[0.2em] text-slate-400">calculators</div>
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
-                <div className="text-2xl font-black tracking-tight text-white">3</div>
+                <div className="text-2xl font-black tracking-tight text-white">2</div>
                 <div className="mt-1 text-[10px] font-mono font-semibold uppercase tracking-[0.2em] text-slate-400">languages</div>
               </div>
             </div>

@@ -30,12 +30,9 @@ export const PayPalButtonModal: React.FC<PayPalButtonModalProps> = ({
     return actions.order.capture().then(async (details: any) => {
       console.log('PayPal Payment Captured:', details);
       
-      // 1. Activate client entitlement with duration
-      activateProPass(planType);
-      
-      // 2. Notify backend worker API
+      // 1. Notify backend worker API to verify order and issue session token
       try {
-        await fetch('/api/paypal-verify', {
+        const res = await fetch('/api/paypal-verify', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -46,8 +43,13 @@ export const PayPalButtonModal: React.FC<PayPalButtonModalProps> = ({
             status: details.status
           })
         });
+        const payload = await res.json() as { proToken?: string };
+        // 2. Activate client entitlement with server-issued session token
+        activateProPass(planType, payload.proToken);
       } catch (err) {
         console.warn('Backend PayPal verification warning:', err);
+        // Fallback activation
+        activateProPass(planType);
       }
 
       setPaymentSuccess(true);

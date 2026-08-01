@@ -1,7 +1,7 @@
-import type { PagesFunction } from '@cloudflare/workers-types';
+import type { PagesFunction, KVNamespace } from '@cloudflare/workers-types';
 
 interface Env {
-  LEADS?: any;
+  LEADS?: KVNamespace;
   PAYPAL_CLIENT_ID?: string;
   PAYPAL_CLIENT_SECRET?: string;
 }
@@ -28,10 +28,10 @@ async function getPayPalAccessToken(clientId: string, clientSecret: string): Pro
 }
 
 export const onRequestOptions: PagesFunction<Env> = async () => {
-  return new Response(null, { status: 204, headers: CORS });
+  return new Response(null, { status: 204, headers: CORS }) as any;
 };
 
-export async function onRequestPost(context: { request: Request; env: Env }) {
+export const onRequestPost: PagesFunction<Env> = async (context) => {
   try {
     const body = await context.request.json() as {
       orderId?: string;
@@ -41,17 +41,15 @@ export async function onRequestPost(context: { request: Request; env: Env }) {
       status?: string;
     };
 
-    const { orderId, payerEmail, amount, planType } = body;
+    const { orderId, payerEmail, amount, planType = 'monthly' } = body;
 
     if (!orderId) {
       return new Response(JSON.stringify({ error: 'Missing orderId' }), {
         status: 400, headers: CORS,
-      });
+      }) as any;
     }
 
     // SERVER-SIDE PAYPAL VERIFICATION
-    // If credentials are configured, verify the order with PayPal's API directly.
-    // This prevents payment spoofing where a client sends { status: "COMPLETED" } without paying.
     if (context.env.PAYPAL_CLIENT_ID && context.env.PAYPAL_CLIENT_SECRET) {
       try {
         const accessToken = await getPayPalAccessToken(
@@ -65,45 +63,67 @@ export async function onRequestPost(context: { request: Request; env: Env }) {
         if (orderDetails.status !== 'COMPLETED') {
           return new Response(JSON.stringify({ error: 'PayPal order not verified as COMPLETED' }), {
             status: 402, headers: CORS,
-          });
+          }) as any;
         }
       } catch (verifyErr: any) {
         console.error(JSON.stringify({ endpoint: 'paypal-verify', step: 'paypal-api', error: verifyErr.message }));
         return new Response(JSON.stringify({ error: 'Payment verification failed' }), {
           status: 500, headers: CORS,
-        });
+        }) as any;
       }
     } else {
-      // Credentials not set — MVP mode: log a warning but continue.
-      // ACTION REQUIRED: Set PAYPAL_CLIENT_ID and PAYPAL_CLIENT_SECRET in
-      // Cloudflare Pages → Settings → Environment Variables to enable real verification.
       console.warn('PayPal credentials not configured. Operating in MVP mode — set PAYPAL_CLIENT_ID and PAYPAL_CLIENT_SECRET.');
     }
+
+    // Generate cryptographically secure Pro session token
+    const proToken = `pro_sess_${crypto.randomUUID().replace(/-/g, '')}`;
+    const durationDays = planType === 'lifetime' ? 36500 : (planType === 'annual' ? 365 : 30);
+    const durationSeconds = durationDays * 24 * 60 * 60;
+    const expiresAt = Date.now() + durationSeconds * 1000;
 
     const verificationRecord = {
       orderId,
       payerEmail: payerEmail || 'anonymous',
       amount: amount || '9.99',
-      planType: planType || 'monthly',
+      planType,
       status: 'COMPLETED',
       verifiedAt: new Date().toISOString(),
       source: 'paypal_checkout',
     };
 
+    const sessionRecord = {
+      proToken,
+      orderId,
+      payerEmail: payerEmail || 'anonymous',
+      planType,
+      expiresAt,
+      createdAt: new Date().toISOString(),
+    };
+
     if (context.env.LEADS) {
       await context.env.LEADS.put(`paypal_${orderId}`, JSON.stringify(verificationRecord));
+      await context.env.LEADS.put(`pro_session:${proToken}`, JSON.stringify(sessionRecord), {
+        expirationTtl: durationSeconds,
+      });
     }
+
+    const responseHeaders = new Headers({
+      ...CORS,
+      'Set-Cookie': `pro_token=${proToken}; Path=/; HttpOnly; SameSite=Lax; Max-Age=${durationSeconds}`,
+    });
 
     return new Response(JSON.stringify({
       success: true,
       message: 'Payment verified and logged.',
+      proToken,
+      expiresAt,
       data: verificationRecord,
-    }), { status: 200, headers: CORS });
+    }), { status: 200, headers: responseHeaders }) as any;
 
   } catch (err: any) {
     console.error(JSON.stringify({ endpoint: 'paypal-verify', error: err.message, timestamp: new Date().toISOString() }));
     return new Response(JSON.stringify({ error: err.message || 'Internal verification error' }), {
       status: 500, headers: CORS,
-    });
+    }) as any;
   }
-}
+};

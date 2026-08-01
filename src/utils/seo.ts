@@ -188,7 +188,7 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
       };
     }
     return {
-      title: 'CareCalculus | Free Clinical Calculators in English, French, and Arabic',
+      title: 'CareCalculus | Free Clinical Calculators in English and French',
       desc: 'CareCalculus is a free multilingual clinical calculator suite for ICU, emergency, internal medicine, pharmacology, nutrition, and medical education. Use validated tools for MAP, GCS, qSOFA, CURB-65, CKD-EPI, MELD, BMI, and more.',
       keywords: 'clinical calculators, medical scores, ICU calculator, emergency medicine tool, dosing calculator, multilingual medical tools',
     };
@@ -792,7 +792,7 @@ export function buildJsonLd(logicalPath: string, lang: LangCode) {
         name: meta.title.split(' | ')[0]
       },
       citation: 'Surviving Sepsis Campaign Guidelines (2021), BTS Guidelines, ACC/AHA Clinical Practice Guidelines, WHO Nutrition & Malnutrition Standards',
-      featureList: '1-Click EHR Export for Epic and Cerner, Evidence-based clinical formulas, offline PWA access, multi-language decision support (English, French, Arabic), exact quantitative cutoffs (SOFA >=2 >10% mortality, qSOFA >=2 high risk, MAP <65 mmHg hypoperfusion threshold)',
+      featureList: '1-Click EHR Export for Epic and Cerner, Evidence-based clinical formulas, offline PWA access, multi-language decision support (English and French), exact quantitative cutoffs (SOFA >=2 >10% mortality, qSOFA >=2 high risk, MAP <65 mmHg hypoperfusion threshold)',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
       url,
       inLanguage: lang,
@@ -856,7 +856,7 @@ export function organizationJsonLd() {
       url: ORIGIN,
       logo: `${ORIGIN}/icon.svg`,
       description:
-        'The clinical standard for 1-Click EHR Exports. Free, multilingual (English, French, Arabic) clinical calculators, medical scores and dosage tools for nurses, ICU specialists, emergency physicians and healthcare students.',
+        'The clinical standard for 1-Click EHR Exports. Free, multilingual (English and French) clinical calculators, medical scores and dosage tools for nurses, ICU specialists, emergency physicians and healthcare students.',
       sameAs: [
         'https://carecalculus.com',
       ],
