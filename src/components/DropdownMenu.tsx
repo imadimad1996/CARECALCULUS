@@ -158,14 +158,13 @@ export default function DropdownMenu({
         ) : (
           <button
             onClick={() => {
-              setIsMenuOpen(!isMenuOpen);
+              onAuthClick();
               setIsBellOpen(false);
             }}
             className="h-10 px-4 bg-teal-600 hover:bg-teal-500 text-white text-xs font-extrabold rounded-xl transition duration-200 shadow-xs active:scale-95 cursor-pointer flex items-center gap-2"
-            aria-expanded={isMenuOpen}
           >
-            <span>{dict.login.split(' / ')[0]}</span>
-            <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isMenuOpen ? 'rotate-180' : ''}`} />
+            <LogIn className="w-4 h-4 shrink-0" />
+            <span className="hidden sm:inline">{dict.login.split(' / ')[0]}</span>
           </button>
         )}
 
