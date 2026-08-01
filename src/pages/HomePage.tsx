@@ -10,6 +10,7 @@ import { useLang } from '../utils/lang';
 import Logo from '../components/Logo';
 import SmartPasteModal from '../components/SmartPasteModal';
 import { SynapseEngine } from '../components/SynapseEngine';
+import { CONDITIONS_DB } from '../data/conditions';
 
 interface HomePageProps {
   lang: LangCode;
@@ -437,6 +438,35 @@ export default function HomePage({ lang }: HomePageProps) {
               </Link>
             );
           })}
+        </div>
+      </section>
+
+      {/* Clinical Guidelines Directory */}
+      <section className="mt-8 pt-8 border-t border-slate-200/60">
+        <div className="flex items-center gap-2 mb-6">
+          <BookOpen className="w-5 h-5 text-indigo-600" />
+          <h3 className="text-sm font-black text-slate-900 uppercase tracking-widest">
+            {lang === 'fr' ? 'Annuaire des protocoles cliniques' : 'Clinical Guidelines Directory'}
+          </h3>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-3">
+          {CONDITIONS_DB.slice(0, 24).map(cond => (
+            <Link
+              key={cond.id}
+              to={langPath(`/conditions/${cond.id}`)}
+              className="text-xs font-semibold text-slate-600 hover:text-indigo-600 hover:underline transition-colors truncate"
+            >
+              {lang === 'fr' ? cond.nameFr : cond.nameEn}
+            </Link>
+          ))}
+        </div>
+        <div className="mt-6 flex justify-end">
+          <Link
+            to={langPath('/clinical-guide')}
+            className="text-xs font-bold text-indigo-600 hover:text-indigo-700 flex items-center gap-1"
+          >
+            {lang === 'fr' ? 'Voir tout l\'annuaire' : 'View full directory'} <ChevronRight className="w-3.5 h-3.5" />
+          </Link>
         </div>
       </section>
 

@@ -545,14 +545,22 @@ function AppLayout() {
               <span className="font-extrabold">{geoState.standard === 'Metric (SI)' ? 'SI' : 'US'}</span>
             </button>
 
+            {/* B2B Hospital CTA */}
+            <Link
+              to={langPath('/for-hospitals')}
+              className="shrink-0 hidden md:flex items-center gap-1.5 px-3.5 py-2 bg-purple-50 hover:bg-purple-100 dark:bg-purple-900/30 dark:hover:bg-purple-900/50 text-purple-700 dark:text-purple-300 text-[11px] font-black uppercase tracking-wider rounded-xl transition-all border border-purple-200 dark:border-purple-800/50 shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-95 cursor-pointer"
+            >
+              <span className="hidden sm:inline">{lang === 'fr' ? 'Pour Hôpitaux' : 'For Hospitals'}</span>
+            </Link>
+
             {/* Tier 1 Primary Monetization CTA */}
             {!isPro && (
               <Link
                 to={langPath('/pricing')}
-                className="shrink-0 flex items-center gap-1.5 px-3.5 py-2 bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-slate-950 text-[11px] font-black uppercase tracking-wider rounded-xl transition-all shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-95 cursor-pointer"
+                className="shrink-0 flex items-center gap-1.5 px-3.5 py-2 bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-slate-950 text-[11px] font-black uppercase tracking-wider rounded-xl transition-all shadow-[0_0_15px_rgba(6,182,212,0.4)] hover:shadow-[0_0_20px_rgba(6,182,212,0.6)] hover:scale-[1.02] active:scale-95 cursor-pointer"
               >
                 <Sparkles className="w-3.5 h-3.5" />
-                <span className="hidden sm:inline">{lang === 'fr' ? 'Pass Pro' : 'Upgrade'}</span>
+                <span className="hidden sm:inline">{lang === 'fr' ? 'Débloquer Pro' : 'Upgrade to Pro'}</span>
               </Link>
             )}
 

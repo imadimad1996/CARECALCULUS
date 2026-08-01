@@ -132,11 +132,20 @@ export const ActionableResultPanel: React.FC<ActionableResultProps> = ({
                   <Zap className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-slate-800">⚡ Save this result to Epic instantly</h4>
-                  <p className="text-xs text-slate-600 mt-0.5">Copy perfect DotPhrases with CareCalculus PRO.</p>
+                  <h4 className="text-sm font-bold text-slate-800">
+                    {lang === 'fr' ? '⚡ Enregistrez ce résultat dans Epic instantanément' : '⚡ Save this result to Epic instantly'}
+                  </h4>
+                  <p className="text-xs text-slate-600 mt-0.5">
+                    {lang === 'fr' ? 'Débloquez Pro pour copier des notes parfaitement formatées.' : 'Unlock Pro to copy perfectly formatted SBAR DotPhrases.'}
+                  </p>
                 </div>
               </div>
-              <ArrowRight className="w-5 h-5 text-cyan-600 group-hover:translate-x-1 transition-transform" />
+              <div className="flex items-center gap-2">
+                <span className="text-[10px] font-bold text-cyan-700 uppercase tracking-widest hidden sm:inline-block">
+                  {lang === 'fr' ? 'Débloquer Pro' : 'Unlock Pro'}
+                </span>
+                <ArrowRight className="w-5 h-5 text-cyan-600 group-hover:translate-x-1 transition-transform" />
+              </div>
             </button>
             
             <div className="mt-2">

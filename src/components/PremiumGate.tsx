@@ -28,18 +28,18 @@ export default function PremiumGate({ featureName, lang, children }: PremiumGate
   const content = {
     en: {
       badge: 'CARECALCULUS PRO',
-      title: 'Support CareCalculus & Unlock Pro',
-      description: `Buy me a coffee to support the project and unlock ${featureName}. Copy perfectly formatted DotPhrases and SBAR notes directly into Epic or Cerner.`,
-      upgrade: 'Unlock Pro (One-Time $9.99)',
+      title: 'Upgrade to CareCalculus Pro',
+      description: `Unlock ${featureName} and streamline your clinical workflow. Export perfectly formatted DotPhrases and SBAR notes directly into Epic or Cerner.`,
+      upgrade: 'Unlock Pro (1-Year Pass $19.99)',
       features: ['1-Click Epic/Cerner Formatted Export', 'Unlimited Local Shift Patient Queue', 'Full Offline PWA (Works in basements)', '100% Ad-Free Experience'],
       hipaa: '100% HIPAA Compliant — All data stays local in browser',
       guarantee: '1-Time Payment • Non-Renewing Pass'
     },
     fr: {
       badge: 'CARECALCULUS PRO',
-      title: 'Soutenez CareCalculus & Débloquez Pro',
-      description: `Offrez-moi un café pour soutenir le projet et débloquer ${featureName}. Copiez des notes parfaitement formatées directement dans votre logiciel.`,
-      upgrade: 'Débloquer Pro (Paiement Unique 9.99$)',
+      title: 'Passez à CareCalculus Pro',
+      description: `Débloquez ${featureName} et optimisez votre flux clinique. Copiez des notes parfaitement formatées directement dans votre logiciel.`,
+      upgrade: 'Débloquer Pro (Pass 1-An 19.99$)',
       features: ['Export formaté en 1-clic', 'File d\'attente locale illimitée', 'Mode Hors-ligne intégral PWA', 'Expérience 100% sans publicité'],
       hipaa: '100% Conforme HIPAA — Calculs effectués localement',
       guarantee: 'Paiement Unique • Sans Renouvellement'

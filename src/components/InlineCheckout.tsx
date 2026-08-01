@@ -50,6 +50,24 @@ export const InlineCheckout: React.FC<InlineCheckoutProps> = ({
         console.warn('Backend verification warning:', err);
       }
 
+      // 3. Fire conversion event for Google Analytics/Ads
+      if (typeof (window as any).gtag === 'function') {
+        try {
+          (window as any).gtag('event', 'purchase', {
+            transaction_id: details.id,
+            value: parseFloat(price),
+            currency: currency,
+            items: [{
+              item_name: planName,
+              price: parseFloat(price),
+              quantity: 1
+            }]
+          });
+        } catch (e) {
+          console.warn('Analytics tracking error:', e);
+        }
+      }
+
       setPaymentSuccess(true);
       if (onSuccess) onSuccess();
     });
