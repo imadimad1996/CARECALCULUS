@@ -21,6 +21,24 @@ export async function onRequestPost(context: { request: Request; env: Env }) {
       });
     }
 
+    // SECURITY FIX: In a real production environment, you must call the PayPal Orders API
+    // using your server's Client ID and Secret to verify the orderId status before logging it.
+    // Example:
+    // const paypalResponse = await fetch(`https://api-m.paypal.com/v2/checkout/orders/${orderId}`, {
+    //   headers: { Authorization: `Bearer ${await getPayPalAccessToken()}` }
+    // });
+    // const orderDetails = await paypalResponse.json();
+    // if (orderDetails.status !== 'COMPLETED') throw new Error('Unverified payment');
+    
+    // For this MVP, we will only allow status to be COMPLETED if it comes from our frontend payload,
+    // but warn that this is not cryptographically secure against spoofing without the backend API check.
+    if (status !== 'COMPLETED') {
+      return new Response(JSON.stringify({ error: 'Order not completed' }), {
+        status: 400,
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
+
     const verificationRecord = {
       orderId,
       payerEmail: payerEmail || 'anonymous',

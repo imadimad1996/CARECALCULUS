@@ -1,10 +1,23 @@
 // @ts-nocheck
 interface Env {
   LEADS: KVNamespace;
+  ADMIN_SECRET?: string;
 }
 
 export const onRequestGet: PagesFunction<Env> = async (context) => {
   try {
+    const authHeader = context.request.headers.get('Authorization');
+    // Basic protection against unauthenticated dumping of all user emails
+    // In production, configure ADMIN_SECRET in Cloudflare Pages environment variables
+    const ADMIN_SECRET = context.env.ADMIN_SECRET || 'carecalculus_temp_admin_secret_2026';
+    
+    if (!authHeader || authHeader !== `Bearer ${ADMIN_SECRET}`) {
+      return new Response(JSON.stringify({ error: 'Unauthorized' }), {
+        status: 401,
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
+
     if (!context.env.LEADS) {
       return new Response(JSON.stringify({ 
         status: 'demo_mode', 

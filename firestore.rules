@@ -4,13 +4,13 @@ service cloud.firestore {
     // Newsletter & Lead Subscriptions
     match /subscribers/{subscriberId} {
       allow create: if request.resource.data.email is string;
-      allow read, write: if request.auth != null;
+      allow read, update, delete: if false; // Secure: clients cannot read or dump subscribers
     }
 
     // Default read-only access for medical reference data
     match /{document=**} {
       allow read: if true;
-      allow write: if request.auth != null;
+      allow write: if false; // Secure: global data is strictly read-only for clients
     }
   }
 }
