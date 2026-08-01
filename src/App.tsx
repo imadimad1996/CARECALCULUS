@@ -509,7 +509,10 @@ function AppLayout() {
   // Unified top navigation: Principal buttons replacing the double search bar
   const renderUnifiedTopNav = () => {
     return (
-      <div className="mb-6 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-xs relative z-30">
+      <div className="mb-6 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm relative z-30 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/10">
+        {/* Ambient Top Accent Light Line */}
+        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-teal-500/60 to-transparent opacity-80 pointer-events-none" />
+
         <div className="px-3.5 py-2 flex flex-wrap sm:flex-nowrap items-center justify-between gap-2.5">
           
           {/* Left Cluster: Core Navigation & Smart Tool */}
@@ -541,7 +544,7 @@ function AppLayout() {
             <button
               onClick={toggleGeoStandard}
               className="w-10 h-10 bg-slate-100/90 hover:bg-slate-200/90 dark:bg-slate-800/80 dark:hover:bg-slate-700/80 text-slate-700 dark:text-slate-300 text-xs font-mono font-bold rounded-xl transition border border-slate-200/80 dark:border-slate-700/80 shadow-2xs active:scale-95 cursor-pointer whitespace-nowrap flex items-center justify-center"
-              title="Toggle unit standard"
+              title={`Active Unit Standard: ${geoState.standard} — Click to toggle`}
             >
               <span className="font-extrabold text-[11px] text-teal-600 dark:text-teal-400">{geoState.standard === 'Metric (SI)' ? 'SI' : 'US'}</span>
             </button>
@@ -576,7 +579,7 @@ function AppLayout() {
             {!isPro && (
               <Link
                 to={langPath('/pricing')}
-                className="h-10 px-3.5 bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white text-[11px] font-black uppercase tracking-wider rounded-xl transition-all shadow-xs hover:scale-[1.02] active:scale-95 cursor-pointer whitespace-nowrap flex items-center gap-1.5"
+                className="h-10 px-3.5 bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white text-[11px] font-black uppercase tracking-wider rounded-xl transition-all shadow-[0_0_12px_rgba(20,184,166,0.3)] hover:shadow-[0_0_18px_rgba(20,184,166,0.5)] hover:scale-[1.02] active:scale-95 cursor-pointer whitespace-nowrap flex items-center gap-1.5"
               >
                 <Sparkles className="w-3.5 h-3.5 shrink-0" />
                 <span className="hidden sm:inline">{lang === 'fr' ? 'Débloquer Pro' : 'Upgrade to Pro'}</span>
