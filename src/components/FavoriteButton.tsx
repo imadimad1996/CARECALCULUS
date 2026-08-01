@@ -27,10 +27,10 @@ export default function FavoriteButton({ lang }: { lang: string }) {
     <div className="relative shrink-0 z-50">
       <button
         onClick={handleToggle}
-        className={`flex items-center justify-center w-10 h-10 rounded-xl transition border active:scale-95 cursor-pointer ${
+        className={`flex items-center justify-center w-10 h-10 rounded-xl transition border shadow-2xs active:scale-95 cursor-pointer ${
           isFav 
             ? 'bg-amber-500 text-white border-amber-500 shadow-md ring-2 ring-amber-500/30' 
-            : 'bg-white hover:bg-amber-50 text-slate-400 hover:text-amber-500 border-slate-200 shadow-sm'
+            : 'bg-slate-100/90 hover:bg-amber-50/80 dark:bg-slate-800/80 dark:hover:bg-slate-700/80 text-slate-400 hover:text-amber-500 dark:text-slate-400 border-slate-200/80 dark:border-slate-700/80'
         }`}
         title={lang === 'fr' ? 'Ajouter aux favoris' : 'Add to favorites'}
       >

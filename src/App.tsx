@@ -509,14 +509,14 @@ function AppLayout() {
   // Unified top navigation: Principal buttons replacing the double search bar
   const renderUnifiedTopNav = () => {
     return (
-      <div className="mb-6 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-xs relative z-30 overflow-x-auto hide-scrollbar">
-        <div className="px-3.5 py-2 flex items-center justify-between gap-3 min-w-[640px] sm:min-w-0">
+      <div className="mb-6 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-xs relative z-30">
+        <div className="px-3.5 py-2 flex flex-wrap sm:flex-nowrap items-center justify-between gap-2.5">
           
           {/* Left Cluster: Core Navigation & Smart Tool */}
           <div className="flex items-center gap-2 shrink-0">
             <button 
               onClick={() => setIsSpecialtiesModalOpen(true)}
-              className="shrink-0 px-3 py-2 bg-teal-50 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300 hover:bg-teal-100 dark:hover:bg-teal-900/50 font-bold rounded-xl text-xs sm:text-sm transition-all flex items-center gap-2 border border-teal-200/50 dark:border-teal-800/50 cursor-pointer shadow-2xs hover:scale-[1.02] active:scale-95 whitespace-nowrap"
+              className="h-10 px-3.5 bg-slate-100/90 hover:bg-slate-200/90 dark:bg-slate-800/80 dark:hover:bg-slate-700/80 text-slate-800 dark:text-slate-200 font-bold rounded-xl text-xs transition-all flex items-center gap-2 border border-slate-200/80 dark:border-slate-700/80 cursor-pointer shadow-2xs hover:scale-[1.02] active:scale-95 whitespace-nowrap"
             >
               <Layers className="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0" />
               <span>{lang === 'fr' ? 'Spécialités' : 'Browse Specialties'}</span>
@@ -530,50 +530,53 @@ function AppLayout() {
             <FavoriteButton lang={lang} />
             <button
               onClick={() => setIsShiftDrawerOpen(true)}
-              className="shrink-0 flex items-center gap-1.5 px-3 py-2 bg-emerald-50 hover:bg-emerald-100 dark:bg-emerald-950/40 dark:hover:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 text-xs font-bold rounded-xl transition border border-emerald-200 dark:border-emerald-800/60 cursor-pointer shadow-2xs hover:scale-[1.02] active:scale-95 whitespace-nowrap"
+              className="h-10 px-3.5 bg-slate-100/90 hover:bg-slate-200/90 dark:bg-slate-800/80 dark:hover:bg-slate-700/80 text-slate-800 dark:text-slate-200 text-xs font-bold rounded-xl transition border border-slate-200/80 dark:border-slate-700/80 cursor-pointer shadow-2xs hover:scale-[1.02] active:scale-95 whitespace-nowrap flex items-center gap-1.5"
               title="Shift Patient Queue"
             >
-              <ClipboardList className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+              <ClipboardList className="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0" />
               <span className="hidden sm:inline">Shift Queue</span>
             </button>
 
             {/* Critical Unit Standard Toggle */}
             <button
               onClick={toggleGeoStandard}
-              className="shrink-0 flex items-center gap-1.5 px-3 py-2 bg-slate-900 hover:bg-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700 text-white text-[11px] font-mono font-bold rounded-xl transition border border-slate-700 shadow-2xs active:scale-95 cursor-pointer whitespace-nowrap"
-              style={{ minHeight: '38px' }}
+              className="w-10 h-10 bg-slate-100/90 hover:bg-slate-200/90 dark:bg-slate-800/80 dark:hover:bg-slate-700/80 text-slate-700 dark:text-slate-300 text-xs font-mono font-bold rounded-xl transition border border-slate-200/80 dark:border-slate-700/80 shadow-2xs active:scale-95 cursor-pointer whitespace-nowrap flex items-center justify-center"
               title="Toggle unit standard"
             >
-              <Scale className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-              <span className="font-extrabold">{geoState.standard === 'Metric (SI)' ? 'SI' : 'US'}</span>
+              <span className="font-extrabold text-[11px] text-teal-600 dark:text-teal-400">{geoState.standard === 'Metric (SI)' ? 'SI' : 'US'}</span>
             </button>
 
             {/* Offline Badge */}
             {!isOnline && (
-              <div className="shrink-0 flex items-center gap-1.5 px-3 py-2 bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-400 text-[11px] font-bold rounded-xl border border-rose-200 dark:border-rose-800/50 shadow-2xs whitespace-nowrap">
-                <div className="relative flex h-3 w-3 shrink-0">
+              <div className="h-10 px-3 bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-400 text-[11px] font-bold rounded-xl border border-rose-200 dark:border-rose-800/50 shadow-2xs whitespace-nowrap flex items-center gap-1.5">
+                <div className="relative flex h-2.5 w-2.5 shrink-0">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-rose-500"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-rose-500"></span>
                 </div>
                 <span className="hidden sm:inline">Offline Mode</span>
               </div>
             )}
 
             {/* Dark Mode Toggle */}
-            <button
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="shrink-0 flex items-center justify-center p-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-xl transition border border-slate-200 dark:border-slate-700 shadow-2xs active:scale-95 cursor-pointer"
-              style={{ minHeight: '38px', minWidth: '38px' }}
-              title="Toggle Dark Mode"
-            >
-              {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400 shrink-0" /> : <Moon className="w-4 h-4 text-slate-500 shrink-0" />}
-            </button>
+            {(() => {
+              const isDarkMode = theme === 'dark' || (theme === 'system' && typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+              return (
+                <button
+                  onClick={() => setTheme(isDarkMode ? 'light' : 'dark')}
+                  className="w-10 h-10 bg-slate-100/90 hover:bg-slate-200/90 dark:bg-slate-800/80 dark:hover:bg-slate-700/80 border border-slate-200/80 dark:border-slate-700/80 text-slate-700 dark:text-slate-300 rounded-xl transition shadow-2xs active:scale-95 cursor-pointer flex items-center justify-center"
+                  title={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+                  aria-label="Toggle Dark Mode"
+                >
+                  {isDarkMode ? <Sun className="w-4 h-4 text-amber-400 shrink-0" /> : <Moon className="w-4 h-4 text-slate-500 shrink-0" />}
+                </button>
+              );
+            })()}
 
             {/* Primary Monetization CTA */}
             {!isPro && (
               <Link
                 to={langPath('/pricing')}
-                className="shrink-0 flex items-center gap-1.5 px-3.5 py-2 bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-slate-950 text-[11px] font-black uppercase tracking-wider rounded-xl transition-all shadow-[0_0_15px_rgba(6,182,212,0.4)] hover:shadow-[0_0_20px_rgba(6,182,212,0.6)] hover:scale-[1.02] active:scale-95 cursor-pointer whitespace-nowrap"
+                className="h-10 px-3.5 bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white text-[11px] font-black uppercase tracking-wider rounded-xl transition-all shadow-xs hover:scale-[1.02] active:scale-95 cursor-pointer whitespace-nowrap flex items-center gap-1.5"
               >
                 <Sparkles className="w-3.5 h-3.5 shrink-0" />
                 <span className="hidden sm:inline">{lang === 'fr' ? 'Débloquer Pro' : 'Upgrade to Pro'}</span>
@@ -729,7 +732,7 @@ function AppLayout() {
       </script>
     </Helmet>
     <TrackingScripts />
-    <div className={`min-h-screen bg-[#fafafa] text-[#111] transition-colors duration-300 flex flex-col md:flex-row w-full overflow-x-clip ${isRtl ? 'font-arabic' : 'font-sans'}`} dir={isRtl ? 'rtl' : 'ltr'}>
+    <div className={`min-h-screen bg-[#fafafa] dark:bg-slate-950 text-[#111] dark:text-slate-100 transition-colors duration-300 flex flex-col md:flex-row w-full overflow-x-clip ${isRtl ? 'font-arabic' : 'font-sans'}`} dir={isRtl ? 'rtl' : 'ltr'}>
       <CommandPalette />
       {/* Reading progress indicator for content pages */}
       {isContentPage && <ReadingProgress />}
@@ -1131,7 +1134,7 @@ function AppLayout() {
       </aside>}
 
       {/* Main Content Area */}
-      <main id="main-content" className="flex-1 min-w-0 bg-[#fafafa] w-full overflow-x-clip mb-16 md:mb-0">
+      <main id="main-content" className="flex-1 min-w-0 bg-[#fafafa] dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300 w-full overflow-x-clip mb-16 md:mb-0">
         <div className={`mx-auto px-4 sm:px-6 pt-6 pb-24 md:py-10 relative flex flex-col justify-between min-h-screen w-full ${isContentPage ? 'max-w-6xl' : 'max-w-5xl'}`}>
           <div>
 

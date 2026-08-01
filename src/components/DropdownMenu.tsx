@@ -115,16 +115,16 @@ export default function DropdownMenu({
             setIsBellOpen(!isBellOpen);
             setIsMenuOpen(false);
           }}
-          className={`relative p-2.5 rounded-xl border transition duration-250 flex items-center justify-center cursor-pointer ${
+          className={`w-10 h-10 rounded-xl border transition duration-200 flex items-center justify-center cursor-pointer shadow-2xs active:scale-95 ${
             isBellOpen 
-              ? 'bg-teal-50 dark:bg-slate-800 border-teal-300 dark:border-teal-800 text-teal-600 dark:text-teal-400' 
-              : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800'
+              ? 'bg-teal-50 dark:bg-slate-800 border-teal-300 dark:border-teal-700 text-teal-700 dark:text-teal-300' 
+              : 'bg-slate-100/90 hover:bg-slate-200/90 dark:bg-slate-800/80 dark:hover:bg-slate-700/80 border-slate-200/80 dark:border-slate-700/80 text-slate-700 dark:text-slate-300'
           }`}
-          style={{ minWidth: '44px', minHeight: '44px' }}
           aria-label="Clinical notifications"
           aria-expanded={isBellOpen}
+          title="Clinical notifications"
         >
-          <Bell className="w-5 h-5" />
+          <Bell className="w-4 h-4" />
         </button>
 
         {isBellOpen && (
@@ -147,14 +147,13 @@ export default function DropdownMenu({
               setIsMenuOpen(!isMenuOpen);
               setIsBellOpen(false);
             }}
-            className="flex items-center gap-1.5 p-1 pr-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition duration-200 cursor-pointer"
-            style={{ minHeight: '44px' }}
+            className="h-10 px-2.5 bg-slate-100/90 hover:bg-slate-200/90 dark:bg-slate-800/80 dark:hover:bg-slate-700/80 border border-slate-200/80 dark:border-slate-700/80 rounded-xl transition duration-200 cursor-pointer flex items-center gap-1.5 shadow-2xs active:scale-95"
             aria-expanded={isMenuOpen}
           >
-            <div className="w-8 h-8 rounded-lg bg-teal-600 text-white flex items-center justify-center font-bold text-xs uppercase shadow-sm">
+            <div className="w-7 h-7 rounded-lg bg-teal-600 text-white flex items-center justify-center font-bold text-xs uppercase shadow-xs">
               {user.email ? user.email.charAt(0) : 'U'}
             </div>
-            <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform duration-200 ${isMenuOpen ? 'rotate-180' : ''}`} />
+            <ChevronDown className={`w-3.5 h-3.5 text-slate-500 transition-transform duration-200 ${isMenuOpen ? 'rotate-180' : ''}`} />
           </button>
         ) : (
           <button
@@ -162,12 +161,11 @@ export default function DropdownMenu({
               setIsMenuOpen(!isMenuOpen);
               setIsBellOpen(false);
             }}
-            className="flex items-center gap-2 px-4 py-2 bg-teal-600 hover:bg-teal-700 text-white text-xs font-extrabold rounded-xl transition duration-200 shadow-md shadow-teal-500/10 active:scale-97 cursor-pointer"
-            style={{ minHeight: '44px' }}
+            className="h-10 px-4 bg-teal-600 hover:bg-teal-500 text-white text-xs font-extrabold rounded-xl transition duration-200 shadow-xs active:scale-95 cursor-pointer flex items-center gap-2"
             aria-expanded={isMenuOpen}
           >
             <span>{dict.login.split(' / ')[0]}</span>
-            <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isMenuOpen ? 'rotate-180' : ''}`} />
+            <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isMenuOpen ? 'rotate-180' : ''}`} />
           </button>
         )}
 

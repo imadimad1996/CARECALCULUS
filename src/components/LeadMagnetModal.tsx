@@ -7,6 +7,7 @@ export interface LeadMagnetModalProps {
 }
 
 const LOCAL_KEY = 'carecalculus_lead_magnet_subscribed';
+const DISMISSED_KEY = 'carecalculus_lead_magnet_dismissed_until';
 
 export const LeadMagnetModal: React.FC<LeadMagnetModalProps> = ({ lang }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,15 +17,28 @@ export const LeadMagnetModal: React.FC<LeadMagnetModalProps> = ({ lang }) => {
   const isFr = lang === 'fr';
 
   useEffect(() => {
-    // Show modal after 15 seconds if not already subscribed
+    // Check if subscribed or recently dismissed (within 14 days)
     const isSubscribed = localStorage.getItem(LOCAL_KEY);
-    if (!isSubscribed) {
-      const timer = setTimeout(() => {
-        setIsOpen(true);
-      }, 12000);
-      return () => clearTimeout(timer);
-    }
+    const dismissedUntil = localStorage.getItem(DISMISSED_KEY);
+    const now = Date.now();
+
+    if (isSubscribed) return;
+    if (dismissedUntil && now < parseInt(dismissedUntil, 10)) return;
+
+    // Show modal after 45 seconds of continuous clinical session (much less noisy)
+    const timer = setTimeout(() => {
+      setIsOpen(true);
+    }, 45000);
+
+    return () => clearTimeout(timer);
   }, []);
+
+  const handleClose = () => {
+    setIsOpen(false);
+    // Remember dismissal for 14 days so it doesn't annoy the clinician repeatedly
+    const fourteenDaysMs = 14 * 24 * 60 * 60 * 1000;
+    localStorage.setItem(DISMISSED_KEY, (Date.now() + fourteenDaysMs).toString());
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -67,7 +81,7 @@ export const LeadMagnetModal: React.FC<LeadMagnetModalProps> = ({ lang }) => {
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-md animate-in fade-in duration-200">
       <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 max-w-md w-full text-white shadow-2xl relative">
         <button
-          onClick={() => setIsOpen(false)}
+          onClick={handleClose}
           className="absolute top-4 right-4 p-2 text-slate-400 hover:text-white rounded-xl hover:bg-slate-800 transition cursor-pointer"
         >
           <X className="w-5 h-5" />
