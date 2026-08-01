@@ -27,7 +27,7 @@ export default function ProgrammaticGuidePage({ lang }: Props) {
       : 'Explore clinical protocols linking leading calculators with specific disease states (Sepsis, ARDS, Cirrhosis, Renal Injury, etc.).';
       
     return (
-      <div className="min-h-screen bg-slate-50 py-10 px-4 sm:px-6 lg:px-8 pb-32">
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-950 py-10 px-4 sm:px-6 lg:px-8 pb-32">
         <Helmet>
           <title>{pageTitle}</title>
           <meta name="description" content={metaDesc} />
@@ -39,7 +39,7 @@ export default function ProgrammaticGuidePage({ lang }: Props) {
               <Sparkles className="w-3.5 h-3.5" />
               {isFr ? 'Index des Protocoles' : 'Clinical Index'}
             </span>
-            <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-2">
+            <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-2">
               {isFr ? 'Guides Cliniques' : 'Clinical Guides'}
             </h1>
             <p className="text-slate-300 text-sm sm:text-base max-w-xl leading-relaxed">
@@ -109,7 +109,7 @@ export default function ProgrammaticGuidePage({ lang }: Props) {
 
   if (!calcInfo || !diseaseInfo) {
     return (
-      <div className="min-h-screen bg-slate-50 py-16 px-4 text-center">
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-950 py-16 px-4 text-center">
         <div className="w-full max-w-full max-w-md mx-auto bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
           <AlertTriangle className="w-12 h-12 text-amber-500 mx-auto mb-4" />
           <h1 className="text-xl font-bold text-slate-900 mb-2">
@@ -200,7 +200,7 @@ export default function ProgrammaticGuidePage({ lang }: Props) {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 py-10 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 py-10 px-4 sm:px-6 lg:px-8">
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={metaDesc} />
@@ -229,7 +229,7 @@ export default function ProgrammaticGuidePage({ lang }: Props) {
               <Sparkles className="w-3.5 h-3.5" />
               {isFr ? 'Protocole & Objectifs Cliniques' : 'Clinical Protocol & Targets'}
             </div>
-            <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight leading-tight mb-4">
+            <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight mb-4">
               {calcTitle} <span className="text-cyan-400 font-light">in</span> {diseaseTitle}
             </h1>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
@@ -277,7 +277,7 @@ export default function ProgrammaticGuidePage({ lang }: Props) {
         {/* Interactive Launch Card */}
         <div className="bg-gradient-to-r from-cyan-600 to-indigo-600 rounded-2xl p-6 sm:p-8 text-white shadow-lg mb-10 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
-            <h2 className="text-xl font-bold mb-1">
+            <h2 className="text-xl font-bold text-white mb-1">
               {isFr ? `Ouvrir ${calcTitle} Interactif` : `Launch Interactive ${calcTitle}`}
             </h2>
             <p className="text-cyan-100 text-xs sm:text-sm">

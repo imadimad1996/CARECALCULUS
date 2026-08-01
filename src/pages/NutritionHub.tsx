@@ -100,7 +100,7 @@ export default function NutritionHub({ lang }: NutritionHubProps) {
   const faqs = (faqDbRaw as any)['/nutrition-hub'] || [];
 
   return (
-    <div className={`min-h-screen bg-slate-50 ${isRtl ? 'rtl' : 'ltr'}`}>
+    <div className={`min-h-screen bg-slate-50 dark:bg-slate-950 ${isRtl ? 'rtl' : 'ltr'}`}>
       <SEO 
         title={tLabels.title}
         description={tLabels.subtitle}
@@ -279,3 +279,4 @@ export default function NutritionHub({ lang }: NutritionHubProps) {
     </div>
   );
 }
+

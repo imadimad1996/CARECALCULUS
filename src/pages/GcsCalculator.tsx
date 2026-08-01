@@ -224,7 +224,7 @@ export default function GcsCalculator({ lang }: { lang: LangCode }) {
             
             <div className="relative z-10">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-bold uppercase tracking-widest text-slate-400">
+                <span className="text-xs font-bold uppercase tracking-widest text-slate-300">
                   {currentText.result}
                 </span>
                 <span className="flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full bg-white/10 text-slate-300 backdrop-blur-md">
@@ -428,3 +428,4 @@ export default function GcsCalculator({ lang }: { lang: LangCode }) {
     </>
   );
 }
+

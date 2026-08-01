@@ -21,8 +21,13 @@ export default function CommandPalette() {
         setIsOpen(false);
       }
     };
+    const handleCustomOpen = () => setIsOpen(true);
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener('carecalculus:open-command-palette', handleCustomOpen);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('carecalculus:open-command-palette', handleCustomOpen);
+    };
   }, [isOpen]);
 
   useEffect(() => {

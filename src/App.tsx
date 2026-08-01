@@ -528,6 +528,26 @@ function AppLayout() {
             <SmartPasteModal lang={lang} />
           </div>
 
+          {/* Middle Cluster: Quick Calculator Search (Fills empty space seamlessly) */}
+          <div className="hidden md:flex items-center flex-1 max-w-sm mx-2">
+            <button 
+              onClick={() => {
+                const event = new CustomEvent('carecalculus:open-command-palette');
+                window.dispatchEvent(event);
+              }}
+              className="w-full h-10 px-3.5 rounded-xl bg-slate-100/90 hover:bg-slate-200/90 dark:bg-slate-800/80 dark:hover:bg-slate-700/80 border border-slate-200/80 dark:border-slate-700/80 text-slate-500 dark:text-slate-400 text-xs font-medium flex items-center justify-between transition-all shadow-2xs hover:scale-[1.01] active:scale-98 cursor-pointer group"
+              title="Search all 100+ calculators (Ctrl+K)"
+            >
+              <div className="flex items-center gap-2 truncate">
+                <Search className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400 shrink-0 group-hover:scale-110 transition-transform" />
+                <span className="truncate font-semibold">{lang === 'fr' ? 'Rechercher un calculateur...' : 'Search calculators...'}</span>
+              </div>
+              <kbd className="hidden lg:inline-flex items-center px-1.5 py-0.5 text-[10px] font-mono font-bold text-slate-400 dark:text-slate-400 bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-700 rounded-md shrink-0 shadow-2xs">
+                ⌘K
+              </kbd>
+            </button>
+          </div>
+
           {/* Right Cluster: Bedside Actions & Primary CTA */}
           <div className="flex items-center gap-2 shrink-0">
             <FavoriteButton lang={lang} />

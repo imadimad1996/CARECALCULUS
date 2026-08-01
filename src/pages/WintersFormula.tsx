@@ -200,7 +200,7 @@ export default function WintersFormula({ lang }: { lang: LangCode }) {
 
         <div className="lg:col-span-5 space-y-6 sticky top-6">
           <div className="backdrop-blur-xl bg-gradient-to-br from-slate-900 to-slate-950 text-white rounded-3xl p-6 md:p-8 shadow-xl border border-slate-800">
-            <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-6 font-mono">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-slate-300 mb-6 font-mono">
               {currentText.expectedPco2}
             </h3>
 

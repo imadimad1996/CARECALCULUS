@@ -157,6 +157,11 @@
     min-height: 100%;
   }
 
+  html.dark body {
+    background-color: #020617; /* slate-950 */
+    color: #f8fafc;
+  }
+
   body {
     background-color: #FFFFFF;
     font-family: var(--font-sans);
@@ -294,7 +299,7 @@
 
 /* Print */
 @media print {
-  html, body {
+  html, html.dark body { background-color: #020617; color: #f8fafc; } body {
     background-color: #ffffff !important;
     color: #1a1a1a !important;
     font-size: 12px !important;
