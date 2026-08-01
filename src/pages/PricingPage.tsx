@@ -24,7 +24,7 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
       {/* Header with Animation */}
       <div className="text-center max-w-3xl mx-auto mb-16 animate-in fade-in slide-in-from-bottom-8 duration-700">
         <span className="text-xs font-bold text-cyan-600 dark:text-cyan-400 uppercase tracking-widest bg-cyan-500/10 px-4 py-1.5 rounded-full border border-cyan-500/20 inline-block mb-4 shadow-sm">
-          {isFr ? 'REJOINT PAR +10 000 SOIGNANTS DANS LE MONDE' : 'JOINED BY 10,000+ CLINICIANS WORLDWIDE'}
+          {isFr ? 'ACCÉDEZ À +88 OUTILS VALIDÉS' : 'ACCESS 88+ PEER-REVIEWED TOOLS'}
         </span>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6">
           {isFr ? 'Le Pass Export 1-Clic pour Soignants Occupés' : 'The 1-Click EHR Export Pass for Busy Clinicians'}

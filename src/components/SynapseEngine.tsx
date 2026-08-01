@@ -129,7 +129,7 @@ export function SynapseEngine({ lang, langPath }: SynapseEngineProps) {
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-teal-500/30 bg-teal-500/10 px-3 py-1 text-[11px] font-mono font-bold uppercase tracking-widest text-teal-300">
             <Sparkles className="w-3.5 h-3.5 text-teal-400" />
-            [ SPECIALITIES & MEDICAL JOURNALS SYNAPSE ENGINE ]
+            [ AI-POWERED CLINICAL JOURNALS ]
           </div>
           <h2 className="mt-3 text-2xl sm:text-3xl font-black tracking-tight text-white">
             {lang === 'fr' ? 'Matrice Clinique & Preuves en Direct' : 'Live Clinical & Journal Evidence Matrix'}

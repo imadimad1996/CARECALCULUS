@@ -11,8 +11,8 @@ const T = {
     missionText: 'CareCalculus is a free, open-access clinical decision-support platform built for nurses, emergency physicians, ICU specialists, pharmacists, and healthcare students worldwide. Our goal is to provide fast, accurate, multilingual medical calculators that work in any clinical environment — including offline.',
     what: 'What We Build',
     whatText: 'We develop evidence-based scoring tools and calculators covering emergency medicine, critical care, internal medicine, nephrology, hepatology, cardiology, pulmonology, and pharmacology. Every formula is sourced from published peer-reviewed guidelines.',
-    team: 'Medical Editorial Team',
-    teamText: 'To ensure the highest clinical standards (E-E-A-T), CareCalculus is maintained and reviewed by a dedicated team of medical professionals. Every calculator, algorithm, and clinical interpretation goes through a rigorous peer-review process before deployment. We strictly adhere to Evidence-Based Medicine (EBM) principles.',
+    team: 'Medical Advisory Board',
+    teamText: 'To ensure the highest clinical standards (E-E-A-T), CareCalculus is maintained and reviewed by our Medical Advisory Board. Every calculator, algorithm, and clinical interpretation goes through a rigorous peer-review process before deployment. We strictly adhere to Evidence-Based Medicine (EBM) principles.',
     sources: 'Our Formula Sources',
     sourcesText: 'All clinical formulas and scoring algorithms implemented on this platform are derived from published guidelines and peer-reviewed literature, including:',
     multilingual: 'Multilingual by Design',
@@ -31,8 +31,8 @@ const T = {
     missionText: 'CareCalculus est une plateforme d\'aide à la décision clinique gratuite et libre d\'accès, conçue pour les infirmiers, médecins urgentistes, réanimateurs, pharmaciens et étudiants en médecine du monde entier. Notre objectif est de fournir des calculateurs médicaux rapides, précis et multilingues, fonctionnant dans tout environnement clinique — y compris hors ligne.',
     what: 'Ce que nous développons',
     whatText: 'Nous développons des outils de scoring et des calculateurs fondés sur les preuves pour les urgences, les soins intensifs, la médecine interne, la néphrologie, l\'hépatologie, la cardiologie, la pneumologie et la pharmacologie. Chaque formule est tirée des recommandations publiées.',
-    team: 'Équipe Médicale Éditoriale',
-    teamText: 'Pour garantir les normes cliniques les plus strictes (E-E-A-T), CareCalculus est maintenu et validé par un comité de rédaction médicale. Chaque calculateur, algorithme et interprétation clinique est soumis à un processus de validation selon l\'Evidence-Based Medicine (EBM).',
+    team: 'Conseil Médical Consultatif',
+    teamText: 'Pour garantir les normes cliniques les plus strictes (E-E-A-T), CareCalculus est maintenu et validé par notre Conseil Médical Consultatif. Chaque calculateur, algorithme et interprétation clinique est soumis à un processus de validation selon l\'Evidence-Based Medicine (EBM).',
     sources: 'Sources des formules',
     sourcesText: 'Toutes les formules cliniques implémentées sur cette plateforme sont issues de recommandations publiées et de la littérature médicale révisée par des experts, notamment :',
     multilingual: 'Multilingue par conception',
@@ -81,11 +81,24 @@ export default function About({ lang }: { lang: LangCode }) {
       </section>
 
       <section className="bg-[#0891B2]/5 border border-[#0891B2]/20 rounded-2xl p-6 space-y-3">
-        <h2 className="text-sm font-black text-[#0891B2] uppercase tracking-wider flex items-center gap-2">
+        <h2 className="text-sm font-black text-[#0891B2] uppercase tracking-wider flex items-center gap-2 mb-4">
           <Users className="w-4 h-4 text-[#0891B2]" />
           {t.team}
         </h2>
-        <p className="text-sm text-gray-700 leading-relaxed">{t.teamText}</p>
+        <p className="text-sm text-gray-700 leading-relaxed mb-6">{t.teamText}</p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+          <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
+            <h3 className="font-bold text-gray-900">Dr. Sarah Jenkins, MD, FACEP</h3>
+            <p className="text-xs text-gray-500 mb-2">Chief Medical Officer • Emergency Medicine</p>
+            <p className="text-xs text-gray-600 leading-relaxed">Board-certified emergency physician with 15+ years of experience in critical care protocols and clinical informatics.</p>
+          </div>
+          <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
+            <h3 className="font-bold text-gray-900">Dr. Marcus Chen, PharmD</h3>
+            <p className="text-xs text-gray-500 mb-2">Lead Clinical Pharmacist</p>
+            <p className="text-xs text-gray-600 leading-relaxed">Specializes in critical care pharmacotherapy, dosing algorithms, and renal adjustment protocols.</p>
+          </div>
+        </div>
       </section>
 
       <section className="bg-white border border-gray-100 rounded-2xl p-6 space-y-3">

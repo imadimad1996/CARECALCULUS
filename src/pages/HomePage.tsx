@@ -286,7 +286,12 @@ export default function HomePage({ lang }: HomePageProps) {
               {cta.primary}
               <ChevronRight className="w-4 h-4" />
             </button>
-
+          </div>
+          
+          <div className="mt-6">
+            <Link to={langPath('/for-hospitals')} className="text-xs font-bold text-teal-600 hover:text-teal-700 underline">
+              {lang === 'fr' ? 'Déploiement pour Hôpitaux & Cliniques ?' : 'Looking for Hospital Deployment?'}
+            </Link>
           </div>
         </div>
       </section>
@@ -365,7 +370,7 @@ export default function HomePage({ lang }: HomePageProps) {
         })}
       </section>
 
-      {/* 2026 Next-Gen Specialty & Journal Synapse Engine */}
+      {/* AI-Powered Clinical Journals */}
       <SynapseEngine lang={lang} langPath={langPath} />
 
       {/* Specialty Filter Bar */}
