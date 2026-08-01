@@ -1016,6 +1016,22 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.carecalculus.com/clinical-guide/has-bled-score-in-afib</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/has-bled-score-in-afib" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/has-bled-score-in-afib" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/has-bled-score-in-afib" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/has-bled-score-in-afib</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/has-bled-score-in-afib" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/has-bled-score-in-afib" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/has-bled-score-in-afib" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.carecalculus.com/clinical-guide/curb65-score-in-pneumonia</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/curb65-score-in-pneumonia" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/curb65-score-in-pneumonia" />
@@ -1108,6 +1124,630 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/qsofa-score-in-multi-organ-failure" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/qsofa-score-in-multi-organ-failure" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/qsofa-score-in-multi-organ-failure" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/apache-ii-score-in-multi-organ-failure</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/apache-ii-score-in-multi-organ-failure" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/apache-ii-score-in-multi-organ-failure" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/apache-ii-score-in-multi-organ-failure" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/apache-ii-score-in-multi-organ-failure</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/apache-ii-score-in-multi-organ-failure" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/apache-ii-score-in-multi-organ-failure" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/apache-ii-score-in-multi-organ-failure" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/saps-ii-score-in-multi-organ-failure</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/saps-ii-score-in-multi-organ-failure" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/saps-ii-score-in-multi-organ-failure" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/saps-ii-score-in-multi-organ-failure" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/saps-ii-score-in-multi-organ-failure</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/saps-ii-score-in-multi-organ-failure" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/saps-ii-score-in-multi-organ-failure" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/saps-ii-score-in-multi-organ-failure" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/nihss-score-in-stroke</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/nihss-score-in-stroke" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/nihss-score-in-stroke" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/nihss-score-in-stroke" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/nihss-score-in-stroke</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/nihss-score-in-stroke" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/nihss-score-in-stroke" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/nihss-score-in-stroke" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/timi-score-in-nstemi</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/timi-score-in-nstemi" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/timi-score-in-nstemi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/timi-score-in-nstemi" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/timi-score-in-nstemi</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/timi-score-in-nstemi" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/timi-score-in-nstemi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/timi-score-in-nstemi" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/heart-score-in-nstemi</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/heart-score-in-nstemi" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/heart-score-in-nstemi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/heart-score-in-nstemi" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/heart-score-in-nstemi</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/heart-score-in-nstemi" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/heart-score-in-nstemi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/heart-score-in-nstemi" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/grace-score-in-nstemi</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/grace-score-in-nstemi" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/grace-score-in-nstemi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/grace-score-in-nstemi" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/grace-score-in-nstemi</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/grace-score-in-nstemi" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/grace-score-in-nstemi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/grace-score-in-nstemi" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/timi-score-in-stemi</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/timi-score-in-stemi" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/timi-score-in-stemi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/timi-score-in-stemi" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/timi-score-in-stemi</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/timi-score-in-stemi" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/timi-score-in-stemi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/timi-score-in-stemi" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/grace-score-in-stemi</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/grace-score-in-stemi" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/grace-score-in-stemi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/grace-score-in-stemi" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/grace-score-in-stemi</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/grace-score-in-stemi" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/grace-score-in-stemi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/grace-score-in-stemi" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/heart-score-in-chest-pain</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/heart-score-in-chest-pain" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/heart-score-in-chest-pain" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/heart-score-in-chest-pain" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/heart-score-in-chest-pain</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/heart-score-in-chest-pain" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/heart-score-in-chest-pain" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/heart-score-in-chest-pain" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/timi-score-in-chest-pain</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/timi-score-in-chest-pain" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/timi-score-in-chest-pain" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/timi-score-in-chest-pain" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/timi-score-in-chest-pain</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/timi-score-in-chest-pain" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/timi-score-in-chest-pain" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/timi-score-in-chest-pain" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/hfa-peff-score-in-heart-failure</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/hfa-peff-score-in-heart-failure" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/hfa-peff-score-in-heart-failure" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/hfa-peff-score-in-heart-failure" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/hfa-peff-score-in-heart-failure</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/hfa-peff-score-in-heart-failure" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/hfa-peff-score-in-heart-failure" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/hfa-peff-score-in-heart-failure" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/framingham-risk-score-in-heart-failure</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/framingham-risk-score-in-heart-failure" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/framingham-risk-score-in-heart-failure" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/framingham-risk-score-in-heart-failure" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/framingham-risk-score-in-heart-failure</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/framingham-risk-score-in-heart-failure" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/framingham-risk-score-in-heart-failure" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/framingham-risk-score-in-heart-failure" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/sodium-correction-in-hyponatremia</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/sodium-correction-in-hyponatremia" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/sodium-correction-in-hyponatremia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/sodium-correction-in-hyponatremia" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/sodium-correction-in-hyponatremia</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/sodium-correction-in-hyponatremia" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/sodium-correction-in-hyponatremia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/sodium-correction-in-hyponatremia" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/osmolal-gap-in-hyponatremia</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/osmolal-gap-in-hyponatremia" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/osmolal-gap-in-hyponatremia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/osmolal-gap-in-hyponatremia" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/osmolal-gap-in-hyponatremia</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/osmolal-gap-in-hyponatremia" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/osmolal-gap-in-hyponatremia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/osmolal-gap-in-hyponatremia" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/free-water-deficit-in-hypernatremia</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/free-water-deficit-in-hypernatremia" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/free-water-deficit-in-hypernatremia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/free-water-deficit-in-hypernatremia" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/free-water-deficit-in-hypernatremia</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/free-water-deficit-in-hypernatremia" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/free-water-deficit-in-hypernatremia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/free-water-deficit-in-hypernatremia" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/sodium-correction-in-hypernatremia</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/sodium-correction-in-hypernatremia" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/sodium-correction-in-hypernatremia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/sodium-correction-in-hypernatremia" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/sodium-correction-in-hypernatremia</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/sodium-correction-in-hypernatremia" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/sodium-correction-in-hypernatremia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/sodium-correction-in-hypernatremia" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/anion-gap-in-metabolic-acidosis</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/anion-gap-in-metabolic-acidosis" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/anion-gap-in-metabolic-acidosis" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/anion-gap-in-metabolic-acidosis" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/anion-gap-in-metabolic-acidosis</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/anion-gap-in-metabolic-acidosis" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/anion-gap-in-metabolic-acidosis" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/anion-gap-in-metabolic-acidosis" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/winters-formula-in-metabolic-acidosis</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/winters-formula-in-metabolic-acidosis" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/winters-formula-in-metabolic-acidosis" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/winters-formula-in-metabolic-acidosis" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/winters-formula-in-metabolic-acidosis</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/winters-formula-in-metabolic-acidosis" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/winters-formula-in-metabolic-acidosis" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/winters-formula-in-metabolic-acidosis" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/bicarb-deficit-in-metabolic-acidosis</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/bicarb-deficit-in-metabolic-acidosis" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/bicarb-deficit-in-metabolic-acidosis" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/bicarb-deficit-in-metabolic-acidosis" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/bicarb-deficit-in-metabolic-acidosis</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/bicarb-deficit-in-metabolic-acidosis" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/bicarb-deficit-in-metabolic-acidosis" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/bicarb-deficit-in-metabolic-acidosis" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/ckd-epi-gfr-in-chronic-kidney-disease</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/ckd-epi-gfr-in-chronic-kidney-disease" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/ckd-epi-gfr-in-chronic-kidney-disease" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/ckd-epi-gfr-in-chronic-kidney-disease" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/ckd-epi-gfr-in-chronic-kidney-disease</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/ckd-epi-gfr-in-chronic-kidney-disease" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/ckd-epi-gfr-in-chronic-kidney-disease" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/ckd-epi-gfr-in-chronic-kidney-disease" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/mdrd-gfr-in-chronic-kidney-disease</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/mdrd-gfr-in-chronic-kidney-disease" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/mdrd-gfr-in-chronic-kidney-disease" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/mdrd-gfr-in-chronic-kidney-disease" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/mdrd-gfr-in-chronic-kidney-disease</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/mdrd-gfr-in-chronic-kidney-disease" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/mdrd-gfr-in-chronic-kidney-disease" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/mdrd-gfr-in-chronic-kidney-disease" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/creatinine-clearance-in-chronic-kidney-disease</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/creatinine-clearance-in-chronic-kidney-disease" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/creatinine-clearance-in-chronic-kidney-disease" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/creatinine-clearance-in-chronic-kidney-disease" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/creatinine-clearance-in-chronic-kidney-disease</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/creatinine-clearance-in-chronic-kidney-disease" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/creatinine-clearance-in-chronic-kidney-disease" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/creatinine-clearance-in-chronic-kidney-disease" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/meld-score-in-hepatitis</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/meld-score-in-hepatitis" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/meld-score-in-hepatitis" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/meld-score-in-hepatitis" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/meld-score-in-hepatitis</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/meld-score-in-hepatitis" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/meld-score-in-hepatitis" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/meld-score-in-hepatitis" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/child-pugh-score-in-hepatitis</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/child-pugh-score-in-hepatitis" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/child-pugh-score-in-hepatitis" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/child-pugh-score-in-hepatitis" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/child-pugh-score-in-hepatitis</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/child-pugh-score-in-hepatitis" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/child-pugh-score-in-hepatitis" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/child-pugh-score-in-hepatitis" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/has-bled-score-in-gi-bleeding</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/has-bled-score-in-gi-bleeding" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/has-bled-score-in-gi-bleeding" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/has-bled-score-in-gi-bleeding" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/has-bled-score-in-gi-bleeding</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/has-bled-score-in-gi-bleeding" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/has-bled-score-in-gi-bleeding" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/has-bled-score-in-gi-bleeding" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/parkland-formula-in-burn-injury</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/parkland-formula-in-burn-injury" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/parkland-formula-in-burn-injury" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/parkland-formula-in-burn-injury" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/parkland-formula-in-burn-injury</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/parkland-formula-in-burn-injury" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/parkland-formula-in-burn-injury" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/parkland-formula-in-burn-injury" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/ciwa-ar-score-in-alcohol-withdrawal</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/ciwa-ar-score-in-alcohol-withdrawal" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/ciwa-ar-score-in-alcohol-withdrawal" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/ciwa-ar-score-in-alcohol-withdrawal" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/ciwa-ar-score-in-alcohol-withdrawal</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/ciwa-ar-score-in-alcohol-withdrawal" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/ciwa-ar-score-in-alcohol-withdrawal" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/ciwa-ar-score-in-alcohol-withdrawal" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/osmolal-gap-in-alcohol-withdrawal</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/osmolal-gap-in-alcohol-withdrawal" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/osmolal-gap-in-alcohol-withdrawal" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/osmolal-gap-in-alcohol-withdrawal" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/osmolal-gap-in-alcohol-withdrawal</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/osmolal-gap-in-alcohol-withdrawal" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/osmolal-gap-in-alcohol-withdrawal" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/osmolal-gap-in-alcohol-withdrawal" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/rumack-matthew-nomogram-in-acetaminophen-overdose</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/rumack-matthew-nomogram-in-acetaminophen-overdose" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/rumack-matthew-nomogram-in-acetaminophen-overdose" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/rumack-matthew-nomogram-in-acetaminophen-overdose" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/rumack-matthew-nomogram-in-acetaminophen-overdose</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/rumack-matthew-nomogram-in-acetaminophen-overdose" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/rumack-matthew-nomogram-in-acetaminophen-overdose" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/rumack-matthew-nomogram-in-acetaminophen-overdose" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/anc-calculator-in-neutropenia</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/anc-calculator-in-neutropenia" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/anc-calculator-in-neutropenia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/anc-calculator-in-neutropenia" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/anc-calculator-in-neutropenia</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/anc-calculator-in-neutropenia" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/anc-calculator-in-neutropenia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/anc-calculator-in-neutropenia" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/mascc-risk-index-in-neutropenia</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/mascc-risk-index-in-neutropenia" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/mascc-risk-index-in-neutropenia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/mascc-risk-index-in-neutropenia" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/mascc-risk-index-in-neutropenia</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/mascc-risk-index-in-neutropenia" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/mascc-risk-index-in-neutropenia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/mascc-risk-index-in-neutropenia" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/retic-index-in-anemia</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/retic-index-in-anemia" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/retic-index-in-anemia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/retic-index-in-anemia" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/retic-index-in-anemia</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/retic-index-in-anemia" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/retic-index-in-anemia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/retic-index-in-anemia" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/four-ts-hit-score-in-hit</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/four-ts-hit-score-in-hit" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/four-ts-hit-score-in-hit" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/four-ts-hit-score-in-hit" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/four-ts-hit-score-in-hit</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/four-ts-hit-score-in-hit" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/four-ts-hit-score-in-hit" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/four-ts-hit-score-in-hit" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/centor-score-in-pharyngitis</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/centor-score-in-pharyngitis" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/centor-score-in-pharyngitis" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/centor-score-in-pharyngitis" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/centor-score-in-pharyngitis</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/centor-score-in-pharyngitis" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/centor-score-in-pharyngitis" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/centor-score-in-pharyngitis" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/phq9-score-in-depression</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/phq9-score-in-depression" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/phq9-score-in-depression" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/phq9-score-in-depression" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/phq9-score-in-depression</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/phq9-score-in-depression" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/phq9-score-in-depression" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/phq9-score-in-depression" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/bmi-calculator-in-malnutrition</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/bmi-calculator-in-malnutrition" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/bmi-calculator-in-malnutrition" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/bmi-calculator-in-malnutrition" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/bmi-calculator-in-malnutrition</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/bmi-calculator-in-malnutrition" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/bmi-calculator-in-malnutrition" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/bmi-calculator-in-malnutrition" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/adjusted-body-weight-in-malnutrition</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/adjusted-body-weight-in-malnutrition" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/adjusted-body-weight-in-malnutrition" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/adjusted-body-weight-in-malnutrition" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/adjusted-body-weight-in-malnutrition</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/adjusted-body-weight-in-malnutrition" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/adjusted-body-weight-in-malnutrition" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/adjusted-body-weight-in-malnutrition" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/nutrition-must-in-malnutrition</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/nutrition-must-in-malnutrition" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/nutrition-must-in-malnutrition" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/nutrition-must-in-malnutrition" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/nutrition-must-in-malnutrition</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/nutrition-must-in-malnutrition" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/nutrition-must-in-malnutrition" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/nutrition-must-in-malnutrition" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/clinical-guide/nutrition-nrs2002-in-malnutrition</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/nutrition-nrs2002-in-malnutrition" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/nutrition-nrs2002-in-malnutrition" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/nutrition-nrs2002-in-malnutrition" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/clinical-guide/nutrition-nrs2002-in-malnutrition</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/clinical-guide/nutrition-nrs2002-in-malnutrition" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/clinical-guide/nutrition-nrs2002-in-malnutrition" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/clinical-guide/nutrition-nrs2002-in-malnutrition" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1417,66 +2057,34 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/what-does-curb-65-stand-for</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-does-curb-65-stand-for" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-does-curb-65-stand-for" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-does-curb-65-stand-for" />
+    <loc>https://www.carecalculus.com/q/what-is-the-curb-65-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-curb-65-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-curb-65-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-curb-65-score" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/what-does-curb-65-stand-for</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-does-curb-65-stand-for" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-does-curb-65-stand-for" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-does-curb-65-stand-for" />
+    <loc>https://fr.carecalculus.com/q/what-is-the-curb-65-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-curb-65-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-curb-65-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-curb-65-score" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/what-curb-65-score-requires-hospitalization</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-curb-65-score-requires-hospitalization" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-curb-65-score-requires-hospitalization" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-curb-65-score-requires-hospitalization" />
+    <loc>https://www.carecalculus.com/q/what-curb-65-score-requires-icu-admission</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-curb-65-score-requires-icu-admission" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-curb-65-score-requires-icu-admission" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-curb-65-score-requires-icu-admission" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/what-curb-65-score-requires-hospitalization</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-curb-65-score-requires-hospitalization" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-curb-65-score-requires-hospitalization" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-curb-65-score-requires-hospitalization" />
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.carecalculus.com/q/what-is-the-source-study-for-curb-65</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-source-study-for-curb-65" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-source-study-for-curb-65" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-source-study-for-curb-65" />
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fr.carecalculus.com/q/what-is-the-source-study-for-curb-65</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-source-study-for-curb-65" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-source-study-for-curb-65" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-source-study-for-curb-65" />
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.carecalculus.com/q/what-is-the-difference-between-curb-65-and-psi-pneumonia-severity-index</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-difference-between-curb-65-and-psi-pneumonia-severity-index" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-difference-between-curb-65-and-psi-pneumonia-severity-index" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-difference-between-curb-65-and-psi-pneumonia-severity-index" />
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fr.carecalculus.com/q/what-is-the-difference-between-curb-65-and-psi-pneumonia-severity-index</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-difference-between-curb-65-and-psi-pneumonia-severity-index" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-difference-between-curb-65-and-psi-pneumonia-severity-index" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-difference-between-curb-65-and-psi-pneumonia-severity-index" />
+    <loc>https://fr.carecalculus.com/q/what-curb-65-score-requires-icu-admission</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-curb-65-score-requires-icu-admission" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-curb-65-score-requires-icu-admission" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-curb-65-score-requires-icu-admission" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1545,82 +2153,34 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/what-meld-score-qualifies-for-liver-transplant</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-meld-score-qualifies-for-liver-transplant" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-meld-score-qualifies-for-liver-transplant" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-meld-score-qualifies-for-liver-transplant" />
+    <loc>https://www.carecalculus.com/q/what-meld-score-qualifies-for-liver-transplant-listing</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-meld-score-qualifies-for-liver-transplant-listing" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-meld-score-qualifies-for-liver-transplant-listing" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-meld-score-qualifies-for-liver-transplant-listing" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/what-meld-score-qualifies-for-liver-transplant</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-meld-score-qualifies-for-liver-transplant" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-meld-score-qualifies-for-liver-transplant" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-meld-score-qualifies-for-liver-transplant" />
+    <loc>https://fr.carecalculus.com/q/what-meld-score-qualifies-for-liver-transplant-listing</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-meld-score-qualifies-for-liver-transplant-listing" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-meld-score-qualifies-for-liver-transplant-listing" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-meld-score-qualifies-for-liver-transplant-listing" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/how-is-meld-score-calculated</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/how-is-meld-score-calculated" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/how-is-meld-score-calculated" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/how-is-meld-score-calculated" />
+    <loc>https://www.carecalculus.com/q/what-is-meld-na-and-how-does-it-differ-from-meld</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-meld-na-and-how-does-it-differ-from-meld" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-meld-na-and-how-does-it-differ-from-meld" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-meld-na-and-how-does-it-differ-from-meld" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/how-is-meld-score-calculated</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/how-is-meld-score-calculated" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/how-is-meld-score-calculated" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/how-is-meld-score-calculated" />
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.carecalculus.com/q/what-parameters-are-used-to-calculate-the-meld-score</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-parameters-are-used-to-calculate-the-meld-score" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-parameters-are-used-to-calculate-the-meld-score" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-parameters-are-used-to-calculate-the-meld-score" />
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fr.carecalculus.com/q/what-parameters-are-used-to-calculate-the-meld-score</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-parameters-are-used-to-calculate-the-meld-score" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-parameters-are-used-to-calculate-the-meld-score" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-parameters-are-used-to-calculate-the-meld-score" />
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.carecalculus.com/q/what-meld-score-indicates-the-need-for-a-liver-transplant</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-meld-score-indicates-the-need-for-a-liver-transplant" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-meld-score-indicates-the-need-for-a-liver-transplant" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-meld-score-indicates-the-need-for-a-liver-transplant" />
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fr.carecalculus.com/q/what-meld-score-indicates-the-need-for-a-liver-transplant</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-meld-score-indicates-the-need-for-a-liver-transplant" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-meld-score-indicates-the-need-for-a-liver-transplant" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-meld-score-indicates-the-need-for-a-liver-transplant" />
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.carecalculus.com/q/how-often-is-the-meld-score-recalculated-for-transplant-patients</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/how-often-is-the-meld-score-recalculated-for-transplant-patients" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/how-often-is-the-meld-score-recalculated-for-transplant-patients" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/how-often-is-the-meld-score-recalculated-for-transplant-patients" />
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fr.carecalculus.com/q/how-often-is-the-meld-score-recalculated-for-transplant-patients</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/how-often-is-the-meld-score-recalculated-for-transplant-patients" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/how-often-is-the-meld-score-recalculated-for-transplant-patients" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/how-often-is-the-meld-score-recalculated-for-transplant-patients" />
+    <loc>https://fr.carecalculus.com/q/what-is-meld-na-and-how-does-it-differ-from-meld</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-meld-na-and-how-does-it-differ-from-meld" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-meld-na-and-how-does-it-differ-from-meld" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-meld-na-and-how-does-it-differ-from-meld" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1641,210 +2201,146 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/what-wells-score-indicates-high-risk-for-dvt</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-wells-score-indicates-high-risk-for-dvt" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-wells-score-indicates-high-risk-for-dvt" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-wells-score-indicates-high-risk-for-dvt" />
+    <loc>https://www.carecalculus.com/q/what-score-on-the-wells-criteria-means-high-probability-of-pe</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-score-on-the-wells-criteria-means-high-probability-of-pe" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-score-on-the-wells-criteria-means-high-probability-of-pe" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-score-on-the-wells-criteria-means-high-probability-of-pe" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/what-wells-score-indicates-high-risk-for-dvt</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-wells-score-indicates-high-risk-for-dvt" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-wells-score-indicates-high-risk-for-dvt" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-wells-score-indicates-high-risk-for-dvt" />
+    <loc>https://fr.carecalculus.com/q/what-score-on-the-wells-criteria-means-high-probability-of-pe</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-score-on-the-wells-criteria-means-high-probability-of-pe" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-score-on-the-wells-criteria-means-high-probability-of-pe" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-score-on-the-wells-criteria-means-high-probability-of-pe" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/what-is-the-difference-between-wells-criteria-for-dvt-and-pe</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-difference-between-wells-criteria-for-dvt-and-pe" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-difference-between-wells-criteria-for-dvt-and-pe" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-difference-between-wells-criteria-for-dvt-and-pe" />
+    <loc>https://www.carecalculus.com/q/can-i-use-the-wells-score-without-d-dimer</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/can-i-use-the-wells-score-without-d-dimer" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/can-i-use-the-wells-score-without-d-dimer" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/can-i-use-the-wells-score-without-d-dimer" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/what-is-the-difference-between-wells-criteria-for-dvt-and-pe</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-difference-between-wells-criteria-for-dvt-and-pe" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-difference-between-wells-criteria-for-dvt-and-pe" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-difference-between-wells-criteria-for-dvt-and-pe" />
+    <loc>https://fr.carecalculus.com/q/can-i-use-the-wells-score-without-d-dimer</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/can-i-use-the-wells-score-without-d-dimer" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/can-i-use-the-wells-score-without-d-dimer" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/can-i-use-the-wells-score-without-d-dimer" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/what-is-the-difference-between-wells-criteria-for-dvt-and-pe</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-difference-between-wells-criteria-for-dvt-and-pe" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-difference-between-wells-criteria-for-dvt-and-pe" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-difference-between-wells-criteria-for-dvt-and-pe" />
+    <loc>https://www.carecalculus.com/q/what-are-the-wells-score-criteria-for-dvt</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-are-the-wells-score-criteria-for-dvt" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-are-the-wells-score-criteria-for-dvt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-are-the-wells-score-criteria-for-dvt" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/what-is-the-difference-between-wells-criteria-for-dvt-and-pe</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-difference-between-wells-criteria-for-dvt-and-pe" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-difference-between-wells-criteria-for-dvt-and-pe" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-difference-between-wells-criteria-for-dvt-and-pe" />
+    <loc>https://fr.carecalculus.com/q/what-are-the-wells-score-criteria-for-dvt</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-are-the-wells-score-criteria-for-dvt" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-are-the-wells-score-criteria-for-dvt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-are-the-wells-score-criteria-for-dvt" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/how-do-you-interpret-a-wells-dvt-score-of-2-or-higher</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/how-do-you-interpret-a-wells-dvt-score-of-2-or-higher" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/how-do-you-interpret-a-wells-dvt-score-of-2-or-higher" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/how-do-you-interpret-a-wells-dvt-score-of-2-or-higher" />
+    <loc>https://www.carecalculus.com/q/what-does-chads-vasc-stand-for</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-does-chads-vasc-stand-for" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-does-chads-vasc-stand-for" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-does-chads-vasc-stand-for" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/how-do-you-interpret-a-wells-dvt-score-of-2-or-higher</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/how-do-you-interpret-a-wells-dvt-score-of-2-or-higher" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/how-do-you-interpret-a-wells-dvt-score-of-2-or-higher" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/how-do-you-interpret-a-wells-dvt-score-of-2-or-higher" />
+    <loc>https://fr.carecalculus.com/q/what-does-chads-vasc-stand-for</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-does-chads-vasc-stand-for" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-does-chads-vasc-stand-for" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-does-chads-vasc-stand-for" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/should-a-d-dimer-test-be-done-before-calculating-wells-score</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/should-a-d-dimer-test-be-done-before-calculating-wells-score" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/should-a-d-dimer-test-be-done-before-calculating-wells-score" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/should-a-d-dimer-test-be-done-before-calculating-wells-score" />
+    <loc>https://www.carecalculus.com/q/at-what-chads-vasc-score-should-i-start-anticoagulation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/at-what-chads-vasc-score-should-i-start-anticoagulation" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/at-what-chads-vasc-score-should-i-start-anticoagulation" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/at-what-chads-vasc-score-should-i-start-anticoagulation" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/should-a-d-dimer-test-be-done-before-calculating-wells-score</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/should-a-d-dimer-test-be-done-before-calculating-wells-score" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/should-a-d-dimer-test-be-done-before-calculating-wells-score" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/should-a-d-dimer-test-be-done-before-calculating-wells-score" />
+    <loc>https://fr.carecalculus.com/q/at-what-chads-vasc-score-should-i-start-anticoagulation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/at-what-chads-vasc-score-should-i-start-anticoagulation" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/at-what-chads-vasc-score-should-i-start-anticoagulation" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/at-what-chads-vasc-score-should-i-start-anticoagulation" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/what-is-cha2ds2-vasc-score</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-cha2ds2-vasc-score" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-cha2ds2-vasc-score" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-cha2ds2-vasc-score" />
+    <loc>https://www.carecalculus.com/q/why-is-female-sex-counted-differently-in-chads-vasc</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/why-is-female-sex-counted-differently-in-chads-vasc" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/why-is-female-sex-counted-differently-in-chads-vasc" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/why-is-female-sex-counted-differently-in-chads-vasc" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/what-is-cha2ds2-vasc-score</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-cha2ds2-vasc-score" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-cha2ds2-vasc-score" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-cha2ds2-vasc-score" />
+    <loc>https://fr.carecalculus.com/q/why-is-female-sex-counted-differently-in-chads-vasc</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/why-is-female-sex-counted-differently-in-chads-vasc" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/why-is-female-sex-counted-differently-in-chads-vasc" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/why-is-female-sex-counted-differently-in-chads-vasc" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/what-cha2ds2-vasc-score-requires-anticoagulation</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-cha2ds2-vasc-score-requires-anticoagulation" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-cha2ds2-vasc-score-requires-anticoagulation" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-cha2ds2-vasc-score-requires-anticoagulation" />
+    <loc>https://www.carecalculus.com/q/what-is-the-cockcroft-gault-equation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-cockcroft-gault-equation" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-cockcroft-gault-equation" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-cockcroft-gault-equation" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/what-cha2ds2-vasc-score-requires-anticoagulation</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-cha2ds2-vasc-score-requires-anticoagulation" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-cha2ds2-vasc-score-requires-anticoagulation" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-cha2ds2-vasc-score-requires-anticoagulation" />
+    <loc>https://fr.carecalculus.com/q/what-is-the-cockcroft-gault-equation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-cockcroft-gault-equation" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-cockcroft-gault-equation" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-cockcroft-gault-equation" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/what-does-the-cha2ds2-vasc-score-estimate</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-does-the-cha2ds2-vasc-score-estimate" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-does-the-cha2ds2-vasc-score-estimate" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-does-the-cha2ds2-vasc-score-estimate" />
+    <loc>https://www.carecalculus.com/q/when-should-i-use-cockcroft-gault-vs-ckd-epi</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/when-should-i-use-cockcroft-gault-vs-ckd-epi" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/when-should-i-use-cockcroft-gault-vs-ckd-epi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/when-should-i-use-cockcroft-gault-vs-ckd-epi" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/what-does-the-cha2ds2-vasc-score-estimate</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-does-the-cha2ds2-vasc-score-estimate" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-does-the-cha2ds2-vasc-score-estimate" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-does-the-cha2ds2-vasc-score-estimate" />
+    <loc>https://fr.carecalculus.com/q/when-should-i-use-cockcroft-gault-vs-ckd-epi</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/when-should-i-use-cockcroft-gault-vs-ckd-epi" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/when-should-i-use-cockcroft-gault-vs-ckd-epi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/when-should-i-use-cockcroft-gault-vs-ckd-epi" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/at-what-cha2ds2-vasc-score-is-anticoagulation-recommended</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/at-what-cha2ds2-vasc-score-is-anticoagulation-recommended" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/at-what-cha2ds2-vasc-score-is-anticoagulation-recommended" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/at-what-cha2ds2-vasc-score-is-anticoagulation-recommended" />
+    <loc>https://www.carecalculus.com/q/what-creatinine-clearance-requires-dose-adjustment-for-vancomycin</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-creatinine-clearance-requires-dose-adjustment-for-vancomycin" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-creatinine-clearance-requires-dose-adjustment-for-vancomycin" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-creatinine-clearance-requires-dose-adjustment-for-vancomycin" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/at-what-cha2ds2-vasc-score-is-anticoagulation-recommended</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/at-what-cha2ds2-vasc-score-is-anticoagulation-recommended" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/at-what-cha2ds2-vasc-score-is-anticoagulation-recommended" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/at-what-cha2ds2-vasc-score-is-anticoagulation-recommended" />
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.carecalculus.com/q/how-does-female-sex-impact-the-cha2ds2-vasc-score-calculation</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/how-does-female-sex-impact-the-cha2ds2-vasc-score-calculation" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/how-does-female-sex-impact-the-cha2ds2-vasc-score-calculation" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/how-does-female-sex-impact-the-cha2ds2-vasc-score-calculation" />
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fr.carecalculus.com/q/how-does-female-sex-impact-the-cha2ds2-vasc-score-calculation</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/how-does-female-sex-impact-the-cha2ds2-vasc-score-calculation" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/how-does-female-sex-impact-the-cha2ds2-vasc-score-calculation" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/how-does-female-sex-impact-the-cha2ds2-vasc-score-calculation" />
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.carecalculus.com/q/what-is-creatinine-clearance</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-creatinine-clearance" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-creatinine-clearance" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-creatinine-clearance" />
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fr.carecalculus.com/q/what-is-creatinine-clearance</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-creatinine-clearance" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-creatinine-clearance" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-creatinine-clearance" />
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.carecalculus.com/q/what-is-the-cockcroft-gault-formula</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-cockcroft-gault-formula" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-cockcroft-gault-formula" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-cockcroft-gault-formula" />
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fr.carecalculus.com/q/what-is-the-cockcroft-gault-formula</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-cockcroft-gault-formula" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-cockcroft-gault-formula" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-cockcroft-gault-formula" />
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.carecalculus.com/q/what-creatinine-clearance-is-considered-normal</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-creatinine-clearance-is-considered-normal" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-creatinine-clearance-is-considered-normal" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-creatinine-clearance-is-considered-normal" />
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fr.carecalculus.com/q/what-creatinine-clearance-is-considered-normal</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-creatinine-clearance-is-considered-normal" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-creatinine-clearance-is-considered-normal" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-creatinine-clearance-is-considered-normal" />
+    <loc>https://fr.carecalculus.com/q/what-creatinine-clearance-requires-dose-adjustment-for-vancomycin</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-creatinine-clearance-requires-dose-adjustment-for-vancomycin" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-creatinine-clearance-requires-dose-adjustment-for-vancomycin" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-creatinine-clearance-requires-dose-adjustment-for-vancomycin" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2041,98 +2537,66 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/what-is-the-pf-ratio</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-pf-ratio" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-pf-ratio" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-pf-ratio" />
+    <loc>https://www.carecalculus.com/q/what-is-the-pf-ratio-pf-ratio</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-pf-ratio-pf-ratio" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-pf-ratio-pf-ratio" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-pf-ratio-pf-ratio" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/what-is-the-pf-ratio</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-pf-ratio" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-pf-ratio" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-pf-ratio" />
+    <loc>https://fr.carecalculus.com/q/what-is-the-pf-ratio-pf-ratio</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-pf-ratio-pf-ratio" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-pf-ratio-pf-ratio" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-pf-ratio-pf-ratio" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/what-is-a-normal-pf-ratio</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-a-normal-pf-ratio" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-a-normal-pf-ratio" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-a-normal-pf-ratio" />
+    <loc>https://www.carecalculus.com/q/what-pf-ratio-indicates-ards</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-pf-ratio-indicates-ards" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-pf-ratio-indicates-ards" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-pf-ratio-indicates-ards" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/what-is-a-normal-pf-ratio</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-a-normal-pf-ratio" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-a-normal-pf-ratio" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-a-normal-pf-ratio" />
+    <loc>https://fr.carecalculus.com/q/what-pf-ratio-indicates-ards</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-pf-ratio-indicates-ards" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-pf-ratio-indicates-ards" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-pf-ratio-indicates-ards" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/how-does-the-pf-ratio-classify-ards</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/how-does-the-pf-ratio-classify-ards" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/how-does-the-pf-ratio-classify-ards" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/how-does-the-pf-ratio-classify-ards" />
+    <loc>https://www.carecalculus.com/q/what-tidal-volume-should-i-use-for-ards-ventilation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-tidal-volume-should-i-use-for-ards-ventilation" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-tidal-volume-should-i-use-for-ards-ventilation" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-tidal-volume-should-i-use-for-ards-ventilation" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/how-does-the-pf-ratio-classify-ards</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/how-does-the-pf-ratio-classify-ards" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/how-does-the-pf-ratio-classify-ards" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/how-does-the-pf-ratio-classify-ards" />
+    <loc>https://fr.carecalculus.com/q/what-tidal-volume-should-i-use-for-ards-ventilation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-tidal-volume-should-i-use-for-ards-ventilation" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-tidal-volume-should-i-use-for-ards-ventilation" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-tidal-volume-should-i-use-for-ards-ventilation" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/why-should-tidal-volume-be-calculated-based-on-predicted-body-weight-pbw</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/why-should-tidal-volume-be-calculated-based-on-predicted-body-weight-pbw" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/why-should-tidal-volume-be-calculated-based-on-predicted-body-weight-pbw" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/why-should-tidal-volume-be-calculated-based-on-predicted-body-weight-pbw" />
+    <loc>https://www.carecalculus.com/q/what-is-predicted-body-weight-pbw-and-why-does-it-matter</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-predicted-body-weight-pbw-and-why-does-it-matter" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-predicted-body-weight-pbw-and-why-does-it-matter" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-predicted-body-weight-pbw-and-why-does-it-matter" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/why-should-tidal-volume-be-calculated-based-on-predicted-body-weight-pbw</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/why-should-tidal-volume-be-calculated-based-on-predicted-body-weight-pbw" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/why-should-tidal-volume-be-calculated-based-on-predicted-body-weight-pbw" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/why-should-tidal-volume-be-calculated-based-on-predicted-body-weight-pbw" />
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.carecalculus.com/q/what-is-the-standard-protective-tidal-volume-target-in-ards</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-standard-protective-tidal-volume-target-in-ards" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-standard-protective-tidal-volume-target-in-ards" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-standard-protective-tidal-volume-target-in-ards" />
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fr.carecalculus.com/q/what-is-the-standard-protective-tidal-volume-target-in-ards</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-standard-protective-tidal-volume-target-in-ards" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-standard-protective-tidal-volume-target-in-ards" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-standard-protective-tidal-volume-target-in-ards" />
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.carecalculus.com/q/what-formula-is-used-to-calculate-predicted-body-weight</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-formula-is-used-to-calculate-predicted-body-weight" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-formula-is-used-to-calculate-predicted-body-weight" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-formula-is-used-to-calculate-predicted-body-weight" />
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fr.carecalculus.com/q/what-formula-is-used-to-calculate-predicted-body-weight</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-formula-is-used-to-calculate-predicted-body-weight" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-formula-is-used-to-calculate-predicted-body-weight" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-formula-is-used-to-calculate-predicted-body-weight" />
+    <loc>https://fr.carecalculus.com/q/what-is-predicted-body-weight-pbw-and-why-does-it-matter</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-predicted-body-weight-pbw-and-why-does-it-matter" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-predicted-body-weight-pbw-and-why-does-it-matter" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-predicted-body-weight-pbw-and-why-does-it-matter" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2281,50 +2745,34 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/what-are-the-sirs-criteria</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-are-the-sirs-criteria" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-are-the-sirs-criteria" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-are-the-sirs-criteria" />
+    <loc>https://www.carecalculus.com/q/what-are-the-sirs-criteria-for-sepsis</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-are-the-sirs-criteria-for-sepsis" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-are-the-sirs-criteria-for-sepsis" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-are-the-sirs-criteria-for-sepsis" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/what-are-the-sirs-criteria</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-are-the-sirs-criteria" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-are-the-sirs-criteria" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-are-the-sirs-criteria" />
+    <loc>https://fr.carecalculus.com/q/what-are-the-sirs-criteria-for-sepsis</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-are-the-sirs-criteria-for-sepsis" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-are-the-sirs-criteria-for-sepsis" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-are-the-sirs-criteria-for-sepsis" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/what-is-the-difference-between-sirs-and-sepsis</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-difference-between-sirs-and-sepsis" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-difference-between-sirs-and-sepsis" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-difference-between-sirs-and-sepsis" />
+    <loc>https://www.carecalculus.com/q/is-sirs-still-used-after-the-sepsis-3-definition</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/is-sirs-still-used-after-the-sepsis-3-definition" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/is-sirs-still-used-after-the-sepsis-3-definition" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/is-sirs-still-used-after-the-sepsis-3-definition" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/what-is-the-difference-between-sirs-and-sepsis</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-difference-between-sirs-and-sepsis" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-difference-between-sirs-and-sepsis" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-difference-between-sirs-and-sepsis" />
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.carecalculus.com/q/is-sirs-still-used-to-diagnose-sepsis</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/is-sirs-still-used-to-diagnose-sepsis" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/is-sirs-still-used-to-diagnose-sepsis" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/is-sirs-still-used-to-diagnose-sepsis" />
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fr.carecalculus.com/q/is-sirs-still-used-to-diagnose-sepsis</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/is-sirs-still-used-to-diagnose-sepsis" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/is-sirs-still-used-to-diagnose-sepsis" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/is-sirs-still-used-to-diagnose-sepsis" />
+    <loc>https://fr.carecalculus.com/q/is-sirs-still-used-after-the-sepsis-3-definition</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/is-sirs-still-used-after-the-sepsis-3-definition" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/is-sirs-still-used-after-the-sepsis-3-definition" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/is-sirs-still-used-after-the-sepsis-3-definition" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2441,82 +2889,66 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/how-does-the-sofa-score-define-organ-dysfunction-severity</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/how-does-the-sofa-score-define-organ-dysfunction-severity" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/how-does-the-sofa-score-define-organ-dysfunction-severity" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/how-does-the-sofa-score-define-organ-dysfunction-severity" />
+    <loc>https://www.carecalculus.com/q/what-sofa-score-indicates-sepsis</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-sofa-score-indicates-sepsis" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-sofa-score-indicates-sepsis" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-sofa-score-indicates-sepsis" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/how-does-the-sofa-score-define-organ-dysfunction-severity</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/how-does-the-sofa-score-define-organ-dysfunction-severity" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/how-does-the-sofa-score-define-organ-dysfunction-severity" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/how-does-the-sofa-score-define-organ-dysfunction-severity" />
+    <loc>https://fr.carecalculus.com/q/what-sofa-score-indicates-sepsis</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-sofa-score-indicates-sepsis" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-sofa-score-indicates-sepsis" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-sofa-score-indicates-sepsis" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/what-is-the-clinical-significance-of-a-change-in-sofa-score</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-clinical-significance-of-a-change-in-sofa-score" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-clinical-significance-of-a-change-in-sofa-score" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-clinical-significance-of-a-change-in-sofa-score" />
+    <loc>https://www.carecalculus.com/q/what-is-the-maximum-sofa-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-maximum-sofa-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-maximum-sofa-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-maximum-sofa-score" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/what-is-the-clinical-significance-of-a-change-in-sofa-score</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-clinical-significance-of-a-change-in-sofa-score" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-clinical-significance-of-a-change-in-sofa-score" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-clinical-significance-of-a-change-in-sofa-score" />
+    <loc>https://fr.carecalculus.com/q/what-is-the-maximum-sofa-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-maximum-sofa-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-maximum-sofa-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-maximum-sofa-score" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/what-are-the-six-organ-systems-assessed-by-the-sofa-score</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-are-the-six-organ-systems-assessed-by-the-sofa-score" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-are-the-six-organ-systems-assessed-by-the-sofa-score" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-are-the-six-organ-systems-assessed-by-the-sofa-score" />
+    <loc>https://www.carecalculus.com/q/how-does-sofa-differ-from-qsofa</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/how-does-sofa-differ-from-qsofa" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/how-does-sofa-differ-from-qsofa" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/how-does-sofa-differ-from-qsofa" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/what-are-the-six-organ-systems-assessed-by-the-sofa-score</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-are-the-six-organ-systems-assessed-by-the-sofa-score" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-are-the-six-organ-systems-assessed-by-the-sofa-score" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-are-the-six-organ-systems-assessed-by-the-sofa-score" />
+    <loc>https://fr.carecalculus.com/q/how-does-sofa-differ-from-qsofa</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/how-does-sofa-differ-from-qsofa" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/how-does-sofa-differ-from-qsofa" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/how-does-sofa-differ-from-qsofa" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/what-is-the-clinical-significance-of-a-2-point-increase-in-the-sofa-score</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-clinical-significance-of-a-2-point-increase-in-the-sofa-score" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-clinical-significance-of-a-2-point-increase-in-the-sofa-score" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-clinical-significance-of-a-2-point-increase-in-the-sofa-score" />
+    <loc>https://www.carecalculus.com/q/can-sofa-score-predict-icu-mortality</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/can-sofa-score-predict-icu-mortality" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/can-sofa-score-predict-icu-mortality" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/can-sofa-score-predict-icu-mortality" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/what-is-the-clinical-significance-of-a-2-point-increase-in-the-sofa-score</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-clinical-significance-of-a-2-point-increase-in-the-sofa-score" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-clinical-significance-of-a-2-point-increase-in-the-sofa-score" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-clinical-significance-of-a-2-point-increase-in-the-sofa-score" />
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.carecalculus.com/q/can-the-sofa-score-predict-mortality-in-the-icu</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/can-the-sofa-score-predict-mortality-in-the-icu" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/can-the-sofa-score-predict-mortality-in-the-icu" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/can-the-sofa-score-predict-mortality-in-the-icu" />
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fr.carecalculus.com/q/can-the-sofa-score-predict-mortality-in-the-icu</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/can-the-sofa-score-predict-mortality-in-the-icu" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/can-the-sofa-score-predict-mortality-in-the-icu" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/can-the-sofa-score-predict-mortality-in-the-icu" />
+    <loc>https://fr.carecalculus.com/q/can-sofa-score-predict-icu-mortality</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/can-sofa-score-predict-icu-mortality" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/can-sofa-score-predict-icu-mortality" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/can-sofa-score-predict-icu-mortality" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2537,130 +2969,114 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/what-are-the-child-pugh-classification-classes</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-are-the-child-pugh-classification-classes" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-are-the-child-pugh-classification-classes" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-are-the-child-pugh-classification-classes" />
+    <loc>https://www.carecalculus.com/q/what-is-the-difference-between-child-pugh-and-meld-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-difference-between-child-pugh-and-meld-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-difference-between-child-pugh-and-meld-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-difference-between-child-pugh-and-meld-score" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/what-are-the-child-pugh-classification-classes</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-are-the-child-pugh-classification-classes" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-are-the-child-pugh-classification-classes" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-are-the-child-pugh-classification-classes" />
+    <loc>https://fr.carecalculus.com/q/what-is-the-difference-between-child-pugh-and-meld-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-difference-between-child-pugh-and-meld-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-difference-between-child-pugh-and-meld-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-difference-between-child-pugh-and-meld-score" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/how-does-the-child-pugh-score-differ-from-the-meld-score</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/how-does-the-child-pugh-score-differ-from-the-meld-score" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/how-does-the-child-pugh-score-differ-from-the-meld-score" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/how-does-the-child-pugh-score-differ-from-the-meld-score" />
+    <loc>https://www.carecalculus.com/q/what-is-the-survival-of-child-pugh-class-c-cirrhosis</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-survival-of-child-pugh-class-c-cirrhosis" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-survival-of-child-pugh-class-c-cirrhosis" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-survival-of-child-pugh-class-c-cirrhosis" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/how-does-the-child-pugh-score-differ-from-the-meld-score</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/how-does-the-child-pugh-score-differ-from-the-meld-score" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/how-does-the-child-pugh-score-differ-from-the-meld-score" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/how-does-the-child-pugh-score-differ-from-the-meld-score" />
+    <loc>https://fr.carecalculus.com/q/what-is-the-survival-of-child-pugh-class-c-cirrhosis</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-survival-of-child-pugh-class-c-cirrhosis" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-survival-of-child-pugh-class-c-cirrhosis" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-survival-of-child-pugh-class-c-cirrhosis" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/what-is-the-serum-anion-gap</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-serum-anion-gap" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-serum-anion-gap" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-serum-anion-gap" />
+    <loc>https://www.carecalculus.com/q/what-is-the-anion-gap</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-anion-gap" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-anion-gap" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-anion-gap" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/what-is-the-serum-anion-gap</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-serum-anion-gap" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-serum-anion-gap" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-serum-anion-gap" />
+    <loc>https://fr.carecalculus.com/q/what-is-the-anion-gap</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-anion-gap" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-anion-gap" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-anion-gap" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/what-is-a-normal-serum-anion-gap</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-a-normal-serum-anion-gap" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-a-normal-serum-anion-gap" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-a-normal-serum-anion-gap" />
+    <loc>https://www.carecalculus.com/q/what-conditions-cause-a-high-anion-gap-metabolic-acidosis</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-conditions-cause-a-high-anion-gap-metabolic-acidosis" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-conditions-cause-a-high-anion-gap-metabolic-acidosis" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-conditions-cause-a-high-anion-gap-metabolic-acidosis" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/what-is-a-normal-serum-anion-gap</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-a-normal-serum-anion-gap" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-a-normal-serum-anion-gap" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-a-normal-serum-anion-gap" />
+    <loc>https://fr.carecalculus.com/q/what-conditions-cause-a-high-anion-gap-metabolic-acidosis</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-conditions-cause-a-high-anion-gap-metabolic-acidosis" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-conditions-cause-a-high-anion-gap-metabolic-acidosis" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-conditions-cause-a-high-anion-gap-metabolic-acidosis" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/what-causes-a-high-anion-gap-metabolic-acidosis-hagma</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-causes-a-high-anion-gap-metabolic-acidosis-hagma" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-causes-a-high-anion-gap-metabolic-acidosis-hagma" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-causes-a-high-anion-gap-metabolic-acidosis-hagma" />
+    <loc>https://www.carecalculus.com/q/how-do-i-correct-the-anion-gap-for-low-albumin</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/how-do-i-correct-the-anion-gap-for-low-albumin" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/how-do-i-correct-the-anion-gap-for-low-albumin" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/how-do-i-correct-the-anion-gap-for-low-albumin" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/what-causes-a-high-anion-gap-metabolic-acidosis-hagma</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-causes-a-high-anion-gap-metabolic-acidosis-hagma" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-causes-a-high-anion-gap-metabolic-acidosis-hagma" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-causes-a-high-anion-gap-metabolic-acidosis-hagma" />
+    <loc>https://fr.carecalculus.com/q/how-do-i-correct-the-anion-gap-for-low-albumin</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/how-do-i-correct-the-anion-gap-for-low-albumin" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/how-do-i-correct-the-anion-gap-for-low-albumin" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/how-do-i-correct-the-anion-gap-for-low-albumin" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/what-is-the-alveolar-arterial-a-a-oxygen-gradient</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-alveolar-arterial-a-a-oxygen-gradient" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-alveolar-arterial-a-a-oxygen-gradient" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-alveolar-arterial-a-a-oxygen-gradient" />
+    <loc>https://www.carecalculus.com/q/what-is-the-alveolar-arterial-a-a-gradient</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-alveolar-arterial-a-a-gradient" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-alveolar-arterial-a-a-gradient" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-alveolar-arterial-a-a-gradient" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/what-is-the-alveolar-arterial-a-a-oxygen-gradient</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-alveolar-arterial-a-a-oxygen-gradient" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-alveolar-arterial-a-a-oxygen-gradient" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-alveolar-arterial-a-a-oxygen-gradient" />
+    <loc>https://fr.carecalculus.com/q/what-is-the-alveolar-arterial-a-a-gradient</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-alveolar-arterial-a-a-gradient" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-alveolar-arterial-a-a-gradient" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-alveolar-arterial-a-a-gradient" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/how-is-the-expected-normal-a-a-gradient-calculated</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/how-is-the-expected-normal-a-a-gradient-calculated" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/how-is-the-expected-normal-a-a-gradient-calculated" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/how-is-the-expected-normal-a-a-gradient-calculated" />
+    <loc>https://www.carecalculus.com/q/what-does-a-normal-a-a-gradient-with-hypoxemia-indicate</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-does-a-normal-a-a-gradient-with-hypoxemia-indicate" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-does-a-normal-a-a-gradient-with-hypoxemia-indicate" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-does-a-normal-a-a-gradient-with-hypoxemia-indicate" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/how-is-the-expected-normal-a-a-gradient-calculated</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/how-is-the-expected-normal-a-a-gradient-calculated" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/how-is-the-expected-normal-a-a-gradient-calculated" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/how-is-the-expected-normal-a-a-gradient-calculated" />
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.carecalculus.com/q/what-causes-an-elevated-a-a-gradient</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-causes-an-elevated-a-a-gradient" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-causes-an-elevated-a-a-gradient" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-causes-an-elevated-a-a-gradient" />
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fr.carecalculus.com/q/what-causes-an-elevated-a-a-gradient</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-causes-an-elevated-a-a-gradient" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-causes-an-elevated-a-a-gradient" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-causes-an-elevated-a-a-gradient" />
+    <loc>https://fr.carecalculus.com/q/what-does-a-normal-a-a-gradient-with-hypoxemia-indicate</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-does-a-normal-a-a-gradient-with-hypoxemia-indicate" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-does-a-normal-a-a-gradient-with-hypoxemia-indicate" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-does-a-normal-a-a-gradient-with-hypoxemia-indicate" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2745,34 +3161,34 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/what-does-a-ckd-epi-gfr-score-of-45-indicate</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-does-a-ckd-epi-gfr-score-of-45-indicate" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-does-a-ckd-epi-gfr-score-of-45-indicate" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-does-a-ckd-epi-gfr-score-of-45-indicate" />
+    <loc>https://www.carecalculus.com/q/what-is-the-ckd-epi-equation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-ckd-epi-equation" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-ckd-epi-equation" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-ckd-epi-equation" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/what-does-a-ckd-epi-gfr-score-of-45-indicate</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-does-a-ckd-epi-gfr-score-of-45-indicate" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-does-a-ckd-epi-gfr-score-of-45-indicate" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-does-a-ckd-epi-gfr-score-of-45-indicate" />
+    <loc>https://fr.carecalculus.com/q/what-is-the-ckd-epi-equation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-ckd-epi-equation" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-ckd-epi-equation" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-ckd-epi-equation" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/q/is-the-ckd-epi-equation-reliable-in-acute-kidney-injury-aki</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/is-the-ckd-epi-equation-reliable-in-acute-kidney-injury-aki" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/is-the-ckd-epi-equation-reliable-in-acute-kidney-injury-aki" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/is-the-ckd-epi-equation-reliable-in-acute-kidney-injury-aki" />
+    <loc>https://www.carecalculus.com/q/what-egfr-indicates-stage-3-ckd</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-egfr-indicates-stage-3-ckd" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-egfr-indicates-stage-3-ckd" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-egfr-indicates-stage-3-ckd" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fr.carecalculus.com/q/is-the-ckd-epi-equation-reliable-in-acute-kidney-injury-aki</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/is-the-ckd-epi-equation-reliable-in-acute-kidney-injury-aki" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/is-the-ckd-epi-equation-reliable-in-acute-kidney-injury-aki" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/is-the-ckd-epi-equation-reliable-in-acute-kidney-injury-aki" />
+    <loc>https://fr.carecalculus.com/q/what-egfr-indicates-stage-3-ckd</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-egfr-indicates-stage-3-ckd" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-egfr-indicates-stage-3-ckd" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-egfr-indicates-stage-3-ckd" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3109,6 +3525,214 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/quelles-sont-les-limites-de-la-formule-de-cockcroft-gault" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/quelles-sont-les-limites-de-la-formule-de-cockcroft-gault" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/quelles-sont-les-limites-de-la-formule-de-cockcroft-gault" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/q/what-is-the-apache-ii-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-apache-ii-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-apache-ii-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-apache-ii-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/q/what-is-the-apache-ii-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-apache-ii-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-apache-ii-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-apache-ii-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/q/what-apache-ii-score-indicates-high-mortality-risk</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-apache-ii-score-indicates-high-mortality-risk" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-apache-ii-score-indicates-high-mortality-risk" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-apache-ii-score-indicates-high-mortality-risk" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/q/what-apache-ii-score-indicates-high-mortality-risk</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-apache-ii-score-indicates-high-mortality-risk" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-apache-ii-score-indicates-high-mortality-risk" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-apache-ii-score-indicates-high-mortality-risk" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/q/how-does-apache-ii-differ-from-sofa-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/how-does-apache-ii-differ-from-sofa-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/how-does-apache-ii-differ-from-sofa-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/how-does-apache-ii-differ-from-sofa-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/q/how-does-apache-ii-differ-from-sofa-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/how-does-apache-ii-differ-from-sofa-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/how-does-apache-ii-differ-from-sofa-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/how-does-apache-ii-differ-from-sofa-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/q/what-is-the-heart-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-heart-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-heart-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-heart-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/q/what-is-the-heart-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-heart-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-heart-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-heart-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/q/what-heart-score-is-considered-low-risk</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-heart-score-is-considered-low-risk" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-heart-score-is-considered-low-risk" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-heart-score-is-considered-low-risk" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/q/what-heart-score-is-considered-low-risk</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-heart-score-is-considered-low-risk" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-heart-score-is-considered-low-risk" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-heart-score-is-considered-low-risk" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/q/is-the-heart-score-superior-to-timi-for-chest-pain</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/is-the-heart-score-superior-to-timi-for-chest-pain" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/is-the-heart-score-superior-to-timi-for-chest-pain" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/is-the-heart-score-superior-to-timi-for-chest-pain" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/q/is-the-heart-score-superior-to-timi-for-chest-pain</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/is-the-heart-score-superior-to-timi-for-chest-pain" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/is-the-heart-score-superior-to-timi-for-chest-pain" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/is-the-heart-score-superior-to-timi-for-chest-pain" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/q/how-do-troponin-levels-affect-the-heart-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/how-do-troponin-levels-affect-the-heart-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/how-do-troponin-levels-affect-the-heart-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/how-do-troponin-levels-affect-the-heart-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/q/how-do-troponin-levels-affect-the-heart-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/how-do-troponin-levels-affect-the-heart-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/how-do-troponin-levels-affect-the-heart-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/how-do-troponin-levels-affect-the-heart-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/q/what-is-the-nih-stroke-scale-nihss</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-nih-stroke-scale-nihss" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-nih-stroke-scale-nihss" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-nih-stroke-scale-nihss" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/q/what-is-the-nih-stroke-scale-nihss</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-nih-stroke-scale-nihss" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-nih-stroke-scale-nihss" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-nih-stroke-scale-nihss" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/q/what-nihss-score-qualifies-for-iv-thrombolysis-tpa</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-nihss-score-qualifies-for-iv-thrombolysis-tpa" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-nihss-score-qualifies-for-iv-thrombolysis-tpa" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-nihss-score-qualifies-for-iv-thrombolysis-tpa" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/q/what-nihss-score-qualifies-for-iv-thrombolysis-tpa</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-nihss-score-qualifies-for-iv-thrombolysis-tpa" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-nihss-score-qualifies-for-iv-thrombolysis-tpa" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-nihss-score-qualifies-for-iv-thrombolysis-tpa" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/q/what-nihss-score-indicates-a-severe-stroke</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-nihss-score-indicates-a-severe-stroke" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-nihss-score-indicates-a-severe-stroke" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-nihss-score-indicates-a-severe-stroke" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/q/what-nihss-score-indicates-a-severe-stroke</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-nihss-score-indicates-a-severe-stroke" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-nihss-score-indicates-a-severe-stroke" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-nihss-score-indicates-a-severe-stroke" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/q/what-is-the-has-bled-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-has-bled-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-has-bled-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-has-bled-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/q/what-is-the-has-bled-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-is-the-has-bled-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-is-the-has-bled-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-is-the-has-bled-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/q/what-has-bled-score-indicates-high-bleeding-risk</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-has-bled-score-indicates-high-bleeding-risk" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-has-bled-score-indicates-high-bleeding-risk" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-has-bled-score-indicates-high-bleeding-risk" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/q/what-has-bled-score-indicates-high-bleeding-risk</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/what-has-bled-score-indicates-high-bleeding-risk" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/what-has-bled-score-indicates-high-bleeding-risk" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/what-has-bled-score-indicates-high-bleeding-risk" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/q/should-i-withhold-anticoagulation-if-has-bled-is-high</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/should-i-withhold-anticoagulation-if-has-bled-is-high" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/should-i-withhold-anticoagulation-if-has-bled-is-high" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/should-i-withhold-anticoagulation-if-has-bled-is-high" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/q/should-i-withhold-anticoagulation-if-has-bled-is-high</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/q/should-i-withhold-anticoagulation-if-has-bled-is-high" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/q/should-i-withhold-anticoagulation-if-has-bled-is-high" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/q/should-i-withhold-anticoagulation-if-has-bled-is-high" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

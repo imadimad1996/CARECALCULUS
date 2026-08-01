@@ -171,17 +171,11 @@ The Sepsis-3 consensus replaced SIRS with qSOFA for out-of-ICU sepsis screening,
 
 ### /CURB65-SCORE CLINICAL Q&A
 
-#### Q: What does CURB-65 stand for?
-CURB-65 is an acronym: C = Confusion (new disorientation), U = Urea >7 mmol/L (BUN >19 mg/dL), R = Respiratory rate ≥30/min, B = Blood pressure (Systolic <90 or Diastolic ≤60 mmHg), 65 = Age ≥65 years. Each criterion scores 1 point.
+#### Q: What is the CURB-65 Score?
+CURB-65 is a validated clinical prediction rule for community-acquired pneumonia (CAP) severity, developed by the British Thoracic Society (BTS). It scores 5 variables: Confusion (new onset), Blood Urea Nitrogen > 19 mg/dL (7 mmol/L), Respiratory rate ≥ 30/min, Blood pressure (SBP < 90 or DBP ≤ 60 mmHg), and age ≥ 65 years.
 
-#### Q: What CURB-65 score requires hospitalization?
-Score 0-1: Low risk — outpatient management appropriate. Score 2: Intermediate risk — consider short inpatient admission or close outpatient follow-up. Score 3-5: High risk — hospitalize, consider ICU admission for score ≥4-5.
-
-#### Q: What is the source study for CURB-65?
-CURB-65 was derived by Lim et al. (2003) from British Thoracic Society community-acquired pneumonia (CAP) guidelines data, published in Thorax (PMID: 12668799). It validated across multiple international CAP cohorts.
-
-#### Q: What is the difference between CURB-65 and PSI (Pneumonia Severity Index)?
-PSI (PORT score) uses 20 variables and is more complex, providing finer risk stratification for low-risk patients. CURB-65 uses only 5 criteria and is faster at the bedside. Both are validated; CURB-65 is preferred for rapid triage in emergency settings.
+#### Q: What CURB-65 score requires ICU admission?
+Per BTS guidelines: CURB-65 score 0–1 = low severity, outpatient treatment appropriate (~1.5% 30-day mortality). Score 2 = moderate severity, consider short hospital admission or close outpatient follow-up (~9.2% 30-day mortality). Score 3–5 = severe CAP, hospital admission required; score ≥ 4–5 indicates possible ICU care (~22–57% 30-day mortality).
 
 ### /ORL CLINICAL Q&A
 
@@ -196,71 +190,50 @@ T4 indicates advanced disease. T4a represents moderately advanced local disease 
 
 ### /MELD-SCORE CLINICAL Q&A
 
-#### Q: What is the MELD score?
-The Model for End-Stage Liver Disease (MELD) score is a numerical scale (6–40) that predicts 3-month mortality risk in patients with end-stage liver disease. It uses serum bilirubin, serum creatinine, and INR to calculate the score.
+#### Q: What is the MELD Score?
+The Model for End-Stage Liver Disease (MELD) score predicts 90-day mortality in patients with chronic liver disease and cirrhosis. It uses bilirubin, creatinine, and INR to generate a score from 6 to 40. The MELD score is used by UNOS/OPTN to prioritize liver transplant allocation in the United States.
 
-#### Q: What MELD score qualifies for liver transplant?
-A MELD score of 15 or higher generally qualifies a patient for liver transplant listing. Higher scores indicate greater urgency. Scores above 30 are associated with >50% 90-day mortality without transplant.
+#### Q: What MELD score qualifies for liver transplant listing?
+A MELD score ≥ 15 is generally the threshold at which the survival benefit of liver transplantation exceeds the risk of the procedure, according to UNOS guidelines. Patients with MELD < 15 have better outcomes without transplantation. Patients with MELD > 25 have approximately 50–60% 3-month mortality without transplantation.
 
-#### Q: How is MELD score calculated?
-MELD = 3.78 × ln(bilirubin mg/dL) + 11.2 × ln(INR) + 9.57 × ln(creatinine mg/dL) + 6.43. All values below 1.0 are set to 1.0. Maximum creatinine is capped at 4.0.
-
-#### Q: What parameters are used to calculate the MELD Score?
-The Model for End-Stage Liver Disease (MELD) score is calculated using serum bilirubin, serum creatinine, International Normalized Ratio (INR), and serum sodium. It was updated to MELD-Na to improve predictive accuracy for waiting list mortality.
-
-#### Q: What MELD score indicates the need for a liver transplant?
-Patients with a MELD score of 15 or higher are generally placed on the liver transplant waiting list, as the benefit of transplantation exceeds the procedural risk. Higher MELD scores indicate greater disease severity and receive higher priority on the list.
-
-#### Q: How often is the MELD score recalculated for transplant patients?
-The frequency of MELD recalculation depends on its severity: MELD ≥25 is updated every 7 days; MELD 19-24 is updated every 30 days; MELD 11-18 is updated every 90 days; and MELD ≤10 is updated annually.
+#### Q: What is MELD-Na and how does it differ from MELD?
+MELD-Na incorporates serum sodium (hyponatremia) into the original MELD calculation. Hyponatremia is a marker of severe portal hypertension and significantly worsens prognosis independently. MELD-Na became the standard for US transplant prioritization in 2016 and better predicts 90-day waitlist mortality than original MELD.
 
 ### /WELLS-SCORE CLINICAL Q&A
 
-#### Q: What is the Wells score used for?
-The Wells score is a clinical prediction rule used to estimate the pretest probability of deep vein thrombosis (DVT) or pulmonary embolism (PE). It helps guide diagnostic testing decisions.
+#### Q: What is the Wells Score used for?
+The Wells Score is a validated clinical prediction tool that estimates the pre-test probability of Deep Vein Thrombosis (DVT) and Pulmonary Embolism (PE). It was developed by Philip Wells, MD, and validated in multiple prospective studies. A score ≥ 2 for DVT or ≥ 5 for PE indicates high probability requiring urgent imaging or anticoagulation consideration.
 
-#### Q: What Wells score indicates high risk for DVT?
-A Wells score of ≥3 indicates high probability of DVT (prevalence ~75%). Score 1-2 is moderate probability (~17%), and ≤0 is low probability (~5%). High-probability patients typically proceed directly to imaging.
+#### Q: What score on the Wells criteria means high probability of PE?
+Using the three-tier model: a score < 2 indicates low probability (PE prevalence ~3.4%), 2–6 indicates moderate probability (~27.8%), and > 6 indicates high probability (~78.4%). ESC 2019 and ACEP guidelines recommend CTPA for high-probability patients and D-dimer testing for low/moderate probability.
 
-#### Q: What is the difference between Wells criteria for DVT and PE?
-Wells for DVT and Wells for PE are separate scoring systems with different criteria. DVT Wells evaluates leg-specific findings, while PE Wells includes heart rate >100, hemoptysis, and whether PE is the most likely diagnosis.
+#### Q: Can I use the Wells Score without D-dimer?
+In low-probability patients (Wells Score < 2), a negative high-sensitivity D-dimer test safely excludes PE without imaging, with a negative predictive value > 99%. However, in high-probability patients, CTPA should be performed directly regardless of D-dimer result.
 
-#### Q: What is the difference between Wells' Criteria for DVT and PE?
-Wells' Criteria for Deep Vein Thrombosis (DVT) scores localized signs like unilateral calf swelling and collateral superficial veins, whereas Wells' Criteria for Pulmonary Embolism (PE) heavily weights systemic clinical signs, tachycardia, history of DVT/PE, and whether an alternative diagnosis is less likely.
-
-#### Q: How do you interpret a Wells' DVT score of 2 or higher?
-A Wells' DVT score of 2 or higher indicates that DVT is clinically 'likely' (approximately 28% risk). The recommended clinical pathway is to obtain a proximal lower extremity ultrasound. For scores < 2 (DVT unlikely), a high-sensitivity D-Dimer test can be used to rule out DVT.
-
-#### Q: Should a D-Dimer test be done before calculating Wells' Score?
-No. Guidelines recommend calculating the Wells' Score first (pre-test probability). D-Dimer has high sensitivity but low specificity; doing it first leads to unnecessary imaging. Calculate the Wells' Score first to determine if D-Dimer is appropriate (unlikely probability) or if direct imaging is needed (likely probability).
+#### Q: What are the Wells Score criteria for DVT?
+The 9 Wells DVT criteria include: active cancer (+1), paralysis/paresis/plaster immobilization of lower limb (+1), bedridden > 3 days or major surgery within 12 weeks (+1), localized tenderness along deep venous system (+1), entire leg swollen (+1), calf swelling > 3 cm (+1), pitting edema (+1), collateral superficial veins (+1), and alternative diagnosis as likely or more likely (-2). Score ≥ 2 = high probability.
 
 ### /CHA2DS2-VASC CLINICAL Q&A
 
-#### Q: What is CHA2DS2-VASc score?
-CHA2DS2-VASc is a clinical prediction score that estimates stroke risk in patients with non-valvular atrial fibrillation (AF). It guides decisions about anticoagulation therapy. The acronym stands for: Congestive heart failure, Hypertension, Age ≥75 (2 points), Diabetes, Stroke/TIA (2 points), Vascular disease, Age 65-74, Sex category (female).
+#### Q: What does CHA₂DS₂-VASc stand for?
+CHA₂DS₂-VASc stands for: Congestive heart failure (1 pt), Hypertension (1 pt), Age ≥ 75 (2 pts), Diabetes (1 pt), Stroke/TIA history (2 pts), Vascular disease (1 pt), Age 65–74 (1 pt), and female Sex category (1 pt). Maximum score is 9 points.
 
-#### Q: What CHA2DS2-VASc score requires anticoagulation?
-Per ESC/AHA guidelines: Score 0 (males) or 1 (females) = no anticoagulation needed. Score ≥1 (males) or ≥2 (females) = consider anticoagulation. Score ≥2 (males) or ≥3 (females) = anticoagulation recommended.
+#### Q: At what CHA₂DS₂-VASc score should I start anticoagulation?
+Per ESC 2020 and AHA/ACC 2023 guidelines: anticoagulation (DOAC preferred over warfarin) is recommended for CHA₂DS₂-VASc ≥ 2 in men and ≥ 3 in women. Score of 1 in men or 2 in women may warrant consideration based on individual risk-benefit assessment. Score 0 in men or 1 in women (female sex only): anticoagulation is not routinely recommended.
 
-#### Q: What does the CHA2DS2-VASc score estimate?
-The CHA2DS2-VASc score estimates the annual risk of ischemic stroke in patients with non-valvular atrial fibrillation (AF). It guides decisions regarding oral anticoagulation therapy (OAC) to prevent thromboembolic events.
-
-#### Q: At what CHA2DS2-VASc score is anticoagulation recommended?
-Anticoagulation is generally recommended for a CHA2DS2-VASc score of ≥2 in males and ≥3 in females. For a score of 1 in males or 2 in females, anticoagulation should be considered based on individual risk-benefit discussion. A score of 0 (males) or 1 (females) does not require anticoagulation.
-
-#### Q: How does female sex impact the CHA2DS2-VASc score calculation?
-Female sex is a modifier that adds 1 point to the score, reflecting a higher baseline stroke risk in females with atrial fibrillation. However, female sex alone (score of 1) in the absence of other risk factors does not warrant anticoagulation.
+#### Q: Why is female sex counted differently in CHA₂DS₂-VASc?
+Female sex alone is not an independent risk factor for stroke in AF. The 1-point allocation for female sex only modifies the risk assessment when other risk factors are present. Therefore, a score of 1 (female sex only) is not sufficient indication for anticoagulation — only when combined with at least one other risk factor (score ≥ 2 in women) is anticoagulation indicated.
 
 ### /CREATININE-CLEARANCE CLINICAL Q&A
 
-#### Q: What is creatinine clearance?
-Creatinine clearance (CrCl) is a measure of kidney function that estimates the glomerular filtration rate (GFR). It reflects how efficiently the kidneys filter creatinine from the blood and is measured in mL/min.
+#### Q: What is the Cockcroft-Gault equation?
+The Cockcroft-Gault (CG) equation estimates creatinine clearance (CrCl) as a surrogate for glomerular filtration rate: CrCl (mL/min) = [(140 − age) × weight (kg)] / [72 × serum creatinine (mg/dL)] × 0.85 (if female). It was derived from 249 patients in 1976 and remains the FDA and EMA standard for drug dose adjustment in renal impairment.
 
-#### Q: What is the Cockcroft-Gault formula?
-CrCl = [(140 - Age) × Weight (kg)] / [72 × Serum Creatinine (mg/dL)] × 0.85 if female. It was published by Cockcroft and Gault in 1976 and remains the standard for drug dosing adjustments.
+#### Q: When should I use Cockcroft-Gault vs CKD-EPI?
+Use Cockcroft-Gault for pharmacokinetic drug dosing (it is required by FDA labeling for renal dose adjustment). Use CKD-EPI for diagnosing and staging chronic kidney disease (CKD) — it is more accurate than Cockcroft-Gault across a wide range of GFR values and is the KDIGO-recommended equation for CKD classification.
 
-#### Q: What creatinine clearance is considered normal?
-Normal creatinine clearance is approximately 90-120 mL/min for healthy adults. Values below 60 mL/min indicate chronic kidney disease (CKD) Stage 3 or worse. Below 15 mL/min indicates kidney failure (Stage 5).
+#### Q: What creatinine clearance requires dose adjustment for vancomycin?
+Vancomycin dosing should be adjusted when CrCl < 50 mL/min. Below this threshold, the dosing interval is extended (q24h or q48h instead of q12h) and serum trough or AUC monitoring is required. Patients with CrCl < 10 mL/min typically require weight-based loading doses with AUC-guided subsequent dosing per ASHP/SIDP 2020 consensus guidelines.
 
 ### /CORRECTED-CALCIUM CLINICAL Q&A
 
@@ -308,25 +281,19 @@ To convert creatinine from mg/dL to micromoles per liter (µmol/L), multiply the
 
 ### /PF-RATIO CLINICAL Q&A
 
-#### Q: What is the P/F ratio?
-The P/F ratio is the ratio of arterial oxygen partial pressure (PaO2 in mmHg) to fractional inspired oxygen (FiO2 as a decimal). It is used to quantify the severity of hypoxemia and lung injury.
+#### Q: What is the PF Ratio (P/F Ratio)?
+The P/F ratio (PaO₂/FiO₂ ratio, or Horowitz index) is the ratio of arterial oxygen partial pressure to the inspired oxygen fraction. It quantifies the degree of hypoxemia and is the cornerstone of the Berlin Definition of ARDS (2012), where P/F < 300 on PEEP ≥ 5 cmH₂O defines ARDS.
 
-#### Q: What is a normal P/F ratio?
-A normal P/F ratio is approximately 400 to 500 mmHg. A value below 300 mmHg indicates acute lung injury, and below 200 mmHg is a hallmark of ARDS.
-
-#### Q: How does the P/F ratio classify ARDS?
-Under the Berlin Definition, ARDS is classified by P/F ratio with PEEP/CPAP ≥5 cmH2O: Mild (201-300 mmHg), Moderate (101-200 mmHg), and Severe (≤100 mmHg).
+#### Q: What P/F ratio indicates ARDS?
+Berlin Definition ARDS classification: Mild ARDS: P/F ratio 201–300 mmHg (on PEEP ≥ 5 cmH₂O) — associated with ~27% mortality. Moderate ARDS: P/F ratio 101–200 mmHg — ~32% mortality. Severe ARDS: P/F ratio ≤ 100 mmHg — ~45% mortality. All categories require bilateral opacities on chest imaging not explained by fluid overload or cardiac failure.
 
 ### /TIDAL-VOLUME CLINICAL Q&A
 
-#### Q: Why should tidal volume be calculated based on predicted body weight (PBW)?
-Lung size is determined by biological sex and height, not by actual body weight. Using actual body weight in obese patients would result in excessively large tidal volumes, leading to ventilator-induced lung injury (volutrauma/barotrauma).
+#### Q: What tidal volume should I use for ARDS ventilation?
+The ARDSNet ARMA trial (NEJM 2000) established that lung-protective ventilation with tidal volumes of 6 mL/kg of predicted body weight (PBW) reduces mortality by 22% compared to 12 mL/kg PBW in patients with ARDS. This 6 mL/kg PBW target, combined with plateau pressure ≤ 30 cmH₂O, is the global standard of care per ATS, ESICM, and SCCM.
 
-#### Q: What is the standard protective tidal volume target in ARDS?
-The ARDSNet protocol recommends starting at 6 mL/kg of predicted body weight (PBW), with a range between 4 to 8 mL/kg, while maintaining plateau pressure < 30 cmH2O.
-
-#### Q: What formula is used to calculate predicted body weight?
-The Devine formula is typically used. Males: 50 + 2.3 × (Height in inches - 60). Females: 45.5 + 2.3 × (Height in inches - 60).
+#### Q: What is predicted body weight (PBW) and why does it matter?
+PBW is calculated from sex and height — not actual body weight. For males: PBW = 50 + 2.3 × (height in inches − 60). For females: PBW = 45.5 + 2.3 × (height in inches − 60). Using actual body weight in obese patients would result in dangerously high tidal volumes and ventilator-induced lung injury (VILI). Lung volume correlates with height, not body mass.
 
 ### /ANC-CALCULATOR CLINICAL Q&A
 
@@ -363,14 +330,11 @@ Scores indicate depression severity: 0-4 (Minimal/None), 5-9 (Mild), 10-14 (Mode
 
 ### /SIRS-CRITERIA CLINICAL Q&A
 
-#### Q: What are the SIRS criteria?
-Systemic Inflammatory Response Syndrome (SIRS) is defined by meeting ≥2 of: Temperature <36°C or >38°C; Heart Rate >90 bpm; Respiratory Rate >20/min or PaCO2 <32 mmHg; WBC Count <4,000/µL, >12,000/µL, or >10% bands.
+#### Q: What are the SIRS criteria for sepsis?
+Systemic Inflammatory Response Syndrome (SIRS) requires ≥ 2 of the following: Temperature > 38°C or < 36°C; Heart rate > 90 bpm; Respiratory rate > 20/min or PaCO₂ < 32 mmHg; WBC > 12,000 or < 4,000 cells/μL or > 10% bands. SIRS + suspected/confirmed infection = Sepsis (pre-Sepsis-3 definition).
 
-#### Q: What is the difference between SIRS and Sepsis?
-SIRS is a systemic inflammatory response to any insult (infectious or non-infectious, e.g., pancreatitis). Sepsis is defined as SIRS (or organ dysfunction) caused by a documented or suspected infection.
-
-#### Q: Is SIRS still used to diagnose sepsis?
-While Sepsis-3 guidelines transitioned to using the SOFA/qSOFA scores for defining sepsis due to better specificity, SIRS remains widely monitored in clinical triage as a highly sensitive screening tool.
+#### Q: Is SIRS still used after the Sepsis-3 definition?
+The Sepsis-3 consensus (2016) replaced SIRS-based sepsis definition with the SOFA-based definition (organ dysfunction). However, SIRS remains clinically useful as a non-specific alert for physiological stress responses and may trigger infection workup. SIRS criteria are still used in many hospital protocols, sepsis bundles, and pediatric sepsis definitions.
 
 ### /GLP-1-HUB CLINICAL Q&A
 
@@ -396,56 +360,50 @@ It is calculated routinely at 1 and 5 minutes after birth. If the 5-minute score
 
 ### /SOFA-SCORE CLINICAL Q&A
 
-#### Q: What is the SOFA score?
-The Sequential Organ Failure Assessment (SOFA) score is a scoring system used in ICU settings to track a patient's organ dysfunction level across six organ systems: respiratory, cardiovascular, hepatic, coagulation, renal, and neurological.
+#### Q: What is the SOFA Score?
+The Sequential Organ Failure Assessment (SOFA) score quantifies the degree of organ dysfunction in critically ill patients across 6 organ systems: respiratory (PaO2/FiO2), coagulation (platelets), liver (bilirubin), cardiovascular (MAP/vasopressors), central nervous system (GCS), and renal (creatinine). It is the cornerstone of the Sepsis-3 consensus definition published in JAMA 2016.
 
-#### Q: How does the SOFA score define organ dysfunction severity?
-Each of the six organ systems is scored from 0 (normal) to 4 (severe dysfunction), yielding a total score between 0 and 24. A higher score is associated with higher mortality risk.
+#### Q: What SOFA score indicates sepsis?
+According to the Sepsis-3 definition (Singer et al., JAMA 2016), sepsis is defined as a SOFA score increase of ≥ 2 points from baseline in a patient with suspected infection. This threshold corresponds to an estimated in-hospital mortality of approximately 10%.
 
-#### Q: What is the clinical significance of a change in SOFA score?
-An increase in SOFA score of ≥2 points from baseline indicates acute organ dysfunction, representing a positive screen for sepsis under Sepsis-3 criteria and indicating a 10% or greater hospital mortality risk.
+#### Q: What is the maximum SOFA score?
+The maximum SOFA score is 24 points (4 points per organ system × 6 systems). Higher scores correlate with worse outcomes: a SOFA score > 11 is associated with approximately 95% ICU mortality in most validation studies.
 
-#### Q: What are the six organ systems assessed by the SOFA score?
-The Sequential Organ Failure Assessment (SOFA) score evaluates: Respiratory (PaO2/FiO2 ratio), Cardiovascular (MAP or need for vasopressors), Renal (creatinine or urine output), Hepatic (bilirubin), Coagulation (platelets), and Neurological (Glasgow Coma Scale) systems.
+#### Q: How does SOFA differ from qSOFA?
+qSOFA (quick SOFA) is a 3-item bedside screening tool (altered mentation, RR ≥ 22/min, SBP ≤ 100 mmHg) for identifying high-risk infected patients outside the ICU. Full SOFA requires 6 lab values and is used in the ICU to formally assess and track organ dysfunction severity.
 
-#### Q: What is the clinical significance of a 2-point increase in the SOFA score?
-A 2-point or greater increase in the SOFA score in the presence of an infection defines sepsis under the Sepsis-3 consensus guidelines, correlating with an in-hospital mortality rate of approximately 10% or higher.
-
-#### Q: Can the SOFA score predict mortality in the ICU?
-Yes. While initially designed to describe organ dysfunction severity over time, sequential calculation of the SOFA score is a strong predictor of ICU mortality. An increasing score during the first 96 hours of admission indicates a worsening clinical trajectory.
+#### Q: Can SOFA score predict ICU mortality?
+Yes. A mean SOFA score > 11 corresponds to a predicted mortality >95%. The delta-SOFA (change in SOFA over 48–72 hours) is a stronger predictor of outcome than a single static score — a worsening SOFA predicts mortality independently of the initial score.
 
 ### /CHILD-PUGH-SCORE CLINICAL Q&A
 
-#### Q: What is the Child-Pugh score?
-The Child-Pugh score is a clinical staging system used to assess the prognosis of chronic liver disease, particularly cirrhosis. It evaluates total bilirubin, serum albumin, INR, ascites, and hepatic encephalopathy.
+#### Q: What is the Child-Pugh Score?
+The Child-Pugh score (also known as Child-Turcotte-Pugh, CTP) classifies the severity of cirrhosis using 5 parameters: bilirubin, albumin, INR/prothrombin time, ascites, and hepatic encephalopathy. Scores 5–6 = Class A (compensated); 7–9 = Class B (significant dysfunction); 10–15 = Class C (decompensated). Developed in 1964, it remains widely used for surgical risk stratification.
 
-#### Q: What are the Child-Pugh classification classes?
-Patients are categorized into three classes: Class A (Score 5-6, 100% 1-year survival), Class B (Score 7-9, 81% 1-year survival), and Class C (Score 10-15, 45% 1-year survival).
+#### Q: What is the difference between Child-Pugh and MELD score?
+Child-Pugh is primarily used for surgical risk stratification in cirrhosis and incorporates subjective parameters (ascites, encephalopathy grading). MELD uses objective lab values only (bilirubin, creatinine, INR) and is the validated standard for liver transplant prioritization. MELD is generally preferred for prognostication; Child-Pugh remains useful for surgical planning and pharmacokinetic dosing adjustments.
 
-#### Q: How does the Child-Pugh score differ from the MELD score?
-The Child-Pugh score includes subjective parameters (ascites and encephalopathy) alongside labs. The MELD score is purely objective and laboratory-based (creatinine, bilirubin, INR, sodium), making it preferred for transplant allocation.
+#### Q: What is the survival of Child-Pugh Class C cirrhosis?
+Child-Pugh Class C cirrhosis carries a 1-year survival of approximately 35–45% and 2-year survival of 15–35% without transplantation. Class A cirrhosis has 1-year survival > 85% and 5-year survival of approximately 75%. These estimates assume no acute decompensation events such as variceal bleeding or spontaneous bacterial peritonitis.
 
 ### /ANION-GAP CLINICAL Q&A
 
-#### Q: What is the serum Anion Gap?
-The serum anion gap is a calculated metric representing the difference between measured cations (sodium) and measured anions (chloride and bicarbonate). It helps identify the cause of metabolic acidosis.
+#### Q: What is the Anion Gap?
+The anion gap (AG) is the difference between measured serum cations and anions: AG = Na⁺ − (Cl⁻ + HCO₃⁻). The normal reference range is 8–12 mEq/L (some labs 3–11 mEq/L depending on albumin correction). An elevated anion gap (> 12 mEq/L) indicates the presence of unmeasured anions such as lactate, ketones, or toxic metabolites.
 
-#### Q: What is a normal serum Anion Gap?
-A normal anion gap is typically 8 to 12 mEq/L (without potassium) or 12 to 16 mEq/L if potassium is included. However, reference ranges vary by laboratory.
+#### Q: What conditions cause a high anion gap metabolic acidosis?
+The MUDPILES mnemonic covers the main causes: Methanol, Uremia, Diabetic ketoacidosis (DKA), Propylene glycol/Paraldehyde, Isoniazid/Iron, Lactic acidosis, Ethylene glycol, Salicylates. Lactic acidosis and DKA are the most common causes in the ICU. A gap > 20 mEq/L is usually pathological and warrants urgent investigation.
 
-#### Q: What causes a high Anion Gap metabolic acidosis (HAGMA)?
-Common causes of HAGMA can be remembered using the acronym GOLD MARK: Glycols, Oxoproline, L-lactate, D-lactate, Methanol, Aspirin (salicylates), Renal failure (uremia), and Ketoacidosis.
+#### Q: How do I correct the anion gap for low albumin?
+Albumin contributes significantly to the anion gap. The corrected AG formula is: Corrected AG = Measured AG + 2.5 × (4 − measured albumin in g/dL). For every 1 g/dL decrease in albumin below 4 g/dL, the expected anion gap decreases by approximately 2.5 mEq/L. Hypoalbuminemia is extremely common in ICU patients and can mask a true high anion gap.
 
 ### /AA-GRADIENT CLINICAL Q&A
 
-#### Q: What is the Alveolar-Arterial (A-a) oxygen gradient?
-The A-a gradient is the difference between the partial pressure of oxygen in the alveoli (PAO2) and in arterial blood (PaO2). It evaluates the integrity of the alveolar-capillary membrane.
+#### Q: What is the Alveolar-Arterial (A-a) gradient?
+The A-a gradient measures the difference between alveolar oxygen partial pressure (PAO₂) and arterial oxygen partial pressure (PaO₂). It detects abnormal oxygen transfer in the lungs. Normal A-a gradient: approximately 2.5 + 0.21 × age (in years) mmHg (on room air). An elevated A-a gradient suggests V/Q mismatch, diffusion defect, or intrapulmonary shunting.
 
-#### Q: How is the expected normal A-a gradient calculated?
-A normal A-a gradient increases with age. It can be estimated as: Expected Normal Gradient = (Age / 4) + 4. It also depends on the fraction of inspired oxygen (FiO2).
-
-#### Q: What causes an elevated A-a gradient?
-An elevated A-a gradient indicates an oxygenation defect, caused by ventilation-perfusion (V/Q) mismatch (e.g., pulmonary embolism, pneumonia), right-to-left shunt (e.g., anatomical shunt), or diffusion limitation.
+#### Q: What does a normal A-a gradient with hypoxemia indicate?
+A normal A-a gradient in the setting of hypoxemia indicates hypoxemia due to hypoventilation (low alveolar oxygen from reduced respiratory effort) — not a lung pathology. Causes include opioid overdose, respiratory muscle weakness, or high-altitude breathing. The lung itself is functioning normally; the problem is insufficient ventilation.
 
 ### /ISPITS CLINICAL Q&A
 
@@ -468,11 +426,11 @@ Glomerular filtration rate is heavily influenced by muscle mass, which generates
 
 ### /CKD-EPI-GFR CLINICAL Q&A
 
-#### Q: What does a CKD-EPI GFR score of 45 indicate?
-A GFR of 45 mL/min/1.73m² indicates Stage 3a Chronic Kidney Disease (moderate reduction in GFR). If persistent for 3 months or more, it warrants clinical evaluation, monitoring of progression, cardiovascular risk assessment, and medication dose adjustment.
+#### Q: What is the CKD-EPI equation?
+The Chronic Kidney Disease Epidemiology Collaboration (CKD-EPI) equation estimates glomerular filtration rate (eGFR) using serum creatinine, age, and sex. The 2021 race-free CKD-EPI equation (recommended by KDIGO and ASN) removed race coefficients that previously overestimated GFR in Black patients, addressing a documented health equity concern.
 
-#### Q: Is the CKD-EPI equation reliable in acute kidney injury (AKI)?
-No. GFR estimation equations like CKD-EPI and MDRD assume a steady-state serum creatinine level. In AKI, creatinine levels fluctuate rapidly, making these equations highly inaccurate. In AKI, urine output and serial creatinine trends should guide management.
+#### Q: What eGFR indicates stage 3 CKD?
+KDIGO 2022 CKD staging by eGFR: G1 ≥ 90 mL/min/1.73m² (normal/high), G2 60–89 (mildly decreased), G3a 45–59 (mild-moderate decrease), G3b 30–44 (moderate-severe decrease), G4 15–29 (severely decreased), G5 < 15 or dialysis (kidney failure). Stage G3a/b combined is referred to as Stage 3 CKD.
 
 ### /NUTRITION-MUST CLINICAL Q&A
 
@@ -550,4 +508,51 @@ Bien que d'autres formules (CKD-EPI, MDRD) soient préférées pour diagnostique
 
 #### Q: Quelles sont les limites de la formule de Cockcroft-Gault ?
 Elle est moins précise chez les patients très âgés, obèses ou dénutris, car elle dépend fortement du poids corporel et de la masse musculaire.
+
+### /APACHE-II-SCORE CLINICAL Q&A
+
+#### Q: What is the APACHE II Score?
+APACHE II (Acute Physiology and Chronic Health Evaluation II) is a severity-of-illness scoring system developed by Knaus et al. (1985). It uses 12 acute physiological variables, age, and chronic health status to predict ICU mortality. Scores range from 0 to 71, with higher scores correlating with greater mortality risk.
+
+#### Q: What APACHE II score indicates high mortality risk?
+An APACHE II score > 25 is associated with a predicted hospital mortality of approximately 55%. Scores > 35 carry a predicted mortality of approximately 73–85%. The score is most useful when calculated within the first 24 hours of ICU admission.
+
+#### Q: How does APACHE II differ from SOFA score?
+APACHE II is primarily a static severity-of-illness predictor calculated once at ICU admission to predict overall mortality. SOFA is a dynamic organ dysfunction tracker updated daily to guide clinical management. APACHE II better predicts admission-day mortality; SOFA better tracks trajectory and day-to-day organ failure progression.
+
+### /HEART-SCORE CLINICAL Q&A
+
+#### Q: What is the HEART Score?
+The HEART Score (History, ECG, Age, Risk factors, Troponin) is a validated clinical decision tool for stratifying risk of major adverse cardiac events (MACE) in patients presenting to the emergency department with chest pain. A score ≤ 3 identifies low-risk patients safe for early discharge.
+
+#### Q: What HEART score is considered low risk?
+A HEART score of 0–3 is considered low risk, associated with a 30-day MACE rate of approximately 1.7–2%. This threshold supports safe early discharge without further invasive testing. Scores of 4–6 indicate intermediate risk (~12% MACE), and scores ≥ 7 indicate high risk (~65% MACE) requiring urgent intervention.
+
+#### Q: Is the HEART Score superior to TIMI for chest pain?
+Multiple prospective validation studies demonstrate that the HEART Score outperforms TIMI, GRACE, and PURSUIT scores for identifying low-risk chest pain patients in the ED setting. The HEART score was specifically designed for ED triage, whereas TIMI was designed for ACS prognosis in already-diagnosed patients.
+
+#### Q: How do troponin levels affect the HEART Score?
+Troponin is the most heavily weighted HEART component: normal troponin = 0 points; 1–3× upper limit of normal = 1 point; > 3× upper limit = 2 points. A single high-sensitivity troponin at 0 hours plus HEART score ≤ 3 is used in the HEART Pathway to safely discharge low-risk patients.
+
+### /NIHSS-SCORE CLINICAL Q&A
+
+#### Q: What is the NIH Stroke Scale (NIHSS)?
+The National Institutes of Health Stroke Scale (NIHSS) is a standardized neurological assessment tool with 15 items evaluating consciousness, vision, motor and sensory function, speech, and neglect in stroke patients. Total scores range from 0 (no deficit) to 42 (maximum deficit). It was developed in 1989 and remains the gold standard for acute stroke severity assessment.
+
+#### Q: What NIHSS score qualifies for IV thrombolysis (tPA)?
+IV alteplase (tPA) is generally considered for patients with NIHSS ≥ 4 (clinically significant deficit) presenting within 4.5 hours of stroke symptom onset, per AHA/ASA 2023 guidelines. Isolated minor deficits with NIHSS < 4 may not require tPA unless they are disabling. Very high NIHSS (> 25) may indicate large territory infarction where hemorrhagic transformation risk must be weighed.
+
+#### Q: What NIHSS score indicates a severe stroke?
+NIHSS severity classification: 0 = no stroke; 1–4 = minor stroke; 5–15 = moderate stroke; 16–20 = moderate-severe stroke; 21–42 = severe stroke. Patients with NIHSS > 20 have approximately 50% risk of severe disability or death and should be evaluated urgently for large vessel occlusion and mechanical thrombectomy candidacy.
+
+### /HAS-BLED-SCORE CLINICAL Q&A
+
+#### Q: What is the HAS-BLED Score?
+The HAS-BLED score estimates 1-year risk of major bleeding in patients with atrial fibrillation (AF) who are on anticoagulation. It evaluates: Hypertension, Abnormal renal/liver function, Stroke history, Bleeding history or predisposition, Labile INR, Elderly (age > 65), and Drugs/alcohol use.
+
+#### Q: What HAS-BLED score indicates high bleeding risk?
+A HAS-BLED score ≥ 3 indicates high risk for major bleeding (~3.74 bleeds per 100 patient-years). ESC 2020 AF guidelines recommend using HAS-BLED to identify and address modifiable bleeding risk factors, not to withhold anticoagulation — since the net clinical benefit of anticoagulation remains positive in most patients with CHA₂DS₂-VASc ≥ 2.
+
+#### Q: Should I withhold anticoagulation if HAS-BLED is high?
+Generally no. ESC and AHA guidelines state that a high HAS-BLED score should prompt correction of reversible risk factors (uncontrolled hypertension, NSAIDs, excessive alcohol), not automatic anticoagulation cessation. The stroke prevention benefit of anticoagulation in high-CHA₂DS₂-VASc patients typically outweighs the bleeding risk.
 
