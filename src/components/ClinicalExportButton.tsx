@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Printer, Copy, Check, FileText, X, User, Calendar, FileDown, Lock, Share2 } from 'lucide-react';
+import { Printer, Copy, Check, FileText, X, User, Calendar, FileDown, Lock, Share2, ArrowUpRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { LangCode } from '../types';
 import { generateSOAP, generateSBAR, generateDotPhrase, generateShiftHandover, generateCaseShareUrl } from '../utils/soapGenerator';
@@ -412,42 +412,98 @@ ${divider}`;
 
   return (
     <>
-      <div className="flex flex-col sm:flex-row gap-3 mt-4 w-full">
-        {/* Tactical action button placed cleanly inside results card */}
+      {/* ─── 10/10 Clinical Action Bar ─────────────────────────────────────────── */}
+      <div className="flex flex-col sm:flex-row gap-2.5 mt-5 w-full items-stretch">
+
+        {/* ── PRIMARY: Print / Export Report ───────────────────────────────────── */}
         <button
           onClick={handleOpen}
-          className="flex-1 py-3 px-4 rounded-xl flex items-center justify-center gap-2.5 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white text-xs font-bold font-mono uppercase tracking-wider transition-all duration-300 shadow-sm relative overflow-hidden group cursor-pointer"
-          style={{ minHeight: '44px' }}
+          className="
+            relative flex-1 overflow-hidden group cursor-pointer
+            flex items-center justify-between gap-3
+            px-5 py-3 rounded-xl
+            bg-gradient-to-r from-teal-600 via-teal-600 to-cyan-700
+            hover:from-teal-500 hover:via-teal-500 hover:to-cyan-600
+            active:scale-[0.98]
+            text-white
+            font-sans font-extrabold text-[11px] uppercase tracking-widest
+            shadow-md shadow-teal-900/25 hover:shadow-lg hover:shadow-teal-500/30
+            border border-teal-400/25
+            transition-all duration-200 ease-out
+            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent
+          "
+          style={{ minHeight: '48px' }}
           id={`btn-open-export-${title.split(' ')[0].toLowerCase()}`}
+          aria-label={t.btnText}
         >
-          <Printer className="w-4 h-4 text-blue-200 group-hover:text-white transition-colors animate-pulse" />
-          <span>{t.btnText}</span>
-          <FileDown className="w-3.5 h-3.5 opacity-55 absolute right-4 group-hover:translate-y-0.5 transition-transform" />
+          {/* Shimmer sweep on hover */}
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/10 to-transparent"
+          />
+          {/* Top inner glass highlight */}
+          <span aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+
+          {/* Left icon */}
+          <span className="flex items-center justify-center w-7 h-7 rounded-lg bg-white/10 border border-white/15 shrink-0 group-hover:bg-white/15 transition-colors">
+            <Printer className="w-3.5 h-3.5 text-white" />
+          </span>
+
+          {/* Label */}
+          <span className="flex-1 text-center leading-tight whitespace-nowrap">{t.btnText}</span>
+
+          {/* Right inline arrow — no collision */}
+          <span className="flex items-center justify-center w-6 h-6 rounded-md bg-white/10 border border-white/10 shrink-0 group-hover:translate-x-0.5 transition-transform">
+            <ArrowUpRight className="w-3.5 h-3.5 text-teal-200" />
+          </span>
         </button>
 
-        {/* New Social Share Result button */}
+        {/* ── SECONDARY: Share Result ───────────────────────────────────────────── */}
         <button
           onClick={handleShare}
-          className={`flex-1 py-3 px-4 rounded-xl flex items-center justify-center gap-2.5 text-xs font-bold font-mono uppercase tracking-wider transition-all duration-300 border shadow-sm relative overflow-hidden group cursor-pointer ${
-            shareCopied
-              ? 'bg-emerald-600 border-emerald-500 text-white'
-              : 'bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 active:bg-slate-100 dark:active:bg-slate-600 text-slate-700 dark:text-slate-200 border-slate-200 dark:border-slate-700'
-          }`}
-          style={{ minHeight: '44px' }}
+          className={`
+            relative flex-1 overflow-hidden group cursor-pointer
+            flex items-center justify-center gap-2.5
+            px-5 py-3 rounded-xl
+            font-sans font-extrabold text-[11px] uppercase tracking-widest
+            border
+            active:scale-[0.98]
+            transition-all duration-200 ease-out
+            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent
+            ${
+              shareCopied
+                ? 'bg-emerald-600 hover:bg-emerald-500 border-emerald-500/60 text-white shadow-md shadow-emerald-900/20'
+                : 'bg-slate-100 dark:bg-slate-800/90 hover:bg-slate-200/80 dark:hover:bg-slate-800 border-slate-200 dark:border-slate-700/80 text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white hover:border-slate-300 dark:hover:border-slate-600 shadow-sm'
+            }
+          `}
+          style={{ minHeight: '48px' }}
           id={`btn-share-result-${title.split(' ')[0].toLowerCase()}`}
+          aria-label={shareCopied ? t.shareSuccess : t.shareBtn}
         >
           {shareCopied ? (
             <>
-              <Check className="w-4 h-4 text-emerald-300" />
-              <span>{t.shareSuccess}</span>
+              {/* Shimmer on success */}
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/15 to-transparent"
+              />
+              <Check className="w-4 h-4 text-emerald-200 shrink-0" />
+              <span className="whitespace-nowrap">{t.shareSuccess}</span>
             </>
           ) : (
             <>
-              <Share2 className="w-4 h-4 text-slate-400 dark:text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
-              <span>{t.shareBtn}</span>
+              <Share2 className="
+                w-4 h-4 shrink-0
+                text-slate-400 dark:text-slate-500
+                group-hover:text-teal-600 dark:group-hover:text-teal-400
+                group-hover:rotate-[-6deg] group-hover:scale-110
+                transition-all duration-200
+              " />
+              <span className="whitespace-nowrap">{t.shareBtn}</span>
             </>
           )}
         </button>
+
       </div>
 
       {/* Interactive AnimatePresence modal rendering */}

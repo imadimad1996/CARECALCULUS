@@ -20,21 +20,21 @@ export default function MobileBottomNav({ lang, langPath, onSearchClick, onMenuC
   };
 
   return (
-    <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-xl border-t border-slate-200/80 z-40 pb-safe shadow-[0_-4px_24px_rgba(0,0,0,0.04)]">
+    <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-slate-950/95 backdrop-blur-xl border-t border-slate-200/80 dark:border-slate-800 z-40 pb-safe shadow-[0_-4px_24px_rgba(0,0,0,0.04)] dark:shadow-[0_-4px_24px_rgba(0,0,0,0.4)]">
       <div className="flex items-center justify-around px-2 py-2">
         <Link 
           to={langPath('/')} 
           className={`flex flex-col items-center justify-center w-16 h-12 rounded-xl transition-colors ${
-            isActive('/') ? 'text-teal-600' : 'text-slate-400 hover:text-slate-600'
+            isActive('/') ? 'text-teal-600 dark:text-teal-400' : 'text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300'
           }`}
         >
-          <Home className={`w-5 h-5 mb-1 ${isActive('/') ? 'fill-teal-600/20' : ''}`} />
+          <Home className={`w-5 h-5 mb-1 ${isActive('/') ? 'fill-teal-600/20 dark:fill-teal-400/20' : ''}`} />
           <span className="text-[10px] font-semibold">{lang === 'fr' ? 'Accueil' : 'Home'}</span>
         </Link>
 
         <button 
           onClick={onSearchClick}
-          className="flex flex-col items-center justify-center w-16 h-12 rounded-xl text-slate-400 hover:text-slate-600 transition-colors"
+          className="flex flex-col items-center justify-center w-16 h-12 rounded-xl text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 transition-colors"
         >
           <Search className="w-5 h-5 mb-1" />
           <span className="text-[10px] font-semibold">{lang === 'fr' ? 'Chercher' : 'Search'}</span>
@@ -43,16 +43,16 @@ export default function MobileBottomNav({ lang, langPath, onSearchClick, onMenuC
         <Link 
           to={langPath('/glp-1-hub')} 
           className={`flex flex-col items-center justify-center w-16 h-12 rounded-xl transition-colors ${
-            isActive('/glp-1-hub') ? 'text-indigo-600' : 'text-slate-400 hover:text-slate-600'
+            isActive('/glp-1-hub') ? 'text-indigo-600 dark:text-indigo-400' : 'text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300'
           }`}
         >
-          <Sparkles className={`w-5 h-5 mb-1 ${isActive('/glp-1-hub') ? 'fill-indigo-600/20' : ''}`} />
+          <Sparkles className={`w-5 h-5 mb-1 ${isActive('/glp-1-hub') ? 'fill-indigo-600/20 dark:fill-indigo-400/20' : ''}`} />
           <span className="text-[10px] font-semibold">GLP-1</span>
         </Link>
 
         <button 
           onClick={onMenuClick}
-          className="flex flex-col items-center justify-center w-16 h-12 rounded-xl text-slate-400 hover:text-slate-600 transition-colors"
+          className="flex flex-col items-center justify-center w-16 h-12 rounded-xl text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 transition-colors"
         >
           <Menu className="w-5 h-5 mb-1" />
           <span className="text-[10px] font-semibold">{lang === 'fr' ? 'Menu' : 'Menu'}</span>

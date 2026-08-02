@@ -38,21 +38,22 @@ export function ThemeProvider({
   useEffect(() => {
     const root = window.document.documentElement;
     
-    // We intentionally don't fully implement dark mode across all 150+ components yet
-    // because clinical apps typically require high contrast light mode by default.
-    // This provider establishes the SV-tier architectural pattern for future implementation.
-    
-    root.classList.remove('light', 'dark');
+    const applyTheme = (resolvedTheme: 'dark' | 'light') => {
+      root.classList.remove('light', 'dark');
+      root.classList.add(resolvedTheme);
+    };
 
     if (theme === 'system') {
-      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
-        ? 'dark'
-        : 'light';
-      root.classList.add(systemTheme);
-      return;
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      applyTheme(mediaQuery.matches ? 'dark' : 'light');
+
+      // Listen for real-time OS theme changes
+      const handler = (e: MediaQueryListEvent) => applyTheme(e.matches ? 'dark' : 'light');
+      mediaQuery.addEventListener('change', handler);
+      return () => mediaQuery.removeEventListener('change', handler);
     }
 
-    root.classList.add(theme);
+    applyTheme(theme);
   }, [theme]);
 
   const value = {

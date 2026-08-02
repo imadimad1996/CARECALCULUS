@@ -110,6 +110,41 @@
   --radius-input: 8px;
   --radius-btn: 8px;
   --radius-pill: 999px;
+
+  /* Light mode semantic tokens */
+  --cc-bg: #ffffff;
+  --cc-surface: #f8fafc;
+  --cc-surface-raised: #ffffff;
+  --cc-border: #e2e8f0;
+  --cc-border-subtle: #f1f5f9;
+  --cc-text: #0f172a;
+  --cc-text-muted: #64748b;
+  --cc-text-subtle: #94a3b8;
+  --cc-card-bg: #ffffff;
+  --cc-card-border: #e2e8f0;
+  --cc-input-bg: #ffffff;
+  --cc-input-border: #cbd5e1;
+}
+
+html.dark {
+  /* Dark mode semantic tokens — WCAG AA compliant */
+  --cc-bg: #020617;           /* slate-950 */
+  --cc-surface: #0f172a;      /* slate-900 */
+  --cc-surface-raised: #1e293b; /* slate-800 */
+  --cc-border: #1e293b;       /* slate-800 */
+  --cc-border-subtle: #334155; /* slate-700 */
+  --cc-text: #f1f5f9;         /* slate-100 — contrast 16:1 ✓ */
+  --cc-text-muted: #94a3b8;   /* slate-400 — contrast 4.7:1 ✓ */
+  --cc-text-subtle: #64748b;  /* slate-500 */
+  --cc-card-bg: #0f172a;      /* slate-900 */
+  --cc-card-border: #1e293b;  /* slate-800 */
+  --cc-input-bg: #1e293b;     /* slate-800 */
+  --cc-input-border: #334155; /* slate-700 */
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.4);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.5);
+  --shadow-xl: 0 20px 25px rgba(0,0,0,0.6);
 }
 
 /* Accessibility: skip-to-content */
@@ -159,7 +194,7 @@
 
   html.dark body {
     background-color: #020617; /* slate-950 */
-    color: #f8fafc;
+    color: #f1f5f9;
   }
 
   body {
@@ -188,6 +223,11 @@
     letter-spacing: -0.015em;
     line-height: 1.25;
     font-weight: 700;
+  }
+
+  html.dark h1, html.dark h2, html.dark h3,
+  html.dark h4, html.dark h5, html.dark h6 {
+    color: #f1f5f9;
   }
 
   h1 {
@@ -222,6 +262,10 @@
     color: #334155;
   }
 
+  html.dark label {
+    color: #94a3b8;
+  }
+
   p, span, li, a {
     line-height: 1.75;
   }
@@ -235,6 +279,9 @@
     font-size: 1.5rem;
     font-weight: 700;
     color: #0F172A;
+  }
+  html.dark input[type="number"] {
+    color: #e2e8f0;
   }
   @media (min-width: 768px) {
     input[type="number"] { font-size: 1.875rem; }
@@ -267,6 +314,11 @@
     background-color: #CCFBF1;
     color: #0F766E;
   }
+
+  html.dark ::selection {
+    background-color: #0F766E;
+    color: #CCFBF1;
+  }
   
   html {
     scroll-behavior: smooth;
@@ -277,11 +329,20 @@
     color: #94A3B8;
     font-weight: 400;
   }
+
+  html.dark ::placeholder {
+    color: #475569;
+  }
   
   .skeleton {
     background: linear-gradient(90deg, #f0f4f8 25%, #e2e8f0 50%, #f0f4f8 75%);
     background-size: 200% 100%;
     animation: skeleton-pulse 1.5s ease infinite;
+  }
+
+  html.dark .skeleton {
+    background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+    background-size: 200% 100%;
   }
 
   @keyframes skeleton-pulse {
@@ -345,13 +406,29 @@
 }
 
 .card {
-  @apply bg-white rounded-xl p-6 shadow-sm transition-all duration-200 border border-slate-200;
+  @apply bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm transition-all duration-200 border border-slate-200 dark:border-slate-800;
 }
 .card:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.09);
 }
+html.dark .card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
 
 .input {
-  @apply px-4 py-3 border border-slate-300 rounded-lg text-[15px] transition-all duration-200 focus:border-[#0D9488] focus:ring-2 focus:ring-[#0D9488]/10 outline-none bg-white;
+  @apply px-4 py-3 border border-slate-300 dark:border-slate-700 rounded-lg text-[15px] transition-all duration-200 focus:border-[#0D9488] focus:ring-2 focus:ring-[#0D9488]/10 outline-none bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   GLOBAL ANIMATION KEYFRAMES
+   ═══════════════════════════════════════════════════════════════════════ */
+
+@keyframes shimmer {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 0.65s ease-in-out;
 }

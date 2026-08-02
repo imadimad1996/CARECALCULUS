@@ -1,0 +1,87 @@
+email,hospital,country,message_id,sent_at
+donations@hamiltonhealth.ca,Hamilton Health Sciences,Canada,08b4aaa0-8e03-11f1-0040-f1f2a014e63f,2026-08-01T23:45:10.772131
+pressoffice@uhbw.nhs.uk,Bristol University NHS Trust,UK,0af301e0-8e03-11f1-0040-f12f7dc93be2,2026-08-01T23:45:14.751515
+imperial.press.office@nhs.net,Imperial College Healthcare NHS,UK,0d7a21f0-8e03-11f1-0000-f12577c331e8,2026-08-01T23:45:18.774477
+ahs.corp@ahs.ca,Alberta Health Services,Canada,0fcceb90-8e03-11f1-0040-f1f2a014e63f,2026-08-01T23:45:22.675050
+hhsnews@hhsc.ca,Hamilton Health Sciences,Canada,120cf080-8e03-11f1-0000-f10153e715cc,2026-08-01T23:45:26.449507
+digitalcommunications@mft.nhs.uk,Manchester NHS Foundation Trust,UK,147a6e10-8e03-11f1-0040-f12f7dc93be2,2026-08-01T23:45:30.527618
+patientsupportservices@uhs.nhs.uk,Southampton University NHS,UK,170c8aa0-8e03-11f1-0000-f10153e715cc,2026-08-01T23:45:34.837136
+webadmin@emoryhealthcare.org,Emory Healthcare,USA,1949a960-8e03-11f1-0000-f12577c331e8,2026-08-01T23:45:38.590685
+ahs.info@ahs.ca,Alberta Health Services,Canada,1b876460-8e03-11f1-0040-f12f7dc93be2,2026-08-01T23:45:42.351261
+communications@wrha.mb.ca,Winnipeg Health Sciences,Canada,1dc03d60-8e03-11f1-0000-f12577c331e8,2026-08-01T23:45:46.076870
+tsbadmin@uhbw.nhs.uk,Bristol University NHS Trust,UK,200b65e0-8e03-11f1-0040-f12f7dc93be2,2026-08-01T23:45:49.930096
+medicalstudentselectives@uhbw.nhs.uk,Bristol University NHS Trust,UK,22432d70-8e03-11f1-0000-f10153e715cc,2026-08-01T23:45:53.646395
+informationgovernance@uhbw.nhs.uk,Bristol University NHS Trust,UK,24964530-8e03-11f1-0040-f1f2a014e63f,2026-08-01T23:45:57.553318
+cuh.press@nhs.net,Cambridge University Hospitals,UK,26de6070-8e03-11f1-0000-f10153e715cc,2026-08-01T23:46:01.377233
+imperial.communications@nhs.net,Imperial College Healthcare NHS,UK,292b0f90-8e03-11f1-0000-f12577c331e8,2026-08-01T23:46:05.230514
+pressoffice@mft.nhs.uk,Manchester NHS Foundation Trust,UK,2b68ca90-8e03-11f1-0040-f1f2a014e63f,2026-08-01T23:46:09.000738
+patientrelations@bswhealth.org,Baylor Scott & White Health,USA,2db552a0-8e03-11f1-0040-f1f2a014e63f,2026-08-01T23:46:12.849538
+janet.christenbury@emoryhealthcare.org,Emory Healthcare,USA,301821d0-8e03-11f1-0040-f12f7dc93be2,2026-08-01T23:46:16.853066
+jennifer.phillips2@emoryhealthcare.org,Emory Healthcare,USA,326c7210-8e03-11f1-0000-f10153e715cc,2026-08-01T23:46:20.765844
+tarvis.thompson@emoryhealthcare.org,Emory Healthcare,USA,34ce56e0-8e03-11f1-0040-f1f2a014e63f,2026-08-01T23:46:24.759891
+audra.mincey@emoryhealthcare.org,Emory Healthcare,USA,3719a670-8e03-11f1-0040-f12f7dc93be2,2026-08-01T23:46:28.607894
+patient.relations@emoryhealthcare.org,Emory Healthcare,USA,398d6590-8e03-11f1-0040-f12f7dc93be2,2026-08-01T23:46:32.733046
+emory.international@emoryhealthcare.org,Emory Healthcare,USA,3bc701e0-8e03-11f1-0040-f1f2a014e63f,2026-08-01T23:46:36.457829
+insiders@iuhealth.org,Indiana University Health,USA,3e016180-8e03-11f1-0040-f12f7dc93be2,2026-08-01T23:46:40.191073
+jhmedia@jhmi.edu,Johns Hopkins Hospital,USA,404ab540-8e03-11f1-0000-f12577c331e8,2026-08-01T23:46:44.028048
+guestservices@stanfordhealthcare.org,Stanford Health Care,USA,42991210-8e03-11f1-0040-f1f2a014e63f,2026-08-01T23:46:47.961811
+hospitalconstruction@stanfordhealthcare.org,Stanford Health Care,USA,44eced20-8e03-11f1-0040-f12f7dc93be2,2026-08-01T23:46:51.804971
+myatriumhealth@atriumhealth.org,Wake Forest Baptist Health,USA,4723ca50-8e03-11f1-0000-f10153e715cc,2026-08-01T23:46:55.515163
+pathtocare@ahs.ca,Alberta Health Services,Canada,49626fb0-8e03-11f1-0000-f12577c331e8,2026-08-01T23:46:59.286669
+policy@ahs.ca,Alberta Health Services,Canada,4bad4a10-8e03-11f1-0040-f12f7dc93be2,2026-08-01T23:47:03.131144
+privacy@ahs.ca,Alberta Health Services,Canada,4dfc1c10-8e03-11f1-0040-f12f7dc93be2,2026-08-01T23:47:07.000005
+webcomm@ahs.ca,Alberta Health Services,Canada,503f7c60-8e03-11f1-0000-f10153e715cc,2026-08-01T23:47:10.794354
+parkingoffice@hhsc.ca,Hamilton Health Sciences,Canada,527bd7d0-8e03-11f1-0040-f12f7dc93be2,2026-08-01T23:47:14.551758
+hrservices@uhbw.nhs.uk,Bristol University NHS Trust,UK,54cca5a0-8e03-11f1-0040-f1f2a014e63f,2026-08-01T23:47:18.433613
+honoraryrequests@uhbw.nhs.uk,Bristol University NHS Trust,UK,573abf70-8e03-11f1-0000-f10153e715cc,2026-08-01T23:47:22.514400
+southbristolacademy@uhbw.nhs.uk,Bristol University NHS Trust,UK,59719ca0-8e03-11f1-0040-f1f2a014e63f,2026-08-01T23:47:26.236294
+talent@uhbw.nhs.uk,Bristol University NHS Trust,UK,5be0eef0-8e03-11f1-0040-f1f2a014e63f,2026-08-01T23:47:30.318388
+gpliaison@uhbw.nhs.uk,Bristol University NHS Trust,UK,5e617f50-8e03-11f1-0040-f1f2a014e63f,2026-08-01T23:47:34.511668
+payments@uhbw.nhs.uk,Bristol University NHS Trust,UK,60988390-8e03-11f1-0000-f10153e715cc,2026-08-01T23:47:38.221393
+hello@act4addenbrookes.org.uk,Cambridge University Hospitals,UK,62e6e060-8e03-11f1-0000-f12577c331e8,2026-08-01T23:47:42.092725
+cuh.accessibility@nhs.net,Cambridge University Hospitals,UK,652c1570-8e03-11f1-0000-f12577c331e8,2026-08-01T23:47:45.899900
+i.outpatientappointments@nhs.net,Imperial College Healthcare NHS,UK,67622f50-8e03-11f1-0040-f1f2a014e63f,2026-08-01T23:47:49.610948
+imperial.web@nhs.net,Imperial College Healthcare NHS,UK,69bf0b10-8e03-11f1-0040-f12f7dc93be2,2026-08-01T23:47:53.576157
+charity.office@mft.nhs.uk,Manchester NHS Foundation Trust,UK,6c1927b0-8e03-11f1-0040-f1f2a014e63f,2026-08-01T23:47:57.521503
+claims@mft.nhs.uk,Manchester NHS Foundation Trust,UK,6e8a9ce0-8e03-11f1-0040-f12f7dc93be2,2026-08-01T23:48:01.626383
+sar.mft@mft.nhs.uk,Manchester NHS Foundation Trust,UK,70c6f850-8e03-11f1-0000-f12577c331e8,2026-08-01T23:48:05.370938
+pals@uhs.nhs.uk,Southampton University NHS,UK,73043e20-8e03-11f1-0040-f12f7dc93be2,2026-08-01T23:48:09.132377
+disclosures@uhs.nhs.uk,Southampton University NHS,UK,75516270-8e03-11f1-0040-f12f7dc93be2,2026-08-01T23:48:12.992261
+privatepatients@uhs.nhs.uk,Southampton University NHS,UK,779cb200-8e03-11f1-0000-f12577c331e8,2026-08-01T23:48:16.843318
+patientinvolvement@uhs.nhs.uk,Southampton University NHS,UK,79d8bf50-8e03-11f1-0000-f12577c331e8,2026-08-01T23:48:20.590888
+careersexperience@uhs.nhs.uk,Southampton University NHS,UK,7c0e8b10-8e03-11f1-0040-f1f2a014e63f,2026-08-01T23:48:24.302282
+volunteers@uhs.nhs.uk,Southampton University NHS,UK,7ea45120-8e03-11f1-0000-f10153e715cc,2026-08-01T23:48:28.635061
+elective@southampton.ac.uk,Southampton University NHS,UK,80e51960-8e03-11f1-0040-f12f7dc93be2,2026-08-01T23:48:32.414647
+publications@uhs.nhs.uk,Southampton University NHS,UK,8322d460-8e03-11f1-0040-f12f7dc93be2,2026-08-01T23:48:36.178108
+uclh.webmaster@nhs.net,University College London NHS,UK,857290c0-8e03-11f1-0000-f12577c331e8,2026-08-01T23:48:40.048093
+uclh.members@nhs.net,University College London NHS,UK,87ac5420-8e03-11f1-0000-f12577c331e8,2026-08-01T23:48:43.787113
+uclh.igqueries@nhs.net,University College London NHS,UK,89e7ec40-8e03-11f1-0000-f10153e715cc,2026-08-01T23:48:47.535117
+foundation.trust@uclh.nhs.uk,University College London NHS,UK,8c2929b0-8e03-11f1-0000-f10153e715cc,2026-08-01T23:48:51.313598
+jennifer.johnson@emory.edu,Emory Healthcare,USA,8e64e8e0-8e03-11f1-0000-f12577c331e8,2026-08-01T23:48:55.071454
+andrea.clement@emory.edu,Emory Healthcare,USA,90a2f200-8e03-11f1-0000-f10153e715cc,2026-08-01T23:48:58.824897
+andrea.mendez@emory.edu,Emory Healthcare,USA,92e62b40-8e03-11f1-0000-f10153e715cc,2026-08-01T23:49:02.620123
+sustainability@houstonmethodist.org,Houston Methodist Hospital,USA,953683e0-8e03-11f1-0040-f1f2a014e63f,2026-08-01T23:49:06.503111
+shollen2@jh.edu,Johns Hopkins Hospital,USA,976e2460-8e03-11f1-0040-f1f2a014e63f,2026-08-01T23:49:10.223346
+ellen.mcvay@jhmi.edu,Johns Hopkins Hospital,USA,99a99570-8e03-11f1-0040-f1f2a014e63f,2026-08-01T23:49:13.964494
+ashley.roberts@jhmi.edu,Johns Hopkins Hospital,USA,9be0e7d0-8e03-11f1-0000-f12577c331e8,2026-08-01T23:49:17.684105
+acarola1@jh.edu,Johns Hopkins Hospital,USA,9e1a8420-8e03-11f1-0040-f1f2a014e63f,2026-08-01T23:49:21.419732
+chatch8@jhu.edu,Johns Hopkins Hospital,USA,a0789860-8e03-11f1-0040-f12f7dc93be2,2026-08-01T23:49:25.395639
+cdavi185@jhmi.edu,Johns Hopkins Hospital,USA,a2bbaa90-8e03-11f1-0000-f10153e715cc,2026-08-01T23:49:29.188969
+glittle@jhu.edu,Johns Hopkins Hospital,USA,a51a5b10-8e03-11f1-0000-f12577c331e8,2026-08-01T23:49:33.298825
+hjones49@jhmi.edu,Johns Hopkins Hospital,USA,a777d310-8e03-11f1-0040-f1f2a014e63f,2026-08-01T23:49:37.126198
+jfrost16@jh.edu,Johns Hopkins Hospital,USA,a9b232b0-8e03-11f1-0040-f1f2a014e63f,2026-08-01T23:49:40.870745
+kpolyni1@jhmi.edu,Johns Hopkins Hospital,USA,abfc22b0-8e03-11f1-0040-f12f7dc93be2,2026-08-01T23:49:44.704751
+lmotel1@jhmi.edu,Johns Hopkins Hospital,USA,ae41f400-8e03-11f1-0000-f10153e715cc,2026-08-01T23:49:48.516908
+lvanden8@jhmi.edu,Johns Hopkins Hospital,USA,b07cefe0-8e03-11f1-0000-f12577c331e8,2026-08-01T23:49:52.258231
+mroos3@jh.edu,Johns Hopkins Hospital,USA,b2b88800-8e03-11f1-0040-f1f2a014e63f,2026-08-01T23:49:56.010100
+melben1@jhmi.edu,Johns Hopkins Hospital,USA,b51849f0-8e03-11f1-0000-f10153e715cc,2026-08-01T23:49:59.986762
+paigeace@jhu.edu,Johns Hopkins Hospital,USA,b7584ee0-8e03-11f1-0000-f12577c331e8,2026-08-01T23:50:03.765781
+rmikeas1@jh.edu,Johns Hopkins Hospital,USA,b98fa140-8e03-11f1-0000-f10153e715cc,2026-08-01T23:50:07.483789
+tpayne@jhmi.edu,Johns Hopkins Hospital,USA,bbfb4a10-8e03-11f1-0040-f1f2a014e63f,2026-08-01T23:50:11.542291
+zfulwoo1@jhu.edu,Johns Hopkins Hospital,USA,be3c6070-8e03-11f1-0040-f1f2a014e63f,2026-08-01T23:50:15.324804
+careers@partners.org,Massachusetts General Hospital,USA,c0819580-8e03-11f1-0040-f12f7dc93be2,2026-08-01T23:50:19.132931
+opx@mayo.edu,Mayo Clinic,USA,c2b9f950-8e03-11f1-0040-f12f7dc93be2,2026-08-01T23:50:22.868217
+ims@ucsf.edu,UCSF Medical Center,USA,c51a5780-8e03-11f1-0040-f1f2a014e63f,2026-08-01T23:50:26.846943
+patient.relations@ucsf.edu,UCSF Medical Center,USA,c757c460-8e03-11f1-0000-f10153e715cc,2026-08-01T23:50:30.600671
+engagement@upmc.edu,UPMC,USA,c9922400-8e03-11f1-0040-f1f2a014e63f,2026-08-01T23:50:34.348864
+invoices@upmc.edu,UPMC,USA,cbfc6d40-8e03-11f1-0040-f12f7dc93be2,2026-08-01T23:50:38.395340

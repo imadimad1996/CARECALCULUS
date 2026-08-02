@@ -178,20 +178,20 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
 
       {/* Clinical Evidence & PubMed Citations */}
       {citationsDb[logicalPath] && citationsDb[logicalPath].length > 0 && (
-        <div className="mt-8 pt-8 border-t border-slate-200">
-          <h2 className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-4 flex items-center gap-2">
-            <BookOpen className="w-4 h-4 text-emerald-600" />
+      <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-800">
+          <h2 className="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+            <BookOpen className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
             {lang === 'fr' ? 'Preuves Cliniques & Références' : 'Clinical Evidence & References'}
           </h2>
           <div className="space-y-4">
             {citationsDb[logicalPath].map((cite, i) => (
-              <div key={i} className="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-xs">
-                <div className="p-2 min-h-[36px] min-w-[36px] bg-emerald-50 text-emerald-600 rounded-lg shrink-0 flex items-center justify-center">
+              <div key={i} className="flex items-start gap-3 bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-100 dark:border-slate-800 shadow-xs">
+                <div className="p-2 min-h-[36px] min-w-[36px] bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-lg shrink-0 flex items-center justify-center">
                   <FileText className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 text-sm mb-1">{cite.title}</h3>
-                  <p className="text-gray-500 text-xs leading-relaxed italic">{cite.authors} {cite.journal} {cite.year}</p>
+                  <h3 className="font-semibold text-gray-900 dark:text-slate-100 text-sm mb-1">{cite.title}</h3>
+                  <p className="text-gray-500 dark:text-slate-400 text-xs leading-relaxed italic">{cite.authors} {cite.journal} {cite.year}</p>
                   <a 
                     href={`https://pubmed.ncbi.nlm.nih.gov/${cite.pmid}/`} 
                     target="_blank" 
@@ -222,18 +222,18 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
 
       {/* Mobile Sticky Result Bar */}
       {calcData && calcData.results && calcData.results.length > 0 && (
-        <div className="md:hidden fixed bottom-16 left-0 right-0 bg-white border-t border-slate-200 shadow-[0_-8px_24px_rgba(0,0,0,0.08)] z-30 px-4 py-3 pb-safe animate-in slide-in-from-bottom-4 flex items-center justify-between">
+        <div className="md:hidden fixed bottom-16 left-0 right-0 bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 shadow-[0_-8px_24px_rgba(0,0,0,0.08)] dark:shadow-[0_-8px_24px_rgba(0,0,0,0.5)] z-30 px-4 py-3 pb-safe animate-in slide-in-from-bottom-4 flex items-center justify-between">
           <div className="flex flex-col">
-            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{calcData.results[0].label}</span>
+            <span className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">{calcData.results[0].label}</span>
             <div className="flex items-baseline gap-1">
-              <span className="text-xl font-extrabold text-teal-700">{calcData.results[0].value}</span>
-              {calcData.results[0].unit && <span className="text-xs font-semibold text-teal-600/80">{calcData.results[0].unit}</span>}
+              <span className="text-xl font-extrabold text-teal-700 dark:text-teal-400">{calcData.results[0].value}</span>
+              {calcData.results[0].unit && <span className="text-xs font-semibold text-teal-600/80 dark:text-teal-500/80">{calcData.results[0].unit}</span>}
             </div>
           </div>
           {calcData.results.length > 1 && (
             <div className="flex flex-col items-end text-right">
-              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{calcData.results[1].label}</span>
-              <span className="text-sm font-bold text-slate-700 truncate max-w-[140px]">{calcData.results[1].value}</span>
+              <span className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">{calcData.results[1].label}</span>
+              <span className="text-sm font-bold text-slate-700 dark:text-slate-300 truncate max-w-[140px]">{calcData.results[1].value}</span>
             </div>
           )}
         </div>
@@ -352,15 +352,15 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
 
       {/* Dynamic SEO Internal Linking Hub */}
       {(relatedCalculators.length > 0 || matchingComparisons.length > 0 || relatedConditions.length > 0 || relatedSpecialties.length > 0) && (
-        <div className="mt-16 pt-10 border-t border-slate-200" dir={isRtl ? 'rtl' : 'ltr'}>
+        <div className="mt-16 pt-10 border-t border-slate-200 dark:border-slate-800" dir={isRtl ? 'rtl' : 'ltr'}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             
             {/* Left Column: Comparisons & Other Calculators */}
             <div className="space-y-6">
               {matchingComparisons.length > 0 && (
-                <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
-                  <h3 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4 flex items-center gap-2">
-                    <Scale className="w-4 h-4 text-teal-600" />
+                <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-sm">
+                  <h3 className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                    <Scale className="w-4 h-4 text-teal-600 dark:text-teal-400" />
                     {t.comparisons}
                   </h3>
                   <div className="space-y-2">
@@ -375,7 +375,7 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
                         <Link
                           key={comp}
                           to={`${prefix}/compare/${comp}`}
-                          className="flex items-center justify-between p-3 bg-slate-50 hover:bg-teal-50 border border-slate-200 hover:border-teal-200 rounded-lg text-sm font-medium text-slate-700 hover:text-teal-800 transition-all"
+                          className="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-800 hover:bg-teal-50 dark:hover:bg-teal-900/20 border border-slate-200 dark:border-slate-700 hover:border-teal-200 dark:hover:border-teal-700 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-teal-800 dark:hover:text-teal-300 transition-all"
                         >
                           <span>{currentName} vs {otherName}</span>
                           <ArrowRight className={`w-4 h-4 text-slate-400 shrink-0 ${isRtl ? 'rotate-180' : ''}`} />
@@ -387,9 +387,9 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
               )}
 
               {relatedCalculators.length > 0 && (
-                <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
-                  <h3 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4 flex items-center gap-2">
-                    <Activity className="w-4 h-4 text-blue-500" />
+                <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-sm">
+                  <h3 className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                    <Activity className="w-4 h-4 text-blue-500 dark:text-blue-400" />
                     {t.otherTools}
                   </h3>
                   <div className="flex flex-wrap gap-2">
@@ -400,7 +400,7 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
                         <Link
                           key={path}
                           to={`${prefix}${path}`}
-                          className="px-3.5 py-2 bg-white hover:bg-blue-50/50 border border-gray-200/60 rounded-2xl text-xs font-semibold text-gray-700 hover:text-blue-700 transition-all hover:shadow-sm"
+                          className="px-3.5 py-2 bg-white dark:bg-slate-900 hover:bg-blue-50/50 dark:hover:bg-blue-900/20 border border-gray-200/60 dark:border-slate-700 rounded-2xl text-xs font-semibold text-gray-700 dark:text-slate-300 hover:text-blue-700 dark:hover:text-blue-400 transition-all hover:shadow-sm"
                         >
                           {name}
                         </Link>
@@ -414,9 +414,9 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
             {/* Right Column: Conditions & Specialties */}
             <div className="space-y-6">
               {relatedConditions.length > 0 && (
-                <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
-                  <h3 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4 flex items-center gap-2">
-                    <FolderHeart className="w-4 h-4 text-rose-500" />
+                <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-sm">
+                  <h3 className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                    <FolderHeart className="w-4 h-4 text-rose-500 dark:text-rose-400" />
                     {t.conditions}
                   </h3>
                   <div className="space-y-3">
@@ -429,16 +429,16 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
                         <Link
                           key={cond.id}
                           to={`${prefix}/conditions/${cond.id}`}
-                          className="block p-4 bg-white hover:bg-rose-50/30 border border-gray-200/60 rounded-2xl transition-all hover:shadow-sm group"
+                          className="block p-4 bg-white dark:bg-slate-900 hover:bg-rose-50/30 dark:hover:bg-rose-900/10 border border-gray-200/60 dark:border-slate-700 rounded-2xl transition-all hover:shadow-sm group"
                         >
                           <div className="flex items-center justify-between mb-1.5">
-                            <span className="font-bold text-sm text-gray-800 group-hover:text-rose-700">{name}</span>
+                            <span className="font-bold text-sm text-gray-800 dark:text-slate-200 group-hover:text-rose-700 dark:group-hover:text-rose-400">{name}</span>
                             <span className="text-xs text-rose-600 hover:underline flex items-center gap-0.5 font-bold">
                               {t.readMore}
                               <ArrowRight className={`w-3.5 h-3.5 ${isRtl ? 'rotate-180' : ''}`} />
                             </span>
                           </div>
-                          <p className="text-xs text-gray-500 line-clamp-2 leading-relaxed">{desc}</p>
+                          <p className="text-xs text-gray-500 dark:text-slate-400 line-clamp-2 leading-relaxed">{desc}</p>
                         </Link>
                       );
                     })}
@@ -447,9 +447,9 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
               )}
 
               {relatedSpecialties.length > 0 && (
-                <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
-                  <h3 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4 flex items-center gap-2">
-                    <Layers className="w-4 h-4 text-emerald-500" />
+                <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-sm">
+                  <h3 className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                    <Layers className="w-4 h-4 text-emerald-500 dark:text-emerald-400" />
                     {t.specialties}
                   </h3>
                   <div className="flex flex-wrap gap-2">
@@ -460,7 +460,7 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
                         <Link
                           key={spec.id}
                           to={`${prefix}/specialties/${spec.id}`}
-                          className="px-3.5 py-2 bg-white hover:bg-emerald-50/50 border border-gray-200/60 rounded-2xl text-xs font-semibold text-gray-700 hover:text-emerald-700 transition-all hover:shadow-sm"
+                          className="px-3.5 py-2 bg-white dark:bg-slate-900 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/20 border border-gray-200/60 dark:border-slate-700 rounded-2xl text-xs font-semibold text-gray-700 dark:text-slate-300 hover:text-emerald-700 dark:hover:text-emerald-400 transition-all hover:shadow-sm"
                         >
                           {name}
                         </Link>
@@ -474,25 +474,25 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
           </div>
 
           {/* E-E-A-T Board-Certified Medical Reviewer Card (10/10 Google Trust Signal) */}
-          <div className="mt-12 pt-8 border-t border-slate-200">
+          <div className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800">
             <MedicalReviewerCard reviewer={REVIEWER_INTENSIVIST} lang={lang} />
           </div>
 
           {/* FAQ Section — rendered in UI for humans + baked into FAQPage JSON-LD for AI engines */}
           {faqDb[logicalPath] && faqDb[logicalPath].length > 0 && (
-            <div className="mt-10 pt-8 border-t border-slate-200" id="faq-section">
-              <h2 className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-6 flex items-center gap-2">
-                <HelpCircle className="w-4 h-4 text-cyan-500" />
+            <div className="mt-10 pt-8 border-t border-slate-200 dark:border-slate-800" id="faq-section">
+              <h2 className="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-6 flex items-center gap-2">
+                <HelpCircle className="w-4 h-4 text-cyan-500 dark:text-cyan-400" />
                 {lang === 'fr' ? 'Questions Fréquentes' : 'Frequently Asked Questions'}
               </h2>
               <div className="space-y-4">
                 {faqDb[logicalPath].map((faq, i) => (
-                  <details key={i} className="group bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
-                    <summary className="flex items-center justify-between gap-3 px-5 py-4 cursor-pointer list-none font-semibold text-sm text-slate-800 hover:text-cyan-700 transition-colors">
+                  <details key={i} className="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm">
+                    <summary className="flex items-center justify-between gap-3 px-5 py-4 cursor-pointer list-none font-semibold text-sm text-slate-800 dark:text-slate-200 hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">
                       <span>{faq.question}</span>
                       <ArrowRight className="w-4 h-4 text-slate-400 group-open:rotate-90 transition-transform shrink-0" />
                     </summary>
-                    <div className="px-5 pb-5 pt-1 text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                    <div className="px-5 pb-5 pt-1 text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-100 dark:border-slate-800">
                       {faq.answer}
                     </div>
                   </details>

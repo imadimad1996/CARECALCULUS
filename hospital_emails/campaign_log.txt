@@ -1,0 +1,377 @@
+2026-08-02 00:37:11,805 Loaded 97 leads with score ≥ 10
+2026-08-02 00:37:11,806 [DRY RUN] Campaign: 97 leads targeted
+2026-08-02 00:37:11,806 ============================================================
+2026-08-02 00:37:11,806   📧 [ 25] donations@hamiltonhealth.ca                   — Hamilton Health Sciences (Canada)
+2026-08-02 00:37:11,806   📧 [ 25] pressoffice@uhbw.nhs.uk                       — Bristol University NHS Trust (UK)
+2026-08-02 00:37:11,806   📧 [ 25] imperial.press.office@nhs.net                 — Imperial College Healthcare NHS (UK)
+2026-08-02 00:37:11,806   📧 [ 20] ahs.corp@ahs.ca                               — Alberta Health Services (Canada)
+2026-08-02 00:37:11,809   📧 [ 20] hhsnews@hhsc.ca                               — Hamilton Health Sciences (Canada)
+2026-08-02 00:37:11,809   📧 [ 20] digitalcommunications@mft.nhs.uk              — Manchester NHS Foundation Trust (UK)
+2026-08-02 00:37:11,810   📧 [ 20] patientsupportservices@uhs.nhs.uk             — Southampton University NHS (UK)
+2026-08-02 00:37:11,810   📧 [ 20] webadmin@emoryhealthcare.org                  — Emory Healthcare (USA)
+2026-08-02 00:37:11,810   📧 [ 15] ahs.info@ahs.ca                               — Alberta Health Services (Canada)
+2026-08-02 00:37:11,810   📧 [ 15] communications@wrha.mb.ca                     — Winnipeg Health Sciences (Canada)
+2026-08-02 00:37:11,810   📧 [ 15] tsbadmin@uhbw.nhs.uk                          — Bristol University NHS Trust (UK)
+2026-08-02 00:37:11,810   📧 [ 15] medicalstudentselectives@uhbw.nhs.uk          — Bristol University NHS Trust (UK)
+2026-08-02 00:37:11,810   📧 [ 15] informationgovernance@uhbw.nhs.uk             — Bristol University NHS Trust (UK)
+2026-08-02 00:37:11,810   📧 [ 15] cuh.press@nhs.net                             — Cambridge University Hospitals (UK)
+2026-08-02 00:37:11,810   📧 [ 15] imperial.communications@nhs.net               — Imperial College Healthcare NHS (UK)
+2026-08-02 00:37:11,811   📧 [ 15] pressoffice@mft.nhs.uk                        — Manchester NHS Foundation Trust (UK)
+2026-08-02 00:37:11,811   📧 [ 15] patientrelations@bswhealth.org                — Baylor Scott & White Health (USA)
+2026-08-02 00:37:11,811   📧 [ 15] janet.christenbury@emoryhealthcare.org        — Emory Healthcare (USA)
+2026-08-02 00:37:11,811   📧 [ 15] jennifer.phillips2@emoryhealthcare.org        — Emory Healthcare (USA)
+2026-08-02 00:37:11,812   📧 [ 15] tarvis.thompson@emoryhealthcare.org           — Emory Healthcare (USA)
+2026-08-02 00:37:11,812   📧 [ 15] audra.mincey@emoryhealthcare.org              — Emory Healthcare (USA)
+2026-08-02 00:37:11,812   📧 [ 15] patient.relations@emoryhealthcare.org         — Emory Healthcare (USA)
+2026-08-02 00:37:11,812   📧 [ 15] emory.international@emoryhealthcare.org       — Emory Healthcare (USA)
+2026-08-02 00:37:11,812   📧 [ 15] insiders@iuhealth.org                         — Indiana University Health (USA)
+2026-08-02 00:37:11,812   📧 [ 15] jhmedia@jhmi.edu                              — Johns Hopkins Hospital (USA)
+2026-08-02 00:37:11,813   📧 [ 15] guestservices@stanfordhealthcare.org          — Stanford Health Care (USA)
+2026-08-02 00:37:11,813   📧 [ 15] hospitalconstruction@stanfordhealthcare.org   — Stanford Health Care (USA)
+2026-08-02 00:37:11,813   📧 [ 15] myatriumhealth@atriumhealth.org               — Wake Forest Baptist Health (USA)
+2026-08-02 00:37:11,813   📧 [ 10] pathtocare@ahs.ca                             — Alberta Health Services (Canada)
+2026-08-02 00:37:11,813   📧 [ 10] policy@ahs.ca                                 — Alberta Health Services (Canada)
+2026-08-02 00:37:11,814   📧 [ 10] privacy@ahs.ca                                — Alberta Health Services (Canada)
+2026-08-02 00:37:11,814   📧 [ 10] webcomm@ahs.ca                                — Alberta Health Services (Canada)
+2026-08-02 00:37:11,814   📧 [ 10] parkingoffice@hhsc.ca                         — Hamilton Health Sciences (Canada)
+2026-08-02 00:37:11,814   📧 [ 10] hrservices@uhbw.nhs.uk                        — Bristol University NHS Trust (UK)
+2026-08-02 00:37:11,815   📧 [ 10] honoraryrequests@uhbw.nhs.uk                  — Bristol University NHS Trust (UK)
+2026-08-02 00:37:11,815   📧 [ 10] southbristolacademy@uhbw.nhs.uk               — Bristol University NHS Trust (UK)
+2026-08-02 00:37:11,815   📧 [ 10] talent@uhbw.nhs.uk                            — Bristol University NHS Trust (UK)
+2026-08-02 00:37:11,815   📧 [ 10] gpliaison@uhbw.nhs.uk                         — Bristol University NHS Trust (UK)
+2026-08-02 00:37:11,816   📧 [ 10] payments@uhbw.nhs.uk                          — Bristol University NHS Trust (UK)
+2026-08-02 00:37:11,816   📧 [ 10] hello@act4addenbrookes.org.uk                 — Cambridge University Hospitals (UK)
+2026-08-02 00:37:11,816   📧 [ 10] cuh.accessibility@nhs.net                     — Cambridge University Hospitals (UK)
+2026-08-02 00:37:11,816   📧 [ 10] i.outpatientappointments@nhs.net              — Imperial College Healthcare NHS (UK)
+2026-08-02 00:37:11,817   📧 [ 10] imperial.web@nhs.net                          — Imperial College Healthcare NHS (UK)
+2026-08-02 00:37:11,817   📧 [ 10] charity.office@mft.nhs.uk                     — Manchester NHS Foundation Trust (UK)
+2026-08-02 00:37:11,817   📧 [ 10] claims@mft.nhs.uk                             — Manchester NHS Foundation Trust (UK)
+2026-08-02 00:37:11,817   📧 [ 10] sar.mft@mft.nhs.uk                            — Manchester NHS Foundation Trust (UK)
+2026-08-02 00:37:11,818   📧 [ 10] pals@uhs.nhs.uk                               — Southampton University NHS (UK)
+2026-08-02 00:37:11,818   📧 [ 10] u003epals@uhs.nhs.uk                          — Southampton University NHS (UK)
+2026-08-02 00:37:11,818   📧 [ 10] disclosures@uhs.nhs.uk                        — Southampton University NHS (UK)
+2026-08-02 00:37:11,818   📧 [ 10] privatepatients@uhs.nhs.uk                    — Southampton University NHS (UK)
+2026-08-02 00:37:11,818   📧 [ 10] patientinvolvement@uhs.nhs.uk                 — Southampton University NHS (UK)
+2026-08-02 00:37:11,818   📧 [ 10] careersexperience@uhs.nhs.uk                  — Southampton University NHS (UK)
+2026-08-02 00:37:11,819   📧 [ 10] volunteers@uhs.nhs.uk                         — Southampton University NHS (UK)
+2026-08-02 00:37:11,819   📧 [ 10] elective@southampton.ac.uk                    — Southampton University NHS (UK)
+2026-08-02 00:37:11,819   📧 [ 10] u003edisclosures@uhs.nhs.uk                   — Southampton University NHS (UK)
+2026-08-02 00:37:11,819   📧 [ 10] u003eprivatepatients@uhs.nhs.uk               — Southampton University NHS (UK)
+2026-08-02 00:37:11,819   📧 [ 10] u003epatientinvolvement@uhs.nhs.uk            — Southampton University NHS (UK)
+2026-08-02 00:37:11,819   📧 [ 10] u003ecareersexperience@uhs.nhs.uk             — Southampton University NHS (UK)
+2026-08-02 00:37:11,819   📧 [ 10] u003evolunteers@uhs.nhs.uk                    — Southampton University NHS (UK)
+2026-08-02 00:37:11,820   📧 [ 10] u003eelective@southampton.ac.uk               — Southampton University NHS (UK)
+2026-08-02 00:37:11,820   📧 [ 10] publications@uhs.nhs.uk                       — Southampton University NHS (UK)
+2026-08-02 00:37:11,820   📧 [ 10] uclh.webmaster@nhs.net                        — University College London NHS (UK)
+2026-08-02 00:37:11,820   📧 [ 10] uclh.members@nhs.net                          — University College London NHS (UK)
+2026-08-02 00:37:11,820   📧 [ 10] uclh.igqueries@nhs.net                        — University College London NHS (UK)
+2026-08-02 00:37:11,820   📧 [ 10] foundation.trust@uclh.nhs.uk                  — University College London NHS (UK)
+2026-08-02 00:37:11,820   📧 [ 10] jennifer.johnson@emory.edu                    — Emory Healthcare (USA)
+2026-08-02 00:37:11,821   📧 [ 10] andrea.clement@emory.edu                      — Emory Healthcare (USA)
+2026-08-02 00:37:11,822   📧 [ 10] andrea.mendez@emory.edu                       — Emory Healthcare (USA)
+2026-08-02 00:37:11,822   📧 [ 10] //sustainability@houstonmethodist.org         — Houston Methodist Hospital (USA)
+2026-08-02 00:37:11,822   📧 [ 10] sustainability@houstonmethodist.org           — Houston Methodist Hospital (USA)
+2026-08-02 00:37:11,822   📧 [ 10] shollen2@jh.edu                               — Johns Hopkins Hospital (USA)
+2026-08-02 00:37:11,822   📧 [ 10] ellen.mcvay@jhmi.edu                          — Johns Hopkins Hospital (USA)
+2026-08-02 00:37:11,822   📧 [ 10] ashley.roberts@jhmi.edu                       — Johns Hopkins Hospital (USA)
+2026-08-02 00:37:11,822   📧 [ 10] acarola1@jh.edu                               — Johns Hopkins Hospital (USA)
+2026-08-02 00:37:11,822   📧 [ 10] chatch8@jhu.edu                               — Johns Hopkins Hospital (USA)
+2026-08-02 00:37:11,822   📧 [ 10] cdavi185@jhmi.edu                             — Johns Hopkins Hospital (USA)
+2026-08-02 00:37:11,823   📧 [ 10] glittle@jhu.edu                               — Johns Hopkins Hospital (USA)
+2026-08-02 00:37:11,824   📧 [ 10] hjones49@jhmi.edu                             — Johns Hopkins Hospital (USA)
+2026-08-02 00:37:11,824   📧 [ 10] jfrost16@jh.edu                               — Johns Hopkins Hospital (USA)
+2026-08-02 00:37:11,824   📧 [ 10] kpolyni1@jhmi.edu                             — Johns Hopkins Hospital (USA)
+2026-08-02 00:37:11,824   📧 [ 10] lmotel1@jhmi.edu                              — Johns Hopkins Hospital (USA)
+2026-08-02 00:37:11,824   📧 [ 10] lvanden8@jhmi.edu                             — Johns Hopkins Hospital (USA)
+2026-08-02 00:37:11,824   📧 [ 10] mroos3@jh.edu                                 — Johns Hopkins Hospital (USA)
+2026-08-02 00:37:11,824   📧 [ 10] melben1@jhmi.edu                              — Johns Hopkins Hospital (USA)
+2026-08-02 00:37:11,824   📧 [ 10] paigeace@jhu.edu                              — Johns Hopkins Hospital (USA)
+2026-08-02 00:37:11,825   📧 [ 10] rmikeas1@jh.edu                               — Johns Hopkins Hospital (USA)
+2026-08-02 00:37:11,825   📧 [ 10] tpayne@jhmi.edu                               — Johns Hopkins Hospital (USA)
+2026-08-02 00:37:11,825   📧 [ 10] zfulwoo1@jhu.edu                              — Johns Hopkins Hospital (USA)
+2026-08-02 00:37:11,825   📧 [ 10] careers@partners.org                          — Massachusetts General Hospital (USA)
+2026-08-02 00:37:11,826   📧 [ 10] opx@mayo.edu                                  — Mayo Clinic (USA)
+2026-08-02 00:37:11,826   📧 [ 10] u003eopx@mayo.edu                             — Mayo Clinic (USA)
+2026-08-02 00:37:11,826   📧 [ 10] ims@ucsf.edu                                  — UCSF Medical Center (USA)
+2026-08-02 00:37:11,826   📧 [ 10] patient.relations@ucsf.edu                    — UCSF Medical Center (USA)
+2026-08-02 00:37:11,826   📧 [ 10] u003eims@ucsf.edu                             — UCSF Medical Center (USA)
+2026-08-02 00:37:11,827   📧 [ 10] u003epatient.relations@ucsf.edu               — UCSF Medical Center (USA)
+2026-08-02 00:37:11,827   📧 [ 10] engagement@upmc.edu                           — UPMC (USA)
+2026-08-02 00:37:11,827   📧 [ 10] invoices@upmc.edu                             — UPMC (USA)
+2026-08-02 00:37:11,828 ============================================================
+2026-08-02 00:37:11,828 [DRY RUN] DONE — ✅ 97 sent  ⏭ 0 skipped  ❌ 0 failed
+2026-08-02 00:37:11,828   → Run with --send to actually deliver emails
+2026-08-02 00:43:57,838 Loaded 86 clean leads (score >= 10)
+2026-08-02 00:43:57,839 [DRY RUN] Campaign — 86 leads targeted
+2026-08-02 00:43:57,839 =================================================================
+2026-08-02 00:43:57,839   📧 [ 25] donations@hamiltonhealth.ca                      Hamilton Health Sciences (Canada)
+2026-08-02 00:43:57,839   📧 [ 25] pressoffice@uhbw.nhs.uk                          Bristol University NHS Trust (UK)
+2026-08-02 00:43:57,839   📧 [ 25] imperial.press.office@nhs.net                    Imperial College Healthcare NHS (UK)
+2026-08-02 00:43:57,839   📧 [ 20] ahs.corp@ahs.ca                                  Alberta Health Services (Canada)
+2026-08-02 00:43:57,840   📧 [ 20] hhsnews@hhsc.ca                                  Hamilton Health Sciences (Canada)
+2026-08-02 00:43:57,840   📧 [ 20] digitalcommunications@mft.nhs.uk                 Manchester NHS Foundation Trust (UK)
+2026-08-02 00:43:57,840   📧 [ 20] patientsupportservices@uhs.nhs.uk                Southampton University NHS (UK)
+2026-08-02 00:43:57,840   📧 [ 20] webadmin@emoryhealthcare.org                     Emory Healthcare (USA)
+2026-08-02 00:43:57,840   📧 [ 15] ahs.info@ahs.ca                                  Alberta Health Services (Canada)
+2026-08-02 00:43:57,840   📧 [ 15] communications@wrha.mb.ca                        Winnipeg Health Sciences (Canada)
+2026-08-02 00:43:57,841   📧 [ 15] tsbadmin@uhbw.nhs.uk                             Bristol University NHS Trust (UK)
+2026-08-02 00:43:57,841   📧 [ 15] medicalstudentselectives@uhbw.nhs.uk             Bristol University NHS Trust (UK)
+2026-08-02 00:43:57,841   📧 [ 15] informationgovernance@uhbw.nhs.uk                Bristol University NHS Trust (UK)
+2026-08-02 00:43:57,842   📧 [ 15] cuh.press@nhs.net                                Cambridge University Hospitals (UK)
+2026-08-02 00:43:57,842   📧 [ 15] imperial.communications@nhs.net                  Imperial College Healthcare NHS (UK)
+2026-08-02 00:43:57,842   📧 [ 15] pressoffice@mft.nhs.uk                           Manchester NHS Foundation Trust (UK)
+2026-08-02 00:43:57,842   📧 [ 15] patientrelations@bswhealth.org                   Baylor Scott & White Health (USA)
+2026-08-02 00:43:57,842   📧 [ 15] janet.christenbury@emoryhealthcare.org           Emory Healthcare (USA)
+2026-08-02 00:43:57,842   📧 [ 15] jennifer.phillips2@emoryhealthcare.org           Emory Healthcare (USA)
+2026-08-02 00:43:57,843   📧 [ 15] tarvis.thompson@emoryhealthcare.org              Emory Healthcare (USA)
+2026-08-02 00:43:57,843   📧 [ 15] audra.mincey@emoryhealthcare.org                 Emory Healthcare (USA)
+2026-08-02 00:43:57,843   📧 [ 15] patient.relations@emoryhealthcare.org            Emory Healthcare (USA)
+2026-08-02 00:43:57,843   📧 [ 15] emory.international@emoryhealthcare.org          Emory Healthcare (USA)
+2026-08-02 00:43:57,843   📧 [ 15] insiders@iuhealth.org                            Indiana University Health (USA)
+2026-08-02 00:43:57,843   📧 [ 15] jhmedia@jhmi.edu                                 Johns Hopkins Hospital (USA)
+2026-08-02 00:43:57,843   📧 [ 15] guestservices@stanfordhealthcare.org             Stanford Health Care (USA)
+2026-08-02 00:43:57,844   📧 [ 15] hospitalconstruction@stanfordhealthcare.org      Stanford Health Care (USA)
+2026-08-02 00:43:57,844   📧 [ 15] myatriumhealth@atriumhealth.org                  Wake Forest Baptist Health (USA)
+2026-08-02 00:43:57,844   📧 [ 10] pathtocare@ahs.ca                                Alberta Health Services (Canada)
+2026-08-02 00:43:57,844   📧 [ 10] policy@ahs.ca                                    Alberta Health Services (Canada)
+2026-08-02 00:43:57,844   📧 [ 10] privacy@ahs.ca                                   Alberta Health Services (Canada)
+2026-08-02 00:43:57,845   📧 [ 10] webcomm@ahs.ca                                   Alberta Health Services (Canada)
+2026-08-02 00:43:57,845   📧 [ 10] parkingoffice@hhsc.ca                            Hamilton Health Sciences (Canada)
+2026-08-02 00:43:57,845   📧 [ 10] hrservices@uhbw.nhs.uk                           Bristol University NHS Trust (UK)
+2026-08-02 00:43:57,845   📧 [ 10] honoraryrequests@uhbw.nhs.uk                     Bristol University NHS Trust (UK)
+2026-08-02 00:43:57,846   📧 [ 10] southbristolacademy@uhbw.nhs.uk                  Bristol University NHS Trust (UK)
+2026-08-02 00:43:57,846   📧 [ 10] talent@uhbw.nhs.uk                               Bristol University NHS Trust (UK)
+2026-08-02 00:43:57,846   📧 [ 10] gpliaison@uhbw.nhs.uk                            Bristol University NHS Trust (UK)
+2026-08-02 00:43:57,847   📧 [ 10] payments@uhbw.nhs.uk                             Bristol University NHS Trust (UK)
+2026-08-02 00:43:57,847   📧 [ 10] hello@act4addenbrookes.org.uk                    Cambridge University Hospitals (UK)
+2026-08-02 00:43:57,847   📧 [ 10] cuh.accessibility@nhs.net                        Cambridge University Hospitals (UK)
+2026-08-02 00:43:57,847   📧 [ 10] i.outpatientappointments@nhs.net                 Imperial College Healthcare NHS (UK)
+2026-08-02 00:43:57,847   📧 [ 10] imperial.web@nhs.net                             Imperial College Healthcare NHS (UK)
+2026-08-02 00:43:57,847   📧 [ 10] charity.office@mft.nhs.uk                        Manchester NHS Foundation Trust (UK)
+2026-08-02 00:43:57,848   📧 [ 10] claims@mft.nhs.uk                                Manchester NHS Foundation Trust (UK)
+2026-08-02 00:43:57,849   📧 [ 10] sar.mft@mft.nhs.uk                               Manchester NHS Foundation Trust (UK)
+2026-08-02 00:43:57,849   📧 [ 10] pals@uhs.nhs.uk                                  Southampton University NHS (UK)
+2026-08-02 00:43:57,849   📧 [ 10] disclosures@uhs.nhs.uk                           Southampton University NHS (UK)
+2026-08-02 00:43:57,850   📧 [ 10] privatepatients@uhs.nhs.uk                       Southampton University NHS (UK)
+2026-08-02 00:43:57,850   📧 [ 10] patientinvolvement@uhs.nhs.uk                    Southampton University NHS (UK)
+2026-08-02 00:43:57,850   📧 [ 10] careersexperience@uhs.nhs.uk                     Southampton University NHS (UK)
+2026-08-02 00:43:57,850   📧 [ 10] volunteers@uhs.nhs.uk                            Southampton University NHS (UK)
+2026-08-02 00:43:57,850   📧 [ 10] elective@southampton.ac.uk                       Southampton University NHS (UK)
+2026-08-02 00:43:57,851   📧 [ 10] publications@uhs.nhs.uk                          Southampton University NHS (UK)
+2026-08-02 00:43:57,851   📧 [ 10] uclh.webmaster@nhs.net                           University College London NHS (UK)
+2026-08-02 00:43:57,852   📧 [ 10] uclh.members@nhs.net                             University College London NHS (UK)
+2026-08-02 00:43:57,852   📧 [ 10] uclh.igqueries@nhs.net                           University College London NHS (UK)
+2026-08-02 00:43:57,852   📧 [ 10] foundation.trust@uclh.nhs.uk                     University College London NHS (UK)
+2026-08-02 00:43:57,852   📧 [ 10] jennifer.johnson@emory.edu                       Emory Healthcare (USA)
+2026-08-02 00:43:57,853   📧 [ 10] andrea.clement@emory.edu                         Emory Healthcare (USA)
+2026-08-02 00:43:57,853   📧 [ 10] andrea.mendez@emory.edu                          Emory Healthcare (USA)
+2026-08-02 00:43:57,853   📧 [ 10] sustainability@houstonmethodist.org              Houston Methodist Hospital (USA)
+2026-08-02 00:43:57,853   📧 [ 10] shollen2@jh.edu                                  Johns Hopkins Hospital (USA)
+2026-08-02 00:43:57,854   📧 [ 10] ellen.mcvay@jhmi.edu                             Johns Hopkins Hospital (USA)
+2026-08-02 00:43:57,854   📧 [ 10] ashley.roberts@jhmi.edu                          Johns Hopkins Hospital (USA)
+2026-08-02 00:43:57,854   📧 [ 10] acarola1@jh.edu                                  Johns Hopkins Hospital (USA)
+2026-08-02 00:43:57,855   📧 [ 10] chatch8@jhu.edu                                  Johns Hopkins Hospital (USA)
+2026-08-02 00:43:57,855   📧 [ 10] cdavi185@jhmi.edu                                Johns Hopkins Hospital (USA)
+2026-08-02 00:43:57,855   📧 [ 10] glittle@jhu.edu                                  Johns Hopkins Hospital (USA)
+2026-08-02 00:43:57,855   📧 [ 10] hjones49@jhmi.edu                                Johns Hopkins Hospital (USA)
+2026-08-02 00:43:57,855   📧 [ 10] jfrost16@jh.edu                                  Johns Hopkins Hospital (USA)
+2026-08-02 00:43:57,856   📧 [ 10] kpolyni1@jhmi.edu                                Johns Hopkins Hospital (USA)
+2026-08-02 00:43:57,856   📧 [ 10] lmotel1@jhmi.edu                                 Johns Hopkins Hospital (USA)
+2026-08-02 00:43:57,856   📧 [ 10] lvanden8@jhmi.edu                                Johns Hopkins Hospital (USA)
+2026-08-02 00:43:57,856   📧 [ 10] mroos3@jh.edu                                    Johns Hopkins Hospital (USA)
+2026-08-02 00:43:57,856   📧 [ 10] melben1@jhmi.edu                                 Johns Hopkins Hospital (USA)
+2026-08-02 00:43:57,857   📧 [ 10] paigeace@jhu.edu                                 Johns Hopkins Hospital (USA)
+2026-08-02 00:43:57,857   📧 [ 10] rmikeas1@jh.edu                                  Johns Hopkins Hospital (USA)
+2026-08-02 00:43:57,857   📧 [ 10] tpayne@jhmi.edu                                  Johns Hopkins Hospital (USA)
+2026-08-02 00:43:57,857   📧 [ 10] zfulwoo1@jhu.edu                                 Johns Hopkins Hospital (USA)
+2026-08-02 00:43:57,857   📧 [ 10] careers@partners.org                             Massachusetts General Hospital (USA)
+2026-08-02 00:43:57,857   📧 [ 10] opx@mayo.edu                                     Mayo Clinic (USA)
+2026-08-02 00:43:57,857   📧 [ 10] ims@ucsf.edu                                     UCSF Medical Center (USA)
+2026-08-02 00:43:57,857   📧 [ 10] patient.relations@ucsf.edu                       UCSF Medical Center (USA)
+2026-08-02 00:43:57,858   📧 [ 10] engagement@upmc.edu                              UPMC (USA)
+2026-08-02 00:43:57,858   📧 [ 10] invoices@upmc.edu                                UPMC (USA)
+2026-08-02 00:43:57,858 =================================================================
+2026-08-02 00:43:57,858 [DRY RUN] DONE — ✅ 86 sent  ⏭ 0 skipped  ❌ 0 failed
+2026-08-02 00:43:57,858   → Run with --send to actually deliver emails
+2026-08-02 00:45:09,588 Loaded 86 clean leads (score >= 10)
+2026-08-02 00:45:09,589 Campaign — 86 leads targeted
+2026-08-02 00:45:09,589 =================================================================
+2026-08-02 00:45:10,773   ✅ [ 25] → donations@hamiltonhealth.ca                   | Hamilton Health Sciences
+2026-08-02 00:45:14,752   ✅ [ 25] → pressoffice@uhbw.nhs.uk                       | Bristol University NHS Trust
+2026-08-02 00:45:18,774   ✅ [ 25] → imperial.press.office@nhs.net                 | Imperial College Healthcare NHS
+2026-08-02 00:45:22,675   ✅ [ 20] → ahs.corp@ahs.ca                               | Alberta Health Services
+2026-08-02 00:45:26,450   ✅ [ 20] → hhsnews@hhsc.ca                               | Hamilton Health Sciences
+2026-08-02 00:45:30,529   ✅ [ 20] → digitalcommunications@mft.nhs.uk              | Manchester NHS Foundation Trust
+2026-08-02 00:45:34,838   ✅ [ 20] → patientsupportservices@uhs.nhs.uk             | Southampton University NHS
+2026-08-02 00:45:38,591   ✅ [ 20] → webadmin@emoryhealthcare.org                  | Emory Healthcare
+2026-08-02 00:45:42,351   ✅ [ 15] → ahs.info@ahs.ca                               | Alberta Health Services
+2026-08-02 00:45:46,077   ✅ [ 15] → communications@wrha.mb.ca                     | Winnipeg Health Sciences
+2026-08-02 00:45:49,930   ✅ [ 15] → tsbadmin@uhbw.nhs.uk                          | Bristol University NHS Trust
+2026-08-02 00:45:53,646   ✅ [ 15] → medicalstudentselectives@uhbw.nhs.uk          | Bristol University NHS Trust
+2026-08-02 00:45:57,553   ✅ [ 15] → informationgovernance@uhbw.nhs.uk             | Bristol University NHS Trust
+2026-08-02 00:46:01,378   ✅ [ 15] → cuh.press@nhs.net                             | Cambridge University Hospitals
+2026-08-02 00:46:05,231   ✅ [ 15] → imperial.communications@nhs.net               | Imperial College Healthcare NHS
+2026-08-02 00:46:09,002   ✅ [ 15] → pressoffice@mft.nhs.uk                        | Manchester NHS Foundation Trust
+2026-08-02 00:46:12,850   ✅ [ 15] → patientrelations@bswhealth.org                | Baylor Scott & White Health
+2026-08-02 00:46:16,853   ✅ [ 15] → janet.christenbury@emoryhealthcare.org        | Emory Healthcare
+2026-08-02 00:46:20,765   ✅ [ 15] → jennifer.phillips2@emoryhealthcare.org        | Emory Healthcare
+2026-08-02 00:46:24,760   ✅ [ 15] → tarvis.thompson@emoryhealthcare.org           | Emory Healthcare
+2026-08-02 00:46:28,608   ✅ [ 15] → audra.mincey@emoryhealthcare.org              | Emory Healthcare
+2026-08-02 00:46:32,734   ✅ [ 15] → patient.relations@emoryhealthcare.org         | Emory Healthcare
+2026-08-02 00:46:36,458   ✅ [ 15] → emory.international@emoryhealthcare.org       | Emory Healthcare
+2026-08-02 00:46:40,192   ✅ [ 15] → insiders@iuhealth.org                         | Indiana University Health
+2026-08-02 00:46:44,029   ✅ [ 15] → jhmedia@jhmi.edu                              | Johns Hopkins Hospital
+2026-08-02 00:46:47,962   ✅ [ 15] → guestservices@stanfordhealthcare.org          | Stanford Health Care
+2026-08-02 00:46:51,805   ✅ [ 15] → hospitalconstruction@stanfordhealthcare.org   | Stanford Health Care
+2026-08-02 00:46:55,515   ✅ [ 15] → myatriumhealth@atriumhealth.org               | Wake Forest Baptist Health
+2026-08-02 00:46:59,287   ✅ [ 10] → pathtocare@ahs.ca                             | Alberta Health Services
+2026-08-02 00:47:03,131   ✅ [ 10] → policy@ahs.ca                                 | Alberta Health Services
+2026-08-02 00:47:07,000   ✅ [ 10] → privacy@ahs.ca                                | Alberta Health Services
+2026-08-02 00:47:10,794   ✅ [ 10] → webcomm@ahs.ca                                | Alberta Health Services
+2026-08-02 00:47:14,552   ✅ [ 10] → parkingoffice@hhsc.ca                         | Hamilton Health Sciences
+2026-08-02 00:47:18,434   ✅ [ 10] → hrservices@uhbw.nhs.uk                        | Bristol University NHS Trust
+2026-08-02 00:47:22,514   ✅ [ 10] → honoraryrequests@uhbw.nhs.uk                  | Bristol University NHS Trust
+2026-08-02 00:47:26,237   ✅ [ 10] → southbristolacademy@uhbw.nhs.uk               | Bristol University NHS Trust
+2026-08-02 00:47:30,319   ✅ [ 10] → talent@uhbw.nhs.uk                            | Bristol University NHS Trust
+2026-08-02 00:47:34,511   ✅ [ 10] → gpliaison@uhbw.nhs.uk                         | Bristol University NHS Trust
+2026-08-02 00:47:38,221   ✅ [ 10] → payments@uhbw.nhs.uk                          | Bristol University NHS Trust
+2026-08-02 00:47:42,095   ✅ [ 10] → hello@act4addenbrookes.org.uk                 | Cambridge University Hospitals
+2026-08-02 00:47:45,899   ✅ [ 10] → cuh.accessibility@nhs.net                     | Cambridge University Hospitals
+2026-08-02 00:47:49,610   ✅ [ 10] → i.outpatientappointments@nhs.net              | Imperial College Healthcare NHS
+2026-08-02 00:47:53,577   ✅ [ 10] → imperial.web@nhs.net                          | Imperial College Healthcare NHS
+2026-08-02 00:47:57,526   ✅ [ 10] → charity.office@mft.nhs.uk                     | Manchester NHS Foundation Trust
+2026-08-02 00:48:01,631   ✅ [ 10] → claims@mft.nhs.uk                             | Manchester NHS Foundation Trust
+2026-08-02 00:48:05,376   ✅ [ 10] → sar.mft@mft.nhs.uk                            | Manchester NHS Foundation Trust
+2026-08-02 00:48:09,133   ✅ [ 10] → pals@uhs.nhs.uk                               | Southampton University NHS
+2026-08-02 00:48:12,992   ✅ [ 10] → disclosures@uhs.nhs.uk                        | Southampton University NHS
+2026-08-02 00:48:16,843   ✅ [ 10] → privatepatients@uhs.nhs.uk                    | Southampton University NHS
+2026-08-02 00:48:20,591   ✅ [ 10] → patientinvolvement@uhs.nhs.uk                 | Southampton University NHS
+2026-08-02 00:48:24,302   ✅ [ 10] → careersexperience@uhs.nhs.uk                  | Southampton University NHS
+2026-08-02 00:48:28,636   ✅ [ 10] → volunteers@uhs.nhs.uk                         | Southampton University NHS
+2026-08-02 00:48:32,414   ✅ [ 10] → elective@southampton.ac.uk                    | Southampton University NHS
+2026-08-02 00:48:36,179   ✅ [ 10] → publications@uhs.nhs.uk                       | Southampton University NHS
+2026-08-02 00:48:40,048   ✅ [ 10] → uclh.webmaster@nhs.net                        | University College London NHS
+2026-08-02 00:48:43,788   ✅ [ 10] → uclh.members@nhs.net                          | University College London NHS
+2026-08-02 00:48:47,536   ✅ [ 10] → uclh.igqueries@nhs.net                        | University College London NHS
+2026-08-02 00:48:51,313   ✅ [ 10] → foundation.trust@uclh.nhs.uk                  | University College London NHS
+2026-08-02 00:48:55,072   ✅ [ 10] → jennifer.johnson@emory.edu                    | Emory Healthcare
+2026-08-02 00:48:58,825   ✅ [ 10] → andrea.clement@emory.edu                      | Emory Healthcare
+2026-08-02 00:49:02,621   ✅ [ 10] → andrea.mendez@emory.edu                       | Emory Healthcare
+2026-08-02 00:49:06,504   ✅ [ 10] → sustainability@houstonmethodist.org           | Houston Methodist Hospital
+2026-08-02 00:49:10,224   ✅ [ 10] → shollen2@jh.edu                               | Johns Hopkins Hospital
+2026-08-02 00:49:13,964   ✅ [ 10] → ellen.mcvay@jhmi.edu                          | Johns Hopkins Hospital
+2026-08-02 00:49:17,685   ✅ [ 10] → ashley.roberts@jhmi.edu                       | Johns Hopkins Hospital
+2026-08-02 00:49:21,420   ✅ [ 10] → acarola1@jh.edu                               | Johns Hopkins Hospital
+2026-08-02 00:49:25,395   ✅ [ 10] → chatch8@jhu.edu                               | Johns Hopkins Hospital
+2026-08-02 00:49:29,189   ✅ [ 10] → cdavi185@jhmi.edu                             | Johns Hopkins Hospital
+2026-08-02 00:49:33,298   ✅ [ 10] → glittle@jhu.edu                               | Johns Hopkins Hospital
+2026-08-02 00:49:37,127   ✅ [ 10] → hjones49@jhmi.edu                             | Johns Hopkins Hospital
+2026-08-02 00:49:40,870   ✅ [ 10] → jfrost16@jh.edu                               | Johns Hopkins Hospital
+2026-08-02 00:49:44,704   ✅ [ 10] → kpolyni1@jhmi.edu                             | Johns Hopkins Hospital
+2026-08-02 00:49:48,516   ✅ [ 10] → lmotel1@jhmi.edu                              | Johns Hopkins Hospital
+2026-08-02 00:49:52,259   ✅ [ 10] → lvanden8@jhmi.edu                             | Johns Hopkins Hospital
+2026-08-02 00:49:56,011   ✅ [ 10] → mroos3@jh.edu                                 | Johns Hopkins Hospital
+2026-08-02 00:49:59,986   ✅ [ 10] → melben1@jhmi.edu                              | Johns Hopkins Hospital
+2026-08-02 00:50:03,765   ✅ [ 10] → paigeace@jhu.edu                              | Johns Hopkins Hospital
+2026-08-02 00:50:07,484   ✅ [ 10] → rmikeas1@jh.edu                               | Johns Hopkins Hospital
+2026-08-02 00:50:11,542   ✅ [ 10] → tpayne@jhmi.edu                               | Johns Hopkins Hospital
+2026-08-02 00:50:15,325   ✅ [ 10] → zfulwoo1@jhu.edu                              | Johns Hopkins Hospital
+2026-08-02 00:50:19,132   ✅ [ 10] → careers@partners.org                          | Massachusetts General Hospital
+2026-08-02 00:50:22,869   ✅ [ 10] → opx@mayo.edu                                  | Mayo Clinic
+2026-08-02 00:50:26,846   ✅ [ 10] → ims@ucsf.edu                                  | UCSF Medical Center
+2026-08-02 00:50:30,601   ✅ [ 10] → patient.relations@ucsf.edu                    | UCSF Medical Center
+2026-08-02 00:50:34,349   ✅ [ 10] → engagement@upmc.edu                           | UPMC
+2026-08-02 00:50:38,395   ✅ [ 10] → invoices@upmc.edu                             | UPMC
+2026-08-02 00:50:41,396 =================================================================
+2026-08-02 00:50:41,397 DONE — ✅ 86 sent  ⏭ 0 skipped  ❌ 0 failed
+2026-08-02 00:56:13,506 Loaded 86 clean leads (score >= 10)
+2026-08-02 00:56:13,506 Campaign — 86 leads targeted
+2026-08-02 00:56:13,507 =================================================================
+2026-08-02 00:56:14,642   ✅ [ 25] → donations@hamiltonhealth.ca                   | Hamilton Health Sciences
+2026-08-02 00:56:18,650   ✅ [ 25] → pressoffice@uhbw.nhs.uk                       | Bristol University NHS Trust
+2026-08-02 00:56:22,437   ✅ [ 25] → imperial.press.office@nhs.net                 | Imperial College Healthcare NHS
+2026-08-02 00:56:26,880   ✅ [ 20] → ahs.corp@ahs.ca                               | Alberta Health Services
+2026-08-02 00:56:42,236   ✅ [ 20] → hhsnews@hhsc.ca                               | Hamilton Health Sciences
+2026-08-02 00:56:46,517   ✅ [ 20] → digitalcommunications@mft.nhs.uk              | Manchester NHS Foundation Trust
+2026-08-02 00:56:51,042   ✅ [ 20] → patientsupportservices@uhs.nhs.uk             | Southampton University NHS
+2026-08-02 00:56:56,774   ✅ [ 20] → webadmin@emoryhealthcare.org                  | Emory Healthcare
+2026-08-02 00:57:01,021   ✅ [ 15] → ahs.info@ahs.ca                               | Alberta Health Services
+2026-08-02 00:57:05,139   ✅ [ 15] → communications@wrha.mb.ca                     | Winnipeg Health Sciences
+2026-08-02 00:57:09,240   ✅ [ 15] → tsbadmin@uhbw.nhs.uk                          | Bristol University NHS Trust
+2026-08-02 00:57:13,453   ✅ [ 15] → medicalstudentselectives@uhbw.nhs.uk          | Bristol University NHS Trust
+2026-08-02 00:57:17,654   ✅ [ 15] → informationgovernance@uhbw.nhs.uk             | Bristol University NHS Trust
+2026-08-02 00:57:21,954   ✅ [ 15] → cuh.press@nhs.net                             | Cambridge University Hospitals
+2026-08-02 00:57:26,274   ✅ [ 15] → imperial.communications@nhs.net               | Imperial College Healthcare NHS
+2026-08-02 00:57:30,648   ✅ [ 15] → pressoffice@mft.nhs.uk                        | Manchester NHS Foundation Trust
+2026-08-02 00:57:34,720   ✅ [ 15] → patientrelations@bswhealth.org                | Baylor Scott & White Health
+2026-08-02 00:57:38,850   ✅ [ 15] → janet.christenbury@emoryhealthcare.org        | Emory Healthcare
+2026-08-02 00:57:42,948   ✅ [ 15] → jennifer.phillips2@emoryhealthcare.org        | Emory Healthcare
+2026-08-02 00:57:47,141   ✅ [ 15] → tarvis.thompson@emoryhealthcare.org           | Emory Healthcare
+2026-08-02 00:57:51,365   ✅ [ 15] → audra.mincey@emoryhealthcare.org              | Emory Healthcare
+2026-08-02 00:57:55,641   ✅ [ 15] → patient.relations@emoryhealthcare.org         | Emory Healthcare
+2026-08-02 00:57:59,867   ✅ [ 15] → emory.international@emoryhealthcare.org       | Emory Healthcare
+2026-08-02 00:58:04,167   ✅ [ 15] → insiders@iuhealth.org                         | Indiana University Health
+2026-08-02 00:58:08,353   ✅ [ 15] → jhmedia@jhmi.edu                              | Johns Hopkins Hospital
+2026-08-02 00:58:12,504   ✅ [ 15] → guestservices@stanfordhealthcare.org          | Stanford Health Care
+2026-08-02 00:58:16,829   ✅ [ 15] → hospitalconstruction@stanfordhealthcare.org   | Stanford Health Care
+2026-08-02 00:58:20,926   ✅ [ 15] → myatriumhealth@atriumhealth.org               | Wake Forest Baptist Health
+2026-08-02 00:58:25,064   ✅ [ 10] → pathtocare@ahs.ca                             | Alberta Health Services
+2026-08-02 00:58:29,186   ✅ [ 10] → policy@ahs.ca                                 | Alberta Health Services
+2026-08-02 00:58:33,683   ✅ [ 10] → privacy@ahs.ca                                | Alberta Health Services
+2026-08-02 00:58:37,814   ✅ [ 10] → webcomm@ahs.ca                                | Alberta Health Services
+2026-08-02 00:58:41,957   ✅ [ 10] → parkingoffice@hhsc.ca                         | Hamilton Health Sciences
+2026-08-02 00:58:46,132   ✅ [ 10] → hrservices@uhbw.nhs.uk                        | Bristol University NHS Trust
+2026-08-02 00:58:50,413   ✅ [ 10] → honoraryrequests@uhbw.nhs.uk                  | Bristol University NHS Trust
+2026-08-02 00:58:54,575   ✅ [ 10] → southbristolacademy@uhbw.nhs.uk               | Bristol University NHS Trust
+2026-08-02 00:58:58,731   ✅ [ 10] → talent@uhbw.nhs.uk                            | Bristol University NHS Trust
+2026-08-02 00:59:02,836   ✅ [ 10] → gpliaison@uhbw.nhs.uk                         | Bristol University NHS Trust
+2026-08-02 00:59:06,986   ✅ [ 10] → payments@uhbw.nhs.uk                          | Bristol University NHS Trust
+2026-08-02 00:59:11,177   ✅ [ 10] → hello@act4addenbrookes.org.uk                 | Cambridge University Hospitals
+2026-08-02 00:59:15,301   ✅ [ 10] → cuh.accessibility@nhs.net                     | Cambridge University Hospitals
+2026-08-02 00:59:19,486   ✅ [ 10] → i.outpatientappointments@nhs.net              | Imperial College Healthcare NHS
+2026-08-02 00:59:23,744   ✅ [ 10] → imperial.web@nhs.net                          | Imperial College Healthcare NHS
+2026-08-02 00:59:27,899   ✅ [ 10] → charity.office@mft.nhs.uk                     | Manchester NHS Foundation Trust
+2026-08-02 00:59:32,074   ✅ [ 10] → claims@mft.nhs.uk                             | Manchester NHS Foundation Trust
+2026-08-02 00:59:36,281   ✅ [ 10] → sar.mft@mft.nhs.uk                            | Manchester NHS Foundation Trust
+2026-08-02 00:59:40,936   ✅ [ 10] → pals@uhs.nhs.uk                               | Southampton University NHS
+2026-08-02 00:59:45,402   ✅ [ 10] → disclosures@uhs.nhs.uk                        | Southampton University NHS
+2026-08-02 00:59:50,076   ✅ [ 10] → privatepatients@uhs.nhs.uk                    | Southampton University NHS
+2026-08-02 00:59:54,554   ✅ [ 10] → patientinvolvement@uhs.nhs.uk                 | Southampton University NHS
+2026-08-02 00:59:58,877   ✅ [ 10] → careersexperience@uhs.nhs.uk                  | Southampton University NHS
+2026-08-02 01:00:03,270   ✅ [ 10] → volunteers@uhs.nhs.uk                         | Southampton University NHS
+2026-08-02 01:00:07,450   ✅ [ 10] → elective@southampton.ac.uk                    | Southampton University NHS
+2026-08-02 01:00:11,826   ✅ [ 10] → publications@uhs.nhs.uk                       | Southampton University NHS
+2026-08-02 01:00:16,277   ✅ [ 10] → uclh.webmaster@nhs.net                        | University College London NHS
+2026-08-02 01:00:20,469   ✅ [ 10] → uclh.members@nhs.net                          | University College London NHS
+2026-08-02 01:00:24,614   ✅ [ 10] → uclh.igqueries@nhs.net                        | University College London NHS
+2026-08-02 01:00:29,071   ✅ [ 10] → foundation.trust@uclh.nhs.uk                  | University College London NHS
+2026-08-02 01:00:33,632   ✅ [ 10] → jennifer.johnson@emory.edu                    | Emory Healthcare
+2026-08-02 01:00:37,827   ✅ [ 10] → andrea.clement@emory.edu                      | Emory Healthcare
+2026-08-02 01:00:42,030   ✅ [ 10] → andrea.mendez@emory.edu                       | Emory Healthcare
+2026-08-02 01:00:46,241   ✅ [ 10] → sustainability@houstonmethodist.org           | Houston Methodist Hospital
+2026-08-02 01:00:50,405   ❌ Error (shollen2@jh.edu): Your account has reached its daily sending limit. Please upgrade your plan or retry in 23h21m19s.
+2026-08-02 01:00:51,523   ❌ Error (ellen.mcvay@jhmi.edu): Your account has reached its daily sending limit. Please upgrade your plan or retry in 23h21m18s.
+2026-08-02 01:00:52,603   ❌ Error (ashley.roberts@jhmi.edu): Your account has reached its daily sending limit. Please upgrade your plan or retry in 23h21m17s.
+2026-08-02 01:00:53,738   ❌ Error (acarola1@jh.edu): Your account has reached its daily sending limit. Please upgrade your plan or retry in 23h21m15s.
+2026-08-02 01:00:54,854   ❌ Error (chatch8@jhu.edu): Your account has reached its daily sending limit. Please upgrade your plan or retry in 23h21m14s.
+2026-08-02 01:00:56,150   ❌ Error (cdavi185@jhmi.edu): Your account has reached its daily sending limit. Please upgrade your plan or retry in 23h21m13s.
+2026-08-02 01:00:57,228   ❌ Error (glittle@jhu.edu): Your account has reached its daily sending limit. Please upgrade your plan or retry in 23h21m12s.
+2026-08-02 01:00:58,292   ❌ Error (hjones49@jhmi.edu): Your account has reached its daily sending limit. Please upgrade your plan or retry in 23h21m11s.
+2026-08-02 01:00:59,400   ❌ Error (jfrost16@jh.edu): Your account has reached its daily sending limit. Please upgrade your plan or retry in 23h21m10s.
+2026-08-02 01:01:00,496   ❌ Error (kpolyni1@jhmi.edu): Your account has reached its daily sending limit. Please upgrade your plan or retry in 23h21m9s.
+2026-08-02 01:01:01,559   ❌ Error (lmotel1@jhmi.edu): Your account has reached its daily sending limit. Please upgrade your plan or retry in 23h21m8s.
+2026-08-02 01:01:02,623   ❌ Error (lvanden8@jhmi.edu): Your account has reached its daily sending limit. Please upgrade your plan or retry in 23h21m7s.
+2026-08-02 01:01:03,691   ❌ Error (mroos3@jh.edu): Your account has reached its daily sending limit. Please upgrade your plan or retry in 23h21m6s.
+2026-08-02 01:01:04,757   ❌ Error (melben1@jhmi.edu): Your account has reached its daily sending limit. Please upgrade your plan or retry in 23h21m4s.
+2026-08-02 01:01:05,844   ❌ Error (paigeace@jhu.edu): Your account has reached its daily sending limit. Please upgrade your plan or retry in 23h21m3s.
+2026-08-02 01:01:07,087   ❌ Error (rmikeas1@jh.edu): Your account has reached its daily sending limit. Please upgrade your plan or retry in 23h21m2s.
+2026-08-02 01:01:08,243   ❌ Error (tpayne@jhmi.edu): Your account has reached its daily sending limit. Please upgrade your plan or retry in 23h21m1s.
+2026-08-02 01:01:09,425   ❌ Error (zfulwoo1@jhu.edu): Your account has reached its daily sending limit. Please upgrade your plan or retry in 23h21m0s.
+2026-08-02 01:01:10,517   ❌ Error (careers@partners.org): Your account has reached its daily sending limit. Please upgrade your plan or retry in 23h20m59s.
+2026-08-02 01:01:11,576   ❌ Error (opx@mayo.edu): Your account has reached its daily sending limit. Please upgrade your plan or retry in 23h20m58s.
+2026-08-02 01:01:12,669   ❌ Error (ims@ucsf.edu): Your account has reached its daily sending limit. Please upgrade your plan or retry in 23h20m57s.
+2026-08-02 01:01:14,116   ❌ Error (patient.relations@ucsf.edu): Your account has reached its daily sending limit. Please upgrade your plan or retry in 23h20m55s.
+2026-08-02 01:01:15,236   ❌ Error (engagement@upmc.edu): Your account has reached its daily sending limit. Please upgrade your plan or retry in 23h20m54s.
+2026-08-02 01:01:16,317   ❌ Error (invoices@upmc.edu): Your account has reached its daily sending limit. Please upgrade your plan or retry in 23h20m53s.
+2026-08-02 01:01:16,323 =================================================================
+2026-08-02 01:01:16,323 DONE — ✅ 62 sent  ⏭ 0 skipped  ❌ 24 failed

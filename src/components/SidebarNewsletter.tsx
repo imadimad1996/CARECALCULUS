@@ -71,20 +71,20 @@ export default function SidebarNewsletter({ lang }: SidebarNewsletterProps) {
   };
 
   return (
-    <div className="mt-auto px-6 pt-4 border-t border-gray-150/80">
-      <div className="bg-slate-50 border border-slate-200/60 rounded-2xl p-4 relative overflow-hidden text-left rtl:text-right">
+    <div className="mt-auto px-6 pt-4 border-t border-gray-150/80 dark:border-slate-800">
+      <div className="bg-slate-50 dark:bg-slate-900/60 border border-slate-200/60 dark:border-slate-800 rounded-2xl p-4 relative overflow-hidden text-left rtl:text-right">
         {submitted ? (
           <div className="flex items-center gap-2 py-2">
-            <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
-            <p className="text-[11px] font-bold text-emerald-600">{t.success}</p>
+            <CheckCircle className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+            <p className="text-[11px] font-bold text-emerald-600 dark:text-emerald-400">{t.success}</p>
           </div>
         ) : (
           <div className="space-y-2.5">
             <div className="flex items-center gap-1.5">
-              <Sparkles className="w-3.5 h-3.5 text-teal-600" />
-              <span className="text-[10px] font-mono font-black text-teal-600 uppercase tracking-wider">{t.title}</span>
+              <Sparkles className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
+              <span className="text-[10px] font-mono font-black text-teal-600 dark:text-teal-400 uppercase tracking-wider">{t.title}</span>
             </div>
-            <p className="text-[10px] text-gray-500 font-semibold leading-relaxed">{t.desc}</p>
+            <p className="text-[10px] text-gray-500 dark:text-slate-400 font-semibold leading-relaxed">{t.desc}</p>
             
             <form onSubmit={handleSubmit} className="space-y-1.5">
               <input
@@ -93,7 +93,7 @@ export default function SidebarNewsletter({ lang }: SidebarNewsletterProps) {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={t.placeholder}
                 disabled={isSubmitting}
-                className={`w-full px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-[11px] outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 transition-all ${
+                className={`w-full px-3 py-1.5 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg text-[11px] text-slate-900 dark:text-slate-100 outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 transition-all ${
                   isRtl ? 'text-right' : 'text-left'
                 }`}
                 style={{ minHeight: '34px' }}

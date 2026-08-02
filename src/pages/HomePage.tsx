@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import {
   Activity, Brain, Stethoscope, Wind, TestTube, AlertOctagon, HeartPulse,
-  Droplet, ArrowRightLeft, LayoutDashboard, BookOpen, MonitorPlay, GraduationCap,
+  Droplet, ArrowRightLeft, LayoutDashboard, BookOpen,
   Newspaper, Calculator, ChevronRight, ShieldCheck, Globe, Sparkles, AlertTriangle, Search, Award, ArrowRight, Pill
 } from 'lucide-react';
 import { LangCode } from '../types';
@@ -19,7 +19,7 @@ interface HomePageProps {
 const T = {
   hero: {
     en: { badge: 'Clinical Decision Suite', title: 'Medical Calculators', subtitle: 'Trusted by clinicians worldwide', desc: 'The fastest, most rigorous clinical decision support tools. Designed for the bedside: zero fluff, offline-ready, and strictly aligned with current AHA, KDIGO, and ESPEN guidelines.' },
-    fr: { badge: 'Suite de Décision Clinique', title: 'Calculateurs Médicaux', subtitle: 'Utilisé par des cliniciens du monde entier', desc: 'Les outils d\'aide à la décision clinique les plus rapides et rigoureux. Conçus pour le lit du patient : sans fioritures, hors ligne, et strictement alignés sur les recommandations AHA, KDIGO et ESPEN.' },
+    fr: { badge: 'Suite de Décision Clinique', title: 'Calculateurs Médicaux', subtitle: 'Utilisé par des cliniciens du monde entier', desc: 'Les outils d\'aide à la décision clinique les plus rapides et rigoureux. Conçus pour le lit du patient : sans fioritures, hors ligne, et strictly alignés sur les recommandations AHA, KDIGO et ESPEN.' },
     
   },
   cta: {
@@ -31,13 +31,11 @@ const T = {
       t1: { label: 'Emergency & Critical Care', desc: '30+ validated ICU & emergency scoring tools' },
       t2: { label: 'Metabolic & Cardiorenal', desc: '25+ organ function & cardiorenal calculators' },
       t3: { label: 'Therapeutic & Dosing', desc: '30+ pharmacology & body metric tools' },
-      t4: { label: 'Learning Resources', desc: 'Journals, Blogs, Presentations & Courses' },
     },
     fr: {
       t1: { label: 'Urgences & Soins Intensifs', desc: '30+ outils de scoring validés pour réanimation' },
       t2: { label: 'Métabolique & Cardiorénal', desc: '25+ calculateurs organes & cardiorenal' },
       t3: { label: 'Thérapeutique & Dosages', desc: '30+ outils de pharmacologie & métriques corporels' },
-      t4: { label: 'Ressources Pédagogiques', desc: 'Journaux, Blog, Présentations & Cours' },
     },
     
   },
@@ -112,13 +110,6 @@ const FEATURED_CALCULATORS = [
   { id: 'ibw', icon: LayoutDashboard, en: 'IBW & ABW', fr: 'Poids Idéal', path: '/adjusted-body-weight', specialties: ['nutrition', 'pharmaco'] },
   { id: 'unit', icon: ArrowRightLeft, en: 'Unit Conversions', fr: 'Conversions d\'Unités', path: '/medical-conversions', specialties: ['pharmaco'] },
 ];
-
-const LEARNING_RESOURCES = [
-
-  { id: 'presentations', icon: MonitorPlay, en: 'Presentations', fr: 'Présentations', path: '/presentations' },
-  { id: 'courses', icon: GraduationCap, en: 'Courses (PDF)', fr: 'Cours (PDF)', path: '/cours' },
-];
-
 
 import SEO from '../components/SEO';
 import CommandPalette from '../components/CommandPalette';
@@ -438,31 +429,6 @@ export default function HomePage({ lang }: HomePageProps) {
       </section>
 
 
-
-      {/* Learning Resources */}
-      <section className="mt-8 pt-8 border-t border-slate-200/60">
-        <h3 className="text-sm font-black text-slate-900 uppercase tracking-widest mb-6">
-          {lang === 'fr' ? 'Ressources Pédagogiques' : 'Learning Resources'}
-        </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {LEARNING_RESOURCES.map((res) => {
-            const ResIcon = res.icon;
-            const label = lang === 'fr' ? res.fr : res.en;
-            return (
-              <Link
-                key={res.id}
-                to={langPath(res.path)}
-                className="flex items-center gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200 hover:border-purple-300 hover:bg-white hover:shadow-sm transition-all duration-300 group"
-              >
-                <div className="p-3 min-h-[44px] min-w-[44px] rounded-lg bg-white text-slate-500 border border-slate-200 group-hover:border-purple-200 group-hover:text-purple-600 group-hover:bg-purple-50 transition-colors">
-                  <ResIcon className="w-4 h-4 shrink-0" />
-                </div>
-                <span className="text-xs font-bold text-slate-700 group-hover:text-purple-700 transition-colors truncate">{label}</span>
-              </Link>
-            );
-          })}
-        </div>
-      </section>
 
       {/* Clinical Guidelines Directory */}
       <section className="mt-8 pt-8 border-t border-slate-200/60">
