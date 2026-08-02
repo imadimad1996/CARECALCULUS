@@ -509,9 +509,11 @@ function AppLayout() {
   // Unified top navigation: Principal buttons replacing the double search bar
   const renderUnifiedTopNav = () => {
     return (
-      <div className="mb-6 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm relative z-30 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/10">
+      <div className="mb-6 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm relative z-30 ring-1 ring-slate-900/5 dark:ring-white/10">
         {/* Ambient Top Accent Light Line */}
-        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-teal-500/60 to-transparent opacity-80 pointer-events-none" />
+        <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none">
+          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-teal-500/60 to-transparent opacity-80" />
+        </div>
 
         <div className="px-3.5 py-2 flex items-center gap-2 flex-wrap">
           <button 
