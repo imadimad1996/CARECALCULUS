@@ -1350,8 +1350,6 @@ function AppLayout() {
       {/* Medical Specialties Directory Modal */}
       <SpecialtiesModal isOpen={isSpecialtiesModalOpen} onClose={() => setIsSpecialtiesModalOpen(false)} lang={lang} langPath={langPath} />
       
-      {/* AdSense & GDPR Cookie Consent */}
-      <CookieConsent />
     </div>
    </LangContext.Provider>
   );

@@ -9,8 +9,20 @@ export default function CookieConsent() {
 
   useEffect(() => {
     const consent = localStorage.getItem('carecalculus-cookie-consent');
-    if (!consent) {
-      setIsVisible(true);
+    if (consent) return; // already consented, do nothing
+
+    const medicalDisclaimerAccepted = localStorage.getItem('carecalculus-medical-disclaimer');
+    if (medicalDisclaimerAccepted) {
+      // Returning user: stagger by 2 seconds
+      const timer = setTimeout(() => setIsVisible(true), 2000);
+      return () => clearTimeout(timer);
+    } else {
+      // New user: Wait for medical disclaimer to be accepted
+      const handleDisclaimerAccepted = () => {
+        setTimeout(() => setIsVisible(true), 1000);
+      };
+      window.addEventListener('carecalculus:medical-disclaimer-accepted', handleDisclaimerAccepted);
+      return () => window.removeEventListener('carecalculus:medical-disclaimer-accepted', handleDisclaimerAccepted);
     }
   }, []);
 

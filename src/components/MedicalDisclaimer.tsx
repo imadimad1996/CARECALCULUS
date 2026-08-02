@@ -17,6 +17,7 @@ export default function MedicalDisclaimer({ lang }: { lang: LangCode }) {
   const handleAccept = () => {
     localStorage.setItem('carecalculus-medical-disclaimer', 'true');
     setAccepted(true);
+    window.dispatchEvent(new Event('carecalculus:medical-disclaimer-accepted'));
   };
 
   const texts = {
