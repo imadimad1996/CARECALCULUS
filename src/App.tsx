@@ -1094,31 +1094,7 @@ function AppLayout() {
               </div>
             )}
 
-            {/* Faculté de Médecine et de Pharmacie (FMPC) Section */}
-            {matchesSearch({ nameEn: 'Faculty of Medicine & Pharmacy FMPC', nameFr: 'Faculté de Médecine et de Pharmacie FMPC', nameAr: 'كلية الطب والصيدلة', path: '/fmp-medecine' }, sidebarSearch) && (
-              <div className="space-y-1.5 pt-4 border-t border-slate-200/80 dark:border-slate-800">
-                <div className="px-3 py-2 rounded-xl bg-teal-500/10 dark:bg-teal-500/20 border border-teal-500/20 text-[11px] font-mono leading-none tracking-wider text-teal-700 dark:text-teal-300 font-extrabold uppercase flex items-center justify-between">
-                  <span className="flex items-center gap-2">
-                    
-                    <span>{lang === 'fr' ? 'FMP ACCUEIL COURS' : ('FMP ACADEMIC HUB')}</span>
-                  </span>
-                </div>
-                <div className="space-y-1 mt-1.5">
-                  <Link
-                    to={langPath('/fmp-medecine')}
-                    className={`flex items-center gap-3.5 px-4 py-2.5 rounded-2xl text-[14px] font-bold transition-all duration-200 active:scale-[0.98] ${
-                      logicalPath === '/fmp-medecine'
-                        ? 'bg-gradient-to-r from-teal-500/15 via-teal-500/5 to-transparent text-teal-700 dark:text-teal-300 font-bold border-l-4 rtl:border-l-0 rtl:border-r-4 border-teal-600 shadow-xs'
-                        : 'text-slate-700 dark:text-slate-350 hover:bg-slate-100/70 dark:hover:bg-slate-800/60 hover:text-slate-900 dark:hover:text-white hover:translate-x-1.5 rtl:hover:-translate-x-1.5 border-l-4 rtl:border-l-0 rtl:border-r-4 border-transparent'
-                    }`}
-                    style={{ minHeight: '46px' }}
-                  >
-                    <GraduationCap className={`w-4 h-4 shrink-0 transition-transform group-hover:scale-110 ${logicalPath === '/fmp-medecine' ? 'text-teal-600 dark:text-teal-400' : 'text-slate-400 dark:text-slate-500'}`} />
-                    <span className="line-clamp-2 leading-snug">{lang === 'fr' ? 'Cours & Livres PDF' : ('Courses & PDF Books')}</span>
-                  </Link>
-                </div>
-              </div>
-            )}
+
 
             {/* Sidebar Newsletter subscription widget */}
             <div className="pt-4 border-t border-slate-200/80 dark:border-slate-800">

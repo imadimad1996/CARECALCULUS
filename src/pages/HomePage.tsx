@@ -198,7 +198,7 @@ export default function HomePage({ lang }: HomePageProps) {
     
   }[lang];
 
-  const tierLabels = [tiers.t1, tiers.t2, tiers.t3, tiers.t4];
+  const tierLabels = [tiers.t1, tiers.t2, tiers.t3];
 
   return (
     <div className="space-y-16 pb-12" dir={isRtl ? 'rtl' : 'ltr'}>

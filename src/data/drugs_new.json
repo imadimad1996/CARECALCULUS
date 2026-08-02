@@ -1,0 +1,138 @@
+[
+  {
+    "name": "Dexmedetomidine",
+    "class": "Sedative",
+    "indication": "Critical Care / Resuscitation",
+    "dose": "Titrate to effect",
+    "concentration": "Standard ICU concentration",
+    "notes": "Monitor continuously."
+  },
+  {
+    "name": "Amiodarone",
+    "class": "Antiarrhythmic",
+    "indication": "Critical Care / Resuscitation",
+    "dose": "Titrate to effect",
+    "concentration": "Standard ICU concentration",
+    "notes": "Monitor continuously."
+  },
+  {
+    "name": "Adenosine",
+    "class": "Antiarrhythmic",
+    "indication": "Critical Care / Resuscitation",
+    "dose": "Titrate to effect",
+    "concentration": "Standard ICU concentration",
+    "notes": "Monitor continuously."
+  },
+  {
+    "name": "Atropine",
+    "class": "Critical Care",
+    "indication": "Critical Care / Resuscitation",
+    "dose": "Titrate to effect",
+    "concentration": "Standard ICU concentration",
+    "notes": "Monitor continuously."
+  },
+  {
+    "name": "Oops! That page can’t be found.",
+    "class": "Critical Care",
+    "indication": "Critical Care / Resuscitation",
+    "dose": "Titrate to effect",
+    "concentration": "Standard ICU concentration",
+    "notes": "Monitor continuously."
+  },
+  {
+    "name": "Dobutamine",
+    "class": "Vasoactive",
+    "indication": "Critical Care / Resuscitation",
+    "dose": "Titrate to effect",
+    "concentration": "Standard ICU concentration",
+    "notes": "Monitor continuously."
+  },
+  {
+    "name": "Oops! That page can’t be found.",
+    "class": "Critical Care",
+    "indication": "Critical Care / Resuscitation",
+    "dose": "Titrate to effect",
+    "concentration": "Standard ICU concentration",
+    "notes": "Monitor continuously."
+  },
+  {
+    "name": "Midazolam",
+    "class": "Sedative",
+    "indication": "Critical Care / Resuscitation",
+    "dose": "Titrate to effect",
+    "concentration": "Standard ICU concentration",
+    "notes": "Monitor continuously."
+  },
+  {
+    "name": "Oops! That page can’t be found.",
+    "class": "Critical Care",
+    "indication": "Critical Care / Resuscitation",
+    "dose": "Titrate to effect",
+    "concentration": "Standard ICU concentration",
+    "notes": "Monitor continuously."
+  },
+  {
+    "name": "Ketamine",
+    "class": "Critical Care",
+    "indication": "Critical Care / Resuscitation",
+    "dose": "Titrate to effect",
+    "concentration": "Standard ICU concentration",
+    "notes": "Monitor continuously."
+  },
+  {
+    "name": "Propofol",
+    "class": "Sedative",
+    "indication": "Critical Care / Resuscitation",
+    "dose": "Titrate to effect",
+    "concentration": "Standard ICU concentration",
+    "notes": "Monitor continuously."
+  },
+  {
+    "name": "Sodium Bicarbonate",
+    "class": "Electrolyte",
+    "indication": "Critical Care / Resuscitation",
+    "dose": "Titrate to effect",
+    "concentration": "Standard ICU concentration",
+    "notes": "Monitor continuously."
+  },
+  {
+    "name": "Oops! That page can’t be found.",
+    "class": "Critical Care",
+    "indication": "Critical Care / Resuscitation",
+    "dose": "Titrate to effect",
+    "concentration": "Standard ICU concentration",
+    "notes": "Monitor continuously."
+  },
+  {
+    "name": "Adrenaline or epinephrine?",
+    "class": "Vasoactive",
+    "indication": "Critical Care / Resuscitation",
+    "dose": "Titrate to effect",
+    "concentration": "Standard ICU concentration",
+    "notes": "Monitor continuously."
+  },
+  {
+    "name": "Oops! That page can’t be found.",
+    "class": "Critical Care",
+    "indication": "Critical Care / Resuscitation",
+    "dose": "Titrate to effect",
+    "concentration": "Standard ICU concentration",
+    "notes": "Monitor continuously."
+  },
+  {
+    "name": "Vasopressin",
+    "class": "Vasoactive",
+    "indication": "Critical Care / Resuscitation",
+    "dose": "Titrate to effect",
+    "concentration": "Standard ICU concentration",
+    "notes": "Monitor continuously."
+  },
+  {
+    "name": "Oops! That page can’t be found.",
+    "class": "Critical Care",
+    "indication": "Critical Care / Resuscitation",
+    "dose": "Titrate to effect",
+    "concentration": "Standard ICU concentration",
+    "notes": "Monitor continuously."
+  }
+]
