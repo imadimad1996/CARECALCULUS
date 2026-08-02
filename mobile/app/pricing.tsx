@@ -36,7 +36,7 @@ export default function PricingScreen() {
         >
           <X size={18} color="#94a3b8" />
         </TouchableOpacity>
-        <Text className="text-white text-base font-bold">CareCalculus Pro</Text>
+        <Text className="text-white text-base font-bold">CareCalculus Pro (In-App Purchase)</Text>
         <View className="w-9" />
       </View>
 
@@ -45,6 +45,9 @@ export default function PricingScreen() {
         <View className="items-center my-4">
           <View className="w-14 h-14 rounded-2xl bg-amber-500/20 border border-amber-500/40 items-center justify-center mb-3">
             <Sparkles size={30} color="#f59e0b" />
+          </View>
+          <View className="bg-brand-600/20 px-3 py-1 rounded-full mb-3 border border-brand-500/30">
+            <Text className="text-brand-400 text-xs font-bold uppercase tracking-widest">In-App Purchase Offer</Text>
           </View>
           <Text className="text-white text-2xl font-extrabold text-center mb-1">
             Unlock Full Clinical Power

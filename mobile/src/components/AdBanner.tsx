@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Platform } from 'react-native';
+import { View, Text, StyleSheet, Platform } from 'react-native';
 import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
 import { useAppStore } from '../store/useAppStore';
 
@@ -16,6 +16,7 @@ export const AdBanner = () => {
 
   return (
     <View style={styles.container}>
+      <Text style={styles.adLabel}>Advertisement</Text>
       <BannerAd
         unitId={adUnitId}
         size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
@@ -40,5 +41,14 @@ const styles = StyleSheet.create({
   },
   placeholder: {
     height: 0,
+  },
+  adLabel: {
+    fontSize: 10,
+    color: '#94a3b8',
+    marginBottom: 4,
+    alignSelf: 'flex-start',
+    paddingLeft: 16,
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
   },
 });

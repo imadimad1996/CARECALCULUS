@@ -5,7 +5,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useQueueStore } from '../src/store/useQueueStore';
 import '../global.css';
-import mobileAds from 'react-native-google-mobile-ads';
+import mobileAds, { MaxAdContentRating } from 'react-native-google-mobile-ads';
 import * as TrackingTransparency from 'expo-tracking-transparency';
 
 const queryClient = new QueryClient();
@@ -21,6 +21,11 @@ export default function RootLayout() {
       if (status === 'granted') {
         console.log('Tracking permissions granted.');
       }
+      await mobileAds().setRequestConfiguration({
+        maxAdContentRating: MaxAdContentRating.G,
+        tagForChildDirectedTreatment: true,
+        tagForUnderAgeOfConsent: true,
+      });
       mobileAds()
         .initialize()
         .then(adapterStatuses => {
