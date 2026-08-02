@@ -419,14 +419,14 @@ ${divider}`;
         <button
           onClick={handleOpen}
           className="
-            relative flex-1 overflow-hidden group cursor-pointer
-            flex items-center justify-between gap-3
-            px-5 py-3 rounded-xl
+            relative flex-[3] overflow-hidden group cursor-pointer
+            flex items-center justify-between gap-2 sm:gap-3
+            px-3 sm:px-4 py-3 rounded-xl
             bg-gradient-to-r from-teal-600 via-teal-600 to-cyan-700
             hover:from-teal-500 hover:via-teal-500 hover:to-cyan-600
             active:scale-[0.98]
             text-white
-            font-sans font-extrabold text-[11px] uppercase tracking-widest
+            font-sans font-extrabold text-[10px] sm:text-[11px] uppercase tracking-wide
             shadow-md shadow-teal-900/25 hover:shadow-lg hover:shadow-teal-500/30
             border border-teal-400/25
             transition-all duration-200 ease-out
@@ -462,10 +462,10 @@ ${divider}`;
         <button
           onClick={handleShare}
           className={`
-            relative flex-1 overflow-hidden group cursor-pointer
-            flex items-center justify-center gap-2.5
-            px-5 py-3 rounded-xl
-            font-sans font-extrabold text-[11px] uppercase tracking-widest
+            relative flex-[2] overflow-hidden group cursor-pointer
+            flex items-center justify-center gap-2 sm:gap-2.5
+            px-3 sm:px-4 py-3 rounded-xl
+            font-sans font-extrabold text-[10px] sm:text-[11px] uppercase tracking-wide
             border
             active:scale-[0.98]
             transition-all duration-200 ease-out
