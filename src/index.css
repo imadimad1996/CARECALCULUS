@@ -361,7 +361,7 @@ html.dark {
 
 /* Print */
 @media print {
-  html, html.dark body { background-color: #020617; color: #f8fafc; } body {
+  body {
     background-color: #ffffff !important;
     color: #1a1a1a !important;
     font-size: 12px !important;
@@ -432,4 +432,59 @@ html.dark .card:hover {
 
 .animate-shimmer {
   animation: shimmer 0.65s ease-in-out;
+}
+
+/* ============================================================
+   FADE-UP ENTRANCE ANIMATIONS
+   Staggered utilities for section-level entrances on scroll.
+   ============================================================ */
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.5s ease-out both;
+}
+.animate-fade-up-d1 {
+  animation: fade-up 0.5s 0.1s ease-out both;
+}
+.animate-fade-up-d2 {
+  animation: fade-up 0.5s 0.2s ease-out both;
+}
+.animate-fade-up-d3 {
+  animation: fade-up 0.5s 0.32s ease-out both;
+}
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out both;
+}
+
+/* ============================================================
+   GLASSMORPHIC CARD VARIANT
+   Used for elevated clinical data panels.
+   ============================================================ */
+.card-glass {
+  @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-md rounded-2xl border border-white/40 dark:border-slate-700/60 shadow-lg;
+}
+
+/* Active nav indicator pill */
+.nav-active-pill {
+  position: relative;
+}
+.nav-active-pill::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 3px;
+  border-radius: 999px;
+  background: #0D9488;
 }

@@ -772,7 +772,9 @@ function AppLayout() {
             <button
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}
               className="p-2 text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-teal-500/30 rounded-xl active:scale-95 transition-all duration-200"
-              aria-label="Toggle Navigation Sidebar"
+              aria-label={isSidebarOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-expanded={isSidebarOpen}
+              aria-controls="mobile-sidebar"
               style={{ minWidth: '44px', minHeight: '44px' }}
             >
               {isSidebarOpen ? <X className="w-6 h-6 animate-spin-once" /> : <Menu className="w-6 h-6" />}
@@ -781,7 +783,13 @@ function AppLayout() {
         </div>
       </div>
 
-      {!isContentPage && <aside className={`fixed inset-y-0 ${isRtl ? 'right-0' : 'left-0'} z-40 w-72 md:w-[280px] bg-white/85 dark:bg-slate-900/90 backdrop-blur-2xl border-${isRtl ? 'l' : 'r'} border-slate-200/80 dark:border-slate-800 shadow-[0_10px_40px_rgba(0,0,0,0.06)] transform transition-transform duration-300 ease-out md:translate-x-0 md:static md:flex-shrink-0 relative overflow-hidden ${isSidebarOpen ? 'translate-x-0' : (isRtl ? 'translate-x-full md:translate-x-0' : '-translate-x-full')}`}>
+      {!isContentPage && <aside
+        id="mobile-sidebar"
+        role="dialog"
+        aria-modal={isSidebarOpen ? "true" : undefined}
+        aria-label="Clinical calculator navigation"
+        className={`fixed inset-y-0 ${isRtl ? 'right-0' : 'left-0'} z-40 w-72 md:w-[280px] bg-white/85 dark:bg-slate-900/90 backdrop-blur-2xl border-${isRtl ? 'l' : 'r'} border-slate-200/80 dark:border-slate-800 shadow-[0_10px_40px_rgba(0,0,0,0.06)] transform transition-transform duration-300 ease-out md:translate-x-0 md:static md:flex-shrink-0 relative overflow-hidden ${isSidebarOpen ? 'translate-x-0' : (isRtl ? 'translate-x-full md:translate-x-0' : '-translate-x-full')}`}
+      >
         {/* Subtle ambient lighting backdrop gradient */}
         <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-teal-500/10 via-blue-500/5 to-transparent pointer-events-none -z-10" />
 
@@ -863,6 +871,7 @@ function AppLayout() {
             {/* Home link */}
             <Link
               to={langPath('/')}
+              aria-current={isHomePage ? 'page' : undefined}
               className={`flex items-center gap-3.5 px-4 py-3 rounded-2xl text-sm font-bold transition-all duration-200 active:scale-[0.98] ${
                 isHomePage
                   ? 'bg-gradient-to-r from-teal-500/15 via-teal-500/5 to-transparent text-teal-700 dark:text-teal-300 font-extrabold border-l-4 rtl:border-l-0 rtl:border-r-4 border-teal-600 shadow-xs'

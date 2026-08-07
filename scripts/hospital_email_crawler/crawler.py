@@ -81,6 +81,58 @@ TARGET_HOSPITALS = [
     {"country": "USA", "name": "Ochsner Health Louisiana",       "url": "https://www.ochsner.org/contact-us"},
     {"country": "USA", "name": "Wake Forest Baptist Health",     "url": "https://www.wakehealth.edu/contact-us"},
     {"country": "USA", "name": "Baylor Scott & White Health",    "url": "https://www.bswhealth.com/contact-us"},
+    {"country": "USA", "name": "Mount Sinai Health System",      "url": "https://www.mountsinai.org/about/contact"},
+    {"country": "USA", "name": "NYU Langone Health",             "url": "https://nyulangone.org/contact-us"},
+    {"country": "USA", "name": "UCLA Health",                    "url": "https://www.uclahealth.org/contact-us"},
+    {"country": "USA", "name": "Memorial Sloan Kettering",       "url": "https://www.mskcc.org/contact"},
+    {"country": "USA", "name": "Children's Hosp of Philadelphia", "url": "https://www.chop.edu/contact-us"},
+    {"country": "USA", "name": "Boston Children's Hospital",     "url": "https://www.childrenshospital.org/contact-us"},
+    {"country": "USA", "name": "Dana-Farber Cancer Institute",   "url": "https://www.dana-farber.org/contact-us"},
+    {"country": "USA", "name": "MD Anderson Cancer Center",      "url": "https://www.mdanderson.org/about-md-anderson/contact-us.html"},
+    {"country": "USA", "name": "Ascension Health",               "url": "https://healthcare.ascension.org/contact-us"},
+    {"country": "USA", "name": "CommonSpirit Health",            "url": "https://www.commonspirit.org/contact-us"},
+    {"country": "USA", "name": "Providence Health",              "url": "https://www.providence.org/contact-us"},
+    {"country": "USA", "name": "Trinity Health",                 "url": "https://www.trinity-health.org/contact-us"},
+    {"country": "USA", "name": "Advocate Health",                "url": "https://www.advocatehealth.com/contact-us"},
+    {"country": "USA", "name": "Intermountain Health",           "url": "https://intermountainhealthcare.org/about/contact-us"},
+    {"country": "USA", "name": "Banner Health",                  "url": "https://www.bannerhealth.com/contact-us"},
+    {"country": "USA", "name": "Kaiser Permanente",              "url": "https://healthy.kaiserpermanente.org/support"},
+    {"country": "USA", "name": "Geisinger Health System",        "url": "https://www.geisinger.org/about-geisinger/contact-us"},
+    {"country": "USA", "name": "Scripps Health",                 "url": "https://www.scripps.org/contact_us"},
+    {"country": "USA", "name": "Jefferson Health",               "url": "https://www.jeffersonhealth.org/contact-us"},
+    {"country": "USA", "name": "Northwell Health",               "url": "https://www.northwell.org/about/contact-us"},
+    {"country": "USA", "name": "Hackensack Meridian Health",    "url": "https://www.hackensackmeridianhealth.org/en/contact-us"},
+    {"country": "USA", "name": "RWJBarnabas Health",            "url": "https://www.rwjbh.org/contact-us/"},
+    {"country": "USA", "name": "Beth Israel Deaconess",          "url": "https://www.bidmc.org/contact-us"},
+    {"country": "USA", "name": "Stony Brook Medicine",           "url": "https://www.stonybrookmedicine.edu/contact-us"},
+    {"country": "USA", "name": "UChicago Medicine",              "url": "https://www.uchicagomedicine.org/contact-us"},
+    {"country": "USA", "name": "Corewell Health",                "url": "https://www.corewellhealth.org/contact-us"},
+    {"country": "USA", "name": "Henry Ford Health",              "url": "https://www.henryford.com/contact-us"},
+    {"country": "USA", "name": "OhioState Wexner Medical Center", "url": "https://wexnermedical.osu.edu/utility/contact-us"},
+    {"country": "USA", "name": "UR Medicine Rochester",          "url": "https://www.urmc.rochester.edu/contact.aspx"},
+    {"country": "USA", "name": "Inova Health System",            "url": "https://www.inova.org/contact-us"},
+    {"country": "USA", "name": "VCU Health",                     "url": "https://www.vcuhealth.org/contact-us"},
+    {"country": "USA", "name": "UVA Health",                     "url": "https://uvahealth.com/services/contact-us"},
+    {"country": "USA", "name": "MUSC Health",                    "url": "https://muschealth.org/about-us/contact-us"},
+    {"country": "USA", "name": "UNC Health",                     "url": "https://www.unchealthcare.org/contact-us"},
+    {"country": "USA", "name": "UF Health Shands",               "url": "https://ufhealth.org/contact-us"},
+    {"country": "USA", "name": "Moffitt Cancer Center",          "url": "https://www.moffitt.org/about-moffitt/contact-us"},
+    {"country": "USA", "name": "Tampa General Hospital",         "url": "https://www.tgh.org/contact-us"},
+    {"country": "USA", "name": "Baptist Health South Florida",   "url": "https://baptisthealth.net/contact-us"},
+    {"country": "USA", "name": "UAB Medicine",                   "url": "https://www.uabmedicine.org/contact-us"},
+    {"country": "USA", "name": "St. Jude Children's",            "url": "https://www.stjude.org/contact-us.html"},
+    {"country": "USA", "name": "Barnes-Jewish BJC Health",       "url": "https://www.barnesjewish.org/Contact-Us"},
+    {"country": "USA", "name": "University of Kansas Health",    "url": "https://www.kansashealthsystem.com/contact-us"},
+    {"country": "USA", "name": "Nebraska Medicine",              "url": "https://www.nebraskamed.com/contact-us"},
+    {"country": "USA", "name": "Sanford Health",                 "url": "https://www.sanfordhealth.org/contact-us"},
+    {"country": "USA", "name": "M Health Fairview",              "url": "https://mhealthfairview.org/contact-us"},
+    {"country": "USA", "name": "UW Health Wisconsin",            "url": "https://www.uwhealth.org/contact-us"},
+    {"country": "USA", "name": "Froedtert & MCW",                "url": "https://www.froedtert.com/contact"},
+    {"country": "USA", "name": "City of Hope",                   "url": "https://www.cityofhope.org/contact-us"},
+    {"country": "USA", "name": "Sutter Health",                  "url": "https://www.sutterhealth.org/contact"},
+    {"country": "USA", "name": "UC Davis Health",                "url": "https://health.ucdavis.edu/contactus/"},
+    {"country": "USA", "name": "UC Irvine Health",               "url": "https://www.ucihealth.org/contact-us"},
+
     # ── CANADA ────────────────────────────────────────────────────────────────
     {"country": "Canada", "name": "University Health Network",   "url": "https://www.uhn.ca/corporate/contact"},
     {"country": "Canada", "name": "McGill University Health Centre","url": "https://www.muhc.ca/contact"},
@@ -94,6 +146,17 @@ TARGET_HOSPITALS = [
     {"country": "Canada", "name": "London Health Sciences",      "url": "https://www.lhsc.on.ca/contact-us"},
     {"country": "Canada", "name": "Winnipeg Health Sciences",    "url": "https://www.wrha.mb.ca/contact"},
     {"country": "Canada", "name": "CIUSSS de l'Est-de-l'Île-de-Montréal","url": "https://ciusss-estmtl.gouv.qc.ca/contact"},
+    {"country": "Canada", "name": "Sinai Health Toronto",        "url": "https://www.sinaihealth.ca/contact-us/"},
+    {"country": "Canada", "name": "Unity Health Toronto",        "url": "https://unityhealth.to/contact-us/"},
+    {"country": "Canada", "name": "SickKids Toronto",            "url": "https://www.sickkids.ca/en/contact-us/"},
+    {"country": "Canada", "name": "CAMH Toronto",                "url": "https://www.camh.ca/en/your-care/contact-us"},
+    {"country": "Canada", "name": "Trillium Health Partners",    "url": "https://www.trilliumhealthpartners.ca/contactus/Pages/default.aspx"},
+    {"country": "Canada", "name": "Fraser Health BC",            "url": "https://www.fraserhealth.ca/contact-us"},
+    {"country": "Canada", "name": "Interior Health BC",          "url": "https://www.interiorhealth.ca/about-us/contact-us"},
+    {"country": "Canada", "name": "Covenant Health Alberta",     "url": "https://www.covenanthealth.ca/contact-us"},
+    {"country": "Canada", "name": "CHUM Montreal",               "url": "https://www.chumontreal.qc.ca/nous-joindre"},
+    {"country": "Canada", "name": "CHU Sainte-Justine",          "url": "https://www.chusj.org/fr/Nous-joindre"},
+
     # ── UK ───────────────────────────────────────────────────────────────────
     {"country": "UK", "name": "Royal London Hospital",            "url": "https://www.bartshealth.nhs.uk/contact"},
     {"country": "UK", "name": "Guy's and St Thomas' NHS",         "url": "https://www.guysandstthomas.nhs.uk/contact-us"},
@@ -112,6 +175,41 @@ TARGET_HOSPITALS = [
     {"country": "UK", "name": "Liverpool University Hospitals",   "url": "https://www.liverpoolft.nhs.uk/contact-us"},
     {"country": "UK", "name": "University Hospitals Birmingham",  "url": "https://www.uhb.nhs.uk/contact-us"},
     {"country": "UK", "name": "Southampton University NHS",       "url": "https://www.uhs.nhs.uk/contact"},
+    {"country": "UK", "name": "Royal Marsden NHS Foundation",     "url": "https://www.royalmarsden.nhs.uk/contact-us"},
+    {"country": "UK", "name": "Great Ormond Street NHS",          "url": "https://www.gosh.nhs.uk/contact-us/"},
+    {"country": "UK", "name": "St George's University NHS",       "url": "https://www.stgeorges.nhs.uk/contact-us/"},
+    {"country": "UK", "name": "Chelsea and Westminster NHS",      "url": "https://www.chelwest.nhs.uk/contact-us"},
+    {"country": "UK", "name": "University Hospitals Sussex",      "url": "https://www.uhsussex.nhs.uk/contact-us/"},
+    {"country": "UK", "name": "Northumbria Healthcare NHS",       "url": "https://www.northumbria.nhs.uk/contact-us"},
+    {"country": "UK", "name": "University Hospitals of Leicester","url": "https://www.leicestershospitals.nhs.uk/contact-us/"},
+    {"country": "UK", "name": "Derby and Burton NHS Trust",       "url": "https://www.uhdb.nhs.uk/contact-us"},
+    {"country": "UK", "name": "Norfolk and Norwich NHS",          "url": "https://www.nnuh.nhs.uk/contact-us/"},
+    {"country": "UK", "name": "East Suffolk & North Essex NHS",   "url": "https://www.esneft.nhs.uk/contact-us/"},
+    {"country": "UK", "name": "NHS Greater Glasgow and Clyde",    "url": "https://www.nhsggc.scot/contact-us/"},
+    {"country": "UK", "name": "NHS Lothian Edinburgh",            "url": "https://www.nhslothian.scot/contact-us/"},
+    {"country": "UK", "name": "Cardiff and Vale Health Board",    "url": "https://cavuhb.nhs.wales/contact-us/"},
+    {"country": "UK", "name": "Belfast Health & Social Care",     "url": "https://belfasttrust.hscni.net/contact-us/"},
+
+    # ── AUSTRALIA & NEW ZEALAND ──────────────────────────────────────────────
+    {"country": "Australia", "name": "Royal Melbourne Hospital",   "url": "https://www.thermh.org.au/contact-us"},
+    {"country": "Australia", "name": "Alfred Health Melbourne",    "url": "https://www.alfredhealth.org.au/contact-us"},
+    {"country": "Australia", "name": "St Vincent's Melbourne",     "url": "https://www.svhm.org.au/contact-us"},
+    {"country": "Australia", "name": "Monash Health Melbourne",    "url": "https://monashhealth.org/contact-us/"},
+    {"country": "Australia", "name": "Austin Health Melbourne",    "url": "https://www.austin.org.au/contact-us/"},
+    {"country": "Australia", "name": "Royal Prince Alfred Sydney", "url": "https://www.slhd.nsw.gov.au/rpa/contact.html"},
+    {"country": "Australia", "name": "St Vincent's Sydney",        "url": "https://www.svhs.org.au/contact-us"},
+    {"country": "Australia", "name": "Royal North Shore Sydney",   "url": "https://www.nslhd.health.nsw.gov.au/Hospitals/RNSH/Pages/default.aspx"},
+    {"country": "Australia", "name": "Royal Brisbane & Women's",   "url": "https://metronorth.health.qld.gov.au/rbwh/contact-us"},
+    {"country": "Australia", "name": "Princess Alexandra Brisbane","url": "https://metro-south.health.qld.gov.au/princess-alexandra-hospital/contact-us"},
+    {"country": "Australia", "name": "Royal Adelaide Hospital",    "url": "https://www.rah.sa.gov.au/contact-us"},
+    {"country": "Australia", "name": "Sir Charles Gairdner Perth", "url": "https://www.nmahs.health.wa.gov.au/contact-us"},
+
+    # ── IRELAND ──────────────────────────────────────────────────────────────
+    {"country": "Ireland", "name": "St. James's Hospital Dublin",  "url": "https://www.stjames.ie/contact/"},
+    {"country": "Ireland", "name": "Beaumont Hospital Dublin",     "url": "https://www.beaumont.ie/contact-us"},
+    {"country": "Ireland", "name": "Mater Hospital Dublin",        "url": "https://www.mater.ie/contact/"},
+    {"country": "Ireland", "name": "St. Vincent's Dublin",         "url": "https://www.stvincents.ie/contact-us/"},
+    {"country": "Ireland", "name": "Galway University Hospitals",  "url": "https://www.saolta.ie/contact"},
 ]
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -151,7 +249,8 @@ SPAM_FILTER = [
     "noreply", "no-reply", "donotreply", "bounce", "mailer-daemon",
     "newsletter", "unsubscribe", "example.com", ".png", ".jpg", ".gif",
     "test@", "support@sentry", "wired.com", "schema.org", "w3.org",
-    "sentry.io", "@2x", "jquery", "bootstrap",
+    "sentry.io", "@2x", "jquery", "bootstrap", "example@", "@xyz.com",
+    "@email.com", "abc@xyz.com",
 ]
 
 
@@ -208,9 +307,11 @@ def parse_emails(result, hospital_name: str, country: str) -> list[dict]:
 
     for email in all_candidates:
         email = email.lower().strip(".,;:()\"'")
+        email = re.sub(r'^(?:u003e|\\u003e|//|<|>|mailto:)+', '', email, flags=re.IGNORECASE)
+        email = email.strip(".,;:()\"'<> \t\n\r")
         # Strip query strings that sometimes get appended
         email = email.split("?")[0].split("&")[0]
-        if email in seen or not email:
+        if email in seen or not email or "@" not in email or email.startswith("//") or "u003e" in email:
             continue
         seen.add(email)
         # Get context from raw HTML first (more text around it)
@@ -399,6 +500,11 @@ async def main():
                         if lead["email"] not in seen_emails:
                             seen_emails.add(lead["email"])
                             all_leads.append(lead)
+
+            if all_leads:
+                all_leads.sort(key=lambda x: (-x["score"], x["country"], x["hospital"]))
+                save_csv(all_leads)
+                save_xlsx(all_leads)
 
             delay = random.uniform(DELAY_MIN, DELAY_MAX)
             log.info(f"⏳ Sleeping {delay:.1f}s…")

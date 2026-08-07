@@ -33,6 +33,14 @@ export const LeadMagnetModal: React.FC<LeadMagnetModalProps> = ({ lang }) => {
     return () => clearTimeout(timer);
   }, []);
 
+  // Close on Escape key
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') handleClose(); };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [isOpen]);
+
   const handleClose = () => {
     setIsOpen(false);
     // Remember dismissal for 14 days so it doesn't annoy the clinician repeatedly
@@ -78,10 +86,17 @@ export const LeadMagnetModal: React.FC<LeadMagnetModalProps> = ({ lang }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-md animate-in fade-in duration-200">
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="lead-magnet-title"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-md animate-in fade-in duration-200"
+      onClick={(e) => { if (e.target === e.currentTarget) handleClose(); }}
+    >
       <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 max-w-md w-full text-white shadow-2xl relative">
         <button
           onClick={handleClose}
+          aria-label="Close lead magnet modal"
           className="absolute top-4 right-4 p-2 text-slate-400 hover:text-white rounded-xl hover:bg-slate-800 transition cursor-pointer"
         >
           <X className="w-5 h-5" />
@@ -118,7 +133,7 @@ export const LeadMagnetModal: React.FC<LeadMagnetModalProps> = ({ lang }) => {
                 <span className="text-[10px] font-mono font-bold text-cyan-400 uppercase tracking-widest bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/20">
                   FREE DOWNLOAD
                 </span>
-                <h3 className="font-bold text-xl text-white mt-1">
+                <h3 id="lead-magnet-title" className="font-bold text-xl text-white mt-1">
                   {isFr ? 'Guide de Poche Réanimation 2026' : '2026 ICU & ER Pocket Guide'}
                 </h3>
               </div>
@@ -132,8 +147,12 @@ export const LeadMagnetModal: React.FC<LeadMagnetModalProps> = ({ lang }) => {
 
             <form onSubmit={handleSubmit} className="space-y-3">
               <div className="relative">
+                <label htmlFor="lead-magnet-email" className="sr-only">
+                  {isFr ? 'Adresse email professionnelle' : 'Professional email address'}
+                </label>
                 <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
                 <input
+                  id="lead-magnet-email"
                   type="email"
                   required
                   placeholder={isFr ? 'votre.email@hopital.fr' : 'doctor@hospital.org'}

@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import {
   Activity, Brain, Stethoscope, Wind, TestTube, AlertOctagon, HeartPulse,
   Droplet, ArrowRightLeft, LayoutDashboard, BookOpen,
   Newspaper, Calculator, ChevronRight, ShieldCheck, Globe, Sparkles, AlertTriangle, Search, Award, ArrowRight, Pill
 } from 'lucide-react';
+import { motion, useInView } from 'motion/react';
 import { LangCode } from '../types';
 import { useLang } from '../utils/lang';
 import Logo from '../components/Logo';
@@ -113,7 +114,32 @@ const FEATURED_CALCULATORS = [
 
 import SEO from '../components/SEO';
 import CommandPalette from '../components/CommandPalette';
-import { JsonLd } from '../components/JsonLd';
+import { JsonLd, generateWebSiteSchema, generateFAQSchema } from '../components/JsonLd';
+
+// Animated counter that counts up to a target number on scroll-into-view
+function AnimatedStatValue({ value }: { value: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '-40px' });
+  const isNumeric = /^\d/.test(value);
+  const numericPart = parseInt(value.replace(/[^0-9]/g, ''), 10) || 0;
+  const suffix = value.replace(/^[0-9]+/, '');
+  const [display, setDisplay] = useState(isNumeric ? '0' + suffix : value);
+
+  useEffect(() => {
+    if (!isInView || !isNumeric) { setDisplay(value); return; }
+    let start = 0;
+    const duration = 1200;
+    const step = Math.ceil(numericPart / (duration / 16));
+    const timer = setInterval(() => {
+      start = Math.min(start + step, numericPart);
+      setDisplay(String(start) + suffix);
+      if (start >= numericPart) clearInterval(timer);
+    }, 16);
+    return () => clearInterval(timer);
+  }, [isInView]);
+
+  return <div ref={ref} className="text-2xl sm:text-3xl font-black text-slate-800 tracking-tight font-mono leading-none">{display}</div>;
+}
 
 export default function HomePage({ lang }: HomePageProps) {
   const { langPath } = useLang();
@@ -224,70 +250,126 @@ export default function HomePage({ lang }: HomePageProps) {
 
       <CommandPalette isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} lang={lang} />
 
+      {/* WebSite + SearchAction schema — enables Google Sitelinks Searchbox */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateWebSiteSchema()) }} />
+
+      {/* FAQPage schema — "People Also Ask" + GEO AI citation boost */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema([
+        { question: 'What is CareCalculus?', answer: 'CareCalculus is a free, evidence-based clinical decision support platform providing over 88 medical calculators for ICU, emergency medicine, cardiology, nephrology, and nutrition. All tools are peer-reviewed and aligned with international guidelines including AHA, KDIGO, ESPEN, and Surviving Sepsis.' },
+        { question: 'Is CareCalculus free to use?', answer: 'Yes. CareCalculus is completely free for all clinicians. Core calculators including MAP, GCS, qSOFA, MELD, Wells Score, CHA2DS2-VASc, CURB-65, and Creatinine Clearance are accessible without an account.' },
+        { question: 'How accurate are the medical calculators on CareCalculus?', answer: 'Every calculator on CareCalculus is validated against landmark peer-reviewed publications and clinical guidelines. Formulas are sourced from original research (e.g., Cockcroft-Gault for creatinine clearance, MDRD and CKD-EPI for GFR) and reviewed by our medical editorial board.' },
+        { question: 'Which specialties does CareCalculus cover?', answer: 'CareCalculus covers Emergency & Critical Care, Cardiology, Nephrology, Pulmonology, Gastroenterology, Neurology, Hematology, Pediatrics, Obstetrics, Nutrition, Toxicology, and Pharmacology — offering over 88 validated clinical scoring tools and calculators.' },
+        { question: 'Can I use CareCalculus offline?', answer: 'Yes. CareCalculus is a Progressive Web App (PWA) that supports offline use. Once loaded, all core clinical calculators remain fully functional without an internet connection, making them ideal for use in clinical settings with limited connectivity.' },
+        { question: 'What is a MAP calculator?', answer: 'A Mean Arterial Pressure (MAP) calculator computes the average arterial pressure during one cardiac cycle. The formula is: MAP = (SBP + 2 × DBP) / 3. Normal MAP is 70–10 mmHg. Values below 65 mmHg indicate inadequate organ perfusion and require immediate clinical action.' },
+        { question: 'What is the qSOFA score used for?', answer: 'The quick Sequential Organ Failure Assessment (qSOFA) score is a rapid bedside screening tool for sepsis. It uses three criteria: altered mental status (GCS < 15), respiratory rate ≥ 22/min, and systolic blood pressure ≤ 100 mmHg. A score of ≥ 2 suggests possible sepsis and warrants further evaluation.' }
+      ])) }} />
+
       {/* Hero — 2026 Ambient Glassmorphic Clinical Workbench */}
-      <section className="relative bg-gradient-to-b from-teal-50/40 via-white to-white border-b border-slate-100 px-6 sm:px-10 py-12 sm:py-16 -mx-4 sm:-mx-6 md:mx-0 md:border md:border-slate-200/80 md:rounded-3xl shadow-sm overflow-hidden">
+      <section className="relative bg-gradient-to-b from-teal-50/40 via-white to-white dark:from-teal-950/30 dark:via-slate-950 dark:to-slate-950 border-b border-slate-100 dark:border-slate-800 px-6 sm:px-10 py-12 sm:py-16 -mx-4 sm:-mx-6 md:mx-0 md:border md:border-slate-200/80 dark:md:border-slate-800 md:rounded-3xl shadow-sm overflow-hidden">
         {/* Ambient lighting accents */}
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-teal-400/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative z-10 w-full max-w-[720px] mx-auto flex flex-col items-center text-center">
           {/* Brand badge */}
-          <div className="inline-flex items-center gap-2 mb-5 px-3.5 py-1.5 bg-teal-500/10 backdrop-blur-md rounded-full border border-teal-500/20 shadow-xs">
+          <motion.div
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, ease: 'easeOut' }}
+            className="inline-flex items-center gap-2 mb-5 px-3.5 py-1.5 bg-teal-500/10 backdrop-blur-md rounded-full border border-teal-500/20 shadow-xs"
+          >
             <Logo className="w-4 h-4" mode="light" />
-            <span className="text-[11px] font-mono font-bold text-teal-700 dark:text-teal-800 uppercase tracking-widest">{hero.badge}</span>
-          </div>
+            <span className="text-[11px] font-mono font-bold text-teal-700 dark:text-teal-400 uppercase tracking-widest">{hero.badge}</span>
+          </motion.div>
 
-          <h1 className="text-4xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight mb-4 text-center">
+          <motion.h1
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.08, ease: 'easeOut' }}
+            className="text-4xl sm:text-5xl font-black tracking-tight text-slate-900 dark:text-slate-50 leading-tight mb-4 text-center"
+          >
             {hero.title}
-          </h1>
-          <p className="text-lg text-slate-700 font-medium mb-2 text-center">{hero.subtitle}</p>
-          <p className="text-base text-slate-600 font-normal leading-relaxed mb-10 w-full max-w-[580px] text-center mx-auto">{hero.desc}</p>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.16, ease: 'easeOut' }}
+            className="text-lg text-slate-700 dark:text-slate-300 font-medium mb-2 text-center"
+          >{hero.subtitle}</motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.22, ease: 'easeOut' }}
+            className="text-base text-slate-600 dark:text-slate-400 font-normal leading-relaxed mb-10 w-full max-w-[580px] text-center mx-auto"
+          >{hero.desc}</motion.p>
 
           {/* Search trigger — Glassmorphic */}
-          <div className="mb-5 w-full max-w-[540px] mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, delay: 0.3, ease: 'easeOut' }}
+            className="mb-5 w-full max-w-[540px] mx-auto"
+            role="search"
+          >
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="w-full flex items-center justify-between px-5 py-4 bg-white/80 backdrop-blur-md hover:bg-white text-slate-500 rounded-2xl border border-slate-200 hover:border-teal-400 shadow-md hover:shadow-lg transition-all duration-300 group cursor-pointer text-left rtl:text-right"
+              aria-label={`Search clinical calculators — ${searchPlaceholder}`}
+              className="w-full flex items-center justify-between px-5 py-4 bg-white/80 dark:bg-slate-800/80 backdrop-blur-md hover:bg-white dark:hover:bg-slate-800 text-slate-500 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-teal-400 dark:hover:border-teal-500 shadow-md hover:shadow-lg transition-all duration-300 group cursor-pointer text-left rtl:text-right"
               style={{ minHeight: '56px' }}
             >
               <div className="flex items-center gap-3.5 min-w-0">
-                <Search className="w-4 h-4 text-teal-600 shrink-0 group-hover:scale-110 transition-transform" />
-                <span className="text-sm font-medium truncate block text-slate-600 group-hover:text-slate-900">{searchPlaceholder}</span>
+                <Search className="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0 group-hover:scale-110 transition-transform" />
+                <span className="text-sm font-medium truncate block text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-100">{searchPlaceholder}</span>
               </div>
-              <div className="hidden sm:flex items-center gap-1 shrink-0 px-2.5 py-1 rounded-lg bg-slate-100 border border-slate-200 text-[10px] font-mono font-bold text-slate-500 shadow-xs">
+              <div className="hidden sm:flex items-center gap-1 shrink-0 px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-[10px] font-mono font-bold text-slate-500 dark:text-slate-400 shadow-xs">
                 <span>Ctrl</span><span>+</span><span>K</span>
               </div>
             </button>
-          </div>
+          </motion.div>
 
           {/* Quick-links */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mb-10 text-xs">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.38 }}
+            className="flex flex-wrap items-center justify-center gap-2 mb-10 text-xs"
+          >
             <span className="text-slate-400 font-medium">{popular.label}</span>
             {popular.items.map((item, idx) => (
               <Link
                 key={idx}
                 to={langPath(item.path)}
-                className="px-4 py-2.5 min-h-[44px] bg-white text-slate-700 hover:text-teal-700 hover:bg-teal-50/50 rounded-xl border border-slate-200 hover:border-teal-300 transition-all duration-200 font-bold shadow-2xs hover:shadow-xs"
+                className="px-4 py-2.5 min-h-[44px] bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-teal-700 hover:bg-teal-50/50 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-teal-300 transition-all duration-200 font-bold shadow-2xs hover:shadow-xs"
               >
                 {item.name}
               </Link>
             ))}
-          </div>
+          </motion.div>
 
-          <div className="flex flex-wrap items-center justify-center gap-3">
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.44 }}
+            className="flex flex-wrap items-center justify-center gap-3"
+          >
             <SmartPasteModal lang={lang} />
             <button onClick={() => setIsSearchOpen(true)} className="btn-primary text-sm cursor-pointer shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all">
               <Calculator className="w-4 h-4" />
               {cta.primary}
               <ChevronRight className="w-4 h-4" />
             </button>
-          </div>
+          </motion.div>
           
-          <div className="mt-6">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.52 }}
+            className="mt-6"
+          >
             <Link to={langPath('/for-hospitals')} className="text-xs font-bold text-teal-600 hover:text-teal-700 underline">
               {lang === 'fr' ? 'Déploiement pour Hôpitaux & Cliniques ?' : 'Looking for Hospital Deployment?'}
             </Link>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -347,18 +429,18 @@ export default function HomePage({ lang }: HomePageProps) {
       </section>
 
       {/* Stats row */}
-      <section className="grid grid-cols-1 sm:grid-cols-2 sm:grid-cols-4 gap-4">
+      <section className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         {stats.map((s, i) => {
           const StatIcon = [Calculator, Globe, ShieldCheck, Award][i];
           return (
-            <div key={i} className="bg-white/80 border border-slate-200/60 rounded-2xl p-5 flex flex-col items-center justify-between text-center shadow-xs transition-all duration-300 hover:shadow-sm hover:border-cyan-500/20 group relative overflow-hidden">
+            <div key={i} className="bg-white/80 dark:bg-slate-900/80 border border-slate-200/60 dark:border-slate-800 rounded-2xl p-5 flex flex-col items-center justify-between text-center shadow-xs transition-all duration-300 hover:shadow-sm hover:border-cyan-500/20 group relative overflow-hidden">
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500/50 to-emerald-500/50 opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="p-3 min-h-[44px] min-w-[44px].5 rounded-xl bg-slate-55/30 text-cyan-600 mb-2.5 group-hover:scale-105 transition-transform duration-300">
+              <div className="p-3 min-h-[44px] min-w-[44px] rounded-xl bg-slate-50/30 dark:bg-slate-800/30 text-cyan-600 dark:text-cyan-400 mb-2.5 group-hover:scale-105 transition-transform duration-300">
                 <StatIcon className="w-5 h-5" />
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl font-black text-slate-800 tracking-tight font-mono leading-none">{s.value}</div>
-                <div className="text-[11px] font-bold text-slate-600 uppercase tracking-widest mt-1.5">{s.label}</div>
+                <AnimatedStatValue value={s.value} />
+                <div className="text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-widest mt-1.5">{s.label}</div>
               </div>
             </div>
           );
@@ -369,8 +451,8 @@ export default function HomePage({ lang }: HomePageProps) {
       <SynapseEngine lang={lang} langPath={langPath} />
 
       {/* Specialty Filter Bar */}
-      <section className="w-full relative">
-        <div className="flex overflow-x-auto pb-4 pt-2 hide-scrollbar -mx-6 px-6 sm:mx-0 sm:px-0 gap-2 snap-x">
+      <section className="w-full relative" aria-label="Filter calculators by specialty">
+        <div className="flex overflow-x-auto pb-4 pt-2 hide-scrollbar -mx-6 px-6 sm:mx-0 sm:px-0 gap-2 snap-x" role="group" aria-label="Specialty filters">
           {SPECIALTIES.map((spec) => {
             const isActive = activeSpecialty === spec.id;
             const label = lang === 'fr' ? spec.fr : spec.en;
@@ -378,10 +460,11 @@ export default function HomePage({ lang }: HomePageProps) {
               <button
                 key={spec.id}
                 onClick={() => setActiveSpecialty(spec.id)}
+                aria-pressed={isActive}
                 className={`snap-start shrink-0 px-4 py-2 rounded-full text-xs font-bold transition-all duration-300 border ${
                   isActive 
-                    ? 'bg-teal-600 text-white border-teal-600 shadow-[0_4px_12px_rgba(13,148,136,0.3)]' 
-                    : 'bg-white text-slate-600 border-slate-200 hover:border-teal-300 hover:bg-slate-50'
+                    ? 'bg-teal-600 text-white border-teal-600 shadow-[0_4px_12px_rgba(13,148,136,0.3)] scale-105' 
+                    : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-700 hover:border-teal-300 hover:bg-slate-50 dark:hover:bg-slate-800'
                 }`}
               >
                 {label}

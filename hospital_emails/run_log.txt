@@ -475,3 +475,859 @@
 2026-08-02 00:12:58,364 [INFO] =================================================================
 2026-08-02 00:12:58,365 [INFO] 
 📂 Output folder: C:\Users\DeLL\CARECALCULUS\hospital_emails
+2026-08-03 23:06:52,245 [INFO] =================================================================
+2026-08-03 23:06:52,246 [INFO] CareCalculus Hospital Email Harvester
+2026-08-03 23:06:52,246 [INFO] Hospitals: 146 | Max concurrent: 3
+2026-08-03 23:06:52,246 [INFO] =================================================================
+2026-08-03 23:06:55,224 [INFO] 
+📦 Batch 1/49
+2026-08-03 23:06:55,460 [INFO] 🏥 Mayo Clinic (USA)
+2026-08-03 23:06:55,716 [INFO] 🏥 Cleveland Clinic (USA)
+2026-08-03 23:06:55,865 [INFO] 🏥 Johns Hopkins Hospital (USA)
+2026-08-03 23:06:59,112 [WARNING]   ❌ Blocked by anti-bot protection: Cloudflare JS challenge
+2026-08-03 23:07:10,744 [INFO]   📧 0 emails on main page
+2026-08-03 23:07:21,352 [INFO]   📧 0 emails on main page
+2026-08-03 23:07:33,561 [INFO]     ↳ patient-experience → 1 emails
+2026-08-03 23:07:37,658 [INFO] ⏳ Sleeping 2.4s…
+2026-08-03 23:07:40,057 [INFO] 
+📦 Batch 2/49
+2026-08-03 23:07:40,144 [INFO] 🏥 Massachusetts General Hospital (USA)
+2026-08-03 23:07:40,319 [INFO] 🏥 UCSF Medical Center (USA)
+2026-08-03 23:07:40,411 [INFO] 🏥 NewYork-Presbyterian (USA)
+2026-08-03 23:07:43,437 [WARNING]   ❌ Blocked by anti-bot protection: Structural: minimal_text, no_content_elements, script_heavy_shell (23430 bytes, 0 chars visible)
+2026-08-03 23:07:49,785 [INFO]   📧 2 emails on main page
+2026-08-03 23:07:51,224 [INFO]   📧 0 emails on main page
+2026-08-03 23:08:51,222 [WARNING]   ⏱ Sub-pages timed out for Massachusetts General Hospital, skipping
+2026-08-03 23:08:51,223 [INFO] ⏳ Sleeping 1.1s…
+2026-08-03 23:08:52,347 [INFO] 
+📦 Batch 3/49
+2026-08-03 23:08:52,417 [INFO] 🏥 Cedars-Sinai (USA)
+2026-08-03 23:08:52,558 [INFO] 🏥 UPMC (USA)
+2026-08-03 23:08:52,832 [INFO] 🏥 Duke University Hospital (USA)
+2026-08-03 23:09:00,531 [INFO]   📧 0 emails on main page
+2026-08-03 23:09:01,753 [WARNING]   ❌ Blocked by anti-bot protection: HTTP 403 with HTML content (44921 bytes)
+2026-08-03 23:09:07,388 [INFO]   📧 0 emails on main page
+2026-08-03 23:09:50,715 [INFO] =================================================================
+2026-08-03 23:09:50,715 [INFO] CareCalculus Hospital Email Harvester
+2026-08-03 23:09:50,715 [INFO] Hospitals: 146 | Max concurrent: 3
+2026-08-03 23:09:50,715 [INFO] =================================================================
+2026-08-03 23:09:52,183 [INFO] 
+📦 Batch 1/49
+2026-08-03 23:09:52,280 [INFO] 🏥 Mayo Clinic (USA)
+2026-08-03 23:09:52,444 [INFO] 🏥 Cleveland Clinic (USA)
+2026-08-03 23:09:52,578 [INFO] 🏥 Johns Hopkins Hospital (USA)
+2026-08-03 23:09:54,381 [WARNING]   ❌ Blocked by anti-bot protection: Cloudflare JS challenge
+2026-08-03 23:09:55,512 [INFO]   📧 0 emails on main page
+2026-08-03 23:10:01,202 [INFO]   📧 0 emails on main page
+2026-08-03 23:10:09,793 [INFO]     ↳ patient-experience → 1 emails
+2026-08-03 23:10:09,796 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:10:10,480 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:10:10,480 [INFO] ⏳ Sleeping 1.6s…
+2026-08-03 23:10:12,118 [INFO] 
+📦 Batch 2/49
+2026-08-03 23:10:12,169 [INFO] 🏥 Massachusetts General Hospital (USA)
+2026-08-03 23:10:12,295 [INFO] 🏥 UCSF Medical Center (USA)
+2026-08-03 23:10:12,370 [INFO] 🏥 NewYork-Presbyterian (USA)
+2026-08-03 23:10:17,238 [INFO]   📧 0 emails on main page
+2026-08-03 23:10:17,871 [INFO]   📧 0 emails on main page
+2026-08-03 23:10:18,779 [INFO]   📧 2 emails on main page
+2026-08-03 23:10:49,660 [INFO]     ↳ directory → 1 emails
+2026-08-03 23:10:50,770 [INFO]     ↳ price-transparency → 2 emails
+2026-08-03 23:10:51,441 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:10:51,455 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:10:51,456 [INFO] ⏳ Sleeping 2.2s…
+2026-08-03 23:10:53,623 [INFO] 
+📦 Batch 3/49
+2026-08-03 23:10:53,664 [INFO] 🏥 Cedars-Sinai (USA)
+2026-08-03 23:10:53,788 [INFO] 🏥 UPMC (USA)
+2026-08-03 23:10:53,866 [INFO] 🏥 Duke University Hospital (USA)
+2026-08-03 23:11:02,408 [INFO]   📧 0 emails on main page
+2026-08-03 23:11:02,560 [WARNING]   ❌ Blocked by anti-bot protection: HTTP 403 with HTML content (44899 bytes)
+2026-08-03 23:11:05,962 [INFO]   📧 0 emails on main page
+2026-08-03 23:11:23,180 [INFO]     ↳ contact → 1 emails
+2026-08-03 23:11:23,181 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:11:23,207 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:11:23,208 [INFO] ⏳ Sleeping 1.0s…
+2026-08-03 23:11:24,223 [INFO] 
+📦 Batch 4/49
+2026-08-03 23:11:24,274 [INFO] 🏥 Northwestern Memorial Hospital (USA)
+2026-08-03 23:11:24,542 [INFO] 🏥 Brigham and Women's Hospital (USA)
+2026-08-03 23:11:24,673 [INFO] 🏥 Stanford Health Care (USA)
+2026-08-03 23:11:52,000 [INFO]   📧 1 emails on main page
+2026-08-03 23:11:52,139 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.nm.org/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-03 23:11:53,816 [INFO]   📧 0 emails on main page
+2026-08-03 23:12:21,475 [INFO]     ↳ about-us.html → 1 emails
+2026-08-03 23:12:43,364 [INFO]     ↳ 300-pasteur-renewal-program.html → 2 emails
+2026-08-03 23:13:05,297 [INFO]     ↳ conduct.html → 1 emails
+2026-08-03 23:13:27,194 [INFO]     ↳ website-privacy-policy.html → 2 emails
+2026-08-03 23:13:49,469 [INFO]     ↳ annual-report.html → 1 emails
+2026-08-03 23:13:49,556 [WARNING]   ⏱ Sub-pages timed out for Brigham and Women's Hospital, skipping
+2026-08-03 23:13:49,559 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:13:49,595 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:13:49,595 [INFO] ⏳ Sleeping 1.8s…
+2026-08-03 23:13:51,439 [INFO] 
+📦 Batch 5/49
+2026-08-03 23:13:51,485 [INFO] 🏥 Houston Methodist Hospital (USA)
+2026-08-03 23:13:51,616 [INFO] 🏥 Penn Medicine (USA)
+2026-08-03 23:13:51,692 [INFO] 🏥 Vanderbilt University Medical (USA)
+2026-08-03 23:13:56,797 [INFO]   📧 0 emails on main page
+2026-08-03 23:13:59,489 [INFO]   📧 0 emails on main page
+2026-08-03 23:14:04,531 [INFO]   📧 0 emails on main page
+2026-08-03 23:14:05,559 [INFO]     ↳  → 1 emails
+2026-08-03 23:14:05,764 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:14:05,781 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:14:05,781 [INFO] ⏳ Sleeping 2.3s…
+2026-08-03 23:14:08,093 [INFO] 
+📦 Batch 6/49
+2026-08-03 23:14:08,133 [INFO] 🏥 OHSU Hospital (USA)
+2026-08-03 23:14:08,262 [INFO] 🏥 Rush University Medical (USA)
+2026-08-03 23:14:08,331 [INFO] 🏥 Emory Healthcare (USA)
+2026-08-03 23:14:14,264 [INFO]   📧 0 emails on main page
+2026-08-03 23:14:15,676 [INFO]   📧 1 emails on main page
+2026-08-03 23:14:16,464 [INFO]   📧 0 emails on main page
+2026-08-03 23:14:25,237 [INFO]     ↳ contact → 2 emails
+2026-08-03 23:14:25,593 [INFO]     ↳ make-a-gift → 1 emails
+2026-08-03 23:14:25,685 [INFO]     ↳  → 2 emails
+2026-08-03 23:14:25,688 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:14:25,734 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:14:25,734 [INFO] ⏳ Sleeping 1.3s…
+2026-08-03 23:14:27,074 [INFO] 
+📦 Batch 7/49
+2026-08-03 23:14:27,242 [INFO] 🏥 Yale New Haven Hospital (USA)
+2026-08-03 23:14:27,541 [INFO] 🏥 UC San Diego Health (USA)
+2026-08-03 23:14:27,708 [INFO] 🏥 Indiana University Health (USA)
+2026-08-03 23:14:30,595 [WARNING]   ❌ Blocked by anti-bot protection: Cloudflare JS challenge
+2026-08-03 23:14:37,042 [INFO]   📧 0 emails on main page
+2026-08-03 23:14:42,365 [INFO]   📧 0 emails on main page
+2026-08-03 23:14:54,854 [INFO]     ↳ volunteering → 1 emails
+2026-08-03 23:15:37,071 [WARNING]   ⏱ Sub-pages timed out for UC San Diego Health, skipping
+2026-08-03 23:15:37,073 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:15:37,095 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:15:37,095 [INFO] ⏳ Sleeping 2.1s…
+2026-08-03 23:15:39,225 [INFO] 
+📦 Batch 8/49
+2026-08-03 23:15:39,290 [INFO] 🏥 UCHealth Colorado (USA)
+2026-08-03 23:15:39,425 [INFO] 🏥 Ochsner Health Louisiana (USA)
+2026-08-03 23:15:39,507 [INFO] 🏥 Wake Forest Baptist Health (USA)
+2026-08-03 23:15:41,086 [WARNING]   ❌ Blocked by anti-bot protection: Cloudflare JS challenge
+2026-08-03 23:15:43,654 [INFO]   📧 0 emails on main page
+2026-08-03 23:15:46,574 [INFO]   📧 1 emails on main page
+2026-08-03 23:15:53,704 [INFO]     ↳ contact-us → 1 emails
+2026-08-03 23:16:43,677 [WARNING]   ⏱ Sub-pages timed out for Ochsner Health Louisiana, skipping
+2026-08-03 23:16:43,682 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:16:43,732 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:16:43,733 [INFO] ⏳ Sleeping 1.2s…
+2026-08-03 23:16:44,971 [INFO] 
+📦 Batch 9/49
+2026-08-03 23:16:45,070 [INFO] 🏥 Baylor Scott & White Health (USA)
+2026-08-03 23:16:45,265 [INFO] 🏥 Mount Sinai Health System (USA)
+2026-08-03 23:16:45,389 [INFO] 🏥 NYU Langone Health (USA)
+2026-08-03 23:16:49,757 [INFO]   📧 0 emails on main page
+2026-08-03 23:16:56,464 [INFO]   📧 7 emails on main page
+2026-08-03 23:17:35,155 [INFO]   📧 5 emails on main page
+2026-08-03 23:17:38,035 [INFO]     ↳ patient-relations → 1 emails
+2026-08-03 23:17:48,880 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:17:48,913 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:17:48,914 [INFO] ⏳ Sleeping 1.9s…
+2026-08-03 23:17:50,796 [INFO] 
+📦 Batch 10/49
+2026-08-03 23:17:50,892 [INFO] 🏥 UCLA Health (USA)
+2026-08-03 23:17:51,111 [INFO] 🏥 Memorial Sloan Kettering (USA)
+2026-08-03 23:17:51,334 [INFO] 🏥 Children's Hosp of Philadelphia (USA)
+2026-08-03 23:17:52,819 [WARNING]   ❌ Blocked by anti-bot protection: HTTP 403 with HTML content (434 bytes)
+2026-08-03 23:17:56,009 [WARNING]   ❌ Blocked by anti-bot protection: Structural: no_content_elements, script_heavy_shell (24234 bytes, 96 chars visible)
+2026-08-03 23:17:56,579 [INFO]   📧 0 emails on main page
+2026-08-03 23:17:56,583 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:17:56,638 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:17:56,638 [INFO] ⏳ Sleeping 1.5s…
+2026-08-03 23:17:58,186 [INFO] 
+📦 Batch 11/49
+2026-08-03 23:17:58,255 [INFO] 🏥 Boston Children's Hospital (USA)
+2026-08-03 23:17:58,386 [INFO] 🏥 Dana-Farber Cancer Institute (USA)
+2026-08-03 23:17:58,481 [INFO] 🏥 MD Anderson Cancer Center (USA)
+2026-08-03 23:18:04,714 [INFO]   📧 0 emails on main page
+2026-08-03 23:18:05,996 [WARNING]   ❌ Blocked by anti-bot protection: Structural: minimal_text, no_content_elements, script_heavy_shell (24730 bytes, 0 chars visible)
+2026-08-03 23:18:10,160 [INFO]   📧 2 emails on main page
+2026-08-03 23:19:10,180 [WARNING]   ⏱ Sub-pages timed out for MD Anderson Cancer Center, skipping
+2026-08-03 23:19:10,191 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:19:10,263 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:19:10,263 [INFO] ⏳ Sleeping 2.4s…
+2026-08-03 23:19:12,694 [INFO] 
+📦 Batch 12/49
+2026-08-03 23:19:12,747 [INFO] 🏥 Ascension Health (USA)
+2026-08-03 23:19:12,872 [INFO] 🏥 CommonSpirit Health (USA)
+2026-08-03 23:19:12,949 [INFO] 🏥 Providence Health (USA)
+2026-08-03 23:19:17,155 [INFO]   📧 2 emails on main page
+2026-08-03 23:19:56,388 [INFO]   📧 0 emails on main page
+2026-08-03 23:19:59,634 [INFO]   📧 0 emails on main page
+2026-08-03 23:20:09,093 [INFO]     ↳ terms → 1 emails
+2026-08-03 23:23:17,978 [WARNING]   ⏱ Sub-pages timed out for CommonSpirit Health, skipping
+2026-08-03 23:23:17,981 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:23:18,034 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:23:18,034 [INFO] ⏳ Sleeping 1.8s…
+2026-08-03 23:23:19,863 [INFO] 
+📦 Batch 13/49
+2026-08-03 23:23:19,920 [INFO] 🏥 Trinity Health (USA)
+2026-08-03 23:23:20,086 [INFO] 🏥 Advocate Health (USA)
+2026-08-03 23:23:20,194 [INFO] 🏥 Intermountain Health (USA)
+2026-08-03 23:23:21,902 [WARNING]   ❌ Blocked by anti-bot protection: HTTP 403 with HTML content (2606 bytes)
+2026-08-03 23:23:23,396 [INFO]   📧 0 emails on main page
+2026-08-03 23:23:23,674 [INFO]   📧 1 emails on main page
+2026-08-03 23:23:30,149 [INFO]     ↳ financial-assistance-for-patients → 1 emails
+2026-08-03 23:23:30,292 [INFO]     ↳ contact-us → 1 emails
+2026-08-03 23:23:30,432 [INFO]     ↳ contact-us → 2 emails
+2026-08-03 23:23:30,733 [INFO]     ↳ contact-us → 2 emails
+2026-08-03 23:23:30,736 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:23:30,770 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:23:30,770 [INFO] ⏳ Sleeping 2.4s…
+2026-08-03 23:23:33,141 [INFO] 
+📦 Batch 14/49
+2026-08-03 23:23:33,192 [INFO] 🏥 Banner Health (USA)
+2026-08-03 23:23:33,296 [INFO] 🏥 Kaiser Permanente (USA)
+2026-08-03 23:23:33,351 [INFO] 🏥 Geisinger Health System (USA)
+2026-08-03 23:23:39,189 [INFO]   📧 0 emails on main page
+2026-08-03 23:23:49,242 [INFO]   📧 0 emails on main page
+2026-08-03 23:23:50,786 [INFO]     ↳ nondiscrimination → 1 emails
+2026-08-03 23:23:51,126 [INFO]     ↳ privacy → 1 emails
+2026-08-03 23:23:54,315 [INFO]   📧 0 emails on main page
+2026-08-03 23:24:26,234 [INFO]     ↳ for-the-media → 2 emails
+2026-08-03 23:24:40,327 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:24:40,365 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:24:40,365 [INFO] ⏳ Sleeping 2.2s…
+2026-08-03 23:24:42,570 [INFO] 
+📦 Batch 15/49
+2026-08-03 23:24:42,621 [INFO] 🏥 Scripps Health (USA)
+2026-08-03 23:24:42,735 [INFO] 🏥 Jefferson Health (USA)
+2026-08-03 23:24:42,803 [INFO] 🏥 Northwell Health (USA)
+2026-08-03 23:24:44,088 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.northwell.org/about/contact-us
+Call log:
+  - navigating to "https://www.northwell.org/about/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-03 23:25:02,883 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.scripps.org/contact_us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-03 23:25:03,051 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.jeffersonhealth.org/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-03 23:25:03,054 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:25:03,156 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:25:03,156 [INFO] ⏳ Sleeping 1.8s…
+2026-08-03 23:25:04,924 [INFO] 
+📦 Batch 16/49
+2026-08-03 23:25:04,992 [INFO] 🏥 Hackensack Meridian Health (USA)
+2026-08-03 23:25:05,120 [INFO] 🏥 RWJBarnabas Health (USA)
+2026-08-03 23:25:05,192 [INFO] 🏥 Beth Israel Deaconess (USA)
+2026-08-03 23:25:14,895 [INFO]   📧 33 emails on main page
+2026-08-03 23:25:16,355 [INFO]   📧 0 emails on main page
+2026-08-03 23:25:17,764 [INFO]   📧 0 emails on main page
+2026-08-03 23:25:25,393 [INFO]     ↳ contact → 3 emails
+2026-08-03 23:25:25,448 [INFO]     ↳ healthcare-professionals-staff → 1 emails
+2026-08-03 23:25:34,887 [INFO]     ↳ new-team-members → 3 emails
+2026-08-03 23:25:35,820 [INFO]     ↳ nondiscrimination-policy → 1 emails
+2026-08-03 23:25:46,201 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:25:46,254 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:25:46,254 [INFO] ⏳ Sleeping 1.9s…
+2026-08-03 23:25:48,184 [INFO] 
+📦 Batch 17/49
+2026-08-03 23:25:48,238 [INFO] 🏥 Stony Brook Medicine (USA)
+2026-08-03 23:25:48,355 [INFO] 🏥 UChicago Medicine (USA)
+2026-08-03 23:25:48,432 [INFO] 🏥 Corewell Health (USA)
+2026-08-03 23:25:51,945 [INFO]   📧 0 emails on main page
+2026-08-03 23:25:52,515 [WARNING]   ❌ Blocked by anti-bot protection: Structural: minimal_text, no_content_elements, script_heavy_shell (9302 bytes, 0 chars visible)
+2026-08-03 23:25:53,087 [INFO]   📧 2 emails on main page
+2026-08-03 23:26:03,138 [INFO]     ↳ jcaho-public-notice → 4 emails
+2026-08-03 23:26:03,481 [INFO]     ↳ about-us → 2 emails
+2026-08-03 23:26:03,899 [INFO]     ↳ media-newsroom → 3 emails
+2026-08-03 23:26:04,276 [INFO]     ↳ legal-disclaimer → 2 emails
+2026-08-03 23:26:04,937 [INFO]     ↳ privacy-practices → 6 emails
+2026-08-03 23:26:05,418 [INFO]     ↳ contact-us-form → 2 emails
+2026-08-03 23:26:05,421 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:26:05,492 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:26:05,492 [INFO] ⏳ Sleeping 2.4s…
+2026-08-03 23:26:07,882 [INFO] 
+📦 Batch 18/49
+2026-08-03 23:26:07,971 [INFO] 🏥 Henry Ford Health (USA)
+2026-08-03 23:26:08,112 [INFO] 🏥 OhioState Wexner Medical Center (USA)
+2026-08-03 23:26:08,225 [INFO] 🏥 UR Medicine Rochester (USA)
+2026-08-03 23:26:16,911 [INFO]   📧 1 emails on main page
+2026-08-03 23:26:17,469 [INFO]   📧 2 emails on main page
+2026-08-03 23:26:27,864 [INFO]     ↳ about-us → 1 emails
+2026-08-03 23:26:27,927 [INFO]     ↳ quality-and-safety → 1 emails
+2026-08-03 23:26:27,994 [INFO]     ↳ contact-us → 6 emails
+2026-08-03 23:26:30,476 [INFO]   📧 1 emails on main page
+2026-08-03 23:26:31,847 [INFO]     ↳ contact → 2 emails
+2026-08-03 23:26:32,504 [INFO]     ↳ form → 1 emails
+2026-08-03 23:26:32,650 [INFO]     ↳ vendor → 2 emails
+2026-08-03 23:26:40,746 [INFO]     ↳ contact-us.aspx → 4 emails
+2026-08-03 23:26:47,819 [INFO]     ↳ contact-us.aspx → 2 emails
+2026-08-03 23:26:49,463 [INFO]     ↳ contact.aspx → 2 emails
+2026-08-03 23:26:49,467 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:26:49,538 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:26:49,538 [INFO] ⏳ Sleeping 1.7s…
+2026-08-03 23:26:51,291 [INFO] 
+📦 Batch 19/49
+2026-08-03 23:26:51,347 [INFO] 🏥 Inova Health System (USA)
+2026-08-03 23:26:51,557 [INFO] 🏥 VCU Health (USA)
+2026-08-03 23:26:51,715 [INFO] 🏥 UVA Health (USA)
+2026-08-03 23:26:54,765 [INFO]   📧 0 emails on main page
+2026-08-03 23:26:55,470 [INFO]   📧 0 emails on main page
+2026-08-03 23:36:08,687 [INFO]   📧 0 emails on main page
+2026-08-03 23:36:46,965 [INFO]     ↳  → 1 emails
+2026-08-03 23:36:46,969 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:36:47,044 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:36:47,044 [INFO] ⏳ Sleeping 1.3s…
+2026-08-03 23:36:48,372 [INFO] 
+📦 Batch 20/49
+2026-08-03 23:36:48,461 [INFO] 🏥 MUSC Health (USA)
+2026-08-03 23:36:48,601 [INFO] 🏥 UNC Health (USA)
+2026-08-03 23:36:48,698 [INFO] 🏥 UF Health Shands (USA)
+2026-08-03 23:36:52,745 [INFO]   📧 0 emails on main page
+2026-08-03 23:36:54,696 [WARNING]   ❌ Blocked by anti-bot protection: Structural: minimal_text, no_content_elements, script_heavy_shell (10327 bytes, 46 chars visible)
+2026-08-03 23:38:15,026 [INFO]   📧 0 emails on main page
+2026-08-03 23:40:45,081 [INFO]     ↳ family-liaison → 1 emails
+2026-08-03 23:40:45,085 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:40:45,172 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:40:45,172 [INFO] ⏳ Sleeping 2.3s…
+2026-08-03 23:40:47,515 [INFO] 
+📦 Batch 21/49
+2026-08-03 23:40:47,568 [INFO] 🏥 Moffitt Cancer Center (USA)
+2026-08-03 23:40:47,717 [INFO] 🏥 Tampa General Hospital (USA)
+2026-08-03 23:40:47,781 [INFO] 🏥 Baptist Health South Florida (USA)
+2026-08-03 23:40:51,572 [INFO]   📧 2 emails on main page
+2026-08-03 23:41:04,095 [INFO]   📧 0 emails on main page
+2026-08-03 23:41:06,121 [INFO]   📧 0 emails on main page
+2026-08-03 23:41:08,659 [INFO]     ↳ contact-us → 6 emails
+2026-08-03 23:41:08,792 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:41:08,871 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:41:08,872 [INFO] ⏳ Sleeping 1.8s…
+2026-08-03 23:41:10,635 [INFO] 
+📦 Batch 22/49
+2026-08-03 23:41:10,716 [INFO] 🏥 UAB Medicine (USA)
+2026-08-03 23:41:10,840 [INFO] 🏥 St. Jude Children's (USA)
+2026-08-03 23:41:10,911 [INFO] 🏥 Barnes-Jewish BJC Health (USA)
+2026-08-03 23:41:12,371 [WARNING]   ❌ Blocked by anti-bot protection: Cloudflare JS challenge
+2026-08-03 23:41:16,300 [INFO]   📧 8 emails on main page
+2026-08-03 23:41:22,643 [INFO]   📧 0 emails on main page
+2026-08-03 23:41:33,224 [INFO]     ↳ contact-us.html → 8 emails
+2026-08-03 23:41:34,080 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:41:34,157 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:41:34,157 [INFO] ⏳ Sleeping 1.2s…
+2026-08-03 23:41:35,370 [INFO] 
+📦 Batch 23/49
+2026-08-03 23:41:35,464 [INFO] 🏥 University of Kansas Health (USA)
+2026-08-03 23:41:35,604 [INFO] 🏥 Nebraska Medicine (USA)
+2026-08-03 23:41:35,715 [INFO] 🏥 Sanford Health (USA)
+2026-08-03 23:41:39,795 [INFO]   📧 0 emails on main page
+2026-08-03 23:41:43,551 [INFO]     ↳ contact-media-relations → 8 emails
+2026-08-03 23:41:44,274 [INFO]   📧 0 emails on main page
+2026-08-03 23:41:55,868 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.kansashealthsystem.com/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-03 23:41:55,873 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:41:55,999 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:41:55,999 [INFO] ⏳ Sleeping 2.4s…
+2026-08-03 23:41:58,450 [INFO] 
+📦 Batch 24/49
+2026-08-03 23:41:58,498 [INFO] 🏥 M Health Fairview (USA)
+2026-08-03 23:41:58,620 [INFO] 🏥 UW Health Wisconsin (USA)
+2026-08-03 23:41:58,690 [INFO] 🏥 Froedtert & MCW (USA)
+2026-08-03 23:42:00,068 [WARNING]   ❌ Blocked by anti-bot protection: Cloudflare JS challenge
+2026-08-03 23:42:01,466 [WARNING]   ❌ Blocked by anti-bot protection: Structural: minimal_text, no_content_elements, script_heavy_shell (7752 bytes, 0 chars visible)
+2026-08-03 23:42:02,081 [INFO]   📧 1 emails on main page
+2026-08-03 23:42:02,090 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:42:02,180 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:42:02,180 [INFO] ⏳ Sleeping 2.2s…
+2026-08-03 23:42:04,355 [INFO] 
+📦 Batch 25/49
+2026-08-03 23:42:04,401 [INFO] 🏥 City of Hope (USA)
+2026-08-03 23:42:04,523 [INFO] 🏥 Sutter Health (USA)
+2026-08-03 23:42:04,594 [INFO] 🏥 UC Davis Health (USA)
+2026-08-03 23:42:05,839 [WARNING]   ❌ Blocked by anti-bot protection: HTTP 429 Too Many Requests
+2026-08-03 23:42:19,079 [INFO]   📧 0 emails on main page
+2026-08-03 23:42:19,741 [INFO]   📧 1 emails on main page
+2026-08-03 23:42:26,807 [INFO]     ↳ contact → 11 emails
+2026-08-03 23:42:26,948 [INFO]     ↳ default.html → 2 emails
+2026-08-03 23:42:42,187 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:42:42,291 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:42:42,291 [INFO] ⏳ Sleeping 2.3s…
+2026-08-03 23:42:44,599 [INFO] 
+📦 Batch 26/49
+2026-08-03 23:42:44,637 [INFO] 🏥 UC Irvine Health (USA)
+2026-08-03 23:42:44,764 [INFO] 🏥 University Health Network (Canada)
+2026-08-03 23:42:44,826 [INFO] 🏥 McGill University Health Centre (Canada)
+2026-08-03 23:42:48,324 [INFO]   📧 0 emails on main page
+2026-08-03 23:42:54,062 [INFO]   📧 0 emails on main page
+2026-08-03 23:42:55,563 [INFO]   📧 0 emails on main page
+2026-08-03 23:43:03,747 [INFO]     ↳ For Partners → 2 emails
+2026-08-03 23:43:03,829 [INFO]     ↳ Mission Vision and Values → 1 emails
+2026-08-03 23:43:03,920 [INFO]     ↳ about-us → 1 emails
+2026-08-03 23:43:04,059 [INFO]     ↳ Contact Patient Form → 1 emails
+2026-08-03 23:43:04,220 [INFO]     ↳ news → 1 emails
+2026-08-03 23:43:04,241 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:43:04,381 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:43:04,381 [INFO] ⏳ Sleeping 1.6s…
+2026-08-03 23:43:05,987 [INFO] 
+📦 Batch 27/49
+2026-08-03 23:43:06,033 [INFO] 🏥 Vancouver Coastal Health (Canada)
+2026-08-03 23:43:06,180 [INFO] 🏥 Ottawa Hospital (Canada)
+2026-08-03 23:43:06,259 [INFO] 🏥 Sunnybrook Health Sciences (Canada)
+2026-08-03 23:43:09,128 [INFO]   📧 0 emails on main page
+2026-08-03 23:43:11,132 [INFO]   📧 0 emails on main page
+2026-08-03 23:43:12,761 [INFO]   📧 0 emails on main page
+2026-08-03 23:43:12,766 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:43:12,850 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:43:12,850 [INFO] ⏳ Sleeping 1.4s…
+2026-08-03 23:43:14,226 [INFO] 
+📦 Batch 28/49
+2026-08-03 23:43:14,304 [INFO] 🏥 Alberta Health Services (Canada)
+2026-08-03 23:43:14,429 [INFO] 🏥 QEII Health Sciences Centre (Canada)
+2026-08-03 23:43:14,487 [INFO] 🏥 Kingston Health Sciences (Canada)
+2026-08-03 23:43:23,303 [WARNING]   ❌ Blocked by anti-bot protection: Access Denied on short page (HTTP 403, 42910 bytes)
+2026-08-03 23:43:24,537 [WARNING]   ❌ Blocked by anti-bot protection: Structural: minimal_text, no_content_elements, script_heavy_shell (25294 bytes, 0 chars visible)
+2026-08-03 23:43:31,338 [INFO]   📧 0 emails on main page
+2026-08-03 23:43:38,564 [INFO]     ↳ Page121.aspx → 2 emails
+2026-08-03 23:43:39,008 [INFO]     ↳ Page12639.aspx → 1 emails
+2026-08-03 23:43:39,875 [INFO]     ↳ Page210.aspx → 2 emails
+2026-08-03 23:43:40,690 [INFO]     ↳ websitefeedback.aspx?src= → 1 emails
+2026-08-03 23:43:40,695 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:43:40,785 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:43:40,785 [INFO] ⏳ Sleeping 2.2s…
+2026-08-03 23:43:42,961 [INFO] 
+📦 Batch 29/49
+2026-08-03 23:43:43,010 [INFO] 🏥 Hamilton Health Sciences (Canada)
+2026-08-03 23:43:43,126 [INFO] 🏥 London Health Sciences (Canada)
+2026-08-03 23:43:43,203 [INFO] 🏥 Winnipeg Health Sciences (Canada)
+2026-08-03 23:43:47,152 [INFO]   📧 0 emails on main page
+2026-08-03 23:43:49,847 [INFO]   📧 0 emails on main page
+2026-08-03 23:43:54,603 [INFO]   📧 1 emails on main page
+2026-08-03 23:43:57,441 [INFO]     ↳  → 2 emails
+2026-08-03 23:43:57,967 [INFO]     ↳  → 1 emails
+2026-08-03 23:44:00,166 [INFO]     ↳  → 1 emails
+2026-08-03 23:44:00,366 [INFO]     ↳  → 1 emails
+2026-08-03 23:44:00,372 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:44:00,463 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:44:00,464 [INFO] ⏳ Sleeping 2.3s…
+2026-08-03 23:44:02,730 [INFO] 
+📦 Batch 30/49
+2026-08-03 23:44:02,782 [INFO] 🏥 CIUSSS de l'Est-de-l'Île-de-Montréal (Canada)
+2026-08-03 23:44:02,899 [INFO] 🏥 Sinai Health Toronto (Canada)
+2026-08-03 23:44:02,973 [INFO] 🏥 Unity Health Toronto (Canada)
+2026-08-03 23:44:07,078 [WARNING]   ❌ Blocked by anti-bot protection: Structural: minimal_text, no_content_elements, script_heavy_shell (11605 bytes, 0 chars visible)
+2026-08-03 23:44:08,443 [INFO]   📧 1 emails on main page
+2026-08-03 23:44:08,819 [INFO]   📧 0 emails on main page
+2026-08-03 23:44:11,646 [INFO]     ↳  → 1 emails
+2026-08-03 23:44:11,765 [INFO]     ↳  → 1 emails
+2026-08-03 23:44:11,770 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:44:11,858 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:44:11,858 [INFO] ⏳ Sleeping 1.4s…
+2026-08-03 23:44:13,322 [INFO] 
+📦 Batch 31/49
+2026-08-03 23:44:13,453 [INFO] 🏥 SickKids Toronto (Canada)
+2026-08-03 23:44:13,602 [INFO] 🏥 CAMH Toronto (Canada)
+2026-08-03 23:44:13,689 [INFO] 🏥 Trillium Health Partners (Canada)
+2026-08-03 23:44:19,816 [INFO]   📧 0 emails on main page
+2026-08-03 23:44:25,817 [INFO]   📧 0 emails on main page
+2026-08-03 23:44:33,885 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.trilliumhealthpartners.ca/contactus/Pages/default.aspx", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-03 23:44:47,041 [INFO]     ↳  → 1 emails
+2026-08-03 23:44:47,096 [INFO]     ↳  → 1 emails
+2026-08-03 23:44:47,330 [INFO]     ↳  → 3 emails
+2026-08-03 23:44:47,710 [INFO]     ↳  → 1 emails
+2026-08-03 23:44:56,563 [INFO]     ↳ careers-at-camh?utm_id=joinourteam → 1 emails
+2026-08-03 23:44:57,785 [INFO]     ↳ careers-at-camh → 1 emails
+2026-08-03 23:44:58,650 [INFO]     ↳ contact-camh → 5 emails
+2026-08-03 23:45:00,600 [INFO]     ↳ for-reporters → 2 emails
+2026-08-03 23:45:01,726 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:45:01,872 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:45:01,872 [INFO] ⏳ Sleeping 1.4s…
+2026-08-03 23:45:03,306 [INFO] 
+📦 Batch 32/49
+2026-08-03 23:45:03,374 [INFO] 🏥 Fraser Health BC (Canada)
+2026-08-03 23:45:03,502 [INFO] 🏥 Interior Health BC (Canada)
+2026-08-03 23:45:03,572 [INFO] 🏥 Covenant Health Alberta (Canada)
+2026-08-03 23:45:07,564 [INFO]   📧 0 emails on main page
+2026-08-03 23:45:08,385 [INFO]   📧 1 emails on main page
+2026-08-03 23:45:15,472 [INFO]     ↳ business-opportunities → 1 emails
+2026-08-03 23:45:15,639 [INFO]     ↳ abbotsford-regional-hospital-and-cancer-centre → 1 emails
+2026-08-03 23:45:15,710 [INFO]     ↳ laboratory-service → 1 emails
+2026-08-03 23:45:15,823 [INFO]     ↳ warranty-disclaimer → 1 emails
+2026-08-03 23:45:26,941 [WARNING]   ❌ Blocked by anti-bot protection: Structural: minimal_text, no_content_elements, script_heavy_shell (13561 bytes, 0 chars visible)
+2026-08-03 23:45:26,949 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:45:27,125 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:45:27,126 [INFO] ⏳ Sleeping 1.2s…
+2026-08-03 23:45:28,374 [INFO] 
+📦 Batch 33/49
+2026-08-03 23:45:28,472 [INFO] 🏥 CHUM Montreal (Canada)
+2026-08-03 23:45:28,635 [INFO] 🏥 CHU Sainte-Justine (Canada)
+2026-08-03 23:45:28,751 [INFO] 🏥 Royal London Hospital (UK)
+2026-08-03 23:45:30,182 [INFO]   📧 0 emails on main page
+2026-08-03 23:45:31,485 [WARNING]   ❌ Blocked by anti-bot protection: Structural: minimal_text, no_content_elements, script_heavy_shell (12436 bytes, 0 chars visible)
+2026-08-03 23:45:31,541 [INFO]   📧 0 emails on main page
+2026-08-03 23:45:31,548 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:45:31,725 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:45:31,725 [INFO] ⏳ Sleeping 1.5s…
+2026-08-03 23:45:33,195 [INFO] 
+📦 Batch 34/49
+2026-08-03 23:45:33,268 [INFO] 🏥 Guy's and St Thomas' NHS (UK)
+2026-08-03 23:45:33,375 [INFO] 🏥 King's College Hospital (UK)
+2026-08-03 23:45:33,427 [INFO] 🏥 Imperial College Healthcare NHS (UK)
+2026-08-03 23:45:38,656 [INFO]   📧 0 emails on main page
+2026-08-03 23:45:40,016 [INFO]   📧 2 emails on main page
+2026-08-03 23:45:40,134 [WARNING]   ❌ Blocked by anti-bot protection: Structural: no <body> tag (13971 bytes)
+2026-08-03 23:45:46,623 [INFO]     ↳ foi → 1 emails
+2026-08-03 23:45:47,088 [INFO]     ↳ contact-and-find-us → 2 emails
+2026-08-03 23:45:47,131 [INFO]     ↳ about-us → 1 emails
+2026-08-03 23:45:47,444 [INFO]     ↳ how-we-use-social-media → 2 emails
+2026-08-03 23:45:47,706 [INFO]     ↳ press-office → 2 emails
+2026-08-03 23:45:47,711 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:45:47,810 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:45:47,810 [INFO] ⏳ Sleeping 1.2s…
+2026-08-03 23:45:49,002 [INFO] 
+📦 Batch 35/49
+2026-08-03 23:45:49,100 [INFO] 🏥 Manchester NHS Foundation Trust (UK)
+2026-08-03 23:45:49,266 [INFO] 🏥 Leeds Teaching Hospitals NHS (UK)
+2026-08-03 23:45:49,414 [INFO] 🏥 Oxford University Hospitals NHS (UK)
+2026-08-03 23:45:50,891 [WARNING]   ❌ Blocked by anti-bot protection: Cloudflare JS challenge
+2026-08-03 23:45:53,489 [INFO]   📧 5 emails on main page
+2026-08-03 23:45:54,047 [INFO]   📧 0 emails on main page
+2026-08-03 23:45:56,645 [INFO]     ↳  → 5 emails
+2026-08-03 23:45:56,652 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:45:56,960 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:45:56,960 [INFO] ⏳ Sleeping 1.8s…
+2026-08-03 23:45:58,746 [INFO] 
+📦 Batch 36/49
+2026-08-03 23:45:58,805 [INFO] 🏥 Cambridge University Hospitals (UK)
+2026-08-03 23:45:58,977 [INFO] 🏥 Newcastle Hospitals NHS (UK)
+2026-08-03 23:45:59,081 [INFO] 🏥 University College London NHS (UK)
+2026-08-03 23:46:03,263 [INFO]   📧 0 emails on main page
+2026-08-03 23:46:05,884 [INFO]   📧 0 emails on main page
+2026-08-03 23:46:10,442 [INFO]   📧 1 emails on main page
+2026-08-03 23:46:24,221 [INFO]     ↳ become-member → 3 emails
+2026-08-03 23:46:26,311 [INFO]     ↳  → 26 emails
+2026-08-03 23:46:27,116 [INFO]     ↳  → 1 emails
+2026-08-03 23:46:28,609 [INFO]     ↳  → 1 emails
+2026-08-03 23:46:30,555 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:46:30,688 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:46:30,688 [INFO] ⏳ Sleeping 1.9s…
+2026-08-03 23:46:32,541 [INFO] 
+📦 Batch 37/49
+2026-08-03 23:46:32,581 [INFO] 🏥 Sheffield Teaching Hospitals (UK)
+2026-08-03 23:46:32,704 [INFO] 🏥 Bristol University NHS Trust (UK)
+2026-08-03 23:46:32,762 [INFO] 🏥 Royal Free London NHS (UK)
+2026-08-03 23:46:35,450 [WARNING]   ❌ Blocked by anti-bot protection: Cloudflare JS challenge
+2026-08-03 23:46:36,167 [INFO]   📧 10 emails on main page
+2026-08-03 23:46:36,525 [INFO]   📧 0 emails on main page
+2026-08-03 23:46:44,913 [INFO]     ↳  → 1 emails
+2026-08-03 23:46:44,952 [INFO]     ↳  → 3 emails
+2026-08-03 23:46:44,987 [INFO]     ↳  → 2 emails
+2026-08-03 23:46:44,995 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:46:45,123 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:46:45,123 [INFO] ⏳ Sleeping 2.4s…
+2026-08-03 23:46:47,579 [INFO] 
+📦 Batch 38/49
+2026-08-03 23:46:47,678 [INFO] 🏥 Nottingham University Hospitals (UK)
+2026-08-03 23:46:47,852 [INFO] 🏥 Liverpool University Hospitals (UK)
+2026-08-03 23:46:47,982 [INFO] 🏥 University Hospitals Birmingham (UK)
+2026-08-03 23:46:49,614 [INFO]   📧 0 emails on main page
+2026-08-03 23:46:50,785 [INFO]   📧 0 emails on main page
+2026-08-03 23:46:53,090 [INFO]   📧 0 emails on main page
+2026-08-03 23:47:16,059 [INFO]     ↳ procurement → 1 emails
+2026-08-03 23:47:16,717 [INFO]     ↳ press-information → 4 emails
+2026-08-03 23:47:19,245 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:47:19,592 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:47:19,592 [INFO] ⏳ Sleeping 1.1s…
+2026-08-03 23:47:20,705 [INFO] 
+📦 Batch 39/49
+2026-08-03 23:47:20,789 [INFO] 🏥 Southampton University NHS (UK)
+2026-08-03 23:47:20,951 [INFO] 🏥 Royal Marsden NHS Foundation (UK)
+2026-08-03 23:47:21,022 [INFO] 🏥 Great Ormond Street NHS (UK)
+2026-08-03 23:47:24,532 [INFO]   📧 1 emails on main page
+2026-08-03 23:47:36,611 [INFO]   📧 0 emails on main page
+2026-08-03 23:47:38,154 [WARNING]   ❌ Blocked by anti-bot protection: Structural: minimal_text, no_content_elements, script_heavy_shell (29640 bytes, 0 chars visible)
+2026-08-03 23:47:39,057 [INFO]     ↳ getting-help → 9 emails
+2026-08-03 23:47:39,497 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:47:39,663 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:47:39,664 [INFO] ⏳ Sleeping 1.2s…
+2026-08-03 23:47:40,853 [INFO] 
+📦 Batch 40/49
+2026-08-03 23:47:41,116 [INFO] 🏥 St George's University NHS (UK)
+2026-08-03 23:47:41,335 [INFO] 🏥 Chelsea and Westminster NHS (UK)
+2026-08-03 23:47:41,487 [INFO] 🏥 University Hospitals Sussex (UK)
+2026-08-03 23:47:45,150 [INFO]   📧 0 emails on main page
+2026-08-03 23:47:45,486 [INFO]   📧 4 emails on main page
+2026-08-03 23:47:47,237 [INFO]   📧 8 emails on main page
+2026-08-03 23:47:56,681 [INFO]     ↳  → 1 emails
+2026-08-03 23:47:56,981 [INFO]     ↳  → 1 emails
+2026-08-03 23:47:57,093 [INFO]     ↳  → 1 emails
+2026-08-03 23:47:57,196 [INFO]     ↳  → 4 emails
+2026-08-03 23:47:57,759 [INFO]     ↳ contact → 8 emails
+2026-08-03 23:47:58,175 [INFO]     ↳  → 8 emails
+2026-08-03 23:47:58,389 [INFO]     ↳ send-us-feedback → 1 emails
+2026-08-03 23:47:58,396 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:47:58,773 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:47:58,773 [INFO] ⏳ Sleeping 1.7s…
+2026-08-03 23:48:00,476 [INFO] 
+📦 Batch 41/49
+2026-08-03 23:48:00,541 [INFO] 🏥 Northumbria Healthcare NHS (UK)
+2026-08-03 23:48:00,690 [INFO] 🏥 University Hospitals of Leicester (UK)
+2026-08-03 23:48:00,791 [INFO] 🏥 Derby and Burton NHS Trust (UK)
+2026-08-03 23:48:05,800 [INFO]   📧 0 emails on main page
+2026-08-03 23:48:07,196 [INFO]   📧 0 emails on main page
+2026-08-03 23:48:07,586 [INFO]   📧 6 emails on main page
+2026-08-03 23:48:13,870 [INFO]     ↳  → 1 emails
+2026-08-03 23:48:15,442 [INFO]     ↳ contact-us-how-to-request-a-bsl-interpreter → 3 emails
+2026-08-03 23:48:16,564 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:48:17,175 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:48:17,176 [INFO] ⏳ Sleeping 1.9s…
+2026-08-03 23:48:19,107 [INFO] 
+📦 Batch 42/49
+2026-08-03 23:48:19,190 [INFO] 🏥 Norfolk and Norwich NHS (UK)
+2026-08-03 23:48:19,344 [INFO] 🏥 East Suffolk & North Essex NHS (UK)
+2026-08-03 23:48:19,457 [INFO] 🏥 NHS Greater Glasgow and Clyde (UK)
+2026-08-03 23:48:22,049 [WARNING]   ❌ Blocked by anti-bot protection: HTTP 503 with HTML content (18326 bytes)
+2026-08-03 23:48:23,333 [INFO]   📧 0 emails on main page
+2026-08-03 23:48:24,193 [INFO]   📧 4 emails on main page
+2026-08-03 23:48:36,691 [INFO]     ↳  → 9 emails
+2026-08-03 23:48:36,994 [INFO]     ↳  → 2 emails
+2026-08-03 23:48:37,722 [INFO]     ↳  → 2 emails
+2026-08-03 23:48:37,936 [INFO]     ↳  → 1 emails
+2026-08-03 23:48:38,942 [INFO]     ↳  → 1 emails
+2026-08-03 23:48:39,107 [INFO]     ↳  → 1 emails
+2026-08-03 23:48:39,120 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:48:39,326 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:48:39,326 [INFO] ⏳ Sleeping 2.0s…
+2026-08-03 23:48:41,332 [INFO] 
+📦 Batch 43/49
+2026-08-03 23:48:41,380 [INFO] 🏥 NHS Lothian Edinburgh (UK)
+2026-08-03 23:48:41,524 [INFO] 🏥 Cardiff and Vale Health Board (UK)
+2026-08-03 23:48:41,615 [INFO] 🏥 Belfast Health & Social Care (UK)
+2026-08-03 23:48:47,631 [INFO]   📧 0 emails on main page
+2026-08-03 23:48:48,063 [INFO]   📧 2 emails on main page
+2026-08-03 23:48:53,019 [INFO]   📧 1 emails on main page
+2026-08-03 23:48:58,661 [INFO]     ↳  → 1 emails
+2026-08-03 23:49:05,709 [INFO]     ↳  → 1 emails
+2026-08-03 23:49:05,898 [INFO]     ↳  → 1 emails
+2026-08-03 23:49:08,452 [INFO]     ↳  → 1 emails
+2026-08-03 23:49:08,700 [INFO]     ↳  → 1 emails
+2026-08-03 23:49:08,989 [INFO]     ↳  → 1 emails
+2026-08-03 23:49:09,001 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:49:09,662 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:49:09,663 [INFO] ⏳ Sleeping 1.9s…
+2026-08-03 23:49:11,593 [INFO] 
+📦 Batch 44/49
+2026-08-03 23:49:11,674 [INFO] 🏥 Royal Melbourne Hospital (Australia)
+2026-08-03 23:49:11,866 [INFO] 🏥 Alfred Health Melbourne (Australia)
+2026-08-03 23:49:11,950 [INFO] 🏥 St Vincent's Melbourne (Australia)
+2026-08-03 23:49:14,997 [WARNING]   ❌ Blocked by anti-bot protection: Imperva/Incapsula block
+2026-08-03 23:49:16,847 [INFO]   📧 0 emails on main page
+2026-08-03 23:49:19,880 [INFO]   📧 0 emails on main page
+2026-08-03 23:49:32,358 [INFO]     ↳ about-clinical-trials → 1 emails
+2026-08-03 23:49:32,501 [INFO]     ↳ about-research → 1 emails
+2026-08-03 23:49:32,737 [INFO]     ↳ contact → 3 emails
+2026-08-03 23:49:32,749 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:49:33,181 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:49:33,181 [INFO] ⏳ Sleeping 1.9s…
+2026-08-03 23:49:35,086 [INFO] 
+📦 Batch 45/49
+2026-08-03 23:49:35,141 [INFO] 🏥 Monash Health Melbourne (Australia)
+2026-08-03 23:49:35,277 [INFO] 🏥 Austin Health Melbourne (Australia)
+2026-08-03 23:49:35,351 [INFO] 🏥 Royal Prince Alfred Sydney (Australia)
+2026-08-03 23:49:37,478 [INFO]   📧 0 emails on main page
+2026-08-03 23:49:39,525 [INFO]   📧 0 emails on main page
+2026-08-03 23:49:49,659 [INFO]   📧 0 emails on main page
+2026-08-03 23:49:49,728 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:49:50,498 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:49:50,498 [INFO] ⏳ Sleeping 1.4s…
+2026-08-03 23:49:51,929 [INFO] 
+📦 Batch 46/49
+2026-08-03 23:49:52,021 [INFO] 🏥 St Vincent's Sydney (Australia)
+2026-08-03 23:49:52,286 [INFO] 🏥 Royal North Shore Sydney (Australia)
+2026-08-03 23:49:52,598 [INFO] 🏥 Royal Brisbane & Women's (Australia)
+2026-08-03 23:50:04,630 [WARNING]   ❌ Blocked by anti-bot protection: Structural: no <body> tag (35265 bytes)
+2026-08-03 23:50:05,742 [WARNING]   ❌ Blocked by anti-bot protection: Cloudflare JS challenge
+2026-08-03 23:50:07,446 [WARNING]   ❌ Blocked by anti-bot protection: Imperva/Incapsula block
+2026-08-03 23:50:07,481 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:50:08,114 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:50:08,114 [INFO] ⏳ Sleeping 2.2s…
+2026-08-03 23:50:10,301 [INFO] 
+📦 Batch 47/49
+2026-08-03 23:50:10,438 [INFO] 🏥 Princess Alexandra Brisbane (Australia)
+2026-08-03 23:50:10,705 [INFO] 🏥 Royal Adelaide Hospital (Australia)
+2026-08-03 23:50:10,810 [INFO] 🏥 Sir Charles Gairdner Perth (Australia)
+2026-08-03 23:50:11,389 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: net::ERR_NAME_NOT_RESOLVED at https://metro-south.health.qld.gov.au/princess-alexandra-hospital/contact-us
+Call log:
+  - navigating to "https://metro-south.health.qld.gov.au/princess-alexandra-hospital/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-03 23:50:16,487 [INFO]   📧 0 emails on main page
+2026-08-03 23:50:20,176 [INFO]   📧 0 emails on main page
+2026-08-03 23:50:39,407 [INFO]     ↳ contact → 2 emails
+2026-08-03 23:50:43,747 [INFO]     ↳ information-for-staff → 2 emails
+2026-08-03 23:50:45,463 [INFO]     ↳ Misconduct → 1 emails
+2026-08-03 23:50:45,980 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:50:46,739 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:50:46,739 [INFO] ⏳ Sleeping 1.5s…
+2026-08-03 23:50:48,289 [INFO] 
+📦 Batch 48/49
+2026-08-03 23:50:48,412 [INFO] 🏥 St. James's Hospital Dublin (Ireland)
+2026-08-03 23:50:48,565 [INFO] 🏥 Beaumont Hospital Dublin (Ireland)
+2026-08-03 23:50:48,693 [INFO] 🏥 Mater Hospital Dublin (Ireland)
+2026-08-03 23:50:52,921 [INFO]   📧 0 emails on main page
+2026-08-03 23:50:53,845 [INFO]   📧 0 emails on main page
+2026-08-03 23:51:02,919 [INFO]     ↳  → 1 emails
+2026-08-03 23:51:03,145 [INFO]     ↳  → 1 emails
+2026-08-03 23:51:04,917 [INFO]   📧 0 emails on main page
+2026-08-03 23:51:04,938 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:51:05,842 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:51:05,842 [INFO] ⏳ Sleeping 1.2s…
+2026-08-03 23:51:07,040 [INFO] 
+📦 Batch 49/49
+2026-08-03 23:51:07,137 [INFO] 🏥 St. Vincent's Dublin (Ireland)
+2026-08-03 23:51:07,342 [INFO] 🏥 Galway University Hospitals (Ireland)
+2026-08-03 23:51:10,919 [WARNING]   ❌ Blocked by anti-bot protection: Structural: no <body> tag (13182 bytes)
+2026-08-03 23:51:12,086 [INFO]   📧 7 emails on main page
+2026-08-03 23:51:24,770 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:51:25,130 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:51:25,130 [INFO] ⏳ Sleeping 2.4s…
+2026-08-03 23:51:29,364 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-03 23:51:30,390 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-03 23:51:30,392 [INFO] 
+=================================================================
+2026-08-03 23:51:30,392 [INFO] 🎯 DONE — 329 unique leads harvested
+2026-08-03 23:51:30,392 [INFO]    Australia: 10 emails
+2026-08-03 23:51:30,392 [INFO]    Canada: 28 emails
+2026-08-03 23:51:30,392 [INFO]    Ireland: 9 emails
+2026-08-03 23:51:30,392 [INFO]    UK: 123 emails
+2026-08-03 23:51:30,392 [INFO]    USA: 159 emails
+2026-08-03 23:51:30,392 [INFO] 
+⭐ High-value leads (score ≥ 20): 40
+2026-08-03 23:51:30,392 [INFO]    [ 30] media@advocatehealth.org                      Advocate Health (USA)
+2026-08-03 23:51:30,392 [INFO]    [ 25] donations@hamiltonhealth.ca                   Hamilton Health Sciences (Canada)
+2026-08-03 23:51:30,392 [INFO]    [ 25] pressoffice@uhbw.nhs.uk                       Bristol University NHS Trust (UK)
+2026-08-03 23:51:30,392 [INFO]    [ 25] cuh.procurement@nhs.net                       Cambridge University Hospitals (UK)
+2026-08-03 23:51:30,392 [INFO]    [ 25] imperial.press.office@nhs.net                 Imperial College Healthcare NHS (UK)
+2026-08-03 23:51:30,392 [INFO]    [ 25] procurement.helpdesk@liverpoolft.nhs.uk       Liverpool University Hospitals (UK)
+2026-08-03 23:51:30,392 [INFO]    [ 25] your.name@northumbria-healthcare.nhs.uk       Northumbria Healthcare NHS (UK)
+2026-08-03 23:51:30,392 [INFO]    [ 25] uhl-tr.pressoffice@nhs.net                    University Hospitals of Leicester (UK)
+2026-08-03 23:51:30,392 [INFO]    [ 25] joe.palmer@advocatehealth.com                 Advocate Health (USA)
+2026-08-03 23:51:30,392 [INFO]    [ 25] national-media-relations@kp.org               Kaiser Permanente (USA)
+2026-08-03 23:51:30,396 [INFO]    [ 25] angela.dejene@sanfordhealth.org               Sanford Health (USA)
+2026-08-03 23:51:30,396 [INFO]    [ 25] jillian.johnson@sanfordhealth.org             Sanford Health (USA)
+2026-08-03 23:51:30,397 [INFO]    [ 25] chelsey.kralicek@sanfordhealth.org            Sanford Health (USA)
+2026-08-03 23:51:30,397 [INFO]    [ 25] nathan.aamodt@sanfordhealth.org               Sanford Health (USA)
+2026-08-03 23:51:30,397 [INFO]    [ 25] jon.berg@sanfordhealth.org                    Sanford Health (USA)
+2026-08-03 23:51:30,400 [INFO] =================================================================
+2026-08-03 23:51:30,402 [INFO] 
+📂 Output folder: C:\Users\DeLL\CARECALCULUS\hospital_emails

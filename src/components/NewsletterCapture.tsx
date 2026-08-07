@@ -160,7 +160,9 @@ export default function NewsletterCapture({ lang }: NewsletterCaptureProps) {
 
               <form onSubmit={handleSubmit} className="flex items-center gap-2 flex-wrap sm:flex-nowrap">
                 <div className="flex-1 min-w-0">
+                  <label htmlFor="newsletter-email" className="sr-only">{t.placeholder}</label>
                   <input
+                    id="newsletter-email"
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}

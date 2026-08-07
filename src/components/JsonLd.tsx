@@ -26,10 +26,9 @@ export function JsonLd({ data, path, title, description, type }: JsonLdProps) {
   );
 }
 
-// Helper function to generate MedicalOrganization schema
+// Helper function to generate MedicalOrganization schema (no @context — used as nested publisher object)
 export function generateMedicalOrganizationSchema() {
   return {
-    "@context": "https://schema.org",
     "@type": ["MedicalOrganization", "Organization"],
     "name": "CareCalculus",
     "url": "https://carecalculus.com",
@@ -56,6 +55,29 @@ export function generateMedicalWebPageSchema(title: string, description: string,
     "description": description,
     "url": url,
     "publisher": generateMedicalOrganizationSchema()
+  };
+}
+
+/**
+ * WebSite schema with SearchAction — enables Google Sitelinks Searchbox and
+ * tells AI engines this is a searchable medical tool directory.
+ */
+export function generateWebSiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "CareCalculus",
+    "url": "https://carecalculus.com",
+    "description": "Free evidence-based clinical calculators for ICU, ER, and hospital clinicians. MAP, GCS, BMI, qSOFA, MELD, Wells Score, CHA2DS2-VASc and more.",
+    "publisher": generateMedicalOrganizationSchema(),
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://carecalculus.com/?search={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
   };
 }
 
