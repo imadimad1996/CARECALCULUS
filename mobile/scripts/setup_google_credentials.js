@@ -8,16 +8,31 @@
 const fs = require('fs');
 const path = require('path');
 
+const envFilePath = process.env.GOOGLE_APPLICATION_CREDENTIALS;
 const envKey = process.env.GOOGLE_SERVICE_ACCOUNT_KEY || process.env.GOOGLE_SERVICES_JSON;
 const targetPath = path.join(__dirname, '..', 'pc-api-key.json');
 
+// 1. If GOOGLE_APPLICATION_CREDENTIALS file exists, copy it
+if (envFilePath && fs.existsSync(envFilePath)) {
+  try {
+    const fileContent = fs.readFileSync(envFilePath, 'utf-8');
+    const parsed = JSON.parse(fileContent);
+    fs.writeFileSync(targetPath, JSON.stringify(parsed, null, 2), 'utf-8');
+    console.log(`✅  Successfully initialized Google Play Service Account Key from GOOGLE_APPLICATION_CREDENTIALS (${parsed.client_email})`);
+    process.exit(0);
+  } catch (err) {
+    console.error('❌  Error reading file at GOOGLE_APPLICATION_CREDENTIALS:', err.message);
+  }
+}
+
+// 2. Fallback to GOOGLE_SERVICE_ACCOUNT_KEY / GOOGLE_SERVICES_JSON string
 if (!envKey) {
   console.log('ℹ️  No GOOGLE_SERVICE_ACCOUNT_KEY or GOOGLE_SERVICES_JSON environment variable provided.');
   if (fs.existsSync(targetPath)) {
     console.log('✅  Existing ./pc-api-key.json credential file found.');
     process.exit(0);
   } else {
-    console.warn('⚠️  Warning: ./pc-api-key.json does not exist. Make sure to set GOOGLE_SERVICE_ACCOUNT_KEY env variable before submitting.');
+    console.warn('⚠️  Warning: ./pc-api-key.json does not exist. Set GOOGLE_APPLICATION_CREDENTIALS or GOOGLE_SERVICE_ACCOUNT_KEY before submitting.');
     process.exit(0);
   }
 }
