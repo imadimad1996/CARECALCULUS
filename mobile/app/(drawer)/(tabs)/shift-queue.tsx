@@ -13,6 +13,24 @@ export default function ShiftQueueScreen() {
   const router = useRouter();
   const { records, removeRecord, clearAll } = useQueueStore();
 
+  const handleExportCSV = async () => {
+    if (records.length === 0) return;
+    try {
+      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+    } catch {}
+
+    const headers = "Bed Number,Patient Initials,Calculator,Calculated Score,Interpretation,Timestamp,Unit System\n";
+    const csvRows = records
+      .map(
+        (r) =>
+          `"${r.bedNumber}","${r.patientInitials}","${r.calculatorTitle}","${r.calculatedScore}","${r.interpretation.replace(/"/g, '""')}","${new Date(r.timestamp).toLocaleString()}","${r.unitStandard}"`
+      )
+      .join('\n');
+
+    await Clipboard.setStringAsync(headers + csvRows);
+    Alert.alert('CSV Copied', 'Shift patient records exported as CSV format to clipboard.');
+  };
+
   const handleCopyHandoverDotPhrase = async () => {
     if (records.length === 0) return;
     try {
@@ -45,26 +63,35 @@ export default function ShiftQueueScreen() {
 
       <ScrollView className="flex-1 px-4 pt-4" showsVerticalScrollIndicator={false}>
         {/* Banner */}
-        <View className="bg-brand-950/40 p-4 rounded-2xl border border-brand-700/50 mb-4 flex-row items-center justify-between">
-          <View className="flex-1 pr-2">
-            <View className="flex-row items-center space-x-1.5 mb-1">
+        <View className="bg-brand-950/40 p-4 rounded-2xl border border-brand-700/50 mb-4">
+          <View className="flex-row items-center justify-between mb-2">
+            <View className="flex-row items-center space-x-1.5">
               <Users size={16} color="#14b8a6" />
               <Text className="text-brand-300 text-sm font-bold">Shift Queue (Encrypted SQLite)</Text>
             </View>
-            <Text className="text-slate-400 text-xs leading-4">
-              Local patient score tracker for ICU rounds & shift handoffs. Zero cloud transmission.
-            </Text>
+            {records.length > 0 ? (
+              <View className="flex-row space-x-1.5">
+                <TouchableOpacity
+                  onPress={handleExportCSV}
+                  activeOpacity={0.7}
+                  className="bg-slate-800 border border-slate-700 px-2.5 py-1.5 rounded-xl flex-row items-center space-x-1"
+                >
+                  <Text className="text-brand-400 text-xs font-bold">CSV</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={handleCopyHandoverDotPhrase}
+                  activeOpacity={0.7}
+                  className="bg-brand-600 px-3 py-1.5 rounded-xl flex-row items-center space-x-1"
+                >
+                  <Copy size={12} color="#ffffff" />
+                  <Text className="text-white text-xs font-bold">Handoff</Text>
+                </TouchableOpacity>
+              </View>
+            ) : null}
           </View>
-          {records.length > 0 ? (
-            <TouchableOpacity
-              onPress={handleCopyHandoverDotPhrase}
-              activeOpacity={0.7}
-              className="bg-brand-600 px-3 py-2 rounded-xl flex-row items-center space-x-1"
-            >
-              <Copy size={13} color="#ffffff" />
-              <Text className="text-white text-xs font-bold">Export</Text>
-            </TouchableOpacity>
-          ) : null}
+          <Text className="text-slate-400 text-xs leading-4">
+            Local patient score tracker for ICU rounds & shift handoffs. Zero cloud transmission.
+          </Text>
         </View>
 
         {/* Action Header */}

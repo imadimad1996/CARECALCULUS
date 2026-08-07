@@ -623,3 +623,452 @@ export function calculateNIHSS(input: NIHSSInput): NIHSSResult {
   return { score, strokeSeverity, interpretation, severity };
 }
 
+// 16. APACHE II Score for ICU Mortality
+export interface APACHE2Input {
+  age: number;
+  tempC: number;
+  map: number;
+  hr: number;
+  rr: number;
+  pao2: number;
+  ph: number;
+  na: number;
+  k: number;
+  scr: number;
+  hct: number;
+  wbc: number;
+  gcs: number;
+  chronicOrganFailure: boolean;
+}
+export interface APACHE2Result {
+  score: number;
+  estimatedMortality: string;
+  interpretation: string;
+  severity: 'normal' | 'warning' | 'emergency';
+}
+export function calculateAPACHE2(input: APACHE2Input): APACHE2Result {
+  let score = 0;
+  // Age points
+  if (input.age >= 75) score += 6;
+  else if (input.age >= 65) score += 5;
+  else if (input.age >= 55) score += 3;
+  else if (input.age >= 44) score += 2;
+
+  // GCS points (15 - GCS)
+  score += Math.max(0, 15 - input.gcs);
+
+  // Temp C
+  if (input.tempC >= 41 || input.tempC <= 29.9) score += 4;
+  else if (input.tempC >= 39 || input.tempC <= 31.9) score += 3;
+  else if (input.tempC <= 33.9) score += 2;
+  else if (input.tempC >= 38.5 || input.tempC <= 35.9) score += 1;
+
+  // MAP
+  if (input.map >= 160 || input.map <= 49) score += 4;
+  else if (input.map >= 130) score += 3;
+  else if (input.map >= 110 || input.map <= 69) score += 2;
+
+  // HR
+  if (input.hr >= 180 || input.hr <= 39) score += 4;
+  else if (input.hr >= 140 || input.hr <= 54) score += 3;
+  else if (input.hr >= 110 || input.hr <= 69) score += 2;
+
+  // Chronic Organ Failure
+  if (input.chronicOrganFailure) score += 5;
+
+  let estimatedMortality = '< 4%';
+  let severity: 'normal' | 'warning' | 'emergency' = 'normal';
+
+  if (score >= 35) {
+    estimatedMortality = '> 80%';
+    severity = 'emergency';
+  } else if (score >= 25) {
+    estimatedMortality = '50 - 55%';
+    severity = 'emergency';
+  } else if (score >= 15) {
+    estimatedMortality = '25 - 30%';
+    severity = 'warning';
+  } else if (score >= 10) {
+    estimatedMortality = '10 - 15%';
+    severity = 'normal';
+  }
+
+  const interpretation = `APACHE II Score: ${score} points. Estimated ICU In-Hospital Mortality: ${estimatedMortality}.`;
+  return { score, estimatedMortality, interpretation, severity };
+}
+
+// 17. Parkland Formula for Burn Resuscitation
+export interface ParklandInput {
+  weightKg: number;
+  tbsaPercent: number; // Total Body Surface Area %
+}
+export interface ParklandResult {
+  totalVolumeMl: number;
+  first8HoursMl: number;
+  next16HoursMl: number;
+  hourlyRateFirst8h: number;
+  hourlyRateNext16h: number;
+  interpretation: string;
+  severity: 'normal' | 'warning' | 'emergency';
+}
+export function calculateParkland(input: ParklandInput): ParklandResult {
+  const totalVolumeMl = Math.round(4 * input.weightKg * input.tbsaPercent);
+  const first8HoursMl = Math.round(totalVolumeMl / 2);
+  const next16HoursMl = Math.round(totalVolumeMl / 2);
+  const hourlyRateFirst8h = Math.round(first8HoursMl / 8);
+  const hourlyRateNext16h = Math.round(next16HoursMl / 16);
+
+  const severity = input.tbsaPercent >= 20 ? 'emergency' : input.tbsaPercent >= 10 ? 'warning' : 'normal';
+  const interpretation = `Total 24-hr LR Fluid: ${totalVolumeMl} mL. Give ${first8HoursMl} mL over first 8 hours (${hourlyRateFirst8h} mL/hr) and ${next16HoursMl} mL over remaining 16 hours (${hourlyRateNext16h} mL/hr).`;
+
+  return {
+    totalVolumeMl,
+    first8HoursMl,
+    next16HoursMl,
+    hourlyRateFirst8h,
+    hourlyRateNext16h,
+    interpretation,
+    severity,
+  };
+}
+
+// 18. TIMI Risk Score for NSTEMI / Unstable Angina
+export interface TIMIInput {
+  age65OrOlder: boolean;
+  cadRiskFactors3OrMore: boolean; // HTN, DM, Dyslipidemia, Smoker, FHx
+  knownCadStenosis50Percent: boolean;
+  asaUsePast7Days: boolean;
+  severeAngina24h: boolean;
+  stDeviation05mm: boolean;
+  positiveCardiacMarkers: boolean;
+}
+export interface TIMIResult {
+  score: number;
+  risk14Day: string;
+  interpretation: string;
+  severity: 'normal' | 'warning' | 'emergency';
+}
+export function calculateTIMI(input: TIMIInput): TIMIResult {
+  let score = 0;
+  if (input.age65OrOlder) score++;
+  if (input.cadRiskFactors3OrMore) score++;
+  if (input.knownCadStenosis50Percent) score++;
+  if (input.asaUsePast7Days) score++;
+  if (input.severeAngina24h) score++;
+  if (input.stDeviation05mm) score++;
+  if (input.positiveCardiacMarkers) score++;
+
+  let risk14Day = '4.7%';
+  let severity: 'normal' | 'warning' | 'emergency' = 'normal';
+
+  if (score >= 6) {
+    risk14Day = '40.9%';
+    severity = 'emergency';
+  } else if (score >= 5) {
+    risk14Day = '26.2%';
+    severity = 'emergency';
+  } else if (score >= 3) {
+    risk14Day = '13.2 - 19.9%';
+    severity = 'warning';
+  } else if (score >= 1) {
+    risk14Day = '4.7 - 8.3%';
+  }
+
+  const interpretation = `TIMI Score: ${score}/7. 14-Day Risk of All-Cause Mortality, Severe Ischemia, or Recurrent MI: ${risk14Day}.`;
+  return { score, risk14Day, interpretation, severity };
+}
+
+// 19. Child-Pugh Score for Cirrhosis Mortality
+export interface ChildPughInput {
+  biliMgDl: number;
+  albuminGDl: number;
+  inr: number;
+  ascites: 'none' | 'slight' | 'moderate';
+  encephalopathy: 'none' | 'grade1_2' | 'grade3_4';
+}
+export interface ChildPughResult {
+  score: number;
+  childClass: 'Class A' | 'Class B' | 'Class C';
+  oneYearSurvival: string;
+  twoYearSurvival: string;
+  interpretation: string;
+  severity: 'normal' | 'warning' | 'emergency';
+}
+export function calculateChildPugh(input: ChildPughInput): ChildPughResult {
+  let score = 0;
+
+  // Bilirubin
+  if (input.biliMgDl < 2.0) score += 1;
+  else if (input.biliMgDl <= 3.0) score += 2;
+  else score += 3;
+
+  // Albumin
+  if (input.albuminGDl > 3.5) score += 1;
+  else if (input.albuminGDl >= 2.8) score += 2;
+  else score += 3;
+
+  // INR
+  if (input.inr < 1.7) score += 1;
+  else if (input.inr <= 2.3) score += 2;
+  else score += 3;
+
+  // Ascites
+  if (input.ascites === 'none') score += 1;
+  else if (input.ascites === 'slight') score += 2;
+  else score += 3;
+
+  // Encephalopathy
+  if (input.encephalopathy === 'none') score += 1;
+  else if (input.encephalopathy === 'grade1_2') score += 2;
+  else score += 3;
+
+  let childClass: 'Class A' | 'Class B' | 'Class C' = 'Class A';
+  let oneYearSurvival = '100%';
+  let twoYearSurvival = '85%';
+  let severity: 'normal' | 'warning' | 'emergency' = 'normal';
+
+  if (score >= 10) {
+    childClass = 'Class C';
+    oneYearSurvival = '45%';
+    twoYearSurvival = '35%';
+    severity = 'emergency';
+  } else if (score >= 7) {
+    childClass = 'Class B';
+    oneYearSurvival = '80%';
+    twoYearSurvival = '60%';
+    severity = 'warning';
+  }
+
+  const interpretation = `Child-Pugh ${childClass} (${score} Points). 1-Year Survival: ${oneYearSurvival}, 2-Year Survival: ${twoYearSurvival}.`;
+  return { score, childClass, oneYearSurvival, twoYearSurvival, interpretation, severity };
+}
+
+// 20. Modified Centor Score for Strep Pharyngitis
+export interface CentorInput {
+  ageYears: number;
+  tonsillarExudate: boolean;
+  tenderAnteriorCervicalNodes: boolean;
+  feverHistory: boolean; // > 38°C (100.4°F)
+  absenceOfCough: boolean;
+}
+export interface CentorResult {
+  score: number;
+  strepProbability: string;
+  recommendation: string;
+  severity: 'normal' | 'warning' | 'emergency';
+}
+export function calculateCentor(input: CentorInput): CentorResult {
+  let score = 0;
+  if (input.tonsillarExudate) score++;
+  if (input.tenderAnteriorCervicalNodes) score++;
+  if (input.feverHistory) score++;
+  if (input.absenceOfCough) score++;
+
+  if (input.ageYears >= 3 && input.ageYears <= 14) score += 1;
+  else if (input.ageYears >= 45) score -= 1;
+
+  let strepProbability = '< 5%';
+  let recommendation = 'No testing or antibiotic treatment required.';
+  let severity: 'normal' | 'warning' | 'emergency' = 'normal';
+
+  if (score >= 4) {
+    strepProbability = '51 - 53%';
+    recommendation = 'Rapid Strep Test (RADT) or throat culture; initiate empiric antibiotic therapy (Amoxicillin/Penicillin).';
+    severity = 'warning';
+  } else if (score >= 2) {
+    strepProbability = '15 - 32%';
+    recommendation = 'Perform Rapid Strep Test (RADT). Treat only if positive.';
+    severity = 'normal';
+  }
+
+  return { score, strepProbability, recommendation, severity };
+}
+
+// 21. PERC Rule for PE Exclusion
+export interface PERCInput {
+  age50OrOlder: boolean;
+  hr100OrHigher: boolean;
+  spo2LessThan95: boolean;
+  priorDvtPe: boolean;
+  recentSurgeryOrTrauma: boolean;
+  hemoptysis: boolean;
+  estrogenUse: boolean;
+  unilateralLegSwelling: boolean;
+}
+export interface PERCResult {
+  score: number;
+  peExcluded: boolean;
+  interpretation: string;
+  severity: 'normal' | 'warning' | 'emergency';
+}
+export function calculatePERC(input: PERCInput): PERCResult {
+  let score = 0;
+  if (input.age50OrOlder) score++;
+  if (input.hr100OrHigher) score++;
+  if (input.spo2LessThan95) score++;
+  if (input.priorDvtPe) score++;
+  if (input.recentSurgeryOrTrauma) score++;
+  if (input.hemoptysis) score++;
+  if (input.estrogenUse) score++;
+  if (input.unilateralLegSwelling) score++;
+
+  const peExcluded = score === 0;
+  const interpretation = peExcluded
+    ? 'PERC Negative (0 Criteria Met): PE effectively ruled out (< 1.8% risk). No D-Dimer or CTPA required.'
+    : `PERC Positive (${score} Criteria Met): PERC rule cannot exclude PE. Proceed with D-Dimer or CTA per clinical algorithm.`;
+
+  return { score, peExcluded, interpretation, severity: peExcluded ? 'normal' : 'warning' };
+}
+
+// 22. Maintenance Fluid Rate (4-2-1 Rule)
+export interface Fluid421Input {
+  weightKg: number;
+}
+export interface Fluid421Result {
+  hourlyRateMl: number;
+  dailyVolumeMl: number;
+  breakdown: string;
+  interpretation: string;
+  severity: 'normal' | 'warning' | 'emergency';
+}
+export function calculateFluid421(input: Fluid421Input): Fluid421Result {
+  const w = input.weightKg;
+  let rate = 0;
+
+  if (w <= 10) {
+    rate = w * 4;
+  } else if (w <= 20) {
+    rate = 40 + (w - 10) * 2;
+  } else {
+    rate = 60 + (w - 20) * 1;
+  }
+
+  const dailyVolumeMl = rate * 24;
+  const breakdown = w > 20 ? `(40 mL for 1st 10kg + 20 mL for 2nd 10kg + ${w - 20} mL for rest)` : `${rate} mL/hr`;
+  const interpretation = `Maintenance IV Fluid Rate: ${rate} mL/hr (${dailyVolumeMl} mL/24 hr). Standard isotonic fluid (e.g. D5 0.45% NS + 20 mEq KCl).`;
+
+  return { hourlyRateMl: rate, dailyVolumeMl, breakdown, interpretation, severity: 'normal' };
+}
+
+// 23. Serum Osmolal Gap Calculator
+export interface OsmolalGapInput {
+  measuredOsm: number; // mOsm/kg
+  na: number; // mEq/L
+  glucoseMgDl: number;
+  bunMgDl: number;
+  ethanolMgDl?: number;
+}
+export interface OsmolalGapResult {
+  calculatedOsm: number;
+  osmolalGap: number;
+  interpretation: string;
+  severity: 'normal' | 'warning' | 'emergency';
+}
+export function calculateOsmolalGap(input: OsmolalGapInput): OsmolalGapResult {
+  const ethanol = input.ethanolMgDl || 0;
+  const calculatedOsm = Math.round(2 * input.na + input.glucoseMgDl / 18 + input.bunMgDl / 2.8 + ethanol / 4.6);
+  const osmolalGap = Math.round(input.measuredOsm - calculatedOsm);
+
+  let interpretation = 'Normal Osmolal Gap (<= 10 mOsm/kg)';
+  let severity: 'normal' | 'warning' | 'emergency' = 'normal';
+
+  if (osmolalGap > 10) {
+    interpretation = `High Osmolal Gap (${osmolalGap} mOsm/kg > 10). High suspicion for toxic alcohol ingestion (Methanol, Ethylene Glycol, Isopropanol, or Propylene Glycol). Emergency toxicology evaluation & Fomepizole indicated.`;
+    severity = 'emergency';
+  }
+
+  return { calculatedOsm, osmolalGap, interpretation, severity };
+}
+
+// 24. Framingham 10-Year CVD Risk Score
+export interface FraminghamInput {
+  age: number;
+  totalCholesterolMgDl: number;
+  hdlMgDl: number;
+  sbp: number;
+  onHtnMeds: boolean;
+  smoker: boolean;
+  sex: 'male' | 'female';
+}
+export interface FraminghamResult {
+  riskPercent: string;
+  riskCategory: 'Low Risk' | 'Intermediate Risk' | 'High Risk';
+  interpretation: string;
+  severity: 'normal' | 'warning' | 'emergency';
+}
+export function calculateFramingham(input: FraminghamInput): FraminghamResult {
+  let score = 0;
+  if (input.age >= 70) score += 12;
+  else if (input.age >= 60) score += 9;
+  else if (input.age >= 50) score += 6;
+  else if (input.age >= 40) score += 3;
+
+  if (input.smoker) score += 4;
+  if (input.totalCholesterolMgDl >= 240) score += 3;
+  if (input.hdlMgDl < 40) score += 2;
+  if (input.sbp >= 140) score += (input.onHtnMeds ? 3 : 2);
+
+  let riskPercent = '< 5%';
+  let riskCategory: 'Low Risk' | 'Intermediate Risk' | 'High Risk' = 'Low Risk';
+  let severity: 'normal' | 'warning' | 'emergency' = 'normal';
+
+  if (score >= 12) {
+    riskPercent = '> 20%';
+    riskCategory = 'High Risk';
+    severity = 'warning';
+  } else if (score >= 7) {
+    riskPercent = '10 - 20%';
+    riskCategory = 'Intermediate Risk';
+    severity = 'normal';
+  }
+
+  const interpretation = `Framingham 10-Year Cardiovascular Disease Risk: ${riskPercent} (${riskCategory}).`;
+  return { riskPercent, riskCategory, interpretation, severity };
+}
+
+// 25. Alvarado Score for Acute Appendicitis
+export interface AlvaradoInput {
+  migratoryRifPain: boolean;
+  anorexia: boolean;
+  nauseaVomiting: boolean;
+  tendernessRif: boolean;
+  reboundTenderness: boolean;
+  feverOver373C: boolean;
+  leukocytosisOver10k: boolean;
+  shiftToLeftWbc: boolean;
+}
+export interface AlvaradoResult {
+  score: number;
+  likelihood: string;
+  recommendation: string;
+  severity: 'normal' | 'warning' | 'emergency';
+}
+export function calculateAlvarado(input: AlvaradoInput): AlvaradoResult {
+  let score = 0;
+  if (input.migratoryRifPain) score += 1;
+  if (input.anorexia) score += 1;
+  if (input.nauseaVomiting) score += 1;
+  if (input.tendernessRif) score += 2;
+  if (input.reboundTenderness) score += 1;
+  if (input.feverOver373C) score += 1;
+  if (input.leukocytosisOver10k) score += 2;
+  if (input.shiftToLeftWbc) score += 1;
+
+  let likelihood = 'Low Likelihood (0 - 4)';
+  let recommendation = 'Appendicitis unlikely. Consider alternative diagnoses or discharge with return precautions.';
+  let severity: 'normal' | 'warning' | 'emergency' = 'normal';
+
+  if (score >= 7) {
+    likelihood = 'High Likelihood / Probable Appendicitis (7 - 10)';
+    recommendation = 'Urgent surgical consultation & abdominal CT/Ultrasound imaging.';
+    severity = 'emergency';
+  } else if (score >= 5) {
+    likelihood = 'Equivocal / Possible Appendicitis (5 - 6)';
+    recommendation = 'Observation, serial abdominal exams, and diagnostic imaging recommended.';
+    severity = 'warning';
+  }
+
+  return { score, likelihood, recommendation, severity };
+}
+
+
