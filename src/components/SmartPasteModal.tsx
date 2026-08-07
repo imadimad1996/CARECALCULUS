@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Sparkles, ClipboardPaste, Check, X, AlertCircle, FileText, ArrowRight } from 'lucide-react';
 import { parseLabText, saveParsedLabs, getParsedLabs, clearParsedLabs, ParsedLabPanel } from '../utils/labParser';
 import { LangCode } from '../types';
@@ -138,10 +139,17 @@ export default function SmartPasteModal({ lang = 'en' }: SmartPasteModalProps) {
         )}
       </div>
 
-      {/* Modal Dialog */}
-      {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200" dir={isRtl ? 'rtl' : 'ltr'}>
-          <div className="relative w-full max-w-2xl bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 overflow-hidden flex flex-col max-h-[90vh]">
+      {/* Modal Dialog rendered into document.body portal */}
+      {isOpen && createPortal(
+        <div 
+          className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-md animate-in fade-in duration-200" 
+          dir={isRtl ? 'rtl' : 'ltr'}
+          onClick={() => setIsOpen(false)}
+        >
+          <div 
+            className="relative w-full max-w-2xl bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 overflow-hidden flex flex-col max-h-[90vh]"
+            onClick={(e) => e.stopPropagation()}
+          >
             
             {/* Header */}
             <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800 bg-gradient-to-r from-emerald-500/5 via-teal-500/5 to-transparent">
@@ -334,7 +342,8 @@ export default function SmartPasteModal({ lang = 'en' }: SmartPasteModalProps) {
             </div>
 
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );
