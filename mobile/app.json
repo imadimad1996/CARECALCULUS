@@ -16,7 +16,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.carecalculus.app",
+      "bundleIdentifier": "com.carecalculus",
       "infoPlist": {
         "UIBackgroundModes": [
           "remote-notification"
@@ -28,7 +28,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#0b1329"
       },
-      "package": "com.carecalculus.app",
+      "package": "com.carecalculus",
       "versionCode": 2,
       "permissions": [
         "VIBRATE",
