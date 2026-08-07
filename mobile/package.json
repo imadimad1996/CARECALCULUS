@@ -7,10 +7,10 @@
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web",
-    "build:aab": "eas build --platform android --profile production",
-    "build:apk": "eas build --platform android --profile preview",
-    "submit:internal": "node scripts/setup_google_credentials.js && eas submit --platform android --profile production",
-    "release:internal": "node scripts/setup_google_credentials.js && eas build --platform android --profile production --auto-submit"
+    "build:aab": "npx eas build --platform android --profile production",
+    "build:apk": "npx eas build --platform android --profile preview",
+    "submit:internal": "node scripts/setup_google_credentials.js && npx eas submit --platform android --profile production",
+    "release:internal": "node scripts/setup_google_credentials.js && npx eas build --platform android --profile production --auto-submit"
   },
   "dependencies": {
     "@expo/metro-runtime": "~3.2.3",
