@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { useNavigate } from 'react-router-dom';
 import { Search, X, Calculator, BookOpen, Sparkles, Command, ArrowRight, Activity, FileText } from 'lucide-react';
 import { LangCode } from '../types';
@@ -92,10 +93,14 @@ export default function CommandPalette({ isOpen, onClose, lang }: CommandPalette
 
   if (!isOpen) return null;
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center pt-16 sm:pt-24 px-4 bg-gray-950/60 backdrop-blur-md transition-opacity">
+  return createPortal(
+    <div 
+      className="fixed inset-0 z-[9999] flex items-start justify-center pt-12 sm:pt-20 px-4 bg-slate-950/70 backdrop-blur-md transition-opacity"
+      onClick={onClose}
+    >
       <div 
         className="w-full max-w-2xl bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 overflow-hidden flex flex-col max-h-[80vh] transition-all transform animate-in fade-in zoom-in-95 duration-150"
+        onClick={(e) => e.stopPropagation()}
         onKeyDown={handleKeyDown}
       >
         {/* Header Search Input */}
@@ -182,6 +187,7 @@ export default function CommandPalette({ isOpen, onClose, lang }: CommandPalette
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
