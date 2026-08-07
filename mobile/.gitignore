@@ -1,0 +1,13 @@
+# Expo & React Native
+node_modules/
+.expo/
+dist/
+web-build/
+
+# Temporary rendering assets
+scripts/temp_render/
+
+# Environment and logs
+*.log
+.env*
+!.env.example
