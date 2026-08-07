@@ -307,9 +307,23 @@ export default function CalculatorDetailScreen() {
     dotPhrase = `.MAP: ${res.map} mmHg`;
   }
 
+  const isPro = useAppStore((state) => state.isPro);
+  const records = useQueueStore((state) => state.records);
+
   const handleSaveToQueue = async () => {
     if (!bedNum || !initials) {
       Alert.alert('Bed & Initials Required', 'Please enter Bed Number and Patient Initials to add to Shift Queue.');
+      return;
+    }
+    if (!isPro && records.length >= 5) {
+      Alert.alert(
+        'CareCalculus Pro Pass Required',
+        'Free tier is limited to 5 active shift queue records. Upgrade to Pro for unlimited offline patient logging.',
+        [
+          { text: 'Cancel', style: 'cancel' },
+          { text: 'Upgrade to Pro', onPress: () => router.push('/pricing') },
+        ]
+      );
       return;
     }
     const success = await addRecord({

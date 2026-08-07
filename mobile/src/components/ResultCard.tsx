@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
+import Animated, { FadeInDown, ZoomIn } from 'react-native-reanimated';
 import * as Clipboard from 'expo-clipboard';
 import * as Haptics from 'expo-haptics';
 import { Copy, Check, ShieldAlert, BookOpen, UserPlus } from 'lucide-react-native';
@@ -50,7 +51,7 @@ export const ResultCard: React.FC<Props> = ({
   };
 
   return (
-    <View className={`p-5 rounded-2xl border ${severityBg} mb-5 shadow-lg`}>
+    <Animated.View entering={FadeInDown.duration(400).springify()} className={`p-5 rounded-2xl border ${severityBg} mb-5 shadow-lg`}>
       {/* Score Header */}
       <View className="flex-row items-center justify-between mb-2">
         <Text className="text-slate-300 text-xs font-semibold uppercase tracking-wider">
@@ -114,6 +115,6 @@ export const ResultCard: React.FC<Props> = ({
           </TouchableOpacity>
         ) : null}
       </View>
-    </View>
+    </Animated.View>
   );
 };
