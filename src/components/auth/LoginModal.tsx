@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { X, LogIn, Mail } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
 
@@ -64,8 +65,8 @@ export const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
     }
   };
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
+  return createPortal(
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
       <div className="relative w-full max-w-md p-6 bg-white rounded-2xl shadow-xl dark:bg-slate-800 max-h-[90vh] overflow-y-auto">
         <button
           onClick={onClose}
@@ -176,6 +177,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };

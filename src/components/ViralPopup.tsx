@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Share2, X, Users, HeartPulse } from 'lucide-react';
 
 export default function ViralPopup() {
@@ -38,13 +39,19 @@ export default function ViralPopup() {
     handleDismiss();
   };
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 backdrop-blur-sm p-4">
-      <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full overflow-y-auto max-h-[90vh] animate-in fade-in zoom-in duration-300">
+  return createPortal(
+    <div 
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-slate-950/70 backdrop-blur-md p-4 animate-in fade-in duration-200"
+      onClick={handleDismiss}
+    >
+      <div 
+        className="bg-white rounded-3xl shadow-2xl max-w-md w-full overflow-y-auto max-h-[90vh] animate-in fade-in zoom-in duration-300"
+        onClick={(e) => e.stopPropagation()}
+      >
         <div className="bg-gradient-to-r from-teal-500 to-emerald-500 p-6 text-white text-center relative">
           <button 
             onClick={handleDismiss}
-            className="absolute top-4 right-4 p-1.5 bg-white/10 hover:bg-white/20 rounded-full transition"
+            className="absolute top-4 right-4 p-1.5 bg-white/10 hover:bg-white/20 rounded-full transition cursor-pointer"
           >
             <X className="w-4 h-4" />
           </button>
@@ -60,7 +67,7 @@ export default function ViralPopup() {
         <div className="p-6 space-y-4">
           <button 
             onClick={handleShareWhatsApp}
-            className="w-full flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#1EBE5D] text-white py-4 rounded-2xl font-bold text-lg shadow-lg shadow-green-500/20 transition-all active:scale-95"
+            className="w-full flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#1EBE5D] text-white py-4 rounded-2xl font-bold text-lg shadow-lg shadow-green-500/20 transition-all active:scale-95 cursor-pointer"
           >
             <Users className="w-6 h-6" />
             Share to WhatsApp Group
@@ -68,12 +75,13 @@ export default function ViralPopup() {
           
           <button 
             onClick={handleDismiss}
-            className="w-full py-3 text-slate-400 hover:text-slate-600 text-sm font-semibold transition"
+            className="w-full py-3 text-slate-400 hover:text-slate-600 text-sm font-semibold transition cursor-pointer"
           >
             Maybe later
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

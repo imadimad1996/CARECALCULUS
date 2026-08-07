@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { X, Mail, Check, AlertCircle, HeartPulse } from 'lucide-react';
 import { LangCode } from '../types';
 
@@ -52,8 +53,7 @@ export default function ContactModal({ isOpen, onClose, lang = 'en' }: ContactMo
       }, 2000);
     } catch (err) {
       setIsSubmitting(false);
-      setSuccess(true); // Graceful fallback
-      onClose();
+      setError(lang === 'fr' ? 'Une erreur est survenue.' : 'An error occurred.');
     }
   };
 
@@ -96,18 +96,20 @@ export default function ContactModal({ isOpen, onClose, lang = 'en' }: ContactMo
 
   const dict = t[lang] || t.en;
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+  return createPortal(
+    <div 
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-md animate-in fade-in duration-200"
+      onClick={onClose}
+    >
       <div 
         className="relative w-full max-w-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl shadow-2xl overflow-y-auto max-h-[90vh] animate-in fade-in zoom-in-95 duration-200"
         role="dialog"
         aria-modal="true"
         aria-labelledby="contact-modal-title"
+        onClick={(e) => e.stopPropagation()}
       >
-        {/* Decorative lighting effect */}
         <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-teal-500 via-cyan-500 to-blue-500" />
         
-        {/* Header */}
         <div className="px-6 pt-7 pb-4 flex items-center justify-between">
           <div className="flex items-center gap-2 text-teal-600 dark:text-teal-400">
             <HeartPulse className="w-5 h-5 shrink-0" />
@@ -125,16 +127,10 @@ export default function ContactModal({ isOpen, onClose, lang = 'en' }: ContactMo
           </button>
         </div>
 
-        {/* Form Body */}
         <form onSubmit={handleSubmit} className="px-6 pb-7 space-y-4">
           <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
             {dict.sub}
           </p>
-
-          <div className="p-3 bg-teal-50 dark:bg-teal-950/40 border border-teal-200 dark:border-teal-900/50 rounded-2xl flex items-center justify-between text-xs text-teal-800 dark:text-teal-300 font-medium">
-            <span className="flex items-center gap-1.5"><Mail className="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0" /> Direct Email Support:</span>
-            <a href="mailto:support@carecalculus.com" className="font-bold underline hover:text-teal-900 dark:hover:text-white">support@carecalculus.com</a>
-          </div>
 
           {error && (
             <div className="p-3.5 bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-900/50 rounded-2xl flex items-center gap-2.5 text-xs text-red-700 dark:text-red-300 font-semibold animate-shake">
@@ -150,7 +146,6 @@ export default function ContactModal({ isOpen, onClose, lang = 'en' }: ContactMo
             </div>
           )}
 
-          {/* Subject Selector */}
           <div className="space-y-1.5">
             <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
               {dict.subjectLabel}
@@ -170,7 +165,6 @@ export default function ContactModal({ isOpen, onClose, lang = 'en' }: ContactMo
             </select>
           </div>
 
-          {/* Email Input */}
           <div className="space-y-1.5">
             <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
               {dict.emailLabel}
@@ -189,7 +183,6 @@ export default function ContactModal({ isOpen, onClose, lang = 'en' }: ContactMo
             </div>
           </div>
 
-          {/* Message Textarea */}
           <div className="space-y-1.5">
             <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
               {dict.msgLabel}
@@ -204,7 +197,6 @@ export default function ContactModal({ isOpen, onClose, lang = 'en' }: ContactMo
             />
           </div>
 
-          {/* Submit Action */}
           <button
             type="submit"
             disabled={isSubmitting || success}
@@ -215,6 +207,7 @@ export default function ContactModal({ isOpen, onClose, lang = 'en' }: ContactMo
           </button>
         </form>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

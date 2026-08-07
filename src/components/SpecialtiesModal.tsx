@@ -1,4 +1,5 @@
 import React from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import { X, Layers, ChevronRight, Sparkles, ArrowRight } from 'lucide-react';
 import { SPECIALTIES_DB } from '../data/specialties';
@@ -15,8 +16,11 @@ interface SpecialtiesModalProps {
 export function SpecialtiesModal({ isOpen, onClose, lang, langPath }: SpecialtiesModalProps) {
   if (!isOpen) return null;
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-md animate-in fade-in duration-200">
+  return createPortal(
+    <div 
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-md animate-in fade-in duration-200"
+      onClick={onClose}
+    >
       <div 
         className="relative w-full max-w-4xl max-h-[85vh] bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden flex flex-col"
         onClick={(e) => e.stopPropagation()}
@@ -24,7 +28,7 @@ export function SpecialtiesModal({ isOpen, onClose, lang, langPath }: Specialtie
         {/* Modal Header */}
         <div className="flex items-center justify-between p-6 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50">
           <div className="flex items-center gap-3">
-            <div className="p-3 min-h-[44px] min-w-[44px].5 rounded-xl bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400">
+            <div className="p-3 min-h-[44px] min-w-[44px] rounded-xl bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400">
               <Layers className="w-5 h-5" />
             </div>
             <div>
@@ -131,6 +135,7 @@ export function SpecialtiesModal({ isOpen, onClose, lang, langPath }: Specialtie
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

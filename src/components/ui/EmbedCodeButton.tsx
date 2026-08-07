@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Code, Check, X } from 'lucide-react';
 import { LangCode } from '../../types';
 
@@ -43,8 +44,8 @@ export default function EmbedCodeButton({ calculatorSlug, lang, title }: EmbedCo
         {buttonText}
       </button>
 
-      {isOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-gray-900/40 backdrop-blur-sm" dir={isRtl ? 'rtl' : 'ltr'}>
+      {isOpen && createPortal(
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-gray-900/40 backdrop-blur-sm" dir={isRtl ? 'rtl' : 'ltr'}>
           <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg border border-gray-100 overflow-hidden" onClick={e => e.stopPropagation()}>
             <div className="flex items-center justify-between p-4 border-b border-gray-100 bg-gray-50/50">
               <h3 className="font-bold text-gray-900 flex items-center gap-2">
@@ -101,7 +102,8 @@ export default function EmbedCodeButton({ calculatorSlug, lang, title }: EmbedCo
               </div>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );

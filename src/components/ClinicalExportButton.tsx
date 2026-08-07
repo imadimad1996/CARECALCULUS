@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
+import { createPortal } from 'react-dom';
 import { Printer, Copy, Check, FileText, X, User, Calendar, FileDown, Lock, Share2, ArrowUpRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { LangCode } from '../types';
@@ -506,18 +507,19 @@ ${divider}`;
 
       </div>
 
-      {/* Interactive AnimatePresence modal rendering */}
-      <AnimatePresence>
-        {isOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-            {/* Modal backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-slate-950/80 backdrop-blur-md cursor-pointer"
-              onClick={handleClose}
-            />
+      {/* Interactive AnimatePresence modal rendering via createPortal */}
+      {createPortal(
+        <AnimatePresence>
+          {isOpen && (
+            <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
+              {/* Modal backdrop */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 bg-slate-950/80 backdrop-blur-md cursor-pointer"
+                onClick={handleClose}
+              />
 
             {/* Modal console box */}
             <motion.div
@@ -701,7 +703,9 @@ ${divider}`;
               </motion.div>
             </div>
           )}
-        </AnimatePresence>
-      </>
-    );
-  }
+        </AnimatePresence>,
+        document.body
+      )}
+    </>
+  );
+}

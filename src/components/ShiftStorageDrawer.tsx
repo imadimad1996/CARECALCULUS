@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { ClipboardList, Trash2, Copy, Check, X, Clock, UserCheck, Sparkles, Lock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -93,9 +94,15 @@ export const ShiftStorageDrawer: React.FC<{ isOpen: boolean; onClose: () => void
 
   if (!isOpen) return null;
 
-  return (
-    <div className="fixed inset-0 z-50 flex justify-end bg-slate-950/60 backdrop-blur-sm transition-all">
-      <div className="w-full max-w-md bg-slate-900 border-l border-slate-800 text-white h-full flex flex-col shadow-2xl p-6 overflow-hidden animate-in slide-in-from-right">
+  return createPortal(
+    <div 
+      className="fixed inset-0 z-[9999] flex justify-end bg-slate-950/70 backdrop-blur-md transition-all"
+      onClick={onClose}
+    >
+      <div 
+        className="w-full max-w-md bg-slate-900 border-l border-slate-800 text-white h-full flex flex-col shadow-2xl p-6 overflow-hidden animate-in slide-in-from-right"
+        onClick={(e) => e.stopPropagation()}
+      >
         
         {/* Header */}
         <div className="flex items-center justify-between pb-4 border-b border-slate-800">
@@ -124,28 +131,31 @@ export const ShiftStorageDrawer: React.FC<{ isOpen: boolean; onClose: () => void
               <p className="text-xs mt-1 text-slate-600">Calculations exported using the Export button automatically log here.</p>
             </div>
           ) : (
-            records.map((rec) => (
-              <div key={rec.id} className="p-4 rounded-2xl bg-slate-800/60 border border-slate-700/60 flex flex-col gap-2">
-                <div className="flex items-center justify-between text-xs">
-                  <span className="font-mono font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
-                    {rec.patientId || 'Ref #' + rec.id.slice(-4)}
+            records.map((r, i) => (
+              <div key={r.id} className="p-3.5 bg-slate-800/60 rounded-xl border border-slate-700/60 space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold text-teal-400">
+                    Patient #{i + 1} ({r.patientId || 'Unassigned'})
                   </span>
-                  <span className="text-slate-400 flex items-center gap-1 text-[11px]">
-                    <Clock className="w-3 h-3" /> {rec.timestamp}
+                  <span className="text-[10px] text-slate-400 flex items-center gap-1 font-mono">
+                    <Clock className="w-3 h-3" /> {r.timestamp}
                   </span>
                 </div>
-                <div className="flex items-baseline justify-between mt-1">
-                  <span className="font-bold text-sm text-slate-100">{rec.calculatorName}</span>
-                  <span className="text-xs font-semibold text-slate-300">Score: {rec.score}</span>
+                <div className="text-xs text-slate-200">
+                  <span className="font-semibold">{r.calculatorName}:</span> {r.score}
+                  {r.riskLevel && (
+                    <span className="ml-2 px-1.5 py-0.5 rounded text-[10px] font-mono bg-teal-500/20 text-teal-300 border border-teal-500/30">
+                      {r.riskLevel}
+                    </span>
+                  )}
                 </div>
-                <div className="flex items-center justify-between pt-2 border-t border-slate-700/50 mt-1">
-                  <span className="text-xs text-amber-400 font-medium">{rec.riskLevel}</span>
+                <div className="pt-2 flex justify-end">
                   <button
-                    onClick={() => handleCopySingle(rec.id, rec.formattedNote)}
-                    className="text-xs text-slate-300 hover:text-white flex items-center gap-1 font-semibold transition cursor-pointer"
+                    onClick={() => handleCopySingle(r.id, r.formattedNote)}
+                    className="text-[11px] text-teal-400 hover:text-teal-300 font-medium flex items-center gap-1 cursor-pointer"
                   >
-                    {copiedId === rec.id ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
-                    <span>{copiedId === rec.id ? 'Copied' : 'Copy Note'}</span>
+                    {copiedId === r.id ? <Check className="w-3 h-3" /> : <Copy className="w-3 h-3" />}
+                    <span>{copiedId === r.id ? 'Copied Note' : 'Copy Note'}</span>
                   </button>
                 </div>
               </div>
@@ -195,6 +205,7 @@ export const ShiftStorageDrawer: React.FC<{ isOpen: boolean; onClose: () => void
         )}
 
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
