@@ -7,7 +7,10 @@ web-build/
 # Temporary rendering assets
 scripts/temp_render/
 
-# Environment and logs
+# Environment, secrets, and credentials
 *.log
 .env*
 !.env.example
+pc-api-key.json
+*.json.key
+
