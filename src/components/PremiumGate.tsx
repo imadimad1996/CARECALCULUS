@@ -3,6 +3,7 @@ import { Lock, FileText, Download, Bell, Sparkles, CheckCircle2, ArrowRight, Shi
 import { LangCode } from '../types';
 import { isProActive } from '../utils/pro';
 import { useNavigate } from 'react-router-dom';
+import { trackPremiumGateView, trackPremiumUpgradeClick } from '../utils/telemetry';
 
 interface PremiumGateProps {
   featureName: string;
@@ -15,11 +16,18 @@ export default function PremiumGate({ featureName, lang, children }: PremiumGate
   const navigate = useNavigate();
   
   useEffect(() => {
-    setIsPro(isProActive());
+    const proStatus = isProActive();
+    setIsPro(proStatus);
+    
+    // Only track the view if they are NOT pro
+    if (!proStatus) {
+      trackPremiumGateView(featureName);
+    }
+    
     const handleStorageChange = () => setIsPro(isProActive());
     window.addEventListener('storage', handleStorageChange);
     return () => window.removeEventListener('storage', handleStorageChange);
-  }, []);
+  }, [featureName]);
   
   if (isPro && children) {
     return <>{children}</>;
@@ -89,7 +97,10 @@ export default function PremiumGate({ featureName, lang, children }: PremiumGate
 
         <div className="w-full max-w-sm flex flex-col items-center">
           <button 
-            onClick={() => navigate('/pricing')}
+            onClick={() => {
+              trackPremiumUpgradeClick(featureName);
+              navigate('/pricing');
+            }}
             className="flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white rounded-xl font-black text-lg transition-all duration-300 shadow-[0_0_30px_rgba(6,182,212,0.4)] hover:shadow-[0_0_40px_rgba(6,182,212,0.6)] active:scale-95 cursor-pointer w-full mb-3 border border-cyan-400/30"
           >
             {text.upgrade}

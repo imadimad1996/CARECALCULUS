@@ -43,6 +43,26 @@ export function trackNewsletterSignup(source: string) {
   }
 }
 
+export function trackPremiumGateView(featureName: string) {
+  console.info(`[Telemetry] Premium Gate Viewed | Feature: ${featureName}`);
+  if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+    (window as any).gtag('event', 'premium_gate_view', {
+      event_category: 'monetization',
+      event_label: featureName
+    });
+  }
+}
+
+export function trackPremiumUpgradeClick(featureName: string) {
+  console.info(`[Telemetry] Premium Upgrade Clicked | Feature: ${featureName}`);
+  if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+    (window as any).gtag('event', 'premium_upgrade_click', {
+      event_category: 'monetization',
+      event_label: featureName
+    });
+  }
+}
+
 export function trackCalculatorResult(calculatorId: string, score: number | string, interpretation: string, lang: string) {
   console.info(`[Telemetry] Calculator Result: ${calculatorId} | Score: ${score} | Lang: ${lang}`);
   if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
