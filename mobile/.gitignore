@@ -12,5 +12,7 @@ scripts/temp_render/
 .env*
 !.env.example
 pc-api-key.json
-*.json.key
-
+# Android build cache
+.gradle/
+android/.gradle/
+android/app/build/

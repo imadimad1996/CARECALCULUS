@@ -1,0 +1,13 @@
+# EAS Build Ignore File - Lightweight fast upload
+.gradle/
+android/.gradle/
+android/build/
+android/app/build/
+android/app/.cxx/
+android/.cxx/
+ios/Pods/
+ios/build/
+*.aab
+*.apk
+carecalculus.aab
+node_modules/
