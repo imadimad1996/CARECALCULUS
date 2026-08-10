@@ -21,11 +21,13 @@ const T = {
     en: { badge: 'Clinical Decision Suite', title: 'Medical Calculators', subtitle: 'Trusted by clinicians worldwide', desc: 'The fastest, most rigorous clinical decision support tools. Designed for the bedside: zero fluff, offline-ready, and strictly aligned with current AHA, KDIGO, and ESPEN guidelines.' },
     fr: { badge: 'Suite de Décision Clinique', title: 'Calculateurs Médicaux', subtitle: 'Utilisé par des cliniciens du monde entier', desc: 'Les outils d\'aide à la décision clinique les plus rapides et rigoureux. Conçus pour le lit du patient : sans fioritures, hors ligne, et strictly alignés sur les recommandations AHA, KDIGO et ESPEN.' },
     es: { badge: 'Suite de Decisión Clínica', title: 'Calculadoras Médicas', subtitle: 'Utilizado por médicos en todo el mundo', desc: 'Herramientas de soporte de decisiones clínicas más rápidas y rigurosas. Diseñadas para la práctica médica: sin rodeos, listas para uso offline y alineadas con guías AHA, KDIGO y ESPEN.' },
+    ar: { badge: 'مجموعة القرار السريري', title: 'الحاسبات الطبية', subtitle: 'موثوق به من قبل الأطباء حول العالم', desc: 'أسرع وأدق أدوات دعم القرار السريري. مصممة للاستخدام بجانب السرير: بدون حشو، تدعم العمل بدون إنترنت، ومتوافقة تماماً مع أحدث إرشادات AHA، KDIGO، و ESPEN.' },
   },
   cta: {
     en: { primary: 'Quick Calculate', secondary: 'Browse Library' },
     fr: { primary: 'Calcul Rapide', secondary: 'Parcourir la bibliothèque' },
     es: { primary: 'Cálculo Rápido', secondary: 'Explorar Biblioteca' },
+    ar: { primary: 'حساب سريع', secondary: 'تصفح المكتبة' },
   },
   tiers: {
     en: {
@@ -42,6 +44,11 @@ const T = {
       t1: { label: 'Urgencias y Cuidados Críticos', desc: '30+ escalas validadas para UCI y urgencias' },
       t2: { label: 'Metabólico y Cardiorrenal', desc: '25+ calculadoras de función orgánica' },
       t3: { label: 'Terapéutica y Dosificación', desc: '30+ herramientas farmacológicas y métricas' },
+    },
+    ar: {
+      t1: { label: 'الطوارئ والرعاية الحرجة', desc: 'أكثر من 30 أداة تقييم معتمدة للعناية المركزة والطوارئ' },
+      t2: { label: 'الاضطرابات الأيضية والقلبية الكلوية', desc: 'أكثر من 25 حاسبة لوظائف الأعضاء والقلب والكلى' },
+      t3: { label: 'الجرعات العلاجية والمقاييس الدوائية', desc: 'أكثر من 30 أداة للمقاييس الدوائية والبدنية' },
     },
   },
   stats: {
@@ -63,16 +70,24 @@ const T = {
       { value: '100%', label: 'Revisado por Expertos' },
       { value: 'E-E-A-T', label: 'Conforme a Guías Clínicas' },
     ],
+    ar: [
+      { value: '50K+', label: 'قرارات سريرية / شهر' },
+      { value: '4', label: 'لغات مدعومة' },
+      { value: '100%', label: 'تمت المراجعة بواسطة خبراء' },
+      { value: 'E-E-A-T', label: 'متوافق مع الإرشادات السريرية' },
+    ],
   },
   search: {
     en: 'Search calculators, clinical scores & ICU reference...',
     fr: 'Rechercher un calculateur, score ou fiche clinique...',
     es: 'Buscar calculadoras, escalas clínicas y referencia UCI...',
+    ar: 'ابحث عن الحاسبات، التقييمات السريرية والمراجع...',
   },
   trust: {
     en: 'All tools are validated against peer-reviewed literature (AHA, ESC, CDC, SFAR, NIH) and aligned with international clinical guidelines.',
     fr: 'Tous les outils sont validés selon la littérature médicale révisée (AHA, ESC, HAS, SFMU, NIH) et alignés avec les recommandations internationales.',
     es: 'Todas las herramientas están validadas con literatura médica revisada por pares (AHA, ESC, CDC, NIH) y alineadas con guías internacionales.',
+    ar: 'جميع الأدوات معتمدة بناءً على الدراسات الطبية المراجعة (AHA, ESC, CDC, NIH) ومتوافقة مع الإرشادات السريرية الدولية.',
   },
 };
 
@@ -182,17 +197,21 @@ export default function HomePage({ lang }: HomePageProps) {
     activeSpecialty === 'all' || calc.specialties.includes(activeSpecialty)
   );
 
-  const hero = T.hero[lang];
-  const cta = T.cta[lang];
-  const searchPlaceholder = T.search[lang];
-  const tiers = T.tiers[lang];
-  const stats = T.stats[lang];
-  const popular = {
-    en: { label: 'Popular:', items: [{ name: 'MAP', path: '/map-calculator' }, { name: 'GCS', path: '/glasgow-coma-scale' }, { name: 'Wells PE', path: '/wells-pe-score' }, { name: 'Creatinine', path: '/creatinine-clearance' }] },
-    fr: { label: 'Populaire :', items: [{ name: 'PAM', path: '/map-calculator' }, { name: 'Glasgow', path: '/glasgow-coma-scale' }, { name: 'Wells EP', path: '/wells-pe-score' }, { name: 'Créatinine', path: '/creatinine-clearance' }] }
-  }[lang];
+  const hero = T.hero[lang] || T.hero.en;
+  const cta = T.cta[lang] || T.cta.en;
+  const searchPlaceholder = T.search[lang] || T.search.en;
+  const tiers = T.tiers[lang] || T.tiers.en;
+  const stats = T.stats[lang] || T.stats.en;
 
-  const bedsideSummary = {
+  const popularOptions = {
+    en: { label: 'Popular:', items: [{ name: 'MAP', path: '/map-calculator' }, { name: 'GCS', path: '/glasgow-coma-scale' }, { name: 'Wells PE', path: '/wells-pe-score' }, { name: 'Creatinine', path: '/creatinine-clearance' }] },
+    fr: { label: 'Populaire :', items: [{ name: 'PAM', path: '/map-calculator' }, { name: 'Glasgow', path: '/glasgow-coma-scale' }, { name: 'Wells EP', path: '/wells-pe-score' }, { name: 'Créatinine', path: '/creatinine-clearance' }] },
+    es: { label: 'Popular:', items: [{ name: 'PAM', path: '/map-calculator' }, { name: 'Glasgow', path: '/glasgow-coma-scale' }, { name: 'Wells EP', path: '/wells-pe-score' }, { name: 'Creatinina', path: '/creatinine-clearance' }] },
+    ar: { label: 'الأكثر استخداماً:', items: [{ name: 'MAP', path: '/map-calculator' }, { name: 'GCS', path: '/glasgow-coma-scale' }, { name: 'Wells PE', path: '/wells-pe-score' }, { name: 'Creatinine', path: '/creatinine-clearance' }] }
+  };
+  const popular = popularOptions[lang as keyof typeof popularOptions] || popularOptions.en;
+
+  const bedsideSummaryOptions = {
     en: {
       badge: 'Evidence-First Design',
       title: 'Built for bedside speed and precision',
@@ -231,8 +250,46 @@ export default function HomePage({ lang }: HomePageProps) {
         '3. Contrôle de version strict sur tous les algorithmes pour garantir la sécurité.'
       ]
     },
-    
-  }[lang];
+    es: {
+      badge: 'Diseño Basado en Evidencia',
+      title: 'Diseñado para velocidad y precisión al lado del paciente',
+      desc: 'Eliminamos lo innecesario. CareCalculus está diseñado para cuidados intensivos y medicina de urgencias donde cada segundo cuenta. Cada fórmula, valor de corte y pauta de dosificación es inmediatamente visible, estrictamente referenciada y adaptada a los datos de su paciente.',
+      chips: [
+        { label: 'PAM / perfusión', path: '/map-calculator' },
+        { label: 'GCS / neuro', path: '/glasgow-coma-scale' },
+        { label: 'qSOFA / sepsis', path: '/qsofa-score' },
+        { label: 'CKD-EPI / riñón', path: '/ckd-epi-gfr' },
+        { label: 'CURB-65 / neumonía', path: '/curb65-score' },
+        { label: 'MELD / hígado', path: '/meld-score' },
+      ],
+      boxBadge: 'Rigor Clínico',
+      boxLines: [
+        '1. Validado con ensayos clínicos de referencia (p. ej., Surviving Sepsis, KDIGO).',
+        '2. Soporte multilingüe nativo (EN, FR, ES) para equipos médicos internacionales.',
+        '3. Control estricto de versiones en todos los algoritmos para garantizar la seguridad.'
+      ]
+    },
+    ar: {
+      badge: 'تصميم مبني على الأدلة',
+      title: 'مصمم للسرعة والدقة بجانب المريض',
+      desc: 'نزيل التشتيت تماماً. تم تصميم CareCalculus للعناية المركزة وطب الطوارئ حيث كل ثانية تهم. كل معادلة، قيمة فاصلة، وإرشادات الجرعة مرئية على الفور، وموثقة، وتتكيف تلقائياً مع قياسات مريضك.',
+      chips: [
+        { label: 'MAP / التروية', path: '/map-calculator' },
+        { label: 'GCS / الأعصاب', path: '/glasgow-coma-scale' },
+        { label: 'qSOFA / الإنتان', path: '/qsofa-score' },
+        { label: 'CKD-EPI / الكلى', path: '/ckd-epi-gfr' },
+        { label: 'CURB-65 / الالتهاب الرئوي', path: '/curb65-score' },
+        { label: 'MELD / الكبد', path: '/meld-score' },
+      ],
+      boxBadge: 'الصرامة السريرية',
+      boxLines: [
+        '1. تم التحقق منها باستخدام التجارب السريرية الرئيسية (مثل Surviving Sepsis, KDIGO).',
+        '2. دعم متعدد اللغات أصلي (EN, FR, ES, AR) للفرق الطبية الدولية.',
+        '3. مراقبة دقيقة لإصدارات الخوارزميات لضمان سلامة الجرعات.'
+      ]
+    }
+  };
+  const bedsideSummary = bedsideSummaryOptions[lang as keyof typeof bedsideSummaryOptions] || bedsideSummaryOptions.en;
 
   const tierLabels = [tiers.t1, tiers.t2, tiers.t3];
 
