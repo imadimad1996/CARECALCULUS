@@ -56,8 +56,6 @@ const pageLoaders = [
   () => import('../pages/ForHospitals'),
   () => import('../pages/SpecialtyHub'),
   () => import('../pages/NutritionHub'),
-  () => import('../pages/ClinicalQuestionPage'),
-  () => import('../pages/ProgrammaticGuidePage'),
   () => import('../pages/ParklandFormula'),
   () => import('../pages/FenaCalculator'),
   () => import('../pages/WintersFormula'),
@@ -139,7 +137,6 @@ const [
   FlashcardGenerator, CaseStudyViewer, StudyTracker, DrugSheets, AbbreviationLookup,
   Compare, NutritionTdee, NutritionMust, NutritionNrs2002, ConditionHub,
   MdrdGfr, CkdEpiGfr, EmbedGallery, ForHospitals, SpecialtyHub, NutritionHub,
-  ClinicalQuestionPage, ProgrammaticGuidePage,
   ParklandFormula, FenaCalculator, WintersFormula, HasBledScore,
   CiwaArScore, FreeWaterDeficit, SodiumCorrection,
   HeparinDosing, OpioidConversion, MaintenanceFluids,
@@ -412,11 +409,7 @@ export function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="aa-gradient" element={wrapCalculator('/aa-gradient', <AaGradient lang={lang} />)} />
       <Route path="compare/:slug1-vs-:slug2" element={<Compare lang={lang} />} />
 
-      {/* Clinical Q&A Pages — the 100x SEO multiplier */}
-      <Route path="q/:questionSlug" element={<ClinicalQuestionPage lang={lang} />} />
-      {/* Programmatic SEO Guides */}
-      <Route path="clinical-guide" element={<ProgrammaticGuidePage lang={lang} />} />
-      <Route path="clinical-guide/:guideSlug" element={<ProgrammaticGuidePage lang={lang} />} />
+      {/* Removed Programmatic SEO Guides */}
       <Route path="bishop-score" element={wrapCalculator('/bishop-score', <BishopScore lang={lang} />)} />
       <Route path="centor-score" element={wrapCalculator('/centor-score', <CentorScore lang={lang} />)} />
       <Route path="pediatric-gcs" element={wrapCalculator('/pediatric-gcs', <PediatricGcs lang={lang} />)} />

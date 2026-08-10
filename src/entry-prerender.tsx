@@ -19,9 +19,6 @@ import { slugify } from './utils/slug';
 
 import { CONDITIONS_DB } from './data/conditions';
 import { SPECIALTIES_DB } from './data/specialties';
-import faqDb from './data/faqDb.json';
-import programmaticData from './data/programmaticEngine.json';
-
 let pagesReady: Promise<void> | null = null;
 
 /**
@@ -53,20 +50,6 @@ function slugifyQuestion(question: string): string {
     .slice(0, 80);
 }
 
-const qaSlugs: string[] = [];
-for (const entries of Object.values(faqDb as Record<string, { question: string; answer: string }[]>)) {
-  for (const entry of entries) {
-    const slug = slugifyQuestion(entry.question);
-    if (slug) qaSlugs.push(`/q/${slug}`);
-  }
-}
-
-const programmaticGuideSlugs: string[] = [];
-for (const disease of (programmaticData as any).dataSets.diseases) {
-  for (const calcSlug of disease.relatedCalculators || []) {
-    programmaticGuideSlugs.push(`/clinical-guide/${calcSlug}-in-${disease.slug}`);
-  }
-}
 
 const compareSlugs = [
   '/compare/map-calculator-vs-glasgow-coma-scale',
@@ -126,8 +109,7 @@ const LOGICAL_ROUTES = [
 
   ...conditionSlugs,
   ...specialtySlugs,
-  ...qaSlugs,
-  ...programmaticGuideSlugs,
+
   ...compareSlugs,
 ];
 

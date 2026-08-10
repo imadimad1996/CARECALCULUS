@@ -22,13 +22,8 @@ const OG_IMAGE = 'https://carecalculus.com/og-image.png';
 
 import seoMaps from '../data/seoMaps.json';
 import medicalSchemasRaw from '../data/medicalSchemas.json';
-import faqDbRaw from '../data/faqDb.json';
-import programmaticDataRaw from '../data/programmaticEngine.json';
-
-const programmaticData: any = programmaticDataRaw;
 
 const medicalSchemaDb: Record<string, any> = medicalSchemasRaw;
-const faqSchemaDb: Record<string, { question: string; answer: string }[]> = faqDbRaw;
 export const nameEnMap: Record<string, string> = seoMaps.nameEnMap;
 const nameFrMap: Record<string, string> = seoMaps.nameFrMap;
 const nameArMap: Record<string, string> = seoMaps.nameArMap;
@@ -44,15 +39,7 @@ function slugifyQuestion(question: string): string {
     .slice(0, 80);
 }
 
-export const qaLookup: Record<string, { question: string; answer: string; calcPath: string }> = {};
-for (const [calcPath, entries] of Object.entries(faqSchemaDb)) {
-  for (const entry of entries) {
-    const slug = slugifyQuestion(entry.question);
-    if (slug) {
-      qaLookup[slug] = { ...entry, calcPath };
-    }
-  }
-}
+
 
 export interface RouteMeta {
   title: string;
@@ -144,30 +131,7 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
     };
   }
 
-  if (path.startsWith('/clinical-guide/')) {
-    const guideSlug = path.replace('/clinical-guide/', '');
-    const parts = guideSlug.split('-in-');
-    const calcSlug = parts[0] || '';
-    const diseaseSlug = parts[1] || '';
-    const calcInfo = programmaticData.dataSets.calculators.find((c: any) => c.slug === calcSlug);
-    const diseaseInfo = programmaticData.dataSets.diseases.find((d: any) => d.slug === diseaseSlug);
-    if (calcInfo && diseaseInfo) {
-      const calcTitle = lang === 'fr' ? (nameFrMap[`/${calcSlug}`] || calcInfo.name) : (nameEnMap[`/${calcSlug}`] || calcInfo.name);
-      const diseaseTitle = diseaseInfo.name;
-      if (lang === 'fr') {
-        return {
-          title: `${calcTitle} dans ${diseaseTitle} : Guide & Objectifs | CareCalculus`,
-          desc: `Guide clinique fondé sur des preuves pour l'utilisation de ${calcTitle} dans la prise en charge de ${diseaseTitle}. Seuils quantitatifs, réanimation et intégration DSE.`,
-          keywords: `${calcTitle.toLowerCase()}, ${diseaseTitle.toLowerCase()}, guide clinique, protocoles`,
-        };
-      }
-      return {
-        title: `${calcTitle} in ${diseaseTitle}: Clinical Targets & Management Guide | CareCalculus`,
-        desc: `Evidence-based clinical guide on utilizing the ${calcTitle} in ${diseaseTitle} management. Quantitative targets, physiological interaction, and EHR integration.`,
-        keywords: `${calcTitle.toLowerCase()}, ${diseaseTitle.toLowerCase()}, clinical guide, protocol`,
-      };
-    }
-  }
+
 
   if (path === '/' || path === '/home') {
     if (lang === 'fr') {
@@ -253,18 +217,7 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
     }
   }
 
-  // 8. Q&A Clinical Pages (/q/:slug)
-  if (path.startsWith('/q/')) {
-    const qSlug = path.replace(/^\/q\//, '');
-    const entry = qaLookup[qSlug];
-    if (entry) {
-      return {
-        title: `${entry.question} | CareCalculus`,
-        desc: entry.answer.slice(0, 160),
-        keywords: `${entry.question.toLowerCase().replace(/[^a-z0-9\s]/g, '')}, clinical qa, medical guidance, carecalculus`,
-      };
-    }
-  }
+
 
   const nameEn = nameEnMap[path] || 'Multilingual Care Calculators';
   const nameFr = nameFrMap[path] || 'Calculateur Médical Gratuit';
@@ -565,28 +518,7 @@ const howToSchemaDb: Record<string, { name: string; description: string; steps: 
 };
 
 export function getFaqSchema(path: string) {
-  let faqs = faqSchemaDb[path];
-
-
-  if (!faqs && path.startsWith('/q/')) {
-    const qSlug = path.replace(/^\/q\//, '');
-    const entry = qaLookup[qSlug];
-    if (entry) {
-      const related = (faqSchemaDb[entry.calcPath] || []).filter(e => e.question !== entry.question);
-      faqs = [entry, ...related];
-    }
-  }
-
-  if (!faqs) return null;
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map(faq => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
-    })),
-  };
+  return null;
 }
 
 export function getHowToSchema(path: string) {
@@ -607,7 +539,7 @@ export function getHowToSchema(path: string) {
 }
 
 export function getFaqData(path: string) {
-  return faqSchemaDb[path] ?? null;
+  return null;
 }
 
 /** Full JSON-LD graph (array) for a route. */

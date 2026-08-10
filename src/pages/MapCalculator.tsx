@@ -143,7 +143,7 @@ export default function MapCalculator({ lang }: { lang: LangCode }) {
             {lang === 'fr' ? 'Définition Clinique' : 'Clinical Definition'}
           </h2>
           <p className="text-gray-700 text-sm leading-relaxed">
-            {currentText.faqA1}
+            {currentText.faqs?.[0]?.answer}
           </p>
         </div>
       </div>
@@ -320,18 +320,13 @@ export default function MapCalculator({ lang }: { lang: LangCode }) {
       <div className="mt-0 pt-0 border-t border-gray-100">
         <h2 className="text-xl font-bold text-gray-900 mb-6">{layoutTranslations[lang].faqTitle}</h2>
         <div className="space-y-3">
-          {[
-            { q: currentText.faqQ1, a: currentText.faqA1 },
-            { q: currentText.faqQ2, a: currentText.faqA2 },
-            { q: currentText.faqQ3, a: currentText.faqA3 },
-            { q: currentText.faqQ4, a: currentText.faqA4 },
-          ].map(({ q, a }) => (
-            <details key={q} className="group border border-gray-200 rounded-xl overflow-hidden">
+          {currentText.faqs?.map(({ question, answer }) => (
+            <details key={question} className="group border border-gray-200 rounded-xl overflow-hidden">
               <summary className="flex items-center justify-between px-5 py-4 cursor-pointer list-none font-medium text-gray-800 hover:bg-gray-50 transition-colors">
-                <span className="text-sm">{q}</span>
+                <span className="text-sm">{question}</span>
                 <ChevronDown className="w-4 h-4 text-gray-400 shrink-0 ml-3 group-open:rotate-180 transition-transform" />
               </summary>
-              <p className="px-5 pb-4 text-sm text-gray-600 leading-relaxed">{a}</p>
+              <p className="px-5 pb-4 text-sm text-gray-600 leading-relaxed">{answer}</p>
             </details>
           ))}
         </div>

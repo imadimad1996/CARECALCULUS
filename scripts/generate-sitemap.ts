@@ -15,10 +15,7 @@ import { slugify } from '../src/utils/slug';
 const BASE_URL = 'https://carecalculus.com';
 const OUTPUT_PATH = join(process.cwd(), 'public', 'sitemap.xml');
 
-// Read faqDb to extract all Q&A slugs
-const faqDb = JSON.parse(readFileSync(join(process.cwd(), 'src', 'data', 'faqDb.json'), 'utf-8'));
-// Read programmaticEngine to extract all guides
-const programmaticData = JSON.parse(readFileSync(join(process.cwd(), 'src', 'data', 'programmaticEngine.json'), 'utf-8'));
+// Removed programmatic and FAQ paths
 
 function slugifyQuestion(question: string): string {
   return question
@@ -66,21 +63,7 @@ const comparisonPages = [
 const staticPages = ['/about', '/disclaimer', '/privacy', '/terms', '/glp-1-hub', '/nutrition-hub', '/pricing', '/embed-gallery'];
 
 
-const programmaticGuidePages: string[] = [];
-for (const disease of programmaticData.dataSets.diseases) {
-  for (const calcSlug of disease.relatedCalculators || []) {
-    programmaticGuidePages.push(`/clinical-guide/${calcSlug}-in-${disease.slug}`);
-  }
-}
 
-// Build all Q&A slug pages
-const qaSlugs: string[] = [];
-for (const [, entries] of Object.entries(faqDb) as [string, {question: string}[]][]) {
-  for (const entry of entries) {
-    const slug = slugifyQuestion(entry.question);
-    if (slug) qaSlugs.push(`/q/${slug}`);
-  }
-}
 
 
 const domains = ['https://www.carecalculus.com', 'https://fr.carecalculus.com'] as const;
@@ -141,8 +124,7 @@ ${buildUrls(calculatorPages, '1.0', 'weekly', '0.8')}
 ${buildUrls(conditionPages, '0.8', 'monthly', '0.8')}
 ${buildUrls(specialtyPages, '0.8', 'monthly', '0.8')}
 ${buildUrls(comparisonPages, '0.7', 'monthly', '0.7')}
-${buildUrls(programmaticGuidePages, '0.8', 'weekly', '0.8')}
-${buildUrls(qaSlugs, '0.7', 'weekly', '0.7')}
+
 ${buildUrls(staticPages, '0.5', 'monthly', '0.5')}
 </urlset>`;
 
@@ -154,8 +136,6 @@ const totalUrls = (
   conditionPages.length * 2 +
   specialtyPages.length * 2 +
   comparisonPages.length * 2 +
-  programmaticGuidePages.length * 2 +
-  qaSlugs.length * 2 +
   staticPages.length * 2
 );
 
@@ -165,6 +145,4 @@ console.log(`  - Calculator pages: ${calculatorPages.length * 2}`);
 console.log(`  - Condition pages: ${conditionPages.length * 2}`);
 console.log(`  - Specialty pages: ${specialtyPages.length * 2}`);
   console.log(`  - Comparison pages: ${comparisonPages.length * 2}`);
-  console.log(`  - Clinical Guides: ${programmaticGuidePages.length * 2}`);
-console.log(`  - Clinical Q&A pages: ${qaSlugs.length * 2} (THE 100x MULTIPLIER)`);
 console.log(`  - Static pages: ${staticPages.length * 2}`);

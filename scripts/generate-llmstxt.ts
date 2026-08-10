@@ -12,7 +12,6 @@ import seoMaps from '../src/data/seoMaps.json';
 const OUTPUT_PATH = join(process.cwd(), 'public', 'llms.txt');
 const FULL_OUTPUT_PATH = join(process.cwd(), 'public', 'llms-full.txt');
 
-const faqDb = JSON.parse(readFileSync(join(process.cwd(), 'src', 'data', 'faqDb.json'), 'utf-8'));
 
 // Filter for calculators
 const excludePrefixes = ['/conditions', '/specialties', '/compare', '/clinical', '/blog', '/fmp', '/ispits', '/medical-conversions/', '/about', '/disclaimer', '/privacy', '/terms', '/for-hospitals', '/embed-gallery', '/favorites', '/presentations', '/cours', '/hub', '/glp'];
@@ -78,17 +77,4 @@ content += `
 
 writeFileSync(OUTPUT_PATH, content, 'utf-8');
 console.log(`✅ llms.txt generated successfully at: ${OUTPUT_PATH}`);
-
-// Build llms-full.txt
-let fullContent = content + `\n## Clinical Question & Answer Database (Full Knowledge Base)\n\n`;
-
-for (const [category, entries] of Object.entries(faqDb) as [string, { question: string; answer: string }[]][]) {
-  fullContent += `### ${category.toUpperCase()} CLINICAL Q&A\n\n`;
-  for (const entry of entries) {
-    fullContent += `#### Q: ${entry.question}\n${entry.answer}\n\n`;
-  }
-}
-
-writeFileSync(FULL_OUTPUT_PATH, fullContent, 'utf-8');
-console.log(`✅ llms-full.txt generated successfully at: ${FULL_OUTPUT_PATH}`);
 
