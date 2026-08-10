@@ -138,7 +138,7 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
   if (path === '/' || path === '/home') {
     if (lang === 'fr') {
       return {
-        title: 'CareCalculus | Calculateurs Médicaux Gratuits en Français, Anglais et Arabe',
+        title: 'CareCalculus | Calculateurs Médicaux Gratuits en Français, Anglais et Espagnol',
         desc: 'CareCalculus est une suite gratuite de calculateurs cliniques multilingues pour les soins intensifs, les urgences, la médecine interne, la pharmacologie, la nutrition et l’enseignement médical. Utilisez des outils validés pour MAP, GCS, qSOFA, CURB-65, CKD-EPI, MELD, IMC et plus encore.',
         keywords: 'calculateurs médicaux, scores cliniques, calculateur réanimation, calculateur urgences, outil dosage, outils médicaux multilingues',
       };

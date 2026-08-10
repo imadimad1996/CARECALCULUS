@@ -7,7 +7,8 @@ export default function EvidencePanel({ lang, references }: { lang: LangCode, re
   
   const title = {
     en: 'Evidence & Literature',
-    fr: 'Preuves & Littérature'
+    fr: 'Preuves & Littérature',
+    es: 'Evidencia y Literatura'
   };
 
   if (!references || references.length === 0) return null;
@@ -16,7 +17,7 @@ export default function EvidencePanel({ lang, references }: { lang: LangCode, re
     <div className="mt-8 bg-slate-50/50 border border-slate-200/60 rounded-2xl p-6 shadow-sm" dir={isRtl ? 'rtl' : 'ltr'}>
       <h3 className="text-sm font-bold text-slate-800 flex items-center gap-2 mb-4">
         <BookOpen className="w-4 h-4 text-slate-500" />
-        {title[lang]}
+        {title[lang] || title.en}
       </h3>
       <ul className="space-y-3">
         {references.map((ref, idx) => (

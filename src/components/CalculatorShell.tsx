@@ -78,6 +78,7 @@ function cleanName(raw: string): string {
 
 function getCalculatorName(path: string, lang: LangCode): string {
   if (lang === 'fr') return cleanName(nameFrMap[path] || path.substring(1));
+  if (lang === 'es') return cleanName(nameEsMap[path] || nameEnMap[path] || path.substring(1));
   return cleanName(nameEnMap[path] || path.substring(1));
 }
 

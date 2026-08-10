@@ -7,18 +7,20 @@ export default function ReviewBadge({ lang }: { lang: LangCode }) {
   
   const text = {
     en: 'Reviewed by CareCalculus Clinical Board',
-    fr: 'Validé par le Comité Clinique CareCalculus'
+    fr: 'Validé par le Comité Clinique CareCalculus',
+    es: 'Revisado por el Comité Clínico CareCalculus'
   };
 
   const dateText = {
     en: 'Updated: July 2026',
-    fr: 'Mis à jour : Juillet 2026'
+    fr: 'Mis à jour : Juillet 2026',
+    es: 'Actualizado: Julio 2026'
   };
 
   return (
     <div className="flex items-center gap-2 bg-emerald-50/50 border border-emerald-100 px-3 py-1.5 rounded-full mt-4 w-fit shadow-sm" dir={isRtl ? 'rtl' : 'ltr'}>
       <ShieldCheck className="w-4 h-4 text-emerald-600" />
-      <span className="text-xs font-semibold text-emerald-800">{text[lang]} • <span className="text-emerald-600 font-medium">{dateText[lang]}</span></span>
+      <span className="text-xs font-semibold text-emerald-800">{text[lang] || text.en} • <span className="text-emerald-600 font-medium">{dateText[lang] || dateText.en}</span></span>
     </div>
   );
 }

@@ -34,7 +34,7 @@ export const ActionableResultPanel: React.FC<ActionableResultProps> = ({
       icon: <CheckCircle2 className="w-5 h-5 text-emerald-600" />,
       scoreBg: 'bg-emerald-100/50',
       scoreText: 'text-emerald-700',
-      label: { en: 'Low Risk', fr: 'Risque Faible' }
+      label: { en: 'Low Risk', fr: 'Risque Faible', es: 'Riesgo Bajo' }
     },
     medium: {
       bg: 'bg-amber-50',
@@ -43,7 +43,7 @@ export const ActionableResultPanel: React.FC<ActionableResultProps> = ({
       icon: <AlertCircle className="w-5 h-5 text-amber-600" />,
       scoreBg: 'bg-amber-100/50',
       scoreText: 'text-amber-700',
-      label: { en: 'Moderate Risk', fr: 'Risque Modéré' }
+      label: { en: 'Moderate Risk', fr: 'Risque Modéré', es: 'Riesgo Moderado' }
     },
     high: {
       bg: 'bg-rose-50',
@@ -52,7 +52,7 @@ export const ActionableResultPanel: React.FC<ActionableResultProps> = ({
       icon: <AlertCircle className="w-5 h-5 text-rose-600" />,
       scoreBg: 'bg-rose-100/50',
       scoreText: 'text-rose-700',
-      label: { en: 'High Risk', fr: 'Risque Élevé' }
+      label: { en: 'High Risk', fr: 'Risque Élevé', es: 'Riesgo Alto' }
     },
     neutral: {
       bg: 'bg-teal-50',
@@ -61,14 +61,14 @@ export const ActionableResultPanel: React.FC<ActionableResultProps> = ({
       icon: <Info className="w-5 h-5 text-teal-600" />,
       scoreBg: 'bg-teal-100/50',
       scoreText: 'text-teal-700',
-      label: { en: 'Result', fr: 'Résultat' }
+      label: { en: 'Result', fr: 'Résultat', es: 'Resultado' }
     }
   };
 
   const style = styles[riskLevel] || styles.neutral;
 
   const t = {
-    nextSteps: { en: 'Management & Next Steps', fr: 'Gestion et Prochaines Étapes' }
+    nextSteps: { en: 'Management & Next Steps', fr: 'Gestion et Prochaines Étapes', es: 'Gestión y Próximos Pasos' }
   };
 
   return (
@@ -82,7 +82,7 @@ export const ActionableResultPanel: React.FC<ActionableResultProps> = ({
           <div className={`relative overflow-hidden shrink-0 flex flex-col items-center justify-center p-4 rounded-xl ${style.scoreBg} border border-white/50 min-w-[120px] ring-1 ring-black/5`}>
             <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-50 mix-blend-overlay"></div>
             <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-1 opacity-80">
-              {title || style.label[lang]}
+              {title || style.label[lang] || style.label.en}
             </span>
             <span className={`text-4xl font-mono font-black ${style.scoreText} tracking-tight leading-none`}>
               {score}
@@ -94,7 +94,7 @@ export const ActionableResultPanel: React.FC<ActionableResultProps> = ({
             <div className="flex items-center gap-2">
               {style.icon}
               <h3 className={`text-lg font-bold ${style.text}`}>
-                {style.label[lang]}
+                {style.label[lang] || style.label.en}
               </h3>
             </div>
             <p className="text-[15px] leading-relaxed text-slate-700 font-medium">
@@ -107,7 +107,7 @@ export const ActionableResultPanel: React.FC<ActionableResultProps> = ({
         {nextSteps && nextSteps.length > 0 && (
           <div className="mt-6 pt-5 border-t border-black/5">
             <h4 className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">
-              {t.nextSteps[lang]}
+              {t.nextSteps[lang] || t.nextSteps.en}
             </h4>
             <ul className="space-y-2.5">
               {nextSteps.map((step, idx) => (
