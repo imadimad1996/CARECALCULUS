@@ -9,7 +9,6 @@ import { useLang } from '../utils/lang';
 import { slugify } from '../utils/slug';
 import SEO from '../components/SEO';
 import { HelpCircle, TrendingUp, AlertCircle } from 'lucide-react';
-import faqDbRaw from '../data/faqDb.json';
 
 interface NutritionHubProps {
   lang: LangCode;
@@ -97,7 +96,7 @@ export default function NutritionHub({ lang }: NutritionHubProps) {
     }
   };
 
-  const faqs = (faqDbRaw as any)['/nutrition-hub'] || [];
+  const faqs: any[] = [];
 
   return (
     <div className={`min-h-screen bg-slate-50 dark:bg-slate-950 ${isRtl ? 'rtl' : 'ltr'}`}>

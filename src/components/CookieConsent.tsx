@@ -45,21 +45,21 @@ export default function CookieConsent() {
   const t = {
     en: {
       title: 'Your Privacy Matters',
-      desc: 'We use cookies and similar technologies to improve your experience, measure performance, and serve relevant advertisements via Google AdSense. By clicking "Accept", you consent to our use of cookies.',
+      desc: 'We use cookies and similar technologies to improve your experience and measure performance. By clicking "Accept", you consent to our use of cookies.',
       accept: 'Accept All',
       decline: 'Decline Optional',
       privacy: 'Privacy Policy',
     },
     fr: {
       title: 'Votre vie privée compte',
-      desc: 'Nous utilisons des cookies et des technologies similaires pour améliorer votre expérience, mesurer les performances et diffuser des annonces pertinentes via Google AdSense. En cliquant sur "Accepter", vous consentez à notre utilisation des cookies.',
+      desc: 'Nous utilisons des cookies et des technologies similaires pour améliorer votre expérience et mesurer les performances. En cliquant sur "Accepter", vous consentez à notre utilisation des cookies.',
       accept: 'Tout accepter',
       decline: 'Refuser les optionnels',
       privacy: 'Politique de confidentialité',
     }
   }[lang] || {
     title: 'Your Privacy Matters',
-    desc: 'We use cookies and similar technologies to improve your experience, measure performance, and serve relevant advertisements via Google AdSense. By clicking "Accept", you consent to our use of cookies.',
+    desc: 'We use cookies and similar technologies to improve your experience and measure performance. By clicking "Accept", you consent to our use of cookies.',
     accept: 'Accept All',
     decline: 'Decline Optional',
     privacy: 'Privacy Policy',

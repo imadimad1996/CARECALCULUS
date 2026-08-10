@@ -25,12 +25,7 @@ export const LeadMagnetModal: React.FC<LeadMagnetModalProps> = ({ lang }) => {
     if (isSubscribed) return;
     if (dismissedUntil && now < parseInt(dismissedUntil, 10)) return;
 
-    // Show modal after 45 seconds of continuous clinical session (much less noisy)
-    const timer = setTimeout(() => {
-      setIsOpen(true);
-    }, 45000);
 
-    return () => clearTimeout(timer);
   }, []);
 
   // Close on Escape key

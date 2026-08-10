@@ -10,7 +10,6 @@ import { LangCode } from '../types';
 import { useLang } from '../utils/lang';
 import Logo from '../components/Logo';
 import SmartPasteModal from '../components/SmartPasteModal';
-import { SynapseEngine } from '../components/SynapseEngine';
 import { CONDITIONS_DB } from '../data/conditions';
 
 interface HomePageProps {
@@ -454,8 +453,6 @@ export default function HomePage({ lang }: HomePageProps) {
         })}
       </section>
 
-      {/* AI-Powered Clinical Journals */}
-      <SynapseEngine lang={lang} langPath={langPath} />
 
       {/* Specialty Filter Bar */}
       <section className="w-full relative" aria-label="Filter calculators by specialty">
