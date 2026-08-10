@@ -1,2 +1,1 @@
-/assets/*   /assets/:splat  404
 /ar/*       /:splat         301
