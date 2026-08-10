@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { BookOpen } from 'lucide-react';
 import { LangCode } from '../types';
+import { usePopupLock } from '../utils/popupManager';
 
 export default function MedicalDisclaimer({ lang }: { lang: LangCode }) {
   const [accepted, setAccepted] = useState(true); // default true to avoid flash
+  const [hasLock, releaseLock] = usePopupLock('medical-disclaimer', !accepted);
 
   useEffect(() => {
     const isAccepted = localStorage.getItem('carecalculus-medical-disclaimer');
@@ -12,11 +14,12 @@ export default function MedicalDisclaimer({ lang }: { lang: LangCode }) {
     }
   }, []);
 
-  if (accepted) return null;
+  if (accepted || !hasLock) return null;
 
   const handleAccept = () => {
     localStorage.setItem('carecalculus-medical-disclaimer', 'true');
     setAccepted(true);
+    releaseLock();
     window.dispatchEvent(new Event('carecalculus:medical-disclaimer-accepted'));
   };
 

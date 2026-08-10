@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { ShieldCheck, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLang } from '../utils/lang';
+import { usePopupLock } from '../utils/popupManager';
 
 export default function CookieConsent() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [wantsToShow, setWantsToShow] = useState(false);
+  const [hasLock, releaseLock] = usePopupLock('cookie-consent', wantsToShow);
   const { lang, langPath } = useLang();
 
   useEffect(() => {
@@ -13,13 +15,13 @@ export default function CookieConsent() {
 
     const medicalDisclaimerAccepted = localStorage.getItem('carecalculus-medical-disclaimer');
     if (medicalDisclaimerAccepted) {
-      // Returning user: stagger by 2 seconds
-      const timer = setTimeout(() => setIsVisible(true), 2000);
+      // Returning user: stagger by 1.5 seconds
+      const timer = setTimeout(() => setWantsToShow(true), 1500);
       return () => clearTimeout(timer);
     } else {
       // New user: Wait for medical disclaimer to be accepted
       const handleDisclaimerAccepted = () => {
-        setTimeout(() => setIsVisible(true), 1000);
+        setTimeout(() => setWantsToShow(true), 1500);
       };
       window.addEventListener('carecalculus:medical-disclaimer-accepted', handleDisclaimerAccepted);
       return () => window.removeEventListener('carecalculus:medical-disclaimer-accepted', handleDisclaimerAccepted);
@@ -28,15 +30,17 @@ export default function CookieConsent() {
 
   const handleAccept = () => {
     localStorage.setItem('carecalculus-cookie-consent', 'accepted');
-    setIsVisible(false);
+    setWantsToShow(false);
+    releaseLock();
   };
 
   const handleDecline = () => {
     localStorage.setItem('carecalculus-cookie-consent', 'declined');
-    setIsVisible(false);
+    setWantsToShow(false);
+    releaseLock();
   };
 
-  if (!isVisible) return null;
+  if (!wantsToShow || !hasLock) return null;
 
   const t = {
     en: {
@@ -94,7 +98,7 @@ export default function CookieConsent() {
             {t.accept}
           </button>
           <button 
-            onClick={() => setIsVisible(false)}
+            onClick={() => { setWantsToShow(false); releaseLock(); }}
             className="p-3 min-h-[44px] min-w-[44px].5 text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors ml-1 cursor-pointer"
             aria-label="Close"
           >

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Download, X } from 'lucide-react';
+import { usePopupLock } from '../utils/popupManager';
 
 export default function InstallAppPrompt() {
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
-  const [showPrompt, setShowPrompt] = useState(false);
+  const [wantsToShow, setWantsToShow] = useState(false);
+  const [hasLock, releaseLock] = usePopupLock('install-app', wantsToShow);
 
   useEffect(() => {
     // Only show to returning users (visit_count > 1) and if not dismissed
@@ -14,7 +16,7 @@ export default function InstallAppPrompt() {
       e.preventDefault();
       setDeferredPrompt(e);
       if (visits > 1 && !hasDismissed) {
-        setShowPrompt(true);
+        setWantsToShow(true);
       }
     };
 
@@ -25,7 +27,7 @@ export default function InstallAppPrompt() {
     const isStandalone = ('standalone' in navigator) && ((navigator as any).standalone === true);
     
     if (isIos && !isStandalone && visits > 1 && !hasDismissed) {
-      setShowPrompt(true);
+      setWantsToShow(true);
     }
 
     return () => {
@@ -35,7 +37,8 @@ export default function InstallAppPrompt() {
 
   const handleInstallClick = async () => {
     if (deferredPrompt) {
-      setShowPrompt(false);
+      setWantsToShow(false);
+      releaseLock();
       deferredPrompt.prompt();
       const { outcome } = await deferredPrompt.userChoice;
       console.log(`User response to the install prompt: ${outcome}`);
@@ -49,11 +52,12 @@ export default function InstallAppPrompt() {
   };
 
   const handleDismiss = () => {
-    setShowPrompt(false);
+    setWantsToShow(false);
+    releaseLock();
     localStorage.setItem('pwa_prompt_dismissed', 'true');
   };
 
-  if (!showPrompt) return null;
+  if (!wantsToShow || !hasLock) return null;
 
   return (
     <div className="fixed bottom-4 left-4 right-4 md:left-auto md:right-8 md:w-80 bg-white shadow-2xl rounded-2xl border border-slate-200 p-4 z-50 animate-in slide-in-from-bottom-4">

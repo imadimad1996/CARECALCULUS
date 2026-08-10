@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { Share2, X, Users, HeartPulse } from 'lucide-react';
+import { usePopupLock } from '../utils/popupManager';
 
 export default function ViralPopup() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [wantsToShow, setWantsToShow] = useState(false);
+  const [hasLock, releaseLock] = usePopupLock('viral-popup', wantsToShow);
 
   useEffect(() => {
     const handleData = () => {
@@ -18,7 +20,7 @@ export default function ViralPopup() {
       const hoursSinceDismissal = timeSinceDismissal / (1000 * 60 * 60);
 
       if (calcUses >= 2 && hoursSinceDismissal > 24) {
-        setIsVisible(true);
+        setWantsToShow(true);
       }
     };
 
@@ -26,10 +28,11 @@ export default function ViralPopup() {
     return () => window.removeEventListener('carecalculus:calc-data', handleData);
   }, []);
 
-  if (!isVisible) return null;
+  if (!wantsToShow || !hasLock) return null;
 
   const handleDismiss = () => {
-    setIsVisible(false);
+    setWantsToShow(false);
+    releaseLock();
     localStorage.setItem('carecalculus_share_dismissed', Date.now().toString());
   };
 

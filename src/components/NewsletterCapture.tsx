@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Mail, X, Sparkles, CheckCircle } from 'lucide-react';
 import { LangCode } from '../types';
 import { trackNewsletterSignup } from '../utils/telemetry';
+import { usePopupLock } from '../utils/popupManager';
 
 /**
  * Elegant newsletter capture component.
@@ -34,7 +35,8 @@ const T = {
 };
 
 export default function NewsletterCapture({ lang }: NewsletterCaptureProps) {
-  const [visible, setVisible] = useState(false);
+  const [wantsToShow, setWantsToShow] = useState(false);
+  const [hasLock, releaseLock] = usePopupLock('newsletter', wantsToShow);
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
@@ -52,14 +54,14 @@ export default function NewsletterCapture({ lang }: NewsletterCaptureProps) {
     localStorage.setItem('cc-page-views', String(views));
 
     if (views >= 2) {
-      // Show after 8 seconds on page
-      const timer = setTimeout(() => setVisible(true), 8000);
+      // Show after 15 seconds on page (increased delay)
+      const timer = setTimeout(() => setWantsToShow(true), 15000);
       return () => clearTimeout(timer);
     }
 
     // Trigger on calculator completion event nudge
     const handleShowNewsletter = () => {
-      setVisible(true);
+      setWantsToShow(true);
     };
     window.addEventListener('cc-show-newsletter', handleShowNewsletter);
     window.addEventListener('cc-calculator-result', handleShowNewsletter);
@@ -74,7 +76,8 @@ export default function NewsletterCapture({ lang }: NewsletterCaptureProps) {
       e.preventDefault();
       e.stopPropagation();
     }
-    setVisible(false);
+    setWantsToShow(false);
+    releaseLock();
     localStorage.setItem('cc-newsletter-dismissed', Date.now().toString());
   };
 
@@ -112,7 +115,10 @@ export default function NewsletterCapture({ lang }: NewsletterCaptureProps) {
       localStorage.setItem('cc-newsletter-subscribed', email);
       setSubmitted(true);
       trackNewsletterSignup('floating_bar');
-      setTimeout(() => setVisible(false), 3000);
+      setTimeout(() => {
+        setWantsToShow(false);
+        releaseLock();
+      }, 3000);
     } catch (err) {
       setErrorMsg('Failed to subscribe. Please try again.');
       console.error('Newsletter subscription error:', err);
@@ -121,7 +127,7 @@ export default function NewsletterCapture({ lang }: NewsletterCaptureProps) {
     }
   };
 
-  if (!visible) return null;
+  if (!wantsToShow || !hasLock) return null;
 
   return (
     <div
