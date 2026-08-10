@@ -610,24 +610,24 @@ function AppLayout() {
 
   // Breadcrumb + back link for content/reading pages
   const renderContentPageTopBar = () => {
-    const sectionMap: Record<string, { en: string; fr: string; ar: string; icon: any }> = {
+    const sectionMap: Record<string, { en: string; fr: string; es: string; ar: string; icon: any }> = {
 
-      '/presentations': { en: 'Presentations',    fr: 'Présentations',     ar: 'العروض التقديمية', icon: MonitorPlay },
-      '/cours':         { en: 'Courses (PDF)',     fr: 'Cours (PDF)',       ar: 'المحاضرات والدروس', icon: GraduationCap },
-      '/about':         { en: 'About',            fr: 'À propos',          ar: 'عن المنصة', icon: ShieldCheck },
-      '/disclaimer':    { en: 'Medical Disclaimer', fr: 'Avertissement médical', ar: 'إخلاء المسؤولية', icon: ShieldCheck },
-      '/privacy':       { en: 'Privacy Policy',   fr: 'Confidentialité',   ar: 'سياسة الخصوصية', icon: ShieldCheck },
-      '/terms':         { en: 'Terms of Use',     fr: 'Conditions',        ar: 'شروط الاستخدام', icon: FileText },
-      '/glp-1-hub':     { en: 'GLP-1 Hub',        fr: 'Hub GLP-1',         ar: 'مركز أدوية GLP-1',  icon: Sparkles },
-      '/hub-glp1':      { en: 'GLP-1 Hub',        fr: 'Hub GLP-1',         ar: 'مركز أدوية GLP-1',  icon: Sparkles },
-      '/مركز-glp1':     { en: 'GLP-1 Hub',        fr: 'Hub GLP-1',         ar: 'مركز أدوية GLP-1',  icon: Sparkles },
-      '/clinical-guide':{ en: 'Clinical Guides',  fr: 'Guides Cliniques',  ar: 'الأدلة السريرية', icon: BookOpen },
+      '/presentations': { en: 'Presentations',    fr: 'Présentations',     es: 'Presentaciones',      ar: 'العروض التقديمية', icon: MonitorPlay },
+      '/cours':         { en: 'Courses (PDF)',     fr: 'Cours (PDF)',       es: 'Cursos (PDF)',         ar: 'المحاضرات والدروس', icon: GraduationCap },
+      '/about':         { en: 'About',            fr: 'À propos',          es: 'Sobre nosotros',       ar: 'عن المنصة', icon: ShieldCheck },
+      '/disclaimer':    { en: 'Medical Disclaimer', fr: 'Avertissement médical', es: 'Aviso Médico',   ar: 'إخلاء المسؤولية', icon: ShieldCheck },
+      '/privacy':       { en: 'Privacy Policy',   fr: 'Confidentialité',   es: 'Política de Privacidad', ar: 'سياسة الخصوصية', icon: ShieldCheck },
+      '/terms':         { en: 'Terms of Use',     fr: 'Conditions',        es: 'Términos de Uso',     ar: 'شروط الاستخدام', icon: FileText },
+      '/glp-1-hub':     { en: 'GLP-1 Hub',        fr: 'Hub GLP-1',         es: 'Centro GLP-1',        ar: 'مركز أدوية GLP-1',  icon: Sparkles },
+      '/hub-glp1':      { en: 'GLP-1 Hub',        fr: 'Hub GLP-1',         es: 'Centro GLP-1',        ar: 'مركز أدوية GLP-1',  icon: Sparkles },
+      '/مركز-glp1':     { en: 'GLP-1 Hub',        fr: 'Hub GLP-1',         es: 'Centro GLP-1',        ar: 'مركز أدوية GLP-1',  icon: Sparkles },
+      '/clinical-guide':{ en: 'Clinical Guides',  fr: 'Guides Cliniques',  es: 'Guías Clínicas',      ar: 'الأدلة السريرية', icon: BookOpen },
 
     };
     const base = CONTENT_ROUTES.find(r => logicalPath === r || logicalPath.startsWith(r + '/'));
     const section = base ? sectionMap[base] : null;
     const SectionIcon = section?.icon;
-    const sectionLabel = section ? (lang === 'fr' ? section.fr : section.en) : '';
+    const sectionLabel = section ? (lang === 'fr' ? section.fr : lang === 'es' ? section.es : section.en) : '';
     const isDetail = base && logicalPath !== base;
 
     return (
