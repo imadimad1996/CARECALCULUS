@@ -41,7 +41,7 @@ export default function TidalVolume({ lang }: { lang: LangCode }) {
   const [height, setHeight] = useState<number | ''>(170);
   const [sex, setSex] = useState<number>(0); // 0: male, 1: female
 
-  const currentText = translations[lang];
+  const currentText = translations[lang] || translations.en;
   const isRtl = false;
 
   const pbw = useMemo(() => {

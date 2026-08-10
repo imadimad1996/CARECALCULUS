@@ -146,7 +146,7 @@ export default function SofaScore({ lang }: { lang: LangCode }) {
   const [renal, setRenal] = useState<number>(0);
   const [copied, setCopied] = useState(false);
 
-  const currentText = translations[lang];
+  const currentText = translations[lang] || translations.en;
   const isRtl = false;
 
   const sofaValue = resp + coag + liver + cardio + cns + renal;

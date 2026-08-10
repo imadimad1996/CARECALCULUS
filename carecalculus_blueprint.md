@@ -46,7 +46,7 @@ When commanded to generate a calculator page or architectural feature, you must 
 - Do not use flex or grid configurations directly at the global container root; handle layouts locally using robust Tailwind utility grids or clear flex blocks.
 - Ensure all numbers handle float anomalies natively (e.g., limit results explicitly to two decimal places `.toFixed(2)`).
 - Ensure input fields contain clear range parameters (`min`, max`) and prevent dangerous medical extremes from skewing execution states.
-- For Arabic rendering (`ar`), ensure parent block containers evaluate `dir="rtl"` conditions smoothly and switch font headings to a highly legible Arabic typeface family.
+- For Spanish rendering (`es`), ensure domain routing seamlessly switches to `es.carecalculus.com` while maintaining clear, high-legibility typography.
 
 ---
 

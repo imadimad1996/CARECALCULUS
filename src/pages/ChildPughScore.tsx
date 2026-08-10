@@ -112,7 +112,7 @@ export default function ChildPughScore({ lang }: { lang: LangCode }) {
   const [enceph, setEnceph] = useState<number>(1);
   const [copied, setCopied] = useState(false);
 
-  const currentText = translations[lang];
+  const currentText = translations[lang] || translations.en;
   const isRtl = false;
 
   const childPughValue = bilirubin + albumin + inr + ascites + enceph;

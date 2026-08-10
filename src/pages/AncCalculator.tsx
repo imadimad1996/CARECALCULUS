@@ -47,7 +47,7 @@ export default function AncCalculator({ lang }: { lang: LangCode }) {
   const [neutro, setNeutro] = useState<number | ''>(60);
   const [bands, setBands] = useState<number | ''>(2);
 
-  const currentText = translations[lang];
+  const currentText = translations[lang] || translations.en;
   const isRtl = false;
 
   const ancValue = useMemo(() => {

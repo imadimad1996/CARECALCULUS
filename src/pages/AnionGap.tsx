@@ -75,7 +75,7 @@ export default function AnionGap({ lang }: { lang: LangCode }) {
   const [albumin, setAlbumin] = useState<number>(4.0);
   const [copied, setCopied] = useState(false);
 
-  const currentText = translations[lang];
+  const currentText = translations[lang] || translations.en;
   const isRtl = false;
 
   const rawAg = useMemo(() => {

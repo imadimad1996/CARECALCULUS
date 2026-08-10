@@ -97,7 +97,7 @@ export default function ApgarScore({ lang }: { lang: LangCode }) {
   const [respiration, setRespiration] = useState<number>(2);
   const [copied, setCopied] = useState(false);
 
-  const currentText = translations[lang];
+  const currentText = translations[lang] || translations.en;
   const isRtl = false;
 
   const apgarValue = appearance + pulse + grimace + activity + respiration;

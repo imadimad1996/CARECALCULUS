@@ -98,7 +98,7 @@ export default function MeldScore({ lang }: { lang: LangCode }) {
   const [sodium, setSodium] = useState<number | ''>(137);
   const [dialysis, setDialysis] = useState<boolean>(false);
 
-  const currentText = translations[lang];
+  const currentText = translations[lang] || translations.en;
   const isRtl = false;
 
   const meldScore = useMemo(() => {

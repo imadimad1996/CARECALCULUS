@@ -57,7 +57,7 @@ export default function FraminghamRiskScore({ lang }: { lang: LangCode }) {
   const [sbp, setSbp] = useState<number>(138);
   const [smoker, setSmoker] = useState<boolean>(false);
   const [treatedBp, setTreatedBp] = useState<boolean>(false);
-  const t = translations[lang];
+  const t = translations[lang] || translations.en;
 
   const { riskPercent, category } = useMemo(() => {
     // Simplified Framingham point approximation for primary care demo

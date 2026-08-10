@@ -47,7 +47,7 @@ export default function AdjustedBodyWeight({ lang }: { lang: LangCode }) {
   const [weight, setWeight] = useState<number | ''>(100);
   const [sex, setSex] = useState<number>(0); 
 
-  const currentText = translations[lang];
+  const currentText = translations[lang] || translations.en;
   const isRtl = false;
 
   const results = useMemo(() => {

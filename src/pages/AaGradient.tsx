@@ -76,7 +76,7 @@ export default function AaGradient({ lang }: { lang: LangCode }) {
   const [patm, setPatm] = useState<number>(760);
   const [copied, setCopied] = useState(false);
 
-  const currentText = translations[lang];
+  const currentText = translations[lang] || translations.en;
   const isRtl = false;
 
   const expectedGradient = useMemo(() => {

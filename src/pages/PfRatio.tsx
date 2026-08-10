@@ -43,7 +43,7 @@ export default function PfRatio({ lang }: { lang: LangCode }) {
   const [pao2, setPao2] = useState<number | ''>(90);
   const [fio2, setFio2] = useState<number | ''>(21);
 
-  const currentText = translations[lang];
+  const currentText = translations[lang] || translations.en;
   const isRtl = false;
 
   const pfRatio = useMemo(() => {

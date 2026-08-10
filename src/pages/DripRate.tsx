@@ -38,7 +38,7 @@ export default function DripRate({ lang }: { lang: LangCode }) {
   const [time, setTime] = useState<number | ''>('');
   const [dropFactor, setDropFactor] = useState<number | ''>('');
 
-  const currentText = translations[lang];
+  const currentText = translations[lang] || translations.en;
   const isRtl = false;
 
   const rateValue = useMemo(() => {

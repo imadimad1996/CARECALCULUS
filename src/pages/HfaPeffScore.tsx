@@ -60,7 +60,7 @@ export default function HfaPeffScore({ lang }: { lang: LangCode }) {
   const [morphPts, setMorphPts] = useState<number>(2);
   const [bioPts, setBioPts] = useState<number>(2);
 
-  const t = translations[lang];
+  const t = translations[lang] || translations.en;
 
   const score = useMemo(() => funcPts + morphPts + bioPts, [funcPts, morphPts, bioPts]);
 

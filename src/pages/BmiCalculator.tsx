@@ -94,7 +94,7 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
   const [weight, setWeight] = useState<number>(70); // kg
   const [targetBmiStr, setTargetBmiStr] = useState<string>(''); // string for empty input
 
-  const currentText = translations[lang];
+  const currentText = translations[lang] || translations.en;
   const isRtl = false;
   
   const isHeightWarning = height > 0 && (height < 50 || height > 250);

@@ -41,7 +41,7 @@ export default function RumackMatthewNomogram({ lang }: { lang: LangCode }) {
   const [hours, setHours] = useState<number>(6);
   const [conc, setConc] = useState<number>(180);
   const [unit, setUnit] = useState<'mcg' | 'umol'>('mcg');
-  const t = translations[lang];
+  const t = translations[lang] || translations.en;
 
   const { isAboveLine, isValidTime, concMcg, thresholdMcg } = useMemo(() => {
     const valid = hours >= 4 && hours <= 24;

@@ -77,7 +77,7 @@ export default function NutritionMust({ lang }: { lang: LangCode }) {
   const [weightLossScore, setWeightLossScore] = useState<number>(0);
   const [diseaseScore, setDiseaseScore] = useState<number>(0);
 
-  const currentText = translations[lang];
+  const currentText = translations[lang] || translations.en;
   const isRtl = false;
 
   const totalScore = useMemo(() => {

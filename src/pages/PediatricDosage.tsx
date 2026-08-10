@@ -55,7 +55,7 @@ export default function PediatricDosage({ lang }: { lang: LangCode }) {
   const [dosePerKg, setDosePerKg] = useState<number>(15);
   const [freq, setFreq] = useState<number>(4); // QID
   const [conc, setConc] = useState<number>(24); // e.g. 120mg/5mL = 24mg/mL
-  const t = translations[lang];
+  const t = translations[lang] || translations.en;
 
   const { bsa, totalDailyMg, singleMg, volumeMl } = useMemo(() => {
     const w = Math.max(0.5, weight);

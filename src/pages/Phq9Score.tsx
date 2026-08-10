@@ -69,7 +69,7 @@ const options = [ 'a0', 'a1', 'a2', 'a3' ] as const;
 export default function Phq9Score({ lang }: { lang: LangCode }) {
   const [answers, setAnswers] = useState<Record<string, number>>({});
 
-  const currentText = translations[lang];
+  const currentText = translations[lang] || translations.en;
   const isRtl = false;
 
   const handleAnswer = (q: string, value: number) => {

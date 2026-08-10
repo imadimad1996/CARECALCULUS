@@ -49,7 +49,7 @@ export default function SteroidConversion({ lang }: { lang: LangCode }) {
   const [toId, setToId] = useState<string>('dexamethasone');
   const [dose, setDose] = useState<number | ''>(50);
 
-  const currentText = translations[lang];
+  const currentText = translations[lang] || translations.en;
   const isRtl = false;
 
   const equivalent = useMemo(() => {

@@ -147,7 +147,7 @@ export default function WellsScore({ lang }: { lang: LangCode }) {
   const [riskModel, setRiskModel] = useState<'2-tier' | '3-tier'>('3-tier');
   const [viewMode, setViewMode] = useState<'calc' | 'tree'>('calc');
 
-  const currentText = translations[lang];
+  const currentText = translations[lang] || translations.en;
   const isRtl = false;
 
   const toggleSelection = (key: string) => {

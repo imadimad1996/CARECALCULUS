@@ -35,7 +35,7 @@ const translations: Translations = {
 
 export default function GestationalAgeCrl({ lang }: { lang: LangCode }) {
   const [crlMm, setCrlMm] = useState<number>(35);
-  const t = translations[lang];
+  const t = translations[lang] || translations.en;
 
   const { weeks, days, totalDays } = useMemo(() => {
     const crl = Math.max(2, Math.min(120, crlMm));

@@ -69,7 +69,7 @@ export default function FourTsHitScore({ lang }: { lang: LangCode }) {
   const [t3, setT3] = useState<number>(0);
   const [t4, setT4] = useState<number>(2);
 
-  const t = translations[lang];
+  const t = translations[lang] || translations.en;
 
   const score = useMemo(() => t1 + t2 + t3 + t4, [t1, t2, t3, t4]);
 

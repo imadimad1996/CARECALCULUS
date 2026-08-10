@@ -74,7 +74,7 @@ export default function CreatinineClearance({ lang }: { lang: LangCode }) {
   const [creatinine, setCreatinine] = useState<number>(1.2);
   const [isFemale, setIsFemale] = useState<boolean>(false);
 
-  const currentText = translations[lang];
+  const currentText = translations[lang] || translations.en;
   const isRtl = false;
 
   const crclValue = useMemo(() => {

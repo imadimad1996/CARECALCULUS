@@ -1,27 +1,14 @@
-const CACHE_NAME = 'carecalculus-v1';
+const CACHE_NAME = 'carecalculus-v2';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
-  '/manifest.json',
-  '/wells-score',
-  '/grace-score',
-  '/sofa-score',
-  '/qsofa-score',
-  '/curb65-score',
-  '/map-calculator',
-  '/pf-ratio',
-  '/creatinine-clearance',
-  '/glasgow-coma-scale',
-  '/meld-score',
-  '/cha2ds2-vasc',
-  '/anc-calculator',
-  '/adjusted-body-weight'
+  '/manifest.json'
 ];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log('[Service Worker] Pre-caching core clinical calculators for offline bedside use');
+      console.log('[Service Worker] Pre-caching core shell for offline use');
       return cache.addAll(ASSETS_TO_CACHE);
     })
   );
@@ -47,10 +34,14 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
   
+  // Never intercept /assets/ requests with cache fallbacks
+  if (event.request.url.includes('/assets/')) {
+    return;
+  }
+  
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       if (cachedResponse) {
-        // Return cached response while updating cache in background
         fetch(event.request)
           .then((networkResponse) => {
             if (networkResponse.status === 200) {

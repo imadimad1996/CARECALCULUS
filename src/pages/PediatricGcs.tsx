@@ -104,7 +104,7 @@ export default function PediatricGcs({ lang }: { lang: LangCode }) {
   const [verbal, setVerbal] = useState<number>(5);
   const [motor, setMotor] = useState<number>(6);
 
-  const t = translations[lang];
+  const t = translations[lang] || translations.en;
 
   const score = useMemo(() => eye + verbal + motor, [eye, verbal, motor]);
 

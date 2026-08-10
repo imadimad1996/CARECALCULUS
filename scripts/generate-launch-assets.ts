@@ -18,7 +18,7 @@ const productHuntData = {
   links: [
     "https://carecalculus.com"
   ],
-  firstComment: "Hey Product Hunt! 👋\n\nWe built CareCalculus because we were frustrated by the slow, ad-heavy, and outdated interfaces of legacy medical calculators used during critical ER shifts. \n\nWe wanted something instantly accessible, offline-first, and designed with modern 'glassmorphic' UX principles to make finding the right dose or risk score painless.\n\n✨ Features:\n- Instant EHR SmartPhrase / SOAP exports\n- Completely open-source (react + vite)\n- Multi-lingual (English, French, Arabic)\n- Programmatic Disease-to-Calculator Guides\n\nWe'd love your feedback! Let us know what calculators we should build next.",
+  firstComment: "Hey Product Hunt! 👋\n\nWe built CareCalculus because we were frustrated by the slow, ad-heavy, and outdated interfaces of legacy medical calculators used during critical ER shifts. \n\nWe wanted something instantly accessible, offline-first, and designed with modern 'glassmorphic' UX principles to make finding the right dose or risk score painless.\n\n✨ Features:\n- Instant EHR SmartPhrase / SOAP exports\n- Completely open-source (react + vite)\n- Multi-lingual (English, French, Spanish)\n- Programmatic Disease-to-Calculator Guides\n\nWe'd love your feedback! Let us know what calculators we should build next.",
 };
 
 fs.writeFileSync(

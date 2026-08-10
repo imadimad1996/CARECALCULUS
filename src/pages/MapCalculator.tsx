@@ -86,7 +86,7 @@ export default function MapCalculator({ lang }: { lang: LangCode }) {
   const [dia, setDia] = useState<number>(80);
   const [copied, setCopied] = useState(false);
 
-  const currentText = translations[lang];
+  const currentText = translations[lang] || translations.en;
   const isRtl = false;
 
   const mapValue = useMemo(() => {

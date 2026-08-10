@@ -105,7 +105,7 @@ export default function GcsCalculator({ lang }: { lang: LangCode }) {
   const [verbal, setVerbal] = useState<number>(0);
   const [motor, setMotor] = useState<number>(0);
 
-  const currentText = translations[lang];
+  const currentText = translations[lang] || translations.en;
   const isRtl = false;
 
   const isComplete = eye > 0 && verbal > 0 && motor > 0;

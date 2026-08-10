@@ -59,6 +59,32 @@ const pageTranslations: Record<LangCode, any> = {
     clinicalText: "Les plages de référence sont indicatives et peuvent varier considérablement selon la méthodologie de laboratoire, les variations de population et les conditions spécifiques du patient. Suivez toujours les directives cliniques standard de votre région.",
     formula: "Facteurs de conversion standard IUPAC et unités SI",
     references: "Manuels de laboratoire de l'Organisation mondiale de la santé (OMS) & Recommandations IUPAC-IFCC sur les quantités et unités en chimie clinique."
+  },
+  es: {
+    pageTitle: "Conversión de Unidades Médicas",
+    pageSubtitle: "Herramienta de conversión rápida para valores de laboratorio",
+    sourceValue: "Valor de Origen",
+    calculate: "Calcular",
+    inUnit: "En {unit}",
+    albuminTitle: "Albúmina / Proteínas",
+    albuminNormal: "Rango normal: 35–50 g/L | 3.5–5.0 g/dL | 530–756 µmol/L",
+    calciumTitle: "Calcio",
+    calciumNormal: "Rango normal: 2.2–2.6 mmol/L | 88–104 mg/L | 8.8–10.4 mg/dL | 4.4–5.2 mEq/L",
+    cholesterolTitle: "Colesterol (Total, HDL, LDL)",
+    cholesterolNormal: "• Total: Deseable < 5.2 mmol/L | < 200 mg/dL | < 2.0 g/L\n• HDL: Deseable > 1.0 mmol/L (H) / > 1.3 mmol/L (M)\n• LDL: Óptimo < 2.6 mmol/L | < 100 mg/dL | < 1.0 g/L",
+    creatinineTitle: "Creatinina",
+    creatinineNormal: "• Hombre: 62–115 µmol/L | 7–13 mg/L | 0.7–1.3 mg/dL\n• Mujer: 44–97 µmol/L | 5–11 mg/L | 0.5–1.1 mg/dL",
+    glucoseTitle: "Glucemia",
+    glucoseNormal: "• Ayunas Normal: 3.9–5.5 mmol/L | 0.70–1.00 g/L | 70–100 mg/dL\n• Prediabetes: 5.6–6.9 mmol/L | 1.00–1.25 g/L | 100–125 mg/dL\n• Diabetes: ≥ 7.0 mmol/L | ≥ 1.26 g/L | ≥ 126 mg/dL",
+    hba1cTitle: "HbA1c (Hemoglobina Glicada)",
+    hba1cNormal: "Normal < 42 mmol/mol (< 6%) | Prediabetes: 42–47 mmol/mol (6–6.4%) | Diabetes ≥ 48 mmol/mol (≥ 6.5%)",
+    triglyceridesTitle: "Triglicéridos",
+    triglyceridesNormal: "• Normal < 1.7 mmol/L | < 150 mg/dL | < 1.50 g/L\n• Límite alto: 1.7–2.3 mmol/L | 150–200 mg/dL | 1.5–2.0 g/L\n• Alto: 2.3–5.6 mmol/L | 200–499 mg/dL | 2.0–4.99 g/L\n• Muy alto ≥ 5.6 mmol/L | ≥ 500 mg/dL | ≥ 5.0 g/L",
+    enterValue: "Ingrese un valor para convertir",
+    clinicalTitle: "Contexto Clínico",
+    clinicalText: "Los rangos de referencia son indicativos y pueden variar según la metodología de laboratorio y condiciones del paciente.",
+    formula: "Factores de conversión estándar IUPAC y unidades SI",
+    references: "Manuales de laboratorio de la Organización Mundial de la Salud (OMS)."
   }
 };
 
@@ -243,7 +269,7 @@ function ConverterCard({ config, currentText, lang }: { config: ConfigLinear | C
 }
 
 export default function MedicalConversions({ lang }: { lang: LangCode }) {
-  const currentText = pageTranslations[lang];
+  const currentText = pageTranslations[lang] || pageTranslations.en;
   const isRtl = false;
   const { category } = useParams<{ category: string }>();
   const location = useLocation();

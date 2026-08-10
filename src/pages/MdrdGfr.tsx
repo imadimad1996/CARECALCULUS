@@ -71,7 +71,7 @@ export default function MdrdGfr({ lang }: { lang: LangCode }) {
   const [isFemale, setIsFemale] = useState<boolean>(false);
   const [isBlack, setIsBlack] = useState<boolean>(false);
 
-  const currentText = translations[lang];
+  const currentText = translations[lang] || translations.en;
   const uiText = layoutTranslations[lang];
   const isRtl = false;
 

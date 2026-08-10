@@ -50,7 +50,7 @@ export default function NaegeleEddCalculator({ lang }: { lang: LangCode }) {
     return d.toISOString().split('T')[0];
   });
   const [cycleDays, setCycleDays] = useState<number>(28);
-  const t = translations[lang];
+  const t = translations[lang] || translations.en;
 
   const { eddFormatted, totalDays, weeks, remDays, trimester } = useMemo(() => {
     const lmp = new Date(lmpDate);

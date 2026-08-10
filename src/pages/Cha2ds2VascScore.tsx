@@ -94,7 +94,7 @@ export default function Cha2ds2VascScore({ lang }: { lang: LangCode }) {
   const [vascular, setVascular] = useState<boolean>(false);
   const [diabetes, setDiabetes] = useState<boolean>(false);
 
-  const currentText = translations[lang];
+  const currentText = translations[lang] || translations.en;
   const isRtl = false;
 
   const scoreValue = useMemo(() => {

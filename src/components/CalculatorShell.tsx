@@ -15,7 +15,7 @@ import { citationsDb } from '../data/citationsDb';
 
 const nameEnMap: Record<string, string> = seoMaps.nameEnMap;
 const nameFrMap: Record<string, string> = seoMaps.nameFrMap;
-const nameArMap: Record<string, string> = seoMaps.nameArMap;
+const nameEsMap: Record<string, string> = (seoMaps as any).nameEsMap || {};
 
 interface CalculatorShellProps {
   logicalPath: string;
@@ -34,9 +34,16 @@ const T = {
   fr: {
     comparisons: "Comparaisons Cliniques",
     conditions: "Pathologies Associées",
-    specialties: "Spécialités Connexes",
-    otherTools: "Calculateurs & Scores Liés",
-    readMore: "Voir le hub"
+    specialties: "Spécialités Associées",
+    otherTools: "Autres Outils Cliniques",
+    readMore: "Voir le Hub"
+  },
+  es: {
+    comparisons: "Comparaciones Clínicas",
+    conditions: "Condiciones Asociadas",
+    specialties: "Especialidades Relacionadas",
+    otherTools: "Calculadoras y Escalas Relacionadas",
+    readMore: "Ver Centro de Información"
   }
 };
 

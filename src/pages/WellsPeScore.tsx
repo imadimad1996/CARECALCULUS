@@ -133,7 +133,7 @@ export default function WellsPeScore({ lang }: { lang: LangCode }) {
   const [selections, setSelections] = useState<Record<string, boolean>>({});
   const [riskModel, setRiskModel] = useState<'2-tier' | '3-tier'>('2-tier');
 
-  const currentText = translations[lang];
+  const currentText = translations[lang] || translations.en;
   const isRtl = false;
 
   const toggleSelection = (key: string) => {

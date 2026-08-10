@@ -57,7 +57,7 @@ export default function MasccRiskIndex({ lang }: { lang: LangCode }) {
   const [noDehydration, setNoDehydration] = useState<boolean>(true);
   const [outpatient, setOutpatient] = useState<boolean>(true);
   const [ageUnder60, setAgeUnder60] = useState<boolean>(true);
-  const t = translations[lang];
+  const t = translations[lang] || translations.en;
 
   const score = useMemo(() => {
     let s = burden;

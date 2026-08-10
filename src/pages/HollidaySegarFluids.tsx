@@ -41,7 +41,7 @@ const translations: Translations = {
 
 export default function HollidaySegarFluids({ lang }: { lang: LangCode }) {
   const [weight, setWeight] = useState<number>(14);
-  const t = translations[lang];
+  const t = translations[lang] || translations.en;
 
   const { hourly, daily, naMin, naMax, kMin, kMax } = useMemo(() => {
     const w = Math.max(0.5, weight);

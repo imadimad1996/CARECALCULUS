@@ -84,7 +84,7 @@ const criteriaList = [
 export default function Curb65Score({ lang }: { lang: LangCode }) {
   const [selections, setSelections] = useState<Record<string, boolean>>({});
 
-  const currentText = translations[lang];
+  const currentText = translations[lang] || translations.en;
   const isRtl = false;
 
   const toggleSelection = (key: string) => {

@@ -45,7 +45,7 @@ export default function SchwartzGfr({ lang }: { lang: LangCode }) {
   const [height, setHeight] = useState<number>(110);
   const [scr, setScr] = useState<number>(0.6);
   const [unit, setUnit] = useState<'mg' | 'umol'>('mg');
-  const t = translations[lang];
+  const t = translations[lang] || translations.en;
 
   const { egfr, category } = useMemo(() => {
     const h = Math.max(30, height);

@@ -73,7 +73,7 @@ export default function NutritionTdee({ lang }: { lang: LangCode }) {
   const [weight, setWeight] = useState<number>(70); // kg
   const [stressFactor, setStressFactor] = useState<number>(1.2);
 
-  const currentText = translations[lang];
+  const currentText = translations[lang] || translations.en;
   const isRtl = false;
 
   const bmrValue = useMemo(() => {
