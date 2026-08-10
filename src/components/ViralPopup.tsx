@@ -9,12 +9,16 @@ export default function ViralPopup() {
 
   useEffect(() => {
     const handleData = () => {
-      // Increment calc usage counter
-      let calcUses = parseInt(localStorage.getItem('carecalculus_uses') || '0', 10);
-      calcUses += 1;
-      localStorage.setItem('carecalculus_uses', calcUses.toString());
+      // Do not show for premium users
+      const isPro = localStorage.getItem('carecalculus_pro_status') === 'active';
+      if (isPro) return;
 
-      // If user has used calculators twice and hasn't dismissed the popup recently
+      // Increment calc success counter
+      let calcUses = parseInt(localStorage.getItem('carecalculus_viral_uses') || '0', 10);
+      calcUses += 1;
+      localStorage.setItem('carecalculus_viral_uses', calcUses.toString());
+
+      // If user has successfully copied calculators twice and hasn't dismissed the popup recently
       const lastDismissed = localStorage.getItem('carecalculus_share_dismissed');
       const timeSinceDismissal = lastDismissed ? Date.now() - parseInt(lastDismissed, 10) : Infinity;
       const hoursSinceDismissal = timeSinceDismissal / (1000 * 60 * 60);
@@ -24,8 +28,8 @@ export default function ViralPopup() {
       }
     };
 
-    window.addEventListener('carecalculus:calc-data', handleData);
-    return () => window.removeEventListener('carecalculus:calc-data', handleData);
+    window.addEventListener('carecalculus:calc-success', handleData);
+    return () => window.removeEventListener('carecalculus:calc-success', handleData);
   }, []);
 
   if (!wantsToShow || !hasLock) return null;

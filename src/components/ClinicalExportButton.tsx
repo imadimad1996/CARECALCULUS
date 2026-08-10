@@ -141,6 +141,8 @@ export default function ClinicalExportButton({
       setCopyCount(newCount);
       localStorage.setItem('ehr_copy_count', String(newCount));
       
+      window.dispatchEvent(new Event('carecalculus:calc-success'));
+      
       trackEhrExport(calculatorName || title || 'unknown', noteTab);
       saveShiftRecord({
         patientId: patientId || 'PT-' + Math.floor(1000 + Math.random() * 9000),
