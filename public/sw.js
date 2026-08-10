@@ -1,4 +1,4 @@
-const CACHE_NAME = 'carecalculus-v2';
+const CACHE_NAME = 'carecalculus-v3';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
@@ -6,13 +6,7 @@ const ASSETS_TO_CACHE = [
 ];
 
 self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      console.log('[Service Worker] Pre-caching core shell for offline use');
-      return cache.addAll(ASSETS_TO_CACHE);
-    })
-  );
-  self.skipWaiting();
+  self.skipWaiting(); // Force new service worker to activate immediately
 });
 
 self.addEventListener('activate', (event) => {
@@ -26,29 +20,44 @@ self.addEventListener('activate', (event) => {
           }
         })
       );
-    })
+    }).then(() => self.clients.claim()) // Take control of all pages immediately
   );
-  self.clients.claim();
 });
 
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
   
-  // Never intercept /assets/ requests with cache fallbacks
-  if (event.request.url.includes('/assets/')) {
+  const url = new URL(event.request.url);
+
+  // Exclude assets from SW interception entirely
+  if (url.pathname.startsWith('/assets/')) {
+    return;
+  }
+
+  // Network First, fallback to Cache for HTML/Navigation requests
+  if (event.request.mode === 'navigate' || url.pathname === '/' || url.pathname === '/index.html') {
+    event.respondWith(
+      fetch(event.request)
+        .then((networkResponse) => {
+          if (networkResponse.status === 200) {
+            const responseClone = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseClone));
+          }
+          return networkResponse;
+        })
+        .catch(() => {
+          return caches.match(event.request).then((cachedResponse) => {
+            return cachedResponse || caches.match('/');
+          });
+        })
+    );
     return;
   }
   
+  // Cache First, fallback to Network for everything else (manifest, icons)
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       if (cachedResponse) {
-        fetch(event.request)
-          .then((networkResponse) => {
-            if (networkResponse.status === 200) {
-              caches.open(CACHE_NAME).then((cache) => cache.put(event.request, networkResponse));
-            }
-          })
-          .catch(() => {/* Offline fallback */});
         return cachedResponse;
       }
       return fetch(event.request);
