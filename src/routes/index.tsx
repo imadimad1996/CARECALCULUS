@@ -110,15 +110,28 @@ const safeLazy = (loader: () => Promise<any>) => {
     try {
       return await loader();
     } catch (error: any) {
+      const errStr = error?.toString() || error?.message || '';
       const isChunkError =
-        error?.message?.includes('Failed to fetch dynamically imported module') ||
-        error?.message?.includes('Loading chunk') ||
-        error?.name === 'TypeError';
+        errStr.includes('Failed to fetch dynamically imported module') ||
+        errStr.includes('Loading chunk') ||
+        errStr.includes('MIME type') ||
+        errStr.includes('Importing a module script failed');
 
-      const hasReloaded = sessionStorage.getItem('cc_chunk_reload');
+      const lastReload = Number(sessionStorage.getItem('cc_chunk_reload_time') || 0);
+      const now = Date.now();
 
-      if (isChunkError && !hasReloaded) {
-        sessionStorage.setItem('cc_chunk_reload', 'true');
+      if (isChunkError && (now - lastReload > 5000)) {
+        sessionStorage.setItem('cc_chunk_reload_time', String(now));
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistrations().then(regs => {
+            for (const r of regs) r.unregister();
+          });
+        }
+        if ('caches' in window) {
+          caches.keys().then(keys => {
+            for (const k of keys) caches.delete(k);
+          });
+        }
         window.location.reload();
         return new Promise(() => {});
       }
