@@ -11,8 +11,10 @@ interface StudyLog {
   type: 'reading' | 'calculator_practice' | 'case_study' | 'revision';
 }
 
+import { LangCode } from '../types';
+
 interface StudyTrackerProps {
-  lang?: 'en' | 'fr' | 'ar';
+  lang?: LangCode;
 }
 
 const T = {
@@ -89,13 +91,50 @@ const T = {
         notes: 'Comparaison des formules CKD-EPI et Cockcroft-Gault chez les patients ages.'
       }
     ]
+  },
+  es: {
+    title: 'Seguimiento de Estudio Clínico',
+    subtitle: 'Registra tus sesiones de práctica de calculadoras, casos clínicos y lecturas médicas.',
+    addLog: 'Registrar Sesión',
+    totalHours: 'Tiempo Total de Estudio',
+    hours: 'hrs',
+    mins: 'mins',
+    sessionsCompleted: 'Sesiones Registradas',
+    practiceType: 'Enfoque Principal',
+    recentActivity: 'Registro Reciente',
+    emptyActivity: 'No hay sesiones registradas aún. ¡Haz clic en "Registrar Sesión" para comenzar!',
+    subjectLabel: 'Asunto / Tema',
+    subjectPlaceholder: 'ej. Manejo de Sepsis y Escala SOFA',
+    durationLabel: 'Duración (Minutos)',
+    typeLabel: 'Tipo de Actividad',
+    notesLabel: 'Puntos Clave / Notas',
+    notesPlaceholder: '¿Qué perlas clínicas aprendiste?',
+    saveBtn: 'Guardar Sesión',
+    cancelBtn: 'Cancelar',
+    deleteConfirm: '¿Estás seguro de que deseas eliminar este registro?',
+    types: {
+      reading: 'Lectura Clínica',
+      calculator_practice: 'Práctica con Calculadoras',
+      case_study: 'Simulación de Caso Clínico',
+      revision: 'Repaso General'
+    },
+    defaultLogs: [
+      {
+        subject: 'Guías de Sepsis y Evaluación qSOFA',
+        notes: 'Revisión de criterios Surviving Sepsis y práctica de graduación qSOFA en 5 perfiles de pacientes.'
+      },
+      {
+        subject: 'Función Renal y Cálculo de Filtrado Glomerular',
+        notes: 'Comparación de fórmulas CKD-EPI vs Cockcroft-Gault en pacientes de edad avanzada.'
+      }
+    ]
   }
 };
 
 export const StudyTracker: React.FC<StudyTrackerProps> = ({ lang = 'en' }) => {
   const currentLang = (lang && T[lang]) ? lang : 'en';
   const t = T[currentLang];
-  const isRtl = currentLang === 'ar';
+  const isRtl = false;
 
   const [logs, setLogs] = useState<StudyLog[]>([]);
   const [showModal, setShowModal] = useState(false);

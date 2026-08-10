@@ -177,12 +177,18 @@ while ((sMatch = specialtyIdRe.exec(specialtiesBlock)) !== null) {
 }
 
 // --- Build the set of LOGICAL paths (language-agnostic) -----------------------
-// English is served bare, French at /fr, Arabic at /ar. Each logical path below
-// is emitted once per language with full hreflang alternates.
-const LANGS = ['en', 'fr', 'ar'];
+// English is served bare at carecalculus.com, French at fr.carecalculus.com, Spanish at es.carecalculus.com.
+const LANGS = ['en', 'fr', 'es'];
+const ORIGIN_EN = 'https://www.carecalculus.com';
+const ORIGIN_FR = 'https://fr.carecalculus.com';
+const ORIGIN_ES = 'https://es.carecalculus.com';
+
 const langUrl = (path, lang) => {
   const clean = path === '/' ? '' : path;
-  return lang === 'en' ? `${ORIGIN}${clean || '/'}` : `${ORIGIN}/${lang}${clean}`;
+  if (lang === 'en') return `${ORIGIN_EN}${clean || '/'}`;
+  if (lang === 'fr') return `${ORIGIN_FR}${clean || '/'}`;
+  if (lang === 'es') return `${ORIGIN_ES}${clean || '/'}`;
+  return `${ORIGIN_EN}${clean || '/'}`;
 };
 
 /** @type {{path:string, priority:string, changefreq?:string}[]} */

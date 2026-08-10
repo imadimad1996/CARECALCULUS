@@ -12,8 +12,6 @@ interface ClinicalContextProps {
 
 export default function ClinicalContextPanel({ lang, pearls, pitfalls, evidence, references }: ClinicalContextProps) {
   const [isExpanded, setIsExpanded] = useState(false);
-  const isRtl = false; // Arabic is not currently in LangCode
-
   const t = {
     en: {
       title: 'Clinical Context & Evidence',
@@ -32,11 +30,20 @@ export default function ClinicalContextPanel({ lang, pearls, pitfalls, evidence,
       referencesTitle: 'Références',
       expand: 'Afficher les détails',
       collapse: 'Masquer les détails'
+    },
+    es: {
+      title: 'Contexto Clínico y Evidencia',
+      pearlsTitle: 'Perlas Clínicas',
+      pitfallsTitle: 'Errores Frecuentes',
+      evidenceTitle: 'Evidencia y Fórmula',
+      referencesTitle: 'Referencias',
+      expand: 'Mostrar Detalles',
+      collapse: 'Ocultar Detalles'
     }
   }[lang] || { title: 'Clinical Context', pearlsTitle: 'Pearls', pitfallsTitle: 'Pitfalls', evidenceTitle: 'Evidence', referencesTitle: 'References', expand: 'Expand', collapse: 'Collapse' };
 
   return (
-    <div className="mt-8 bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm" dir={isRtl ? 'rtl' : 'ltr'}>
+    <div className="mt-8 bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm" dir="ltr">
       <button 
         onClick={() => setIsExpanded(!isExpanded)}
         className="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition-colors"

@@ -12,22 +12,22 @@ export interface MedicalReviewer {
   lastReviewed: string;
 }
 
+import { LangCode } from '../types';
+
 interface MedicalReviewerCardProps {
   reviewer: MedicalReviewer;
-  lang?: 'en' | 'fr' | 'ar';
+  lang?: LangCode;
 }
 
 export const MedicalReviewerCard: React.FC<MedicalReviewerCardProps> = ({ reviewer, lang = 'en' }) => {
-  const isRtl = false;
-
   const t = {
-    reviewedBy: { en: 'Medically Reviewed By', fr: 'Révisé Médicalement Par' },
-    lastUpdated: { en: 'Last updated:', fr: 'Dernière mise à jour :' },
-    viewProfile: { en: 'View Full Profile', fr: 'Voir le Profil Complet' }
+    reviewedBy: { en: 'Medically Reviewed By', fr: 'Révisé Médicalement Par', es: 'Revisado Médicamente Por' },
+    lastUpdated: { en: 'Last updated:', fr: 'Dernière mise à jour :', es: 'Última actualización:' },
+    viewProfile: { en: 'View Full Profile', fr: 'Voir le Profil Complet', es: 'Ver Perfil Completo' }
   };
 
   return (
-    <div className="mt-12 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 overflow-hidden relative" dir={isRtl ? 'rtl' : 'ltr'}>
+    <div className="mt-12 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 overflow-hidden relative" dir="ltr">
       {/* Decorative background element */}
       <div className="absolute top-0 right-0 w-32 h-32 bg-teal-500/5 rounded-full blur-2xl -mr-10 -mt-10 pointer-events-none" />
       

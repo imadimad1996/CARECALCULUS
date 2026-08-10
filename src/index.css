@@ -6,7 +6,6 @@
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-arabic: "Cairo", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
   /* Popularity state colors for textbook modules */
@@ -288,29 +287,6 @@ html.dark {
     input[type="number"] { font-size: 1.875rem; }
   }
 
-  /* Arabic font override */
-  html[lang="ar"] h1,
-  html[lang="ar"] h2,
-  html[lang="ar"] h3,
-  html[lang="ar"] h4,
-  html[lang="ar"] h5,
-  html[lang="ar"] h6,
-  html[lang="ar"] body,
-  html[lang="ar"] button,
-  html[lang="ar"] input,
-  html[lang="ar"] label,
-  html[lang="ar"] select,
-  html[lang="ar"] textarea,
-  html[lang="ar"] span,
-  html[lang="ar"] div,
-  html[lang="ar"] p,
-  html[lang="ar"] a,
-  html[lang="ar"] font {
-    font-family: var(--font-arabic) !important;
-    letter-spacing: 0px !important;
-    line-height: 1.75 !important;
-  }
-  
   ::selection {
     background-color: #CCFBF1;
     color: #0F766E;

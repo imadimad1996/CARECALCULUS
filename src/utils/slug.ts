@@ -4,8 +4,7 @@
 /**
  * Turn an arbitrary title into a URL-safe, SEO-friendly slug.
  * Handles Latin diacritics (é, à, ç…) and strips anything non-alphanumeric.
- * Falls back to the provided id when a title produces an empty slug
- * (e.g. an Arabic-only title).
+ * Falls back to the provided id when a title produces an empty slug.
  */
 export function slugify(title: string, fallbackId?: string): string {
   const base = title

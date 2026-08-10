@@ -18,5 +18,15 @@
     "seeAlso": "Voir aussi",
     "faqTitle": "Questions Fréquemment Posées",
     "parameters": "Paramètres"
+  },
+  "es": {
+    "reviewedBy": "Revisado por el equipo clínico de CareCalculus",
+    "specialists": "Médicos, especialistas en cuidados intensivos y urgencias",
+    "updated": "Actualizado en 2026",
+    "mathMetric": "Métrica Matemática",
+    "evidenceLit": "Evidencia y Literatura",
+    "seeAlso": "Ver también",
+    "faqTitle": "Preguntas Frecuentes",
+    "parameters": "Parámetros"
   }
 }

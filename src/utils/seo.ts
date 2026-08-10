@@ -15,6 +15,7 @@ import { slugify } from './slug';
 
 export const ORIGIN_EN = 'https://www.carecalculus.com';
 export const ORIGIN_FR = 'https://fr.carecalculus.com';
+export const ORIGIN_ES = 'https://es.carecalculus.com';
 export const ORIGIN = ORIGIN_EN;
 
 const OG_IMAGE = 'https://carecalculus.com/og-image.png';
@@ -26,9 +27,10 @@ import medicalSchemasRaw from '../data/medicalSchemas.json';
 const medicalSchemaDb: Record<string, any> = medicalSchemasRaw;
 export const nameEnMap: Record<string, string> = seoMaps.nameEnMap;
 const nameFrMap: Record<string, string> = seoMaps.nameFrMap;
-const nameArMap: Record<string, string> = seoMaps.nameArMap;
+const nameEsMap: Record<string, string> = (seoMaps as any).nameEsMap || {};
 const keywordsEnMap: Record<string, string> = (seoMaps as any).keywordsEnMap || {};
 const keywordsFrMap: Record<string, string> = (seoMaps as any).keywordsFrMap || {};
+const keywordsEsMap: Record<string, string> = (seoMaps as any).keywordsEsMap || {};
 
 function slugifyQuestion(question: string): string {
   return question
@@ -669,7 +671,7 @@ export function organizationJsonLd() {
       '@type': 'WebSite',
       name: 'CareCalculus',
       url: ORIGIN,
-      inLanguage: ['en', 'fr'],
+      inLanguage: ['en', 'fr', 'es'],
       potentialAction: {
         '@type': 'SearchAction',
         target: {
@@ -687,7 +689,7 @@ export function getBreadcrumbSchema(logicalPath: string, lang: LangCode): any | 
   if (logicalPath === '/' || logicalPath === '/home') return null;
   const meta = getLocalizedMeta(logicalPath, lang);
   const pageName = meta.title.split(' | ')[0];
-  const homeLabel = lang === 'fr' ? 'Accueil' : 'Home';
+  const homeLabel = lang === 'fr' ? 'Accueil' : lang === 'es' ? 'Inicio' : 'Home';
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -733,6 +735,7 @@ export function buildHead(logicalPath: string, lang: LangCode): HeadModel {
   const hreflang: { hreflang: string; href: string }[] = [
     { hreflang: 'en', href: `${ORIGIN_EN}${pathSuffix}` },
     { hreflang: 'fr', href: `${ORIGIN_FR}${pathSuffix}` },
+    { hreflang: 'es', href: `${ORIGIN_ES}${pathSuffix}` },
     { hreflang: 'x-default', href: `${ORIGIN_EN}${pathSuffix}` },
   ];
 

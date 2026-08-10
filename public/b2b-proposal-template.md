@@ -10,7 +10,7 @@ I am writing to introduce **CareCalculus** (https://carecalculus.com), a free, o
 Unlike legacy tools, CareCalculus provides:
 1. **1-Click Epic & Cerner DotPhrase Formatter:** Automatically formats pre-test risk scores (Wells, SOFA, CURB-65, MAP) for progress note integration.
 2. **100% Offline Hospital PWA Availability:** Functions seamlessly in zero-reception ICU basements.
-3. **Multilingual Access:** Native support in English, French (SFAR / HAS aligned), and Arabic.
+3. **Multilingual Access:** Native support in English, French (SFAR / HAS aligned), and Spanish.
 
 We offer **Departmental & Institutional Passes ($499/year)** which include:
 - Custom hospital/university EHR DotPhrase templates.

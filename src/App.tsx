@@ -86,6 +86,10 @@ function AppLayout() {
     const cleanLogical = logicalPath.startsWith('/') ? logicalPath : `/${logicalPath}`;
     
     if (typeof window !== 'undefined' && !window.location.hostname.includes('localhost') && !window.location.hostname.includes('127.0.0.1') && !window.location.hostname.endsWith('.pages.dev')) {
+      if (next === 'es') {
+        window.location.href = `https://es.carecalculus.com${cleanLogical === '/' ? '' : cleanLogical}`;
+        return;
+      }
       if (next === 'fr') {
         window.location.href = `https://fr.carecalculus.com${cleanLogical === '/' ? '' : cleanLogical}`;
         return;
@@ -96,8 +100,9 @@ function AppLayout() {
       }
     }
 
-    if (cleanLogical === '/glp-1-hub' || cleanLogical === '/hub-glp1' || cleanLogical === '/مركز-glp1' || decodeURIComponent(cleanLogical) === '/مركز-glp1') {
+    if (cleanLogical === '/glp-1-hub' || cleanLogical === '/hub-glp1') {
       if (next === 'fr') navigate('/fr/hub-glp1');
+      else if (next === 'es') navigate('/es/hub-glp1');
       else navigate('/glp-1-hub');
       return;
     }
@@ -108,21 +113,23 @@ function AppLayout() {
   // consult a stored preference / browser language and redirect.
   useEffect(() => {
     if (location.pathname !== '/') return;
-    if (typeof window !== 'undefined' && window.location.hostname.startsWith('fr.')) return;
+    if (typeof window !== 'undefined' && (window.location.hostname.startsWith('fr.') || window.location.hostname.startsWith('es.'))) return;
     const stored = localStorage.getItem('carecalculus-lang');
     let preferred: LangCode = 'en';
-    if (stored === 'fr' || stored === 'en') {
-      preferred = stored;
+    if (stored === 'fr' || stored === 'en' || stored === 'es') {
+      preferred = stored as LangCode;
     } else {
       const browserLangs = navigator.languages || [navigator.language];
       for (const b of browserLangs) {
         const code = b.toLowerCase().slice(0, 2);
         if (code === 'fr') { preferred = 'fr'; break; }
+        if (code === 'es') { preferred = 'es'; break; }
       }
     }
     if (preferred !== 'en') {
       if (typeof window !== 'undefined' && !window.location.hostname.includes('localhost') && !window.location.hostname.includes('127.0.0.1') && !window.location.hostname.endsWith('.pages.dev')) {
-        window.location.href = `https://fr.carecalculus.com/`;
+        const targetDomain = preferred === 'es' ? 'https://es.carecalculus.com/' : 'https://fr.carecalculus.com/';
+        window.location.href = targetDomain;
       } else {
         navigate(buildPath('/', preferred), { replace: true });
       }
@@ -730,7 +737,7 @@ function AppLayout() {
       </script>
     </Helmet>
     <TrackingScripts />
-    <div className={`min-h-screen bg-[#fafafa] dark:bg-slate-950 text-[#111] dark:text-slate-100 transition-colors duration-300 flex flex-col md:flex-row w-full overflow-x-clip ${isRtl ? 'font-arabic' : 'font-sans'}`} dir={isRtl ? 'rtl' : 'ltr'}>
+    <div className="min-h-screen bg-[#fafafa] dark:bg-slate-950 text-[#111] dark:text-slate-100 transition-colors duration-300 flex flex-col md:flex-row w-full overflow-x-clip font-sans" dir="ltr">
       <CommandPalette />
       {/* Reading progress indicator for content pages */}
       {isContentPage && <ReadingProgress />}
@@ -851,6 +858,18 @@ function AppLayout() {
                   >
                     <span>Français</span>
                     <span className="font-mono text-[10px] font-black opacity-60">FR</span>
+                  </a>
+                  <a
+                    href="https://es.carecalculus.com"
+                    role="option"
+                    aria-selected={lang === 'es'}
+                    onClick={() => { setLang('es'); setIsLangOpen(false); }}
+                    className={`w-full px-3 py-2 rounded-xl text-xs font-bold flex items-center justify-between transition-colors cursor-pointer ${
+                      lang === 'es' ? 'bg-teal-50 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300' : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+                    }`}
+                  >
+                    <span>Español</span>
+                    <span className="font-mono text-[10px] font-black opacity-60">ES</span>
                   </a>
                 </div>
               )}
@@ -1148,12 +1167,13 @@ function AppLayout() {
               fallback={<div className="py-10 text-center text-sm text-gray-500">Loading clinical module...</div>}
             >
               <Routes>
-                {/* English (bare) + French (/fr) + Arabic (/ar) all share the
+                {/* English (bare) + French (/fr) + Spanish (/es) all share the
                     same module routes. Relative child paths let one definition
                     serve every language prefix. Navigate targets are built with
                     langPath so redirects stay inside the active language. */}
                 <Route path="/">{moduleRoutes(lang, langPath)}</Route>
                 <Route path="/fr">{moduleRoutes('fr', (p) => buildPath(p, 'fr'))}</Route>
+                <Route path="/es">{moduleRoutes('es', (p) => buildPath(p, 'es'))}</Route>
                 <Route path="*" element={<NotFound lang={lang} />} />
               </Routes>
             </React.Suspense>

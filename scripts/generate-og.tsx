@@ -16,10 +16,7 @@ async function main() {
     fs.mkdirSync(distOgDir, { recursive: true });
   }
   const interFontPath = path.join(ROOT, 'node_modules', '@fontsource', 'inter', 'files', 'inter-latin-600-normal.woff');
-  const cairoFontPath = path.join(ROOT, 'node_modules', '@fontsource', 'cairo', 'files', 'cairo-arabic-600-normal.woff');
-  
   const interFont = fs.readFileSync(interFontPath);
-  const cairoFont = fs.readFileSync(cairoFontPath);
 
   let logoSvg = '';
   try {
@@ -37,7 +34,7 @@ async function main() {
   // Add home
   routes.push('/');
 
-  const langs = ['en', 'fr'] as const;
+  const langs = ['en', 'fr', 'es'] as const;
 
   for (const lang of langs) {
     const langDir = path.join(distOgDir, lang);
@@ -48,10 +45,11 @@ async function main() {
     for (const route of routes) {
       const meta = getLocalizedMeta(route, lang);
       const title = meta.title.split(' | ')[0];
-      const isArabic = false;
 
       const subtitle = lang === 'fr' 
         ? 'Calculateur Médical Gratuit' 
+        : lang === 'es'
+        ? 'Calculadora Médica Gratuita'
         : 'Multilingual Care Calculators';
 
       const element = (
@@ -66,8 +64,8 @@ async function main() {
             backgroundColor: '#ffffff',
             backgroundImage: 'radial-gradient(circle at 25px 25px, #f3f4f6 2%, transparent 0%), radial-gradient(circle at 75px 75px, #f3f4f6 2%, transparent 0%)',
             backgroundSize: '100px 100px',
-            fontFamily: isArabic ? '"Cairo"' : '"Inter"',
-            direction: isArabic ? 'rtl' : 'ltr',
+            fontFamily: '"Inter"',
+            direction: 'ltr',
           }}
         >
           <div
@@ -99,40 +97,35 @@ async function main() {
                   src={`data:image/svg+xml;base64,${Buffer.from(logoSvg).toString('base64')}`}
                   width={80}
                   height={80}
-                  style={{ display: 'flex' }}
+                  alt="Logo"
                 />
-                <span style={{ fontSize: '36px', fontWeight: 600, marginLeft: '20px', color: '#111827' }}>CareCalculus</span>
               </div>
 
-            {/* Title */}
-            <h1
-              style={{
-                fontSize: isArabic ? '64px' : '56px',
-                fontWeight: 600,
-                color: '#111827',
-                marginBottom: '24px',
-                lineHeight: 1.2,
-                display: 'flex',
-                justifyContent: 'center',
-                textAlign: 'center'
-              }}
-            >
-              {title}
-            </h1>
+              {/* Title */}
+              <div
+                style={{
+                  fontSize: '56px',
+                  fontWeight: 600,
+                  color: '#111827',
+                  marginBottom: '20px',
+                  lineHeight: 1.2,
+                }}
+              >
+                {title}
+              </div>
 
-            {/* Subtitle */}
-            <p
-              style={{
-                fontSize: '28px',
-                color: '#6b7280',
-                display: 'flex',
-                justifyContent: 'center',
-                textAlign: 'center',
-                margin: 0
-              }}
-            >
-              {subtitle}
-            </p>
+              {/* Subtitle */}
+              <div
+                style={{
+                  fontSize: '28px',
+                  fontWeight: 600,
+                  color: '#2563eb',
+                  textTransform: 'uppercase',
+                  letterSpacing: '2px',
+                }}
+              >
+                {subtitle}
+              </div>
           </div>
         </div>
       );
@@ -147,14 +140,8 @@ async function main() {
             weight: 600,
             style: 'normal',
           },
-          {
-            name: 'Cairo',
-            data: cairoFont,
-            weight: 600,
-            style: 'normal',
-          },
         ],
-      });
+      });;
 
       const resvg = new Resvg(svg, {
         background: 'rgba(255, 255, 255, 1)',

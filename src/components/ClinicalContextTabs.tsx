@@ -7,9 +7,11 @@ export type ClinicalContextType = {
   evidence?: React.ReactNode;
 };
 
+import { LangCode } from '../types';
+
 interface ClinicalContextTabsProps {
   context: ClinicalContextType;
-  lang?: 'en' | 'fr' | 'ar';
+  lang?: LangCode;
 }
 
 export const ClinicalContextTabs: React.FC<ClinicalContextTabsProps> = ({ context, lang = 'en' }) => {
@@ -28,15 +30,13 @@ export const ClinicalContextTabs: React.FC<ClinicalContextTabsProps> = ({ contex
   }, [context]);
 
   const t = {
-    when: { en: 'When to Use', fr: 'Quand utiliser' },
-    pearls: { en: 'Pearls & Pitfalls', fr: 'Perles et Pièges' },
-    evidence: { en: 'Evidence', fr: 'Preuves' }
+    when: { en: 'When to Use', fr: 'Quand utiliser', es: 'Cuándo Usar' },
+    pearls: { en: 'Pearls & Pitfalls', fr: 'Perles et Pièges', es: 'Perlas y Errores' },
+    evidence: { en: 'Evidence', fr: 'Preuves', es: 'Evidencia' }
   };
 
-  const isRtl = false;
-
   return (
-    <div className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm mt-8" dir={isRtl ? 'rtl' : 'ltr'}>
+    <div className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm mt-8" dir="ltr">
       <div className="flex border-b border-slate-200 bg-slate-50/50 overflow-x-auto hide-scrollbar">
         {context.whenToUse && (
           <button

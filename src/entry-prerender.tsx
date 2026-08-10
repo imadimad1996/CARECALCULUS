@@ -113,7 +113,7 @@ const LOGICAL_ROUTES = [
   ...compareSlugs,
 ];
 
-const LANGS: LangCode[] = ['en', 'fr'];
+const LANGS: LangCode[] = ['en', 'fr', 'es'];
 
 /** Every URL (all langs) we want statically generated. */
 function allUrls(): string[] {
@@ -159,7 +159,7 @@ export async function prerender(data: { url: string }) {
       type: 'meta',
       props: {
         property: 'og:locale',
-        content: lang === 'fr' ? 'fr_FR' : 'en_US',
+        content: lang === 'fr' ? 'fr_FR' : lang === 'es' ? 'es_ES' : 'en_US',
       },
     },
 
@@ -170,7 +170,7 @@ export async function prerender(data: { url: string }) {
     { type: 'meta', props: { name: 'twitter:image', content: head.ogImage } },
   ];
 
-  // hreflang alternates (en/fr/ar + x-default)
+  // hreflang alternates (en/fr/es + x-default)
   for (const alt of head.hreflang) {
     elements.push({
       type: 'link',

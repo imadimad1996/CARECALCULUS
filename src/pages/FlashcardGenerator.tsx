@@ -20,6 +20,11 @@ const PRESETS = {
     { front: "Cible de PAM dans le choc septique", back: "≥ 65 mmHg pour maintenir la perfusion des organes vitaux." },
     { front: "Seuil du score GCS pour l'intubation", back: "GCS ≤ 8 (Éviter l'inhalation et protéger les voies aériennes)." },
     { front: "Causes réversibles d'arrêt cardiaque (5 H)", back: "Hypoxie, Hypovolémie, Ions Hydrogène (acidose), Hypo-/Hyperkaliémie, Hypothermie." }
+  ],
+  es: [
+    { front: "Objetivo de PAM en Choque Séptico", back: "≥ 65 mmHg para mantener la perfusión de órganos vitales." },
+    { front: "Umbral de GCS para Intubación", back: "GCS ≤ 8 (¡Con 8, intubar y proteger la vía aérea!)" },
+    { front: "Causas Reversibles de Paro Cardíaco (5 H)", back: "Hipoxia, Hipovolemia, Hidrogeniones (acidosis), Hipo-/Hiperpotasemia, Hipotermia." }
   ]
 };
 
@@ -120,12 +125,12 @@ export default function FlashcardGenerator({ lang }: { lang: LangCode }) {
             <div className="flex items-center justify-between text-xs text-gray-400 font-mono font-bold">
               <span>CARD {currentIndex + 1} OF {activeCards.length}</span>
               <span className="px-2 py-0.5 rounded bg-gray-100 uppercase text-[9px]">
-                {isFlipped ? (lang === 'fr' ? 'RÉPONSE' : isRtl ? 'الجواب' : 'REVERSE') : (lang === 'fr' ? 'QUESTION' : isRtl ? 'السؤال' : 'FRONT')}
+                {isFlipped ? (lang === 'fr' ? 'RÉPONSE' : lang === 'es' ? 'RESPUESTA' : 'REVERSE') : (lang === 'fr' ? 'QUESTION' : lang === 'es' ? 'PREGUNTA' : 'FRONT')}
               </span>
             </div>
 
             <div className="py-6 text-center">
-              <p className={`text-lg font-bold text-slate-800 ${isRtl ? 'font-arabic' : 'font-sans'}`}>
+              <p className="text-lg font-bold text-slate-800 font-sans">
                 {isFlipped ? activeCards[currentIndex].back : activeCards[currentIndex].front}
               </p>
             </div>

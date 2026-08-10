@@ -7,7 +7,7 @@
     "dev": "vite --port=3000 --host=0.0.0.0",
     "favicons": "tsx scripts/generate-favicons.ts",
     "llmstxt": "tsx scripts/generate-llmstxt.ts",
-    "build": "npm run favicons && npm run sitemap && npm run llmstxt && vite build && node scripts/postbuild-rtl.mjs",
+    "build": "npm run favicons && npm run sitemap && npm run llmstxt && vite build",
     "og": "tsx scripts/generate-og.tsx",
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
@@ -41,7 +41,6 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20260702.1",
-    "@fontsource/cairo": "^5.2.7",
     "@fontsource/inter": "^5.2.8",
     "@resvg/resvg-js": "^2.6.2",
     "@types/express": "^4.17.21",

@@ -8,25 +8,25 @@ This document serves as the absolute blueprint configuration for **CareCalculus*
 ## 1. Project Vision & Architecture Overview
 
 ### Vision Statement
-**CareCalculus** is engineered to be the definitive global reference platform for nurses, emergency personnel, ICU specialists, and healthcare students. By providing instantaneous, error-free clinical calculations, nursing tools, drug dosage matrices, and dynamic clinical scoring reference points across English, French, and Arabic, it eliminates cognitive load in high-stress medical environments.
+**CareCalculus** is engineered to be the definitive global reference platform for nurses, emergency personnel, ICU specialists, and healthcare students. By providing instantaneous, error-free clinical calculations, nursing tools, drug dosage matrices, and dynamic clinical scoring reference points across English, French, and Spanish, it eliminates cognitive load in high-stress medical environments.
 
 ### Core Architecture & UI/UX Guidelines
 1. **Design System Accent & Atmosphere:** Inspired by the hyper-clean aesthetics of Stripe, Apple, and Airbnb. The user interface uses generous whitespace, high-contrast typography, and subtle border framing to promote quick visual scanning. 
 2. **Clinical Utility First:** Interactive tools calculate state instantly on text/slider input values rather than enforcing explicit submission buttons.
-3. **Bi-Directional Layouts (LTR ↔ RTL):** Native support for English (`en`) and French (`fr`) alongside localized Arabic (`ar`) configurations via dynamic semantic HTML elements wrapping layout components inside standard Tailwind rules (`dir="rtl"` / `dir="ltr"`).
-4. **Performance Targets:** High Lighthouse scores (98+) leveraging Next.js App Router for server-rendered page shells, instant client-side interaction loops, and static file generation optimization via Cloudflare caching topologies.
+3. **Multi-Domain Internationalization:** Native support for English (`www.carecalculus.com`), French (`fr.carecalculus.com`), and Spanish (`es.carecalculus.com`).
+4. **Performance Targets:** High Lighthouse scores (98+) leveraging Vite static pre-rendering, instant client-side interaction loops, and static file generation optimization via Cloudflare caching topologies.
 
 ---
 
 ## 2. Tech Stack & Infrastructure
 
-- **Frontend Framework:** Next.js (App Router Architecture), React, TypeScript.
-- **Styling Architecture:** Tailwind CSS, including custom layout classes handling dual fonts (`Geist` or `Inter` for LTR text scales; `Cairo` or `Tajawal` for clean, high-legibility Arabic scripts).
+- **Frontend Framework:** React, TypeScript, Vite.
+- **Styling Architecture:** Tailwind CSS, including custom typography tokens (`Inter` / `Plus Jakarta Sans`).
 - **Icon Suite:** `lucide-react` for light, semantic, scalable icons.
-- **Internationalization Strategy:** Next.js Middleware sub-path routing structures:
-  - English: `carecalculus.net/[calculator-slug]`
-  - French: `carecalculus.net/fr/[calculateur-slug]`
-  - Arabic: `carecalculus.net/ar/[حاسبة-slug]`
+- **Internationalization Strategy:** Multi-domain & sub-path routing structures:
+  - English: `www.carecalculus.com/[calculator-slug]`
+  - French: `fr.carecalculus.com/[calculator-slug]` (or `/fr/[calculator-slug]`)
+  - Spanish: `es.carecalculus.com/[calculator-slug]` (or `/es/[calculator-slug]`)
 - **SEO & Search Dominance:** Integrated JSON-LD structured schema engine utilizing `MedicalWebPage` and `MedicalCalculator` types from Schema.org. Fully automated metadata rendering maps localized titles, meta descriptions, and alternate language canonical href links.
 - **Hosting Environment:** Managed via Vercel for instant frontend atomic deployments, routed globally through Cloudflare with custom caching and wholesale domain management to eliminate high markup overheads.
 
