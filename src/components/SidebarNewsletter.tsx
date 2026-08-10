@@ -29,7 +29,7 @@ export default function SidebarNewsletter({ lang }: SidebarNewsletterProps) {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const t = T[lang];
+  const t = T[lang] || T.en;
   const isRtl = false;
 
   useEffect(() => {

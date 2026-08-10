@@ -16,7 +16,7 @@ export default function ReviewerBadge({ reviewerName, lang, date }: ReviewerBadg
     fr: { prefix: "Revue Médicale par", datePrefix: "Mis à jour le" }
   };
   
-  const currentText = texts[lang];
+  const currentText = texts[lang] || texts.en;
 
   return (
     <div className={`inline-flex items-center gap-3 px-3 py-2 rounded-xl bg-emerald-50/80 border border-emerald-100/50 ${isRtl ? 'flex-row-reverse' : ''}`} dir={isRtl ? 'rtl' : 'ltr'}>

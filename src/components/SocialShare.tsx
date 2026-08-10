@@ -27,7 +27,7 @@ const T = {
 
 export default function SocialShare({ title, shareText, lang, compact = false }: SocialShareProps) {
   const [copied, setCopied] = useState(false);
-  const t = T[lang];
+  const t = T[lang] || T.en;
 
   const pageUrl = typeof window !== 'undefined' ? window.location.href : 'https://carecalculus.com';
   const text = shareText || title;

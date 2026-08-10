@@ -36,7 +36,7 @@ export default function MedicalDisclaimer({ lang }: { lang: LangCode }) {
     }
   };
 
-  const currentText = texts[lang];
+  const currentText = texts[lang] || texts.en;
   const isRtl = false;
 
   return (

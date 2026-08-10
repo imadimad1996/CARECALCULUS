@@ -40,7 +40,7 @@ export default function NewsletterCapture({ lang }: NewsletterCaptureProps) {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
-  const t = T[lang];
+  const t = T[lang] || T.en;
   const isRtl = false;
 
   useEffect(() => {

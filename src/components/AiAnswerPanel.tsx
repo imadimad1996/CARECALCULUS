@@ -37,7 +37,7 @@ export default function AiAnswerPanel({ logicalPath, lang }: AiAnswerPanelProps)
   const faqs = getFaqData(logicalPath) ?? [];
   const howTo = getHowToSchema(logicalPath);
   const steps = Array.isArray(howTo?.step) ? howTo.step : [];
-  const text = labels[lang];
+  const text = labels[lang] || labels.en;
   const pageTitle = meta.title.split(' | ')[0];
 
   return (
