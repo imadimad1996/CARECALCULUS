@@ -7,27 +7,40 @@
     <!-- Immediate PWA & Stale Asset Error Recovery Script -->
     <script>
       (function() {
+        function flushAndReload() {
+          var lastFix = Number(sessionStorage.getItem('cc_sw_flush_time') || 0);
+          if (Date.now() - lastFix > 3000) {
+            sessionStorage.setItem('cc_sw_flush_time', String(Date.now()));
+            if ('serviceWorker' in navigator) {
+              navigator.serviceWorker.getRegistrations().then(function(regs) {
+                for (var i = 0; i < regs.length; i++) regs[i].unregister();
+              });
+            }
+            if ('caches' in window) {
+              caches.keys().then(function(keys) {
+                for (var i = 0; i < keys.length; i++) caches.delete(keys[i]);
+              });
+            }
+            var cleanUrl = window.location.href.replace(/[\?&]cc_reload=\d+/, '');
+            var sep = cleanUrl.indexOf('?') !== -1 ? '&' : '?';
+            window.location.href = cleanUrl + sep + 'cc_reload=' + Date.now();
+          }
+        }
+
         window.addEventListener('error', function(e) {
           var msg = (e && e.message) ? e.message : '';
           var isAssetError = e.target && (e.target.tagName === 'SCRIPT' || e.target.tagName === 'LINK');
-          if (isAssetError || msg.indexOf('MIME type') !== -1 || msg.indexOf('dynamically imported module') !== -1 || msg.indexOf('Importing a module script failed') !== -1) {
-            var lastFix = Number(sessionStorage.getItem('cc_sw_flush_time') || 0);
-            if (Date.now() - lastFix > 5000) {
-              sessionStorage.setItem('cc_sw_flush_time', String(Date.now()));
-              if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.getRegistrations().then(function(regs) {
-                  for (var r of regs) r.unregister();
-                });
-              }
-              if ('caches' in window) {
-                caches.keys().then(function(keys) {
-                  for (var k of keys) caches.delete(k);
-                });
-              }
-              window.location.reload();
-            }
+          if (isAssetError || msg.indexOf('MIME type') !== -1 || msg.indexOf('dynamically imported module') !== -1 || msg.indexOf('Importing a module script failed') !== -1 || msg.indexOf('Failed to fetch') !== -1) {
+            flushAndReload();
           }
         }, true);
+
+        window.addEventListener('unhandledrejection', function(e) {
+          var reason = (e && e.reason) ? String(e.reason) : '';
+          if (reason.indexOf('MIME type') !== -1 || reason.indexOf('dynamically imported module') !== -1 || reason.indexOf('Importing a module script failed') !== -1 || reason.indexOf('Failed to fetch') !== -1) {
+            flushAndReload();
+          }
+        });
       })();
     </script>
 
