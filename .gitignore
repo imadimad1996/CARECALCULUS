@@ -1,13 +1,86 @@
+# Dependencies
 node_modules/
+.pnp
+.pnp.js
+
+# Build outputs
 build/
 dist/
-coverage/
-.DS_Store
-*.log
-.env*
-!.env.example
-.wrangler/
+dist-ssr/
+.output/
 
-# Environment secrets
+# Coverage reports
+coverage/
+
+# Environment files
 .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+!.env.example
 scripts/hospital_email_crawler/.env
+
+# Cloudflare / Wrangler
+.wrangler/
+wrangler.toml.bak
+
+# OS artifacts
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+desktop.ini
+
+# IDE / Editor
+.vscode/settings.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Testing
+*.snap
+
+# Cache
+.eslintcache
+.cache/
+.parcel-cache/
+.vite/
+*.tsbuildinfo
+
+# Generated assets (can be rebuilt)
+public/favicon*.png
+public/apple-touch-icon.png
+public/icon-*.png
+public/favicon.ico
+
+# Temp files
+*.tmp
+*.temp
+
+# Python & Virtual Environments
+crawl_env/
+venv/
+.venv/
+env/
+*_env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+
+# Audit Scratchpad Markdown Reports
+*_audit.md
+

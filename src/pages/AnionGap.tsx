@@ -1,268 +1,321 @@
-import { JsonLd } from '../components/JsonLd';
-import React, { useState, useMemo, useEffect } from 'react';
-import { Activity, Info, BookOpen, ChevronDown, Check, Copy } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Activity, Info, BookOpen, ChevronDown, FlaskConical } from 'lucide-react';
 import { LangCode, Translations } from '../types';
 import ClinicalExportButton from '../components/ClinicalExportButton';
-import CalculatorInput from '../components/ui/CalculatorInput';
 import { layoutTranslations } from '../utils/lang';
 import { trackCalculatorUsage, trackCalculatorResult } from '../utils/telemetry';
+import EmbedCodeButton from '../components/ui/EmbedCodeButton';
+import { JsonLd, generateMedicalCalculatorSchema } from '../components/JsonLd';
+import { MedicalReviewerCard } from '../components/MedicalReviewerCard';
+import { REVIEWER_NEPHROLOGY } from '../data/reviewers';
 
 const translations: Translations = {
   en: {
     title: "Anion Gap Calculator",
-    subtitle: "Calculate serum anion gap and correct for albumin to evaluate metabolic acidosis",
-    sodium: "Sodium (Na+)",
-    chloride: "Chloride (Cl-)",
-    bicarbonate: "Bicarbonate (HCO3-)",
-    albumin: "Serum Albumin",
-    result: "Calculated Anion Gap",
-    correctedResult: "Albumin-Corrected AG",
-    normal: "Normal Anion Gap",
-    normalSub: "8 - 12 mEq/L",
-    high: "High Anion Gap",
-    highSub: "> 12 mEq/L (HAGMA)",
-    low: "Low Anion Gap",
-    lowSub: "< 8 mEq/L",
-    formula: "AG = Na+ - (Cl- + HCO3-)",
-    correctedFormula: "Corrected AG = AG + 2.5 * (4.0 - Albumin)",
+    subtitle: "Calculates serum Anion Gap with optional Albumin correction",
+    na: "Sodium (Na) (mEq/L)",
+    cl: "Chloride (Cl) (mEq/L)",
+    hco3: "Bicarbonate (HCO₃) (mEq/L)",
+    alb: "Albumin (g/dL) - Optional",
+    result: "Anion Gap",
+    points: "mEq/L",
+    correctedAg: "Corrected AG:",
+    status: "Interpretation:",
+    formula: "AG = Na - (Cl + HCO3). Corrected = AG + 2.5 × (4 - Albumin)",
     clinicalTitle: "Clinical Interpretation",
-    clinicalText: "An elevated anion gap suggests accumulation of unmeasured organic acids (e.g. lactic acid, ketoacids). Correcting for albumin is essential in patients with hypoalbuminemia, as a drop in albumin by 1 g/dL lowers the normal anion gap by 2.5 mEq/L.",
-    references: "References: Emmett M, Narins RG. Clinical use of the anion gap. Medicine 1977.",
-    faqQ1: "What is the serum Anion Gap?",
-    faqA1: "The serum anion gap is a calculated metric representing the difference between measured cations (sodium) and measured anions (chloride and bicarbonate). It helps identify the cause of metabolic acidosis.",
-    faqQ2: "What is a normal serum Anion Gap?",
-    faqA2: "A normal anion gap is typically 8 to 12 mEq/L (without potassium). However, reference ranges vary slightly by laboratory and assay methods.",
-    faqQ3: "Why is it important to correct the Anion Gap for albumin?",
-    faqA3: "Albumin is the major unmeasured anion in serum. For every 1 g/dL decrease in serum albumin below the normal value of 4.0 g/dL, the baseline anion gap decreases by approximately 2.5 mEq/L. Failing to correct for low albumin can mask an underlying high-gap acidosis.",
-    faqQ4: "What causes a high Anion Gap metabolic acidosis (HAGMA)?",
-    faqA4: "HAGMA is caused by accumulation of unmeasured acid anions. Common etiologies can be recalled using the GOLD MARK mnemonic: Glycols, Oxoproline, L-lactate, D-lactate, Methanol, Aspirin (salicylates), Renal failure, and Ketoacidosis.",
+    clinicalText: "The anion gap is used to differentiate causes of metabolic acidosis. A high anion gap (> 12 mEq/L) indicates the presence of unmeasured anions (e.g., lactate, ketones, toxins).",
+    pillarTitle: "Usage Guidelines",
+    pillarText: [
+      "Normal Anion Gap: ~ 8-12 mEq/L.",
+      "High Anion Gap Metabolic Acidosis (HAGMA) causes: MUDPILES (Methanol, Uremia, DKA, Paraldehyde, Iron/Isoniazid, Lactic acidosis, Ethylene glycol, Salicylates) or GOLD MARK.",
+      "Normal Anion Gap Metabolic Acidosis (NAGMA) causes: HARDUP (Hyperalimentation, Acetazolamide, Renal tubular acidosis, Diarrhea, Uretero-pelvic shunt, Post-hypocapnia).",
+      "Because albumin is a major unmeasured anion, hypoalbuminemia will falsely lower the anion gap. The corrected AG adjusts for this (adds 2.5 mEq/L to the AG for every 1 g/dL drop in albumin below 4.0)."
+    ],
+    references: "Figge J, Jabor A, Kazda A, Fenves A. Anion gap and hypoalbuminemia. Crit Care Med. 1998;26(11):1807-10.",
+    faqTitle: "Frequently Asked Questions",
+    faqQ1: "Why correct for Albumin?",
+    faqA1: "Albumin is negatively charged and accounts for a large portion of the normal anion gap. In patients with low albumin (very common in critically ill patients), a 'normal' uncorrected anion gap might actually be masking a high anion gap metabolic acidosis. Correcting it reveals the true gap.",
+    faqQ2: "Is Potassium included?",
+    faqA2: "The standard formula omits Potassium (Na - (Cl + HCO3)) because its extracellular concentration is small and relatively constant. If included, the normal range changes to 12-16 mEq/L.",
   },
   fr: {
-    title: "Calculateur de Trou Anionique",
-    subtitle: "Calculer le trou anionique plasmatique corrigé par l'albumine",
-    sodium: "Sodium (Na+)",
-    chloride: "Chlore (Cl-)",
-    bicarbonate: "Bicarbonate (HCO3-)",
-    albumin: "Albumine Sérique",
+    title: "Trou Anionique",
+    subtitle: "Calcule le trou anionique plasmatique avec correction éventuelle par l'albumine",
+    na: "Sodium (Na) (mmol/L)",
+    cl: "Chlore (Cl) (mmol/L)",
+    hco3: "Bicarbonate (HCO₃) (mmol/L)",
+    alb: "Albumine (g/dL) - Optionnel",
     result: "Trou Anionique",
-    correctedResult: "Trou Anionique Corrigé",
-    normal: "Trou Anionique Normal",
-    normalSub: "8 - 12 mEq/L",
-    high: "Trou Anionique Élevé",
-    highSub: "> 12 mEq/L (Acidose)",
-    low: "Trou Anionique Bas",
-    lowSub: "< 8 mEq/L",
-    formula: "TA = Na+ - (Cl- + HCO3-)",
-    correctedFormula: "TA Corrigé = TA + 2,5 * (4,0 - Albumine)",
+    points: "mmol/L",
+    correctedAg: "TA Corrigé :",
+    status: "Interprétation :",
+    formula: "TA = Na - (Cl + HCO3). Corrigé = TA + 2.5 × (4 - Albumine)",
     clinicalTitle: "Interprétation Clinique",
-    clinicalText: "Un trou anionique augmenté signale une accumulation d'acides organiques non mesurés (lactates, cétones). La correction par l'albumine est essentielle en cas d'hypoalbuminémie.",
-    references: "Références : Emmett M, Narins RG. Clinical use of the anion gap. Medicine 1977.",
-    faqQ1: "Qu'est-ce que le trou anionique plasmatique ?",
-    faqA1: "Le trou anionique est la différence entre les cations mesurés (sodium) et les anions mesurés (chlore et bicarbonate). Il aide à diagnostiquer et classer les acidoses métaboliques.",
-    faqQ2: "Quelle est la valeur normale du trou anionique ?",
-    faqA2: "La valeur normale se situe habituellement entre 8 et 12 mEq/L (sans le potassium). Les valeurs de référence peuvent varier selon le laboratoire.",
-    faqQ3: "Pourquoi corriger le trou anionique par l'albumine ?",
-    faqA3: "L'albumine est la principale protéine chargée négativement dans le sang. Une baisse d'albumine de 1 g/dL diminue le trou anionique de base de 2,5 mEq/L. Corriger ce biais évite de rater une acidose masquée.",
-    faqQ4: "Quelles sont les causes d'un trou anionique élevé ?",
-    faqA4: "Un trou anionique élevé traduit une acidose métabolique à trou anionique augmenté (HAGMA). Les causes majeures incluent l'acidose lactique, l'acidocétose (diabétique, alcoolique), l'insuffisance rénale sévère et certaines intoxications (méthanol, éthylène glycol, aspirine).",
+    clinicalText: "Le trou anionique permet de différencier les causes d'acidose métabolique. Un TA élevé (> 12 mmol/L) indique la présence d'anions indosés (lactate, cétones, toxines).",
+    pillarTitle: "Recommandations d'Utilisation",
+    pillarText: [
+      "Trou Anionique Normal : ~ 8-12 mmol/L.",
+      "Causes de TA élevé (HAGMA) : MUDPILES (Méthanol, Urémie, Acidocétose, Paraldéhyde, Isoniazide, Lactate, Éthylène glycol, Salicylates).",
+      "Causes de TA normal (NAGMA) : Pertes digestives (diarrhée), acidose tubulaire rénale.",
+      "L'albumine étant le principal anion indosé, une hypoalbuminémie abaisse faussement le TA. Le TA corrigé ajoute 2.5 mmol/L au TA pour chaque baisse de 1 g/dL de l'albumine sous 4.0."
+    ],
+    references: "Figge J, et al. Anion gap and hypoalbuminemia. Crit Care Med. 1998.",
+    faqTitle: "Questions Fréquentes",
+    faqQ1: "Pourquoi corriger par l'albumine ?",
+    faqA1: "L'albumine est chargée négativement. Chez les patients en réanimation (souvent hypoalbuminémiques), un TA 'normal' peut cacher une acidose métabolique à TA élevé. La correction rétablit la vraie valeur.",
+    faqQ2: "Le potassium est-il inclus ?",
+    faqA2: "La formule standard ignore le potassium car sa concentration extracellulaire est faible. S'il est inclus, la normale devient 12-16 mmol/L.",
+  },
+  es: {
+    title: "Brecha Aniónica (Anion Gap)",
+    subtitle: "Calcula el Anion Gap sérico con corrección opcional por albúmina",
+    na: "Sodio (Na) (mEq/L)",
+    cl: "Cloruro (Cl) (mEq/L)",
+    hco3: "Bicarbonato (HCO₃) (mEq/L)",
+    alb: "Albúmina (g/dL) - Opcional",
+    result: "Anion Gap",
+    points: "mEq/L",
+    correctedAg: "AG Corregido:",
+    status: "Interpretación:",
+    formula: "AG = Na - (Cl + HCO3). Corregido = AG + 2.5 × (4 - Albúmina)",
+    clinicalTitle: "Interpretación Clínica",
+    clinicalText: "La brecha aniónica se usa para diferenciar causas de acidosis metabólica. Un AG alto (> 12 mEq/L) indica presencia de aniones no medidos (lactato, cetonas, toxinas).",
+    pillarTitle: "Pautas de Uso",
+    pillarText: [
+      "Anion Gap Normal: ~ 8-12 mEq/L.",
+      "Causas de AG Alto (HAGMA): MUDPILES (Metanol, Uremia, Cetoacidosis, Paraldehído, Isoniazida, Lactato, Etilenglicol, Salicilatos).",
+      "Causas de AG Normal (NAGMA): Pérdidas GI (diarrea), acidosis tubular renal, fístulas.",
+      "La albúmina es un anión importante. La hipoalbuminemia reduce falsamente el AG. El AG corregido suma 2.5 mEq/L al AG por cada 1 g/dL que la albúmina cae por debajo de 4.0."
+    ],
+    references: "Figge J, et al. Anion gap and hypoalbuminemia. Crit Care Med. 1998.",
+    faqTitle: "Preguntas Frecuentes",
+    faqQ1: "¿Por qué corregir con albúmina?",
+    faqA1: "La albúmina tiene carga negativa. En pacientes con hipoalbuminemia, un AG 'normal' podría estar ocultando una acidosis metabólica de AG alto. La corrección revela la brecha real.",
+    faqQ2: "¿Se incluye el potasio?",
+    faqA2: "La fórmula estándar omite el potasio porque su concentración extracelular es pequeña. Si se incluye, el rango normal sube a 12-16 mEq/L.",
+  },
+  ar: {
+    title: "الفجوة الأنيونية (Anion Gap)",
+    subtitle: "حساب الفجوة الأنيونية في الدم مع تصحيح الألبومين الاختياري",
+    na: "الصوديوم (Na) (mEq/L)",
+    cl: "الكلوريد (Cl) (mEq/L)",
+    hco3: "البيكربونات (HCO₃) (mEq/L)",
+    alb: "الألبومين (g/dL) - اختياري",
+    result: "الفجوة الأنيونية",
+    points: "mEq/L",
+    correctedAg: "الفجوة المصححة:",
+    status: "التفسير:",
+    formula: "الفجوة = الصوديوم - (الكلوريد + البيكربونات). المصححة = الفجوة + 2.5 × (4 - الألبومين)",
+    clinicalTitle: "التفسير السريري",
+    clinicalText: "تُستخدم الفجوة الأنيونية للتفريق بين أسباب الحماض الأيضي (Metabolic Acidosis). تشير الفجوة العالية (> 12) إلى وجود أنيونات غير مقاسة مثل اللاكتات والكيتونات والسموم.",
+    pillarTitle: "إرشادات الاستخدام",
+    pillarText: [
+      "الفجوة الأنيونية الطبيعية: ~ 8-12 mEq/L.",
+      "أسباب الحماض الأيضي بفجوة عالية: MUDPILES (الميثانول، اليوريميا، الحماض الكيتوني، اللاكتات، الإيثيلين جلايكول، الساليسيلات).",
+      "أسباب الحماض الأيضي بفجوة طبيعية: فقدان البيكربونات من الجهاز الهضمي (الإسهال) أو الكلى (الحماض الأنبوبي الكلوي).",
+      "بما أن الألبومين هو أنيون رئيسي غير مقاس، فإن نقص الألبومين يقلل الفجوة الأنيونية بشكل خاطئ. الفجوة المصححة تضيف 2.5 للفجوة لكل انخفاض بمقدار 1 جم/ديسيلتر في الألبومين أقل من 4.0."
+    ],
+    references: "Figge J, et al. Anion gap and hypoalbuminemia. Crit Care Med. 1998.",
+    faqTitle: "الأسئلة الشائعة",
+    faqQ1: "لماذا نقوم بتصحيح الفجوة بناءً على الألبومين؟",
+    faqA1: "الألبومين يحمل شحنة سالبة. لدى المرضى الذين يعانون من نقص الألبومين (شائع في العناية المركزة)، قد تبدو الفجوة طبيعية ظاهرياً بينما هي في الواقع عالية. التصحيح يظهر الفجوة الحقيقية.",
+    faqQ2: "هل يتم تضمين البوتاسيوم في الحساب؟",
+    faqA2: "المعادلة القياسية تتجاهل البوتاسيوم لأن تركيزه خارج الخلايا قليل وثابت نسبياً. إذا تم تضمينه، يصبح النطاق الطبيعي 12-16.",
   }
 };
 
 export default function AnionGap({ lang }: { lang: LangCode }) {
-  const [sodium, setSodium] = useState<number>(140);
-  const [chloride, setChloride] = useState<number>(104);
-  const [bicarbonate, setBicarbonate] = useState<number>(24);
-  const [albumin, setAlbumin] = useState<number>(4.0);
-  const [copied, setCopied] = useState(false);
+  const [na, setNa] = useState<string>('');
+  const [cl, setCl] = useState<string>('');
+  const [hco3, setHco3] = useState<string>('');
+  const [alb, setAlb] = useState<string>('');
 
   const currentText = translations[lang] || translations.en;
-  const isRtl = false;
+  const isRtl = lang === 'ar';
 
-  const rawAg = useMemo(() => {
-    if (sodium <= 0 || chloride <= 0 || bicarbonate <= 0) return 0;
-    const computed = sodium - (chloride + bicarbonate);
-    return parseFloat(computed.toFixed(1));
-  }, [sodium, chloride, bicarbonate]);
+  const isComplete = na !== '' && !isNaN(parseFloat(na)) &&
+                     cl !== '' && !isNaN(parseFloat(cl)) &&
+                     hco3 !== '' && !isNaN(parseFloat(hco3));
+  
+  let ag = 0;
+  let correctedAg = 0;
+  let interpretation = "";
+  let hasAlbumin = false;
 
-  const correctedAg = useMemo(() => {
-    if (rawAg <= 0) return 0;
-    if (albumin <= 0 || albumin > 6.0) return rawAg;
-    const computed = rawAg + 2.5 * (4.0 - albumin);
-    return parseFloat(computed.toFixed(1));
-  }, [rawAg, albumin]);
+  if (isComplete) {
+    const n = parseFloat(na);
+    const c = parseFloat(cl);
+    const h = parseFloat(hco3);
+    ag = n - (c + h);
 
-  const getAgCategory = (val: number) => {
-    if (val > 12) return { label: currentText.high, color: 'text-red-400', bg: 'bg-red-500/10 border-red-500/20', sub: currentText.highSub };
-    if (val < 8) return { label: currentText.low, color: 'text-amber-400', bg: 'bg-amber-500/10 border-amber-500/20', sub: currentText.lowSub };
-    return { label: currentText.normal, color: 'text-emerald-400', bg: 'bg-emerald-500/10 border-emerald-500/20', sub: currentText.normalSub };
-  };
+    if (alb !== '' && !isNaN(parseFloat(alb))) {
+      hasAlbumin = true;
+      const a = parseFloat(alb);
+      correctedAg = ag + 2.5 * (4.0 - a);
+    }
 
-  const category = getAgCategory(correctedAg > 0 ? correctedAg : rawAg);
+    const valToUse = hasAlbumin ? correctedAg : ag;
+
+    if (valToUse > 12) {
+      interpretation = lang === 'fr' ? 'Élevé (Acidose à TA élevé probable)' : lang === 'es' ? 'Alto (HAGMA probable)' : lang === 'ar' ? 'فجوة عالية (حماض أيضي مرتفع الفجوة)' : 'High (Probable High AG Metabolic Acidosis)';
+    } else {
+      interpretation = lang === 'fr' ? 'Normal (8-12)' : lang === 'es' ? 'Normal (8-12)' : lang === 'ar' ? 'طبيعي (8-12)' : 'Normal (8-12 mEq/L)';
+    }
+  }
 
   useEffect(() => {
-    if (rawAg > 0) {
+    if (isComplete) {
       const timer = setTimeout(() => {
-        trackCalculatorUsage('anion-gap', lang, rawAg);
-        trackCalculatorResult('anion-gap', rawAg, category.label, lang);
+        const valToUse = hasAlbumin ? correctedAg : ag;
+        trackCalculatorUsage('anion-gap', lang, valToUse);
+        trackCalculatorResult('anion-gap', valToUse, 'mEq/L', lang);
       }, 1500);
       return () => clearTimeout(timer);
     }
-  }, [rawAg, lang, category.label]);
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(`Anion Gap: ${rawAg} mEq/L (Corrected for Albumin: ${correctedAg} mEq/L, Interpretation: ${category.label})`);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
+  }, [isComplete, ag, correctedAg, hasAlbumin, lang]);
 
   return (
     <>
-      <div className="w-full max-w-full max-w-3xl mb-12">
-      <JsonLd path="/anion-gap" title="Clinical Decision Support — CareCalculus" description="Evidence-based medical decision support calculator." type="SoftwareApplication" />
-        <h1 className={`text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-3 ${isRtl ? 'leading-normal' : ''}`}>
-          {currentText.title}
-        </h1>
-        <p className="text-lg text-gray-500 max-w-2xl">
+      <JsonLd data={generateMedicalCalculatorSchema(currentText.title, currentText.subtitle)} />
+      
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-blue-500/10 via-indigo-500/5 to-purple-500/10 blur-3xl -z-10 pointer-events-none rounded-full" />
+
+      <div className="w-full max-w-full max-w-3xl mb-12 relative" dir={isRtl ? 'rtl' : 'ltr'}>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <h1 className={`text-4xl md:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-gray-900 via-gray-800 to-indigo-950 bg-clip-text text-transparent mb-3 ${isRtl ? 'leading-normal' : ''}`}>
+            {currentText.title}
+          </h1>
+          <EmbedCodeButton calculatorSlug="anion-gap" lang={lang} title={currentText.title} />
+        </div>
+        <p className="text-lg text-gray-500 max-w-2xl mt-3 leading-relaxed">
           {currentText.subtitle}
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start" dir={isRtl ? 'rtl' : 'ltr'}>
         <div className="lg:col-span-7 space-y-6">
-          <div className="bg-white rounded-2xl shadow-[0_2px_10px_-3px_rgba(6,81,237,0.1)] ring-1 ring-gray-950/5 p-6 md:p-8">
-            <div className="space-y-8">
-              <CalculatorInput
-                label={currentText.sodium}
-                unit="mEq/L"
-                value={sodium}
-                min={100}
-                max={180}
-                placeholder="140"
-                onChange={setSodium}
-              />
+          <div className="backdrop-blur-xl bg-white/90 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] ring-1 ring-gray-950/5 p-6 md:p-8 transition-all">
+            <div className="space-y-6">
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-gray-900">{currentText.na}</label>
+                  <input
+                    type="number"
+                    value={na}
+                    onChange={(e) => setNa(e.target.value)}
+                    placeholder="e.g. 140"
+                    className="block w-full rounded-xl border-gray-200 bg-gray-50/50 py-3 px-4 text-gray-900 placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500/20 sm:text-sm font-medium transition-all"
+                    dir="ltr"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-gray-900">{currentText.cl}</label>
+                  <input
+                    type="number"
+                    value={cl}
+                    onChange={(e) => setCl(e.target.value)}
+                    placeholder="e.g. 104"
+                    className="block w-full rounded-xl border-gray-200 bg-gray-50/50 py-3 px-4 text-gray-900 placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500/20 sm:text-sm font-medium transition-all"
+                    dir="ltr"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-gray-900">{currentText.hco3}</label>
+                  <input
+                    type="number"
+                    value={hco3}
+                    onChange={(e) => setHco3(e.target.value)}
+                    placeholder="e.g. 24"
+                    className="block w-full rounded-xl border-gray-200 bg-gray-50/50 py-3 px-4 text-gray-900 placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500/20 sm:text-sm font-medium transition-all"
+                    dir="ltr"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-gray-900">{currentText.alb}</label>
+                  <input
+                    type="number"
+                    value={alb}
+                    onChange={(e) => setAlb(e.target.value)}
+                    placeholder="e.g. 4.0"
+                    className="block w-full rounded-xl border-gray-200 bg-gray-50/50 py-3 px-4 text-gray-900 placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500/20 sm:text-sm font-medium transition-all"
+                    dir="ltr"
+                  />
+                </div>
+              </div>
 
-              <CalculatorInput
-                label={currentText.chloride}
-                unit="mEq/L"
-                value={chloride}
-                min={70}
-                max={130}
-                placeholder="104"
-                onChange={setChloride}
-              />
-
-              <CalculatorInput
-                label={currentText.bicarbonate}
-                unit="mEq/L"
-                value={bicarbonate}
-                min={5}
-                max={50}
-                placeholder="24"
-                onChange={setBicarbonate}
-              />
-
-              <CalculatorInput
-                label={currentText.albumin}
-                unit="g/dL"
-                value={albumin}
-                min={1.0}
-                max={6.0}
-                step={0.1}
-                placeholder="4.0"
-                onChange={setAlbumin}
-              />
             </div>
           </div>
         </div>
 
         <div className="lg:col-span-5 relative">
-          <div className="sticky bottom-4 z-40 lg:top-28 lg:bottom-auto bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden ring-1 ring-white/10 flex flex-col justify-between p-5 lg:p-8 lg:min-h-[320px]">
-            <div className="absolute top-0 right-0 p-32 bg-gradient-to-bl from-blue-500/20 to-transparent rounded-bl-[100px] pointer-events-none" />
+          <div className="sticky bottom-4 z-40 lg:top-28 lg:bottom-auto backdrop-blur-2xl bg-gradient-to-b from-slate-900 via-gray-900 to-slate-950 text-white rounded-3xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden ring-1 ring-white/15 flex flex-col justify-between p-5 lg:p-8 lg:min-h-[360px] transition-all duration-300">
+            <div className="absolute top-0 right-0 p-36 bg-gradient-to-bl from-blue-500/30 via-indigo-500/10 to-transparent rounded-bl-[120px] pointer-events-none animate-pulse" />
             
-            <div className="relative z-10 flex items-start justify-between">
-              <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-gray-400 block mb-3">
+            <div className="relative z-10">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-bold uppercase tracking-widest text-slate-300">
                   {currentText.result}
                 </span>
-                
-                <div className="flex items-baseline gap-2 tabular-nums">
-                  <span className="text-7xl font-bold tracking-tighter transition-all duration-300">
-                    {rawAg > 0 ? rawAg : '--'}
-                  </span>
-                  <span className="text-xl font-medium text-gray-400">mEq/L</span>
-                </div>
-
-                {albumin !== 4.0 && rawAg > 0 && (
-                  <div className="mt-4">
-                    <span className="text-xs font-bold uppercase tracking-wider text-gray-400 block mb-1">
-                      {currentText.correctedResult}
-                    </span>
-                    <div className="flex items-baseline gap-2 tabular-nums">
-                      <span className="text-3xl font-bold text-blue-400">
-                        {correctedAg}
-                      </span>
-                      <span className="text-sm font-medium text-gray-400">mEq/L</span>
-                    </div>
-                  </div>
-                )}
+                <FlaskConical className="w-5 h-5 text-blue-400" />
               </div>
               
-              {rawAg > 0 && (
-                <button
-                  onClick={handleCopy}
-                  className="mt-2 p-2.5 bg-gray-800 hover:bg-gray-700 rounded-xl transition-colors border border-gray-700/50 flex items-center justify-center text-gray-300 hover:text-white"
-                  title="Copy Result"
-                >
-                  {copied ? <Check className="w-5 h-5 text-emerald-400" /> : <Copy className="w-5 h-5" />}
-                </button>
+              <div className="flex items-baseline gap-2 tabular-nums my-2" dir="ltr">
+                <span className="text-7xl font-black tracking-tighter transition-all duration-300 bg-gradient-to-b from-white via-slate-100 to-slate-400 bg-clip-text text-transparent">
+                  {isComplete ? (hasAlbumin ? correctedAg.toFixed(1) : ag.toFixed(1)) : '--'}
+                </span>
+                <span className="text-2xl font-bold text-slate-500">{currentText.points}</span>
+              </div>
+              {isComplete && hasAlbumin && (
+                <div className="text-sm font-medium text-slate-400 mt-1">
+                  Uncorrected AG: {ag.toFixed(1)} mEq/L
+                </div>
               )}
             </div>
 
-            <div className="relative z-10 mt-10">
-              {rawAg > 0 && (
-                <>
-                  <div className={`p-4 rounded-xl border flex justify-between items-center transition-all ${category.bg} ${category.color}`}>
-                    <div className="font-semibold text-sm">
-                      {category.label}
-                    </div>
-                    <div className="font-mono text-xs opacity-80">
-                      {category.sub}
-                    </div>
+            <div className="relative z-10 mt-6 space-y-4">
+              {isComplete ? (
+                <div className={`p-4 rounded-2xl border backdrop-blur-md transition-all shadow-lg ${
+                  (hasAlbumin ? correctedAg : ag) > 12 ? 'bg-red-500/10 border-red-500/20 text-red-400' :
+                  'bg-emerald-500/10 border-emerald-500/20 text-emerald-400'
+                }`}>
+                  <div className="font-bold text-sm tracking-wide mb-1">
+                    {currentText.status}
                   </div>
-
-                  <ClinicalExportButton
-                    title={currentText.title}
-                    inputs={[
-                      { label: currentText.sodium, value: `${sodium} mEq/L` },
-                      { label: currentText.chloride, value: `${chloride} mEq/L` },
-                      { label: currentText.bicarbonate, value: `${bicarbonate} mEq/L` },
-                      { label: currentText.albumin, value: `${albumin} g/dL` }
-                    ]}
-                    results={[
-                      { label: currentText.result, value: rawAg, unit: 'mEq/L' },
-                      { label: currentText.correctedResult, value: correctedAg, unit: 'mEq/L' },
-                      { label: 'Acid-Base Category', value: category.label }
-                    ]}
-                    formula={currentText.formula}
-                    disclaimer={currentText.clinicalText}
-                    references={currentText.references}
-                    lang={lang}
-                  />
-                </>
+                  <div className="font-semibold text-lg">{interpretation}</div>
+                </div>
+              ) : (
+                <div className="p-4 rounded-2xl border flex justify-between items-center transition-all bg-gray-800/50 border-gray-700/80 text-slate-400 backdrop-blur-md">
+                  <div className="font-semibold text-sm">
+                    {lang === 'fr' ? 'Entrez les valeurs' : lang === 'es' ? 'Ingrese los valores' : lang === 'ar' ? 'أدخل القيم' : 'Enter values to calculate'}
+                  </div>
+                </div>
               )}
+
+              <ClinicalExportButton
+                title={currentText.title}
+                inputs={[
+                  { label: "Sodium", value: `${na} mEq/L` },
+                  { label: "Chloride", value: `${cl} mEq/L` },
+                  { label: "Bicarbonate", value: `${hco3} mEq/L` },
+                  ...(hasAlbumin ? [{ label: "Albumin", value: `${alb} g/dL` }] : [])
+                ]}
+                results={[
+                  { label: "Anion Gap", value: isComplete ? ag.toFixed(1) : '--' },
+                  ...(hasAlbumin ? [{ label: "Corrected Anion Gap", value: correctedAg.toFixed(1) }] : []),
+                  { label: "Interpretation", value: isComplete ? interpretation : '--' }
+                ]}
+                formula={currentText.formula}
+                disclaimer={currentText.clinicalText}
+                references={currentText.references}
+                lang={lang}
+              />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="mt-16 pt-10 border-t border-gray-200">
-        <div className="flex items-center gap-3 mb-8 text-xs text-gray-400">
-          <span className="font-semibold text-gray-500">{layoutTranslations[lang].reviewedBy}</span>
-          <span>&middot;</span>
-          <span>{layoutTranslations[lang].specialists}</span>
-          <span>&middot;</span>
-          <span>{layoutTranslations[lang].updated}</span>
-        </div>
+      <div className="mt-16 pt-10 border-t border-gray-200" dir={isRtl ? 'rtl' : 'ltr'}>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="flex items-start gap-4">
             <div className="p-3 min-h-[44px] min-w-[44px].5 bg-blue-50 text-blue-600 rounded-lg shrink-0">
@@ -279,11 +332,8 @@ export default function AnionGap({ lang }: { lang: LangCode }) {
             </div>
             <div className="w-full">
               <h2 className="font-semibold text-gray-900 mb-2 text-base">{layoutTranslations[lang].mathMetric}</h2>
-              <div className="font-mono text-xs bg-gray-100 text-gray-700 py-2 px-3 rounded-md border border-gray-200 uppercase tracking-tight mb-2" dir="ltr">
-                {currentText.formula}
-              </div>
               <div className="font-mono text-xs bg-gray-100 text-gray-700 py-2 px-3 rounded-md border border-gray-200 uppercase tracking-tight" dir="ltr">
-                {currentText.correctedFormula}
+                {currentText.formula}
               </div>
             </div>
           </div>
@@ -294,39 +344,26 @@ export default function AnionGap({ lang }: { lang: LangCode }) {
             <div>
               <h2 className="font-semibold text-gray-900 mb-2 text-base">{layoutTranslations[lang].evidenceLit}</h2>
               <p className="text-gray-500 text-xs leading-relaxed italic">{currentText.references}</p>
-              <a href="https://pubmed.ncbi.nlm.nih.gov/413723/" target="_blank" rel="noopener noreferrer" className="text-xs text-blue-600 hover:underline mt-1 inline-block">Emmett & Narins, Medicine 1977 (PMID: 413723) →</a>
             </div>
           </div>
         </div>
       </div>
-
-      <div className="mt-12 pt-8 border-t border-gray-100">
-        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">{layoutTranslations[lang].seeAlso}</h2>
-        <div className="flex flex-wrap gap-2 mb-10">
-          {[
-            { label: 'P/F Ratio', path: '/pf-ratio' },
-            { label: 'Tidal Volume (ARDS)', path: '/tidal-volume' },
-            { label: 'Creatinine Clearance', path: '/creatinine-clearance' },
-            { label: 'Corrected Calcium', path: '/corrected-calcium' },
-          ].map(({ label, path }) => {
-            const prefix = lang === 'en' ? '' : `/${lang}`;
-            return (
-              <a key={path} href={`${prefix}${path}`} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 hover:bg-blue-50 text-gray-700 hover:text-blue-700 rounded-lg text-sm font-medium transition-colors border border-gray-200 hover:border-blue-200">
-                {label}
-              </a>
-            );
-          })}
+      
+      <div className="mt-8 pt-10 border-t border-gray-100" dir={isRtl ? 'rtl' : 'ltr'}>
+        <h2 className="text-xl font-bold text-gray-900 mb-6">{currentText.pillarTitle}</h2>
+        <div className="space-y-4 text-gray-700 leading-relaxed text-sm">
+          {currentText.pillarText.map((paragraph, idx) => (
+            <p key={idx}>{paragraph}</p>
+          ))}
         </div>
       </div>
 
-      <div className="mt-0 pt-0 border-t border-gray-100">
-        <h2 className="text-xl font-bold text-gray-900 mb-6">{layoutTranslations[lang].faqTitle}</h2>
+      <div className="mt-0 pt-10 border-t border-gray-100" dir={isRtl ? 'rtl' : 'ltr'}>
+        <h2 className="text-xl font-bold text-gray-900 mb-6">{currentText.faqTitle || layoutTranslations[lang].faqTitle}</h2>
         <div className="space-y-3">
           {[
             { q: currentText.faqQ1, a: currentText.faqA1 },
             { q: currentText.faqQ2, a: currentText.faqA2 },
-            { q: currentText.faqQ3, a: currentText.faqA3 },
-            { q: currentText.faqQ4, a: currentText.faqA4 },
           ].map(({ q, a }) => (
             <details key={q} className="group border border-gray-200 rounded-xl overflow-hidden">
               <summary className="flex items-center justify-between px-5 py-4 cursor-pointer list-none font-medium text-gray-800 hover:bg-gray-50 transition-colors">
@@ -337,6 +374,10 @@ export default function AnionGap({ lang }: { lang: LangCode }) {
             </details>
           ))}
         </div>
+      </div>
+
+      <div className="mt-8" dir={isRtl ? 'rtl' : 'ltr'}>
+        <MedicalReviewerCard reviewer={REVIEWER_NEPHROLOGY} lang={lang} />
       </div>
     </>
   );

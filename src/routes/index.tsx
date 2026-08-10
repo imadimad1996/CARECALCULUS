@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import { LangCode } from '../types';
 import EmbedLayout from '../components/EmbedLayout';
 import CalculatorShell from '../components/CalculatorShell';
-import { Activity, BookOpen, HeartPulse, Menu, X, LayoutDashboard, Calculator, Droplet, Brain, TestTube, AlertOctagon, ArrowRightLeft, AlertTriangle, Stethoscope, Wind, FileText, ShieldCheck, Sparkles, ChevronRight, Search, Globe, Scale, MonitorPlay, GraduationCap, Newspaper, Scissors, Layers, Award, Pill } from 'lucide-react';
+import { Activity, BookOpen, HeartPulse, Menu, X, LayoutDashboard, Calculator, Droplet, Brain, TestTube, AlertOctagon, ArrowRightLeft, AlertTriangle, Stethoscope, Wind, FileText, ShieldCheck, Sparkles, ChevronRight, Search, Globe, Scale, MonitorPlay, GraduationCap, Newspaper, Scissors, Layers, Award, Pill, FlaskConical, Thermometer, Syringe, ShieldAlert } from 'lucide-react';
 
 // Page import factories kept in one list so they can be (a) wrapped in
 // React.lazy for client-side code-splitting and (b) eagerly awaited during
@@ -103,6 +103,35 @@ const pageLoaders = [
   () => import('../pages/FraminghamRiskScore'),
   () => import('../pages/HfaPeffScore'),
   () => import('../pages/SchwartzGfr'),
+  () => import('../pages/BradenScale'),
+  () => import('../pages/MorseFallScale'),
+  () => import('../pages/News2Score'),
+  () => import('../pages/MewsScore'),
+  () => import('../pages/WongBakerFaces'),
+  () => import('../pages/FlaccScore'),
+  () => import('../pages/RassScore'),
+  () => import('../pages/CamIcu'),
+  () => import('../pages/InsulinSlidingScale'),
+  () => import('../pages/AscvdRiskScore'),
+  () => import('../pages/BenzoEquivalence'),
+  () => import('../pages/TpnMacronutrients'),
+  () => import('../pages/DigoxinDosing'),
+  () => import('../pages/ProtamineReversal'),
+  () => import('../pages/PhenytoinLoading'),
+  () => import('../pages/WarfarinDosing'),
+  () => import('../pages/RcriScore'),
+  () => import('../pages/ApriScore'),
+  () => import('../pages/MeldNaScore'),
+  () => import('../pages/Curb65'),
+  () => import('../pages/SirsCriteria'),
+  () => import('../pages/QsofaScore'),
+  () => import('../pages/AnionGap'),
+  () => import('../pages/CorrectedCalcium'),
+  () => import('../pages/FenaCalculator'),
+  () => import('../pages/NntCalculator'),
+  () => import('../pages/SampleSizeCalculator'),
+  () => import('../pages/OrToRrConverter'),
+  () => import('../pages/FragilityIndex'),
 ] as const;
 
 const safeLazy = (loader: () => Promise<any>) => {
@@ -161,7 +190,11 @@ const [
   PesiScore, BovaScore, ApacheIIScore, SapsIIScore, DrugInteractions, MedicalStatistics, FavoritesPage, PricingPage,
   BishopScore, CentorScore, EditorialBoard,
   PediatricGcs, HollidaySegarFluids, PediatricDosage, NaegeleEddCalculator, GestationalAgeCrl,
-  FourTsHitScore, MasccRiskIndex, RumackMatthewNomogram, FraminghamRiskScore, HfaPeffScore, SchwartzGfr
+  FourTsHitScore, MasccRiskIndex, RumackMatthewNomogram, FraminghamRiskScore, HfaPeffScore, SchwartzGfr,
+  BradenScale, MorseFallScale, News2Score, MewsScore, WongBakerFaces, FlaccScore, RassScore, CamIcu, InsulinSlidingScale,
+  AscvdRiskScore, BenzoEquivalence, TpnMacronutrients, DigoxinDosing, ProtamineReversal, PhenytoinLoading,
+  WarfarinDosing, RcriScore, ApriScore, MeldNaScore, Curb65V2, SirsCriteriaV2, QSofaScoreV2, AnionGapV2, CorrectedCalciumV2, FenaCalculatorV2,
+  NntCalculator, SampleSizeCalculator, OrToRrConverter, FragilityIndex
 ] = pageLoaders.map((loader) => safeLazy(loader as any)) as any[];
 
 export const HomePage = safeLazy(() => import('../pages/HomePage'));
@@ -280,8 +313,37 @@ export const navItems = [
   { path: '/framingham-risk-score', nameEn: 'Framingham Risk Score', nameFr: 'Score de Framingham', nameAr: 'مقياس فرامينغهام للقلب', icon: HeartPulse, tier: 2 },
   { path: '/hfa-peff-score', nameEn: 'HFA-PEFF Score', nameFr: 'Score HFA-PEFF ICFEP', nameAr: 'مقياس قصور القلب HFA-PEFF', icon: HeartPulse, tier: 2 },
   { path: '/schwartz-pediatric-gfr', nameEn: 'Schwartz Pediatric GFR', nameFr: 'DFG Pédiatrique Schwartz', nameAr: 'وظائف كلى الأطفال', icon: TestTube, tier: 2 },
+  { path: '/braden-scale', nameEn: 'Braden Scale', nameFr: 'Échelle de Braden', nameAr: 'مقياس برادن للقرح السريرية', icon: HeartPulse, tier: 2 },
+  { path: '/morse-fall-scale', nameEn: 'Morse Fall Scale', nameFr: 'Échelle de Chute Morse', nameAr: 'مقياس مورس للسقوط', icon: Activity, tier: 2 },
+  { path: '/news2-score', nameEn: 'NEWS-2 Score', nameFr: 'Score NEWS-2', nameAr: 'مقياس NEWS-2 للطوارئ', icon: AlertOctagon, tier: 1 },
+  { path: '/mews-score', nameEn: 'MEWS Score', nameFr: 'Score MEWS', nameAr: 'مقياس MEWS للطوارئ', icon: Activity, tier: 1 },
+  { path: '/wong-baker-faces', nameEn: 'Wong-Baker FACES', nameFr: 'Échelle Wong-Baker', nameAr: 'مقياس وونغ-بيكر للألم', icon: Activity, tier: 3 },
+  { path: '/flacc-score', nameEn: 'FLACC Pain Scale', nameFr: 'Échelle FLACC', nameAr: 'مقياس فلاك للألم', icon: Activity, tier: 3 },
+  { path: '/rass-score', nameEn: 'RASS Score', nameFr: 'Score RASS', nameAr: 'مقياس ريتشموند (RASS)', icon: Activity, tier: 2 },
+  { path: '/cam-icu', nameEn: 'CAM-ICU', nameFr: 'CAM-ICU', nameAr: 'مقياس CAM-ICU للهذيان', icon: Activity, tier: 2 },
+  { path: '/insulin-sliding-scale', nameEn: 'Insulin Sliding Scale', nameFr: 'Échelle d\'Insuline', nameAr: 'مقياس الإنسولين المتدرج', icon: Activity, tier: 1 },
 
   // Tier 3: Infusions, Metrics & Pharmacology
+  { path: '/ascvd-risk-score', nameEn: 'ASCVD Risk Estimator', nameFr: 'Évaluateur ASCVD', nameAr: 'مقياس خطر ASCVD', icon: HeartPulse, tier: 1 },
+  { path: '/benzo-equivalence', nameEn: 'Benzodiazepine Equiv', nameFr: 'Équivalence Benzo', nameAr: 'مكافئ البنزوديازيبين', icon: ArrowRightLeft, tier: 2 },
+  { path: '/tpn-macronutrients', nameEn: 'TPN Macronutrients', nameFr: 'Macronutriments NPT', nameAr: 'مغذيات التغذية الوريدية', icon: LayoutDashboard, tier: 3 },
+  { path: '/digoxin-dosing', nameEn: 'Digoxin Dosing', nameFr: 'Dose de Digoxine', nameAr: 'جرعة الديجوكسين', icon: HeartPulse, tier: 2 },
+  { path: '/protamine-reversal', nameEn: 'Protamine Reversal', nameFr: 'Inversion Protamine', nameAr: 'معاكسة البروتامين', icon: ShieldAlert, tier: 2 },
+  { path: '/phenytoin-loading', nameEn: 'Phenytoin Loading', nameFr: 'Charge Phénytoïne', nameAr: 'جرعة الفينيتوين', icon: Syringe, tier: 2 },
+  { path: '/warfarin-dosing', nameEn: 'Warfarin Dosing', nameFr: 'Ajustement Warfarine', nameAr: 'جرعة الوارفارين', icon: Activity, tier: 2 },
+  { path: '/rcri-score', nameEn: 'RCRI Score', nameFr: 'Score RCRI', nameAr: 'مؤشر الخطر القلبي', icon: HeartPulse, tier: 2 },
+  { path: '/apri-score', nameEn: 'APRI Score', nameFr: 'Score APRI', nameAr: 'مؤشر تليف الكبد', icon: Droplet, tier: 2 },
+  { path: '/meld-na-score', nameEn: 'MELD-Na Score', nameFr: 'Score MELD-Na', nameAr: 'مؤشر وظائف الكبد', icon: Activity, tier: 2 },
+  { path: '/curb-65', nameEn: 'CURB-65', nameFr: 'CURB-65', nameAr: 'مقياس الالتهاب الرئوي', icon: Wind, tier: 2 },
+  { path: '/sirs-criteria', nameEn: 'SIRS Criteria', nameFr: 'Critères SIRS', nameAr: 'معايير SIRS', icon: Thermometer, tier: 2 },
+  { path: '/qsofa-score', nameEn: 'qSOFA Score', nameFr: 'Score qSOFA', nameAr: 'مقياس qSOFA', icon: AlertTriangle, tier: 2 },
+  { path: '/anion-gap', nameEn: 'Anion Gap', nameFr: 'Trou Anionique', nameAr: 'الفجوة الأنيونية', icon: Activity, tier: 2 },
+  { path: '/corrected-calcium', nameEn: 'Corrected Calcium', nameFr: 'Calcium Corrigé', nameAr: 'الكالسيوم المصحح', icon: FlaskConical, tier: 2 },
+  { path: '/fena-calculator', nameEn: 'FeNa Calculator', nameFr: 'Calculateur FeNa', nameAr: 'حاسبة FeNa', icon: Droplet, tier: 2 },
+  { path: '/nnt-calculator', nameEn: 'Number Needed to Treat (NNT)', nameFr: 'Nombre Nécessaire à Traiter', nameAr: 'العدد المطلوب للعلاج', icon: Calculator, tier: 3 },
+  { path: '/sample-size-calculator', nameEn: 'Sample Size Calculator', nameFr: 'Calculateur Taille Échantillon', nameAr: 'حاسبة حجم العينة', icon: Calculator, tier: 3 },
+  { path: '/or-to-rr', nameEn: 'OR to RR Converter', nameFr: 'Convertisseur RC en RR', nameAr: 'محول OR إلى RR', icon: ArrowRightLeft, tier: 3 },
+  { path: '/fragility-index', nameEn: 'Fragility Index', nameFr: 'Indice de Fragilité', nameAr: 'مؤشر الهشاشة', icon: ShieldAlert, tier: 3 },
   { path: '/drip-rate-calculator', nameEn: 'IV Drip Rate Tool', nameFr: 'Calcul Débit Perfusion', nameAr: 'سرعة تنقيط المحلول الوريدي', icon: Droplet, tier: 3 },
   { path: '/steroid-conversion', nameEn: 'Steroids Equivalence', nameFr: 'Équivalence Corticoïdes', nameAr: 'تحويل جرعات الكورتيزون والستيرويد', icon: ArrowRightLeft, tier: 3 },
   { path: '/adjusted-body-weight', nameEn: 'IBW & ABW Weight', nameFr: 'Poids Idéal & Ajusté', nameAr: 'حساب الوزن المثالي والمعدل', icon: LayoutDashboard, tier: 3 },
@@ -313,19 +375,23 @@ export const TIER_HEADERS: Record<number, Record<LangCode, string>> = {
   1: {
     en: 'Emergency & Critical Care',
     fr: 'Urgences & Soins Critiques',
-    es: 'Urgencias y Cuidados Críticos'
+    es: 'Urgencias y Cuidados Críticos',
+    ar: 'الطوارئ والرعاية الحرجة'
   },
   2: {
     en: 'Metabolic & Cardiorenal',
     fr: 'Métabolique & Cardiorénal',
-    es: 'Metabólico y Cardiorrenal'
+    es: 'Metabólico y Cardiorrenal',
+    ar: 'الاضطرابات الأيضية والقلبية الكلوية'
   },
   3: {
     en: 'Therapeutic & Dosing Metrics',
     fr: 'Métriques, Perfusions & Doses',
-    es: 'Métricas Terapéuticas y Dosificación'
+    es: 'Métricas Terapéuticas y Dosificación',
+    ar: 'الجرعات العلاجية والمقاييس الدوائية'
   }
 };
+
 
 
 // The set of clinical module routes, defined once with RELATIVE paths so it can
@@ -428,7 +494,6 @@ export function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="aa-gradient" element={wrapCalculator('/aa-gradient', <AaGradient lang={lang} />)} />
       <Route path="compare/:slug1-vs-:slug2" element={<Compare lang={lang} />} />
 
-      {/* Removed Programmatic SEO Guides */}
       <Route path="bishop-score" element={wrapCalculator('/bishop-score', <BishopScore lang={lang} />)} />
       <Route path="centor-score" element={wrapCalculator('/centor-score', <CentorScore lang={lang} />)} />
       <Route path="pediatric-gcs" element={wrapCalculator('/pediatric-gcs', <PediatricGcs lang={lang} />)} />
@@ -442,6 +507,35 @@ export function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="framingham-risk-score" element={wrapCalculator('/framingham-risk-score', <FraminghamRiskScore lang={lang} />)} />
       <Route path="hfa-peff-score" element={wrapCalculator('/hfa-peff-score', <HfaPeffScore lang={lang} />)} />
       <Route path="schwartz-pediatric-gfr" element={wrapCalculator('/schwartz-pediatric-gfr', <SchwartzGfr lang={lang} />)} />
+      <Route path="braden-scale" element={wrapCalculator('/braden-scale', <BradenScale lang={lang} />)} />
+      <Route path="morse-fall-scale" element={wrapCalculator('/morse-fall-scale', <MorseFallScale lang={lang} />)} />
+      <Route path="news2-score" element={wrapCalculator('/news2-score', <News2Score lang={lang} />)} />
+      <Route path="mews-score" element={wrapCalculator('/mews-score', <MewsScore lang={lang} />)} />
+      <Route path="wong-baker-faces" element={wrapCalculator('/wong-baker-faces', <WongBakerFaces lang={lang} />)} />
+      <Route path="flacc-score" element={wrapCalculator('/flacc-score', <FlaccScore lang={lang} />)} />
+      <Route path="rass-score" element={wrapCalculator('/rass-score', <RassScore lang={lang} />)} />
+      <Route path="cam-icu" element={wrapCalculator('/cam-icu', <CamIcu lang={lang} />)} />
+      <Route path="insulin-sliding-scale" element={wrapCalculator('/insulin-sliding-scale', <InsulinSlidingScale lang={lang} />)} />
+      <Route path="ascvd-risk-score" element={wrapCalculator('/ascvd-risk-score', <AscvdRiskScore lang={lang} />)} />
+      <Route path="benzo-equivalence" element={wrapCalculator('/benzo-equivalence', <BenzoEquivalence lang={lang} />)} />
+      <Route path="tpn-macronutrients" element={wrapCalculator('/tpn-macronutrients', <TpnMacronutrients lang={lang} />)} />
+      <Route path="digoxin-dosing" element={wrapCalculator('/digoxin-dosing', <DigoxinDosing lang={lang} />)} />
+      <Route path="protamine-reversal" element={wrapCalculator('/protamine-reversal', <ProtamineReversal lang={lang} />)} />
+      <Route path="phenytoin-loading" element={wrapCalculator('/phenytoin-loading', <PhenytoinLoading lang={lang} />)} />
+      <Route path="warfarin-dosing" element={wrapCalculator('/warfarin-dosing', <WarfarinDosing lang={lang} />)} />
+      <Route path="rcri-score" element={wrapCalculator('/rcri-score', <RcriScore lang={lang} />)} />
+      <Route path="apri-score" element={wrapCalculator('/apri-score', <ApriScore lang={lang} />)} />
+      <Route path="meld-na-score" element={wrapCalculator('/meld-na-score', <MeldNaScore lang={lang} />)} />
+      <Route path="curb-65" element={wrapCalculator('/curb-65', <Curb65V2 lang={lang} />)} />
+      <Route path="sirs-criteria" element={wrapCalculator('/sirs-criteria', <SirsCriteriaV2 lang={lang} />)} />
+      <Route path="qsofa-score" element={wrapCalculator('/qsofa-score', <QSofaScoreV2 lang={lang} />)} />
+      <Route path="anion-gap" element={wrapCalculator('/anion-gap', <AnionGapV2 lang={lang} />)} />
+      <Route path="corrected-calcium" element={wrapCalculator('/corrected-calcium', <CorrectedCalciumV2 lang={lang} />)} />
+      <Route path="fena-calculator" element={wrapCalculator('/fena-calculator', <FenaCalculatorV2 lang={lang} />)} />
+      <Route path="nnt-calculator" element={wrapCalculator('/nnt-calculator', <NntCalculator lang={lang} />)} />
+      <Route path="sample-size-calculator" element={wrapCalculator('/sample-size-calculator', <SampleSizeCalculator lang={lang} />)} />
+      <Route path="or-to-rr" element={wrapCalculator('/or-to-rr', <OrToRrConverter lang={lang} />)} />
+      <Route path="fragility-index" element={wrapCalculator('/fragility-index', <FragilityIndex lang={lang} />)} />
     </>
   );
 }

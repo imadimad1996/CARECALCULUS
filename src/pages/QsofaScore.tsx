@@ -1,184 +1,250 @@
-import { JsonLd } from '../components/JsonLd';
-import React, { useState, useMemo, useEffect } from 'react';
-import { Activity, Info, BookOpen, ChevronDown } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Activity, Info, BookOpen, ChevronDown, AlertTriangle } from 'lucide-react';
 import { LangCode, Translations } from '../types';
+import ClinicalExportButton from '../components/ClinicalExportButton';
 import { layoutTranslations } from '../utils/lang';
 import { trackCalculatorUsage, trackCalculatorResult } from '../utils/telemetry';
-import ClinicalExportButton from '../components/ClinicalExportButton';
+import EmbedCodeButton from '../components/ui/EmbedCodeButton';
+import { JsonLd, generateMedicalCalculatorSchema } from '../components/JsonLd';
 import { MedicalReviewerCard } from '../components/MedicalReviewerCard';
 import { REVIEWER_EMERGENCY } from '../data/reviewers';
 
 const translations: Translations = {
   en: {
     title: "qSOFA Score",
-    subtitle: "Quick Sepsis-related Organ Failure Assessment",
-    rr22: "Respiratory rate ≥ 22/min",
-    mentation: "Altered mentation (GCS < 15)",
-    sbp100: "Systolic blood pressure ≤ 100 mmHg",
-    result: "qSOFA Score",
-    formula: "1 point per positive criterion",
-    clinicalTitle: "Clinical Management",
-    clinicalText: "Score ≥ 2 indicates a high risk of poor outcome and suggests the patient should be investigated for sepsis.",
-    pillarTitle: "Sepsis-3 Consensus and the Evolution of Sepsis Screening",
-    pillarText: [
-      "The quick Sequential Organ Failure Assessment (qSOFA) score was introduced in 2016 as part of the Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3). Prior to this, the Systemic Inflammatory Response Syndrome (SIRS) criteria were universally used to screen for sepsis. However, the Sepsis-3 task force argued that SIRS criteria lacked specificity, as many non-infectious conditions (like pancreatitis, trauma, or severe burns) routinely trigger a robust systemic inflammatory response without indicating an impending, life-threatening infection.",
-      "The qSOFA score was specifically designed as a bedside prompt for clinicians outside the intensive care unit (such as in emergency departments or general medical wards). It is not diagnostic for sepsis; rather, it is prognostic. A score of 2 or greater signifies a high probability of a poor clinical outcome (specifically, an in-hospital mortality risk of approximately 10% or an impending ICU admission). This should trigger immediate clinical actions, including drawing blood cultures, measuring serum lactate, and initiating empiric broad-spectrum intravenous antibiotics.",
-      "While qSOFA improves specificity over SIRS, it sacrifices sensitivity. Some studies have shown that waiting for a patient to develop two qSOFA criteria may delay the recognition of early sepsis compared to SIRS. Consequently, many modern hospital protocols and the Surviving Sepsis Campaign recommend using qSOFA in conjunction with other clinical early warning scores (like MEWS or NEWS), rather than as a standalone screening tool to replace clinical judgment."
+    subtitle: "Quick Sequential Organ Failure Assessment for identifying high-risk patients with suspected infection",
+    criteria: [
+      "Altered mental status (GCS < 15)",
+      "Respiratory Rate ≥ 22 breaths/min",
+      "Systolic Blood Pressure ≤ 100 mmHg"
     ],
-    references: "References: Singer M, et al. The Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3).",
-    lowRisk: "Low Risk (< 2)",
-    highRisk: "High Risk of Sepsis (≥ 2)",
-    faqQ1: "What is the qSOFA score?",
-    faqA1: "The quick SOFA (qSOFA) is a bedside clinical tool for rapid identification of patients likely to have poor outcomes due to infection-related organ dysfunction (sepsis). It scores three criteria: Respiratory Rate ≥22/min, Altered Mentation (GCS <15), and Systolic BP ≤100 mmHg.",
-    faqQ2: "What qSOFA score is considered high risk?",
-    faqA2: "A qSOFA score of ≥2 out of 3 indicates high risk of poor outcome and should prompt clinicians to investigate for sepsis, initiate monitoring, and consider ICU-level care, per the Sepsis-3 consensus (Singer et al., JAMA 2016).",
-    faqQ3: "What is the difference between qSOFA and SOFA?",
-    faqA3: "qSOFA is a 3-item bedside screening tool usable without lab tests. Full SOFA requires lab values (PaO2, bilirubin, creatinine, platelets) and is used for formal organ failure quantification in the ICU.",
-    faqQ4: "Should qSOFA replace SIRS criteria for sepsis screening?",
-    faqA4: "The Sepsis-3 consensus replaced SIRS with qSOFA for out-of-ICU sepsis screening, arguing SIRS lacked specificity. Both tools remain in use across different guidelines and settings.",
+    yes: "Yes",
+    no: "No",
+    result: "qSOFA Score",
+    points: "points",
+    status: "Interpretation:",
+    formula: "Score from 0-3 based on Mental Status, RR, and SBP.",
+    clinicalTitle: "Clinical Interpretation",
+    clinicalText: "The qSOFA score was introduced in the Sepsis-3 guidelines (2016) as a bedside prompt to identify adult patients with suspected infection who are at greater risk for a poor outcome outside the ICU (prolonged ICU stay or in-hospital mortality).",
+    pillarTitle: "Usage Guidelines",
+    pillarText: [
+      "0-1 Point: Not high risk. However, continue to monitor and use clinical judgment.",
+      "≥ 2 Points: High risk of poor outcome. Indicates organ dysfunction. Consider escalating care, closer monitoring, and early intervention.",
+      "qSOFA is NOT a diagnostic test for sepsis; it is a prognostic tool to identify high-risk patients.",
+      "Unlike SIRS, qSOFA does not require lab tests, making it ideal for rapid bedside assessment."
+    ],
+    references: "Singer M, et al. The Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3). JAMA. 2016;315(8):801-810.",
+    faqTitle: "Frequently Asked Questions",
+    faqQ1: "Does a score of 0 or 1 mean the patient does not have sepsis?",
+    faqA1: "No. A low score means they are not currently at high risk for a poor outcome based on this tool, but they could still have an infection requiring prompt treatment.",
+    faqQ2: "How is 'altered mental status' defined?",
+    faqA2: "Any Glasgow Coma Scale (GCS) score less than 15. This includes any confusion, lethargy, or unresponsiveness.",
   },
   fr: {
-    title: "Score qSOFA Sepsis (Dépistage Rapide)",
-    subtitle: "Évaluation rapide de la défaillance d'organe liée au sepsis",
-    rr22: "Fréquence respiratoire ≥ 22/min",
-    mentation: "Altération de l'état mental (GCS < 15)",
-    sbp100: "Pression artérielle systolique ≤ 100 mmHg",
-    result: "Score qSOFA",
-    formula: "1 point par critère",
-    clinicalTitle: "Prise en charge",
-    clinicalText: "Un score ≥ 2 indique un risque élevé de mortalité et suggère d'investiguer un sepsis.",
-    pillarTitle: "Le Consensus Sepsis-3 et l'Évolution du Dépistage du Sepsis",
-    pillarText: [
-      "Le score qSOFA (quick Sequential Organ Failure Assessment) a été introduit en 2016 dans le cadre de la troisième définition du consensus international pour le sepsis et le choc septique (Sepsis-3). Auparavant, les critères du syndrome de réponse inflammatoire systémique (SIRS) étaient universellement utilisés pour dépister le sepsis. Cependant, le groupe de travail Sepsis-3 a fait valoir que les critères SIRS manquaient de spécificité, car de nombreuses affections non infectieuses (comme la pancréatite ou les traumatismes) déclenchent une réponse inflammatoire systémique sans indiquer d'infection mortelle.",
-      "Le score qSOFA a été spécifiquement conçu comme une alerte au chevet du patient pour les cliniciens en dehors des unités de soins intensifs (comme aux urgences ou dans les services de médecine générale). Il ne permet pas de diagnostiquer le sepsis ; il est plutôt pronostique. Un score supérieur ou égal à 2 signifie une forte probabilité d'évolution clinique défavorable (mortalité intra-hospitalière d'environ 10 %). Cela doit déclencher des actions cliniques immédiates, notamment des hémocultures, la mesure des lactates et l'initiation d'une antibiothérapie intraveineuse à large spectre.",
-      "Bien que le qSOFA améliore la spécificité par rapport au SIRS, il sacrifie la sensibilité. Certaines études ont montré qu'attendre qu'un patient développe deux critères qSOFA peut retarder la reconnaissance d'un sepsis précoce. Par conséquent, de nombreux protocoles hospitaliers modernes recommandent d'utiliser le qSOFA en conjonction avec d'autres scores d'alerte clinique (comme le MEWS ou le NEWS)."
+    title: "Score qSOFA",
+    subtitle: "Évaluation rapide pour identifier les patients à haut risque avec une suspicion d'infection",
+    criteria: [
+      "Altération de l'état mental (Glasgow < 15)",
+      "Fréquence Respiratoire ≥ 22 cycles/min",
+      "Pression Artérielle Systolique ≤ 100 mmHg"
     ],
-    references: "Références: Singer M, et al. (Sepsis-3).",
-    lowRisk: "Faible Risque (< 2)",
-    highRisk: "Haut Risque de Sepsis (≥ 2)",
-    faqQ1: "Qu'est-ce que le score qSOFA ?",
-    faqA1: "Le score qSOFA (quick SOFA) est un outil clinique de chevet permettant d'identifier rapidement les patients risquant de présenter des complications graves liées à un dysfonctionnement d'organe induit par une infection (sepsis). Il évalue trois critères : Fréquence respiratoire ≥22/min, État mental altéré (GCS <15) et Pression artérielle systolique ≤100 mmHg.",
-    faqQ2: "Quel score qSOFA est considéré comme à haut risque ?",
-    faqA2: "Un score qSOFA ≥2 sur 3 indique un risque élevé d'évolution défavorable. Il doit inciter les cliniciens à rechercher un sepsis, à renforcer la surveillance et à envisager une admission en réanimation, selon le consensus Sepsis-3 (Singer et al., JAMA 2016).",
-    faqQ3: "Quelle est la différence entre le qSOFA et le SOFA ?",
-    faqA3: "Le qSOFA est un outil de dépistage rapide au chevet utilisable sans examen biologique. Le score SOFA complet nécessite des analyses de laboratoire (PaO2, bilirubine, créatinine, plaquettes) pour quantifier formellement les défaillances d'organes en soins intensifs.",
-    faqQ4: "Le score qSOFA doit-il remplacer les critères SIRS pour le dépistage du sepsis ?",
-    faqA4: "Le consensus Sepsis-3 a remplacé le SIRS par le qSOFA pour le dépistage hors réanimation, estimant que le SIRS manquait de spécificité. Cependant, les deux outils restent couramment utilisés selon les directives et les contextes cliniques.",
+    yes: "Oui",
+    no: "Non",
+    result: "Score qSOFA",
+    points: "points",
+    status: "Interprétation :",
+    formula: "Score de 0 à 3 basé sur l'État Mental, la FR et la PAS.",
+    clinicalTitle: "Interprétation Clinique",
+    clinicalText: "Le qSOFA a été introduit dans Sepsis-3 (2016) comme outil clinique au lit du malade pour identifier les patients infectés présentant un risque élevé de mortalité intra-hospitalière ou de séjour prolongé en réanimation.",
+    pillarTitle: "Recommandations d'Utilisation",
+    pillarText: [
+      "0-1 Point : Risque non élevé. Continuer la surveillance selon le jugement clinique.",
+      "≥ 2 Points : Haut risque de complications. Signe une dysfonction d'organe. Envisager une intensification des soins.",
+      "Le qSOFA n'est PAS un outil diagnostique pour le sepsis ; c'est un outil pronostique.",
+      "Contrairement au SIRS, le qSOFA ne nécessite pas d'examens sanguins (rapide au lit du patient)."
+    ],
+    references: "Singer M, et al. The Third International Consensus Definitions for Sepsis (Sepsis-3). JAMA. 2016.",
+    faqTitle: "Questions Fréquentes",
+    faqQ1: "Un score de 0 ou 1 exclut-il le sepsis ?",
+    faqA1: "Non, cela signifie que le risque de mauvais pronostic est faible pour l'instant, mais une infection peut toujours nécessiter un traitement rapide.",
+    faqQ2: "Qu'est-ce qu'une altération de l'état mental ?",
+    faqA2: "Tout score de Glasgow inférieur à 15 (confusion, léthargie, perte de connaissance).",
+  },
+  es: {
+    title: "Escala qSOFA",
+    subtitle: "Evaluación rápida para identificar pacientes de alto riesgo con sospecha de infección",
+    criteria: [
+      "Alteración del estado mental (GCS < 15)",
+      "Frecuencia Respiratoria ≥ 22 resp/min",
+      "Presión Arterial Sistólica ≤ 100 mmHg"
+    ],
+    yes: "Sí",
+    no: "No",
+    result: "Puntuación qSOFA",
+    points: "puntos",
+    status: "Interpretación:",
+    formula: "Puntuación de 0 a 3 (Estado Mental, FR, y PAS).",
+    clinicalTitle: "Interpretación Clínica",
+    clinicalText: "La escala qSOFA se introdujo en las guías Sepsis-3 (2016) como una herramienta rápida para identificar pacientes adultos con sospecha de infección con mayor riesgo de un mal resultado.",
+    pillarTitle: "Pautas de Uso",
+    pillarText: [
+      "0-1 Puntos: Riesgo bajo. Mantener vigilancia y juicio clínico.",
+      "≥ 2 Puntos: Alto riesgo de mal resultado. Indica disfunción orgánica. Considerar escalada de cuidados o UCI.",
+      "qSOFA NO diagnostica sepsis; es una herramienta de pronóstico.",
+      "A diferencia de SIRS, qSOFA no requiere pruebas de laboratorio, ideal para uso junto a la cama del paciente."
+    ],
+    references: "Singer M, et al. The Third International Consensus Definitions for Sepsis (Sepsis-3). JAMA. 2016.",
+    faqTitle: "Preguntas Frecuentes",
+    faqQ1: "¿Un puntaje de 0 o 1 descarta la sepsis?",
+    faqA1: "No. Significa que actualmente no tienen un riesgo alto de mortalidad según esta herramienta, pero pueden requerir tratamiento rápido.",
+    faqQ2: "¿Cómo se define el estado mental alterado?",
+    faqA2: "Cualquier puntuación en la Escala de Coma de Glasgow (GCS) menor a 15 (confusión, letargo).",
+  },
+  ar: {
+    title: "مقياس qSOFA",
+    subtitle: "التقييم السريع لتحديد المرضى المعرضين لمخاطر عالية مع وجود اشتباه بالعدوى",
+    criteria: [
+      "تغير في الحالة العقلية (مقياس غلاسكو للغيبوبة < 15)",
+      "معدل التنفس ≥ 22 نفس/دقيقة",
+      "ضغط الدم الانقباضي ≤ 100 ملم زئبق"
+    ],
+    yes: "نعم",
+    no: "لا",
+    result: "نتيجة qSOFA",
+    points: "نقاط",
+    status: "التفسير:",
+    formula: "درجة من 0 إلى 3 تعتمد على الحالة العقلية، التنفس، وضغط الدم.",
+    clinicalTitle: "التفسير السريري",
+    clinicalText: "تم تقديم مقياس qSOFA في إرشادات Sepsis-3 لعام 2016 كأداة سريرية سريعة بجانب السرير لتحديد المرضى البالغين المشتبه في إصابتهم بعدوى والذين هم أكثر عرضة لنتائج سيئة (الوفاة أو العناية المركزة المطولة).",
+    pillarTitle: "إرشادات الاستخدام",
+    pillarText: [
+      "0-1 نقطة: خطورة منخفضة. ومع ذلك، يجب الاستمرار في المراقبة واستخدام التقييم السريري.",
+      "نقطتين أو أكثر (≥ 2): خطر عالي لنتائج سيئة. يشير إلى خلل في وظائف الأعضاء. يجب التفكير في تكثيف الرعاية والنقل للعناية المركزة.",
+      "مقياس qSOFA ليس أداة لتشخيص تعفن الدم؛ بل هو أداة إنذار مبكر.",
+      "على عكس SIRS، لا يتطلب qSOFA فحوصات مخبرية، مما يجعله مثالياً للتقييم السريع."
+    ],
+    references: "Singer M, et al. The Third International Consensus Definitions for Sepsis (Sepsis-3). JAMA. 2016.",
+    faqTitle: "الأسئلة الشائعة",
+    faqQ1: "هل تعني الدرجة 0 أو 1 أن المريض لا يعاني من تعفن الدم؟",
+    faqA1: "لا. النتيجة المنخفضة تعني أنه ليس في خطر كبير للوفاة وفقاً لهذه الأداة حالياً، لكنه قد يحتاج إلى علاج فوري لعدوى موجودة.",
+    faqQ2: "كيف يتم تعريف 'تغير الحالة العقلية'؟",
+    faqA2: "أي درجة على مقياس غلاسكو للغيبوبة (GCS) أقل من 15. يشمل ذلك أي ارتباك أو خمول أو عدم استجابة.",
   }
 };
 
-const criteriaList = [
-  { key: 'rr22' },
-  { key: 'mentation' },
-  { key: 'sbp100' }
-] as const;
-
-export default function QsofaScore({ lang }: { lang: LangCode }) {
-  const [selections, setSelections] = useState<Record<string, boolean>>({});
+export default function QSofaScore({ lang }: { lang: LangCode }) {
+  const [answers, setAnswers] = useState<boolean[]>(new Array(3).fill(false));
 
   const currentText = translations[lang] || translations.en;
-  const isRtl = false;
+  const isRtl = lang === 'ar';
 
-  const toggleSelection = (key: string) => {
-    setSelections(prev => ({ ...prev, [key]: !prev[key] }));
+  const toggleAnswer = (index: number) => {
+    const newAnswers = [...answers];
+    newAnswers[index] = !newAnswers[index];
+    setAnswers(newAnswers);
   };
 
-  const scoreValue = useMemo(() => {
-    return criteriaList.reduce((acc, item) => {
-      return acc + (selections[item.key] ? 1 : 0);
-    }, 0);
-  }, [selections]);
-
-  const category = scoreValue >= 2 
-    ? { label: currentText.highRisk, bg: 'bg-red-500/10 border-red-500/20', color: 'text-red-500' }
-    : { label: currentText.lowRisk, bg: 'bg-emerald-500/10 border-emerald-500/20', color: 'text-emerald-500' };
+  const score = answers.filter(Boolean).length;
+  const isHighRisk = score >= 2;
+  
+  let interpretation = "";
+  if (isHighRisk) {
+    interpretation = lang === 'fr' ? 'Haut risque (≥ 2 points)' : lang === 'es' ? 'Alto riesgo (≥ 2 puntos)' : lang === 'ar' ? 'خطر عالي (≥ 2 نقاط)' : 'High risk (≥ 2 points)';
+  } else {
+    interpretation = lang === 'fr' ? 'Risque faible à modéré' : lang === 'es' ? 'Riesgo bajo a moderado' : lang === 'ar' ? 'خطر منخفض إلى متوسط' : 'Low/Moderate risk';
+  }
 
   useEffect(() => {
-    if (scoreValue > 0) {
-      const timer = setTimeout(() => {
-        trackCalculatorUsage('qsofa-score', lang, scoreValue);
-        trackCalculatorResult('qsofa-score', scoreValue, category.label, lang);
-      }, 1500);
-      return () => clearTimeout(timer);
-    }
-  }, [scoreValue, lang, category.label]);
+    const timer = setTimeout(() => {
+      trackCalculatorUsage('qsofa-score', lang, score);
+      trackCalculatorResult('qsofa-score', score, 'points', lang);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, [score, lang]);
 
   return (
     <>
-      <div className="w-full max-w-full max-w-3xl mb-12">
-      <JsonLd path="/qsofa-score" title="Clinical Decision Support — CareCalculus" description="Evidence-based medical decision support calculator." type="SoftwareApplication" />
-        <h1 className={`text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-3 ${isRtl ? 'leading-normal' : ''}`}>
-          {currentText.title}
-        </h1>
-        <p className="text-lg text-gray-500 max-w-2xl">
+      <JsonLd data={generateMedicalCalculatorSchema(currentText.title, currentText.subtitle)} />
+      
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-blue-500/10 via-indigo-500/5 to-purple-500/10 blur-3xl -z-10 pointer-events-none rounded-full" />
+
+      <div className="w-full max-w-full max-w-3xl mb-12 relative" dir={isRtl ? 'rtl' : 'ltr'}>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <h1 className={`text-4xl md:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-gray-900 via-gray-800 to-indigo-950 bg-clip-text text-transparent mb-3 ${isRtl ? 'leading-normal' : ''}`}>
+            {currentText.title}
+          </h1>
+          <EmbedCodeButton calculatorSlug="qsofa-score" lang={lang} title={currentText.title} />
+        </div>
+        <p className="text-lg text-gray-500 max-w-2xl mt-3 leading-relaxed">
           {currentText.subtitle}
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start" dir={isRtl ? 'rtl' : 'ltr'}>
         <div className="lg:col-span-7 space-y-6">
-          <div className="bg-white rounded-2xl shadow-[0_2px_10px_-3px_rgba(6,81,237,0.1)] ring-1 ring-gray-950/5 p-6 md:p-8">
+          <div className="backdrop-blur-xl bg-white/90 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] ring-1 ring-gray-950/5 p-6 md:p-8 transition-all">
             <div className="space-y-4">
-              
-              {criteriaList.map(item => (
+              {currentText.criteria.map((criterion, idx) => (
                 <div 
-                  key={item.key}
-                  onClick={() => toggleSelection(item.key)}
-                  className={`p-4 border rounded-xl cursor-pointer hover:bg-gray-50 transition-all flex items-start gap-4 ${selections[item.key] ? 'border-red-500 bg-red-50/30 ring-1 ring-red-500/30' : 'border-gray-200'}`}
+                  key={idx}
+                  onClick={() => toggleAnswer(idx)}
+                  className={`group relative flex items-center justify-between p-4 rounded-2xl cursor-pointer transition-all border ${
+                    answers[idx] 
+                      ? 'bg-blue-50 border-blue-200 shadow-sm ring-1 ring-blue-500/20' 
+                      : 'bg-white border-gray-200 hover:bg-gray-50'
+                  }`}
                 >
-                  <div className={`mt-0.5 shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors ${selections[item.key] ? 'bg-red-600 border-red-600 text-white' : 'border-gray-300'}`}>
-                    {selections[item.key] && (
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.6667 3.5L5.25001 9.91667L2.33334 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    )}
-                  </div>
-                  <div className="flex-1 flex justify-between gap-4 pt-0.5">
-                    <span className={`text-base font-medium ${selections[item.key] ? 'text-gray-900' : 'text-gray-700'}`}>
-                      {currentText[item.key]}
-                    </span>
+                  <span className={`text-sm font-medium pr-4 ${answers[idx] ? 'text-blue-900' : 'text-gray-700'}`}>
+                    {criterion}
+                  </span>
+                  <div className={`relative w-12 h-6 rounded-full transition-colors duration-200 ease-in-out shrink-0 ${answers[idx] ? 'bg-blue-600' : 'bg-gray-200'}`}>
+                    <div className={`absolute top-1 w-4 h-4 rounded-full bg-white transition-transform duration-200 ease-in-out ${answers[idx] ? (isRtl ? '-translate-x-6' : 'translate-x-6') : (isRtl ? '-translate-x-1' : 'translate-x-1')}`} />
                   </div>
                 </div>
               ))}
-
             </div>
           </div>
         </div>
 
         <div className="lg:col-span-5 relative">
-          <div className="sticky bottom-4 z-40 lg:top-28 lg:bottom-auto bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden ring-1 ring-white/10 flex flex-col justify-between p-5 lg:p-8 lg:min-h-[320px]">
-            <div className="absolute top-0 right-0 p-32 bg-gradient-to-bl from-red-500/10 to-transparent rounded-bl-[100px] pointer-events-none" />
+          <div className="sticky bottom-4 z-40 lg:top-28 lg:bottom-auto backdrop-blur-2xl bg-gradient-to-b from-slate-900 via-gray-900 to-slate-950 text-white rounded-3xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden ring-1 ring-white/15 flex flex-col justify-between p-5 lg:p-8 lg:min-h-[360px] transition-all duration-300">
+            <div className="absolute top-0 right-0 p-36 bg-gradient-to-bl from-blue-500/30 via-indigo-500/10 to-transparent rounded-bl-[120px] pointer-events-none animate-pulse" />
             
             <div className="relative z-10">
-              <span className="text-xs font-bold uppercase tracking-wider text-gray-400 block mb-3">
-                {currentText.result}
-              </span>
-              
-              <div className="flex items-baseline gap-2 tabular-nums">
-                <span className="text-7xl font-bold tracking-tighter transition-all duration-300">
-                  {scoreValue}
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-bold uppercase tracking-widest text-slate-300">
+                  {currentText.result}
                 </span>
-                <span className="text-xl font-medium text-gray-400">/ 3</span>
+                <AlertTriangle className="w-5 h-5 text-red-400" />
+              </div>
+              
+              <div className="flex items-baseline gap-2 tabular-nums my-2" dir="ltr">
+                <span className="text-7xl font-black tracking-tighter transition-all duration-300 bg-gradient-to-b from-white via-slate-100 to-slate-400 bg-clip-text text-transparent">
+                  {score}
+                </span>
+                <span className="text-2xl font-bold text-slate-500">{currentText.points}</span>
               </div>
             </div>
 
-            <div className="relative z-10 mt-10">
-              <div className={`p-4 rounded-xl border flex justify-between items-center transition-all ${category.bg} ${category.color}`}>
-                <div className="font-semibold text-sm">
-                  {category.label}
+            <div className="relative z-10 mt-6 space-y-4">
+              <div className={`p-4 rounded-2xl border backdrop-blur-md transition-all shadow-lg flex flex-col gap-1 ${
+                isHighRisk ? 'bg-red-500/10 border-red-500/20 text-red-400' : 'bg-emerald-500/10 border-emerald-500/20 text-emerald-400'
+              }`}>
+                <div className="font-bold text-sm tracking-wide">
+                  {currentText.status}
                 </div>
+                <div className="font-semibold text-lg">{interpretation}</div>
               </div>
 
               <ClinicalExportButton
                 title={currentText.title}
-                inputs={[
-                  { label: currentText.rr22, value: selections.rr22 ? 'Yes (1)' : 'No (0)' },
-                  { label: currentText.mentation, value: selections.mentation ? 'Yes (1)' : 'No (0)' },
-                  { label: currentText.sbp100, value: selections.sbp100 ? 'Yes (1)' : 'No (0)' }
-                ]}
+                inputs={currentText.criteria.map((c, i) => ({
+                  label: c.split(' (')[0].split(' ≤')[0].split(' ≥')[0].trim(),
+                  value: answers[i] ? currentText.yes : currentText.no
+                }))}
                 results={[
-                  { label: currentText.result, value: `${scoreValue} / 3` },
-                  { label: 'Risk Stratification', value: category.label }
+                  { label: "qSOFA Score", value: `${score}/3` },
+                  { label: "Interpretation", value: interpretation }
                 ]}
                 formula={currentText.formula}
                 disclaimer={currentText.clinicalText}
@@ -190,17 +256,10 @@ export default function QsofaScore({ lang }: { lang: LangCode }) {
         </div>
       </div>
 
-      <div className="mt-16 pt-10 border-t border-gray-200">
-        <div className="flex items-center gap-3 mb-8 text-xs text-gray-400">
-          <span className="font-semibold text-gray-500">{layoutTranslations[lang].reviewedBy}</span>
-          <span>&middot;</span>
-          <span>{layoutTranslations[lang].specialists}</span>
-          <span>&middot;</span>
-          <span>{layoutTranslations[lang].updated}</span>
-        </div>
+      <div className="mt-16 pt-10 border-t border-gray-200" dir={isRtl ? 'rtl' : 'ltr'}>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="flex items-start gap-4">
-            <div className="p-2.5 bg-blue-50 text-blue-600 rounded-lg shrink-0">
+            <div className="p-3 min-h-[44px] min-w-[44px].5 bg-blue-50 text-blue-600 rounded-lg shrink-0">
               <Info className="w-5 h-5" />
             </div>
             <div>
@@ -209,7 +268,7 @@ export default function QsofaScore({ lang }: { lang: LangCode }) {
             </div>
           </div>
           <div className="flex items-start gap-4">
-            <div className="p-2.5 bg-purple-50 text-purple-600 rounded-lg shrink-0">
+            <div className="p-3 min-h-[44px] min-w-[44px].5 bg-purple-50 text-purple-600 rounded-lg shrink-0">
               <Activity className="w-5 h-5" />
             </div>
             <div className="w-full">
@@ -220,20 +279,18 @@ export default function QsofaScore({ lang }: { lang: LangCode }) {
             </div>
           </div>
           <div className="flex items-start gap-4">
-            <div className="p-2.5 bg-emerald-50 text-emerald-600 rounded-lg shrink-0">
+            <div className="p-3 min-h-[44px] min-w-[44px].5 bg-emerald-50 text-emerald-600 rounded-lg shrink-0">
               <BookOpen className="w-5 h-5" />
             </div>
             <div>
               <h2 className="font-semibold text-gray-900 mb-2 text-base">{layoutTranslations[lang].evidenceLit}</h2>
               <p className="text-gray-500 text-xs leading-relaxed italic">{currentText.references}</p>
-              <a href="https://pubmed.ncbi.nlm.nih.gov/26973543/" target="_blank" rel="noopener noreferrer" className="text-xs text-blue-600 hover:underline mt-1 inline-block">Singer et al., JAMA 2016 — Sepsis-3 Definitions (PMID: 26973543) →</a>
             </div>
           </div>
         </div>
       </div>
       
-      {/* Pillar Content Section */}
-      <div className="mt-12 pt-10 border-t border-gray-100">
+      <div className="mt-8 pt-10 border-t border-gray-100" dir={isRtl ? 'rtl' : 'ltr'}>
         <h2 className="text-xl font-bold text-gray-900 mb-6">{currentText.pillarTitle}</h2>
         <div className="space-y-4 text-gray-700 leading-relaxed text-sm">
           {currentText.pillarText.map((paragraph, idx) => (
@@ -242,66 +299,12 @@ export default function QsofaScore({ lang }: { lang: LangCode }) {
         </div>
       </div>
 
-      {/* qSOFA Risk Stratification Table */}
-      <div className="mt-8 pt-10 border-t border-gray-100 max-w-3xl">
-        <h2 className="text-xl font-bold text-gray-900 mb-6">
-          {lang === 'fr' ? 'Stratification du Risque et Mortalité' : 'qSOFA Risk Stratification & Outcomes'}
-        </h2>
-        <div className="overflow-x-auto">
-          <table className="w-full text-left rtl:text-right border-collapse text-sm text-gray-600">
-            <thead>
-              <tr className="border-b border-gray-200 bg-gray-50 text-gray-700 font-bold">
-                <th className="p-3">{lang === 'fr' ? 'Score' : 'Score'}</th>
-                <th className="p-3">{lang === 'fr' ? 'Groupe de Risque' : 'Risk Group'}</th>
-                <th className="p-3">{lang === 'fr' ? 'Mortalité Intra-Hospitalière' : 'In-Hospital Mortality'}</th>
-                <th className="p-3">{lang === 'fr' ? 'Recommandations Cliniques' : 'Clinical Recommendations'}</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="border-b border-gray-100">
-                <td className="p-3 font-mono font-bold">0 - 1</td>
-                <td className="p-3 text-emerald-600 font-semibold">{lang === 'fr' ? 'Risque Faible' : 'Low Risk'}</td>
-                <td className="p-3">&lt; 3%</td>
-                <td className="p-3">{lang === 'fr' ? 'Continuer la surveillance clinique standard.' : 'Maintain routine clinical monitoring.'}</td>
-              </tr>
-              <tr className="border-b border-gray-100">
-                <td className="p-3 font-mono font-bold">2 - 3</td>
-                <td className="p-3 text-red-600 font-bold">{lang === 'fr' ? 'Risque Élevé' : 'High Risk'}</td>
-                <td className="p-3">~10%</td>
-                <td className="p-3">{lang === 'fr' ? 'Évaluer le dysfonctionnement d\'organes (score SOFA complet). Envisager le sepsis.' : 'Assess for organ dysfunction (full SOFA). Initiate sepsis management protocols.'}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div className="mt-12 pt-8 border-t border-gray-100">
-        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">{layoutTranslations[lang].seeAlso}</h2>
-        <div className="flex flex-wrap gap-2 mb-10">
-          {[
-            { label: 'SIRS Criteria', path: '/sirs-criteria' },
-            { label: 'CURB-65 Score', path: '/curb65-score' },
-            { label: 'MAP Calculator', path: '/map-calculator' },
-            { label: 'Glasgow Coma Scale', path: '/glasgow-coma-scale' },
-          ].map(({ label, path }) => {
-            const prefix = lang === 'en' ? '' : `/${lang}`;
-            return (
-              <a key={path} href={`${prefix}${path}`} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 hover:bg-blue-50 text-gray-700 hover:text-blue-700 rounded-lg text-sm font-medium transition-colors border border-gray-200 hover:border-blue-200">
-                {label}
-              </a>
-            );
-          })}
-        </div>
-      </div>
-
-      <div className="mt-0 pt-0 border-t border-gray-100">
-        <h2 className="text-xl font-bold text-gray-900 mb-6">{layoutTranslations[lang].faqTitle}</h2>
+      <div className="mt-0 pt-10 border-t border-gray-100" dir={isRtl ? 'rtl' : 'ltr'}>
+        <h2 className="text-xl font-bold text-gray-900 mb-6">{currentText.faqTitle || layoutTranslations[lang].faqTitle}</h2>
         <div className="space-y-3">
           {[
             { q: currentText.faqQ1, a: currentText.faqA1 },
             { q: currentText.faqQ2, a: currentText.faqA2 },
-            { q: currentText.faqQ3, a: currentText.faqA3 },
-            { q: currentText.faqQ4, a: currentText.faqA4 },
           ].map(({ q, a }) => (
             <details key={q} className="group border border-gray-200 rounded-xl overflow-hidden">
               <summary className="flex items-center justify-between px-5 py-4 cursor-pointer list-none font-medium text-gray-800 hover:bg-gray-50 transition-colors">
@@ -314,8 +317,9 @@ export default function QsofaScore({ lang }: { lang: LangCode }) {
         </div>
       </div>
 
-      {/* E-E-A-T Trust Signal — Physician Reviewer Card */}
-      <MedicalReviewerCard reviewer={REVIEWER_EMERGENCY} lang={lang} />
+      <div className="mt-8" dir={isRtl ? 'rtl' : 'ltr'}>
+        <MedicalReviewerCard reviewer={REVIEWER_EMERGENCY} lang={lang} />
+      </div>
     </>
   );
 }

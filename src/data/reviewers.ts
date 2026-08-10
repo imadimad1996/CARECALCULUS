@@ -50,6 +50,10 @@ export const REVIEWER_CARDIOLOGY: MedicalReviewer = {
   lastReviewed: 'August 2024',
 };
 
+// Alias for backward compatibility
+export const REVIEWER_CARDIO = REVIEWER_CARDIOLOGY;
+
+
 export const REVIEWER_NEUROLOGY: MedicalReviewer = {
   name: 'CareCalculus Medical Editorial Team',
   credentials: ['Editorial Review'],
@@ -76,3 +80,49 @@ export const REVIEWER_PULMONOLOGY: MedicalReviewer = {
   profileUrl: '/about',
   lastReviewed: 'August 2024',
 };
+
+export const REVIEWER_NURSING: MedicalReviewer = {
+  name: 'CareCalculus Medical Editorial Team',
+  credentials: ['Editorial Review'],
+  role: 'Internal Editorial Review — Nursing',
+  institution: 'CareCalculus Content Team',
+  profileUrl: '/about',
+  lastReviewed: 'August 2024',
+};
+
+export const REVIEWER_PHARMACY: MedicalReviewer = {
+  name: 'CareCalculus Medical Editorial Team',
+  credentials: ['Editorial Review'],
+  role: 'Internal Editorial Review — Clinical Pharmacy',
+  institution: 'CareCalculus Content Team',
+  profileUrl: '/about',
+  lastReviewed: 'August 2025',
+};
+
+export const REVIEWER_ONCOLOGY: MedicalReviewer = {
+  name: 'CareCalculus Medical Editorial Team',
+  credentials: ['Editorial Review'],
+  role: 'Internal Editorial Review — Oncology',
+  institution: 'CareCalculus Content Team',
+  profileUrl: '/about',
+  lastReviewed: 'August 2025',
+};
+
+export const REVIEWER_INTERNAL_MEDICINE: MedicalReviewer = {
+  name: 'CareCalculus Medical Editorial Team',
+  credentials: ['Editorial Review'],
+  role: 'Internal Editorial Review — Internal Medicine',
+  institution: 'CareCalculus Content Team',
+  profileUrl: '/about',
+  lastReviewed: 'August 2025',
+};
+
+export const REVIEWER_PERIOPERATIVE: MedicalReviewer = {
+  name: 'CareCalculus Medical Editorial Team',
+  credentials: ['Editorial Review'],
+  role: 'Internal Editorial Review — Perioperative Medicine',
+  institution: 'CareCalculus Content Team',
+  profileUrl: '/about',
+  lastReviewed: 'August 2025',
+};
+

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Activity, Info, BookOpen, ChevronDown, Thermometer } from 'lucide-react';
+import { Activity, Info, BookOpen, ChevronDown, HeartPulse } from 'lucide-react';
 import { LangCode, Translations } from '../types';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 import { layoutTranslations } from '../utils/lang';
@@ -7,137 +7,149 @@ import { trackCalculatorUsage, trackCalculatorResult } from '../utils/telemetry'
 import EmbedCodeButton from '../components/ui/EmbedCodeButton';
 import { JsonLd, generateMedicalCalculatorSchema } from '../components/JsonLd';
 import { MedicalReviewerCard } from '../components/MedicalReviewerCard';
-import { REVIEWER_EMERGENCY } from '../data/reviewers';
+import { REVIEWER_CARDIO } from '../data/reviewers';
 
 const translations: Translations = {
   en: {
-    title: "SIRS Criteria",
-    subtitle: "Systemic Inflammatory Response Syndrome criteria for identifying systemic inflammation",
+    title: "Revised Cardiac Risk Index (RCRI)",
+    subtitle: "Estimates risk of perioperative cardiac complications for noncardiac surgery",
     criteria: [
-      "Temperature > 38°C (100.4°F) or < 36°C (96.8°F)",
-      "Heart Rate > 90 beats/min",
-      "Respiratory Rate > 20 breaths/min (or PaCO₂ < 32 mmHg)",
-      "WBC count > 12,000/mm³, < 4,000/mm³, or > 10% immature (band) forms"
+      "High-risk surgery (intraperitoneal, intrathoracic, or suprainguinal vascular)",
+      "History of ischemic heart disease (e.g. prior MI, positive exercise test, angina)",
+      "History of congestive heart failure (e.g. pulmonary edema, paroxysmal nocturnal dyspnea, S3 gallop)",
+      "History of cerebrovascular disease (prior TIA or stroke)",
+      "Preoperative treatment with insulin",
+      "Preoperative serum creatinine > 2.0 mg/dL (177 µmol/L)"
     ],
     yes: "Yes",
     no: "No",
-    result: "SIRS Score",
-    points: "criteria met",
-    status: "Interpretation:",
-    formula: "Score from 0-4 based on Temp, HR, RR/PaCO2, and WBC/Bands.",
+    result: "RCRI Score",
+    points: "points",
+    risk: "Risk of major cardiac event:",
+    formula: "Risk of myocardial infarction, pulmonary edema, ventricular fibrillation, or primary cardiac arrest.",
     clinicalTitle: "Clinical Interpretation",
-    clinicalText: "SIRS criteria were historically used to define sepsis (SIRS + suspected infection). While the Sepsis-3 definitions (2016) shifted focus to SOFA/qSOFA for defining sepsis, SIRS remains a highly sensitive tool for identifying patients with general systemic inflammation or early infection.",
+    clinicalText: "The RCRI (Lee's Revised Cardiac Risk Index) is a widely used and validated preoperative risk stratification tool. It helps identify patients at higher risk of major adverse cardiac events (MACE) during non-cardiac surgery.",
     pillarTitle: "Usage Guidelines",
     pillarText: [
-      "≥ 2 Criteria: Patient meets the definition for Systemic Inflammatory Response Syndrome (SIRS).",
-      "If SIRS is present and infection is suspected, evaluate for sepsis and consider early antibiotics and fluid resuscitation.",
-      "SIRS is highly sensitive but non-specific (can be triggered by trauma, surgery, pancreatitis, burns, etc.).",
-      "A score of < 2 does not completely rule out severe infection in immunocompromised or elderly patients."
+      "0 points (Class I): 0.4% risk of major cardiac event.",
+      "1 point (Class II): 0.9% risk of major cardiac event.",
+      "2 points (Class III): 2.4% risk of major cardiac event.",
+      "≥ 3 points (Class IV): 5.4% risk of major cardiac event.",
+      "Note: The original study rates are shown. Some modern cohorts (e.g. VISION) suggest the actual risk in current practice may be higher depending on the population."
     ],
-    references: "Bone RC, et al. Definitions for sepsis and organ failure and guidelines for the use of innovative therapies in sepsis. Chest. 1992;101(6):1644-55.",
+    references: "Lee TH, et al. Derivation and prospective validation of a simple index for prediction of cardiac risk of major noncardiac surgery. Circulation. 1999;100(10):1043-9.",
     faqTitle: "Frequently Asked Questions",
-    faqQ1: "Is SIRS still used for Sepsis?",
-    faqA1: "The 2016 Sepsis-3 guidelines removed SIRS from the formal definition of sepsis, favoring SOFA score. However, many institutions still use SIRS as an early warning screening tool because it is very sensitive.",
-    faqQ2: "Can you have SIRS without an infection?",
-    faqA2: "Yes. Non-infectious causes include burns, trauma, pancreatitis, ischemia, hemorrhage, and severe immune responses.",
+    faqQ1: "Does prior CABG or PCI count as ischemic heart disease?",
+    faqA1: "Yes, any history of myocardial infarction, prior positive stress test, prior revascularization, or current angina counts.",
+    faqQ2: "What if the patient uses oral antidiabetics, not insulin?",
+    faqA2: "Only treatment with insulin before surgery counts as a risk factor in this specific score.",
   },
   fr: {
-    title: "Critères SIRS",
-    subtitle: "Syndrome de Réponse Inflammatoire Systémique",
+    title: "Score RCRI (Index de Risque Cardiaque)",
+    subtitle: "Estime le risque de complications cardiaques périopératoires en chirurgie non cardiaque",
     criteria: [
-      "Température > 38°C ou < 36°C",
-      "Fréquence Cardiaque > 90 battements/min",
-      "Fréquence Respiratoire > 20 cycles/min (ou PaCO₂ < 32 mmHg)",
-      "Leucocytes > 12 000/mm³, < 4 000/mm³, ou > 10% de formes immatures"
+      "Chirurgie à haut risque (intrapéritonéale, intrathoracique ou vasculaire sus-inguinale)",
+      "Antécédent de cardiopathie ischémique (ex. IDM, angor, test d'effort positif)",
+      "Antécédent d'insuffisance cardiaque (ex. OAP, DPN, Bruit B3)",
+      "Antécédent de maladie cérébrovasculaire (AIT ou AVC)",
+      "Traitement préopératoire par insuline",
+      "Créatinine préopératoire > 2.0 mg/dL (> 177 µmol/L)"
     ],
     yes: "Oui",
     no: "Non",
-    result: "Score SIRS",
-    points: "critères",
-    status: "Interprétation :",
-    formula: "Score de 0 à 4 (Temp, FC, FR/PaCO2, Leucocytes).",
+    result: "Score RCRI",
+    points: "points",
+    risk: "Risque d'événement cardiaque majeur :",
+    formula: "Risque d'infarctus, OAP, FV ou arrêt cardiaque.",
     clinicalTitle: "Interprétation Clinique",
-    clinicalText: "Le SIRS était historiquement utilisé pour définir le sepsis. Bien que Sepsis-3 (2016) ait privilégié le score (q)SOFA, le SIRS reste un outil de dépistage très sensible pour l'inflammation systémique.",
+    clinicalText: "Le RCRI de Lee est largement utilisé pour stratifier le risque préopératoire. Il identifie les patients à haut risque d'événements cardiaques indésirables majeurs (MACE).",
     pillarTitle: "Recommandations d'Utilisation",
     pillarText: [
-      "≥ 2 Critères : Le patient présente un Syndrome de Réponse Inflammatoire Systémique (SIRS).",
-      "Si un SIRS est présent avec une suspicion d'infection, évaluer le risque de sepsis.",
-      "Le SIRS est très sensible mais peu spécifique (déclenché par traumatisme, pancréatite, chirurgie...).",
-      "Un score < 2 n'exclut pas une infection sévère chez la personne âgée ou immunodéprimée."
+      "0 point (Classe I) : 0,4 % de risque.",
+      "1 point (Classe II) : 0,9 % de risque.",
+      "2 points (Classe III) : 2,4 % de risque.",
+      "≥ 3 points (Classe IV) : 5,4 % de risque.",
+      "Remarque : Les taux de l'étude d'origine sont indiqués. Des cohortes modernes suggèrent que le risque réel peut être supérieur."
     ],
-    references: "Bone RC, et al. Definitions for sepsis and organ failure. Chest. 1992.",
+    references: "Lee TH, et al. Derivation and prospective validation of a simple index for prediction of cardiac risk of major noncardiac surgery. Circulation. 1999.",
     faqTitle: "Questions Fréquentes",
-    faqQ1: "Le SIRS est-il toujours utilisé pour le sepsis ?",
-    faqA1: "Les recommandations Sepsis-3 l'ont remplacé par le SOFA pour la définition, mais il reste utile comme outil d'alerte précoce.",
-    faqQ2: "Peut-on avoir un SIRS sans infection ?",
-    faqA2: "Oui. Les causes non infectieuses incluent les brûlures, traumatismes, pancréatites et hémorragies.",
+    faqQ1: "Un antécédent de pontage ou d'angioplastie compte-t-il ?",
+    faqA1: "Oui, tout antécédent de revascularisation, d'infarctus ou d'angor compte comme cardiopathie ischémique.",
+    faqQ2: "Et si le patient prend des antidiabétiques oraux sans insuline ?",
+    faqA2: "Seul le traitement par insuline avant l'intervention compte dans ce score.",
   },
   es: {
-    title: "Criterios SIRS",
-    subtitle: "Síndrome de Respuesta Inflamatoria Sistémica",
+    title: "Índice de Riesgo Cardíaco Revisado (RCRI)",
+    subtitle: "Estima el riesgo de complicaciones cardíacas perioperatorias en cirugía no cardíaca",
     criteria: [
-      "Temperatura > 38°C o < 36°C",
-      "Frecuencia Cardíaca > 90 latidos/min",
-      "Frecuencia Respiratoria > 20 resp/min (o PaCO₂ < 32 mmHg)",
-      "Leucocitos > 12,000/mm³, < 4,000/mm³, o > 10% formas inmaduras (bandas)"
+      "Cirugía de alto riesgo (intraperitoneal, intratorácica o vascular suprainguinal)",
+      "Antecedente de cardiopatía isquémica (ej. IAM, angina, ergometría positiva)",
+      "Antecedente de insuficiencia cardíaca (ej. EAP, disnea paroxística nocturna)",
+      "Antecedente de enfermedad cerebrovascular (AIT o ACV)",
+      "Tratamiento preoperatorio con insulina",
+      "Creatinina preoperatoria > 2.0 mg/dL (177 µmol/L)"
     ],
     yes: "Sí",
     no: "No",
-    result: "Puntuación SIRS",
-    points: "criterios",
-    status: "Interpretación:",
-    formula: "Puntuación de 0 a 4 (Temp, FC, FR/PaCO2, Leucocitos).",
+    result: "Puntuación RCRI",
+    points: "puntos",
+    risk: "Riesgo de evento cardíaco mayor:",
+    formula: "Riesgo de IAM, EAP, FV o parada cardíaca primaria.",
     clinicalTitle: "Interpretación Clínica",
-    clinicalText: "Los criterios SIRS se usaban históricamente para definir la sepsis. Aunque Sepsis-3 (2016) cambió al (q)SOFA, SIRS sigue siendo una herramienta muy sensible para identificar inflamación sistémica.",
+    clinicalText: "El RCRI de Lee es una herramienta de estratificación del riesgo preoperatorio muy utilizada. Ayuda a identificar a los pacientes con mayor riesgo de MACE en cirugías no cardíacas.",
     pillarTitle: "Pautas de Uso",
     pillarText: [
-      "≥ 2 Criterios: El paciente cumple la definición de SIRS.",
-      "Si hay SIRS y sospecha de infección, evaluar sepsis y considerar antibióticos tempranos.",
-      "SIRS es muy sensible pero poco específico (traumas, pancreatitis, quemaduras lo causan).",
-      "Una puntuación < 2 no descarta infección grave en ancianos o inmunodeprimidos."
+      "0 puntos (Clase I): 0.4% de riesgo.",
+      "1 punto (Clase II): 0.9% de riesgo.",
+      "2 puntos (Clase III): 2.4% de riesgo.",
+      "≥ 3 puntos (Clase IV): 5.4% de riesgo.",
+      "Nota: Se muestran las tasas del estudio original de 1999."
     ],
-    references: "Bone RC, et al. Definitions for sepsis and organ failure. Chest. 1992.",
+    references: "Lee TH, et al. Derivation and prospective validation of a simple index for prediction of cardiac risk of major noncardiac surgery. Circulation. 1999.",
     faqTitle: "Preguntas Frecuentes",
-    faqQ1: "¿Se sigue usando SIRS para Sepsis?",
-    faqA1: "Las guías Sepsis-3 lo eliminaron de la definición formal a favor de SOFA, pero muchos hospitales lo usan como alerta temprana por su alta sensibilidad.",
-    faqQ2: "¿Puede haber SIRS sin infección?",
-    faqA2: "Sí. Causas no infecciosas incluyen quemaduras, traumatismos, pancreatitis e isquemia.",
+    faqQ1: "¿El antecedente de stent o bypass cuenta como cardiopatía isquémica?",
+    faqA1: "Sí, cualquier antecedente de revascularización, infarto o angina sintomática cuenta.",
+    faqQ2: "¿Y si el paciente toma antidiabéticos orales pero no insulina?",
+    faqA2: "Solo se puntúa el tratamiento con insulina.",
   },
   ar: {
-    title: "معايير SIRS",
-    subtitle: "متلازمة الاستجابة الالتهابية الجهازية",
+    title: "مؤشر الخطر القلبي المُعدّل (RCRI)",
+    subtitle: "تقدير خطر حدوث مضاعفات قلبية أثناء الجراحة غير القلبية",
     criteria: [
-      "درجة الحرارة > 38°C أو < 36°C",
-      "معدل ضربات القلب > 90 نبضة/دقيقة",
-      "معدل التنفس > 20 نفس/دقيقة (أو PaCO₂ < 32 ملم زئبق)",
-      "كريات الدم البيضاء > 12,000 أو < 4,000 أو > 10% خلايا غير ناضجة"
+      "جراحة عالية الخطورة (داخل البطن، داخل الصدر، أو الأوعية الدموية فوق الإربية)",
+      "تاريخ لمرض نقص تروية القلب (مثل جلطة سابقة، ذبحة صدرية، اختبار إجهاد إيجابي)",
+      "تاريخ لفشل القلب الاحتقاني",
+      "تاريخ لأمراض الأوعية الدموية الدماغية (سكتة دماغية أو نوبة نقص تروية عابرة)",
+      "العلاج بالأنسولين قبل الجراحة",
+      "كرياتينين المصل قبل الجراحة > 2.0 مجم/ديسيلتر (>177 ميكرومول/لتر)"
     ],
     yes: "نعم",
     no: "لا",
-    result: "نتيجة SIRS",
-    points: "معايير",
-    status: "التفسير:",
-    formula: "درجة من 0 إلى 4 (الحرارة، النبض، التنفس، الدم).",
+    result: "نقاط RCRI",
+    points: "نقاط",
+    risk: "خطر حدوث حدث قلبي كبير:",
+    formula: "خطر احتشاء عضلة القلب، وذمة رئوية، رجفان بطيني، أو توقف القلب.",
     clinicalTitle: "التفسير السريري",
-    clinicalText: "كانت معايير SIRS تُستخدم تاريخياً لتعريف تعفن الدم (Sepsis). ورغم أن تعريفات Sepsis-3 (2016) تحولت إلى استخدام SOFA، إلا أن SIRS لا يزال أداة حساسة جداً للتعرف على الالتهاب الجهازي المبكر.",
+    clinicalText: "يعد مؤشر RCRI (مؤشر لي) أداة واسعة الاستخدام لتقييم المخاطر قبل الجراحة. يساعد في تحديد المرضى المعرضين لخطر أكبر لحدوث أحداث قلبية سلبية كبرى (MACE).",
     pillarTitle: "إرشادات الاستخدام",
     pillarText: [
-      "معيارين أو أكثر (≥ 2): المريض يستوفي تعريف متلازمة الاستجابة الالتهابية الجهازية (SIRS).",
-      "إذا كان SIRS موجوداً مع اشتباه في عدوى، يجب تقييم حالة تعفن الدم والبدء المبكر بالمضادات الحيوية.",
-      "مؤشر SIRS حساس جداً لكنه غير متخصص (يمكن أن يرتفع بسبب الصدمات، التهاب البنكرياس، الحروق).",
-      "نتيجة أقل من 2 لا تستبعد تماماً وجود عدوى شديدة لدى كبار السن أو ضعاف المناعة."
+      "0 نقطة (الفئة الأولى): 0.4% خطر حدوث حدث قلبي كبير.",
+      "1 نقطة (الفئة الثانية): 0.9% خطر.",
+      "2 نقطة (الفئة الثالثة): 2.4% خطر.",
+      "≥ 3 نقاط (الفئة الرابعة): 5.4% خطر.",
+      "ملاحظة: هذه النسب مستندة إلى الدراسة الأصلية عام 1999."
     ],
-    references: "Bone RC, et al. Definitions for sepsis and organ failure. Chest. 1992.",
+    references: "Lee TH, et al. Derivation and prospective validation of a simple index for prediction of cardiac risk of major noncardiac surgery. Circulation. 1999.",
     faqTitle: "الأسئلة الشائعة",
-    faqQ1: "هل لا يزال SIRS يُستخدم لتشخيص الإنتان (تعفن الدم)؟",
-    faqA1: "أزالت إرشادات Sepsis-3 لعام 2016 مقياس SIRS من التعريف الرسمي لصالح SOFA. ومع ذلك، لا تزال العديد من المستشفيات تستخدمه كأداة إنذار مبكر لأنه حساس للغاية.",
-    faqQ2: "هل يمكن أن يحدث SIRS بدون عدوى؟",
-    faqA2: "نعم. تشمل الأسباب غير المعدية الحروق والصدمات والتهاب البنكرياس والنزيف الشديد.",
+    faqQ1: "هل يعتبر وجود دعامة سابقة في القلب مرض نقص تروية؟",
+    faqA1: "نعم، أي تاريخ لإعادة التروية (قسطرة أو جراحة) أو جلطة قلبية يعتبر مرض نقص تروية.",
+    faqQ2: "ماذا لو كان المريض يستخدم أدوية السكر الفموية بدون أنسولين؟",
+    faqA2: "في هذا المؤشر، يقتصر الخطر على العلاج بالأنسولين فقط.",
   }
 };
 
-export default function SirsCriteria({ lang }: { lang: LangCode }) {
-  const [answers, setAnswers] = useState<boolean[]>(new Array(4).fill(false));
+export default function RcriScore({ lang }: { lang: LangCode }) {
+  const [answers, setAnswers] = useState<boolean[]>(new Array(6).fill(false));
 
   const currentText = translations[lang] || translations.en;
   const isRtl = lang === 'ar';
@@ -149,19 +161,17 @@ export default function SirsCriteria({ lang }: { lang: LangCode }) {
   };
 
   const score = answers.filter(Boolean).length;
-  const isPositive = score >= 2;
   
-  let interpretation = "";
-  if (isPositive) {
-    interpretation = lang === 'fr' ? 'Critères SIRS remplis (≥ 2)' : lang === 'es' ? 'Criterios SIRS cumplidos (≥ 2)' : lang === 'ar' ? 'مستوفي لمعايير SIRS' : 'SIRS criteria met (≥ 2)';
-  } else {
-    interpretation = lang === 'fr' ? 'Critères SIRS non remplis' : lang === 'es' ? 'Criterios SIRS no cumplidos' : lang === 'ar' ? 'غير مستوفي لمعايير SIRS' : 'SIRS criteria not met';
-  }
+  let riskPercent = "";
+  if (score === 0) riskPercent = "0.4%";
+  else if (score === 1) riskPercent = "0.9%";
+  else if (score === 2) riskPercent = "2.4%";
+  else riskPercent = "5.4%";
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      trackCalculatorUsage('sirs-criteria', lang, score);
-      trackCalculatorResult('sirs-criteria', score, 'criteria', lang);
+      trackCalculatorUsage('rcri-score', lang, score);
+      trackCalculatorResult('rcri-score', score, 'points', lang);
     }, 2000);
     return () => clearTimeout(timer);
   }, [score, lang]);
@@ -177,7 +187,7 @@ export default function SirsCriteria({ lang }: { lang: LangCode }) {
           <h1 className={`text-4xl md:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-gray-900 via-gray-800 to-indigo-950 bg-clip-text text-transparent mb-3 ${isRtl ? 'leading-normal' : ''}`}>
             {currentText.title}
           </h1>
-          <EmbedCodeButton calculatorSlug="sirs-criteria" lang={lang} title={currentText.title} />
+          <EmbedCodeButton calculatorSlug="rcri-score" lang={lang} title={currentText.title} />
         </div>
         <p className="text-lg text-gray-500 max-w-2xl mt-3 leading-relaxed">
           {currentText.subtitle}
@@ -219,7 +229,7 @@ export default function SirsCriteria({ lang }: { lang: LangCode }) {
                 <span className="text-xs font-bold uppercase tracking-widest text-slate-300">
                   {currentText.result}
                 </span>
-                <Thermometer className="w-5 h-5 text-red-400" />
+                <HeartPulse className="w-5 h-5 text-red-400" />
               </div>
               
               <div className="flex items-baseline gap-2 tabular-nums my-2" dir="ltr">
@@ -231,24 +241,27 @@ export default function SirsCriteria({ lang }: { lang: LangCode }) {
             </div>
 
             <div className="relative z-10 mt-6 space-y-4">
-              <div className={`p-4 rounded-2xl border backdrop-blur-md transition-all shadow-lg flex flex-col gap-1 ${
-                isPositive ? 'bg-red-500/10 border-red-500/20 text-red-400' : 'bg-emerald-500/10 border-emerald-500/20 text-emerald-400'
+              <div className={`p-4 rounded-2xl border backdrop-blur-md transition-all shadow-lg ${
+                score >= 3 ? 'bg-red-500/10 border-red-500/20 text-red-400' :
+                score === 2 ? 'bg-orange-500/10 border-orange-500/20 text-orange-400' :
+                score === 1 ? 'bg-yellow-500/10 border-yellow-500/20 text-yellow-400' :
+                'bg-emerald-500/10 border-emerald-500/20 text-emerald-400'
               }`}>
-                <div className="font-bold text-sm tracking-wide">
-                  {currentText.status}
+                <div className="font-bold text-sm tracking-wide mb-1">
+                  {currentText.risk}
                 </div>
-                <div className="font-semibold text-lg">{interpretation}</div>
+                <div className="text-2xl font-black">{riskPercent}</div>
               </div>
 
               <ClinicalExportButton
                 title={currentText.title}
                 inputs={currentText.criteria.map((c, i) => ({
-                  label: c.split(' (')[0].split(' >')[0].split(' <')[0].trim(),
+                  label: c,
                   value: answers[i] ? currentText.yes : currentText.no
                 }))}
                 results={[
-                  { label: "SIRS Criteria Score", value: `${score}/4` },
-                  { label: "Interpretation", value: interpretation }
+                  { label: "RCRI Score", value: `${score} points` },
+                  { label: "Risk of MACE", value: riskPercent }
                 ]}
                 formula={currentText.formula}
                 disclaimer={currentText.clinicalText}
@@ -322,7 +335,7 @@ export default function SirsCriteria({ lang }: { lang: LangCode }) {
       </div>
 
       <div className="mt-8" dir={isRtl ? 'rtl' : 'ltr'}>
-        <MedicalReviewerCard reviewer={REVIEWER_EMERGENCY} lang={lang} />
+        <MedicalReviewerCard reviewer={REVIEWER_CARDIO} lang={lang} />
       </div>
     </>
   );
