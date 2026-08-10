@@ -141,7 +141,7 @@ async function main() {
             style: 'normal',
           },
         ],
-      });;
+      });
 
       const resvg = new Resvg(svg, {
         background: 'rgba(255, 255, 255, 1)',

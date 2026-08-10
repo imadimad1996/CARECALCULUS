@@ -6,6 +6,7 @@
     <loc>https://www.carecalculus.com/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -14,6 +15,16 @@
     <loc>https://fr.carecalculus.com/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -23,6 +34,7 @@
     <loc>https://www.carecalculus.com/map-calculator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/map-calculator" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/map-calculator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/map-calculator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/map-calculator" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -31,6 +43,16 @@
     <loc>https://fr.carecalculus.com/map-calculator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/map-calculator" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/map-calculator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/map-calculator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/map-calculator" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/map-calculator</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/map-calculator" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/map-calculator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/map-calculator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/map-calculator" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -39,6 +61,7 @@
     <loc>https://www.carecalculus.com/bmi-calculator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/bmi-calculator" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/bmi-calculator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/bmi-calculator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/bmi-calculator" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -47,6 +70,16 @@
     <loc>https://fr.carecalculus.com/bmi-calculator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/bmi-calculator" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/bmi-calculator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/bmi-calculator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/bmi-calculator" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/bmi-calculator</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/bmi-calculator" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/bmi-calculator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/bmi-calculator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/bmi-calculator" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -55,6 +88,7 @@
     <loc>https://www.carecalculus.com/glasgow-coma-scale</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/glasgow-coma-scale" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/glasgow-coma-scale" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/glasgow-coma-scale" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/glasgow-coma-scale" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -63,6 +97,16 @@
     <loc>https://fr.carecalculus.com/glasgow-coma-scale</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/glasgow-coma-scale" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/glasgow-coma-scale" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/glasgow-coma-scale" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/glasgow-coma-scale" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/glasgow-coma-scale</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/glasgow-coma-scale" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/glasgow-coma-scale" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/glasgow-coma-scale" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/glasgow-coma-scale" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -71,6 +115,7 @@
     <loc>https://www.carecalculus.com/drip-rate-calculator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/drip-rate-calculator" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/drip-rate-calculator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/drip-rate-calculator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/drip-rate-calculator" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -79,6 +124,16 @@
     <loc>https://fr.carecalculus.com/drip-rate-calculator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/drip-rate-calculator" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/drip-rate-calculator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/drip-rate-calculator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/drip-rate-calculator" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/drip-rate-calculator</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/drip-rate-calculator" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/drip-rate-calculator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/drip-rate-calculator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/drip-rate-calculator" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -87,6 +142,7 @@
     <loc>https://www.carecalculus.com/creatinine-clearance</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/creatinine-clearance" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/creatinine-clearance" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/creatinine-clearance" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/creatinine-clearance" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -95,6 +151,16 @@
     <loc>https://fr.carecalculus.com/creatinine-clearance</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/creatinine-clearance" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/creatinine-clearance" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/creatinine-clearance" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/creatinine-clearance" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/creatinine-clearance</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/creatinine-clearance" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/creatinine-clearance" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/creatinine-clearance" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/creatinine-clearance" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -103,6 +169,7 @@
     <loc>https://www.carecalculus.com/mdrd-gfr</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/mdrd-gfr" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/mdrd-gfr" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/mdrd-gfr" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/mdrd-gfr" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -111,6 +178,16 @@
     <loc>https://fr.carecalculus.com/mdrd-gfr</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/mdrd-gfr" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/mdrd-gfr" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/mdrd-gfr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/mdrd-gfr" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/mdrd-gfr</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/mdrd-gfr" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/mdrd-gfr" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/mdrd-gfr" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/mdrd-gfr" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -119,6 +196,7 @@
     <loc>https://www.carecalculus.com/ckd-epi-gfr</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/ckd-epi-gfr" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/ckd-epi-gfr" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/ckd-epi-gfr" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/ckd-epi-gfr" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -127,6 +205,16 @@
     <loc>https://fr.carecalculus.com/ckd-epi-gfr</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/ckd-epi-gfr" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/ckd-epi-gfr" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/ckd-epi-gfr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/ckd-epi-gfr" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/ckd-epi-gfr</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/ckd-epi-gfr" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/ckd-epi-gfr" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/ckd-epi-gfr" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/ckd-epi-gfr" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -135,6 +223,7 @@
     <loc>https://www.carecalculus.com/wells-score</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/wells-score" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/wells-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/wells-score" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/wells-score" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -143,6 +232,16 @@
     <loc>https://fr.carecalculus.com/wells-score</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/wells-score" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/wells-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/wells-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/wells-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/wells-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/wells-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/wells-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/wells-score" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/wells-score" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -151,6 +250,7 @@
     <loc>https://www.carecalculus.com/medical-conversions</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/medical-conversions" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/medical-conversions" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/medical-conversions" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/medical-conversions" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -159,6 +259,16 @@
     <loc>https://fr.carecalculus.com/medical-conversions</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/medical-conversions" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/medical-conversions" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/medical-conversions" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/medical-conversions" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/medical-conversions</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/medical-conversions" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/medical-conversions" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/medical-conversions" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/medical-conversions" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -167,6 +277,7 @@
     <loc>https://www.carecalculus.com/corrected-calcium</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/corrected-calcium" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/corrected-calcium" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/corrected-calcium" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/corrected-calcium" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -175,6 +286,16 @@
     <loc>https://fr.carecalculus.com/corrected-calcium</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/corrected-calcium" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/corrected-calcium" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/corrected-calcium" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/corrected-calcium" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/corrected-calcium</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/corrected-calcium" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/corrected-calcium" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/corrected-calcium" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/corrected-calcium" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -183,6 +304,7 @@
     <loc>https://www.carecalculus.com/qsofa-score</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/qsofa-score" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/qsofa-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/qsofa-score" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/qsofa-score" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -191,6 +313,16 @@
     <loc>https://fr.carecalculus.com/qsofa-score</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/qsofa-score" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/qsofa-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/qsofa-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/qsofa-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/qsofa-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/qsofa-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/qsofa-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/qsofa-score" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/qsofa-score" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -199,6 +331,7 @@
     <loc>https://www.carecalculus.com/curb65-score</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/curb65-score" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/curb65-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/curb65-score" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/curb65-score" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -207,6 +340,16 @@
     <loc>https://fr.carecalculus.com/curb65-score</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/curb65-score" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/curb65-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/curb65-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/curb65-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/curb65-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/curb65-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/curb65-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/curb65-score" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/curb65-score" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -215,6 +358,7 @@
     <loc>https://www.carecalculus.com/cha2ds2-vasc</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/cha2ds2-vasc" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/cha2ds2-vasc" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/cha2ds2-vasc" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/cha2ds2-vasc" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -223,6 +367,16 @@
     <loc>https://fr.carecalculus.com/cha2ds2-vasc</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/cha2ds2-vasc" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/cha2ds2-vasc" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/cha2ds2-vasc" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/cha2ds2-vasc" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/cha2ds2-vasc</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/cha2ds2-vasc" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/cha2ds2-vasc" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/cha2ds2-vasc" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/cha2ds2-vasc" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -231,6 +385,7 @@
     <loc>https://www.carecalculus.com/phq9-score</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/phq9-score" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/phq9-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/phq9-score" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/phq9-score" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -239,6 +394,16 @@
     <loc>https://fr.carecalculus.com/phq9-score</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/phq9-score" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/phq9-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/phq9-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/phq9-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/phq9-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/phq9-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/phq9-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/phq9-score" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/phq9-score" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -247,6 +412,7 @@
     <loc>https://www.carecalculus.com/meld-score</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/meld-score" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/meld-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/meld-score" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/meld-score" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -255,6 +421,16 @@
     <loc>https://fr.carecalculus.com/meld-score</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/meld-score" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/meld-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/meld-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/meld-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/meld-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/meld-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/meld-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/meld-score" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/meld-score" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -263,6 +439,7 @@
     <loc>https://www.carecalculus.com/sirs-criteria</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/sirs-criteria" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/sirs-criteria" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/sirs-criteria" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/sirs-criteria" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -271,6 +448,16 @@
     <loc>https://fr.carecalculus.com/sirs-criteria</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/sirs-criteria" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/sirs-criteria" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/sirs-criteria" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/sirs-criteria" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/sirs-criteria</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/sirs-criteria" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/sirs-criteria" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/sirs-criteria" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/sirs-criteria" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -279,6 +466,7 @@
     <loc>https://www.carecalculus.com/pf-ratio</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/pf-ratio" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/pf-ratio" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/pf-ratio" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/pf-ratio" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -287,6 +475,16 @@
     <loc>https://fr.carecalculus.com/pf-ratio</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/pf-ratio" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/pf-ratio" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/pf-ratio" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/pf-ratio" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/pf-ratio</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/pf-ratio" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/pf-ratio" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/pf-ratio" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/pf-ratio" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -295,6 +493,7 @@
     <loc>https://www.carecalculus.com/tidal-volume</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/tidal-volume" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/tidal-volume" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/tidal-volume" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/tidal-volume" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -303,6 +502,16 @@
     <loc>https://fr.carecalculus.com/tidal-volume</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/tidal-volume" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/tidal-volume" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/tidal-volume" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/tidal-volume" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/tidal-volume</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/tidal-volume" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/tidal-volume" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/tidal-volume" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/tidal-volume" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -311,6 +520,7 @@
     <loc>https://www.carecalculus.com/anc-calculator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/anc-calculator" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/anc-calculator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/anc-calculator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/anc-calculator" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -319,6 +529,16 @@
     <loc>https://fr.carecalculus.com/anc-calculator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/anc-calculator" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/anc-calculator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/anc-calculator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/anc-calculator" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/anc-calculator</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/anc-calculator" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/anc-calculator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/anc-calculator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/anc-calculator" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -327,6 +547,7 @@
     <loc>https://www.carecalculus.com/adjusted-body-weight</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/adjusted-body-weight" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/adjusted-body-weight" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/adjusted-body-weight" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/adjusted-body-weight" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -335,6 +556,16 @@
     <loc>https://fr.carecalculus.com/adjusted-body-weight</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/adjusted-body-weight" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/adjusted-body-weight" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/adjusted-body-weight" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/adjusted-body-weight" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/adjusted-body-weight</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/adjusted-body-weight" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/adjusted-body-weight" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/adjusted-body-weight" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/adjusted-body-weight" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -343,6 +574,7 @@
     <loc>https://www.carecalculus.com/steroid-conversion</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/steroid-conversion" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/steroid-conversion" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/steroid-conversion" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/steroid-conversion" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -351,6 +583,16 @@
     <loc>https://fr.carecalculus.com/steroid-conversion</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/steroid-conversion" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/steroid-conversion" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/steroid-conversion" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/steroid-conversion" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/steroid-conversion</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/steroid-conversion" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/steroid-conversion" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/steroid-conversion" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/steroid-conversion" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -359,6 +601,7 @@
     <loc>https://www.carecalculus.com/apgar-score</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/apgar-score" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/apgar-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/apgar-score" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/apgar-score" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -367,6 +610,16 @@
     <loc>https://fr.carecalculus.com/apgar-score</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/apgar-score" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/apgar-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/apgar-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/apgar-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/apgar-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/apgar-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/apgar-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/apgar-score" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/apgar-score" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -375,6 +628,7 @@
     <loc>https://www.carecalculus.com/sofa-score</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/sofa-score" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/sofa-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/sofa-score" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/sofa-score" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -383,6 +637,16 @@
     <loc>https://fr.carecalculus.com/sofa-score</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/sofa-score" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/sofa-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/sofa-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/sofa-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/sofa-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/sofa-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/sofa-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/sofa-score" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/sofa-score" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -391,6 +655,7 @@
     <loc>https://www.carecalculus.com/child-pugh-score</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/child-pugh-score" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/child-pugh-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/child-pugh-score" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/child-pugh-score" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -399,6 +664,16 @@
     <loc>https://fr.carecalculus.com/child-pugh-score</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/child-pugh-score" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/child-pugh-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/child-pugh-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/child-pugh-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/child-pugh-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/child-pugh-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/child-pugh-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/child-pugh-score" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/child-pugh-score" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -407,6 +682,7 @@
     <loc>https://www.carecalculus.com/anion-gap</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/anion-gap" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/anion-gap" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/anion-gap" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/anion-gap" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -415,6 +691,16 @@
     <loc>https://fr.carecalculus.com/anion-gap</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/anion-gap" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/anion-gap" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/anion-gap" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/anion-gap" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/anion-gap</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/anion-gap" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/anion-gap" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/anion-gap" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/anion-gap" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -423,6 +709,7 @@
     <loc>https://www.carecalculus.com/aa-gradient</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/aa-gradient" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/aa-gradient" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/aa-gradient" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/aa-gradient" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -431,6 +718,16 @@
     <loc>https://fr.carecalculus.com/aa-gradient</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/aa-gradient" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/aa-gradient" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/aa-gradient" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/aa-gradient" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/aa-gradient</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/aa-gradient" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/aa-gradient" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/aa-gradient" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/aa-gradient" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -439,6 +736,7 @@
     <loc>https://www.carecalculus.com/nutrition-tdee</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/nutrition-tdee" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/nutrition-tdee" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/nutrition-tdee" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/nutrition-tdee" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -447,6 +745,16 @@
     <loc>https://fr.carecalculus.com/nutrition-tdee</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/nutrition-tdee" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/nutrition-tdee" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/nutrition-tdee" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/nutrition-tdee" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/nutrition-tdee</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/nutrition-tdee" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/nutrition-tdee" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/nutrition-tdee" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/nutrition-tdee" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -455,6 +763,7 @@
     <loc>https://www.carecalculus.com/nutrition-must</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/nutrition-must" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/nutrition-must" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/nutrition-must" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/nutrition-must" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -463,6 +772,16 @@
     <loc>https://fr.carecalculus.com/nutrition-must</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/nutrition-must" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/nutrition-must" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/nutrition-must" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/nutrition-must" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/nutrition-must</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/nutrition-must" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/nutrition-must" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/nutrition-must" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/nutrition-must" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -471,6 +790,7 @@
     <loc>https://www.carecalculus.com/nutrition-nrs2002</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/nutrition-nrs2002" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/nutrition-nrs2002" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/nutrition-nrs2002" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/nutrition-nrs2002" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -479,6 +799,16 @@
     <loc>https://fr.carecalculus.com/nutrition-nrs2002</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/nutrition-nrs2002" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/nutrition-nrs2002" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/nutrition-nrs2002" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/nutrition-nrs2002" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/nutrition-nrs2002</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/nutrition-nrs2002" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/nutrition-nrs2002" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/nutrition-nrs2002" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/nutrition-nrs2002" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -488,6 +818,7 @@
     <loc>https://www.carecalculus.com/conditions/sepsis</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/conditions/sepsis" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/conditions/sepsis" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/conditions/sepsis" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/conditions/sepsis" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -496,6 +827,16 @@
     <loc>https://fr.carecalculus.com/conditions/sepsis</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/conditions/sepsis" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/conditions/sepsis" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/conditions/sepsis" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/conditions/sepsis" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/conditions/sepsis</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/conditions/sepsis" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/conditions/sepsis" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/conditions/sepsis" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/conditions/sepsis" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -504,6 +845,7 @@
     <loc>https://www.carecalculus.com/conditions/liver-disease</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/conditions/liver-disease" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/conditions/liver-disease" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/conditions/liver-disease" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/conditions/liver-disease" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -512,6 +854,16 @@
     <loc>https://fr.carecalculus.com/conditions/liver-disease</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/conditions/liver-disease" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/conditions/liver-disease" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/conditions/liver-disease" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/conditions/liver-disease" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/conditions/liver-disease</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/conditions/liver-disease" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/conditions/liver-disease" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/conditions/liver-disease" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/conditions/liver-disease" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -520,6 +872,7 @@
     <loc>https://www.carecalculus.com/conditions/atrial-fibrillation</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/conditions/atrial-fibrillation" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/conditions/atrial-fibrillation" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/conditions/atrial-fibrillation" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/conditions/atrial-fibrillation" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -528,6 +881,16 @@
     <loc>https://fr.carecalculus.com/conditions/atrial-fibrillation</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/conditions/atrial-fibrillation" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/conditions/atrial-fibrillation" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/conditions/atrial-fibrillation" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/conditions/atrial-fibrillation" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/conditions/atrial-fibrillation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/conditions/atrial-fibrillation" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/conditions/atrial-fibrillation" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/conditions/atrial-fibrillation" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/conditions/atrial-fibrillation" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -536,6 +899,7 @@
     <loc>https://www.carecalculus.com/conditions/respiratory-failure</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/conditions/respiratory-failure" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/conditions/respiratory-failure" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/conditions/respiratory-failure" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/conditions/respiratory-failure" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -544,6 +908,16 @@
     <loc>https://fr.carecalculus.com/conditions/respiratory-failure</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/conditions/respiratory-failure" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/conditions/respiratory-failure" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/conditions/respiratory-failure" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/conditions/respiratory-failure" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/conditions/respiratory-failure</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/conditions/respiratory-failure" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/conditions/respiratory-failure" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/conditions/respiratory-failure" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/conditions/respiratory-failure" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -552,6 +926,7 @@
     <loc>https://www.carecalculus.com/conditions/renal-failure</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/conditions/renal-failure" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/conditions/renal-failure" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/conditions/renal-failure" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/conditions/renal-failure" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -560,6 +935,16 @@
     <loc>https://fr.carecalculus.com/conditions/renal-failure</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/conditions/renal-failure" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/conditions/renal-failure" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/conditions/renal-failure" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/conditions/renal-failure" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/conditions/renal-failure</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/conditions/renal-failure" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/conditions/renal-failure" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/conditions/renal-failure" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/conditions/renal-failure" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -569,6 +954,7 @@
     <loc>https://www.carecalculus.com/specialties/intensive-care</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/specialties/intensive-care" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/specialties/intensive-care" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/specialties/intensive-care" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/specialties/intensive-care" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -577,6 +963,16 @@
     <loc>https://fr.carecalculus.com/specialties/intensive-care</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/specialties/intensive-care" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/specialties/intensive-care" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/specialties/intensive-care" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/specialties/intensive-care" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/specialties/intensive-care</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/specialties/intensive-care" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/specialties/intensive-care" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/specialties/intensive-care" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/specialties/intensive-care" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -585,6 +981,7 @@
     <loc>https://www.carecalculus.com/specialties/emergency-medicine</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/specialties/emergency-medicine" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/specialties/emergency-medicine" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/specialties/emergency-medicine" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/specialties/emergency-medicine" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -593,6 +990,16 @@
     <loc>https://fr.carecalculus.com/specialties/emergency-medicine</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/specialties/emergency-medicine" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/specialties/emergency-medicine" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/specialties/emergency-medicine" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/specialties/emergency-medicine" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/specialties/emergency-medicine</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/specialties/emergency-medicine" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/specialties/emergency-medicine" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/specialties/emergency-medicine" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/specialties/emergency-medicine" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -601,6 +1008,7 @@
     <loc>https://www.carecalculus.com/specialties/internal-medicine</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/specialties/internal-medicine" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/specialties/internal-medicine" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/specialties/internal-medicine" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/specialties/internal-medicine" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -609,6 +1017,16 @@
     <loc>https://fr.carecalculus.com/specialties/internal-medicine</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/specialties/internal-medicine" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/specialties/internal-medicine" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/specialties/internal-medicine" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/specialties/internal-medicine" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/specialties/internal-medicine</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/specialties/internal-medicine" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/specialties/internal-medicine" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/specialties/internal-medicine" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/specialties/internal-medicine" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -617,6 +1035,7 @@
     <loc>https://www.carecalculus.com/specialties/nephrology</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/specialties/nephrology" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/specialties/nephrology" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/specialties/nephrology" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/specialties/nephrology" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -625,6 +1044,16 @@
     <loc>https://fr.carecalculus.com/specialties/nephrology</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/specialties/nephrology" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/specialties/nephrology" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/specialties/nephrology" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/specialties/nephrology" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/specialties/nephrology</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/specialties/nephrology" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/specialties/nephrology" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/specialties/nephrology" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/specialties/nephrology" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -633,6 +1062,7 @@
     <loc>https://www.carecalculus.com/specialties/cardiology</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/specialties/cardiology" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/specialties/cardiology" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/specialties/cardiology" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/specialties/cardiology" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -641,6 +1071,16 @@
     <loc>https://fr.carecalculus.com/specialties/cardiology</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/specialties/cardiology" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/specialties/cardiology" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/specialties/cardiology" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/specialties/cardiology" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/specialties/cardiology</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/specialties/cardiology" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/specialties/cardiology" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/specialties/cardiology" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/specialties/cardiology" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -649,6 +1089,7 @@
     <loc>https://www.carecalculus.com/specialties/pulmonology</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/specialties/pulmonology" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/specialties/pulmonology" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/specialties/pulmonology" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/specialties/pulmonology" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -657,6 +1098,16 @@
     <loc>https://fr.carecalculus.com/specialties/pulmonology</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/specialties/pulmonology" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/specialties/pulmonology" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/specialties/pulmonology" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/specialties/pulmonology" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/specialties/pulmonology</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/specialties/pulmonology" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/specialties/pulmonology" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/specialties/pulmonology" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/specialties/pulmonology" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -665,6 +1116,7 @@
     <loc>https://www.carecalculus.com/specialties/neurology</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/specialties/neurology" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/specialties/neurology" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/specialties/neurology" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/specialties/neurology" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -673,6 +1125,16 @@
     <loc>https://fr.carecalculus.com/specialties/neurology</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/specialties/neurology" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/specialties/neurology" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/specialties/neurology" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/specialties/neurology" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/specialties/neurology</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/specialties/neurology" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/specialties/neurology" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/specialties/neurology" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/specialties/neurology" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -682,6 +1144,7 @@
     <loc>https://www.carecalculus.com/compare/map-calculator-vs-qsofa-score</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/compare/map-calculator-vs-qsofa-score" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/compare/map-calculator-vs-qsofa-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/compare/map-calculator-vs-qsofa-score" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/compare/map-calculator-vs-qsofa-score" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -690,6 +1153,16 @@
     <loc>https://fr.carecalculus.com/compare/map-calculator-vs-qsofa-score</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/compare/map-calculator-vs-qsofa-score" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/compare/map-calculator-vs-qsofa-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/compare/map-calculator-vs-qsofa-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/compare/map-calculator-vs-qsofa-score" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/compare/map-calculator-vs-qsofa-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/compare/map-calculator-vs-qsofa-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/compare/map-calculator-vs-qsofa-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/compare/map-calculator-vs-qsofa-score" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/compare/map-calculator-vs-qsofa-score" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -698,6 +1171,7 @@
     <loc>https://www.carecalculus.com/compare/qsofa-score-vs-sirs-criteria</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/compare/qsofa-score-vs-sirs-criteria" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/compare/qsofa-score-vs-sirs-criteria" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/compare/qsofa-score-vs-sirs-criteria" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/compare/qsofa-score-vs-sirs-criteria" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -706,6 +1180,16 @@
     <loc>https://fr.carecalculus.com/compare/qsofa-score-vs-sirs-criteria</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/compare/qsofa-score-vs-sirs-criteria" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/compare/qsofa-score-vs-sirs-criteria" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/compare/qsofa-score-vs-sirs-criteria" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/compare/qsofa-score-vs-sirs-criteria" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/compare/qsofa-score-vs-sirs-criteria</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/compare/qsofa-score-vs-sirs-criteria" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/compare/qsofa-score-vs-sirs-criteria" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/compare/qsofa-score-vs-sirs-criteria" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/compare/qsofa-score-vs-sirs-criteria" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -714,6 +1198,7 @@
     <loc>https://www.carecalculus.com/compare/qsofa-score-vs-sofa-score</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/compare/qsofa-score-vs-sofa-score" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/compare/qsofa-score-vs-sofa-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/compare/qsofa-score-vs-sofa-score" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/compare/qsofa-score-vs-sofa-score" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -722,6 +1207,16 @@
     <loc>https://fr.carecalculus.com/compare/qsofa-score-vs-sofa-score</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/compare/qsofa-score-vs-sofa-score" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/compare/qsofa-score-vs-sofa-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/compare/qsofa-score-vs-sofa-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/compare/qsofa-score-vs-sofa-score" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/compare/qsofa-score-vs-sofa-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/compare/qsofa-score-vs-sofa-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/compare/qsofa-score-vs-sofa-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/compare/qsofa-score-vs-sofa-score" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/compare/qsofa-score-vs-sofa-score" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -730,6 +1225,7 @@
     <loc>https://www.carecalculus.com/compare/glasgow-coma-scale-vs-qsofa-score</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/compare/glasgow-coma-scale-vs-qsofa-score" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/compare/glasgow-coma-scale-vs-qsofa-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/compare/glasgow-coma-scale-vs-qsofa-score" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/compare/glasgow-coma-scale-vs-qsofa-score" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -738,6 +1234,16 @@
     <loc>https://fr.carecalculus.com/compare/glasgow-coma-scale-vs-qsofa-score</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/compare/glasgow-coma-scale-vs-qsofa-score" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/compare/glasgow-coma-scale-vs-qsofa-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/compare/glasgow-coma-scale-vs-qsofa-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/compare/glasgow-coma-scale-vs-qsofa-score" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/compare/glasgow-coma-scale-vs-qsofa-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/compare/glasgow-coma-scale-vs-qsofa-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/compare/glasgow-coma-scale-vs-qsofa-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/compare/glasgow-coma-scale-vs-qsofa-score" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/compare/glasgow-coma-scale-vs-qsofa-score" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -746,6 +1252,7 @@
     <loc>https://www.carecalculus.com/compare/curb65-score-vs-qsofa-score</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/compare/curb65-score-vs-qsofa-score" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/compare/curb65-score-vs-qsofa-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/compare/curb65-score-vs-qsofa-score" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/compare/curb65-score-vs-qsofa-score" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -754,6 +1261,16 @@
     <loc>https://fr.carecalculus.com/compare/curb65-score-vs-qsofa-score</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/compare/curb65-score-vs-qsofa-score" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/compare/curb65-score-vs-qsofa-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/compare/curb65-score-vs-qsofa-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/compare/curb65-score-vs-qsofa-score" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/compare/curb65-score-vs-qsofa-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/compare/curb65-score-vs-qsofa-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/compare/curb65-score-vs-qsofa-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/compare/curb65-score-vs-qsofa-score" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/compare/curb65-score-vs-qsofa-score" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -762,6 +1279,7 @@
     <loc>https://www.carecalculus.com/compare/bmi-calculator-vs-adjusted-body-weight</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/compare/bmi-calculator-vs-adjusted-body-weight" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/compare/bmi-calculator-vs-adjusted-body-weight" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/compare/bmi-calculator-vs-adjusted-body-weight" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/compare/bmi-calculator-vs-adjusted-body-weight" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -770,6 +1288,16 @@
     <loc>https://fr.carecalculus.com/compare/bmi-calculator-vs-adjusted-body-weight</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/compare/bmi-calculator-vs-adjusted-body-weight" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/compare/bmi-calculator-vs-adjusted-body-weight" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/compare/bmi-calculator-vs-adjusted-body-weight" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/compare/bmi-calculator-vs-adjusted-body-weight" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/compare/bmi-calculator-vs-adjusted-body-weight</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/compare/bmi-calculator-vs-adjusted-body-weight" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/compare/bmi-calculator-vs-adjusted-body-weight" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/compare/bmi-calculator-vs-adjusted-body-weight" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/compare/bmi-calculator-vs-adjusted-body-weight" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -778,6 +1306,7 @@
     <loc>https://www.carecalculus.com/compare/meld-score-vs-child-pugh-score</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/compare/meld-score-vs-child-pugh-score" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/compare/meld-score-vs-child-pugh-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/compare/meld-score-vs-child-pugh-score" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/compare/meld-score-vs-child-pugh-score" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -786,6 +1315,16 @@
     <loc>https://fr.carecalculus.com/compare/meld-score-vs-child-pugh-score</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/compare/meld-score-vs-child-pugh-score" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/compare/meld-score-vs-child-pugh-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/compare/meld-score-vs-child-pugh-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/compare/meld-score-vs-child-pugh-score" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/compare/meld-score-vs-child-pugh-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/compare/meld-score-vs-child-pugh-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/compare/meld-score-vs-child-pugh-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/compare/meld-score-vs-child-pugh-score" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/compare/meld-score-vs-child-pugh-score" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -794,6 +1333,7 @@
     <loc>https://www.carecalculus.com/compare/mdrd-gfr-vs-ckd-epi-gfr</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/compare/mdrd-gfr-vs-ckd-epi-gfr" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/compare/mdrd-gfr-vs-ckd-epi-gfr" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/compare/mdrd-gfr-vs-ckd-epi-gfr" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/compare/mdrd-gfr-vs-ckd-epi-gfr" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -802,6 +1342,16 @@
     <loc>https://fr.carecalculus.com/compare/mdrd-gfr-vs-ckd-epi-gfr</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/compare/mdrd-gfr-vs-ckd-epi-gfr" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/compare/mdrd-gfr-vs-ckd-epi-gfr" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/compare/mdrd-gfr-vs-ckd-epi-gfr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/compare/mdrd-gfr-vs-ckd-epi-gfr" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/compare/mdrd-gfr-vs-ckd-epi-gfr</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/compare/mdrd-gfr-vs-ckd-epi-gfr" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/compare/mdrd-gfr-vs-ckd-epi-gfr" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/compare/mdrd-gfr-vs-ckd-epi-gfr" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/compare/mdrd-gfr-vs-ckd-epi-gfr" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -810,6 +1360,7 @@
     <loc>https://www.carecalculus.com/compare/creatinine-clearance-vs-mdrd-gfr</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/compare/creatinine-clearance-vs-mdrd-gfr" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/compare/creatinine-clearance-vs-mdrd-gfr" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/compare/creatinine-clearance-vs-mdrd-gfr" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/compare/creatinine-clearance-vs-mdrd-gfr" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -818,6 +1369,16 @@
     <loc>https://fr.carecalculus.com/compare/creatinine-clearance-vs-mdrd-gfr</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/compare/creatinine-clearance-vs-mdrd-gfr" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/compare/creatinine-clearance-vs-mdrd-gfr" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/compare/creatinine-clearance-vs-mdrd-gfr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/compare/creatinine-clearance-vs-mdrd-gfr" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/compare/creatinine-clearance-vs-mdrd-gfr</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/compare/creatinine-clearance-vs-mdrd-gfr" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/compare/creatinine-clearance-vs-mdrd-gfr" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/compare/creatinine-clearance-vs-mdrd-gfr" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/compare/creatinine-clearance-vs-mdrd-gfr" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -828,6 +1389,7 @@
     <loc>https://www.carecalculus.com/about</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/about" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/about" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/about" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/about" />
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -836,6 +1398,16 @@
     <loc>https://fr.carecalculus.com/about</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/about" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/about" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/about" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/about" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/about" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/about" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/about" />
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -844,6 +1416,7 @@
     <loc>https://www.carecalculus.com/disclaimer</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/disclaimer" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/disclaimer" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/disclaimer" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/disclaimer" />
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -852,6 +1425,16 @@
     <loc>https://fr.carecalculus.com/disclaimer</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/disclaimer" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/disclaimer" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/disclaimer" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/disclaimer" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/disclaimer</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/disclaimer" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/disclaimer" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/disclaimer" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/disclaimer" />
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -860,6 +1443,7 @@
     <loc>https://www.carecalculus.com/privacy</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/privacy" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/privacy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/privacy" />
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -868,6 +1452,16 @@
     <loc>https://fr.carecalculus.com/privacy</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/privacy" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/privacy" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/privacy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/privacy" />
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -876,6 +1470,7 @@
     <loc>https://www.carecalculus.com/terms</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/terms" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/terms" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/terms" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/terms" />
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -884,6 +1479,16 @@
     <loc>https://fr.carecalculus.com/terms</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/terms" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/terms" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/terms" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/terms" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/terms</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/terms" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/terms" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/terms" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/terms" />
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -892,6 +1497,7 @@
     <loc>https://www.carecalculus.com/glp-1-hub</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/glp-1-hub" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/glp-1-hub" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/glp-1-hub" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/glp-1-hub" />
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -900,6 +1506,16 @@
     <loc>https://fr.carecalculus.com/glp-1-hub</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/glp-1-hub" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/glp-1-hub" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/glp-1-hub" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/glp-1-hub" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/glp-1-hub</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/glp-1-hub" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/glp-1-hub" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/glp-1-hub" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/glp-1-hub" />
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -908,6 +1524,7 @@
     <loc>https://www.carecalculus.com/nutrition-hub</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/nutrition-hub" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/nutrition-hub" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/nutrition-hub" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/nutrition-hub" />
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -916,6 +1533,16 @@
     <loc>https://fr.carecalculus.com/nutrition-hub</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/nutrition-hub" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/nutrition-hub" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/nutrition-hub" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/nutrition-hub" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/nutrition-hub</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/nutrition-hub" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/nutrition-hub" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/nutrition-hub" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/nutrition-hub" />
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -924,6 +1551,7 @@
     <loc>https://www.carecalculus.com/pricing</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/pricing" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/pricing" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/pricing" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/pricing" />
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -932,6 +1560,16 @@
     <loc>https://fr.carecalculus.com/pricing</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/pricing" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/pricing" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/pricing" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/pricing" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/pricing" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/pricing" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/pricing" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/pricing" />
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -940,6 +1578,7 @@
     <loc>https://www.carecalculus.com/embed-gallery</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/embed-gallery" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/embed-gallery" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/embed-gallery" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/embed-gallery" />
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -948,6 +1587,16 @@
     <loc>https://fr.carecalculus.com/embed-gallery</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/embed-gallery" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/embed-gallery" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/embed-gallery" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/embed-gallery" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/embed-gallery</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/embed-gallery" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/embed-gallery" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/embed-gallery" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/embed-gallery" />
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

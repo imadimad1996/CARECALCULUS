@@ -6,4 +6,4 @@ export interface TranslationDetails {
   [key: string]: any;
 }
 
-export type Translations = Record<LangCode, TranslationDetails>;
+export type Translations = Partial<Record<LangCode, TranslationDetails>>;

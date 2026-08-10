@@ -299,15 +299,18 @@ export const navItems = [
 export const TIER_HEADERS: Record<number, Record<LangCode, string>> = {
   1: {
     en: 'Emergency & Critical Care',
-    fr: 'Urgences & Soins Critiques'
+    fr: 'Urgences & Soins Critiques',
+    es: 'Urgencias y Cuidados Críticos'
   },
   2: {
     en: 'Metabolic & Cardiorenal',
-    fr: 'Métabolique & Cardiorénal'
+    fr: 'Métabolique & Cardiorénal',
+    es: 'Metabólico y Cardiorrenal'
   },
   3: {
     en: 'Therapeutic & Dosing Metrics',
-    fr: 'Métriques, Perfusions & Doses'
+    fr: 'Métriques, Perfusions & Doses',
+    es: 'Métricas Terapéuticas y Dosificación'
   }
 };
 

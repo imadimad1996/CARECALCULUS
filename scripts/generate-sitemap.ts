@@ -66,13 +66,14 @@ const staticPages = ['/about', '/disclaimer', '/privacy', '/terms', '/glp-1-hub'
 
 
 
-const domains = ['https://www.carecalculus.com', 'https://fr.carecalculus.com'] as const;
+const domains = ['https://www.carecalculus.com', 'https://fr.carecalculus.com', 'https://es.carecalculus.com'] as const;
 
 function buildUrls(paths: string[], priority: string, changefreq: string, frPriority?: string): string {
   const urls: string[] = [];
   for (const path of paths) {
     const enUrl = `https://www.carecalculus.com${path}`;
     const frUrl = `https://fr.carecalculus.com${path}`;
+    const esUrl = `https://es.carecalculus.com${path}`;
     
     // EN Entry
     urls.push(`
@@ -80,6 +81,7 @@ function buildUrls(paths: string[], priority: string, changefreq: string, frPrio
     <loc>${enUrl}</loc>
     <xhtml:link rel="alternate" hreflang="en" href="${enUrl}" />
     <xhtml:link rel="alternate" hreflang="fr" href="${frUrl}" />
+    <xhtml:link rel="alternate" hreflang="es" href="${esUrl}" />
     <xhtml:link rel="alternate" hreflang="x-default" href="${enUrl}" />
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
@@ -92,6 +94,19 @@ function buildUrls(paths: string[], priority: string, changefreq: string, frPrio
     <loc>${frUrl}</loc>
     <xhtml:link rel="alternate" hreflang="en" href="${enUrl}" />
     <xhtml:link rel="alternate" hreflang="fr" href="${frUrl}" />
+    <xhtml:link rel="alternate" hreflang="es" href="${esUrl}" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="${enUrl}" />
+    <changefreq>${changefreq}</changefreq>
+    <priority>${pFr}</priority>
+  </url>`);
+
+    // ES Entry
+    urls.push(`
+  <url>
+    <loc>${esUrl}</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}" />
+    <xhtml:link rel="alternate" hreflang="fr" href="${frUrl}" />
+    <xhtml:link rel="alternate" hreflang="es" href="${esUrl}" />
     <xhtml:link rel="alternate" hreflang="x-default" href="${enUrl}" />
     <changefreq>${changefreq}</changefreq>
     <priority>${pFr}</priority>
@@ -108,6 +123,7 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <loc>https://www.carecalculus.com/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -116,6 +132,16 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <loc>https://fr.carecalculus.com/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -131,18 +157,18 @@ ${buildUrls(staticPages, '0.5', 'monthly', '0.5')}
 writeFileSync(OUTPUT_PATH, sitemap, 'utf-8');
 
 const totalUrls = (
-  2 +
-  calculatorPages.length * 2 +
-  conditionPages.length * 2 +
-  specialtyPages.length * 2 +
-  comparisonPages.length * 2 +
-  staticPages.length * 2
+  3 +
+  calculatorPages.length * 3 +
+  conditionPages.length * 3 +
+  specialtyPages.length * 3 +
+  comparisonPages.length * 3 +
+  staticPages.length * 3
 );
 
 console.log(`✅ sitemap.xml generated: ${OUTPUT_PATH}`);
 console.log(`📊 Total URLs indexed: ${totalUrls}`);
-console.log(`  - Calculator pages: ${calculatorPages.length * 2}`);
-console.log(`  - Condition pages: ${conditionPages.length * 2}`);
-console.log(`  - Specialty pages: ${specialtyPages.length * 2}`);
-  console.log(`  - Comparison pages: ${comparisonPages.length * 2}`);
-console.log(`  - Static pages: ${staticPages.length * 2}`);
+console.log(`  - Calculator pages: ${calculatorPages.length * 3}`);
+console.log(`  - Condition pages: ${conditionPages.length * 3}`);
+console.log(`  - Specialty pages: ${specialtyPages.length * 3}`);
+console.log(`  - Comparison pages: ${comparisonPages.length * 3}`);
+console.log(`  - Static pages: ${staticPages.length * 3}`);

@@ -194,8 +194,8 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
       const nEn2 = cleanName(nameEnMap[path2] || slugs[1]);
       const nFr1 = cleanName(nameFrMap[path1] || slugs[0]);
       const nFr2 = cleanName(nameFrMap[path2] || slugs[1]);
-      const nAr1 = cleanName(nameArMap[path1] || slugs[0]);
-      const nAr2 = cleanName(nameArMap[path2] || slugs[1]);
+      const nEs1 = cleanName(nameEsMap[path1] || slugs[0]);
+      const nEs2 = cleanName(nameEsMap[path2] || slugs[1]);
 
       if (lang === 'fr') {
         return {
@@ -203,11 +203,11 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
           desc: `Comparez ${nFr1} et ${nFr2}. Découvrez quel calculateur ou score clinique utiliser selon la situation, les directives et les recommandations d'experts.`,
           keywords: `${nFr1.toLowerCase()}, ${nFr2.toLowerCase()}, comparaison clinique, diagnostic`,
         };
-      } else if (false) {
+      } else if (lang === 'es') {
         return {
-          title: `مقارنة: ${nAr1} ضد ${nAr2} | CareCalculus`,
-          desc: `قارن بين ${nAr1} و ${nAr2}. تعرف على متى تستخدم كل أداة حسابية سريرية بناءً على الإرشادات الطبية وتوصيات الخبراء.`,
-          keywords: `${nAr1}, ${nAr2}, مقارنة سريرية, تشخيص طبي`,
+          title: `${nEs1} vs ${nEs2} | Comparación Clínica | CareCalculus`,
+          desc: `Compare ${nEs1} y ${nEs2}. Descubra qué calculadora o escala clínica utilizar según el contexto clínico, las guías y las recomendaciones de expertos.`,
+          keywords: `${nEs1.toLowerCase()}, ${nEs2.toLowerCase()}, comparacion clinica, diagnostico medico`,
         };
       } else {
         return {
@@ -223,7 +223,7 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
 
   const nameEn = nameEnMap[path] || 'Multilingual Care Calculators';
   const nameFr = nameFrMap[path] || 'Calculateur Médical Gratuit';
-  const nameAr = nameArMap[path] || 'الحاسبة الطبية الشاملة المعتمدة';
+  const nameEs = nameEsMap[path] || 'Calculadora Médica Gratuita';
 
   if (lang === 'fr') {
     return {
@@ -231,11 +231,11 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
       desc: `Calculateur ${nameFr} gratuit — outil d'aide à la décision clinique utilisé par les médecins de réanimation, urgentistes et infirmiers. Gratuit, sans inscription.`,
       keywords: keywordsFrMap[path] || `${nameFr.toLowerCase().replace(/[^a-zA-Z\s]/g, '')}, calculateur medical, guide, medecine`,
     };
-  } else if (false) {
+  } else if (lang === 'es') {
     return {
-      title: `${nameAr} | CareCalculus`,
-      desc: `حاسبة ${nameAr} المجانية — أداة دعم القرار السريري المستخدمة من قبل الأطباء وممرضي العناية المركزة والطوارئ. حساب فوري مع مراجع PubMed وصيغ معتمدة ودعم متعدد اللغات.`,
-      keywords: `${nameAr}, حاسبة طبية, أدوات الأطباء, معادلة سريرية`,
+      title: `${nameEs} | CareCalculus`,
+      desc: `Calculadora ${nameEs} gratuita — herramienta de soporte de decisiones clínicas para médicos de UCI, urgencias y enfermería. Gratis, sin registro.`,
+      keywords: keywordsEsMap[path] || `${nameEs.toLowerCase().replace(/[^a-zA-Z\s]/g, '')}, calculadora medica, escala clinica, medicina`,
     };
   }
 
