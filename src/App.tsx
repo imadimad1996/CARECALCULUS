@@ -510,13 +510,13 @@ function AppLayout() {
   // Unified top navigation: Principal buttons replacing the double search bar
   const renderUnifiedTopNav = () => {
     return (
-      <div className="mb-6 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm relative z-30 ring-1 ring-slate-900/5 dark:ring-white/10">
+      <div className="mb-6 w-full xl:w-fit mx-auto bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm relative z-30 ring-1 ring-slate-900/5 dark:ring-white/10">
         {/* Ambient Top Accent Light Line */}
         <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none">
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-teal-500/60 to-transparent opacity-80" />
         </div>
 
-        <div className="px-3.5 py-2 flex items-center gap-2 flex-wrap">
+        <div className="px-3.5 py-2 flex items-center justify-center gap-2 flex-wrap">
           <button 
             onClick={() => setIsSpecialtiesModalOpen(true)}
             className="h-10 px-3.5 bg-slate-100/90 hover:bg-slate-200/90 dark:bg-slate-800/80 dark:hover:bg-slate-700/80 text-slate-800 dark:text-slate-200 font-bold rounded-xl text-xs transition-all flex items-center gap-2 border border-slate-200/80 dark:border-slate-700/80 cursor-pointer shadow-2xs hover:scale-[1.02] active:scale-95 whitespace-nowrap"
@@ -559,7 +559,7 @@ function AppLayout() {
             );
           })()}
 
-          <div className="ml-auto flex items-center gap-2">
+          <div className="flex items-center gap-2">
             <FavoriteButton lang={lang} />
 
             {!isOnline && (
