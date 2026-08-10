@@ -101,7 +101,8 @@ const FEATURED_CALCULATORS = [
   { id: 'pf', icon: Wind, en: 'P/F Ratio', fr: 'Rapport P/F', path: '/pf-ratio', specialties: ['pulmonology', 'emergency'] },
   { id: 'creat', icon: TestTube, en: 'Creatinine Clearance', fr: 'Clairance Créatinine', path: '/creatinine-clearance', specialties: ['nephrology'] },
   { id: 'meld', icon: Activity, en: 'MELD Score', fr: 'Score MELD', path: '/meld-score', specialties: ['gastro'] },
-  { id: 'wells', icon: AlertOctagon, en: 'Wells Score', fr: 'Score de Wells', path: '/wells-score', specialties: ['pulmonology', 'cardiology'] },
+  { id: 'wells', icon: AlertOctagon, en: 'Wells Score (DVT)', fr: 'Score de Wells (TVP)', path: '/wells-score', specialties: ['pulmonology', 'cardiology'] },
+  { id: 'wells-pe', icon: AlertOctagon, en: 'Wells Score (PE)', fr: 'Score de Wells (EP)', path: '/wells-pe-score', specialties: ['pulmonology', 'cardiology'] },
   { id: 'cha2', icon: HeartPulse, en: 'CHA₂DS₂-VASc', fr: 'CHA₂DS₂-VASc', path: '/cha2ds2-vasc', specialties: ['cardiology'] },
   { id: 'tdee', icon: Activity, en: 'Nutrition TDEE', fr: 'Nutrition TDEE', path: '/nutrition-tdee', specialties: ['nutrition'] },
   { id: 'must', icon: Activity, en: 'MUST Score', fr: 'Score MUST', path: '/nutrition-must', specialties: ['nutrition'] },
@@ -177,8 +178,8 @@ export default function HomePage({ lang }: HomePageProps) {
   const tiers = T.tiers[lang];
   const stats = T.stats[lang];
   const popular = {
-    en: { label: 'Popular:', items: [{ name: 'MAP', path: '/map-calculator' }, { name: 'GCS', path: '/glasgow-coma-scale' }, { name: 'Wells', path: '/wells-score' }, { name: 'Creatinine', path: '/creatinine-clearance' }] },
-    fr: { label: 'Populaire :', items: [{ name: 'PAM', path: '/map-calculator' }, { name: 'Glasgow', path: '/glasgow-coma-scale' }, { name: 'Wells', path: '/wells-score' }, { name: 'Créatinine', path: '/creatinine-clearance' }] }
+    en: { label: 'Popular:', items: [{ name: 'MAP', path: '/map-calculator' }, { name: 'GCS', path: '/glasgow-coma-scale' }, { name: 'Wells PE', path: '/wells-pe-score' }, { name: 'Creatinine', path: '/creatinine-clearance' }] },
+    fr: { label: 'Populaire :', items: [{ name: 'PAM', path: '/map-calculator' }, { name: 'Glasgow', path: '/glasgow-coma-scale' }, { name: 'Wells EP', path: '/wells-pe-score' }, { name: 'Créatinine', path: '/creatinine-clearance' }] }
   }[lang];
 
   const bedsideSummary = {

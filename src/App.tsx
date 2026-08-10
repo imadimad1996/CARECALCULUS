@@ -559,41 +559,43 @@ function AppLayout() {
             );
           })()}
 
-          <FavoriteButton lang={lang} />
+          <div className="ml-auto flex items-center gap-2">
+            <FavoriteButton lang={lang} />
 
-          {!isOnline && (
-            <div className="h-10 px-3 bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-400 text-[11px] font-bold rounded-xl border border-rose-200 dark:border-rose-800/50 shadow-2xs whitespace-nowrap flex items-center gap-1.5">
-              <div className="relative flex h-2.5 w-2.5 shrink-0">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-rose-500"></span>
+            {!isOnline && (
+              <div className="h-10 px-3 bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-400 text-[11px] font-bold rounded-xl border border-rose-200 dark:border-rose-800/50 shadow-2xs whitespace-nowrap flex items-center gap-1.5">
+                <div className="relative flex h-2.5 w-2.5 shrink-0">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-rose-500"></span>
+                </div>
+                <span className="hidden sm:inline">Offline Mode</span>
               </div>
-              <span className="hidden sm:inline">Offline Mode</span>
-            </div>
-          )}
+            )}
 
-          {!isPro && (
-            <Link
-              to={langPath('/pricing')}
-              className="h-10 px-3.5 bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white text-[11px] font-black uppercase tracking-wider rounded-xl transition-all shadow-[0_0_12px_rgba(20,184,166,0.3)] hover:shadow-[0_0_18px_rgba(20,184,166,0.5)] hover:scale-[1.02] active:scale-95 cursor-pointer whitespace-nowrap flex items-center gap-1.5"
-            >
-              <Sparkles className="w-3.5 h-3.5 shrink-0" />
-              <span className="hidden sm:inline">{lang === 'fr' ? 'Débloquer Pro' : 'Upgrade to Pro'}</span>
-            </Link>
-          )}
+            {!isPro && (
+              <Link
+                to={langPath('/pricing')}
+                className="h-10 px-3.5 bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white text-[11px] font-black uppercase tracking-wider rounded-xl transition-all shadow-[0_0_12px_rgba(20,184,166,0.3)] hover:shadow-[0_0_18px_rgba(20,184,166,0.5)] hover:scale-[1.02] active:scale-95 cursor-pointer whitespace-nowrap flex items-center gap-1.5"
+              >
+                <Sparkles className="w-3.5 h-3.5 shrink-0" />
+                <span className="hidden sm:inline">{lang === 'fr' ? 'Débloquer Pro' : 'Upgrade to Pro'}</span>
+              </Link>
+            )}
 
-          <DropdownMenu
-            user={user}
-            logout={logout}
-            onAuthClick={() => setIsLoginModalOpen(true)}
-            onEhrClick={() => {
-              const event = new CustomEvent('carecalculus:open-smart-paste');
-              window.dispatchEvent(event);
-            }}
-            onContactClick={() => setIsContactModalOpen(true)}
-            langPath={langPath}
-            lang={lang}
-            setLang={setLang}
-          />
+            <DropdownMenu
+              user={user}
+              logout={logout}
+              onAuthClick={() => setIsLoginModalOpen(true)}
+              onEhrClick={() => {
+                const event = new CustomEvent('carecalculus:open-smart-paste');
+                window.dispatchEvent(event);
+              }}
+              onContactClick={() => setIsContactModalOpen(true)}
+              langPath={langPath}
+              lang={lang}
+              setLang={setLang}
+            />
+          </div>
         </div>
       </div>
     );

@@ -16,6 +16,7 @@ const pageLoaders = [
   () => import('../pages/DripRate'),
   () => import('../pages/CreatinineClearance'),
   () => import('../pages/WellsScore'),
+  () => import('../pages/WellsPeScore'),
   () => import('../pages/MedicalConversions'),
   () => import('../pages/CorrectedCalcium'),
   () => import('../pages/QsofaScore'),
@@ -129,7 +130,7 @@ const safeLazy = (loader: () => Promise<any>) => {
 
 const [
   MapCalculator, BmiCalculator, GcsCalculator, DripRate, CreatinineClearance,
-  WellsScore, MedicalConversions, CorrectedCalcium, QsofaScore, Curb65Score,
+  WellsScore, WellsPeScore, MedicalConversions, CorrectedCalcium, QsofaScore, Curb65Score,
   Cha2ds2VascScore, Phq9Score, MeldScore, SirsCriteria, PfRatio, TidalVolume,
   AncCalculator, AdjustedBodyWeight, SteroidConversion,
   About, Disclaimer, Privacy, Terms,
@@ -238,6 +239,7 @@ export const navItems = [
   { path: '/ckd-epi-gfr', nameEn: 'CKD-EPI GFR Score', nameFr: 'CKD-EPI DFG Score', nameAr: 'معدل الترشيح الكبيبي CKD-EPI', icon: TestTube, tier: 2 },
   { path: '/meld-score', nameEn: 'MELD Score Liver', nameFr: 'Score MELD Hépatique', nameAr: 'نقاط MELD لتليف وفشل الكبد', icon: Activity, tier: 2 },
   { path: '/wells-score', nameEn: 'Wells Score', nameFr: 'Score de Wells DVT/PE', nameAr: 'نقاط ويلز للانسداد الرئوي والجلطة', icon: AlertOctagon, tier: 2 },
+  { path: '/wells-pe-score', nameEn: 'Wells PE Score', nameFr: 'Score de Wells EP', nameAr: 'نقاط ويلز للجلطة الرئوية', icon: AlertOctagon, tier: 2 },
   { path: '/cha2ds2-vasc', nameEn: 'CHA2DS2-VASc stroke', nameFr: 'Score CHA2DS2-VASc FA', nameAr: 'معيار سكتة الرجفان الأذيني', icon: HeartPulse, tier: 2 },
   { path: '/corrected-calcium', nameEn: 'Corrected Calcium', nameFr: 'Calcium Corrigé Albumin', nameAr: 'الكالسيوم المصحح بالألبومين', icon: TestTube, tier: 2 },
   { path: '/anc-calculator', nameEn: 'ANC Calculator', nameFr: 'Calculateur NAN Neutro', nameAr: 'حساب خلايا الدم المتعادلة ANC', icon: TestTube, tier: 2 },
@@ -333,6 +335,7 @@ export function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="mdrd-gfr" element={wrapCalculator('/mdrd-gfr', <MdrdGfr lang={lang} />)} />
       <Route path="ckd-epi-gfr" element={wrapCalculator('/ckd-epi-gfr', <CkdEpiGfr lang={lang} />)} />
       <Route path="wells-score" element={wrapCalculator('/wells-score', <WellsScore lang={lang} />)} />
+      <Route path="wells-pe-score" element={wrapCalculator('/wells-pe-score', <WellsPeScore lang={lang} />)} />
       <Route path="parkland-formula" element={wrapCalculator('/parkland-formula', <ParklandFormula lang={lang} />)} />
       <Route path="heparin-dosing" element={wrapCalculator('/heparin-dosing', <HeparinDosing lang={lang} />)} />
       <Route path="opioid-conversion" element={wrapCalculator('/opioid-conversion', <OpioidConversion lang={lang} />)} />

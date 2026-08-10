@@ -31,6 +31,7 @@ const QUICK_LINKS = [
   { path: '/qsofa-score', en: 'qSOFA Sepsis', fr: 'qSOFA Sepsis' },
   { path: '/meld-score', en: 'MELD Liver', fr: 'Score MELD' },
   { path: '/wells-score', en: 'Wells DVT', fr: 'Wells Phlébite' },
+  { path: '/wells-pe-score', en: 'Wells PE', fr: 'Wells EP' },
 ];
 
 export default function NotFound({ lang }: { lang: LangCode }) {
