@@ -20,11 +20,12 @@ const T = {
   hero: {
     en: { badge: 'Clinical Decision Suite', title: 'Medical Calculators', subtitle: 'Trusted by clinicians worldwide', desc: 'The fastest, most rigorous clinical decision support tools. Designed for the bedside: zero fluff, offline-ready, and strictly aligned with current AHA, KDIGO, and ESPEN guidelines.' },
     fr: { badge: 'Suite de Décision Clinique', title: 'Calculateurs Médicaux', subtitle: 'Utilisé par des cliniciens du monde entier', desc: 'Les outils d\'aide à la décision clinique les plus rapides et rigoureux. Conçus pour le lit du patient : sans fioritures, hors ligne, et strictly alignés sur les recommandations AHA, KDIGO et ESPEN.' },
-    
+    es: { badge: 'Suite de Decisión Clínica', title: 'Calculadoras Médicas', subtitle: 'Utilizado por médicos en todo el mundo', desc: 'Herramientas de soporte de decisiones clínicas más rápidas y rigurosas. Diseñadas para la práctica médica: sin rodeos, listas para uso offline y alineadas con guías AHA, KDIGO y ESPEN.' },
   },
   cta: {
     en: { primary: 'Quick Calculate', secondary: 'Browse Library' },
     fr: { primary: 'Calcul Rapide', secondary: 'Parcourir la bibliothèque' },
+    es: { primary: 'Cálculo Rápido', secondary: 'Explorar Biblioteca' },
   },
   tiers: {
     en: {
@@ -37,47 +38,56 @@ const T = {
       t2: { label: 'Métabolique & Cardiorénal', desc: '25+ calculateurs organes & cardiorenal' },
       t3: { label: 'Thérapeutique & Dosages', desc: '30+ outils de pharmacologie & métriques corporels' },
     },
-    
+    es: {
+      t1: { label: 'Urgencias y Cuidados Críticos', desc: '30+ escalas validadas para UCI y urgencias' },
+      t2: { label: 'Metabólico y Cardiorrenal', desc: '25+ calculadoras de función orgánica' },
+      t3: { label: 'Terapéutica y Dosificación', desc: '30+ herramientas farmacológicas y métricas' },
+    },
   },
   stats: {
     en: [
       { value: '50K+', label: 'Clinical Decisions / Mo.' },
-      { value: '2', label: 'Supported Languages' },
+      { value: '3', label: 'Supported Languages' },
       { value: '100%', label: 'Expert Peer-Reviewed' },
       { value: 'E-E-A-T', label: 'Guideline-Aligned' },
     ],
     fr: [
       { value: '50K+', label: 'Décisions Cliniques / Mois' },
-      { value: '2', label: 'Langues Supportées' },
+      { value: '3', label: 'Langues Supportées' },
       { value: '100%', label: 'Validé par Experts' },
       { value: 'E-E-A-T', label: 'Aligné aux Recommandations' },
     ],
-    
+    es: [
+      { value: '50K+', label: 'Decisiones Clínicas / Mes' },
+      { value: '3', label: 'Idiomas Disponibles' },
+      { value: '100%', label: 'Revisado por Expertos' },
+      { value: 'E-E-A-T', label: 'Conforme a Guías Clínicas' },
+    ],
   },
   search: {
     en: 'Search calculators, clinical scores & ICU reference...',
     fr: 'Rechercher un calculateur, score ou fiche clinique...',
-    
+    es: 'Buscar calculadoras, escalas clínicas y referencia UCI...',
   },
   trust: {
     en: 'All tools are validated against peer-reviewed literature (AHA, ESC, CDC, SFAR, NIH) and aligned with international clinical guidelines.',
     fr: 'Tous les outils sont validés selon la littérature médicale révisée (AHA, ESC, HAS, SFMU, NIH) et alignés avec les recommandations internationales.',
-    
+    es: 'Todas las herramientas están validadas con literatura médica revisada por pares (AHA, ESC, CDC, NIH) y alineadas con guías internacionales.',
   },
 };
 
 const SPECIALTIES = [
-  { id: 'all', en: 'All Categories', fr: 'Toutes catégories' },
-  { id: 'emergency', en: 'Emergency & Critical Care', fr: 'Urgences & Soins Intensifs' },
-  { id: 'cardiology', en: 'Cardiology', fr: 'Cardiologie' },
-  { id: 'pediatrics', en: 'Pediatrics', fr: 'Pédiatrie' },
-  { id: 'obgyn', en: 'Obstetrics & Gyn', fr: 'Obstétrique & Gynéco' },
-  { id: 'hematology', en: 'Hematology & Oncology', fr: 'Hématologie & Oncologie' },
-  { id: 'toxicology', en: 'Toxicology', fr: 'Toxicologie' },
-  { id: 'pulmonology', en: 'Pulmonology', fr: 'Pneumologie' },
-  { id: 'nephrology', en: 'Nephrology', fr: 'Néphrologie' },
-  { id: 'gastro', en: 'Gastroenterology', fr: 'Gastro-entérologie' },
-  { id: 'neuro', en: 'Neurology', fr: 'Neurologie' },
+  { id: 'all', en: 'All Categories', fr: 'Toutes catégories', es: 'Todas las categorías' },
+  { id: 'emergency', en: 'Emergency & Critical Care', fr: 'Urgences & Soins Intensifs', es: 'Urgencias y Cuidados Críticos' },
+  { id: 'cardiology', en: 'Cardiology', fr: 'Cardiologie', es: 'Cardiología' },
+  { id: 'pediatrics', en: 'Pediatrics', fr: 'Pédiatrie', es: 'Pediatría' },
+  { id: 'obgyn', en: 'Obstetrics & Gyn', fr: 'Obstétrique & Gynéco', es: 'Obstetricia y Ginecología' },
+  { id: 'hematology', en: 'Hematology & Oncology', fr: 'Hématologie & Oncologie', es: 'Hematología y Oncología' },
+  { id: 'toxicology', en: 'Toxicology', fr: 'Toxicologie', es: 'Toxicología' },
+  { id: 'pulmonology', en: 'Pulmonology', fr: 'Pneumologie', es: 'Neumología' },
+  { id: 'nephrology', en: 'Nephrology', fr: 'Néphrologie', es: 'Nefrología' },
+  { id: 'gastro', en: 'Gastroenterology', fr: 'Gastro-entérologie', es: 'Gastroenterología' },
+  { id: 'neuro', en: 'Neurology', fr: 'Neurologie', es: 'Neurología' },
   { id: 'nutrition', en: 'Nutrition', fr: 'Nutrition' },
   { id: 'pharmaco', en: 'Pharmacology', fr: 'Pharmacologie' },
 ];

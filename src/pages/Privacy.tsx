@@ -53,7 +53,7 @@ const T = {
 
 export default function Privacy({ lang }: { lang: LangCode }) {
   const { langPath } = useLang();
-  const t = T[lang];
+  const t = T[lang] || T.en;
   const isRtl = false;
 
   return (

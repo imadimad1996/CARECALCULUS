@@ -36,7 +36,7 @@ const QUICK_LINKS = [
 
 export default function NotFound({ lang }: { lang: LangCode }) {
   const { langPath } = useLang();
-  const t = T[lang];
+  const t = T[lang] || T.en;
   const isRtl = false;
 
   return (

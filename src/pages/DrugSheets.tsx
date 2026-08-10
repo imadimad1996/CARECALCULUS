@@ -29,7 +29,7 @@ export default function DrugSheets({ lang }: { lang: LangCode }) {
   const { langPath } = useLang();
   const isRtl = false;
   const [filter, setFilter] = useState('');
-  const t = T[lang];
+  const t = T[lang] || T.en;
 
   const [drugs, setDrugs] = useState<DrugInfo[]>([]);
   const [isLoading, setIsLoading] = useState(true);

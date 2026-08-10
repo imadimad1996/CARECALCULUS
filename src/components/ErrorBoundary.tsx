@@ -43,18 +43,33 @@ export class GlobalErrorBoundary extends React.Component<any, any> {
               CareCalculus encountered an unexpected clinical application error. Our engineers have been notified. Please refresh the page to restore the session.
             </p>
             <button
-              onClick={() => window.location.reload()}
+              onClick={() => {
+                if ('serviceWorker' in navigator) {
+                  navigator.serviceWorker.getRegistrations().then(regs => {
+                    for (const r of regs) r.unregister();
+                  });
+                }
+                if ('caches' in window) {
+                  caches.keys().then(keys => {
+                    for (const k of keys) caches.delete(k);
+                  });
+                }
+                window.location.reload();
+              }}
               className="w-full bg-slate-900 hover:bg-slate-800 text-white rounded-xl py-3.5 font-bold text-sm flex items-center justify-center gap-2 transition-all active:scale-[0.98]"
             >
               <RotateCcw className="w-4 h-4" />
-              Reload Application
+              Reload Application & Flush Cache
             </button>
             
-            {process.env.NODE_ENV === 'development' && (
-              <div className="mt-8 text-left bg-slate-900 rounded-xl p-4 overflow-auto max-h-48 text-xs font-mono text-emerald-400">
-                <div className="font-bold text-rose-400 mb-2">{this.state.error?.toString()}</div>
-                {this.state.error?.stack}
-              </div>
+            {this.state.error && (
+              <details className="mt-6 text-left">
+                <summary className="text-xs text-slate-400 cursor-pointer font-mono hover:text-slate-600">View Diagnostic Details</summary>
+                <div className="mt-2 bg-slate-900 rounded-xl p-4 overflow-auto max-h-48 text-[11px] font-mono text-emerald-400">
+                  <div className="font-bold text-rose-400 mb-1">{this.state.error?.toString()}</div>
+                  {this.state.error?.stack}
+                </div>
+              </details>
             )}
           </div>
         </div>
