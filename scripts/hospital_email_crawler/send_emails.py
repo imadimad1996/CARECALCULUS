@@ -97,7 +97,7 @@ BODY_HTML = """\
 </ul>
 
 <p>
-  <a href="https://www.carecalculus.com" class="cta">Try CareCalculus Free →</a>
+  <a href="https://www.carecalculus.com/?utm_source=hospital_outreach&utm_medium=email&utm_campaign=hospitals_v1" class="cta">Try CareCalculus Free →</a>
 </p>
 
 <p>

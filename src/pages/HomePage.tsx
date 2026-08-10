@@ -327,21 +327,28 @@ export default function HomePage({ lang }: HomePageProps) {
             </button>
           </motion.div>
 
-          {/* Quick-links */}
+          {/* Quick-Launch Clinical Workbench */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.38 }}
-            className="flex flex-wrap items-center justify-center gap-2 mb-10 text-xs"
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.38, ease: 'easeOut' }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10 w-full max-w-[800px] mx-auto px-4"
           >
-            <span className="text-slate-400 font-medium">{popular.label}</span>
-            {popular.items.map((item, idx) => (
+            {[
+              { path: '/map-calculator', name: 'MAP Calc', icon: <Activity className="w-6 h-6 text-teal-600 dark:text-teal-400" /> },
+              { path: '/wells-score', name: 'Wells Score', icon: <AlertOctagon className="w-6 h-6 text-rose-600 dark:text-rose-400" /> },
+              { path: '/parkland-formula', name: 'Parkland', icon: <Droplet className="w-6 h-6 text-cyan-600 dark:text-cyan-400" /> },
+              { path: '/grace-score', name: 'GRACE ACS', icon: <HeartPulse className="w-6 h-6 text-indigo-600 dark:text-indigo-400" /> }
+            ].map((item, idx) => (
               <Link
                 key={idx}
                 to={langPath(item.path)}
-                className="px-4 py-2.5 min-h-[44px] bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-teal-700 hover:bg-teal-50/50 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-teal-300 transition-all duration-200 font-bold shadow-2xs hover:shadow-xs"
+                className="group flex flex-col items-center justify-center gap-3 p-4 min-h-[100px] bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-slate-200/80 dark:border-slate-700 hover:border-teal-400 dark:hover:border-teal-400 rounded-3xl shadow-[0_2px_10px_-3px_rgba(6,81,237,0.1)] hover:shadow-lg transition-all duration-300 text-slate-800 dark:text-slate-100 hover:-translate-y-1"
               >
-                {item.name}
+                <div className="p-3 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 group-hover:bg-teal-50 dark:group-hover:bg-teal-900/30 transition-colors">
+                  {item.icon}
+                </div>
+                <span className="text-sm font-bold text-center tracking-tight">{item.name}</span>
               </Link>
             ))}
           </motion.div>

@@ -4,7 +4,7 @@ import { LangCode, Translations } from '../types';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 import { trackCalculatorUsage } from '../utils/telemetry';
 import EmbedCodeButton from '../components/ui/EmbedCodeButton';
-import { JsonLd } from '../components/JsonLd';
+import { CalcPageSchemas } from '../components/JsonLd';
 import ClinicalContextPanel from '../components/ClinicalContextPanel';
 
 const translations: Translations = {
@@ -97,38 +97,12 @@ export default function ParklandFormula({ lang }: { lang: LangCode }) {
 
   return (
     <>
-      <JsonLd data={{
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "MedicalWebPage",
-            "@id": `https://carecalculus.com/${lang === 'en' ? '' : lang + '/'}parkland-formula`,
-            "url": `https://carecalculus.com/${lang === 'en' ? '' : lang + '/'}parkland-formula`,
-            "name": currentText.title,
-            "description": currentText.subtitle,
-            "inLanguage": lang,
-            "about": {
-              "@type": "MedicalCondition",
-              "name": "Thermal Burn",
-              "code": {
-                "@type": "MedicalCode",
-                "codingSystem": "ICD-10",
-                "code": "T30.0"
-              }
-            }
-          },
-          {
-            "@type": "MedicalCalculator",
-            "name": currentText.title,
-            "description": currentText.subtitle,
-            "url": `https://carecalculus.com/${lang === 'en' ? '' : lang + '/'}parkland-formula`,
-            "relevantSpecialty": {
-              "@type": "MedicalSpecialty",
-              "name": "Emergency Medicine"
-            }
-          }
-        ]
-      }} />
+      <CalcPageSchemas 
+        name={currentText.title}
+        description={currentText.subtitle}
+        path={`/${lang === 'en' ? '' : lang + '/'}parkland-formula`}
+        scoringSystem="Parkland Formula"
+      />
 
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-orange-500/5 via-teal-500/5 to-purple-500/5 blur-3xl -z-10 pointer-events-none rounded-full" />
 

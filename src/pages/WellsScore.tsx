@@ -5,7 +5,7 @@ import ClinicalExportButton from '../components/ClinicalExportButton';
 import { trackCalculatorUsage, trackCalculatorResult } from '../utils/telemetry';
 import { layoutTranslations } from '../utils/lang';
 import EmbedCodeButton from '../components/ui/EmbedCodeButton';
-import { JsonLd } from '../components/JsonLd';
+import { CalcPageSchemas } from '../components/JsonLd';
 import ClinicalContextPanel from '../components/ClinicalContextPanel';
 import { RiskGauge } from '../components/RiskGauge';
 import { PubMedPopover } from '../components/PubMedPopover';
@@ -178,45 +178,12 @@ export default function WellsScore({ lang }: { lang: LangCode }) {
 
   return (
     <>
-      <JsonLd data={{
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "MedicalWebPage",
-            "@id": `https://carecalculus.com/${lang === 'en' ? '' : lang + '/'}wells-score`,
-            "url": `https://carecalculus.com/${lang === 'en' ? '' : lang + '/'}wells-score`,
-            "name": currentText.title,
-            "description": currentText.subtitle,
-            "inLanguage": lang,
-            "about": {
-              "@type": "MedicalCondition",
-              "name": "Deep Vein Thrombosis",
-              "alternateName": "DVT",
-              "code": {
-                "@type": "MedicalCode",
-                "codingSystem": "ICD-10",
-                "code": "I82.4"
-              }
-            }
-          },
-          {
-            "@type": "MedicalCalculator",
-            "name": currentText.title,
-            "description": currentText.subtitle,
-            "url": `https://carecalculus.com/${lang === 'en' ? '' : lang + '/'}wells-score`,
-            "relevantSpecialty": {
-              "@type": "MedicalSpecialty",
-              "name": "Emergency Medicine"
-            }
-          },
-          {
-            "@type": "MedicalRiskScore",
-            "name": currentText.title,
-            "description": currentText.subtitle,
-            "url": `https://carecalculus.com/${lang === 'en' ? '' : lang + '/'}wells-score`
-          }
-        ]
-      }} />
+      <CalcPageSchemas 
+        name={currentText.title}
+        description={currentText.subtitle}
+        path={`/${lang === 'en' ? '' : lang + '/'}wells-score`}
+        scoringSystem="Wells Score for DVT"
+      />
       
       {/* Ambient 2026 Page Lighting */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-cyan-500/10 via-teal-500/5 to-purple-500/10 blur-3xl -z-10 pointer-events-none rounded-full" />

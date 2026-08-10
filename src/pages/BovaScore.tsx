@@ -1,4 +1,4 @@
-import { JsonLd } from '../components/JsonLd';
+import { CalcPageSchemas } from '../components/JsonLd';
 import React, { useState } from 'react';
 import CalculatorShell from '../components/CalculatorShell';
 import { HeartPulse } from 'lucide-react';
@@ -63,7 +63,12 @@ export default function BovaScore({ lang }: { lang: LangCode }) {
 
   return (
     <CalculatorShell logicalPath="/bova-score" lang={lang}>
-      <JsonLd path="/bova-score" title="Clinical Decision Support — CareCalculus" description="Evidence-based medical decision support calculator." type="SoftwareApplication" />
+      <CalcPageSchemas 
+        name={dict.title}
+        description={dict.desc}
+        path="/bova-score"
+        scoringSystem="Bova Score"
+      />
       <div className="w-full max-w-full max-w-3xl relative">
         <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3 mb-3">
           <HeartPulse className="w-8 h-8 text-rose-500" />
