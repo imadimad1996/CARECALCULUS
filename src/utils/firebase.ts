@@ -13,6 +13,11 @@ export const firebaseConfig = {
   measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID || ""
 };
 
+// Check for required configuration before initialization
+if (!firebaseConfig.apiKey) {
+  console.warn("Firebase config is missing VITE_FIREBASE_API_KEY. Firebase services may fail to initialize properly.");
+}
+
 // Initialize Firebase safely (Singleton instance)
 export const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
 
