@@ -319,7 +319,7 @@ export function getMedicalSchema(path: string) {
 export function pageUrl(logicalPath: string, lang: LangCode): string {
   const origin = lang === 'fr' ? ORIGIN_FR : ORIGIN_EN;
   if (logicalPath === '/' || logicalPath === '/home') {
-    return `${origin}`;
+    return `${origin}/`;
   }
   return `${origin}${logicalPath}`;
 }
@@ -796,7 +796,7 @@ export function buildHead(logicalPath: string, lang: LangCode): HeadModel {
   const effectivePath = logicalPath === '/home' ? '/' : logicalPath;
   const meta = getLocalizedMeta(effectivePath, lang);
   const url = pageUrl(effectivePath, lang);
-  const pathSuffix = effectivePath === '/' ? '' : effectivePath;
+  const pathSuffix = effectivePath === '/' ? '/' : effectivePath;
 
   const hreflang: { hreflang: string; href: string }[] = [
     { hreflang: 'en', href: `${ORIGIN_EN}${pathSuffix}` },

@@ -33,14 +33,18 @@ const translations: Translations = {
       "However, individualizing the MAP target is increasingly recognized. In patients with chronic uncontrolled hypertension, a higher MAP target (e.g., 75-85 mmHg) may be necessary to maintain renal perfusion, as their autoregulatory curve is shifted to the right. Conversely, in acute hemorrhagic shock without traumatic brain injury, permissive hypotension (targeting a lower MAP, e.g., 50-60 mmHg) is often employed to minimize blood loss while maintaining basic perfusion until surgical control of bleeding is achieved."
     ],
     references: "Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2021. Intensive Care Med. 2021;47(11):1181-1247 (PMID: 34657111). American Heart Association (AHA) Guidelines for Cardiopulmonary Resuscitation.",
-    faqQ1: "What is Mean Arterial Pressure (MAP)?",
-    faqA1: "Mean Arterial Pressure (MAP) is the average arterial pressure throughout one cardiac cycle. It reflects the average perfusion pressure driving blood to organs and is calculated as: MAP = DBP + 1/3 × (SBP − DBP).",
-    faqQ2: "What MAP value indicates adequate organ perfusion?",
-    faqA2: "A MAP of at least 65 mmHg is the widely accepted minimum threshold for adequate perfusion of vital organs, particularly in septic shock. Resuscitation targeting ≥65 mmHg significantly reduces acute kidney injury (AKI) risks, as validated by the Surviving Sepsis Campaign (PMID: 34657111).",
-    faqQ3: "When should I use the MAP calculator?",
-    faqA3: "Use the MAP calculator in ICU, ER, or any acute care setting — septic shock resuscitation, vasopressor titration, hypertensive emergencies, and post-operative hemodynamic monitoring.",
-    faqQ4: "What is the difference between MAP and systolic blood pressure?",
-    faqA4: "Systolic BP is the peak pressure during ventricular contraction. MAP accounts for the entire cardiac cycle and better reflects tissue perfusion because diastole occupies approximately 2/3 of the cycle.",
+    faqs: [
+      { question: "What is Mean Arterial Pressure (MAP)?", answer: "Mean Arterial Pressure (MAP) is the average arterial pressure throughout one cardiac cycle. It reflects the average perfusion pressure driving blood to organs and is calculated as: MAP = DBP + 1/3 × (SBP − DBP)." },
+      { question: "What MAP value indicates adequate organ perfusion?", answer: "A MAP of at least 65 mmHg is the widely accepted minimum threshold for adequate perfusion of vital organs, particularly in septic shock. Resuscitation targeting ≥65 mmHg significantly reduces acute kidney injury (AKI) risks, as validated by the Surviving Sepsis Campaign (PMID: 34657111)." },
+      { question: "When should I use the MAP calculator?", answer: "Use the MAP calculator in ICU, ER, or any acute care setting — septic shock resuscitation, vasopressor titration, hypertensive emergencies, and post-operative hemodynamic monitoring." },
+      { question: "What is the difference between MAP and systolic blood pressure?", answer: "Systolic BP is the peak pressure during ventricular contraction. MAP accounts for the entire cardiac cycle and better reflects tissue perfusion because diastole occupies approximately 2/3 of the cycle." }
+    ],
+    howToSteps: [
+      "Input the patient's Systolic Blood Pressure (SBP).",
+      "Input the patient's Diastolic Blood Pressure (DBP).",
+      "View the calculated Mean Arterial Pressure (MAP).",
+      "Ensure MAP is ≥ 65 mmHg for adequate organ perfusion in shock states."
+    ]
   },
   fr: {
     title: "Calcul MAP Tension Artérielle Moyenne (PAM)",
@@ -62,14 +66,18 @@ const translations: Translations = {
       "Cependant, l'individualisation de la cible de la PAM est de plus en plus reconnue. Chez les patients souffrant d'hypertension chronique non contrôlée, une cible de PAM plus élevée (par exemple, 75-85 mmHg) peut être nécessaire pour maintenir la perfusion rénale, car leur courbe d'autorégulation est déplacée vers la droite. À l'inverse, dans le choc hémorragique aigu sans traumatisme crânien, une hypotension permissive (ciblant une PAM plus faible, par exemple, 50-60 mmHg) est souvent utilisée pour minimiser la perte de sang tout en maintenant une perfusion de base jusqu'à ce que le contrôle chirurgical du saignement soit obtenu."
     ],
     references: "Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2021. Intensive Care Med. 2021;47(11):1181-1247 (PMID: 34657111). American Heart Association (AHA) Guidelines.",
-    faqQ1: "Qu'est-ce que la pression artérielle moyenne (PAM) ?",
-    faqA1: "La pression artérielle moyenne (PAM) est la pression moyenne dans les artères d'un patient pendant un cycle cardiaque complet. Elle reflète la pression de perfusion des organes et se calcule ainsi : PAM = PAD + 1/3 × (PAS − PAD).",
-    faqQ2: "Quelle valeur de PAM indique une perfusion d'organe adéquate ?",
-    faqA2: "Une PAM d'au moins 65 mmHg est le seuil minimal généralement accepté pour assurer une perfusion adéquate des organes vitaux. Le maintien de la PAM ≥65 mmHg réduit significativement le risque d'insuffisance rénale aiguë (IRA) selon la Surviving Sepsis Campaign (PMID: 34657111).",
-    faqQ3: "Quand dois-je utiliser le calculateur de PAM ?",
-    faqA3: "Utilisez le calculateur de PAM en réanimation, aux urgences ou dans tout service de soins critiques : réanimation de choc septique, titration des vasopresseurs, urgences hypertensives et surveillance hémodynamique postopératoire.",
-    faqQ4: "Quelle est la différence entre la PAM et la pression artérielle systolique ?",
-    faqA4: "La pression artérielle systolique (PAS) est la pression maximale pendant la contraction ventriculaire. La PAM prend en compte l'ensemble du cycle cardiaque et reflète mieux la perfusion tissulaire car la diastole occupe environ les 2/3 du cycle.",
+    faqs: [
+      { question: "Qu'est-ce que la pression artérielle moyenne (PAM) ?", answer: "La pression artérielle moyenne (PAM) est la pression moyenne dans les artères d'un patient pendant un cycle cardiaque complet. Elle reflète la pression de perfusion des organes et se calcule ainsi : PAM = PAD + 1/3 × (PAS − PAD)." },
+      { question: "Quelle valeur de PAM indique une perfusion d'organe adéquate ?", answer: "Une PAM d'au moins 65 mmHg est le seuil minimal généralement accepté pour assurer une perfusion adéquate des organes vitaux. Le maintien de la PAM ≥65 mmHg réduit significativement le risque d'insuffisance rénale aiguë (IRA) selon la Surviving Sepsis Campaign (PMID: 34657111)." },
+      { question: "Quand dois-je utiliser le calculateur de PAM ?", answer: "Utilisez le calculateur de PAM en réanimation, aux urgences ou dans tout service de soins critiques : réanimation de choc septique, titration des vasopresseurs, urgences hypertensives et surveillance hémodynamique postopératoire." },
+      { question: "Quelle est la différence entre la PAM et la pression artérielle systolique ?", answer: "La pression artérielle systolique (PAS) est la pression maximale pendant la contraction ventriculaire. La PAM prend en compte l'ensemble du cycle cardiaque et reflète mieux la perfusion tissulaire car la diastole occupe environ les 2/3 du cycle." }
+    ],
+    howToSteps: [
+      "Entrez la pression artérielle systolique (PAS) du patient.",
+      "Entrez la pression artérielle diastolique (PAD) du patient.",
+      "Vérifiez la pression artérielle moyenne (PAM) calculée.",
+      "Assurez-vous que la PAM est ≥ 65 mmHg pour une perfusion adéquate des organes."
+    ]
   }
 };
 
@@ -115,6 +123,8 @@ export default function MapCalculator({ lang }: { lang: LangCode }) {
         description={currentText.subtitle}
         path={`/${lang === 'en' ? '' : lang + '/'}map-calculator`}
         scoringSystem="Mean Arterial Pressure"
+        faqs={currentText.faqs}
+        howToSteps={currentText.howToSteps}
       />
       <div className="w-full max-w-full max-w-3xl mb-12">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">

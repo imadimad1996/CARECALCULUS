@@ -32,7 +32,18 @@ const translations: Translations = {
       "Do not count first-degree burns (erythema only without blistering)."
     ],
     evidence: "Total Fluid (LR) = 4 mL × Weight (kg) × TBSA Burned (%). First half given over first 8 hours, second half over subsequent 16 hours.",
-    references: "Baxter CR. Fluid volume and electrolyte changes of the early postburn period. Clin Plast Surg 1974;1:693-703."
+    references: "Baxter CR. Fluid volume and electrolyte changes of the early postburn period. Clin Plast Surg 1974;1:693-703.",
+    faqs: [
+      { question: "What is the Parkland Formula used for?", answer: "The Parkland Formula is used to calculate the fluid resuscitation requirements for burn patients in the first 24 hours after injury." },
+      { question: "How is TBSA calculated for burns?", answer: "Total Body Surface Area (TBSA) is typically estimated using the Rule of Nines or the Lund and Browder chart. Only include 2nd (partial) and 3rd (full) degree burns in the calculation." }
+    ],
+    howToSteps: [
+      "Input the patient's weight in kilograms.",
+      "Input the Total Body Surface Area (TBSA) burned as a percentage, excluding 1st-degree burns.",
+      "Review the total calculated resuscitation fluid (Lactated Ringer's).",
+      "Administer the first 50% of the total fluid over the first 8 hours from the time of injury.",
+      "Administer the remaining 50% over the subsequent 16 hours."
+    ]
   },
   fr: {
     title: "Formule de Parkland pour Brûlures",
@@ -58,7 +69,18 @@ const translations: Translations = {
       "Ne pas comptabiliser les brûlures du 1er degré (érythème simple)."
     ],
     evidence: "Volume Total (RL) = 4 mL × Poids (kg) × Surface Brûlée (%). La moitié en 8 heures, le reste en 16 heures.",
-    references: "Baxter CR. Fluid volume and electrolyte changes of the early postburn period. Clin Plast Surg 1974;1:693-703."
+    references: "Baxter CR. Fluid volume and electrolyte changes of the early postburn period. Clin Plast Surg 1974;1:693-703.",
+    faqs: [
+      { question: "À quoi sert la Formule de Parkland ?", answer: "La formule de Parkland sert à estimer le volume de liquides nécessaires à la réanimation d'un patient brûlé au cours des premières 24 heures." },
+      { question: "Comment calculer la surface brûlée (TBSA) ?", answer: "La surface corporelle brûlée (TBSA) s'évalue souvent par la Règle des 9 de Wallace. Ne comptez que les brûlures de 2ème et 3ème degré." }
+    ],
+    howToSteps: [
+      "Entrez le poids du patient en kilogrammes.",
+      "Entrez le pourcentage de surface corporelle brûlée (TBSA), sans compter les brûlures du 1er degré.",
+      "Vérifiez le volume total de réanimation calculé (Ringer Lactate).",
+      "Administrez la première moitié (50%) sur les 8 premières heures suivant la brûlure.",
+      "Administrez la seconde moitié (50%) sur les 16 heures suivantes."
+    ]
   }
 };
 
@@ -102,6 +124,8 @@ export default function ParklandFormula({ lang }: { lang: LangCode }) {
         description={currentText.subtitle}
         path={`/${lang === 'en' ? '' : lang + '/'}parkland-formula`}
         scoringSystem="Parkland Formula"
+        faqs={currentText.faqs}
+        howToSteps={currentText.howToSteps}
       />
 
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-orange-500/5 via-teal-500/5 to-purple-500/5 blur-3xl -z-10 pointer-events-none rounded-full" />

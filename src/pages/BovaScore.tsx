@@ -24,6 +24,17 @@ export default function BovaScore({ lang }: { lang: LangCode }) {
         'Stage I (0-2 points): Low risk (~4% 30-day PE-related complications).',
         'Stage II (3-4 points): Intermediate risk (~18% complications).',
         'Stage III (>4 points): High risk (~42% complications).'
+      ],
+      faqs: [
+        { question: "What is the Bova Score used for?", answer: "The Bova Score is used to predict 30-day PE-related complications in normotensive patients with acute pulmonary embolism." },
+        { question: "What variables are included in the Bova Score?", answer: "The score evaluates heart rate, systolic blood pressure, right ventricular (RV) dysfunction, and cardiac troponin levels." }
+      ],
+      howToSteps: [
+        "Assess patient's heart rate; check if ≥ 110 bpm.",
+        "Assess patient's systolic BP; check if 90-100 mmHg.",
+        "Check for RV dysfunction on Echocardiogram or CT scan.",
+        "Check for elevated cardiac troponin levels.",
+        "Review the calculated stage to determine complication risk."
       ]
     },
     fr: {
@@ -38,6 +49,17 @@ export default function BovaScore({ lang }: { lang: LangCode }) {
         'Stade I (0-2 points) : Faible risque (~4% de complications à 30 jours).',
         'Stade II (3-4 points) : Risque intermédiaire (~18% de complications).',
         'Stade III (>4 points) : Haut risque (~42% de complications).'
+      ],
+      faqs: [
+        { question: "À quoi sert le Score de Bova ?", answer: "Le Score de Bova prédit les complications liées à l'EP (Embolie Pulmonaire) à 30 jours chez les patients normotendus." },
+        { question: "Quels sont les critères du Score de Bova ?", answer: "Il évalue la fréquence cardiaque, la pression artérielle systolique, la dysfonction du ventricule droit (VD) et le taux de troponine cardiaque." }
+      ],
+      howToSteps: [
+        "Vérifiez si la fréquence cardiaque est ≥ 110 bpm.",
+        "Vérifiez si la PA systolique est entre 90 et 100 mmHg.",
+        "Recherchez une dysfonction VD à l'échocardiographie ou au scanner.",
+        "Vérifiez si la troponine cardiaque est élevée.",
+        "Lisez le stade calculé pour déterminer le risque de complications."
       ]
     }
   };
@@ -68,6 +90,8 @@ export default function BovaScore({ lang }: { lang: LangCode }) {
         description={dict.desc}
         path="/bova-score"
         scoringSystem="Bova Score"
+        faqs={dict.faqs}
+        howToSteps={dict.howToSteps}
       />
       <div className="w-full max-w-full max-w-3xl relative">
         <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3 mb-3">

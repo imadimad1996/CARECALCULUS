@@ -40,12 +40,17 @@ const translations: Translations = {
       "Clinicians must exercise careful judgment when evaluating the 'Alternative diagnosis' criterion (-2 points). This requires clinical experience to assess whether conditions such as cellulitis, Baker's cyst, muscle tear, or superficial thrombophlebitis are as likely or more likely than DVT.",
       "If pulmonary embolism is also suspected, consider evaluating the patient using the <a href='/geneva-score' class='text-cyan-600 hover:underline font-semibold'>Geneva Score</a>. For patients with acute respiratory distress, the <a href='/pf-ratio' class='text-cyan-600 hover:underline font-semibold'>PaO2/FiO2 Ratio</a> can help assess oxygenation severity."
     ],
-    faqQ1: "Can Wells Score predict DVT?",
-    faqA1: "Yes, the Wells Score for DVT is a validated clinical prediction rule that calculates the pretest probability of deep vein thrombosis based on 10 clinical history and physical exam criteria.",
-    faqQ2: "What is the difference between Wells Score for DVT and PE?",
-    faqA2: "The Wells Score for DVT is used when you suspect a clot in the leg (Deep Vein Thrombosis). The Wells Score for PE is a completely different set of criteria used when you suspect a clot in the lungs (Pulmonary Embolism). Both use the Wells name but evaluate different clinical signs.",
-    faqQ3: "Can the Wells Score be used in pregnant patients?",
-    faqA3: "No. The standard Wells Criteria are not validated for pregnant or postpartum patients. Specialized algorithms such as the LEFt clinical prediction rule should be utilized during pregnancy.",
+    faqs: [
+      { question: "Can Wells Score predict DVT?", answer: "Yes, the Wells Score for DVT is a validated clinical prediction rule that calculates the pretest probability of deep vein thrombosis based on 10 clinical history and physical exam criteria." },
+      { question: "What is the difference between Wells Score for DVT and PE?", answer: "The Wells Score for DVT is used when you suspect a clot in the leg (Deep Vein Thrombosis). The Wells Score for PE is a completely different set of criteria used when you suspect a clot in the lungs (Pulmonary Embolism). Both use the Wells name but evaluate different clinical signs." },
+      { question: "Can the Wells Score be used in pregnant patients?", answer: "No. The standard Wells Criteria are not validated for pregnant or postpartum patients. Specialized algorithms such as the LEFt clinical prediction rule should be utilized during pregnancy." }
+    ],
+    howToSteps: [
+      "Select all clinical features that apply to the patient (e.g., active cancer, paralysis).",
+      "Subtract 2 points if an alternative diagnosis is at least as likely as DVT.",
+      "Review the total calculated Wells Score.",
+      "Interpret the score using the chosen Risk Stratification Model (2-Tier or 3-Tier)."
+    ],
     references: "References: Wells PS, et al. Evaluation of DVT: Value of assessment of pretest probability. NEJM 2003;349:1227-1235.",
     likely: "DVT Likely",
     unlikely: "DVT Unlikely",
@@ -91,12 +96,17 @@ const translations: Translations = {
       "Dans le modèle à trois niveaux, le risque est stratifié en Risque Faible (Score ≤ 0), Risque Modéré (Score 1-2) et Risque Élevé (Score ≥ 3). Les catégories de risque faible et modéré guident le clinicien vers un dosage des D-dimères (haute sensibilité requise pour le risque modéré). Les patients à risque élevé doivent éviter le test des D-dimères et passer directement à l'échographie de compression. Si l'échographie proximale est négative, une nouvelle échographie après une semaine est recommandée.",
       "Le critère 'Diagnostic alternatif' (-2 points) nécessite un jugement clinique rigoureux pour déterminer si des affections telles qu'une érysipèle, un kyste de Baker ou une déchirure musculaire sont plus probables qu'une TVP."
     ],
-    faqQ1: "Qu'est-ce que le score de Wells pour la TVP ?",
-    faqA1: "Le score de Wells pour la TVP est un outil clinique validé qui évalue la probabilité pré-test de thrombose veineuse profonde reposant sur 10 critères anamnestiques et cliniques.",
-    faqQ2: "Quel score indique une TVP probable ?",
-    faqA2: "Un score de Wells ≥ 2 indique que la TVP est probable, nécessitant une échographie-doppler veineuse. Un score < 2 indique une faible probabilité, où des D-dimères négatifs suffisent à exclure la thrombose.",
-    faqQ3: "Le score de Wells est-il applicable chez la femme enceinte ?",
-    faqA3: "Non. Le score de Wells standard n'est pas validé pendant la grossesse ou le post-partum. Des algorithmes spécifiques comme le score LEFt doivent être utilisés.",
+    faqs: [
+      { question: "Qu'est-ce que le score de Wells pour la TVP ?", answer: "Le score de Wells pour la TVP est un outil clinique validé qui évalue la probabilité pré-test de thrombose veineuse profonde reposant sur 10 critères anamnestiques et cliniques." },
+      { question: "Quel score indique une TVP probable ?", answer: "Un score de Wells ≥ 2 indique que la TVP est probable, nécessitant une échographie-doppler veineuse. Un score < 2 indique une faible probabilité, où des D-dimères négatifs suffisent à exclure la thrombose." },
+      { question: "Le score de Wells est-il applicable chez la femme enceinte ?", answer: "Non. Le score de Wells standard n'est pas validé pendant la grossesse ou le post-partum. Des algorithmes spécifiques comme le score LEFt doivent être utilisés." }
+    ],
+    howToSteps: [
+      "Sélectionnez toutes les caractéristiques cliniques applicables au patient.",
+      "Soustrayez 2 points si un diagnostic alternatif est au moins aussi probable qu'une TVP.",
+      "Consultez le score de Wells calculé.",
+      "Interprétez le score selon le modèle de stratification choisi (2 niveaux ou 3 niveaux)."
+    ],
     references: "Références : Wells PS, et al. Evaluation of DVT: Value of assessment of pretest probability. NEJM 2003;349:1227-1235.",
     likely: "TVP Probable",
     unlikely: "TVP Peu Probable",
@@ -183,6 +193,8 @@ export default function WellsScore({ lang }: { lang: LangCode }) {
         description={currentText.subtitle}
         path={`/${lang === 'en' ? '' : lang + '/'}wells-score`}
         scoringSystem="Wells Score for DVT"
+        faqs={currentText.faqs}
+        howToSteps={currentText.howToSteps}
       />
       
       {/* Ambient 2026 Page Lighting */}
@@ -208,7 +220,7 @@ export default function WellsScore({ lang }: { lang: LangCode }) {
             </h2>
           </div>
           <p className="text-gray-700 text-sm leading-relaxed font-medium">
-            {currentText.faqA1}
+            {currentText.faqs[0].answer}
           </p>
         </div>
         {/* Mode Switcher: Calculator vs Interactive Decision Flowchart */}
