@@ -2,6 +2,7 @@ import type { PagesFunction, KVNamespace } from '@cloudflare/workers-types';
 
 interface Env {
   LEADS: KVNamespace;
+  DISCORD_WEBHOOK_URL?: string;
 }
 
 const CORS = {
@@ -62,6 +63,23 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       await context.env.LEADS.put(kvKey, JSON.stringify(leadData));
     } else {
       console.warn('LEADS KV namespace not bound. Simulating save:', leadData);
+    }
+
+    // Send Discord Webhook Notification if configured
+    if (context.env.DISCORD_WEBHOOK_URL) {
+      try {
+        const message = {
+          content: `🚨 **New B2B Enterprise Lead** 🚨\n**Name:** ${data.firstName} ${data.lastName}\n**Email:** ${data.workEmail}\n**Hospital:** ${data.hospitalName}\n**EHR:** ${data.ehrSystem}\n**Role:** ${data.role}`,
+        };
+        await fetch(context.env.DISCORD_WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(message)
+        });
+      } catch (webhookErr) {
+        console.error('Failed to send discord webhook:', webhookErr);
+        // We don't fail the request if the webhook fails
+      }
     }
 
     return new Response(JSON.stringify({ success: true, message: 'B2B lead received successfully' }), {
