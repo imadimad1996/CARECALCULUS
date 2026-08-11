@@ -5,7 +5,7 @@ import { LangCode } from '../types';
 import { InlineCheckout } from '../components/InlineCheckout';
 
 export default function PricingPage({ lang }: { lang: LangCode }) {
-  const [showCheckout, setShowCheckout] = useState(true);
+  const [showCheckout, setShowCheckout] = useState(false);
   const [billingCycle, setBillingCycle] = useState<'annual' | 'lifetime'>('lifetime');
 
   const isFr = lang === 'fr';
@@ -15,7 +15,10 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
     setShowCheckout(true);
     const checkoutEl = document.getElementById('inline-checkout-section');
     if (checkoutEl) {
-      checkoutEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Small delay to ensure it renders before scrolling if it was hidden
+      setTimeout(() => {
+        checkoutEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 50);
     }
   };
 
@@ -185,6 +188,19 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
             <span>{isFr ? 'Payer par Carte / PayPal' : 'Pay by Card or PayPal'}</span>
             <ArrowRight className="w-5 h-5" />
           </button>
+
+          {/* Embedded Inline Card & PayPal Checkout Container (Moved here for better CRO flow) */}
+          {showCheckout && (
+            <div className="animate-in fade-in slide-in-from-top-4 duration-500 mt-6 border-t border-slate-700 pt-6">
+              <InlineCheckout
+                lang={lang}
+                planName={billingCycle === 'lifetime' ? "CareCalculus Pro Lifetime Pass" : "CareCalculus Pro 1-Year Pass"}
+                price={proPrice}
+                currency="USD"
+                planType={billingCycle}
+              />
+            </div>
+          )}
         </div>
 
         {/* Tier 3: Hospital License */}
@@ -229,18 +245,55 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
         </div>
       </div>
 
-      {/* Embedded Inline Card & PayPal Checkout Container */}
-      {showCheckout && (
-        <div className="animate-in fade-in slide-in-from-bottom-6 duration-500">
-          <InlineCheckout
-            lang={lang}
-            planName={billingCycle === 'lifetime' ? "CareCalculus Pro Lifetime Pass" : "CareCalculus Pro 1-Year Pass"}
-            price={proPrice}
-            currency="USD"
-            planType={billingCycle}
-          />
+      {/* Testimonials Block (Social Proof) */}
+      <div className="w-full max-w-full max-w-6xl mx-auto mb-20 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-400">
+        <h3 className="text-2xl font-black mb-8 text-center">{isFr ? 'Ils gagnent du temps chaque jour' : 'Loved by Clinicians Everywhere'}</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <div className="bg-white dark:bg-slate-900/50 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm relative">
+            <div className="text-amber-400 text-lg mb-3">★★★★★</div>
+            <p className="text-sm text-slate-700 dark:text-slate-300 font-medium italic mb-4 leading-relaxed">
+              "{isFr ? 'Le Pass Pro m\'a fait gagner 45 minutes de paperasse par garde. Les DotPhrases Epic sont parfaitement formatées à chaque fois.' : 'Saved me 45 minutes of chart work per shift. The Epic DotPhrases format perfectly every time. Absolute lifesaver.'}"
+            </p>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-500 font-bold">SJ</div>
+              <div>
+                <div className="text-sm font-bold text-slate-900 dark:text-slate-100">Dr. Sarah Jenkins</div>
+                <div className="text-xs text-slate-500">{isFr ? 'Médecin Urgentiste' : 'ER Attending'}</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white dark:bg-slate-900/50 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm relative">
+            <div className="text-amber-400 text-lg mb-3">★★★★★</div>
+            <p className="text-sm text-slate-700 dark:text-slate-300 font-medium italic mb-4 leading-relaxed">
+              "{isFr ? 'Pouvoir lancer des calculs de déficit hydrique complexes hors-ligne dans les sous-sols de réa change tout.' : 'I can finally run complex fluid deficit calcs offline in the ICU basement. Total game changer.'}"
+            </p>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-500 font-bold">MD</div>
+              <div>
+                <div className="text-sm font-bold text-slate-900 dark:text-slate-100">Dr. Marc Dubois</div>
+                <div className="text-xs text-slate-500">{isFr ? 'Réanimateur Médical' : 'ICU Fellow'}</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white dark:bg-slate-900/50 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm relative">
+            <div className="text-amber-400 text-lg mb-3">★★★★★</div>
+            <p className="text-sm text-slate-700 dark:text-slate-300 font-medium italic mb-4 leading-relaxed">
+              "{isFr ? 'La licence hospitalière était une évidence pour notre clinique. L\'installation sur notre intranet a pris 5 minutes.' : 'The department pass was a no-brainer for our clinic. Setup took 5 minutes and works flawlessly.'}"
+            </p>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-500 font-bold">EC</div>
+              <div>
+                <div className="text-sm font-bold text-slate-900 dark:text-slate-100">Emily Chen</div>
+                <div className="text-xs text-slate-500">{isFr ? 'Infirmière en Pratique Avancée' : 'Nurse Practitioner'}</div>
+              </div>
+            </div>
+          </div>
+
         </div>
-      )}
+      </div>
 
       {/* Trust & Guarantees */}
       <div className="animate-in fade-in duration-700 delay-500 flex flex-col sm:flex-row items-center justify-center gap-8 py-10 border-y border-slate-200 dark:border-slate-800 mb-20">
