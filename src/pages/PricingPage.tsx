@@ -337,7 +337,7 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
               <h4 className="font-bold text-base text-slate-900 dark:text-slate-100">{isFr ? 'Est-ce un abonnement renouvelable ?' : 'Is this an auto-renewing subscription?'}</h4>
             </div>
             <p className="text-slate-600 dark:text-slate-400 ml-8 leading-relaxed">
-              {isFr ? 'Non, il s\'agit d\'un paiement unique pour la durée sélectionnée (1 mois ou 1 an). Aucun prélèvement automatique ne sera effectué.' : 'No, this is a strict one-time payment for the selected duration (1 month or 1 year). We will never auto-charge your card.'}
+              {isFr ? 'Non, il s\'agit d\'un paiement unique pour la formule sélectionnée (Annuel ou À Vie). Aucun prélèvement automatique ne sera effectué.' : 'No, this is a strict one-time payment for the selected plan (Annual or Lifetime). We will never auto-charge your card.'}
             </p>
           </div>
 
