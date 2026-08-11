@@ -70,8 +70,8 @@ export default function SocialShare({ title, shareText, lang, compact = false }:
     {
       label: 'X',
       href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodedUrl}`,
-      bg: 'bg-gray-900/10 hover:bg-gray-900/20 text-gray-900',
-      border: 'border-gray-900/10',
+      bg: 'bg-gray-900/10 hover:bg-gray-900/20 text-gray-900 dark:text-white dark:bg-white/10 dark:hover:bg-white/20',
+      border: 'border-gray-900/10 dark:border-white/10',
       icon: <span className="text-xs font-black">𝕏</span>,
     },
     {
@@ -103,8 +103,8 @@ export default function SocialShare({ title, shareText, lang, compact = false }:
           onClick={handleCopy}
           className={`p-2 rounded-lg border transition-all active:scale-95 ${
             copied
-              ? 'bg-emerald-50 text-emerald-600 border-emerald-200'
-              : 'bg-gray-50 text-gray-500 border-gray-200 hover:bg-gray-100'
+              ? 'bg-emerald-50 text-emerald-600 border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-400 dark:border-emerald-900/50'
+              : 'bg-gray-50 text-gray-500 border-gray-200 hover:bg-gray-100 dark:bg-slate-800 dark:text-slate-400 dark:border-slate-700 dark:hover:bg-slate-700'
           }`}
           title={t.copyLink}
           style={{ minWidth: '36px', minHeight: '36px' }}
@@ -116,7 +116,7 @@ export default function SocialShare({ title, shareText, lang, compact = false }:
   }
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-200/80 p-4 shadow-xs">
+    <div className="bg-white dark:bg-slate-900 rounded-2xl border border-gray-200/80 dark:border-slate-800 p-4 shadow-xs">
       <div className="flex items-center gap-2 mb-3">
         <Share2 className="w-4 h-4 text-gray-400" />
         <span className="text-[10px] font-mono font-bold text-gray-400 uppercase tracking-wider">{t.share}</span>
@@ -139,8 +139,8 @@ export default function SocialShare({ title, shareText, lang, compact = false }:
           onClick={handleCopy}
           className={`inline-flex items-center gap-2 px-3.5 py-2 rounded-xl border text-xs font-bold transition-all active:scale-95 ${
             copied
-              ? 'bg-emerald-50 text-emerald-600 border-emerald-200'
-              : 'bg-gray-50 text-gray-500 border-gray-200 hover:bg-gray-100 hover:text-gray-700'
+              ? 'bg-emerald-50 text-emerald-600 border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-400 dark:border-emerald-900/50'
+              : 'bg-gray-50 text-gray-500 border-gray-200 hover:bg-gray-100 hover:text-gray-700 dark:bg-slate-800 dark:text-slate-400 dark:border-slate-700 dark:hover:bg-slate-700 dark:hover:text-slate-200'
           }`}
           style={{ minHeight: '40px' }}
         >
