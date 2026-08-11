@@ -188,19 +188,6 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
             <span>{isFr ? 'Payer par Carte / PayPal' : 'Pay by Card or PayPal'}</span>
             <ArrowRight className="w-5 h-5" />
           </button>
-
-          {/* Embedded Inline Card & PayPal Checkout Container (Moved here for better CRO flow) */}
-          {showCheckout && (
-            <div className="animate-in fade-in slide-in-from-top-4 duration-500 mt-6 border-t border-slate-700 pt-6">
-              <InlineCheckout
-                lang={lang}
-                planName={billingCycle === 'lifetime' ? "CareCalculus Pro Lifetime Pass" : "CareCalculus Pro 1-Year Pass"}
-                price={proPrice}
-                currency="USD"
-                planType={billingCycle}
-              />
-            </div>
-          )}
         </div>
 
         {/* Tier 3: Hospital License */}
@@ -242,6 +229,24 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
           >
             {isFr ? 'Demander une Démo' : 'Request Demo'}
           </Link>
+        </div>
+      </div>
+
+      {/* Expanding Full-Width Checkout Section */}
+      <div 
+        id="inline-checkout-section"
+        className={`grid transition-[grid-template-rows] duration-700 ease-in-out w-full max-w-4xl mx-auto ${showCheckout ? 'grid-rows-[1fr] mb-20' : 'grid-rows-[0fr] mb-0'}`}
+      >
+        <div className="overflow-hidden">
+          <div className="pt-2 pb-6">
+            <InlineCheckout
+              lang={lang}
+              planName={billingCycle === 'lifetime' ? "CareCalculus Pro Lifetime Pass" : "CareCalculus Pro 1-Year Pass"}
+              price={proPrice}
+              currency="USD"
+              planType={billingCycle}
+            />
+          </div>
         </div>
       </div>
 
