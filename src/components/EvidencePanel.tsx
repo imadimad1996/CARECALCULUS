@@ -14,7 +14,7 @@ export default function EvidencePanel({ lang, references }: { lang: LangCode, re
   if (!references || references.length === 0) return null;
 
   return (
-    <div className="mt-8 bg-slate-50/50 border border-slate-200/60 rounded-2xl p-6 shadow-sm" dir={isRtl ? 'rtl' : 'ltr'}>
+    <div className="mt-8 bg-slate-50/50 dark:bg-slate-900/80 border border-slate-200/60 dark:border-slate-800 rounded-2xl p-6 shadow-sm" dir={isRtl ? 'rtl' : 'ltr'}>
       <h3 className="text-sm font-bold text-slate-800 flex items-center gap-2 mb-4">
         <BookOpen className="w-4 h-4 text-slate-500" />
         {title[lang] || title.en}

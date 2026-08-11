@@ -28,39 +28,39 @@ export const ActionableResultPanel: React.FC<ActionableResultProps> = ({
 
   const styles = {
     low: {
-      bg: 'bg-emerald-50',
-      border: 'border-emerald-200',
-      text: 'text-emerald-800',
-      icon: <CheckCircle2 className="w-5 h-5 text-emerald-600" />,
-      scoreBg: 'bg-emerald-100/50',
-      scoreText: 'text-emerald-700',
+      bg: 'bg-emerald-50 dark:bg-emerald-950/40',
+      border: 'border-emerald-200 dark:border-emerald-900/50',
+      text: 'text-emerald-800 dark:text-emerald-400',
+      icon: <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-500" />,
+      scoreBg: 'bg-emerald-100/50 dark:bg-emerald-900/30',
+      scoreText: 'text-emerald-700 dark:text-emerald-400',
       label: { en: 'Low Risk', fr: 'Risque Faible', es: 'Riesgo Bajo' }
     },
     medium: {
-      bg: 'bg-amber-50',
-      border: 'border-amber-200',
-      text: 'text-amber-800',
-      icon: <AlertCircle className="w-5 h-5 text-amber-600" />,
-      scoreBg: 'bg-amber-100/50',
-      scoreText: 'text-amber-700',
+      bg: 'bg-amber-50 dark:bg-amber-950/40',
+      border: 'border-amber-200 dark:border-amber-900/50',
+      text: 'text-amber-800 dark:text-amber-400',
+      icon: <AlertCircle className="w-5 h-5 text-amber-600 dark:text-amber-500" />,
+      scoreBg: 'bg-amber-100/50 dark:bg-amber-900/30',
+      scoreText: 'text-amber-700 dark:text-amber-400',
       label: { en: 'Moderate Risk', fr: 'Risque Modéré', es: 'Riesgo Moderado' }
     },
     high: {
-      bg: 'bg-rose-50',
-      border: 'border-rose-200',
-      text: 'text-rose-800',
-      icon: <AlertCircle className="w-5 h-5 text-rose-600" />,
-      scoreBg: 'bg-rose-100/50',
-      scoreText: 'text-rose-700',
+      bg: 'bg-rose-50 dark:bg-rose-950/40',
+      border: 'border-rose-200 dark:border-rose-900/50',
+      text: 'text-rose-800 dark:text-rose-400',
+      icon: <AlertCircle className="w-5 h-5 text-rose-600 dark:text-rose-500" />,
+      scoreBg: 'bg-rose-100/50 dark:bg-rose-900/30',
+      scoreText: 'text-rose-700 dark:text-rose-400',
       label: { en: 'High Risk', fr: 'Risque Élevé', es: 'Riesgo Alto' }
     },
     neutral: {
-      bg: 'bg-teal-50',
-      border: 'border-teal-200',
-      text: 'text-teal-800',
-      icon: <Info className="w-5 h-5 text-teal-600" />,
-      scoreBg: 'bg-teal-100/50',
-      scoreText: 'text-teal-700',
+      bg: 'bg-teal-50 dark:bg-teal-950/40',
+      border: 'border-teal-200 dark:border-teal-900/50',
+      text: 'text-teal-800 dark:text-teal-400',
+      icon: <Info className="w-5 h-5 text-teal-600 dark:text-teal-500" />,
+      scoreBg: 'bg-teal-100/50 dark:bg-teal-900/30',
+      scoreText: 'text-teal-700 dark:text-teal-400',
       label: { en: 'Result', fr: 'Résultat', es: 'Resultado' }
     }
   };
@@ -97,7 +97,7 @@ export const ActionableResultPanel: React.FC<ActionableResultProps> = ({
                 {style.label[lang] || style.label.en}
               </h3>
             </div>
-            <p className="text-[15px] leading-relaxed text-slate-700 font-medium">
+            <p className="text-[15px] leading-relaxed text-slate-700 dark:text-slate-300 font-medium">
               {interpretation}
             </p>
           </div>
@@ -111,7 +111,7 @@ export const ActionableResultPanel: React.FC<ActionableResultProps> = ({
             </h4>
             <ul className="space-y-2.5">
               {nextSteps.map((step, idx) => (
-                <li key={idx} className="flex items-start gap-2.5 text-sm text-slate-700">
+                <li key={idx} className="flex items-start gap-2.5 text-sm text-slate-700 dark:text-slate-300">
                   <ArrowRight className={`w-4 h-4 mt-0.5 shrink-0 opacity-40 ${isRtl ? 'rotate-180' : ''}`} />
                   <span className="leading-snug">{step}</span>
                 </li>
@@ -132,10 +132,10 @@ export const ActionableResultPanel: React.FC<ActionableResultProps> = ({
                   <Zap className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-slate-800">
+                  <h4 className="text-sm font-bold text-slate-800 dark:text-slate-100">
                     {lang === 'fr' ? '⚡ Enregistrez ce résultat dans Epic instantanément' : '⚡ Save this result to Epic instantly'}
                   </h4>
-                  <p className="text-xs text-slate-600 mt-0.5">
+                  <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">
                     {lang === 'fr' ? 'Débloquez Pro pour copier des notes parfaitement formatées.' : 'Unlock Pro to copy perfectly formatted SBAR DotPhrases.'}
                   </p>
                 </div>

@@ -448,7 +448,7 @@ export default function HomePage({ lang }: HomePageProps) {
       </section>
 
       <section className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-        <div className="rounded-3xl border border-slate-200/80 bg-white/90 shadow-sm p-6 sm:p-8">
+        <div className="rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 shadow-sm p-6 sm:p-8">
           <div className="inline-flex items-center gap-2 rounded-full border border-cyan-100 bg-cyan-50 px-3 py-1 text-[10px] font-mono font-extrabold uppercase tracking-[0.24em] text-cyan-700">
             <Sparkles className="w-3.5 h-3.5" />
             {bedsideSummary.badge}
@@ -556,17 +556,17 @@ export default function HomePage({ lang }: HomePageProps) {
             <Link
               key={calc.id}
               to={langPath(calc.path)}
-              className="relative flex items-center justify-between p-4.5 bg-white rounded-2xl border border-slate-200/90 hover:border-teal-400 hover:shadow-[0_12px_35px_rgba(13,148,136,0.12)] hover:-translate-y-1 hover:ring-4 hover:ring-teal-500/10 transition-all duration-300 group active:scale-[0.98] overflow-hidden"
+              className="relative flex items-center justify-between p-4.5 bg-white dark:bg-slate-800/50 rounded-2xl border border-slate-200/90 dark:border-slate-700 hover:border-teal-400 dark:hover:border-teal-500 hover:shadow-[0_12px_35px_rgba(13,148,136,0.12)] hover:-translate-y-1 hover:ring-4 hover:ring-teal-500/10 transition-all duration-300 group active:scale-[0.98] overflow-hidden dark:hover:bg-slate-800"
             >
               {/* Subtle top border accent on hover */}
               <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-teal-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
               <div className="flex items-center gap-4 min-w-0">
-                <div className="p-3 min-h-[44px] min-w-[44px] rounded-xl bg-slate-50 border border-slate-100 text-slate-600 group-hover:bg-gradient-to-br group-hover:from-teal-500 group-hover:to-cyan-600 group-hover:text-white group-hover:border-transparent transition-all duration-300 shadow-2xs group-hover:shadow-md shrink-0">
+                <div className="p-3 min-h-[44px] min-w-[44px] rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-700 text-slate-600 dark:text-slate-400 group-hover:bg-gradient-to-br group-hover:from-teal-500 group-hover:to-cyan-600 group-hover:text-white group-hover:border-transparent transition-all duration-300 shadow-2xs group-hover:shadow-md shrink-0">
                   <CalcIcon className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
                 </div>
                 <div className="min-w-0">
-                  <span className="text-sm font-black text-slate-800 group-hover:text-teal-950 transition-colors truncate block leading-snug">
+                  <span className="text-sm font-black text-slate-800 dark:text-slate-200 group-hover:text-teal-950 dark:group-hover:text-teal-300 transition-colors truncate block leading-snug">
                     {label}
                   </span>
                   <span className="text-[10px] font-mono font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider mt-0.5 block truncate">
