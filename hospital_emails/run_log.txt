@@ -1331,3 +1331,1469 @@ Code context:
 2026-08-03 23:51:30,400 [INFO] =================================================================
 2026-08-03 23:51:30,402 [INFO] 
 📂 Output folder: C:\Users\DeLL\CARECALCULUS\hospital_emails
+2026-08-11 23:48:04,960 [INFO] =================================================================
+2026-08-11 23:48:04,960 [INFO] CareCalculus Hospital Email Harvester
+2026-08-11 23:48:04,960 [INFO] Hospitals: 146 | Max concurrent: 3
+2026-08-11 23:48:04,960 [INFO] =================================================================
+2026-08-11 23:48:07,145 [INFO] 
+📦 Batch 1/49
+2026-08-11 23:48:07,316 [INFO] 🏥 Mayo Clinic (USA)
+2026-08-11 23:48:07,548 [INFO] 🏥 Cleveland Clinic (USA)
+2026-08-11 23:48:07,680 [INFO] 🏥 Johns Hopkins Hospital (USA)
+2026-08-11 23:48:10,282 [INFO]   📧 0 emails on main page
+2026-08-11 23:48:14,966 [INFO]   📧 0 emails on main page
+2026-08-11 23:48:22,283 [INFO]   📧 0 emails on main page
+2026-08-11 23:48:30,413 [INFO]     ↳ patient-experience → 1 emails
+2026-08-11 23:48:34,085 [INFO]     ↳ media-and-public-relations-contacts → 3 emails
+2026-08-11 23:48:34,090 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-11 23:48:34,992 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-11 23:48:34,993 [INFO] ⏳ Sleeping 1.5s…
+2026-08-11 23:48:36,525 [INFO] 
+📦 Batch 2/49
+2026-08-11 23:48:36,638 [INFO] 🏥 Massachusetts General Hospital (USA)
+2026-08-11 23:48:36,785 [INFO] 🏥 UCSF Medical Center (USA)
+2026-08-11 23:48:36,883 [INFO] 🏥 NewYork-Presbyterian (USA)
+2026-08-11 23:48:40,286 [WARNING]   ❌ Blocked by anti-bot protection: Structural: minimal_text, no_content_elements, script_heavy_shell (23301 bytes, 0 chars visible)
+2026-08-11 23:48:40,884 [INFO]   📧 0 emails on main page
+2026-08-11 23:48:42,448 [INFO]   📧 2 emails on main page
+2026-08-11 23:48:48,413 [INFO]     ↳ directory → 1 emails
+2026-08-11 23:48:51,740 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-11 23:48:51,767 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-11 23:48:51,767 [INFO] ⏳ Sleeping 1.5s…
+2026-08-11 23:48:53,318 [INFO] 
+📦 Batch 3/49
+2026-08-11 23:48:53,485 [INFO] 🏥 Cedars-Sinai (USA)
+2026-08-11 23:48:53,694 [INFO] 🏥 UPMC (USA)
+2026-08-11 23:48:53,797 [INFO] 🏥 Duke University Hospital (USA)
+2026-08-11 23:49:08,926 [WARNING]   ❌ Blocked by anti-bot protection: HTTP 403 with HTML content (44921 bytes)
+2026-08-11 23:49:13,856 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.cedars-sinai.org/contact-us.html", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:49:14,405 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.upmc.com/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:49:14,408 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-11 23:49:14,437 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-11 23:49:14,437 [INFO] ⏳ Sleeping 1.6s…
+2026-08-11 23:49:16,028 [INFO] 
+📦 Batch 4/49
+2026-08-11 23:49:16,146 [INFO] 🏥 Northwestern Memorial Hospital (USA)
+2026-08-11 23:49:16,305 [INFO] 🏥 Brigham and Women's Hospital (USA)
+2026-08-11 23:49:16,432 [INFO] 🏥 Stanford Health Care (USA)
+2026-08-11 23:49:22,680 [INFO]   📧 0 emails on main page
+2026-08-11 23:49:29,888 [INFO]     ↳ volunteering → 1 emails
+2026-08-11 23:49:36,494 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.nm.org/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:50:00,028 [INFO]   📧 1 emails on main page
+2026-08-11 23:50:32,248 [INFO]     ↳ 300-pasteur-renewal-program.html → 2 emails
+2026-08-11 23:50:54,973 [INFO]     ↳ conduct.html → 1 emails
+2026-08-11 23:51:18,545 [INFO]     ↳ contact.html → 1 emails
+2026-08-11 23:51:41,020 [INFO]     ↳ legal-disclaimer.html → 1 emails
+2026-08-11 23:52:06,360 [INFO]     ↳ website-privacy-policy.html → 2 emails
+2026-08-11 23:52:06,364 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-11 23:52:06,388 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-11 23:52:06,388 [INFO] ⏳ Sleeping 1.6s…
+2026-08-11 23:52:07,960 [INFO] 
+📦 Batch 5/49
+2026-08-11 23:52:08,054 [INFO] 🏥 Houston Methodist Hospital (USA)
+2026-08-11 23:52:08,200 [INFO] 🏥 Penn Medicine (USA)
+2026-08-11 23:52:08,312 [INFO] 🏥 Vanderbilt University Medical (USA)
+2026-08-11 23:52:28,403 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.houstonmethodist.org/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:52:28,529 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.vumc.org/main/contact", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:52:28,730 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.pennmedicine.org/contact", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:52:28,759 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-11 23:52:28,815 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-11 23:52:28,815 [INFO] ⏳ Sleeping 2.2s…
+2026-08-11 23:52:31,021 [INFO] 
+📦 Batch 6/49
+2026-08-11 23:52:31,074 [INFO] 🏥 OHSU Hospital (USA)
+2026-08-11 23:52:31,199 [INFO] 🏥 Rush University Medical (USA)
+2026-08-11 23:52:31,275 [INFO] 🏥 Emory Healthcare (USA)
+2026-08-11 23:52:51,358 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.ohsu.edu/contact", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:52:51,419 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.rush.edu/contact-rush", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:52:51,488 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.emoryhealthcare.org/contact-emory", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:52:51,490 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-11 23:52:51,518 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-11 23:52:51,518 [INFO] ⏳ Sleeping 2.0s…
+2026-08-11 23:52:53,487 [INFO] 
+📦 Batch 7/49
+2026-08-11 23:52:53,533 [INFO] 🏥 Yale New Haven Hospital (USA)
+2026-08-11 23:52:53,651 [INFO] 🏥 UC San Diego Health (USA)
+2026-08-11 23:52:53,815 [INFO] 🏥 Indiana University Health (USA)
+2026-08-11 23:53:13,926 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.ynhh.org/contact", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:53:14,061 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://iuhealth.org/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:53:14,202 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://health.ucsd.edu/contact/pages/default.aspx", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:53:14,203 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-11 23:53:14,235 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-11 23:53:14,235 [INFO] ⏳ Sleeping 1.5s…
+2026-08-11 23:53:15,699 [INFO] 
+📦 Batch 8/49
+2026-08-11 23:53:15,801 [INFO] 🏥 UCHealth Colorado (USA)
+2026-08-11 23:53:15,978 [INFO] 🏥 Ochsner Health Louisiana (USA)
+2026-08-11 23:53:16,126 [INFO] 🏥 Wake Forest Baptist Health (USA)
+2026-08-11 23:53:28,116 [WARNING]   ❌ Blocked by anti-bot protection: Cloudflare JS challenge
+2026-08-11 23:53:36,368 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.wakehealth.edu/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:53:36,692 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.ochsner.org/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:53:36,694 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-11 23:53:36,722 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-11 23:53:36,722 [INFO] ⏳ Sleeping 1.2s…
+2026-08-11 23:53:37,923 [INFO] 
+📦 Batch 9/49
+2026-08-11 23:53:38,061 [INFO] 🏥 Baylor Scott & White Health (USA)
+2026-08-11 23:53:38,193 [INFO] 🏥 Mount Sinai Health System (USA)
+2026-08-11 23:53:38,297 [INFO] 🏥 NYU Langone Health (USA)
+2026-08-11 23:53:58,435 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.bswhealth.com/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:53:58,519 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://nyulangone.org/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:53:58,812 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.mountsinai.org/about/contact", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:53:58,814 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-11 23:53:58,841 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-11 23:53:58,842 [INFO] ⏳ Sleeping 1.1s…
+2026-08-11 23:53:59,952 [INFO] 
+📦 Batch 10/49
+2026-08-11 23:54:00,010 [INFO] 🏥 UCLA Health (USA)
+2026-08-11 23:54:00,141 [INFO] 🏥 Memorial Sloan Kettering (USA)
+2026-08-11 23:54:00,252 [INFO] 🏥 Children's Hosp of Philadelphia (USA)
+2026-08-11 23:54:20,330 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.uclahealth.org/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:54:20,465 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.chop.edu/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:54:20,845 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.mskcc.org/contact", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:54:20,848 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-11 23:54:20,877 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-11 23:54:20,877 [INFO] ⏳ Sleeping 2.2s…
+2026-08-11 23:54:23,104 [INFO] 
+📦 Batch 11/49
+2026-08-11 23:54:23,175 [INFO] 🏥 Boston Children's Hospital (USA)
+2026-08-11 23:54:23,286 [INFO] 🏥 Dana-Farber Cancer Institute (USA)
+2026-08-11 23:54:23,364 [INFO] 🏥 MD Anderson Cancer Center (USA)
+2026-08-11 23:54:43,428 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.childrenshospital.org/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:54:43,555 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.mdanderson.org/about-md-anderson/contact-us.html", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:54:43,649 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.dana-farber.org/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:54:43,651 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-11 23:54:43,679 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-11 23:54:43,679 [INFO] ⏳ Sleeping 2.5s…
+2026-08-11 23:54:46,168 [INFO] 
+📦 Batch 12/49
+2026-08-11 23:54:46,285 [INFO] 🏥 Ascension Health (USA)
+2026-08-11 23:54:46,423 [INFO] 🏥 CommonSpirit Health (USA)
+2026-08-11 23:54:46,524 [INFO] 🏥 Providence Health (USA)
+2026-08-11 23:55:06,586 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://healthcare.ascension.org/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:55:06,735 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.providence.org/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:55:06,848 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.commonspirit.org/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:55:06,849 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-11 23:55:06,876 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-11 23:55:06,877 [INFO] ⏳ Sleeping 1.5s…
+2026-08-11 23:55:08,409 [INFO] 
+📦 Batch 13/49
+2026-08-11 23:55:08,494 [INFO] 🏥 Trinity Health (USA)
+2026-08-11 23:55:08,628 [INFO] 🏥 Advocate Health (USA)
+2026-08-11 23:55:08,729 [INFO] 🏥 Intermountain Health (USA)
+2026-08-11 23:55:28,811 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.trinity-health.org/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:55:28,920 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://intermountainhealthcare.org/about/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:55:28,993 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.advocatehealth.com/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:55:28,994 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-11 23:55:29,023 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-11 23:55:29,023 [INFO] ⏳ Sleeping 2.2s…
+2026-08-11 23:55:31,264 [INFO] 
+📦 Batch 14/49
+2026-08-11 23:55:31,317 [INFO] 🏥 Banner Health (USA)
+2026-08-11 23:55:31,456 [INFO] 🏥 Kaiser Permanente (USA)
+2026-08-11 23:55:31,542 [INFO] 🏥 Geisinger Health System (USA)
+2026-08-11 23:55:51,618 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.bannerhealth.com/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:55:51,759 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.geisinger.org/about-geisinger/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:55:51,785 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://healthy.kaiserpermanente.org/support", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:55:51,788 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-11 23:55:51,827 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-11 23:55:51,827 [INFO] ⏳ Sleeping 1.3s…
+2026-08-11 23:55:53,176 [INFO] 
+📦 Batch 15/49
+2026-08-11 23:55:53,285 [INFO] 🏥 Scripps Health (USA)
+2026-08-11 23:55:53,433 [INFO] 🏥 Jefferson Health (USA)
+2026-08-11 23:55:53,539 [INFO] 🏥 Northwell Health (USA)
+2026-08-11 23:56:13,602 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.scripps.org/contact_us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:56:13,788 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.northwell.org/about/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:56:13,980 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.jeffersonhealth.org/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:56:13,982 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-11 23:56:14,010 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-11 23:56:14,010 [INFO] ⏳ Sleeping 2.3s…
+2026-08-11 23:56:16,313 [INFO] 
+📦 Batch 16/49
+2026-08-11 23:56:16,386 [INFO] 🏥 Hackensack Meridian Health (USA)
+2026-08-11 23:56:16,518 [INFO] 🏥 RWJBarnabas Health (USA)
+2026-08-11 23:56:16,616 [INFO] 🏥 Beth Israel Deaconess (USA)
+2026-08-11 23:56:33,405 [INFO]   📧 33 emails on main page
+2026-08-11 23:56:34,934 [INFO]   📧 0 emails on main page
+2026-08-11 23:56:36,866 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.rwjbh.org/contact-us/", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-11 23:56:45,631 [INFO]     ↳ contact → 3 emails
+2026-08-11 23:56:45,753 [INFO]     ↳ healthcare-professionals-staff → 1 emails
+2026-08-11 23:56:48,448 [INFO]     ↳ newsroom → 2 emails
+2026-08-11 23:56:48,919 [INFO]     ↳ nondiscrimination-policy → 1 emails
+2026-08-11 23:56:48,923 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-11 23:56:48,968 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-11 23:56:48,969 [INFO] ⏳ Sleeping 2.3s…
+2026-08-11 23:56:51,235 [INFO] 
+📦 Batch 17/49
+2026-08-11 23:56:51,279 [INFO] 🏥 Stony Brook Medicine (USA)
+2026-08-11 23:56:51,412 [INFO] 🏥 UChicago Medicine (USA)
+2026-08-11 23:56:51,493 [INFO] 🏥 Corewell Health (USA)
+2026-08-11 23:56:55,985 [INFO]   📧 0 emails on main page
+2026-08-11 23:56:57,442 [WARNING]   ❌ Blocked by anti-bot protection: Structural: minimal_text, no_content_elements, script_heavy_shell (23004 bytes, 0 chars visible)
+2026-08-11 23:56:59,000 [INFO]   📧 1 emails on main page
+2026-08-11 23:57:06,790 [INFO]     ↳ about-us → 1 emails
+2026-08-11 23:57:07,291 [INFO]     ↳ legal-disclaimer → 1 emails
+2026-08-11 23:57:07,633 [INFO]     ↳ community → 1 emails
+2026-08-11 23:57:08,257 [INFO]     ↳ privacy-practices → 5 emails
+2026-08-11 23:57:08,596 [INFO]     ↳ careers → 1 emails
+2026-08-11 23:57:08,943 [INFO]     ↳ contact-us-form → 1 emails
+2026-08-11 23:57:08,947 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-11 23:57:08,993 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-11 23:57:08,994 [INFO] ⏳ Sleeping 2.2s…
+2026-08-11 23:57:11,161 [INFO] 
+📦 Batch 18/49
+2026-08-11 23:57:11,208 [INFO] 🏥 Henry Ford Health (USA)
+2026-08-11 23:57:11,340 [INFO] 🏥 OhioState Wexner Medical Center (USA)
+2026-08-11 23:57:11,422 [INFO] 🏥 UR Medicine Rochester (USA)
+2026-08-11 23:57:18,623 [INFO]   📧 1 emails on main page
+2026-08-11 23:57:19,330 [INFO]   📧 1 emails on main page
+2026-08-11 23:57:19,808 [INFO]   📧 2 emails on main page
+2026-08-11 23:57:30,539 [INFO]     ↳ about-us → 1 emails
+2026-08-11 23:57:30,607 [INFO]     ↳ contact-us → 6 emails
+2026-08-11 23:57:30,662 [INFO]     ↳ quality-and-safety → 1 emails
+2026-08-11 23:57:31,906 [INFO]     ↳ contact → 2 emails
+2026-08-11 23:57:32,277 [INFO]     ↳ vendor → 2 emails
+2026-08-11 23:57:32,468 [INFO]     ↳ form → 1 emails
+2026-08-11 23:57:42,002 [INFO]     ↳ contact-us.aspx → 4 emails
+2026-08-11 23:57:48,886 [INFO]     ↳ contact-us.aspx → 2 emails
+2026-08-11 23:57:48,891 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-11 23:57:48,954 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-11 23:57:48,955 [INFO] ⏳ Sleeping 1.2s…
+2026-08-11 23:57:50,136 [INFO] 
+📦 Batch 19/49
+2026-08-11 23:57:50,260 [INFO] 🏥 Inova Health System (USA)
+2026-08-11 23:57:50,406 [INFO] 🏥 VCU Health (USA)
+2026-08-11 23:57:50,511 [INFO] 🏥 UVA Health (USA)
+2026-08-11 23:57:54,404 [INFO]   📧 0 emails on main page
+2026-08-11 23:58:00,059 [INFO]   📧 0 emails on main page
+2026-08-12 00:07:57,613 [INFO]   📧 0 emails on main page
+2026-08-12 00:08:38,645 [INFO]     ↳  → 1 emails
+2026-08-12 00:08:38,662 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:08:38,713 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:08:38,713 [INFO] ⏳ Sleeping 1.2s…
+2026-08-12 00:08:39,895 [INFO] 
+📦 Batch 20/49
+2026-08-12 00:08:40,025 [INFO] 🏥 MUSC Health (USA)
+2026-08-12 00:08:40,214 [INFO] 🏥 UNC Health (USA)
+2026-08-12 00:08:40,307 [INFO] 🏥 UF Health Shands (USA)
+2026-08-12 00:08:57,494 [WARNING]   ❌ Blocked by anti-bot protection: Akamai block (Reference #)
+2026-08-12 00:10:37,277 [INFO]   📧 0 emails on main page
+2026-08-12 00:10:37,540 [WARNING]   ⏱ Hard timeout for UF Health Shands — skipping
+2026-08-12 00:13:40,987 [INFO]     ↳ family-liaison → 1 emails
+2026-08-12 00:13:40,991 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:13:41,050 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:13:41,050 [INFO] ⏳ Sleeping 2.2s…
+2026-08-12 00:13:43,239 [INFO] 
+📦 Batch 21/49
+2026-08-12 00:13:43,301 [INFO] 🏥 Moffitt Cancer Center (USA)
+2026-08-12 00:13:43,401 [INFO] 🏥 Tampa General Hospital (USA)
+2026-08-12 00:13:43,460 [INFO] 🏥 Baptist Health South Florida (USA)
+2026-08-12 00:13:46,863 [INFO]   📧 2 emails on main page
+2026-08-12 00:13:49,348 [INFO]   📧 0 emails on main page
+2026-08-12 00:13:52,208 [ERROR] Future exception was never retrieved
+future: <Future finished exception=TimeoutError('Timeout 20000ms exceeded.\nCall log:\n  - navigating to "https://ufhealth.org/contact-us", waiting until "domcontentloaded"\n')>
+playwright._impl._errors.TimeoutError: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://ufhealth.org/contact-us", waiting until "domcontentloaded"
+
+2026-08-12 00:13:54,096 [INFO]     ↳ contact-us → 6 emails
+2026-08-12 00:14:03,670 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://baptisthealth.net/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-12 00:14:15,447 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:14:15,506 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:14:15,506 [INFO] ⏳ Sleeping 1.9s…
+2026-08-12 00:14:17,379 [INFO] 
+📦 Batch 22/49
+2026-08-12 00:14:17,410 [INFO] 🏥 UAB Medicine (USA)
+2026-08-12 00:14:17,508 [INFO] 🏥 St. Jude Children's (USA)
+2026-08-12 00:14:17,561 [INFO] 🏥 Barnes-Jewish BJC Health (USA)
+2026-08-12 00:14:19,008 [WARNING]   ❌ Blocked by anti-bot protection: Cloudflare JS challenge
+2026-08-12 00:14:34,191 [INFO]   📧 0 emails on main page
+2026-08-12 00:14:37,656 [INFO]   📧 8 emails on main page
+2026-08-12 00:15:06,498 [INFO]     ↳ contact-us.html → 8 emails
+2026-08-12 00:15:06,504 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:15:06,571 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:15:06,571 [INFO] ⏳ Sleeping 1.9s…
+2026-08-12 00:15:08,532 [INFO] 
+📦 Batch 23/49
+2026-08-12 00:15:08,622 [INFO] 🏥 University of Kansas Health (USA)
+2026-08-12 00:15:08,771 [INFO] 🏥 Nebraska Medicine (USA)
+2026-08-12 00:15:08,887 [INFO] 🏥 Sanford Health (USA)
+2026-08-12 00:15:18,847 [INFO]   📧 0 emails on main page
+2026-08-12 00:15:22,361 [INFO]     ↳ contact-media-relations → 8 emails
+2026-08-12 00:15:24,727 [INFO]   📧 0 emails on main page
+2026-08-12 00:15:28,966 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.kansashealthsystem.com/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-12 00:15:28,970 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:15:29,061 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:15:29,063 [INFO] ⏳ Sleeping 2.3s…
+2026-08-12 00:15:31,366 [INFO] 
+📦 Batch 24/49
+2026-08-12 00:15:31,413 [INFO] 🏥 M Health Fairview (USA)
+2026-08-12 00:15:31,498 [INFO] 🏥 UW Health Wisconsin (USA)
+2026-08-12 00:15:31,547 [INFO] 🏥 Froedtert & MCW (USA)
+2026-08-12 00:15:33,180 [WARNING]   ❌ Blocked by anti-bot protection: Cloudflare JS challenge
+2026-08-12 00:15:35,379 [INFO]   📧 1 emails on main page
+2026-08-12 00:15:48,506 [WARNING]   ❌ Blocked by anti-bot protection: Structural: minimal_text, no_content_elements, script_heavy_shell (9715 bytes, 0 chars visible)
+2026-08-12 00:15:48,510 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:15:48,604 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:15:48,604 [INFO] ⏳ Sleeping 1.1s…
+2026-08-12 00:15:49,705 [INFO] 
+📦 Batch 25/49
+2026-08-12 00:15:49,801 [INFO] 🏥 City of Hope (USA)
+2026-08-12 00:15:49,942 [INFO] 🏥 Sutter Health (USA)
+2026-08-12 00:15:50,053 [INFO] 🏥 UC Davis Health (USA)
+2026-08-12 00:15:51,660 [WARNING]   ❌ Blocked by anti-bot protection: HTTP 429 Too Many Requests
+2026-08-12 00:16:06,497 [INFO]   📧 0 emails on main page
+2026-08-12 00:16:07,944 [INFO]   📧 1 emails on main page
+2026-08-12 00:16:31,327 [INFO]     ↳  → 1 emails
+2026-08-12 00:16:31,513 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:16:31,579 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:16:31,579 [INFO] ⏳ Sleeping 1.1s…
+2026-08-12 00:16:32,697 [INFO] 
+📦 Batch 26/49
+2026-08-12 00:16:32,809 [INFO] 🏥 UC Irvine Health (USA)
+2026-08-12 00:16:32,949 [INFO] 🏥 University Health Network (Canada)
+2026-08-12 00:16:33,055 [INFO] 🏥 McGill University Health Centre (Canada)
+2026-08-12 00:16:38,601 [INFO]   📧 0 emails on main page
+2026-08-12 00:16:43,366 [INFO]   📧 0 emails on main page
+2026-08-12 00:16:49,124 [INFO]   📧 0 emails on main page
+2026-08-12 00:17:00,031 [INFO]     ↳ For Partners → 1 emails
+2026-08-12 00:17:00,395 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:17:00,480 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:17:00,480 [INFO] ⏳ Sleeping 1.1s…
+2026-08-12 00:17:01,551 [INFO] 
+📦 Batch 27/49
+2026-08-12 00:17:01,614 [INFO] 🏥 Vancouver Coastal Health (Canada)
+2026-08-12 00:17:01,744 [INFO] 🏥 Ottawa Hospital (Canada)
+2026-08-12 00:17:01,849 [INFO] 🏥 Sunnybrook Health Sciences (Canada)
+2026-08-12 00:17:05,448 [WARNING]   ❌ Blocked by anti-bot protection: Structural: minimal_text, no_content_elements, script_heavy_shell (20049 bytes, 0 chars visible)
+2026-08-12 00:17:07,893 [INFO]   📧 0 emails on main page
+2026-08-12 00:17:11,942 [INFO]   📧 0 emails on main page
+2026-08-12 00:17:11,948 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:17:12,011 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:17:12,011 [INFO] ⏳ Sleeping 2.4s…
+2026-08-12 00:17:14,467 [INFO] 
+📦 Batch 28/49
+2026-08-12 00:17:14,535 [INFO] 🏥 Alberta Health Services (Canada)
+2026-08-12 00:17:14,627 [INFO] 🏥 QEII Health Sciences Centre (Canada)
+2026-08-12 00:17:14,681 [INFO] 🏥 Kingston Health Sciences (Canada)
+2026-08-12 00:17:23,983 [INFO]   📧 0 emails on main page
+2026-08-12 00:17:24,103 [WARNING]   ❌ Blocked by anti-bot protection: Structural: minimal_text, no_content_elements, script_heavy_shell (25363 bytes, 0 chars visible)
+2026-08-12 00:17:30,634 [INFO]     ↳ Page210.aspx → 2 emails
+2026-08-12 00:17:31,089 [INFO]     ↳ Page12639.aspx → 1 emails
+2026-08-12 00:17:31,552 [INFO]     ↳ Page121.aspx → 2 emails
+2026-08-12 00:17:32,372 [INFO]     ↳ websitefeedback.aspx?src= → 1 emails
+2026-08-12 00:17:34,884 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://kingstonhsc.ca/contact", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-12 00:17:34,889 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:17:35,000 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:17:35,000 [INFO] ⏳ Sleeping 1.1s…
+2026-08-12 00:17:36,106 [INFO] 
+📦 Batch 29/49
+2026-08-12 00:17:36,201 [INFO] 🏥 Hamilton Health Sciences (Canada)
+2026-08-12 00:17:36,341 [INFO] 🏥 London Health Sciences (Canada)
+2026-08-12 00:17:36,439 [INFO] 🏥 Winnipeg Health Sciences (Canada)
+2026-08-12 00:17:39,845 [INFO]   📧 0 emails on main page
+2026-08-12 00:17:44,653 [INFO]   📧 1 emails on main page
+2026-08-12 00:17:49,150 [INFO]   📧 0 emails on main page
+2026-08-12 00:17:50,140 [INFO]     ↳  → 1 emails
+2026-08-12 00:17:50,380 [INFO]     ↳  → 1 emails
+2026-08-12 00:17:57,087 [INFO]     ↳  → 2 emails
+2026-08-12 00:17:57,256 [INFO]     ↳  → 1 emails
+2026-08-12 00:17:57,414 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:17:57,480 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:17:57,481 [INFO] ⏳ Sleeping 1.8s…
+2026-08-12 00:17:59,262 [INFO] 
+📦 Batch 30/49
+2026-08-12 00:17:59,313 [INFO] 🏥 CIUSSS de l'Est-de-l'Île-de-Montréal (Canada)
+2026-08-12 00:17:59,407 [INFO] 🏥 Sinai Health Toronto (Canada)
+2026-08-12 00:17:59,462 [INFO] 🏥 Unity Health Toronto (Canada)
+2026-08-12 00:18:03,248 [WARNING]   ❌ Blocked by anti-bot protection: Structural: minimal_text, no_content_elements, script_heavy_shell (11265 bytes, 0 chars visible)
+2026-08-12 00:18:07,135 [INFO]   📧 1 emails on main page
+2026-08-12 00:18:07,508 [INFO]   📧 0 emails on main page
+2026-08-12 00:18:09,544 [INFO]     ↳  → 1 emails
+2026-08-12 00:18:09,658 [INFO]     ↳  → 1 emails
+2026-08-12 00:18:09,665 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:18:09,749 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:18:09,751 [INFO] ⏳ Sleeping 2.1s…
+2026-08-12 00:18:11,901 [INFO] 
+📦 Batch 31/49
+2026-08-12 00:18:11,949 [INFO] 🏥 SickKids Toronto (Canada)
+2026-08-12 00:18:12,054 [INFO] 🏥 CAMH Toronto (Canada)
+2026-08-12 00:18:12,120 [INFO] 🏥 Trillium Health Partners (Canada)
+2026-08-12 00:18:17,607 [INFO]   📧 0 emails on main page
+2026-08-12 00:18:24,178 [INFO]   📧 0 emails on main page
+2026-08-12 00:18:29,530 [INFO]     ↳  → 1 emails
+2026-08-12 00:18:29,586 [INFO]     ↳  → 1 emails
+2026-08-12 00:18:30,039 [INFO]     ↳  → 3 emails
+2026-08-12 00:18:30,522 [INFO]     ↳  → 1 emails
+2026-08-12 00:18:32,350 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.trilliumhealthpartners.ca/contactus/Pages/default.aspx", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-12 00:18:45,397 [INFO]     ↳ contact-camh → 5 emails
+2026-08-12 00:18:46,283 [INFO]     ↳ careers-at-camh → 1 emails
+2026-08-12 00:18:47,856 [INFO]     ↳ careers-at-camh?utm_id=joinourteam → 1 emails
+2026-08-12 00:18:48,746 [INFO]     ↳ for-reporters → 2 emails
+2026-08-12 00:18:49,643 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:18:49,715 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:18:49,715 [INFO] ⏳ Sleeping 1.6s…
+2026-08-12 00:18:51,372 [INFO] 
+📦 Batch 32/49
+2026-08-12 00:18:51,401 [INFO] 🏥 Fraser Health BC (Canada)
+2026-08-12 00:18:51,507 [INFO] 🏥 Interior Health BC (Canada)
+2026-08-12 00:18:51,553 [INFO] 🏥 Covenant Health Alberta (Canada)
+2026-08-12 00:18:56,533 [INFO]   📧 1 emails on main page
+2026-08-12 00:18:58,164 [INFO]   📧 0 emails on main page
+2026-08-12 00:19:04,641 [INFO]     ↳ delta-hospital → 1 emails
+2026-08-12 00:19:04,923 [INFO]     ↳ jim-pattison-outpatient-care-and-surgery-centre → 1 emails
+2026-08-12 00:19:05,102 [INFO]     ↳ awards-and-recognition → 1 emails
+2026-08-12 00:19:17,169 [WARNING]   ❌ Blocked by anti-bot protection: Structural: minimal_text, no_content_elements, script_heavy_shell (13668 bytes, 0 chars visible)
+2026-08-12 00:19:17,175 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:19:17,303 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:19:17,304 [INFO] ⏳ Sleeping 1.3s…
+2026-08-12 00:19:18,571 [INFO] 
+📦 Batch 33/49
+2026-08-12 00:19:18,656 [INFO] 🏥 CHUM Montreal (Canada)
+2026-08-12 00:19:18,794 [INFO] 🏥 CHU Sainte-Justine (Canada)
+2026-08-12 00:19:18,882 [INFO] 🏥 Royal London Hospital (UK)
+2026-08-12 00:19:20,279 [INFO]   📧 0 emails on main page
+2026-08-12 00:19:21,635 [INFO]   📧 0 emails on main page
+2026-08-12 00:19:22,130 [WARNING]   ❌ Blocked by anti-bot protection: Structural: minimal_text, no_content_elements, script_heavy_shell (12436 bytes, 0 chars visible)
+2026-08-12 00:19:22,135 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:19:22,255 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:19:22,255 [INFO] ⏳ Sleeping 2.3s…
+2026-08-12 00:19:24,522 [INFO] 
+📦 Batch 34/49
+2026-08-12 00:19:24,586 [INFO] 🏥 Guy's and St Thomas' NHS (UK)
+2026-08-12 00:19:24,683 [INFO] 🏥 King's College Hospital (UK)
+2026-08-12 00:19:24,736 [INFO] 🏥 Imperial College Healthcare NHS (UK)
+2026-08-12 00:19:30,234 [INFO]   📧 0 emails on main page
+2026-08-12 00:19:31,462 [INFO]   📧 2 emails on main page
+2026-08-12 00:19:32,611 [INFO]   📧 0 emails on main page
+2026-08-12 00:19:37,123 [INFO]     ↳ foi → 1 emails
+2026-08-12 00:19:37,159 [INFO]     ↳ how-we-use-social-media → 2 emails
+2026-08-12 00:19:37,482 [INFO]     ↳ about-us → 1 emails
+2026-08-12 00:19:37,516 [INFO]     ↳ press-office → 2 emails
+2026-08-12 00:19:37,590 [INFO]     ↳ contact-and-find-us → 2 emails
+2026-08-12 00:19:41,703 [INFO]     ↳  → 2 emails
+2026-08-12 00:19:41,710 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:19:41,852 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:19:41,854 [INFO] ⏳ Sleeping 1.4s…
+2026-08-12 00:19:43,314 [INFO] 
+📦 Batch 35/49
+2026-08-12 00:19:43,350 [INFO] 🏥 Manchester NHS Foundation Trust (UK)
+2026-08-12 00:19:43,460 [INFO] 🏥 Leeds Teaching Hospitals NHS (UK)
+2026-08-12 00:19:43,530 [INFO] 🏥 Oxford University Hospitals NHS (UK)
+2026-08-12 00:19:45,181 [WARNING]   ❌ Blocked by anti-bot protection: Cloudflare JS challenge
+2026-08-12 00:19:48,035 [INFO]   📧 0 emails on main page
+2026-08-12 00:19:49,341 [INFO]   📧 5 emails on main page
+2026-08-12 00:19:52,143 [INFO]     ↳  → 5 emails
+2026-08-12 00:19:52,150 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:19:52,235 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:19:52,235 [INFO] ⏳ Sleeping 2.4s…
+2026-08-12 00:19:54,613 [INFO] 
+📦 Batch 36/49
+2026-08-12 00:19:54,671 [INFO] 🏥 Cambridge University Hospitals (UK)
+2026-08-12 00:19:54,767 [INFO] 🏥 Newcastle Hospitals NHS (UK)
+2026-08-12 00:19:54,821 [INFO] 🏥 University College London NHS (UK)
+2026-08-12 00:19:57,631 [INFO]   📧 0 emails on main page
+2026-08-12 00:19:59,700 [INFO]   📧 0 emails on main page
+2026-08-12 00:20:01,750 [INFO]   📧 1 emails on main page
+2026-08-12 00:20:08,650 [INFO]     ↳  → 1 emails
+2026-08-12 00:20:11,727 [INFO]     ↳  → 26 emails
+2026-08-12 00:20:14,294 [INFO]     ↳ become-member → 3 emails
+2026-08-12 00:20:14,636 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:20:14,726 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:20:14,727 [INFO] ⏳ Sleeping 1.9s…
+2026-08-12 00:20:16,629 [INFO] 
+📦 Batch 37/49
+2026-08-12 00:20:16,683 [INFO] 🏥 Sheffield Teaching Hospitals (UK)
+2026-08-12 00:20:16,780 [INFO] 🏥 Bristol University NHS Trust (UK)
+2026-08-12 00:20:16,834 [INFO] 🏥 Royal Free London NHS (UK)
+2026-08-12 00:20:18,575 [WARNING]   ❌ Blocked by anti-bot protection: Cloudflare JS challenge
+2026-08-12 00:20:19,444 [INFO]   📧 10 emails on main page
+2026-08-12 00:20:19,702 [INFO]   📧 0 emails on main page
+2026-08-12 00:20:25,510 [INFO]     ↳  → 1 emails
+2026-08-12 00:20:25,556 [INFO]     ↳  → 10 emails
+2026-08-12 00:20:25,597 [INFO]     ↳  → 10 emails
+2026-08-12 00:20:25,978 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:20:26,086 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:20:26,087 [INFO] ⏳ Sleeping 2.2s…
+2026-08-12 00:20:28,343 [INFO] 
+📦 Batch 38/49
+2026-08-12 00:20:28,414 [INFO] 🏥 Nottingham University Hospitals (UK)
+2026-08-12 00:20:28,514 [INFO] 🏥 Liverpool University Hospitals (UK)
+2026-08-12 00:20:28,568 [INFO] 🏥 University Hospitals Birmingham (UK)
+2026-08-12 00:20:29,856 [INFO]   📧 0 emails on main page
+2026-08-12 00:20:30,868 [INFO]   📧 0 emails on main page
+2026-08-12 00:20:31,761 [INFO]   📧 0 emails on main page
+2026-08-12 00:20:37,385 [INFO]     ↳ press-information → 4 emails
+2026-08-12 00:20:37,435 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:20:37,528 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:20:37,528 [INFO] ⏳ Sleeping 1.9s…
+2026-08-12 00:20:39,478 [INFO] 
+📦 Batch 39/49
+2026-08-12 00:20:39,520 [INFO] 🏥 Southampton University NHS (UK)
+2026-08-12 00:20:39,612 [INFO] 🏥 Royal Marsden NHS Foundation (UK)
+2026-08-12 00:20:39,661 [INFO] 🏥 Great Ormond Street NHS (UK)
+2026-08-12 00:20:42,334 [INFO]   📧 0 emails on main page
+2026-08-12 00:20:43,738 [WARNING]   ❌ Blocked by anti-bot protection: Structural: minimal_text, no_content_elements, script_heavy_shell (14665 bytes, 0 chars visible)
+2026-08-12 00:20:44,291 [INFO]   📧 1 emails on main page
+2026-08-12 00:20:46,907 [INFO]     ↳ getting-help → 9 emails
+2026-08-12 00:20:46,918 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:20:47,082 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:20:47,082 [INFO] ⏳ Sleeping 1.6s…
+2026-08-12 00:20:48,662 [INFO] 
+📦 Batch 40/49
+2026-08-12 00:20:48,713 [INFO] 🏥 St George's University NHS (UK)
+2026-08-12 00:20:48,825 [INFO] 🏥 Chelsea and Westminster NHS (UK)
+2026-08-12 00:20:48,878 [INFO] 🏥 University Hospitals Sussex (UK)
+2026-08-12 00:20:52,134 [INFO]   📧 0 emails on main page
+2026-08-12 00:20:52,447 [INFO]   📧 4 emails on main page
+2026-08-12 00:20:52,964 [INFO]   📧 8 emails on main page
+2026-08-12 00:20:58,341 [INFO]     ↳ send-us-feedback → 1 emails
+2026-08-12 00:20:58,685 [INFO]     ↳ contact → 8 emails
+2026-08-12 00:21:00,453 [INFO]     ↳  → 1 emails
+2026-08-12 00:21:00,608 [INFO]     ↳  → 1 emails
+2026-08-12 00:21:00,693 [INFO]     ↳  → 4 emails
+2026-08-12 00:21:00,850 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:21:00,953 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:21:00,953 [INFO] ⏳ Sleeping 1.1s…
+2026-08-12 00:21:02,093 [INFO] 
+📦 Batch 41/49
+2026-08-12 00:21:02,197 [INFO] 🏥 Northumbria Healthcare NHS (UK)
+2026-08-12 00:21:02,335 [INFO] 🏥 University Hospitals of Leicester (UK)
+2026-08-12 00:21:02,454 [INFO] 🏥 Derby and Burton NHS Trust (UK)
+2026-08-12 00:21:06,281 [INFO]   📧 0 emails on main page
+2026-08-12 00:21:08,901 [INFO]   📧 0 emails on main page
+2026-08-12 00:21:11,265 [INFO]   📧 6 emails on main page
+2026-08-12 00:21:12,565 [INFO]     ↳ contact-us-how-to-request-a-bsl-interpreter → 3 emails
+2026-08-12 00:21:15,208 [INFO]     ↳  → 1 emails
+2026-08-12 00:21:15,216 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:21:15,334 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:21:15,334 [INFO] ⏳ Sleeping 1.2s…
+2026-08-12 00:21:16,513 [INFO] 
+📦 Batch 42/49
+2026-08-12 00:21:16,602 [INFO] 🏥 Norfolk and Norwich NHS (UK)
+2026-08-12 00:21:16,734 [INFO] 🏥 East Suffolk & North Essex NHS (UK)
+2026-08-12 00:21:16,843 [INFO] 🏥 NHS Greater Glasgow and Clyde (UK)
+2026-08-12 00:21:18,307 [WARNING]   ❌ Blocked by anti-bot protection: HTTP 503 with HTML content (18328 bytes)
+2026-08-12 00:21:21,045 [INFO]   📧 0 emails on main page
+2026-08-12 00:21:21,305 [INFO]   📧 4 emails on main page
+2026-08-12 00:21:26,716 [INFO]     ↳  → 1 emails
+2026-08-12 00:21:26,801 [INFO]     ↳  → 1 emails
+2026-08-12 00:21:28,799 [INFO]     ↳  → 2 emails
+2026-08-12 00:21:28,931 [INFO]     ↳  → 1 emails
+2026-08-12 00:21:29,105 [INFO]     ↳  → 9 emails
+2026-08-12 00:21:29,575 [INFO]     ↳  → 2 emails
+2026-08-12 00:21:29,837 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:21:29,958 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:21:29,958 [INFO] ⏳ Sleeping 2.0s…
+2026-08-12 00:21:31,972 [INFO] 
+📦 Batch 43/49
+2026-08-12 00:21:32,032 [INFO] 🏥 NHS Lothian Edinburgh (UK)
+2026-08-12 00:21:32,121 [INFO] 🏥 Cardiff and Vale Health Board (UK)
+2026-08-12 00:21:32,174 [INFO] 🏥 Belfast Health & Social Care (UK)
+2026-08-12 00:21:38,108 [INFO]   📧 2 emails on main page
+2026-08-12 00:21:38,472 [INFO]   📧 0 emails on main page
+2026-08-12 00:21:39,016 [INFO]   📧 1 emails on main page
+2026-08-12 00:21:41,958 [INFO]     ↳  → 1 emails
+2026-08-12 00:21:42,052 [INFO]     ↳  → 1 emails
+2026-08-12 00:21:45,574 [INFO]     ↳  → 1 emails
+2026-08-12 00:21:56,225 [INFO]     ↳  → 4 emails
+2026-08-12 00:21:56,347 [INFO]     ↳  → 3 emails
+2026-08-12 00:21:56,789 [INFO]     ↳  → 1 emails
+2026-08-12 00:21:56,797 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:21:56,944 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:21:56,944 [INFO] ⏳ Sleeping 1.2s…
+2026-08-12 00:21:58,166 [INFO] 
+📦 Batch 44/49
+2026-08-12 00:21:58,250 [INFO] 🏥 Royal Melbourne Hospital (Australia)
+2026-08-12 00:21:58,387 [INFO] 🏥 Alfred Health Melbourne (Australia)
+2026-08-12 00:21:58,490 [INFO] 🏥 St Vincent's Melbourne (Australia)
+2026-08-12 00:22:01,277 [WARNING]   ❌ Blocked by anti-bot protection: Imperva/Incapsula block
+2026-08-12 00:22:09,020 [INFO]   📧 0 emails on main page
+2026-08-12 00:22:11,600 [INFO]   📧 0 emails on main page
+2026-08-12 00:22:20,135 [INFO]     ↳ about-clinical-trials → 1 emails
+2026-08-12 00:22:20,232 [INFO]     ↳ contact → 3 emails
+2026-08-12 00:22:20,360 [INFO]     ↳ about-research → 1 emails
+2026-08-12 00:22:32,346 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:22:32,533 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:22:32,533 [INFO] ⏳ Sleeping 1.5s…
+2026-08-12 00:22:34,072 [INFO] 
+📦 Batch 45/49
+2026-08-12 00:22:34,113 [INFO] 🏥 Monash Health Melbourne (Australia)
+2026-08-12 00:22:34,228 [INFO] 🏥 Austin Health Melbourne (Australia)
+2026-08-12 00:22:34,298 [INFO] 🏥 Royal Prince Alfred Sydney (Australia)
+2026-08-12 00:22:36,456 [INFO]   📧 0 emails on main page
+2026-08-12 00:22:36,995 [INFO]   📧 0 emails on main page
+2026-08-12 00:22:54,381 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://monashhealth.org/contact-us/", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-12 00:22:54,389 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:22:54,564 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:22:54,564 [INFO] ⏳ Sleeping 1.5s…
+2026-08-12 00:22:56,086 [INFO] 
+📦 Batch 46/49
+2026-08-12 00:22:56,121 [INFO] 🏥 St Vincent's Sydney (Australia)
+2026-08-12 00:22:56,234 [INFO] 🏥 Royal North Shore Sydney (Australia)
+2026-08-12 00:22:56,337 [INFO] 🏥 Royal Brisbane & Women's (Australia)
+2026-08-12 00:22:58,004 [WARNING]   ❌ Blocked by anti-bot protection: Cloudflare JS challenge
+2026-08-12 00:22:59,035 [WARNING]   ❌ Blocked by anti-bot protection: Imperva/Incapsula block
+2026-08-12 00:23:16,659 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://metronorth.health.qld.gov.au/rbwh/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-12 00:23:16,672 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:23:16,837 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:23:16,837 [INFO] ⏳ Sleeping 1.1s…
+2026-08-12 00:23:17,957 [INFO] 
+📦 Batch 47/49
+2026-08-12 00:23:18,064 [INFO] 🏥 Princess Alexandra Brisbane (Australia)
+2026-08-12 00:23:18,192 [INFO] 🏥 Royal Adelaide Hospital (Australia)
+2026-08-12 00:23:18,291 [INFO] 🏥 Sir Charles Gairdner Perth (Australia)
+2026-08-12 00:23:20,278 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: net::ERR_NAME_NOT_RESOLVED at https://metro-south.health.qld.gov.au/princess-alexandra-hospital/contact-us
+Call log:
+  - navigating to "https://metro-south.health.qld.gov.au/princess-alexandra-hospital/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-12 00:23:24,819 [INFO]   📧 0 emails on main page
+2026-08-12 00:23:40,906 [INFO]     ↳ information-for-staff → 2 emails
+2026-08-12 00:23:40,940 [WARNING]   ❌ Unexpected error in _crawl_web at line 778 in _crawl_web (..\..\..\CivicFlare\crawl_env\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.nmahs.health.wa.gov.au/contact-us", waiting until "domcontentloaded"
+
+
+Code context:
+ 773                                   tag="GOTO",
+ 774                                   params={"url": url},
+ 775                               )
+ 776                               response = None
+ 777                           else:
+ 778 →                             raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+ 779   
+ 780                       # ──────────────────────────────────────────────────────────────
+ 781                       # Walk the redirect chain.  Playwright returns only the last
+ 782                       # hop, so we trace the `request.redirected_from` links until the
+ 783                       # first response that differs from the final one and surface its
+2026-08-12 00:23:40,950 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:23:41,112 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:23:41,112 [INFO] ⏳ Sleeping 1.0s…
+2026-08-12 00:23:42,142 [INFO] 
+📦 Batch 48/49
+2026-08-12 00:23:42,200 [INFO] 🏥 St. James's Hospital Dublin (Ireland)
+2026-08-12 00:23:42,313 [INFO] 🏥 Beaumont Hospital Dublin (Ireland)
+2026-08-12 00:23:42,426 [INFO] 🏥 Mater Hospital Dublin (Ireland)
+2026-08-12 00:23:43,967 [INFO]   📧 0 emails on main page
+2026-08-12 00:23:48,625 [INFO]   📧 0 emails on main page
+2026-08-12 00:23:51,167 [INFO]   📧 0 emails on main page
+2026-08-12 00:23:57,207 [INFO]     ↳  → 1 emails
+2026-08-12 00:23:57,258 [INFO]     ↳  → 1 emails
+2026-08-12 00:23:57,266 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:23:57,392 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:23:57,393 [INFO] ⏳ Sleeping 1.6s…
+2026-08-12 00:23:59,037 [INFO] 
+📦 Batch 49/49
+2026-08-12 00:23:59,069 [INFO] 🏥 St. Vincent's Dublin (Ireland)
+2026-08-12 00:23:59,170 [INFO] 🏥 Galway University Hospitals (Ireland)
+2026-08-12 00:24:06,591 [WARNING]   ❌ Blocked by anti-bot protection: Structural: no <body> tag (13180 bytes)
+2026-08-12 00:24:14,030 [INFO]   📧 7 emails on main page
+2026-08-12 00:24:19,990 [INFO]     ↳  → 3 emails
+2026-08-12 00:24:20,062 [INFO]     ↳  → 1 emails
+2026-08-12 00:24:20,170 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:24:20,329 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:24:20,330 [INFO] ⏳ Sleeping 2.2s…
+2026-08-12 00:24:22,888 [INFO] ✅ CSV saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.csv
+2026-08-12 00:24:23,032 [INFO] ✅ Excel saved → C:\Users\DeLL\CARECALCULUS\hospital_emails\hospital_leads.xlsx
+2026-08-12 00:24:23,033 [INFO] 
+=================================================================
+2026-08-12 00:24:23,033 [INFO] 🎯 DONE — 274 unique leads harvested
+2026-08-12 00:24:23,034 [INFO]    Australia: 7 emails
+2026-08-12 00:24:23,034 [INFO]    Canada: 28 emails
+2026-08-12 00:24:23,034 [INFO]    Ireland: 12 emails
+2026-08-12 00:24:23,034 [INFO]    UK: 124 emails
+2026-08-12 00:24:23,034 [INFO]    USA: 103 emails
+2026-08-12 00:24:23,034 [INFO] 
+⭐ High-value leads (score ≥ 20): 33
+2026-08-12 00:24:23,035 [INFO]    [ 25] donations@hamiltonhealth.ca                   Hamilton Health Sciences (Canada)
+2026-08-12 00:24:23,035 [INFO]    [ 25] pressoffice@uhbw.nhs.uk                       Bristol University NHS Trust (UK)
+2026-08-12 00:24:23,035 [INFO]    [ 25] cuh.procurement@nhs.net                       Cambridge University Hospitals (UK)
+2026-08-12 00:24:23,035 [INFO]    [ 25] imperial.press.office@nhs.net                 Imperial College Healthcare NHS (UK)
+2026-08-12 00:24:23,035 [INFO]    [ 25] your.name@northumbria-healthcare.nhs.uk       Northumbria Healthcare NHS (UK)
+2026-08-12 00:24:23,035 [INFO]    [ 25] uhl-tr.pressoffice@nhs.net                    University Hospitals of Leicester (UK)
+2026-08-12 00:24:23,035 [INFO]    [ 25] angela.dejene@sanfordhealth.org               Sanford Health (USA)
+2026-08-12 00:24:23,035 [INFO]    [ 25] jillian.johnson@sanfordhealth.org             Sanford Health (USA)
+2026-08-12 00:24:23,035 [INFO]    [ 25] chelsey.kralicek@sanfordhealth.org            Sanford Health (USA)
+2026-08-12 00:24:23,035 [INFO]    [ 25] nathan.aamodt@sanfordhealth.org               Sanford Health (USA)
+2026-08-12 00:24:23,036 [INFO]    [ 25] jon.berg@sanfordhealth.org                    Sanford Health (USA)
+2026-08-12 00:24:23,036 [INFO]    [ 25] web@stanfordhealthcare.org                    Stanford Health Care (USA)
+2026-08-12 00:24:23,036 [INFO]    [ 25] vitalstats@flhealth.gov                       Tampa General Hospital (USA)
+2026-08-12 00:24:23,036 [INFO]    [ 20] health.calhnclinicalworkerhealthservice@sa.gov.au Royal Adelaide Hospital (Australia)
+2026-08-12 00:24:23,036 [INFO]    [ 20] ahs.corp@ahs.ca                               Alberta Health Services (Canada)
+2026-08-12 00:24:23,036 [INFO] =================================================================
+2026-08-12 00:24:23,037 [INFO] 
+📂 Output folder: C:\Users\DeLL\CARECALCULUS\hospital_emails

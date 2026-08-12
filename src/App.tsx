@@ -798,7 +798,7 @@ function AppLayout() {
         role="dialog"
         aria-modal={isSidebarOpen ? "true" : undefined}
         aria-label="Clinical calculator navigation"
-        className={`fixed inset-y-0 ${isRtl ? 'right-0' : 'left-0'} z-40 w-72 md:w-[280px] bg-white/85 dark:bg-slate-900/90 backdrop-blur-2xl border-${isRtl ? 'l' : 'r'} border-slate-200/80 dark:border-slate-800 shadow-[0_10px_40px_rgba(0,0,0,0.06)] transform transition-transform duration-300 ease-out md:translate-x-0 md:static md:flex-shrink-0 relative overflow-hidden ${isSidebarOpen ? 'translate-x-0' : (isRtl ? 'translate-x-full md:translate-x-0' : '-translate-x-full')}`}
+        className={`fixed inset-y-0 ${isRtl ? 'right-0' : 'left-0'} z-40 w-72 md:w-[280px] bg-white/85 dark:bg-slate-900/90 backdrop-blur-2xl border-${isRtl ? 'l' : 'r'} border-slate-200/80 dark:border-slate-800 shadow-[0_10px_40px_rgba(0,0,0,0.06)] transform transition-transform duration-300 ease-out md:translate-x-0 md:relative md:flex-shrink-0 overflow-hidden ${isSidebarOpen ? 'translate-x-0' : (isRtl ? 'translate-x-full md:translate-x-0' : '-translate-x-full')}`}
       >
         {/* Subtle ambient lighting backdrop gradient */}
         <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-teal-500/10 via-blue-500/5 to-transparent pointer-events-none -z-10" />

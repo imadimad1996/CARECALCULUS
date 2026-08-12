@@ -32,7 +32,7 @@ import os
 # ─────────────────────────────────────────────────────────────────────────────
 MAILTRAP_TOKEN = os.getenv("SMTP_PASS", "")   # reuse SMTP_PASS field from .env
 FROM_NAME      = os.getenv("FROM_NAME", "CareCalculus Team")
-FROM_EMAIL     = os.getenv("FROM_EMAIL", "hello@demomailtrap.co")
+FROM_EMAIL     = os.getenv("FROM_EMAIL", "hello@carecalculus.com")
 DELAY_SEC      = float(os.getenv("SEND_DELAY_SEC", "3"))
 MIN_SCORE      = int(os.getenv("MIN_SCORE", "10"))
 
@@ -47,7 +47,7 @@ log = logging.getLogger(__name__)
 # ─────────────────────────────────────────────────────────────────────────────
 # EMAIL TEMPLATE
 # ─────────────────────────────────────────────────────────────────────────────
-SUBJECT = "Free Clinical Calculator Suite for {hospital} — No IT Setup Required"
+SUBJECT = "clinical calculators / workflow"
 
 BODY_HTML = """\
 <!DOCTYPE html>
@@ -57,65 +57,26 @@ BODY_HTML = """\
 <style>
   body {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
          line-height: 1.7; color: #1a1a1a; max-width: 620px; margin: auto; padding: 20px; }}
-  .logo {{ font-weight: 900; font-size: 22px; color: #0ea5e9; letter-spacing: -0.5px; }}
-  .highlight {{ background: #f0f9ff; border-left: 4px solid #0ea5e9; padding: 12px 18px;
-                border-radius: 0 8px 8px 0; margin: 18px 0; }}
-  .cta {{ display: inline-block; background: #0ea5e9; color: white; padding: 12px 28px;
-          border-radius: 8px; text-decoration: none; font-weight: 700; margin: 8px 0; }}
-  .calc-list {{ columns: 2; list-style: none; padding: 0; margin: 10px 0; }}
-  .calc-list li::before {{ content: "✓ "; color: #0ea5e9; font-weight: 700; }}
   .footer {{ margin-top: 32px; padding-top: 16px; border-top: 1px solid #e5e7eb;
              font-size: 12px; color: #6b7280; }}
 </style>
 </head>
 <body>
-<p class="logo">CareCalculus</p>
-
 <p>Hi,</p>
 
-<p>I'm reaching out because <strong>{hospital}</strong> deserves the best bedside decision tools — and I wanted to share something your clinical team can start using <em>today, for free</em>.</p>
+<p>I noticed {hospital} is actively improving clinical workflows and wanted to share a resource your bedside teams can use right away.</p>
 
-<div class="highlight">
-  <strong>CareCalculus</strong> is a free, peer-reviewed clinical calculator platform built for busy clinicians —
-  not hospital administrators. No EHR login, no IT tickets, no waiting.
-</div>
+<p>We built <a href="https://www.carecalculus.com">CareCalculus</a>—a free, peer-reviewed clinical calculator platform for busy clinicians. Unlike heavy EHR integrations, it requires zero IT setup, no login, and covers 90+ calculators (qSOFA, Wells, CHA2DS2-VASc, etc.).</p>
 
-<p><strong>What's included (100% free):</strong></p>
-<ul class="calc-list">
-  <li>qSOFA / SOFA / SIRS</li>
-  <li>GCS &amp; Pediatric GCS</li>
-  <li>Wells DVT &amp; PE Score</li>
-  <li>CURB-65 Pneumonia</li>
-  <li>MELD &amp; Child-Pugh</li>
-  <li>Creatinine Clearance</li>
-  <li>CHA₂DS₂-VASc</li>
-  <li>NIH Stroke Scale</li>
-  <li>APACHE II / SAPS II</li>
-  <li>Vancomycin Dosing</li>
-  <li>Drug Interactions</li>
-  <li>88+ more calculators</li>
-</ul>
+<p>We also offer a Pro Export Pass that generates SOAP notes and DotPhrases directly into your EHR format, saving hours of documentation.</p>
 
-<p>
-  <a href="https://www.carecalculus.com/?utm_source=hospital_outreach&utm_medium=email&utm_campaign=hospitals_v1" class="cta">Try CareCalculus Free →</a>
-</p>
+<p>Worth exploring for the clinical team?</p>
 
-<p>
-  For hospitals and health systems, we also offer a <strong>Pro Export Pass</strong> that lets your team
-  generate SOAP notes, SBAR summaries, and EHR-ready DotPhrases in one click —
-  <a href="https://www.carecalculus.com/pricing">learn more</a>.
-</p>
-
-<p>Would it be appropriate for me to connect with your CMO or Medical Informatics team for a brief 15-minute call?
-I'd love to explore how CareCalculus can support <strong>{hospital}</strong>'s clinical workflows.</p>
-
-<p>Best regards,<br>
-<strong>CareCalculus Team</strong><br>
-<a href="https://www.carecalculus.com">carecalculus.com</a></p>
+<p>Best,<br>
+CareCalculus Team</p>
 
 <div class="footer">
-  You received this email because {hospital} provides clinical care and we believe CareCalculus
-  could support your team. To unsubscribe, simply reply "unsubscribe" and we will remove you immediately.
+  You received this email because {hospital} provides clinical care. To unsubscribe, simply reply "unsubscribe".
 </div>
 </body>
 </html>
@@ -124,20 +85,13 @@ I'd love to explore how CareCalculus can support <strong>{hospital}</strong>'s c
 BODY_TEXT = """\
 Hi,
 
-I'm reaching out because {hospital} deserves the best bedside decision tools.
+I noticed {hospital} is actively improving clinical workflows and wanted to share a resource your bedside teams can use right away.
 
-CareCalculus is a free, peer-reviewed clinical calculator platform built for busy clinicians.
-No EHR login. No IT tickets. Start in 30 seconds.
+We built CareCalculus—a free, peer-reviewed clinical calculator platform for busy clinicians. Unlike heavy EHR integrations, it requires zero IT setup, no login, and covers 90+ calculators (qSOFA, Wells, CHA2DS2-VASc, etc.).
 
-Free calculators include: qSOFA, SOFA, SIRS, GCS, Wells DVT/PE, CURB-65, MELD,
-Child-Pugh, Creatinine Clearance, CHA2DS2-VASc, NIHSS, APACHE II, and 80+ more.
+We also offer a Pro Export Pass that generates SOAP notes and DotPhrases directly into your EHR format, saving hours of documentation.
 
-Try it free: https://www.carecalculus.com
-
-For hospitals, we offer a Pro Export Pass with SOAP/SBAR/DotPhrase generation:
-https://www.carecalculus.com/pricing
-
-Would it be appropriate to connect with your CMO or Medical Informatics team for 15 minutes?
+Worth exploring for the clinical team?
 
 Best,
 CareCalculus Team
