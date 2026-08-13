@@ -92,12 +92,6 @@ export default function ClinicalExportButton({
   const [copied, setCopied] = useState(false);
   const [shareCopied, setShareCopied] = useState(false);
   const [noteTab, setNoteTab] = useState<'soap' | 'sbar' | 'dotphrase' | 'ascii'>('soap');
-  const [copyCount, setCopyCount] = useState(0);
-  const [showUpgradeGate, setShowUpgradeGate] = useState(false);
-
-  useEffect(() => {
-    setCopyCount(parseInt(localStorage.getItem('ehr_copy_count') || '0', 10));
-  }, []);
 
   const inputsRecord = useMemo(() => {
     const rec: Record<string, any> = {};
@@ -130,16 +124,9 @@ export default function ClinicalExportButton({
   };
 
   const handleCopyNote = () => {
-    if (copyCount >= 3 && !isProActive()) {
-      setShowUpgradeGate(true);
-      return;
-    }
     const textToCopy = getFormattedNote();
     navigator.clipboard.writeText(textToCopy).then(() => {
       setCopied(true);
-      const newCount = copyCount + 1;
-      setCopyCount(newCount);
-      localStorage.setItem('ehr_copy_count', String(newCount));
       
       window.dispatchEvent(new Event('carecalculus:calc-success'));
       
@@ -615,52 +602,17 @@ ${divider}`;
                       })}
                     </div>
                     
-                    {(noteTab === 'sbar' || noteTab === 'dotphrase') ? (
-                      <PremiumGate featureName={noteTab === 'sbar' ? 'SBAR Handover' : 'Epic/Cerner DotPhrase'} lang={lang}>
-                        <div className="space-y-3">
-                          {/* Live Preview Box */}
-                          <div className="p-4 rounded-xl bg-slate-950 text-emerald-400 font-mono text-xs overflow-x-auto whitespace-pre-wrap border border-slate-800 shadow-inner max-h-60 select-all">
-                            {getFormattedNote()}
-                          </div>
-
-                          {/* Action Buttons */}
-                          <div className="flex flex-col sm:flex-row items-center gap-3 pt-2 border-t border-slate-200 dark:border-slate-800">
-                            <button
-                              onClick={handleCopyNote}
-                              className="w-full sm:flex-1 py-3 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl transition shadow-sm flex items-center justify-center gap-2 cursor-pointer"
-                            >
-                              {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-                              <span>{copied ? t.copySuccess : t.copyBtn}</span>
-                            </button>
-
-                            <button
-                              onClick={handlePrint}
-                              className="w-full sm:flex-1 py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl transition shadow-sm flex items-center justify-center gap-2 cursor-pointer"
-                            >
-                              <Printer className="w-4 h-4" />
-                              <span>{t.printBtn}</span>
-                            </button>
-
-                            <button
-                              onClick={handleWhatsAppShare}
-                              className="w-full sm:w-auto py-3 px-5 bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-xs rounded-xl transition shadow-sm flex items-center justify-center gap-2 cursor-pointer"
-                              title="Share Shift Handover to WhatsApp"
-                            >
-                              <Share2 className="w-4 h-4" />
-                              <span>WhatsApp</span>
-                            </button>
-                          </div>
+                    {(noteTab === 'sbar' || noteTab === 'dotphrase') && !isProActive() ? (
+                      <div className="space-y-3 relative">
+                        {/* Blurred Live Preview Box Teaser */}
+                        <div className="p-4 rounded-xl bg-slate-950 text-emerald-400 font-mono text-xs overflow-hidden whitespace-pre-wrap border border-slate-800 shadow-inner h-48 select-none blur-[4px] opacity-60 pointer-events-none relative">
+                          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/50 to-slate-900 z-10"></div>
+                          {getFormattedNote()}
                         </div>
-                      </PremiumGate>
-                    ) : showUpgradeGate ? (
-                      <div className="space-y-3">
-                        <PremiumGate featureName="Unlimited EHR Exports" lang={lang} />
-                        <button
-                          onClick={() => setShowUpgradeGate(false)}
-                          className="w-full py-3 px-4 bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold text-xs rounded-xl transition"
-                        >
-                          Cancel
-                        </button>
+                        
+                        <div className="relative -mt-40 z-20 mx-2">
+                          <PremiumGate featureName={noteTab === 'sbar' ? 'SBAR Handover' : 'Epic/Cerner DotPhrase'} lang={lang} />
+                        </div>
                       </div>
                     ) : (
                       <div className="space-y-3">

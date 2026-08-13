@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { LangCode } from '../types';
 import { Building2, ShieldCheck, Activity, Code2, ArrowRight, CheckCircle2, ChevronRight, Lock, Settings, Server, Users, HelpCircle, Quote } from 'lucide-react';
 import SEO from '../components/SEO';
+import { trackEvent } from '../utils/firebase';
 
 const T = {
   en: {
@@ -108,6 +109,12 @@ export default function ForHospitals({ lang }: { lang: LangCode }) {
       if (!res.ok) {
         throw new Error('Failed to submit request');
       }
+      
+      trackEvent('generate_lead', {
+        hospital_name: leadObj.hospitalName,
+        ehr_system: leadObj.ehrSystem,
+        role: leadObj.role
+      });
       
       setSubmitted(true);
     } catch (err) {

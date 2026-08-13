@@ -1,5 +1,5 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
-import { getAnalytics, isSupported } from "firebase/analytics";
+import { getAnalytics, isSupported, logEvent } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
@@ -35,3 +35,13 @@ if (typeof window !== 'undefined') {
     }
   }).catch(console.error);
 }
+
+export const trackEvent = (eventName: string, eventParams?: Record<string, any>) => {
+  if (analytics) {
+    try {
+      logEvent(analytics, eventName, eventParams);
+    } catch (e) {
+      console.error("Failed to log event:", e);
+    }
+  }
+};

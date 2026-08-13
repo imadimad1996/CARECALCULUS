@@ -10,8 +10,11 @@ import { CONDITIONS_DB } from '../data/conditions';
 import { SPECIALTIES_DB } from '../data/specialties';
 import seoMaps from '../data/seoMaps.json';
 import { CalcPageSchemas } from './JsonLd';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import { citationsDb } from '../data/citationsDb';
+import PremiumGate from './PremiumGate';
+import { createPortal } from 'react-dom';
+import { X } from 'lucide-react';
 
 const nameEnMap: Record<string, string> = seoMaps.nameEnMap;
 const nameFrMap: Record<string, string> = seoMaps.nameFrMap;
@@ -91,6 +94,7 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
   const [calcData, setCalcData] = useState<any>(null);
   const [copiedType, setCopiedType] = useState<string | null>(null);
   const [isPro, setIsPro] = useState(false);
+  const [showInlineGate, setShowInlineGate] = useState<'sbar' | 'dotphrase' | null>(null);
 
   useEffect(() => {
     setIsPro(localStorage.getItem('carecalculus_pro_status') === 'active');
@@ -260,8 +264,8 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
                 <button
                   key={type}
                   onClick={() => {
-                    if (!isPro) {
-                      navigate(lang === 'en' ? '/pricing' : `/${lang}/pricing`);
+                    if (!isPro && (type === 'sbar' || type === 'dotphrase')) {
+                      setShowInlineGate(type);
                       return;
                     }
                     const scoreVal = calcData.results?.[0]?.value || '';
@@ -484,6 +488,50 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
 
 
         </div>
+      )}
+      {/* Inline Premium Gate Modal via Portal */}
+      {createPortal(
+        <AnimatePresence>
+          {showInlineGate && (
+            <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
+              {/* Modal backdrop */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 bg-slate-950/80 backdrop-blur-md cursor-pointer"
+                onClick={() => setShowInlineGate(null)}
+              />
+
+              {/* Modal console box */}
+              <motion.div
+                initial={{ scale: 0.94, opacity: 0, y: 15 }}
+                animate={{ scale: 1, opacity: 1, y: 0 }}
+                exit={{ scale: 0.94, opacity: 0, y: 15 }}
+                transition={{ type: "spring", duration: 0.5, bounce: 0.15 }}
+                className="relative bg-slate-900 border border-slate-700/80 rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col"
+              >
+                {/* Header */}
+                <div className="p-4 border-b border-slate-800 flex justify-end items-center bg-slate-950/40 shrink-0">
+                  <button
+                    onClick={() => setShowInlineGate(null)}
+                    className="p-1.5 hover:bg-slate-800 text-gray-400 hover:text-white rounded-lg transition-colors cursor-pointer"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+                
+                <div className="p-0 overflow-y-auto max-h-[85vh]">
+                  <PremiumGate 
+                    featureName={showInlineGate === 'sbar' ? 'SBAR Handover' : 'Epic/Cerner DotPhrase'} 
+                    lang={lang} 
+                  />
+                </div>
+              </motion.div>
+            </div>
+          )}
+        </AnimatePresence>,
+        document.body
       )}
     </div>
   );
