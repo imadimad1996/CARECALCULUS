@@ -14,13 +14,13 @@ const CORS = {
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-// Lightweight IP-based rate limiting: max 3 requests per IP per 10 minutes
+// Lightweight IP-based rate limiting: max 5 requests per IP per 10 minutes
 async function isRateLimited(env: Env, ip: string): Promise<boolean> {
   if (!env.LEADS) return false;
   const key = `ratelimit_b2b:${ip}`;
   const existing = await env.LEADS.get(key);
   const count = existing ? parseInt(existing, 10) : 0;
-  if (count >= 3) return true;
+  if (count >= 5) return true;
   await env.LEADS.put(key, String(count + 1), { expirationTtl: 600 }); // 10 min TTL
   return false;
 }

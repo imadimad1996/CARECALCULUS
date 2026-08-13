@@ -107,7 +107,18 @@ export default function ForHospitals({ lang }: { lang: LangCode }) {
       });
       
       if (!res.ok) {
-        throw new Error('Failed to submit request');
+        let errorData;
+        try {
+          errorData = await res.json();
+        } catch (e) {
+          // Ignore parsing error if response is not JSON
+        }
+        
+        if (errorData && errorData.error) {
+          throw new Error(errorData.error);
+        } else {
+          throw new Error('Something went wrong. Please try again.');
+        }
       }
       
       trackEvent('generate_lead', {
@@ -117,8 +128,8 @@ export default function ForHospitals({ lang }: { lang: LangCode }) {
       });
       
       setSubmitted(true);
-    } catch (err) {
-      setErrorMsg('Something went wrong. Please try again.');
+    } catch (err: any) {
+      setErrorMsg(err.message || 'Something went wrong. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
