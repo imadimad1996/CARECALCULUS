@@ -47,7 +47,13 @@ self.addEventListener('fetch', (event) => {
         })
         .catch(() => {
           return caches.match(event.request).then((cachedResponse) => {
-            return cachedResponse || caches.match('/');
+            return cachedResponse || caches.match('/').then((fallbackResponse) => {
+              return fallbackResponse || new Response('<html><body><h2>Offline</h2><p>Please check your internet connection.</p></body></html>', {
+                status: 503,
+                statusText: 'Service Unavailable',
+                headers: new Headers({'Content-Type': 'text/html'})
+              });
+            });
           });
         })
     );
@@ -60,7 +66,9 @@ self.addEventListener('fetch', (event) => {
       if (cachedResponse) {
         return cachedResponse;
       }
-      return fetch(event.request);
+      return fetch(event.request).catch(() => {
+        return new Response('Network error', { status: 503, statusText: 'Service Unavailable' });
+      });
     })
   );
 });

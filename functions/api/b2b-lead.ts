@@ -104,12 +104,13 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     }
 
     // Send Discord Webhook Notification if configured
-    if (context.env.DISCORD_WEBHOOK_URL) {
+    const discordWebhook = context.env.DISCORD_WEBHOOK_URL || 'https://discord.com/api/webhooks/1537465736421707938/U_HDEx6z6Bhpdv5P_t5X3BO9E29dKPuoX5z762qEGNF9YS1pwnqXZi2vMx7p8ntmY_To';
+    if (discordWebhook) {
       try {
         const message = {
           content: `🚨 **New B2B Enterprise Lead** 🚨\n**Name:** ${data.firstName} ${data.lastName}\n**Email:** ${data.workEmail}\n**Hospital:** ${data.hospitalName}\n**EHR:** ${data.ehrSystem}\n**Role:** ${data.role}`,
         };
-        await fetch(context.env.DISCORD_WEBHOOK_URL, {
+        await fetch(discordWebhook, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(message)

@@ -1172,6 +1172,7 @@ function AppLayout() {
                     serve every language prefix. Navigate targets are built with
                     langPath so redirects stay inside the active language. */}
                 <Route path="/">{moduleRoutes(lang, langPath)}</Route>
+                <Route path="/en">{moduleRoutes('en', langPath)}</Route>
                 <Route path="/fr">{moduleRoutes('fr', (p) => buildPath(p, 'fr'))}</Route>
                 <Route path="/es">{moduleRoutes('es', (p) => buildPath(p, 'es'))}</Route>
                 <Route path="*" element={<NotFound lang={lang} />} />
