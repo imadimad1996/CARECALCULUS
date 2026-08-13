@@ -127,7 +127,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
   } catch (error: any) {
     console.error(JSON.stringify({ endpoint: 'b2b-lead', error: error.message, timestamp: new Date().toISOString() }));
-    return new Response(JSON.stringify({ error: 'Server error processing B2B lead' }), {
+    return new Response(JSON.stringify({ error: 'Server error processing B2B lead', details: error.message, stack: error.stack }), {
       status: 500, headers: CORS,
     });
   }

@@ -63,32 +63,5 @@ export default function TrackingScripts() {
   }, [location]);
 
 
-  useEffect(() => {
-    const loadSecondaryScripts = () => {
-      // 2. Microsoft Clarity — heatmaps + session recordings
-      const CLARITY_PROJECT_ID = 'xvmk1929os';
-
-      if (!document.getElementById('clarity-script')) {
-        const clarityInit = document.createElement('script');
-        clarityInit.id = 'clarity-script';
-        clarityInit.innerHTML = `
-          (function(c,l,a,r,i,t,y){
-              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-          })(window, document, "clarity", "script", "${CLARITY_PROJECT_ID}");
-        `;
-        document.head.appendChild(clarityInit);
-      }
-
-    };
-
-    if ('requestIdleCallback' in window) {
-      (window as any).requestIdleCallback(loadSecondaryScripts);
-    } else {
-      setTimeout(loadSecondaryScripts, 2000);
-    }
-  }, []);
-
   return null;
 }
