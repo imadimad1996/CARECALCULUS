@@ -3,6 +3,7 @@ import type { PagesFunction, KVNamespace } from '@cloudflare/workers-types';
 interface Env {
   LEADS: KVNamespace;
   DISCORD_WEBHOOK_URL?: string;
+  MAILTRAP_TOKEN?: string;
 }
 
 const CORS = {
@@ -24,10 +25,12 @@ async function isRateLimited(env: Env, ip: string): Promise<boolean> {
   return false;
 }
 
+// @ts-ignore - Bypassing DOM vs Cloudflare Response type mismatch
 export const onRequestOptions: PagesFunction<Env> = async () => {
   return new Response(null, { status: 204, headers: CORS });
 };
 
+// @ts-ignore - Bypassing DOM vs Cloudflare Response type mismatch
 export const onRequestPost: PagesFunction<Env> = async (context) => {
   try {
     const ip = context.request.headers.get('CF-Connecting-IP') || 'unknown';
@@ -63,6 +66,41 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       await context.env.LEADS.put(kvKey, JSON.stringify(leadData));
     } else {
       console.warn('LEADS KV namespace not bound. Simulating save:', leadData);
+    }
+
+    // Send Automated Welcome Email via Mailtrap
+    if (context.env.MAILTRAP_TOKEN) {
+      try {
+        const emailHtml = `
+          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; line-height: 1.6; max-width: 600px; margin: 0 auto; color: #1e293b;">
+            <h2 style="color: #0f172a;">Welcome to CareCalculus Enterprise, ${data.firstName}!</h2>
+            <p>Thank you for requesting sandbox access for <strong>${data.hospitalName}</strong>. Our enterprise support team has received your request and will contact you as soon as possible to activate your environment.</p>
+            <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 24px 0;" />
+            <h3 style="color: #0f172a;">How the Pro Plan for Hospitals Works</h3>
+            <p>We designed our enterprise offering to be completely frictionless. Instead of managing individual licenses, we simply whitelist your hospital's email domains.</p>
+            <p>Once activated, <strong>every single clinician, nurse, and medical student at your institution gets unlimited access to CareCalculus Pro</strong>—including our automated EHR SOAP note generation and export tools—automatically.</p>
+            <p>We look forward to partnering with your clinical teams to streamline bedside workflows.</p>
+            <br/>
+            <p>Best regards,<br><strong>The CareCalculus Team</strong></p>
+          </div>
+        `;
+        
+        await fetch("https://send.api.mailtrap.io/api/send", {
+          method: "POST",
+          headers: {
+            "Authorization": `Bearer ${context.env.MAILTRAP_TOKEN}`,
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            from: { email: "hello@carecalculus.com", name: "CareCalculus Team" },
+            to: [{ email: data.workEmail }],
+            subject: "Welcome to CareCalculus Enterprise",
+            html: emailHtml
+          })
+        });
+      } catch (emailErr) {
+        console.error('Failed to send welcome email:', emailErr);
+      }
     }
 
     // Send Discord Webhook Notification if configured
