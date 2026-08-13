@@ -7,7 +7,7 @@ import { layoutTranslations } from '../utils/lang';
 import { trackCalculatorUsage } from '../utils/telemetry';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 
-const pageTranslations: Record<LangCode, any> = {
+const pageTranslations: Record<string, any> = {
   en: {
     pageTitle: "Medical Unit Conversions",
     pageSubtitle: "Quick conversion tool for biological lab values",
