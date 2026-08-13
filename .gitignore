@@ -23,6 +23,7 @@ scripts/hospital_email_crawler/.env
 
 # Cloudflare / Wrangler
 .wrangler/
+.dev.vars
 wrangler.toml.bak
 
 # OS artifacts
