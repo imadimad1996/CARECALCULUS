@@ -230,7 +230,7 @@ export default function ForHospitals({ lang }: { lang: LangCode }) {
                   </div>
                   <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Request Received</h3>
                   <p className="text-slate-600 dark:text-slate-400">
-                    Our enterprise team will contact you shortly to schedule your personalized demo.
+                    A welcome email has been sent. Our support team will contact you as soon as possible to explain how the PRO plan for hospitals works. We provide unlimited PRO accounts for each hospital.
                   </p>
                 </div>
               ) : (
