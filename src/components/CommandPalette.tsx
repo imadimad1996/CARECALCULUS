@@ -10,48 +10,7 @@ interface CommandPaletteProps {
   lang: LangCode;
 }
 
-interface SearchItem {
-  id: string;
-  title: { en: string; fr: string };
-  category: { en: string; fr: string };
-  path: string;
-  keywords: string[];
-}
-
-const SEARCH_ITEMS: SearchItem[] = [
-  // Calculators & Scores
-  { id: 'wells', title: { en: "Wells' Criteria for DVT", fr: "Score de Wells pour TVP" }, category: { en: "Emergency & Critical Care", fr: "Urgences & Soins Intensifs" }, path: "/wells-score", keywords: ["dvt", "thrombosis", "wells", "tvp", "embolism"] },
-  { id: 'heart', title: { en: "HEART Score for Chest Pain", fr: "Score HEART Douleur Thoracique" }, category: { en: "Emergency & Critical Care", fr: "Urgences & Soins Intensifs" }, path: "/heart-score", keywords: ["heart", "chest pain", "acs", "mace", "douleur thoracique", "stemi", "nstemi", "troponin"] },
-  { id: 'grace', title: { en: "GRACE Score for ACS Risk", fr: "Score de GRACE (SCA)" }, category: { en: "Cardiology", fr: "Cardiologie" }, path: "/grace-score", keywords: ["grace", "acs", "stemi", "nstemi", "mortality", "coronary", "sca"] },
-  { id: 'sofa', title: { en: "SOFA Score (Sepsis)", fr: "Score SOFA (Sepsis)" }, category: { en: "Emergency & Critical Care", fr: "Urgences & Soins Intensifs" }, path: "/sofa-score", keywords: ["sofa", "sepsis", "organ failure", "icu", "rea"] },
-  { id: 'qsofa', title: { en: "qSOFA Score (Quick Sepsis)", fr: "Score qSOFA Sepsis Rapid" }, category: { en: "Emergency & Critical Care", fr: "Urgences & Soins Intensifs" }, path: "/qsofa-score", keywords: ["qsofa", "sepsis", "quick sofa", "emergency"] },
-  { id: 'curb65', title: { en: "CURB-65 Pneumonia Severity", fr: "Score CURB-65 Pneumopathie" }, category: { en: "Pulmonology", fr: "Pneumologie" }, path: "/curb65-score", keywords: ["curb65", "curb-65", "pneumonia", "pulmonary", "pneumopathie"] },
-  { id: 'map', title: { en: "Mean Arterial Pressure (MAP)", fr: "Pression Artérielle Moyenne (PAM)" }, category: { en: "Cardiology", fr: "Cardiologie" }, path: "/map-calculator", keywords: ["map", "pam", "pressure", "arterial", "pression"] },
-  { id: 'pf', title: { en: "P/F Ratio (PaO2/FiO2)", fr: "Rapport P/F (PaO2/FiO2)" }, category: { en: "Pulmonology", fr: "Pneumologie" }, path: "/pf-ratio", keywords: ["pf ratio", "pao2", "fio2", "ards", "sdra"] },
-  { id: 'anc', title: { en: "Absolute Neutrophil Count (ANC)", fr: "PNN - Polynucléaires Neutrophiles" }, category: { en: "Hematology & Oncology", fr: "Hématologie & Oncologie" }, path: "/anc-calculator", keywords: ["anc", "neutrophil", "pnn", "neutropenia", "oncology"] },
-  { id: 'gcs', title: { en: "Glasgow Coma Scale (GCS)", fr: "Échelle de Glasgow (GCS)" }, category: { en: "Neurology & ICU", fr: "Neurologie & Réanimation" }, path: "/glasgow-coma-scale", keywords: ["gcs", "glasgow", "coma", "neuro", "brain"] },
-  { id: 'creat', title: { en: "Cockcroft-Gault Creatinine Clearance", fr: "Clairance de la Créatinine" }, category: { en: "Nephrology", fr: "Néphrologie" }, path: "/creatinine-clearance", keywords: ["cockcroft", "creatinine", "gfr", "dfg", "kidney", "renal"] },
-  { id: 'meld', title: { en: "MELD & MELD-Na Score", fr: "Score MELD (Hépatologie)" }, category: { en: "Gastroenterology", fr: "Gastro-entérologie" }, path: "/meld-score", keywords: ["meld", "liver", "cirrhosis", "hepatology", "foie"] },
-  { id: 'cha2ds2', title: { en: "CHA₂DS₂-VASc Score", fr: "Score CHA₂DS₂-VASc" }, category: { en: "Cardiology", fr: "Cardiologie" }, path: "/cha2ds2-vasc", keywords: ["cha2ds2", "afib", "stroke", "anticoagulation", "fa"] },
-  { id: 'hasbled', title: { en: "HAS-BLED Bleeding Risk", fr: "Score HAS-BLED Risque Hémorragique" }, category: { en: "Cardiology", fr: "Cardiologie" }, path: "/has-bled-score", keywords: ["hasbled", "bleeding", "hemorrhage", "anticoagulation"] },
-  { id: 'sirs', title: { en: "SIRS Criteria", fr: "Critères du SIRS" }, category: { en: "Emergency & Critical Care", fr: "Urgences & Soins Intensifs" }, path: "/sirs-criteria", keywords: ["sirs", "inflammation", "sepsis", "fever"] },
-  { id: 'pgcs', title: { en: "Pediatric Glasgow Coma Scale (pGCS)", fr: "Échelle de Glasgow Pédiatrique (pGCS)" }, category: { en: "Pediatrics", fr: "Pédiatrie" }, path: "/pediatric-gcs", keywords: ["pediatric gcs", "pgcs", "pediatric glasgow", "infant gcs", "child gcs"] },
-  { id: 'holliday', title: { en: "Holliday-Segar Pediatric Fluids (4-2-1)", fr: "Fluides Pédiatriques Holliday-Segar (4-2-1)" }, category: { en: "Pediatrics", fr: "Pédiatrie" }, path: "/holliday-segar-fluids", keywords: ["holliday segar", "4-2-1 rule", "pediatric fluids", "maintenance fluids"] },
-  { id: 'peds-dose', title: { en: "Pediatric Weight & BSA Dosage", fr: "Calculateur de Posologie Pédiatrique" }, category: { en: "Pediatrics & Pharmacology", fr: "Pédiatrie & Pharmacologie" }, path: "/pediatric-dosage", keywords: ["pediatric dosage", "mg kg dose", "bsa calculator", "child dosing"] },
-  { id: 'naegele', title: { en: "Naegele's Rule EDD Calculator", fr: "Calculateur de Terme (Naegele)" }, category: { en: "Obstetrics & Gynecology", fr: "Obstétrique & Gynécologie" }, path: "/naegele-edd-calculator", keywords: ["naegele", "edd", "due date", "gestational age", "lmp", "dpa", "ddr"] },
-  { id: 'crl', title: { en: "Gestational Age from CRL", fr: "Âge Gestationnel par LCC / CRL" }, category: { en: "Obstetrics & Gynecology", fr: "Obstétrique & Gynécologie" }, path: "/gestational-age-crl", keywords: ["crl", "lcc", "ultrasound dating", "crown rump length", "1st trimester"] },
-  { id: 'fourts', title: { en: "4Ts Score for HIT", fr: "Score des 4T pour la TIH" }, category: { en: "Hematology & Critical Care", fr: "Hématologie & Soins Intensifs" }, path: "/four-ts-hit-score", keywords: ["4ts hit", "heparin induced thrombocytopenia", "tih", "heparin"] },
-  { id: 'mascc', title: { en: "MASCC Risk Index (Febrile Neutropenia)", fr: "Score MASCC Neutropénie Fébrile" }, category: { en: "Hematology & Oncology", fr: "Hématologie & Oncologie" }, path: "/mascc-risk-index", keywords: ["mascc", "febrile neutropenia", "neutropenie febrile", "cancer risk"] },
-  { id: 'rumack', title: { en: "Rumack-Matthew Nomogram (Paracetamol)", fr: "Nomogramme Rumack-Matthew (Paracétamol)" }, category: { en: "Toxicology & Emergency", fr: "Toxicologie & Urgences" }, path: "/rumack-matthew-nomogram", keywords: ["rumack matthew", "paracetamol", "acetaminophen", "toxicity", "nac"] },
-  { id: 'framingham', title: { en: "Framingham 10-Yr CVD Risk Score", fr: "Score de Risque Framingham (10 ans)" }, category: { en: "Cardiology", fr: "Cardiologie" }, path: "/framingham-risk-score", keywords: ["framingham", "cvd risk", "coronary risk", "heart risk", "cardiovascular"] },
-  { id: 'hfapeff', title: { en: "HFA-PEFF Score (HFpEF Diagnosis)", fr: "Score HFA-PEFF (Diagnostic ICFEP)" }, category: { en: "Cardiology", fr: "Cardiologie" }, path: "/hfa-peff-score", keywords: ["hfa peff", "hfpeff", "heart failure", "preserved ejection fraction", "icfep"] },
-  { id: 'schwartz', title: { en: "Bedside Schwartz Pediatric eGFR", fr: "Formule de Schwartz Pédiatrique (DFG)" }, category: { en: "Nephrology & Pediatrics", fr: "Néphrologie & Pédiatrie" }, path: "/schwartz-pediatric-gfr", keywords: ["schwartz egfr", "pediatric gfr", "schwartz formula", "child kidney"] },
-
-  // Reference & Educational Hubs
-  { id: 'fmp', title: { en: "FMP Médecine Maroc", fr: "FMP Médecine Maroc (Cours & Fiches)" }, category: { en: "Academic Hub", fr: "Espace Académique" }, path: "/fmp-medecine", keywords: ["fmp", "maroc", "faculte", "medecine", "casablanca", "rabat"] },
-  { id: 'ispits', title: { en: "ISPITS Infirmier & Réanimation", fr: "ISPITS Soins & Réanimation" }, category: { en: "Academic Hub", fr: "Espace Académique" }, path: "/ispits", keywords: ["ispits", "infirmier", "reanimation", "maroc", "soins"] },
-  { id: 'fr-hub', title: { en: "Espace Médical Francophone (/fr)", fr: "Espace Médical Francophone (/fr)" }, category: { en: "Localization", fr: "Localisation" }, path: "/fr", keywords: ["french", "francophone", "frances", "maroc", "sfar"] }
-];
+import { ALL_CALCULATORS } from '../data/calculators';
 
 export default function CommandPalette({ isOpen, onClose, lang }: CommandPaletteProps) {
   const [query, setQuery] = useState('');
@@ -68,7 +27,7 @@ export default function CommandPalette({ isOpen, onClose, lang }: CommandPalette
     }
   }, [isOpen]);
 
-  const filteredItems = SEARCH_ITEMS.filter(item => {
+  const filteredItems = ALL_CALCULATORS.filter(item => {
     const titleText = item.title[lang] || item.title.en;
     const catText = item.category[lang] || item.category.en;
     const searchString = `${titleText} ${catText} ${item.keywords.join(' ')}`.toLowerCase();
@@ -150,7 +109,7 @@ export default function CommandPalette({ isOpen, onClose, lang }: CommandPalette
                 >
                   <div className="flex items-center gap-3">
                     <div className={`p-2 rounded-lg ${isSelected ? 'bg-cyan-600 text-white' : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400'}`}>
-                      <Calculator className="w-4 h-4" />
+                      <item.icon className="w-4 h-4" />
                     </div>
                     <div>
                       <h4 className="text-sm font-semibold text-gray-900 dark:text-white">

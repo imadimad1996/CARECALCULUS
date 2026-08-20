@@ -107,35 +107,7 @@ const SPECIALTIES = [
   { id: 'pharmaco', en: 'Pharmacology', fr: 'Pharmacologie' },
 ];
 
-const FEATURED_CALCULATORS = [
-  { id: 'map', icon: Activity, en: 'MAP Calculator', fr: 'Calculateur PAM', path: '/map-calculator', specialties: ['cardiology', 'emergency'] },
-  { id: 'gcs', icon: Brain, en: 'GCS Score', fr: 'Échelle Glasgow', path: '/glasgow-coma-scale', specialties: ['neuro', 'emergency'] },
-  { id: 'qsofa', icon: AlertTriangle, en: 'qSOFA Sepsis', fr: 'qSOFA Sepsis', path: '/qsofa-score', specialties: ['emergency'] },
-  { id: 'pgcs', icon: Brain, en: 'Pediatric GCS', fr: 'Glasgow Pédiatrique', path: '/pediatric-gcs', specialties: ['pediatrics', 'emergency'] },
-  { id: 'holliday', icon: Droplet, en: 'Holliday-Segar Fluids', fr: 'Fluides Holliday-Segar', path: '/holliday-segar-fluids', specialties: ['pediatrics'] },
-  { id: 'peds-dose', icon: Pill, en: 'Pediatric Dosage', fr: 'Dosage Pédiatrique', path: '/pediatric-dosage', specialties: ['pediatrics', 'pharmaco'] },
-  { id: 'edd', icon: HeartPulse, en: 'Naegele EDD', fr: 'Calculateur DPA Naegele', path: '/naegele-edd-calculator', specialties: ['obgyn'] },
-  { id: 'crl', icon: Activity, en: 'Gestational Age CRL', fr: 'Âge Gestationnel LCC', path: '/gestational-age-crl', specialties: ['obgyn'] },
-  { id: 'fourts', icon: AlertOctagon, en: '4Ts HIT Score', fr: 'Score 4T TIH', path: '/four-ts-hit-score', specialties: ['hematology', 'emergency'] },
-  { id: 'mascc', icon: ShieldCheck, en: 'MASCC Risk Index', fr: 'Score MASCC Neutropénie', path: '/mascc-risk-index', specialties: ['hematology'] },
-  { id: 'rumack', icon: AlertTriangle, en: 'Rumack-Matthew Nomogram', fr: 'Nomogramme Rumack-Matthew', path: '/rumack-matthew-nomogram', specialties: ['toxicology', 'emergency'] },
-  { id: 'framingham', icon: HeartPulse, en: 'Framingham Risk', fr: 'Score de Framingham', path: '/framingham-risk-score', specialties: ['cardiology'] },
-  { id: 'hfapeff', icon: HeartPulse, en: 'HFA-PEFF Score', fr: 'Score HFA-PEFF ICFEP', path: '/hfa-peff-score', specialties: ['cardiology'] },
-  { id: 'schwartz', icon: TestTube, en: 'Schwartz Pediatric GFR', fr: 'DFG Pédiatrique Schwartz', path: '/schwartz-pediatric-gfr', specialties: ['nephrology', 'pediatrics'] },
-  { id: 'curb65', icon: Stethoscope, en: 'CURB-65', fr: 'CURB-65', path: '/curb65-score', specialties: ['pulmonology', 'emergency'] },
-  { id: 'pf', icon: Wind, en: 'P/F Ratio', fr: 'Rapport P/F', path: '/pf-ratio', specialties: ['pulmonology', 'emergency'] },
-  { id: 'creat', icon: TestTube, en: 'Creatinine Clearance', fr: 'Clairance Créatinine', path: '/creatinine-clearance', specialties: ['nephrology'] },
-  { id: 'meld', icon: Activity, en: 'MELD Score', fr: 'Score MELD', path: '/meld-score', specialties: ['gastro'] },
-  { id: 'wells', icon: AlertOctagon, en: 'Wells Score (DVT)', fr: 'Score de Wells (TVP)', path: '/wells-score', specialties: ['pulmonology', 'cardiology'] },
-  { id: 'wells-pe', icon: AlertOctagon, en: 'Wells Score (PE)', fr: 'Score de Wells (EP)', path: '/wells-pe-score', specialties: ['pulmonology', 'cardiology'] },
-  { id: 'cha2', icon: HeartPulse, en: 'CHA₂DS₂-VASc', fr: 'CHA₂DS₂-VASc', path: '/cha2ds2-vasc', specialties: ['cardiology'] },
-  { id: 'tdee', icon: Activity, en: 'Nutrition TDEE', fr: 'Nutrition TDEE', path: '/nutrition-tdee', specialties: ['nutrition'] },
-  { id: 'must', icon: Activity, en: 'MUST Score', fr: 'Score MUST', path: '/nutrition-must', specialties: ['nutrition'] },
-  { id: 'iv', icon: Droplet, en: 'IV Drip Rate', fr: 'Débit Perfusion', path: '/drip-rate-calculator', specialties: ['pharmaco', 'emergency'] },
-  { id: 'steroid', icon: ArrowRightLeft, en: 'Steroid Conversion', fr: 'Équivalences Stéroïdes', path: '/steroid-conversion', specialties: ['pharmaco'] },
-  { id: 'ibw', icon: LayoutDashboard, en: 'IBW & ABW', fr: 'Poids Idéal', path: '/adjusted-body-weight', specialties: ['nutrition', 'pharmaco'] },
-  { id: 'unit', icon: ArrowRightLeft, en: 'Unit Conversions', fr: 'Conversions d\'Unités', path: '/medical-conversions', specialties: ['pharmaco'] },
-];
+import { ALL_CALCULATORS } from '../data/calculators';
 
 import SEO from '../components/SEO';
 import CommandPalette from '../components/CommandPalette';
@@ -193,6 +165,7 @@ export default function HomePage({ lang }: HomePageProps) {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
+  const FEATURED_CALCULATORS = ALL_CALCULATORS.filter(c => c.isFeatured);
   const filteredCalculators = FEATURED_CALCULATORS.filter(calc =>
     activeSpecialty === 'all' || calc.specialties.includes(activeSpecialty)
   );
@@ -308,7 +281,7 @@ export default function HomePage({ lang }: HomePageProps) {
         },
         "hasPart": FEATURED_CALCULATORS.map(c => ({
           "@type": "SoftwareApplication",
-          "name": c.en,
+          "name": c.title.en,
           "applicationCategory": "HealthApplication",
           "operatingSystem": "All",
           "url": `https://carecalculus.com${c.path}`
@@ -550,7 +523,7 @@ export default function HomePage({ lang }: HomePageProps) {
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {filteredCalculators.map((calc) => {
           const CalcIcon = calc.icon;
-          const label = lang === 'fr' ? calc.fr : calc.en;
+          const label = lang === 'fr' ? calc.title.fr : calc.title.en;
           const mainCategory = calc.specialties[0] || 'general';
           return (
             <Link
