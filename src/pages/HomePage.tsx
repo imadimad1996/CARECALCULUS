@@ -4,7 +4,7 @@ import {
   Activity, Brain, Stethoscope, Wind, TestTube, AlertOctagon, HeartPulse,
   Droplet, ArrowRightLeft, LayoutDashboard, BookOpen,
   Newspaper, Calculator, ChevronRight, ShieldCheck, Globe, Sparkles, AlertTriangle, Search, Award, ArrowRight, Pill,
-  ClipboardList
+  ClipboardCopy
 } from 'lucide-react';
 import { motion, useInView } from 'motion/react';
 import { LangCode } from '../types';
@@ -392,7 +392,7 @@ export default function HomePage({ lang }: HomePageProps) {
               { path: '/map-calculator', name: 'MAP Calc', icon: <Activity className="w-6 h-6 text-teal-600 dark:text-teal-400" /> },
               { path: '/wells-score', name: 'Wells Score', icon: <AlertOctagon className="w-6 h-6 text-rose-600 dark:text-rose-400" /> },
               { path: '/synapse-engine', name: 'Guidelines AI', icon: <Sparkles className="w-6 h-6 text-indigo-600 dark:text-indigo-400" /> },
-              { isSmartPaste: true, name: 'SmartPaste EHR', icon: <ClipboardList className="w-6 h-6 text-cyan-600 dark:text-cyan-400" /> }
+              { isSmartPaste: true, name: 'SmartPaste EHR', icon: <ClipboardCopy className="w-6 h-6 text-cyan-600 dark:text-cyan-400" /> }
             ].map((item, idx) => {
               if (item.isSmartPaste) {
                 return (
