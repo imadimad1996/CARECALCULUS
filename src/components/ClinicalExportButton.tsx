@@ -22,7 +22,7 @@ export interface ClinicalExportButtonProps {
 
 const localizations = {
   en: {
-    btnText: "Print / Export Report",
+    btnText: "Print / Export",
     modalTitle: "Clinical Export Console & EHR Report",
     patientId: "Patient ID / Case Ref #",
     patientIdPlc: "e.g., PT-9042-X",
@@ -46,7 +46,7 @@ const localizations = {
     shareTemplate: "I just calculated a {result} using CareCalculus! Check out the free clinical tool here: {url}"
   },
   fr: {
-    btnText: "Imprimer / Exporter le Bilan",
+    btnText: "Imprimer / Exporter",
     modalTitle: "Console d'Export Clinique & Rapport EHR",
     patientId: "Identifiant Patient / Réf Dossier",
     patientIdPlc: "ex : PT-9042-X",
@@ -440,7 +440,7 @@ ${divider}`;
           </span>
 
           {/* Label */}
-          <span className="flex-1 text-center leading-tight whitespace-nowrap">{t.btnText}</span>
+          <span className="flex-1 text-center leading-tight truncate">{t.btnText}</span>
 
           {/* Right inline arrow — no collision */}
           <span className="flex items-center justify-center w-6 h-6 rounded-md bg-white/10 border border-white/10 shrink-0 group-hover:translate-x-0.5 transition-transform">
