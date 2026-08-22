@@ -3,7 +3,8 @@ import { Link, useSearchParams } from 'react-router-dom';
 import {
   Activity, Brain, Stethoscope, Wind, TestTube, AlertOctagon, HeartPulse,
   Droplet, ArrowRightLeft, LayoutDashboard, BookOpen,
-  Newspaper, Calculator, ChevronRight, ShieldCheck, Globe, Sparkles, AlertTriangle, Search, Award, ArrowRight, Pill
+  Newspaper, Calculator, ChevronRight, ShieldCheck, Globe, Sparkles, AlertTriangle, Search, Award, ArrowRight, Pill,
+  ClipboardList
 } from 'lucide-react';
 import { motion, useInView } from 'motion/react';
 import { LangCode } from '../types';
@@ -295,15 +296,17 @@ export default function HomePage({ lang }: HomePageProps) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateWebSiteSchema()) }} />
 
       {/* FAQPage schema — "People Also Ask" + GEO AI citation boost */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema([
-        { question: 'What is CareCalculus?', answer: 'CareCalculus is a free, evidence-based clinical decision support platform providing over 88 medical calculators for ICU, emergency medicine, cardiology, nephrology, and nutrition. All tools are peer-reviewed and aligned with international guidelines including AHA, KDIGO, ESPEN, and Surviving Sepsis.' },
-        { question: 'Is CareCalculus free to use?', answer: 'Yes. CareCalculus is completely free for all clinicians. Core calculators including MAP, GCS, qSOFA, MELD, Wells Score, CHA2DS2-VASc, CURB-65, and Creatinine Clearance are accessible without an account.' },
-        { question: 'How accurate are the medical calculators on CareCalculus?', answer: 'Every calculator on CareCalculus is validated against landmark peer-reviewed publications and clinical guidelines. Formulas are sourced from original research (e.g., Cockcroft-Gault for creatinine clearance, MDRD and CKD-EPI for GFR) and reviewed by our medical editorial board.' },
-        { question: 'Which specialties does CareCalculus cover?', answer: 'CareCalculus covers Emergency & Critical Care, Cardiology, Nephrology, Pulmonology, Gastroenterology, Neurology, Hematology, Pediatrics, Obstetrics, Nutrition, Toxicology, and Pharmacology — offering over 88 validated clinical scoring tools and calculators.' },
-        { question: 'Can I use CareCalculus offline?', answer: 'Yes. CareCalculus is a Progressive Web App (PWA) that supports offline use. Once loaded, all core clinical calculators remain fully functional without an internet connection, making them ideal for use in clinical settings with limited connectivity.' },
-        { question: 'What is a MAP calculator?', answer: 'A Mean Arterial Pressure (MAP) calculator computes the average arterial pressure during one cardiac cycle. The formula is: MAP = (SBP + 2 × DBP) / 3. Normal MAP is 70–10 mmHg. Values below 65 mmHg indicate inadequate organ perfusion and require immediate clinical action.' },
-        { question: 'What is the qSOFA score used for?', answer: 'The quick Sequential Organ Failure Assessment (qSOFA) score is a rapid bedside screening tool for sepsis. It uses three criteria: altered mental status (GCS < 15), respiratory rate ≥ 22/min, and systolic blood pressure ≤ 100 mmHg. A score of ≥ 2 suggests possible sepsis and warrants further evaluation.' }
-      ])) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: JSON.stringify(generateFAQSchema([
+          { question: 'What is CareCalculus?', answer: 'CareCalculus is a free, evidence-based clinical decision support platform providing over 88 medical calculators for ICU, emergency medicine, cardiology, nephrology, and nutrition. All tools are peer-reviewed and aligned with international guidelines including AHA, KDIGO, ESPEN, and Surviving Sepsis.' },
+          { question: 'Is CareCalculus free to use?', answer: 'Yes. CareCalculus is completely free for all clinicians. Core calculators including MAP, GCS, qSOFA, MELD, Wells Score, CHA2DS2-VASc, CURB-65, and Creatinine Clearance are accessible without an account.' },
+          { question: 'How accurate are the medical calculators on CareCalculus?', answer: 'Every calculator on CareCalculus is validated against landmark peer-reviewed publications and clinical guidelines. Formulas are sourced from original research (e.g., Cockcroft-Gault for creatinine clearance, MDRD and CKD-EPI for GFR) and reviewed by our medical editorial board.' },
+          { question: 'Which specialties does CareCalculus cover?', answer: 'CareCalculus covers Emergency & Critical Care, Cardiology, Nephrology, Pulmonology, Gastroenterology, Neurology, Hematology, Pediatrics, Obstetrics, Nutrition, Toxicology, and Pharmacology — offering over 88 validated clinical scoring tools and calculators.' },
+          { question: 'Can I use CareCalculus offline?', answer: 'Yes. CareCalculus is a Progressive Web App (PWA) that supports offline use. Once loaded, all core clinical calculators remain fully functional without an internet connection, making them ideal for use in clinical settings with limited connectivity.' },
+          { question: 'What is a MAP calculator?', answer: 'A Mean Arterial Pressure (MAP) calculator computes the average arterial pressure during one cardiac cycle. The formula is: MAP = (SBP + 2 × DBP) / 3. Normal MAP is 70–10 mmHg. Values below 65 mmHg indicate inadequate organ perfusion and require immediate clinical action.' },
+          { question: 'What is the qSOFA score used for?', answer: 'The quick Sequential Organ Failure Assessment (qSOFA) score is a rapid bedside screening tool for sepsis. It uses three criteria: altered mental status (GCS < 15), respiratory rate ≥ 22/min, and systolic blood pressure ≤ 100 mmHg. A score of ≥ 2 suggests possible sepsis and warrants further evaluation.' }
+        ]))
+      }} />
 
       {/* Hero — 2026 Ambient Glassmorphic Clinical Workbench */}
       <section className="relative bg-gradient-to-b from-teal-50/40 via-white to-white dark:from-teal-950/30 dark:via-slate-950 dark:to-slate-950 border-b border-slate-100 dark:border-slate-800 px-6 sm:px-10 py-12 sm:py-16 -mx-4 sm:-mx-6 md:mx-0 md:border md:border-slate-200/80 dark:md:border-slate-800 md:rounded-3xl shadow-sm overflow-hidden">
@@ -436,7 +439,7 @@ export default function HomePage({ lang }: HomePageProps) {
               <ChevronRight className="w-4 h-4" />
             </button>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -549,11 +552,10 @@ export default function HomePage({ lang }: HomePageProps) {
                 key={spec.id}
                 onClick={() => setActiveSpecialty(spec.id)}
                 aria-pressed={isActive}
-                className={`snap-start shrink-0 px-4 py-2 rounded-full text-xs font-bold transition-all duration-300 border ${
-                  isActive 
-                    ? 'bg-teal-600 text-white border-teal-600 shadow-[0_4px_12px_rgba(13,148,136,0.3)] scale-105' 
+                className={`snap-start shrink-0 px-4 py-2 rounded-full text-xs font-bold transition-all duration-300 border ${isActive
+                    ? 'bg-teal-600 text-white border-teal-600 shadow-[0_4px_12px_rgba(13,148,136,0.3)] scale-105'
                     : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-700 hover:border-teal-300 hover:bg-slate-50 dark:hover:bg-slate-800'
-                }`}
+                  }`}
               >
                 {label}
               </button>
