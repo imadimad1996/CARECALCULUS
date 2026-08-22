@@ -714,6 +714,7 @@ function AppLayout() {
       <meta name="description" content={appHead.meta.desc} />
       <meta name="keywords" content={appHead.meta.keywords} />
       <link rel="canonical" href={appHead.url} />
+      <link rel="alternate" type="text/markdown" href="/llms.txt" />
       <meta property="og:title" content={appHead.title} />
       <meta property="og:description" content={appHead.meta.desc} />
       <meta property="og:url" content={appHead.url} />

@@ -1,0 +1,594 @@
+{
+  "/aa-gradient": [
+    {
+      "question": "What is the Alveolar-Arterial (A-a) oxygen gradient?",
+      "answer": "The A-a gradient is the difference between the partial pressure of oxygen in the alveoli (PAO2) and in arterial blood (PaO2). It evaluates the integrity of the alveolar-capillary membrane."
+    },
+    {
+      "question": "How is the expected normal A-a gradient calculated?",
+      "answer": "A normal A-a gradient increases with age due to physiological lung senescence. It can be estimated using the formula: Expected Normal Gradient = (Age / 4) + 4."
+    },
+    {
+      "question": "What does a normal A-a gradient with hypoxemia mean?",
+      "answer": "If a patient is hypoxemic (low PaO2) but has a normal A-a gradient, the cause of hypoxemia is extra-pulmonary: either alveolar hypoventilation (e.g. opioid overdose, neuromuscular disease) or a low fraction of inspired oxygen (e.g. high altitude)."
+    },
+    {
+      "question": "What does an elevated A-a gradient mean?",
+      "answer": "An elevated A-a gradient (> expected age-adjusted value) indicates a pulmonary cause of hypoxemia. This is typically due to ventilation-perfusion (V/Q) mismatch (e.g. pulmonary embolism, COPD, pneumonia), right-to-left shunt (e.g. atelectasis, AVMs), or diffusion limitations."
+    }
+  ],
+  "/anion-gap": [
+    {
+      "question": "Why correct for Albumin?",
+      "answer": "Albumin is negatively charged and accounts for a large portion of the normal anion gap. In patients with low albumin (very common in critically ill patients), a"
+    },
+    {
+      "question": "Is Potassium included?",
+      "answer": "The standard formula omits Potassium (Na - (Cl + HCO3)) because its extracellular concentration is small and relatively constant. If included, the normal range changes to 12-16 mEq/L."
+    }
+  ],
+  "/apgar-score": [
+    {
+      "question": "What is the APGAR score?",
+      "answer": "The APGAR score is a rapid assessment of a newborn"
+    },
+    {
+      "question": "What does a normal APGAR score mean?",
+      "answer": "An APGAR score of 7 to 10 is considered normal and indicates the newborn is in good health. Scores of 4 to 6 indicate moderate depression, and 0 to 3 indicate severe distress requiring immediate resuscitation."
+    },
+    {
+      "question": "When is the APGAR score calculated?",
+      "answer": "It is calculated routinely at 1 and 5 minutes after birth. If the 5-minute score is low (<7), it may be repeated every 5 minutes up to 20 minutes to monitor resuscitation progress."
+    },
+    {
+      "question": "Does a low APGAR score predict long-term brain damage?",
+      "answer": "Not necessarily. A low score at 1 minute is common and often resolves. Even at 5 minutes, a low score shows correlation with immediate survival but is a poor predictor of long-term neurological outcome in individual cases."
+    }
+  ],
+  "/apri-score": [
+    {
+      "question": "Can APRI replace liver biopsy?",
+      "answer": "It can reduce the need for biopsy by identifying patients at the extremes (very low or very high probability). Those in the indeterminate zone (0.5 - 1.5) often still need further evaluation."
+    },
+    {
+      "question": "What is a normal AST ULN?",
+      "answer": "It varies by laboratory, but 40 IU/L is a commonly used standard value if the lab"
+    }
+  ],
+  "/ascvd-risk-score": [
+    {
+      "question": "Who is this calculator for?",
+      "answer": "Adults aged 40-79 years without a prior history of ASCVD."
+    },
+    {
+      "question": "What if the patient is younger than 40?",
+      "answer": "The 10-year risk equations are only validated for ages 40-79. For patients 20-39, lifetime risk is typically evaluated instead."
+    }
+  ],
+  "/benzo-equivalence": [
+    {
+      "question": "Should I switch at 100% of the calculated equivalent dose?",
+      "answer": "No. Due to incomplete cross-tolerance, you should typically reduce the new dose by 25-50% and titrate to effect."
+    },
+    {
+      "question": "Does this apply to IV formulations?",
+      "answer": "No, these are oral (PO) equivalencies. IV dosing, especially for midazolam or lorazepam, has different bioavailability and equivalence."
+    }
+  ],
+  "/bishop-score": [
+    {
+      "question": "What is the Bishop Score?",
+      "answer": "The Bishop Score is a pre-labor scoring system used to predict whether induction of labor will be required or successful. It evaluates five components of a pelvic examination: cervical dilation, cervical effacement, fetal station, cervical consistency, and cervical position."
+    },
+    {
+      "question": "What is a",
+      "answer": "A score of 8 or greater indicates a"
+    },
+    {
+      "question": "How does the modified Bishop score differ?",
+      "answer": "Some modern modifications replace effacement with cervical length in centimeters. However, the original Bishop score using percentage effacement remains the most universally taught and utilized standard in OB/GYN."
+    },
+    {
+      "question": "Can the Bishop score predict preterm birth?",
+      "answer": "While originally designed for elective induction at term, components of the Bishop score (specifically dilation and effacement/cervical length) are heavily used in assessing the risk of preterm labor."
+    }
+  ],
+  "/bmi-calculator": [
+    {
+      "question": "What is Body Mass Index (BMI)?",
+      "answer": "BMI is a numeric value derived from a person"
+    },
+    {
+      "question": "What are the WHO BMI classification categories?",
+      "answer": "WHO classifies BMI as: Underweight (<18.5), Normal weight (18.5\u201324.9), Overweight (25\u201329.9), and Obese (\u226530). The obese category is further divided into Class I (30\u201334.9), II (35\u201339.9), and III (\u226540, severe obesity)."
+    },
+    {
+      "question": "What are the limitations of BMI in clinical practice?",
+      "answer": "BMI does not distinguish between fat and muscle mass, does not reflect fat distribution, and may misclassify athletes or elderly patients. It should be interpreted alongside waist circumference, clinical context, and comorbidities."
+    },
+    {
+      "question": "Is BMI accurate for all ethnicities?",
+      "answer": "Asian populations have higher cardiometabolic risk at lower BMI thresholds. WHO and several national guidelines recommend lower obesity cut-offs for Asian adults: overweight \u226523, obese \u226527.5."
+    }
+  ],
+  "/bova-score": [
+    {
+      "question": "What is the Bova Score used for?",
+      "answer": "The Bova Score is used to predict 30-day PE-related complications in normotensive patients with acute pulmonary embolism."
+    },
+    {
+      "question": "What variables are included in the Bova Score?",
+      "answer": "The score evaluates heart rate, systolic blood pressure, right ventricular (RV) dysfunction, and cardiac troponin levels."
+    }
+  ],
+  "/braden-scale": [
+    {
+      "question": "What is the Braden Scale?",
+      "answer": "The Braden Scale is a risk assessment tool used by nurses to determine a patient"
+    },
+    {
+      "question": "What does a low score mean?",
+      "answer": "A low score (9 or below) indicates a severe risk of developing pressure ulcers, requiring immediate and aggressive preventive measures."
+    }
+  ],
+  "/cam-icu": [
+    {
+      "question": "Can CAM-ICU be used in intubated patients?",
+      "answer": "Yes, it relies on non-verbal responses like squeezing a hand or nodding."
+    },
+    {
+      "question": "What if the patient is unarousable (RASS -4 or -5)?",
+      "answer": "Do not assess CAM-ICU if the patient is deeply sedated or unarousable. Wait until they are at RASS -3 or lighter."
+    }
+  ],
+  "/centor-score": [
+    {
+      "question": "What is the Modified Centor Score?",
+      "answer": "The Modified Centor Score (McIsaac score) estimates the probability that pharyngitis is caused by Group A Streptococcus (GAS). It helps clinicians decide who needs throat swabbing or antibiotics."
+    },
+    {
+      "question": "Who should not be scored using this tool?",
+      "answer": "Do not use this score for children under 3 years old, as GAS pharyngitis is rare in this age group and acute rheumatic fever is extremely uncommon."
+    },
+    {
+      "question": "Why is absence of cough a point?",
+      "answer": "Viral pharyngitis typically presents with prominent respiratory symptoms like cough, rhinorrhea, or hoarseness. The absence of these symptoms increases the likelihood of a bacterial etiology."
+    },
+    {
+      "question": "Should I prescribe antibiotics purely based on a score of 4?",
+      "answer": "Guidelines vary. IDSA guidelines recommend laboratory confirmation (rapid test or culture) for all adults suspected of having GAS, regardless of score, rather than purely empiric treatment."
+    }
+  ],
+  "/cha2ds2-vasc-score": [
+    {
+      "question": "What does CHA2DS2-VASc stand for?",
+      "answer": "CHA2DS2-VASc is an acronym representing Congestive heart failure, Hypertension, Age \u2265 75 (doubled), Diabetes, prior Stroke/TIA (doubled), Vascular disease, Age 65-74, and Sex category (female)."
+    },
+    {
+      "question": "Does a score of 1 in a female patient require blood thinners?",
+      "answer": "No. Female sex alone gives 1 point but does not increase stroke risk independently in young women. Oral anticoagulation is typically initiated only when additional clinical risk factors are present."
+    },
+    {
+      "question": "Should bleeding risk be assessed alongside this score?",
+      "answer": "Yes. Clinicians routinely calculate the HAS-BLED score alongside CHA2DS2-VASc to evaluate modifiable bleeding risks, though high bleeding risk rarely contraindicates anticoagulation when stroke risk is severe."
+    }
+  ],
+  "/child-pugh-score": [
+    {
+      "question": "What is the Child-Pugh score?",
+      "answer": "The Child-Pugh score is a clinical staging system used to assess the prognosis of chronic liver disease, particularly cirrhosis. It evaluates total bilirubin, serum albumin, INR, ascites, and hepatic encephalopathy."
+    },
+    {
+      "question": "What are the Child-Pugh classification classes?",
+      "answer": "Patients are categorized into three classes: Class A (Score 5-6, 100% 1-year survival, 85% 2-year survival), Class B (Score 7-9, 81% 1-year survival, 57% 2-year survival), and Class C (Score 10-15, 45% 1-year survival, 35% 2-year survival). These survival rates guide eligibility for liver transplantation and surgical risk assessment."
+    },
+    {
+      "question": "How does the Child-Pugh score differ from the MELD score?",
+      "answer": "The Child-Pugh score includes subjective parameters (ascites and encephalopathy) alongside labs. The MELD score is purely objective and laboratory-based (creatinine, bilirubin, INR, sodium), making it preferred for transplant allocation."
+    },
+    {
+      "question": "What is the maximum Child-Pugh score?",
+      "answer": "The score ranges from a minimum of 5 points to a maximum of 15 points. Higher scores indicate more severe hepatic impairment and poorer prognosis."
+    }
+  ],
+  "/corrected-calcium": [
+    {
+      "question": "Should I use this if the patient has renal failure?",
+      "answer": "The corrected calcium formula is notoriously inaccurate in end-stage renal disease (ESRD) and critically ill patients. Direct measurement of ionized calcium is preferred in these populations."
+    },
+    {
+      "question": "What if the albumin is higher than 4.0?",
+      "answer": "The formula still works mathematically (it will lower the corrected calcium), but clinically, significant hyperalbuminemia is rare and usually due to severe dehydration."
+    }
+  ],
+  "/curb65": [
+    {
+      "question": "What if BUN or Urea is not available yet?",
+      "answer": "You can use the CRB-65 score, which omits the Urea component. CRB-65 of 0 is low risk, while 1-4 points require careful assessment, as a score of 1 might be driven solely by age."
+    },
+    {
+      "question": "What is AMTS?",
+      "answer": "The Abbreviated Mental Test Score (AMTS) is a 10-point test used to rapidly assess confusion or cognitive impairment."
+    }
+  ],
+  "/curb65-score": [
+    {
+      "question": "What does CURB-65 stand for?",
+      "answer": "CURB-65 is an acronym: C = Confusion (new disorientation), U = Urea >7 mmol/L (BUN >19 mg/dL), R = Respiratory rate \u226530/min, B = Blood pressure (Systolic <90 or Diastolic \u226460 mmHg), 65 = Age \u226565 years. Each criterion scores 1 point."
+    },
+    {
+      "question": "What CURB-65 score requires hospitalization?",
+      "answer": "Score 0-1: Low risk \u2014 outpatient management appropriate. Score 2: Intermediate risk \u2014 consider short inpatient admission. Score 3-5: High risk \u2014 hospitalize, consider ICU admission for score \u22654-5."
+    },
+    {
+      "question": "What is the source study for CURB-65?",
+      "answer": "CURB-65 was derived by Lim et al. (2003) from British Thoracic Society CAP guideline data, published in Thorax (PMID: 12668799). It has been validated across multiple international CAP cohorts."
+    },
+    {
+      "question": "What is the difference between CURB-65 and PSI?",
+      "answer": "PSI (PORT score) uses 20 variables for finer risk stratification. CURB-65 uses only 5 criteria and is faster at the bedside. CURB-65 is preferred for rapid triage in emergency settings."
+    }
+  ],
+  "/digoxin-dosing": [
+    {
+      "question": "How do I switch from IV to PO?",
+      "answer": "Bioavailability of oral tablets is about 70-80% compared to IV. When switching from IV to PO, the dose is generally increased by 20-25%."
+    },
+    {
+      "question": "What if the patient is obese?",
+      "answer": "Digoxin does not distribute into adipose tissue. Ideal Body Weight (IBW) should be used regardless of how much the actual weight exceeds IBW."
+    }
+  ],
+  "/fena-calculator": [
+    {
+      "question": "Can I use FeNa if the patient is on loop diuretics (e.g., Furosemide)?",
+      "answer": "Loop diuretics force the kidneys to excrete sodium, which will artificially raise the FeNa > 1% even if the patient is severely hypovolemic (prerenal). Consider using FeUrea instead."
+    },
+    {
+      "question": "Does this work for Chronic Kidney Disease (CKD)?",
+      "answer": "FeNa is primarily validated for oliguric Acute Kidney Injury (AKI). In CKD, the fractional excretion of sodium increases as nephron mass decreases to maintain sodium balance, so a high FeNa is expected and non-diagnostic for ATN."
+    }
+  ],
+  "/flacc-score": [
+    {
+      "question": "Who is the FLACC scale designed for?",
+      "answer": "It is designed for children aged 2 months to 7 years, or older patients who are cognitively impaired or unable to communicate (e.g., intubated patients)."
+    },
+    {
+      "question": "How long should I observe the patient?",
+      "answer": "Observe the patient for at least 1-5 minutes to properly score each category based on their behavior."
+    }
+  ],
+  "/fragility-index": [
+    {
+      "question": "What counts as a",
+      "answer": "There is no universal cutoff, but an FI < 10 is often flagged as a concern. More importantly, if the FI is less than the number of patients lost to follow-up, the result is considered especially fragile."
+    },
+    {
+      "question": "Does this only work for significant results?",
+      "answer": "Technically yes \u2014 the FI measures how many outcome changes are needed to cross the significance threshold. If the trial result is already non-significant, the analogous measure is the Reverse Fragility Index."
+    }
+  ],
+  "/gcs-calculator": [
+    {
+      "question": "What is the Glasgow Coma Scale (GCS)?",
+      "answer": "The Glasgow Coma Scale (GCS) is a standardized neurological assessment tool that measures level of consciousness by scoring three components: Eye Opening (E, 1-4), Verbal Response (V, 1-5), and Motor Response (M, 1-6). Total score ranges from 3 to 15."
+    },
+    {
+      "question": "What GCS score indicates severe brain injury?",
+      "answer": "A GCS score of 8 or below indicates severe brain injury. A score of 9-12 indicates moderate injury, and 13-15 indicates mild injury. Patients with GCS \u2264 8 are generally considered for intubation to protect the airway."
+    },
+    {
+      "question": "Who developed the Glasgow Coma Scale?",
+      "answer": "The GCS was developed by Teasdale and Jennett in 1974 at the University of Glasgow, published in The Lancet. It has since become the global standard for consciousness assessment after traumatic brain injury."
+    },
+    {
+      "question": "Can GCS be used in children?",
+      "answer": "The standard GCS is validated for adults and older children. For infants and young children, a modified Pediatric GCS is preferred, which adapts verbal and motor components to age-appropriate responses."
+    }
+  ],
+  "/insulin-sliding-scale": [
+    {
+      "question": "Is sliding scale insulin recommended as monotherapy?",
+      "answer": "No, sliding scale alone is strongly discouraged for long-term use. It should be used as correction insulin alongside basal and nutritional insulin."
+    },
+    {
+      "question": "When should I notify the physician?",
+      "answer": "Generally, you should notify the physician if blood glucose is <70 mg/dL or persistently >350-400 mg/dL, according to hospital policy."
+    }
+  ],
+  "/map-calculator": [
+    {
+      "question": "What is Mean Arterial Pressure (MAP)?",
+      "answer": "Mean Arterial Pressure (MAP) is the average arterial pressure throughout one cardiac cycle. It reflects the average perfusion pressure driving blood to organs and is calculated as: MAP = DBP + 1/3 \u00d7 (SBP \u2212 DBP)."
+    },
+    {
+      "question": "What MAP value indicates adequate organ perfusion?",
+      "answer": "A MAP of at least 65 mmHg is the widely accepted minimum threshold for adequate perfusion of vital organs, particularly in septic shock. Resuscitation targeting \u226565 mmHg significantly reduces acute kidney injury (AKI) risks, as validated by the Surviving Sepsis Campaign (PMID: 34657111)."
+    },
+    {
+      "question": "When should I use the MAP calculator?",
+      "answer": "Use the MAP calculator in ICU, ER, or any acute care setting \u2014 septic shock resuscitation, vasopressor titration, hypertensive emergencies, and post-operative hemodynamic monitoring."
+    },
+    {
+      "question": "What is the difference between MAP and systolic blood pressure?",
+      "answer": "Systolic BP is the peak pressure during ventricular contraction. MAP accounts for the entire cardiac cycle and better reflects tissue perfusion because diastole occupies approximately 2/3 of the cycle."
+    }
+  ],
+  "/meld-na-score": [
+    {
+      "question": "Why is Sodium included?",
+      "answer": "Hyponatremia is a strong independent predictor of mortality in patients with cirrhosis, largely reflecting severe portal hypertension and splanchnic vasodilation."
+    },
+    {
+      "question": "What if the patient",
+      "answer": "The UNOS formula caps the sodium value at a maximum of 137. So any value >137 is treated as 137 in the math."
+    }
+  ],
+  "/meld-score": [
+    {
+      "question": "What is the MELD score and why is it used?",
+      "answer": "The MELD Score (Model for End-Stage Liver Disease) is a validated prognostic score predicting 3-month mortality in liver cirrhosis. A MELD score \u226515 is the standard threshold for liver transplant listing. For scores \u226540, 3-month mortality reaches 71.3%; for 30-39, it is 52.6%; for 20-29, 19.6%; and for 10-19, 6.0%."
+    },
+    {
+      "question": "How does MELD-Na differ from the original MELD score?",
+      "answer": "MELD-Na incorporates serum sodium concentration (bounded between 125 and 137 mEq/L) into the original equation. Because dilutional hyponatremia reflects severe portal hypertension and free-water retention, MELD-Na significantly improves mortality prediction over the standard MELD score."
+    },
+    {
+      "question": "What MELD score qualifies a patient for liver transplant listing?",
+      "answer": "A MELD score greater than or equal to 15 is the standard clinical threshold where the 1-year mortality benefit of orthotopic liver transplantation outweighs perioperative risks. UNOS allocation policies prioritize patients with the highest MELD-Na scores on regional waiting lists."
+    },
+    {
+      "question": "How does renal function impact the MELD score calculation?",
+      "answer": "Serum creatinine has a logarithmic impact in the MELD equation. If a patient undergoes hemodialysis or continuous renal replacement therapy at least twice within the prior 7 days, the serum creatinine variable is automatically fixed at the upper bound of 4.0 mg/dL."
+    }
+  ],
+  "/mews-score": [
+    {
+      "question": "When should MEWS be calculated?",
+      "answer": "MEWS should be calculated routinely along with vital signs in medical-surgical units to spot deteriorating patients early."
+    },
+    {
+      "question": "What is AVPU?",
+      "answer": "AVPU is a simplified scale to assess consciousness: Alert, Voice, Pain, Unresponsive."
+    }
+  ],
+  "/morse-fall-scale": [
+    {
+      "question": "What is the Morse Fall Scale?",
+      "answer": "The Morse Fall Scale is a systematic tool used to identify the fall risk status of hospitalized patients based on 6 easily identifiable variables."
+    },
+    {
+      "question": "What is considered a high fall risk?",
+      "answer": "A score of 45 or higher designates a patient as"
+    }
+  ],
+  "/news2-score": [
+    {
+      "question": "When to use SpO2 Scale 2?",
+      "answer": "Use Scale 2 for patients with confirmed hypercapnic respiratory failure (usually due to COPD) who have a prescribed oxygen saturation target of 88-92%."
+    },
+    {
+      "question": "What does CVPU mean?",
+      "answer": "CVPU stands for Confusion, Voice, Pain, Unresponsive. Any new confusion or reduced consciousness scores a 3."
+    }
+  ],
+  "/nnt-calculator": [
+    {
+      "question": "Why is NNT better than Relative Risk Reduction (RRR)?",
+      "answer": "RRR can be misleading. A drug might reduce the risk of a rare disease from 2 in 1,000,000 to 1 in 1,000,000. That"
+    },
+    {
+      "question": "What is a",
+      "answer": "It depends on the context. For a cheap, safe drug (like aspirin for secondary prevention), an NNT of 50 is acceptable. For an expensive, risky procedure, you"
+    }
+  ],
+  "/nutrition-must": [
+    {
+      "question": "What is MUST?",
+      "answer": "The Malnutrition Universal Screening Tool (MUST) is a validated tool to identify adults who are malnourished or at risk of malnutrition."
+    },
+    {
+      "question": "Who should be screened with MUST?",
+      "answer": "It is recommended for all adults upon admission to hospitals, care homes, and in the community."
+    },
+    {
+      "question": "What happens if a patient is high risk?",
+      "answer": "A score of 2 or more indicates high risk. A dietitian should be involved, and a formal nutritional care plan must be initiated to improve outcomes."
+    }
+  ],
+  "/nutrition-nrs2002": [
+    {
+      "question": "What is NRS-2002?",
+      "answer": "The Nutritional Risk Screening 2002 is a tool designed by ESPEN to detect undernutrition and the risk of undernutrition in hospitalized patients."
+    },
+    {
+      "question": "What does the score mean?",
+      "answer": "A score of 3 or higher indicates the patient is at nutritional risk and requires a nutritional care plan."
+    },
+    {
+      "question": "Why is age included?",
+      "answer": "Elderly patients (\u2265 70 years) have a higher inherent risk of malnutrition and worse clinical outcomes, so an extra point is added."
+    }
+  ],
+  "/nutrition-tdee": [
+    {
+      "question": "What is BMR?",
+      "answer": "Basal Metabolic Rate is the amount of energy expended while at rest in a neutrally temperate environment."
+    },
+    {
+      "question": "Why use Mifflin-St Jeor?",
+      "answer": "The Mifflin-St Jeor equation is recommended by the Academy of Nutrition and Dietetics as the most accurate predictive equation for resting metabolic rate in healthy and obese adults."
+    },
+    {
+      "question": "How to apply stress factors?",
+      "answer": "Stress factors adjust the BMR to account for the increased metabolic demands of illness, surgery, or trauma. A factor of 1.2 is used for resting patients, while severe burns can increase metabolic demand to 2.0x BMR."
+    }
+  ],
+  "/or-to-rr-converter": [
+    {
+      "question": "When is OR approximately equal to RR?",
+      "answer": "When the event rate in both groups is low (< 10%), the denominator of the Zhang formula approaches 1, and OR \u2248 RR. This is the"
+    },
+    {
+      "question": "Can I always convert OR to RR?",
+      "answer": "Not always. This conversion is only valid for cohort-type data where you have a baseline event rate. In a pure case-control study, you do not have an incidence rate; you only have an OR."
+    }
+  ],
+  "/parkland-formula": [
+    {
+      "question": "What is the Parkland Formula used for?",
+      "answer": "The Parkland Formula is used to calculate the fluid resuscitation requirements for burn patients in the first 24 hours after injury."
+    },
+    {
+      "question": "How is TBSA calculated for burns?",
+      "answer": "Total Body Surface Area (TBSA) is typically estimated using the Rule of Nines or the Lund and Browder chart. Only include 2nd (partial) and 3rd (full) degree burns in the calculation."
+    }
+  ],
+  "/phenytoin-loading": [
+    {
+      "question": "Should I use actual or ideal body weight?",
+      "answer": "For non-obese patients, actual body weight is used. In obesity, a modified weight might be considered, as Vd is larger due to lipid solubility, but usually, an adjusted weight or actual weight is used depending on institutional protocol."
+    },
+    {
+      "question": "What is",
+      "answer": "PE stands for Phenytoin Equivalents. Fosphenytoin is ordered and dosed in terms of mg PE. 1 mg PE is equivalent to 1 mg of phenytoin sodium."
+    }
+  ],
+  "/protamine-reversal": [
+    {
+      "question": "Can I give more than 50 mg?",
+      "answer": "Generally no. Doses > 50 mg in a single injection increase the risk of severe cardiovascular collapse and can actually worsen bleeding."
+    },
+    {
+      "question": "Does protamine reverse apixaban or rivaroxaban?",
+      "answer": "No. Protamine only works on heparin and partially on LMWH. For DOACs, agents like Andexanet alfa or PCC are used."
+    }
+  ],
+  "/qsofa-score": [
+    {
+      "question": "Does a score of 0 or 1 mean the patient does not have sepsis?",
+      "answer": "No. A low score means they are not currently at high risk for a poor outcome based on this tool, but they could still have an infection requiring prompt treatment."
+    },
+    {
+      "question": "How is",
+      "answer": "Any Glasgow Coma Scale (GCS) score less than 15. This includes any confusion, lethargy, or unresponsiveness."
+    }
+  ],
+  "/rass-score": [
+    {
+      "question": "Why is RASS important?",
+      "answer": "It helps clinicians titrate sedation to a specific target, avoiding oversedation or undersedation, which are both associated with negative outcomes."
+    },
+    {
+      "question": "How often should RASS be assessed?",
+      "answer": "Typically every 2 to 4 hours in the ICU, or whenever there is a change in the patient"
+    }
+  ],
+  "/rcri-score": [
+    {
+      "question": "Does prior CABG or PCI count as ischemic heart disease?",
+      "answer": "Yes, any history of myocardial infarction, prior positive stress test, prior revascularization, or current angina counts."
+    },
+    {
+      "question": "What if the patient uses oral antidiabetics, not insulin?",
+      "answer": "Only treatment with insulin before surgery counts as a risk factor in this specific score."
+    }
+  ],
+  "/sample-size-calculator": [
+    {
+      "question": "Why does a small effect size need a huge sample?",
+      "answer": "If you"
+    },
+    {
+      "question": "What if my study has unequal group sizes?",
+      "answer": "Use the allocation ratio (k = n2/n1) to account for this. An equal ratio (k=1) is most efficient. Unequal allocation increases the total sample size needed."
+    }
+  ],
+  "/sirs-criteria": [
+    {
+      "question": "Is SIRS still used for Sepsis?",
+      "answer": "The 2016 Sepsis-3 guidelines removed SIRS from the formal definition of sepsis, favoring SOFA score. However, many institutions still use SIRS as an early warning screening tool because it is very sensitive."
+    },
+    {
+      "question": "Can you have SIRS without an infection?",
+      "answer": "Yes. Non-infectious causes include burns, trauma, pancreatitis, ischemia, hemorrhage, and severe immune responses."
+    }
+  ],
+  "/sofa-score": [
+    {
+      "question": "What is the SOFA score?",
+      "answer": "The Sequential Organ Failure Assessment (SOFA) score is a scoring system used in ICU settings to track a patient"
+    },
+    {
+      "question": "How does the SOFA score define organ dysfunction severity?",
+      "answer": "Each of the six organ systems is scored from 0 (normal) to 4 (severe dysfunction), yielding a total score between 0 and 24. A higher score is associated with higher mortality risk."
+    },
+    {
+      "question": "What is the clinical significance of a change in SOFA score?",
+      "answer": "An increase in SOFA score of \u22652 points from baseline indicates acute organ dysfunction, representing a positive screen for sepsis under Sepsis-3 criteria and indicating a 10% or greater hospital mortality risk."
+    },
+    {
+      "question": "Can SOFA score be used to diagnose sepsis?",
+      "answer": "Yes. Under Sepsis-3 definitions (2016), sepsis is defined as life-threatening organ dysfunction caused by a dysregulated host response to infection. Organ dysfunction can be identified as an acute change in total SOFA score \u22652 points consequent to the infection."
+    }
+  ],
+  "/tpn-macronutrients": [
+    {
+      "question": "Why do lipids provide 10 kcal/g instead of 9?",
+      "answer": "IV lipid emulsions contain glycerol to make them isotonic, which adds extra calories, bringing the total to approximately 10 kcal per gram of fat."
+    },
+    {
+      "question": "What is the maximum dextrose infusion rate?",
+      "answer": "Typically 4-5 mg/kg/min to prevent hyperglycemia and hepatic steatosis."
+    }
+  ],
+  "/warfarin-dosing": [
+    {
+      "question": "Should I adjust the dose for a single INR of 1.9 or 3.1?",
+      "answer": "Often, minor out-of-range values (e.g., 1.9 or 3.1 on a 2.0-3.0 goal) can be monitored without a dose change if the patient has been previously stable. Clinical judgment is required."
+    },
+    {
+      "question": "How is the new weekly dose calculated?",
+      "answer": "The calculator suggests a conservative midpoint adjustment (e.g., if the guideline says 5-10% decrease, it provides the target dose for both a 5% and 10% decrease to guide your prescription)."
+    }
+  ],
+  "/wells-pe-score": [
+    {
+      "question": "What is the difference between Wells Score for DVT and PE?",
+      "answer": "The Wells Score for DVT is used when you suspect a clot in the leg (Deep Vein Thrombosis). The Wells Score for PE is a completely different set of criteria used when you suspect a clot in the lungs (Pulmonary Embolism). Both use the Wells name but evaluate different clinical signs."
+    },
+    {
+      "question": "Can the Wells Score be used in pregnant patients?",
+      "answer": "No. The standard Wells Criteria are not validated for pregnant or postpartum patients. Specialized algorithms such as the YEARS algorithm modified for pregnancy should be utilized."
+    },
+    {
+      "question": "When should I use the PERC Rule instead of Wells?",
+      "answer": "The PERC Rule should ONLY be applied to patients who have already been deemed to have a LOW clinical pre-test probability for PE (e.g., clinician gestalt < 15%, or a Wells PE Score < 2). If PERC is negative in these patients, no further testing is needed."
+    }
+  ],
+  "/wells-score": [
+    {
+      "question": "Can Wells Score predict DVT?",
+      "answer": "Yes, the Wells Score for DVT is a validated clinical prediction rule that calculates the pretest probability of deep vein thrombosis based on 10 clinical history and physical exam criteria."
+    },
+    {
+      "question": "What is the difference between Wells Score for DVT and PE?",
+      "answer": "The Wells Score for DVT is used when you suspect a clot in the leg (Deep Vein Thrombosis). The Wells Score for PE is a completely different set of criteria used when you suspect a clot in the lungs (Pulmonary Embolism). Both use the Wells name but evaluate different clinical signs."
+    },
+    {
+      "question": "Can the Wells Score be used in pregnant patients?",
+      "answer": "No. The standard Wells Criteria are not validated for pregnant or postpartum patients. Specialized algorithms such as the LEFt clinical prediction rule should be utilized during pregnancy."
+    }
+  ],
+  "/wong-baker-faces": [
+    {
+      "question": "Who can use the FACES scale?",
+      "answer": "It is primarily used for children 3 years and older, but can also be used for adults, especially those who may not speak the local language or have cognitive impairments."
+    },
+    {
+      "question": "Can a nurse choose the face for the patient?",
+      "answer": "No, this is a self-assessment tool. The patient must choose the face that represents their pain."
+    }
+  ]
+}

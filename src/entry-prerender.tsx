@@ -146,6 +146,7 @@ export async function prerender(data: { url: string }) {
     { type: 'meta', props: { name: 'description', content: head.meta.desc } },
     { type: 'meta', props: { name: 'keywords', content: head.meta.keywords } },
     { type: 'link', props: { rel: 'canonical', href: head.url } },
+    { type: 'link', props: { rel: 'alternate', type: 'text/markdown', href: '/llms.txt' } },
 
     // Open Graph
     { type: 'meta', props: { property: 'og:title', content: head.title } },

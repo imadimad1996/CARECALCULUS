@@ -23,7 +23,9 @@ const OG_IMAGE = 'https://carecalculus.com/og-image.png';
 
 import seoMaps from '../data/seoMaps.json';
 import medicalSchemasRaw from '../data/medicalSchemas.json';
+import faqsDbRaw from '../data/faqs.json';
 
+const faqsDb: Record<string, any[]> = faqsDbRaw;
 const medicalSchemaDb: Record<string, any> = medicalSchemasRaw;
 export const nameEnMap: Record<string, string> = seoMaps.nameEnMap;
 const nameFrMap: Record<string, string> = seoMaps.nameFrMap;
@@ -520,7 +522,21 @@ const howToSchemaDb: Record<string, { name: string; description: string; steps: 
 };
 
 export function getFaqSchema(path: string) {
-  return null;
+  const faqs = faqsDb[path];
+  if (!faqs || faqs.length === 0) return null;
+  
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f: any) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: f.answer
+      }
+    }))
+  };
 }
 
 export function getHowToSchema(path: string) {
@@ -612,9 +628,9 @@ export function buildJsonLd(logicalPath: string, lang: LangCode) {
   ];
   const medical = getMedicalSchema(logicalPath);
   if (medical) {
-    // Inject exact quantitative cutoffs and clinical citation density if not present
+    // Inject clinical citation density if not present
     if (!medical.citation) {
-      medical.citation = 'Peer-reviewed clinical evidence and international practice guidelines (Surviving Sepsis Campaign, BTS, AHA/ACC, AASLD).';
+      medical.citation = 'Peer-reviewed clinical evidence, international practice guidelines, and established medical literature.';
     }
     list.push(medical);
   }
