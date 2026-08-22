@@ -69,67 +69,55 @@ export default function AiAnswerPanel({ logicalPath, lang }: AiAnswerPanelProps)
         </div>
       </div>
 
-      <div className="grid gap-6 p-6 sm:p-8 lg:grid-cols-[1.2fr_0.8fr]">
-        <div className="space-y-6">
-          <div className="rounded-2xl border border-cyan-100 dark:border-teal-900/50 bg-cyan-50/50 dark:bg-teal-950/30 p-5">
-            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.24em] text-cyan-700 dark:text-cyan-500">
-              <BookOpen className="h-4 w-4" />
-              {text.direct}
-            </div>
-            <p className="mt-3 text-sm leading-7 text-slate-700 dark:text-slate-300">
-              {meta.desc}
-            </p>
-          </div>
-
+      {(steps.length > 0 || faqs.length > 0) && (
+        <div className={`grid gap-6 p-6 sm:p-8 ${steps.length > 0 && faqs.length > 0 ? 'lg:grid-cols-[1.2fr_0.8fr]' : 'lg:grid-cols-1'}`}>
           {steps.length > 0 && (
-            <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 p-5">
-              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.24em] text-slate-600 dark:text-slate-400">
-                <ListChecks className="h-4 w-4" />
-                {text.steps}
-              </div>
-              <ol className="mt-4 space-y-3">
-                {steps.slice(0, 4).map((step: any, idx: number) => (
-                  <li key={`${step.name}-${idx}`} className="flex gap-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-3">
-                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-900 dark:bg-slate-700 text-[11px] font-bold text-white">
-                      {idx + 1}
-                    </span>
-                    <div className="min-w-0">
-                      <div className="text-sm font-semibold text-slate-900 dark:text-slate-100">{step.name}</div>
-                      <p className="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-400">{step.text}</p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          )}
-        </div>
-
-        <div className="space-y-3">
-          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.24em] text-slate-600 dark:text-slate-400">
-            <BookOpen className="h-4 w-4" />
-            {text.faq}
-          </div>
-          {faqs.length > 0 ? (
-            faqs.slice(0, 4).map((faq, idx) => (
-              <details key={`${faq.question}-${idx}`} className="group rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-[0_1px_0_rgba(15,23,42,0.03)] dark:shadow-none">
-                <summary className="cursor-pointer list-none px-4 py-4 text-sm font-semibold text-slate-900 dark:text-slate-100 transition-colors hover:bg-slate-50 dark:hover:bg-slate-700/50 rounded-t-2xl group-open:rounded-b-none rounded-b-2xl">
-                  <span className="inline-flex items-start gap-2">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-cyan-500" />
-                    <span>{faq.question}</span>
-                  </span>
-                </summary>
-                <div className="px-4 pb-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
-                  {faq.answer}
+            <div className="space-y-6">
+              <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 p-5">
+                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.24em] text-slate-600 dark:text-slate-400">
+                  <ListChecks className="h-4 w-4" />
+                  {text.steps}
                 </div>
-              </details>
-            ))
-          ) : (
-            <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
-              {meta.desc}
+                <ol className="mt-4 space-y-3">
+                  {steps.slice(0, 4).map((step: any, idx: number) => (
+                    <li key={`${step.name}-${idx}`} className="flex gap-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-3">
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-900 dark:bg-slate-700 text-[11px] font-bold text-white">
+                        {idx + 1}
+                      </span>
+                      <div className="min-w-0">
+                        <div className="text-sm font-semibold text-slate-900 dark:text-slate-100">{step.name}</div>
+                        <p className="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-400">{step.text}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </div>
+          )}
+
+          {faqs.length > 0 && (
+            <div className="space-y-3">
+              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.24em] text-slate-600 dark:text-slate-400">
+                <BookOpen className="h-4 w-4" />
+                {text.faq}
+              </div>
+              {faqs.slice(0, 4).map((faq, idx) => (
+                <details key={`${faq.question}-${idx}`} className="group rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-[0_1px_0_rgba(15,23,42,0.03)] dark:shadow-none">
+                  <summary className="cursor-pointer list-none px-4 py-4 text-sm font-semibold text-slate-900 dark:text-slate-100 transition-colors hover:bg-slate-50 dark:hover:bg-slate-700/50 rounded-t-2xl group-open:rounded-b-none rounded-b-2xl">
+                    <span className="inline-flex items-start gap-2">
+                      <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-cyan-500" />
+                      <span>{faq.question}</span>
+                    </span>
+                  </summary>
+                  <div className="px-4 pb-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
+                    {faq.answer}
+                  </div>
+                </details>
+              ))}
             </div>
           )}
         </div>
-      </div>
+      )}
     </section>
   );
 }
