@@ -38,6 +38,7 @@ import { LoginModal } from './components/auth/LoginModal';
 import { ThemeProvider, useTheme } from './components/ThemeProvider';
 import { GlobalErrorBoundary } from './components/ErrorBoundary';
 import { useOnlineStatus } from './hooks/useOnlineStatus';
+import ScrollManager from './components/ScrollManager';
 
 
 
@@ -736,6 +737,7 @@ function AppLayout() {
         {JSON.stringify(appHead.jsonLd)}
       </script>
     </Helmet>
+    <ScrollManager />
     <TrackingScripts />
     <div className="min-h-screen bg-[#fafafa] dark:bg-slate-950 text-[#111] dark:text-slate-100 transition-colors duration-300 flex flex-col md:flex-row w-full overflow-x-clip font-sans" dir="ltr">
       <CommandPalette />
