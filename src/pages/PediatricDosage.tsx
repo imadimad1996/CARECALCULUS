@@ -107,7 +107,7 @@ export default function PediatricDosage({ lang }: { lang: LangCode }) {
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">{t.weight}</label>
             <input
-              type="number"
+              type="number" inputMode="decimal"
               min="0.5"
               max="120"
               step="0.5"
@@ -119,7 +119,7 @@ export default function PediatricDosage({ lang }: { lang: LangCode }) {
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">{t.height}</label>
             <input
-              type="number"
+              type="number" inputMode="decimal"
               min="20"
               max="220"
               step="1"
@@ -131,7 +131,7 @@ export default function PediatricDosage({ lang }: { lang: LangCode }) {
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">{t.dosePerKg}</label>
             <input
-              type="number"
+              type="number" inputMode="decimal"
               min="0.1"
               max="500"
               step="0.5"
@@ -159,7 +159,7 @@ export default function PediatricDosage({ lang }: { lang: LangCode }) {
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">{t.concentration}</label>
             <input
-              type="number"
+              type="number" inputMode="decimal"
               min="0"
               max="500"
               step="1"
@@ -201,3 +201,4 @@ export default function PediatricDosage({ lang }: { lang: LangCode }) {
     </div>
   );
 }
+

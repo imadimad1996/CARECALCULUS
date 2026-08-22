@@ -187,15 +187,19 @@ export default function ForHospitals({ lang }: { lang: LangCode }) {
             <div>
               <div className="bg-white/50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 mb-8">
                 <h3 className="text-sm font-bold text-slate-800 dark:text-slate-200 uppercase tracking-widest mb-3 flex items-center gap-2">
-                  <Activity className="w-4 h-4 text-emerald-500" />
-                  {lang === 'fr' ? 'Rejoignez le Programme Pilote' : 'Join the Pilot Program'}
+                  <Activity className="w-4 h-4 text-blue-500" />
+                  {lang === 'fr' ? 'Licence Établissement (Tarif B2B)' : 'Enterprise License (B2B Pricing)'}
                 </h3>
+                <div className="mb-4 flex items-end gap-1">
+                  <span className="text-4xl font-black tracking-tighter text-blue-600 dark:text-blue-400">$4,999</span>
+                  <span className="text-sm text-slate-500 font-medium pb-1">/ {lang === 'fr' ? 'an par hôpital' : 'year per hospital'}</span>
+                </div>
                 <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-                  {lang === 'fr' ? 'Devenez l\'un de nos hôpitaux fondateurs. Co-concevez des fonctionnalités et obtenez une tarification à vie pour l\'ensemble de votre système de santé.' : 'Become one of our founding hospital partners. Co-design features and secure lifetime legacy pricing for your entire health system.'}
+                  {lang === 'fr' ? 'Inclut des accès PRO illimités pour tous vos cliniciens, l\'intégration SMART on FHIR (Epic/Cerner) et un support dédié 24/7.' : 'Includes unlimited PRO access for all your clinicians, SMART on FHIR integration (Epic/Cerner), and 24/7 dedicated support.'}
                 </p>
-                <div className="flex items-center gap-2 text-xs font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/20 px-3 py-1.5 rounded-full inline-flex">
+                <div className="flex items-center gap-2 text-xs font-bold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 px-3 py-1.5 rounded-full inline-flex">
                   <CheckCircle2 className="w-3.5 h-3.5" />
-                  {lang === 'fr' ? '3 places restantes pour 2026' : '3 spots remaining for 2026'}
+                  {lang === 'fr' ? 'Tarif de lancement 2026' : '2026 Early Adopter Pricing'}
                 </div>
               </div>
 

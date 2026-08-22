@@ -1,1 +1,4 @@
+# AdSense configuration
+# Note: Ad revenue is an untested/legacy channel. 
+# Primary monetization focus is PRO (B2C) and Enterprise (B2B) licensing.
 google.com, pub-7102695194621911, DIRECT, f08c47fec0942fa0

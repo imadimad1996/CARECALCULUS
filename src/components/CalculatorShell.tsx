@@ -15,6 +15,7 @@ import { citationsDb } from '../data/citationsDb';
 import PremiumGate from './PremiumGate';
 import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
+import { useAuth } from '../contexts/AuthContext';
 
 const nameEnMap: Record<string, string> = seoMaps.nameEnMap;
 const nameFrMap: Record<string, string> = seoMaps.nameFrMap;
@@ -93,18 +94,19 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
 
   const [calcData, setCalcData] = useState<any>(null);
   const [copiedType, setCopiedType] = useState<string | null>(null);
+  const { user } = useAuth();
   const [isPro, setIsPro] = useState(false);
   const [showInlineGate, setShowInlineGate] = useState<'sbar' | 'dotphrase' | null>(null);
 
   useEffect(() => {
-    setIsPro(localStorage.getItem('carecalculus_pro_status') === 'active');
+    setIsPro(localStorage.getItem('carecalculus_pro_status') === 'active' && !!user);
     
     const handleData = (e: any) => {
       setCalcData(e.detail);
     };
     window.addEventListener('carecalculus:calc-data', handleData);
     return () => window.removeEventListener('carecalculus:calc-data', handleData);
-  }, []);
+  }, [user]);
 
   // Find related conditions
   const relatedConditions = useMemo(() => {
@@ -179,8 +181,13 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
           initial={{ opacity: 0, y: 10 }} 
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, ease: 'easeOut' }}
+          className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800 rounded-3xl sm:rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] sm:p-8 p-4 relative overflow-hidden"
         >
-          {children}
+          {/* Ambient lighting accent */}
+          <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-teal-50/30 to-transparent dark:from-teal-900/10 pointer-events-none rounded-3xl sm:rounded-[2.5rem]" />
+          <div className="relative z-10">
+            {children}
+          </div>
         </motion.div>
       </div>
 

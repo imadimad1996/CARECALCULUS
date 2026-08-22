@@ -364,7 +364,7 @@ export const StudyTracker: React.FC<StudyTrackerProps> = ({ lang = 'en' }) => {
                     {t.durationLabel}
                   </label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     min="1"
                     required
                     value={duration}
@@ -427,3 +427,4 @@ export const StudyTracker: React.FC<StudyTrackerProps> = ({ lang = 'en' }) => {
 };
 
 export default StudyTracker;
+

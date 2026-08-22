@@ -251,12 +251,12 @@ export default function FragilityIndex({ lang }: { lang: LangCode }) {
                 <div className="col-span-2 font-semibold text-gray-800 border-b border-gray-200 pb-2">Control Group</div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-gray-700">{currentText.cTotal}</label>
-                  <input type="number" value={cTotal} onChange={e => setCTotal(e.target.value)} placeholder="e.g. 100"
+                  <input type="number" inputMode="decimal" value={cTotal} onChange={e => setCTotal(e.target.value)} placeholder="e.g. 100"
                     className="block w-full rounded-xl border-gray-200 bg-white py-3 px-4 text-gray-900 placeholder:text-gray-400 focus:border-red-500 focus:ring-red-500/20 sm:text-sm font-medium shadow-sm" dir="ltr" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-gray-700">{currentText.cEvents}</label>
-                  <input type="number" value={cEvents} onChange={e => setCEvents(e.target.value)} placeholder="e.g. 20"
+                  <input type="number" inputMode="decimal" value={cEvents} onChange={e => setCEvents(e.target.value)} placeholder="e.g. 20"
                     className="block w-full rounded-xl border-gray-200 bg-white py-3 px-4 text-gray-900 placeholder:text-gray-400 focus:border-red-500 focus:ring-red-500/20 sm:text-sm font-medium shadow-sm" dir="ltr" />
                 </div>
               </div>
@@ -264,12 +264,12 @@ export default function FragilityIndex({ lang }: { lang: LangCode }) {
                 <div className="col-span-2 font-semibold text-blue-900 border-b border-blue-100 pb-2">Experimental Group (Treatment)</div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-gray-700">{currentText.eTotal}</label>
-                  <input type="number" value={eTotal} onChange={e => setETotal(e.target.value)} placeholder="e.g. 100"
+                  <input type="number" inputMode="decimal" value={eTotal} onChange={e => setETotal(e.target.value)} placeholder="e.g. 100"
                     className="block w-full rounded-xl border-gray-200 bg-white py-3 px-4 text-gray-900 placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500/20 sm:text-sm font-medium shadow-sm" dir="ltr" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-gray-700">{currentText.eEvents}</label>
-                  <input type="number" value={eEvents} onChange={e => setEEvents(e.target.value)} placeholder="e.g. 12"
+                  <input type="number" inputMode="decimal" value={eEvents} onChange={e => setEEvents(e.target.value)} placeholder="e.g. 12"
                     className="block w-full rounded-xl border-gray-200 bg-white py-3 px-4 text-gray-900 placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500/20 sm:text-sm font-medium shadow-sm" dir="ltr" />
                 </div>
               </div>
@@ -383,3 +383,4 @@ export default function FragilityIndex({ lang }: { lang: LangCode }) {
     </>
   );
 }
+

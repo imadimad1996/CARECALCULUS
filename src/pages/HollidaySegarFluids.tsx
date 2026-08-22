@@ -100,7 +100,7 @@ export default function HollidaySegarFluids({ lang }: { lang: LangCode }) {
         <div className="w-full max-w-full max-w-xs mb-8">
           <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">{t.weightLabel}</label>
           <input
-            type="number"
+            type="number" inputMode="decimal"
             min="0.5"
             max="120"
             step="0.5"
@@ -152,3 +152,4 @@ export default function HollidaySegarFluids({ lang }: { lang: LangCode }) {
     </div>
   );
 }
+

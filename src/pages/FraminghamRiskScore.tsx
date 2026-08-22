@@ -146,7 +146,7 @@ export default function FraminghamRiskScore({ lang }: { lang: LangCode }) {
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">{t.age}</label>
             <input
-              type="number"
+              type="number" inputMode="decimal"
               min="30"
               max="85"
               step="1"
@@ -178,7 +178,7 @@ export default function FraminghamRiskScore({ lang }: { lang: LangCode }) {
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">{t.chol}</label>
             <input
-              type="number"
+              type="number" inputMode="decimal"
               min="100"
               max="400"
               step="1"
@@ -190,7 +190,7 @@ export default function FraminghamRiskScore({ lang }: { lang: LangCode }) {
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">{t.hdl}</label>
             <input
-              type="number"
+              type="number" inputMode="decimal"
               min="20"
               max="120"
               step="1"
@@ -202,7 +202,7 @@ export default function FraminghamRiskScore({ lang }: { lang: LangCode }) {
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">{t.sbp}</label>
             <input
-              type="number"
+              type="number" inputMode="decimal"
               min="90"
               max="220"
               step="1"
@@ -271,3 +271,4 @@ export default function FraminghamRiskScore({ lang }: { lang: LangCode }) {
     </div>
   );
 }
+

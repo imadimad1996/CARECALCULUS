@@ -124,7 +124,7 @@ export default function NaegeleEddCalculator({ lang }: { lang: LangCode }) {
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">{t.cycleLength}</label>
             <input
-              type="number"
+              type="number" inputMode="decimal"
               min="20"
               max="45"
               step="1"
@@ -164,3 +164,4 @@ export default function NaegeleEddCalculator({ lang }: { lang: LangCode }) {
     </div>
   );
 }
+

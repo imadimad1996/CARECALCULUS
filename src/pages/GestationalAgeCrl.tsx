@@ -78,7 +78,7 @@ export default function GestationalAgeCrl({ lang }: { lang: LangCode }) {
         <div className="w-full max-w-full max-w-xs mb-8">
           <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">{t.crlLabel}</label>
           <input
-            type="number"
+            type="number" inputMode="decimal"
             min="2"
             max="120"
             step="1"
@@ -108,3 +108,4 @@ export default function GestationalAgeCrl({ lang }: { lang: LangCode }) {
     </div>
   );
 }
+

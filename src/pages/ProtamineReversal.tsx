@@ -231,7 +231,7 @@ export default function ProtamineReversal({ lang }: { lang: LangCode }) {
                   {agent === 'heparin' ? currentText.hepDose : currentText.enoxDose}
                 </label>
                 <input
-                  type="number"
+                  type="number" inputMode="decimal"
                   value={dose}
                   onChange={(e) => setDose(e.target.value)}
                   placeholder={agent === 'heparin' ? "1000" : "80"}
@@ -397,3 +397,4 @@ export default function ProtamineReversal({ lang }: { lang: LangCode }) {
     </>
   );
 }
+

@@ -53,6 +53,7 @@ export default function ConditionHub({ lang }: { lang: LangCode }) {
 
   const title = lang === 'fr' ? condition.nameFr : condition.nameEn;
   const description = lang === 'fr' ? condition.descriptionFr : condition.descriptionEn;
+  const clinicalOverview = lang === 'fr' ? (condition as any).clinicalOverviewFr : lang === 'ar' ? (condition as any).clinicalOverviewAr : (condition as any).clinicalOverviewEn;
   
   // SEO optimization specifically mirroring competitor practices
   const seoTitle = t.seoTitle.replace('{title}', title);
@@ -83,6 +84,12 @@ export default function ConditionHub({ lang }: { lang: LangCode }) {
         <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
           {description}
         </p>
+        {clinicalOverview && (
+          <div className="mt-8 bg-blue-50/50 rounded-2xl p-6 sm:p-8 border border-blue-100 text-left">
+            <h3 className="text-xl font-bold text-slate-800 mb-3">Clinical Overview</h3>
+            <p className="text-slate-700 leading-relaxed">{clinicalOverview}</p>
+          </div>
+        )}
       </div>
       
       <div className="mb-10">

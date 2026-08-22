@@ -201,7 +201,7 @@ function ConverterCard({ config, currentText, lang }: { config: ConfigLinear | C
           <div className="w-full">
             <label className="text-xs font-bold text-gray-600 uppercase tracking-wider block mb-2">{currentText.sourceValue}</label>
             <input
-              type="number"
+              type="number" inputMode="decimal"
               value={val}
               onChange={(e) => setVal(e.target.value)}
               className="w-full bg-white px-4 py-3.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600 text-xl font-semibold text-gray-900 placeholder:text-gray-300"
@@ -369,3 +369,4 @@ export default function MedicalConversions({ lang }: { lang: LangCode }) {
     </>
   );
 }
+

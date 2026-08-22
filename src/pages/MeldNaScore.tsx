@@ -216,7 +216,7 @@ export default function MeldNaScore({ lang }: { lang: LangCode }) {
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-900">{currentText.bili}</label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={bili}
                     onChange={(e) => setBili(e.target.value)}
                     placeholder="e.g. 1.5"
@@ -227,7 +227,7 @@ export default function MeldNaScore({ lang }: { lang: LangCode }) {
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-900">{currentText.cr}</label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={cr}
                     onChange={(e) => setCr(e.target.value)}
                     placeholder="e.g. 1.2"
@@ -239,7 +239,7 @@ export default function MeldNaScore({ lang }: { lang: LangCode }) {
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-900">{currentText.inr}</label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={inr}
                     onChange={(e) => setInr(e.target.value)}
                     placeholder="e.g. 1.1"
@@ -250,7 +250,7 @@ export default function MeldNaScore({ lang }: { lang: LangCode }) {
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-900">{currentText.na}</label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={na}
                     onChange={(e) => setNa(e.target.value)}
                     placeholder="e.g. 135"
@@ -413,3 +413,4 @@ export default function MeldNaScore({ lang }: { lang: LangCode }) {
     </>
   );
 }
+

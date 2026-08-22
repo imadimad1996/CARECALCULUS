@@ -87,15 +87,15 @@ function AppLayout() {
     
     if (typeof window !== 'undefined' && !window.location.hostname.includes('localhost') && !window.location.hostname.includes('127.0.0.1') && !window.location.hostname.endsWith('.pages.dev')) {
       if (next === 'es') {
-        window.location.href = `https://es.carecalculus.com${cleanLogical === '/' ? '' : cleanLogical}`;
+        window.location.href = `https://carecalculus.com/es${cleanLogical === '/' ? '' : cleanLogical}`;
         return;
       }
       if (next === 'fr') {
-        window.location.href = `https://fr.carecalculus.com${cleanLogical === '/' ? '' : cleanLogical}`;
+        window.location.href = `https://carecalculus.com/fr${cleanLogical === '/' ? '' : cleanLogical}`;
         return;
       }
       if (next === 'en') {
-        window.location.href = `https://www.carecalculus.com${cleanLogical === '/' ? '' : cleanLogical}`;
+        window.location.href = `https://carecalculus.com${cleanLogical === '/' ? '' : cleanLogical}`;
         return;
       }
     }
@@ -128,7 +128,7 @@ function AppLayout() {
     }
     if (preferred !== 'en') {
       if (typeof window !== 'undefined' && !window.location.hostname.includes('localhost') && !window.location.hostname.includes('127.0.0.1') && !window.location.hostname.endsWith('.pages.dev')) {
-        const targetDomain = preferred === 'es' ? 'https://es.carecalculus.com/' : 'https://fr.carecalculus.com/';
+        const targetDomain = preferred === 'es' ? 'https://carecalculus.com/es/' : 'https://carecalculus.com/fr/';
         window.location.href = targetDomain;
       } else {
         navigate(buildPath('/', preferred), { replace: true });

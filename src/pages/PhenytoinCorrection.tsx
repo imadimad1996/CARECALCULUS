@@ -66,7 +66,7 @@ export default function PhenytoinCorrection({ lang }: { lang: LangCode }) {
           <div>
             <label className="block text-sm font-bold text-slate-700 mb-2">{dict.measuredPhenytoin}</label>
             <input
-              type="number"
+              type="number" inputMode="decimal"
               value={measuredPhenytoin}
               onChange={(e) => setMeasuredPhenytoin(e.target.value === '' ? '' : Number(e.target.value))}
               className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 focus:border-[#0891B2] focus:ring-4 focus:ring-[#0891B2]/10 rounded-2xl text-lg font-semibold transition"
@@ -77,7 +77,7 @@ export default function PhenytoinCorrection({ lang }: { lang: LangCode }) {
           <div>
             <label className="block text-sm font-bold text-slate-700 mb-2">{dict.albumin}</label>
             <input
-              type="number"
+              type="number" inputMode="decimal"
               value={albumin}
               onChange={(e) => setAlbumin(e.target.value === '' ? '' : Number(e.target.value))}
               className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 focus:border-[#0891B2] focus:ring-4 focus:ring-[#0891B2]/10 rounded-2xl text-lg font-semibold transition"
@@ -146,3 +146,4 @@ export default function PhenytoinCorrection({ lang }: { lang: LangCode }) {
     </CalculatorShell>
   );
 }
+

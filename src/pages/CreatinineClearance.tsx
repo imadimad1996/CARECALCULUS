@@ -149,7 +149,7 @@ export default function CreatinineClearance({ lang }: { lang: LangCode }) {
                     <label className="text-sm font-semibold text-gray-700 uppercase tracking-wider">{currentText.age}</label>
                   </div>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={age === 0 ? '' : age}
                     onChange={(e) => setAge(Number(e.target.value))}
                     className="w-full bg-gray-50/50 px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600 text-2xl tabular-nums font-semibold text-gray-900 transition-all placeholder:text-gray-300"
@@ -163,7 +163,7 @@ export default function CreatinineClearance({ lang }: { lang: LangCode }) {
                     <label className="text-sm font-semibold text-gray-700 uppercase tracking-wider">{currentText.weight}</label>
                   </div>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={weight === 0 ? '' : weight}
                     onChange={(e) => setWeight(Number(e.target.value))}
                     className="w-full bg-gray-50/50 px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600 text-2xl tabular-nums font-semibold text-gray-900 transition-all placeholder:text-gray-300"
@@ -179,7 +179,7 @@ export default function CreatinineClearance({ lang }: { lang: LangCode }) {
                   <span className="text-xs font-medium text-gray-400 tabular-nums">{isSI ? currentText.creatinineUmol : currentText.creatinineMg}</span>
                 </div>
                 <input
-                  type="number"
+                  type="number" inputMode="decimal"
                   step={isSI ? "1" : "0.1"}
                   value={creatinine === 0 ? '' : creatinine}
                   onChange={(e) => setCreatinine(Number(e.target.value))}
@@ -295,3 +295,4 @@ export default function CreatinineClearance({ lang }: { lang: LangCode }) {
     </CalculatorShell>
   );
 }
+

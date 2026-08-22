@@ -21,7 +21,10 @@ export function trackCalculatorUsage(calculatorId: string, language: LangCode, r
 export function trackEhrExport(calculatorId: string, format: string) {
   console.info(`[Telemetry] EHR Export: ${calculatorId} | Format: ${format}`);
   
-  trackEvent('ehr_copy', {
+  // Create specific event name based on format (e.g., 'export_soap', 'export_sbar')
+  const eventName = `export_${format.toLowerCase()}`;
+  
+  trackEvent(eventName, {
     event_category: 'export',
     event_label: calculatorId,
     format: format

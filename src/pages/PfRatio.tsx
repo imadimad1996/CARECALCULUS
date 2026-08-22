@@ -93,7 +93,7 @@ export default function PfRatio({ lang }: { lang: LangCode }) {
               <div className="group">
                 <label className="text-sm font-semibold text-gray-700 uppercase tracking-wider block mb-2">{currentText.pao2}</label>
                 <input
-                  type="number"
+                  type="number" inputMode="decimal"
                   value={pao2}
                   onChange={(e) => setPao2(e.target.value === '' ? '' : Number(e.target.value))}
                   className="w-full bg-gray-50 px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600 text-2xl font-semibold text-gray-900"
@@ -103,7 +103,7 @@ export default function PfRatio({ lang }: { lang: LangCode }) {
               <div className="group">
                 <label className="text-sm font-semibold text-gray-700 uppercase tracking-wider block mb-2">{currentText.fio2}</label>
                 <input
-                  type="number"
+                  type="number" inputMode="decimal"
                   value={fio2}
                   min="21"
                   max="100"
@@ -205,3 +205,4 @@ export default function PfRatio({ lang }: { lang: LangCode }) {
     </>
   );
 }
+

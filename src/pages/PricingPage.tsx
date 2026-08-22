@@ -34,8 +34,8 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
         </h1>
         <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto">
           {isFr
-            ? 'Accès gratuit pour tous les étudiants. Gagnez 30 secondes par patient en copiant des DotPhrases et notes SBAR directement dans Epic/Cerner.'
-            : 'Free forever for medical students. Save 30 seconds per patient by copying pre-formatted DotPhrases & SBAR notes directly into Epic or Cerner.'}
+            ? 'Accès gratuit pour tous les cliniciens. Gagnez 30 secondes par patient en copiant des DotPhrases et notes SBAR directement dans Epic/Cerner.'
+            : 'Free forever for all clinicians. Save 30 seconds per patient by copying pre-formatted DotPhrases & SBAR notes directly into Epic or Cerner.'}
         </p>
 
       </div>
@@ -65,19 +65,19 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch mb-12">
         
         {/* Tier 1: Free Pass */}
-        <div className="animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100 bg-white dark:bg-slate-900/50 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+        <div className="animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100 bg-white dark:bg-slate-900/50 rounded-3xl p-8 border border-emerald-500/30 dark:border-emerald-500/30 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
           <div>
-            <div className="flex items-center gap-2 text-slate-500 mb-6">
-              <div className="p-3 min-h-[44px] min-w-[44px] bg-slate-100 dark:bg-slate-800 rounded-lg">
+            <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 mb-6">
+              <div className="p-3 min-h-[44px] min-w-[44px] bg-emerald-500/10 rounded-lg">
                 <User className="w-5 h-5" />
               </div>
-              <span className="text-xs font-bold uppercase tracking-widest">{isFr ? 'Forfait Étudiant' : 'Free Bedside Pass'}</span>
+              <span className="text-xs font-bold uppercase tracking-widest">{isFr ? 'Gratuit pour Tous' : 'Free for Clinicians'}</span>
             </div>
-            <h3 className="text-2xl font-black mb-2">{isFr ? 'Gratuit' : 'Free Pass'}</h3>
-            <p className="text-sm text-slate-500 mb-6 min-h-[40px]">{isFr ? 'Idéal pour les étudiants et internes' : 'For students, residents, and basic calculations.'}</p>
+            <h3 className="text-2xl font-black mb-2">{isFr ? 'Pass Standard' : 'Standard Pass'}</h3>
+            <p className="text-sm text-slate-500 mb-6 min-h-[40px]">{isFr ? 'Accès libre aux outils essentiels pour tous les soignants.' : 'Core clinical calculators free for all healthcare professionals.'}</p>
 
             <div className="mb-8 flex items-end gap-1">
-              <span className="text-5xl font-black tracking-tighter">$0</span>
+              <span className="text-5xl font-black tracking-tighter text-emerald-600 dark:text-emerald-400">$0</span>
               <span className="text-sm text-slate-500 font-medium pb-2">/ {isFr ? 'toujours' : 'forever'}</span>
             </div>
 

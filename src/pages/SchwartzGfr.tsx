@@ -101,7 +101,7 @@ export default function SchwartzGfr({ lang }: { lang: LangCode }) {
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">{t.heightLabel}</label>
             <input
-              type="number"
+              type="number" inputMode="decimal"
               min="30"
               max="200"
               step="1"
@@ -113,7 +113,7 @@ export default function SchwartzGfr({ lang }: { lang: LangCode }) {
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">{t.scrLabel}</label>
             <input
-              type="number"
+              type="number" inputMode="decimal"
               min="0.1"
               max="15"
               step="0.05"
@@ -168,3 +168,4 @@ export default function SchwartzGfr({ lang }: { lang: LangCode }) {
     </div>
   );
 }
+

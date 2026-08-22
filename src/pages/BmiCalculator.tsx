@@ -253,7 +253,7 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
                 </div>
                 <div className="relative flex items-center">
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={height === 0 ? '' : height}
                     onChange={(e) => {
                       const v = Number(e.target.value);
@@ -288,7 +288,7 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
                 </div>
                 <div className="relative flex items-center">
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={weight === 0 ? '' : weight}
                     onChange={(e) => {
                       const v = Number(e.target.value);
@@ -323,7 +323,7 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
                 </div>
                 <div className="relative flex items-center">
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={targetBmiStr}
                     onChange={(e) => setTargetBmiStr(e.target.value)}
                     placeholder="e.g. 25"
@@ -561,3 +561,4 @@ export default function BmiCalculator({ lang }: { lang: LangCode }) {
     </>
   );
 }
+

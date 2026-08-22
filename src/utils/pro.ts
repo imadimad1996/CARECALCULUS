@@ -1,3 +1,6 @@
+import { auth } from './firebase';
+import { getFirestore, doc, setDoc, getDoc } from 'firebase/firestore';
+
 export function isProActive(): boolean {
   if (typeof window === 'undefined') return false;
   try {
@@ -19,7 +22,7 @@ export function isProActive(): boolean {
   }
 }
 
-export function activateProPass(
+export async function activateProPass(
   planType: 'monthly' | 'annual' | 'lifetime' = 'monthly',
   token?: string
 ) {
@@ -30,6 +33,21 @@ export function activateProPass(
   localStorage.setItem('carecalculus_pro_expires', expiresAt.toString());
   if (token) {
     localStorage.setItem('carecalculus_pro_token', token);
+  }
+
+  // Sync to Firestore if logged in
+  const user = auth.currentUser;
+  if (user) {
+    try {
+      const db = getFirestore();
+      await setDoc(doc(db, 'users', user.uid), {
+        proStatus: 'active',
+        proExpires: expiresAt,
+        planType
+      }, { merge: true });
+    } catch (e) {
+      console.error('Failed to sync Pro status to Firestore', e);
+    }
   }
 }
 
@@ -66,11 +84,16 @@ export async function verifyProWithServer(): Promise<boolean> {
 
     if (!res.ok) {
       // If server returns error, do not revoke immediately in case of transient 5xx
-      return isProActive();
+      // Let's also check Firestore as a fallback
+      return await checkFirestoreProStatus();
     }
 
     const data = await res.json() as { active: boolean; expiresAt?: number };
     if (!data.active) {
+      // Check firestore before giving up
+      const firestoreActive = await checkFirestoreProStatus();
+      if (firestoreActive) return true;
+
       console.warn('Server invalidated Pro entitlement. Revoking local pass.');
       purgeProPass();
       return false;
@@ -84,8 +107,26 @@ export async function verifyProWithServer(): Promise<boolean> {
     return true;
   } catch (e) {
     // Network offline or fetch error — fail open to preserve offline access for legitimate clinicians
-    return isProActive();
+    return await checkFirestoreProStatus() || isProActive();
   }
+}
+
+async function checkFirestoreProStatus(): Promise<boolean> {
+  const user = auth.currentUser;
+  if (!user) return false;
+  try {
+    const db = getFirestore();
+    const docSnap = await getDoc(doc(db, 'users', user.uid));
+    if (docSnap.exists()) {
+      const data = docSnap.data();
+      if (data.proStatus === 'active' && (!data.proExpires || Date.now() < data.proExpires)) {
+        return true;
+      }
+    }
+  } catch (e) {
+    console.error('Firestore check failed', e);
+  }
+  return false;
 }
 
 // Auto-run non-blocking server verification on module load in browser

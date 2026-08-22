@@ -194,7 +194,7 @@ export default function FenaCalculator({ lang }: { lang: LangCode }) {
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-900">{currentText.sNa}</label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={sNa}
                     onChange={(e) => setSNa(e.target.value)}
                     placeholder="e.g. 140"
@@ -205,7 +205,7 @@ export default function FenaCalculator({ lang }: { lang: LangCode }) {
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-900">{currentText.uNa}</label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={uNa}
                     onChange={(e) => setUNa(e.target.value)}
                     placeholder="e.g. 15"
@@ -216,7 +216,7 @@ export default function FenaCalculator({ lang }: { lang: LangCode }) {
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-900">{currentText.sCr}</label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={sCr}
                     onChange={(e) => setSCr(e.target.value)}
                     placeholder="e.g. 1.8"
@@ -227,7 +227,7 @@ export default function FenaCalculator({ lang }: { lang: LangCode }) {
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-900">{currentText.uCr}</label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={uCr}
                     onChange={(e) => setUCr(e.target.value)}
                     placeholder="e.g. 50"
@@ -370,3 +370,4 @@ export default function FenaCalculator({ lang }: { lang: LangCode }) {
     </>
   );
 }
+

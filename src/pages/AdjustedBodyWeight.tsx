@@ -131,7 +131,7 @@ export default function AdjustedBodyWeight({ lang }: { lang: LangCode }) {
                   <div className="group">
                     <label className="text-sm font-semibold text-gray-700 uppercase tracking-wider block mb-2">{currentText.height}</label>
                     <input
-                      type="number"
+                      type="number" inputMode="decimal"
                       value={height}
                       onChange={(e) => {
                         const val = e.target.value === '' ? '' : Number(e.target.value);
@@ -143,7 +143,7 @@ export default function AdjustedBodyWeight({ lang }: { lang: LangCode }) {
                   <div className="group">
                     <label className="text-sm font-semibold text-gray-700 uppercase tracking-wider block mb-2">{currentText.weight}</label>
                     <input
-                      type="number"
+                      type="number" inputMode="decimal"
                       value={weight}
                       onChange={(e) => {
                         const val = e.target.value === '' ? '' : Number(e.target.value);
@@ -317,3 +317,4 @@ export default function AdjustedBodyWeight({ lang }: { lang: LangCode }) {
     </CalculatorShell>
   );
 }
+

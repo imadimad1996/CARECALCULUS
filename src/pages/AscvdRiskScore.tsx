@@ -311,7 +311,7 @@ export default function AscvdRiskScore({ lang }: { lang: LangCode }) {
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-900">{currentText.age}</label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={age}
                     onChange={(e) => setAge(e.target.value)}
                     placeholder="40"
@@ -334,7 +334,7 @@ export default function AscvdRiskScore({ lang }: { lang: LangCode }) {
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-900">{currentText.totChol}</label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={tc}
                     onChange={(e) => setTc(e.target.value)}
                     placeholder="170"
@@ -345,7 +345,7 @@ export default function AscvdRiskScore({ lang }: { lang: LangCode }) {
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-900">{currentText.hdl}</label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={hdl}
                     onChange={(e) => setHdl(e.target.value)}
                     placeholder="50"
@@ -356,7 +356,7 @@ export default function AscvdRiskScore({ lang }: { lang: LangCode }) {
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-900">{currentText.sbp}</label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={sbp}
                     onChange={(e) => setSbp(e.target.value)}
                     placeholder="120"
@@ -514,3 +514,4 @@ export default function AscvdRiskScore({ lang }: { lang: LangCode }) {
     </>
   );
 }
+

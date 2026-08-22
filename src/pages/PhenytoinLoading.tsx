@@ -175,7 +175,7 @@ export default function PhenytoinLoading({ lang }: { lang: LangCode }) {
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-gray-900">{currentText.weight}</label>
                 <input
-                  type="number"
+                  type="number" inputMode="decimal"
                   value={weight}
                   onChange={(e) => setWeight(e.target.value)}
                   placeholder="e.g. 70"
@@ -188,7 +188,7 @@ export default function PhenytoinLoading({ lang }: { lang: LangCode }) {
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-900">{currentText.currentLvl}</label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={currentLvl}
                     onChange={(e) => setCurrentLvl(e.target.value)}
                     placeholder="0"
@@ -199,7 +199,7 @@ export default function PhenytoinLoading({ lang }: { lang: LangCode }) {
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-900">{currentText.targetLvl}</label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={targetLvl}
                     onChange={(e) => setTargetLvl(e.target.value)}
                     placeholder="20"
@@ -339,3 +339,4 @@ export default function PhenytoinLoading({ lang }: { lang: LangCode }) {
     </>
   );
 }
+

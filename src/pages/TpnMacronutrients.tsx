@@ -172,7 +172,7 @@ export default function TpnMacronutrients({ lang }: { lang: LangCode }) {
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-gray-900">{currentText.dextrose}</label>
                 <input
-                  type="number"
+                  type="number" inputMode="decimal"
                   value={dextrose}
                   onChange={(e) => setDextrose(e.target.value)}
                   placeholder="e.g. 250"
@@ -184,7 +184,7 @@ export default function TpnMacronutrients({ lang }: { lang: LangCode }) {
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-gray-900">{currentText.amino}</label>
                 <input
-                  type="number"
+                  type="number" inputMode="decimal"
                   value={amino}
                   onChange={(e) => setAmino(e.target.value)}
                   placeholder="e.g. 100"
@@ -196,7 +196,7 @@ export default function TpnMacronutrients({ lang }: { lang: LangCode }) {
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-gray-900">{currentText.lipid}</label>
                 <input
-                  type="number"
+                  type="number" inputMode="decimal"
                   value={lipid}
                   onChange={(e) => setLipid(e.target.value)}
                   placeholder="e.g. 50"
@@ -355,3 +355,4 @@ export default function TpnMacronutrients({ lang }: { lang: LangCode }) {
     </>
   );
 }
+

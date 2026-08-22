@@ -215,7 +215,7 @@ export default function CkdEpiGfr({ lang }: { lang: LangCode }) {
                   </label>
                 </div>
                 <input
-                  type="number"
+                  type="number" inputMode="decimal"
                   min={isSI ? "9" : "0.1"}
                   max={isSI ? "1768" : "20"}
                   step={isSI ? "1" : "0.1"}
@@ -315,3 +315,4 @@ export default function CkdEpiGfr({ lang }: { lang: LangCode }) {
     </div>
   );
 }
+

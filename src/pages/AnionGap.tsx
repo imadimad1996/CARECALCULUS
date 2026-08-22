@@ -201,7 +201,7 @@ export default function AnionGap({ lang }: { lang: LangCode }) {
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-900">{currentText.na}</label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={na}
                     onChange={(e) => setNa(e.target.value)}
                     placeholder="e.g. 140"
@@ -212,7 +212,7 @@ export default function AnionGap({ lang }: { lang: LangCode }) {
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-900">{currentText.cl}</label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={cl}
                     onChange={(e) => setCl(e.target.value)}
                     placeholder="e.g. 104"
@@ -223,7 +223,7 @@ export default function AnionGap({ lang }: { lang: LangCode }) {
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-900">{currentText.hco3}</label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={hco3}
                     onChange={(e) => setHco3(e.target.value)}
                     placeholder="e.g. 24"
@@ -234,7 +234,7 @@ export default function AnionGap({ lang }: { lang: LangCode }) {
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-900">{currentText.alb}</label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={alb}
                     onChange={(e) => setAlb(e.target.value)}
                     placeholder="e.g. 4.0"
@@ -382,3 +382,4 @@ export default function AnionGap({ lang }: { lang: LangCode }) {
     </>
   );
 }
+

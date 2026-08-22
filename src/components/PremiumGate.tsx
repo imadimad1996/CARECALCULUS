@@ -4,6 +4,7 @@ import { LangCode } from '../types';
 import { isProActive } from '../utils/pro';
 import { useNavigate } from 'react-router-dom';
 import { trackPremiumGateView, trackPremiumUpgradeClick } from '../utils/telemetry';
+import { useAuth } from '../contexts/AuthContext';
 
 interface PremiumGateProps {
   featureName: string;
@@ -13,6 +14,7 @@ interface PremiumGateProps {
 
 export default function PremiumGate({ featureName, lang, children }: PremiumGateProps) {
   const [isPro, setIsPro] = useState(false);
+  const { user, signInWithGoogle } = useAuth();
   const navigate = useNavigate();
   
   useEffect(() => {
@@ -38,8 +40,8 @@ export default function PremiumGate({ featureName, lang, children }: PremiumGate
       badge: 'CARECALCULUS PRO',
       title: `Save 30 mins/shift with 1-Click ${featureName}`,
       description: 'Stop typing the same clinical scores manually. Export perfectly formatted DotPhrases and SBAR notes directly into Epic or Cerner with a single tap.',
-      upgrade: 'Get Pro & Save Time',
-      subCTA: 'Only $1.66/mo (billed annually at $19.99)',
+      upgrade: user ? 'Get Pro & Save Time' : 'Sign in with Google',
+      subCTA: user ? 'Only $1.66/mo (billed annually at $19.99)' : 'Create a free account to continue',
       socialProof: 'Trusted by 10,000+ Clinicians',
       features: ['1-Click Epic/Cerner Formatted Export', 'Unlimited Local Shift Patient Queue', 'Full Offline PWA (Works in basements)', '100% Ad-Free Experience'],
       hipaa: '100% HIPAA Compliant — All data stays local in browser',
@@ -49,8 +51,8 @@ export default function PremiumGate({ featureName, lang, children }: PremiumGate
       badge: 'CARECALCULUS PRO',
       title: `Gagnez 30 min/garde avec l'Export ${featureName}`,
       description: 'Ne retapez plus jamais les mêmes scores. Copiez des notes formatées parfaitement pour votre logiciel clinique en un seul clic.',
-      upgrade: 'Devenir Pro & Gagner du Temps',
-      subCTA: 'Seulement 1,66$/mois (facturé 19,99$ par an)',
+      upgrade: user ? 'Devenir Pro & Gagner du Temps' : 'Se connecter avec Google',
+      subCTA: user ? 'Seulement 1,66$/mois (facturé 19,99$ par an)' : 'Créez un compte gratuit pour continuer',
       socialProof: 'Approuvé par +10 000 Soignants',
       features: ['Export formaté en 1-clic', 'File d\'attente locale illimitée', 'Mode Hors-ligne intégral PWA', 'Expérience 100% sans publicité'],
       hipaa: '100% Conforme HIPAA — Calculs effectués localement',
@@ -97,9 +99,17 @@ export default function PremiumGate({ featureName, lang, children }: PremiumGate
 
         <div className="w-full max-w-sm flex flex-col items-center">
           <button 
-            onClick={() => {
+            onClick={async () => {
               trackPremiumUpgradeClick(featureName);
-              navigate('/pricing');
+              if (!user) {
+                try {
+                  await signInWithGoogle();
+                } catch (e) {
+                  console.error(e);
+                }
+              } else {
+                navigate('/pricing');
+              }
             }}
             className="flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white rounded-xl font-black text-lg transition-all duration-300 shadow-[0_0_30px_rgba(6,182,212,0.4)] hover:shadow-[0_0_40px_rgba(6,182,212,0.6)] active:scale-95 cursor-pointer w-full mb-3 border border-cyan-400/30"
           >

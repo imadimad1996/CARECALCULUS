@@ -91,7 +91,7 @@ export default function RumackMatthewNomogram({ lang }: { lang: LangCode }) {
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">{t.hoursLabel}</label>
             <input
-              type="number"
+              type="number" inputMode="decimal"
               min="1"
               max="24"
               step="0.5"
@@ -103,7 +103,7 @@ export default function RumackMatthewNomogram({ lang }: { lang: LangCode }) {
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">{t.concLabel}</label>
             <input
-              type="number"
+              type="number" inputMode="decimal"
               min="0"
               max="1000"
               step="1"
@@ -168,3 +168,4 @@ export default function RumackMatthewNomogram({ lang }: { lang: LangCode }) {
     </div>
   );
 }
+

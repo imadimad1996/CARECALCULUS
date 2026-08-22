@@ -204,7 +204,7 @@ export default function SodiumCorrection({ lang }: { lang: LangCode }) {
                     {currentText.weightLabel as string}
                   </label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={weight}
                     onChange={(e) => setWeight(e.target.value)}
                     className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all font-mono text-lg"
@@ -217,7 +217,7 @@ export default function SodiumCorrection({ lang }: { lang: LangCode }) {
                     {currentText.naLabel as string}
                   </label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={na}
                     onChange={(e) => setNa(e.target.value)}
                     className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all font-mono text-lg"
@@ -252,7 +252,7 @@ export default function SodiumCorrection({ lang }: { lang: LangCode }) {
                   {currentText.fluidVolLabel as string}
                 </label>
                 <input
-                  type="number"
+                  type="number" inputMode="decimal"
                   step="0.1"
                   value={fluidVol}
                   onChange={(e) => setFluidVol(e.target.value)}
@@ -341,3 +341,4 @@ export default function SodiumCorrection({ lang }: { lang: LangCode }) {
     </>
   );
 }
+

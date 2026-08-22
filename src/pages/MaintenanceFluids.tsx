@@ -132,7 +132,7 @@ export default function MaintenanceFluids({ lang }: { lang: LangCode }) {
                 {currentText.weightLabel as string}
               </label>
               <input
-                type="number"
+                type="number" inputMode="decimal"
                 value={weight}
                 onChange={(e) => setWeight(e.target.value)}
                 className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all font-mono text-lg"
@@ -205,3 +205,4 @@ export default function MaintenanceFluids({ lang }: { lang: LangCode }) {
     </>
   );
 }
+

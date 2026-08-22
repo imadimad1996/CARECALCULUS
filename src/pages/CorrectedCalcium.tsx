@@ -176,7 +176,7 @@ export default function CorrectedCalcium({ lang }: { lang: LangCode }) {
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-900">{currentText.ca}</label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={ca}
                     onChange={(e) => setCa(e.target.value)}
                     placeholder="e.g. 7.5"
@@ -187,7 +187,7 @@ export default function CorrectedCalcium({ lang }: { lang: LangCode }) {
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-900">{currentText.alb}</label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={alb}
                     onChange={(e) => setAlb(e.target.value)}
                     placeholder="e.g. 2.5"
@@ -328,3 +328,4 @@ export default function CorrectedCalcium({ lang }: { lang: LangCode }) {
     </>
   );
 }
+

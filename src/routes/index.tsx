@@ -98,6 +98,7 @@ const pageLoaders = [
   () => import('../pages/NaegeleEddCalculator'),
   () => import('../pages/GestationalAgeCrl'),
   () => import('../pages/FourTsHitScore'),
+  () => import('../pages/SynapseEnginePage'),
   () => import('../pages/MasccRiskIndex'),
   () => import('../pages/RumackMatthewNomogram'),
   () => import('../pages/FraminghamRiskScore'),
@@ -194,7 +195,7 @@ const [
   BradenScale, MorseFallScale, News2Score, MewsScore, WongBakerFaces, FlaccScore, RassScore, CamIcu, InsulinSlidingScale,
   AscvdRiskScore, BenzoEquivalence, TpnMacronutrients, DigoxinDosing, ProtamineReversal, PhenytoinLoading,
   WarfarinDosing, RcriScore, ApriScore, MeldNaScore, Curb65V2, SirsCriteriaV2, QSofaScoreV2, AnionGapV2, CorrectedCalciumV2, FenaCalculatorV2,
-  NntCalculator, SampleSizeCalculator, OrToRrConverter, FragilityIndex
+  NntCalculator, SampleSizeCalculator, OrToRrConverter, FragilityIndex, SynapseEnginePage
 ] = pageLoaders.map((loader) => safeLazy(loader as any)) as any[];
 
 export const HomePage = safeLazy(() => import('../pages/HomePage'));
@@ -217,7 +218,7 @@ export async function preloadPages() {
 export const LEGAL_ROUTES = ['/about', '/disclaimer', '/privacy', '/terms', '/embed-gallery', '/for-hospitals'];
 
 // Routes that open in full-width reading mode (no sidebar, no top widgets)
-export const CONTENT_ROUTES = ['/about', '/editorial-board', '/comite-editorial', '/disclaimer', '/privacy', '/terms', '/glp-1-hub', '/hub-glp1', '/%D9%85%D8%B1%D9%83%D8%B2-glp1', '/مركز-glp1', '/embed-gallery', '/for-hospitals', '/clinical-guide'];
+export const CONTENT_ROUTES = ['/about', '/editorial-board', '/comite-editorial', '/disclaimer', '/privacy', '/terms', '/glp-1-hub', '/hub-glp1', '/%D9%85%D8%B1%D9%83%D8%B2-glp1', '/مركز-glp1', '/embed-gallery', '/for-hospitals', '/clinical-guide', '/synapse-engine'];
 
 export class ErrorBoundary extends React.Component<any, any> {
   constructor(props: any) {
@@ -364,6 +365,7 @@ export const navItems = [
   { path: '/glp-1-hub', nameEn: 'GLP-1 Hub', nameFr: 'Hub GLP-1', nameAr: 'مركز أدوية GLP-1', icon: Sparkles, tier: 4, group: 'reading' as const },
 
   { path: '/study-tracker', nameEn: 'Study Progress Tracker', nameFr: 'Suivi d\'Études', nameAr: 'متابع التقدم الدراسي', icon: Award, tier: 4, group: 'learning' as const },
+  { path: '/synapse-engine', nameEn: 'Synapse Engine (Guidelines)', nameFr: 'Moteur Synapse (Recommandations)', nameAr: 'محرك الإرشادات الطبية', icon: Sparkles, tier: 4, group: 'learning' as const },
   { path: '/flashcard-generator', nameEn: 'Medical Flashcards', nameFr: 'Flashcards Médicales', nameAr: 'البطاقات التعليمية الطبية', icon: Layers, tier: 4, group: 'learning' as const },
   { path: '/case-study-viewer', nameEn: 'Clinical Case Studies', nameFr: 'Cas Cliniques', nameAr: 'الحالات السريرية التفاعلية', icon: Stethoscope, tier: 4, group: 'learning' as const },
   { path: '/drug-sheets', nameEn: 'ICU Drug Reference', nameFr: 'Fiches Médicaments', nameAr: 'جرعات أدوية العناية', icon: Droplet, tier: 4, group: 'learning' as const },
@@ -465,6 +467,7 @@ export function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="nutrition-tdee" element={wrapCalculator('/nutrition-tdee', <NutritionTdee lang={lang} />)} />
       <Route path="nutrition-must" element={wrapCalculator('/nutrition-must', <NutritionMust lang={lang} />)} />
       <Route path="nutrition-nrs2002" element={wrapCalculator('/nutrition-nrs2002', <NutritionNrs2002 lang={lang} />)} />
+      <Route path="synapse-engine" element={<SynapseEnginePage lang={lang} langPath={langPath} />} />
       <Route path="nutrition-hub" element={<NutritionHub lang={lang} />} />
       <Route path="glp-1-hub" element={<Glp1Hub lang={lang} />} />
       <Route path="hub-glp1" element={<Glp1Hub lang={lang} />} />

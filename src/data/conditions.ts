@@ -10,6 +10,9 @@ export const CONDITIONS_DB = [
     descriptionEn: 'Clinical decision tools for early detection, risk stratification, and management of sepsis and systemic inflammatory response syndrome.',
     descriptionFr: 'Outils de décision clinique pour la détection précoce, la stratification du risque et la prise en charge du sepsis et du SIRS.',
     descriptionAr: 'أدوات القرار السريري للكشف المبكر، وتقييم المخاطر، وإدارة تسمم الدم.',
+    clinicalOverviewEn: 'Sepsis is defined as life-threatening organ dysfunction caused by a dysregulated host response to infection. According to the Surviving Sepsis Campaign guidelines, early recognition and prompt initiation of broad-spectrum antibiotics and fluid resuscitation are critical for survival. The qSOFA and SOFA scores are primary tools used to stratify mortality risk and identify organ dysfunction in suspected sepsis patients outside and inside the ICU respectively.',
+    clinicalOverviewFr: "Le sepsis est défini comme une dysfonction organique menaçant le pronostic vital, causée par une réponse dérégulée de l'hôte à l'infection. Selon les recommandations de la Surviving Sepsis Campaign, la reconnaissance précoce et l'initiation rapide d'antibiotiques à large spectre sont essentielles.",
+    clinicalOverviewAr: 'يُعرّف الإنتان بأنه خلل وظيفي في الأعضاء يهدد الحياة ناتج عن استجابة غير منظمة للعدوى.',
     calculators: ['qsofa-score', 'sirs-criteria', 'sofa-score', 'map-calculator']
   },
   {
@@ -21,6 +24,9 @@ export const CONDITIONS_DB = [
     descriptionEn: 'Risk stratification and severity scoring for community-acquired and hospital-acquired pneumonia.',
     descriptionFr: 'Stratification du risque et score de sévérité pour les pneumonies.',
     descriptionAr: 'تقييم مخاطر وشدة الالتهاب الرئوي.',
+    clinicalOverviewEn: 'Pneumonia is an infection that inflames the air sacs in one or both lungs. Risk stratification is essential to determine whether a patient can be safely treated as an outpatient, requires hospital admission, or needs intensive care. The CURB-65 score and PSI (Pneumonia Severity Index) are extensively validated tools recommended by the ATS/IDSA guidelines for community-acquired pneumonia.',
+    clinicalOverviewFr: "La pneumonie est une infection qui enflamme les alvéoles d'un ou des deux poumons. La stratification du risque est essentielle pour déterminer l'orientation du patient.",
+    clinicalOverviewAr: 'الالتهاب الرئوي هو عدوى تؤدي إلى التهاب الحويصلات الهوائية في إحدى الرئتين أو كلتيهما.',
     calculators: ['curb65-score']
   },
   {

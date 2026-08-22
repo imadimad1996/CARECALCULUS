@@ -152,7 +152,7 @@ export default function NutritionTdee({ lang }: { lang: LangCode }) {
               <div className="group">
                 <label className="text-sm font-semibold text-gray-700 uppercase tracking-wider block mb-2">{currentText.age}</label>
                 <input
-                  type="number"
+                  type="number" inputMode="decimal"
                   value={age === 0 ? '' : age}
                   onChange={(e) => setAge(Number(e.target.value))}
                   className="w-full bg-gray-50/50 px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600 text-xl font-semibold text-gray-900 transition-all"
@@ -164,7 +164,7 @@ export default function NutritionTdee({ lang }: { lang: LangCode }) {
               <div className="group">
                 <label className="text-sm font-semibold text-gray-700 uppercase tracking-wider block mb-2">{currentText.height}</label>
                 <input
-                  type="number"
+                  type="number" inputMode="decimal"
                   value={height === 0 ? '' : height}
                   onChange={(e) => setHeight(Number(e.target.value))}
                   className="w-full bg-gray-50/50 px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600 text-xl font-semibold text-gray-900 transition-all"
@@ -176,7 +176,7 @@ export default function NutritionTdee({ lang }: { lang: LangCode }) {
               <div className="group">
                 <label className="text-sm font-semibold text-gray-700 uppercase tracking-wider block mb-2">{currentText.weight}</label>
                 <input
-                  type="number"
+                  type="number" inputMode="decimal"
                   value={weight === 0 ? '' : weight}
                   onChange={(e) => setWeight(Number(e.target.value))}
                   className="w-full bg-gray-50/50 px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600 text-xl font-semibold text-gray-900 transition-all"
@@ -319,3 +319,4 @@ export default function NutritionTdee({ lang }: { lang: LangCode }) {
     </>
   );
 }
+

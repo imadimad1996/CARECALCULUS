@@ -190,7 +190,7 @@ export default function ApriScore({ lang }: { lang: LangCode }) {
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-900">{currentText.ast}</label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={ast}
                     onChange={(e) => setAst(e.target.value)}
                     placeholder="e.g. 55"
@@ -201,7 +201,7 @@ export default function ApriScore({ lang }: { lang: LangCode }) {
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-900">{currentText.astUln}</label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={astUln}
                     onChange={(e) => setAstUln(e.target.value)}
                     placeholder="e.g. 40"
@@ -214,7 +214,7 @@ export default function ApriScore({ lang }: { lang: LangCode }) {
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-gray-900">{currentText.platelets}</label>
                 <input
-                  type="number"
+                  type="number" inputMode="decimal"
                   value={platelets}
                   onChange={(e) => setPlatelets(e.target.value)}
                   placeholder="e.g. 150"
@@ -355,3 +355,4 @@ export default function ApriScore({ lang }: { lang: LangCode }) {
     </>
   );
 }
+

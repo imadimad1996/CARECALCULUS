@@ -218,7 +218,7 @@ export default function NntCalculator({ lang }: { lang: LangCode }) {
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-gray-700">{currentText.controlTotal}</label>
                     <input
-                      type="number"
+                      type="number" inputMode="decimal"
                       value={cTotal}
                       onChange={(e) => setCTotal(e.target.value)}
                       placeholder="e.g. 100"
@@ -229,7 +229,7 @@ export default function NntCalculator({ lang }: { lang: LangCode }) {
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-gray-700">{currentText.controlEvents}</label>
                     <input
-                      type="number"
+                      type="number" inputMode="decimal"
                       value={cEvents}
                       onChange={(e) => setCEvents(e.target.value)}
                       placeholder="e.g. 15"
@@ -246,7 +246,7 @@ export default function NntCalculator({ lang }: { lang: LangCode }) {
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-gray-700">{currentText.expTotal}</label>
                     <input
-                      type="number"
+                      type="number" inputMode="decimal"
                       value={eTotal}
                       onChange={(e) => setETotal(e.target.value)}
                       placeholder="e.g. 100"
@@ -257,7 +257,7 @@ export default function NntCalculator({ lang }: { lang: LangCode }) {
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-gray-700">{currentText.expEvents}</label>
                     <input
-                      type="number"
+                      type="number" inputMode="decimal"
                       value={eEvents}
                       onChange={(e) => setEEvents(e.target.value)}
                       placeholder="e.g. 10"
@@ -423,3 +423,4 @@ export default function NntCalculator({ lang }: { lang: LangCode }) {
     </>
   );
 }
+

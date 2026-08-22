@@ -252,7 +252,7 @@ export default function WarfarinDosing({ lang }: { lang: LangCode }) {
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-gray-900">{currentText.inr}</label>
                 <input
-                  type="number"
+                  type="number" inputMode="decimal"
                   step="0.1"
                   value={inr}
                   onChange={(e) => setInr(e.target.value)}
@@ -265,7 +265,7 @@ export default function WarfarinDosing({ lang }: { lang: LangCode }) {
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-gray-900">{currentText.weeklyDose}</label>
                 <input
-                  type="number"
+                  type="number" inputMode="decimal"
                   value={weeklyDose}
                   onChange={(e) => setWeeklyDose(e.target.value)}
                   placeholder="e.g. 35"
@@ -437,3 +437,4 @@ export default function WarfarinDosing({ lang }: { lang: LangCode }) {
     </>
   );
 }
+

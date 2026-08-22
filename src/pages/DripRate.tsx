@@ -80,7 +80,7 @@ export default function DripRate({ lang }: { lang: LangCode }) {
                 </div>
                 <div className="relative flex items-center">
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={volume}
                     onChange={(e) => {
                       if (e.target.value === '') {
@@ -106,7 +106,7 @@ export default function DripRate({ lang }: { lang: LangCode }) {
                 </div>
                 <div className="relative flex items-center">
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={time}
                     onChange={(e) => {
                       if (e.target.value === '') {
@@ -234,3 +234,4 @@ export default function DripRate({ lang }: { lang: LangCode }) {
     </>
   );
 }
+

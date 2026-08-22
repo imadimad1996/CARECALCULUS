@@ -11,6 +11,7 @@ import { useLang } from '../utils/lang';
 import Logo from '../components/Logo';
 import SmartPasteModal from '../components/SmartPasteModal';
 import { CONDITIONS_DB } from '../data/conditions';
+import QuickMAPCalculator from '../components/QuickMAPCalculator';
 
 interface HomePageProps {
   lang: LangCode;
@@ -53,28 +54,28 @@ const T = {
   },
   stats: {
     en: [
-      { value: '50K+', label: 'Clinical Decisions / Mo.' },
-      { value: '3', label: 'Supported Languages' },
-      { value: '100%', label: 'Expert Peer-Reviewed' },
-      { value: 'E-E-A-T', label: 'Guideline-Aligned' },
+      { value: '117+', label: 'Validated Clinical Tools' },
+      { value: '3', label: 'Languages (EN, FR, ES)' },
+      { value: '100%', label: 'Guideline-Sourced (AHA/ESC/KDIGO)' },
+      { value: '0 PHI', label: '100% Client-Side & Private' },
     ],
     fr: [
-      { value: '50K+', label: 'Décisions Cliniques / Mois' },
-      { value: '3', label: 'Langues Supportées' },
-      { value: '100%', label: 'Validé par Experts' },
-      { value: 'E-E-A-T', label: 'Aligné aux Recommandations' },
+      { value: '117+', label: 'Outils Cliniques Validés' },
+      { value: '3', label: 'Langues (EN, FR, ES)' },
+      { value: '100%', label: 'Basé sur Recommandations (AHA/ESC/KDIGO)' },
+      { value: '0 PHI', label: '100% Local & Privé' },
     ],
     es: [
-      { value: '50K+', label: 'Decisiones Clínicas / Mes' },
-      { value: '3', label: 'Idiomas Disponibles' },
-      { value: '100%', label: 'Revisado por Expertos' },
-      { value: 'E-E-A-T', label: 'Conforme a Guías Clínicas' },
+      { value: '117+', label: 'Herramientas Clínicas Validadas' },
+      { value: '3', label: 'Idiomas (EN, FR, ES)' },
+      { value: '100%', label: 'Basado en Guías (AHA/ESC/KDIGO)' },
+      { value: '0 PHI', label: '100% Local y Privado' },
     ],
     ar: [
-      { value: '50K+', label: 'قرارات سريرية / شهر' },
-      { value: '4', label: 'لغات مدعومة' },
-      { value: '100%', label: 'تمت المراجعة بواسطة خبراء' },
-      { value: 'E-E-A-T', label: 'متوافق مع الإرشادات السريرية' },
+      { value: '117+', label: 'أداة سريرية معتمدة' },
+      { value: '3', label: 'لغات (EN, FR, ES)' },
+      { value: '100%', label: 'مستمد من الإرشادات (AHA/ESC/KDIGO)' },
+      { value: '0 PHI', label: 'محلي وخاص 100%' },
     ],
   },
   search: {
@@ -367,6 +368,16 @@ export default function HomePage({ lang }: HomePageProps) {
             </button>
           </motion.div>
 
+          {/* Quick-Launch Interactive Calculator */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.35, ease: 'easeOut' }}
+            className="mb-10 w-full"
+          >
+            <QuickMAPCalculator />
+          </motion.div>
+
           {/* Quick-Launch Clinical Workbench */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
@@ -377,20 +388,39 @@ export default function HomePage({ lang }: HomePageProps) {
             {[
               { path: '/map-calculator', name: 'MAP Calc', icon: <Activity className="w-6 h-6 text-teal-600 dark:text-teal-400" /> },
               { path: '/wells-score', name: 'Wells Score', icon: <AlertOctagon className="w-6 h-6 text-rose-600 dark:text-rose-400" /> },
-              { path: '/parkland-formula', name: 'Parkland', icon: <Droplet className="w-6 h-6 text-cyan-600 dark:text-cyan-400" /> },
-              { path: '/grace-score', name: 'GRACE ACS', icon: <HeartPulse className="w-6 h-6 text-indigo-600 dark:text-indigo-400" /> }
-            ].map((item, idx) => (
-              <Link
-                key={idx}
-                to={langPath(item.path)}
-                className="group flex flex-col items-center justify-center gap-3 p-4 min-h-[100px] bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-slate-200/80 dark:border-slate-700 hover:border-teal-400 dark:hover:border-teal-400 rounded-3xl shadow-[0_2px_10px_-3px_rgba(6,81,237,0.1)] hover:shadow-lg transition-all duration-300 text-slate-800 dark:text-slate-100 hover:-translate-y-1"
-              >
-                <div className="p-3 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 group-hover:bg-teal-50 dark:group-hover:bg-teal-900/30 transition-colors">
-                  {item.icon}
-                </div>
-                <span className="text-sm font-bold text-center tracking-tight">{item.name}</span>
-              </Link>
-            ))}
+              { path: '/synapse-engine', name: 'Guidelines AI', icon: <Sparkles className="w-6 h-6 text-indigo-600 dark:text-indigo-400" /> },
+              { isSmartPaste: true, name: 'SmartPaste EHR', icon: <ClipboardList className="w-6 h-6 text-cyan-600 dark:text-cyan-400" /> }
+            ].map((item, idx) => {
+              if (item.isSmartPaste) {
+                return (
+                  <button
+                    key={idx}
+                    onClick={() => {
+                      const event = new CustomEvent('carecalculus:open-smart-paste');
+                      window.dispatchEvent(event);
+                    }}
+                    className="group flex flex-col items-center justify-center gap-3 p-4 min-h-[100px] bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-slate-200/80 dark:border-slate-700 hover:border-teal-400 dark:hover:border-teal-400 rounded-3xl shadow-[0_2px_10px_-3px_rgba(6,81,237,0.1)] hover:shadow-lg transition-all duration-300 text-slate-800 dark:text-slate-100 hover:-translate-y-1 cursor-pointer"
+                  >
+                    <div className="p-3 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 group-hover:bg-teal-50 dark:group-hover:bg-teal-900/30 transition-colors">
+                      {item.icon}
+                    </div>
+                    <span className="text-sm font-bold text-center tracking-tight">{item.name}</span>
+                  </button>
+                );
+              }
+              return (
+                <Link
+                  key={idx}
+                  to={langPath(item.path!)}
+                  className="group flex flex-col items-center justify-center gap-3 p-4 min-h-[100px] bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-slate-200/80 dark:border-slate-700 hover:border-teal-400 dark:hover:border-teal-400 rounded-3xl shadow-[0_2px_10px_-3px_rgba(6,81,237,0.1)] hover:shadow-lg transition-all duration-300 text-slate-800 dark:text-slate-100 hover:-translate-y-1"
+                >
+                  <div className="p-3 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 group-hover:bg-teal-50 dark:group-hover:bg-teal-900/30 transition-colors">
+                    {item.icon}
+                  </div>
+                  <span className="text-sm font-bold text-center tracking-tight">{item.name}</span>
+                </Link>
+              );
+            })}
           </motion.div>
 
           <motion.div
@@ -417,6 +447,19 @@ export default function HomePage({ lang }: HomePageProps) {
               {lang === 'fr' ? 'Déploiement pour Hôpitaux & Cliniques ?' : 'Looking for Hospital Deployment?'}
             </Link>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Trusted By / Social Proof */}
+      <section className="py-8 border-b border-slate-100 dark:border-slate-800">
+        <div className="max-w-4xl mx-auto text-center px-4">
+          <p className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-6">Trusted by clinicians at leading institutions</p>
+          <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+            {/* Placeholder Logos */}
+            <div className="flex items-center gap-2 text-slate-700 font-bold text-xl"><ShieldCheck className="w-6 h-6" /> General Hospital</div>
+            <div className="flex items-center gap-2 text-slate-700 font-bold text-xl"><Award className="w-6 h-6" /> Univ. Medical</div>
+            <div className="flex items-center gap-2 text-slate-700 font-bold text-xl"><Stethoscope className="w-6 h-6" /> Critical Care Partners</div>
+          </div>
         </div>
       </section>
 

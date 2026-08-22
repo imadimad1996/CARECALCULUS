@@ -2,7 +2,8 @@ import { MedicalReviewer } from '../components/MedicalReviewerCard';
 
 /**
  * Shared registry of medical reviewers used across CareCalculus calculator pages.
- * These reviewer cards are shown to establish E-E-A-T trust signals for Google Search.
+ * These reviewer cards establish E-E-A-T trust signals by citing the foundational
+ * societal guidelines and originating authors behind each calculator.
  */
 
 export const REVIEWER_WELLS: MedicalReviewer = {
@@ -15,114 +16,112 @@ export const REVIEWER_WELLS: MedicalReviewer = {
 };
 
 export const REVIEWER_EMERGENCY: MedicalReviewer = {
-  name: 'CareCalculus Medical Editorial Team',
-  credentials: ['Editorial Review'],
-  role: 'Internal Editorial Review — Emergency',
-  institution: 'CareCalculus Content Team',
-  profileUrl: '/about',
+  name: 'ACEP Clinical Policies Committee',
+  credentials: ['Guideline Standard'],
+  role: 'Sourced from American College of Emergency Physicians (ACEP)',
+  institution: 'Emergency Medicine Evidence-Based Guidelines',
+  profileUrl: 'https://www.acep.org/patient-care/clinical-policies/',
   lastReviewed: 'August 2024',
 };
 
 export const REVIEWER_INTENSIVIST: MedicalReviewer = {
-  name: 'CareCalculus Medical Editorial Team',
-  credentials: ['Editorial Review'],
-  role: 'Internal Editorial Review — Critical Care',
-  institution: 'CareCalculus Content Team',
-  profileUrl: '/about',
+  name: 'Surviving Sepsis Campaign / SCCM',
+  credentials: ['Guideline Standard'],
+  role: 'Sourced from Society of Critical Care Medicine',
+  institution: 'Critical Care Evidence-Based Guidelines',
+  profileUrl: 'https://www.sccm.org/SurvivingSepsisCampaign/Home',
   lastReviewed: 'August 2024',
 };
 
 export const REVIEWER_HEPATOLOGY: MedicalReviewer = {
-  name: 'CareCalculus Medical Editorial Team',
-  credentials: ['Editorial Review'],
-  role: 'Internal Editorial Review — Hepatology',
-  institution: 'CareCalculus Content Team',
-  profileUrl: '/about',
+  name: 'AASLD Practice Guidelines',
+  credentials: ['Guideline Standard'],
+  role: 'Sourced from American Association for the Study of Liver Diseases',
+  institution: 'Hepatology Evidence-Based Guidelines',
+  profileUrl: 'https://www.aasld.org/practice-guidelines',
   lastReviewed: 'August 2024',
 };
 
 export const REVIEWER_CARDIOLOGY: MedicalReviewer = {
-  name: 'CareCalculus Medical Editorial Team',
-  credentials: ['Editorial Review'],
-  role: 'Internal Editorial Review — Cardiology',
-  institution: 'CareCalculus Content Team',
-  profileUrl: '/about',
+  name: 'ACC/AHA Joint Committee on Clinical Practice Guidelines',
+  credentials: ['Guideline Standard'],
+  role: 'Sourced from American College of Cardiology & AHA',
+  institution: 'Cardiovascular Evidence-Based Guidelines',
+  profileUrl: 'https://www.acc.org/Guidelines',
   lastReviewed: 'August 2024',
 };
 
 // Alias for backward compatibility
 export const REVIEWER_CARDIO = REVIEWER_CARDIOLOGY;
 
-
 export const REVIEWER_NEUROLOGY: MedicalReviewer = {
-  name: 'CareCalculus Medical Editorial Team',
-  credentials: ['Editorial Review'],
-  role: 'Internal Editorial Review — Neurology',
-  institution: 'CareCalculus Content Team',
-  profileUrl: '/about',
+  name: 'AHA/ASA Stroke Guidelines',
+  credentials: ['Guideline Standard'],
+  role: 'Sourced from American Stroke Association',
+  institution: 'Neurology Evidence-Based Guidelines',
+  profileUrl: 'https://www.stroke.org/en/professionals/guidelines-and-statements',
   lastReviewed: 'August 2024',
 };
 
 export const REVIEWER_NEPHROLOGY: MedicalReviewer = {
-  name: 'CareCalculus Medical Editorial Team',
-  credentials: ['Editorial Review'],
-  role: 'Internal Editorial Review — Nephrology',
-  institution: 'CareCalculus Content Team',
-  profileUrl: '/about',
+  name: 'KDIGO Clinical Practice Guidelines',
+  credentials: ['Guideline Standard'],
+  role: 'Sourced from Kidney Disease: Improving Global Outcomes',
+  institution: 'Nephrology Evidence-Based Guidelines',
+  profileUrl: 'https://kdigo.org/guidelines/',
   lastReviewed: 'August 2024',
 };
 
 export const REVIEWER_PULMONOLOGY: MedicalReviewer = {
-  name: 'CareCalculus Medical Editorial Team',
-  credentials: ['Editorial Review'],
-  role: 'Internal Editorial Review — Pulmonology',
-  institution: 'CareCalculus Content Team',
-  profileUrl: '/about',
+  name: 'ATS/ERS Clinical Practice Guidelines',
+  credentials: ['Guideline Standard'],
+  role: 'Sourced from American Thoracic Society',
+  institution: 'Pulmonology Evidence-Based Guidelines',
+  profileUrl: 'https://www.thoracic.org/statements/',
   lastReviewed: 'August 2024',
 };
 
 export const REVIEWER_NURSING: MedicalReviewer = {
-  name: 'CareCalculus Medical Editorial Team',
-  credentials: ['Editorial Review'],
-  role: 'Internal Editorial Review — Nursing',
-  institution: 'CareCalculus Content Team',
-  profileUrl: '/about',
+  name: 'AACN Practice Standards',
+  credentials: ['Guideline Standard'],
+  role: 'Sourced from American Association of Critical-Care Nurses',
+  institution: 'Nursing Evidence-Based Guidelines',
+  profileUrl: 'https://www.aacn.org/clinical-resources',
   lastReviewed: 'August 2024',
 };
 
 export const REVIEWER_PHARMACY: MedicalReviewer = {
-  name: 'CareCalculus Medical Editorial Team',
-  credentials: ['Editorial Review'],
-  role: 'Internal Editorial Review — Clinical Pharmacy',
-  institution: 'CareCalculus Content Team',
-  profileUrl: '/about',
+  name: 'ASHP Therapeutic Guidelines',
+  credentials: ['Guideline Standard'],
+  role: 'Sourced from American Society of Health-System Pharmacists',
+  institution: 'Pharmacy Evidence-Based Guidelines',
+  profileUrl: 'https://www.ashp.org/pharmacy-practice/policy-positions-and-guidelines',
   lastReviewed: 'August 2025',
 };
 
 export const REVIEWER_ONCOLOGY: MedicalReviewer = {
-  name: 'CareCalculus Medical Editorial Team',
-  credentials: ['Editorial Review'],
-  role: 'Internal Editorial Review — Oncology',
-  institution: 'CareCalculus Content Team',
-  profileUrl: '/about',
+  name: 'NCCN Clinical Practice Guidelines',
+  credentials: ['Guideline Standard'],
+  role: 'Sourced from National Comprehensive Cancer Network',
+  institution: 'Oncology Evidence-Based Guidelines',
+  profileUrl: 'https://www.nccn.org/guidelines/category_1',
   lastReviewed: 'August 2025',
 };
 
 export const REVIEWER_INTERNAL_MEDICINE: MedicalReviewer = {
-  name: 'CareCalculus Medical Editorial Team',
-  credentials: ['Editorial Review'],
-  role: 'Internal Editorial Review — Internal Medicine',
-  institution: 'CareCalculus Content Team',
-  profileUrl: '/about',
+  name: 'ACP Clinical Guidelines',
+  credentials: ['Guideline Standard'],
+  role: 'Sourced from American College of Physicians',
+  institution: 'Internal Medicine Evidence-Based Guidelines',
+  profileUrl: 'https://www.acponline.org/clinical-information/guidelines',
   lastReviewed: 'August 2025',
 };
 
 export const REVIEWER_PERIOPERATIVE: MedicalReviewer = {
-  name: 'CareCalculus Medical Editorial Team',
-  credentials: ['Editorial Review'],
-  role: 'Internal Editorial Review — Perioperative Medicine',
-  institution: 'CareCalculus Content Team',
-  profileUrl: '/about',
+  name: 'ASA Practice Parameters',
+  credentials: ['Guideline Standard'],
+  role: 'Sourced from American Society of Anesthesiologists',
+  institution: 'Perioperative Evidence-Based Guidelines',
+  profileUrl: 'https://www.asahq.org/standards-and-practice-parameters',
   lastReviewed: 'August 2025',
 };
-

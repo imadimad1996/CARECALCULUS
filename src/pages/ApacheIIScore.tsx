@@ -263,7 +263,7 @@ export default function ApacheIIScore({ lang }: { lang: LangCode }) {
 
           <div>
             <label className="block text-sm font-bold text-slate-700 mb-2">{dict.gcs}</label>
-            <input type="number" min="0" max="12" value={gcs} onChange={(e) => setGcs(e.target.value)} className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl font-bold text-slate-700" placeholder="15 - GCS" />
+            <input type="number" inputMode="decimal" min="0" max="12" value={gcs} onChange={(e) => setGcs(e.target.value)} className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl font-bold text-slate-700" placeholder="15 - GCS" />
             <span className="text-xs text-slate-500">Ex: if GCS is 10, enter 5</span>
           </div>
 
@@ -328,3 +328,4 @@ export default function ApacheIIScore({ lang }: { lang: LangCode }) {
     </CalculatorShell>
   );
 }
+

@@ -234,7 +234,7 @@ export default function InsulinSlidingScale({ lang }: { lang: LangCode }) {
                 <div className="flex gap-2">
                   <div className="relative flex-1">
                     <input
-                      type="number"
+                      type="number" inputMode="decimal"
                       value={bg}
                       onChange={(e) => setBg(e.target.value)}
                       placeholder="e.g. 180"
@@ -413,3 +413,4 @@ export default function InsulinSlidingScale({ lang }: { lang: LangCode }) {
     </>
   );
 }
+

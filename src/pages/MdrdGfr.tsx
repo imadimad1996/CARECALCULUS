@@ -204,7 +204,7 @@ export default function MdrdGfr({ lang }: { lang: LangCode }) {
                   </label>
                 </div>
                 <input
-                  type="number"
+                  type="number" inputMode="decimal"
                   min={isSI ? "10" : "0.1"}
                   max={isSI ? "2000" : "20"}
                   step={isSI ? "1" : "0.1"}
@@ -295,3 +295,4 @@ export default function MdrdGfr({ lang }: { lang: LangCode }) {
     </div>
   );
 }
+

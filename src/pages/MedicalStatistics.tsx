@@ -120,21 +120,21 @@ export default function MedicalStatistics({ lang }: { lang: LangCode }) {
             <div className="bg-slate-50 p-4 font-bold text-slate-700 flex items-center justify-center">{dict.testPositive}</div>
             <div className="p-4 bg-indigo-50/30">
               <label className="text-xs text-slate-500 mb-1 block">{dict.tp}</label>
-              <input type="number" value={tp} onChange={(e) => setTp(e.target.value === '' ? '' : Number(e.target.value))} className="w-full text-center px-4 py-2 bg-white border border-indigo-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 rounded-xl text-lg font-bold" placeholder="TP" />
+              <input type="number" inputMode="decimal" value={tp} onChange={(e) => setTp(e.target.value === '' ? '' : Number(e.target.value))} className="w-full text-center px-4 py-2 bg-white border border-indigo-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 rounded-xl text-lg font-bold" placeholder="TP" />
             </div>
             <div className="p-4 bg-emerald-50/30">
               <label className="text-xs text-slate-500 mb-1 block">{dict.fp}</label>
-              <input type="number" value={fp} onChange={(e) => setFp(e.target.value === '' ? '' : Number(e.target.value))} className="w-full text-center px-4 py-2 bg-white border border-emerald-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 rounded-xl text-lg font-bold" placeholder="FP" />
+              <input type="number" inputMode="decimal" value={fp} onChange={(e) => setFp(e.target.value === '' ? '' : Number(e.target.value))} className="w-full text-center px-4 py-2 bg-white border border-emerald-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 rounded-xl text-lg font-bold" placeholder="FP" />
             </div>
 
             <div className="bg-slate-50 p-4 font-bold text-slate-700 flex items-center justify-center">{dict.testNegative}</div>
             <div className="p-4 bg-indigo-50/30">
               <label className="text-xs text-slate-500 mb-1 block">{dict.fn}</label>
-              <input type="number" value={fn} onChange={(e) => setFn(e.target.value === '' ? '' : Number(e.target.value))} className="w-full text-center px-4 py-2 bg-white border border-indigo-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 rounded-xl text-lg font-bold" placeholder="FN" />
+              <input type="number" inputMode="decimal" value={fn} onChange={(e) => setFn(e.target.value === '' ? '' : Number(e.target.value))} className="w-full text-center px-4 py-2 bg-white border border-indigo-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 rounded-xl text-lg font-bold" placeholder="FN" />
             </div>
             <div className="p-4 bg-emerald-50/30">
               <label className="text-xs text-slate-500 mb-1 block">{dict.tn}</label>
-              <input type="number" value={tn} onChange={(e) => setTn(e.target.value === '' ? '' : Number(e.target.value))} className="w-full text-center px-4 py-2 bg-white border border-emerald-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 rounded-xl text-lg font-bold" placeholder="TN" />
+              <input type="number" inputMode="decimal" value={tn} onChange={(e) => setTn(e.target.value === '' ? '' : Number(e.target.value))} className="w-full text-center px-4 py-2 bg-white border border-emerald-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 rounded-xl text-lg font-bold" placeholder="TN" />
             </div>
           </div>
         </div>
@@ -210,3 +210,4 @@ export default function MedicalStatistics({ lang }: { lang: LangCode }) {
     </CalculatorShell>
   );
 }
+

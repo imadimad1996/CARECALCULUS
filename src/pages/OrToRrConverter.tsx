@@ -163,12 +163,12 @@ export default function OrToRrConverter({ lang }: { lang: LangCode }) {
             <div className="space-y-5">
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-gray-900">{currentText.or}</label>
-                <input type="number" value={orStr} onChange={e => setOrStr(e.target.value)} placeholder="e.g. 2.5"
+                <input type="number" inputMode="decimal" value={orStr} onChange={e => setOrStr(e.target.value)} placeholder="e.g. 2.5"
                   className="block w-full rounded-xl border-gray-200 bg-gray-50/50 py-3 px-4 text-gray-900 placeholder:text-gray-400 focus:border-orange-500 focus:ring-orange-500/20 sm:text-sm font-medium transition-all" dir="ltr" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-gray-900">{currentText.pe}</label>
-                <input type="number" value={peStr} onChange={e => setPeStr(e.target.value)} placeholder="e.g. 20"
+                <input type="number" inputMode="decimal" value={peStr} onChange={e => setPeStr(e.target.value)} placeholder="e.g. 20"
                   className="block w-full rounded-xl border-gray-200 bg-gray-50/50 py-3 px-4 text-gray-900 placeholder:text-gray-400 focus:border-orange-500 focus:ring-orange-500/20 sm:text-sm font-medium transition-all" dir="ltr" />
               </div>
             </div>
@@ -290,3 +290,4 @@ export default function OrToRrConverter({ lang }: { lang: LangCode }) {
     </>
   );
 }
+

@@ -185,7 +185,7 @@ export default function MeldScore({ lang }: { lang: LangCode }) {
                 <div className="group">
                   <label className="text-xs font-bold text-gray-500 uppercase tracking-wider block mb-2">{currentText.bilirubin} ({isSI ? currentText.bilirubinUmol : currentText.bilirubinMg})</label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     step={isSI ? "1" : "0.1"}
                     min={isSI ? "17" : "0.1"}
                     value={bilirubin}
@@ -196,7 +196,7 @@ export default function MeldScore({ lang }: { lang: LangCode }) {
                 <div className="group">
                   <label className="text-xs font-bold text-gray-500 uppercase tracking-wider block mb-2">{currentText.inr}</label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     step="0.1"
                     min="0.1"
                     value={inr}
@@ -207,7 +207,7 @@ export default function MeldScore({ lang }: { lang: LangCode }) {
                 <div className="group">
                   <label className="text-xs font-bold text-gray-500 uppercase tracking-wider block mb-2">{currentText.creatinine} ({isSI ? currentText.creatinineUmol : currentText.creatinineMg})</label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     step={isSI ? "1" : "0.1"}
                     min={isSI ? "9" : "0.1"}
                     value={creatinine}
@@ -218,7 +218,7 @@ export default function MeldScore({ lang }: { lang: LangCode }) {
                 <div className="group">
                   <label className="text-xs font-bold text-gray-500 uppercase tracking-wider block mb-2">{currentText.sodium} ({isSI ? currentText.sodiumSi : currentText.sodiumUS})</label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     step="1"
                     min="125"
                     max="140"
@@ -435,4 +435,5 @@ export default function MeldScore({ lang }: { lang: LangCode }) {
     </>
   );
 }
+
 

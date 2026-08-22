@@ -165,7 +165,7 @@ export default function WintersFormula({ lang }: { lang: LangCode }) {
                   {currentText.hco3Label}
                 </label>
                 <input
-                  type="number"
+                  type="number" inputMode="decimal"
                   value={hco3}
                   onChange={(e) => setHco3(e.target.value)}
                   className="w-full px-4 py-3.5 min-h-[48px] bg-gray-50 border border-gray-200 focus:bg-white focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100 outline-none rounded-2xl text-base font-semibold text-gray-900 transition-all"
@@ -178,7 +178,7 @@ export default function WintersFormula({ lang }: { lang: LangCode }) {
                   {currentText.pco2Label}
                 </label>
                 <input
-                  type="number"
+                  type="number" inputMode="decimal"
                   value={pco2}
                   onChange={(e) => setPco2(e.target.value)}
                   className="w-full px-4 py-3.5 min-h-[48px] bg-gray-50 border border-gray-200 focus:bg-white focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100 outline-none rounded-2xl text-base font-semibold text-gray-900 transition-all"
@@ -254,3 +254,4 @@ export default function WintersFormula({ lang }: { lang: LangCode }) {
     </>
   );
 }
+

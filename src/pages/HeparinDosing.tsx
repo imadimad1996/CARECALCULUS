@@ -174,7 +174,7 @@ export default function HeparinDosing({ lang }: { lang: LangCode }) {
                   {currentText.weightLabel as string}
                 </label>
                 <input
-                  type="number"
+                  type="number" inputMode="decimal"
                   value={weight}
                   onChange={(e) => setWeight(e.target.value)}
                   className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-rose-500 focus:border-rose-500 transition-all font-mono text-lg"
@@ -254,3 +254,4 @@ export default function HeparinDosing({ lang }: { lang: LangCode }) {
     </>
   );
 }
+

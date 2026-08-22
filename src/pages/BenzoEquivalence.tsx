@@ -190,7 +190,7 @@ export default function BenzoEquivalence({ lang }: { lang: LangCode }) {
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-gray-900">{currentText.dose}</label>
                 <input
-                  type="number"
+                  type="number" inputMode="decimal"
                   value={dose}
                   onChange={(e) => setDose(e.target.value)}
                   placeholder="e.g. 10"
@@ -346,3 +346,4 @@ export default function BenzoEquivalence({ lang }: { lang: LangCode }) {
     </>
   );
 }
+

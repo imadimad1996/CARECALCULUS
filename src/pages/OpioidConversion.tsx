@@ -155,7 +155,7 @@ export default function OpioidConversion({ lang }: { lang: LangCode }) {
                   {currentText.doseLabel as string}
                 </label>
                 <input
-                  type="number"
+                  type="number" inputMode="decimal"
                   value={dose}
                   onChange={(e) => setDose(e.target.value)}
                   className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all font-mono text-lg"
@@ -240,3 +240,4 @@ export default function OpioidConversion({ lang }: { lang: LangCode }) {
     </>
   );
 }
+

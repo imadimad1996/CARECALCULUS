@@ -47,8 +47,8 @@ export function generateMedicalOrganizationSchema() {
 }
 
 // Helper function to generate MedicalWebPage schema
-export function generateMedicalWebPageSchema(title: string, description: string, url: string) {
-  return {
+export function generateMedicalWebPageSchema(title: string, description: string, url: string, reviewerName?: string, reviewerUrl?: string) {
+  const schema: any = {
     "@context": "https://schema.org",
     "@type": "MedicalWebPage",
     "name": title,
@@ -56,6 +56,14 @@ export function generateMedicalWebPageSchema(title: string, description: string,
     "url": url,
     "publisher": generateMedicalOrganizationSchema()
   };
+  if (reviewerName) {
+    schema.reviewedBy = {
+      "@type": "Person",
+      "name": reviewerName,
+      ...(reviewerUrl ? { "sameAs": reviewerUrl } : {})
+    };
+  }
+  return schema;
 }
 
 /**
@@ -82,18 +90,26 @@ export function generateWebSiteSchema() {
 }
 
 // Helper function to generate MedicalCalculator schema
-export function generateMedicalCalculatorSchema(name: string, description: string) {
-  return {
+export function generateMedicalCalculatorSchema(name: string, description: string, authorName?: string, authorUrl?: string) {
+  const schema: any = {
     "@context": "https://schema.org",
     "@type": "MedicalCalculator",
     "name": name,
     "description": description
   };
+  if (authorName) {
+    schema.author = {
+      "@type": "Person",
+      "name": authorName,
+      ...(authorUrl ? { "sameAs": authorUrl } : {})
+    };
+  }
+  return schema;
 }
 
 // Helper function to generate MedicalRiskScore schema
-export function generateMedicalRiskScoreSchema(name: string, description: string, url: string, scoringSystem: string) {
-  return {
+export function generateMedicalRiskScoreSchema(name: string, description: string, url: string, scoringSystem: string, reviewerName?: string, reviewerUrl?: string) {
+  const schema: any = {
     "@context": "https://schema.org",
     "@type": ["MedicalWebPage", "MedicalRiskScore"],
     "name": name,
@@ -105,6 +121,14 @@ export function generateMedicalRiskScoreSchema(name: string, description: string
     },
     "publisher": generateMedicalOrganizationSchema()
   };
+  if (reviewerName) {
+    schema.reviewedBy = {
+      "@type": "Person",
+      "name": reviewerName,
+      ...(reviewerUrl ? { "sameAs": reviewerUrl } : {})
+    };
+  }
+  return schema;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

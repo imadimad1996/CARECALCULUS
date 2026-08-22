@@ -140,7 +140,7 @@ export default function AminoglycosideDosing({ lang }: { lang: LangCode }) {
 
           <div>
             <label className="block text-sm font-bold text-slate-700 mb-2">{dict.age}</label>
-            <input type="number" value={age} onChange={(e) => setAge(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 focus:border-fuchsia-500 focus:ring-4 focus:ring-fuchsia-500/10 rounded-2xl text-lg font-semibold transition" placeholder="e.g. 45" />
+            <input type="number" inputMode="decimal" value={age} onChange={(e) => setAge(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 focus:border-fuchsia-500 focus:ring-4 focus:ring-fuchsia-500/10 rounded-2xl text-lg font-semibold transition" placeholder="e.g. 45" />
           </div>
 
           <div>
@@ -153,17 +153,17 @@ export default function AminoglycosideDosing({ lang }: { lang: LangCode }) {
 
           <div>
             <label className="block text-sm font-bold text-slate-700 mb-2">{dict.weight}</label>
-            <input type="number" value={weight} onChange={(e) => setWeight(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 focus:border-fuchsia-500 focus:ring-4 focus:ring-fuchsia-500/10 rounded-2xl text-lg font-semibold transition" placeholder="e.g. 70" />
+            <input type="number" inputMode="decimal" value={weight} onChange={(e) => setWeight(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 focus:border-fuchsia-500 focus:ring-4 focus:ring-fuchsia-500/10 rounded-2xl text-lg font-semibold transition" placeholder="e.g. 70" />
           </div>
 
           <div>
             <label className="block text-sm font-bold text-slate-700 mb-2">{dict.height}</label>
-            <input type="number" value={height} onChange={(e) => setHeight(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 focus:border-fuchsia-500 focus:ring-4 focus:ring-fuchsia-500/10 rounded-2xl text-lg font-semibold transition" placeholder="e.g. 175" />
+            <input type="number" inputMode="decimal" value={height} onChange={(e) => setHeight(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 focus:border-fuchsia-500 focus:ring-4 focus:ring-fuchsia-500/10 rounded-2xl text-lg font-semibold transition" placeholder="e.g. 175" />
           </div>
 
           <div>
             <label className="block text-sm font-bold text-slate-700 mb-2">{isSI ? dict.scrSI : dict.scr}</label>
-            <input type="number" step={isSI ? "1" : "0.1"} value={scr} onChange={(e) => setScr(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 focus:border-fuchsia-500 focus:ring-4 focus:ring-fuchsia-500/10 rounded-2xl text-lg font-semibold transition" placeholder={isSI ? "e.g. 88" : "e.g. 1.0"} />
+            <input type="number" inputMode="decimal" step={isSI ? "1" : "0.1"} value={scr} onChange={(e) => setScr(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-200 focus:border-fuchsia-500 focus:ring-4 focus:ring-fuchsia-500/10 rounded-2xl text-lg font-semibold transition" placeholder={isSI ? "e.g. 88" : "e.g. 1.0"} />
           </div>
         </div>
 
@@ -225,3 +225,4 @@ export default function AminoglycosideDosing({ lang }: { lang: LangCode }) {
     </CalculatorShell>
   );
 }
+

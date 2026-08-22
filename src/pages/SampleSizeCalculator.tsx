@@ -243,12 +243,12 @@ export default function SampleSizeCalculator({ lang }: { lang: LangCode }) {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-900">{currentText.p1}</label>
-                  <input type="number" value={p1Str} onChange={e => setP1(e.target.value)} placeholder="e.g. 15"
+                  <input type="number" inputMode="decimal" value={p1Str} onChange={e => setP1(e.target.value)} placeholder="e.g. 15"
                     className="block w-full rounded-xl border-gray-200 bg-gray-50/50 py-3 px-4 text-gray-900 placeholder:text-gray-400 focus:border-indigo-500 focus:ring-indigo-500/20 sm:text-sm font-medium transition-all" dir="ltr" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-900">{currentText.p2}</label>
-                  <input type="number" value={p2Str} onChange={e => setP2(e.target.value)} placeholder="e.g. 10"
+                  <input type="number" inputMode="decimal" value={p2Str} onChange={e => setP2(e.target.value)} placeholder="e.g. 10"
                     className="block w-full rounded-xl border-gray-200 bg-gray-50/50 py-3 px-4 text-gray-900 placeholder:text-gray-400 focus:border-indigo-500 focus:ring-indigo-500/20 sm:text-sm font-medium transition-all" dir="ltr" />
                 </div>
               </div>
@@ -412,3 +412,4 @@ export default function SampleSizeCalculator({ lang }: { lang: LangCode }) {
     </>
   );
 }
+

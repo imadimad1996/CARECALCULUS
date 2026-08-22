@@ -152,7 +152,7 @@ export default function ParklandFormula({ lang }: { lang: LangCode }) {
                   {currentText.weightLabel} ({currentText.weightUnit})
                 </label>
                 <input
-                  type="number"
+                  type="number" inputMode="decimal"
                   value={weight}
                   onChange={(e) => setWeight(e.target.value)}
                   className="w-full px-4 py-3.5 min-h-[48px] bg-gray-50 border border-gray-200 focus:bg-white focus:border-orange-500 focus:ring-2 focus:ring-orange-100 outline-none rounded-2xl text-base font-semibold text-gray-900 transition-all"
@@ -166,7 +166,7 @@ export default function ParklandFormula({ lang }: { lang: LangCode }) {
                 </label>
                 <span className="block text-xs text-gray-400 mb-2">{currentText.tbsaHelp}</span>
                 <input
-                  type="number"
+                  type="number" inputMode="decimal"
                   value={tbsa}
                   onChange={(e) => setTbsa(e.target.value)}
                   className="w-full px-4 py-3.5 min-h-[48px] bg-gray-50 border border-gray-200 focus:bg-white focus:border-orange-500 focus:ring-2 focus:ring-orange-100 outline-none rounded-2xl text-base font-semibold text-gray-900 transition-all"
@@ -265,3 +265,4 @@ export default function ParklandFormula({ lang }: { lang: LangCode }) {
     </>
   );
 }
+

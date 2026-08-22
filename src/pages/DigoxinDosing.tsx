@@ -231,7 +231,7 @@ export default function DigoxinDosing({ lang }: { lang: LangCode }) {
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-900">{currentText.age}</label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={age}
                     onChange={(e) => setAge(e.target.value)}
                     placeholder="e.g. 65"
@@ -249,7 +249,7 @@ export default function DigoxinDosing({ lang }: { lang: LangCode }) {
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-900">{currentText.height}</label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={height}
                     onChange={(e) => setHeight(e.target.value)}
                     placeholder="170"
@@ -260,7 +260,7 @@ export default function DigoxinDosing({ lang }: { lang: LangCode }) {
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-900">{currentText.weight}</label>
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={weight}
                     onChange={(e) => setWeight(e.target.value)}
                     placeholder="75"
@@ -273,7 +273,7 @@ export default function DigoxinDosing({ lang }: { lang: LangCode }) {
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-gray-900">{currentText.scr}</label>
                 <input
-                  type="number"
+                  type="number" inputMode="decimal"
                   step="0.1"
                   value={scr}
                   onChange={(e) => setScr(e.target.value)}
@@ -438,3 +438,4 @@ export default function DigoxinDosing({ lang }: { lang: LangCode }) {
     </>
   );
 }
+
