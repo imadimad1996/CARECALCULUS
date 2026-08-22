@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import CalculatorShell from '../components/CalculatorShell';
 import { ShieldCheck, AlertOctagon, AlertTriangle, Info } from 'lucide-react';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 import { LangCode } from '../types';
@@ -64,7 +63,7 @@ export default function DrugInteractions({ lang }: { lang: LangCode }) {
   };
 
   return (
-    <CalculatorShell logicalPath="/drug-interactions" lang={lang}>
+    <>
       <div className="w-full max-w-full max-w-3xl relative">
         <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3 mb-3">
           <ShieldCheck className="w-8 h-8 text-emerald-500" />
@@ -155,6 +154,6 @@ export default function DrugInteractions({ lang }: { lang: LangCode }) {
           </div>
         )}
       </div>
-    </CalculatorShell>
+    </>
   );
 }

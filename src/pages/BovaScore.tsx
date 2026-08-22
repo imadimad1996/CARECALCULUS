@@ -1,6 +1,5 @@
 import { CalcPageSchemas } from '../components/JsonLd';
 import React, { useState } from 'react';
-import CalculatorShell from '../components/CalculatorShell';
 import { HeartPulse } from 'lucide-react';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 import { LangCode } from '../types';
@@ -84,7 +83,7 @@ export default function BovaScore({ lang }: { lang: LangCode }) {
   };
 
   return (
-    <CalculatorShell logicalPath="/bova-score" lang={lang}>
+    <>
       <CalcPageSchemas 
         name={dict.title}
         description={dict.desc}
@@ -155,6 +154,6 @@ export default function BovaScore({ lang }: { lang: LangCode }) {
           </div>
         </div>
       </div>
-    </CalculatorShell>
+    </>
   );
 }

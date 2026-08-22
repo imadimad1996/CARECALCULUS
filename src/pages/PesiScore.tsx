@@ -1,6 +1,5 @@
 import { JsonLd } from '../components/JsonLd';
 import React, { useState } from 'react';
-import CalculatorShell from '../components/CalculatorShell';
 import { Wind } from 'lucide-react';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 import { LangCode } from '../types';
@@ -96,7 +95,7 @@ export default function PesiScore({ lang }: { lang: LangCode }) {
   };
 
   return (
-    <CalculatorShell logicalPath="/pesi-score" lang={lang}>
+    <>
       <JsonLd path="/pesi-score" title="Clinical Decision Support — CareCalculus" description="Evidence-based medical decision support calculator." type="SoftwareApplication" />
       <div className="w-full max-w-full max-w-3xl relative">
         <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3 mb-3">
@@ -180,7 +179,7 @@ export default function PesiScore({ lang }: { lang: LangCode }) {
           </div>
         )}
       </div>
-    </CalculatorShell>
+    </>
   );
 }
 

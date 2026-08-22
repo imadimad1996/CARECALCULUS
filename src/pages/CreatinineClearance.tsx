@@ -5,7 +5,6 @@ import { LangCode, Translations } from '../types';
 import { layoutTranslations } from '../utils/lang';
 import { trackCalculatorUsage, trackCalculatorResult } from '../utils/telemetry';
 import ClinicalExportButton from '../components/ClinicalExportButton';
-import CalculatorShell from '../components/CalculatorShell';
 import { useUnitSystem } from '../contexts/UnitSystemContext';
 
 const translations: Translations = {
@@ -109,7 +108,7 @@ export default function CreatinineClearance({ lang }: { lang: LangCode }) {
   const stage = getStage(crclValue);
 
   return (
-    <CalculatorShell logicalPath="/creatinine-clearance" lang={lang}>
+    <>
       <JsonLd path="/creatinine-clearance" title="Clinical Decision Support — CareCalculus" description="Evidence-based medical decision support calculator." type="SoftwareApplication" />
       <div className="w-full max-w-full max-w-3xl mb-12">
         <h1 className={`text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-3 ${isRtl ? 'leading-normal' : ''}`}>
@@ -292,7 +291,7 @@ export default function CreatinineClearance({ lang }: { lang: LangCode }) {
           ))}
         </div>
       )}
-    </CalculatorShell>
+    </>
   );
 }
 

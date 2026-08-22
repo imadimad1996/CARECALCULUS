@@ -5,7 +5,6 @@ import { LangCode, Translations } from '../types';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 import { trackCalculatorUsage } from '../utils/telemetry';
 import { layoutTranslations } from '../utils/lang';
-import CalculatorShell from '../components/CalculatorShell';
 
 const translations: Translations = {
   en: {
@@ -91,7 +90,7 @@ export default function AdjustedBodyWeight({ lang }: { lang: LangCode }) {
   }, [results, lang]);
 
   return (
-    <CalculatorShell logicalPath="/adjusted-body-weight" lang={lang}>
+    <>
       <JsonLd path="/adjusted-body-weight" title="Clinical Decision Support — CareCalculus" description="Evidence-based medical decision support calculator." type="SoftwareApplication" />
       <div className="w-full max-w-full max-w-3xl mb-12">
         <h1 className={`text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-3 ${isRtl ? 'leading-normal' : ''}`}>
@@ -314,7 +313,7 @@ export default function AdjustedBodyWeight({ lang }: { lang: LangCode }) {
           </table>
         </div>
       </div>
-    </CalculatorShell>
+    </>
   );
 }
 

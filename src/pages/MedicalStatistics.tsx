@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import CalculatorShell from '../components/CalculatorShell';
 import { Layers } from 'lucide-react';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 import { LangCode } from '../types';
@@ -101,7 +100,7 @@ export default function MedicalStatistics({ lang }: { lang: LangCode }) {
   const res = calculate();
 
   return (
-    <CalculatorShell logicalPath="/medical-statistics" lang={lang}>
+    <>
       <div className="w-full max-w-full max-w-4xl relative">
         <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3 mb-3">
           <Layers className="w-8 h-8 text-blue-500" />
@@ -207,7 +206,7 @@ export default function MedicalStatistics({ lang }: { lang: LangCode }) {
           </div>
         )}
       </div>
-    </CalculatorShell>
+    </>
   );
 }
 

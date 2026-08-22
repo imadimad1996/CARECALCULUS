@@ -1,6 +1,5 @@
 import { JsonLd } from '../components/JsonLd';
 import React, { useState } from 'react';
-import CalculatorShell from '../components/CalculatorShell';
 import { Activity } from 'lucide-react';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 import { LangCode } from '../types';
@@ -93,7 +92,7 @@ export default function SapsIIScore({ lang }: { lang: LangCode }) {
   const mortality = (Math.exp(logit) / (1 + Math.exp(logit)) * 100).toFixed(1);
 
   return (
-    <CalculatorShell logicalPath="/saps-ii-score" lang={lang}>
+    <>
       <JsonLd path="/saps-ii-score" title="Clinical Decision Support — CareCalculus" description="Evidence-based medical decision support calculator." type="SoftwareApplication" />
       <div className="w-full max-w-full max-w-4xl relative">
         <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3 mb-3">
@@ -287,6 +286,6 @@ export default function SapsIIScore({ lang }: { lang: LangCode }) {
           </div>
         </div>
       </div>
-    </CalculatorShell>
+    </>
   );
 }

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Heart, FileText, AlertCircle, TrendingUp, Activity } from 'lucide-react';
 import { LangCode } from '../../types';
-import CalculatorShell from '../../components/CalculatorShell';
 import { ActionableResultPanel, RiskLevel } from '../../components/ActionableResultPanel';
 
 const I18N = {
@@ -132,7 +131,7 @@ export default function HeartScore({ lang }: { lang: LangCode }) {
   }, [score, history, ekg, age, risk, troponin, lang, t, interpretation]);
 
   return (
-    <CalculatorShell logicalPath="/heart-score" lang={lang}>
+    <>
       <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden relative">
         <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-red-500 via-rose-400 to-red-500"></div>
         <div className="p-6 md:p-8">
@@ -287,6 +286,6 @@ export default function HeartScore({ lang }: { lang: LangCode }) {
           </div>
         </div>
       </div>
-    </CalculatorShell>
+    </>
   );
 }
