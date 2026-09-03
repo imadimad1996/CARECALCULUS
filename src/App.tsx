@@ -153,6 +153,48 @@ function AppLayout() {
   const [sidebarSearch, setSidebarSearch] = useState('');
   const [topSearch, setTopSearch] = useState('');
 
+  // Track Recent Calculators
+  const [recentCalculators, setRecentCalculators] = useState<string[]>(() => {
+    try {
+      const stored = localStorage.getItem('carecalculus-recent');
+      return stored ? JSON.parse(stored) : [];
+    } catch {
+      return [];
+    }
+  });
+
+  useEffect(() => {
+    if (logicalPath !== '/' && logicalPath !== '/map-calculator' && !isContentPage) {
+      setRecentCalculators(prev => {
+        const next = [logicalPath, ...prev.filter(p => p !== logicalPath)].slice(0, 5);
+        try {
+          localStorage.setItem('carecalculus-recent', JSON.stringify(next));
+        } catch (e) {}
+        return next;
+      });
+    }
+  }, [logicalPath, isContentPage]);
+
+  // Locale detection banner state
+  const [showLocaleBanner, setShowLocaleBanner] = useState(() => {
+    if (typeof navigator === 'undefined') return false;
+    const isEn = lang === 'en';
+    const hasDismissed = localStorage.getItem('carecalculus-locale-banner-dismissed');
+    return isEn && !hasDismissed;
+  });
+
+  const getSuggestedLocale = () => {
+    if (typeof navigator === 'undefined') return null;
+    const browserLangs = navigator.languages || [navigator.language];
+    for (const b of browserLangs) {
+      const code = b.toLowerCase().slice(0, 2);
+      if (code === 'fr') return 'fr';
+      if (code === 'es') return 'es';
+    }
+    return null;
+  };
+  const suggestedLocale = getSuggestedLocale();
+
   // Lock body scroll when mobile sidebar is open
   useEffect(() => {
     if (isSidebarOpen) {
@@ -1162,6 +1204,67 @@ function AppLayout() {
 
             {/* Unified top navigation widget — home and calculator pages */}
             {!isContentPage && renderUnifiedTopNav()}
+
+            {/* Language Detection Banner */}
+            {showLocaleBanner && suggestedLocale && (
+              <div className="mb-6 mx-auto w-full xl:w-fit bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 rounded-xl p-3 flex items-center justify-between gap-4 shadow-sm animate-fade-in relative z-20">
+                <div className="flex items-center gap-2.5">
+                  <Globe className="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0" />
+                  <p className="text-sm font-bold text-blue-800 dark:text-blue-200">
+                    {suggestedLocale === 'fr' 
+                      ? "CareCalculus est également disponible en français." 
+                      : "CareCalculus también está disponible en español."}
+                  </p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => setLang(suggestedLocale)}
+                    className="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-lg transition-colors whitespace-nowrap cursor-pointer"
+                  >
+                    {suggestedLocale === 'fr' ? 'Passer en français' : 'Cambiar a español'}
+                  </button>
+                  <button
+                    onClick={() => {
+                      localStorage.setItem('carecalculus-locale-banner-dismissed', 'true');
+                      setShowLocaleBanner(false);
+                    }}
+                    className="p-1.5 text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-800 rounded-lg transition-colors cursor-pointer"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* Quick Bedside Pin Bar */}
+            {!isContentPage && recentCalculators.length > 0 && (
+              <div className="mb-6 flex flex-wrap items-center gap-2 animate-fade-in relative z-20">
+                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest flex items-center gap-1.5 px-2">
+                  <Activity className="w-3.5 h-3.5" />
+                  {lang === 'fr' ? 'RÉCENTS :' : 'RECENT:'}
+                </span>
+                {recentCalculators.map(path => {
+                  const item = navItems.find(i => i.path === path);
+                  if (!item) return null;
+                  const Icon = item.icon;
+                  const isCurMatch = logicalPath === item.path;
+                  return (
+                    <Link
+                      key={path}
+                      to={langPath(path)}
+                      className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-bold transition-all shadow-sm ${
+                        isCurMatch 
+                          ? 'border-teal-500 bg-teal-50 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300' 
+                          : 'border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-700 dark:text-slate-300 hover:border-teal-300 hover:bg-teal-50/50 dark:hover:bg-slate-700'
+                      }`}
+                    >
+                      <Icon className="w-3.5 h-3.5 opacity-80" />
+                      <span>{lang === 'fr' ? item.nameFr : item.nameEn}</span>
+                    </Link>
+                  );
+                })}
+              </div>
+            )}
 
             {/* Content-page back-navigation bar */}
             {isContentPage && renderContentPageTopBar()}

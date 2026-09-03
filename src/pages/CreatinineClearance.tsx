@@ -1,8 +1,9 @@
 import { JsonLd } from '../components/JsonLd';
 import React, { useState, useMemo, useEffect } from 'react';
-import { Activity, Info, BookOpen } from 'lucide-react';
+import { Activity, Info, BookOpen, TestTube, Droplet } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { LangCode, Translations } from '../types';
-import { layoutTranslations } from '../utils/lang';
+import { layoutTranslations, buildPath } from '../utils/lang';
 import { trackCalculatorUsage, trackCalculatorResult } from '../utils/telemetry';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 import { useUnitSystem } from '../contexts/UnitSystemContext';
@@ -33,7 +34,12 @@ const translations: Translations = {
       "The Cockcroft-Gault equation, developed in 1976, is historically one of the first formulas to estimate creatinine clearance (and by extension, glomerular filtration rate) using serum creatinine, age, sex, and patient weight. While it has been largely superseded by more modern equations (like MDRD and CKD-EPI) for screening and diagnosing chronic kidney disease, it remains a cornerstone in clinical pharmacokinetics.",
       "Clinically, the vast majority of dosing recommendations for renally cleared medications (especially antibiotics like vancomycin, aminoglycosides, and direct oral anticoagulants or DOACs) were validated in clinical trials using the Cockcroft-Gault formula. Using a different equation (such as CKD-EPI) for these specific drugs can lead to overdosing (toxicity risk) or underdosing (therapeutic failure), particularly in the elderly or those with extreme body weights.",
       "However, it is crucial to understand its limitations: the equation often overestimates GFR in obese patients (since adipose tissue does not produce creatinine) and underestimates it in malnourished or amputated patients. In these situations, using ideal or adjusted body weight is often recommended to refine the calculation."
-    ]
+    ],
+    nextStepsTitle: "Next Steps in Renal Pathway",
+    nextStepsRenal: "For more accurate GFR (screening), use CKD-EPI. For dosing adjustments based on CrCl, refer to specific antibiotic protocols.",
+    linkCkdEpi: "CKD-EPI GFR",
+    linkVanco: "Vancomycin Dosing",
+    linkAmino: "Aminoglycoside Dosing",
   },
   fr: {
     title: "Calcul Créatinine Clearance (Formule de Cockcroft-Gault)",
@@ -60,7 +66,12 @@ const translations: Translations = {
       "La formule de Cockcroft-Gault, développée en 1976, est historiquement l'une des premières équations permettant d'estimer la clairance de la créatinine (et par extension le débit de filtration glomérulaire, DFG) à partir de la créatininémie, de l'âge, du sexe et du poids du patient. Bien qu'elle ait été progressivement remplacée par des équations plus modernes (comme MDRD et CKD-EPI) pour le dépistage et le diagnostic de l'insuffisance rénale chronique, elle conserve une place prépondérante et incontournable en pharmacocinétique clinique.",
       "Sur le plan clinique, la majorité des recommandations d'adaptation posologique des médicaments à élimination rénale (en particulier les antibiotiques comme la vancomycine, les aminosides, et les anticoagulants oraux directs ou AOD) ont été validées lors des essais cliniques en utilisant la formule de Cockcroft-Gault. Utiliser une autre formule (comme CKD-EPI) pour ces médicaments spécifiques peut conduire à des surdosages (risque toxique) ou à des sous-dosages (échec thérapeutique), particulièrement chez les sujets âgés ou de poids extrême.",
       "Il est cependant crucial d'en connaître les limites : l'équation surestime souvent le DFG chez les patients obèses (car la masse grasse ne produit pas de créatinine) et le sous-estime chez les patients dénutris ou amputés. Dans ces situations, l'utilisation du poids corporel idéal ou ajusté est souvent recommandée pour affiner le calcul."
-    ]
+    ],
+    nextStepsTitle: "Prochaines Étapes : Voie Rénale",
+    nextStepsRenal: "Pour un DFG plus précis (dépistage), utilisez CKD-EPI. Pour l'adaptation posologique basée sur la CrCl, consultez les protocoles spécifiques.",
+    linkCkdEpi: "DFG par CKD-EPI",
+    linkVanco: "Dosage Vancomycine",
+    linkAmino: "Dosage Aminosides",
   }
 };
 
@@ -235,6 +246,26 @@ export default function CreatinineClearance({ lang }: { lang: LangCode }) {
                     references={currentText.references}
                     lang={lang}
                   />
+                  
+                  {/* Next Steps in Renal Pathway */}
+                  <div className="mt-4 p-4 rounded-xl border border-blue-500/20 bg-blue-500/10">
+                    <h4 className="text-[10px] font-bold text-blue-400 uppercase tracking-wider mb-1.5">{currentText.nextStepsTitle}</h4>
+                    <p className="text-xs text-gray-300 mb-3">{currentText.nextStepsRenal}</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Link to={buildPath('/ckd-epi', lang)} className="px-2.5 py-1.5 bg-gray-800/80 hover:bg-gray-700 text-[11px] font-semibold rounded-lg border border-gray-700 transition-colors flex items-center gap-1.5 shadow-sm">
+                        <Activity className="w-3.5 h-3.5 text-blue-400" />
+                        {currentText.linkCkdEpi}
+                      </Link>
+                      <Link to={buildPath('/vancomycin-dosing', lang)} className="px-2.5 py-1.5 bg-gray-800/80 hover:bg-gray-700 text-[11px] font-semibold rounded-lg border border-gray-700 transition-colors flex items-center gap-1.5 shadow-sm">
+                        <Droplet className="w-3.5 h-3.5 text-blue-400" />
+                        {currentText.linkVanco}
+                      </Link>
+                      <Link to={buildPath('/aminoglycoside-dosing', lang)} className="px-2.5 py-1.5 bg-gray-800/80 hover:bg-gray-700 text-[11px] font-semibold rounded-lg border border-gray-700 transition-colors flex items-center gap-1.5 shadow-sm">
+                        <TestTube className="w-3.5 h-3.5 text-blue-400" />
+                        {currentText.linkAmino}
+                      </Link>
+                    </div>
+                  </div>
                 </>
               )}
             </div>

@@ -1,8 +1,9 @@
 import { JsonLd } from '../components/JsonLd';
 import React, { useState, useMemo, useEffect } from 'react';
-import { Activity, Info, BookOpen } from 'lucide-react';
+import { Activity, Info, BookOpen, Wind, HeartPulse } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { LangCode, Translations } from '../types';
-import { layoutTranslations } from '../utils/lang';
+import { layoutTranslations, buildPath } from '../utils/lang';
 import { trackCalculatorUsage, trackCalculatorResult } from '../utils/telemetry';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 
@@ -21,6 +22,10 @@ const translations: Translations = {
     mild: "Mild ARDS (200 - 300)",
     moderate: "Moderate ARDS (100 - 200)",
     severe: "Severe ARDS (< 100)",
+    nextStepsTitle: "Clinical Next Steps",
+    nextStepsARDS: "Consider Lung Protective Ventilation (ARDSNet) - Target 6 mL/kg PBW. Assess A-a Gradient for shunt evaluation.",
+    linkTidalVolume: "ARDSNet Tidal Volume",
+    linkAaGradient: "A-a Gradient",
   },
   fr: {
     title: "Rapport P/F (SDRA)",
@@ -36,6 +41,10 @@ const translations: Translations = {
     mild: "SDRA Léger (200 - 300)",
     moderate: "SDRA Modéré (100 - 200)",
     severe: "SDRA Sévère (< 100)",
+    nextStepsTitle: "Prochaines Étapes Cliniques",
+    nextStepsARDS: "Envisager une ventilation protectrice (ARDSNet) - Cible 6 mL/kg PBW. Évaluer le gradient alvéolo-artériel.",
+    linkTidalVolume: "Volume Courant ARDSNet",
+    linkAaGradient: "Gradient A-a",
   }
 };
 
@@ -156,6 +165,22 @@ export default function PfRatio({ lang }: { lang: LangCode }) {
                   references={currentText.references}
                   lang={lang}
                 />
+
+                {/* Clinical Next Steps */}
+                <div className="mt-4 p-4 rounded-xl border border-blue-500/20 bg-blue-500/10">
+                  <h4 className="text-[10px] font-bold text-blue-400 uppercase tracking-wider mb-1.5">{currentText.nextStepsTitle}</h4>
+                  <p className="text-xs text-gray-300 mb-3">{currentText.nextStepsARDS}</p>
+                  <div className="flex flex-wrap gap-2">
+                    <Link to={buildPath('/ideal-body-weight', lang)} className="px-2.5 py-1.5 bg-gray-800/80 hover:bg-gray-700 text-[11px] font-semibold rounded-lg border border-gray-700 transition-colors flex items-center gap-1.5 shadow-sm">
+                      <Wind className="w-3.5 h-3.5 text-blue-400" />
+                      {currentText.linkTidalVolume}
+                    </Link>
+                    <Link to={buildPath('/a-a-gradient', lang)} className="px-2.5 py-1.5 bg-gray-800/80 hover:bg-gray-700 text-[11px] font-semibold rounded-lg border border-gray-700 transition-colors flex items-center gap-1.5 shadow-sm">
+                      <HeartPulse className="w-3.5 h-3.5 text-blue-400" />
+                      {currentText.linkAaGradient}
+                    </Link>
+                  </div>
+                </div>
               </div>
             )}
           </div>

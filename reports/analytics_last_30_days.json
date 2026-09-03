@@ -1,0 +1,1743 @@
+{
+  "metadata": {
+    "property_id": "544473056",
+    "generated_at": "2026-09-02T14:45:34.395360",
+    "date_range": "Last 30 Days (30daysAgo to yesterday)",
+    "comparison_range": "Previous 30 Days (60daysAgo to 31daysAgo)"
+  },
+  "overview": {
+    "sessions": {
+      "current_30d": 215,
+      "previous_30d": 192,
+      "absolute_change": 23,
+      "percentage_change": 11.98
+    },
+    "totalUsers": {
+      "current_30d": 183,
+      "previous_30d": 109,
+      "absolute_change": 74,
+      "percentage_change": 67.89
+    },
+    "activeUsers": {
+      "current_30d": 183,
+      "previous_30d": 109,
+      "absolute_change": 74,
+      "percentage_change": 67.89
+    },
+    "newUsers": {
+      "current_30d": 180,
+      "previous_30d": 139,
+      "absolute_change": 41,
+      "percentage_change": 29.5
+    },
+    "screenPageViews": {
+      "current_30d": 316,
+      "previous_30d": 634,
+      "absolute_change": -318,
+      "percentage_change": -50.16
+    },
+    "engagementRate": {
+      "current_30d": 0.3814,
+      "previous_30d": 0.474,
+      "absolute_change": -0.0926,
+      "percentage_change": -19.54
+    },
+    "bounceRate": {
+      "current_30d": 0.6186,
+      "previous_30d": 0.526,
+      "absolute_change": 0.0926,
+      "percentage_change": 17.6
+    },
+    "averageSessionDuration": {
+      "current_30d": 144.2449,
+      "previous_30d": 369.9832,
+      "absolute_change": -225.7383,
+      "percentage_change": -61.01
+    },
+    "eventCount": {
+      "current_30d": 1081,
+      "previous_30d": 1536,
+      "absolute_change": -455,
+      "percentage_change": -29.62
+    }
+  },
+  "daily_trends": [
+    {
+      "date": "20260803",
+      "dayOfWeekName": "Monday",
+      "sessions": 28,
+      "activeUsers": 28,
+      "screenPageViews": 35,
+      "engagementRate": 0.4286,
+      "averageSessionDuration": 10.4429
+    },
+    {
+      "date": "20260804",
+      "dayOfWeekName": "Tuesday",
+      "sessions": 12,
+      "activeUsers": 12,
+      "screenPageViews": 14,
+      "engagementRate": 0.1667,
+      "averageSessionDuration": 4.626
+    },
+    {
+      "date": "20260805",
+      "dayOfWeekName": "Wednesday",
+      "sessions": 2,
+      "activeUsers": 2,
+      "screenPageViews": 2,
+      "engagementRate": 0,
+      "averageSessionDuration": 3.3708
+    },
+    {
+      "date": "20260806",
+      "dayOfWeekName": "Thursday",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 1,
+      "engagementRate": 0,
+      "averageSessionDuration": 0
+    },
+    {
+      "date": "20260807",
+      "dayOfWeekName": "Friday",
+      "sessions": 16,
+      "activeUsers": 16,
+      "screenPageViews": 16,
+      "engagementRate": 0.25,
+      "averageSessionDuration": 85.7807
+    },
+    {
+      "date": "20260808",
+      "dayOfWeekName": "Saturday",
+      "sessions": 10,
+      "activeUsers": 10,
+      "screenPageViews": 10,
+      "engagementRate": 0.3,
+      "averageSessionDuration": 33.9749
+    },
+    {
+      "date": "20260809",
+      "dayOfWeekName": "Sunday",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 1,
+      "engagementRate": 0,
+      "averageSessionDuration": 2.3726
+    },
+    {
+      "date": "20260810",
+      "dayOfWeekName": "Monday",
+      "sessions": 28,
+      "activeUsers": 22,
+      "screenPageViews": 70,
+      "engagementRate": 0.5357,
+      "averageSessionDuration": 264.039
+    },
+    {
+      "date": "20260811",
+      "dayOfWeekName": "Tuesday",
+      "sessions": 18,
+      "activeUsers": 15,
+      "screenPageViews": 52,
+      "engagementRate": 0.5,
+      "averageSessionDuration": 391.1549
+    },
+    {
+      "date": "20260812",
+      "dayOfWeekName": "Wednesday",
+      "sessions": 19,
+      "activeUsers": 15,
+      "screenPageViews": 15,
+      "engagementRate": 0.1579,
+      "averageSessionDuration": 73.6103
+    },
+    {
+      "date": "20260813",
+      "dayOfWeekName": "Thursday",
+      "sessions": 5,
+      "activeUsers": 5,
+      "screenPageViews": 11,
+      "engagementRate": 0.6,
+      "averageSessionDuration": 843.2069
+    },
+    {
+      "date": "20260814",
+      "dayOfWeekName": "Friday",
+      "sessions": 4,
+      "activeUsers": 4,
+      "screenPageViews": 5,
+      "engagementRate": 0.5,
+      "averageSessionDuration": 200.9411
+    },
+    {
+      "date": "20260815",
+      "dayOfWeekName": "Saturday",
+      "sessions": 3,
+      "activeUsers": 2,
+      "screenPageViews": 3,
+      "engagementRate": 0.3333,
+      "averageSessionDuration": 12.2993
+    },
+    {
+      "date": "20260816",
+      "dayOfWeekName": "Sunday",
+      "sessions": 8,
+      "activeUsers": 8,
+      "screenPageViews": 8,
+      "engagementRate": 0.75,
+      "averageSessionDuration": 96.7555
+    },
+    {
+      "date": "20260817",
+      "dayOfWeekName": "Monday",
+      "sessions": 2,
+      "activeUsers": 2,
+      "screenPageViews": 2,
+      "engagementRate": 0.5,
+      "averageSessionDuration": 11.0498
+    },
+    {
+      "date": "20260818",
+      "dayOfWeekName": "Tuesday",
+      "sessions": 7,
+      "activeUsers": 7,
+      "screenPageViews": 11,
+      "engagementRate": 0.5714,
+      "averageSessionDuration": 52.6607
+    },
+    {
+      "date": "20260819",
+      "dayOfWeekName": "Wednesday",
+      "sessions": 10,
+      "activeUsers": 10,
+      "screenPageViews": 10,
+      "engagementRate": 0,
+      "averageSessionDuration": 0.7504
+    },
+    {
+      "date": "20260820",
+      "dayOfWeekName": "Thursday",
+      "sessions": 10,
+      "activeUsers": 8,
+      "screenPageViews": 9,
+      "engagementRate": 0.3,
+      "averageSessionDuration": 108.6565
+    },
+    {
+      "date": "20260821",
+      "dayOfWeekName": "Friday",
+      "sessions": 9,
+      "activeUsers": 8,
+      "screenPageViews": 9,
+      "engagementRate": 0.7778,
+      "averageSessionDuration": 70.9458
+    },
+    {
+      "date": "20260822",
+      "dayOfWeekName": "Saturday",
+      "sessions": 7,
+      "activeUsers": 5,
+      "screenPageViews": 13,
+      "engagementRate": 0.5714,
+      "averageSessionDuration": 581.8297
+    },
+    {
+      "date": "20260823",
+      "dayOfWeekName": "Sunday",
+      "sessions": 4,
+      "activeUsers": 4,
+      "screenPageViews": 3,
+      "engagementRate": 0.25,
+      "averageSessionDuration": 206.9093
+    },
+    {
+      "date": "20260825",
+      "dayOfWeekName": "Tuesday",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 3,
+      "engagementRate": 1,
+      "averageSessionDuration": 49.5459
+    },
+    {
+      "date": "20260826",
+      "dayOfWeekName": "Wednesday",
+      "sessions": 5,
+      "activeUsers": 5,
+      "screenPageViews": 7,
+      "engagementRate": 0.2,
+      "averageSessionDuration": 29.6732
+    },
+    {
+      "date": "20260827",
+      "dayOfWeekName": "Thursday",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 1,
+      "engagementRate": 1,
+      "averageSessionDuration": 37.513
+    },
+    {
+      "date": "20260829",
+      "dayOfWeekName": "Saturday",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 0,
+      "engagementRate": 0,
+      "averageSessionDuration": 0
+    },
+    {
+      "date": "20260831",
+      "dayOfWeekName": "Monday",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 1,
+      "engagementRate": 0,
+      "averageSessionDuration": 0
+    },
+    {
+      "date": "20260901",
+      "dayOfWeekName": "Tuesday",
+      "sessions": 4,
+      "activeUsers": 4,
+      "screenPageViews": 4,
+      "engagementRate": 0.25,
+      "averageSessionDuration": 5.2468
+    }
+  ],
+  "channels": [
+    {
+      "sessionDefaultChannelGrouping": "Direct",
+      "sessions": 151,
+      "activeUsers": 143,
+      "newUsers": 142,
+      "engagementRate": 0.2715,
+      "averageSessionDuration": 88.5028
+    },
+    {
+      "sessionDefaultChannelGrouping": "Organic Search",
+      "sessions": 42,
+      "activeUsers": 34,
+      "newUsers": 31,
+      "engagementRate": 0.6905,
+      "averageSessionDuration": 167.2199
+    },
+    {
+      "sessionDefaultChannelGrouping": "Referral",
+      "sessions": 15,
+      "activeUsers": 2,
+      "newUsers": 1,
+      "engagementRate": 0.7333,
+      "averageSessionDuration": 705.5491
+    },
+    {
+      "sessionDefaultChannelGrouping": "Organic Social",
+      "sessions": 4,
+      "activeUsers": 4,
+      "newUsers": 4,
+      "engagementRate": 0,
+      "averageSessionDuration": 0
+    },
+    {
+      "sessionDefaultChannelGrouping": "Unassigned",
+      "sessions": 2,
+      "activeUsers": 2,
+      "newUsers": 1,
+      "engagementRate": 0,
+      "averageSessionDuration": 3.5463
+    },
+    {
+      "sessionDefaultChannelGrouping": "AI Assistant",
+      "sessions": 1,
+      "activeUsers": 1,
+      "newUsers": 1,
+      "engagementRate": 1,
+      "averageSessionDuration": 35.1608
+    }
+  ],
+  "source_medium": [
+    {
+      "sessionSourceMedium": "(direct) / (none)",
+      "sessions": 151,
+      "activeUsers": 143,
+      "engagementRate": 0.2715,
+      "bounceRate": 0.7285,
+      "averageSessionDuration": 88.5028
+    },
+    {
+      "sessionSourceMedium": "google / organic",
+      "sessions": 42,
+      "activeUsers": 34,
+      "engagementRate": 0.6905,
+      "bounceRate": 0.3095,
+      "averageSessionDuration": 167.2199
+    },
+    {
+      "sessionSourceMedium": "a1aa529f.carecalculus.pages.dev / referral",
+      "sessions": 14,
+      "activeUsers": 1,
+      "engagementRate": 0.7857,
+      "bounceRate": 0.2143,
+      "averageSessionDuration": 755.9455
+    },
+    {
+      "sessionSourceMedium": "facebook.com / referral",
+      "sessions": 4,
+      "activeUsers": 4,
+      "engagementRate": 0,
+      "bounceRate": 1,
+      "averageSessionDuration": 0
+    },
+    {
+      "sessionSourceMedium": "(not set)",
+      "sessions": 1,
+      "activeUsers": 1,
+      "engagementRate": 0,
+      "bounceRate": 1,
+      "averageSessionDuration": 0
+    },
+    {
+      "sessionSourceMedium": "chatgpt.com / ai-assistant",
+      "sessions": 1,
+      "activeUsers": 1,
+      "engagementRate": 1,
+      "bounceRate": 0,
+      "averageSessionDuration": 35.1608
+    },
+    {
+      "sessionSourceMedium": "copilot.com / (not set)",
+      "sessions": 1,
+      "activeUsers": 1,
+      "engagementRate": 0,
+      "bounceRate": 1,
+      "averageSessionDuration": 7.0925
+    },
+    {
+      "sessionSourceMedium": "partnerstack.lightning.force.com / referral",
+      "sessions": 1,
+      "activeUsers": 1,
+      "engagementRate": 0,
+      "bounceRate": 1,
+      "averageSessionDuration": 0
+    }
+  ],
+  "top_pages": [
+    {
+      "pagePath": "/",
+      "pageTitle": "CareCalculus | Free Clinical Calculators in English and French",
+      "screenPageViews": 187,
+      "activeUsers": 100,
+      "averageSessionDuration": 83.1538,
+      "bounceRate": 0.6475
+    },
+    {
+      "pagePath": "/pricing/",
+      "pageTitle": "Multilingual Care Calculators | CareCalculus",
+      "screenPageViews": 20,
+      "activeUsers": 21,
+      "averageSessionDuration": 3.6157,
+      "bounceRate": 0.5238
+    },
+    {
+      "pagePath": "/map-calculator",
+      "pageTitle": "Calculateur PAM - Pression Arterielle Moyenne | CareCalculus",
+      "screenPageViews": 14,
+      "activeUsers": 15,
+      "averageSessionDuration": 12.3568,
+      "bounceRate": 0.7647
+    },
+    {
+      "pagePath": "/",
+      "pageTitle": "CareCalculus | Calculateurs M\u00e9dicaux Gratuits en Fran\u00e7ais, Anglais et Arabe",
+      "screenPageViews": 10,
+      "activeUsers": 8,
+      "averageSessionDuration": 150.7114,
+      "bounceRate": 0.3333
+    },
+    {
+      "pagePath": "/adjusted-body-weight",
+      "pageTitle": "Calcul Poids Ideal et Poids Ajuste | CareCalculus",
+      "screenPageViews": 6,
+      "activeUsers": 6,
+      "averageSessionDuration": 20.4171,
+      "bounceRate": 0.1667
+    },
+    {
+      "pagePath": "/",
+      "pageTitle": "CareCalculus | Calculateurs M\u00e9dicaux Gratuits en Fran\u00e7ais, Anglais et Espagnol",
+      "screenPageViews": 4,
+      "activeUsers": 4,
+      "averageSessionDuration": 9.7586,
+      "bounceRate": 0.25
+    },
+    {
+      "pagePath": "/blog-articles/top-10-global-medical-blogs-in-2026-e-e-a-t-authority-and-editorial-best-practic/",
+      "pageTitle": "Multilingual Care Calculators | CareCalculus",
+      "screenPageViews": 4,
+      "activeUsers": 4,
+      "averageSessionDuration": 16.0566,
+      "bounceRate": 0.5
+    },
+    {
+      "pagePath": "/pf-ratio",
+      "pageTitle": "Rapport PaO2/FiO2 (Rapport P/F) | CareCalculus",
+      "screenPageViews": 4,
+      "activeUsers": 4,
+      "averageSessionDuration": 386.0657,
+      "bounceRate": 0.25
+    },
+    {
+      "pagePath": "/creatinine-clearance",
+      "pageTitle": "Clairance de la Creatinine (Cockcroft-Gault) | CareCalculus",
+      "screenPageViews": 3,
+      "activeUsers": 3,
+      "averageSessionDuration": 52.0081,
+      "bounceRate": 0.3333
+    },
+    {
+      "pagePath": "/for-hospitals/",
+      "pageTitle": "CareCalculus for Hospitals \u2014 EHR Integration & Clinical Decision Support | CareCalculus",
+      "screenPageViews": 3,
+      "activeUsers": 1,
+      "averageSessionDuration": 8.6869,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/for-hospitals/",
+      "pageTitle": "Enterprise Clinical Decision Support | CareCalculus for Hospitals",
+      "screenPageViews": 3,
+      "activeUsers": 1,
+      "averageSessionDuration": 2173.8144,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/parkland-formula",
+      "pageTitle": "Multilingual Care Calculators | CareCalculus",
+      "screenPageViews": 3,
+      "activeUsers": 3,
+      "averageSessionDuration": 432.3692,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/wells-score/",
+      "pageTitle": "Wells Score for DVT/PE Calculator | CareCalculus",
+      "screenPageViews": 3,
+      "activeUsers": 3,
+      "averageSessionDuration": 8.7834,
+      "bounceRate": 0.3333
+    },
+    {
+      "pagePath": "/about/",
+      "pageTitle": "About CareCalculus \u2014 Mission, Sources & Team | CareCalculus",
+      "screenPageViews": 2,
+      "activeUsers": 1,
+      "averageSessionDuration": 13.7926,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/fr",
+      "pageTitle": "CareCalculus | Calculateurs M\u00e9dicaux Gratuits en Fran\u00e7ais, Anglais et Arabe",
+      "screenPageViews": 2,
+      "activeUsers": 1,
+      "averageSessionDuration": 428.9193,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/fr",
+      "pageTitle": "CareCalculus | Calculateurs M\u00e9dicaux Gratuits en Fran\u00e7ais, Anglais et Espagnol",
+      "screenPageViews": 2,
+      "activeUsers": 1,
+      "averageSessionDuration": 0,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/fr/",
+      "pageTitle": "CareCalculus | Calculateurs M\u00e9dicaux Gratuits en Fran\u00e7ais, Anglais et Arabe",
+      "screenPageViews": 2,
+      "activeUsers": 1,
+      "averageSessionDuration": 228.7492,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/medical-conversions/",
+      "pageTitle": "Medical Unit Conversions Converter | CareCalculus",
+      "screenPageViews": 2,
+      "activeUsers": 2,
+      "averageSessionDuration": 0,
+      "bounceRate": 1
+    },
+    {
+      "pagePath": "/pf-ratio/",
+      "pageTitle": "P/F Ratio Lung Injury Calculator | CareCalculus",
+      "screenPageViews": 2,
+      "activeUsers": 2,
+      "averageSessionDuration": 2.334,
+      "bounceRate": 1
+    },
+    {
+      "pagePath": "/qsofa-score/",
+      "pageTitle": "qSOFA Score \u2014 Sepsis Screening Tool | CareCalculus",
+      "screenPageViews": 2,
+      "activeUsers": 2,
+      "averageSessionDuration": 20.174,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/steroid-conversion",
+      "pageTitle": "Conversion de Corticoides Equivalents | CareCalculus",
+      "screenPageViews": 2,
+      "activeUsers": 2,
+      "averageSessionDuration": 304.6151,
+      "bounceRate": 0.5
+    },
+    {
+      "pagePath": "/steroid-conversion/",
+      "pageTitle": "Corticosteroids Equivalent Dosage Converter | CareCalculus",
+      "screenPageViews": 2,
+      "activeUsers": 2,
+      "averageSessionDuration": 4.1228,
+      "bounceRate": 1
+    },
+    {
+      "pagePath": "/tidal-volume/",
+      "pageTitle": "Tidal Volume ARDS Calculator | CareCalculus",
+      "screenPageViews": 2,
+      "activeUsers": 2,
+      "averageSessionDuration": 578.518,
+      "bounceRate": 0.5
+    },
+    {
+      "pagePath": "/",
+      "pageTitle": "CareCalculus | Free Clinical Calculators in English, French, and Arabic",
+      "screenPageViews": 1,
+      "activeUsers": 1,
+      "averageSessionDuration": 3.56,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/blog-articles/ai-in-clinical-practice-2026-what-physicians-are-actually-using-and-whats-still/",
+      "pageTitle": "Multilingual Care Calculators | CareCalculus",
+      "screenPageViews": 1,
+      "activeUsers": 1,
+      "averageSessionDuration": 2.3726,
+      "bounceRate": 1
+    },
+    {
+      "pagePath": "/bova-score",
+      "pageTitle": "Multilingual Care Calculators | CareCalculus",
+      "screenPageViews": 1,
+      "activeUsers": 1,
+      "averageSessionDuration": 1088.2083,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/ckd-epi-gfr",
+      "pageTitle": "Calculateur DFG CKD-EPI (2021) | CareCalculus",
+      "screenPageViews": 1,
+      "activeUsers": 1,
+      "averageSessionDuration": 6.2785,
+      "bounceRate": 1
+    },
+    {
+      "pagePath": "/cours",
+      "pageTitle": "Referentiel des Cours Academiques (PDF) | CareCalculus",
+      "screenPageViews": 1,
+      "activeUsers": 1,
+      "averageSessionDuration": 9.9131,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/creatinine-clearance/",
+      "pageTitle": "Creatinine Clearance Calculator (Cockcroft-Gault) | CareCalculus",
+      "screenPageViews": 1,
+      "activeUsers": 1,
+      "averageSessionDuration": 4.9879,
+      "bounceRate": 1
+    },
+    {
+      "pagePath": "/en/for-hospitals",
+      "pageTitle": "Multilingual Care Calculators | CareCalculus",
+      "screenPageViews": 1,
+      "activeUsers": 1,
+      "averageSessionDuration": 539.602,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/es/steroid-conversion/",
+      "pageTitle": "Conversor de Dosis Equivalente de Corticoides | CareCalculus",
+      "screenPageViews": 1,
+      "activeUsers": 1,
+      "averageSessionDuration": 17.8938,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/fmp-medecine/anatomie-iii/",
+      "pageTitle": "Multilingual Care Calculators | CareCalculus",
+      "screenPageViews": 1,
+      "activeUsers": 1,
+      "averageSessionDuration": 2.4709,
+      "bounceRate": 1
+    },
+    {
+      "pagePath": "/fmp-medecine/anatomie-pathologique-generale/",
+      "pageTitle": "CareCalculus | Free Clinical Calculators in English and French",
+      "screenPageViews": 1,
+      "activeUsers": 1,
+      "averageSessionDuration": 0,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/fr",
+      "pageTitle": "CareCalculus | Free Clinical Calculators in English and French",
+      "screenPageViews": 1,
+      "activeUsers": 1,
+      "averageSessionDuration": 0,
+      "bounceRate": 1
+    },
+    {
+      "pagePath": "/fr/",
+      "pageTitle": "CareCalculus | Calculateurs M\u00e9dicaux Gratuits en Fran\u00e7ais, Anglais et Espagnol",
+      "screenPageViews": 1,
+      "activeUsers": 1,
+      "averageSessionDuration": 30.0613,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/glasgow-coma-scale/",
+      "pageTitle": "Glasgow Coma Scale (GCS) Calculator | CareCalculus",
+      "screenPageViews": 1,
+      "activeUsers": 1,
+      "averageSessionDuration": 0,
+      "bounceRate": 1
+    },
+    {
+      "pagePath": "/grace-score",
+      "pageTitle": "Multilingual Care Calculators | CareCalculus",
+      "screenPageViews": 1,
+      "activeUsers": 2,
+      "averageSessionDuration": 9.6591,
+      "bounceRate": 0.5
+    },
+    {
+      "pagePath": "/has-bled",
+      "pageTitle": "Multilingual Care Calculators | CareCalculus",
+      "screenPageViews": 1,
+      "activeUsers": 2,
+      "averageSessionDuration": 632.8932,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/ispits/anatomie-et-physiologie-i",
+      "pageTitle": "Calculateur M\u00e9dical Gratuit | CareCalculus",
+      "screenPageViews": 1,
+      "activeUsers": 1,
+      "averageSessionDuration": 17.4326,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/ispits/anatomie-et-physiologie-i",
+      "pageTitle": "CareCalculus | Free Clinical Calculators in English and French",
+      "screenPageViews": 1,
+      "activeUsers": 1,
+      "averageSessionDuration": 61.8025,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/ispits/anatomie-et-physiologie-i/",
+      "pageTitle": "Multilingual Care Calculators | CareCalculus",
+      "screenPageViews": 1,
+      "activeUsers": 1,
+      "averageSessionDuration": 3.5325,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/ispits/soins-infirmiers-en-chirurgie-et-bloc-operatoire/",
+      "pageTitle": "Multilingual Care Calculators | CareCalculus",
+      "screenPageViews": 1,
+      "activeUsers": 1,
+      "averageSessionDuration": 17.0142,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/ispits/soins-infirmiers-en-nephrologie-et-dialyse/",
+      "pageTitle": "CareCalculus | Free Clinical Calculators in English and French",
+      "screenPageViews": 1,
+      "activeUsers": 1,
+      "averageSessionDuration": 0,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/ispits/soins-infirmiers-en-nephrologie-et-dialyse/",
+      "pageTitle": "Multilingual Care Calculators | CareCalculus",
+      "screenPageViews": 1,
+      "activeUsers": 1,
+      "averageSessionDuration": 18.4489,
+      "bounceRate": 0.5
+    },
+    {
+      "pagePath": "/meld-score",
+      "pageTitle": "Score MELD Pronostic Insuffisance Hepatique | CareCalculus",
+      "screenPageViews": 1,
+      "activeUsers": 1,
+      "averageSessionDuration": 105.5562,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/nutrition-nrs2002",
+      "pageTitle": "Calculateur NRS-2002 (Risque Nutritionnel) | CareCalculus",
+      "screenPageViews": 1,
+      "activeUsers": 1,
+      "averageSessionDuration": 921.9932,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/parkland-formula",
+      "pageTitle": "CareCalculus | Free Clinical Calculators in English and French",
+      "screenPageViews": 1,
+      "activeUsers": 1,
+      "averageSessionDuration": 8.952,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/pediatric-dosage",
+      "pageTitle": "CareCalculus | Free Clinical Calculators in English and French",
+      "screenPageViews": 1,
+      "activeUsers": 1,
+      "averageSessionDuration": 1.4056,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/pricing",
+      "pageTitle": "Calculateur M\u00e9dical Gratuit | CareCalculus",
+      "screenPageViews": 1,
+      "activeUsers": 1,
+      "averageSessionDuration": 427.2773,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/q/what-creatinine-clearance-requires-dose-adjustment-for-vancomycin",
+      "pageTitle": "Multilingual Care Calculators | CareCalculus",
+      "screenPageViews": 1,
+      "activeUsers": 1,
+      "averageSessionDuration": 3.8647,
+      "bounceRate": 1
+    }
+  ],
+  "landing_pages": [
+    {
+      "landingPagePlusQueryString": "/",
+      "sessions": 116,
+      "activeUsers": 94,
+      "newUsers": 92,
+      "bounceRate": 0.6379,
+      "averageSessionDuration": 209.4301
+    },
+    {
+      "landingPagePlusQueryString": "/pricing/",
+      "sessions": 16,
+      "activeUsers": 16,
+      "newUsers": 16,
+      "bounceRate": 0.6875,
+      "averageSessionDuration": 4.5436
+    },
+    {
+      "landingPagePlusQueryString": "/map-calculator",
+      "sessions": 14,
+      "activeUsers": 14,
+      "newUsers": 14,
+      "bounceRate": 0.7857,
+      "averageSessionDuration": 11.4859
+    },
+    {
+      "landingPagePlusQueryString": "(not set)",
+      "sessions": 6,
+      "activeUsers": 3,
+      "newUsers": 0,
+      "bounceRate": 1,
+      "averageSessionDuration": 0.8244
+    },
+    {
+      "landingPagePlusQueryString": "/adjusted-body-weight",
+      "sessions": 6,
+      "activeUsers": 6,
+      "newUsers": 6,
+      "bounceRate": 0.1667,
+      "averageSessionDuration": 20.4171
+    },
+    {
+      "landingPagePlusQueryString": "/blog-articles/top-10-global-medical-blogs-in-2026-e-e-a-t-authority-and-editorial-best-practic/",
+      "sessions": 4,
+      "activeUsers": 4,
+      "newUsers": 4,
+      "bounceRate": 0.5,
+      "averageSessionDuration": 16.0566
+    },
+    {
+      "landingPagePlusQueryString": "/fr",
+      "sessions": 4,
+      "activeUsers": 2,
+      "newUsers": 2,
+      "bounceRate": 0.25,
+      "averageSessionDuration": 118.5393
+    },
+    {
+      "landingPagePlusQueryString": "/pf-ratio",
+      "sessions": 4,
+      "activeUsers": 4,
+      "newUsers": 4,
+      "bounceRate": 0.25,
+      "averageSessionDuration": 386.0657
+    },
+    {
+      "landingPagePlusQueryString": "/creatinine-clearance",
+      "sessions": 3,
+      "activeUsers": 3,
+      "newUsers": 3,
+      "bounceRate": 0.3333,
+      "averageSessionDuration": 52.0081
+    },
+    {
+      "landingPagePlusQueryString": "/wells-score/",
+      "sessions": 3,
+      "activeUsers": 3,
+      "newUsers": 3,
+      "bounceRate": 0.3333,
+      "averageSessionDuration": 8.7834
+    },
+    {
+      "landingPagePlusQueryString": "/ispits/soins-infirmiers-en-nephrologie-et-dialyse/",
+      "sessions": 2,
+      "activeUsers": 1,
+      "newUsers": 1,
+      "bounceRate": 0.5,
+      "averageSessionDuration": 18.4489
+    },
+    {
+      "landingPagePlusQueryString": "/medical-conversions/",
+      "sessions": 2,
+      "activeUsers": 2,
+      "newUsers": 2,
+      "bounceRate": 1,
+      "averageSessionDuration": 0
+    },
+    {
+      "landingPagePlusQueryString": "/pf-ratio/",
+      "sessions": 2,
+      "activeUsers": 2,
+      "newUsers": 2,
+      "bounceRate": 1,
+      "averageSessionDuration": 2.334
+    },
+    {
+      "landingPagePlusQueryString": "/qsofa-score/",
+      "sessions": 2,
+      "activeUsers": 2,
+      "newUsers": 1,
+      "bounceRate": 0,
+      "averageSessionDuration": 20.5729
+    },
+    {
+      "landingPagePlusQueryString": "/steroid-conversion",
+      "sessions": 2,
+      "activeUsers": 2,
+      "newUsers": 2,
+      "bounceRate": 0.5,
+      "averageSessionDuration": 304.6151
+    },
+    {
+      "landingPagePlusQueryString": "/steroid-conversion/",
+      "sessions": 2,
+      "activeUsers": 2,
+      "newUsers": 2,
+      "bounceRate": 1,
+      "averageSessionDuration": 4.1228
+    },
+    {
+      "landingPagePlusQueryString": "/tidal-volume/",
+      "sessions": 2,
+      "activeUsers": 2,
+      "newUsers": 2,
+      "bounceRate": 0.5,
+      "averageSessionDuration": 578.518
+    },
+    {
+      "landingPagePlusQueryString": "/?fbclid=IwcGRvZgRleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAwyNTYyODEwNDA1NTgAAR4asx-NweHRkXpGpXunDJvklbLFE4XWBBmpZg2FoivkL4O7LEdL2sSd6sGd2A_aem_mjOuhzI2ewNX1F1oIDp7Fw",
+      "sessions": 1,
+      "activeUsers": 1,
+      "newUsers": 1,
+      "bounceRate": 1,
+      "averageSessionDuration": 0
+    },
+    {
+      "landingPagePlusQueryString": "/?fbclid=IwcGRvZgRleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAwyNTYyODEwNDA1NTgAAR4rIqFd0JjJgYcZ2W3VdRwFkzKluy2OCsEhXc_y3jQBXZteXgqxcjmGJYKNJA_aem_lwvoOrjz8g39W5e0kd8ufg",
+      "sessions": 1,
+      "activeUsers": 1,
+      "newUsers": 1,
+      "bounceRate": 1,
+      "averageSessionDuration": 0
+    },
+    {
+      "landingPagePlusQueryString": "/?fbclid=IwcGRvZgRleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAwyNTYyODEwNDA1NTgAAR5-4LSB1eoFTt_INX4JU98TBQST8fAHqFfmJYmOF8cw_TB3lQehuGkwe64keQ_aem_wfxlgIR08pQnOBhwpBaQJA",
+      "sessions": 1,
+      "activeUsers": 1,
+      "newUsers": 1,
+      "bounceRate": 1,
+      "averageSessionDuration": 0
+    },
+    {
+      "landingPagePlusQueryString": "/?fbclid=IwcGRvZgRleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAwyNTYyODEwNDA1NTgAAR55FnkgtZDj16DO6eMdBNBlcXR4Vq70yQc2ArPcLg5i0KJjgDYz1Pcw7MEsDw_aem_DaAYUcMvUiYybJplVBYYvg",
+      "sessions": 1,
+      "activeUsers": 1,
+      "newUsers": 1,
+      "bounceRate": 1,
+      "averageSessionDuration": 0
+    },
+    {
+      "landingPagePlusQueryString": "/?fbclid=IwcGRvZgRleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAwyNTYyODEwNDA1NTgAAR5MAtyCuycygVCY5rWmcSxhDIwDPG7YfaLCGLA5vU1v3EiMWaqCj7uqnRqoWg_aem_wbNI0_w5P5TrbFUXDiaSrA",
+      "sessions": 1,
+      "activeUsers": 1,
+      "newUsers": 1,
+      "bounceRate": 1,
+      "averageSessionDuration": 0
+    },
+    {
+      "landingPagePlusQueryString": "/?fbclid=IwcGRvZgRleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAwyNTYyODEwNDA1NTgAAR5jytE5ccrr0LimDXX0tbnVJfxEjriKdKvRvlcGd5EPEBgPvSM3XXi4ZJmHhQ_aem_Ak1abw5OGafWU8_37KO-Ng",
+      "sessions": 1,
+      "activeUsers": 1,
+      "newUsers": 1,
+      "bounceRate": 1,
+      "averageSessionDuration": 0
+    },
+    {
+      "landingPagePlusQueryString": "/?fbclid=IwcGRvZgRleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAwyNTYyODEwNDA1NTgAAR6m4AXHvGQOyN31DGoH8OpJ1_W4sTrrm4xBRC2caD7evZTy4FwiKh_aQmo0dQ_aem_ZmFrZWR1bW15MTZieXRlcw",
+      "sessions": 1,
+      "activeUsers": 1,
+      "newUsers": 1,
+      "bounceRate": 1,
+      "averageSessionDuration": 0
+    },
+    {
+      "landingPagePlusQueryString": "/blog-articles/ai-in-clinical-practice-2026-what-physicians-are-actually-using-and-whats-still/",
+      "sessions": 1,
+      "activeUsers": 1,
+      "newUsers": 1,
+      "bounceRate": 1,
+      "averageSessionDuration": 2.3726
+    },
+    {
+      "landingPagePlusQueryString": "/ckd-epi-gfr",
+      "sessions": 1,
+      "activeUsers": 1,
+      "newUsers": 1,
+      "bounceRate": 1,
+      "averageSessionDuration": 6.2785
+    },
+    {
+      "landingPagePlusQueryString": "/creatinine-clearance/",
+      "sessions": 1,
+      "activeUsers": 1,
+      "newUsers": 1,
+      "bounceRate": 1,
+      "averageSessionDuration": 4.9879
+    },
+    {
+      "landingPagePlusQueryString": "/es/steroid-conversion/",
+      "sessions": 1,
+      "activeUsers": 1,
+      "newUsers": 1,
+      "bounceRate": 0,
+      "averageSessionDuration": 17.8938
+    },
+    {
+      "landingPagePlusQueryString": "/fmp-medecine/anatomie-iii/",
+      "sessions": 1,
+      "activeUsers": 1,
+      "newUsers": 1,
+      "bounceRate": 1,
+      "averageSessionDuration": 2.4709
+    },
+    {
+      "landingPagePlusQueryString": "/fmp-medecine/anatomie-pathologique-generale/",
+      "sessions": 1,
+      "activeUsers": 1,
+      "newUsers": 1,
+      "bounceRate": 0,
+      "averageSessionDuration": 20.9872
+    },
+    {
+      "landingPagePlusQueryString": "/fr/",
+      "sessions": 1,
+      "activeUsers": 1,
+      "newUsers": 0,
+      "bounceRate": 0,
+      "averageSessionDuration": 964.8328
+    },
+    {
+      "landingPagePlusQueryString": "/glasgow-coma-scale/",
+      "sessions": 1,
+      "activeUsers": 1,
+      "newUsers": 1,
+      "bounceRate": 1,
+      "averageSessionDuration": 0
+    },
+    {
+      "landingPagePlusQueryString": "/grace-score",
+      "sessions": 1,
+      "activeUsers": 1,
+      "newUsers": 1,
+      "bounceRate": 1,
+      "averageSessionDuration": 9.6371
+    },
+    {
+      "landingPagePlusQueryString": "/ispits/anatomie-et-physiologie-i",
+      "sessions": 1,
+      "activeUsers": 1,
+      "newUsers": 1,
+      "bounceRate": 0,
+      "averageSessionDuration": 79.2351
+    },
+    {
+      "landingPagePlusQueryString": "/ispits/anatomie-et-physiologie-i/",
+      "sessions": 1,
+      "activeUsers": 1,
+      "newUsers": 1,
+      "bounceRate": 0,
+      "averageSessionDuration": 37.513
+    },
+    {
+      "landingPagePlusQueryString": "/ispits/soins-infirmiers-en-chirurgie-et-bloc-operatoire/",
+      "sessions": 1,
+      "activeUsers": 1,
+      "newUsers": 1,
+      "bounceRate": 0,
+      "averageSessionDuration": 17.0142
+    },
+    {
+      "landingPagePlusQueryString": "/meld-score",
+      "sessions": 1,
+      "activeUsers": 1,
+      "newUsers": 1,
+      "bounceRate": 0,
+      "averageSessionDuration": 105.5562
+    },
+    {
+      "landingPagePlusQueryString": "/nutrition-nrs2002",
+      "sessions": 1,
+      "activeUsers": 1,
+      "newUsers": 1,
+      "bounceRate": 0,
+      "averageSessionDuration": 921.9932
+    },
+    {
+      "landingPagePlusQueryString": "/q/what-creatinine-clearance-requires-dose-adjustment-for-vancomycin",
+      "sessions": 1,
+      "activeUsers": 1,
+      "newUsers": 1,
+      "bounceRate": 1,
+      "averageSessionDuration": 3.8647
+    },
+    {
+      "landingPagePlusQueryString": "/qsofa-score",
+      "sessions": 1,
+      "activeUsers": 1,
+      "newUsers": 1,
+      "bounceRate": 1,
+      "averageSessionDuration": 7.0925
+    },
+    {
+      "landingPagePlusQueryString": "/specialties/intensive-care/",
+      "sessions": 1,
+      "activeUsers": 1,
+      "newUsers": 1,
+      "bounceRate": 0,
+      "averageSessionDuration": 12.5289
+    },
+    {
+      "landingPagePlusQueryString": "/specialties/nephrology",
+      "sessions": 1,
+      "activeUsers": 1,
+      "newUsers": 1,
+      "bounceRate": 0,
+      "averageSessionDuration": 21.3052
+    }
+  ],
+  "countries": [
+    {
+      "country": "United States",
+      "sessions": 96,
+      "activeUsers": 96,
+      "screenPageViews": 103,
+      "engagementRate": 0.0938
+    },
+    {
+      "country": "Morocco",
+      "sessions": 52,
+      "activeUsers": 22,
+      "screenPageViews": 145,
+      "engagementRate": 0.75
+    },
+    {
+      "country": "France",
+      "sessions": 17,
+      "activeUsers": 15,
+      "screenPageViews": 15,
+      "engagementRate": 0.7647
+    },
+    {
+      "country": "Canada",
+      "sessions": 6,
+      "activeUsers": 6,
+      "screenPageViews": 6,
+      "engagementRate": 0.1667
+    },
+    {
+      "country": "(not set)",
+      "sessions": 5,
+      "activeUsers": 5,
+      "screenPageViews": 5,
+      "engagementRate": 1
+    },
+    {
+      "country": "India",
+      "sessions": 5,
+      "activeUsers": 5,
+      "screenPageViews": 6,
+      "engagementRate": 0.4
+    },
+    {
+      "country": "United Kingdom",
+      "sessions": 5,
+      "activeUsers": 5,
+      "screenPageViews": 6,
+      "engagementRate": 0.2
+    },
+    {
+      "country": "Belgium",
+      "sessions": 4,
+      "activeUsers": 4,
+      "screenPageViews": 4,
+      "engagementRate": 0.25
+    },
+    {
+      "country": "Ireland",
+      "sessions": 3,
+      "activeUsers": 3,
+      "screenPageViews": 3,
+      "engagementRate": 0.3333
+    },
+    {
+      "country": "Australia",
+      "sessions": 2,
+      "activeUsers": 2,
+      "screenPageViews": 2,
+      "engagementRate": 0.5
+    },
+    {
+      "country": "Germany",
+      "sessions": 2,
+      "activeUsers": 2,
+      "screenPageViews": 2,
+      "engagementRate": 0
+    },
+    {
+      "country": "Netherlands",
+      "sessions": 2,
+      "activeUsers": 2,
+      "screenPageViews": 2,
+      "engagementRate": 0.5
+    },
+    {
+      "country": "Pakistan",
+      "sessions": 2,
+      "activeUsers": 2,
+      "screenPageViews": 2,
+      "engagementRate": 0
+    },
+    {
+      "country": "Chad",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 0,
+      "engagementRate": 1
+    },
+    {
+      "country": "Congo - Brazzaville",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 1,
+      "engagementRate": 0
+    },
+    {
+      "country": "Congo - Kinshasa",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 1,
+      "engagementRate": 0
+    },
+    {
+      "country": "Greece",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 1,
+      "engagementRate": 0
+    },
+    {
+      "country": "Indonesia",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 1,
+      "engagementRate": 1
+    },
+    {
+      "country": "Iran",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 2,
+      "engagementRate": 1
+    },
+    {
+      "country": "Lebanon",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 1,
+      "engagementRate": 1
+    },
+    {
+      "country": "Mexico",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 1,
+      "engagementRate": 1
+    },
+    {
+      "country": "Serbia",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 1,
+      "engagementRate": 1
+    },
+    {
+      "country": "Singapore",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 1,
+      "engagementRate": 1
+    },
+    {
+      "country": "South Africa",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 1,
+      "engagementRate": 0
+    },
+    {
+      "country": "Spain",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 1,
+      "engagementRate": 1
+    },
+    {
+      "country": "Sweden",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 1,
+      "engagementRate": 0
+    },
+    {
+      "country": "Switzerland",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 1,
+      "engagementRate": 1
+    },
+    {
+      "country": "Thailand",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 1,
+      "engagementRate": 0
+    },
+    {
+      "country": "Venezuela",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 0,
+      "engagementRate": 1
+    }
+  ],
+  "cities": [
+    {
+      "city": "Kenitra",
+      "country": "Morocco",
+      "sessions": 26,
+      "activeUsers": 10,
+      "screenPageViews": 94
+    },
+    {
+      "city": "Ashburn",
+      "country": "United States",
+      "sessions": 23,
+      "activeUsers": 23,
+      "screenPageViews": 22
+    },
+    {
+      "city": "Tangier",
+      "country": "Morocco",
+      "sessions": 16,
+      "activeUsers": 7,
+      "screenPageViews": 38
+    },
+    {
+      "city": "(not set)",
+      "country": "United States",
+      "sessions": 11,
+      "activeUsers": 11,
+      "screenPageViews": 11
+    },
+    {
+      "city": "Des Moines",
+      "country": "United States",
+      "sessions": 6,
+      "activeUsers": 6,
+      "screenPageViews": 9
+    },
+    {
+      "city": "(not set)",
+      "country": "(not set)",
+      "sessions": 5,
+      "activeUsers": 5,
+      "screenPageViews": 5
+    },
+    {
+      "city": "Boardman",
+      "country": "United States",
+      "sessions": 5,
+      "activeUsers": 5,
+      "screenPageViews": 5
+    },
+    {
+      "city": "Casablanca",
+      "country": "Morocco",
+      "sessions": 5,
+      "activeUsers": 4,
+      "screenPageViews": 5
+    },
+    {
+      "city": "San Jose",
+      "country": "United States",
+      "sessions": 5,
+      "activeUsers": 5,
+      "screenPageViews": 8
+    },
+    {
+      "city": "Toronto",
+      "country": "Canada",
+      "sessions": 5,
+      "activeUsers": 5,
+      "screenPageViews": 5
+    },
+    {
+      "city": "(not set)",
+      "country": "India",
+      "sessions": 4,
+      "activeUsers": 4,
+      "screenPageViews": 5
+    },
+    {
+      "city": "Glenview",
+      "country": "United States",
+      "sessions": 4,
+      "activeUsers": 4,
+      "screenPageViews": 4
+    },
+    {
+      "city": "London",
+      "country": "United Kingdom",
+      "sessions": 4,
+      "activeUsers": 4,
+      "screenPageViews": 5
+    },
+    {
+      "city": "Moses Lake",
+      "country": "United States",
+      "sessions": 4,
+      "activeUsers": 4,
+      "screenPageViews": 6
+    },
+    {
+      "city": "New York",
+      "country": "United States",
+      "sessions": 4,
+      "activeUsers": 4,
+      "screenPageViews": 4
+    },
+    {
+      "city": "Paris",
+      "country": "France",
+      "sessions": 4,
+      "activeUsers": 2,
+      "screenPageViews": 2
+    },
+    {
+      "city": "Council Bluffs",
+      "country": "United States",
+      "sessions": 3,
+      "activeUsers": 3,
+      "screenPageViews": 3
+    },
+    {
+      "city": "Dublin",
+      "country": "Ireland",
+      "sessions": 3,
+      "activeUsers": 3,
+      "screenPageViews": 3
+    },
+    {
+      "city": "(not set)",
+      "country": "France",
+      "sessions": 2,
+      "activeUsers": 2,
+      "screenPageViews": 2
+    },
+    {
+      "city": "Chicago",
+      "country": "United States",
+      "sessions": 2,
+      "activeUsers": 2,
+      "screenPageViews": 2
+    },
+    {
+      "city": "Clifton",
+      "country": "United States",
+      "sessions": 2,
+      "activeUsers": 2,
+      "screenPageViews": 2
+    },
+    {
+      "city": "Lille",
+      "country": "France",
+      "sessions": 2,
+      "activeUsers": 2,
+      "screenPageViews": 2
+    },
+    {
+      "city": "Los Angeles",
+      "country": "United States",
+      "sessions": 2,
+      "activeUsers": 2,
+      "screenPageViews": 2
+    },
+    {
+      "city": "Marseille",
+      "country": "France",
+      "sessions": 2,
+      "activeUsers": 2,
+      "screenPageViews": 2
+    },
+    {
+      "city": "Piscataway",
+      "country": "United States",
+      "sessions": 2,
+      "activeUsers": 2,
+      "screenPageViews": 2
+    },
+    {
+      "city": "Prineville",
+      "country": "United States",
+      "sessions": 2,
+      "activeUsers": 2,
+      "screenPageViews": 2
+    },
+    {
+      "city": "San Francisco",
+      "country": "United States",
+      "sessions": 2,
+      "activeUsers": 2,
+      "screenPageViews": 2
+    },
+    {
+      "city": "(not set)",
+      "country": "Belgium",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 1
+    },
+    {
+      "city": "(not set)",
+      "country": "Lebanon",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 1
+    },
+    {
+      "city": "(not set)",
+      "country": "Netherlands",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 1
+    }
+  ],
+  "devices": [
+    {
+      "deviceCategory": "desktop",
+      "sessions": 178,
+      "activeUsers": 150,
+      "engagementRate": 0.382,
+      "averageSessionDuration": 162.1515
+    },
+    {
+      "deviceCategory": "mobile",
+      "sessions": 39,
+      "activeUsers": 34,
+      "engagementRate": 0.4103,
+      "averageSessionDuration": 55.1199
+    }
+  ],
+  "browsers": [
+    {
+      "browser": "Chrome",
+      "sessions": 179,
+      "activeUsers": 149,
+      "engagementRate": 0.3911
+    },
+    {
+      "browser": "Safari",
+      "sessions": 16,
+      "activeUsers": 16,
+      "engagementRate": 0.3125
+    },
+    {
+      "browser": "Edge",
+      "sessions": 13,
+      "activeUsers": 11,
+      "engagementRate": 0.5385
+    },
+    {
+      "browser": "Firefox",
+      "sessions": 9,
+      "activeUsers": 9,
+      "engagementRate": 0.2222
+    },
+    {
+      "browser": "Opera",
+      "sessions": 1,
+      "activeUsers": 1,
+      "engagementRate": 1
+    }
+  ],
+  "operating_systems": [
+    {
+      "operatingSystem": "Windows",
+      "sessions": 130,
+      "activeUsers": 103,
+      "engagementRate": 0.4
+    },
+    {
+      "operatingSystem": "Macintosh",
+      "sessions": 30,
+      "activeUsers": 30,
+      "engagementRate": 0.3667
+    },
+    {
+      "operatingSystem": "Android",
+      "sessions": 23,
+      "activeUsers": 18,
+      "engagementRate": 0.5652
+    },
+    {
+      "operatingSystem": "Linux",
+      "sessions": 20,
+      "activeUsers": 19,
+      "engagementRate": 0.35
+    },
+    {
+      "operatingSystem": "iOS",
+      "sessions": 16,
+      "activeUsers": 16,
+      "engagementRate": 0.1875
+    },
+    {
+      "operatingSystem": "Chrome OS",
+      "sessions": 1,
+      "activeUsers": 1,
+      "engagementRate": 1
+    }
+  ],
+  "user_types": [
+    {
+      "newVsReturning": "new",
+      "sessions": 180,
+      "activeUsers": 180,
+      "averageSessionDuration": 54.693,
+      "engagementRate": 0.3222
+    },
+    {
+      "newVsReturning": "returning",
+      "sessions": 29,
+      "activeUsers": 9,
+      "averageSessionDuration": 729.9279,
+      "engagementRate": 0.8276
+    },
+    {
+      "newVsReturning": "(not set)",
+      "sessions": 6,
+      "activeUsers": 0,
+      "averageSessionDuration": 0,
+      "engagementRate": 0
+    }
+  ],
+  "events": [
+    {
+      "eventName": "page_view",
+      "eventCount": 316,
+      "totalUsers": 182
+    },
+    {
+      "eventName": "session_start",
+      "eventCount": 215,
+      "totalUsers": 182
+    },
+    {
+      "eventName": "first_visit",
+      "eventCount": 180,
+      "totalUsers": 179
+    },
+    {
+      "eventName": "user_engagement",
+      "eventCount": 162,
+      "totalUsers": 67
+    },
+    {
+      "eventName": "calculator_used",
+      "eventCount": 136,
+      "totalUsers": 47
+    },
+    {
+      "eventName": "calculator_result",
+      "eventCount": 64,
+      "totalUsers": 29
+    },
+    {
+      "eventName": "premium_upgrade_click",
+      "eventCount": 3,
+      "totalUsers": 1
+    },
+    {
+      "eventName": "generate_lead",
+      "eventCount": 2,
+      "totalUsers": 2
+    },
+    {
+      "eventName": "premium_gate_view",
+      "eventCount": 2,
+      "totalUsers": 1
+    },
+    {
+      "eventName": "export_print",
+      "eventCount": 1,
+      "totalUsers": 1
+    }
+  ]
+}

@@ -41,7 +41,12 @@ const T = {
     faq2A: "Because we use standard SMART on FHIR protocols, most hospital IT departments can deploy our sandbox within 48 hours.",
     faq3Q: "Can we restrict specific calculators?",
     faq3A: "Yes. With the Enterprise tier, the CMIO can restrict or mandate specific calculators based on your hospital's clinical pathways.",
-    testimonial: "\"CareCalculus saved our ER attendings an average of 4 hours per week by automating complex documentation.\""
+    testimonial: "\"CareCalculus saved our ER attendings an average of 4 hours per week by automating complex documentation.\"",
+    roiTitle: "Calculate Your Hospital's Impact",
+    roiDesc: "See the estimated impact of implementing CareCalculus across your health system.",
+    roiBeds: "Number of Hospital Beds",
+    roiErrors: "Estimated Errors Prevented / Year",
+    roiTime: "Clinician Hours Saved / Year",
   },
   fr: {
     seoTitle: "Aide à la Décision Clinique pour Hôpitaux | CareCalculus Enterprise",
@@ -79,12 +84,18 @@ const T = {
     faq2A: "Grâce aux protocoles SMART on FHIR standards, la plupart des départements informatiques peuvent déployer notre bac à sable en 48 heures.",
     faq3Q: "Pouvons-nous restreindre certains calculateurs ?",
     faq3A: "Oui. Avec le forfait Entreprise, le CMIO peut restreindre ou recommander des calculateurs selon les protocoles de l'hôpital.",
-    testimonial: "\"CareCalculus a fait gagner en moyenne 4 heures par semaine à nos urgentistes en automatisant la documentation.\""
+    testimonial: "\"CareCalculus a fait gagner en moyenne 4 heures par semaine à nos urgentistes en automatisant la documentation.\"",
+    roiTitle: "Calculez l'Impact pour Votre Hôpital",
+    roiDesc: "Découvrez l'impact estimé de l'implémentation de CareCalculus dans votre établissement.",
+    roiBeds: "Nombre de Lits",
+    roiErrors: "Erreurs Médicamenteuses Évitées / An",
+    roiTime: "Heures Cliniques Économisées / An",
   }
 };
 
 export default function ForHospitals({ lang }: { lang: LangCode }) {
   const [submitted, setSubmitted] = useState(false);
+  const [roiBeds, setRoiBeds] = useState<number>(500);
   const isRtl = false;
   const t = T[lang] || T.en;
 
@@ -345,6 +356,58 @@ export default function ForHospitals({ lang }: { lang: LangCode }) {
                   </form>
                 </>
               )}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Interactive ROI Calculator */}
+      <div className="w-full bg-slate-50 dark:bg-slate-950 py-16">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="bg-gradient-to-br from-blue-700 to-indigo-900 rounded-3xl p-8 md:p-12 shadow-2xl text-white relative overflow-hidden border border-blue-500/20">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3"></div>
+            
+            <div className="relative z-10">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-black mb-4">{t.roiTitle}</h2>
+                <p className="text-blue-100 text-lg max-w-2xl mx-auto">{t.roiDesc}</p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div className="bg-white/5 p-8 rounded-3xl backdrop-blur-md border border-white/10 shadow-inner">
+                  <div className="flex justify-between items-end mb-6">
+                    <label className="block text-sm font-bold text-blue-100 uppercase tracking-wider">{t.roiBeds}</label>
+                    <span className="text-3xl font-black text-white">{roiBeds}</span>
+                  </div>
+                  <input 
+                    type="range" 
+                    min="50" max="2000" step="50" 
+                    value={roiBeds} 
+                    onChange={(e) => setRoiBeds(Number(e.target.value))}
+                    className="w-full h-3 bg-white/20 rounded-full appearance-none cursor-pointer accent-white hover:accent-blue-200 transition-all" 
+                  />
+                  <div className="flex justify-between text-xs font-semibold text-blue-200/70 mt-3">
+                    <span>50</span>
+                    <span>2000+</span>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="bg-white/10 p-6 rounded-2xl border border-white/10 backdrop-blur-md flex items-center justify-between">
+                    <div className="text-blue-100 text-sm font-semibold">{t.roiErrors}</div>
+                    <div className="text-3xl font-black text-emerald-400 tabular-nums">
+                      {Math.round(roiBeds * 1.8).toLocaleString()}
+                    </div>
+                  </div>
+                  <div className="bg-white/10 p-6 rounded-2xl border border-white/10 backdrop-blur-md flex items-center justify-between">
+                    <div className="text-blue-100 text-sm font-semibold">{t.roiTime}</div>
+                    <div className="text-3xl font-black text-blue-300 tabular-nums">
+                      {Math.round(roiBeds * 12.5).toLocaleString()} <span className="text-lg font-bold text-blue-200/70">hrs</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

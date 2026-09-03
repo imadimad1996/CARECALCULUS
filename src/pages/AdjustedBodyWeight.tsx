@@ -1,10 +1,11 @@
 import { JsonLd } from '../components/JsonLd';
 import React, { useState, useMemo, useEffect } from 'react';
-import { Activity, Info, BookOpen } from 'lucide-react';
+import { Activity, Info, BookOpen, TestTube, Droplet } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { LangCode, Translations } from '../types';
 import ClinicalExportButton from '../components/ClinicalExportButton';
 import { trackCalculatorUsage } from '../utils/telemetry';
-import { layoutTranslations } from '../utils/lang';
+import { layoutTranslations, buildPath } from '../utils/lang';
 
 const translations: Translations = {
   en: {
@@ -22,6 +23,11 @@ const translations: Translations = {
     clinicalTitle: "Dosing Relevance",
     clinicalText: "Aminoglycosides and some chemotherapies use Adjusted BW if Actual > 120% of IBW. Tidal volume uses PBW/IBW.",
     references: "References: Devine BJ. Gentamicin therapy.",
+    dosingToolsTitle: "ICU Dosing Protocols",
+    dosingToolsText: "Use Adjusted Body Weight (ABW) for these specific dosing protocols when the patient is obese (>120% IBW).",
+    linkVanco: "Vancomycin Dosing",
+    linkAmino: "Aminoglycoside Dosing",
+    linkHeparin: "Heparin Nomogram",
   },
   fr: {
     title: "Poids Idéal et Ajusté",
@@ -38,6 +44,11 @@ const translations: Translations = {
     clinicalTitle: "Pertinence Posologique",
     clinicalText: "Les aminosides utilisent le poids ajusté si le poids réel > 120% du poids idéal. Le volume courant s'appuie sur le poids idéal.",
     references: "Références: Devine BJ. Pai MP, et al.",
+    dosingToolsTitle: "Protocoles de Dosage en Réanimation",
+    dosingToolsText: "Utilisez le poids ajusté (ABW) pour ces protocoles spécifiques lorsque le patient est obèse (>120% IBW).",
+    linkVanco: "Dosage Vancomycine",
+    linkAmino: "Dosage Aminosides",
+    linkHeparin: "Nomogramme Héparine",
   }
 };
 
@@ -203,24 +214,46 @@ export default function AdjustedBodyWeight({ lang }: { lang: LangCode }) {
                   </div>
 
                   {results !== null && (
-                    <ClinicalExportButton
-                      title={currentText.title}
-                      inputs={[
-                        { label: currentText.sex, value: sex === 0 ? currentText.male : currentText.female },
-                        { label: currentText.height, value: `${height} cm` },
-                        { label: currentText.weight, value: `${weight} kg` }
-                      ]}
-                      results={[
-                        { label: currentText.ibwTitle, value: results.ibw.toFixed(1), unit: 'kg' },
-                        { label: currentText.abwTitle, value: results.abw.toFixed(1), unit: 'kg' },
-                        { label: currentText.lbwTitle, value: results.lbw.toFixed(1), unit: 'kg' },
-                        { label: 'Obesity Status', value: results.isObese ? 'Obese (Actual > 120% Ideal)' : 'Non-obese' }
-                      ]}
-                      formula="Devine: Male IBW = 50.0 + 2.3 * ((Ht - 152.4)/2.54), Female IBW = 45.5 + 2.3 * ((Ht - 152.4)/2.54)"
-                      disclaimer="This calculator estimates medical dry weights. Clinicians should evaluate physiological factors, fluid status, and muscle status."
-                      references="Devine BJ. Gentamicin therapy. Drug Intell Clin Pharm. 1974;8:650–655. / Robinson Formula / Peters Formula."
-                      lang={lang}
-                    />
+                    <>
+                      <ClinicalExportButton
+                        title={currentText.title}
+                        inputs={[
+                          { label: currentText.sex, value: sex === 0 ? currentText.male : currentText.female },
+                          { label: currentText.height, value: `${height} cm` },
+                          { label: currentText.weight, value: `${weight} kg` }
+                        ]}
+                        results={[
+                          { label: currentText.ibwTitle, value: results.ibw.toFixed(1), unit: 'kg' },
+                          { label: currentText.abwTitle, value: results.abw.toFixed(1), unit: 'kg' },
+                          { label: currentText.lbwTitle, value: results.lbw.toFixed(1), unit: 'kg' },
+                          { label: 'Obesity Status', value: results.isObese ? 'Obese (Actual > 120% Ideal)' : 'Non-obese' }
+                        ]}
+                        formula="Devine: Male IBW = 50.0 + 2.3 * ((Ht - 152.4)/2.54), Female IBW = 45.5 + 2.3 * ((Ht - 152.4)/2.54)"
+                        disclaimer="This calculator estimates medical dry weights. Clinicians should evaluate physiological factors, fluid status, and muscle status."
+                        references="Devine BJ. Gentamicin therapy. Drug Intell Clin Pharm. 1974;8:650–655. / Robinson Formula / Peters Formula."
+                        lang={lang}
+                      />
+                      
+                      {/* ICU Dosing Tools */}
+                      <div className="mt-4 p-4 rounded-xl border border-blue-500/20 bg-blue-500/10">
+                        <h4 className="text-[10px] font-bold text-blue-400 uppercase tracking-wider mb-1.5">{currentText.dosingToolsTitle}</h4>
+                        <p className="text-xs text-gray-300 mb-3">{currentText.dosingToolsText}</p>
+                        <div className="flex flex-wrap gap-2">
+                          <Link to={buildPath('/aminoglycoside-dosing', lang)} className="px-2.5 py-1.5 bg-gray-800/80 hover:bg-gray-700 text-[11px] font-semibold rounded-lg border border-gray-700 transition-colors flex items-center gap-1.5 shadow-sm">
+                            <TestTube className="w-3.5 h-3.5 text-blue-400" />
+                            {currentText.linkAmino}
+                          </Link>
+                          <Link to={buildPath('/heparin-dosing', lang)} className="px-2.5 py-1.5 bg-gray-800/80 hover:bg-gray-700 text-[11px] font-semibold rounded-lg border border-gray-700 transition-colors flex items-center gap-1.5 shadow-sm">
+                            <Activity className="w-3.5 h-3.5 text-blue-400" />
+                            {currentText.linkHeparin}
+                          </Link>
+                          <Link to={buildPath('/vancomycin-dosing', lang)} className="px-2.5 py-1.5 bg-gray-800/80 hover:bg-gray-700 text-[11px] font-semibold rounded-lg border border-gray-700 transition-colors flex items-center gap-1.5 shadow-sm">
+                            <Droplet className="w-3.5 h-3.5 text-blue-400" />
+                            {currentText.linkVanco}
+                          </Link>
+                        </div>
+                      </div>
+                    </>
                   )}
 
                </div>
