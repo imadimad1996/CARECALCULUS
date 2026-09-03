@@ -112,7 +112,6 @@ const SPECIALTIES = [
 import { ALL_CALCULATORS } from '../data/calculators';
 
 import SEO from '../components/SEO';
-import CommandPalette from '../components/CommandPalette';
 import { JsonLd, generateWebSiteSchema, generateFAQSchema } from '../components/JsonLd';
 
 // Animated counter that counts up to a target number on scroll-into-view
@@ -147,7 +146,6 @@ export default function HomePage({ lang }: HomePageProps) {
   const [searchParams] = useSearchParams();
   const initialCategory = searchParams.get('category') || searchParams.get('specialty') || 'all';
   const [activeSpecialty, setActiveSpecialty] = useState(initialCategory);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   useEffect(() => {
     const categoryParam = searchParams.get('category') || searchParams.get('specialty');
@@ -155,17 +153,6 @@ export default function HomePage({ lang }: HomePageProps) {
       setActiveSpecialty(categoryParam);
     }
   }, [searchParams]);
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-        e.preventDefault();
-        setIsSearchOpen(prev => !prev);
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
 
   const FEATURED_CALCULATORS = ALL_CALCULATORS.filter(c => c.isFeatured);
   const filteredCalculators = FEATURED_CALCULATORS.filter(calc =>
@@ -290,8 +277,6 @@ export default function HomePage({ lang }: HomePageProps) {
         }))
       }} />
 
-      <CommandPalette isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} lang={lang} />
-
       {/* WebSite + SearchAction schema — enables Google Sitelinks Searchbox */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateWebSiteSchema()) }} />
 
@@ -356,7 +341,7 @@ export default function HomePage({ lang }: HomePageProps) {
             role="search"
           >
             <button
-              onClick={() => setIsSearchOpen(true)}
+              onClick={() => window.dispatchEvent(new CustomEvent('carecalculus:open-command-palette'))}
               aria-label={`Search clinical calculators — ${searchPlaceholder}`}
               className="w-full flex items-center justify-between px-5 py-4 bg-white/80 dark:bg-slate-800/80 backdrop-blur-md hover:bg-white dark:hover:bg-slate-800 text-slate-500 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-teal-400 dark:hover:border-teal-500 shadow-md hover:shadow-lg transition-all duration-300 group cursor-pointer text-left rtl:text-right"
               style={{ minHeight: '56px' }}
@@ -433,7 +418,7 @@ export default function HomePage({ lang }: HomePageProps) {
             className="flex flex-wrap items-center justify-center gap-3"
           >
             <SmartPasteModal lang={lang} />
-            <button onClick={() => setIsSearchOpen(true)} className="btn-primary text-sm cursor-pointer shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all">
+            <button onClick={() => window.dispatchEvent(new CustomEvent('carecalculus:open-command-palette'))} className="btn-primary text-sm cursor-pointer shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all">
               <Calculator className="w-4 h-4" />
               {cta.primary}
               <ChevronRight className="w-4 h-4" />

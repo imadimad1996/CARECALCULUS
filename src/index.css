@@ -181,6 +181,16 @@ html.dark {
   border-radius: 4px;
 }
 
+/* Command Palette clean input override — prevent disjointed text box outline */
+.command-palette-input,
+.command-palette-input:focus,
+.command-palette-input:focus-visible {
+  outline: none !important;
+  outline-offset: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
 @layer base {
   html, body {
     -webkit-text-size-adjust: 100%;

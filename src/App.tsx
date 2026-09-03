@@ -151,7 +151,6 @@ function AppLayout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [sidebarSearch, setSidebarSearch] = useState('');
-  const [topSearch, setTopSearch] = useState('');
 
   // Track Recent Calculators
   const [recentCalculators, setRecentCalculators] = useState<string[]>(() => {
@@ -295,11 +294,6 @@ function AppLayout() {
     return false;
   };
 
-  // Memoized filtered results for the top-page search
-  const filteredTopResults = React.useMemo(() => {
-    if (!topSearch) return [];
-    return navItems.filter(i => matchesSearch(i, topSearch));
-  }, [topSearch]);
 
   useEffect(() => {
     document.documentElement.dir = isRtl ? 'rtl' : 'ltr';
@@ -461,96 +455,6 @@ function AppLayout() {
     );
   };
 
-  // Render the high-performance top page clinical search bar
-  const renderTopPageSearchBar = () => {
-    return (
-      <div className="mb-6 bg-white dark:bg-slate-900/80 p-4 sm:p-5 rounded-2xl border border-gray-200/80 dark:border-slate-800 shadow-xs relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 rounded-full blur-2xl pointer-events-none" />
-        
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div className="space-y-1 shrink-0">
-            <span className="text-[10px] font-mono font-black text-blue-600 dark:text-blue-400 uppercase tracking-widest block">
-              {lang === 'fr' ? 'RECHERCHE D’OUTIL DIRECTE' : ('RAPID DECISION SUPPORT SEARCH')}
-            </span>
-            <h2 className="text-sm font-black text-slate-800 dark:text-slate-200 uppercase tracking-tight">
-              {lang === 'fr' 
-                ? 'Accès aux Protocoles Cliniques' 
-                : ('Search Clinical Modules & Tiers')}
-            </h2>
-          </div>
-
-          <div className="flex-1 max-w-lg w-full relative">
-            <Search className={`absolute ${isRtl ? 'right-4' : 'left-4'} top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400`} />
-            <input
-              id="top-page-search-field"
-              type="text"
-              placeholder={lang === 'fr' ? 'Saisissez sepsis, GCS, calcul de reins, corticoides...' : ('Type sepsis, GCS, renal clearance, steroids conversion...')}
-              value={topSearch}
-              onChange={(e) => setTopSearch(e.target.value)}
-              className={`w-full py-2.5 bg-gray-50 dark:bg-slate-800 focus:bg-white dark:focus:bg-slate-900 text-gray-900 dark:text-slate-100 border border-gray-200 dark:border-slate-700 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-4 focus:ring-blue-100/40 dark:focus:ring-blue-400/10 outline-none rounded-xl text-xs font-bold transition-all placeholder-gray-400 dark:placeholder-slate-500 ${
-                isRtl ? 'pr-11 pl-9 text-right' : 'pl-11 pr-9 text-left'
-              }`}
-              style={{ minHeight: '44px' }}
-            />
-            {topSearch && (
-              <button
-                onClick={() => setTopSearch('')}
-                className={`absolute ${isRtl ? 'left-3' : 'right-3'} top-1/2 -translate-y-1/2 text-gray-400 dark:text-slate-500 hover:text-gray-700 dark:hover:text-slate-300 p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-700 transition`}
-                style={{ minWidth: '24px', minHeight: '24px' }}
-                aria-label="Clear top search"
-              >
-                <X className="w-4 h-4" />
-              </button>
-            )}
-          </div>
-        </div>
-
-        {/* Live Search Results Display */}
-        {topSearch && (
-          <div className="mt-4 pt-4 border-t border-gray-150 space-y-3">
-            <span className="text-[10px] font-mono font-bold text-blue-600 dark:text-blue-400 block uppercase tracking-wider">
-              {lang === 'fr' ? 'RÉSULTATS DE RECHERCHE CORRESPONDANTS' : ('MATCHING CLINICAL MODULES FOUND')}
-            </span>
-            {filteredTopResults.length === 0 ? (
-              <div className="p-4 text-center bg-gray-50 dark:bg-slate-800 rounded-xl border border-gray-150 dark:border-slate-700 text-xs font-semibold text-gray-500 dark:text-slate-400 flex items-center justify-center gap-2">
-                <AlertOctagon className="w-4 h-4 text-gray-400" />
-                <span>{lang === 'fr' ? 'Aucun protocole clinique actif trouvé.' : ('No diagnostic calculator or guidelines found matching query.')}</span>
-              </div>
-            ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-                {filteredTopResults.map((item) => {
-                  const Icon = item.icon;
-                  const itemTitle = lang === 'fr' ? item.nameFr : (item.nameEn);
-                  const isCurMatch = logicalPath === item.path || (logicalPath === '/' && item.path === '/map-calculator');
-                  return (
-                    <Link
-                      key={item.path}
-                      to={langPath(item.path)}
-                      onClick={() => setTopSearch('')}
-                      className={`p-3 border rounded-xl flex items-center justify-between hover:border-blue-400 hover:shadow-xs hover:bg-blue-50/10 dark:hover:bg-blue-900/10 transition-all ${
-                        isCurMatch ? 'border-blue-600 bg-blue-50/20 dark:bg-blue-900/20' : 'border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900'
-                      }`}
-                      style={{ minHeight: '52px' }}
-                    >
-                      <div className="flex items-center gap-2.5 truncate">
-                        <div className={`p-1.5 rounded-lg text-xs ${isCurMatch ? 'bg-blue-600 text-white' : 'bg-gray-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400'}`}>
-                          <Icon className="w-4 h-4 shrink-0" />
-                        </div>
-                        <span className="text-[11px] font-bold text-gray-800 dark:text-slate-200 uppercase tracking-tight truncate">
-                          {itemTitle}
-                        </span>
-                      </div>
-                      <ChevronRight className="w-3.5 h-3.5 text-gray-400 shrink-0" />
-                    </Link>
-                  );
-                })}
-              </div>
-            )}
-          </div>
-        )}
-      </div>
-    );
-  };
 
   const getLocalizedTierHeader = (tier: number) => {
     return TIER_HEADERS[tier] ? TIER_HEADERS[tier][lang] : `Tier ${tier}`;
@@ -567,6 +471,18 @@ function AppLayout() {
         </div>
 
         <div className="px-3.5 py-2 flex items-center justify-center gap-2 flex-wrap">
+          {/* Global Rapid Search Trigger */}
+          <button
+            type="button"
+            onClick={() => window.dispatchEvent(new CustomEvent('carecalculus:open-command-palette'))}
+            className="h-10 px-3.5 bg-teal-50/80 hover:bg-teal-100/90 dark:bg-teal-950/40 dark:hover:bg-teal-900/60 text-teal-800 dark:text-teal-200 font-bold rounded-xl text-xs transition-all flex items-center gap-2 border border-teal-200/80 dark:border-teal-800/80 cursor-pointer shadow-2xs hover:scale-[1.02] active:scale-95 whitespace-nowrap"
+            title={lang === 'fr' ? 'Recherche globale (Ctrl+K)' : 'Global Search (Ctrl+K)'}
+          >
+            <Search className="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0" />
+            <span>{lang === 'fr' ? 'Rechercher...' : 'Search Tools...'}</span>
+            <span className="hidden sm:inline-block px-1.5 py-0.5 rounded bg-teal-100/70 dark:bg-teal-900/70 text-[10px] font-mono text-teal-700 dark:text-teal-300 font-bold ml-0.5">⌘K</span>
+          </button>
+
           <button 
             onClick={() => setIsSpecialtiesModalOpen(true)}
             className="h-10 px-3.5 bg-slate-100/90 hover:bg-slate-200/90 dark:bg-slate-800/80 dark:hover:bg-slate-700/80 text-slate-800 dark:text-slate-200 font-bold rounded-xl text-xs transition-all flex items-center gap-2 border border-slate-200/80 dark:border-slate-700/80 cursor-pointer shadow-2xs hover:scale-[1.02] active:scale-95 whitespace-nowrap"
@@ -700,6 +616,16 @@ function AppLayout() {
           )}
         </div>
         <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => window.dispatchEvent(new CustomEvent('carecalculus:open-command-palette'))}
+            className="flex items-center gap-1.5 px-3 py-1.5 bg-teal-50 hover:bg-teal-100 text-teal-700 dark:bg-teal-950/40 dark:hover:bg-teal-900/60 dark:text-teal-300 text-xs font-bold rounded-xl border border-teal-100 dark:border-teal-800 transition-all cursor-pointer"
+            style={{ minHeight: '36px' }}
+            title="Search clinical tools (Ctrl+K)"
+          >
+            <Search className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
+            <span>{lang === 'fr' ? 'Rechercher' : 'Search'}</span>
+          </button>
           <Link
             to={langPath('/glp-1-hub')}
             className="flex items-center gap-1.5 px-3 py-1.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-xs font-bold rounded-xl border border-indigo-100 transition-all"
@@ -816,8 +742,8 @@ function AppLayout() {
           />
           <InstallAppButton lang={lang} />
           <button
-            onClick={() => window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }))}
-            className="p-2 text-gray-600 dark:text-slate-400 hover:text-gray-900 dark:hover:text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-600/20 rounded-lg animate-fade-in"
+            onClick={() => window.dispatchEvent(new CustomEvent('carecalculus:open-command-palette'))}
+            className="p-2 text-gray-600 dark:text-slate-400 hover:text-gray-900 dark:hover:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/20 rounded-lg animate-fade-in cursor-pointer"
             aria-label="Global Search"
             style={{ minWidth: '44px', minHeight: '44px' }}
           >
@@ -940,9 +866,14 @@ function AppLayout() {
                 <X className="w-3.5 h-3.5" />
               </button>
             ) : (
-              <span className={`hidden sm:inline absolute ${isRtl ? 'left-9' : 'right-9'} top-1/2 -translate-y-1/2 font-mono text-[10px] font-bold bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 px-1.5 py-0.5 rounded-md text-slate-400 shadow-2xs pointer-events-none`}>
+              <button
+                type="button"
+                onClick={() => window.dispatchEvent(new CustomEvent('carecalculus:open-command-palette'))}
+                className={`hidden sm:inline-flex absolute ${isRtl ? 'left-9' : 'right-9'} top-1/2 -translate-y-1/2 font-mono text-[10px] font-bold bg-white dark:bg-slate-700 hover:bg-teal-50 dark:hover:bg-slate-600 text-slate-500 hover:text-teal-600 dark:text-slate-400 border border-slate-200 dark:border-slate-600 px-1.5 py-0.5 rounded-md shadow-2xs cursor-pointer transition-colors`}
+                title="Open Global Search (Ctrl+K)"
+              >
                 ⌘K
-              </span>
+              </button>
             )}
           </div>
 
@@ -1455,7 +1386,7 @@ function AppLayout() {
       <MobileBottomNav 
         lang={lang} 
         langPath={langPath} 
-        onSearchClick={() => window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }))}
+        onSearchClick={() => window.dispatchEvent(new CustomEvent('carecalculus:open-command-palette'))}
         onMenuClick={() => setIsSidebarOpen(true)}
       />
 
