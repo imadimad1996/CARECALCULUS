@@ -30,7 +30,7 @@ CareCalculus is a free, open-access, peer-reviewed clinical decision support pla
 - **Evidence-Based Rigor**: 100% peer-reviewed citations with direct PubMed and DOI links.
 
 ## Pricing
-- **Free Tier**: $0/forever — Full access to all 88+ clinical calculators, formulas, guidelines, and reference tools.
+- **Free Tier**: $0/forever — Full access to all 150 clinical calculators, formulas, guidelines, and reference tools.
 - **Pro Export Pass**: $1.66/month (billed annually at $19.99/year) — Unlocks unlimited 1-Click EHR SOAP/SBAR note exports, copy-paste snippets, and advanced clinical export templates.
 - **Enterprise / Hospitals**: Enterprise integration for health systems with custom EHR EHR/SMART-on-FHIR workflows.
 

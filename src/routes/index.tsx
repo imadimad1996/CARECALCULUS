@@ -191,6 +191,33 @@ const PsiPortScore = createLazyPage(() => import('../pages/PsiPortScore'));
 const EcogPerformance = createLazyPage(() => import('../pages/EcogPerformance'));
 const PecarnHeadTrauma = createLazyPage(() => import('../pages/PecarnHeadTrauma'));
 
+// Milestone 1: 25 High-Yield Clinical Calculators
+const CrusadeScore = createLazyPage(() => import('../pages/CrusadeScore'));
+const HeartPathway = createLazyPage(() => import('../pages/HeartPathway'));
+const SpesiScore = createLazyPage(() => import('../pages/SpesiScore'));
+const RevisedGenevaScore = createLazyPage(() => import('../pages/RevisedGenevaScore'));
+const OrbitBleedingScore = createLazyPage(() => import('../pages/OrbitBleedingScore'));
+const HuntHessScale = createLazyPage(() => import('../pages/HuntHessScale'));
+const FourScore = createLazyPage(() => import('../pages/FourScore'));
+const PaduaPredictionScore = createLazyPage(() => import('../pages/PaduaPredictionScore'));
+const BunCreatinineRatio = createLazyPage(() => import('../pages/BunCreatinineRatio'));
+const UpcrCalculator = createLazyPage(() => import('../pages/UpcrCalculator'));
+const CalciumPhosphateProduct = createLazyPage(() => import('../pages/CalciumPhosphateProduct'));
+const UrineOsmolalGap = createLazyPage(() => import('../pages/UrineOsmolalGap'));
+const HomaIrCalculator = createLazyPage(() => import('../pages/HomaIrCalculator'));
+const Meld3Score = createLazyPage(() => import('../pages/Meld3Score'));
+const GanzoniIronDeficit = createLazyPage(() => import('../pages/GanzoniIronDeficit'));
+const LactateClearance = createLazyPage(() => import('../pages/LactateClearance'));
+const ChildPughDetailed = createLazyPage(() => import('../pages/ChildPughDetailed'));
+const SmartCopScore = createLazyPage(() => import('../pages/SmartCopScore'));
+const CentorMcisaac = createLazyPage(() => import('../pages/CentorMcisaac'));
+const OasisIcuScore = createLazyPage(() => import('../pages/OasisIcuScore'));
+const Saps3Score = createLazyPage(() => import('../pages/Saps3Score'));
+const FraxCalculator = createLazyPage(() => import('../pages/FraxCalculator'));
+const PregnancyWeightGain = createLazyPage(() => import('../pages/PregnancyWeightGain'));
+const EpdsDepression = createLazyPage(() => import('../pages/EpdsDepression'));
+const PediatricBloodPressure = createLazyPage(() => import('../pages/PediatricBloodPressure'));
+
 export const HomePage = safeLazy(() => import('../pages/HomePage'));
 export const NotFound = safeLazy(() => import('../pages/NotFound'));
 
@@ -379,6 +406,33 @@ export const navItems = [
   { path: '/ecog-performance', nameEn: 'ECOG Performance Status', nameFr: 'Score de Performance ECOG OMS', nameAr: 'مقياس الأداء الوظيفي ECOG', icon: Activity, tier: 3 },
   { path: '/pecarn-head-trauma', nameEn: 'PECARN Pediatric Head Trauma', nameFr: 'Règle PECARN Traumatisme Crânien', nameAr: 'قاعدة بيكارن لإصابات الرأس لدى الأطفال', icon: Brain, tier: 1 },
 
+  // Milestone 1: 25 High-Yield Clinical Calculators
+  { path: '/crusade-score', nameEn: 'CRUSADE Bleeding Score', nameFr: 'Score CRUSADE Saignement SCA', nameAr: 'مقياس كروسيد للنزيف القلبي', icon: ShieldAlert, tier: 2 },
+  { path: '/heart-pathway', nameEn: 'HEART Pathway Protocol', nameFr: 'Protocole HEART Pathway', nameAr: 'مسار هارت لألم الصدر', icon: HeartPulse, tier: 1 },
+  { path: '/spesi-score', nameEn: 'sPESI Pulmonary Embolism', nameFr: 'Score sPESI Embolie Pulmonaire', nameAr: 'مؤشر شدة الانصمام الرئوي المبسط', icon: Wind, tier: 1 },
+  { path: '/revised-geneva', nameEn: 'Revised Geneva PE Score', nameFr: 'Score de Genève Révisé EP', nameAr: 'مقياس جنيف المعدل للانصمام الرئوي', icon: Activity, tier: 1 },
+  { path: '/orbit-bleeding-score', nameEn: 'ORBIT Bleeding Score in AFib', nameFr: 'Score ORBIT Saignement FA', nameAr: 'مقياس أوربيت للنزيف في الرجفان الأذيني', icon: ShieldAlert, tier: 2 },
+  { path: '/hunt-hess', nameEn: 'Hunt & Hess Scale (SAH)', nameFr: 'Échelle de Hunt et Hess HSA', nameAr: 'مقياس هنت وهيس للنزف تحت العنكبوتية', icon: Brain, tier: 1 },
+  { path: '/four-score', nameEn: 'FOUR Coma Score', nameFr: 'Score FOUR Coma & Conscience', nameAr: 'مقياس فور لتقييم الغيبوبة', icon: Brain, tier: 1 },
+  { path: '/padua-score', nameEn: 'Padua VTE Prediction Score', nameFr: 'Score de Padoue Risque MTEV', nameAr: 'مقياس بادوا للتخثر الوريدي الطبي', icon: ShieldAlert, tier: 2 },
+  { path: '/bun-creatinine-ratio', nameEn: 'BUN / Creatinine Ratio', nameFr: 'Ratio Urée / Créatinine', nameAr: 'نسبة نيتروجين اليوريا إلى الكرياتينين', icon: Droplet, tier: 2 },
+  { path: '/upcr-calculator', nameEn: 'UPCR & UACR Proteinuria', nameFr: 'Calculateur UPCR & UACR', nameAr: 'نسبة البروتين والألبومين إلى الكرياتينين', icon: Droplet, tier: 2 },
+  { path: '/calcium-phosphate-product', nameEn: 'Calcium × Phosphate Product', nameFr: 'Produit Phospho-Calcique', nameAr: 'حاصل ضرب الكالسيوم والفوسفات', icon: Activity, tier: 2 },
+  { path: '/urine-osmolal-gap', nameEn: 'Urine Osmolal Gap (NH4+)', nameFr: 'Trou Osmolaire Urinaire (NH4+)', nameAr: 'الفجوة الحلولية البولية والأمونيوم', icon: Droplet, tier: 2 },
+  { path: '/homa-ir', nameEn: 'HOMA-IR Insulin Resistance', nameFr: 'HOMA-IR Insulino-Résistance', nameAr: 'مؤشر هوما لمقاومة الأنسولين', icon: Activity, tier: 2 },
+  { path: '/meld-3-score', nameEn: 'MELD 3.0 Score (OPTN)', nameFr: 'Score MELD 3.0 Greffe Foie', nameAr: 'مقياس ميلد 3.0 لتخصيص الكبد', icon: Activity, tier: 2 },
+  { path: '/ganzoni-formula', nameEn: 'Ganzoni Iron Deficit', nameFr: 'Formule de Ganzoni Fer IV', nameAr: 'معادلة غانزوني لنقص الحديد', icon: Pill, tier: 3 },
+  { path: '/lactate-clearance', nameEn: 'Lactate Clearance in Sepsis', nameFr: 'Clairance du Lactate Sepsis', nameAr: 'تصفية اللاكتات في الإنتان', icon: Activity, tier: 1 },
+  { path: '/child-pugh-decompensated', nameEn: 'Child-Pugh Score & Survival', nameFr: 'Score de Child-Pugh & Survie', nameAr: 'تصنيف تشايلد-بو للمراحل الكبدية', icon: Activity, tier: 2 },
+  { path: '/smart-cop', nameEn: 'SMART-COP Score for CAP', nameFr: 'Score SMART-COP Pneumonie', nameAr: 'مقياس سمارت كوب للالتهاب الرئوي', icon: Wind, tier: 1 },
+  { path: '/centor-mcisaac', nameEn: 'McIsaac Centor Strep Score', nameFr: 'Score de McIsaac Centor Angine', nameAr: 'مقياس ماك آيزاك المعدل لالتهاب الحلق', icon: Activity, tier: 1 },
+  { path: '/oasis-score', nameEn: 'OASIS ICU Severity Score', nameFr: 'Score OASIS Réanimation', nameAr: 'مقياس أواسيس لشدة المرض بالعناية', icon: Activity, tier: 1 },
+  { path: '/saps-3-score', nameEn: 'SAPS 3 Score (First Hour)', nameFr: 'Score SAPS 3 Réanimation', nameAr: 'مقياس سابس 3 للفسيولوجيا الحادة', icon: Activity, tier: 1 },
+  { path: '/frax-score', nameEn: 'FRAX 10-Yr Fracture Risk', nameFr: 'Score FRAX Risque Fracturaire', nameAr: 'حاسبة فراكس لكسور هشاشة العظام', icon: Activity, tier: 3 },
+  { path: '/pregnancy-weight-gain', nameEn: 'Pregnancy Weight Gain (IOM)', nameFr: 'Prise de Poids Grossesse IOM', nameAr: 'زيادة الوزن أثناء الحمل IOM', icon: HeartPulse, tier: 3 },
+  { path: '/epds-score', nameEn: 'Edinburgh Depression (EPDS)', nameFr: 'Échelle d\'Édimbourg EPDS', nameAr: 'مقياس إدنبرة لاكتئاب ما بعد الولادة', icon: Brain, tier: 3 },
+  { path: '/pediatric-bp-percentiles', nameEn: 'Pediatric BP (AAP 2017)', nameFr: 'Tension Pédiatrique AAP', nameAr: 'النسب المئوية لضغط دم الأطفال AAP', icon: HeartPulse, tier: 3 },
+
   { path: '/medical-statistics', nameEn: 'Medical Statistics', nameFr: 'Statistiques Médicales', nameAr: 'الإحصاء الطبي', icon: Layers, tier: 3 },
   { path: '/synapse-engine', nameEn: 'Synapse Engine (Guidelines)', nameFr: 'Moteur Synapse (Recommandations)', nameAr: 'محرك الإرشادات الطبية', icon: Sparkles, tier: 0 },
 ];
@@ -565,6 +619,33 @@ export function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="psi-port-score" element={wrapCalculator('/psi-port-score', <PsiPortScore lang={lang} />)} />
       <Route path="ecog-performance" element={wrapCalculator('/ecog-performance', <EcogPerformance lang={lang} />)} />
       <Route path="pecarn-head-trauma" element={wrapCalculator('/pecarn-head-trauma', <PecarnHeadTrauma lang={lang} />)} />
+
+      {/* Milestone 1: 25 High-Yield Clinical Calculators */}
+      <Route path="crusade-score" element={wrapCalculator('/crusade-score', <CrusadeScore lang={lang} />)} />
+      <Route path="heart-pathway" element={wrapCalculator('/heart-pathway', <HeartPathway lang={lang} />)} />
+      <Route path="spesi-score" element={wrapCalculator('/spesi-score', <SpesiScore lang={lang} />)} />
+      <Route path="revised-geneva" element={wrapCalculator('/revised-geneva', <RevisedGenevaScore lang={lang} />)} />
+      <Route path="orbit-bleeding-score" element={wrapCalculator('/orbit-bleeding-score', <OrbitBleedingScore lang={lang} />)} />
+      <Route path="hunt-hess" element={wrapCalculator('/hunt-hess', <HuntHessScale lang={lang} />)} />
+      <Route path="four-score" element={wrapCalculator('/four-score', <FourScore lang={lang} />)} />
+      <Route path="padua-score" element={wrapCalculator('/padua-score', <PaduaPredictionScore lang={lang} />)} />
+      <Route path="bun-creatinine-ratio" element={wrapCalculator('/bun-creatinine-ratio', <BunCreatinineRatio lang={lang} />)} />
+      <Route path="upcr-calculator" element={wrapCalculator('/upcr-calculator', <UpcrCalculator lang={lang} />)} />
+      <Route path="calcium-phosphate-product" element={wrapCalculator('/calcium-phosphate-product', <CalciumPhosphateProduct lang={lang} />)} />
+      <Route path="urine-osmolal-gap" element={wrapCalculator('/urine-osmolal-gap', <UrineOsmolalGap lang={lang} />)} />
+      <Route path="homa-ir" element={wrapCalculator('/homa-ir', <HomaIrCalculator lang={lang} />)} />
+      <Route path="meld-3-score" element={wrapCalculator('/meld-3-score', <Meld3Score lang={lang} />)} />
+      <Route path="ganzoni-formula" element={wrapCalculator('/ganzoni-formula', <GanzoniIronDeficit lang={lang} />)} />
+      <Route path="lactate-clearance" element={wrapCalculator('/lactate-clearance', <LactateClearance lang={lang} />)} />
+      <Route path="child-pugh-decompensated" element={wrapCalculator('/child-pugh-decompensated', <ChildPughDetailed lang={lang} />)} />
+      <Route path="smart-cop" element={wrapCalculator('/smart-cop', <SmartCopScore lang={lang} />)} />
+      <Route path="centor-mcisaac" element={wrapCalculator('/centor-mcisaac', <CentorMcisaac lang={lang} />)} />
+      <Route path="oasis-score" element={wrapCalculator('/oasis-score', <OasisIcuScore lang={lang} />)} />
+      <Route path="saps-3-score" element={wrapCalculator('/saps-3-score', <Saps3Score lang={lang} />)} />
+      <Route path="frax-score" element={wrapCalculator('/frax-score', <FraxCalculator lang={lang} />)} />
+      <Route path="pregnancy-weight-gain" element={wrapCalculator('/pregnancy-weight-gain', <PregnancyWeightGain lang={lang} />)} />
+      <Route path="epds-score" element={wrapCalculator('/epds-score', <EpdsDepression lang={lang} />)} />
+      <Route path="pediatric-bp-percentiles" element={wrapCalculator('/pediatric-bp-percentiles', <PediatricBloodPressure lang={lang} />)} />
     </>
   );
 }

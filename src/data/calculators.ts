@@ -1265,6 +1265,256 @@ export const ALL_CALCULATORS: CalculatorMeta[] = [
     specialties: ["pediatrics","emergency","trauma"],
     icon: Brain,
     isFeatured: true
+  },
+  {
+    id: 'crusade-score',
+    title: {"en":"CRUSADE Bleeding Score in Post-ACS","fr":"Score CRUSADE (Risque Hémorragique SCA)","ar":"مقياس كروسيد للنزيف القلبي بعد متلازمة الشريان التاجي"},
+    category: {"en":"Cardiology & Critical Care","fr":"Cardiologie & Urgences"},
+    path: '/crusade-score',
+    keywords: ["crusade","bleeding","acs","nstemi","stemi","pci","anticoagulation"],
+    specialties: ["cardiology","emergency","critical-care"],
+    icon: ShieldAlert,
+    isFeatured: true
+  },
+  {
+    id: 'heart-pathway',
+    title: {"en":"HEART Pathway Accelerated Protocol","fr":"Protocole HEART Pathway (Douleur Thoracique)","ar":"مسار هارت السريع لألم الصدر"},
+    category: {"en":"Emergency & Critical Care","fr":"Urgences & Soins Intensifs"},
+    path: '/heart-pathway',
+    keywords: ["heart pathway","chest pain","troponin","mace","accelerated diagnostic protocol"],
+    specialties: ["emergency","cardiology"],
+    icon: HeartPulse,
+    isFeatured: true
+  },
+  {
+    id: 'spesi-score',
+    title: {"en":"sPESI Pulmonary Embolism Severity Index","fr":"Score sPESI (Index Simplifié Embolie Pulmonaire)","ar":"مؤشر شدة الانصمام الرئوي المبسط sPESI"},
+    category: {"en":"Pulmonology & Emergency","fr":"Pneumologie & Urgences"},
+    path: '/spesi-score',
+    keywords: ["spesi","pesi","pulmonary embolism","outpatient pe","30-day mortality","embolie pulmonaire"],
+    specialties: ["pulmonology","emergency","critical-care"],
+    icon: Wind,
+    isFeatured: true
+  },
+  {
+    id: 'revised-geneva',
+    title: {"en":"Revised Geneva Score for Pulmonary Embolism","fr":"Score de Genève Révisé (Embolie Pulmonaire)","ar":"مقيas جنيف المعدل لاحتمالية الانصمام الرئوي"},
+    category: {"en":"Pulmonology & Emergency","fr":"Pneumologie & Urgences"},
+    path: '/revised-geneva',
+    keywords: ["geneva score","pulmonary embolism","pe pretest probability","d-dimer","ctpa"],
+    specialties: ["pulmonology","emergency","internal-medicine"],
+    icon: Activity,
+    isFeatured: true
+  },
+  {
+    id: 'orbit-bleeding-score',
+    title: {"en":"ORBIT Bleeding Score in Atrial Fibrillation","fr":"Score ORBIT (Risque Saignement Fibrillation Atriale)","ar":"مقياس أوربيت لخطر النزيف في الرجفان الأذيني"},
+    category: {"en":"Cardiology","fr":"Cardiologie"},
+    path: '/orbit-bleeding-score',
+    keywords: ["orbit score","bleeding risk","atrial fibrillation","afib","doac","anticoagulation"],
+    specialties: ["cardiology","hematology","internal-medicine"],
+    icon: ShieldAlert,
+    isFeatured: true
+  },
+  {
+    id: 'hunt-hess',
+    title: {"en":"Hunt & Hess Scale for Subarachnoid Hemorrhage","fr":"Échelle de Hunt et Hess (Hémorragie Sous-Arachnoïdienne)","ar":"مقياس هنت وهيس لتصنيف النزف تحت العنكبوتية"},
+    category: {"en":"Neurology & Neurosurgery","fr":"Neurologie & Neurochirurgie"},
+    path: '/hunt-hess',
+    keywords: ["hunt hess","subarachnoid hemorrhage","sah","aneurysm","headache","coma"],
+    specialties: ["neurology","emergency","critical-care"],
+    icon: Brain,
+    isFeatured: true
+  },
+  {
+    id: 'four-score',
+    title: {"en":"FOUR Coma Score (ICU & Intubation)","fr":"Score FOUR (Coma et Conscience en Réanimation)","ar":"مقياس فور لتقييم الغيبوبة للمرضى المنبوبين"},
+    category: {"en":"Neurology & Critical Care","fr":"Neurologie & Soins Intensifs"},
+    path: '/four-score',
+    keywords: ["four score","coma","gcs alternative","intubation","brainstem reflexes","icu"],
+    specialties: ["neurology","critical-care","emergency"],
+    icon: Brain,
+    isFeatured: true
+  },
+  {
+    id: 'padua-score',
+    title: {"en":"Padua Prediction Score for Medical Inpatient VTE","fr":"Score de Padoue (Risque MTEV en Médecine)","ar":"مقياس بادوا للتنبؤ بالانصمام الخثاري الوريدي الطبي"},
+    category: {"en":"Internal Medicine & Hematology","fr":"Médecine Interne & Hématologie"},
+    path: '/padua-score',
+    keywords: ["padua score","vte prophylaxis","dvt prevention","medical inpatients","lmwh"],
+    specialties: ["internal-medicine","hematology","critical-care"],
+    icon: ShieldAlert,
+    isFeatured: true
+  },
+  {
+    id: 'bun-creatinine-ratio',
+    title: {"en":"BUN / Creatinine Ratio Calculator","fr":"Ratio Urée / Créatinine (BUN/Cr)","ar":"حاسبة نسبة نيتروجين اليوريا إلى الكرياتينين"},
+    category: {"en":"Nephrology & Renal Medicine","fr":"Néphrologie"},
+    path: '/bun-creatinine-ratio',
+    keywords: ["bun creatinine ratio","prerenal azotemia","acute kidney injury","aki","gi bleed"],
+    specialties: ["nephrology","internal-medicine","emergency"],
+    icon: Droplet,
+    isFeatured: true
+  },
+  {
+    id: 'upcr-calculator',
+    title: {"en":"UPCR & UACR Proteinuria Calculator","fr":"Calculateur UPCR & UACR (Protéinurie / Albuminurie)","ar":"حاسبة نسبة البروتين والألبومين إلى الكرياتينين في البول"},
+    category: {"en":"Nephrology & Renal Medicine","fr":"Néphrologie"},
+    path: '/upcr-calculator',
+    keywords: ["upcr","uacr","proteinuria","microalbuminuria","kdigo","chronic kidney disease"],
+    specialties: ["nephrology","endocrinology","internal-medicine"],
+    icon: Droplet,
+    isFeatured: true
+  },
+  {
+    id: 'calcium-phosphate-product',
+    title: {"en":"Calcium × Phosphate Product (Ca × Pi)","fr":"Produit Phospho-Calcique (Ca × Pi)","ar":"حاسبة حاصل ضرب الكالسيوم والفوسفات"},
+    category: {"en":"Nephrology & Metabolism","fr":"Néphrologie & Métabolisme"},
+    path: '/calcium-phosphate-product',
+    keywords: ["calcium phosphate product","calciphylaxis","ckd-mbd","vascular calcification","end stage renal"],
+    specialties: ["nephrology","endocrinology"],
+    icon: Activity,
+    isFeatured: true
+  },
+  {
+    id: 'urine-osmolal-gap',
+    title: {"en":"Urine Osmolal Gap & Ammonium Calculator","fr":"Trou Osmolaire Urinaire & Ammonium (RTA)","ar":"حاسبة الفجوة الحلولية البولية والأمونيوم"},
+    category: {"en":"Nephrology & Acid-Base","fr":"Néphrologie & Équilibre Acido-Basique"},
+    path: '/urine-osmolal-gap',
+    keywords: ["urine osmolal gap","ammonium","renal tubular acidosis","rta","normal anion gap acidosis"],
+    specialties: ["nephrology","critical-care","internal-medicine"],
+    icon: Droplet,
+    isFeatured: true
+  },
+  {
+    id: 'homa-ir',
+    title: {"en":"HOMA-IR & Beta-Cell Function Calculator","fr":"Calculateur HOMA-IR & Fonction Bêta-Pancréatique","ar":"حاسبة مؤشر هوما لمقاومة الأنسولين ووظيفة خلايا بيتا"},
+    category: {"en":"Endocrinology & Metabolism","fr":"Endocrinologie & Métabolisme"},
+    path: '/homa-ir',
+    keywords: ["homa-ir","insulin resistance","quicki","prediabetes","metabolic syndrome","beta cell"],
+    specialties: ["endocrinology","internal-medicine","cardiology"],
+    icon: Activity,
+    isFeatured: true
+  },
+  {
+    id: 'meld-3-score',
+    title: {"en":"MELD 3.0 Score (OPTN Liver Allocation)","fr":"Score MELD 3.0 (Attribution de Greffe Hépatique)","ar":"مقياس ميلد 3.0 لتخصيص كبد المتبرعين"},
+    category: {"en":"Gastroenterology & Hepatology","fr":"Hépato-Gastroentérologie"},
+    path: '/meld-3-score',
+    keywords: ["meld 3.0","meld score","liver transplant","cirrhosis mortality","optn","unos"],
+    specialties: ["gastroenterology","hepatology","transplant"],
+    icon: Activity,
+    isFeatured: true
+  },
+  {
+    id: 'ganzoni-formula',
+    title: {"en":"Ganzoni Formula for Iron Deficit","fr":"Formule de Ganzoni (Déficit en Fer & Fer IV)","ar":"معادلة غانزوني لحساب عوز الحديد والحديد الوريدي"},
+    category: {"en":"Hematology & Nephrology","fr":"Hématologie & Néphrologie"},
+    path: '/ganzoni-formula',
+    keywords: ["ganzoni formula","iron deficit","iv iron","ferric carboxymaltose","iron sucrose","anemia"],
+    specialties: ["hematology","nephrology","internal-medicine"],
+    icon: Pill,
+    isFeatured: true
+  },
+  {
+    id: 'lactate-clearance',
+    title: {"en":"Lactate Clearance in Sepsis Resuscitation","fr":"Clairance du Lactate (Réanimation du Sepsis)","ar":"حاسبة تصفية اللاكتات في إنعاش الصدمة الإنتانية"},
+    category: {"en":"Emergency & Critical Care","fr":"Urgences & Soins Intensifs"},
+    path: '/lactate-clearance',
+    keywords: ["lactate clearance","septic shock","surviving sepsis","resuscitation kinetics","hyperlactatemia"],
+    specialties: ["critical-care","emergency"],
+    icon: Activity,
+    isFeatured: true
+  },
+  {
+    id: 'child-pugh-decompensated',
+    title: {"en":"Child-Pugh Score for Cirrhosis & Surgical Mortality","fr":"Score de Child-Pugh (Cirrhose & Risque Chirurgical)","ar":"تصنيف تشايلد-بو لشدة تشمع الكبد وبقاء المريض"},
+    category: {"en":"Gastroenterology & Hepatology","fr":"Hépato-Gastroentérologie"},
+    path: '/child-pugh-decompensated',
+    keywords: ["child pugh","cirrhosis","decompensated liver","surgical mortality","ascites","encephalopathy"],
+    specialties: ["gastroenterology","hepatology","surgery"],
+    icon: Activity,
+    isFeatured: true
+  },
+  {
+    id: 'smart-cop',
+    title: {"en":"SMART-COP Score for Severe CAP","fr":"Score SMART-COP (Pneumonie Aiguë Communautaire)","ar":"مقياس سمارت كوب للتنبؤ بالحاجة إلى العناية المركزة في الالتهاب الرئوي"},
+    category: {"en":"Pulmonology & Critical Care","fr":"Pneumologie & Réanimation"},
+    path: '/smart-cop',
+    keywords: ["smart cop","pneumonia","cap","icu admission","mechanical ventilation","vasopressors"],
+    specialties: ["pulmonology","critical-care","emergency"],
+    icon: Wind,
+    isFeatured: true
+  },
+  {
+    id: 'centor-mcisaac',
+    title: {"en":"Modified Centor / McIsaac Strep Score","fr":"Score de Centor Modifié (McIsaac - Angine à Streptocoque)","ar":"مقياس ماك آيزاك وسنتور المعدل لالتهاب الحلق العقدي"},
+    category: {"en":"Emergency & Infectious Disease","fr":"Urgences & Infectiologie"},
+    path: '/centor-mcisaac',
+    keywords: ["centor score","mcisaac","group a strep","pharyngitis","tonsillitis","radt"],
+    specialties: ["emergency","pediatrics","infectious-disease"],
+    icon: Activity,
+    isFeatured: true
+  },
+  {
+    id: 'oasis-score',
+    title: {"en":"OASIS Score (Oxford Acute Severity of Illness)","fr":"Score OASIS (Sévérité en Réanimation Sans Biologie)","ar":"مقياس أواسيس لتقييم شدة المرض في العناية المركزة بدون تحاليل"},
+    category: {"en":"Critical Care","fr":"Soins Intensifs & Réanimation"},
+    path: '/oasis-score',
+    keywords: ["oasis score","icu mortality","severity of illness","non laboratory model","mimic"],
+    specialties: ["critical-care","anesthesiology"],
+    icon: Activity,
+    isFeatured: true
+  },
+  {
+    id: 'saps-3-score',
+    title: {"en":"SAPS 3 Score (First-Hour ICU Physiology)","fr":"Score SAPS 3 (Gravité en Réanimation à la 1ère Heure)","ar":"مقياس سابس 3 للفسيولوجيا الحادة في الساعة الأولى بالعناية"},
+    category: {"en":"Critical Care","fr":"Soins Intensifs & Réanimation"},
+    path: '/saps-3-score',
+    keywords: ["saps 3","icu mortality","acute physiology","admission score","critical care prediction"],
+    specialties: ["critical-care","anesthesiology"],
+    icon: Activity,
+    isFeatured: true
+  },
+  {
+    id: 'frax-score',
+    title: {"en":"FRAX 10-Year Fracture Risk Calculator","fr":"Calculateur FRAX (Risque de Fracture Ostéoporotique à 10 Ans)","ar":"حاسبة فراكس لتقييم خطر كسور الهشاشة العظمية خلال 10 سنوات"},
+    category: {"en":"Endocrinology & Rheumatology","fr":"Rhumatologie & Endocrinologie"},
+    path: '/frax-score',
+    keywords: ["frax","osteoporosis","fracture risk","bone mineral density","t-score","bisphosphonate"],
+    specialties: ["endocrinology","rheumatology","internal-medicine"],
+    icon: Activity,
+    isFeatured: true
+  },
+  {
+    id: 'pregnancy-weight-gain',
+    title: {"en":"Pregnancy Weight Gain Calculator (IOM Guidelines)","fr":"Prise de Poids pendant la Grossesse (Normes IOM)","ar":"حاسبة زيادة الوزن أثناء الحمل وفق توصيات معهد الطب IOM"},
+    category: {"en":"Obstetrics & Gynecology","fr":"Gynécologie & Obstétrique"},
+    path: '/pregnancy-weight-gain',
+    keywords: ["pregnancy weight gain","gestational weight gain","iom guidelines","acog","prenatal bmi"],
+    specialties: ["obstetrics","pediatrics","nutrition"],
+    icon: HeartPulse,
+    isFeatured: true
+  },
+  {
+    id: 'epds-score',
+    title: {"en":"Edinburgh Postnatal Depression Scale (EPDS)","fr":"Échelle d'Édimbourg (Dépression Post-Partum - EPDS)","ar":"مقياس إدنبرة لاكتئاب ما بعد الولادة EPDS"},
+    category: {"en":"Psychiatry & Obstetrics","fr":"Psychiatrie & Obstétrique"},
+    path: '/epds-score',
+    keywords: ["epds","postnatal depression","postpartum depression","perinatal mental health","maternal screening"],
+    specialties: ["psychiatry","obstetrics","pediatrics"],
+    icon: Brain,
+    isFeatured: true
+  },
+  {
+    id: 'pediatric-bp-percentiles',
+    title: {"en":"Pediatric Blood Pressure Percentiles (AAP 2017)","fr":"Tension Artérielle Pédiatrique (Normes AAP 2017)","ar":"النسب المئوية لضغط الدم لدى الأطفال وفق الأكاديمية الأمريكية AAP"},
+    category: {"en":"Pediatrics & Nephrology","fr":"Pédiatrie & Néphrologie"},
+    path: '/pediatric-bp-percentiles',
+    keywords: ["pediatric blood pressure","bp percentiles","aap 2017","pediatric hypertension","staging"],
+    specialties: ["pediatrics","cardiology","nephrology"],
+    icon: HeartPulse,
+    isFeatured: true
   }
 ];
 
