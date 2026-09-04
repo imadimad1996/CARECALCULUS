@@ -35,17 +35,11 @@ const pageLoaders = [
   () => import('../pages/Disclaimer'),
   () => import('../pages/Privacy'),
   () => import('../pages/Terms'),
-  () => import('../pages/Glp1Hub'),
   () => import('../pages/ApgarScore'),
   () => import('../pages/SofaScore'),
   () => import('../pages/ChildPughScore'),
   () => import('../pages/AnionGap'),
   () => import('../pages/AaGradient'),
-  () => import('../pages/FlashcardGenerator'),
-  () => import('../pages/CaseStudyViewer'),
-  () => import('../pages/StudyTracker'),
-  () => import('../pages/DrugSheets'),
-  () => import('../pages/AbbreviationLookup'),
   () => import('../pages/Compare'),
   () => import('../pages/NutritionTdee'),
   () => import('../pages/NutritionMust'),
@@ -56,7 +50,6 @@ const pageLoaders = [
   () => import('../pages/EmbedGallery'),
   () => import('../pages/ForHospitals'),
   () => import('../pages/SpecialtyHub'),
-  () => import('../pages/NutritionHub'),
   () => import('../pages/ParklandFormula'),
   () => import('../pages/FenaCalculator'),
   () => import('../pages/WintersFormula'),
@@ -84,7 +77,6 @@ const pageLoaders = [
   () => import('../pages/BovaScore'),
   () => import('../pages/ApacheIIScore'),
   () => import('../pages/SapsIIScore'),
-  () => import('../pages/DrugInteractions'),
   () => import('../pages/MedicalStatistics'),
   () => import('../pages/FavoritesPage'),
   () => import('../pages/PricingPage'),
@@ -177,10 +169,9 @@ const [
   Cha2ds2VascScore, Phq9Score, MeldScore, SirsCriteria, PfRatio, TidalVolume,
   AncCalculator, AdjustedBodyWeight, SteroidConversion,
   About, Disclaimer, Privacy, Terms,
-  Glp1Hub, ApgarScore, SofaScore, ChildPughScore, AnionGap, AaGradient,
-  FlashcardGenerator, CaseStudyViewer, StudyTracker, DrugSheets, AbbreviationLookup,
+  ApgarScore, SofaScore, ChildPughScore, AnionGap, AaGradient,
   Compare, NutritionTdee, NutritionMust, NutritionNrs2002, ConditionHub,
-  MdrdGfr, CkdEpiGfr, EmbedGallery, ForHospitals, SpecialtyHub, NutritionHub,
+  MdrdGfr, CkdEpiGfr, EmbedGallery, ForHospitals, SpecialtyHub,
   ParklandFormula, FenaCalculator, WintersFormula, HasBledScore,
   CiwaArScore, FreeWaterDeficit, SodiumCorrection,
   HeparinDosing, OpioidConversion, MaintenanceFluids,
@@ -188,7 +179,7 @@ const [
   PercRule, GenevaScore, NihssScore,
   GraceScore, BicarbDeficit, ReticIndex,
   PhenytoinCorrection, AscvdRisk, VancomycinDosing, AminoglycosideDosing,
-  PesiScore, BovaScore, ApacheIIScore, SapsIIScore, DrugInteractions, MedicalStatistics, FavoritesPage, PricingPage,
+  PesiScore, BovaScore, ApacheIIScore, SapsIIScore, MedicalStatistics, FavoritesPage, PricingPage,
   BishopScore, CentorScore, EditorialBoard,
   PediatricGcs, HollidaySegarFluids, PediatricDosage, NaegeleEddCalculator, GestationalAgeCrl,
   FourTsHitScore, MasccRiskIndex, RumackMatthewNomogram, FraminghamRiskScore, HfaPeffScore, SchwartzGfr,
@@ -200,7 +191,6 @@ const [
 
 export const HomePage = safeLazy(() => import('../pages/HomePage'));
 export const NotFound = safeLazy(() => import('../pages/NotFound'));
-export const MoroccanMedicalHub = safeLazy(() => import('../pages/MoroccanMedicalHub'));
 
 /**
  * Eagerly resolve every page chunk. Called once before prerendering so that
@@ -212,7 +202,6 @@ export async function preloadPages() {
   await Promise.all([
     ...pageLoaders.map((load) => load()),
     import('../pages/HomePage'),
-    import('../pages/MoroccanMedicalHub'),
   ]);
 }
 
@@ -220,7 +209,7 @@ export async function preloadPages() {
 export const LEGAL_ROUTES = ['/about', '/disclaimer', '/privacy', '/terms', '/embed-gallery', '/for-hospitals'];
 
 // Routes that open in full-width reading mode (no sidebar, no top widgets)
-export const CONTENT_ROUTES = ['/about', '/editorial-board', '/comite-editorial', '/disclaimer', '/privacy', '/terms', '/glp-1-hub', '/hub-glp1', '/%D9%85%D8%B1%D9%83%D8%B2-glp1', '/مركز-glp1', '/embed-gallery', '/for-hospitals', '/clinical-guide', '/synapse-engine', '/cours', '/fmp-medecine', '/ispits'];
+export const CONTENT_ROUTES = ['/about', '/editorial-board', '/comite-editorial', '/disclaimer', '/privacy', '/terms', '/embed-gallery', '/for-hospitals', '/synapse-engine'];
 
 export class ErrorBoundary extends React.Component<any, any> {
   constructor(props: any) {
@@ -361,21 +350,8 @@ export const navItems = [
   { path: '/maintenance-fluids', nameEn: 'Maintenance IV Fluids', nameFr: 'Fluides d’Entretien IV', nameAr: 'السوائل الوريدية اليومية', icon: Droplet, tier: 3 },
   { path: '/phenytoin-correction', nameEn: 'Phenytoin Correction', nameFr: 'Correction Phénytoïne', nameAr: 'تصحيح الفينيتوين', icon: Pill, tier: 3 },
   
-  // Tier 4 — Resources & Library
-  { path: '/cours', nameEn: 'Clinical Course Library', nameFr: 'Bibliothèque des Cours Médicaux', nameAr: 'مكتبة المحاضرات والدروس', icon: BookOpen, tier: 4, group: 'learning' as const },
-  { path: '/fmp-medecine', nameEn: 'FMP Medicine Handbooks', nameFr: 'Modules Médecine FMP', nameAr: 'وحدات كليات الطب FMP', icon: GraduationCap, tier: 4, group: 'learning' as const },
-  { path: '/ispits', nameEn: 'ISPITS Nursing Handbooks', nameFr: 'Guides Soins ISPITS', nameAr: 'وحدات التمريض ISPITS', icon: Award, tier: 4, group: 'learning' as const },
-  { path: '/drug-interactions', nameEn: 'Drug Interactions', nameFr: 'Interactions Médicamenteuses', nameAr: 'تداخلات الأدوية', icon: ShieldCheck, tier: 0 },
-  { path: '/medical-statistics', nameEn: 'Medical Statistics', nameFr: 'Statistiques Médicales', nameAr: 'الإحصاء الطبي', icon: Layers, tier: 0 },
-  { path: '/glp-1-hub', nameEn: 'GLP-1 Hub', nameFr: 'Hub GLP-1', nameAr: 'مركز أدوية GLP-1', icon: Sparkles, tier: 4, group: 'reading' as const },
-
-  { path: '/study-tracker', nameEn: 'Study Progress Tracker', nameFr: 'Suivi d\'Études', nameAr: 'متابع التقدم الدراسي', icon: Award, tier: 4, group: 'learning' as const },
-  { path: '/synapse-engine', nameEn: 'Synapse Engine (Guidelines)', nameFr: 'Moteur Synapse (Recommandations)', nameAr: 'محرك الإرشادات الطبية', icon: Sparkles, tier: 4, group: 'learning' as const },
-  { path: '/flashcard-generator', nameEn: 'Medical Flashcards', nameFr: 'Flashcards Médicales', nameAr: 'البطاقات التعليمية الطبية', icon: Layers, tier: 4, group: 'learning' as const },
-  { path: '/case-study-viewer', nameEn: 'Clinical Case Studies', nameFr: 'Cas Cliniques', nameAr: 'الحالات السريرية التفاعلية', icon: Stethoscope, tier: 4, group: 'learning' as const },
-  { path: '/drug-sheets', nameEn: 'ICU Drug Reference', nameFr: 'Fiches Médicaments', nameAr: 'جرعات أدوية العناية', icon: Droplet, tier: 4, group: 'learning' as const },
-  { path: '/abbreviation-lookup', nameEn: 'Medical Abbreviations', nameFr: 'Abréviations Médicales', nameAr: 'قاموس الاختصارات الطبية', icon: FileText, tier: 4, group: 'learning' as const },
-  { path: '/nutrition-hub', nameEn: 'Nutrition Hub', nameFr: 'Hub Nutrition', nameAr: 'تغذية', icon: BookOpen, tier: 4, group: 'reading' as const },
+  { path: '/medical-statistics', nameEn: 'Medical Statistics', nameFr: 'Statistiques Médicales', nameAr: 'الإحصاء الطبي', icon: Layers, tier: 3 },
+  { path: '/synapse-engine', nameEn: 'Synapse Engine (Guidelines)', nameFr: 'Moteur Synapse (Recommandations)', nameAr: 'محرك الإرشادات الطبية', icon: Sparkles, tier: 0 },
 ];
 
 export const TIER_HEADERS: Record<number, Record<LangCode, string>> = {
@@ -466,28 +442,12 @@ export function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="bova-score" element={wrapCalculator('/bova-score', <BovaScore lang={lang} />)} />
       <Route path="apache-ii-score" element={wrapCalculator('/apache-ii-score', <ApacheIIScore lang={lang} />)} />
       <Route path="saps-ii-score" element={wrapCalculator('/saps-ii-score', <SapsIIScore lang={lang} />)} />
-      <Route path="drug-interactions" element={wrapCalculator('/drug-interactions', <DrugInteractions lang={lang} />)} />
       <Route path="medical-statistics" element={wrapCalculator('/medical-statistics', <MedicalStatistics lang={lang} />)} />
 
       <Route path="nutrition-tdee" element={wrapCalculator('/nutrition-tdee', <NutritionTdee lang={lang} />)} />
       <Route path="nutrition-must" element={wrapCalculator('/nutrition-must', <NutritionMust lang={lang} />)} />
       <Route path="nutrition-nrs2002" element={wrapCalculator('/nutrition-nrs2002', <NutritionNrs2002 lang={lang} />)} />
-      <Route path="cours" element={<MoroccanMedicalHub type="all" lang={lang} />} />
-      <Route path="fmp-medecine" element={<MoroccanMedicalHub type="fmp" lang={lang} />} />
-      <Route path="fmp-medecine/:moduleSlug" element={<MoroccanMedicalHub type="fmp" lang={lang} />} />
-      <Route path="ispits" element={<MoroccanMedicalHub type="ispits" lang={lang} />} />
-      <Route path="ispits/:moduleSlug" element={<MoroccanMedicalHub type="ispits" lang={lang} />} />
       <Route path="synapse-engine" element={<SynapseEnginePage lang={lang} langPath={langPath} />} />
-      <Route path="nutrition-hub" element={<NutritionHub lang={lang} />} />
-      <Route path="glp-1-hub" element={<Glp1Hub lang={lang} />} />
-      <Route path="hub-glp1" element={<Glp1Hub lang={lang} />} />
-      <Route path="مركز-glp1" element={<Glp1Hub lang={lang} />} />
-      <Route path="%D9%85%D8%B1%D9%83%D8%B2-glp1" element={<Glp1Hub lang={lang} />} />
-      <Route path="flashcard-generator" element={<FlashcardGenerator lang={lang} />} />
-      <Route path="case-study-viewer" element={<CaseStudyViewer lang={lang} />} />
-      <Route path="drug-sheets" element={<DrugSheets lang={lang} />} />
-      <Route path="study-tracker" element={<StudyTracker lang={lang} />} />
-      <Route path="abbreviation-lookup" element={<AbbreviationLookup lang={lang} />} />
       <Route path="about" element={<About lang={lang} />} />
       <Route path="editorial-board" element={<EditorialBoard lang={lang} />} />
       <Route path="comite-editorial" element={<EditorialBoard lang={lang} />} />

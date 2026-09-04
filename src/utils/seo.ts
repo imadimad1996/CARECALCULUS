@@ -121,22 +121,6 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
     }
   }
 
-  // Clinical Guides Page & Sub-guides
-  if (path === '/clinical-guide') {
-    if (lang === 'fr') {
-      return {
-        title: 'Guides de Décision Clinique et Protocoles | CareCalculus',
-        desc: 'Découvrez nos guides de protocoles cliniques transversaux reliant des calculateurs de premier plan à des états pathologiques spécifiques.',
-        keywords: 'guides cliniques, protocoles medicaux, sepsis, sdra, soins intensifs',
-      };
-    }
-    return {
-      title: 'Clinical Intersection Guides & Management Protocols | CareCalculus',
-      desc: 'Explore clinical protocols linking leading calculators with specific disease states (Sepsis, ARDS, Cirrhosis, Renal Injury).',
-      keywords: 'clinical guides, medical protocols, sepsis protocol, ards guidelines',
-    };
-  }
-
 
 
   if (path === '/' || path === '/home') {

@@ -44,15 +44,15 @@ export default function MobileBottomNav({ lang, langPath, onSearchClick, onMenuC
         </button>
 
         <Link 
-          to={langPath('/glp-1-hub')}
-          aria-label="GLP-1 Hub"
-          aria-current={isActive('/glp-1-hub') ? 'page' : undefined}
+          to={langPath('/favorites')}
+          aria-label={lang === 'fr' ? 'Favoris' : 'Saved'}
+          aria-current={isActive('/favorites') ? 'page' : undefined}
           className={`relative flex flex-col items-center justify-center w-16 h-12 rounded-xl transition-all duration-200 ${
-            isActive('/glp-1-hub') ? 'text-indigo-600 dark:text-indigo-400 scale-105 nav-active-pill' : 'text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300'
+            isActive('/favorites') ? 'text-teal-600 dark:text-teal-400 scale-105 nav-active-pill' : 'text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300'
           }`}
         >
-          <Sparkles className={`w-5 h-5 mb-1 transition-all ${isActive('/glp-1-hub') ? 'fill-indigo-600/20 dark:fill-indigo-400/20' : ''}`} />
-          <span className="text-[10px] font-semibold">GLP-1</span>
+          <Calculator className={`w-5 h-5 mb-1 transition-all ${isActive('/favorites') ? 'fill-teal-600/20 dark:fill-teal-400/20' : ''}`} />
+          <span className="text-[10px] font-semibold">{lang === 'fr' ? 'Favoris' : 'Saved'}</span>
         </Link>
 
         <button 

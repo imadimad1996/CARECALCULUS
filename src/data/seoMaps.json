@@ -29,10 +29,7 @@
     "/curb65-score": "curb 65, score curb 65, calcul curb 65 pneumonie, sévérité pneumopathie, antibiothérapie pneumonie",
     "/wells-score": "score de wells, score wells tvp, probabilité phlébite embolie, d-dimères wells",
     "/nutrition-must": "score must dénutrition, calcul score must, dépistage dénutrition adulte espen, évaluation nutritionnelle",
-    "/qsofa-score": "score qsofa sepsis, quick sofa calcul, dépistage sepsis urgences",
-    "/ispits": "ispits maroc, cours ispits infirmier, anatomie et physiologie ispits, soins infirmiers néphrologie, fiches cours ispits pdf",
-    "/fmp-medecine": "fmp médecine maroc, cours médecine fmp rabat casablanca, anatomie fmp, sémiologie médicale pdf, pharmacologie cours",
-    "/cours": "cours de médecine pdf, cours soins infirmiers, fmp cours, ispits cours, polycopiés médecine gratuits"
+    "/qsofa-score": "score qsofa sepsis, quick sofa calcul, dépistage sepsis urgences"
   },
   "nameEnMap": {
     "/map-calculator": "MAP Calculator — Mean Arterial Pressure & Perfusion Target",
@@ -57,11 +54,7 @@
     "/adjusted-body-weight": "Adjusted Body Weight (ABW) & IBW Calculator — Clinical Dosing",
     "/steroid-conversion": "Steroid Conversion Calculator — Corticosteroid Dose Equivalence",
     "/favorites": "My Saved Clinical Calculators — Favorites",
-    "/clinical-guide": "Clinical Decision Guide — Scores & Criteria",
-    "/clinical-library": "Complete Clinical Reference Library",
     "/specialties/intensive-care": "ICU Critical Care Calculators",
-    "/blog": "Evidence-Based Medical Journals & Peer Reviews",
-    "/blog-articles": "CareCalculus Blog — Clinical Tips, News & Editorials",
     "/nutrition-tdee": "TDEE & BMR Nutrition Calculator (Mifflin & Harris-Benedict)",
     "/nutrition-must": "MUST Score Calculator — Malnutrition Universal Screening Tool",
     "/nutrition-nrs2002": "NRS-2002 Nutritional Risk Screening Calculator",
@@ -127,13 +120,9 @@
     "/anc-calculator": "Nombre Absolu de Neutrophiles (NAN)",
     "/adjusted-body-weight": "Calcul Poids Ajusté & Idéal en Ligne (Devine) — Posologie",
     "/steroid-conversion": "Équivalence Corticoïdes : Calculateur de Conversion en Ligne",
-    "/blog": "Journaux Medicaux Bases sur l'Evidence (2K+)",
-    "/blog-articles": "Blog CareCalculus - Astuces Cliniques & Actualites",
     "/nutrition-tdee": "Calculateur TDEE & BMR (Mifflin & Harris-Benedict)",
     "/nutrition-must": "Score MUST en Ligne — Dépistage Dénutrition Adulte",
     "/nutrition-nrs2002": "Calculateur NRS-2002 (Risque Nutritionnel)",
-    "/presentations": "Bibliotheque de Presentations Medicales (PPTX)",
-    "/cours": "Référentiel des Cours Médicaux & Guides Cliniques PDF",
     "/about": "A propos de CareCalculus - Mission et Sources",
     "/disclaimer": "Avertissement medical - CareCalculus",
     "/privacy": "Politique de confidentialite - CareCalculus",
@@ -145,18 +134,12 @@
     "/conditions/atrial-fibrillation": "Calculateurs Fibrillation Auriculaire — CHA2DS2-VASc",
     "/conditions/respiratory-failure": "Calculateurs Insuffisance Respiratoire — P/F, Volume Courant",
     "/conditions/renal-failure": "Calculateurs Insuffisance Rénale — MDRD, CKD-EPI, Clairance Créatinine",
-    "/glp-1-hub": "Centre d'Intelligence GLP-1 & Métabolique",
-    "/hub-glp1": "Centre d'Intelligence GLP-1 & Métabolique",
-    "/مركز-glp1": "Centre d'Intelligence GLP-1 & Métabolique",
-    "/%D9%85%D8%B1%D9%83%D8%B2-glp1": "Centre d'Intelligence GLP-1 & Métabolique",
     "/apgar-score": "Calculateur Score APGAR (Nouveau-né)",
     "/sofa-score": "Calculateur Score SOFA (Réanimation)",
     "/child-pugh-score": "Calculateur Score Child-Pugh (Cirrhose)",
     "/anion-gap": "Calculateur Trou Anionique (Acidose)",
     "/aa-gradient": "Calculateur Gradient Alvéolo-Artériel (A-a)",
-    "/heart-score": "Calculateur Score HEART (Douleur Thoracique)",
-    "/fmp-medecine": "Modules Médecine FMP — Cours & Référentiels Cliniques",
-    "/ispits": "Guide & Modules ISPITS — Sciences Infirmières & Réanimation"
+    "/heart-score": "Calculateur Score HEART (Douleur Thoracique)"
   },
   "keywordsEsMap": {
     "/map-calculator": "calculadora presion arterial media, formula PAM, calculo presion arterial media, perfusion tisular",
@@ -193,16 +176,10 @@
     "/adjusted-body-weight": "Peso Corporal Ajustado e Ideal (PCA/PCI)",
     "/steroid-conversion": "Conversor de Dosis Equivalente de Corticoides",
     "/favorites": "Mis Calculadoras Médicas Guardadas — Favoritos",
-    "/clinical-guide": "Guía de Decisiones Clínicas — Escalas y Criterios",
-    "/clinical-library": "Biblioteca Clínica Completa de Referencia",
     "/specialties/intensive-care": "Calculadoras de Cuidados Intensivos (UCI)",
-    "/blog": "Revistas Médicas y Literatura Científica",
-    "/blog-articles": "Blog CareCalculus — Guías y Editoriales Clínicas",
     "/nutrition-tdee": "Calculadora Nutricional TDEE y BMR",
     "/nutrition-must": "Herramienta MUST de Desnutrición",
     "/nutrition-nrs2002": "Cribado de Riesgo Nutricional NRS-2002",
-    "/presentations": "Biblioteca de Presentaciones Médicas (PPTX)",
-    "/cours": "Cursos y Lecciones Clínicas (PDF)",
     "/about": "Acerca de CareCalculus — Misión y Fuentes",
     "/disclaimer": "Aviso Legal Médico — CareCalculus",
     "/privacy": "Política de Privacidad — CareCalculus",
@@ -214,8 +191,6 @@
     "/conditions/atrial-fibrillation": "Calculadoras de Fibrilación Auricular — CHA2DS2-VASc",
     "/conditions/respiratory-failure": "Calculadoras de Insuficiencia Respiratoria",
     "/conditions/renal-failure": "Calculadoras de Insuficiencia Renal — MDRD, CKD-EPI",
-    "/glp-1-hub": "Centro de Información GLP-1 y Salud Metabólica",
-    "/hub-glp1": "Centro de Información GLP-1 y Salud Metabólica",
     "/apgar-score": "Calculadora de Escala APGAR Neonatal",
     "/sofa-score": "Calculadora de Escala SOFA en UCI",
     "/child-pugh-score": "Escala Child-Pugh de Cirrosis Hepática",
@@ -231,10 +206,7 @@
     "/steroid-conversion": "Tableau d'équivalence et calcul des doses équivalentes de corticoïdes (Prednisone, Solumédrol, Dexaméthasone, Hydrocortisone). Calculateur rapide pour médecins et pharmaciens.",
     "/curb65-score": "Calculateur du score CURB-65 pour la sévérité des pneumonies aiguës communautaires (PAC). Aide à la décision d'hospitalisation ambulatoire ou réanimation.",
     "/wells-score": "Calculateur du score de Wells pour la thrombose veineuse profonde (TVP) et l'embolie pulmonaire (EP). Probabilité clinique pré-test et indication des D-dimères.",
-    "/nutrition-must": "Calculateur de dépistage de la dénutrition chez l'adulte (MUST) selon les directives ESPEN. Évaluez le risque nutritionnel et le plan de soins.",
-    "/ispits": "Accédez aux référentiels et cours officiels des Instituts Supérieurs des Professions Infirmières (ISPITS Maroc). Polycopiés PDF, résumés cliniques et fiches de révision.",
-    "/fmp-medecine": "Consultez et téléchargez les modules officiels de médecine (FMP Rabat, Casablanca). Polycopiés académiques en PDF, sémiologie, anatomie et pharmacologie clinique.",
-    "/cours": "Bibliothèque universitaire de cours médicaux et paramédicaux en PDF. Modules accrédités pour étudiants en médecine, infirmiers et internes des hôpitaux."
+    "/nutrition-must": "Calculateur de dépistage de la dénutrition chez l'adulte (MUST) selon les directives ESPEN. Évaluez le risque nutritionnel et le plan de soins."
   },
   "descEnMap": {
     "/map-calculator": "Instant online Mean Arterial Pressure (MAP) calculator. Calculate organ perfusion pressure using MAP = DBP + 1/3(SBP - DBP) for sepsis, shock, and ICU resuscitation.",
@@ -244,9 +216,6 @@
     "/steroid-conversion": "Convert equipotent doses between Prednisone, Methylprednisolone, Dexamethasone, and Hydrocortisone with anti-inflammatory and mineralocorticoid potencies.",
     "/curb65-score": "Calculate CURB-65 score to stratify mortality risk in community-acquired pneumonia (CAP) and determine outpatient vs inpatient vs ICU admission.",
     "/wells-score": "Calculate Wells score for deep vein thrombosis (DVT) and pulmonary embolism (PE). Clinical pre-test probability risk score with D-dimer decision guidance.",
-    "/nutrition-must": "Calculate MUST score for malnutrition risk screening based on BMI, unintended weight loss, and acute disease effect according to ESPEN guidelines.",
-    "/ispits": "Access official Moroccan ISPITS Nursing Academy academic course modules and clinical study guides. Free PDF handbooks, revision notes, and exam summaries.",
-    "/fmp-medecine": "Browse and download official Moroccan Faculty of Medicine (FMP) course modules. Comprehensive clinical handbooks, anatomy, semiology, and pharmacology PDFs.",
-    "/cours": "Accredited clinical course modules and medical syllabi in PDF. Curated academic resources for medical students, residents, and nursing professionals."
+    "/nutrition-must": "Calculate MUST score for malnutrition risk screening based on BMI, unintended weight loss, and acute disease effect according to ESPEN guidelines."
   }
 }

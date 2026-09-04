@@ -19,6 +19,7 @@ import { slugify } from './utils/slug';
 
 import { CONDITIONS_DB } from './data/conditions';
 import { SPECIALTIES_DB } from './data/specialties';
+import { ALL_CALCULATORS } from './data/calculators';
 let pagesReady: Promise<void> | null = null;
 
 /**
@@ -40,6 +41,7 @@ async function renderResolved(url: string): Promise<string> {
 
 const conditionSlugs = CONDITIONS_DB.map(c => `/conditions/${c.id}`);
 const specialtySlugs = SPECIALTIES_DB.map(s => `/specialties/${s.id}`);
+const calculatorSlugs = Array.from(new Set(ALL_CALCULATORS.map(c => c.path)));
 
 function slugifyQuestion(question: string): string {
   return question
@@ -61,57 +63,19 @@ const compareSlugs = [
 
 // Logical (language-agnostic) structural routes worth prerendering. These are
 // statically generated so Googlebot + AI crawlers get complete HTML on first
-// fetch. Article detail pages (/blog/:slug, etc.) will be added as full-body
-// content is authored for each article.
+// fetch. Exclusively clinical calculators and clinical pathway hubs.
 const LOGICAL_ROUTES = [
   '/',
-  '/map-calculator',
-  '/glasgow-coma-scale',
-  '/qsofa-score',
-  '/sirs-criteria',
-  '/curb65-score',
-  '/pf-ratio',
-  '/tidal-volume',
-  '/creatinine-clearance',
-  '/meld-score',
-  '/wells-score',
-  '/cha2ds2-vasc',
-  '/corrected-calcium',
-  '/anc-calculator',
-  '/drip-rate-calculator',
-  '/steroid-conversion',
-  '/adjusted-body-weight',
-  '/medical-conversions',
-  '/bmi-calculator',
-  '/phq9-score',
-  '/apgar-score',
-  '/sofa-score',
-  '/child-pugh-score',
-  '/anion-gap',
-  '/aa-gradient',
-
-  '/nutrition-tdee',
-  '/nutrition-must',
-  '/nutrition-nrs2002',
-  '/glp-1-hub',
-  '/flashcard-generator',
-  '/case-study-viewer',
-  '/study-tracker',
-  '/drug-sheets',
-  '/abbreviation-lookup',
+  ...calculatorSlugs,
   '/about',
+  '/editorial-board',
   '/disclaimer',
   '/privacy',
   '/terms',
   '/pricing',
   '/for-hospitals',
-  '/clinical-guide',
-  '/cours',
-  '/fmp-medecine',
-  '/ispits',
-  '/ispits/anatomie-et-physiologie-i',
-  '/fmp-medecine/anatomie-iii',
-  '/ispits/soins-infirmiers-en-nephrologie-et-dialyse',
+  '/embed-gallery',
+  '/synapse-engine',
 
   ...conditionSlugs,
   ...specialtySlugs,

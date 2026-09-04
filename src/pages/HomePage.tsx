@@ -597,7 +597,7 @@ export default function HomePage({ lang }: HomePageProps) {
           </h3>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-3">
-          {CONDITIONS_DB.slice(0, 24).map(cond => (
+          {CONDITIONS_DB.map(cond => (
             <Link
               key={cond.id}
               to={langPath(`/conditions/${cond.id}`)}
@@ -606,14 +606,6 @@ export default function HomePage({ lang }: HomePageProps) {
               {lang === 'fr' ? cond.nameFr : cond.nameEn}
             </Link>
           ))}
-        </div>
-        <div className="mt-6 flex justify-end">
-          <Link
-            to={langPath('/clinical-guide')}
-            className="text-xs font-bold text-indigo-600 hover:text-indigo-700 flex items-center gap-1"
-          >
-            {lang === 'fr' ? 'Voir tout l\'annuaire' : 'View full directory'} <ChevronRight className="w-3.5 h-3.5" />
-          </Link>
         </div>
       </section>
 

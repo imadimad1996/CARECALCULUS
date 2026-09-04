@@ -68,11 +68,6 @@ function AppLayout() {
 
   // Build a URL for the current language out of a logical path.
   const langPath = (p: string) => {
-    const clean = p.startsWith('/') ? p : `/${p}`;
-    if (clean === '/glp-1-hub' || clean === '/hub-glp1' || clean === '/مركز-glp1' || decodeURIComponent(clean) === '/مركز-glp1') {
-      if (lang === 'fr') return '/fr/hub-glp1';
-      return '/glp-1-hub';
-    }
     return buildPath(p, lang);
   };
 
@@ -101,12 +96,6 @@ function AppLayout() {
       }
     }
 
-    if (cleanLogical === '/glp-1-hub' || cleanLogical === '/hub-glp1') {
-      if (next === 'fr') navigate('/fr/hub-glp1');
-      else if (next === 'es') navigate('/es/hub-glp1');
-      else navigate('/glp-1-hub');
-      return;
-    }
     navigate(buildPath(logicalPath, next));
   };
 
@@ -577,10 +566,6 @@ function AppLayout() {
       '/disclaimer':    { en: 'Medical Disclaimer', fr: 'Avertissement médical', es: 'Aviso Médico',   ar: 'إخلاء المسؤولية', icon: ShieldCheck },
       '/privacy':       { en: 'Privacy Policy',   fr: 'Confidentialité',   es: 'Política de Privacidad', ar: 'سياسة الخصوصية', icon: ShieldCheck },
       '/terms':         { en: 'Terms of Use',     fr: 'Conditions',        es: 'Términos de Uso',     ar: 'شروط الاستخدام', icon: FileText },
-      '/glp-1-hub':     { en: 'GLP-1 Hub',        fr: 'Hub GLP-1',         es: 'Centro GLP-1',        ar: 'مركز أدوية GLP-1',  icon: Sparkles },
-      '/hub-glp1':      { en: 'GLP-1 Hub',        fr: 'Hub GLP-1',         es: 'Centro GLP-1',        ar: 'مركز أدوية GLP-1',  icon: Sparkles },
-      '/مركز-glp1':     { en: 'GLP-1 Hub',        fr: 'Hub GLP-1',         es: 'Centro GLP-1',        ar: 'مركز أدوية GLP-1',  icon: Sparkles },
-      '/clinical-guide':{ en: 'Clinical Guides',  fr: 'Guides Cliniques',  es: 'Guías Clínicas',      ar: 'الأدلة السريرية', icon: BookOpen },
 
     };
     const base = CONTENT_ROUTES.find(r => logicalPath === r || logicalPath.startsWith(r + '/'));
@@ -999,101 +984,6 @@ function AppLayout() {
                             isActive 
                               ? 'bg-gradient-to-r from-teal-500/10 via-teal-500/5 to-transparent text-teal-850 dark:text-teal-350 font-bold border-l-4 rtl:border-l-0 rtl:border-r-4 border-teal-600 shadow-xs' 
                               : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 hover:text-slate-955 border-l-4 rtl:border-l-0 rtl:border-r-4 border-transparent hover:translate-x-1.5 rtl:hover:-translate-x-1.5'
-                          }`}
-                          style={{ minHeight: '40px' }}
-                        >
-                          <Icon className={`w-4 h-4 shrink-0 transition-colors ${isActive ? 'text-teal-650 dark:text-teal-400' : 'text-slate-450 dark:text-slate-500 group-hover:text-teal-600 dark:group-hover:text-teal-400'}`} />
-                          <span className="line-clamp-2 leading-snug">{lang === 'fr' ? item.nameFr : (item.nameEn)}</span>
-                        </Link>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
-            )}
-
-            {/* TIER IV COMPONENT (RESOURCES & LIBRARY) */}
-            {navItems.filter(i => i.tier === 4 && matchesSearch(i, sidebarSearch)).length > 0 && (
-              <div className="space-y-2">
-                <button
-                  onClick={() => toggleTier(4)}
-                  className="w-full text-left rtl:text-right px-3.5 py-2.5 rounded-xl bg-slate-100/60 dark:bg-slate-800/30 border border-slate-200/50 dark:border-slate-800/80 hover:bg-slate-200/40 dark:hover:bg-slate-800 text-[11.5px] font-mono font-black tracking-wider text-slate-700 dark:text-slate-200 uppercase transition-all duration-200 flex items-center justify-between group cursor-pointer shadow-3xs hover:-translate-y-0.5 active:scale-[0.99]"
-                >
-                  <span className="flex items-center gap-2">
-                    
-                    <span>{lang === 'fr' ? 'RESSOURCES & BIBLIOTHÈQUE' : ('RESOURCES & LIBRARY')}</span>
-                  </span>
-                  <ChevronDown className={`w-4 h-4 text-slate-400 group-hover:text-slate-700 dark:group-hover:text-white transition-transform duration-200 ${(sidebarSearch || expandedTiers[4]) ? '' : (isRtl ? 'rotate-90' : '-rotate-90')}`} />
-                </button>
-                {(sidebarSearch || expandedTiers[4]) && (
-                  <div className="space-y-3 mt-1.5 pl-2 rtl:pl-0 rtl:pr-2">
-                    {([
-                      { key: 'reading', en: 'Reading', fr: 'Lecture', ar: 'القراءة', dot: 'bg-indigo-550 shadow-[0_0_6px_rgba(99,102,241,0.5)]' },
-                      { key: 'learning', en: 'Learning', fr: 'Apprentissage', ar: 'التعلّم', dot: 'bg-emerald-550 shadow-[0_0_6px_rgba(16,185,129,0.5)]' },
-                    ] as const).map((sub) => {
-                      const groupItems = navItems.filter(i => i.tier === 4 && (i as any).group === sub.key && matchesSearch(i, sidebarSearch));
-                      if (groupItems.length === 0) return null;
-                      return (
-                        <div key={sub.key} className="space-y-1">
-                          <div className="px-2 flex items-center gap-2 text-[10px] font-mono font-black uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1">
-                            <span className={`w-1.5 h-1.5 rounded-full ${sub.dot}`} />
-                            <span>{lang === 'fr' ? sub.fr : (sub.en)}</span>
-                          </div>
-                          <div className="space-y-1">
-                            {groupItems.map((item) => {
-                              const isActive = logicalPath === item.path;
-                              const Icon = item.icon;
-                              return (
-                                <Link
-                                  key={item.path}
-                                  to={langPath(item.path)}
-                                  className={`group flex items-center gap-3 px-3 py-2.5 rounded-xl text-[13.5px] font-semibold transition-all duration-200 active:scale-[0.98] ${
-                                    isActive
-                                      ? 'bg-gradient-to-r from-teal-500/10 via-teal-500/5 to-transparent text-teal-850 dark:text-teal-350 font-bold border-l-4 rtl:border-l-0 rtl:border-r-4 border-teal-600 shadow-xs'
-                                      : 'text-slate-700 dark:text-slate-350 hover:bg-slate-100 hover:text-slate-955 border-l-4 rtl:border-l-0 rtl:border-r-4 border-transparent hover:translate-x-1.5 rtl:hover:-translate-x-1.5'
-                                  }`}
-                                  style={{ minHeight: '40px' }}
-                                >
-                                  <Icon className={`w-4 h-4 shrink-0 transition-colors ${isActive ? 'text-teal-650 dark:text-teal-400' : 'text-slate-450 dark:text-slate-500 group-hover:text-teal-600 dark:group-hover:text-teal-400'}`} />
-                                  <span className="line-clamp-2 leading-snug">{lang === 'fr' ? item.nameFr : (item.nameEn)}</span>
-                                </Link>
-                              );
-                            })}
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
-            )}
-
-            {/* TIER V COMPONENT (UTILITIES) */}
-            {navItems.filter(i => i.tier === 5 && matchesSearch(i, sidebarSearch)).length > 0 && (
-              <div className="space-y-1.5">
-                <button
-                  onClick={() => toggleTier(5)}
-                  className="w-full text-left rtl:text-right px-3.5 py-2.5 rounded-xl bg-slate-100/60 dark:bg-slate-800/30 border border-slate-200/50 dark:border-slate-800/80 hover:bg-slate-200/40 dark:hover:bg-slate-800 text-[11.5px] font-mono font-black tracking-wider text-slate-700 dark:text-slate-200 uppercase transition-all duration-200 flex items-center justify-between group cursor-pointer shadow-3xs hover:-translate-y-0.5 active:scale-[0.99]"
-                >
-                  <span className="flex items-center gap-2">
-                    
-                    <span>{getLocalizedTierHeader(5)}</span>
-                  </span>
-                  <ChevronDown className={`w-4 h-4 text-slate-400 group-hover:text-slate-700 dark:group-hover:text-white transition-transform duration-200 ${(sidebarSearch || expandedTiers[5]) ? '' : (isRtl ? 'rotate-90' : '-rotate-90')}`} />
-                </button>
-                {(sidebarSearch || expandedTiers[5]) && (
-                  <div className="space-y-1 mt-1.5">
-                    {navItems.filter(i => i.tier === 5 && matchesSearch(i, sidebarSearch)).map((item) => {
-                      const isActive = logicalPath === item.path;
-                      const Icon = item.icon;
-                      return (
-                        <Link
-                          key={item.path}
-                          to={langPath(item.path)}
-                          className={`group flex items-center gap-3 px-3 py-2.5 rounded-xl text-[13.5px] font-semibold transition-all duration-200 active:scale-[0.98] ${
-                            isActive 
-                              ? 'bg-gradient-to-r from-teal-500/10 via-teal-500/5 to-transparent text-teal-850 dark:text-teal-350 font-bold border-l-4 rtl:border-l-0 rtl:border-r-4 border-teal-600 shadow-xs' 
-                              : 'text-slate-700 dark:text-slate-350 hover:bg-slate-100 hover:text-slate-955 border-l-4 rtl:border-l-0 rtl:border-r-4 border-transparent hover:translate-x-1.5 rtl:hover:-translate-x-1.5'
                           }`}
                           style={{ minHeight: '40px' }}
                         >

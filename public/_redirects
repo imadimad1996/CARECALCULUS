@@ -2,3 +2,26 @@
 /fr/*       https://fr.carecalculus.com/:splat  301
 /fr         https://fr.carecalculus.com/        301
 /ar/*       /:splat                             301
+
+# Purged Academic & Non-Calculator 301 Redirects (Preserve link equity & prevent 404s)
+/fmp-medecine/*         /   301
+/fmp-medecine           /   301
+/ispits/*               /   301
+/ispits                 /   301
+/cours/*                /   301
+/cours                  /   301
+/pdf/fmp/*              /   301
+/flashcard-generator    /   301
+/case-study-viewer      /   301
+/study-tracker          /   301
+/drug-sheets            /   301
+/abbreviation-lookup    /   301
+/drug-interactions      /   301
+/glp-1-hub              /   301
+/hub-glp1               /   301
+/nutrition-hub          /   301
+/clinical-guide         /   301
+/blog/*                 /   301
+/blog                   /   301
+/blog-articles/*        /   301
+/presentations          /   301

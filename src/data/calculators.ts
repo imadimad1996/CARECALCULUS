@@ -344,36 +344,7 @@ export const ALL_CALCULATORS: CalculatorMeta[] = [
     icon: ArrowRightLeft,
     isFeatured: true
   },
-  {
-    id: 'fmp',
-    title: {"en":"FMP Médecine Maroc","fr":"FMP Médecine Maroc (Cours & Fiches)"},
-    category: {"en":"Academic Hub","fr":"Espace Académique"},
-    path: '/fmp-medecine',
-    keywords: ["fmp","maroc","faculte","medecine","casablanca","rabat"],
-    specialties: [],
-    icon: BookOpen,
-    isFeatured: false
-  },
-  {
-    id: 'ispits',
-    title: {"en":"ISPITS Infirmier & Réanimation","fr":"ISPITS Soins & Réanimation"},
-    category: {"en":"Academic Hub","fr":"Espace Académique"},
-    path: '/ispits',
-    keywords: ["ispits","infirmier","reanimation","maroc","soins"],
-    specialties: [],
-    icon: BookOpen,
-    isFeatured: false
-  },
-  {
-    id: 'fr-hub',
-    title: {"en":"Espace Médical Francophone (/fr)","fr":"Espace Médical Francophone (/fr)"},
-    category: {"en":"Localization","fr":"Localisation"},
-    path: '/fr',
-    keywords: ["french","francophone","frances","maroc","sfar"],
-    specialties: [],
-    icon: Globe,
-    isFeatured: false
-  },
+
   {
     id: 'parkland-formula',
     title: {"en":"Parkland Burn Fluid","fr":"Formule de Parkland Brûlure","ar":"معادلة باركلاند للحروق"},
@@ -1044,54 +1015,5 @@ export const ALL_CALCULATORS: CalculatorMeta[] = [
     icon: Sparkles,
     isFeatured: false
   },
-  {
-    id: 'flashcard-generator',
-    title: {"en":"Medical Flashcards","fr":"Flashcards Médicales","ar":"البطاقات التعليمية الطبية"},
-    category: {"en":"Medical Tools","fr":"Outils Médicaux"},
-    path: '/flashcard-generator',
-    keywords: ["flashcard-generator"],
-    specialties: [],
-    icon: Layers,
-    isFeatured: false
-  },
-  {
-    id: 'case-study-viewer',
-    title: {"en":"Clinical Case Studies","fr":"Cas Cliniques","ar":"الحالات السريرية التفاعلية"},
-    category: {"en":"Medical Tools","fr":"Outils Médicaux"},
-    path: '/case-study-viewer',
-    keywords: ["case-study-viewer"],
-    specialties: [],
-    icon: Stethoscope,
-    isFeatured: false
-  },
-  {
-    id: 'drug-sheets',
-    title: {"en":"ICU Drug Reference","fr":"Fiches Médicaments","ar":"جرعات أدوية العناية"},
-    category: {"en":"Medical Tools","fr":"Outils Médicaux"},
-    path: '/drug-sheets',
-    keywords: ["drug-sheets"],
-    specialties: [],
-    icon: Droplet,
-    isFeatured: false
-  },
-  {
-    id: 'abbreviation-lookup',
-    title: {"en":"Medical Abbreviations","fr":"Abréviations Médicales","ar":"قاموس الاختصارات الطبية"},
-    category: {"en":"Medical Tools","fr":"Outils Médicaux"},
-    path: '/abbreviation-lookup',
-    keywords: ["abbreviation-lookup"],
-    specialties: [],
-    icon: FileText,
-    isFeatured: false
-  },
-  {
-    id: 'nutrition-hub',
-    title: {"en":"Nutrition Hub","fr":"Hub Nutrition","ar":"تغذية"},
-    category: {"en":"Medical Tools","fr":"Outils Médicaux"},
-    path: '/nutrition-hub',
-    keywords: ["nutrition-hub"],
-    specialties: [],
-    icon: BookOpen,
-    isFeatured: false
-  }
+
 ];
