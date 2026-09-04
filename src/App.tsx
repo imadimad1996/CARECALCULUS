@@ -612,14 +612,6 @@ function AppLayout() {
             <span>{lang === 'fr' ? 'Rechercher' : 'Search'}</span>
           </button>
           <Link
-            to={langPath('/glp-1-hub')}
-            className="flex items-center gap-1.5 px-3 py-1.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-xs font-bold rounded-xl border border-indigo-100 transition-all"
-            style={{ minHeight: '36px' }}
-          >
-            <Sparkles className="w-3.5 h-3.5 text-indigo-500" />
-            {lang === 'fr' ? 'Hub GLP-1' : 'GLP-1 Hub'}
-          </Link>
-          <Link
             to={langPath('/map-calculator')}
             className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs font-bold rounded-xl border border-blue-100 transition-all"
             style={{ minHeight: '36px' }}

@@ -986,16 +986,6 @@ export const ALL_CALCULATORS: CalculatorMeta[] = [
     isFeatured: false
   },
   {
-    id: 'drug-interactions',
-    title: {"en":"Drug Interactions","fr":"Interactions Médicamenteuses","ar":"تداخلات الأدوية"},
-    category: {"en":"Medical Tools","fr":"Outils Médicaux"},
-    path: '/drug-interactions',
-    keywords: ["drug-interactions"],
-    specialties: [],
-    icon: ShieldCheck,
-    isFeatured: false
-  },
-  {
     id: 'medical-statistics',
     title: {"en":"Medical Statistics","fr":"Statistiques Médicales","ar":"الإحصاء الطبي"},
     category: {"en":"Medical Tools","fr":"Outils Médicaux"},
@@ -1004,16 +994,5 @@ export const ALL_CALCULATORS: CalculatorMeta[] = [
     specialties: [],
     icon: Layers,
     isFeatured: false
-  },
-  {
-    id: 'glp-1-hub',
-    title: {"en":"GLP-1 Hub","fr":"Hub GLP-1","ar":"مركز أدوية GLP-1"},
-    category: {"en":"Medical Tools","fr":"Outils Médicaux"},
-    path: '/glp-1-hub',
-    keywords: ["glp-1-hub"],
-    specialties: [],
-    icon: Sparkles,
-    isFeatured: false
-  },
-
+  }
 ];

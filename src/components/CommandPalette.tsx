@@ -133,15 +133,6 @@ const CLINICAL_SYNONYMS: Record<string, string[]> = {
   'imc': ['bmi-calculator', 'adjusted-body-weight', 'bmi'],
   'ibw': ['adjusted-body-weight', 'tidal-volume'],
   'abw': ['adjusted-body-weight'],
-
-  // GLP-1 & Hubs
-  'glp1': ['glp-1-hub', 'semaglutide', 'tirzepatide', 'ozempic', 'mounjaro', 'wegovy'],
-  'glp-1': ['glp-1-hub', 'semaglutide', 'tirzepatide', 'ozempic', 'mounjaro'],
-  'ozempic': ['glp-1-hub'],
-  'mounjaro': ['glp-1-hub'],
-  'wegovy': ['glp-1-hub'],
-  'semaglutide': ['glp-1-hub'],
-  'tirzepatide': ['glp-1-hub'],
 };
 
 // Popular Bedside Shortcuts for quick launch when search query is empty

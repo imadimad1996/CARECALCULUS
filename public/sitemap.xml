@@ -2596,33 +2596,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.carecalculus.com/drug-interactions</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/drug-interactions" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/drug-interactions" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/drug-interactions" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/drug-interactions" />
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://fr.carecalculus.com/drug-interactions</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/drug-interactions" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/drug-interactions" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/drug-interactions" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/drug-interactions" />
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://es.carecalculus.com/drug-interactions</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/drug-interactions" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/drug-interactions" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/drug-interactions" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/drug-interactions" />
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://www.carecalculus.com/medical-statistics</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/medical-statistics" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/medical-statistics" />
@@ -2646,33 +2619,6 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/medical-statistics" />
     <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/medical-statistics" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/medical-statistics" />
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carecalculus.com/glp-1-hub</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/glp-1-hub" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/glp-1-hub" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/glp-1-hub" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/glp-1-hub" />
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://fr.carecalculus.com/glp-1-hub</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/glp-1-hub" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/glp-1-hub" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/glp-1-hub" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/glp-1-hub" />
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://es.carecalculus.com/glp-1-hub</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/glp-1-hub" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/glp-1-hub" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/glp-1-hub" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/glp-1-hub" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
