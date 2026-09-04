@@ -77,6 +77,9 @@ content += `
 ## Academic & Multilingual Libraries
 
 - [French Clinical Hub](https://fr.carecalculus.com): Full suite localized in French (SFAR, HAS guideline aligned).
+- [FMP & ISPITS Moroccan Medical Handbooks & Course Hub](https://fr.carecalculus.com/cours): Official Moroccan Faculty of Medicine & Pharmacy (FMP Rabat/Casablanca) and ISPITS Nursing academic course modules, PDF polycopiés, and clinical guides.
+- [ISPITS Nursing Modules & Polycopiés](https://fr.carecalculus.com/ispits): ISPITS academic modules including Anatomy & Physiology, Nephrology/Dialysis care, and clinical nursing guides.
+- [FMP Medicine Handbooks](https://fr.carecalculus.com/fmp-medecine): Moroccan FMP medicine modules with direct PDF downloads and bedside calculator integration.
 - [Spanish Clinical Hub](https://es.carecalculus.com): Full suite localized in Spanish.
 - [Clinical Guidelines Library](https://carecalculus.com/clinical-library): Comprehensive evidence-based clinical guides and Q&A references.
 

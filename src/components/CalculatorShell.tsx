@@ -16,6 +16,7 @@ import PremiumGate from './PremiumGate';
 import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
+import BedsideUtilityRibbon from './BedsideUtilityRibbon';
 
 const nameEnMap: Record<string, string> = seoMaps.nameEnMap;
 const nameFrMap: Record<string, string> = seoMaps.nameFrMap;
@@ -175,6 +176,8 @@ export default function CalculatorShell({ logicalPath, lang, children }: Calcula
       <div className="relative">
         <AiAnswerPanel logicalPath={logicalPath} lang={lang} />
       </div>
+
+      <BedsideUtilityRibbon logicalPath={logicalPath} lang={lang} />
 
       <div aria-live="polite">
         <motion.div 

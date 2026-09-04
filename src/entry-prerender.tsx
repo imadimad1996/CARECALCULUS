@@ -106,6 +106,12 @@ const LOGICAL_ROUTES = [
   '/pricing',
   '/for-hospitals',
   '/clinical-guide',
+  '/cours',
+  '/fmp-medecine',
+  '/ispits',
+  '/ispits/anatomie-et-physiologie-i',
+  '/fmp-medecine/anatomie-iii',
+  '/ispits/soins-infirmiers-en-nephrologie-et-dialyse',
 
   ...conditionSlugs,
   ...specialtySlugs,

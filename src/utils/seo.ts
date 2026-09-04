@@ -33,6 +33,8 @@ const nameEsMap: Record<string, string> = (seoMaps as any).nameEsMap || {};
 const keywordsEnMap: Record<string, string> = (seoMaps as any).keywordsEnMap || {};
 const keywordsFrMap: Record<string, string> = (seoMaps as any).keywordsFrMap || {};
 const keywordsEsMap: Record<string, string> = (seoMaps as any).keywordsEsMap || {};
+const descFrMap: Record<string, string> = (seoMaps as any).descFrMap || {};
+const descEnMap: Record<string, string> = (seoMaps as any).descEnMap || {};
 
 function slugifyQuestion(question: string): string {
   return question
@@ -228,24 +230,29 @@ export function getLocalizedMeta(path: string, lang: LangCode): RouteMeta {
   const nameEs = nameEsMap[path] || 'Calculadora Médica Gratuita';
 
   if (lang === 'fr') {
+    const title = nameFr.includes(' | ') ? nameFr : `${nameFr} | CareCalculus`;
+    const desc = descFrMap[path] || `Calculateur ${nameFr} gratuit — outil d'aide à la décision clinique utilisé par les médecins de réanimation, urgentistes et infirmiers. Gratuit, sans inscription.`;
     return {
-      title: `${nameFr} | CareCalculus`,
-      desc: `Calculateur ${nameFr} gratuit — outil d'aide à la décision clinique utilisé par les médecins de réanimation, urgentistes et infirmiers. Gratuit, sans inscription.`,
+      title,
+      desc,
       keywords: keywordsFrMap[path] || `${nameFr.toLowerCase().replace(/[^a-zA-Z\s]/g, '')}, calculateur medical, guide, medecine`,
     };
   } else if (lang === 'es') {
+    const title = nameEs.includes(' | ') ? nameEs : `${nameEs} | CareCalculus`;
     return {
-      title: `${nameEs} | CareCalculus`,
+      title,
       desc: `Calculadora ${nameEs} gratuita — herramienta de soporte de decisiones clínicas para médicos de UCI, urgencias y enfermería. Gratis, sin registro.`,
       keywords: keywordsEsMap[path] || `${nameEs.toLowerCase().replace(/[^a-zA-Z\s]/g, '')}, calculadora medica, escala clinica, medicina`,
     };
   }
 
   const customKeywords = keywordsEnMap[path];
+  const title = nameEn.includes(' | ') ? nameEn : `${nameEn} | CareCalculus`;
+  const desc = descEnMap[path] || `Free ${nameEn} — evidence-based clinical decision support tool used by ICU, ER physicians, and nurses. Free, no login required. Instant clinical calculation.`;
 
   return {
-    title: `${nameEn} | CareCalculus`,
-    desc: `Free ${nameEn} — evidence-based clinical decision support tool used by ICU, ER physicians, and nurses. Free, no login required. Instant clinical calculation.`,
+    title,
+    desc,
     keywords: customKeywords || `${nameEn.toLowerCase().replace(/[^a-zA-Z\s]/g, '')}, clinical calculator, medical metrics, care calculus`,
   };
 }

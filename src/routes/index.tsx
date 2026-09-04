@@ -200,6 +200,7 @@ const [
 
 export const HomePage = safeLazy(() => import('../pages/HomePage'));
 export const NotFound = safeLazy(() => import('../pages/NotFound'));
+export const MoroccanMedicalHub = safeLazy(() => import('../pages/MoroccanMedicalHub'));
 
 /**
  * Eagerly resolve every page chunk. Called once before prerendering so that
@@ -211,6 +212,7 @@ export async function preloadPages() {
   await Promise.all([
     ...pageLoaders.map((load) => load()),
     import('../pages/HomePage'),
+    import('../pages/MoroccanMedicalHub'),
   ]);
 }
 
@@ -218,7 +220,7 @@ export async function preloadPages() {
 export const LEGAL_ROUTES = ['/about', '/disclaimer', '/privacy', '/terms', '/embed-gallery', '/for-hospitals'];
 
 // Routes that open in full-width reading mode (no sidebar, no top widgets)
-export const CONTENT_ROUTES = ['/about', '/editorial-board', '/comite-editorial', '/disclaimer', '/privacy', '/terms', '/glp-1-hub', '/hub-glp1', '/%D9%85%D8%B1%D9%83%D8%B2-glp1', '/مركز-glp1', '/embed-gallery', '/for-hospitals', '/clinical-guide', '/synapse-engine'];
+export const CONTENT_ROUTES = ['/about', '/editorial-board', '/comite-editorial', '/disclaimer', '/privacy', '/terms', '/glp-1-hub', '/hub-glp1', '/%D9%85%D8%B1%D9%83%D8%B2-glp1', '/مركز-glp1', '/embed-gallery', '/for-hospitals', '/clinical-guide', '/synapse-engine', '/cours', '/fmp-medecine', '/ispits'];
 
 export class ErrorBoundary extends React.Component<any, any> {
   constructor(props: any) {
@@ -360,6 +362,9 @@ export const navItems = [
   { path: '/phenytoin-correction', nameEn: 'Phenytoin Correction', nameFr: 'Correction Phénytoïne', nameAr: 'تصحيح الفينيتوين', icon: Pill, tier: 3 },
   
   // Tier 4 — Resources & Library
+  { path: '/cours', nameEn: 'Clinical Course Library', nameFr: 'Bibliothèque des Cours Médicaux', nameAr: 'مكتبة المحاضرات والدروس', icon: BookOpen, tier: 4, group: 'learning' as const },
+  { path: '/fmp-medecine', nameEn: 'FMP Medicine Handbooks', nameFr: 'Modules Médecine FMP', nameAr: 'وحدات كليات الطب FMP', icon: GraduationCap, tier: 4, group: 'learning' as const },
+  { path: '/ispits', nameEn: 'ISPITS Nursing Handbooks', nameFr: 'Guides Soins ISPITS', nameAr: 'وحدات التمريض ISPITS', icon: Award, tier: 4, group: 'learning' as const },
   { path: '/drug-interactions', nameEn: 'Drug Interactions', nameFr: 'Interactions Médicamenteuses', nameAr: 'تداخلات الأدوية', icon: ShieldCheck, tier: 0 },
   { path: '/medical-statistics', nameEn: 'Medical Statistics', nameFr: 'Statistiques Médicales', nameAr: 'الإحصاء الطبي', icon: Layers, tier: 0 },
   { path: '/glp-1-hub', nameEn: 'GLP-1 Hub', nameFr: 'Hub GLP-1', nameAr: 'مركز أدوية GLP-1', icon: Sparkles, tier: 4, group: 'reading' as const },
@@ -467,6 +472,11 @@ export function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="nutrition-tdee" element={wrapCalculator('/nutrition-tdee', <NutritionTdee lang={lang} />)} />
       <Route path="nutrition-must" element={wrapCalculator('/nutrition-must', <NutritionMust lang={lang} />)} />
       <Route path="nutrition-nrs2002" element={wrapCalculator('/nutrition-nrs2002', <NutritionNrs2002 lang={lang} />)} />
+      <Route path="cours" element={<MoroccanMedicalHub type="all" lang={lang} />} />
+      <Route path="fmp-medecine" element={<MoroccanMedicalHub type="fmp" lang={lang} />} />
+      <Route path="fmp-medecine/:moduleSlug" element={<MoroccanMedicalHub type="fmp" lang={lang} />} />
+      <Route path="ispits" element={<MoroccanMedicalHub type="ispits" lang={lang} />} />
+      <Route path="ispits/:moduleSlug" element={<MoroccanMedicalHub type="ispits" lang={lang} />} />
       <Route path="synapse-engine" element={<SynapseEnginePage lang={lang} langPath={langPath} />} />
       <Route path="nutrition-hub" element={<NutritionHub lang={lang} />} />
       <Route path="glp-1-hub" element={<Glp1Hub lang={lang} />} />

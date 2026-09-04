@@ -291,9 +291,16 @@ async function generatePocketGuidePDF() {
     fs.mkdirSync(publicDir, { recursive: true });
   }
 
+  const pdfDir = path.join(process.cwd(), 'public', 'pdf');
+  if (!fs.existsSync(pdfDir)) {
+    fs.mkdirSync(pdfDir, { recursive: true });
+  }
+
   const filePath = path.join(publicDir, 'CareCalculus_2026_ICU_ER_Pocket_Guide.pdf');
+  const pdfPath = path.join(pdfDir, 'carecalculus-pocket-guide-2026.pdf');
   fs.writeFileSync(filePath, pdfBytes);
-  console.log(`✅ 10/10 PDF successfully generated at: ${filePath}`);
+  fs.writeFileSync(pdfPath, pdfBytes);
+  console.log(`✅ 10/10 PDF successfully generated at: ${filePath} & ${pdfPath}`);
 }
 
 generatePocketGuidePDF().catch(console.error);

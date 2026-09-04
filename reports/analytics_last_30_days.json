@@ -1,85 +1,67 @@
 {
   "metadata": {
     "property_id": "544473056",
-    "generated_at": "2026-09-02T14:45:34.395360",
+    "generated_at": "2026-09-04T00:39:17.592750",
     "date_range": "Last 30 Days (30daysAgo to yesterday)",
     "comparison_range": "Previous 30 Days (60daysAgo to 31daysAgo)"
   },
   "overview": {
     "sessions": {
-      "current_30d": 215,
-      "previous_30d": 192,
-      "absolute_change": 23,
-      "percentage_change": 11.98
+      "current_30d": 177,
+      "previous_30d": 232,
+      "absolute_change": -55,
+      "percentage_change": -23.71
     },
     "totalUsers": {
-      "current_30d": 183,
-      "previous_30d": 109,
-      "absolute_change": 74,
-      "percentage_change": 67.89
+      "current_30d": 143,
+      "previous_30d": 149,
+      "absolute_change": -6,
+      "percentage_change": -4.03
     },
     "activeUsers": {
-      "current_30d": 183,
-      "previous_30d": 109,
-      "absolute_change": 74,
-      "percentage_change": 67.89
+      "current_30d": 143,
+      "previous_30d": 149,
+      "absolute_change": -6,
+      "percentage_change": -4.03
     },
     "newUsers": {
-      "current_30d": 180,
-      "previous_30d": 139,
-      "absolute_change": 41,
-      "percentage_change": 29.5
+      "current_30d": 140,
+      "previous_30d": 179,
+      "absolute_change": -39,
+      "percentage_change": -21.79
     },
     "screenPageViews": {
-      "current_30d": 316,
-      "previous_30d": 634,
-      "absolute_change": -318,
-      "percentage_change": -50.16
+      "current_30d": 270,
+      "previous_30d": 683,
+      "absolute_change": -413,
+      "percentage_change": -60.47
     },
     "engagementRate": {
-      "current_30d": 0.3814,
-      "previous_30d": 0.474,
-      "absolute_change": -0.0926,
-      "percentage_change": -19.54
+      "current_30d": 0.3898,
+      "previous_30d": 0.4526,
+      "absolute_change": -0.0628,
+      "percentage_change": -13.88
     },
     "bounceRate": {
-      "current_30d": 0.6186,
-      "previous_30d": 0.526,
-      "absolute_change": 0.0926,
-      "percentage_change": 17.6
+      "current_30d": 0.6102,
+      "previous_30d": 0.5474,
+      "absolute_change": 0.0628,
+      "percentage_change": 11.47
     },
     "averageSessionDuration": {
-      "current_30d": 144.2449,
-      "previous_30d": 369.9832,
-      "absolute_change": -225.7383,
-      "percentage_change": -61.01
+      "current_30d": 174.3389,
+      "previous_30d": 307.6927,
+      "absolute_change": -133.3538,
+      "percentage_change": -43.34
     },
     "eventCount": {
-      "current_30d": 1081,
-      "previous_30d": 1536,
-      "absolute_change": -455,
-      "percentage_change": -29.62
+      "current_30d": 931,
+      "previous_30d": 1698,
+      "absolute_change": -767,
+      "percentage_change": -45.17
     }
   },
   "daily_trends": [
-    {
-      "date": "20260803",
-      "dayOfWeekName": "Monday",
-      "sessions": 28,
-      "activeUsers": 28,
-      "screenPageViews": 35,
-      "engagementRate": 0.4286,
-      "averageSessionDuration": 10.4429
-    },
-    {
-      "date": "20260804",
-      "dayOfWeekName": "Tuesday",
-      "sessions": 12,
-      "activeUsers": 12,
-      "screenPageViews": 14,
-      "engagementRate": 0.1667,
-      "averageSessionDuration": 4.626
-    },
     {
       "date": "20260805",
       "dayOfWeekName": "Wednesday",
@@ -304,16 +286,34 @@
       "screenPageViews": 4,
       "engagementRate": 0.25,
       "averageSessionDuration": 5.2468
+    },
+    {
+      "date": "20260902",
+      "dayOfWeekName": "Wednesday",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 2,
+      "engagementRate": 1,
+      "averageSessionDuration": 184.72
+    },
+    {
+      "date": "20260903",
+      "dayOfWeekName": "Thursday",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 1,
+      "engagementRate": 0,
+      "averageSessionDuration": 8.525
     }
   ],
   "channels": [
     {
       "sessionDefaultChannelGrouping": "Direct",
-      "sessions": 151,
-      "activeUsers": 143,
-      "newUsers": 142,
-      "engagementRate": 0.2715,
-      "averageSessionDuration": 88.5028
+      "sessions": 111,
+      "activeUsers": 103,
+      "newUsers": 102,
+      "engagementRate": 0.2432,
+      "averageSessionDuration": 117.2613
     },
     {
       "sessionDefaultChannelGrouping": "Organic Search",
@@ -325,11 +325,11 @@
     },
     {
       "sessionDefaultChannelGrouping": "Referral",
-      "sessions": 15,
+      "sessions": 16,
       "activeUsers": 2,
       "newUsers": 1,
-      "engagementRate": 0.7333,
-      "averageSessionDuration": 705.5491
+      "engagementRate": 0.75,
+      "averageSessionDuration": 672.9973
     },
     {
       "sessionDefaultChannelGrouping": "Organic Social",
@@ -341,11 +341,11 @@
     },
     {
       "sessionDefaultChannelGrouping": "Unassigned",
-      "sessions": 2,
-      "activeUsers": 2,
+      "sessions": 3,
+      "activeUsers": 3,
       "newUsers": 1,
       "engagementRate": 0,
-      "averageSessionDuration": 3.5463
+      "averageSessionDuration": 5.2059
     },
     {
       "sessionDefaultChannelGrouping": "AI Assistant",
@@ -359,11 +359,11 @@
   "source_medium": [
     {
       "sessionSourceMedium": "(direct) / (none)",
-      "sessions": 151,
-      "activeUsers": 143,
-      "engagementRate": 0.2715,
-      "bounceRate": 0.7285,
-      "averageSessionDuration": 88.5028
+      "sessions": 111,
+      "activeUsers": 103,
+      "engagementRate": 0.2432,
+      "bounceRate": 0.7568,
+      "averageSessionDuration": 117.2613
     },
     {
       "sessionSourceMedium": "google / organic",
@@ -375,11 +375,11 @@
     },
     {
       "sessionSourceMedium": "a1aa529f.carecalculus.pages.dev / referral",
-      "sessions": 14,
+      "sessions": 15,
       "activeUsers": 1,
-      "engagementRate": 0.7857,
-      "bounceRate": 0.2143,
-      "averageSessionDuration": 755.9455
+      "engagementRate": 0.8,
+      "bounceRate": 0.2,
+      "averageSessionDuration": 717.8638
     },
     {
       "sessionSourceMedium": "facebook.com / referral",
@@ -391,11 +391,11 @@
     },
     {
       "sessionSourceMedium": "(not set)",
-      "sessions": 1,
-      "activeUsers": 1,
+      "sessions": 2,
+      "activeUsers": 2,
       "engagementRate": 0,
       "bounceRate": 1,
-      "averageSessionDuration": 0
+      "averageSessionDuration": 4.2625
     },
     {
       "sessionSourceMedium": "chatgpt.com / ai-assistant",
@@ -426,34 +426,26 @@
     {
       "pagePath": "/",
       "pageTitle": "CareCalculus | Free Clinical Calculators in English and French",
-      "screenPageViews": 187,
-      "activeUsers": 100,
-      "averageSessionDuration": 83.1538,
-      "bounceRate": 0.6475
-    },
-    {
-      "pagePath": "/pricing/",
-      "pageTitle": "Multilingual Care Calculators | CareCalculus",
-      "screenPageViews": 20,
-      "activeUsers": 21,
-      "averageSessionDuration": 3.6157,
-      "bounceRate": 0.5238
+      "screenPageViews": 167,
+      "activeUsers": 77,
+      "averageSessionDuration": 100.1754,
+      "bounceRate": 0.6634
     },
     {
       "pagePath": "/map-calculator",
       "pageTitle": "Calculateur PAM - Pression Arterielle Moyenne | CareCalculus",
-      "screenPageViews": 14,
-      "activeUsers": 15,
-      "averageSessionDuration": 12.3568,
-      "bounceRate": 0.7647
+      "screenPageViews": 13,
+      "activeUsers": 14,
+      "averageSessionDuration": 10.4486,
+      "bounceRate": 0.8125
     },
     {
       "pagePath": "/",
       "pageTitle": "CareCalculus | Calculateurs M\u00e9dicaux Gratuits en Fran\u00e7ais, Anglais et Arabe",
-      "screenPageViews": 10,
-      "activeUsers": 8,
-      "averageSessionDuration": 150.7114,
-      "bounceRate": 0.3333
+      "screenPageViews": 8,
+      "activeUsers": 6,
+      "averageSessionDuration": 193.7718,
+      "bounceRate": 0.1429
     },
     {
       "pagePath": "/adjusted-body-weight",
@@ -472,14 +464,6 @@
       "bounceRate": 0.25
     },
     {
-      "pagePath": "/blog-articles/top-10-global-medical-blogs-in-2026-e-e-a-t-authority-and-editorial-best-practic/",
-      "pageTitle": "Multilingual Care Calculators | CareCalculus",
-      "screenPageViews": 4,
-      "activeUsers": 4,
-      "averageSessionDuration": 16.0566,
-      "bounceRate": 0.5
-    },
-    {
       "pagePath": "/pf-ratio",
       "pageTitle": "Rapport PaO2/FiO2 (Rapport P/F) | CareCalculus",
       "screenPageViews": 4,
@@ -488,12 +472,12 @@
       "bounceRate": 0.25
     },
     {
-      "pagePath": "/creatinine-clearance",
-      "pageTitle": "Clairance de la Creatinine (Cockcroft-Gault) | CareCalculus",
+      "pagePath": "/blog-articles/top-10-global-medical-blogs-in-2026-e-e-a-t-authority-and-editorial-best-practic/",
+      "pageTitle": "Multilingual Care Calculators | CareCalculus",
       "screenPageViews": 3,
       "activeUsers": 3,
-      "averageSessionDuration": 52.0081,
-      "bounceRate": 0.3333
+      "averageSessionDuration": 12.246,
+      "bounceRate": 0.6667
     },
     {
       "pagePath": "/for-hospitals/",
@@ -534,6 +518,14 @@
       "activeUsers": 1,
       "averageSessionDuration": 13.7926,
       "bounceRate": 0
+    },
+    {
+      "pagePath": "/creatinine-clearance",
+      "pageTitle": "Clairance de la Creatinine (Cockcroft-Gault) | CareCalculus",
+      "screenPageViews": 2,
+      "activeUsers": 2,
+      "averageSessionDuration": 7.0848,
+      "bounceRate": 0.5
     },
     {
       "pagePath": "/fr",
@@ -724,7 +716,7 @@
       "pageTitle": "Multilingual Care Calculators | CareCalculus",
       "screenPageViews": 1,
       "activeUsers": 2,
-      "averageSessionDuration": 632.8932,
+      "averageSessionDuration": 473.6213,
       "bounceRate": 0
     },
     {
@@ -749,14 +741,6 @@
       "screenPageViews": 1,
       "activeUsers": 1,
       "averageSessionDuration": 3.5325,
-      "bounceRate": 0
-    },
-    {
-      "pagePath": "/ispits/soins-infirmiers-en-chirurgie-et-bloc-operatoire/",
-      "pageTitle": "Multilingual Care Calculators | CareCalculus",
-      "screenPageViews": 1,
-      "activeUsers": 1,
-      "averageSessionDuration": 17.0142,
       "bounceRate": 0
     },
     {
@@ -822,32 +806,40 @@
       "activeUsers": 1,
       "averageSessionDuration": 3.8647,
       "bounceRate": 1
+    },
+    {
+      "pagePath": "/qsofa-score",
+      "pageTitle": "Score qSOFA Depistage Sepsis Rapide | CareCalculus",
+      "screenPageViews": 1,
+      "activeUsers": 1,
+      "averageSessionDuration": 7.0925,
+      "bounceRate": 1
+    },
+    {
+      "pagePath": "/specialties/intensive-care/",
+      "pageTitle": "Intensive Care (ICU) Calculators & Clinical Tools | CareCalculus",
+      "screenPageViews": 1,
+      "activeUsers": 1,
+      "averageSessionDuration": 12.5289,
+      "bounceRate": 0
     }
   ],
   "landing_pages": [
     {
       "landingPagePlusQueryString": "/",
-      "sessions": 116,
-      "activeUsers": 94,
-      "newUsers": 92,
-      "bounceRate": 0.6379,
-      "averageSessionDuration": 209.4301
-    },
-    {
-      "landingPagePlusQueryString": "/pricing/",
-      "sessions": 16,
-      "activeUsers": 16,
-      "newUsers": 16,
-      "bounceRate": 0.6875,
-      "averageSessionDuration": 4.5436
+      "sessions": 98,
+      "activeUsers": 74,
+      "newUsers": 72,
+      "bounceRate": 0.6122,
+      "averageSessionDuration": 249.3126
     },
     {
       "landingPagePlusQueryString": "/map-calculator",
-      "sessions": 14,
-      "activeUsers": 14,
-      "newUsers": 14,
-      "bounceRate": 0.7857,
-      "averageSessionDuration": 11.4859
+      "sessions": 13,
+      "activeUsers": 13,
+      "newUsers": 13,
+      "bounceRate": 0.8462,
+      "averageSessionDuration": 9.0703
     },
     {
       "landingPagePlusQueryString": "(not set)",
@@ -866,14 +858,6 @@
       "averageSessionDuration": 20.4171
     },
     {
-      "landingPagePlusQueryString": "/blog-articles/top-10-global-medical-blogs-in-2026-e-e-a-t-authority-and-editorial-best-practic/",
-      "sessions": 4,
-      "activeUsers": 4,
-      "newUsers": 4,
-      "bounceRate": 0.5,
-      "averageSessionDuration": 16.0566
-    },
-    {
       "landingPagePlusQueryString": "/fr",
       "sessions": 4,
       "activeUsers": 2,
@@ -890,12 +874,12 @@
       "averageSessionDuration": 386.0657
     },
     {
-      "landingPagePlusQueryString": "/creatinine-clearance",
+      "landingPagePlusQueryString": "/blog-articles/top-10-global-medical-blogs-in-2026-e-e-a-t-authority-and-editorial-best-practic/",
       "sessions": 3,
       "activeUsers": 3,
       "newUsers": 3,
-      "bounceRate": 0.3333,
-      "averageSessionDuration": 52.0081
+      "bounceRate": 0.6667,
+      "averageSessionDuration": 12.246
     },
     {
       "landingPagePlusQueryString": "/wells-score/",
@@ -904,6 +888,14 @@
       "newUsers": 3,
       "bounceRate": 0.3333,
       "averageSessionDuration": 8.7834
+    },
+    {
+      "landingPagePlusQueryString": "/creatinine-clearance",
+      "sessions": 2,
+      "activeUsers": 2,
+      "newUsers": 2,
+      "bounceRate": 0.5,
+      "averageSessionDuration": 7.0848
     },
     {
       "landingPagePlusQueryString": "/ispits/soins-infirmiers-en-nephrologie-et-dialyse/",
@@ -960,6 +952,14 @@
       "newUsers": 2,
       "bounceRate": 0.5,
       "averageSessionDuration": 578.518
+    },
+    {
+      "landingPagePlusQueryString": "",
+      "sessions": 1,
+      "activeUsers": 1,
+      "newUsers": 0,
+      "bounceRate": 1,
+      "averageSessionDuration": 8.525
     },
     {
       "landingPagePlusQueryString": "/?fbclid=IwcGRvZgRleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAwyNTYyODEwNDA1NTgAAR4asx-NweHRkXpGpXunDJvklbLFE4XWBBmpZg2FoivkL4O7LEdL2sSd6sGd2A_aem_mjOuhzI2ewNX1F1oIDp7Fw",
@@ -1106,14 +1106,6 @@
       "averageSessionDuration": 37.513
     },
     {
-      "landingPagePlusQueryString": "/ispits/soins-infirmiers-en-chirurgie-et-bloc-operatoire/",
-      "sessions": 1,
-      "activeUsers": 1,
-      "newUsers": 1,
-      "bounceRate": 0,
-      "averageSessionDuration": 17.0142
-    },
-    {
       "landingPagePlusQueryString": "/meld-score",
       "sessions": 1,
       "activeUsers": 1,
@@ -1165,31 +1157,24 @@
   "countries": [
     {
       "country": "United States",
-      "sessions": 96,
-      "activeUsers": 96,
-      "screenPageViews": 103,
-      "engagementRate": 0.0938
+      "sessions": 70,
+      "activeUsers": 70,
+      "screenPageViews": 69,
+      "engagementRate": 0.0286
     },
     {
       "country": "Morocco",
       "sessions": 52,
-      "activeUsers": 22,
-      "screenPageViews": 145,
+      "activeUsers": 20,
+      "screenPageViews": 146,
       "engagementRate": 0.75
     },
     {
       "country": "France",
-      "sessions": 17,
-      "activeUsers": 15,
-      "screenPageViews": 15,
-      "engagementRate": 0.7647
-    },
-    {
-      "country": "Canada",
-      "sessions": 6,
-      "activeUsers": 6,
-      "screenPageViews": 6,
-      "engagementRate": 0.1667
+      "sessions": 16,
+      "activeUsers": 14,
+      "screenPageViews": 14,
+      "engagementRate": 0.75
     },
     {
       "country": "(not set)",
@@ -1199,20 +1184,6 @@
       "engagementRate": 1
     },
     {
-      "country": "India",
-      "sessions": 5,
-      "activeUsers": 5,
-      "screenPageViews": 6,
-      "engagementRate": 0.4
-    },
-    {
-      "country": "United Kingdom",
-      "sessions": 5,
-      "activeUsers": 5,
-      "screenPageViews": 6,
-      "engagementRate": 0.2
-    },
-    {
       "country": "Belgium",
       "sessions": 4,
       "activeUsers": 4,
@@ -1220,10 +1191,17 @@
       "engagementRate": 0.25
     },
     {
-      "country": "Ireland",
+      "country": "United Kingdom",
+      "sessions": 4,
+      "activeUsers": 4,
+      "screenPageViews": 4,
+      "engagementRate": 0
+    },
+    {
+      "country": "India",
       "sessions": 3,
       "activeUsers": 3,
-      "screenPageViews": 3,
+      "screenPageViews": 4,
       "engagementRate": 0.3333
     },
     {
@@ -1234,7 +1212,7 @@
       "engagementRate": 0.5
     },
     {
-      "country": "Germany",
+      "country": "Canada",
       "sessions": 2,
       "activeUsers": 2,
       "screenPageViews": 2,
@@ -1276,6 +1254,13 @@
       "engagementRate": 0
     },
     {
+      "country": "Germany",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 1,
+      "engagementRate": 0
+    },
+    {
       "country": "Greece",
       "sessions": 1,
       "activeUsers": 1,
@@ -1295,6 +1280,13 @@
       "activeUsers": 1,
       "screenPageViews": 2,
       "engagementRate": 1
+    },
+    {
+      "country": "Ireland",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 1,
+      "engagementRate": 0
     },
     {
       "country": "Lebanon",
@@ -1346,13 +1338,6 @@
       "engagementRate": 0
     },
     {
-      "country": "Switzerland",
-      "sessions": 1,
-      "activeUsers": 1,
-      "screenPageViews": 1,
-      "engagementRate": 1
-    },
-    {
       "country": "Thailand",
       "sessions": 1,
       "activeUsers": 1,
@@ -1371,16 +1356,9 @@
     {
       "city": "Kenitra",
       "country": "Morocco",
-      "sessions": 26,
+      "sessions": 27,
       "activeUsers": 10,
-      "screenPageViews": 94
-    },
-    {
-      "city": "Ashburn",
-      "country": "United States",
-      "sessions": 23,
-      "activeUsers": 23,
-      "screenPageViews": 22
+      "screenPageViews": 96
     },
     {
       "city": "Tangier",
@@ -1390,17 +1368,17 @@
       "screenPageViews": 38
     },
     {
-      "city": "(not set)",
+      "city": "Ashburn",
       "country": "United States",
-      "sessions": 11,
-      "activeUsers": 11,
-      "screenPageViews": 11
+      "sessions": 15,
+      "activeUsers": 15,
+      "screenPageViews": 14
     },
     {
-      "city": "Des Moines",
+      "city": "(not set)",
       "country": "United States",
-      "sessions": 6,
-      "activeUsers": 6,
+      "sessions": 9,
+      "activeUsers": 9,
       "screenPageViews": 9
     },
     {
@@ -1420,54 +1398,12 @@
     {
       "city": "Casablanca",
       "country": "Morocco",
-      "sessions": 5,
-      "activeUsers": 4,
-      "screenPageViews": 5
-    },
-    {
-      "city": "San Jose",
-      "country": "United States",
-      "sessions": 5,
-      "activeUsers": 5,
-      "screenPageViews": 8
-    },
-    {
-      "city": "Toronto",
-      "country": "Canada",
-      "sessions": 5,
-      "activeUsers": 5,
-      "screenPageViews": 5
-    },
-    {
-      "city": "(not set)",
-      "country": "India",
       "sessions": 4,
-      "activeUsers": 4,
-      "screenPageViews": 5
-    },
-    {
-      "city": "Glenview",
-      "country": "United States",
-      "sessions": 4,
-      "activeUsers": 4,
+      "activeUsers": 3,
       "screenPageViews": 4
     },
     {
-      "city": "London",
-      "country": "United Kingdom",
-      "sessions": 4,
-      "activeUsers": 4,
-      "screenPageViews": 5
-    },
-    {
-      "city": "Moses Lake",
-      "country": "United States",
-      "sessions": 4,
-      "activeUsers": 4,
-      "screenPageViews": 6
-    },
-    {
-      "city": "New York",
+      "city": "Glenview",
       "country": "United States",
       "sessions": 4,
       "activeUsers": 4,
@@ -1481,6 +1417,13 @@
       "screenPageViews": 2
     },
     {
+      "city": "(not set)",
+      "country": "India",
+      "sessions": 3,
+      "activeUsers": 3,
+      "screenPageViews": 4
+    },
+    {
       "city": "Council Bluffs",
       "country": "United States",
       "sessions": 3,
@@ -1488,8 +1431,15 @@
       "screenPageViews": 3
     },
     {
-      "city": "Dublin",
-      "country": "Ireland",
+      "city": "London",
+      "country": "United Kingdom",
+      "sessions": 3,
+      "activeUsers": 3,
+      "screenPageViews": 3
+    },
+    {
+      "city": "New York",
+      "country": "United States",
       "sessions": 3,
       "activeUsers": 3,
       "screenPageViews": 3
@@ -1530,11 +1480,11 @@
       "screenPageViews": 2
     },
     {
-      "city": "Marseille",
-      "country": "France",
+      "city": "Marrakesh",
+      "country": "Morocco",
       "sessions": 2,
-      "activeUsers": 2,
-      "screenPageViews": 2
+      "activeUsers": 1,
+      "screenPageViews": 5
     },
     {
       "city": "Piscataway",
@@ -1552,6 +1502,13 @@
     },
     {
       "city": "San Francisco",
+      "country": "United States",
+      "sessions": 2,
+      "activeUsers": 2,
+      "screenPageViews": 2
+    },
+    {
+      "city": "San Jose",
       "country": "United States",
       "sessions": 2,
       "activeUsers": 2,
@@ -1577,42 +1534,70 @@
       "sessions": 1,
       "activeUsers": 1,
       "screenPageViews": 1
+    },
+    {
+      "city": "Acton",
+      "country": "United States",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 1
+    },
+    {
+      "city": "Altoona",
+      "country": "United States",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 1
+    },
+    {
+      "city": "Amsterdam",
+      "country": "Netherlands",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 1
+    },
+    {
+      "city": "Anadarko",
+      "country": "United States",
+      "sessions": 1,
+      "activeUsers": 1,
+      "screenPageViews": 1
     }
   ],
   "devices": [
     {
       "deviceCategory": "desktop",
-      "sessions": 178,
-      "activeUsers": 150,
-      "engagementRate": 0.382,
-      "averageSessionDuration": 162.1515
+      "sessions": 144,
+      "activeUsers": 114,
+      "engagementRate": 0.4028,
+      "averageSessionDuration": 199.9109
     },
     {
       "deviceCategory": "mobile",
-      "sessions": 39,
-      "activeUsers": 34,
-      "engagementRate": 0.4103,
-      "averageSessionDuration": 55.1199
+      "sessions": 36,
+      "activeUsers": 30,
+      "engagementRate": 0.3611,
+      "averageSessionDuration": 57.5225
     }
   ],
   "browsers": [
     {
       "browser": "Chrome",
-      "sessions": 179,
-      "activeUsers": 149,
-      "engagementRate": 0.3911
+      "sessions": 143,
+      "activeUsers": 111,
+      "engagementRate": 0.3986
     },
     {
       "browser": "Safari",
-      "sessions": 16,
-      "activeUsers": 16,
-      "engagementRate": 0.3125
+      "sessions": 15,
+      "activeUsers": 15,
+      "engagementRate": 0.3333
     },
     {
       "browser": "Edge",
-      "sessions": 13,
-      "activeUsers": 11,
-      "engagementRate": 0.5385
+      "sessions": 12,
+      "activeUsers": 10,
+      "engagementRate": 0.5833
     },
     {
       "browser": "Firefox",
@@ -1630,33 +1615,33 @@
   "operating_systems": [
     {
       "operatingSystem": "Windows",
-      "sessions": 130,
-      "activeUsers": 103,
-      "engagementRate": 0.4
+      "sessions": 109,
+      "activeUsers": 81,
+      "engagementRate": 0.4128
     },
     {
       "operatingSystem": "Macintosh",
-      "sessions": 30,
-      "activeUsers": 30,
-      "engagementRate": 0.3667
+      "sessions": 25,
+      "activeUsers": 25,
+      "engagementRate": 0.32
     },
     {
       "operatingSystem": "Android",
-      "sessions": 23,
-      "activeUsers": 18,
-      "engagementRate": 0.5652
-    },
-    {
-      "operatingSystem": "Linux",
-      "sessions": 20,
-      "activeUsers": 19,
-      "engagementRate": 0.35
+      "sessions": 21,
+      "activeUsers": 15,
+      "engagementRate": 0.4762
     },
     {
       "operatingSystem": "iOS",
-      "sessions": 16,
-      "activeUsers": 16,
-      "engagementRate": 0.1875
+      "sessions": 15,
+      "activeUsers": 15,
+      "engagementRate": 0.2
+    },
+    {
+      "operatingSystem": "Linux",
+      "sessions": 12,
+      "activeUsers": 10,
+      "engagementRate": 0.5833
     },
     {
       "operatingSystem": "Chrome OS",
@@ -1668,17 +1653,17 @@
   "user_types": [
     {
       "newVsReturning": "new",
-      "sessions": 180,
-      "activeUsers": 180,
-      "averageSessionDuration": 54.693,
-      "engagementRate": 0.3222
+      "sessions": 140,
+      "activeUsers": 140,
+      "averageSessionDuration": 67.8345,
+      "engagementRate": 0.3143
     },
     {
       "newVsReturning": "returning",
-      "sessions": 29,
+      "sessions": 31,
       "activeUsers": 9,
-      "averageSessionDuration": 729.9279,
-      "engagementRate": 0.8276
+      "averageSessionDuration": 689.0695,
+      "engagementRate": 0.8065
     },
     {
       "newVsReturning": "(not set)",
@@ -1691,36 +1676,41 @@
   "events": [
     {
       "eventName": "page_view",
-      "eventCount": 316,
-      "totalUsers": 182
+      "eventCount": 270,
+      "totalUsers": 142
     },
     {
       "eventName": "session_start",
-      "eventCount": 215,
-      "totalUsers": 182
-    },
-    {
-      "eventName": "first_visit",
-      "eventCount": 180,
-      "totalUsers": 179
+      "eventCount": 176,
+      "totalUsers": 142
     },
     {
       "eventName": "user_engagement",
-      "eventCount": 162,
-      "totalUsers": 67
+      "eventCount": 157,
+      "totalUsers": 59
+    },
+    {
+      "eventName": "first_visit",
+      "eventCount": 140,
+      "totalUsers": 139
     },
     {
       "eventName": "calculator_used",
-      "eventCount": 136,
-      "totalUsers": 47
+      "eventCount": 125,
+      "totalUsers": 45
     },
     {
       "eventName": "calculator_result",
-      "eventCount": 64,
-      "totalUsers": 29
+      "eventCount": 53,
+      "totalUsers": 27
     },
     {
       "eventName": "premium_upgrade_click",
+      "eventCount": 4,
+      "totalUsers": 1
+    },
+    {
+      "eventName": "premium_gate_view",
       "eventCount": 3,
       "totalUsers": 1
     },
@@ -1728,11 +1718,6 @@
       "eventName": "generate_lead",
       "eventCount": 2,
       "totalUsers": 2
-    },
-    {
-      "eventName": "premium_gate_view",
-      "eventCount": 2,
-      "totalUsers": 1
     },
     {
       "eventName": "export_print",

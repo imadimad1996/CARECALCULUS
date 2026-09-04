@@ -1,1 +1,4 @@
-/ar/*       /:splat         301
+# Consolidate Subdomain Link Equity: Redirect /fr/* to fr.carecalculus.com
+/fr/*       https://fr.carecalculus.com/:splat  301
+/fr         https://fr.carecalculus.com/        301
+/ar/*       /:splat                             301

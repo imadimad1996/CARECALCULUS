@@ -35,6 +35,28 @@ const calculatorPages = [
   '/pf-ratio', '/tidal-volume', '/anc-calculator', '/adjusted-body-weight',
   '/steroid-conversion', '/apgar-score', '/sofa-score', '/child-pugh-score',
   '/anion-gap', '/aa-gradient', '/nutrition-tdee', '/nutrition-must', '/nutrition-nrs2002',
+  '/phenytoin-correction', '/ascvd-risk', '/vancomycin-dosing', '/aminoglycoside-dosing',
+  '/pesi-score', '/bova-score', '/apache-ii-score', '/saps-ii-score',
+  '/bishop-score', '/centor-score', '/pediatric-gcs', '/holliday-segar-fluids',
+  '/pediatric-dosage', '/naegele-edd-calculator', '/gestational-age-crl',
+  '/four-ts-hit-score', '/mascc-risk-index', '/rumack-matthew-nomogram',
+  '/framingham-risk-score', '/hfa-peff-score', '/schwartz-pediatric-gfr',
+  '/braden-scale', '/morse-fall-scale', '/news2-score', '/mews-score',
+  '/wong-baker-faces', '/flacc-score', '/rass-score', '/cam-icu',
+  '/insulin-sliding-scale', '/ascvd-risk-score', '/benzo-equivalence',
+  '/tpn-macronutrients', '/digoxin-dosing', '/protamine-reversal',
+  '/phenytoin-loading', '/warfarin-dosing', '/rcri-score', '/apri-score',
+  '/meld-na-score', '/fena-calculator', '/nnt-calculator',
+  '/sample-size-calculator', '/or-to-rr', '/fragility-index'
+];
+
+const academicPages = [
+  '/cours',
+  '/fmp-medecine',
+  '/ispits',
+  '/ispits/anatomie-et-physiologie-i',
+  '/fmp-medecine/anatomie-iii',
+  '/ispits/soins-infirmiers-en-nephrologie-et-dialyse'
 ];
 
 const conditionPages = [
@@ -147,6 +169,7 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
 ${buildUrls(calculatorPages, '1.0', 'weekly', '0.8')}
+${buildUrls(academicPages, '0.9', 'weekly', '0.95')}
 ${buildUrls(conditionPages, '0.8', 'monthly', '0.8')}
 ${buildUrls(specialtyPages, '0.8', 'monthly', '0.8')}
 ${buildUrls(comparisonPages, '0.7', 'monthly', '0.7')}
@@ -159,6 +182,7 @@ writeFileSync(OUTPUT_PATH, sitemap, 'utf-8');
 const totalUrls = (
   3 +
   calculatorPages.length * 3 +
+  academicPages.length * 3 +
   conditionPages.length * 3 +
   specialtyPages.length * 3 +
   comparisonPages.length * 3 +
@@ -168,6 +192,7 @@ const totalUrls = (
 console.log(`✅ sitemap.xml generated: ${OUTPUT_PATH}`);
 console.log(`📊 Total URLs indexed: ${totalUrls}`);
 console.log(`  - Calculator pages: ${calculatorPages.length * 3}`);
+console.log(`  - Academic pages: ${academicPages.length * 3}`);
 console.log(`  - Condition pages: ${conditionPages.length * 3}`);
 console.log(`  - Specialty pages: ${specialtyPages.length * 3}`);
 console.log(`  - Comparison pages: ${comparisonPages.length * 3}`);
