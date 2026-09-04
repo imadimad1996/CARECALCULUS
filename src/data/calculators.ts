@@ -990,9 +990,29 @@ export const ALL_CALCULATORS: CalculatorMeta[] = [
     title: {"en":"Medical Statistics","fr":"Statistiques Médicales","ar":"الإحصاء الطبي"},
     category: {"en":"Medical Tools","fr":"Outils Médicaux"},
     path: '/medical-statistics',
-    keywords: ["medical-statistics"],
+    keywords: ["medical-statistics","statistics","odds ratio","relative risk","nnt","fragility index"],
     specialties: [],
     icon: Layers,
+    isFeatured: false
+  },
+  {
+    id: 'insulin-sliding-scale',
+    title: {"en":"Insulin Sliding Scale (SSI)","fr":"Échelle d'Insuline Mobile (SSI)","ar":"مقياس الإنسولين المتدرج"},
+    category: {"en":"Pharmacology & Dosing","fr":"Pharmacologie & Dosages"},
+    path: '/insulin-sliding-scale',
+    keywords: ["insulin","sliding scale","ssi","glycemia","diabetes","diabete","glucose","endocrinology"],
+    specialties: ["endocrinology","internal-medicine","emergency"],
+    icon: Syringe,
+    isFeatured: true
+  },
+  {
+    id: 'schwartz-pediatric-gfr',
+    title: {"en":"Schwartz Pediatric GFR (Bedside)","fr":"DFG Pédiatrique Schwartz","ar":"معدل الترشيح الكبيبي للأطفال شوارتز"},
+    category: {"en":"Metabolic & Renal","fr":"Métabolique & Rénal"},
+    path: '/schwartz-pediatric-gfr',
+    keywords: ["schwartz","pediatric gfr","dfg pediatrique","creatinine","renal","nephrology","pediatrics"],
+    specialties: ["pediatrics","nephrology"],
+    icon: TestTube,
     isFeatured: false
   }
 ];

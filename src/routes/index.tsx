@@ -5,127 +5,7 @@ import EmbedLayout from '../components/EmbedLayout';
 import CalculatorShell from '../components/CalculatorShell';
 import { Activity, BookOpen, HeartPulse, Menu, X, LayoutDashboard, Calculator, Droplet, Brain, TestTube, AlertOctagon, ArrowRightLeft, AlertTriangle, Stethoscope, Wind, FileText, ShieldCheck, Sparkles, ChevronRight, Search, Globe, Scale, MonitorPlay, GraduationCap, Newspaper, Scissors, Layers, Award, Pill, FlaskConical, Thermometer, Syringe, ShieldAlert } from 'lucide-react';
 
-// Page import factories kept in one list so they can be (a) wrapped in
-// React.lazy for client-side code-splitting and (b) eagerly awaited during
-// build-time prerendering, which primes React.lazy's cache so renderToString
-// emits the real page body instead of the Suspense fallback.
-const pageLoaders = [
-  () => import('../pages/MapCalculator'),
-  () => import('../pages/BmiCalculator'),
-  () => import('../pages/GcsCalculator'),
-  () => import('../pages/DripRate'),
-  () => import('../pages/CreatinineClearance'),
-  () => import('../pages/WellsScore'),
-  () => import('../pages/WellsPeScore'),
-  () => import('../pages/MedicalConversions'),
-  () => import('../pages/CorrectedCalcium'),
-  () => import('../pages/QsofaScore'),
-  () => import('../pages/Curb65Score'),
-  () => import('../pages/Cha2ds2VascScore'),
-  () => import('../pages/Phq9Score'),
-  () => import('../pages/MeldScore'),
-  () => import('../pages/SirsCriteria'),
-  () => import('../pages/PfRatio'),
-  () => import('../pages/TidalVolume'),
-  () => import('../pages/AncCalculator'),
-  () => import('../pages/AdjustedBodyWeight'),
-  () => import('../pages/SteroidConversion'),
-
-  () => import('../pages/About'),
-  () => import('../pages/Disclaimer'),
-  () => import('../pages/Privacy'),
-  () => import('../pages/Terms'),
-  () => import('../pages/ApgarScore'),
-  () => import('../pages/SofaScore'),
-  () => import('../pages/ChildPughScore'),
-  () => import('../pages/AnionGap'),
-  () => import('../pages/AaGradient'),
-  () => import('../pages/Compare'),
-  () => import('../pages/NutritionTdee'),
-  () => import('../pages/NutritionMust'),
-  () => import('../pages/NutritionNrs2002'),
-  () => import('../pages/ConditionHub'),
-  () => import('../pages/MdrdGfr'),
-  () => import('../pages/CkdEpiGfr'),
-  () => import('../pages/EmbedGallery'),
-  () => import('../pages/ForHospitals'),
-  () => import('../pages/SpecialtyHub'),
-  () => import('../pages/ParklandFormula'),
-  () => import('../pages/FenaCalculator'),
-  () => import('../pages/WintersFormula'),
-  () => import('../pages/HasBledScore'),
-  () => import('../pages/CiwaArScore'),
-  () => import('../pages/FreeWaterDeficit'),
-  () => import('../pages/SodiumCorrection'),
-  () => import('../pages/HeparinDosing'),
-  () => import('../pages/OpioidConversion'),
-  () => import('../pages/MaintenanceFluids'),
-  () => import('../pages/OsmolalGap'),
-  () => import('../pages/TimiScore'),
-  () => import('../pages/HeartScore'),
-  () => import('../pages/PercRule'),
-  () => import('../pages/GenevaScore'),
-  () => import('../pages/NihssScore'),
-  () => import('../pages/GraceScore'),
-  () => import('../pages/BicarbDeficit'),
-  () => import('../pages/ReticIndex'),
-  () => import('../pages/PhenytoinCorrection'),
-  () => import('../pages/AscvdRisk'),
-  () => import('../pages/VancomycinDosing'),
-  () => import('../pages/AminoglycosideDosing'),
-  () => import('../pages/PesiScore'),
-  () => import('../pages/BovaScore'),
-  () => import('../pages/ApacheIIScore'),
-  () => import('../pages/SapsIIScore'),
-  () => import('../pages/MedicalStatistics'),
-  () => import('../pages/FavoritesPage'),
-  () => import('../pages/PricingPage'),
-
-  () => import('../pages/BishopScore'),
-  () => import('../pages/CentorScore'),
-  () => import('../pages/EditorialBoard'),
-  () => import('../pages/PediatricGcs'),
-  () => import('../pages/HollidaySegarFluids'),
-  () => import('../pages/PediatricDosage'),
-  () => import('../pages/NaegeleEddCalculator'),
-  () => import('../pages/GestationalAgeCrl'),
-  () => import('../pages/FourTsHitScore'),
-  () => import('../pages/SynapseEnginePage'),
-  () => import('../pages/MasccRiskIndex'),
-  () => import('../pages/RumackMatthewNomogram'),
-  () => import('../pages/FraminghamRiskScore'),
-  () => import('../pages/HfaPeffScore'),
-  () => import('../pages/SchwartzGfr'),
-  () => import('../pages/BradenScale'),
-  () => import('../pages/MorseFallScale'),
-  () => import('../pages/News2Score'),
-  () => import('../pages/MewsScore'),
-  () => import('../pages/WongBakerFaces'),
-  () => import('../pages/FlaccScore'),
-  () => import('../pages/RassScore'),
-  () => import('../pages/CamIcu'),
-  () => import('../pages/InsulinSlidingScale'),
-  () => import('../pages/AscvdRiskScore'),
-  () => import('../pages/BenzoEquivalence'),
-  () => import('../pages/TpnMacronutrients'),
-  () => import('../pages/DigoxinDosing'),
-  () => import('../pages/ProtamineReversal'),
-  () => import('../pages/PhenytoinLoading'),
-  () => import('../pages/WarfarinDosing'),
-  () => import('../pages/RcriScore'),
-  () => import('../pages/ApriScore'),
-  () => import('../pages/MeldNaScore'),
-  () => import('../pages/Curb65'),
-  () => import('../pages/SirsCriteria'),
-  () => import('../pages/QsofaScore'),
-  () => import('../pages/AnionGap'),
-  () => import('../pages/CorrectedCalcium'),
-  () => import('../pages/FenaCalculator'),
-  () => import('../pages/NntCalculator'),
-  () => import('../pages/SampleSizeCalculator'),
-  () => import('../pages/OrToRrConverter'),
-  () => import('../pages/FragilityIndex'),
-] as const;
+const pageLoaders: (() => Promise<any>)[] = [];
 
 const safeLazy = (loader: () => Promise<any>) => {
   return React.lazy(async () => {
@@ -163,31 +43,126 @@ const safeLazy = (loader: () => Promise<any>) => {
   });
 };
 
-const [
-  MapCalculator, BmiCalculator, GcsCalculator, DripRate, CreatinineClearance,
-  WellsScore, WellsPeScore, MedicalConversions, CorrectedCalcium, QsofaScore, Curb65Score,
-  Cha2ds2VascScore, Phq9Score, MeldScore, SirsCriteria, PfRatio, TidalVolume,
-  AncCalculator, AdjustedBodyWeight, SteroidConversion,
-  About, Disclaimer, Privacy, Terms,
-  ApgarScore, SofaScore, ChildPughScore, AnionGap, AaGradient,
-  Compare, NutritionTdee, NutritionMust, NutritionNrs2002, ConditionHub,
-  MdrdGfr, CkdEpiGfr, EmbedGallery, ForHospitals, SpecialtyHub,
-  ParklandFormula, FenaCalculator, WintersFormula, HasBledScore,
-  CiwaArScore, FreeWaterDeficit, SodiumCorrection,
-  HeparinDosing, OpioidConversion, MaintenanceFluids,
-  OsmolalGap, TimiScore, HeartScore,
-  PercRule, GenevaScore, NihssScore,
-  GraceScore, BicarbDeficit, ReticIndex,
-  PhenytoinCorrection, AscvdRisk, VancomycinDosing, AminoglycosideDosing,
-  PesiScore, BovaScore, ApacheIIScore, SapsIIScore, MedicalStatistics, FavoritesPage, PricingPage,
-  BishopScore, CentorScore, EditorialBoard,
-  PediatricGcs, HollidaySegarFluids, PediatricDosage, NaegeleEddCalculator, GestationalAgeCrl,
-  FourTsHitScore, MasccRiskIndex, RumackMatthewNomogram, FraminghamRiskScore, HfaPeffScore, SchwartzGfr,
-  BradenScale, MorseFallScale, News2Score, MewsScore, WongBakerFaces, FlaccScore, RassScore, CamIcu, InsulinSlidingScale,
-  AscvdRiskScore, BenzoEquivalence, TpnMacronutrients, DigoxinDosing, ProtamineReversal, PhenytoinLoading,
-  WarfarinDosing, RcriScore, ApriScore, MeldNaScore, Curb65V2, SirsCriteriaV2, QSofaScoreV2, AnionGapV2, CorrectedCalciumV2, FenaCalculatorV2,
-  NntCalculator, SampleSizeCalculator, OrToRrConverter, FragilityIndex, SynapseEnginePage
-] = pageLoaders.map((loader) => safeLazy(loader as any)) as any[];
+const createLazyPage = (loader: () => Promise<any>) => {
+  pageLoaders.push(loader);
+  return safeLazy(loader);
+};
+
+const MapCalculator = createLazyPage(() => import('../pages/MapCalculator'));
+const BmiCalculator = createLazyPage(() => import('../pages/BmiCalculator'));
+const GcsCalculator = createLazyPage(() => import('../pages/GcsCalculator'));
+const DripRate = createLazyPage(() => import('../pages/DripRate'));
+const CreatinineClearance = createLazyPage(() => import('../pages/CreatinineClearance'));
+const WellsScore = createLazyPage(() => import('../pages/WellsScore'));
+const WellsPeScore = createLazyPage(() => import('../pages/WellsPeScore'));
+const MedicalConversions = createLazyPage(() => import('../pages/MedicalConversions'));
+const CorrectedCalcium = createLazyPage(() => import('../pages/CorrectedCalcium'));
+const QsofaScore = createLazyPage(() => import('../pages/QsofaScore'));
+const Curb65Score = createLazyPage(() => import('../pages/Curb65Score'));
+const Cha2ds2VascScore = createLazyPage(() => import('../pages/Cha2ds2VascScore'));
+const Phq9Score = createLazyPage(() => import('../pages/Phq9Score'));
+const MeldScore = createLazyPage(() => import('../pages/MeldScore'));
+const SirsCriteria = createLazyPage(() => import('../pages/SirsCriteria'));
+const PfRatio = createLazyPage(() => import('../pages/PfRatio'));
+const TidalVolume = createLazyPage(() => import('../pages/TidalVolume'));
+const AncCalculator = createLazyPage(() => import('../pages/AncCalculator'));
+const AdjustedBodyWeight = createLazyPage(() => import('../pages/AdjustedBodyWeight'));
+const SteroidConversion = createLazyPage(() => import('../pages/SteroidConversion'));
+
+const About = createLazyPage(() => import('../pages/About'));
+const Disclaimer = createLazyPage(() => import('../pages/Disclaimer'));
+const Privacy = createLazyPage(() => import('../pages/Privacy'));
+const Terms = createLazyPage(() => import('../pages/Terms'));
+const ApgarScore = createLazyPage(() => import('../pages/ApgarScore'));
+const SofaScore = createLazyPage(() => import('../pages/SofaScore'));
+const ChildPughScore = createLazyPage(() => import('../pages/ChildPughScore'));
+const AnionGap = createLazyPage(() => import('../pages/AnionGap'));
+const AaGradient = createLazyPage(() => import('../pages/AaGradient'));
+const Compare = createLazyPage(() => import('../pages/Compare'));
+const NutritionTdee = createLazyPage(() => import('../pages/NutritionTdee'));
+const NutritionMust = createLazyPage(() => import('../pages/NutritionMust'));
+const NutritionNrs2002 = createLazyPage(() => import('../pages/NutritionNrs2002'));
+const ConditionHub = createLazyPage(() => import('../pages/ConditionHub'));
+const MdrdGfr = createLazyPage(() => import('../pages/MdrdGfr'));
+const CkdEpiGfr = createLazyPage(() => import('../pages/CkdEpiGfr'));
+const EmbedGallery = createLazyPage(() => import('../pages/EmbedGallery'));
+const ForHospitals = createLazyPage(() => import('../pages/ForHospitals'));
+const SpecialtyHub = createLazyPage(() => import('../pages/SpecialtyHub'));
+const ParklandFormula = createLazyPage(() => import('../pages/ParklandFormula'));
+const FenaCalculator = createLazyPage(() => import('../pages/FenaCalculator'));
+const WintersFormula = createLazyPage(() => import('../pages/WintersFormula'));
+const HasBledScore = createLazyPage(() => import('../pages/HasBledScore'));
+const CiwaArScore = createLazyPage(() => import('../pages/CiwaArScore'));
+const FreeWaterDeficit = createLazyPage(() => import('../pages/FreeWaterDeficit'));
+const SodiumCorrection = createLazyPage(() => import('../pages/SodiumCorrection'));
+const HeparinDosing = createLazyPage(() => import('../pages/HeparinDosing'));
+const OpioidConversion = createLazyPage(() => import('../pages/OpioidConversion'));
+const MaintenanceFluids = createLazyPage(() => import('../pages/MaintenanceFluids'));
+const OsmolalGap = createLazyPage(() => import('../pages/OsmolalGap'));
+const TimiScore = createLazyPage(() => import('../pages/TimiScore'));
+const HeartScore = createLazyPage(() => import('../pages/HeartScore'));
+const PercRule = createLazyPage(() => import('../pages/PercRule'));
+const GenevaScore = createLazyPage(() => import('../pages/GenevaScore'));
+const NihssScore = createLazyPage(() => import('../pages/NihssScore'));
+const GraceScore = createLazyPage(() => import('../pages/GraceScore'));
+const BicarbDeficit = createLazyPage(() => import('../pages/BicarbDeficit'));
+const ReticIndex = createLazyPage(() => import('../pages/ReticIndex'));
+const PhenytoinCorrection = createLazyPage(() => import('../pages/PhenytoinCorrection'));
+const AscvdRisk = createLazyPage(() => import('../pages/AscvdRisk'));
+const VancomycinDosing = createLazyPage(() => import('../pages/VancomycinDosing'));
+const AminoglycosideDosing = createLazyPage(() => import('../pages/AminoglycosideDosing'));
+const PesiScore = createLazyPage(() => import('../pages/PesiScore'));
+const BovaScore = createLazyPage(() => import('../pages/BovaScore'));
+const ApacheIIScore = createLazyPage(() => import('../pages/ApacheIIScore'));
+const SapsIIScore = createLazyPage(() => import('../pages/SapsIIScore'));
+const MedicalStatistics = createLazyPage(() => import('../pages/MedicalStatistics'));
+const FavoritesPage = createLazyPage(() => import('../pages/FavoritesPage'));
+const PricingPage = createLazyPage(() => import('../pages/PricingPage'));
+
+const BishopScore = createLazyPage(() => import('../pages/BishopScore'));
+const CentorScore = createLazyPage(() => import('../pages/CentorScore'));
+const EditorialBoard = createLazyPage(() => import('../pages/EditorialBoard'));
+const PediatricGcs = createLazyPage(() => import('../pages/PediatricGcs'));
+const HollidaySegarFluids = createLazyPage(() => import('../pages/HollidaySegarFluids'));
+const PediatricDosage = createLazyPage(() => import('../pages/PediatricDosage'));
+const NaegeleEddCalculator = createLazyPage(() => import('../pages/NaegeleEddCalculator'));
+const GestationalAgeCrl = createLazyPage(() => import('../pages/GestationalAgeCrl'));
+const FourTsHitScore = createLazyPage(() => import('../pages/FourTsHitScore'));
+const SynapseEnginePage = createLazyPage(() => import('../pages/SynapseEnginePage'));
+const MasccRiskIndex = createLazyPage(() => import('../pages/MasccRiskIndex'));
+const RumackMatthewNomogram = createLazyPage(() => import('../pages/RumackMatthewNomogram'));
+const FraminghamRiskScore = createLazyPage(() => import('../pages/FraminghamRiskScore'));
+const HfaPeffScore = createLazyPage(() => import('../pages/HfaPeffScore'));
+const SchwartzGfr = createLazyPage(() => import('../pages/SchwartzGfr'));
+const BradenScale = createLazyPage(() => import('../pages/BradenScale'));
+const MorseFallScale = createLazyPage(() => import('../pages/MorseFallScale'));
+const News2Score = createLazyPage(() => import('../pages/News2Score'));
+const MewsScore = createLazyPage(() => import('../pages/MewsScore'));
+const WongBakerFaces = createLazyPage(() => import('../pages/WongBakerFaces'));
+const FlaccScore = createLazyPage(() => import('../pages/FlaccScore'));
+const RassScore = createLazyPage(() => import('../pages/RassScore'));
+const CamIcu = createLazyPage(() => import('../pages/CamIcu'));
+const InsulinSlidingScale = createLazyPage(() => import('../pages/InsulinSlidingScale'));
+const AscvdRiskScore = createLazyPage(() => import('../pages/AscvdRiskScore'));
+const BenzoEquivalence = createLazyPage(() => import('../pages/BenzoEquivalence'));
+const TpnMacronutrients = createLazyPage(() => import('../pages/TpnMacronutrients'));
+const DigoxinDosing = createLazyPage(() => import('../pages/DigoxinDosing'));
+const ProtamineReversal = createLazyPage(() => import('../pages/ProtamineReversal'));
+const PhenytoinLoading = createLazyPage(() => import('../pages/PhenytoinLoading'));
+const WarfarinDosing = createLazyPage(() => import('../pages/WarfarinDosing'));
+const RcriScore = createLazyPage(() => import('../pages/RcriScore'));
+const ApriScore = createLazyPage(() => import('../pages/ApriScore'));
+const MeldNaScore = createLazyPage(() => import('../pages/MeldNaScore'));
+const Curb65V2 = createLazyPage(() => import('../pages/Curb65'));
+const SirsCriteriaV2 = createLazyPage(() => import('../pages/SirsCriteria'));
+const QSofaScoreV2 = createLazyPage(() => import('../pages/QsofaScore'));
+const AnionGapV2 = createLazyPage(() => import('../pages/AnionGap'));
+const CorrectedCalciumV2 = createLazyPage(() => import('../pages/CorrectedCalcium'));
+const FenaCalculatorV2 = createLazyPage(() => import('../pages/FenaCalculator'));
+const NntCalculator = createLazyPage(() => import('../pages/NntCalculator'));
+const SampleSizeCalculator = createLazyPage(() => import('../pages/SampleSizeCalculator'));
+const OrToRrConverter = createLazyPage(() => import('../pages/OrToRrConverter'));
+const FragilityIndex = createLazyPage(() => import('../pages/FragilityIndex'));
 
 export const HomePage = safeLazy(() => import('../pages/HomePage'));
 export const NotFound = safeLazy(() => import('../pages/NotFound'));
