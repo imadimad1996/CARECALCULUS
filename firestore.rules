@@ -11,6 +11,11 @@ service cloud.firestore {
       allow read, update, delete: if false; // Secure: clients cannot read or dump subscribers
     }
 
+    // User profiles (authenticated user can read & write their own record)
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
     // Default public collection for any future medical reference data
     match /public_reference/{document=**} {
       allow read: if true;

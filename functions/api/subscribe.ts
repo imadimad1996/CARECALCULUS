@@ -1,14 +1,9 @@
 import type { PagesFunction, KVNamespace } from '@cloudflare/workers-types';
+import { getCorsHeaders, handleCorsOptions } from '../_cors';
 
 interface Env {
   LEADS: KVNamespace;
 }
-
-const CORS = {
-  'Access-Control-Allow-Origin': 'https://carecalculus.com',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
-  'Content-Type': 'application/json',
-};
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -23,16 +18,17 @@ async function isRateLimited(env: Env, ip: string): Promise<boolean> {
   return false;
 }
 
-export const onRequestOptions: PagesFunction<Env> = async () => {
-  return new Response(null, { status: 204, headers: CORS });
+export const onRequestOptions: PagesFunction<Env> = async (context) => {
+  return handleCorsOptions(context.request as any);
 };
 
 export const onRequestPost: PagesFunction<Env> = async (context) => {
+  const cors = getCorsHeaders(context.request as any);
   try {
     const ip = context.request.headers.get('CF-Connecting-IP') || 'unknown';
     if (await isRateLimited(context.env, ip)) {
       return new Response(JSON.stringify({ error: 'Too many requests. Please try again later.' }), {
-        status: 429, headers: CORS,
+        status: 429, headers: cors,
       });
     }
 
@@ -40,7 +36,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
     if (!data.email || !EMAIL_REGEX.test(data.email)) {
       return new Response(JSON.stringify({ error: 'Invalid email address' }), {
-        status: 400, headers: CORS,
+        status: 400, headers: cors,
       });
     }
 
@@ -59,13 +55,13 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     }
 
     return new Response(JSON.stringify({ success: true, message: 'Subscribed successfully' }), {
-      status: 200, headers: CORS,
+      status: 200, headers: cors,
     });
 
   } catch (error: any) {
     console.error(JSON.stringify({ endpoint: 'subscribe', error: error.message, timestamp: new Date().toISOString() }));
     return new Response(JSON.stringify({ error: 'Server error processing subscription' }), {
-      status: 500, headers: CORS,
+      status: 500, headers: cors,
     });
   }
 };

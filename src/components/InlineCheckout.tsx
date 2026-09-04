@@ -43,13 +43,21 @@ export const InlineCheckout: React.FC<InlineCheckoutProps> = ({
             status: details.status
           })
         });
-        const payload = await res.json() as { proToken?: string };
-        // 2. Activate client entitlement with server-issued session token
-        activateProPass(planType, payload.proToken);
+        const payload = await res.json() as { proToken?: string; error?: string };
+        if (payload.proToken) {
+          // 2. Activate client entitlement with server-issued session token
+          activateProPass(planType, payload.proToken);
+          setPaymentSuccess(true);
+          if (onSuccess) onSuccess();
+        } else {
+          console.error('Backend payment verification rejected:', payload.error);
+          alert(isFr ? `Vérification du paiement échouée: ${payload.error || 'Statut non confirmé'}` : `Payment verification failed: ${payload.error || 'Status not confirmed'}`);
+          return;
+        }
       } catch (err) {
-        console.warn('Backend verification warning:', err);
-        // Fallback activation
-        activateProPass(planType);
+        console.error('Backend verification connection error:', err);
+        alert(isFr ? 'Erreur de connexion au serveur de vérification. Contactez le support si votre compte a été débité.' : 'Connection error to verification server. Please contact support if your account was charged.');
+        return;
       }
 
       // 3. Fire conversion event for Google Analytics/Ads
@@ -69,9 +77,6 @@ export const InlineCheckout: React.FC<InlineCheckoutProps> = ({
           console.warn('Analytics tracking error:', e);
         }
       }
-
-      setPaymentSuccess(true);
-      if (onSuccess) onSuccess();
     });
   };
 

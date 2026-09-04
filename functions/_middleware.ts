@@ -14,7 +14,7 @@ export const onRequest: PagesFunction = async (context) => {
     }
     const response = await context.next();
     // Do NOT return HTML fallback for missing JS/CSS/image static assets
-    const isStaticAsset = url.pathname.startsWith('/assets/') || url.pathname.match(/\.(js|css|ico|png|jpg|jpeg|svg|webp|woff|woff2|ttf|eot|json|map|txt|xml)$/i);
+    const isStaticAsset = url.pathname.startsWith('/assets/') || url.pathname.startsWith('/pdf/') || url.pathname.match(/\.(js|css|ico|png|jpg|jpeg|svg|webp|woff|woff2|ttf|eot|json|map|txt|xml|pdf)$/i);
     if (response.status === 404 && !isStaticAsset) {
       const fallbackUrl = new URL('/', context.request.url);
       return context.env.ASSETS.fetch(new Request(fallbackUrl.toString(), context.request as any) as any) as any;
@@ -36,11 +36,12 @@ export const onRequest: PagesFunction = async (context) => {
       return response;
     }
 
-    // Check if request is for a static asset or file extension (e.g., .js, .css, .png, .ico, /assets/, etc.)
+    // Check if request is for a static asset or file extension (e.g., .js, .css, .png, .ico, /assets/, /pdf/, etc.)
     // If so, pass through directly without rewriting path
     if (
       url.pathname.startsWith('/assets/') ||
-      url.pathname.match(/\.(js|css|ico|png|jpg|jpeg|svg|webp|woff|woff2|ttf|eot|json|map|txt|xml)$/i)
+      url.pathname.startsWith('/pdf/') ||
+      url.pathname.match(/\.(js|css|ico|png|jpg|jpeg|svg|webp|woff|woff2|ttf|eot|json|map|txt|xml|pdf)$/i)
     ) {
       return context.next();
     }

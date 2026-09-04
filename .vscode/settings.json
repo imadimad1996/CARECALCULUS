@@ -2,5 +2,11 @@
   "css.lint.unknownAtRules": "ignore",
   "scss.lint.unknownAtRules": "ignore",
   "less.lint.unknownAtRules": "ignore",
-  "git.ignoreLimitWarning": true
+  "git.ignoreLimitWarning": true,
+  "files.associations": {
+    "_headers": "plaintext",
+    "_redirects": "plaintext",
+    "**/_headers": "plaintext",
+    "**/_redirects": "plaintext"
+  }
 }

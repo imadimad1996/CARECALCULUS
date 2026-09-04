@@ -1,21 +1,34 @@
 import type { PagesFunction, KVNamespace } from '@cloudflare/workers-types';
+import { getCorsHeaders, handleCorsOptions } from '../_cors';
 
 interface Env {
   LEADS?: KVNamespace;
 }
 
-const CORS = {
-  'Access-Control-Allow-Origin': 'https://carecalculus.com',
-  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-  'Content-Type': 'application/json',
-};
+async function isRateLimited(env: Env, ip: string): Promise<boolean> {
+  if (!env.LEADS) return false;
+  const key = `ratelimit_verify_pro:${ip}`;
+  const existing = await env.LEADS.get(key);
+  const count = existing ? parseInt(existing, 10) : 0;
+  if (count >= 30) return true;
+  await env.LEADS.put(key, String(count + 1), { expirationTtl: 600 });
+  return false;
+}
 
-export const onRequestOptions: PagesFunction<Env> = async () => {
-  return new Response(null, { status: 204, headers: CORS }) as any;
+export const onRequestOptions: PagesFunction<Env> = async (context) => {
+  return handleCorsOptions(context.request as any);
 };
 
 export const onRequest: PagesFunction<Env> = async (context) => {
+  const cors = getCorsHeaders(context.request as any);
   try {
+    const ip = context.request.headers.get('CF-Connecting-IP') || 'unknown';
+    if (await isRateLimited(context.env, ip)) {
+      return new Response(JSON.stringify({ active: false, reason: 'Rate limit exceeded' }), {
+        status: 429, headers: cors,
+      }) as any;
+    }
+
     const authHeader = context.request.headers.get('Authorization');
     const cookieHeader = context.request.headers.get('Cookie');
     
@@ -29,20 +42,20 @@ export const onRequest: PagesFunction<Env> = async (context) => {
 
     if (!token) {
       return new Response(JSON.stringify({ active: false, reason: 'No token provided' }), {
-        status: 200, headers: CORS,
+        status: 200, headers: cors,
       }) as any;
     }
 
     if (!context.env.LEADS) {
       return new Response(JSON.stringify({ active: false, reason: 'KV store unavailable' }), {
-        status: 200, headers: CORS,
+        status: 200, headers: cors,
       }) as any;
     }
 
     const sessionDataRaw = await context.env.LEADS.get(`pro_session:${token}`);
     if (!sessionDataRaw) {
       return new Response(JSON.stringify({ active: false, reason: 'Invalid or expired session token' }), {
-        status: 200, headers: CORS,
+        status: 200, headers: cors,
       }) as any;
     }
 
@@ -50,23 +63,23 @@ export const onRequest: PagesFunction<Env> = async (context) => {
     if (session.expiresAt && Date.now() > session.expiresAt) {
       await context.env.LEADS.delete(`pro_session:${token}`);
       return new Response(JSON.stringify({ active: false, reason: 'Session expired' }), {
-        status: 200, headers: CORS,
+        status: 200, headers: cors,
       }) as any;
     }
 
     return new Response(JSON.stringify({
       active: true,
-      planType: session.planType || 'monthly',
+      planType: session.planType || 'annual',
       expiresAt: session.expiresAt,
       payerEmail: session.payerEmail ? session.payerEmail.replace(/(.{2})(.*)(?=@)/, '$1***') : undefined,
     }), {
-      status: 200, headers: CORS,
+      status: 200, headers: cors,
     }) as any;
 
   } catch (err: any) {
     console.error(JSON.stringify({ endpoint: 'verify-pro', error: err.message, timestamp: new Date().toISOString() }));
-    return new Response(JSON.stringify({ active: false, error: err.message }), {
-      status: 500, headers: CORS,
+    return new Response(JSON.stringify({ active: false, error: 'Verification error' }), {
+      status: 500, headers: cors,
     }) as any;
   }
 };

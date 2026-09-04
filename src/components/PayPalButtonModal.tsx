@@ -44,16 +44,19 @@ export const PayPalButtonModal: React.FC<PayPalButtonModalProps> = ({
             status: details.status
           })
         });
-        const payload = await res.json() as { proToken?: string };
-        // 2. Activate client entitlement with server-issued session token
-        activateProPass(planType, payload.proToken);
+        const payload = await res.json() as { proToken?: string; error?: string };
+        if (payload.proToken) {
+          // 2. Activate client entitlement with server-issued session token
+          activateProPass(planType, payload.proToken);
+          setPaymentSuccess(true);
+        } else {
+          console.error('Backend payment verification rejected:', payload.error);
+          alert(`Payment verification failed: ${payload.error || 'Status not confirmed'}`);
+        }
       } catch (err) {
-        console.warn('Backend PayPal verification warning:', err);
-        // Fallback activation
-        activateProPass(planType);
+        console.error('Backend PayPal verification connection error:', err);
+        alert('Connection error to verification server. Please contact support if your account was charged.');
       }
-
-      setPaymentSuccess(true);
     });
   };
 
