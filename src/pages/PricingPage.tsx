@@ -27,7 +27,7 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
       {/* Header with Animation */}
       <div className="text-center max-w-3xl mx-auto mb-16 animate-in fade-in slide-in-from-bottom-8 duration-700">
         <span className="text-xs font-bold text-cyan-600 dark:text-cyan-400 uppercase tracking-widest bg-cyan-500/10 px-4 py-1.5 rounded-full border border-cyan-500/20 inline-block mb-4 shadow-sm">
-          {isFr ? 'ACCÉDEZ À +88 OUTILS VALIDÉS' : 'ACCESS 88+ PEER-REVIEWED TOOLS'}
+          {isFr ? 'ACCÉDEZ À 150+ OUTILS VALIDÉS' : 'ACCESS 150+ PEER-REVIEWED TOOLS'}
         </span>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6">
           {isFr ? 'Le Pass Export 1-Clic pour Soignants Occupés' : 'The 1-Click EHR Export Pass for Busy Clinicians'}
@@ -84,7 +84,7 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
             <ul className="space-y-4 text-sm text-slate-700 dark:text-slate-300 mb-8">
               <li className="flex items-start gap-3">
                 <Check className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
-                <span>{isFr ? 'Accès complet aux 88 calculateurs cliniques' : 'Access to all 88 Clinical Calculators'}</span>
+                <span>{isFr ? 'Accès complet aux 150 calculateurs cliniques' : 'Access to all 150 Clinical Calculators'}</span>
               </li>
               <li className="flex items-start gap-3">
                 <Check className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
@@ -335,7 +335,7 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
             </thead>
             <tbody className="divide-y divide-slate-100 dark:divide-slate-800/50">
               <tr className="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
-                <td className="p-4 md:p-6 text-slate-700 dark:text-slate-300">{isFr ? 'Tous les calculateurs cliniques' : 'All Clinical Calculators (88+)'}</td>
+                <td className="p-4 md:p-6 text-slate-700 dark:text-slate-300">{isFr ? 'Tous les calculateurs cliniques' : 'All Clinical Calculators (150+)'}</td>
                 <td className="p-4 md:p-6 text-center"><Check className="w-5 h-5 text-emerald-500 inline-block" /></td>
                 <td className="p-4 md:p-6 text-center"><Check className="w-5 h-5 text-cyan-500 inline-block" /></td>
               </tr>
@@ -375,7 +375,7 @@ export default function PricingPage({ lang }: { lang: LangCode }) {
               <h4 className="font-bold text-base text-slate-900 dark:text-slate-100">{isFr ? 'Les calculateurs restent-ils gratuits ?' : 'Are the clinical calculators still free?'}</h4>
             </div>
             <p className="text-slate-600 dark:text-slate-400 ml-8 leading-relaxed">
-              {isFr ? 'Oui ! L\'ensemble des 88 calculateurs et guides reste 100% gratuit et accessible de manière permanente.' : 'Yes! All 88 clinical calculators and guides remain 100% free and open-access permanently.'}
+              {isFr ? 'Oui ! L\'ensemble des 150 calculateurs et guides reste 100% gratuit et accessible de manière permanente.' : 'Yes! All 150 clinical calculators and guides remain 100% free and open-access permanently.'}
             </p>
           </div>
 

@@ -55,27 +55,27 @@ const T = {
   },
   stats: {
     en: [
-      { value: '117+', label: 'Validated Clinical Tools' },
+      { value: '150+', label: 'Validated Clinical Tools' },
       { value: '3', label: 'Languages (EN, FR, ES)' },
-      { value: '100%', label: 'Guideline-Sourced (AHA/ESC/KDIGO)' },
+      { value: '100%', label: 'Guideline-Sourced' },
       { value: '0 PHI', label: '100% Client-Side & Private' },
     ],
     fr: [
-      { value: '117+', label: 'Outils Cliniques Validés' },
+      { value: '150+', label: 'Outils Cliniques Validés' },
       { value: '3', label: 'Langues (EN, FR, ES)' },
-      { value: '100%', label: 'Basé sur Recommandations (AHA/ESC/KDIGO)' },
+      { value: '100%', label: 'Recommandations Internationales' },
       { value: '0 PHI', label: '100% Local & Privé' },
     ],
     es: [
-      { value: '117+', label: 'Herramientas Clínicas Validadas' },
+      { value: '150+', label: 'Herramientas Clínicas Validadas' },
       { value: '3', label: 'Idiomas (EN, FR, ES)' },
-      { value: '100%', label: 'Basado en Guías (AHA/ESC/KDIGO)' },
+      { value: '100%', label: 'Guías Clínicas Validadas' },
       { value: '0 PHI', label: '100% Local y Privado' },
     ],
     ar: [
-      { value: '117+', label: 'أداة سريرية معتمدة' },
+      { value: '150+', label: 'أداة سريرية معتمدة' },
       { value: '3', label: 'لغات (EN, FR, ES)' },
-      { value: '100%', label: 'مستمد من الإرشادات (AHA/ESC/KDIGO)' },
+      { value: '100%', label: 'إرشادات سريرية معتمدة' },
       { value: '0 PHI', label: 'محلي وخاص 100%' },
     ],
   },
@@ -283,10 +283,10 @@ export default function HomePage({ lang }: HomePageProps) {
       {/* FAQPage schema — "People Also Ask" + GEO AI citation boost */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{
         __html: JSON.stringify(generateFAQSchema([
-          { question: 'What is CareCalculus?', answer: 'CareCalculus is a free, evidence-based clinical decision support platform providing over 88 medical calculators for ICU, emergency medicine, cardiology, nephrology, and nutrition. All tools are peer-reviewed and aligned with international guidelines including AHA, KDIGO, ESPEN, and Surviving Sepsis.' },
+          { question: 'What is CareCalculus?', answer: 'CareCalculus is a free, evidence-based clinical decision support platform providing 150 validated clinical calculators for ICU, emergency medicine, cardiology, nephrology, and nutrition. All tools are peer-reviewed and aligned with international guidelines including AHA, KDIGO, ESPEN, and Surviving Sepsis.' },
           { question: 'Is CareCalculus free to use?', answer: 'Yes. CareCalculus is completely free for all clinicians. Core calculators including MAP, GCS, qSOFA, MELD, Wells Score, CHA2DS2-VASc, CURB-65, and Creatinine Clearance are accessible without an account.' },
           { question: 'How accurate are the medical calculators on CareCalculus?', answer: 'Every calculator on CareCalculus is validated against landmark peer-reviewed publications and clinical guidelines. Formulas are sourced from original research (e.g., Cockcroft-Gault for creatinine clearance, MDRD and CKD-EPI for GFR) and reviewed by our medical editorial board.' },
-          { question: 'Which specialties does CareCalculus cover?', answer: 'CareCalculus covers Emergency & Critical Care, Cardiology, Nephrology, Pulmonology, Gastroenterology, Neurology, Hematology, Pediatrics, Obstetrics, Nutrition, Toxicology, and Pharmacology — offering over 88 validated clinical scoring tools and calculators.' },
+          { question: 'Which specialties does CareCalculus cover?', answer: 'CareCalculus covers Emergency & Critical Care, Cardiology, Nephrology, Pulmonology, Gastroenterology, Neurology, Hematology, Pediatrics, Obstetrics, Nutrition, Toxicology, and Pharmacology — offering 150 validated clinical scoring tools and calculators.' },
           { question: 'Can I use CareCalculus offline?', answer: 'Yes. CareCalculus is a Progressive Web App (PWA) that supports offline use. Once loaded, all core clinical calculators remain fully functional without an internet connection, making them ideal for use in clinical settings with limited connectivity.' },
           { question: 'What is a MAP calculator?', answer: 'A Mean Arterial Pressure (MAP) calculator computes the average arterial pressure during one cardiac cycle. The formula is: MAP = (SBP + 2 × DBP) / 3. Normal MAP is 70–10 mmHg. Values below 65 mmHg indicate inadequate organ perfusion and require immediate clinical action.' },
           { question: 'What is the qSOFA score used for?', answer: 'The quick Sequential Organ Failure Assessment (qSOFA) score is a rapid bedside screening tool for sepsis. It uses three criteria: altered mental status (GCS < 15), respiratory rate ≥ 22/min, and systolic blood pressure ≤ 100 mmHg. A score of ≥ 2 suggests possible sepsis and warrants further evaluation.' }
@@ -494,12 +494,12 @@ export default function HomePage({ lang }: HomePageProps) {
             </div>
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-center">
               <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
-                <div className="text-2xl font-black tracking-tight text-white">88+</div>
+                <div className="text-2xl font-black tracking-tight text-white">150+</div>
                 <div className="mt-1 text-[10px] font-mono font-semibold uppercase tracking-[0.2em] text-slate-400">calculators</div>
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
-                <div className="text-2xl font-black tracking-tight text-white">2</div>
-                <div className="mt-1 text-[10px] font-mono font-semibold uppercase tracking-[0.2em] text-slate-400">languages</div>
+                <div className="text-2xl font-black tracking-tight text-white">3</div>
+                <div className="mt-1 text-[10px] font-mono font-semibold uppercase tracking-[0.2em] text-slate-400">languages (EN/FR/ES)</div>
               </div>
             </div>
           </div>

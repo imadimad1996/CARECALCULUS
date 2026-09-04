@@ -339,10 +339,10 @@ export default function CommandPalette(props: CommandPaletteProps) {
   if (!isOpen) return null;
 
   const placeholders = {
-    en: 'Search 88+ clinical calculators, formulas, scores (e.g., dvt wells, gcs, crcl, map)...',
-    fr: 'Rechercher 88+ calculateurs, scores, formules (ex: wells tvp, glasgow, clairance, pam)...',
-    es: 'Buscar 88+ calculadoras, escalas clínicas (ej: wells tvp, glasgow, aclaramiento, pam)...',
-    ar: 'ابحث في أكثر من 88 حاسبة طبية ومعادلة سريرية...'
+    en: 'Search 150+ clinical calculators, formulas, scores (e.g., dvt wells, gcs, crcl, map)...',
+    fr: 'Rechercher 150+ calculateurs, scores, formules (ex: wells tvp, glasgow, clairance, pam)...',
+    es: 'Buscar 150+ calculadoras, escalas clínicas (ej: wells tvp, glasgow, aclaramiento, pam)...',
+    ar: 'ابحث في أكثر من 150 حاسبة طبية ومعادلة سريرية...'
   };
 
   return createPortal(
