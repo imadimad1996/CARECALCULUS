@@ -125,3 +125,21 @@ export const REVIEWER_PERIOPERATIVE: MedicalReviewer = {
   profileUrl: 'https://www.asahq.org/standards-and-practice-parameters',
   lastReviewed: 'August 2025',
 };
+
+export const REVIEWER_PEDIATRICS: MedicalReviewer = {
+  name: 'AAP Clinical Practice Guidelines',
+  credentials: ['Guideline Standard'],
+  role: 'Sourced from American Academy of Pediatrics',
+  institution: 'Pediatric Evidence-Based Guidelines',
+  profileUrl: 'https://www.aap.org/en/clinical-resources/',
+  lastReviewed: 'August 2025',
+};
+
+export const REVIEWER_PSYCHIATRY: MedicalReviewer = {
+  name: 'APA Practice Guidelines',
+  credentials: ['Guideline Standard'],
+  role: 'Sourced from American Psychiatric Association',
+  institution: 'Psychiatric Clinical Practice Guidelines',
+  profileUrl: 'https://www.psychiatry.org/psychiatrists/practice/clinical-practice-guidelines',
+  lastReviewed: 'August 2025',
+};

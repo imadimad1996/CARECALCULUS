@@ -164,6 +164,33 @@ const SampleSizeCalculator = createLazyPage(() => import('../pages/SampleSizeCal
 const OrToRrConverter = createLazyPage(() => import('../pages/OrToRrConverter'));
 const FragilityIndex = createLazyPage(() => import('../pages/FragilityIndex'));
 
+// Fast-Track 25 High-Yield Clinical Calculators
+const AlvaradoScore = createLazyPage(() => import('../pages/AlvaradoScore'));
+const RansonsCriteria = createLazyPage(() => import('../pages/RansonsCriteria'));
+const BisapScore = createLazyPage(() => import('../pages/BisapScore'));
+const GlasgowBlatchford = createLazyPage(() => import('../pages/GlasgowBlatchford'));
+const OttawaRules = createLazyPage(() => import('../pages/OttawaRules'));
+const Fib4Index = createLazyPage(() => import('../pages/Fib4Index'));
+const SaagCalculator = createLazyPage(() => import('../pages/SaagCalculator'));
+const MaddreysDf = createLazyPage(() => import('../pages/MaddreysDf'));
+const LilleModel = createLazyPage(() => import('../pages/LilleModel'));
+const FeUreaCalculator = createLazyPage(() => import('../pages/FeUreaCalculator'));
+const DeltaDeltaCalculator = createLazyPage(() => import('../pages/DeltaDeltaCalculator'));
+const SerumOsmolality = createLazyPage(() => import('../pages/SerumOsmolality'));
+const UrineAnionGap = createLazyPage(() => import('../pages/UrineAnionGap'));
+const Abcd2Score = createLazyPage(() => import('../pages/Abcd2Score'));
+const Gad7Score = createLazyPage(() => import('../pages/Gad7Score'));
+const ModifiedRankinScale = createLazyPage(() => import('../pages/ModifiedRankinScale'));
+const CapriniScore = createLazyPage(() => import('../pages/CapriniScore'));
+const MallampatiScore = createLazyPage(() => import('../pages/MallampatiScore'));
+const CanadianCSpine = createLazyPage(() => import('../pages/CanadianCSpine'));
+const AhaPreventRisk = createLazyPage(() => import('../pages/AhaPreventRisk'));
+const DaptScore = createLazyPage(() => import('../pages/DaptScore'));
+const NyhaClassification = createLazyPage(() => import('../pages/NyhaClassification'));
+const PsiPortScore = createLazyPage(() => import('../pages/PsiPortScore'));
+const EcogPerformance = createLazyPage(() => import('../pages/EcogPerformance'));
+const PecarnHeadTrauma = createLazyPage(() => import('../pages/PecarnHeadTrauma'));
+
 export const HomePage = safeLazy(() => import('../pages/HomePage'));
 export const NotFound = safeLazy(() => import('../pages/NotFound'));
 
@@ -325,6 +352,33 @@ export const navItems = [
   { path: '/maintenance-fluids', nameEn: 'Maintenance IV Fluids', nameFr: 'Fluides d’Entretien IV', nameAr: 'السوائل الوريدية اليومية', icon: Droplet, tier: 3 },
   { path: '/phenytoin-correction', nameEn: 'Phenytoin Correction', nameFr: 'Correction Phénytoïne', nameAr: 'تصحيح الفينيتوين', icon: Pill, tier: 3 },
   
+  // Fast-Track 25 Clinical Calculators
+  { path: '/alvarado-score', nameEn: 'Alvarado Score Appendicitis', nameFr: "Score d'Alvarado Appendicite", nameAr: 'مقياس ألفارادو لالتهاب الزائدة', icon: Activity, tier: 1 },
+  { path: '/ransons-criteria', nameEn: "Ranson's Criteria Pancreatitis", nameFr: 'Critères de Ranson Pancréatite', nameAr: 'معايير رانسون لالتهاب البنكرياس', icon: AlertTriangle, tier: 1 },
+  { path: '/bisap-score', nameEn: 'BISAP Score Pancreatitis', nameFr: 'Score BISAP Pancréatite', nameAr: 'مقياس بيساب للبنكرياس', icon: Activity, tier: 1 },
+  { path: '/glasgow-blatchford', nameEn: 'Glasgow-Blatchford Bleed', nameFr: 'Score de Glasgow-Blatchford', nameAr: 'مقياس غلاسكو بلاتشفورد للنزيف', icon: Droplet, tier: 1 },
+  { path: '/ottawa-rules', nameEn: 'Ottawa Ankle & Knee Rules', nameFr: "Règles d'Ottawa Cheville & Genou", nameAr: 'قواعد أوتاوا للكسور', icon: ShieldCheck, tier: 1 },
+  { path: '/fib4-index', nameEn: 'FIB-4 Liver Fibrosis Index', nameFr: 'Indice FIB-4 Fibrose Hépatique', nameAr: 'مؤشر فيب-4 لتليف الكبد', icon: Activity, tier: 2 },
+  { path: '/saag-calculator', nameEn: 'SAAG Ascites Albumin Gradient', nameFr: 'Gradient SAAG Ascite', nameAr: 'مدروج ألبومين المصل والحبن SAAG', icon: TestTube, tier: 2 },
+  { path: '/maddreys-df', nameEn: "Maddrey's Discriminant Function", nameFr: 'Score de Maddrey Hépatite', nameAr: 'معامل مادري لالتهاب الكبد الكحولي', icon: Pill, tier: 2 },
+  { path: '/lille-model', nameEn: 'Lille Model Alcoholic Hepatitis', nameFr: 'Modèle de Lille Hépatite', nameAr: 'نموذج ليل للاستجابة للكورتيزون', icon: Pill, tier: 2 },
+  { path: '/feurea-calculator', nameEn: 'FEUrea Fractional Excretion', nameFr: "FEUrée Fraction d'Excrétion", nameAr: 'الكسر المفرغ من اليوريا FEUrea', icon: Droplet, tier: 2 },
+  { path: '/delta-delta', nameEn: 'Delta-Delta & Delta Ratio', nameFr: 'Delta-Delta & Ratio Delta', nameAr: 'حاسبة دلتا-دلتا والنسبة الفجوية', icon: Activity, tier: 2 },
+  { path: '/serum-osmolality', nameEn: 'Serum Osmolality & Osmolar Gap', nameFr: 'Osmolalité & Trou Osmolaire', nameAr: 'الحلولية المصلية والفجوة الحلولية', icon: TestTube, tier: 2 },
+  { path: '/urine-anion-gap', nameEn: 'Urine Anion Gap (UAG)', nameFr: 'Trou Anionique Urinaire (TAU)', nameAr: 'الفجوة الأنيونية البولية', icon: Droplet, tier: 2 },
+  { path: '/abcd2-score', nameEn: 'ABCD² Score for TIA Stroke Risk', nameFr: 'Score ABCD² Risque AVC post-AIT', nameAr: 'مقياس ABCD² لخطر السكتة', icon: Brain, tier: 1 },
+  { path: '/gad7-score', nameEn: 'GAD-7 Anxiety Scale', nameFr: 'Échelle GAD-7 Anxiété', nameAr: 'مقياس القلق GAD-7', icon: HeartPulse, tier: 3 },
+  { path: '/modified-rankin-scale', nameEn: 'Modified Rankin Scale (mRS)', nameFr: 'Échelle de Rankin Modifiée', nameAr: 'مقياس رانكين المعدل mRS', icon: Award, tier: 3 },
+  { path: '/caprini-score', nameEn: 'Caprini VTE Risk Score', nameFr: 'Score de Caprini Risque MTEV', nameAr: 'مقياس كابريني للجلطات الجراحية', icon: ShieldAlert, tier: 2 },
+  { path: '/mallampati-score', nameEn: 'Mallampati Airway Score', nameFr: 'Classification de Mallampati', nameAr: 'تصنيف مالمباتي للمجرى التنفسي', icon: Activity, tier: 1 },
+  { path: '/canadian-c-spine', nameEn: 'Canadian C-Spine Rule', nameFr: 'Règle Canadienne Rachis Cervical', nameAr: 'قاعدة العمود الفقري العنقي الكندية', icon: ShieldCheck, tier: 1 },
+  { path: '/aha-prevent-risk', nameEn: 'AHA PREVENT™ 10-Year CVD Risk', nameFr: 'Score AHA PREVENT Risque CV', nameAr: 'حاسبة مخاطر القلب AHA PREVENT', icon: HeartPulse, tier: 2 },
+  { path: '/dapt-score', nameEn: 'DAPT Score Post-PCI', nameFr: 'Score DAPT Post-Angioplastie', nameAr: 'نقاط DAPT لتحديد مدة مضادات الصفائح', icon: HeartPulse, tier: 2 },
+  { path: '/nyha-classification', nameEn: 'NYHA Heart Failure Class', nameFr: 'Classification NYHA Insuffisance Cardiaque', nameAr: 'تصنيف NYHA لقصور القلب', icon: HeartPulse, tier: 2 },
+  { path: '/psi-port-score', nameEn: 'PSI / PORT Pneumonia Score', nameFr: 'Score PSI / PORT Pneumonie', nameAr: 'مؤشر شدة الالتهاب الرئوي PSI', icon: Wind, tier: 1 },
+  { path: '/ecog-performance', nameEn: 'ECOG Performance Status', nameFr: 'Score de Performance ECOG OMS', nameAr: 'مقياس الأداء الوظيفي ECOG', icon: Activity, tier: 3 },
+  { path: '/pecarn-head-trauma', nameEn: 'PECARN Pediatric Head Trauma', nameFr: 'Règle PECARN Traumatisme Crânien', nameAr: 'قاعدة بيكارن لإصابات الرأس لدى الأطفال', icon: Brain, tier: 1 },
+
   { path: '/medical-statistics', nameEn: 'Medical Statistics', nameFr: 'Statistiques Médicales', nameAr: 'الإحصاء الطبي', icon: Layers, tier: 3 },
   { path: '/synapse-engine', nameEn: 'Synapse Engine (Guidelines)', nameFr: 'Moteur Synapse (Recommandations)', nameAr: 'محرك الإرشادات الطبية', icon: Sparkles, tier: 0 },
 ];
@@ -484,6 +538,33 @@ export function moduleRoutes(lang: LangCode, langPath: (p: string) => string) {
       <Route path="sample-size-calculator" element={wrapCalculator('/sample-size-calculator', <SampleSizeCalculator lang={lang} />)} />
       <Route path="or-to-rr" element={wrapCalculator('/or-to-rr', <OrToRrConverter lang={lang} />)} />
       <Route path="fragility-index" element={wrapCalculator('/fragility-index', <FragilityIndex lang={lang} />)} />
+
+      {/* Fast-Track 25 High-Yield Clinical Calculators */}
+      <Route path="alvarado-score" element={wrapCalculator('/alvarado-score', <AlvaradoScore lang={lang} />)} />
+      <Route path="ransons-criteria" element={wrapCalculator('/ransons-criteria', <RansonsCriteria lang={lang} />)} />
+      <Route path="bisap-score" element={wrapCalculator('/bisap-score', <BisapScore lang={lang} />)} />
+      <Route path="glasgow-blatchford" element={wrapCalculator('/glasgow-blatchford', <GlasgowBlatchford lang={lang} />)} />
+      <Route path="ottawa-rules" element={wrapCalculator('/ottawa-rules', <OttawaRules lang={lang} />)} />
+      <Route path="fib4-index" element={wrapCalculator('/fib4-index', <Fib4Index lang={lang} />)} />
+      <Route path="saag-calculator" element={wrapCalculator('/saag-calculator', <SaagCalculator lang={lang} />)} />
+      <Route path="maddreys-df" element={wrapCalculator('/maddreys-df', <MaddreysDf lang={lang} />)} />
+      <Route path="lille-model" element={wrapCalculator('/lille-model', <LilleModel lang={lang} />)} />
+      <Route path="feurea-calculator" element={wrapCalculator('/feurea-calculator', <FeUreaCalculator lang={lang} />)} />
+      <Route path="delta-delta" element={wrapCalculator('/delta-delta', <DeltaDeltaCalculator lang={lang} />)} />
+      <Route path="serum-osmolality" element={wrapCalculator('/serum-osmolality', <SerumOsmolality lang={lang} />)} />
+      <Route path="urine-anion-gap" element={wrapCalculator('/urine-anion-gap', <UrineAnionGap lang={lang} />)} />
+      <Route path="abcd2-score" element={wrapCalculator('/abcd2-score', <Abcd2Score lang={lang} />)} />
+      <Route path="gad7-score" element={wrapCalculator('/gad7-score', <Gad7Score lang={lang} />)} />
+      <Route path="modified-rankin-scale" element={wrapCalculator('/modified-rankin-scale', <ModifiedRankinScale lang={lang} />)} />
+      <Route path="caprini-score" element={wrapCalculator('/caprini-score', <CapriniScore lang={lang} />)} />
+      <Route path="mallampati-score" element={wrapCalculator('/mallampati-score', <MallampatiScore lang={lang} />)} />
+      <Route path="canadian-c-spine" element={wrapCalculator('/canadian-c-spine', <CanadianCSpine lang={lang} />)} />
+      <Route path="aha-prevent-risk" element={wrapCalculator('/aha-prevent-risk', <AhaPreventRisk lang={lang} />)} />
+      <Route path="dapt-score" element={wrapCalculator('/dapt-score', <DaptScore lang={lang} />)} />
+      <Route path="nyha-classification" element={wrapCalculator('/nyha-classification', <NyhaClassification lang={lang} />)} />
+      <Route path="psi-port-score" element={wrapCalculator('/psi-port-score', <PsiPortScore lang={lang} />)} />
+      <Route path="ecog-performance" element={wrapCalculator('/ecog-performance', <EcogPerformance lang={lang} />)} />
+      <Route path="pecarn-head-trauma" element={wrapCalculator('/pecarn-head-trauma', <PecarnHeadTrauma lang={lang} />)} />
     </>
   );
 }

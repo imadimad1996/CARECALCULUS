@@ -1014,5 +1014,257 @@ export const ALL_CALCULATORS: CalculatorMeta[] = [
     specialties: ["pediatrics","nephrology"],
     icon: TestTube,
     isFeatured: false
+  },
+  // Fast-Track 25 High-Yield Clinical Calculators
+  {
+    id: 'alvarado-score',
+    title: {"en":"Alvarado Score for Acute Appendicitis","fr":"Score d'Alvarado (Appendicite Aiguë)","ar":"مقياس ألفارادو لالتهاب الزائدة"},
+    category: {"en":"Emergency & Surgery","fr":"Urgences & Chirurgie"},
+    path: '/alvarado-score',
+    keywords: ["alvarado","appendicitis","mantrels","right lower quadrant","acute abdomen","appendicite"],
+    specialties: ["emergency","surgery","gastroenterology"],
+    icon: Activity,
+    isFeatured: true
+  },
+  {
+    id: 'ransons-criteria',
+    title: {"en":"Ranson's Criteria for Pancreatitis","fr":"Critères de Ranson (Pancréatite)","ar":"معايير رانسون لالتهاب البنكرياس"},
+    category: {"en":"Gastroenterology & Critical Care","fr":"Hépato-Gastroentérologie & Soins Critiques"},
+    path: '/ransons-criteria',
+    keywords: ["ranson","pancreatitis","pancreatite","amylase","lipase","mortality"],
+    specialties: ["gastroenterology","emergency","critical-care"],
+    icon: AlertTriangle,
+    isFeatured: true
+  },
+  {
+    id: 'bisap-score',
+    title: {"en":"BISAP Score for Pancreatitis Mortality","fr":"Score BISAP (Pancréatite Aiguë)","ar":"مقياس بيساب لشدة التهاب البنكرياس"},
+    category: {"en":"Gastroenterology & Critical Care","fr":"Hépato-Gastroentérologie & Soins Critiques"},
+    path: '/bisap-score',
+    keywords: ["bisap","pancreatitis","bun","sirs","pleural effusion","pancreatite"],
+    specialties: ["gastroenterology","emergency","critical-care"],
+    icon: Activity,
+    isFeatured: true
+  },
+  {
+    id: 'glasgow-blatchford',
+    title: {"en":"Glasgow-Blatchford Bleeding Score","fr":"Score de Glasgow-Blatchford (Hémorragie Digestive)","ar":"مقياس غلاسكو بلاتشفورد للنزيف الهضمي"},
+    category: {"en":"Gastroenterology & Emergency","fr":"Hépato-Gastroentérologie & Urgences"},
+    path: '/glasgow-blatchford',
+    keywords: ["glasgow blatchford","gbs","gi bleed","upper gi bleeding","melena","hemorragie digestive"],
+    specialties: ["gastroenterology","emergency","internal-medicine"],
+    icon: Droplet,
+    isFeatured: true
+  },
+  {
+    id: 'ottawa-rules',
+    title: {"en":"Ottawa Ankle, Foot & Knee Rules","fr":"Règles d'Ottawa (Cheville, Pied & Genou)","ar":"قواعد أوتاوا لكسور الكاحل والركبة"},
+    category: {"en":"Orthopedics & Emergency","fr":"Orthopédie & Urgences"},
+    path: '/ottawa-rules',
+    keywords: ["ottawa ankle","ottawa knee","fracture","malleolus","radiography","entorse"],
+    specialties: ["orthopedics","emergency"],
+    icon: ShieldCheck,
+    isFeatured: true
+  },
+  {
+    id: 'fib4-index',
+    title: {"en":"FIB-4 Liver Fibrosis Index","fr":"Indice FIB-4 (Fibrose Hépatique)","ar":"مؤشر فيب-4 لتليف الكبد"},
+    category: {"en":"Hepatology & Gastroenterology","fr":"Hépatologie & Gastroentérologie"},
+    path: '/fib4-index',
+    keywords: ["fib-4","fib4","fibrosis","nafld","mash","cirrhosis","alt","ast","platelets"],
+    specialties: ["gastroenterology","internal-medicine"],
+    icon: Activity,
+    isFeatured: true
+  },
+  {
+    id: 'saag-calculator',
+    title: {"en":"Serum-Ascites Albumin Gradient (SAAG)","fr":"Gradient d'Albumine Sérum-Ascite (SAAG)","ar":"مدروج ألبومين المصل والحبن SAAG"},
+    category: {"en":"Hepatology & Gastroenterology","fr":"Hépatologie & Gastroentérologie"},
+    path: '/saag-calculator',
+    keywords: ["saag","ascites","portal hypertension","cirrhosis","peritoneal carcinomatosis"],
+    specialties: ["gastroenterology","internal-medicine"],
+    icon: TestTube,
+    isFeatured: true
+  },
+  {
+    id: 'maddreys-df',
+    title: {"en":"Maddrey's Discriminant Function (MDF)","fr":"Score de Maddrey (Hépatite Alcoolique)","ar":"معامل مادري لالتهاب الكبد الكحولي"},
+    category: {"en":"Hepatology & Pharmacology","fr":"Hépatologie & Pharmacologie"},
+    path: '/maddreys-df',
+    keywords: ["maddrey","mdf","alcoholic hepatitis","prednisolone","corticosteroid","prothrombin time"],
+    specialties: ["gastroenterology","critical-care","internal-medicine"],
+    icon: Pill,
+    isFeatured: true
+  },
+  {
+    id: 'lille-model',
+    title: {"en":"Lille Model for Alcoholic Hepatitis","fr":"Modèle de Lille (Hépatite Alcoolique)","ar":"نموذج ليل لتقييم الاستجابة للكورتيزون"},
+    category: {"en":"Hepatology & Critical Care","fr":"Hépatologie & Soins Critiques"},
+    path: '/lille-model',
+    keywords: ["lille model","alcoholic hepatitis","steroid response","day 7","prednisolone","liver transplant"],
+    specialties: ["gastroenterology","critical-care"],
+    icon: Pill,
+    isFeatured: true
+  },
+  {
+    id: 'feurea-calculator',
+    title: {"en":"Fractional Excretion of Urea (FEUrea)","fr":"Fraction d'Excrétion de l'Urée (FEUrée)","ar":"الكسر المفرغ من اليوريا FEUrea"},
+    category: {"en":"Metabolic & Renal","fr":"Métabolique & Rénal"},
+    path: '/feurea-calculator',
+    keywords: ["feurea","fractional excretion","prerenal","atn","diuretics","acute kidney injury"],
+    specialties: ["nephrology","critical-care","internal-medicine"],
+    icon: Droplet,
+    isFeatured: true
+  },
+  {
+    id: 'delta-delta',
+    title: {"en":"Delta-Delta & Delta Ratio Calculator","fr":"Calculateur Delta-Delta & Ratio Delta","ar":"حاسبة دلتا-دلتا والنسبة الفجوية"},
+    category: {"en":"Metabolic & Renal","fr":"Métabolique & Rénal"},
+    path: '/delta-delta',
+    keywords: ["delta delta","delta ratio","hagma","nagma","acid base","anion gap","metabolic acidosis"],
+    specialties: ["nephrology","critical-care","emergency"],
+    icon: Activity,
+    isFeatured: true
+  },
+  {
+    id: 'serum-osmolality',
+    title: {"en":"Serum Osmolality & Osmolar Gap","fr":"Osmolalité Plasmatique & Trou Osmolaire","ar":"الحلولية المصلية والفجوة الحلولية"},
+    category: {"en":"Metabolic & Critical Care","fr":"Métabolique & Soins Intensifs"},
+    path: '/serum-osmolality',
+    keywords: ["serum osmolality","osmolar gap","toxic alcohol","ethylene glycol","methanol","hyponatremia"],
+    specialties: ["emergency","nephrology","toxicology"],
+    icon: TestTube,
+    isFeatured: true
+  },
+  {
+    id: 'urine-anion-gap',
+    title: {"en":"Urine Anion Gap (UAG)","fr":"Trou Anionique Urinaire (TAU)","ar":"الفجوة الأنيونية البولية"},
+    category: {"en":"Metabolic & Renal","fr":"Métabolique & Rénal"},
+    path: '/urine-anion-gap',
+    keywords: ["urine anion gap","uag","rta","renal tubular acidosis","diarrhea","ammonium"],
+    specialties: ["nephrology","internal-medicine"],
+    icon: Droplet,
+    isFeatured: true
+  },
+  {
+    id: 'abcd2-score',
+    title: {"en":"ABCD² Score for TIA Stroke Risk","fr":"Score ABCD² (Risque d'AVC post-AIT)","ar":"مقياس ABCD² لخطر السكتة الدماغية"},
+    category: {"en":"Neurology & Emergency","fr":"Neurologie & Urgences"},
+    path: '/abcd2-score',
+    keywords: ["abcd2","tia","stroke","ait","avc","transient ischemic attack"],
+    specialties: ["neurology","emergency"],
+    icon: Brain,
+    isFeatured: true
+  },
+  {
+    id: 'gad7-score',
+    title: {"en":"GAD-7 Anxiety Screening Scale","fr":"Échelle GAD-7 (Dépistage de l'Anxiété)","ar":"مقياس القلق العام GAD-7"},
+    category: {"en":"Psychiatry & Behavioral Health","fr":"Psychiatrie & Santé Mentale"},
+    path: '/gad7-score',
+    keywords: ["gad-7","gad7","anxiety","anxiete","generalized anxiety","panic","psychiatry"],
+    specialties: ["psychiatry","primary-care"],
+    icon: HeartPulse,
+    isFeatured: true
+  },
+  {
+    id: 'modified-rankin-scale',
+    title: {"en":"Modified Rankin Scale (mRS)","fr":"Échelle de Rankin Modifiée (mRS)","ar":"مقياس رانكين المعدل للعجز العصبي"},
+    category: {"en":"Neurology & Rehabilitation","fr":"Neurologie & Réadaptation"},
+    path: '/modified-rankin-scale',
+    keywords: ["modified rankin","mrs","stroke outcome","disability","avc","handicap"],
+    specialties: ["neurology","physical-therapy"],
+    icon: ShieldCheck,
+    isFeatured: true
+  },
+  {
+    id: 'caprini-score',
+    title: {"en":"Caprini Score for Surgical VTE Risk","fr":"Score de Caprini (Risque MTEV Chirurgical)","ar":"مقياس كابريني للجلطات الوريدية الجراحية"},
+    category: {"en":"Surgery & Hematology","fr":"Chirurgie & Hématologie"},
+    path: '/caprini-score',
+    keywords: ["caprini","vte","dvt","pe","surgical prophylaxis","thromboprophylaxis","lmwh"],
+    specialties: ["surgery","hematology","anesthesiology"],
+    icon: ShieldAlert,
+    isFeatured: true
+  },
+  {
+    id: 'mallampati-score',
+    title: {"en":"Modified Mallampati Airway Score","fr":"Classification de Mallampati Modifiée","ar":"تصنيف مالمباتي لتقييم صعوبة التنبيب"},
+    category: {"en":"Anesthesiology & Airway","fr":"Anesthésie & Voies Aériennes"},
+    path: '/mallampati-score',
+    keywords: ["mallampati","difficult airway","intubation","laryngoscopy","anesthesia","oropharynx"],
+    specialties: ["anesthesiology","emergency","critical-care"],
+    icon: Activity,
+    isFeatured: true
+  },
+  {
+    id: 'canadian-c-spine',
+    title: {"en":"Canadian C-Spine Rule","fr":"Règle Canadienne du Rachis Cervical","ar":"قاعدة العمود الفقري العنقي الكندية"},
+    category: {"en":"Emergency & Trauma","fr":"Urgences & Traumatologie"},
+    path: '/canadian-c-spine',
+    keywords: ["canadian c-spine","ccr","cervical fracture","trauma","neck injury","c-collar"],
+    specialties: ["emergency","trauma","orthopedics"],
+    icon: ShieldCheck,
+    isFeatured: true
+  },
+  {
+    id: 'aha-prevent-risk',
+    title: {"en":"AHA PREVENT™ 10-Year CVD Risk","fr":"Calculateur AHA PREVENT™ (Risque CV à 10 Ans)","ar":"حاسبة مخاطر أمراض القلب AHA PREVENT"},
+    category: {"en":"Cardiology & Prevention","fr":"Cardiologie & Prévention"},
+    path: '/aha-prevent-risk',
+    keywords: ["aha prevent","prevent equations","ascvd","heart failure","statin","10-year risk"],
+    specialties: ["cardiology","internal-medicine","endocrinology"],
+    icon: HeartPulse,
+    isFeatured: true
+  },
+  {
+    id: 'dapt-score',
+    title: {"en":"DAPT Score for Post-PCI Antiplatelet Duration","fr":"Score DAPT (Durée de Bithérapie Antiagrégante)","ar":"نقاط DAPT لتحديد مدة مضادات الصفائح"},
+    category: {"en":"Cardiology","fr":"Cardiologie"},
+    path: '/dapt-score',
+    keywords: ["dapt score","pci","stent","aspirin","clopidogrel","ticagrelor","antiplatelet"],
+    specialties: ["cardiology"],
+    icon: HeartPulse,
+    isFeatured: true
+  },
+  {
+    id: 'nyha-classification',
+    title: {"en":"NYHA Heart Failure Functional Classification","fr":"Classification Fonctionnelle NYHA (Insuffisance Cardiaque)","ar":"تصنيف NYHA الوظيفي لقصور القلب"},
+    category: {"en":"Cardiology","fr":"Cardiologie"},
+    path: '/nyha-classification',
+    keywords: ["nyha","heart failure","dyspnea","gdmt","functional class","insuffisance cardiaque"],
+    specialties: ["cardiology","internal-medicine"],
+    icon: HeartPulse,
+    isFeatured: true
+  },
+  {
+    id: 'psi-port-score',
+    title: {"en":"Pneumonia Severity Index (PSI / PORT)","fr":"Score PSI / PORT (Pneumonie Communautaire)","ar":"مؤشر شدة الالتهاب الرئوي PSI"},
+    category: {"en":"Pulmonology & Infectious Disease","fr":"Pneumologie & Infectiologie"},
+    path: '/psi-port-score',
+    keywords: ["psi","port score","pneumonia","community acquired pneumonia","cap","curb-65"],
+    specialties: ["pulmonology","emergency","internal-medicine"],
+    icon: Wind,
+    isFeatured: true
+  },
+  {
+    id: 'ecog-performance',
+    title: {"en":"ECOG / WHO Performance Status","fr":"Score de Performance ECOG / OMS","ar":"مقياس الأداء الوظيفي ECOG في الأورام"},
+    category: {"en":"Oncology & Hematology","fr":"Oncologie & Hématologie"},
+    path: '/ecog-performance',
+    keywords: ["ecog","performance status","karnofsky","chemotherapy eligibility","oncology","cancer"],
+    specialties: ["oncology","hematology","palliative"],
+    icon: Activity,
+    isFeatured: true
+  },
+  {
+    id: 'pecarn-head-trauma',
+    title: {"en":"PECARN Pediatric Head Trauma Rule","fr":"Règle PECARN (Traumatisme Crânien Pédiatrique)","ar":"قاعدة بيكارن لإصابات الرأس لدى الأطفال"},
+    category: {"en":"Pediatrics & Emergency","fr":"Pédiatrie & Urgences"},
+    path: '/pecarn-head-trauma',
+    keywords: ["pecarn","pediatric head trauma","citbi","head ct","concussion","skull fracture"],
+    specialties: ["pediatrics","emergency","trauma"],
+    icon: Brain,
+    isFeatured: true
   }
 ];
+

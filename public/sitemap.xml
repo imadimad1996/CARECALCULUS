@@ -2649,6 +2649,681 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.carecalculus.com/alvarado-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/alvarado-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/alvarado-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/alvarado-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/alvarado-score" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/alvarado-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/alvarado-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/alvarado-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/alvarado-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/alvarado-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/alvarado-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/alvarado-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/alvarado-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/alvarado-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/alvarado-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/ransons-criteria</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/ransons-criteria" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/ransons-criteria" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/ransons-criteria" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/ransons-criteria" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/ransons-criteria</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/ransons-criteria" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/ransons-criteria" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/ransons-criteria" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/ransons-criteria" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/ransons-criteria</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/ransons-criteria" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/ransons-criteria" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/ransons-criteria" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/ransons-criteria" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/bisap-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/bisap-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/bisap-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/bisap-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/bisap-score" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/bisap-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/bisap-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/bisap-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/bisap-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/bisap-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/bisap-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/bisap-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/bisap-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/bisap-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/bisap-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/glasgow-blatchford</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/glasgow-blatchford" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/glasgow-blatchford" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/glasgow-blatchford" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/glasgow-blatchford" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/glasgow-blatchford</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/glasgow-blatchford" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/glasgow-blatchford" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/glasgow-blatchford" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/glasgow-blatchford" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/glasgow-blatchford</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/glasgow-blatchford" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/glasgow-blatchford" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/glasgow-blatchford" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/glasgow-blatchford" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/ottawa-rules</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/ottawa-rules" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/ottawa-rules" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/ottawa-rules" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/ottawa-rules" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/ottawa-rules</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/ottawa-rules" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/ottawa-rules" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/ottawa-rules" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/ottawa-rules" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/ottawa-rules</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/ottawa-rules" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/ottawa-rules" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/ottawa-rules" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/ottawa-rules" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/fib4-index</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/fib4-index" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/fib4-index" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/fib4-index" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/fib4-index" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/fib4-index</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/fib4-index" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/fib4-index" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/fib4-index" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/fib4-index" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/fib4-index</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/fib4-index" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/fib4-index" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/fib4-index" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/fib4-index" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/saag-calculator</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/saag-calculator" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/saag-calculator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/saag-calculator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/saag-calculator" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/saag-calculator</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/saag-calculator" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/saag-calculator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/saag-calculator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/saag-calculator" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/saag-calculator</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/saag-calculator" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/saag-calculator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/saag-calculator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/saag-calculator" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/maddreys-df</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/maddreys-df" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/maddreys-df" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/maddreys-df" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/maddreys-df" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/maddreys-df</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/maddreys-df" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/maddreys-df" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/maddreys-df" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/maddreys-df" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/maddreys-df</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/maddreys-df" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/maddreys-df" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/maddreys-df" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/maddreys-df" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/lille-model</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/lille-model" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/lille-model" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/lille-model" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/lille-model" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/lille-model</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/lille-model" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/lille-model" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/lille-model" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/lille-model" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/lille-model</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/lille-model" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/lille-model" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/lille-model" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/lille-model" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/feurea-calculator</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/feurea-calculator" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/feurea-calculator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/feurea-calculator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/feurea-calculator" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/feurea-calculator</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/feurea-calculator" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/feurea-calculator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/feurea-calculator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/feurea-calculator" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/feurea-calculator</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/feurea-calculator" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/feurea-calculator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/feurea-calculator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/feurea-calculator" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/delta-delta</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/delta-delta" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/delta-delta" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/delta-delta" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/delta-delta" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/delta-delta</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/delta-delta" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/delta-delta" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/delta-delta" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/delta-delta" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/delta-delta</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/delta-delta" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/delta-delta" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/delta-delta" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/delta-delta" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/serum-osmolality</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/serum-osmolality" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/serum-osmolality" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/serum-osmolality" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/serum-osmolality" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/serum-osmolality</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/serum-osmolality" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/serum-osmolality" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/serum-osmolality" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/serum-osmolality" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/serum-osmolality</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/serum-osmolality" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/serum-osmolality" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/serum-osmolality" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/serum-osmolality" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/urine-anion-gap</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/urine-anion-gap" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/urine-anion-gap" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/urine-anion-gap" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/urine-anion-gap" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/urine-anion-gap</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/urine-anion-gap" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/urine-anion-gap" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/urine-anion-gap" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/urine-anion-gap" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/urine-anion-gap</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/urine-anion-gap" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/urine-anion-gap" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/urine-anion-gap" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/urine-anion-gap" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/abcd2-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/abcd2-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/abcd2-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/abcd2-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/abcd2-score" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/abcd2-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/abcd2-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/abcd2-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/abcd2-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/abcd2-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/abcd2-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/abcd2-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/abcd2-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/abcd2-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/abcd2-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/gad7-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/gad7-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/gad7-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/gad7-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/gad7-score" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/gad7-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/gad7-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/gad7-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/gad7-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/gad7-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/gad7-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/gad7-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/gad7-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/gad7-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/gad7-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/modified-rankin-scale</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/modified-rankin-scale" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/modified-rankin-scale" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/modified-rankin-scale" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/modified-rankin-scale" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/modified-rankin-scale</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/modified-rankin-scale" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/modified-rankin-scale" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/modified-rankin-scale" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/modified-rankin-scale" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/modified-rankin-scale</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/modified-rankin-scale" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/modified-rankin-scale" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/modified-rankin-scale" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/modified-rankin-scale" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/caprini-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/caprini-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/caprini-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/caprini-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/caprini-score" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/caprini-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/caprini-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/caprini-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/caprini-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/caprini-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/caprini-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/caprini-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/caprini-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/caprini-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/caprini-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/mallampati-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/mallampati-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/mallampati-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/mallampati-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/mallampati-score" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/mallampati-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/mallampati-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/mallampati-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/mallampati-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/mallampati-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/mallampati-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/mallampati-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/mallampati-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/mallampati-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/mallampati-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/canadian-c-spine</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/canadian-c-spine" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/canadian-c-spine" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/canadian-c-spine" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/canadian-c-spine" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/canadian-c-spine</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/canadian-c-spine" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/canadian-c-spine" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/canadian-c-spine" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/canadian-c-spine" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/canadian-c-spine</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/canadian-c-spine" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/canadian-c-spine" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/canadian-c-spine" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/canadian-c-spine" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/aha-prevent-risk</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/aha-prevent-risk" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/aha-prevent-risk" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/aha-prevent-risk" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/aha-prevent-risk" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/aha-prevent-risk</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/aha-prevent-risk" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/aha-prevent-risk" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/aha-prevent-risk" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/aha-prevent-risk" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/aha-prevent-risk</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/aha-prevent-risk" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/aha-prevent-risk" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/aha-prevent-risk" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/aha-prevent-risk" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/dapt-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/dapt-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/dapt-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/dapt-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/dapt-score" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/dapt-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/dapt-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/dapt-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/dapt-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/dapt-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/dapt-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/dapt-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/dapt-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/dapt-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/dapt-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/nyha-classification</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/nyha-classification" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/nyha-classification" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/nyha-classification" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/nyha-classification" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/nyha-classification</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/nyha-classification" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/nyha-classification" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/nyha-classification" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/nyha-classification" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/nyha-classification</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/nyha-classification" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/nyha-classification" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/nyha-classification" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/nyha-classification" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/psi-port-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/psi-port-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/psi-port-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/psi-port-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/psi-port-score" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/psi-port-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/psi-port-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/psi-port-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/psi-port-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/psi-port-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/psi-port-score</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/psi-port-score" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/psi-port-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/psi-port-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/psi-port-score" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/ecog-performance</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/ecog-performance" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/ecog-performance" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/ecog-performance" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/ecog-performance" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/ecog-performance</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/ecog-performance" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/ecog-performance" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/ecog-performance" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/ecog-performance" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/ecog-performance</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/ecog-performance" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/ecog-performance" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/ecog-performance" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/ecog-performance" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.carecalculus.com/pecarn-head-trauma</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/pecarn-head-trauma" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/pecarn-head-trauma" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/pecarn-head-trauma" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/pecarn-head-trauma" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://fr.carecalculus.com/pecarn-head-trauma</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/pecarn-head-trauma" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/pecarn-head-trauma" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/pecarn-head-trauma" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/pecarn-head-trauma" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://es.carecalculus.com/pecarn-head-trauma</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.carecalculus.com/pecarn-head-trauma" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fr.carecalculus.com/pecarn-head-trauma" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://es.carecalculus.com/pecarn-head-trauma" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.carecalculus.com/pecarn-head-trauma" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
   <url>
     <loc>https://www.carecalculus.com/conditions/sepsis-and-infection</loc>
